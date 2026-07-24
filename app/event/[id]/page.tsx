@@ -10,8 +10,15 @@ import AdSlot from "@/components/AdSlot";
 import PosterCard from "@/components/PosterCard";
 import ShareButtons from "@/components/ShareButtons";
 
+// ISR: 하루 1회 재검증. 전체를 빌드 때 만들지 않고 주목도 높은 일부만 사전 생성,
+// 나머지는 첫 요청 때 생성 후 캐시(dynamicParams 기본 true).
+export const revalidate = 86400;
+
 export function generateStaticParams() {
-  return getAllEvents().map((e) => ({ id: e.id }));
+  return getAllEvents()
+    .filter((e) => e.featured)
+    .slice(0, 60)
+    .map((e) => ({ id: e.id }));
 }
 
 export async function generateMetadata({

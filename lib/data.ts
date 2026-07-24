@@ -1,19 +1,9 @@
-import fs from "node:fs";
-import path from "node:path";
+// 정적 import: 빌드 산출물/서버리스 함수에 함께 번들되어 ISR·동적 렌더에서도 안전
+import eventsData from "@/data/events.json";
 import type { CultureEvent, EventsData, PriceType } from "./types";
 
-let cache: EventsData | null = null;
-
 function load(): EventsData {
-  if (cache) return cache;
-  try {
-    const p = path.join(process.cwd(), "data", "events.json");
-    const raw = fs.readFileSync(p, "utf8");
-    cache = JSON.parse(raw) as EventsData;
-  } catch {
-    cache = { generatedAt: "", count: 0, events: [] };
-  }
-  return cache;
+  return eventsData as unknown as EventsData;
 }
 
 export function getAllEvents(): CultureEvent[] {
