@@ -1,0 +1,112 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: theme("colors.ink.DEFAULT");
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 포스터 로딩 스켈레톤 shimmer */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #ececec;
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.4s infinite;
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 정적 안내 페이지 타이포 */
+.prose-page {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 2.5rem;
+  color: theme("colors.ink.soft");
+  line-height: 1.75;
+}
+.prose-page h1 {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: theme("colors.ink.DEFAULT");
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.prose-page h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: theme("colors.ink.DEFAULT");
+  margin: 2rem 0 0.75rem;
+}
+.prose-page p {
+  margin: 0.75rem 0;
+}
+.prose-page ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0.75rem 0;
+}
+.prose-page li {
+  margin: 0.35rem 0;
+}
+.prose-page a {
+  color: theme("colors.free");
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-page b,
+.prose-page strong {
+  color: theme("colors.ink.DEFAULT");
+  font-weight: 700;
+}
+
+/* 스크롤바 살짝 정리 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8d8d5;
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c2c2be;
+}
+
+/* 필터 칩 가로 스크롤 시 스크롤바 숨김 */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

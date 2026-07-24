@@ -1,0 +1,19 @@
+# 환경변수 (인증키 등 비밀값 — 절대 커밋 금지)
+.env
+.env.local
+.env*.local
+
+# 의존성
+/node_modules
+
+# Next.js 빌드 산출물
+/.next
+/out
+
+# 로그
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
