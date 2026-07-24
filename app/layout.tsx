@@ -41,10 +41,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className="flex min-h-screen flex-col bg-panel font-sans antialiased">
+      <body className="bg-white font-sans antialiased">
         <Header />
-        {/* flex-1 로 콘텐츠가 짧아도 남는 공간을 본문(회색)이 채워 푸터를 화면 맨 아래에 고정 */}
-        <main className="flex w-full flex-1 flex-col">{children}</main>
+        {/* 콘텐츠 자연 흐름 — 푸터가 내용 바로 뒤에 옴. 짧은 페이지에선 흰 배경이 푸터와 이어져 빈 띠가 안 생김 */}
+        <main className="w-full">{children}</main>
         <Footer />
         <Analytics />
       </body>
