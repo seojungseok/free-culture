@@ -40,6 +40,8 @@ export function slimForClient(events: CultureEvent[]): CultureEvent[] {
     freeCondition: e.freeCondition,
     area: e.area,
     place: e.place,
+    genreKey: e.genreKey,
+    audiences: e.audiences,
     startDate: e.startDate,
     endDate: e.endDate,
   })) as unknown as CultureEvent[];

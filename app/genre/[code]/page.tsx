@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getByGenre, slimForClient } from "@/lib/data";
+import { getAllEvents, getByGenre, slimForClient } from "@/lib/data";
 import { GENRES, genreLabelOf } from "@/lib/classify";
 import DateBrowser from "@/components/DateBrowser";
 import { Band } from "@/components/Band";
@@ -34,7 +34,8 @@ export default async function GenrePage({
   const valid = GENRES.some((g) => g.key === code);
   if (!valid) notFound();
   const label = genreLabelOf(code);
-  const events = slimForClient(getByGenre(code));
+  const genreCount = getByGenre(code).length;
+  const events = slimForClient(getAllEvents());
 
   return (
     <>
@@ -43,11 +44,11 @@ export default async function GenrePage({
           전국 <span className="text-free">{label}</span>
         </h1>
         <p className="mt-1 text-[14px] text-ink-soft">
-          지금 열리는 {label} 행사 {events.length.toLocaleString()}건 — 날짜로 골라보세요
+          지금 열리는 {label} 행사 {genreCount.toLocaleString()}건 — 지역·가격·날짜로 골라보세요
         </p>
       </Band>
       <Suspense fallback={null}>
-        <DateBrowser events={events} />
+        <DateBrowser events={events} initial={{ genre: code }} />
       </Suspense>
     </>
   );
