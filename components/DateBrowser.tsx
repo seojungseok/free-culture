@@ -13,6 +13,7 @@ import type { CultureEvent } from "@/lib/types";
 import PosterCard from "./PosterCard";
 import AdSlot from "./AdSlot";
 import { Container } from "./Band";
+import ShareLinkButton from "./ShareLinkButton";
 import {
   todayYmd,
   ymdToDash,
@@ -297,7 +298,9 @@ export default function DateBrowser({ events }: { events: CultureEvent[] }) {
                 {filtered.length.toLocaleString()}건
               </span>
             </h2>
-            <div className="flex gap-1 text-[13px]">
+            <div className="flex items-center gap-1 text-[13px]">
+              <ShareLinkButton label="이 목록 공유" />
+              <span className="mx-1 h-3.5 w-px bg-line" />
               {SORTS.map((s) => (
                 <button
                   key={s.key}

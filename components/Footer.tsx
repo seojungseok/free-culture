@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import VisitorCount from "./VisitorCount";
+import ShareLinkButton from "./ShareLinkButton";
 
 export default function Footer() {
   return (
@@ -23,6 +24,9 @@ export default function Footer() {
             </a>
           </p>
           <p className="mt-2 text-xs text-ink-faint">출처: {SITE.source}</p>
+          <div className="mt-3 -ml-2.5">
+            <ShareLinkButton label="사이트 주소 복사" size="md" target="origin" />
+          </div>
         </div>
 
         <nav className="text-sm">

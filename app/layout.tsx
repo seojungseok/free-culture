@@ -4,7 +4,6 @@ import { SITE } from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
-import FloatingShare from "@/components/FloatingShare";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -42,11 +41,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className="min-h-screen bg-panel font-sans antialiased">
+      <body className="flex min-h-screen flex-col bg-panel font-sans antialiased">
         <Header />
-        <main className="w-full">{children}</main>
+        {/* flex-1 로 콘텐츠가 짧아도 남는 공간을 본문(회색)이 채워 푸터를 화면 맨 아래에 고정 */}
+        <main className="flex w-full flex-1 flex-col">{children}</main>
         <Footer />
-        <FloatingShare />
         <Analytics />
       </body>
     </html>

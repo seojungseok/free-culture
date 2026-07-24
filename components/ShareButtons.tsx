@@ -12,72 +12,55 @@ export default function ShareButtons({
   const [toast, setToast] = useState(false);
   const [canShare, setCanShare] = useState(false);
 
-  // navigator.share 지원 여부 (모바일)
   useEffect(() => {
     if (typeof navigator !== "undefined" && "share" in navigator) setCanShare(true);
   }, []);
 
-  function showToast() {
-    setToast(true);
-    setTimeout(() => setToast(false), 1600);
-  }
-
-  async function copyLink() {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      showToast();
-    } catch {
-      // 클립보드 실패 시 선택 폴백
-      window.prompt("아래 링크를 복사하세요", window.location.href);
+  async function shareOrCopy() {
+    const url = window.location.href;
+    if (canShare) {
+      try {
+        await navigator.share({ title, url });
+        return;
+      } catch {
+        /* 취소 시 복사로 폴백 */
+      }
     }
-  }
-
-  async function webShare() {
     try {
-      await navigator.share({ title, url: window.location.href });
+      await navigator.clipboard.writeText(url);
+      setToast(true);
+      setTimeout(() => setToast(false), 1600);
     } catch {
-      /* 사용자 취소 등 무시 */
+      window.prompt("아래 링크를 복사하세요", url);
     }
   }
 
   return (
-    <div className="mt-6 flex flex-wrap gap-2">
-      {officialUrl && (
-        <a
-          href={officialUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-free px-6 py-3 text-sm font-bold text-white transition hover:bg-freedark"
-        >
-          공식 홈페이지 바로가기 ↗
-        </a>
-      )}
+    <div className="mt-6 grid grid-cols-2 gap-2.5">
+      <button
+        onClick={shareOrCopy}
+        className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-line bg-white py-3 text-sm font-bold text-ink transition hover:border-free/50 hover:text-free"
+      >
+        <LinkIcon /> 링크 복사
+      </button>
 
-      {canShare ? (
-        <button
-          onClick={webShare}
-          className="inline-flex items-center gap-1.5 rounded-xl border border-line bg-white px-5 py-3 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free"
-        >
-          <ShareIcon /> 공유
-        </button>
-      ) : (
-        <button
-          onClick={copyLink}
-          className="inline-flex items-center gap-1.5 rounded-xl border border-line bg-white px-5 py-3 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free"
-        >
-          <LinkIcon /> 링크 복사
-        </button>
-      )}
-
-      {/* 데스크톱에서도 링크 복사 별도 제공 */}
-      {canShare && (
-        <button
-          onClick={copyLink}
-          className="inline-flex items-center gap-1.5 rounded-xl border border-line bg-white px-5 py-3 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free"
-        >
-          <LinkIcon /> 링크 복사
-        </button>
-      )}
+      <a
+        href={officialUrl || "#"}
+        target={officialUrl ? "_blank" : undefined}
+        rel="noopener noreferrer"
+        aria-disabled={!officialUrl}
+        onClick={(e) => {
+          if (!officialUrl) e.preventDefault();
+        }}
+        className={[
+          "inline-flex items-center justify-center gap-1.5 rounded-xl py-3 text-sm font-bold transition",
+          officialUrl
+            ? "bg-free text-white hover:bg-freedark"
+            : "cursor-not-allowed bg-neutral-200 text-neutral-400",
+        ].join(" ")}
+      >
+        공식 페이지 <ExtIcon />
+      </a>
 
       {toast && (
         <span
@@ -99,13 +82,10 @@ function LinkIcon() {
     </svg>
   );
 }
-function ShareIcon() {
+function ExtIcon() {
   return (
     <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <circle cx="18" cy="5" r="3" />
-      <circle cx="6" cy="12" r="3" />
-      <circle cx="18" cy="19" r="3" />
-      <path d="m8.6 13.5 6.8 4M15.4 6.5 8.6 10.5" />
+      <path d="M7 17 17 7M9 7h8v8" />
     </svg>
   );
 }

@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { CultureEvent } from "@/lib/types";
 import { fmtRange, dday } from "@/lib/format";
 import PriceBadge from "./PriceBadge";
+import { SITE } from "@/lib/site";
 
 export default function PosterCard({
   ev,
@@ -16,8 +17,24 @@ export default function PosterCard({
 }) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
+  const [copied, setCopied] = useState(false);
   const d = dday(ev.startDate, ev.endDate);
   const hasImg = ev.imgUrl && !errored;
+
+  async function copyLink(e: React.MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+    const url = `${SITE.url.replace(/\/$/, "")}/event/${ev.id}`;
+    try {
+      await navigator.clipboard.writeText(
+        typeof window !== "undefined" ? `${window.location.origin}/event/${ev.id}` : url
+      );
+    } catch {
+      return;
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1400);
+  }
 
   return (
     <Link
@@ -72,6 +89,24 @@ export default function PosterCard({
             </span>
           </div>
         )}
+
+        {/* 공유(링크 복사) — 모바일 항상 / 데스크톱 hover */}
+        <button
+          onClick={copyLink}
+          aria-label="이 행사 링크 복사"
+          className="absolute bottom-1.5 right-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-black/45 text-white opacity-100 backdrop-blur-sm transition hover:bg-black/70 sm:opacity-0 sm:group-hover:opacity-100"
+        >
+          {copied ? (
+            <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
+          ) : (
+            <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1" />
+              <path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1" />
+            </svg>
+          )}
+        </button>
       </div>
 
       {/* 정보 (압축) */}
