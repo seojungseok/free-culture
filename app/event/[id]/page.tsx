@@ -166,29 +166,12 @@ export default async function EventPage({
             {ev.phone && <Row label="문의">{ev.phone}</Row>}
           </dl>
 
-          {/* 무료 추정 안내 (요금 바로 아래) */}
+          {/* 무료 추정 참고 문구 (작게, 회색) */}
           {ev.priceType === "free_estimated" && (
-            <div className="mt-4 rounded-xl border-l-4 border-amber-400 bg-amber-50 p-4">
-              <p className="text-sm font-bold text-amber-900">
-                ⚠️ 요금 정보 확인이 필요합니다
-              </p>
-              <p className="mt-1 text-[13px] leading-relaxed text-amber-800">
-                이 행사는 공공데이터에 요금 정보가 제공되지 않아, 행사 유형을
-                바탕으로 <b>무료로 추정</b>한 것입니다. 일부 프로그램은 유료이거나
-                사전 예약이 필요할 수 있습니다. 방문 전 반드시 공식 페이지나 주최
-                기관에 확인해주세요.
-              </p>
-              {ev.officialUrl && (
-                <a
-                  href={ev.officialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 rounded-lg bg-amber-500 px-4 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600"
-                >
-                  공식 페이지에서 확인하기 →
-                </a>
-              )}
-            </div>
+            <p className="mt-2.5 text-[13px] leading-relaxed text-ink-faint">
+              ※ 요금 정보가 없어 행사 유형으로 추정한 것입니다. 방문 전 공식
+              페이지에서 확인해주세요.
+            </p>
           )}
 
           {/* 요금 정보 없음 안내 */}

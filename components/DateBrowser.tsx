@@ -170,7 +170,6 @@ export default function DateBrowser({
     return { days, map };
   }, [events, mRegion, mGenre, mPrice, mKids, view.y, view.m]);
 
-  const hasEstimated = useMemo(() => filtered.some((e) => e.priceType === "free_estimated"), [filtered]);
   const shown = filtered.slice(0, visible);
 
   const syncUrl = useCallback(
@@ -346,12 +345,6 @@ export default function DateBrowser({
               ))}
             </div>
           </div>
-
-          {hasEstimated && (
-            <p className="mb-4 rounded-lg border-l-4 border-paid bg-[#FFF9E6] px-3.5 py-2.5 text-[13px] leading-relaxed text-ink-soft">
-              ※ <b className="text-ink">무료 추정</b>(점선 배지) 행사는 요금 정보가 없어 행사 유형으로 추정한 것입니다. 방문 전 공식 페이지에서 확인해주세요.
-            </p>
-          )}
 
           {shown.length === 0 ? (
             <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-line bg-white py-20 text-center">

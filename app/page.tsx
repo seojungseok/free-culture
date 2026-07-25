@@ -34,7 +34,7 @@ export default function HomePage() {
       <BigEventModal events={popupPicks} />
 
       {/* 히어로 (컴팩트, 연한 그린 틴트 띠) */}
-      <Band tone="tint" innerClassName="flex flex-wrap items-center justify-between gap-4 py-6 sm:py-7">
+      <Band tone="tint" innerClassName="flex flex-col gap-3 py-5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4 sm:py-7">
         <div>
           <h1 className="text-[28px] font-black leading-[1.1] tracking-[-0.02em] text-ink sm:text-[36px]">
             <span className="text-free">이번 주말</span> 갈 만한 곳
@@ -51,7 +51,7 @@ export default function HomePage() {
             )}
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex w-full gap-2.5 sm:w-auto">
           <SummaryChip label="오늘 무료" value={todayFree} href="/free" accent />
           <SummaryChip label="이번 주말" value={weekendCount} href="/weekend" />
         </div>
@@ -80,19 +80,20 @@ function SummaryChip({
     <Link
       href={href}
       className={[
-        "rounded-xl border px-3.5 py-2 text-center transition hover:shadow-card",
+        "flex flex-1 items-center justify-between gap-2 rounded-xl border px-3.5 py-2 transition hover:shadow-card",
+        "sm:min-w-[104px] sm:flex-none sm:flex-col sm:items-center sm:justify-center sm:text-center",
         accent ? "border-free/30 bg-white hover:border-free" : "border-line bg-white hover:border-ink/30",
       ].join(" ")}
     >
-      <div className="text-[11px] font-semibold text-ink-faint">{label} ›</div>
-      <div
+      <span className="text-[12px] font-semibold text-ink-faint sm:text-[11px]">{label} ›</span>
+      <span
         className={[
-          "text-[18px] font-black tabular-nums",
+          "text-[22px] font-black leading-none tabular-nums sm:text-[20px]",
           accent ? "text-free" : "text-ink",
         ].join(" ")}
       >
         {value.toLocaleString()}
-      </div>
+      </span>
     </Link>
   );
 }

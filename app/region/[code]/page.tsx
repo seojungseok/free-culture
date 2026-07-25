@@ -1,10 +1,13 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllEvents, getByRegion, slimForClient } from "@/lib/data";
-import { SIDO_SLUG, sidoFromSlug } from "@/lib/classify";
+import { GENRES, SIDO_SLUG, sidoFromSlug } from "@/lib/classify";
 import DateBrowser from "@/components/DateBrowser";
 import { Band } from "@/components/Band";
+
+const isFree = (t: string) => t === "free" || t === "free_estimated";
 
 export function generateStaticParams() {
   return Object.values(SIDO_SLUG).map((code) => ({ code }));
@@ -34,8 +37,14 @@ export default async function RegionPage({
   const { code } = await params;
   const sido = sidoFromSlug(code);
   if (!sido) notFound();
+  const all = getAllEvents();
   const regionCount = getByRegion(sido).length;
-  const events = slimForClient(getAllEvents());
+  const events = slimForClient(all);
+
+  // 이 지역에서 무료 행사 있는 분야 (조합 페이지 링크)
+  const freeGenres = GENRES.filter(
+    (g) => g.key !== "etc" && all.some((e) => e.area === sido && e.genreKey === g.key && isFree(e.priceType))
+  );
 
   return (
     <>
@@ -46,6 +55,19 @@ export default async function RegionPage({
         <p className="mt-1 text-[14px] text-ink-soft">
           {sido}에서 열리는 전시·공연 {regionCount.toLocaleString()}건 — 지역·분야·가격·날짜로 골라보세요
         </p>
+        {freeGenres.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {freeGenres.map((g) => (
+              <Link
+                key={g.key}
+                href={`/region/${code}/${g.key}`}
+                className="rounded-full border border-free/30 bg-white px-3 py-1 text-[12.5px] font-bold text-free transition hover:bg-free hover:text-white"
+              >
+                {sido} 무료 {g.label}
+              </Link>
+            ))}
+          </div>
+        )}
       </Band>
       <Suspense fallback={null}>
         <DateBrowser events={events} initial={{ region: sido }} />
