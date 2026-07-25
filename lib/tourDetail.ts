@@ -32,6 +32,40 @@ export interface PlaceOverview {
   tel: string;
 }
 
+const https = (u: string) => String(u || "").replace(/^http:\/\//i, "https://");
+
+export interface PlaceImage {
+  full: string;
+  thumb: string;
+}
+
+/** detailImage2 — 공식 추가 사진 갤러리 (originimgurl/smallimageurl). ISR 캐시. */
+export async function fetchPlaceImages(contentId: string): Promise<PlaceImage[]> {
+  if (!KEY || !contentId) return [];
+  const url = `https://apis.data.go.kr/B551011/KorService2/detailImage2?serviceKey=${encodeURIComponent(
+    KEY
+  )}&MobileOS=ETC&MobileApp=mwohaji&_type=json&imageYN=Y&numOfRows=15&contentId=${contentId}`;
+  try {
+    const res = await fetch(url, { next: { revalidate: 604800 } }); // 1주 캐시
+    if (!res.ok) return [];
+    const j = await res.json();
+    if (j?.response?.header?.resultCode !== "0000") return [];
+    const item = j?.response?.body?.items?.item;
+    const arr = Array.isArray(item) ? item : item ? [item] : [];
+    const out: PlaceImage[] = [];
+    const seen = new Set<string>();
+    for (const it of arr) {
+      const full = https(it.originimgurl || "");
+      if (!full || seen.has(full)) continue;
+      seen.add(full);
+      out.push({ full, thumb: https(it.smallimageurl || "") || full });
+    }
+    return out;
+  } catch {
+    return [];
+  }
+}
+
 export async function fetchPlaceOverview(contentId: string): Promise<PlaceOverview> {
   const empty: PlaceOverview = { overview: "", homepage: "", tel: "" };
   if (!KEY || !contentId) return empty;

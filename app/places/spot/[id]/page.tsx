@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTourById, tourTypeLabel } from "@/lib/tour";
-import { fetchPlaceOverview } from "@/lib/tourDetail";
+import { fetchPlaceOverview, fetchPlaceImages } from "@/lib/tourDetail";
 import { SIDO_SLUG } from "@/lib/classify";
 import { Container } from "@/components/Band";
+import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
 
 // 상세는 방문 시점에 detailCommon2로 overview를 받아 ISR 캐시 (빌드 시 전량 프리렌더 X)
 export const dynamicParams = true;
@@ -40,10 +40,26 @@ export default async function SpotDetailPage({
   const spot = getTourById(id);
   if (!spot) notFound();
 
-  const detail = await fetchPlaceOverview(id);
+  const [detail, extraImages] = await Promise.all([
+    fetchPlaceOverview(id),
+    fetchPlaceImages(id),
+  ]);
   const overview = detail.overview;
   const homepage = detail.homepage;
   const tel = detail.tel || spot.tel;
+
+  // 갤러리 = 대표사진(firstimage) + 추가사진, URL 기준 중복 제거
+  const gallery: GalleryImage[] = [];
+  const seen = new Set<string>();
+  if (spot.image) {
+    gallery.push({ full: spot.image, thumb: spot.image });
+    seen.add(spot.image);
+  }
+  for (const img of extraImages) {
+    if (seen.has(img.full)) continue;
+    seen.add(img.full);
+    gallery.push(img);
+  }
 
   const hasMap = Boolean(spot.mapx && spot.mapy);
   const mapUrl = hasMap
@@ -73,17 +89,9 @@ export default async function SpotDetailPage({
         {spot.title}
       </h1>
 
-      {spot.image && (
-        <div className="relative mt-4 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-neutral-100 ring-1 ring-black/[0.04]">
-          <Image
-            src={spot.image}
-            alt={spot.title}
-            fill
-            sizes="(max-width:820px) 100vw, 820px"
-            className="object-cover"
-            priority
-            unoptimized
-          />
+      {gallery.length > 0 && (
+        <div className="mt-4">
+          <PlaceGallery images={gallery} title={spot.title} />
         </div>
       )}
 
