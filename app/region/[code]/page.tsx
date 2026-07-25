@@ -3,9 +3,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllEvents, getByRegion, slimForClient } from "@/lib/data";
+import { getKidTours } from "@/lib/tour";
 import { GENRES, SIDO_SLUG, sidoFromSlug } from "@/lib/classify";
 import DateBrowser from "@/components/DateBrowser";
-import { Band } from "@/components/Band";
+import TourCard from "@/components/TourCard";
+import { Band, Container } from "@/components/Band";
 
 const isFree = (t: string) => t === "free" || t === "free_estimated";
 
@@ -45,6 +47,7 @@ export default async function RegionPage({
   const freeGenres = GENRES.filter(
     (g) => g.key !== "etc" && all.some((e) => e.area === sido && e.genreKey === g.key && isFree(e.priceType))
   );
+  const tours = getKidTours(sido, 12);
 
   return (
     <>
@@ -72,6 +75,28 @@ export default async function RegionPage({
       <Suspense fallback={null}>
         <DateBrowser events={events} initial={{ region: sido }} />
       </Suspense>
+
+      {/* 아이와 가볼만한 곳 (TourAPI) */}
+      {tours.length > 0 && (
+        <div className="border-t border-line bg-white">
+          <Container className="pb-12 pt-8">
+            <h2 className="text-[18px] font-extrabold text-ink">
+              🏞️ {sido} 아이와 가볼만한 곳
+            </h2>
+            <p className="mt-1 text-[13px] text-ink-faint">
+              박물관·과학관·체험 등 {sido}에서 아이와 나들이하기 좋은 명소 (지도 링크 제공)
+            </p>
+            <div className="mt-4 grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+              {tours.map((t) => (
+                <TourCard key={t.id} spot={t} />
+              ))}
+            </div>
+            <p className="mt-6 text-[12px] text-ink-faint">
+              관광정보 제공: 한국관광공사 (TourAPI)
+            </p>
+          </Container>
+        </div>
+      )}
     </>
   );
 }

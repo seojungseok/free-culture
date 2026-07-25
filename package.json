@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "collect": "node scripts/collect.mjs"
+    "collect": "node scripts/collect.mjs",
+    "collect:tour": "node scripts/collectTour.mjs"
   },
   "dependencies": {
     "next": "^15.5.21",

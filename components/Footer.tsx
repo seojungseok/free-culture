@@ -79,8 +79,8 @@ export default function Footer() {
       <div className="flex flex-col items-center gap-1 border-t border-line py-4 text-center text-xs text-ink-faint">
         <VisitorCount />
         <p>
-          © {new Date().getFullYear()} {SITE.name} · 출처: {SITE.source}. 정확한
-          정보는 각 주최기관 공식 페이지를 확인해 주세요.
+          © {new Date().getFullYear()} {SITE.name} · 출처: 공공데이터포털(한국문화정보원)
+          · 한국관광공사(TourAPI). 정확한 정보는 각 주최기관·공식 페이지를 확인해 주세요.
         </p>
       </div>
     </footer>
