@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTourById, tourTypeLabel } from "@/lib/tour";
+import { getArticle } from "@/lib/articles";
 import { fetchPlaceOverview, fetchPlaceImages } from "@/lib/tourDetail";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
 import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
+import ArticleBody from "@/components/ArticleBody";
 
 // 상세는 방문 시점에 detailCommon2로 overview를 받아 ISR 캐시 (빌드 시 전량 프리렌더 X)
 export const dynamicParams = true;
@@ -25,12 +27,17 @@ export async function generateMetadata({
   const spot = getTourById(id);
   if (!spot) return { title: "장소를 찾을 수 없습니다" };
   const type = tourTypeLabel(spot.type);
-  // 소개글(있으면)로 고유·풍부한 설명, 없으면 롱테일 템플릿(지역+유형+장소명)
-  const { overview } = await fetchPlaceOverview(id); // 페이지 본문과 동일 fetch → Next가 중복 제거
-  const description = overview
-    ? overview.length > 155
-      ? `${overview.slice(0, 155)}…`
-      : overview
+  // 발행글 있으면 그 도입부, 없으면 TourAPI 소개글, 그것도 없으면 롱테일 템플릿
+  const article = getArticle(id);
+  const articlePlain = article
+    ? article.content.replace(/[#*>`-]/g, " ").replace(/\s+/g, " ").trim()
+    : "";
+  const overview = articlePlain ? "" : (await fetchPlaceOverview(id)).overview;
+  const base = articlePlain || overview;
+  const description = base
+    ? base.length > 155
+      ? `${base.slice(0, 155)}…`
+      : base
     : `${spot.area}에서 가볼만한 ${type}, ${spot.title}. 위치·지도·사진과 방문 정보를 확인하세요.`;
   const title = `${spot.title} — ${spot.area} 가볼만한 곳`;
   return {
@@ -54,6 +61,7 @@ export default async function SpotDetailPage({
   const spot = getTourById(id);
   if (!spot) notFound();
 
+  const article = getArticle(id); // 발행된 자체 소개글(있으면 본문으로)
   const [detail, extraImages] = await Promise.all([
     fetchPlaceOverview(id),
     fetchPlaceImages(id),
@@ -87,7 +95,9 @@ export default async function SpotDetailPage({
     "@context": "https://schema.org",
     "@type": "TouristAttraction",
     name: spot.title,
-    description: overview || `${spot.area}에서 가볼만한 ${tourTypeLabel(spot.type)}, ${spot.title}`,
+    description:
+      (article ? article.content.replace(/[#*>`-]/g, " ").replace(/\s+/g, " ").trim() : overview) ||
+      `${spot.area}에서 가볼만한 ${tourTypeLabel(spot.type)}, ${spot.title}`,
     image: gallery.slice(0, 6).map((g) => g.full),
     address: {
       "@type": "PostalAddress",
@@ -142,7 +152,9 @@ export default async function SpotDetailPage({
         </div>
       )}
 
-      {overview ? (
+      {article ? (
+        <ArticleBody content={article.content} />
+      ) : overview ? (
         <p className="mt-5 whitespace-pre-line text-[15px] leading-[1.8] text-ink-soft">
           {overview}
         </p>

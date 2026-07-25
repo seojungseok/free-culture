@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "collect": "node scripts/collect.mjs",
-    "collect:tour": "node scripts/collectTour.mjs"
+    "collect:tour": "node scripts/collectTour.mjs",
+    "articles": "node scripts/generateArticles.mjs",
+    "articles:publish": "node scripts/publishDrafts.mjs",
+    "test:gemini": "node scripts/testGemini.mjs"
   },
   "dependencies": {
     "next": "^15.5.21",
