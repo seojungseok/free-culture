@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllEvents } from "@/lib/data";
-import { getKidTours, getTourAreaCounts } from "@/lib/tour";
+import { getAllPlaces, getTourAreaCounts } from "@/lib/tour";
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 
@@ -45,8 +45,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // 가볼만한 곳 상세
-  const placeSpotRoutes = getKidTours().map((s) => ({
+  // 가볼만한 곳 상세 (전량 — 롱테일 색인)
+  const placeSpotRoutes = getAllPlaces().map((s) => ({
     url: `${base}/places/spot/${s.id}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

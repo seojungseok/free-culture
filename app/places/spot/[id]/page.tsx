@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getTourById, tourTypeLabel } from "@/lib/tour";
 import { fetchPlaceOverview, fetchPlaceImages } from "@/lib/tourDetail";
 import { SIDO_SLUG } from "@/lib/classify";
+import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
 import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
 
@@ -23,11 +24,24 @@ export async function generateMetadata({
   const { id } = await params;
   const spot = getTourById(id);
   if (!spot) return { title: "장소를 찾을 수 없습니다" };
+  const type = tourTypeLabel(spot.type);
+  // 소개글(있으면)로 고유·풍부한 설명, 없으면 롱테일 템플릿(지역+유형+장소명)
+  const { overview } = await fetchPlaceOverview(id); // 페이지 본문과 동일 fetch → Next가 중복 제거
+  const description = overview
+    ? overview.length > 155
+      ? `${overview.slice(0, 155)}…`
+      : overview
+    : `${spot.area}에서 가볼만한 ${type}, ${spot.title}. 위치·지도·사진과 방문 정보를 확인하세요.`;
+  const title = `${spot.title} — ${spot.area} 가볼만한 곳`;
   return {
-    title: `${spot.title} — ${spot.area} 가볼만한 곳`,
-    description: `${spot.area} ${spot.addr}에 위치한 ${tourTypeLabel(spot.type)}. 소개와 지도·홈페이지 정보를 확인하세요.`,
+    title,
+    description,
     alternates: { canonical: `/places/spot/${id}` },
-    openGraph: spot.image ? { images: [{ url: spot.image }] } : undefined,
+    openGraph: {
+      title,
+      description,
+      ...(spot.image ? { images: [{ url: spot.image }] } : {}),
+    },
   };
 }
 
@@ -66,9 +80,42 @@ export default async function SpotDetailPage({
     ? `https://map.kakao.com/link/map/${encodeURIComponent(spot.title)},${spot.mapy},${spot.mapx}`
     : undefined;
   const areaSlug = (SIDO_SLUG as Record<string, string>)[spot.area];
+  const canonical = `${SITE.url}/places/spot/${id}`;
+
+  // 구조화 데이터 — 관광 명소(TouristAttraction) + 빵부스러기
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: spot.title,
+    description: overview || `${spot.area}에서 가볼만한 ${tourTypeLabel(spot.type)}, ${spot.title}`,
+    image: gallery.slice(0, 6).map((g) => g.full),
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: spot.area,
+      streetAddress: spot.addr,
+      addressCountry: "KR",
+    },
+    ...(hasMap
+      ? { geo: { "@type": "GeoCoordinates", latitude: spot.mapy, longitude: spot.mapx } }
+      : {}),
+    url: canonical,
+    ...(homepage ? { sameAs: homepage } : {}),
+    ...(tel ? { telephone: tel } : {}),
+  };
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "가볼만한 곳", item: `${SITE.url}/places` },
+      { "@type": "ListItem", position: 2, name: spot.area, item: `${SITE.url}/places/${areaSlug}` },
+      { "@type": "ListItem", position: 3, name: spot.title, item: canonical },
+    ],
+  };
 
   return (
     <Container className="max-w-[820px] pb-16 pt-5">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <nav className="mb-3 flex flex-wrap items-center gap-1 text-[12.5px] text-ink-faint">
         <Link href="/places" className="hover:text-free">가볼만한 곳</Link>
         <span>›</span>
