@@ -34,6 +34,42 @@ export interface PlaceOverview {
 
 const https = (u: string) => String(u || "").replace(/^http:\/\//i, "https://");
 
+export type Admission = "free" | "paid" | "unknown";
+
+/** 요금 텍스트 → 무료/유료/정보없음 (모든 유형 공통 규칙) */
+export function classifyAdmission(fee: string): Admission {
+  const s = String(fee || "").replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/gi, " ").replace(/\s+/g, " ").trim();
+  if (!s) return "unknown";
+  const hasPrice = /\d[\d,]*\s*원/.test(s);
+  const hasFree = /무료/.test(s);
+  if (hasFree && !hasPrice) return "free";
+  if (hasPrice) return "paid";
+  if (hasFree) return "free";
+  return "unknown";
+}
+
+/** detailIntro2 요금 필드 조회 (문화시설=usefee, 레포츠=usefeeleports). 관광지 등은 요금 필드가 없어 unknown. ISR 캐시. */
+export async function fetchAdmission(contentId: string, type: string): Promise<Admission> {
+  if (!KEY || !contentId) return "unknown";
+  if (type !== "14" && type !== "28") return "unknown"; // 요금 필드 없는 유형은 호출 생략
+  const url = `https://apis.data.go.kr/B551011/KorService2/detailIntro2?serviceKey=${encodeURIComponent(
+    KEY
+  )}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${contentId}&contentTypeId=${type}`;
+  try {
+    const res = await fetch(url, { next: { revalidate: 604800 } });
+    if (!res.ok) return "unknown";
+    const j = await res.json();
+    if (j?.response?.header?.resultCode !== "0000") return "unknown";
+    const item = j?.response?.body?.items?.item;
+    const it = Array.isArray(item) ? item[0] : item;
+    if (!it) return "unknown";
+    const fee = type === "14" ? it.usefee : it.usefeeleports;
+    return classifyAdmission(fee);
+  } catch {
+    return "unknown";
+  }
+}
+
 export interface PlaceImage {
   full: string;
   thumb: string;

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTourById, tourTypeLabel } from "@/lib/tour";
 import { getArticle } from "@/lib/articles";
-import { fetchPlaceOverview, fetchPlaceImages } from "@/lib/tourDetail";
+import { fetchPlaceOverview, fetchPlaceImages, fetchAdmission } from "@/lib/tourDetail";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
@@ -62,13 +62,16 @@ export default async function SpotDetailPage({
   if (!spot) notFound();
 
   const article = getArticle(id); // 발행된 자체 소개글(있으면 본문으로)
-  const [detail, extraImages] = await Promise.all([
+  const [detail, extraImages, admission] = await Promise.all([
     fetchPlaceOverview(id),
     fetchPlaceImages(id),
+    fetchAdmission(id, spot.type),
   ]);
   const overview = detail.overview;
   const homepage = detail.homepage;
   const tel = detail.tel || spot.tel;
+  const admissionLabel =
+    admission === "free" ? "무료" : admission === "paid" ? "유료" : "정보 없음 — 방문 전 확인 권장";
 
   // 갤러리 = 대표사진(firstimage) + 추가사진, URL 기준 중복 제거
   const gallery: GalleryImage[] = [];
@@ -148,7 +151,7 @@ export default async function SpotDetailPage({
 
       {gallery.length > 0 && (
         <div className="mt-4">
-          <PlaceGallery images={gallery} title={spot.title} />
+          <PlaceGallery images={gallery} title={spot.title} freeBadge={admission === "free"} />
         </div>
       )}
 
@@ -165,6 +168,18 @@ export default async function SpotDetailPage({
       )}
 
       <dl className="mt-6 divide-y divide-line rounded-2xl border border-line bg-white">
+        <div className="flex gap-3 px-4 py-3">
+          <dt className="w-14 shrink-0 text-[13px] font-bold text-ink-faint">입장료</dt>
+          <dd className="min-w-0 flex-1 text-[14px]">
+            {admission === "free" ? (
+              <span className="font-bold text-free">무료</span>
+            ) : admission === "paid" ? (
+              <span className="font-semibold text-ink">유료</span>
+            ) : (
+              <span className="text-ink-faint">{admissionLabel}</span>
+            )}
+          </dd>
+        </div>
         {spot.addr && <Row label="주소" value={spot.addr} />}
         {tel && <Row label="전화" value={tel} />}
         {homepage && (

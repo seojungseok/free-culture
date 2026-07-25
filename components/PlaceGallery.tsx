@@ -10,9 +10,11 @@ export interface GalleryImage {
 export default function PlaceGallery({
   images,
   title,
+  freeBadge = false,
 }: {
   images: GalleryImage[];
   title: string;
+  freeBadge?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const [idx, setIdx] = useState(0);
@@ -66,6 +68,11 @@ export default function PlaceGallery({
           className="h-full w-full object-cover transition group-hover:scale-[1.02]"
           loading="eager"
         />
+        {freeBadge && (
+          <span className="absolute right-2.5 top-2.5 rounded-md bg-free px-2 py-1 text-[12px] font-bold text-white shadow-sm">
+            무료입장
+          </span>
+        )}
         {images.length > 1 && (
           <span className="absolute bottom-2.5 right-2.5 rounded-full bg-black/60 px-2.5 py-1 text-[12px] font-bold text-white backdrop-blur-sm">
             📷 {images.length}

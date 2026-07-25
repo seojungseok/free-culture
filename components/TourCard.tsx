@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { TourSpot } from "@/lib/tour";
 import { tourTypeLabel } from "@/lib/tour";
+import { getAdmission } from "@/lib/fees";
 
 export default function TourCard({ spot }: { spot: TourSpot }) {
   return (
@@ -25,6 +26,13 @@ export default function TourCard({ spot }: { spot: TourSpot }) {
             {tourTypeLabel(spot.type)}
           </span>
         </div>
+        {getAdmission(spot.id) === "free" && (
+          <div className="absolute right-1.5 top-1.5">
+            <span className="rounded-md bg-free px-1.5 py-0.5 text-[10px] font-bold text-white shadow-sm backdrop-blur-sm">
+              무료입장
+            </span>
+          </div>
+        )}
       </div>
       <div className="px-0.5 pb-1 pt-2">
         <h3 className="line-clamp-1 text-[14px] font-bold text-ink group-hover:text-free">

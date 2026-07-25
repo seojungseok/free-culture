@@ -1,0 +1,43 @@
+name: 입장료 백필 (가볼만한 곳)
+
+# 문화시설(14)·레포츠(28) 요금을 detailIntro2로 조회해 data/place-fees.json에 점진 캐시.
+# 일 1,000회 한도 → 하루 상한만큼만. 며칠에 걸쳐 완주(다 채우면 커밋 없음).
+on:
+  schedule:
+    - cron: "30 20 * * *" # UTC 20:30 = KST 05:30 (다른 수집 워크플로우와 시간 분리)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fees-backfill
+  cancel-in-progress: false
+
+jobs:
+  fees:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 입장료 백필 (하루 상한)
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          FEE_DAILY: "900"
+        run: node scripts/collectFees.mjs
+
+      - name: 변경분 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/place-fees.json
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 건너뜀"
+          else
+            git commit -m "chore: 입장료 백필 ($(date -u +%Y-%m-%d))"
+            git push
+          fi
