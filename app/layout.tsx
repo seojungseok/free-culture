@@ -25,8 +25,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE.name,
-    title: `${SITE.name} · 전국 무료 전시·공연 정보`,
-    description: SITE.description,
+    title: "주말에 뭐하지? · 전국 무료·저렴 문화행사",
+    description:
+      "이번 주말 갈 만한 전국 전시·공연과 아이와 가볼만한 곳을 매일 새로 모았어요",
     url: SITE.url,
     locale: "ko_KR",
   },
