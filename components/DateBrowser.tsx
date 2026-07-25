@@ -9,6 +9,7 @@ import {
   Fragment,
 } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 import type { CultureEvent } from "@/lib/types";
 import PosterCard from "./PosterCard";
 import AdSlot from "./AdSlot";
@@ -28,7 +29,7 @@ import {
   monthRangeYmd,
 } from "@/lib/dates";
 
-type Kind = "day" | "weekend" | "week" | "month";
+type Kind = "all" | "day" | "weekend" | "week" | "month";
 type Sort = "free" | "ending" | "name";
 type PriceKey = "all" | "free" | "partial" | "cheap" | "paid";
 
@@ -53,6 +54,7 @@ const PRICE_TABS: { key: PriceKey; label: string }[] = [
 const PRICE_LABEL: Record<PriceKey, string> = { all: "", free: "무료", partial: "조건부 무료", cheap: "1만원 이하", paid: "유료" };
 
 const PERIODS: { key: Kind; label: string }[] = [
+  { key: "all", label: "전체" },
   { key: "day", label: "오늘" },
   { key: "weekend", label: "이번 주말" },
   { key: "week", label: "이번 주" },
@@ -69,9 +71,13 @@ const GENRE_TABS = [{ key: "", label: "전체" }, ...GENRES.map((g) => ({ key: g
 export default function DateBrowser({
   events,
   initial,
+  previewHref,
+  openFilters,
 }: {
   events: CultureEvent[];
   initial?: { region?: string; genre?: string; price?: PriceKey };
+  previewHref?: string;
+  openFilters?: boolean;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -80,7 +86,13 @@ export default function DateBrowser({
 
   const initDate = searchParams.get("date");
   const initPeriod = searchParams.get("period") as Kind | null;
-  const [kind, setKind] = useState<Kind>(initPeriod && ["weekend", "week", "month"].includes(initPeriod) ? initPeriod : "day");
+  const [kind, setKind] = useState<Kind>(
+    initPeriod && ["all", "weekend", "week", "month"].includes(initPeriod)
+      ? initPeriod
+      : initDate
+      ? "day"
+      : "all"
+  );
   const [day, setDay] = useState<string>(initDate ? dashToYmd(initDate) : today);
   const urlRegion = searchParams.get("region");
   const [region, setRegion] = useState<string>((urlRegion && sidoFromSlug(urlRegion)) || initial?.region || "");
@@ -92,7 +104,8 @@ export default function DateBrowser({
   const [visible, setVisible] = useState(PAGE);
   // 상세 필터(지역·분야·가격)는 기본 접힘 — 지역/장르 랜딩 페이지에선 펼침
   const [advancedOpen, setAdvancedOpen] = useState<boolean>(
-    !!(initial?.region || initial?.genre) ||
+    !!openFilters ||
+      !!(initial?.region || initial?.genre) ||
       !!searchParams.get("region") ||
       !!searchParams.get("genre")
   );
@@ -117,7 +130,11 @@ export default function DateBrowser({
   const mRegion = useCallback((e: CultureEvent) => !region || e.area === region, [region]);
   const mGenre = useCallback((e: CultureEvent) => !genre || e.genreKey === genre, [genre]);
   const mPrice = useCallback((e: CultureEvent) => PRICE_MATCH[price](e.priceType), [price]);
-  const mDate = useCallback((e: CultureEvent) => e.startDate <= range.end && e.endDate >= range.start, [range]);
+  const mDate = useCallback(
+    (e: CultureEvent) =>
+      kind === "all" ? e.endDate >= today : e.startDate <= range.end && e.endDate >= range.start,
+    [kind, range, today]
+  );
   const mEnding = useCallback((e: CultureEvent) => !ending || (e.endDate >= today && e.endDate <= soonLimit), [ending, today, soonLimit]);
   const mKids = useCallback((e: CultureEvent) => !kids || !!e.audiences?.includes("kids"), [kids]);
 
@@ -170,7 +187,10 @@ export default function DateBrowser({
     return { days, map };
   }, [events, mRegion, mGenre, mPrice, mKids, view.y, view.m]);
 
-  const shown = filtered.slice(0, visible);
+  const shown = previewHref ? filtered.slice(0, 14) : filtered.slice(0, visible);
+  const moreUrl = previewHref
+    ? `${previewHref}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`
+    : "";
 
   const syncUrl = useCallback(
     (next: Partial<{ region: string; genre: string; price: PriceKey; kind: Kind; day: string; ending: boolean; kids: boolean }>) => {
@@ -198,21 +218,21 @@ export default function DateBrowser({
   function pickPrice(pk: PriceKey) { setPrice(pk); resetVis(); syncUrl({ price: pk }); }
   function pickDay(d: string) { setKind("day"); setDay(d); resetVis(); syncUrl({ kind: "day", day: d }); }
   function pickPeriod(k: Kind) { setKind(k); resetVis(); if (k === "day") setDay(today); syncUrl({ kind: k, day: today }); }
-  function toggleWeekend() { const nk: Kind = kind === "weekend" ? "day" : "weekend"; setKind(nk); resetVis(); if (nk === "day") setDay(today); syncUrl({ kind: nk, day: today }); }
+  function toggleWeekend() { const nk: Kind = kind === "weekend" ? "all" : "weekend"; setKind(nk); resetVis(); syncUrl({ kind: nk, day: today }); }
   function toggleEnding() { const v = !ending; setEnding(v); resetVis(); syncUrl({ ending: v }); }
   function toggleKids() { const v = !kids; setKids(v); resetVis(); syncUrl({ kids: v }); }
   function shiftMonth(delta: number) { setView((v) => { const d = new Date(Date.UTC(v.y, v.m + delta, 1)); return { y: d.getUTCFullYear(), m: d.getUTCMonth() }; }); }
   function resetAll() {
-    setRegion(""); setGenre(""); setPrice("all"); setEnding(false); setKids(false); setKind("day"); setDay(today); resetVis();
+    setRegion(""); setGenre(""); setPrice("all"); setEnding(false); setKids(false); setKind("all"); setDay(today); resetVis();
     router.replace(pathname, { scroll: false });
   }
 
-  const headerLabel = kind === "day" ? formatKoreanDate(day) : kind === "weekend" ? "이번 주말" : kind === "week" ? "이번 주" : "이번 달";
+  const headerLabel = kind === "all" ? "전체 행사" : kind === "day" ? formatKoreanDate(day) : kind === "weekend" ? "이번 주말" : kind === "week" ? "이번 주" : "이번 달";
 
   // 선택된 필터 요약
   const chips: { label: string; onRemove: () => void }[] = [];
-  if (kind !== "day") chips.push({ label: PERIODS.find((p) => p.key === kind)!.label, onRemove: () => pickPeriod("day") });
-  else if (day !== today) chips.push({ label: formatKoreanDate(day), onRemove: () => pickDay(today) });
+  if (kind !== "day" && kind !== "all") chips.push({ label: PERIODS.find((p) => p.key === kind)!.label, onRemove: () => pickPeriod("all") });
+  else if (kind === "day" && day !== today) chips.push({ label: formatKoreanDate(day), onRemove: () => pickPeriod("all") });
   if (region) chips.push({ label: region, onRemove: () => pickRegion("") });
   if (genre) chips.push({ label: genreLabelOf(genre), onRemove: () => pickGenre("") });
   if (price !== "all") chips.push({ label: PRICE_LABEL[price], onRemove: () => pickPrice("all") });
@@ -353,23 +373,39 @@ export default function DateBrowser({
               <button onClick={resetAll} className="mt-3 rounded-full bg-ink px-5 py-2 text-sm font-bold text-white transition hover:bg-black">필터 초기화</button>
             </div>
           ) : (
-            <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-7">
+            <div
+              className={[
+                "grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-7",
+                previewHref ? "preview-2rows" : "",
+              ].join(" ")}
+            >
               {shown.map((ev, i) => (
                 <Fragment key={ev.id}>
                   <PosterCard ev={ev} priority={i < 12} />
-                  {(i + 1) % 24 === 0 && <AdSlot label="인피드 광고" />}
+                  {!previewHref && (i + 1) % 24 === 0 && <AdSlot label="인피드 광고" />}
                 </Fragment>
               ))}
             </div>
           )}
 
-          {visible < filtered.length && (
-            <div className="mt-10 flex justify-center">
-              <button onClick={() => setVisible((v) => v + PAGE)} className="rounded-full bg-ink px-7 py-3 text-sm font-bold text-white transition hover:bg-black">
-                더 보기 ({(filtered.length - visible).toLocaleString()}개 남음)
-              </button>
-            </div>
-          )}
+          {previewHref
+            ? filtered.length > 0 && (
+                <div className="mt-6 flex justify-center">
+                  <Link
+                    href={moreUrl}
+                    className="rounded-full bg-ink px-7 py-3 text-sm font-bold text-white transition hover:bg-black"
+                  >
+                    문화행사 전체 보기 ({filtered.length.toLocaleString()}건) →
+                  </Link>
+                </div>
+              )
+            : visible < filtered.length && (
+                <div className="mt-10 flex justify-center">
+                  <button onClick={() => setVisible((v) => v + PAGE)} className="rounded-full bg-ink px-7 py-3 text-sm font-bold text-white transition hover:bg-black">
+                    더 보기 ({(filtered.length - visible).toLocaleString()}개 남음)
+                  </button>
+                </div>
+              )}
         </Container>
       </div>
     </>

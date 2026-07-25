@@ -21,7 +21,16 @@ export default function Header() {
           </span>
         </Link>
 
-        <div className="ml-auto w-full max-w-md">
+        <nav className="ml-1 hidden items-center gap-1 sm:flex">
+          <Link href="/events" className="rounded-full px-3 py-1.5 text-[14px] font-bold text-ink-soft transition hover:bg-tint hover:text-free">
+            문화행사
+          </Link>
+          <Link href="/places" className="rounded-full px-3 py-1.5 text-[14px] font-bold text-ink-soft transition hover:bg-tint hover:text-free">
+            가볼만한 곳
+          </Link>
+        </nav>
+
+        <div className="ml-auto w-full max-w-md sm:max-w-xs">
           <SearchBox size="sm" />
         </div>
       </div>

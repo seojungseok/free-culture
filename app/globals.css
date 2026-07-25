@@ -58,6 +58,34 @@ body {
   }
 }
 
+/* 홈 미리보기: 열 수에 맞춰 딱 2줄만 노출 (그리드 열: 2/3/4/6/7) */
+.preview-2rows > * {
+  display: none !important;
+}
+.preview-2rows > *:nth-child(-n + 4) {
+  display: block !important;
+}
+@media (min-width: 640px) {
+  .preview-2rows > *:nth-child(-n + 6) {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) {
+  .preview-2rows > *:nth-child(-n + 8) {
+    display: block !important;
+  }
+}
+@media (min-width: 1024px) {
+  .preview-2rows > *:nth-child(-n + 12) {
+    display: block !important;
+  }
+}
+@media (min-width: 1536px) {
+  .preview-2rows > *:nth-child(-n + 14) {
+    display: block !important;
+  }
+}
+
 /* 정적 안내 페이지 타이포 */
 .prose-page {
   max-width: 46rem;

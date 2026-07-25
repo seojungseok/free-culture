@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllEvents } from "@/lib/data";
+import { getKidTours, getTourAreaCounts } from "@/lib/tour";
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 
@@ -11,6 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = [
     "",
+    "/events",
+    "/places",
     "/free",
     "/cheap",
     "/weekend",
@@ -24,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${p}`,
     lastModified: now,
     changeFrequency: "daily" as const,
-    priority: p === "" ? 1 : 0.7,
+    priority: p === "" ? 1 : p === "/events" || p === "/places" ? 0.9 : 0.7,
   }));
 
   const regionRoutes = Object.values(SIDO_SLUG).map((code) => ({
@@ -32,6 +35,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "daily" as const,
     priority: 0.7,
+  }));
+
+  // 가볼만한 곳 지역별 (관광지 데이터 있는 지역만)
+  const placeAreaRoutes = getTourAreaCounts().map(({ area }) => ({
+    url: `${base}/places/${(SIDO_SLUG as Record<string, string>)[area]}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  // 가볼만한 곳 상세
+  const placeSpotRoutes = getKidTours().map((s) => ({
+    url: `${base}/places/spot/${s.id}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.5,
   }));
 
   const genreRoutes = GENRES.map((g) => ({
@@ -66,5 +85,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...regionRoutes, ...genreRoutes, ...comboRoutes, ...eventRoutes];
+  return [
+    ...staticRoutes,
+    ...regionRoutes,
+    ...placeAreaRoutes,
+    ...placeSpotRoutes,
+    ...genreRoutes,
+    ...comboRoutes,
+    ...eventRoutes,
+  ];
 }

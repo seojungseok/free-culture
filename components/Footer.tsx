@@ -5,6 +5,8 @@ import VisitorCount from "./VisitorCount";
 import ShareLinkButton from "./ShareLinkButton";
 
 const BROWSE = [
+  { href: "/events", label: "문화행사" },
+  { href: "/places", label: "가볼만한 곳" },
   { href: "/free", label: "무료 행사" },
   { href: "/cheap", label: "1만원 이하" },
   { href: "/weekend", label: "이번 주말" },
