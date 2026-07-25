@@ -90,6 +90,12 @@ export default function DateBrowser({
   const [kids, setKids] = useState<boolean>(searchParams.get("kids") === "1");
   const [sort, setSort] = useState<Sort>("free");
   const [visible, setVisible] = useState(PAGE);
+  // 상세 필터(지역·분야·가격)는 기본 접힘 — 지역/장르 랜딩 페이지에선 펼침
+  const [advancedOpen, setAdvancedOpen] = useState<boolean>(
+    !!(initial?.region || initial?.genre) ||
+      !!searchParams.get("region") ||
+      !!searchParams.get("genre")
+  );
   const [view, setView] = useState(() => {
     const a = initDate ? dashToYmd(initDate) : today;
     return { y: Number(a.slice(0, 4)), m: Number(a.slice(4, 6)) - 1 };
@@ -216,6 +222,19 @@ export default function DateBrowser({
 
   return (
     <>
+      {/* 빠른 필터 바 (달력 위) */}
+      <div className="sticky top-[57px] z-30 border-b border-line bg-white/95 backdrop-blur">
+        <Container className="py-2.5">
+          <div className="flex gap-1.5 overflow-x-auto no-scrollbar">
+            <QuickChip active={price === "free"} onClick={() => pickPrice(price === "free" ? "all" : "free")} label="무료" />
+            <QuickChip active={price === "cheap"} onClick={() => pickPrice(price === "cheap" ? "all" : "cheap")} label="1만원↓" />
+            <QuickChip active={kind === "weekend"} onClick={toggleWeekend} label="🎏 이번 주말" />
+            <QuickChip active={ending} onClick={toggleEnding} label="⏳ 곧 종료" />
+            <QuickChip active={kids} onClick={toggleKids} label="👨‍👩‍👧 아이와 함께" />
+          </div>
+        </Container>
+      </div>
+
       {/* 달력 띠 */}
       <div className="border-b border-line bg-white">
         <Container className="py-4">
@@ -258,41 +277,47 @@ export default function DateBrowser({
       {/* 필터 + 목록 띠 */}
       <div className="bg-panel">
         <Container className="pb-10 pt-3">
-          {/* 빠른 필터 */}
-          <div className="mb-3 flex gap-1.5 overflow-x-auto no-scrollbar">
-            <QuickChip active={kind === "weekend"} onClick={toggleWeekend} label="🎏 이번 주말" />
-            <QuickChip active={ending} onClick={toggleEnding} label="⏳ 곧 종료" />
-            <QuickChip active={kids} onClick={toggleKids} label="👨‍👩‍👧 아이와 함께" />
-          </div>
+          {/* 상세 필터 토글 (기본 접힘 — 카드를 먼저 보여주기 위함) */}
+          <button
+            onClick={() => setAdvancedOpen((o) => !o)}
+            className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-1.5 text-[13px] font-bold text-ink-soft transition hover:border-free/40 hover:text-free"
+          >
+            지역·분야·가격 필터
+            <span className="text-ink-dim">{advancedOpen ? "▲" : "▼"}</span>
+          </button>
 
-          {/* 지역 */}
-          <FilterRow label="지역">
-            <Chip active={!region} disabled={false} onClick={() => pickRegion("")} label="전국" count={regionCounts[""]} primary />
-            {SIDO_LIST.map((s) => (
-              <Chip key={s} active={region === s} disabled={regionCounts[s] === 0} onClick={() => pickRegion(s)} label={s} count={regionCounts[s]} primary />
-            ))}
-          </FilterRow>
-          {/* 분야 */}
-          <FilterRow label="분야">
-            {GENRE_TABS.map((g) => (
-              <Chip key={g.key || "all"} active={genre === g.key} disabled={g.key !== "" && genreCounts[g.key] === 0} onClick={() => pickGenre(g.key)} label={g.label} count={genreCounts[g.key]} />
-            ))}
-          </FilterRow>
-          {/* 가격 */}
-          <FilterRow label="가격">
-            {PRICE_TABS.map((t) => {
-              const active = price === t.key;
-              const n = priceCounts[t.key];
-              const disabled = t.key !== "all" && n === 0;
-              const color = t.key === "free" ? "bg-free" : t.key === "partial" ? "bg-paid" : t.key === "cheap" ? "bg-brandblue" : "bg-ink";
-              return (
-                <button key={t.key} onClick={() => !disabled && pickPrice(t.key)} disabled={disabled}
-                  className={["flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-[12.5px] font-bold transition", active ? `${color} text-white shadow-sm` : disabled ? "border border-line bg-white text-ink-dim/45" : "border border-line bg-white text-ink-soft hover:border-free/40 hover:text-free"].join(" ")}>
-                  {t.label}<span className={["text-[11px] tabular-nums", active ? "text-white/80" : "text-ink-dim"].join(" ")}>{n}</span>
-                </button>
-              );
-            })}
-          </FilterRow>
+          {advancedOpen && (
+            <div className="mb-1 rounded-xl border border-line bg-white p-3">
+              <FilterRow label="지역">
+                <Chip active={!region} disabled={false} onClick={() => pickRegion("")} label="전국" count={regionCounts[""]} primary />
+                {SIDO_LIST.map((s) => (
+                  <Chip key={s} active={region === s} disabled={regionCounts[s] === 0} onClick={() => pickRegion(s)} label={s} count={regionCounts[s]} primary />
+                ))}
+              </FilterRow>
+              <FilterRow label="분야">
+                {GENRE_TABS.map((g) => (
+                  <Chip key={g.key || "all"} active={genre === g.key} disabled={g.key !== "" && genreCounts[g.key] === 0} onClick={() => pickGenre(g.key)} label={g.label} count={genreCounts[g.key]} />
+                ))}
+              </FilterRow>
+              <div className="flex items-center gap-2">
+                <span className="w-7 shrink-0 text-[11px] font-bold text-ink-faint">가격</span>
+                <div className="flex flex-1 gap-1.5 overflow-x-auto no-scrollbar">
+                  {PRICE_TABS.map((t) => {
+                    const active = price === t.key;
+                    const n = priceCounts[t.key];
+                    const disabled = t.key !== "all" && n === 0;
+                    const color = t.key === "free" ? "bg-free" : t.key === "partial" ? "bg-paid" : t.key === "cheap" ? "bg-brandblue" : "bg-ink";
+                    return (
+                      <button key={t.key} onClick={() => !disabled && pickPrice(t.key)} disabled={disabled}
+                        className={["flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-[12.5px] font-bold transition", active ? `${color} text-white shadow-sm` : disabled ? "border border-line bg-white text-ink-dim/45" : "border border-line bg-white text-ink-soft hover:border-free/40 hover:text-free"].join(" ")}>
+                        {t.label}<span className={["text-[11px] tabular-nums", active ? "text-white/80" : "text-ink-dim"].join(" ")}>{n}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* 선택 요약 */}
           {chips.length > 0 && (

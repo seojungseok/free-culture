@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllEvents, getWeekend, getNow, slimForClient } from "@/lib/data";
 import DateBrowser from "@/components/DateBrowser";
@@ -43,8 +44,8 @@ export default function HomePage() {
           </p>
         </div>
         <div className="flex gap-2">
-          <SummaryChip label="오늘 무료" value={todayFree} accent />
-          <SummaryChip label="이번 주말" value={weekendCount} />
+          <SummaryChip label="오늘 무료" value={todayFree} href="/free" accent />
+          <SummaryChip label="이번 주말" value={weekendCount} href="/weekend" />
         </div>
       </Band>
 
@@ -59,20 +60,23 @@ export default function HomePage() {
 function SummaryChip({
   label,
   value,
+  href,
   accent,
 }: {
   label: string;
   value: number;
+  href: string;
   accent?: boolean;
 }) {
   return (
-    <div
+    <Link
+      href={href}
       className={[
-        "rounded-xl border px-3.5 py-2 text-center",
-        accent ? "border-free/30 bg-white" : "border-line bg-white",
+        "rounded-xl border px-3.5 py-2 text-center transition hover:shadow-card",
+        accent ? "border-free/30 bg-white hover:border-free" : "border-line bg-white hover:border-ink/30",
       ].join(" ")}
     >
-      <div className="text-[11px] font-semibold text-ink-faint">{label}</div>
+      <div className="text-[11px] font-semibold text-ink-faint">{label} ›</div>
       <div
         className={[
           "text-[18px] font-black tabular-nums",
@@ -81,6 +85,6 @@ function SummaryChip({
       >
         {value.toLocaleString()}
       </div>
-    </div>
+    </Link>
   );
 }
