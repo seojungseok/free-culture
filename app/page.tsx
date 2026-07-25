@@ -36,11 +36,11 @@ export default function HomePage() {
       {/* 히어로 (컴팩트, 연한 그린 틴트 띠) */}
       <Band tone="tint" innerClassName="flex flex-wrap items-center justify-between gap-4 py-6 sm:py-7">
         <div>
-          <h1 className="text-[26px] font-black leading-[1.1] tracking-[-0.02em] text-ink sm:text-[32px]">
-            이번 주말 <span className="text-free">갈 만한 곳</span>
+          <h1 className="text-[28px] font-black leading-[1.1] tracking-[-0.02em] text-ink sm:text-[36px]">
+            <span className="text-free">이번 주말</span> 갈 만한 곳
           </h1>
           <p className="mt-1.5 text-[14px] font-semibold text-ink-soft sm:text-[15px]">
-            전국 무료·저렴 전시·공연{" "}
+            전국 <span className="text-free">무료</span>·저렴 전시·공연{" "}
             {weekendCount > 0 ? (
               <>
                 <b className="text-free">{weekendCount.toLocaleString()}곳</b>을 매일

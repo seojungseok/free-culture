@@ -4,6 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 로고 전용 폰트 (본문 Pretendard와 확실히 구분) */
+@font-face {
+  font-family: "Gmarket Sans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
+    format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-logo {
+  font-family: "Gmarket Sans", "Pretendard Variable", "Pretendard", sans-serif;
+}
+
 :root {
   --bg: #ffffff;
 }
