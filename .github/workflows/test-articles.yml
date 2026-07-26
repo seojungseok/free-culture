@@ -28,6 +28,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
           TEST_IDS: "2707460,126511,2456536,560981"
         run: node scripts/generateArticles.mjs
 

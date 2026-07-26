@@ -190,8 +190,9 @@ async function main() {
     await sleep(1000);
   }
 
+  const keyFp = TOURKEY ? `${TOURKEY.slice(0, 6)}...${TOURKEY.slice(-4)} (${TOURKEY.length}자)` : "❌비어있음(secret 못 읽음)";
   store.generatedAt = new Date().toISOString();
-  store._lastRun = { at: new Date().toISOString(), made, skipped, results: report }; // 진단용
+  store._lastRun = { at: new Date().toISOString(), made, skipped, keyFp, results: report }; // 진단용
   fs.writeFileSync(STORE, JSON.stringify(store, null, 0));
   const pub = Object.values(store.articles).filter((a) => a.status === "published").length;
   console.log(`\n💾 저장: 신규 발행 ${made} · 스킵 ${skipped} | 총 발행 ${pub}\n`);
