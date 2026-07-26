@@ -23,53 +23,55 @@ const INFO = [
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-white text-[13px] text-ink-soft">
-      <div className="mx-auto grid w-full max-w-[1280px] gap-x-6 gap-y-5 px-5 py-6 sm:px-6 lg:px-8 sm:grid-cols-[1.6fr_1fr_1fr]">
-        {/* 브랜드 */}
-        <div>
-          <div className="text-[15px] font-extrabold text-ink">{SITE.name}</div>
-          <p className="mt-1.5 text-ink-faint">{SITE.tagline}</p>
-          <p className="mt-2">
-            광고·제보·문의:{" "}
-            <a href={`mailto:${SITE.email}`} className="font-semibold text-ink hover:underline">
-              {SITE.email}
-            </a>
-          </p>
-          <div className="mt-1.5 -ml-2.5">
-            <ShareLinkButton label="사이트 주소 복사" target="origin" />
+      <div className="mx-auto w-full max-w-[1280px] px-5 py-4 sm:px-6 lg:px-8">
+        <div className="grid gap-x-6 gap-y-2.5 sm:grid-cols-[1.6fr_1fr_1fr]">
+          {/* 브랜드 */}
+          <div>
+            <div className="text-[15px] font-extrabold text-ink">{SITE.name}</div>
+            <p className="mt-0.5 text-ink-faint">{SITE.tagline}</p>
+            <p className="mt-1">
+              광고·제보·문의:{" "}
+              <a href={`mailto:${SITE.email}`} className="font-semibold text-ink hover:underline">
+                {SITE.email}
+              </a>
+            </p>
+            <div className="-ml-2.5 mt-0.5">
+              <ShareLinkButton label="사이트 주소 복사" target="origin" />
+            </div>
+          </div>
+
+          {/* 둘러보기 + 안내 — 모바일에서도 2단 나란히, sm+에선 그리드 직접 자식 */}
+          <div className="grid grid-cols-2 gap-x-4 sm:contents">
+            <nav>
+              <div className="mb-1 font-bold text-ink">둘러보기</div>
+              <div className="flex flex-wrap gap-x-3 gap-y-0">
+                {BROWSE.map((l) => (
+                  <Link key={l.href} href={l.href} className="inline-flex min-h-[32px] items-center text-[13px] text-[#666] hover:text-free">{l.label}</Link>
+                ))}
+              </div>
+            </nav>
+            <nav>
+              <div className="mb-1 font-bold text-ink">안내</div>
+              <div className="flex flex-wrap gap-x-3 gap-y-0">
+                {INFO.map((l) => (
+                  <Link key={l.href} href={l.href} className="inline-flex min-h-[32px] items-center text-[13px] text-[#666] hover:text-free">{l.label}</Link>
+                ))}
+              </div>
+            </nav>
           </div>
         </div>
-
-        {/* 둘러보기 */}
-        <nav>
-          <div className="mb-2 font-bold text-ink">둘러보기</div>
-          <div className="flex flex-wrap gap-x-3 gap-y-1.5">
-            {BROWSE.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-free">{l.label}</Link>
-            ))}
-          </div>
-        </nav>
-
-        {/* 안내 */}
-        <nav>
-          <div className="mb-2 font-bold text-ink">안내</div>
-          <div className="flex flex-wrap gap-x-3 gap-y-1.5">
-            {INFO.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-free">{l.label}</Link>
-            ))}
-          </div>
-        </nav>
       </div>
 
       {/* 지역별 바로가기 — SEO용 작은 텍스트 링크 (필터는 상단에 있음) */}
       <div className="border-t border-line">
-        <div className="mx-auto w-full max-w-[1280px] px-5 py-3 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[12px] text-ink-faint">
+        <div className="mx-auto w-full max-w-[1280px] px-5 py-1.5 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center gap-x-2.5 gap-y-0 text-[12px] text-ink-faint">
             <span className="font-semibold">지역별:</span>
             {SIDO_LIST.map((sido) => (
               <Link
                 key={sido}
                 href={`/region/${(SIDO_SLUG as Record<string, string>)[sido]}`}
-                className="hover:text-free hover:underline"
+                className="inline-flex min-h-[32px] items-center hover:text-free hover:underline"
               >
                 {sido}
               </Link>
@@ -78,7 +80,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-1 border-t border-line py-4 text-center text-xs text-ink-faint">
+      <div className="flex flex-col items-center gap-0.5 border-t border-line py-3 text-center text-xs text-ink-faint">
         <VisitorCount />
         <p>
           © {new Date().getFullYear()} {SITE.name} · 출처: 공공데이터포털(한국문화정보원)
