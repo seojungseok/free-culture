@@ -6,7 +6,11 @@ on:
   workflow_dispatch: # 수동 실행 버튼
     inputs:
       test_count:
-        description: "시작일 전 테스트 생성 개수 (비우면 램프업대로)"
+        description: "테스트 생성 개수 (비우면 램프업대로)"
+        required: false
+        default: ""
+      test_ids:
+        description: "특정 contentId만 생성 (콤마구분, 예: 2707460,126511). 있으면 개수 무시"
         required: false
         default: ""
 
@@ -37,6 +41,7 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           FORCE_COUNT: ${{ github.event.inputs.test_count }}
+          TEST_IDS: ${{ github.event.inputs.test_ids }}
         run: node scripts/generateArticles.mjs
 
       - name: 변경분 커밋 (발행)

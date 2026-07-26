@@ -126,26 +126,31 @@ export function patternCheck(text, overview) {
   return { ok: true, reason: "" };
 }
 
-// ── 안전망 3: OpenAI 교차검증 (원본 밖 사실이 있으면 FAIL) ──
-export async function verifyWithOpenAI(overview, article, { apiKey, model } = {}) {
-  if (!apiKey) return { result: "SKIP", reason: "OPENAI_API_KEY 없음", problem_sentences: [] };
+// ── 안전망 3: OpenAI 검증 + SEO/가독성 개선 (원본 범위 내에서만) ──
+export async function verifyAndImprove(overview, article, { apiKey, model } = {}) {
+  if (!apiKey) return { result: "SKIP", reason: "OPENAI_API_KEY 없음", improved: "" };
   const mdl = model || "gpt-4o-mini";
-  const prompt = `아래 "원본"과 "작성된 글"을 비교해라.
-작성된 글에 원본에 근거가 없는 사실(연도, 인물, 사건, 구체적 수치)이 있는지 검사해라.
+  const prompt = `아래 "원본"과 "글"을 받아 두 가지를 수행하라.
 
 <원본>
 ${overview || "(상세 소개 자료 없음 — 위치·유형·주소 외의 사실은 모두 근거 없음으로 간주)"}
 </원본>
 
-<작성된 글>
+<글>
 ${article}
-</작성된 글>
+</글>
 
-판정 규칙:
-- 작성된 글의 모든 구체적 사실(연도·인물·사건·수치)이 원본에서 확인되면: PASS
-- 원본에 없는 연도·인물·사건·수치가 하나라도 있으면: FAIL (일반적 서술 "오랜 역사를 지닌" 등은 허용)
-반드시 아래 JSON만 출력:
-{"result":"PASS 또는 FAIL","reason":"이유","problem_sentences":["문장"]}`;
+## 작업 1 - 팩트체크
+- 글에 원본에 없는 사실(연도·인물·사건·구체적 수치)이 있으면 FAIL. 어느 문장인지 reason에 지목.
+- 일반적 서술("오랜 역사를 지닌" 등)은 허용.
+
+## 작업 2 - SEO·가독성 개선 (PASS인 경우만)
+- 원본에 있는 사실 범위 내에서만 개선한다. 새 사실(연도·인물·사건·수치) 절대 추가 금지.
+- 개선: 어색한 문장 자연스럽게 / SEO 키워드(지역명+장소유형) 문맥에 맞게 보강 / 소제목(##)·문단 구조 정리 / 뻔한 미사여구("특별한 시간을 선사" 등)를 원본 근거의 구체적 표현으로.
+- 형식 유지: 첫 줄 굵은 한 문장 + ## 어떤 곳인가요 / ## 볼거리·즐길거리 / (## 아이·가족과 함께라면) / ## 방문 팁(목록). 친근한 ~해요체.
+
+## 출력 (JSON만)
+{"result":"PASS 또는 FAIL","reason":"이유","improved_article":"개선된 마크다운 글(PASS일 때만, FAIL이면 빈 문자열)"}`;
 
   try {
     const res = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -156,15 +161,15 @@ ${article}
         temperature: 0,
         response_format: { type: "json_object" },
         messages: [
-          { role: "system", content: "너는 엄격한 사실 근거 검증기다. 원본에 없는 사실을 잡아낸다. JSON만 답한다." },
+          { role: "system", content: "너는 사실 근거 검증기이자 한국어 SEO 에디터다. 원본에 없는 사실은 잡아내 FAIL하고, PASS면 원본 범위 내에서만 글을 개선한다. JSON만 답한다." },
           { role: "user", content: prompt },
         ],
       }),
-      signal: AbortSignal.timeout(40000),
+      signal: AbortSignal.timeout(60000),
     });
     if (!res.ok) {
       const t = await res.text();
-      return { result: "ERROR", reason: `OpenAI HTTP ${res.status}: ${t.slice(0, 150)}`, problem_sentences: [] };
+      return { result: "ERROR", reason: `OpenAI HTTP ${res.status}: ${t.slice(0, 150)}`, improved: "" };
     }
     const j = await res.json();
     const content = j?.choices?.[0]?.message?.content || "";
@@ -173,10 +178,10 @@ ${article}
     return {
       result: parsed.result === "PASS" ? "PASS" : "FAIL",
       reason: String(parsed.reason || ""),
-      problem_sentences: Array.isArray(parsed.problem_sentences) ? parsed.problem_sentences : [],
+      improved: String(parsed.improved_article || "").trim(),
     };
   } catch (e) {
-    return { result: "ERROR", reason: String(e instanceof Error ? e.message : e), problem_sentences: [] };
+    return { result: "ERROR", reason: String(e instanceof Error ? e.message : e), improved: "" };
   }
 }
 
