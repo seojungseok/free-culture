@@ -64,19 +64,25 @@ export default function Footer() {
 
       {/* 지역별 바로가기 — SEO용 작은 텍스트 링크 (필터는 상단에 있음) */}
       <div className="border-t border-line">
-        <div className="mx-auto w-full max-w-[1280px] px-5 py-1.5 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center gap-x-2.5 gap-y-0 text-[12px] text-ink-faint">
-            <span className="font-semibold">지역별:</span>
-            {SIDO_LIST.map((sido) => (
-              <Link
-                key={sido}
-                href={`/region/${(SIDO_SLUG as Record<string, string>)[sido]}`}
-                className="inline-flex min-h-[32px] items-center hover:text-free hover:underline"
-              >
-                {sido}
-              </Link>
-            ))}
-          </div>
+        <div className="mx-auto w-full max-w-[1280px] px-5 py-1 sm:px-6 lg:px-8">
+          {/* 지역별: 기본 접힘. 링크는 HTML에 남아 SEO엔 그대로 노출 */}
+          <details className="group">
+            <summary className="inline-flex min-h-[32px] cursor-pointer list-none items-center gap-1 text-[12px] font-semibold text-ink-faint select-none [&::-webkit-details-marker]:hidden">
+              지역별
+              <span className="text-[10px] text-ink-dim transition-transform group-open:rotate-180">▼</span>
+            </summary>
+            <div className="mt-0.5 flex flex-wrap items-center gap-x-2.5 gap-y-0 text-[12px] text-ink-faint">
+              {SIDO_LIST.map((sido) => (
+                <Link
+                  key={sido}
+                  href={`/region/${(SIDO_SLUG as Record<string, string>)[sido]}`}
+                  className="inline-flex min-h-[32px] items-center hover:text-free hover:underline"
+                >
+                  {sido}
+                </Link>
+              ))}
+            </div>
+          </details>
         </div>
       </div>
 
