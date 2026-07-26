@@ -84,8 +84,8 @@ export function qualityCheck(text, { overview = "", existingTexts = [] } = {}) {
   const body = String(text || "").trim();
   const len = stripMd(body).length;
 
-  // 700~900 목표. 정보 빈약한 소규모 장소는 500~700 허용(지어내기 방지). 하한 500.
-  if (len < 500) return { ok: false, reason: `길이 ${len}자(너무 짧음)`, len };
+  // 원본 풍부 700~900, 빈약/안전버전 300~500 허용(짧은 게 틀린 것보다 나음). 하한 300.
+  if (len < 300) return { ok: false, reason: `길이 ${len}자(너무 짧음)`, len };
   if (len > 1100) return { ok: false, reason: `길이 ${len}자(너무 김)`, len };
 
   const headings = (body.match(/^##\s/gm) || []).length;
@@ -104,6 +104,96 @@ export function qualityCheck(text, { overview = "", existingTexts = [] } = {}) {
     if (similarity(body, ex) > 0.6) return { ok: false, reason: "기존 발행글과 중복", len };
   }
   return { ok: true, reason: "", len };
+}
+
+// ── 안전망 2: 정규식 패턴 검사 (원본에 없는 연도·인물 차단) ──
+export function patternCheck(text, overview) {
+  const body = String(text || "");
+  const srcTight = String(overview || "").replace(/\s+/g, "");
+
+  // 4자리 연도(1000~2099)가 글에 있는데 원본에 없으면 반려
+  const years = new Set([...body.matchAll(/\b(1\d{3}|20\d{2})\b/g)].map((m) => m[1]));
+  for (const y of years) {
+    if (!srcTight.includes(y)) return { ok: false, reason: `원본에 없는 연도 "${y}"` };
+  }
+
+  // 원본에 없는 인물 표현(OOO 화백/선생/장군/박사/…)이면 반려
+  const persons = body.matchAll(/([가-힣]{1,4})\s?(화백|화가|선생|장군|박사|여사|작가|대사|창건자|설계자|시인|황제|국왕|왕비|대감|대군)/g);
+  for (const m of persons) {
+    const name = m[1];
+    if (!srcTight.includes(name)) return { ok: false, reason: `원본에 없는 인물 표현 "${m[0]}"` };
+  }
+  return { ok: true, reason: "" };
+}
+
+// ── 안전망 3: OpenAI 교차검증 (원본 밖 사실이 있으면 FAIL) ──
+export async function verifyWithOpenAI(overview, article, { apiKey, model } = {}) {
+  if (!apiKey) return { result: "SKIP", reason: "OPENAI_API_KEY 없음", problem_sentences: [] };
+  const mdl = model || "gpt-4o-mini";
+  const prompt = `아래 "원본"과 "작성된 글"을 비교해라.
+작성된 글에 원본에 근거가 없는 사실(연도, 인물, 사건, 구체적 수치)이 있는지 검사해라.
+
+<원본>
+${overview || "(상세 소개 자료 없음 — 위치·유형·주소 외의 사실은 모두 근거 없음으로 간주)"}
+</원본>
+
+<작성된 글>
+${article}
+</작성된 글>
+
+판정 규칙:
+- 작성된 글의 모든 구체적 사실(연도·인물·사건·수치)이 원본에서 확인되면: PASS
+- 원본에 없는 연도·인물·사건·수치가 하나라도 있으면: FAIL (일반적 서술 "오랜 역사를 지닌" 등은 허용)
+반드시 아래 JSON만 출력:
+{"result":"PASS 또는 FAIL","reason":"이유","problem_sentences":["문장"]}`;
+
+  try {
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
+      body: JSON.stringify({
+        model: mdl,
+        temperature: 0,
+        response_format: { type: "json_object" },
+        messages: [
+          { role: "system", content: "너는 엄격한 사실 근거 검증기다. 원본에 없는 사실을 잡아낸다. JSON만 답한다." },
+          { role: "user", content: prompt },
+        ],
+      }),
+      signal: AbortSignal.timeout(40000),
+    });
+    if (!res.ok) {
+      const t = await res.text();
+      return { result: "ERROR", reason: `OpenAI HTTP ${res.status}: ${t.slice(0, 150)}`, problem_sentences: [] };
+    }
+    const j = await res.json();
+    const content = j?.choices?.[0]?.message?.content || "";
+    const m = content.match(/\{[\s\S]*\}/);
+    const parsed = JSON.parse(m ? m[0] : content);
+    return {
+      result: parsed.result === "PASS" ? "PASS" : "FAIL",
+      reason: String(parsed.reason || ""),
+      problem_sentences: Array.isArray(parsed.problem_sentences) ? parsed.problem_sentences : [],
+    };
+  } catch (e) {
+    return { result: "ERROR", reason: String(e instanceof Error ? e.message : e), problem_sentences: [] };
+  }
+}
+
+// ── 안전버전 프롬프트 (역사·인물·연도 완전 배제, 짧게) ──
+export function buildSafePrompt(place, overview = "") {
+  const type = tourTypeLabel(place.type);
+  return `너는 관광지 정보 에디터다. 아래 장소를 소개하는 짧은 글을 쓴다.
+${overview ? `참고(이 안의 사실만, 연도·인물·역사는 빼고 시설·분위기 위주로):\n"""${overview}"""` : "상세 자료가 없다. 위치와 유형만으로 일반적으로 쓴다."}
+
+[장소] ${place.title} / [지역] ${place.area} / [유형] ${type} / [주소] ${place.addr}
+
+규칙(반드시):
+- 연도·날짜·인물명·역사적 사건·유래·구체적 수치는 절대 쓰지 마라.
+- 위치, 장소 유형, 분위기, 방문 시 참고사항만 일반적으로 쓴다.
+- 300~500자. 짧아도 좋다. 친근한 안내체("~해요"). 인사말·이모티콘 금지.
+- 구조: 첫 줄 굵은 한 문장 + "## 어떤 곳인가요", "## 볼거리·즐길거리", "## 방문 팁"(목록, 값 없으면 "정보 없음 — 방문 전 공식 홈페이지 확인 권장").
+마크다운 글만 출력.`;
 }
 
 // ── 승인 예시 2편 (few-shot: 톤·가독성 고정) ──
@@ -160,10 +250,10 @@ ${ref}
 - 문장은 새로 쓰되(그대로 베끼지 말 것), 담긴 사실은 근거를 벗어나지 마세요.
 
 [분량 — 거짓 없이 채우기]
-- 목표 700~900자(공백 제외). 900자를 넘기지 마세요.
+- 원본이 풍부하면 700~900자(공백 제외, 900자 넘기지 말 것). 원본이 빈약하면 300~500자도 좋습니다.
+- ★ 분량 채우려고 없는 내용 지어내기 절대 금지. **짧은 게 틀린 것보다 낫습니다.**
 - 분량은 "내용 없는 인사말·채우기 문장"이 아니라, **근거에 있는 사실을 여러 문장으로 풀어서** 채웁니다.
   예: "자연관찰로 있음" → "자연관찰로를 따라 걸으면 다양한 식물과 새를 볼 수 있어, 아이와 자연 학습 나들이로도 좋아요."
-- 근거가 빈약해 700자가 안 되면 **짧아도 괜찮습니다(500~700자).** 억지로 채우거나 지어내지 마세요.
 - 소제목별: 어떤 곳인가요 3문장+, 볼거리·즐길거리는 근거의 시설·명소를 풀어서, 아이·가족 3문장+(해당 시), 방문 팁 목록 4개.
 
 [구조·서식]
