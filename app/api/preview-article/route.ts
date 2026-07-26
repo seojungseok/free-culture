@@ -9,9 +9,12 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
+// 데모 전용 임시 토큰 — 이 라우트는 미리보기 직후 삭제됨.
+const PREVIEW_TOKEN = "mwohaji-demo-7Qx2Lp9v-remove-after";
+
 export async function GET(req: Request) {
   const token = req.headers.get("x-preview-token");
-  if (!token || token !== process.env.DATA_GO_KR_KEY) {
+  if (!token || token !== PREVIEW_TOKEN) {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
   const geminiKey = process.env.GEMINI_API_KEY;
