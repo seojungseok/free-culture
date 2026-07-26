@@ -18,6 +18,8 @@ const MIN_OVERVIEW = 200; // 원본 200자 미만이면 글 생성 안 함(정�
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PLACES = path.join(ROOT, "data", "places.json");
 const STORE = path.join(ROOT, "data", "place-articles.json");
+const OVERVIEWS = path.join(ROOT, "data", "place-overviews.json"); // 원본 캐시(로컬에서 미리 수집)
+const OVERVIEW_CACHE = fs.existsSync(OVERVIEWS) ? JSON.parse(fs.readFileSync(OVERVIEWS, "utf8")) : {};
 const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
 const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o-mini";
 
@@ -48,6 +50,11 @@ function keyVariants(k) {
 }
 
 async function fetchOverview(id) {
+  // 캐시 우선(로컬에서 미리 받아둔 원본) → GitHub의 TourAPI 401을 우회
+  if (Object.prototype.hasOwnProperty.call(OVERVIEW_CACHE, id)) {
+    const cached = String(OVERVIEW_CACHE[id] || "");
+    return { overview: cached, err: cached ? "" : "캐시:빈원본" };
+  }
   let lastErr = "";
   for (const key of keyVariants(TOURKEY)) {
     try {
