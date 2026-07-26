@@ -74,8 +74,9 @@ async function main() {
     let ok = null;
     for (let attempt = 1; attempt <= 3; attempt++) {
       try {
+        // 웹검색(grounding)은 환각 위험이 커서 기본 비활성 — 원본(overview) 사실만으로 재구성
         const { text, sources } = await callGemini(buildPrompt(place, overview), {
-          apiKey: GEMINI, model: MODEL, grounding: !overview || overview.length < 200,
+          apiKey: GEMINI, model: MODEL, grounding: false,
         });
         const check = qualityCheck(text, { overview, existingTexts });
         if (check.ok) { ok = { text, sources, len: check.len }; break; }
