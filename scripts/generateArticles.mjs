@@ -9,7 +9,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  buildPrompt, buildSafePrompt, callGemini, qualityCheck, patternCheck,
+  buildPrompt, buildMinimalPrompt, callGemini, qualityCheck, patternCheck,
   verifyWithOpenAI, rampUpCount, pickQueue, tourTypeLabel,
 } from "./lib/articleGen.mjs";
 
@@ -65,8 +65,8 @@ async function produceArticle(place, overview, existingTexts) {
     return { ok: true, len: q.len, verify: v.result }; // PASS 또는 SKIP(키 없음)
   };
 
-  // 1차: 일반 프롬프트 3회
-  for (let attempt = 1; attempt <= 3; attempt++) {
+  // 1차: 풍부한 일반 글 2회 (생성 → 패턴검사 → OpenAI 교차검증)
+  for (let attempt = 1; attempt <= 2; attempt++) {
     try {
       const text = await gen(buildPrompt(place, overview));
       const r = await runChecks(text);
@@ -78,14 +78,18 @@ async function produceArticle(place, overview, existingTexts) {
     await sleep(1200);
   }
 
-  // 2차: 안전버전(역사·인물·연도 배제) 1회
-  try {
-    const text = await gen(buildSafePrompt(place, overview));
-    const r = await runChecks(text);
-    if (r.ok) return { text, len: r.len, mode: "safe", verify: r.verify };
-    console.log(`  · ${place.title} 안전버전 ${r.stage} 반려: ${r.reason}`);
-  } catch (e) {
-    console.log(`  · ${place.title} 안전버전 오류: ${e.message}`);
+  // 폴백: "원본 최소 가공" (원본 있을 때만) — 구조·말투만 손봄, 새 사실 0.
+  // 원본 사실만 재배열하므로 OpenAI 교차검증 생략, 품질+패턴검사만 적용.
+  if (overview && overview.length >= 40) {
+    try {
+      const text = await gen(buildMinimalPrompt(place, overview));
+      const q = qualityCheck(text, { overview, existingTexts });
+      const p = patternCheck(text, overview);
+      if (q.ok && p.ok) return { text, len: q.len, mode: "minimal", verify: "MINIMAL" };
+      console.log(`  · ${place.title} 최소가공 반려: ${q.ok ? p.reason : q.reason}`);
+    } catch (e) {
+      console.log(`  · ${place.title} 최소가공 오류: ${e.message}`);
+    }
   }
   return null;
 }
@@ -131,8 +135,8 @@ async function main() {
       content: art.text,
       sources: [],
       model: MODEL,
-      verify: art.verify, // PASS 또는 SKIP
-      safeMode: art.mode === "safe",
+      verify: art.verify, // PASS / SKIP / MINIMAL
+      minimalMode: art.mode === "minimal", // 원본 최소가공 폴백 여부
       length: art.len,
     };
     existingTexts.push(art.text);

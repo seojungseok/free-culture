@@ -43,6 +43,7 @@ export async function generateMetadata({
   return {
     title,
     description,
+    keywords: [`${spot.area} ${type}`, `${spot.area} 가볼만한 곳`, `${spot.area} 나들이`, spot.title],
     alternates: { canonical: `/places/spot/${id}` },
     openGraph: {
       title,
@@ -111,6 +112,7 @@ export default async function SpotDetailPage({
     ...(hasMap
       ? { geo: { "@type": "GeoCoordinates", latitude: spot.mapy, longitude: spot.mapx } }
       : {}),
+    ...(admission === "free" ? { isAccessibleForFree: true } : {}),
     url: canonical,
     ...(homepage ? { sameAs: homepage } : {}),
     ...(tel ? { telephone: tel } : {}),
