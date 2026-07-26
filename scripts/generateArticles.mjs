@@ -75,7 +75,7 @@ async function main() {
     for (let attempt = 1; attempt <= 3; attempt++) {
       try {
         const { text, sources } = await callGemini(buildPrompt(place, overview), {
-          apiKey: GEMINI, model: MODEL, grounding: !overview,
+          apiKey: GEMINI, model: MODEL, grounding: !overview || overview.length < 200,
         });
         const check = qualityCheck(text, { overview, existingTexts });
         if (check.ok) { ok = { text, sources, len: check.len }; break; }
