@@ -40,9 +40,31 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const siteLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE.name,
+    alternateName: SITE.nameEn,
+    url: SITE.url,
+    inLanguage: "ko-KR",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: { "@type": "EntryPoint", urlTemplate: `${SITE.url}/search?q={search_term_string}` },
+      "query-input": "required name=search_term_string",
+    },
+  };
+  const orgLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE.name,
+    url: SITE.url,
+    email: SITE.email,
+  };
   return (
     <html lang="ko">
       <body className="bg-white font-sans antialiased">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
         <Header />
         {/* 콘텐츠 자연 흐름 — 푸터가 내용 바로 뒤에 옴. 짧은 페이지에선 흰 배경이 푸터와 이어져 빈 띠가 안 생김 */}
         <main className="w-full">{children}</main>
