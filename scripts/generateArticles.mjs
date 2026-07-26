@@ -50,50 +50,52 @@ async function fetchOverview(id) {
   } catch { return ""; }
 }
 
-// Gemini 생성 → 패턴검사 → OpenAI 검증+개선. PASS면 개선본 발행. 실패 시 null.
+// Gemini 생성 → 패턴검사 → OpenAI 검증+개선. { art, reasons } 반환(art=null이면 사유 담김).
 async function produceArticle(place, overview, existingTexts) {
+  const reasons = [];
+  const log = (m) => { console.log(`  · ${place.title} ${m}`); reasons.push(m); };
   const gen = async (prompt) => {
     const { text } = await callGemini(prompt, { apiKey: GEMINI, model: MODEL, grounding: false });
     return text;
   };
 
-  // 1차: 풍부한 일반 글 2회
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
       const draft = await gen(buildPrompt(place, overview));
+      if (!draft) { log(`시도${attempt} Gemini 빈 응답`); await sleep(1500); continue; }
       const q = qualityCheck(draft, { overview, existingTexts });
-      if (!q.ok) { console.log(`  · ${place.title} 시도${attempt} 품질 반려: ${q.reason}`); await sleep(1000); continue; }
+      if (!q.ok) { log(`시도${attempt} 품질 반려: ${q.reason}`); await sleep(1000); continue; }
       const p = patternCheck(draft, overview);
-      if (!p.ok) { console.log(`  · ${place.title} 시도${attempt} 패턴 반려: ${p.reason}`); await sleep(1000); continue; }
+      if (!p.ok) { log(`시도${attempt} 패턴 반려: ${p.reason}`); await sleep(1000); continue; }
 
       const v = await verifyAndImprove(overview, draft, { apiKey: OPENAI, model: OPENAI_MODEL });
-      if (v.result === "FAIL") { console.log(`  · ${place.title} 시도${attempt} 검증 FAIL: ${v.reason}`); await sleep(1000); continue; }
-      if (v.result === "ERROR") { console.log(`  · ${place.title} 시도${attempt} 검증오류: ${v.reason}`); await sleep(1500); continue; }
+      if (v.result === "FAIL") { log(`시도${attempt} 검증 FAIL: ${v.reason}`); await sleep(1000); continue; }
+      if (v.result === "ERROR") { log(`시도${attempt} 검증오류: ${v.reason}`); await sleep(1500); continue; }
 
-      // PASS(개선본 사용) 또는 SKIP(키 없음 → 원본 Gemini글). 개선본이 이상하면 원본으로 폴백.
       let finalText = v.result === "PASS" && v.improved ? v.improved : draft;
       const q2 = qualityCheck(finalText, { overview });
       const p2 = patternCheck(finalText, overview);
-      if (!q2.ok || !p2.ok) finalText = draft; // 개선본 문제 시 검증 통과한 원본 사용
+      if (!q2.ok || !p2.ok) finalText = draft;
       const fin = qualityCheck(finalText, {});
-      return { text: finalText, len: fin.len, mode: v.improved && finalText === v.improved ? "improved" : "normal", verify: v.result };
+      return { art: { text: finalText, len: fin.len, mode: v.improved && finalText === v.improved ? "improved" : "normal", verify: v.result }, reasons };
     } catch (e) {
-      console.log(`  · ${place.title} 시도${attempt} 오류: ${e.message}`);
+      log(`시도${attempt} 오류: ${e.message}`);
       await sleep(1500);
     }
   }
 
-  // 폴백: "원본 최소 가공" — 구조·말투만, 새 사실 0. (OpenAI 생략, 품질+패턴만)
+  // 폴백: 원본 최소 가공
   try {
     const text = await gen(buildMinimalPrompt(place, overview));
+    if (!text) { log("최소가공 Gemini 빈 응답"); return { art: null, reasons }; }
     const q = qualityCheck(text, { overview, existingTexts });
     const p = patternCheck(text, overview);
-    if (q.ok && p.ok) return { text, len: q.len, mode: "minimal", verify: "MINIMAL" };
-    console.log(`  · ${place.title} 최소가공 반려: ${q.ok ? p.reason : q.reason}`);
+    if (q.ok && p.ok) return { art: { text, len: q.len, mode: "minimal", verify: "MINIMAL" }, reasons };
+    log(`최소가공 반려: ${q.ok ? p.reason : q.reason}`);
   } catch (e) {
-    console.log(`  · ${place.title} 최소가공 오류: ${e.message}`);
+    log(`최소가공 오류: ${e.message}`);
   }
-  return null;
+  return { art: null, reasons };
 }
 
 async function main() {
@@ -127,6 +129,7 @@ async function main() {
     console.log(`\n🖋️  목표 ${target}건 · 후보 ${queue.length} · 기존 ${doneIds.size} · 검증모델 ${OPENAI ? OPENAI_MODEL : "없음"}`);
   }
   let made = 0, skipped = 0;
+  const report = []; // 진단: 각 후보 결과를 저장소에 남겨 로그 없이도 원인 파악
 
   for (const place of queue) {
     if (made >= target) break;
@@ -135,13 +138,20 @@ async function main() {
     // 원본이 너무 빈약하면 글 생성 안 함(얇은 콘텐츠 방지). 정보 페이지는 유지.
     if (overview.length < MIN_OVERVIEW) {
       skipped++;
+      report.push({ id: place.id, title: place.title, outcome: "skip", reason: `원본 ${overview.length}자(<${MIN_OVERVIEW})` });
       console.log(`  ⏭  원본 빈약(${overview.length}자) 스킵: ${place.title}`);
       continue;
     }
 
-    const art = await produceArticle(place, overview, existingTexts);
-    if (!art) { skipped++; console.log(`  ✗ 스킵(안전망 미통과): ${place.title}`); continue; }
+    const { art, reasons } = await produceArticle(place, overview, existingTexts);
+    if (!art) {
+      skipped++;
+      report.push({ id: place.id, title: place.title, outcome: "skip", overview: overview.length, reason: reasons.slice(-3).join(" | ") });
+      console.log(`  ✗ 스킵: ${place.title}`);
+      continue;
+    }
 
+    report.push({ id: place.id, title: place.title, outcome: "published", detail: `${art.mode}/${art.verify}/${art.len}자` });
     store.articles[place.id] = {
       status: "published", // 3중 안전망 통과 → 자동 발행
       generatedAt: new Date().toISOString(),
@@ -164,6 +174,7 @@ async function main() {
   }
 
   store.generatedAt = new Date().toISOString();
+  store._lastRun = { at: new Date().toISOString(), made, skipped, results: report }; // 진단용
   fs.writeFileSync(STORE, JSON.stringify(store, null, 0));
   const pub = Object.values(store.articles).filter((a) => a.status === "published").length;
   console.log(`\n💾 저장: 신규 발행 ${made} · 스킵 ${skipped} | 총 발행 ${pub}\n`);
