@@ -1,0 +1,44 @@
+name: 글 자동화 테스트 (딜쿠샤 등 4곳, 입력 불필요)
+
+# 입력 없이 Run workflow만 누르면 딜쿠샤·창경궁·강남마이스·심청각 4곳을 생성·검증·발행.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: articles-generate
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 의존성 설치
+        run: npm ci
+
+      - name: 테스트 생성 (고정 4곳)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          TEST_IDS: "2707460,126511,2456536,560981"
+        run: node scripts/generateArticles.mjs
+
+      - name: 변경분 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/place-articles.json
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 건너뜀"
+          else
+            git commit -m "chore: 글 자동화 테스트 발행 (딜쿠샤 등)"
+            git push
+          fi
