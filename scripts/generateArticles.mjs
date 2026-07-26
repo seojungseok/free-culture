@@ -43,11 +43,16 @@ async function fetchOverview(id) {
   try {
     const url = `https://apis.data.go.kr/B551011/KorService2/detailCommon2?serviceKey=${encodeURIComponent(TOURKEY)}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${id}`;
     const r = await fetch(url, { signal: AbortSignal.timeout(20000) });
-    const j = await r.json();
+    const t = await r.text();
+    let j;
+    try { j = JSON.parse(t); } catch { return { overview: "", err: `HTTP${r.status} 비JSON: ${t.slice(0, 80)}` }; }
+    const code = j?.response?.header?.resultCode;
+    if (code !== "0000") return { overview: "", err: `resultCode ${code} ${j?.response?.header?.resultMsg || ""}` };
     const it = j?.response?.body?.items?.item;
     const o = (Array.isArray(it) ? it[0] : it)?.overview || "";
-    return String(o).replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/gi, " ").replace(/\s+/g, " ").trim();
-  } catch { return ""; }
+    const clean = String(o).replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/gi, " ").replace(/\s+/g, " ").trim();
+    return { overview: clean, err: clean ? "" : "overview 필드 비어있음" };
+  } catch (e) { return { overview: "", err: "fetch오류: " + (e instanceof Error ? e.message : e) }; }
 }
 
 // Gemini 생성 → 패턴검사 → OpenAI 검증+개선. { art, reasons } 반환(art=null이면 사유 담김).
@@ -133,13 +138,13 @@ async function main() {
 
   for (const place of queue) {
     if (made >= target) break;
-    const overview = await fetchOverview(place.id);
+    const { overview, err } = await fetchOverview(place.id);
 
     // 원본이 너무 빈약하면 글 생성 안 함(얇은 콘텐츠 방지). 정보 페이지는 유지.
     if (overview.length < MIN_OVERVIEW) {
       skipped++;
-      report.push({ id: place.id, title: place.title, outcome: "skip", reason: `원본 ${overview.length}자(<${MIN_OVERVIEW})` });
-      console.log(`  ⏭  원본 빈약(${overview.length}자) 스킵: ${place.title}`);
+      report.push({ id: place.id, title: place.title, outcome: "skip", reason: `원본 ${overview.length}자(<${MIN_OVERVIEW})${err ? " · " + err : ""}` });
+      console.log(`  ⏭  원본 빈약(${overview.length}자, ${err}) 스킵: ${place.title}`);
       continue;
     }
 
