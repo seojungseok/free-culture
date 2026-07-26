@@ -39,20 +39,32 @@ const TOURKEY = envKey("TOUR_API_KEY", "DATA_GO_KR_KEY");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// data.go.kr 키는 인코딩/디코딩 2종 → 키를 그대로/encode 두 방식으로 시도(어느 걸 넣어도 되게)
+function keyVariants(k) {
+  const raw = String(k || "").trim();
+  const enc = encodeURIComponent(raw);
+  // 이미 %인코딩된 키(인코딩키)면 raw를 먼저, 아니면 encode를 먼저
+  return /%[0-9A-Fa-f]{2}/.test(raw) ? [raw, enc] : [enc, raw];
+}
+
 async function fetchOverview(id) {
-  try {
-    const url = `https://apis.data.go.kr/B551011/KorService2/detailCommon2?serviceKey=${encodeURIComponent(TOURKEY)}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${id}`;
-    const r = await fetch(url, { signal: AbortSignal.timeout(20000) });
-    const t = await r.text();
-    let j;
-    try { j = JSON.parse(t); } catch { return { overview: "", err: `HTTP${r.status} 비JSON: ${t.slice(0, 80)}` }; }
-    const code = j?.response?.header?.resultCode;
-    if (code !== "0000") return { overview: "", err: `resultCode ${code} ${j?.response?.header?.resultMsg || ""}` };
-    const it = j?.response?.body?.items?.item;
-    const o = (Array.isArray(it) ? it[0] : it)?.overview || "";
-    const clean = String(o).replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/gi, " ").replace(/\s+/g, " ").trim();
-    return { overview: clean, err: clean ? "" : "overview 필드 비어있음" };
-  } catch (e) { return { overview: "", err: "fetch오류: " + (e instanceof Error ? e.message : e) }; }
+  let lastErr = "";
+  for (const key of keyVariants(TOURKEY)) {
+    try {
+      const url = `https://apis.data.go.kr/B551011/KorService2/detailCommon2?serviceKey=${key}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${id}`;
+      const r = await fetch(url, { signal: AbortSignal.timeout(20000) });
+      const t = await r.text();
+      let j;
+      try { j = JSON.parse(t); } catch { lastErr = `HTTP${r.status} 비JSON: ${t.slice(0, 60)}`; continue; }
+      const code = j?.response?.header?.resultCode;
+      if (code !== "0000") { lastErr = `resultCode ${code} ${j?.response?.header?.resultMsg || ""}`; continue; }
+      const it = j?.response?.body?.items?.item;
+      const o = (Array.isArray(it) ? it[0] : it)?.overview || "";
+      const clean = String(o).replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/gi, " ").replace(/\s+/g, " ").trim();
+      return { overview: clean, err: clean ? "" : "overview 필드 비어있음" };
+    } catch (e) { lastErr = "fetch오류: " + (e instanceof Error ? e.message : e); }
+  }
+  return { overview: "", err: lastErr };
 }
 
 // Gemini 생성 → 패턴검사 → OpenAI 검증+개선. { art, reasons } 반환(art=null이면 사유 담김).
