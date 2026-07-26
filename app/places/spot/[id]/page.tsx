@@ -29,8 +29,15 @@ export async function generateMetadata({
   const type = tourTypeLabel(spot.type);
   // 발행글 있으면 그 도입부, 없으면 TourAPI 소개글, 그것도 없으면 롱테일 템플릿
   const article = getArticle(id);
+  // 소제목(##)·목록(-) 줄은 빼고 리드+문단만 → 자연스러운 description
   const articlePlain = article
-    ? article.content.replace(/[#*>`-]/g, " ").replace(/\s+/g, " ").trim()
+    ? article.content
+        .split(/\r?\n/)
+        .filter((l) => l.trim() && !/^#{1,3}\s/.test(l) && !/^\s*[-*]\s/.test(l))
+        .join(" ")
+        .replace(/[*>`]/g, "")
+        .replace(/\s+/g, " ")
+        .trim()
     : "";
   const overview = articlePlain ? "" : (await fetchPlaceOverview(id)).overview;
   const base = articlePlain || overview;
@@ -43,7 +50,15 @@ export async function generateMetadata({
   return {
     title,
     description,
-    keywords: [`${spot.area} ${type}`, `${spot.area} 가볼만한 곳`, `${spot.area} 나들이`, spot.title],
+    keywords: (() => {
+      const gu = (spot.addr.match(/[가-힣]{2,}(?:구|군)/) || [])[0];
+      return [
+        `${spot.area} ${type}`,
+        gu ? `${gu} 가볼만한 곳` : `${spot.area} 가볼만한 곳`,
+        `${spot.area} 나들이`,
+        spot.title,
+      ];
+    })(),
     alternates: { canonical: `/places/spot/${id}` },
     openGraph: {
       title,

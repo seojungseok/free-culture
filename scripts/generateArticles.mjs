@@ -20,6 +20,16 @@ const PLACES = path.join(ROOT, "data", "places.json");
 const STORE = path.join(ROOT, "data", "place-articles.json");
 const OVERVIEWS = path.join(ROOT, "data", "place-overviews.json"); // 원본 캐시(로컬에서 미리 수집)
 const OVERVIEW_CACHE = fs.existsSync(OVERVIEWS) ? JSON.parse(fs.readFileSync(OVERVIEWS, "utf8")) : {};
+const FEES = path.join(ROOT, "data", "place-fees.json");
+const FEE_CACHE = fs.existsSync(FEES) ? (JSON.parse(fs.readFileSync(FEES, "utf8")).fees || {}) : {};
+
+// 방문팁의 입장료 줄을 요금 캐시와 일치시킴(무료배지·JSON-LD와 통일)
+function applyAdmission(content, id) {
+  const adm = FEE_CACHE[id];
+  const label = adm === "free" ? "무료" : adm === "paid" ? "유료" : null;
+  if (!label) return content;
+  return content.replace(/(^|\n)(\s*[-*]\s*\*\*입장료\*\*\s*:)[^\n]*/, `$1$2 ${label}`);
+}
 const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
 const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o-mini";
 
@@ -184,7 +194,7 @@ async function main() {
       type: place.type,
       typeLabel: tourTypeLabel(place.type),
       title: place.title,
-      content: art.text,
+      content: applyAdmission(art.text, place.id),
       sources: [],
       model: MODEL,
       verify: art.verify, // PASS / SKIP / MINIMAL
