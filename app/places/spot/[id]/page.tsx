@@ -52,8 +52,13 @@ export async function generateMetadata({
     description,
     keywords: (() => {
       const gu = (spot.addr.match(/[가-힣]{2,}(?:구|군)/) || [])[0];
+      // 장소명에서 구체 유형어 추출(생태공원·박물관·궁궐 등) → 검색 키워드 풍부화
+      const tw = (spot.title.match(
+        /생태공원|수목원|자연휴양림|박물관|미술관|과학관|기념관|전시관|식물원|동물원|아쿠아리움|테마파크|놀이공원|공원|궁궐|궁|사찰|서원|향교|시장|해수욕장|해변|계곡|폭포|전망대|캠핑장|체험관|문화원|아트센터|도서관|호수|저수지/
+      ) || [])[0];
       return [
-        `${spot.area} ${type}`,
+        `${spot.area} ${tw || type}`,
+        ...(tw ? [tw] : []),
         gu ? `${gu} 가볼만한 곳` : `${spot.area} 가볼만한 곳`,
         `${spot.area} 나들이`,
         spot.title,

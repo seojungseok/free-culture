@@ -33,9 +33,18 @@ export async function generateMetadata({
   const desc = `${ev.priceLabel} · ${fmtRange(ev.startDate, ev.endDate)} · ${where}. ${
     ev.contents ? ev.contents.slice(0, 80) : `${ev.realmName} 행사 정보를 확인하세요.`
   }`;
+  const isFree = /free/.test(ev.priceType);
+  const keywords = [
+    `${ev.area} ${ev.realmName}`,
+    isFree ? `${ev.area} 무료 ${ev.realmName}` : `${ev.area} ${ev.realmName} 공연`,
+    ev.sigungu ? `${ev.sigungu} 문화행사` : `${ev.area} 문화행사`,
+    `${ev.area} 주말 나들이`,
+    ev.title,
+  ];
   return {
     title: ev.title,
     description: desc,
+    keywords,
     alternates: { canonical: `/event/${ev.id}` },
     openGraph: {
       title: ev.title,

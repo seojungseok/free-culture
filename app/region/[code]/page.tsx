@@ -27,6 +27,7 @@ export async function generateMetadata({
   return {
     title: `${sido} 문화행사 — 무료·저렴한 전시·공연`,
     description: `${sido}에서 지금 열리는 전시·공연·문화행사 ${n}건. 날짜별로 골라 보고 무료 행사를 먼저 확인하세요.`,
+    keywords: [`${sido} 문화행사`, `${sido} 무료 전시`, `${sido} 무료 공연`, `${sido} 가볼만한 곳`, `${sido} 주말 나들이`],
     alternates: { canonical: `/region/${code}` },
   };
 }
