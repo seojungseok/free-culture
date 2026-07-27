@@ -47,10 +47,10 @@ export default async function OpengraphImage() {
         <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(135deg, #0F3D2E 0%, #163329 46%, #1A1A1A 100%)" }} />
         {/* 1. 대표 이미지 풀블리드 (좌우 분할 없음) */}
         {hero && <img src={hero} width={1200} height={630} style={{ position: "absolute", inset: 0, width: 1200, height: 630, objectFit: "cover" }} />}
-        {/* 2. 어두운 오버레이 — 좌측 거의 불투명 → 우측 옅게 (Satori는 알파를 옅게 렌더 → 값 세게) */}
-        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(4,10,7,0.99) 0%, rgba(4,10,7,0.97) 44%, rgba(6,13,9,0.66) 66%, rgba(8,16,11,0.22) 100%)" }} />
-        {/* 전체 한 겹 더(대비 확보) */}
-        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0) 74%)" }} />
+        {/* 2. 전체 균일 어둡게 (중앙배치 텍스트 가독성) */}
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "rgba(0,0,0,0.44)" }} />
+        {/* 2b. 중앙 방사형으로 더 진하게 (가운데 텍스트 뒤가 가장 어둡게) */}
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "radial-gradient(62% 66% at 50% 50%, rgba(3,9,6,0.72) 0%, rgba(3,9,6,0.34) 55%, rgba(3,9,6,0) 100%)" }} />
         {/* 3. 상·하단 살짝 어둡게(로고·URL 가독성 + 깊이) */}
         <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.42) 100%)" }} />
 
@@ -60,19 +60,19 @@ export default async function OpengraphImage() {
           <div style={{ display: "flex", fontSize: 24, fontWeight: 800, color: "rgba(255,255,255,0.95)", letterSpacing: "-0.5px", textShadow: "0 2px 10px rgba(0,0,0,0.5)" }}>주말에뭐하지</div>
         </div>
 
-        {/* 텍스트 블록 (좌측, 수직 중앙, 전부 흰색) */}
-        <div style={{ display: "flex", flexDirection: "column", position: "absolute", left: 80, top: 0, width: 720, height: 630, justifyContent: "center" }}>
-          <div style={{ display: "flex", fontSize: 23, fontWeight: 500, color: "#D0D0D0", letterSpacing: "6px", textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}>전국 무료·저렴 문화생활</div>
-
-          <div style={{ display: "flex", alignItems: "baseline", marginTop: 16, letterSpacing: "-5px" }}>
-            <div style={{ display: "flex", fontSize: 116, fontWeight: 800, color: "#FFFFFF", lineHeight: 1, paddingRight: 20, textShadow: "0 3px 18px rgba(0,0,0,0.55)" }}>주말에</div>
-            <div style={{ display: "flex", fontSize: 116, fontWeight: 800, color: MINT, lineHeight: 1, textShadow: "0 3px 18px rgba(0,0,0,0.5)" }}>뭐하지?</div>
+        {/* 텍스트 블록 (전체 폭, 수직·수평 중앙 정렬) */}
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "absolute", left: 0, top: 0, width: 1200, height: 630, justifyContent: "center" }}>
+          {/* 메인 (그대로) */}
+          <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", letterSpacing: "-5px" }}>
+            <div style={{ display: "flex", fontSize: 116, fontWeight: 800, color: "#FFFFFF", lineHeight: 1, paddingRight: 20, textShadow: "0 3px 22px rgba(0,0,0,0.65)" }}>주말에</div>
+            <div style={{ display: "flex", fontSize: 116, fontWeight: 800, color: MINT, lineHeight: 1, textShadow: "0 3px 22px rgba(0,0,0,0.6)" }}>뭐하지?</div>
           </div>
 
-          <div style={{ display: "flex", fontSize: 44, fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", marginTop: 24, textShadow: "0 2px 14px rgba(0,0,0,0.55)" }}>문화행사 · 나들이 · 캠핑</div>
+          {/* 아래 1줄 — 크고 굵게(흰색) */}
+          <div style={{ display: "flex", justifyContent: "center", fontSize: 50, fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", marginTop: 26, textShadow: "0 2px 16px rgba(0,0,0,0.6)" }}>문화행사 · 나들이 · 캠핑</div>
 
-          {/* 고정 문구 — 알약 없이 흰 텍스트 (어두운 오버레이 위) */}
-          <div style={{ display: "flex", fontSize: 26, fontWeight: 500, color: "rgba(255,255,255,0.82)", letterSpacing: "0.3px", marginTop: 20, textShadow: "0 2px 12px rgba(0,0,0,0.55)" }}>전국 나들이·캠핑·문화행사</div>
+          {/* 아래 2줄 — 민트 포인트로 강조 */}
+          <div style={{ display: "flex", justifyContent: "center", fontSize: 30, fontWeight: 800, color: MINT, letterSpacing: "0.3px", marginTop: 16, textShadow: "0 2px 14px rgba(0,0,0,0.6)" }}>전국 나들이·캠핑·문화행사</div>
         </div>
 
         {/* 도메인 (우하단, 은은하게) */}
