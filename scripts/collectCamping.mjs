@@ -29,6 +29,21 @@ const arr = (x) => (x == null ? [] : Array.isArray(x) ? x : [x]);
 const https = (u) => String(u || "").replace(/^http:\/\//i, "https://");
 
 const SIDO = { 서울특별시: "서울", 인천광역시: "인천", 부산광역시: "부산", 대구광역시: "대구", 대전광역시: "대전", 광주광역시: "광주", 울산광역시: "울산", 세종특별자치시: "세종", 세종특별자치도: "세종", 경기도: "경기", 강원도: "강원", 강원특별자치도: "강원", 충청북도: "충북", 충청남도: "충남", 전라북도: "전북", 전북특별자치도: "전북", 전라남도: "전남", 경상북도: "경북", 경상남도: "경남", 제주특별자치도: "제주", 제주도: "제주" };
+const SIDO_SHORT = ["서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"];
+const GWANGJU_GU = new Set(["동구", "서구", "남구", "북구", "광산구"]);
+const JEONNAM_RE = /여수|순천|목포|나주|광양|담양|곡성|구례|고흥|보성|화순|장흥|강진|해남|영암|무안|함평|영광|장성|완도|진도|신안/;
+// 시도 정규화: doNm → 정상값. "전남광주통합" 등 이상값은 시군구/주소로 판별.
+function areaOf(it) {
+  const raw = String(it.doNm || "").trim();
+  if (SIDO[raw]) return SIDO[raw];
+  const stripped = raw.replace(/(특별자치도|특별자치시|특별시|광역시|도)$/, "").trim();
+  if (SIDO_SHORT.includes(stripped)) return stripped;
+  const sgg = String(it.sigunguNm || "").trim();
+  if (GWANGJU_GU.has(sgg)) return "광주";
+  if (JEONNAM_RE.test(sgg)) return "전남";
+  const m = String(it.addr1 || "").match(new RegExp(`^(${SIDO_SHORT.join("|")})`));
+  return m ? m[1] : stripped;
+}
 
 // 유형 정규화: induty(콤마구분) + 사이트수로 보강
 function typesOf(it) {
@@ -83,7 +98,7 @@ async function main() {
     camps.push({
       id,
       name: String(it.facltNm || "").trim(),
-      area: SIDO[String(it.doNm || "").trim()] || String(it.doNm || "").replace(/(특별자치도|특별자치시|특별시|광역시|도)$/, "").trim(),
+      area: areaOf(it),
       sigungu: String(it.sigunguNm || "").trim(),
       addr: String(it.addr1 || "").trim(),
       mapx: String(it.mapX || ""), mapy: String(it.mapY || ""),

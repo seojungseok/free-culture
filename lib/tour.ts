@@ -77,13 +77,24 @@ export function getTourAreaCounts(): { area: string; count: number }[] {
   return SIDO_LIST.filter((a) => c[a] > 0).map((area) => ({ area, count: c[area] }));
 }
 
-/** 전국 미리보기 샘플 — 아이친화(박물관·체험 등 이미지 좋은 곳) 우선 */
-export function getPlacesSample(limit = 300): TourSpot[] {
-  const list = LIVE;
-  const kids: TourSpot[] = [];
-  const rest: TourSpot[] = [];
-  for (const s of list) (s.isKid ? kids : rest).push(s);
-  return [...kids, ...rest].slice(0, limit);
+/** 전국 미리보기 샘플 — 유형(12·14·28) 고르게 섞어, 유형 필터해도 카드가 충분히 나오게 */
+export function getPlacesSample(limit = 600): TourSpot[] {
+  const byType: Record<string, TourSpot[]> = { "12": [], "14": [], "28": [] };
+  for (const s of LIVE) if (byType[s.type]) byType[s.type].push(s);
+  // 유형 내 아이친화·이미지 우선
+  for (const k of Object.keys(byType)) byType[k].sort((a, b) => Number(!!b.isKid) - Number(!!a.isKid));
+  // 라운드로빈으로 유형 균형 있게 채움
+  const out: TourSpot[] = [];
+  const idx: Record<string, number> = { "12": 0, "14": 0, "28": 0 };
+  const order = ["14", "12", "28"];
+  let progressed = true;
+  while (out.length < limit && progressed) {
+    progressed = false;
+    for (const k of order) {
+      if (idx[k] < byType[k].length) { out.push(byType[k][idx[k]++]); progressed = true; if (out.length >= limit) break; }
+    }
+  }
+  return out;
 }
 
 export function getTourGeneratedAt(): string {

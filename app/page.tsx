@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getAllEvents, getWeekend, getNow, getFree, slimForClient } from "@/lib/data";
-import { getKidTours, getPlaceCount, getTourAreaCounts, slimTours } from "@/lib/tour";
+import { getAllEvents, getWeekend, getFree, slimForClient } from "@/lib/data";
+import { getKidTours, getPlaceCount, slimTours } from "@/lib/tour";
 import { getCampCount } from "@/lib/camping";
 import { todayYmd } from "@/lib/dates";
 import PosterCard from "@/components/PosterCard";
@@ -10,7 +10,7 @@ import BigEventModal from "@/components/BigEventModal";
 import { Band, Container } from "@/components/Band";
 import { SITE } from "@/lib/site";
 import { season } from "@/lib/finder";
-import PlaceFinder from "@/components/PlaceFinder";
+import QuickEntry from "@/components/QuickEntry";
 import NearMe from "@/components/NearMe";
 
 export const metadata: Metadata = {
@@ -24,23 +24,10 @@ const isFreeish = (t: string) =>
 
 export default function HomePage() {
   const all = getAllEvents();
-
-  const todayFree = getNow().filter((e) => isFreeish(e.priceType)).length;
-  const weekendCount = getWeekend().length;
   const placeCount = getPlaceCount();
-  const placeAreas = getTourAreaCounts().length;
   const campCount = getCampCount();
   const s = season();
 
-  // 원클릭 빠른 추천 (필터 몰라도 한 번 탭)
-  const quickPicks: { emoji: string; label: string; href: string }[] = [
-    { emoji: "🆓", label: "오늘 무료", href: "/free" },
-    { emoji: "👶", label: "아이랑", href: "/kids" },
-    { emoji: "🐶", label: "반려동물 캠핑", href: "/camping?pet=1" },
-    { emoji: "💑", label: "데이트", href: "/genre/exhibition" },
-    { emoji: "🏕️", label: "글램핑", href: "/camping?type=%EA%B8%80%EB%9E%A8%ED%95%91" },
-    { emoji: s.emoji, label: `${s.label} 명소`, href: `/search?q=${encodeURIComponent(s.query)}` },
-  ];
   // 인기 검색어 — 대한민국 대표 명소(기본값). 검색 데이터 쌓이면 실제 인기어로 대체 예정.
   const popular = ["에버랜드", "경복궁", "해운대", "남산타워", "롯데월드", "국립중앙박물관", "전주한옥마을", "오션월드", "불국사", "한라산", "속초", "강릉", "남이섬", "글램핑", "벚꽃"];
 
@@ -67,7 +54,7 @@ export default function HomePage() {
     <>
       <BigEventModal events={popupPicks} />
 
-      {/* 히어로 + 대분류 2버튼 */}
+      {/* 히어로 */}
       <Band tone="tint" innerClassName="py-6 sm:py-8">
         <h1 className="text-center text-[26px] font-black leading-[1.15] tracking-[-0.02em] text-ink sm:text-[34px]">
           주말에 <span className="text-free">뭐하지?</span>
@@ -75,62 +62,33 @@ export default function HomePage() {
         <p className="mt-1.5 text-center text-[14px] font-semibold text-ink-soft sm:text-[15px]">
           전국 <b className="text-free">문화행사·나들이·캠핑</b>, 무료로 저렴하게 즐기는 주말
         </p>
-
-        {/* 최상위: 대분류 */}
-        <div className="mx-auto mt-5 grid max-w-[640px] grid-cols-3 gap-3">
-          <CategoryButton
-            href="/events"
-            emoji="🎭"
-            title="문화행사"
-            sub={`전시·공연 ${all.length.toLocaleString()}건`}
-          />
-          <CategoryButton
-            href="/places"
-            emoji="🏞️"
-            title="나들이"
-            sub={`가볼만한 곳 ${placeCount.toLocaleString()}곳`}
-          />
-          <CategoryButton
-            href="/camping"
-            emoji="⛺"
-            title="캠핑"
-            sub={`전국 캠핑장 ${campCount.toLocaleString()}곳`}
-          />
-        </div>
-
-        {/* 빠른 지표 */}
-        <div className="mx-auto mt-3 flex max-w-[640px] gap-2.5">
-          <SummaryChip label="오늘 무료" value={todayFree} href="/free" accent />
-          <SummaryChip label="이번 주말" value={weekendCount} href="/weekend" />
-          <SummaryChip label="관광 지역" value={placeAreas} href="/places" />
-        </div>
-
-        {/* 원클릭 빠른 추천 */}
-        <div className="mx-auto mt-4 flex max-w-[680px] flex-wrap justify-center gap-2">
-          {quickPicks.map((q) => (
-            <Link key={q.label} href={q.href} className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-4 py-2 text-[14px] font-bold text-ink-soft shadow-sm transition hover:-translate-y-0.5 hover:border-free hover:text-free">
-              <span>{q.emoji}</span>{q.label}
-            </Link>
-          ))}
-        </div>
       </Band>
 
-      {/* 최적의 장소 찾기 필터 */}
-      <Band tone="white" innerClassName="py-7">
-        <div className="mb-3">
-          <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">🔎 최적의 장소 찾기</h2>
-          <p className="mt-0.5 text-[13px] text-ink-faint">카테고리와 조건을 고르면 결과 수가 실시간으로 바뀌어요.</p>
-        </div>
-        <PlaceFinder />
-      </Band>
-
-      {/* 내 주변 */}
-      <Band tone="panel" innerClassName="py-7">
+      {/* 내 주변 (위치 기반, 상단) */}
+      <Band tone="white" innerClassName="py-6">
         <NearMe />
       </Band>
 
+      {/* 빠른 진입 아이콘 — 전부 지역 기반 */}
+      <Band tone="panel" innerClassName="py-6">
+        <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">⚡ 빠른 진입</h2>
+        <p className="mt-0.5 text-[13px] text-ink-faint">아이콘을 누르고 지역을 고르면 바로 그 지역 결과로 가요.</p>
+        <div className="mt-3">
+          <QuickEntry seasonQuery={s.query} seasonLabel={s.label} seasonEmoji={s.emoji} />
+        </div>
+      </Band>
+
+      {/* 큰 카드 3개 (유지) */}
+      <Band tone="white" innerClassName="py-6">
+        <div className="mx-auto grid max-w-[640px] grid-cols-3 gap-3">
+          <CategoryButton href="/events" emoji="🎭" title="문화행사" sub={<>전시·공연 <span className="whitespace-nowrap">{all.length.toLocaleString()}건</span></>} />
+          <CategoryButton href="/places" emoji="🏞️" title="나들이" sub={<>가볼만한 곳 <span className="whitespace-nowrap">{placeCount.toLocaleString()}곳</span></>} />
+          <CategoryButton href="/camping" emoji="⛺" title="캠핑" sub={<>전국 캠핑장 <span className="whitespace-nowrap">{campCount.toLocaleString()}곳</span></>} />
+        </div>
+      </Band>
+
       {/* 계절 추천 (날짜 자동) */}
-      <Band tone="white" innerClassName="py-7">
+      <Band tone="panel" innerClassName="py-7">
         <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">{s.emoji} {s.label} 추천</h2>
         <p className="mt-0.5 text-[13px] text-ink-faint">지금 계절에 딱 맞는 키워드로 골라보세요.</p>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -141,7 +99,7 @@ export default function HomePage() {
       </Band>
 
       {/* 인기 검색어 */}
-      <Band tone="panel" innerClassName="py-7">
+      <Band tone="white" innerClassName="py-7">
         <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">🔥 인기 검색어</h2>
         <p className="mt-0.5 text-[13px] text-ink-faint">대한민국 대표 명소부터 시작해요.</p>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -197,16 +155,16 @@ function CategoryButton({
   href: string;
   emoji: string;
   title: string;
-  sub: string;
+  sub: React.ReactNode;
 }) {
   return (
     <Link
       href={href}
-      className="group flex flex-col items-center gap-1 rounded-2xl border border-line bg-white px-4 py-5 text-center shadow-card transition hover:-translate-y-0.5 hover:border-free hover:shadow-cardhover"
+      className="group flex flex-col items-center gap-1 rounded-2xl border border-line bg-white px-3 py-5 text-center shadow-card transition hover:-translate-y-0.5 hover:border-free hover:shadow-cardhover"
     >
       <span className="text-[30px] leading-none">{emoji}</span>
-      <span className="mt-1 text-[17px] font-black text-ink group-hover:text-free">{title}</span>
-      <span className="text-[12px] font-semibold text-ink-faint">{sub}</span>
+      <span className="mt-1 text-[16px] font-black text-ink group-hover:text-free sm:text-[17px]">{title}</span>
+      <span className="text-[12px] font-semibold leading-tight text-ink-faint">{sub}</span>
       <span className="mt-0.5 text-[12px] font-bold text-free">바로가기 →</span>
     </Link>
   );
@@ -258,35 +216,3 @@ function PreviewSection({
   );
 }
 
-function SummaryChip({
-  label,
-  value,
-  href,
-  accent,
-}: {
-  label: string;
-  value: number;
-  href: string;
-  accent?: boolean;
-}) {
-  return (
-    <Link
-      href={href}
-      className={[
-        "flex flex-1 items-center justify-between gap-2 rounded-xl border bg-white px-3.5 py-2 transition hover:shadow-card",
-        "sm:flex-col sm:items-center sm:justify-center sm:text-center",
-        accent ? "border-free/30 hover:border-free" : "border-line hover:border-ink/30",
-      ].join(" ")}
-    >
-      <span className="text-[11px] font-semibold text-ink-faint">{label} ›</span>
-      <span
-        className={[
-          "text-[20px] font-black leading-none tabular-nums",
-          accent ? "text-free" : "text-ink",
-        ].join(" ")}
-      >
-        {value.toLocaleString()}
-      </span>
-    </Link>
-  );
-}

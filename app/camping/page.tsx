@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { filterCamps, campAreaCounts, campTypeCounts, campFacilityCounts, petCount, getCampCount, CAMP_TYPES, CAMP_FACILITIES, type CampFilter } from "@/lib/camping";
+import { filterCamps, campAreaCounts, campTypeCounts, petCount, getCampCount, CAMP_TYPES, CAMP_FACILITIES, type CampFilter } from "@/lib/camping";
 import CampCard from "@/components/CampCard";
 import { Band, Container } from "@/components/Band";
 
@@ -29,21 +29,28 @@ function qs(base: SP, patch: SP): string {
 
 export default async function CampingPage({ searchParams }: { searchParams: Promise<SP> }) {
   const sp = await searchParams;
-  const cur: CampFilter = { area: sp.area, type: sp.type, facility: sp.facility, pet: sp.pet === "1" };
+  const facSel = (sp.facility || "").split(",").map((x) => x.trim()).filter(Boolean); // 다중 시설
+  const cur: CampFilter = { area: sp.area, type: sp.type, facilities: facSel, pet: sp.pet === "1" };
   const list = filterCamps(cur);
 
   // 패싯 카운트 — 해당 차원을 뺀 나머지 필터 기준
   const baseExcept = (dim: keyof CampFilter) =>
-    filterCamps({ ...cur, [dim]: dim === "pet" ? false : undefined });
+    filterCamps({ ...cur, [dim]: dim === "pet" ? false : dim === "facilities" ? [] : undefined });
   const areaC: Record<string, number> = {};
   for (const c of baseExcept("area")) areaC[c.area] = (areaC[c.area] || 0) + 1;
   const typeC = campTypeCounts(baseExcept("type"));
-  const facC = campFacilityCounts(baseExcept("facility"));
   const petC = petCount(baseExcept("pet"));
+  // 시설 개별 카운트: 다른 조건 + 이미 선택된 시설 + 이 시설 (AND)
+  const facCount = (f: string) => filterCamps({ area: cur.area, type: cur.type, pet: cur.pet, facilities: Array.from(new Set([...facSel, f])) }).length;
+  // 시설 토글 URL (콤마 목록)
+  const facHref = (f: string) => {
+    const next = facSel.includes(f) ? facSel.filter((x) => x !== f) : [...facSel, f];
+    return qs(sp, { facility: next.length ? next.join(",") : undefined });
+  };
 
   const areas = campAreaCounts();
   const shown = list.slice(0, CAP);
-  const heading = [sp.area, sp.type, sp.pet === "1" ? "반려동물" : "", sp.facility].filter(Boolean).join(" ") || "전국";
+  const heading = [sp.area, sp.type, sp.pet === "1" ? "반려동물" : "", ...facSel].filter(Boolean).join(" ") || "전국";
 
   return (
     <>
@@ -52,7 +59,7 @@ export default async function CampingPage({ searchParams }: { searchParams: Prom
           <span className="text-free">⛺ 캠핑</span>
         </h1>
         <p className="mt-1 text-[14px] text-ink-soft">
-          전국 캠핑장 {getCampCount().toLocaleString()}곳 — 유형·시설·지역으로 골라보세요 · 출처: 한국관광공사 고캠핑
+          전국 캠핑장 <span className="whitespace-nowrap">{getCampCount().toLocaleString()}곳</span> — 유형·시설·지역으로 골라보세요 · 출처: 한국관광공사 고캠핑
         </p>
       </Band>
 
@@ -65,11 +72,11 @@ export default async function CampingPage({ searchParams }: { searchParams: Prom
               <Chip key={t} href={qs(sp, { type: sp.type === t ? undefined : t })} active={sp.type === t} label={t} count={typeC[t] || 0} />
             ))}
           </FilterRow>
-          {/* 시설 + 반려동물 */}
+          {/* 시설 + 반려동물 (다중 선택 가능) */}
           <FilterRow label="시설">
             <Chip href={qs(sp, { pet: sp.pet === "1" ? undefined : "1" })} active={sp.pet === "1"} label="🐾 반려동물" count={petC} />
             {CAMP_FACILITIES.map((f) => (
-              <Chip key={f} href={qs(sp, { facility: sp.facility === f ? undefined : f })} active={sp.facility === f} label={f} count={facC[f] || 0} />
+              <Chip key={f} href={facHref(f)} active={facSel.includes(f)} label={f} count={facCount(f)} />
             ))}
           </FilterRow>
           {/* 지역 */}
@@ -79,6 +86,13 @@ export default async function CampingPage({ searchParams }: { searchParams: Prom
               <Chip key={a.area} href={qs(sp, { area: sp.area === a.area ? undefined : a.area })} active={sp.area === a.area} label={a.area} count={areaC[a.area] || 0} />
             ))}
           </FilterRow>
+          {(sp.area || sp.type || sp.pet === "1" || facSel.length > 0) && (
+            <div className="flex items-center gap-2 pt-0.5 text-[12.5px]">
+              <span className="font-bold text-ink-faint">선택:</span>
+              <span className="font-semibold text-freedark">{heading}</span>
+              <Link href="/camping" className="ml-1 font-semibold text-ink-faint underline hover:text-ink">전체 초기화</Link>
+            </div>
+          )}
         </Container>
 
         <Container className="pb-12 pt-2">

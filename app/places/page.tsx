@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function PlacesPage() {
   const total = getPlaceCount();
-  const spots = slimTours(getPlacesSample(300));
+  const spots = slimTours(getPlacesSample(600));
   const areas = getTourAreaCounts();
 
   return (
@@ -24,7 +24,7 @@ export default function PlacesPage() {
           <span className="text-free">나들이</span>
         </h1>
         <p className="mt-1 text-[14px] text-ink-soft">
-          전국 관광지·문화시설·체험 명소 {total.toLocaleString()}곳 — 지역·유형으로 골라보세요
+          전국 관광지·문화시설·체험 명소 <span className="whitespace-nowrap">{total.toLocaleString()}곳</span> — 지역·유형으로 골라보세요
         </p>
       </Band>
       <Suspense fallback={null}>
