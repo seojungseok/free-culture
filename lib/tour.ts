@@ -50,6 +50,14 @@ export function getTourById(id: string): TourSpot | undefined {
   return (data.spots || []).find((s) => s.id === id);
 }
 
+/** 유형별 개수 (전체 데이터 기준). area 주면 그 지역 안에서 집계. 합 = 전체/그 지역 전체와 일치 */
+export function getTypeCounts(area?: string): { all: number; "12": number; "14": number; "28": number } {
+  const list = area ? (data.spots || []).filter((s) => s.area === area) : (data.spots || []);
+  const c = { all: list.length, "12": 0, "14": 0, "28": 0 };
+  for (const s of list) if (s.type === "12" || s.type === "14" || s.type === "28") c[s.type]++;
+  return c;
+}
+
 /** 관광지가 있는 시도 목록 + 각 지역 개수 (전체) */
 export function getTourAreaCounts(): { area: string; count: number }[] {
   const c: Record<string, number> = {};

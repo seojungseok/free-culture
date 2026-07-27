@@ -39,8 +39,8 @@ function main() {
     const r = audit(a);
     rows.push({ id, title: a.title, area: a.area, ...r });
     if (WRITE) {
-      if (r.rewrite) { a.needsRewrite = true; a.rewriteReason = r.reasons.join(" · "); }
-      else { delete a.needsRewrite; delete a.rewriteReason; }
+      if (r.rewrite) { a.needsRewrite = true; a.rewriteReason = r.reasons.join(" · "); a.rewriteScore = r.reasons.length; }
+      else { delete a.needsRewrite; delete a.rewriteReason; delete a.rewriteScore; }
     }
   }
 

@@ -23,6 +23,7 @@ export default function PlacesBrowser({
   initialArea = "",
   kidOnly = false,
   total,
+  typeTotals,
 }: {
   spots: TourSpot[];
   areas: { area: string; count: number }[];
@@ -30,6 +31,8 @@ export default function PlacesBrowser({
   kidOnly?: boolean;
   /** 전국 그랜드 토탈 (전국 뷰는 그리드에 샘플만 실려서 별도 전달) */
   total?: number;
+  /** 유형 필터 숫자용 — 전체 데이터 기준 집계(현재 area 문맥). 카드는 샘플이어도 숫자는 전체 반영 */
+  typeTotals?: Record<TypeKey, number>;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -42,12 +45,14 @@ export default function PlacesBrowser({
     [spots, area]
   );
 
-  // 유형별 개수 (현재 지역 기준)
+  // 유형별 개수 — 전체 집계(typeTotals)가 오면 그걸 우선(4-5: 필터 숫자=전체 반영).
+  // 없을 때만 로컬 스팟에서 집계(하위호환).
   const typeCounts = useMemo(() => {
+    if (typeTotals) return typeTotals;
     const c: Record<TypeKey, number> = { all: areaSpots.length, "12": 0, "14": 0, "28": 0 };
     for (const s of areaSpots) if (s.type in c) c[s.type as TypeKey]++;
     return c;
-  }, [areaSpots]);
+  }, [areaSpots, typeTotals]);
 
   const filtered = useMemo(
     () => (type === "all" ? areaSpots : areaSpots.filter((s) => s.type === type)),
@@ -56,6 +61,8 @@ export default function PlacesBrowser({
   const shown = filtered.slice(0, visible);
   const grandTotal = total ?? spots.length;
   const isNationSample = !area && total != null && total > spots.length;
+  // 제목 옆 개수 — 전체 집계가 있으면 현재 유형의 전체 수, 없으면 기존 로직
+  const displayCount = typeTotals ? typeTotals[type] : isNationSample ? grandTotal : filtered.length;
 
   function pick(a: string) {
     setArea(a);
@@ -125,7 +132,7 @@ export default function PlacesBrowser({
             {area || "전국"} 나들이
           </h2>
           <span className="text-[14px] font-bold text-free">
-            {(isNationSample ? grandTotal : filtered.length).toLocaleString()}곳
+            {displayCount.toLocaleString()}곳
           </span>
         </div>
         {isNationSample && (

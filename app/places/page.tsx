@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getPlaceCount, getPlacesSample, getTourAreaCounts, slimTours } from "@/lib/tour";
+import { getPlaceCount, getPlacesSample, getTourAreaCounts, getTypeCounts, slimTours } from "@/lib/tour";
 import PlacesBrowser from "@/components/PlacesBrowser";
 import { Band } from "@/components/Band";
 
@@ -26,7 +26,7 @@ export default function PlacesPage() {
           전국 관광지·문화시설·체험 명소 {total.toLocaleString()}곳 — 지역·유형으로 골라보세요
         </p>
       </Band>
-      <PlacesBrowser spots={spots} areas={areas} total={total} />
+      <PlacesBrowser spots={spots} areas={areas} total={total} typeTotals={getTypeCounts()} />
     </>
   );
 }

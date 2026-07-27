@@ -174,9 +174,11 @@ async function main() {
     }
     // 3-5: 재작성 대상(needsRewrite) 우선 → 남은 목표만큼 신규
     const byId = new Map(places.map((p) => [p.id, p]));
-    for (const id of Object.keys(store.articles)) {
-      if (store.articles[id]?.needsRewrite && byId.has(id)) items.push({ place: byId.get(id), mode: "rewrite" });
-    }
+    // 재작성은 심각도(rewriteScore) 높은 순 우선 → 램프업 안에서 최악부터 고침
+    const rwIds = Object.keys(store.articles)
+      .filter((id) => store.articles[id]?.needsRewrite && byId.has(id))
+      .sort((a, b) => (store.articles[b].rewriteScore || 0) - (store.articles[a].rewriteScore || 0));
+    for (const id of rwIds) items.push({ place: byId.get(id), mode: "rewrite" });
     const rw = items.length;
     for (const p of pickQueue(places, doneIds, target * 3)) items.push({ place: p, mode: "new" });
     console.log(`\n🖋️  목표 ${target}건 (재작성 ${rw} 우선) · 후보 ${items.length} · 기존 ${doneIds.size} · 검증 ${OPENAI ? OPENAI_MODEL : "없음"}`);
