@@ -43,45 +43,40 @@ export default async function OpengraphImage() {
   return new ImageResponse(
     (
       <div style={{ display: "flex", position: "relative", width: "100%", height: "100%", fontFamily: "Pretendard" }}>
-        {/* 1. 딥그린 → 차콜 대각 그라디언트 */}
+        {/* 0. 폴백 배경(이미지 로드 실패 대비) — 딥그린→차콜 */}
         <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(135deg, #0F3D2E 0%, #163329 46%, #1A1A1A 100%)" }} />
-        {/* 좌상단 은은한 라이트 */}
-        <div style={{ display: "flex", position: "absolute", inset: 0, background: "radial-gradient(60% 65% at 14% 16%, rgba(122,224,176,0.16) 0%, rgba(122,224,176,0) 55%)" }} />
-
-        {/* 2. 대표 이미지 1장 (우측), 좌측으로 넓고 부드럽게 페이드(경계선 없이) */}
-        {hero && <img src={hero} width={660} height={630} style={{ position: "absolute", right: 0, top: 0, width: 660, height: 630, objectFit: "cover" }} />}
-        {/* 이미지 → 배경 melt (넓은 그라디언트로 경계 제거, 텍스트 영역은 불투명) */}
-        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg, #12352A 0%, #12352A 56%, rgba(18,50,40,0.6) 70%, rgba(18,50,40,0) 86%)" }} />
-        {/* 우측 이미지 어둡게(가독성·절제) */}
-        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(8,12,10,0) 66%, rgba(8,12,10,0.44) 100%)" }} />
-        {/* 하단 비네트(깊이감) */}
-        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%)" }} />
+        {/* 1. 대표 이미지 풀블리드 (좌우 분할 없음) */}
+        {hero && <img src={hero} width={1200} height={630} style={{ position: "absolute", inset: 0, width: 1200, height: 630, objectFit: "cover" }} />}
+        {/* 2. 어두운 오버레이 — 좌측 아주 진하게 → 우측 옅게 (넷플릭스 썸네일식, 그린-블랙 틴트) */}
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(5,13,9,0.93) 0%, rgba(5,13,9,0.9) 40%, rgba(8,18,13,0.62) 64%, rgba(9,20,14,0.28) 100%)" }} />
+        {/* 전체 살짝 더 눌러 텍스트 대비 확보 */}
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 78%)" }} />
+        {/* 3. 상·하단 살짝 어둡게(로고·URL 가독성 + 깊이) */}
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.42) 100%)" }} />
 
         {/* 로고 (좌상단, 절제) */}
         <div style={{ display: "flex", alignItems: "center", position: "absolute", top: 52, left: 80 }}>
           <div style={{ display: "flex", width: 12, height: 12, borderRadius: 99, background: MINT, marginRight: 11 }} />
-          <div style={{ display: "flex", fontSize: 24, fontWeight: 800, color: "rgba(255,255,255,0.92)", letterSpacing: "-0.5px" }}>주말에뭐하지</div>
+          <div style={{ display: "flex", fontSize: 24, fontWeight: 800, color: "rgba(255,255,255,0.95)", letterSpacing: "-0.5px", textShadow: "0 2px 10px rgba(0,0,0,0.5)" }}>주말에뭐하지</div>
         </div>
 
-        {/* 텍스트 블록 (좌측, 수직 중앙, 좌측 정렬) */}
-        <div style={{ display: "flex", flexDirection: "column", position: "absolute", left: 80, top: 0, width: 780, height: 630, justifyContent: "center" }}>
-          <div style={{ display: "flex", fontSize: 23, fontWeight: 500, color: "#B0B0B0", letterSpacing: "6px" }}>전국 무료·저렴 문화생활</div>
+        {/* 텍스트 블록 (좌측, 수직 중앙, 전부 흰색) */}
+        <div style={{ display: "flex", flexDirection: "column", position: "absolute", left: 80, top: 0, width: 720, height: 630, justifyContent: "center" }}>
+          <div style={{ display: "flex", fontSize: 23, fontWeight: 500, color: "#D0D0D0", letterSpacing: "6px", textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}>전국 무료·저렴 문화생활</div>
 
           <div style={{ display: "flex", alignItems: "baseline", marginTop: 16, letterSpacing: "-5px" }}>
-            <div style={{ display: "flex", fontSize: 114, fontWeight: 800, color: "#FFFFFF", lineHeight: 1, paddingRight: 20 }}>주말에</div>
-            <div style={{ display: "flex", fontSize: 114, fontWeight: 800, color: MINT, lineHeight: 1 }}>뭐하지?</div>
+            <div style={{ display: "flex", fontSize: 116, fontWeight: 800, color: "#FFFFFF", lineHeight: 1, paddingRight: 20, textShadow: "0 3px 18px rgba(0,0,0,0.55)" }}>주말에</div>
+            <div style={{ display: "flex", fontSize: 116, fontWeight: 800, color: MINT, lineHeight: 1, textShadow: "0 3px 18px rgba(0,0,0,0.5)" }}>뭐하지?</div>
           </div>
 
-          <div style={{ display: "flex", fontSize: 30, fontWeight: 500, color: "rgba(255,255,255,0.82)", letterSpacing: "0.5px", marginTop: 24 }}>문화행사 · 나들이 · 캠핑</div>
+          <div style={{ display: "flex", fontSize: 30, fontWeight: 500, color: "#FFFFFF", letterSpacing: "0.5px", marginTop: 24, textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}>문화행사 · 나들이 · 캠핑</div>
 
-          {/* 고정 문구 — 다크 글래스 알약 (매일 바뀌는 숫자 대신) */}
-          <div style={{ display: "flex", alignItems: "center", marginTop: 36, background: "rgba(18,26,22,0.5)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 999, padding: "13px 26px" }}>
-            <div style={{ display: "flex", fontSize: 25, fontWeight: 500, color: "rgba(255,255,255,0.9)", letterSpacing: "0.2px" }}>이번 주말, 어디 갈지 여기서 정하세요</div>
-          </div>
+          {/* 고정 문구 — 알약 없이 흰 텍스트 (어두운 오버레이 위) */}
+          <div style={{ display: "flex", fontSize: 25, fontWeight: 500, color: "rgba(255,255,255,0.88)", letterSpacing: "0.2px", marginTop: 26, textShadow: "0 2px 12px rgba(0,0,0,0.55)" }}>이번 주말, 어디 갈지 여기서 정하세요</div>
         </div>
 
         {/* 도메인 (우하단, 은은하게) */}
-        <div style={{ display: "flex", position: "absolute", right: 56, bottom: 42, fontSize: 22, fontWeight: 500, color: "rgba(255,255,255,0.6)", letterSpacing: "1.5px" }}>mwohaji.kr</div>
+        <div style={{ display: "flex", position: "absolute", right: 56, bottom: 42, fontSize: 22, fontWeight: 500, color: "rgba(255,255,255,0.7)", letterSpacing: "1.5px", textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}>mwohaji.kr</div>
       </div>
     ),
     {
