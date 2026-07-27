@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import SearchBox from "./SearchBox";
+import BackButton from "./BackButton";
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-[1280px] items-center gap-3 px-5 py-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex w-full max-w-[1280px] items-center gap-2 px-4 py-3 sm:gap-3 sm:px-6 lg:px-8">
+        <BackButton />
         <Link href="/" aria-label={`${SITE.name} 홈`} className="flex shrink-0 items-center gap-1.5">
           <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 shrink-0 text-free sm:h-7 sm:w-7">
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />

@@ -9,7 +9,7 @@ import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 type Key = "loc" | "free" | "season" | "date";
 interface NearItem { id: string; title: string; area: string; image: string; url: string; dist: string }
 
-export default function QuickEntry({ seasonLabel, seasonEmoji, seasonTerms }: { seasonLabel: string; seasonEmoji: string; seasonTerms: string[] }) {
+export default function QuickEntry({ seasonLabel, seasonEmoji, seasonTerms, dateThemes }: { seasonLabel: string; seasonEmoji: string; seasonTerms: string[]; dateThemes: string[] }) {
   const router = useRouter();
   const [open, setOpen] = useState<Key | null>(null);
 
@@ -48,9 +48,9 @@ export default function QuickEntry({ seasonLabel, seasonEmoji, seasonTerms }: { 
           }} />
       )}
       {open === "date" && (
-        <ThemePanel title="💑 데이트" hint="맛집·장소·야경을 고르고(여러 개 가능) 지역을 누르세요"
-          themes={["맛집", "전시", "야경"]} onGo={(region, terms) => {
-            const q = [region, ...(terms.length ? terms : ["전시"])].filter(Boolean).join(" ");
+        <ThemePanel title="💑 데이트" hint="테마를 고르고(여러 개 가능) 지역을 누르세요"
+          themes={dateThemes} onGo={(region, terms) => {
+            const q = [region, ...(terms.length ? terms : [dateThemes[0]])].filter(Boolean).join(" ");
             router.push(`/search?q=${enc(q)}`);
           }} />
       )}

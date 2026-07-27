@@ -46,7 +46,8 @@ export default function SearchBox({
     setOpen(false);
   }
 
-  const pad = size === "lg" ? "h-14 text-base" : size === "sm" ? "h-9 text-sm" : "h-11 text-sm";
+  // 높이만 크기별로. 폰트는 항상 16px 이상 → iOS 자동 줌 방지(모바일 검색창 확대 오류 수정)
+  const pad = size === "lg" ? "h-14" : size === "sm" ? "h-9" : "h-11";
 
   return (
     <form onSubmit={(e) => { e.preventDefault(); go(q); }} className="relative w-full" role="search">
@@ -60,7 +61,7 @@ export default function SearchBox({
         aria-label="검색"
         autoComplete="off"
         className={[
-          "w-full rounded-full border border-black/10 bg-white pl-11 pr-4 font-medium text-ink shadow-sm outline-none transition",
+          "w-full rounded-full border border-black/10 bg-white pl-11 pr-4 text-[16px] font-medium text-ink shadow-sm outline-none transition",
           "placeholder:text-ink-faint focus:border-free/50 focus:ring-2 focus:ring-free/20",
           pad,
         ].join(" ")}

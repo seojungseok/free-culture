@@ -10,6 +10,7 @@ import BigEventModal from "@/components/BigEventModal";
 import { Band, Container } from "@/components/Band";
 import { SITE } from "@/lib/site";
 import { season } from "@/lib/finder";
+import { search } from "@/lib/search";
 import QuickEntry from "@/components/QuickEntry";
 
 export const metadata: Metadata = {
@@ -27,8 +28,14 @@ export default function HomePage() {
   const campCount = getCampCount();
   const s = season();
 
-  // 인기 검색어 — 대한민국 대표 명소(캠핑 제외, 내용 풍부한 곳). 검색 데이터 쌓이면 실제 인기어로 대체 예정.
-  const popular = ["에버랜드", "경복궁", "해운대", "남산타워", "롯데월드", "국립중앙박물관", "전주한옥마을", "오션월드", "불국사", "수원화성", "감천문화마을", "남이섬", "속초", "강릉", "여수"];
+  // 데이트·계절 테마 — 실제 검색 결과 있는 항목만(빈손 버튼 금지)
+  const richThemes = (cands: string[], min: number) => cands.filter((t) => search(t).total >= min);
+  const dateThemes = richThemes(["전시", "공원", "전망대", "야경", "맛집", "드라이브"], 20);
+  const seasonThemes = richThemes(s.terms, 10);
+
+  // 인기 검색어 — 결과 풍부한 지역·명소만(캠핑 제외). 검색 데이터 쌓이면 실제 인기어로 대체 예정.
+  const POP_CANDS = ["경주", "전주", "여수", "강릉", "속초", "통영", "안동", "춘천", "수원", "해운대", "포항", "목포", "군산", "가평", "남해", "양양", "거제"];
+  const popular = POP_CANDS.map((t) => ({ t, n: search(t).total })).filter((x) => x.n >= 40).sort((a, b) => b.n - a.n).slice(0, 15).map((x) => x.t);
 
   // 문화행사 미리보기 (무료 먼저, 진행 중/예정, 이미지 있는 것 14개 = 2줄)
   const today = todayYmd();
@@ -75,7 +82,7 @@ export default function HomePage() {
         <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">⚡ 빠른 진입</h2>
         <p className="mt-0.5 text-[13px] text-ink-faint">원하는 방식을 누르고 지역·조건을 골라보세요.</p>
         <div className="mt-3">
-          <QuickEntry seasonLabel={s.label} seasonEmoji={s.emoji} seasonTerms={s.terms} />
+          <QuickEntry seasonLabel={s.label} seasonEmoji={s.emoji} seasonTerms={seasonThemes} dateThemes={dateThemes} />
         </div>
       </Band>
 
@@ -85,7 +92,8 @@ export default function HomePage() {
         <p className="mt-0.5 text-[13px] text-ink-faint">대한민국 대표 명소부터 시작해요.</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {popular.map((p, i) => (
-            <Link key={p} href={`/search?q=${encodeURIComponent(p)}`} className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-1.5 text-[13.5px] font-semibold text-ink-soft transition hover:border-free/40 hover:text-free">
+            <Link key={p} href={`/search?q=${encodeURIComponent(p)}`}
+              className={["items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-1.5 text-[13.5px] font-semibold text-ink-soft transition hover:border-free/40 hover:text-free", i >= 10 ? "hidden sm:inline-flex" : "inline-flex"].join(" ")}>
               <span className="text-[12px] font-black text-free">{i + 1}</span>{p}
             </Link>
           ))}
