@@ -9,6 +9,10 @@
     "lint": "next lint",
     "collect": "node scripts/collect.mjs",
     "collect:tour": "node scripts/collectTour.mjs",
+    "collect:intro": "node scripts/collectIntro.mjs",
+    "collect:info": "node scripts/collectInfo.mjs",
+    "collect:restaurants": "node scripts/collectRestaurants.mjs",
+    "collect:festivals": "node scripts/collectFestivals.mjs",
     "articles": "node scripts/generateArticles.mjs",
     "articles:publish": "node scripts/publishDrafts.mjs",
     "test:gemini": "node scripts/testGemini.mjs"

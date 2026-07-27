@@ -1,0 +1,56 @@
+name: 방문팁·볼거리 백필 (detailIntro2·detailInfo2)
+
+# 나들이 상세의 방문 팁(detailIntro2)·볼거리(detailInfo2)를 점진 수집해
+# data/place-intro.json / data/place-info.json 에 캐시. 며칠에 걸쳐 완주.
+#
+# ⚠️ 일 1,000회 한도는 입장료 백필(fees.yml)과 공유. 스크립트가 한도 초과 시
+#    진행분을 저장하고 자동 중단하므로 안전(다음날 이어서). 캡은 보수적으로.
+on:
+  schedule:
+    - cron: "0 16 * * *" # UTC 16:00 = KST 01:00 (fees 05:30·데이터갱신과 분리)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tour-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 축제 수집 (searchFestival2) — 먼저(저비용, 진행/예정 갱신)
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: node scripts/collectFestivals.mjs
+
+      - name: 방문 팁 수집 (detailIntro2)
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          INTRO_DAILY: "450"
+        run: node scripts/collectIntro.mjs
+
+      - name: 볼거리 수집 (detailInfo2)
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          INFO_DAILY: "450"
+        run: node scripts/collectInfo.mjs
+
+      - name: 변경분 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/place-intro.json data/place-info.json data/festivals.json
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 건너뜀"
+          else
+            git commit -m "chore: 방문팁·볼거리 백필 ($(date -u +%Y-%m-%d))"
+            git push
+          fi

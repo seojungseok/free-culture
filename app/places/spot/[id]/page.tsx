@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { getTourById, tourTypeLabel } from "@/lib/tour";
 import { getArticle } from "@/lib/articles";
 import { fetchPlaceOverview, fetchPlaceImages, fetchAdmission } from "@/lib/tourDetail";
+import { getAdmission } from "@/lib/fees";
+import { getIntro, introRows, getInfo } from "@/lib/tourExtra";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
@@ -83,10 +85,17 @@ export default async function SpotDetailPage({
   if (!spot) notFound();
 
   const article = getArticle(id); // 발행된 자체 소개글(있으면 본문으로)
+
+  // 방문 팁·볼거리: 미리 수집한 캐시로만 서빙(런타임 API 호출 없음)
+  const tipRows = introRows(id);
+  const facilities = getInfo(id);
+  // 입장료: 캐시 우선(intro → fees) → 없을 때만 런타임 조회(ISR 1주 캐시)
+  const cachedAdmission = getIntro(id)?.admission ?? getAdmission(id);
+
   const [detail, extraImages, admission] = await Promise.all([
     fetchPlaceOverview(id),
     fetchPlaceImages(id),
-    fetchAdmission(id, spot.type),
+    cachedAdmission ? Promise.resolve(cachedAdmission) : fetchAdmission(id, spot.type),
   ]);
   const overview = detail.overview;
   const homepage = detail.homepage;
@@ -215,6 +224,36 @@ export default async function SpotDetailPage({
           </div>
         )}
       </dl>
+
+      {/* 방문 정보 (detailIntro2 캐시) — 이용시간·휴무일·주차·요금 등 */}
+      {tipRows.length > 0 && (
+        <section className="mt-6">
+          <h2 className="mb-2 text-[16px] font-extrabold text-ink">🧭 방문 정보</h2>
+          <dl className="divide-y divide-line rounded-2xl border border-line bg-white">
+            {tipRows.map((r) => (
+              <div key={r.label} className="flex gap-3 px-4 py-3">
+                <dt className="w-16 shrink-0 text-[13px] font-bold text-ink-faint">{r.label}</dt>
+                <dd className="min-w-0 flex-1 whitespace-pre-line text-[14px] text-ink">{r.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+
+      {/* 볼거리·시설 (detailInfo2 캐시) — 부대시설·세부 안내 */}
+      {facilities.length > 0 && (
+        <section className="mt-6">
+          <h2 className="mb-2 text-[16px] font-extrabold text-ink">🖼️ 볼거리·시설</h2>
+          <div className="space-y-2.5">
+            {facilities.map((f, i) => (
+              <div key={i} className="rounded-2xl border border-line bg-white px-4 py-3">
+                {f.name && <div className="text-[14px] font-bold text-ink">{f.name}</div>}
+                {f.text && <p className="mt-0.5 whitespace-pre-line text-[13.5px] leading-[1.7] text-ink-soft">{f.text}</p>}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <div className="mt-5 flex flex-wrap gap-2.5">
         {mapUrl && (
