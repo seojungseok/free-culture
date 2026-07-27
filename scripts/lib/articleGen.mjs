@@ -79,10 +79,67 @@ function stripMd(md) {
     .trim();
 }
 
+// ── 3단계: 금지 표현(근거 없는 미사여구) / 추측성 문장 검사 ──
+// 근거 없는 미사여구 — 하나라도 있으면 반려/재작성 대상
+export const VAGUE_BANNED = [
+  "유명한", "유명세", "맛있기로 소문난", "소문난 맛집", "인기 있는", "인기있는", "인기 만점",
+  "현지인 맛집", "현지인들이 즐겨찾는", "현지인이 사랑하는",
+  "다채로운 경험", "다채로운 볼거리", "다양한 볼거리와 즐길", "다양한 즐길 거리를",
+  "경험을 선사", "즐거움을 선사", "즐거움을 선물", "특별한 시간을 선사", "특별한 추억을 선사",
+  "잊지 못할 추억", "잊지 못할 경험", "힐링을 선사", "오감을 만족", "감동을 선사",
+];
+// 추측성(불확실한 존재를 단정처럼 말하는) 패턴 — 여러 개면 속 빈 글
+export const SPECULATIVE_PATTERNS = [
+  /열릴 수 있|열릴 경우|열릴 예정|열리기도 합니다/,
+  /운영될 수 있|운영될 경우|운영되고 있을|운영하기도/,
+  /제공할 수 있|제공될 수 있|제공하기도 합니다/,
+  /것입니다|것이에요|것으로 보|것으로 예상|일 것으로/,
+  /기회가 될|기회를 제공/,
+  /만날 수 있습니다|만나볼 수 있습니다|경험할 수 있습니다/,
+  /즐길 수 있는 (공간|곳)입니다|즐길 수 있습니다/,
+  /선사합니다|선사해요|선사할 거예요/,
+  /있을 것으로|듯합니다|듯해요|일 수도 있/,
+];
+
+function sentences(text) {
+  // 소제목(#)·목록(-,*) 줄 제외 → 본문 서술문만 대상
+  const body = String(text || "")
+    .split(/\r?\n/)
+    .filter((l) => l.trim() && !/^#{1,6}\s/.test(l) && !/^\s*[-*]\s/.test(l))
+    .join(" ")
+    .replace(/\*\*/g, "");
+  return body.split(/(?<=[.!?]|[요다])\s+/).map((s) => s.trim()).filter((s) => s.length > 4);
+}
+export function vagueHits(text) {
+  const b = String(text || "");
+  return VAGUE_BANNED.filter((w) => b.includes(w));
+}
+export function speculativeHits(text) {
+  return sentences(text).filter((s) => SPECULATIVE_PATTERNS.some((re) => re.test(s)));
+}
+export function speculativeRatio(text) {
+  const s = sentences(text);
+  return s.length ? speculativeHits(text).length / s.length : 0;
+}
+/** 방문 팁 목록이 전부 "정보 없음"인지 */
+export function tipsAllEmpty(text) {
+  const tipLines = String(text || "").match(/^\s*[-*]\s*\*\*[^*]+\*\*\s*:.*/gm) || [];
+  if (!tipLines.length) return false;
+  return tipLines.every((l) => /정보\s*없음/.test(l));
+}
+
 // ── 자동 품질검사 (통과분만 발행) ──
 export function qualityCheck(text, { overview = "", existingTexts = [] } = {}) {
   const body = String(text || "").trim();
   const len = stripMd(body).length;
+
+  // 3단계: 근거 없는 미사여구·추측성 문장 반려
+  const vh = vagueHits(body);
+  if (vh.length) return { ok: false, reason: `근거없는 미사여구(${vh.slice(0, 3).join(",")})`, len };
+  const spec = speculativeHits(body);
+  const sr = speculativeRatio(body);
+  if (spec.length >= 2 || sr > 0.25)
+    return { ok: false, reason: `추측성 문장 ${spec.length}개(${(sr * 100).toFixed(0)}%)`, len };
 
   // 원본 풍부 700~900, 빈약/안전버전 300~500 허용(짧은 게 틀린 것보다 나음). 하한 300.
   if (len < 300) return { ok: false, reason: `길이 ${len}자(너무 짧음)`, len };
@@ -143,9 +200,11 @@ ${article}
 ## 작업 1 - 팩트체크
 - 글에 원본에 없는 사실(연도·인물·사건·구체적 수치)이 있으면 FAIL. 어느 문장인지 reason에 지목.
 - 일반적 서술("오랜 역사를 지닌" 등)은 허용.
+- 추측성 문장("열릴 수 있습니다","운영될 경우","~것입니다","만날 수 있습니다")이 다수(2개 이상)면 FAIL.
 
 ## 작업 2 - SEO·가독성 개선 (PASS인 경우만)
 - 원본에 있는 사실 범위 내에서만 개선한다. 새 사실(연도·인물·사건·수치) 절대 추가 금지.
+- ★ 금지 표현 제거: "유명한/인기 있는/맛있기로 소문난/현지인 맛집/다채로운 경험·볼거리/즐거움을 선사/특별한 시간을 선사" 같은 근거 없는 미사여구와 "~할 수 있습니다/열릴 경우/운영될 경우/~것입니다" 같은 추측 표현은 삭제하거나 근거 있는 구체 표현으로 교체한다. 근거가 없으면 그 문장을 통째로 뺀다(짧아져도 됨).
 - ★ 분량은 700~900자를 지향한다. 원본 근거가 충분하면 문장을 줄이지 말고, 오히려 근거 안에서 풀어 써 채운다.
 - 개선: 어색한 문장 자연스럽게 / SEO 키워드(지역명+장소유형) 문맥에 맞게 보강 / 소제목(##)·문단 구조 정리 / 뻔한 미사여구("특별한 시간을 선사" 등)를 원본 근거의 구체적 표현으로.
 - 형식 유지: 첫 줄 굵은 한 문장 + ## 어떤 곳인가요 / ## 볼거리·즐길거리 / (## 아이·가족과 함께라면) / ## 방문 팁(목록). 친근한 ~해요체.
@@ -238,9 +297,33 @@ const EXAMPLES = `<예시1>
 시설별 운영 시간은 달라질 수 있으니, 방문 전 공식 홈페이지에서 확인하는 것을 권해요.
 </예시1>`;
 
+// detailIntro 공통 스키마 → 방문 팁 라벨(생성 프롬프트에 넣을 사실)
+const INTRO_LABEL = {
+  usetime: "이용시간", restdate: "휴무일", fee: "이용요금", discountinfo: "할인정보",
+  parking: "주차", parkingfee: "주차요금", reservation: "예약", openperiod: "운영기간",
+  babycarriage: "유모차 대여", pet: "반려동물", creditcard: "신용카드", infocenter: "문의처",
+  firstmenu: "대표메뉴", treatmenu: "취급메뉴", kidsfacility: "어린이 시설",
+};
+/** 2단계 수집분(intro·info)을 "사실 목록"으로 포맷 — 프롬프트에 주입 */
+export function buildFactsBlock({ intro, info } = {}) {
+  const lines = [];
+  if (intro) {
+    const rows = Object.entries(INTRO_LABEL)
+      .filter(([k]) => intro[k] && String(intro[k]).trim())
+      .map(([k, label]) => `- ${label}: ${String(intro[k]).replace(/\s+/g, " ").trim()}`);
+    if (rows.length) lines.push(`[운영 정보 — 방문 팁에 이 값만 사용, 값 있는 항목만 넣고 없는 항목은 줄째 빼기]\n${rows.join("\n")}`);
+  }
+  if (info && info.length) {
+    const rows = info.slice(0, 8).map((x) => `- ${[x.name, x.text].filter(Boolean).join(": ")}`);
+    lines.push(`[실제 시설·볼거리 — 볼거리·즐길거리는 아래 이름만 사용]\n${rows.join("\n")}`);
+  }
+  return lines.join("\n\n");
+}
+
 // ── 프롬프트 생성 ──
-export function buildPrompt(place, overview = "") {
+export function buildPrompt(place, overview = "", extras = {}) {
   const type = tourTypeLabel(place.type);
+  const facts = buildFactsBlock(extras);
   const ref = overview
     ? `[사실 근거 — 아래 내용에 있는 사실만 사용하세요]
 """${overview}"""`
@@ -256,6 +339,11 @@ export function buildPrompt(place, overview = "") {
 [주소] ${place.addr}
 
 ${ref}
+${facts ? `\n${facts}\n` : ""}
+[🚫 금지 표현 — 하나도 쓰지 말 것 (근거 없는 미사여구·추측)]
+- "유명한", "인기 있는", "맛있기로 소문난", "현지인 맛집", "다채로운 경험/볼거리", "즐거움을 선사", "특별한 시간을 선사"
+- "~할 수 있습니다", "열릴 경우", "운영될 경우", "~것입니다", "제공할 수 있는", "만날 수 있습니다" 같은 추측·불확실 표현
+- 근거에 없으면 그 항목 자체를 쓰지 말 것(빈 말로 채우지 말 것). 확실한 사실만.
 
 [⚠️ 사실 정확성 — 가장 중요]
 - 사실 근거에 **없는** 인물 이름·건립 연도·역사적 사건·건립 배경을 **절대 지어내지 마세요.** (틀린 정보는 최악입니다.)
@@ -274,7 +362,7 @@ ${ref}
 - 맨 위 첫 줄: 그 장소 특징을 담은 매력적인 한 문장을 **굵게**(뻔한 인사 금지, 장소마다 다르게).
 - 소제목 4개(순서: ## 어떤 곳인가요, ## 볼거리·즐길거리, ## 아이·가족과 함께라면, ## 방문 팁).
 - 문단 2~4문장, 사이 빈 줄. 한 덩어리 금지.
-- ## 방문 팁은 목록(-), 라벨 굵게: **입장료**, **관람 시간**, **주차**, **추천 시기**. (근거에 값이 없으면 "정보 없음 — 방문 전 공식 홈페이지 확인 권장".)
+- ## 방문 팁은 목록(-), 라벨 굵게: 위 [운영 정보]에 **값이 있는 항목만** 넣으세요(예: **이용시간**, **휴무일**, **주차**, **이용요금**). 값이 없는 항목은 줄째 빼고, "정보 없음"을 여러 줄 반복하지 마세요. 운영 정보가 하나도 없으면 방문 팁 목록에 **추천 시기** 한 줄 정도만.
 - **굵게**는 핵심 키워드만(명소명·지역명·입장료·계절), 문단당 2~3개.
 
 [SEO]

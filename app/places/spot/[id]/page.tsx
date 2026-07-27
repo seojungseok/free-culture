@@ -6,6 +6,8 @@ import { getArticle } from "@/lib/articles";
 import { fetchPlaceOverview, fetchPlaceImages, fetchAdmission } from "@/lib/tourDetail";
 import { getAdmission } from "@/lib/fees";
 import { getIntro, introRows, getInfo } from "@/lib/tourExtra";
+import { nearbyPlaces, nearbyRestaurants, distanceLabel, foodTypeLabel } from "@/lib/nearby";
+import TourCard from "@/components/TourCard";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
@@ -89,6 +91,9 @@ export default async function SpotDetailPage({
   // 방문 팁·볼거리: 미리 수집한 캐시로만 서빙(런타임 API 호출 없음)
   const tipRows = introRows(id);
   const facilities = getInfo(id);
+  // 주변 나들이 장소·맛집: 좌표 거리 계산(결정론적, 사실만)
+  const nearPlaces = nearbyPlaces(spot, 5);
+  const nearFood = nearbyRestaurants(spot, 3);
   // 입장료: 캐시 우선(intro → fees) → 없을 때만 런타임 조회(ISR 1주 캐시)
   const cachedAdmission = getIntro(id)?.admission ?? getAdmission(id);
 
@@ -255,7 +260,37 @@ export default async function SpotDetailPage({
         </section>
       )}
 
-      <div className="mt-5 flex flex-wrap gap-2.5">
+      {/* 주변에서 식사하기 (좌표 거리 계산, restaurants.json) */}
+      {nearFood.length > 0 && (
+        <section className="mt-6">
+          <h2 className="mb-2 text-[16px] font-extrabold text-ink">🍽️ 주변에서 식사하기</h2>
+          <div className="divide-y divide-line rounded-2xl border border-line bg-white">
+            {nearFood.map((r) => (
+              <Link key={r.id} href={`/places/spot/${r.id}`} className="flex items-center gap-3 px-4 py-3 hover:bg-tint/40">
+                <span className="min-w-0 flex-1">
+                  <span className="text-[14px] font-bold text-ink">{r.title}</span>
+                  <span className="ml-1.5 text-[12px] text-ink-faint">{foodTypeLabel(r)}</span>
+                </span>
+                <span className="shrink-0 text-[12.5px] font-semibold text-free">{distanceLabel(r.dist)}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* 주변 나들이 장소 (같은 지역, 가까운 순) */}
+      {nearPlaces.length > 0 && (
+        <section className="mt-6">
+          <h2 className="mb-3 text-[16px] font-extrabold text-ink">📍 주변 나들이 장소</h2>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 md:grid-cols-5">
+            {nearPlaces.map((p) => (
+              <TourCard key={p.id} spot={p} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <div className="mt-8 flex flex-wrap gap-2.5">
         {mapUrl && (
           <a
             href={mapUrl}

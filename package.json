@@ -14,6 +14,7 @@
     "collect:restaurants": "node scripts/collectRestaurants.mjs",
     "collect:festivals": "node scripts/collectFestivals.mjs",
     "articles": "node scripts/generateArticles.mjs",
+    "audit": "node scripts/auditArticles.mjs",
     "articles:publish": "node scripts/publishDrafts.mjs",
     "test:gemini": "node scripts/testGemini.mjs"
   },

@@ -34,6 +34,9 @@ jobs:
       - name: 의존성 설치
         run: npm ci
 
+      - name: 발행글 재점검 — 재작성 대상 표시(needsRewrite)
+        run: node scripts/auditArticles.mjs --write
+
       - name: 생성·검증·발행 (3중 안전망, 램프업만큼)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
