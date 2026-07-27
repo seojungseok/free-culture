@@ -69,10 +69,10 @@ export default async function OpengraphImage() {
             <div style={{ display: "flex", fontSize: 116, fontWeight: 800, color: MINT, lineHeight: 1, textShadow: "0 3px 18px rgba(0,0,0,0.5)" }}>뭐하지?</div>
           </div>
 
-          <div style={{ display: "flex", fontSize: 30, fontWeight: 500, color: "#FFFFFF", letterSpacing: "0.5px", marginTop: 24, textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}>문화행사 · 나들이 · 캠핑</div>
+          <div style={{ display: "flex", fontSize: 44, fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", marginTop: 24, textShadow: "0 2px 14px rgba(0,0,0,0.55)" }}>문화행사 · 나들이 · 캠핑</div>
 
           {/* 고정 문구 — 알약 없이 흰 텍스트 (어두운 오버레이 위) */}
-          <div style={{ display: "flex", fontSize: 25, fontWeight: 500, color: "rgba(255,255,255,0.88)", letterSpacing: "0.2px", marginTop: 26, textShadow: "0 2px 12px rgba(0,0,0,0.55)" }}>이번 주말, 어디 갈지 여기서 정하세요</div>
+          <div style={{ display: "flex", fontSize: 26, fontWeight: 500, color: "rgba(255,255,255,0.82)", letterSpacing: "0.3px", marginTop: 20, textShadow: "0 2px 12px rgba(0,0,0,0.55)" }}>전국 나들이·캠핑·문화행사</div>
         </div>
 
         {/* 도메인 (우하단, 은은하게) */}
