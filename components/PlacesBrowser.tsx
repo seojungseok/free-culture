@@ -75,7 +75,7 @@ export default function PlacesBrowser({
       {/* 지역 탭 */}
       <div className="sticky top-[57px] z-30 border-b border-line bg-white/95 backdrop-blur">
         <Container className="py-2.5">
-          <div className="flex gap-1.5 overflow-x-auto no-scrollbar">
+          <div className="flex gap-1.5 gap-y-2 overflow-x-auto no-scrollbar md:flex-wrap md:overflow-visible">
             <AreaChip active={!area} label="전체" count={grandTotal} onClick={() => pick("")} />
             {areas.map((a) => (
               <AreaChip
@@ -93,7 +93,7 @@ export default function PlacesBrowser({
       <Container className="pb-12 pt-4">
         {/* 유형 필터 */}
         {!kidOnly && (
-          <div className="mb-4 flex gap-1.5 overflow-x-auto no-scrollbar">
+          <div className="mb-4 flex gap-1.5 gap-y-2 overflow-x-auto no-scrollbar md:flex-wrap md:overflow-visible">
             {TYPE_TABS.map((t) => {
               const n = typeCounts[t.key];
               const disabled = t.key !== "all" && n === 0;
@@ -122,7 +122,7 @@ export default function PlacesBrowser({
 
         <div className="mb-1 flex items-baseline gap-2">
           <h2 className="text-[20px] font-extrabold tracking-tight text-ink sm:text-[22px]">
-            {area || "전국"} 가볼만한 곳
+            {area || "전국"} 나들이
           </h2>
           <span className="text-[14px] font-bold text-free">
             {(isNationSample ? grandTotal : filtered.length).toLocaleString()}곳

@@ -43,7 +43,7 @@ export default function KidsPage() {
           {/* 관광지 (TourAPI) — 문화행사와 구분 */}
           {tours.length > 0 && (
             <section className="mt-14 border-t border-line pt-8">
-              <h2 className="text-[18px] font-extrabold text-ink">🏞️ 아이와 가볼만한 곳</h2>
+              <h2 className="text-[18px] font-extrabold text-ink">🏞️ 아이와 나들이</h2>
               <p className="mt-1 text-[13px] text-ink-faint">
                 박물관·과학관·수목원·테마파크 등 아이와 나들이하기 좋은 전국 명소 (지도 링크 제공)
               </p>

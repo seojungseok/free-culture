@@ -26,7 +26,7 @@ export default function Header() {
             문화행사
           </Link>
           <Link href="/places" className="rounded-full px-3 py-1.5 text-[14px] font-bold text-ink-soft transition hover:bg-tint hover:text-free">
-            가볼만한 곳
+            나들이
           </Link>
         </nav>
 

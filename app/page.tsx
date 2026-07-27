@@ -56,7 +56,7 @@ export default function HomePage() {
         </h1>
         <p className="mt-1.5 text-center text-[14px] font-semibold text-ink-soft sm:text-[15px]">
           전국 <b className="text-free">무료·저렴 문화행사</b>와{" "}
-          <b className="text-free">아이와 가볼만한 곳</b>을 매일 새로 모았어요
+          <b className="text-free">아이와 나들이 명소</b>를 매일 새로 모았어요
         </p>
 
         {/* 최상위: 대분류 2개 */}
@@ -70,8 +70,8 @@ export default function HomePage() {
           <CategoryButton
             href="/places"
             emoji="🏞️"
-            title="가볼만한 곳"
-            sub={`나들이 명소 ${placeCount.toLocaleString()}곳`}
+            title="나들이"
+            sub={`가볼만한 곳 ${placeCount.toLocaleString()}곳`}
           />
         </div>
 
@@ -102,10 +102,10 @@ export default function HomePage() {
       {/* 가볼만한 곳 미리보기 (2줄) */}
       <PreviewSection
         emoji="🏞️"
-        title="가볼만한 곳"
+        title="나들이"
         desc="박물관·과학관·체험 등 아이와 나들이하기 좋은 곳"
         href="/places"
-        moreLabel={`가볼만한 곳 전체 보기 (${placeCount.toLocaleString()}곳)`}
+        moreLabel={`나들이 명소 전체 보기 (${placeCount.toLocaleString()}곳)`}
         tone="panel"
       >
         <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-7 preview-2rows">

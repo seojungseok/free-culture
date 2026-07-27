@@ -46,7 +46,7 @@ export async function generateMetadata({
       ? `${base.slice(0, 155)}…`
       : base
     : `${spot.area}에서 가볼만한 ${type}, ${spot.title}. 위치·지도·사진과 방문 정보를 확인하세요.`;
-  const title = `${spot.title} — ${spot.area} 가볼만한 곳`;
+  const title = `${spot.title} — ${spot.area} 나들이·가볼만한 곳`;
   return {
     title,
     description,
@@ -141,7 +141,7 @@ export default async function SpotDetailPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "가볼만한 곳", item: `${SITE.url}/places` },
+      { "@type": "ListItem", position: 1, name: "나들이", item: `${SITE.url}/places` },
       { "@type": "ListItem", position: 2, name: spot.area, item: `${SITE.url}/places/${areaSlug}` },
       { "@type": "ListItem", position: 3, name: spot.title, item: canonical },
     ],
@@ -152,7 +152,7 @@ export default async function SpotDetailPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <nav className="mb-3 flex flex-wrap items-center gap-1 text-[12.5px] text-ink-faint">
-        <Link href="/places" className="hover:text-free">가볼만한 곳</Link>
+        <Link href="/places" className="hover:text-free">나들이</Link>
         <span>›</span>
         {areaSlug ? (
           <Link href={`/places/${areaSlug}`} className="hover:text-free">{spot.area}</Link>

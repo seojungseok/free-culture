@@ -27,7 +27,7 @@ export async function generateMetadata({
   return {
     title: `${sido} 문화행사 — 무료·저렴한 전시·공연`,
     description: `${sido}에서 지금 열리는 전시·공연·문화행사 ${n}건. 날짜별로 골라 보고 무료 행사를 먼저 확인하세요.`,
-    keywords: [`${sido} 문화행사`, `${sido} 무료 전시`, `${sido} 무료 공연`, `${sido} 가볼만한 곳`, `${sido} 주말 나들이`],
+    keywords: [`${sido} 문화행사`, `${sido} 무료 전시`, `${sido} 무료 공연`, `${sido} 나들이`, `${sido} 가볼만한 곳`, `${sido} 주말 나들이`],
     alternates: { canonical: `/region/${code}` },
   };
 }
@@ -82,7 +82,7 @@ export default async function RegionPage({
         <div className="border-t border-line bg-white">
           <Container className="pb-12 pt-8">
             <h2 className="text-[18px] font-extrabold text-ink">
-              🏞️ {sido} 아이와 가볼만한 곳
+              🏞️ {sido} 아이와 나들이
             </h2>
             <p className="mt-1 text-[13px] text-ink-faint">
               박물관·과학관·체험 등 {sido}에서 아이와 나들이하기 좋은 명소 (지도 링크 제공)

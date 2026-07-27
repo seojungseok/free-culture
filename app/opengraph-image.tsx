@@ -69,7 +69,7 @@ export default async function OpengraphImage() {
             주말에 뭐하지?
           </div>
           <div style={{ display: "flex", fontSize: 32, fontWeight: 700, color: "#EAFFF3", marginTop: 18, textShadow: shadow }}>
-            문화행사 · 아이와 가볼만한 곳
+            문화행사 · 나들이
           </div>
           <div style={{ display: "flex", marginTop: 30 }}>
             <div style={{ display: "flex", fontSize: 30, fontWeight: 800, color: "#04713F", background: "#ffffff", padding: "14px 30px", borderRadius: 999 }}>

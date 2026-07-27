@@ -25,8 +25,9 @@ export async function generateMetadata({
   if (!sido) return { title: "지역을 찾을 수 없습니다" };
   const n = getPlaces({ area: sido }).length;
   return {
-    title: `${sido} 가볼만한 곳 — 관광지·문화시설·체험 ${n.toLocaleString()}곳`,
+    title: `${sido} 나들이·가볼만한 곳 — 관광지·문화시설·체험 ${n.toLocaleString()}곳`,
     description: `${sido}에서 나들이하기 좋은 관광지·박물관·과학관·수목원·체험 명소 ${n.toLocaleString()}곳. 장소 소개와 지도·홈페이지 링크를 확인하세요.`,
+    keywords: [`${sido} 나들이`, `${sido} 가볼만한 곳`, `${sido} 주말 나들이`, `${sido} 관광지`, `${sido} 문화시설`],
     alternates: { canonical: `/places/${area}` },
   };
 }
@@ -48,7 +49,7 @@ export default async function PlacesAreaPage({
     <>
       <Band tone="tint" innerClassName="py-5">
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
-          <span className="text-free">{sido}</span> 가볼만한 곳
+          <span className="text-free">{sido}</span> 나들이
         </h1>
         <p className="mt-1 text-[14px] text-ink-soft">
           {sido}의 관광지·문화시설·체험 명소 {regionSpots.length.toLocaleString()}곳 — 유형·지도·소개 제공
