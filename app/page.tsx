@@ -11,7 +11,6 @@ import { Band, Container } from "@/components/Band";
 import { SITE } from "@/lib/site";
 import { season } from "@/lib/finder";
 import QuickEntry from "@/components/QuickEntry";
-import NearMe from "@/components/NearMe";
 
 export const metadata: Metadata = {
   title: `${SITE.name} · 이번 주말 갈 만한 전국 무료·저렴 문화행사`,
@@ -28,8 +27,8 @@ export default function HomePage() {
   const campCount = getCampCount();
   const s = season();
 
-  // 인기 검색어 — 대한민국 대표 명소(기본값). 검색 데이터 쌓이면 실제 인기어로 대체 예정.
-  const popular = ["에버랜드", "경복궁", "해운대", "남산타워", "롯데월드", "국립중앙박물관", "전주한옥마을", "오션월드", "불국사", "한라산", "속초", "강릉", "남이섬", "글램핑", "벚꽃"];
+  // 인기 검색어 — 대한민국 대표 명소(캠핑 제외, 내용 풍부한 곳). 검색 데이터 쌓이면 실제 인기어로 대체 예정.
+  const popular = ["에버랜드", "경복궁", "해운대", "남산타워", "롯데월드", "국립중앙박물관", "전주한옥마을", "오션월드", "불국사", "수원화성", "감천문화마을", "남이섬", "속초", "강릉", "여수"];
 
   // 문화행사 미리보기 (무료 먼저, 진행 중/예정, 이미지 있는 것 14개 = 2줄)
   const today = todayYmd();
@@ -62,44 +61,26 @@ export default function HomePage() {
         <p className="mt-1.5 text-center text-[14px] font-semibold text-ink-soft sm:text-[15px]">
           전국 <b className="text-free">문화행사·나들이·캠핑</b>, 무료로 저렴하게 즐기는 주말
         </p>
-      </Band>
 
-      {/* 내 주변 (위치 기반, 상단) */}
-      <Band tone="white" innerClassName="py-6">
-        <NearMe />
-      </Band>
-
-      {/* 빠른 진입 아이콘 — 전부 지역 기반 */}
-      <Band tone="panel" innerClassName="py-6">
-        <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">⚡ 빠른 진입</h2>
-        <p className="mt-0.5 text-[13px] text-ink-faint">아이콘을 누르고 지역을 고르면 바로 그 지역 결과로 가요.</p>
-        <div className="mt-3">
-          <QuickEntry seasonQuery={s.query} seasonLabel={s.label} seasonEmoji={s.emoji} />
-        </div>
-      </Band>
-
-      {/* 큰 카드 3개 (유지) */}
-      <Band tone="white" innerClassName="py-6">
-        <div className="mx-auto grid max-w-[640px] grid-cols-3 gap-3">
+        {/* 메인 카드 3개 — 제일 위 대표 */}
+        <div className="mx-auto mt-5 grid max-w-[680px] grid-cols-3 gap-2.5 sm:gap-3">
           <CategoryButton href="/events" emoji="🎭" title="문화행사" sub={<>전시·공연 <span className="whitespace-nowrap">{all.length.toLocaleString()}건</span></>} />
           <CategoryButton href="/places" emoji="🏞️" title="나들이" sub={<>가볼만한 곳 <span className="whitespace-nowrap">{placeCount.toLocaleString()}곳</span></>} />
           <CategoryButton href="/camping" emoji="⛺" title="캠핑" sub={<>전국 캠핑장 <span className="whitespace-nowrap">{campCount.toLocaleString()}곳</span></>} />
         </div>
       </Band>
 
-      {/* 계절 추천 (날짜 자동) */}
-      <Band tone="panel" innerClassName="py-7">
-        <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">{s.emoji} {s.label} 추천</h2>
-        <p className="mt-0.5 text-[13px] text-ink-faint">지금 계절에 딱 맞는 키워드로 골라보세요.</p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {s.terms.map((t) => (
-            <Link key={t} href={`/search?q=${encodeURIComponent(t)}`} className="rounded-full border border-line bg-white px-4 py-2 text-[14px] font-bold text-ink-soft transition hover:border-free/40 hover:text-free">{t}</Link>
-          ))}
+      {/* 빠른 진입 (4개만) */}
+      <Band tone="white" innerClassName="py-7">
+        <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">⚡ 빠른 진입</h2>
+        <p className="mt-0.5 text-[13px] text-ink-faint">원하는 방식을 누르고 지역·조건을 골라보세요.</p>
+        <div className="mt-3">
+          <QuickEntry seasonLabel={s.label} seasonEmoji={s.emoji} seasonTerms={s.terms} />
         </div>
       </Band>
 
       {/* 인기 검색어 */}
-      <Band tone="white" innerClassName="py-7">
+      <Band tone="panel" innerClassName="py-7">
         <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">🔥 인기 검색어</h2>
         <p className="mt-0.5 text-[13px] text-ink-faint">대한민국 대표 명소부터 시작해요.</p>
         <div className="mt-3 flex flex-wrap gap-2">

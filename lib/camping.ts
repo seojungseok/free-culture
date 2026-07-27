@@ -18,12 +18,13 @@ export function getAllCamps(): Camp[] { return data.camps || []; }
 export function getCampCount(): number { return data.count ?? (data.camps || []).length; }
 export function getCamp(id: string): Camp | undefined { return (data.camps || []).find((c) => c.id === id); }
 
-export interface CampFilter { area?: string; sigungu?: string; type?: string; facility?: string; facilities?: string[]; pet?: boolean }
+export interface CampFilter { area?: string; sigungu?: string; type?: string; types?: string[]; facility?: string; facilities?: string[]; pet?: boolean }
 export function filterCamps(f: CampFilter = {}): Camp[] {
   let list = data.camps || [];
   if (f.area) list = list.filter((c) => c.area === f.area);
   if (f.sigungu) list = list.filter((c) => c.sigungu === f.sigungu);
   if (f.type) list = list.filter((c) => c.types.includes(f.type!));
+  if (f.types && f.types.length) list = list.filter((c) => f.types!.every((t) => c.types.includes(t))); // 다중 유형 AND
   if (f.facility) list = list.filter((c) => c.facilities[f.facility!]);
   if (f.facilities && f.facilities.length) list = list.filter((c) => f.facilities!.every((fa) => c.facilities[fa])); // 다중 시설 AND
   if (f.pet) list = list.filter((c) => c.pet);

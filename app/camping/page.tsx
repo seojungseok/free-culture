@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { filterCamps, campAreaCounts, campTypeCounts, petCount, getCampCount, CAMP_TYPES, CAMP_FACILITIES, type CampFilter } from "@/lib/camping";
+import { filterCamps, campAreaCounts, petCount, getCampCount, CAMP_TYPES, CAMP_FACILITIES, type CampFilter } from "@/lib/camping";
 import CampCard from "@/components/CampCard";
 import { Band, Container } from "@/components/Band";
 
@@ -29,28 +29,26 @@ function qs(base: SP, patch: SP): string {
 
 export default async function CampingPage({ searchParams }: { searchParams: Promise<SP> }) {
   const sp = await searchParams;
+  const typeSel = (sp.type || "").split(",").map((x) => x.trim()).filter(Boolean);   // 다중 유형
   const facSel = (sp.facility || "").split(",").map((x) => x.trim()).filter(Boolean); // 다중 시설
-  const cur: CampFilter = { area: sp.area, type: sp.type, facilities: facSel, pet: sp.pet === "1" };
+  const cur: CampFilter = { area: sp.area, types: typeSel, facilities: facSel, pet: sp.pet === "1" };
   const list = filterCamps(cur);
 
   // 패싯 카운트 — 해당 차원을 뺀 나머지 필터 기준
-  const baseExcept = (dim: keyof CampFilter) =>
-    filterCamps({ ...cur, [dim]: dim === "pet" ? false : dim === "facilities" ? [] : undefined });
+  const baseExcept = (dim: "area" | "types" | "facilities" | "pet") =>
+    filterCamps({ ...cur, [dim]: dim === "pet" ? false : dim === "area" ? undefined : [] });
   const areaC: Record<string, number> = {};
   for (const c of baseExcept("area")) areaC[c.area] = (areaC[c.area] || 0) + 1;
-  const typeC = campTypeCounts(baseExcept("type"));
   const petC = petCount(baseExcept("pet"));
-  // 시설 개별 카운트: 다른 조건 + 이미 선택된 시설 + 이 시설 (AND)
-  const facCount = (f: string) => filterCamps({ area: cur.area, type: cur.type, pet: cur.pet, facilities: Array.from(new Set([...facSel, f])) }).length;
-  // 시설 토글 URL (콤마 목록)
-  const facHref = (f: string) => {
-    const next = facSel.includes(f) ? facSel.filter((x) => x !== f) : [...facSel, f];
-    return qs(sp, { facility: next.length ? next.join(",") : undefined });
-  };
+  // 유형/시설 개별 카운트: 다른 조건 + 이미 선택된 것 + 이 항목 (AND) → 토글 URL
+  const typeCount = (t: string) => filterCamps({ area: cur.area, facilities: facSel, pet: cur.pet, types: Array.from(new Set([...typeSel, t])) }).length;
+  const typeHref = (t: string) => qs(sp, { type: (typeSel.includes(t) ? typeSel.filter((x) => x !== t) : [...typeSel, t]).join(",") || undefined });
+  const facCount = (f: string) => filterCamps({ area: cur.area, types: typeSel, pet: cur.pet, facilities: Array.from(new Set([...facSel, f])) }).length;
+  const facHref = (f: string) => qs(sp, { facility: (facSel.includes(f) ? facSel.filter((x) => x !== f) : [...facSel, f]).join(",") || undefined });
 
   const areas = campAreaCounts();
   const shown = list.slice(0, CAP);
-  const heading = [sp.area, sp.type, sp.pet === "1" ? "반려동물" : "", ...facSel].filter(Boolean).join(" ") || "전국";
+  const heading = [sp.area, ...typeSel, sp.pet === "1" ? "반려동물" : "", ...facSel].filter(Boolean).join(" ") || "전국";
 
   return (
     <>
@@ -65,11 +63,11 @@ export default async function CampingPage({ searchParams }: { searchParams: Prom
 
       <div className="bg-panel">
         <Container className="space-y-3 py-4">
-          {/* 유형 */}
+          {/* 유형 (다중 선택 가능) */}
           <FilterRow label="유형">
-            <Chip href={qs(sp, { type: undefined })} active={!sp.type} label="전체" count={baseExcept("type").length} />
+            <Chip href={qs(sp, { type: undefined })} active={typeSel.length === 0} label="전체" count={baseExcept("types").length} />
             {CAMP_TYPES.map((t) => (
-              <Chip key={t} href={qs(sp, { type: sp.type === t ? undefined : t })} active={sp.type === t} label={t} count={typeC[t] || 0} />
+              <Chip key={t} href={typeHref(t)} active={typeSel.includes(t)} label={t} count={typeCount(t)} />
             ))}
           </FilterRow>
           {/* 시설 + 반려동물 (다중 선택 가능) */}
@@ -86,7 +84,7 @@ export default async function CampingPage({ searchParams }: { searchParams: Prom
               <Chip key={a.area} href={qs(sp, { area: sp.area === a.area ? undefined : a.area })} active={sp.area === a.area} label={a.area} count={areaC[a.area] || 0} />
             ))}
           </FilterRow>
-          {(sp.area || sp.type || sp.pet === "1" || facSel.length > 0) && (
+          {(sp.area || typeSel.length > 0 || sp.pet === "1" || facSel.length > 0) && (
             <div className="flex items-center gap-2 pt-0.5 text-[12.5px]">
               <span className="font-bold text-ink-faint">선택:</span>
               <span className="font-semibold text-freedark">{heading}</span>
