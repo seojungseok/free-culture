@@ -28,6 +28,9 @@ export default function Header() {
           <Link href="/places" className="rounded-full px-3 py-1.5 text-[14px] font-bold text-ink-soft transition hover:bg-tint hover:text-free">
             나들이
           </Link>
+          <Link href="/camping" className="rounded-full px-3 py-1.5 text-[14px] font-bold text-ink-soft transition hover:bg-tint hover:text-free">
+            캠핑
+          </Link>
         </nav>
 
         <div className="ml-auto w-full max-w-md sm:max-w-xs">

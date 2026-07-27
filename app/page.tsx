@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllEvents, getWeekend, getNow, getFree, slimForClient } from "@/lib/data";
 import { getKidTours, getPlaceCount, getTourAreaCounts, slimTours } from "@/lib/tour";
+import { getCampCount } from "@/lib/camping";
 import { todayYmd } from "@/lib/dates";
 import PosterCard from "@/components/PosterCard";
 import TourCard from "@/components/TourCard";
@@ -25,6 +26,7 @@ export default function HomePage() {
   const weekendCount = getWeekend().length;
   const placeCount = getPlaceCount();
   const placeAreas = getTourAreaCounts().length;
+  const campCount = getCampCount();
 
   // 문화행사 미리보기 (무료 먼저, 진행 중/예정, 이미지 있는 것 14개 = 2줄)
   const today = todayYmd();
@@ -59,19 +61,25 @@ export default function HomePage() {
           <b className="text-free">아이와 나들이 명소</b>를 매일 새로 모았어요
         </p>
 
-        {/* 최상위: 대분류 2개 */}
-        <div className="mx-auto mt-5 grid max-w-[640px] grid-cols-2 gap-3">
+        {/* 최상위: 대분류 */}
+        <div className="mx-auto mt-5 grid max-w-[640px] grid-cols-3 gap-3">
           <CategoryButton
             href="/events"
             emoji="🎭"
             title="문화행사"
-            sub={`전시·공연·축제 ${all.length.toLocaleString()}건`}
+            sub={`전시·공연 ${all.length.toLocaleString()}건`}
           />
           <CategoryButton
             href="/places"
             emoji="🏞️"
             title="나들이"
             sub={`가볼만한 곳 ${placeCount.toLocaleString()}곳`}
+          />
+          <CategoryButton
+            href="/camping"
+            emoji="⛺"
+            title="캠핑"
+            sub={`전국 캠핑장 ${campCount.toLocaleString()}곳`}
           />
         </div>
 

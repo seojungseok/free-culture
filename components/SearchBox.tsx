@@ -4,8 +4,9 @@ import { useRouter } from "next/navigation";
 import { useMemo, useRef, useState } from "react";
 
 const SIDOS = ["서울", "인천", "경기", "부산", "대구", "대전", "광주", "울산", "세종", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"];
-const SUFFIX = ["나들이", "가볼만한 곳", "무료 공연", "전시", "축제", "맛집", "캠핑장", "박물관", "체험"];
-const POPULAR = ["인천 나들이", "서울 무료 공연", "부산 맛집", "경기 캠핑장", "제주 가볼만한 곳", "서울 축제"];
+const SUFFIX = ["캠핑장", "글램핑", "오토캠핑", "반려동물 캠핑장", "나들이", "가볼만한 곳", "무료 공연", "전시", "축제", "맛집", "박물관", "체험"];
+const POPULAR = ["글램핑", "반려동물 캠핑장", "인천 나들이", "서울 무료 공연", "경기 오토캠핑", "부산 맛집"];
+const CAMP_SUFFIX = ["캠핑장", "글램핑", "오토캠핑", "카라반", "반려동물 캠핑장"];
 const norm = (s: string) => s.toLowerCase().replace(/\s+/g, "");
 
 export default function SearchBox({
@@ -25,8 +26,13 @@ export default function SearchBox({
   const suggestions = useMemo(() => {
     const nq = norm(q);
     if (!nq) return POPULAR;
-    // 입력에 시도명이 있으면 그 지역 조합 우선, 아니면 전체 조합에서 매칭
     const hitSido = SIDOS.find((s) => nq.includes(norm(s)));
+    const rest = hitSido ? nq.replace(norm(hitSido), "") : nq;
+    // 캠핑 의도 감지("인천캠" → 인천 캠핑장/글램핑/오토캠핑/…) — 부분 입력에도 유형 확장
+    if (rest && /^(캠|캠핑|글램|오토|카라|반려|야영)/.test(rest)) {
+      const region = hitSido ? `${hitSido} ` : "";
+      return CAMP_SUFFIX.map((s) => `${region}${s}`).filter((c) => norm(c) !== nq).slice(0, 7);
+    }
     const base = hitSido ? SUFFIX.map((suf) => `${hitSido} ${suf}`) : SIDOS.flatMap((s) => SUFFIX.map((suf) => `${s} ${suf}`));
     const scored = base
       .filter((c) => norm(c).includes(nq) && norm(c) !== nq)

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import { getTourById, tourTypeLabel } from "@/lib/tour";
+import { notFound, permanentRedirect } from "next/navigation";
+import { getTourById, tourTypeLabel, isCampingDupe, campingDupeTarget } from "@/lib/tour";
 import { getArticle } from "@/lib/articles";
 import { fetchPlaceOverview, fetchPlaceImages, fetchAdmission } from "@/lib/tourDetail";
 import { getAdmission } from "@/lib/fees";
@@ -83,6 +83,11 @@ export default async function SpotDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+  // 캠핑으로 분리된 장소 → /camping 상세로 영구 이동(색인 이전)
+  if (isCampingDupe(id)) {
+    const t = campingDupeTarget(id);
+    permanentRedirect(t ? `/camping/${t}` : "/camping");
+  }
   const spot = getTourById(id);
   if (!spot) notFound();
 

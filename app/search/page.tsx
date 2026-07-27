@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { search, KIND_LABEL } from "@/lib/search";
+import { search, relatedQueries, KIND_LABEL } from "@/lib/search";
 import SearchBox from "@/components/SearchBox";
 import SearchCard from "@/components/SearchCard";
 import { Container } from "@/components/Band";
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
-const SUGGESTIONS = ["인천 나들이", "서울 무료 공연", "인천 캠핑장", "해운대 가볼만한 곳", "부산 박물관", "경기 체험"];
+const SUGGESTIONS = ["인천 캠핑장", "경기 글램핑", "반려동물 캠핑장", "인천 나들이", "서울 무료 공연", "해운대 가볼만한 곳"];
 
 export default async function SearchPage({
   searchParams,
@@ -64,6 +64,19 @@ export default async function SearchPage({
                 </div>
               </section>
             ))}
+            {(() => {
+              const related = relatedQueries(res.parsed);
+              return related.length > 0 ? (
+                <div className="mt-10 border-t border-line pt-5">
+                  <span className="text-[13px] font-bold text-ink-faint">함께 찾는 검색어</span>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {related.map((r) => (
+                      <Link key={r} href={`/search?q=${encodeURIComponent(r)}`} className="rounded-full border border-line bg-white px-3.5 py-1.5 text-[13px] font-semibold text-ink-soft transition hover:border-free/40 hover:text-free">{r}</Link>
+                    ))}
+                  </div>
+                </div>
+              ) : null;
+            })()}
           </>
         ) : (
           <div className="mx-auto mt-8 max-w-xl">

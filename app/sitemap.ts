@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllEvents } from "@/lib/data";
 import { getAllPlaces, getTourAreaCounts } from "@/lib/tour";
+import { getAllCamps } from "@/lib/camping";
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 
@@ -14,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/events",
     "/places",
+    "/camping",
     "/free",
     "/cheap",
     "/weekend",
@@ -48,6 +50,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 가볼만한 곳 상세 (전량 — 롱테일 색인)
   const placeSpotRoutes = getAllPlaces().map((s) => ({
     url: `${base}/places/spot/${s.id}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.5,
+  }));
+
+  // 캠핑 상세 (전량 — 롱테일 색인)
+  const campRoutes = getAllCamps().map((c) => ({
+    url: `${base}/camping/${c.id}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.5,
@@ -90,6 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...regionRoutes,
     ...placeAreaRoutes,
     ...placeSpotRoutes,
+    ...campRoutes,
     ...genreRoutes,
     ...comboRoutes,
     ...eventRoutes,

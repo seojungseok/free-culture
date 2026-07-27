@@ -3,12 +3,13 @@
 import { getAllPlaces } from "@/lib/tour";
 import { getAllEvents } from "@/lib/data";
 import { getAdmission } from "@/lib/fees";
+import { getAllCamps } from "@/lib/camping";
 import { SIDO_LIST } from "@/lib/classify";
 import festivalsData from "@/data/festivals.json";
 import restaurantsData from "@/data/restaurants.json";
 
-export type Kind = "place" | "event" | "festival" | "food";
-export const KIND_LABEL: Record<Kind, string> = { place: "나들이", event: "문화행사", festival: "축제", food: "맛집" };
+export type Kind = "place" | "camping" | "event" | "festival" | "food";
+export const KIND_LABEL: Record<Kind, string> = { place: "나들이", camping: "캠핑", event: "문화행사", festival: "축제", food: "맛집" };
 
 export interface SearchDoc {
   kind: Kind; id: string; title: string; area: string; sub: string;
@@ -56,6 +57,17 @@ function build(): SearchDoc[] {
     });
   }
 
+  // 캠핑(고캠핑)
+  for (const c of getAllCamps()) {
+    const themes = [c.pet ? "반려동물 애견" : "", c.lctCl, ...c.types].join(" ");
+    docs.push({
+      kind: "camping", id: c.id, title: c.name, area: c.area, sub: c.sigungu,
+      url: `/camping/${c.id}`, image: c.image || "", price: "unknown", hasImg: Boolean(c.image),
+      titleN: norm(c.name),
+      hay: norm(`${c.name} ${c.addr} ${c.area} ${c.sigungu} 캠핑 캠핑장 ${themes}`),
+    });
+  }
+
   // 축제(TourAPI, festivals.json) — 수집 전이면 빈 배열
   const fests = (festivalsData as { festivals?: { id: string; title: string; addr: string; area: string; image?: string }[] }).festivals || [];
   for (const f of fests) {
@@ -86,6 +98,13 @@ const FREE_WORDS = ["무료", "공짜", "프리"];
 const CHEAP_WORDS = ["1만원", "만원", "1만원이하", "저렴", "저가"];
 const PLACE_WORDS = ["나들이", "가볼만한곳", "가볼만한", "관광지", "명소", "놀거리"];
 const FOOD_WORDS = ["맛집", "음식점", "식당", "먹거리", "한식", "중식", "일식", "양식", "분식", "카페"];
+const CAMP_WORDS = ["캠핑", "캠핑장", "야영장", "오토캠핑", "자동차야영장", "글램핑", "카라반"];
+// 캠핑 유형/테마 토큰 → 캠핑 kind + 텍스트 조건
+const CAMP_TYPE_TEXT: Record<string, string[]> = {
+  글램핑: ["글램핑"], 오토캠핑: ["오토캠핑", "자동차야영장"], 자동차야영장: ["오토캠핑", "자동차야영장"],
+  카라반: ["카라반"], 일반야영장: ["일반야영장"],
+};
+const PET_WORDS = ["반려동물", "애견", "개동반", "강아지"];
 const STOPWORDS = new Set(["곳", "것", "및", "의", "추천", "정보", "근처", "주변", "여행"]);
 // 이벤트 장르 유의어
 const GENRE_SYN: Record<string, string[]> = {
@@ -94,7 +113,6 @@ const GENRE_SYN: Record<string, string[]> = {
 };
 // 텍스트 유의어(장소 유형) — OR 확장
 const TEXT_SYN: Record<string, string[]> = {
-  캠핑: ["캠핑", "야영", "오토캠핑", "글램핑"], 캠핑장: ["캠핑", "야영", "오토캠핑", "글램핑"],
   박물관: ["박물관", "기념관", "전시관"], 체험: ["체험", "체험관", "체험마을"],
   공원: ["공원", "생태공원", "근린공원"], 수목원: ["수목원", "식물원", "자연휴양림"],
   미술관: ["미술관", "갤러리"], 과학관: ["과학관"],
@@ -115,6 +133,9 @@ export function parseQuery(q: string): ParsedQuery {
     if (CHEAP_WORDS.includes(nt)) { p.price = "cheap"; continue; }
     if (PLACE_WORDS.includes(nt)) { p.kinds.add("place"); continue; }
     if (FOOD_WORDS.includes(nt)) { p.kinds.add("food"); if (nt !== "맛집" && nt !== "음식점" && nt !== "식당" && nt !== "먹거리") p.textGroups.push([nt]); continue; }
+    if (CAMP_TYPE_TEXT[nt]) { p.kinds.add("camping"); p.textGroups.push(CAMP_TYPE_TEXT[nt].map(norm)); continue; }
+    if (CAMP_WORDS.includes(nt)) { p.kinds.add("camping"); continue; }
+    if (PET_WORDS.includes(nt)) { p.textGroups.push(["반려동물", "애견"]); continue; }
     if (/(축제|페스티벌)$/.test(nt)) { p.kinds.add("festival"); const pre = nt.replace(/(축제|페스티벌)$/, ""); if (pre) p.textGroups.push([pre]); continue; }
     if (GENRE_SYN[nt]) { p.kinds.add("event"); GENRE_SYN[nt].forEach((g) => p.genres.add(g)); continue; }
     if (TEXT_SYN[nt]) { p.textGroups.push(TEXT_SYN[nt].map(norm)); continue; }
@@ -155,6 +176,24 @@ export interface SearchResult {
   parsed: ParsedQuery;
 }
 
+// 인접 세부지역(연관검색어용)
+const ADJACENT: Record<string, string[]> = { 인천: ["강화도", "영종도"], 서울: ["강남", "마포"], 경기: ["가평", "양평"], 강원: ["평창", "홍천"], 부산: ["기장", "해운대"], 제주: ["서귀포"] };
+/** 함께 찾는 검색어 — 같은 지역 다른 유형/테마 + 인접 세부지역 */
+export function relatedQueries(parsed: ParsedQuery): string[] {
+  const out: string[] = [];
+  const s = parsed.sido;
+  const isCamp = parsed.kinds.has("camping");
+  if (s) {
+    if (isCamp) out.push(`${s} 글램핑`, `${s} 오토캠핑`, `${s} 반려동물 캠핑장`, `${s} 계곡 캠핑장`);
+    else out.push(`${s} 캠핑장`, `${s} 가볼만한 곳`, `${s} 맛집`, `${s} 무료 공연`);
+    for (const adj of ADJACENT[s] || []) out.push(isCamp ? `${adj} 캠핑장` : `${adj} 가볼만한 곳`);
+  } else if (isCamp) {
+    out.push("글램핑", "오토캠핑", "반려동물 캠핑장", "계곡 캠핑장");
+  }
+  const self = parsed.raw.replace(/\s+/g, "");
+  return [...new Set(out)].filter((x) => x.replace(/\s+/g, "") !== self).slice(0, 6);
+}
+
 export function search(q: string, perGroup = 60): SearchResult {
   const parsed = parseQuery(q);
   const hasCond = parsed.sido || parsed.price || parsed.kinds.size || parsed.genres.size || parsed.textGroups.length;
@@ -163,7 +202,7 @@ export function search(q: string, perGroup = 60): SearchResult {
   const hits = docs().filter((d) => matchDoc(d, parsed));
   hits.sort((a, b) => score(b, parsed) - score(a, parsed));
 
-  const order: Kind[] = ["place", "event", "festival", "food"];
+  const order: Kind[] = ["place", "camping", "festival", "event", "food"];
   const groups = order
     .map((kind) => {
       const all = hits.filter((h) => h.kind === kind);

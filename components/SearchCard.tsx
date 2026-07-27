@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { SearchDoc } from "@/lib/search";
 
-const KIND_EMOJI: Record<string, string> = { place: "🏞️", event: "🎭", festival: "🎪", food: "🍽️" };
+const KIND_EMOJI: Record<string, string> = { place: "🏞️", camping: "⛺", event: "🎭", festival: "🎪", food: "🍽️" };
+const KIND_TEXT: Record<string, string> = { place: "나들이", camping: "캠핑", event: "문화행사", festival: "축제", food: "맛집" };
 
 export default function SearchCard({ doc }: { doc: SearchDoc }) {
   return (
@@ -15,7 +16,7 @@ export default function SearchCard({ doc }: { doc: SearchDoc }) {
         )}
         <div className="absolute left-1.5 top-1.5">
           <span className="rounded-md bg-black/55 px-1.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-sm">
-            {KIND_EMOJI[doc.kind]} {{ place: "나들이", event: "문화행사", festival: "축제", food: "맛집" }[doc.kind]}
+            {KIND_EMOJI[doc.kind]} {KIND_TEXT[doc.kind]}
           </span>
         </div>
         {doc.price === "free" && (
