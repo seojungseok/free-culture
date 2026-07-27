@@ -70,9 +70,6 @@ export default async function OpengraphImage() {
 
           {/* 아래 1줄 — 크고 굵게(흰색) */}
           <div style={{ display: "flex", justifyContent: "center", fontSize: 50, fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.5px", marginTop: 26, textShadow: "0 2px 16px rgba(0,0,0,0.6)" }}>문화행사 · 나들이 · 캠핑</div>
-
-          {/* 아래 2줄 — 민트 포인트로 강조 */}
-          <div style={{ display: "flex", justifyContent: "center", fontSize: 30, fontWeight: 800, color: MINT, letterSpacing: "0.3px", marginTop: 16, textShadow: "0 2px 14px rgba(0,0,0,0.6)" }}>전국 나들이·캠핑·문화행사</div>
         </div>
 
         {/* 도메인 (우하단, 은은하게) */}
