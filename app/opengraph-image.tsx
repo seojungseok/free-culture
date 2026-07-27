@@ -48,9 +48,9 @@ export default async function OpengraphImage() {
         {/* 1. 대표 이미지 풀블리드 (좌우 분할 없음) */}
         {hero && <img src={hero} width={1200} height={630} style={{ position: "absolute", inset: 0, width: 1200, height: 630, objectFit: "cover" }} />}
         {/* 2. 전체 균일 어둡게 (중앙배치 텍스트 가독성) */}
-        <div style={{ display: "flex", position: "absolute", inset: 0, background: "rgba(0,0,0,0.44)" }} />
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "rgba(0,0,0,0.5)" }} />
         {/* 2b. 중앙 방사형으로 더 진하게 (가운데 텍스트 뒤가 가장 어둡게) */}
-        <div style={{ display: "flex", position: "absolute", inset: 0, background: "radial-gradient(62% 66% at 50% 50%, rgba(3,9,6,0.72) 0%, rgba(3,9,6,0.34) 55%, rgba(3,9,6,0) 100%)" }} />
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "radial-gradient(72% 76% at 50% 50%, rgba(2,7,5,0.9) 0%, rgba(2,7,5,0.55) 50%, rgba(2,7,5,0.12) 100%)" }} />
         {/* 3. 상·하단 살짝 어둡게(로고·URL 가독성 + 깊이) */}
         <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.42) 100%)" }} />
 
