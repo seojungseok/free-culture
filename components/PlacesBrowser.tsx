@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { TourSpot } from "@/lib/tour";
 import { SIDO_SLUG } from "@/lib/classify";
 import TourCard from "./TourCard";
@@ -36,14 +36,19 @@ export default function PlacesBrowser({
 }) {
   const router = useRouter();
   const pathname = usePathname();
+  const params = useSearchParams();
+  const urlType = params.get("type");
+  const initType: TypeKey = urlType === "12" || urlType === "14" || urlType === "28" ? urlType : "all";
+  const whoKid = params.get("who") === "kid";
   const [area, setArea] = useState(initialArea);
-  const [type, setType] = useState<TypeKey>("all");
+  const [type, setType] = useState<TypeKey>(initType);
   const [visible, setVisible] = useState(PAGE);
 
-  const areaSpots = useMemo(
-    () => (area ? spots.filter((s) => s.area === area) : spots),
-    [spots, area]
-  );
+  const areaSpots = useMemo(() => {
+    let list = area ? spots.filter((s) => s.area === area) : spots;
+    if (whoKid) list = list.filter((s) => s.isKid);
+    return list;
+  }, [spots, area, whoKid]);
 
   // 유형별 개수 — 전체 집계(typeTotals)가 오면 그걸 우선(4-5: 필터 숫자=전체 반영).
   // 없을 때만 로컬 스팟에서 집계(하위호환).

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getPlaces, getTourAreaCounts, getTypeCounts, slimTours } from "@/lib/tour";
 import { SIDO_SLUG, sidoFromSlug } from "@/lib/classify";
@@ -55,7 +56,9 @@ export default async function PlacesAreaPage({
           {sido}의 관광지·문화시설·체험 명소 {regionSpots.length.toLocaleString()}곳 — 유형·지도·소개 제공
         </p>
       </Band>
-      <PlacesBrowser spots={spots} areas={areas} initialArea={sido} total={regionSpots.length} typeTotals={getTypeCounts(sido)} />
+      <Suspense fallback={null}>
+        <PlacesBrowser spots={spots} areas={areas} initialArea={sido} total={regionSpots.length} typeTotals={getTypeCounts(sido)} />
+      </Suspense>
     </>
   );
 }

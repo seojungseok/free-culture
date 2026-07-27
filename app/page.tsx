@@ -9,6 +9,9 @@ import TourCard from "@/components/TourCard";
 import BigEventModal from "@/components/BigEventModal";
 import { Band, Container } from "@/components/Band";
 import { SITE } from "@/lib/site";
+import { season } from "@/lib/finder";
+import PlaceFinder from "@/components/PlaceFinder";
+import NearMe from "@/components/NearMe";
 
 export const metadata: Metadata = {
   title: `${SITE.name} · 이번 주말 갈 만한 전국 무료·저렴 문화행사`,
@@ -27,6 +30,19 @@ export default function HomePage() {
   const placeCount = getPlaceCount();
   const placeAreas = getTourAreaCounts().length;
   const campCount = getCampCount();
+  const s = season();
+
+  // 원클릭 빠른 추천 (필터 몰라도 한 번 탭)
+  const quickPicks: { emoji: string; label: string; href: string }[] = [
+    { emoji: "🆓", label: "오늘 무료", href: "/free" },
+    { emoji: "👶", label: "아이랑", href: "/kids" },
+    { emoji: "🐶", label: "반려동물 캠핑", href: "/camping?pet=1" },
+    { emoji: "💑", label: "데이트", href: "/genre/exhibition" },
+    { emoji: "🏕️", label: "글램핑", href: "/camping?type=%EA%B8%80%EB%9E%A8%ED%95%91" },
+    { emoji: s.emoji, label: `${s.label} 명소`, href: `/search?q=${encodeURIComponent(s.query)}` },
+  ];
+  // 인기 검색어 — 대한민국 대표 명소(기본값). 검색 데이터 쌓이면 실제 인기어로 대체 예정.
+  const popular = ["에버랜드", "경복궁", "해운대", "남산타워", "롯데월드", "국립중앙박물관", "전주한옥마을", "오션월드", "불국사", "한라산", "속초", "강릉", "남이섬", "글램핑", "벚꽃"];
 
   // 문화행사 미리보기 (무료 먼저, 진행 중/예정, 이미지 있는 것 14개 = 2줄)
   const today = todayYmd();
@@ -57,8 +73,7 @@ export default function HomePage() {
           주말에 <span className="text-free">뭐하지?</span>
         </h1>
         <p className="mt-1.5 text-center text-[14px] font-semibold text-ink-soft sm:text-[15px]">
-          전국 <b className="text-free">무료·저렴 문화행사</b>와{" "}
-          <b className="text-free">아이와 나들이 명소</b>를 매일 새로 모았어요
+          전국 <b className="text-free">문화행사·나들이·캠핑</b>, 무료로 저렴하게 즐기는 주말
         </p>
 
         {/* 최상위: 대분류 */}
@@ -88,6 +103,53 @@ export default function HomePage() {
           <SummaryChip label="오늘 무료" value={todayFree} href="/free" accent />
           <SummaryChip label="이번 주말" value={weekendCount} href="/weekend" />
           <SummaryChip label="관광 지역" value={placeAreas} href="/places" />
+        </div>
+
+        {/* 원클릭 빠른 추천 */}
+        <div className="mx-auto mt-4 flex max-w-[680px] flex-wrap justify-center gap-2">
+          {quickPicks.map((q) => (
+            <Link key={q.label} href={q.href} className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-4 py-2 text-[14px] font-bold text-ink-soft shadow-sm transition hover:-translate-y-0.5 hover:border-free hover:text-free">
+              <span>{q.emoji}</span>{q.label}
+            </Link>
+          ))}
+        </div>
+      </Band>
+
+      {/* 최적의 장소 찾기 필터 */}
+      <Band tone="white" innerClassName="py-7">
+        <div className="mb-3">
+          <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">🔎 최적의 장소 찾기</h2>
+          <p className="mt-0.5 text-[13px] text-ink-faint">카테고리와 조건을 고르면 결과 수가 실시간으로 바뀌어요.</p>
+        </div>
+        <PlaceFinder />
+      </Band>
+
+      {/* 내 주변 */}
+      <Band tone="panel" innerClassName="py-7">
+        <NearMe />
+      </Band>
+
+      {/* 계절 추천 (날짜 자동) */}
+      <Band tone="white" innerClassName="py-7">
+        <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">{s.emoji} {s.label} 추천</h2>
+        <p className="mt-0.5 text-[13px] text-ink-faint">지금 계절에 딱 맞는 키워드로 골라보세요.</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {s.terms.map((t) => (
+            <Link key={t} href={`/search?q=${encodeURIComponent(t)}`} className="rounded-full border border-line bg-white px-4 py-2 text-[14px] font-bold text-ink-soft transition hover:border-free/40 hover:text-free">{t}</Link>
+          ))}
+        </div>
+      </Band>
+
+      {/* 인기 검색어 */}
+      <Band tone="panel" innerClassName="py-7">
+        <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">🔥 인기 검색어</h2>
+        <p className="mt-0.5 text-[13px] text-ink-faint">대한민국 대표 명소부터 시작해요.</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {popular.map((p, i) => (
+            <Link key={p} href={`/search?q=${encodeURIComponent(p)}`} className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-1.5 text-[13.5px] font-semibold text-ink-soft transition hover:border-free/40 hover:text-free">
+              <span className="text-[12px] font-black text-free">{i + 1}</span>{p}
+            </Link>
+          ))}
         </div>
       </Band>
 
