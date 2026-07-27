@@ -1,11 +1,13 @@
 import { ImageResponse } from "next/og";
-import { getNow, getWeekend } from "@/lib/data";
+import { getFeatured } from "@/lib/data";
+import { getAllCamps } from "@/lib/camping";
+import { getAllPlaces } from "@/lib/tour";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "주말에 뭐하지? · 전국 무료·저렴 문화행사";
+export const alt = "주말에 뭐하지? · 전국 무료·저렴 문화행사·나들이·캠핑";
 
-const isFreeLike = (t: string) => t === "free" || t === "free_estimated" || t === "partial_free";
+const MINT = "#6EE7A8"; // 포인트 컬러 딱 하나
 
 async function toDataUrl(url: string): Promise<string | null> {
   try {
@@ -21,69 +23,73 @@ async function toDataUrl(url: string): Promise<string | null> {
 }
 
 export default async function OpengraphImage() {
-  const font = await fetch(
-    "https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/public/static/Pretendard-Bold.otf"
-  ).then((r) => r.arrayBuffer());
+  const [extraBold, medium] = await Promise.all([
+    fetch("https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/public/static/Pretendard-ExtraBold.otf").then((r) => r.arrayBuffer()),
+    fetch("https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/public/static/Pretendard-Medium.otf").then((r) => r.arrayBuffer()),
+  ]);
 
-  const now = getNow();
-  const todayFree = now.filter((e) => isFreeLike(e.priceType)).length;
-  const weekendCount = getWeekend().length;
-
-  // 우측 콜라주용 포스터 4장 (2x2)
-  const candidates = [...now]
-    .filter((e) => e.imgUrl && /\.(jpe?g|png)$/i.test(e.imgUrl))
-    .sort((a, b) => b.featuredScore - a.featuredScore)
-    .slice(0, 16);
-  const posters: string[] = [];
-  for (const e of candidates) {
-    if (posters.length >= 4) break;
-    const d = await toDataUrl(e.imgUrl);
-    if (d) posters.push(d);
+  // 대표 이미지 1장 — 글램핑(감성) → 관광지 사진 → 추천 행사 순으로 첫 성공분
+  const candidates = [
+    ...getAllCamps().filter((c) => c.image && c.types.includes("글램핑")).slice(0, 6).map((c) => c.image),
+    ...getAllPlaces().filter((p) => p.type === "12" && p.image).slice(0, 8).map((p) => p.image),
+    ...getFeatured(6).map((e) => e.imgUrl).filter(Boolean) as string[],
+  ];
+  let hero: string | null = null;
+  for (const u of candidates) {
+    hero = await toDataUrl(u);
+    if (hero) break;
   }
-  const hasCollage = posters.length >= 4;
-
-  const badge = `오늘 무료 ${todayFree.toLocaleString()}건 · 이번 주말 ${weekendCount.toLocaleString()}곳`;
-  const shadow = "0 2px 10px rgba(0,0,0,0.30)";
 
   return new ImageResponse(
     (
-      <div style={{ display: "flex", position: "relative", width: "100%", height: "100%", background: "linear-gradient(135deg,#04A85A 0%,#019149 55%,#04502C 100%)", fontFamily: "Pretendard" }}>
-        {/* 우측 40% 포스터 콜라주 (2x2) */}
-        {hasCollage && (
-          <div style={{ display: "flex", flexWrap: "wrap", position: "absolute", top: 0, right: 0, width: 480, height: 630 }}>
-            {posters.map((src, i) => (
-              <img key={i} src={src} width={240} height={315} style={{ width: 240, height: 315, objectFit: "cover" }} />
-            ))}
-          </div>
-        )}
+      <div style={{ display: "flex", position: "relative", width: "100%", height: "100%", fontFamily: "Pretendard" }}>
+        {/* 1. 딥그린 → 차콜 대각 그라디언트 */}
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(135deg, #0F3D2E 0%, #163329 46%, #1A1A1A 100%)" }} />
+        {/* 좌상단 은은한 라이트 */}
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "radial-gradient(60% 65% at 14% 16%, rgba(122,224,176,0.16) 0%, rgba(122,224,176,0) 55%)" }} />
 
-        {/* 가로 그라데이션: 왼쪽은 진한 초록(텍스트 영역), 오른쪽 이음새는 부드럽게 투명 */}
-        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg,#037A41 0%,#037A41 54%,rgba(3,110,60,0.78) 63%,rgba(4,50,28,0.0) 90%)" }} />
+        {/* 2. 대표 이미지 1장 (우측), 좌측으로 넓고 부드럽게 페이드(경계선 없이) */}
+        {hero && <img src={hero} width={660} height={630} style={{ position: "absolute", right: 0, top: 0, width: 660, height: 630, objectFit: "cover" }} />}
+        {/* 이미지 → 배경 melt (넓은 그라디언트로 경계 제거, 텍스트 영역은 불투명) */}
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg, #12352A 0%, #12352A 56%, rgba(18,50,40,0.6) 70%, rgba(18,50,40,0) 86%)" }} />
+        {/* 우측 이미지 어둡게(가독성·절제) */}
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(8,12,10,0) 66%, rgba(8,12,10,0.44) 100%)" }} />
+        {/* 하단 비네트(깊이감) */}
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%)" }} />
 
-        {/* 좌측 텍스트 (흰색, 왼쪽 정렬) */}
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", position: "absolute", top: 0, left: 0, width: 720, height: 630, padding: "0 40px 0 72px" }}>
-          <div style={{ display: "flex", fontSize: 25, fontWeight: 800, color: "#CFFCE4", letterSpacing: "0.5px", textShadow: shadow }}>
-            전국 무료·저렴 문화생활
+        {/* 로고 (좌상단, 절제) */}
+        <div style={{ display: "flex", alignItems: "center", position: "absolute", top: 52, left: 80 }}>
+          <div style={{ display: "flex", width: 12, height: 12, borderRadius: 99, background: MINT, marginRight: 11 }} />
+          <div style={{ display: "flex", fontSize: 24, fontWeight: 800, color: "rgba(255,255,255,0.92)", letterSpacing: "-0.5px" }}>주말에뭐하지</div>
+        </div>
+
+        {/* 텍스트 블록 (좌측, 수직 중앙, 좌측 정렬) */}
+        <div style={{ display: "flex", flexDirection: "column", position: "absolute", left: 80, top: 0, width: 780, height: 630, justifyContent: "center" }}>
+          <div style={{ display: "flex", fontSize: 23, fontWeight: 500, color: "#B0B0B0", letterSpacing: "6px" }}>전국 무료·저렴 문화생활</div>
+
+          <div style={{ display: "flex", alignItems: "baseline", marginTop: 16, letterSpacing: "-5px" }}>
+            <div style={{ display: "flex", fontSize: 114, fontWeight: 800, color: "#FFFFFF", lineHeight: 1, paddingRight: 20 }}>주말에</div>
+            <div style={{ display: "flex", fontSize: 114, fontWeight: 800, color: MINT, lineHeight: 1 }}>뭐하지?</div>
           </div>
-          <div style={{ display: "flex", fontSize: 92, fontWeight: 800, color: "#ffffff", letterSpacing: "-4px", lineHeight: 1.02, marginTop: 16, textShadow: shadow }}>
-            주말에 뭐하지?
-          </div>
-          <div style={{ display: "flex", fontSize: 32, fontWeight: 700, color: "#EAFFF3", marginTop: 18, textShadow: shadow }}>
-            문화행사 · 나들이
-          </div>
-          <div style={{ display: "flex", marginTop: 30 }}>
-            <div style={{ display: "flex", fontSize: 30, fontWeight: 800, color: "#04713F", background: "#ffffff", padding: "14px 30px", borderRadius: 999 }}>
-              {badge}
-            </div>
+
+          <div style={{ display: "flex", fontSize: 30, fontWeight: 500, color: "rgba(255,255,255,0.82)", letterSpacing: "0.5px", marginTop: 24 }}>문화행사 · 나들이 · 캠핑</div>
+
+          {/* 고정 문구 — 다크 글래스 알약 (매일 바뀌는 숫자 대신) */}
+          <div style={{ display: "flex", alignItems: "center", marginTop: 36, background: "rgba(18,26,22,0.5)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 999, padding: "13px 26px" }}>
+            <div style={{ display: "flex", fontSize: 25, fontWeight: 500, color: "rgba(255,255,255,0.9)", letterSpacing: "0.2px" }}>이번 주말, 어디 갈지 여기서 정하세요</div>
           </div>
         </div>
 
-        {/* 우하단 도메인 */}
-        <div style={{ display: "flex", position: "absolute", right: 40, bottom: 30, fontSize: 26, fontWeight: 800, color: "#ffffff", letterSpacing: "0.5px", textShadow: shadow }}>
-          mwohaji.kr
-        </div>
+        {/* 도메인 (우하단, 은은하게) */}
+        <div style={{ display: "flex", position: "absolute", right: 56, bottom: 42, fontSize: 22, fontWeight: 500, color: "rgba(255,255,255,0.6)", letterSpacing: "1.5px" }}>mwohaji.kr</div>
       </div>
     ),
-    { ...size, fonts: [{ name: "Pretendard", data: font, weight: 800, style: "normal" }] }
+    {
+      ...size,
+      fonts: [
+        { name: "Pretendard", data: extraBold, weight: 800, style: "normal" },
+        { name: "Pretendard", data: medium, weight: 500, style: "normal" },
+      ],
+    }
   );
 }
