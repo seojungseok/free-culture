@@ -59,6 +59,9 @@ export default async function CampingPage({ searchParams }: { searchParams: Prom
         <p className="mt-1 text-[14px] text-ink-soft">
           전국 캠핑장 <span className="whitespace-nowrap">{getCampCount().toLocaleString()}곳</span> — 유형·시설·지역으로 골라보세요 · 출처: 한국관광공사 고캠핑
         </p>
+        <Link href="/camping/collections" className="mt-2 inline-flex items-center gap-1 rounded-full bg-white px-3.5 py-1.5 text-[13px] font-bold text-freedark ring-1 ring-free/30 transition hover:bg-tint">
+          🏕️ 지역·유형별 캠핑장 모음 보기 →
+        </Link>
       </Band>
 
       <div className="bg-panel">

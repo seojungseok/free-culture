@@ -1,10 +1,10 @@
 name: 입장료 백필 (가볼만한 곳)
 
 # 문화시설(14)·레포츠(28) 요금을 detailIntro2로 조회해 data/place-fees.json에 점진 캐시.
-# 일 1,000회 한도 → 하루 상한만큼만. 며칠에 걸쳐 완주(다 채우면 커밋 없음).
+# ⚠️ 은퇴: collectIntro(tour-backfill)가 detailIntro2 전체(요금 포함)를 수집하는 상위집합이라
+#    입장료도 intro 백필로 채워짐(lib/fees.getAdmission이 fees→intro 폴백). 일 1,000회를
+#    intro·볼거리·음식점 수집에 몰아주기 위해 스케줄 중단. 필요 시 수동 실행만.
 on:
-  schedule:
-    - cron: "30 20 * * *" # UTC 20:30 = KST 05:30 (다른 수집 워크플로우와 시간 분리)
   workflow_dispatch: {}
 
 permissions:
