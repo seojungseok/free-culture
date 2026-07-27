@@ -47,10 +47,10 @@ export default async function OpengraphImage() {
         <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(135deg, #0F3D2E 0%, #163329 46%, #1A1A1A 100%)" }} />
         {/* 1. 대표 이미지 풀블리드 (좌우 분할 없음) */}
         {hero && <img src={hero} width={1200} height={630} style={{ position: "absolute", inset: 0, width: 1200, height: 630, objectFit: "cover" }} />}
-        {/* 2. 어두운 오버레이 — 좌측 아주 진하게 → 우측 옅게 (넷플릭스 썸네일식, 그린-블랙 틴트) */}
-        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(5,13,9,0.93) 0%, rgba(5,13,9,0.9) 40%, rgba(8,18,13,0.62) 64%, rgba(9,20,14,0.28) 100%)" }} />
-        {/* 전체 살짝 더 눌러 텍스트 대비 확보 */}
-        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 78%)" }} />
+        {/* 2. 어두운 오버레이 — 좌측 거의 불투명 → 우측 옅게 (Satori는 알파를 옅게 렌더 → 값 세게) */}
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(4,10,7,0.99) 0%, rgba(4,10,7,0.97) 44%, rgba(6,13,9,0.66) 66%, rgba(8,16,11,0.22) 100%)" }} />
+        {/* 전체 한 겹 더(대비 확보) */}
+        <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0) 74%)" }} />
         {/* 3. 상·하단 살짝 어둡게(로고·URL 가독성 + 깊이) */}
         <div style={{ display: "flex", position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.42) 100%)" }} />
 
