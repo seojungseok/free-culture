@@ -74,14 +74,14 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
     >
       <div
         ref={trackRef}
-        className="flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-[7%] no-scrollbar"
+        className="flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-[4%] no-scrollbar sm:px-[7%]"
       >
         {slides.map((s, i) => (
           <Link
             key={i}
             data-i={i}
             href={s.href}
-            className="group relative h-[210px] w-[86%] shrink-0 snap-center overflow-hidden rounded-2xl bg-neutral-200 sm:h-[300px] lg:h-[380px]"
+            className="group relative h-[190px] w-[92%] shrink-0 snap-center overflow-hidden rounded-2xl bg-neutral-200 sm:h-[300px] sm:w-[86%] lg:h-[380px]"
           >
             <Image
               src={s.image}
