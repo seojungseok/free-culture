@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { CultureEvent } from "@/lib/types";
 import { fmtRange, dday } from "@/lib/format";
 import PriceBadge from "./PriceBadge";
+import Icon from "./Icon";
 import { SITE } from "@/lib/site";
 
 export default function PosterCard({
@@ -115,8 +116,9 @@ export default function PosterCard({
           {ev.title}
         </h3>
         {ev.priceType === "partial_free" && ev.freeCondition ? (
-          <p className="mt-0.5 line-clamp-1 text-[11.5px] font-semibold text-free">
-            🎟 {ev.freeCondition}
+          <p className="mt-0.5 flex items-center gap-1 text-[11.5px] font-semibold text-free">
+            <Icon name="ticket" size={12} className="shrink-0" />
+            <span className="line-clamp-1">{ev.freeCondition}</span>
           </p>
         ) : null}
         <p className="mt-0.5 line-clamp-1 text-[12px] text-ink-faint">

@@ -6,19 +6,20 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import type { DateTheme } from "@/lib/dateThemes";
+import Icon, { type IconName } from "./Icon";
 
 type Key = "loc" | "free" | "season" | "date";
 interface NearItem { id: string; title: string; area: string; image: string; url: string; dist: string }
 
-export default function QuickEntry({ seasonLabel, seasonEmoji, seasonTerms, dateThemes }: { seasonLabel: string; seasonEmoji: string; seasonTerms: string[]; dateThemes: DateTheme[] }) {
+export default function QuickEntry({ seasonLabel, seasonIconName, seasonTerms, dateThemes }: { seasonLabel: string; seasonIconName: IconName; seasonTerms: string[]; dateThemes: DateTheme[] }) {
   const router = useRouter();
   const [open, setOpen] = useState<Key | null>(null);
 
-  const entries: { key: Key; emoji: string; label: string }[] = [
-    { key: "loc", emoji: "📍", label: "내 위치로 찾기" },
-    { key: "free", emoji: "🆓", label: "오늘의 무료" },
-    { key: "season", emoji: seasonEmoji, label: `${seasonLabel} 명소` },
-    { key: "date", emoji: "💑", label: "데이트" },
+  const entries: { key: Key; icon: IconName; label: string }[] = [
+    { key: "loc", icon: "pin", label: "내 주변" },
+    { key: "free", icon: "ticket", label: "무료 행사" },
+    { key: "season", icon: seasonIconName, label: `${seasonLabel} 나들이` },
+    { key: "date", icon: "heart", label: "데이트 코스" },
   ];
   const enc = encodeURIComponent;
   const slug = (r: string) => (SIDO_SLUG as Record<string, string>)[r] || "";
@@ -26,23 +27,28 @@ export default function QuickEntry({ seasonLabel, seasonEmoji, seasonTerms, date
   return (
     <div>
       <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
-        {entries.map((e) => (
-          <button key={e.key} onClick={() => setOpen(open === e.key ? null : e.key)}
-            className={["flex flex-col items-center gap-1.5 rounded-2xl border px-2 py-4 text-center transition", open === e.key ? "border-free bg-tint" : "border-line bg-white hover:border-free/40"].join(" ")}>
-            <span className="text-[30px] leading-none">{e.emoji}</span>
-            <span className="text-[13.5px] font-bold text-ink-soft">{e.label}</span>
-          </button>
-        ))}
+        {entries.map((e) => {
+          const active = open === e.key;
+          return (
+            <button key={e.key} onClick={() => setOpen(active ? null : e.key)}
+              className={["flex flex-col items-center gap-2 rounded-2xl border px-2 py-4 text-center transition", active ? "border-free bg-tint" : "border-line bg-white hover:border-free/40"].join(" ")}>
+              <span className={["flex h-12 w-12 items-center justify-center rounded-2xl transition", active ? "bg-free text-white" : "bg-freelight text-freedark"].join(" ")}>
+                <Icon name={e.icon} size={24} />
+              </span>
+              <span className="text-[13.5px] font-bold text-ink-soft">{e.label}</span>
+            </button>
+          );
+        })}
       </div>
 
       {open === "loc" && <LocPanel enc={enc} slug={slug} />}
       {open === "free" && (
-        <Panel title="🆓 오늘의 무료 문화행사" hint="지역을 고르면 그 지역 문화행사로 가요">
+        <Panel title="무료 행사" hint="지역을 고르면 그 지역 무료 문화행사로 가요">
           <RegionRow onPick={(r) => router.push(r ? `/region/${slug(r)}` : "/free")} />
         </Panel>
       )}
       {open === "season" && (
-        <ThemePanel title={`${seasonEmoji} ${seasonLabel} 명소`} hint="테마를 고르고(여러 개 가능) 지역을 누르세요 · 계절은 자동으로 바뀌어요"
+        <ThemePanel title={`${seasonLabel} 나들이`} hint="테마를 고르고(여러 개 가능) 지역을 누르세요 · 계절은 자동으로 바뀌어요"
           themes={seasonTerms} onGo={(region, terms) => {
             const q = [region, ...(terms.length ? terms : [seasonTerms[0]])].filter(Boolean).join(" ");
             router.push(`/search?q=${enc(q)}`);
@@ -63,7 +69,7 @@ function DateThemePanel({ themes, onGo }: { themes: DateTheme[]; onGo: (region: 
   const [sel, setSel] = useState<DateTheme | null>(null);
   if (themes.length === 0) return null;
   return (
-    <Panel title="💑 데이트"
+    <Panel title="데이트 코스"
       hint={sel ? `‘${sel.label}’ · 지역을 누르면 그 지역 결과로 가요` : "테마를 먼저 고르세요 · 결과가 풍부한 지역만 보여드려요"}>
       <div className="mb-2.5 flex flex-wrap gap-1.5">
         {themes.map((t) => (
@@ -112,7 +118,7 @@ function LocPanel({ enc, slug }: { enc: (s: string) => string; slug: (r: string)
   }
 
   return (
-    <Panel title="📍 내 위치로 찾기" hint="종류를 고르고, 위치를 켜거나 지역을 누르세요 · 위치는 저장하지 않아요">
+    <Panel title="내 주변" hint="종류를 고르고, 위치를 켜거나 지역을 누르세요 · 위치는 저장하지 않아요">
       <div className="mb-2.5 flex gap-2">
         {(["nadeuli", "camping"] as const).map((k) => (
           <button key={k} onClick={() => { setKind(k); setStatus("idle"); }}
