@@ -3,6 +3,7 @@ import Link from "next/link";
 import { filterCamps, campAreaCounts, petCount, getCampCount, CAMP_TYPES, CAMP_FACILITIES, type CampFilter } from "@/lib/camping";
 import CampCard from "@/components/CampCard";
 import { Band, Container } from "@/components/Band";
+import { FilterRow, Chip } from "@/components/FilterChips";
 
 type SP = { area?: string; type?: string; facility?: string; pet?: string };
 const CAP = 120;
@@ -118,19 +119,3 @@ export default async function CampingPage({ searchParams }: { searchParams: Prom
   );
 }
 
-function FilterRow({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <div className="flex items-start gap-2">
-      <span className="mt-1.5 w-8 shrink-0 text-[12px] font-bold text-ink-faint">{label}</span>
-      <div className="flex flex-wrap gap-1.5">{children}</div>
-    </div>
-  );
-}
-function Chip({ href, active, label, count }: { href: string; active: boolean; label: string; count: number | boolean }) {
-  return (
-    <Link href={href} className={["flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-3 py-1.5 text-[13px] font-bold transition", active ? "bg-free text-white shadow-sm" : "border border-line bg-white text-ink-soft hover:border-free/40 hover:text-free"].join(" ")}>
-      {label}
-      {typeof count === "number" && <span className={["text-[11px] tabular-nums", active ? "text-white/80" : "text-ink-dim"].join(" ")}>{count}</span>}
-    </Link>
-  );
-}

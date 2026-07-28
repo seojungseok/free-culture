@@ -42,7 +42,7 @@ export default function Header() {
 
       {/* 2줄: 통합 상단 메뉴 (현재 탭 그린 밑줄) */}
       <div className="border-t border-line/70">
-        <HeaderNav seasonLabel={s.label} seasonQuery={s.query} />
+        <HeaderNav seasonLabel={s.label} />
       </div>
     </header>
   );

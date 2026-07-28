@@ -57,9 +57,13 @@ export default function HomePage() {
     for (const pool of pools) if (pool[i] && heroSlides.length < 10) heroSlides.push(pool[i]);
   }
 
-  // 인기 검색어 — 결과 풍부한 명소만
-  const POP_CANDS = ["경주", "전주", "여수", "강릉", "속초", "통영", "안동", "춘천", "수원", "해운대", "포항", "가평", "남해", "양양", "거제"];
-  const popular = POP_CANDS.map((t) => ({ t, n: search(t).total })).filter((x) => x.n >= 40).sort((a, b) => b.n - a.n).slice(0, 12).map((x) => x.t);
+  // 인기 검색어 — 지역+유형 조합(맛집·나들이·캠핑·전시·데이트·카페 골고루), 실제 결과 있는 것만
+  const POP_COMBOS = [
+    "가평 가볼만한 곳", "수원 맛집", "경주 나들이", "강릉 카페", "부산 캠핑장", "서울 무료 전시",
+    "인천 데이트", "제주 가볼만한 곳", "여수 나들이", "속초 맛집", "전주 한옥마을", "춘천 카페",
+    "해운대 맛집", "남해 캠핑장", "안동 가볼만한 곳", "포항 나들이", "양양 카페", "통영 맛집",
+  ];
+  const popular = POP_COMBOS.map((t) => ({ t, n: search(t).total })).filter((x) => x.n >= 5).slice(0, 12).map((x) => x.t);
 
   // 카드 섹션 데이터
   const eventCards = slimForClient(getFree(true).filter((e) => e.imgUrl && e.endDate >= today).slice(0, 12));
@@ -103,7 +107,7 @@ export default function HomePage() {
           <div className="mt-3 flex flex-wrap gap-2">
             {popular.map((p, i) => (
               <Link key={p} href={`/search?q=${encodeURIComponent(p)}`}
-                className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-2 text-[13.5px] font-semibold text-ink-soft transition hover:border-free/40 hover:text-free">
+                className={["items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-2 text-[13.5px] font-semibold text-ink-soft transition hover:border-free/40 hover:text-free", i >= 10 ? "hidden sm:inline-flex" : "inline-flex"].join(" ")}>
                 <span className="text-[12px] font-black text-free">{i + 1}</span>{p}
               </Link>
             ))}
