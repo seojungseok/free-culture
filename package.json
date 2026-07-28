@@ -10,6 +10,7 @@
     "collect": "node scripts/collect.mjs",
     "collect:tour": "node scripts/collectTour.mjs",
     "collect:intro": "node scripts/collectIntro.mjs",
+    "collect:restaurant-intro": "node scripts/collectRestaurantIntro.mjs",
     "collect:info": "node scripts/collectInfo.mjs",
     "collect:restaurants": "node scripts/collectRestaurants.mjs",
     "collect:festivals": "node scripts/collectFestivals.mjs",

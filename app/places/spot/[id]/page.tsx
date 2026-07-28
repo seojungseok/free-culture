@@ -5,7 +5,7 @@ import { getTourById, tourTypeLabel, isCampingDupe, campingDupeTarget } from "@/
 import { getArticle } from "@/lib/articles";
 import { fetchPlaceOverview, fetchPlaceImages, fetchAdmission } from "@/lib/tourDetail";
 import { getAdmission } from "@/lib/fees";
-import { getIntro, introRows, getInfo } from "@/lib/tourExtra";
+import { getIntro, introRows, getInfo, restaurantIntroRows, getRestaurantPhone } from "@/lib/tourExtra";
 import { nearbyPlaces, nearbyRestaurants, distanceLabel, foodTypeLabel, getRestaurantById, type Restaurant } from "@/lib/nearby";
 import TourCard from "@/components/TourCard";
 import { SIDO_SLUG } from "@/lib/classify";
@@ -365,7 +365,11 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
   ]);
   const overview = detail.overview;
   const homepage = detail.homepage;
-  const tel = detail.tel || r.tel;
+  // 전화: detailCommon2 → 목록 tel → detailIntro 문의처(infocenterfood) 순
+  const tel = detail.tel || r.tel || getRestaurantPhone(r.id);
+  const telHref = tel ? (tel.match(/[\d+][\d\-]+\d/) || [])[0]?.replace(/-/g, "") : undefined;
+  // 영업정보(수집분만) — 영업시간·휴무·주차·대표메뉴. 없으면 표 자체 숨김
+  const bizRows = restaurantIntroRows(r.id);
 
   // 갤러리 = 대표사진 + 추가사진(중복 제거)
   const gallery: GalleryImage[] = [];
@@ -450,7 +454,20 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
       <dl className="mt-6 divide-y divide-line rounded-2xl border border-line bg-white">
         <Row label="업종" value={food} />
         {r.addr && <Row label="주소" value={r.addr} />}
-        {tel && <Row label="전화" value={tel} />}
+        {tel && (
+          <div className="flex gap-3 px-4 py-3">
+            <dt className="w-14 shrink-0 text-[13px] font-bold text-ink-faint">전화</dt>
+            <dd className="min-w-0 flex-1 text-[14px]">
+              {telHref ? (
+                <a href={`tel:${telHref}`} className="font-semibold text-free underline underline-offset-2 hover:text-freedark">
+                  {tel}
+                </a>
+              ) : (
+                <span className="text-ink">{tel}</span>
+              )}
+            </dd>
+          </div>
+        )}
         {homepage && (
           <div className="flex gap-3 px-4 py-3">
             <dt className="w-14 shrink-0 text-[13px] font-bold text-ink-faint">홈페이지</dt>
@@ -462,6 +479,21 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
           </div>
         )}
       </dl>
+
+      {/* 영업 정보 (detailIntro2 수집분) — 값 있는 항목만 */}
+      {bizRows.length > 0 && (
+        <section className="mt-6">
+          <h2 className="mb-2 text-[16px] font-extrabold text-ink">🕒 영업 정보</h2>
+          <dl className="divide-y divide-line rounded-2xl border border-line bg-white">
+            {bizRows.map((row) => (
+              <div key={row.label} className="flex gap-3 px-4 py-3">
+                <dt className="w-16 shrink-0 text-[13px] font-bold text-ink-faint">{row.label}</dt>
+                <dd className="min-w-0 flex-1 whitespace-pre-line text-[14px] text-ink">{row.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
 
       <p className="mt-3 rounded-xl bg-tint/50 px-4 py-3 text-[13px] leading-[1.6] text-ink-soft">
         영업시간·휴무는 바뀔 수 있어요. 방문 전 전화나 지도로 <b className="font-bold text-ink">영업 여부를 확인</b>하시길 권해요.
