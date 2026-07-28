@@ -3,7 +3,6 @@ import { SITE } from "@/lib/site";
 import SearchBox from "./SearchBox";
 import BackButton from "./BackButton";
 import HeaderNav from "./HeaderNav";
-import Icon from "./Icon";
 
 export default function Header() {
   return (
@@ -32,9 +31,9 @@ export default function Header() {
 
         <Link
           href="/#quick-entry"
-          className="hidden shrink-0 items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-2 text-[13px] font-bold text-ink-soft transition hover:border-free/40 hover:text-free sm:inline-flex"
+          className="hidden shrink-0 items-center gap-1 rounded-full border border-line bg-white px-3 py-2 text-[13px] font-bold text-ink-soft transition hover:border-free/40 hover:text-free sm:inline-flex"
         >
-          <Icon name="pin" size={16} className="text-free" />
+          <span aria-hidden>📍</span>
           <span>내 주변</span>
         </Link>
       </div>
