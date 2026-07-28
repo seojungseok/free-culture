@@ -1,18 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
-import { getAllEvents, getWeekend, getFree, slimForClient } from "@/lib/data";
-import { getKidTours, getPlaceCount, slimTours } from "@/lib/tour";
-import { getCampCount } from "@/lib/camping";
+import { getAllEvents, getWeekend, getFree, getNow, getFeatured, slimForClient } from "@/lib/data";
+import { getAllPlaces, getPlacesSample, getPlaceCount, type TourSpot } from "@/lib/tour";
+import { getCampCount, getAllCamps } from "@/lib/camping";
 import { todayYmd } from "@/lib/dates";
 import PosterCard from "@/components/PosterCard";
 import TourCard from "@/components/TourCard";
 import BigEventModal from "@/components/BigEventModal";
-import { Band, Container } from "@/components/Band";
+import { Band } from "@/components/Band";
 import { SITE } from "@/lib/site";
 import { season } from "@/lib/finder";
-import { search } from "@/lib/search";
 import { buildDateThemes } from "@/lib/dateThemes";
 import QuickEntry from "@/components/QuickEntry";
+import HeroCarousel, { type HeroSlide } from "@/components/HeroCarousel";
+import ScrollRail from "@/components/ScrollRail";
+import type { CultureEvent } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: `${SITE.name} · 이번 주말 갈 만한 전국 무료·저렴 문화행사`,
@@ -20,190 +23,246 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const isFreeish = (t: string) =>
-  t === "free" || t === "free_estimated" || t === "partial_free";
+const FREEISH = new Set(["free", "free_estimated", "partial_free"]);
+const RAIL_SPOT = "w-[46%] shrink-0 snap-start sm:w-[31%] md:w-[23.5%] lg:w-[19%]";
+const RAIL_POSTER = "w-[42%] shrink-0 snap-start sm:w-[27%] md:w-[21%] lg:w-[16%]";
 
 export default function HomePage() {
   const all = getAllEvents();
   const placeCount = getPlaceCount();
   const campCount = getCampCount();
   const s = season();
-
-  // 데이트 테마 — 지역별로 결과가 풍부한 것만(빈손 원천 차단). 지역 게이트는 lib/dateThemes에서 계산.
-  const dateThemes = buildDateThemes();
-  // 계절 테마 — 전국 기준(계절 명소는 지역 편차 허용)
-  const richThemes = (cands: string[], min: number) => cands.filter((t) => search(t).total >= min);
-  const seasonThemes = richThemes(s.terms, 10);
-
-  // 인기 검색어 — 결과 풍부한 지역·명소만(캠핑 제외). 검색 데이터 쌓이면 실제 인기어로 대체 예정.
-  const POP_CANDS = ["경주", "전주", "여수", "강릉", "속초", "통영", "안동", "춘천", "수원", "해운대", "포항", "목포", "군산", "가평", "남해", "양양", "거제"];
-  const popular = POP_CANDS.map((t) => ({ t, n: search(t).total })).filter((x) => x.n >= 40).sort((a, b) => b.n - a.n).slice(0, 15).map((x) => x.t);
-
-  // 문화행사 미리보기 (무료 먼저, 진행 중/예정, 이미지 있는 것 14개 = 2줄)
   const today = todayYmd();
-  const eventPreview = slimForClient(
-    getFree(true)
-      .filter((e) => e.imgUrl && e.endDate >= today)
-      .slice(0, 14)
+
+  // ── 데이터 선별 ────────────────────────────────────────────────
+  const dateThemes = buildDateThemes();
+
+  // 인기 명소 샘플(아이친화·유형 균형) — 이미지 있는 것만
+  const sample = getPlacesSample(40).filter((p) => p.image);
+  const topSpots = sample.slice(0, 5); // 인기 TOP
+  const weekendSpots = sample.slice(5, 21); // 이번 주말 인기 명소
+
+  // 계절 추천 명소 — 제목·주소에 계절 키워드
+  const seasonSpots = getAllPlaces().filter(
+    (p) => p.image && s.terms.some((t) => `${p.title} ${p.addr}`.includes(t))
   );
 
-  // 가볼만한 곳 미리보기 14개 = 2줄
-  const placePreview = slimTours(getKidTours(undefined, 14));
+  // 오늘 무료로 즐기는 문화행사(진행중·무료·이미지)
+  const todayFreeAll = getNow().filter((e) => FREEISH.has(e.priceType));
+  const todayFree = slimForClient(todayFreeAll.filter((e) => e.imgUrl).slice(0, 14));
+  const freeTodayCount = todayFreeAll.length;
 
-  // 팝업 (주말 무료 큰 행사)
+  // 히어로: 이번 주말 무료 대형행사 + 계절 명소 번갈아
+  const weekendBig = getWeekend()
+    .filter((e) => FREEISH.has(e.priceType) && e.imgUrl && e.endDate >= today)
+    .sort((a, b) => b.featuredScore - a.featuredScore)
+    .slice(0, 5);
+  const heroSlides: HeroSlide[] = [];
+  const seasonForHero = seasonSpots.slice(0, 5);
+  for (let i = 0; i < Math.max(weekendBig.length, seasonForHero.length); i++) {
+    const e = weekendBig[i];
+    if (e) heroSlides.push({ image: e.imgUrl, badge: "이번 주말 · 무료", title: e.title, sub: [e.area, e.place].filter(Boolean).join(" · "), href: `/event/${e.id}` });
+    const p = seasonForHero[i];
+    if (p) heroSlides.push({ image: p.image, badge: `${s.emoji} ${s.label} 추천 명소`, title: p.title, sub: p.area, href: `/places/spot/${p.id}` });
+  }
+  // 폴백 — 이미지가 부족하면 인기 명소로 채움
+  for (const p of sample) {
+    if (heroSlides.length >= 6) break;
+    if (heroSlides.length >= 4) break;
+    heroSlides.push({ image: p.image, badge: "인기 명소", title: p.title, sub: p.area, href: `/places/spot/${p.id}` });
+  }
+
+  // 카테고리 3대 대표 이미지
+  const featImg = getFeatured(1)[0]?.imgUrl;
+  const campImg = getAllCamps().find((c) => c.image)?.image;
+
+  // 팝업(주말 무료 큰 행사)
   const popupPicks = slimForClient(
-    [...getWeekend()]
-      .filter((e) => isFreeish(e.priceType) && e.imgUrl)
-      .sort((a, b) => b.featuredScore - a.featuredScore)
-      .slice(0, 5)
+    [...getWeekend()].filter((e) => FREEISH.has(e.priceType) && e.imgUrl).sort((a, b) => b.featuredScore - a.featuredScore).slice(0, 5)
   );
 
   return (
     <>
       <BigEventModal events={popupPicks} />
 
-      {/* 히어로 */}
-      <Band tone="tint" innerClassName="py-6 sm:py-8">
-        <h1 className="text-center text-[26px] font-black leading-[1.15] tracking-[-0.02em] text-ink sm:text-[34px]">
-          주말에 <span className="text-free">뭐하지?</span>
-        </h1>
-        <p className="mt-1.5 text-center text-[14px] font-semibold text-ink-soft sm:text-[15px]">
-          전국 <b className="text-free">문화행사·나들이·캠핑</b>, 무료로 저렴하게 즐기는 주말
-        </p>
+      {/* 2. 히어로 — 이번 주말 추천 (peek 캐러셀) */}
+      <div className="mx-auto w-full max-w-[1280px] pt-4 sm:pt-5">
+        <div className="mb-3 px-5 sm:px-6 lg:px-8">
+          <h1 className="text-[20px] font-black tracking-[-0.02em] text-ink sm:text-[24px]">
+            이번 주말 <span className="text-free">뭐하지?</span>
+          </h1>
+          <p className="mt-0.5 text-[13px] text-ink-faint sm:text-[14px]">전국 무료 행사·나들이·캠핑, 매일 새로 골라드려요</p>
+        </div>
+        <HeroCarousel slides={heroSlides} />
+      </div>
 
-        {/* 메인 카드 3개 — 제일 위 대표 */}
-        <div className="mx-auto mt-5 grid max-w-[680px] grid-cols-3 gap-2.5 sm:gap-3">
-          <CategoryButton href="/events" emoji="🎭" title="문화행사" sub={<>전시·공연 <span className="whitespace-nowrap">{all.length.toLocaleString()}건</span></>} />
-          <CategoryButton href="/places" emoji="🏞️" title="나들이" sub={<>가볼만한 곳 <span className="whitespace-nowrap">{placeCount.toLocaleString()}곳</span></>} />
-          <CategoryButton href="/camping" emoji="⛺" title="캠핑" sub={<>전국 캠핑장 <span className="whitespace-nowrap">{campCount.toLocaleString()}곳</span></>} />
+      {/* 3. 프로모션 띠 — 오늘 무료 */}
+      <Band tone="white" border={false} innerClassName="pt-4 sm:pt-5">
+        <Link
+          href="/free"
+          className="flex items-center justify-between gap-3 rounded-2xl bg-freelight px-5 py-3.5 transition hover:bg-[#dcf5e7]"
+        >
+          <span className="text-[13.5px] font-bold text-freedark sm:text-[15px]">
+            🆓 오늘 무료로 즐기는 문화행사 <span className="tabular-nums">{freeTodayCount.toLocaleString()}</span>건
+          </span>
+          <span className="shrink-0 text-[13px] font-bold text-free">바로 확인 →</span>
+        </Link>
+      </Band>
+
+      {/* 4. 빠른 진입 (아이콘 카테고리) */}
+      <Band tone="white" border={false} className="scroll-mt-24" innerClassName="py-6 sm:py-7">
+        <div id="quick-entry" className="scroll-mt-28">
+          <SectionHead title="빠른 진입" desc="원하는 방식을 누르고 지역·조건을 골라보세요" />
+          <div className="mt-3">
+            <QuickEntry seasonLabel={s.label} seasonEmoji={s.emoji} seasonTerms={s.terms} dateThemes={dateThemes} />
+          </div>
         </div>
       </Band>
 
-      {/* 빠른 진입 (4개만) */}
-      <Band tone="white" innerClassName="py-7">
-        <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">⚡ 빠른 진입</h2>
-        <p className="mt-0.5 text-[13px] text-ink-faint">원하는 방식을 누르고 지역·조건을 골라보세요.</p>
-        <div className="mt-3">
-          <QuickEntry seasonLabel={s.label} seasonEmoji={s.emoji} seasonTerms={seasonThemes} dateThemes={dateThemes} />
-        </div>
-      </Band>
+      {/* 5-a. 이번 주말 인기 명소 */}
+      <CardSection tone="panel" title="이번 주말 인기 명소" desc="아이와 가기 좋은 전국 나들이" href="/places" moreLabel="나들이 전체">
+        <ScrollRail ariaLabel="이번 주말 인기 명소">
+          {weekendSpots.map((p) => (
+            <div key={p.id} className={RAIL_SPOT}><TourCard spot={p} /></div>
+          ))}
+        </ScrollRail>
+      </CardSection>
 
-      {/* 인기 검색어 */}
-      <Band tone="panel" innerClassName="py-7">
-        <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">🔥 인기 검색어</h2>
-        <p className="mt-0.5 text-[13px] text-ink-faint">대한민국 대표 명소부터 시작해요.</p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {popular.map((p, i) => (
-            <Link key={p} href={`/search?q=${encodeURIComponent(p)}`}
-              className={["items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-1.5 text-[13.5px] font-semibold text-ink-soft transition hover:border-free/40 hover:text-free", i >= 10 ? "hidden sm:inline-flex" : "inline-flex"].join(" ")}>
-              <span className="text-[12px] font-black text-free">{i + 1}</span>{p}
+      {/* 5-b. 오늘 무료 행사 */}
+      {todayFree.length > 0 && (
+        <CardSection tone="white" title="오늘 무료 행사" desc="지금 열리는 무료 전시·공연" href="/free" moreLabel="무료 전체">
+          <ScrollRail ariaLabel="오늘 무료 행사">
+            {todayFree.map((ev: CultureEvent) => (
+              <div key={ev.id} className={RAIL_POSTER}><PosterCard ev={ev} /></div>
+            ))}
+          </ScrollRail>
+        </CardSection>
+      )}
+
+      {/* 5-c. 계절 추천 명소 */}
+      {seasonSpots.length > 0 && (
+        <CardSection tone="panel" title={`${s.emoji} ${s.label} 추천 명소`} desc={`${s.label}에 가기 좋은 곳을 모았어요`} href="/places" moreLabel="더 보기">
+          <ScrollRail ariaLabel={`${s.label} 추천 명소`}>
+            {seasonSpots.slice(0, 16).map((p) => (
+              <div key={p.id} className={RAIL_SPOT}><TourCard spot={p} /></div>
+            ))}
+          </ScrollRail>
+        </CardSection>
+      )}
+
+      {/* 6. 배너 + 카드 조합 — 이 계절 가볼 만한 곳 */}
+      {seasonSpots.length >= 3 && (
+        <Band tone="white" innerClassName="py-7 sm:py-8">
+          <div className="grid gap-4 lg:grid-cols-[1.05fr_2fr]">
+            <Link
+              href="/places"
+              className="group relative flex min-h-[220px] flex-col justify-end overflow-hidden rounded-2xl bg-neutral-800 p-6 sm:min-h-[300px] sm:p-7"
+            >
+              {seasonForHero[0]?.image && (
+                <Image src={seasonForHero[0].image} alt="" fill sizes="(max-width:1024px) 100vw, 420px" className="object-cover opacity-80 transition duration-500 group-hover:scale-[1.04]" unoptimized />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="relative">
+                <div className="text-[22px] font-black leading-tight tracking-[-0.02em] text-white sm:text-[26px]">이 {s.label}, 가볼 만한 곳</div>
+                <p className="mt-1 text-[13px] text-white/80">{s.emoji} {s.terms.slice(0, 3).join(" · ")} 명소</p>
+                <span className="mt-4 inline-flex w-fit items-center gap-1 rounded-full bg-white px-4 py-2 text-[13px] font-bold text-ink transition group-hover:text-free">자세히 보기 →</span>
+              </div>
             </Link>
-          ))}
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
+              {seasonSpots.slice(3, 6).map((p) => (
+                <TourCard key={p.id} spot={p} />
+              ))}
+            </div>
+          </div>
+        </Band>
+      )}
+
+      {/* 7. 카테고리 3대 */}
+      <Band tone="panel" innerClassName="py-7 sm:py-8">
+        <SectionHead title="무엇을 찾고 있나요?" desc="문화행사 · 나들이 · 캠핑 전국 정보를 한 곳에서" />
+        <div className="mt-4 grid grid-cols-3 gap-3 sm:gap-4">
+          <CategoryCard href="/events" emoji="🎭" title="문화행사" count={`${all.length.toLocaleString()}건`} sub="전시·공연" image={featImg} />
+          <CategoryCard href="/places" emoji="🏞️" title="나들이" count={`${placeCount.toLocaleString()}곳`} sub="가볼만한 곳" image={sample[0]?.image} />
+          <CategoryCard href="/camping" emoji="⛺" title="캠핑" count={`${campCount.toLocaleString()}곳`} sub="전국 캠핑장" image={campImg} />
         </div>
       </Band>
 
-      {/* 문화행사 미리보기 (2줄) */}
-      <PreviewSection
-        emoji="🎭"
-        title="문화행사"
-        desc="무료·저렴한 전시·공연을 먼저 보여드려요"
-        href="/events"
-        moreLabel={`문화행사 전체 보기 (${all.length.toLocaleString()}건)`}
-        tone="white"
-      >
-        <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-7 preview-2rows">
-          {eventPreview.map((ev, i) => (
-            <PosterCard key={ev.id} ev={ev} priority={i < 6} />
-          ))}
-        </div>
-      </PreviewSection>
-
-      {/* 가볼만한 곳 미리보기 (2줄) */}
-      <PreviewSection
-        emoji="🏞️"
-        title="나들이"
-        desc="박물관·과학관·체험 등 아이와 나들이하기 좋은 곳"
-        href="/places"
-        moreLabel={`나들이 명소 전체 보기 (${placeCount.toLocaleString()}곳)`}
-        tone="panel"
-      >
-        <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-7 preview-2rows">
-          {placePreview.map((s) => (
-            <TourCard key={s.id} spot={s} />
-          ))}
-        </div>
-      </PreviewSection>
+      {/* 8. 인기 TOP 그리드 */}
+      {topSpots.length >= 5 && (
+        <Band tone="white" innerClassName="py-7 sm:py-8">
+          <SectionHead title="많이 찾는 나들이" desc="지금 인기 있는 전국 명소" href="/places" moreLabel="전체 보기" />
+          <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 lg:grid-cols-5">
+            {topSpots.map((p, i) => (
+              <RankCard key={p.id} spot={p} rank={i + 1} />
+            ))}
+          </div>
+        </Band>
+      )}
     </>
   );
 }
 
-function CategoryButton({
-  href,
-  emoji,
-  title,
-  sub,
-}: {
-  href: string;
-  emoji: string;
-  title: string;
-  sub: React.ReactNode;
-}) {
+// ── 재사용 서브 컴포넌트 ─────────────────────────────────────────
+function SectionHead({ title, desc, href, moreLabel }: { title: string; desc?: string; href?: string; moreLabel?: string }) {
   return (
-    <Link
-      href={href}
-      className="group flex flex-col items-center gap-1 rounded-2xl border border-line bg-white px-3 py-5 text-center shadow-card transition hover:-translate-y-0.5 hover:border-free hover:shadow-cardhover"
-    >
-      <span className="text-[30px] leading-none">{emoji}</span>
-      <span className="mt-1 text-[16px] font-black text-ink group-hover:text-free sm:text-[17px]">{title}</span>
-      <span className="text-[12px] font-semibold leading-tight text-ink-faint">{sub}</span>
-      <span className="mt-0.5 text-[12px] font-bold text-free">바로가기 →</span>
-    </Link>
+    <div className="flex items-end justify-between gap-3">
+      <div>
+        <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[22px]">{title}</h2>
+        {desc && <p className="mt-0.5 text-[13px] text-ink-faint sm:text-[14px]">{desc}</p>}
+      </div>
+      {href && (
+        <Link href={href} className="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-[13px] font-bold text-ink-soft transition hover:bg-black/5 hover:text-ink">
+          {moreLabel || "전체보기"} →
+        </Link>
+      )}
+    </div>
   );
 }
 
-function PreviewSection({
-  emoji,
-  title,
-  desc,
-  href,
-  moreLabel,
-  tone,
-  children,
-}: {
-  emoji: string;
-  title: string;
-  desc: string;
-  href: string;
-  moreLabel: string;
-  tone: "white" | "panel";
-  children: React.ReactNode;
-}) {
+function CardSection({ tone, title, desc, href, moreLabel, children }: { tone: "white" | "panel"; title: string; desc?: string; href?: string; moreLabel?: string; children: React.ReactNode }) {
   return (
-    <Band tone={tone} innerClassName="py-7">
-      <div className="mb-4 flex items-end justify-between gap-3">
-        <div>
-          <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[21px]">
-            {emoji} {title}
-          </h2>
-          <p className="mt-0.5 text-[13px] text-ink-faint">{desc}</p>
-        </div>
-        <Link
-          href={href}
-          className="shrink-0 whitespace-nowrap rounded-full border border-line bg-white px-3.5 py-1.5 text-[13px] font-bold text-ink-soft transition hover:border-free/40 hover:text-free"
-        >
-          전체 보기 →
-        </Link>
-      </div>
-      {children}
-      <div className="mt-6 flex justify-center">
-        <Link
-          href={href}
-          className="rounded-full bg-ink px-7 py-3 text-sm font-bold text-white transition hover:bg-black"
-        >
-          {moreLabel} →
-        </Link>
-      </div>
+    <Band tone={tone} innerClassName="py-7 sm:py-8">
+      <SectionHead title={title} desc={desc} href={href} moreLabel={moreLabel} />
+      <div className="mt-4">{children}</div>
     </Band>
   );
 }
 
+function CategoryCard({ href, emoji, title, count, sub, image }: { href: string; emoji: string; title: string; count: string; sub: string; image?: string }) {
+  return (
+    <Link href={href} className="group relative flex aspect-[3/4] flex-col justify-end overflow-hidden rounded-2xl bg-neutral-800 p-4 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardhover sm:aspect-[4/3]">
+      {image ? (
+        <Image src={image} alt="" fill sizes="(max-width:640px) 33vw, 300px" className="object-cover opacity-75 transition duration-500 group-hover:scale-[1.05]" unoptimized />
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-free/80 to-freedark" />
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+      <div className="relative">
+        <div className="text-[22px] leading-none">{emoji}</div>
+        <div className="mt-1.5 text-[16px] font-black text-white sm:text-[18px]">{title}</div>
+        <div className="mt-0.5 text-[11.5px] font-semibold leading-tight text-white/80 sm:text-[12.5px]">
+          {sub} <span className="whitespace-nowrap">{count}</span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+function RankCard({ spot, rank }: { spot: TourSpot; rank: number }) {
+  return (
+    <Link href={`/places/spot/${spot.id}`} className="group block">
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-100 ring-1 ring-black/[0.04] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-cardhover">
+        {spot.image ? (
+          <Image src={spot.image} alt={spot.title} fill sizes="(max-width:640px) 50vw, 240px" className="object-cover transition group-hover:scale-105" unoptimized />
+        ) : (
+          <div className="flex h-full items-center justify-center text-ink-faint">🏞️</div>
+        )}
+        <span className="absolute left-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-black/60 text-[14px] font-black text-white backdrop-blur-sm">{rank}</span>
+      </div>
+      <div className="px-0.5 pt-2">
+        <h3 className="line-clamp-1 text-[14px] font-bold text-ink group-hover:text-free">{spot.title}</h3>
+        <p className="mt-0.5 line-clamp-1 text-[12px] text-ink-faint">{spot.area}</p>
+      </div>
+    </Link>
+  );
+}

@@ -44,7 +44,7 @@ export default function PosterCard({
     >
       <div
         style={{ aspectRatio: "3 / 4" }}
-        className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-neutral-100 ring-1 ring-black/[0.04] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-cardhover"
+        className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-neutral-100 ring-1 ring-black/[0.04] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-cardhover"
       >
         {hasImg ? (
           <>
