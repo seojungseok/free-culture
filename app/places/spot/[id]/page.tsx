@@ -6,7 +6,7 @@ import { getArticle } from "@/lib/articles";
 import { fetchPlaceOverview, fetchPlaceImages, fetchAdmission } from "@/lib/tourDetail";
 import { getAdmission } from "@/lib/fees";
 import { getIntro, introRows, getInfo } from "@/lib/tourExtra";
-import { nearbyPlaces, nearbyRestaurants, distanceLabel, foodTypeLabel } from "@/lib/nearby";
+import { nearbyPlaces, nearbyRestaurants, distanceLabel, foodTypeLabel, getRestaurantById, type Restaurant } from "@/lib/nearby";
 import TourCard from "@/components/TourCard";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
@@ -29,7 +29,29 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const spot = getTourById(id);
-  if (!spot) return { title: "장소를 찾을 수 없습니다" };
+  if (!spot) {
+    // 음식점(주변 맛집에서 진입) — 별도 메타데이터
+    const r = getRestaurantById(id);
+    if (r) {
+      const food = foodTypeLabel(r);
+      const gu = (r.addr.match(/[가-힣]{2,}(?:구|군)/) || [])[0];
+      const title = `${r.title} — ${r.area} ${food} 맛집`;
+      const description = `${r.area} ${r.addr}에 위치한 ${food} ${r.title}. 위치·지도·연락처와 주변 나들이 장소를 확인하세요.`;
+      return {
+        title,
+        description,
+        keywords: [
+          `${r.area} ${food}`,
+          gu ? `${gu} 맛집` : `${r.area} 맛집`,
+          `${r.title}`,
+          `${r.area} 맛집`,
+        ],
+        alternates: { canonical: `/places/spot/${id}` },
+        openGraph: { title, description, ...(r.image ? { images: [{ url: r.image }] } : {}) },
+      };
+    }
+    return { title: "장소를 찾을 수 없습니다" };
+  }
   const type = tourTypeLabel(spot.type);
   // 발행글 있으면 그 도입부, 없으면 TourAPI 소개글, 그것도 없으면 롱테일 템플릿
   const article = getArticle(id);
@@ -89,7 +111,12 @@ export default async function SpotDetailPage({
     permanentRedirect(t ? `/camping/${t}` : "/camping");
   }
   const spot = getTourById(id);
-  if (!spot) notFound();
+  if (!spot) {
+    // 나들이 장소가 아니면 음식점(주변 맛집 링크)일 수 있음 → 음식점 상세로
+    const restaurant = getRestaurantById(id);
+    if (restaurant) return <RestaurantDetail r={restaurant} />;
+    notFound();
+  }
 
   const article = getArticle(id); // 발행된 자체 소개글(있으면 본문으로)
 
@@ -325,5 +352,152 @@ function Row({ label, value }: { label: string; value: string }) {
       <dt className="w-14 shrink-0 text-[13px] font-bold text-ink-faint">{label}</dt>
       <dd className="min-w-0 flex-1 text-[14px] text-ink">{value}</dd>
     </div>
+  );
+}
+
+// ── 음식점 상세 (주변 맛집에서 진입) ─────────────────────────────
+// 나들이 상세와 동일 톤. overview·사진만 런타임(detailCommon2/detailImage2, ISR 1주) 조회.
+async function RestaurantDetail({ r }: { r: Restaurant }) {
+  const food = foodTypeLabel(r);
+  const [detail, extraImages] = await Promise.all([
+    fetchPlaceOverview(r.id),
+    fetchPlaceImages(r.id),
+  ]);
+  const overview = detail.overview;
+  const homepage = detail.homepage;
+  const tel = detail.tel || r.tel;
+
+  // 갤러리 = 대표사진 + 추가사진(중복 제거)
+  const gallery: GalleryImage[] = [];
+  const seen = new Set<string>();
+  if (r.image) { gallery.push({ full: r.image, thumb: r.image }); seen.add(r.image); }
+  for (const img of extraImages) {
+    if (seen.has(img.full)) continue;
+    seen.add(img.full);
+    gallery.push(img);
+  }
+
+  const hasMap = Boolean(r.mapx && r.mapy);
+  const mapUrl = hasMap
+    ? `https://map.kakao.com/link/map/${encodeURIComponent(r.title)},${r.mapy},${r.mapx}`
+    : undefined;
+  const areaSlug = (SIDO_SLUG as Record<string, string>)[r.area];
+  const canonical = `${SITE.url}/places/spot/${r.id}`;
+  const nearPlaces = nearbyPlaces(r, 5);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    name: r.title,
+    servesCuisine: food,
+    description: overview || `${r.area}에 위치한 ${food} ${r.title}`,
+    image: gallery.slice(0, 6).map((g) => g.full),
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: r.area,
+      streetAddress: r.addr,
+      addressCountry: "KR",
+    },
+    ...(hasMap ? { geo: { "@type": "GeoCoordinates", latitude: r.mapy, longitude: r.mapx } } : {}),
+    url: canonical,
+    ...(homepage ? { sameAs: homepage } : {}),
+    ...(tel ? { telephone: tel } : {}),
+  };
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "나들이", item: `${SITE.url}/places` },
+      { "@type": "ListItem", position: 2, name: r.area, item: `${SITE.url}/places/${areaSlug}` },
+      { "@type": "ListItem", position: 3, name: r.title, item: canonical },
+    ],
+  };
+
+  return (
+    <Container className="max-w-[820px] pb-16 pt-5">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <nav className="mb-3 flex flex-wrap items-center gap-1 text-[12.5px] text-ink-faint">
+        <Link href="/places" className="hover:text-free">나들이</Link>
+        <span>›</span>
+        {areaSlug ? (
+          <Link href={`/places/${areaSlug}`} className="hover:text-free">{r.area}</Link>
+        ) : (
+          <span>{r.area}</span>
+        )}
+      </nav>
+
+      <div className="mb-2 flex items-center gap-2">
+        <span className="rounded-md bg-tint px-2 py-0.5 text-[11px] font-bold text-freedark">🍽️ {food}</span>
+        <span className="text-[12.5px] text-ink-faint">{r.area}</span>
+      </div>
+      <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">{r.title}</h1>
+
+      {gallery.length > 0 && (
+        <div className="mt-4">
+          <PlaceGallery images={gallery} title={r.title} />
+        </div>
+      )}
+
+      {overview ? (
+        <p className="mt-5 whitespace-pre-line text-[15px] leading-[1.8] text-ink-soft">{overview}</p>
+      ) : (
+        <p className="mt-5 text-[15px] leading-[1.8] text-ink-faint">
+          {r.area} {r.addr}에 위치한 {food}입니다. 방문 전 지도와 연락처로 영업 여부를 확인하세요.
+        </p>
+      )}
+
+      <dl className="mt-6 divide-y divide-line rounded-2xl border border-line bg-white">
+        <Row label="업종" value={food} />
+        {r.addr && <Row label="주소" value={r.addr} />}
+        {tel && <Row label="전화" value={tel} />}
+        {homepage && (
+          <div className="flex gap-3 px-4 py-3">
+            <dt className="w-14 shrink-0 text-[13px] font-bold text-ink-faint">홈페이지</dt>
+            <dd className="min-w-0 flex-1 break-all text-[14px]">
+              <a href={homepage} target="_blank" rel="noopener noreferrer" className="text-free underline underline-offset-2 hover:text-freedark">
+                {homepage}
+              </a>
+            </dd>
+          </div>
+        )}
+      </dl>
+
+      <p className="mt-3 rounded-xl bg-tint/50 px-4 py-3 text-[13px] leading-[1.6] text-ink-soft">
+        영업시간·휴무는 바뀔 수 있어요. 방문 전 전화나 지도로 <b className="font-bold text-ink">영업 여부를 확인</b>하시길 권해요.
+      </p>
+
+      {nearPlaces.length > 0 && (
+        <section className="mt-6">
+          <h2 className="mb-3 text-[16px] font-extrabold text-ink">📍 주변 나들이 장소</h2>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 md:grid-cols-5">
+            {nearPlaces.map((p) => (
+              <TourCard key={p.id} spot={p} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <div className="mt-8 flex flex-wrap gap-2.5">
+        {mapUrl && (
+          <a
+            href={mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full bg-free px-5 py-2.5 text-sm font-bold text-white transition hover:bg-freedark"
+          >
+            🗺️ 카카오맵 길찾기
+          </a>
+        )}
+        <Link
+          href={areaSlug ? `/places/${areaSlug}` : "/places"}
+          className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free"
+        >
+          {r.area} 나들이 장소 보기 →
+        </Link>
+      </div>
+
+      <p className="mt-8 text-[12px] text-ink-faint">관광정보 제공: 한국관광공사 (TourAPI)</p>
+    </Container>
   );
 }

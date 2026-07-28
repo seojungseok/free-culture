@@ -50,7 +50,11 @@ export default function PlaceGallery({
 
   if (images.length === 0) return null;
   const hero = images[0];
+  // 썸네일은 최대 7장만 노출(모바일 세로 길이 억제). 나머지는 마지막 칸 "+N"으로 라이트박스 유도.
+  const MAX_THUMBS = 7;
   const rest = images.slice(1);
+  const shown = rest.slice(0, MAX_THUMBS);
+  const hiddenCount = rest.length - shown.length;
 
   return (
     <div>
@@ -80,26 +84,34 @@ export default function PlaceGallery({
         )}
       </button>
 
-      {/* 추가 사진 썸네일 */}
-      {rest.length > 0 && (
+      {/* 추가 사진 썸네일 (최대 MAX_THUMBS장, 초과분은 마지막 칸 +N) */}
+      {shown.length > 0 && (
         <div className="mt-2.5 grid grid-cols-4 gap-2 sm:grid-cols-6">
-          {rest.map((img, i) => (
-            <button
-              key={img.full}
-              type="button"
-              onClick={() => show(i + 1)}
-              className="relative aspect-square overflow-hidden rounded-lg bg-neutral-100 ring-1 ring-black/[0.04] transition hover:opacity-90"
-              aria-label={`${title} 사진 ${i + 2}`}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={img.thumb}
-                alt={`${title} 사진 ${i + 2}`}
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
-            </button>
-          ))}
+          {shown.map((img, i) => {
+            const isLast = i === shown.length - 1 && hiddenCount > 0;
+            return (
+              <button
+                key={img.full}
+                type="button"
+                onClick={() => show(i + 1)}
+                className="relative aspect-square overflow-hidden rounded-lg bg-neutral-100 ring-1 ring-black/[0.04] transition hover:opacity-90"
+                aria-label={isLast ? `${title} 사진 더 보기` : `${title} 사진 ${i + 2}`}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={img.thumb}
+                  alt={`${title} 사진 ${i + 2}`}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+                {isLast && (
+                  <span className="absolute inset-0 flex items-center justify-center bg-black/55 text-[15px] font-bold text-white">
+                    +{hiddenCount}
+                  </span>
+                )}
+              </button>
+            );
+          })}
         </div>
       )}
 

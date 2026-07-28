@@ -40,8 +40,16 @@ export function foodTypeLabel(r: Restaurant): string {
   return FOOD_CAT[r.cat3 || ""] || "음식점";
 }
 
+/** id로 음식점 1곳 조회 (음식점 상세 페이지용). 없으면 undefined */
+export function getRestaurantById(id: string): Restaurant | undefined {
+  return restaurants.find((r) => r.id === id);
+}
+
+// 주변 계산에 필요한 최소 참조(나들이·음식점 공통)
+type NearRef = { id: string; area: string; mapx?: string; mapy?: string };
+
 /** 주변 나들이 장소 n곳 (같은 시도 내, 자기 제외, 가까운 순) */
-export function nearbyPlaces(spot: TourSpot, n = 5): (TourSpot & { dist: number })[] {
+export function nearbyPlaces(spot: NearRef, n = 5): (TourSpot & { dist: number })[] {
   return getAllPlaces()
     .filter((p) => p.id !== spot.id && p.area === spot.area)
     .map((p) => ({ ...p, dist: distanceKm(spot, p) }))
