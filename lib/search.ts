@@ -81,10 +81,11 @@ function build(): SearchDoc[] {
   // 맛집(restaurants.json) — 수집 전이면 빈 배열
   const foods = (restaurantsData as { restaurants?: { id: string; title: string; addr: string; area: string; image?: string; cat3?: string }[] }).restaurants || [];
   for (const r of foods) {
+    const catHay = FOOD_CAT_HAY[r.cat3 || ""] || "";
     docs.push({
       kind: "food", id: r.id, title: r.title, area: r.area, sub: guOf(r.addr || ""),
       url: `/places/spot/${r.id}`, image: r.image || "", price: "unknown", hasImg: Boolean(r.image),
-      titleN: norm(r.title), hay: norm(`${r.title} ${r.addr} ${r.area} 맛집 음식점 식당`),
+      titleN: norm(r.title), hay: norm(`${r.title} ${r.addr} ${r.area} 맛집 음식점 식당 ${catHay}`),
     });
   }
 
@@ -114,8 +115,19 @@ const GENRE_SYN: Record<string, string[]> = {
 // 텍스트 유의어(장소 유형) — OR 확장
 const TEXT_SYN: Record<string, string[]> = {
   박물관: ["박물관", "기념관", "전시관"], 체험: ["체험", "체험관", "체험마을"],
-  공원: ["공원", "생태공원", "근린공원"], 수목원: ["수목원", "식물원", "자연휴양림"],
-  미술관: ["미술관", "갤러리"], 과학관: ["과학관"],
+  공원: ["공원", "생태공원", "근린공원"],
+  // 데이트 테마 — 풍부한 소스로 확장(단독 키워드로도 결과 넉넉하게)
+  수목원: ["수목원", "식물원", "자연휴양림", "정원", "수목"],
+  정원: ["정원", "수목원", "식물원", "자연휴양림"],
+  미술관: ["미술관", "갤러리", "전시관", "아트센터", "전시"], // 장소 미술관 + 전시(문화행사) 통합
+  호수: ["호수", "저수지", "강변", "수변"], // 강변·호수 통합
+  과학관: ["과학관"],
+};
+
+// 음식점 cat3 → 검색어(hay에 편입해 업종 검색 지원: 카페·한식 등)
+const FOOD_CAT_HAY: Record<string, string> = {
+  A05020100: "한식", A05020200: "서양식 양식", A05020300: "일식", A05020400: "중식",
+  A05020700: "이색음식점", A05020900: "카페 찻집 커피", A05021000: "클럽",
 };
 
 export interface ParsedQuery {

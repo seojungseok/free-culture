@@ -5,11 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
+import type { DateTheme } from "@/lib/dateThemes";
 
 type Key = "loc" | "free" | "season" | "date";
 interface NearItem { id: string; title: string; area: string; image: string; url: string; dist: string }
 
-export default function QuickEntry({ seasonLabel, seasonEmoji, seasonTerms, dateThemes }: { seasonLabel: string; seasonEmoji: string; seasonTerms: string[]; dateThemes: string[] }) {
+export default function QuickEntry({ seasonLabel, seasonEmoji, seasonTerms, dateThemes }: { seasonLabel: string; seasonEmoji: string; seasonTerms: string[]; dateThemes: DateTheme[] }) {
   const router = useRouter();
   const [open, setOpen] = useState<Key | null>(null);
 
@@ -48,13 +49,45 @@ export default function QuickEntry({ seasonLabel, seasonEmoji, seasonTerms, date
           }} />
       )}
       {open === "date" && (
-        <ThemePanel title="💑 데이트" hint="테마를 고르고(여러 개 가능) 지역을 누르세요"
-          themes={dateThemes} onGo={(region, terms) => {
-            const q = [region, ...(terms.length ? terms : [dateThemes[0]])].filter(Boolean).join(" ");
-            router.push(`/search?q=${enc(q)}`);
-          }} />
+        <DateThemePanel themes={dateThemes} onGo={(region, term) => {
+          const q = [region, term].filter(Boolean).join(" ");
+          router.push(`/search?q=${enc(q)}`);
+        }} />
       )}
     </div>
+  );
+}
+
+// 💑 데이트: 테마 하나 고르면 → 결과 풍부한 지역만 노출(빈손 방지)
+function DateThemePanel({ themes, onGo }: { themes: DateTheme[]; onGo: (region: string, term: string) => void }) {
+  const [sel, setSel] = useState<DateTheme | null>(null);
+  if (themes.length === 0) return null;
+  return (
+    <Panel title="💑 데이트"
+      hint={sel ? `‘${sel.label}’ · 지역을 누르면 그 지역 결과로 가요` : "테마를 먼저 고르세요 · 결과가 풍부한 지역만 보여드려요"}>
+      <div className="mb-2.5 flex flex-wrap gap-1.5">
+        {themes.map((t) => (
+          <button key={t.label} onClick={() => setSel(sel?.label === t.label ? null : t)}
+            className={["rounded-full px-3.5 py-2 text-[13.5px] font-bold transition", sel?.label === t.label ? "bg-free text-white shadow-sm" : "border border-line bg-white text-ink-soft hover:border-free/40 hover:text-free"].join(" ")}>
+            {t.emoji} {t.label}
+          </button>
+        ))}
+      </div>
+      {sel && (
+        <>
+          <div className="text-[12px] font-bold text-ink-faint">지역 선택 <span className="font-semibold text-ink-faint/70">— 결과 많은 지역만</span></div>
+          <div className="mt-1.5 flex flex-wrap gap-1.5">
+            <RChip label="전국" onClick={() => onGo("", sel.term)} />
+            {SIDO_LIST.filter((r) => sel.regions.includes(r)).map((r) => (
+              <RChip key={r} label={r} onClick={() => onGo(r, sel.term)} />
+            ))}
+          </div>
+          {sel.regions.length < SIDO_LIST.length && (
+            <p className="mt-2 text-[11.5px] text-ink-faint">그 외 지역은 아직 &lsquo;{sel.label}&rsquo; 결과가 적어 숨겼어요. &lsquo;전국&rsquo;으로 보면 더 많이 나와요.</p>
+          )}
+        </>
+      )}
+    </Panel>
   );
 }
 

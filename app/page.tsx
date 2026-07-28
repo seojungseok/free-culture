@@ -11,6 +11,7 @@ import { Band, Container } from "@/components/Band";
 import { SITE } from "@/lib/site";
 import { season } from "@/lib/finder";
 import { search } from "@/lib/search";
+import { buildDateThemes } from "@/lib/dateThemes";
 import QuickEntry from "@/components/QuickEntry";
 
 export const metadata: Metadata = {
@@ -28,9 +29,10 @@ export default function HomePage() {
   const campCount = getCampCount();
   const s = season();
 
-  // 데이트·계절 테마 — 실제 검색 결과 있는 항목만(빈손 버튼 금지)
+  // 데이트 테마 — 지역별로 결과가 풍부한 것만(빈손 원천 차단). 지역 게이트는 lib/dateThemes에서 계산.
+  const dateThemes = buildDateThemes();
+  // 계절 테마 — 전국 기준(계절 명소는 지역 편차 허용)
   const richThemes = (cands: string[], min: number) => cands.filter((t) => search(t).total >= min);
-  const dateThemes = richThemes(["전시", "공원", "전망대", "야경", "맛집", "드라이브"], 20);
   const seasonThemes = richThemes(s.terms, 10);
 
   // 인기 검색어 — 결과 풍부한 지역·명소만(캠핑 제외). 검색 데이터 쌓이면 실제 인기어로 대체 예정.

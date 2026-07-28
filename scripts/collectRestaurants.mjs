@@ -21,13 +21,20 @@ const CT = "39";
 async function main() {
   const store = readCache(OUT, { generatedAt: null, count: 0, restaurants: [] });
   const byId = new Map(store.restaurants.map((r) => [r.id, r]));
-  console.log(`\n🍽️  음식점 수집 — 기존 ${byId.size}곳 · 목표 ${MAX} · 콜 상한 ${DAILY}`);
+
+  // RESTO_AREAS=서울,경기,인천 처럼 시도명(쉼표)으로 수집 지역 한정. 없으면 전국.
+  const areaFilter = (process.env.RESTO_AREAS || "").split(",").map((s) => s.trim()).filter(Boolean);
+  const areaCodes = areaFilter.length
+    ? AREA_CODES.filter((c) => areaFilter.includes(AREA_TO_SIDO[c]))
+    : AREA_CODES;
+  const scope = areaFilter.length ? areaFilter.join("·") : "전국";
+  console.log(`\n🍽️  음식점 수집 — 기존 ${byId.size}곳 · 목표 ${MAX} · 콜 상한 ${DAILY} · 지역 ${scope}`);
 
   const budget = createBudget(DAILY);
   const totals = {};
   let added = 0;
   try {
-    for (const area of AREA_CODES) {
+    for (const area of areaCodes) {
       if (byId.size >= MAX) break;
       const sido = AREA_TO_SIDO[area];
       let page = 1, total = Infinity, areaAdded = 0;
