@@ -4,9 +4,11 @@ name: 일일 데이터·글 (통합, 1일 1배포)
 #  목적: 데이터 커밋을 하루 1회로 묶어 Vercel 재배포(=ISR 캐시 초기화) 횟수를 줄인다.
 #  → 재배포마다 크롤러가 상세페이지를 재생성하며 ISR Writes가 늘어나므로, 배포 빈도가 핵심 절감 레버.
 #  각 수집 스텝은 continue-on-error 로 독립 → 하나 실패해도 나머지 데이터는 그대로 커밋.
+# ⚠️ 2026-07-29 ISR Writes 100% 도달 — 이번 달 남은 기간 스케줄 중단(배포 동결로 캐시 초기화 방지).
+#    다음 달 리셋되면 아래 schedule 주석 해제해 하루 1배포로 복구할 것.
 on:
-  schedule:
-    - cron: "0 16 * * *" # UTC 16:00 = KST 01:00 (하루 1회)
+  # schedule:
+  #   - cron: "0 16 * * *" # UTC 16:00 = KST 01:00 (하루 1회)
   workflow_dispatch:
     inputs:
       test_count:
