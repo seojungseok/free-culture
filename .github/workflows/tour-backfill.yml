@@ -30,29 +30,31 @@ jobs:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
         run: node scripts/collectFestivals.mjs
 
-      - name: 음식점 수집 (areaBasedList2, 39) — 주변 맛집 섹션용(사진 우선, 하루면 완주)
+      - name: 음식점 수집 (areaBasedList2, 39) — 주변 맛집 섹션용(사진 우선, 목록은 사실상 완주)
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          RESTO_DAILY: "300"
+          RESTO_DAILY: "100"
           RESTO_MAX: "6000"
         run: node scripts/collectRestaurants.mjs
 
+      # 음식점 연락처·영업정보 채우기를 최우선으로 상향(300→500). 6,000곳 완주 20일→12일.
       - name: 음식점 영업정보 수집 (detailIntro2, 39) — 전화·영업시간·메뉴(수도권 우선)
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          RIN_DAILY: "300"
+          RIN_DAILY: "500"
         run: node scripts/collectRestaurantIntro.mjs
 
+      # 1,000회/일 공유 한도 보호 → 관광지 intro/info는 잠시 축소(잔여 1만+, 급하지 않음)
       - name: 방문 팁 수집 (detailIntro2)
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          INTRO_DAILY: "400"
+          INTRO_DAILY: "250"
         run: node scripts/collectIntro.mjs
 
       - name: 볼거리 수집 (detailInfo2)
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          INFO_DAILY: "300"
+          INFO_DAILY: "150"
         run: node scripts/collectInfo.mjs
 
       - name: 변경분 커밋
