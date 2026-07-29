@@ -37,6 +37,11 @@ jobs:
       - name: 의존성 설치
         run: npm ci
 
+      # ── 예산 자동 배분: RIN 완주 시 남는 몫을 방문팁·볼거리로 자동 이관(무인) ──
+      - name: TourAPI 예산 계획
+        id: plan
+        run: node scripts/planBudget.mjs
+
       # ── TourAPI(일 1,000회 공유) — 우선순위 순. 캠핑 이미지는 goCamping(별도 한도) ──
       - name: 축제 수집 (searchFestival2)
         continue-on-error: true
@@ -57,21 +62,21 @@ jobs:
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          RIN_DAILY: "500"
+          RIN_DAILY: ${{ steps.plan.outputs.rin_daily }} # 예산 계획이 자동 산정
         run: node scripts/collectRestaurantIntro.mjs
 
       - name: 방문 팁 수집 (detailIntro2)
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          INTRO_DAILY: "250"
+          INTRO_DAILY: ${{ steps.plan.outputs.intro_daily }} # RIN 완주 시 자동 상향
         run: node scripts/collectIntro.mjs
 
       - name: 볼거리 수집 (detailInfo2)
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          INFO_DAILY: "150"
+          INFO_DAILY: ${{ steps.plan.outputs.info_daily }} # RIN 완주 시 자동 상향
         run: node scripts/collectInfo.mjs
 
       - name: 문화행사 수집 (KorService2)
