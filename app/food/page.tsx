@@ -105,6 +105,9 @@ function FoodCard({ r }: { r: Restaurant }) {
       <div className="px-0.5 pb-1 pt-2">
         <h3 className="line-clamp-1 text-[14px] font-bold text-ink group-hover:text-free">{r.title}</h3>
         <p className="mt-0.5 line-clamp-1 text-[12px] text-ink-faint">{[r.area, gu].filter(Boolean).join(" · ")}</p>
+        {r.phone && (
+          <p className="mt-0.5 line-clamp-1 text-[11.5px] font-semibold text-ink-soft">☎ {r.phone}</p>
+        )}
       </div>
     </Link>
   );

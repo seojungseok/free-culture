@@ -5,7 +5,7 @@ import { getTourById, tourTypeLabel, isCampingDupe, campingDupeTarget } from "@/
 import { getArticle } from "@/lib/articles";
 import { fetchPlaceOverview, fetchPlaceImages, fetchAdmission } from "@/lib/tourDetail";
 import { getAdmission } from "@/lib/fees";
-import { getIntro, introRows, getInfo, restaurantIntroRows, getRestaurantPhone, getRestaurantMenu, restaurantOpeningSpec } from "@/lib/tourExtra";
+import { getIntro, introRows, getInfo, restaurantIntroRows, getRestaurantPhone, getRestaurantMenu, restaurantOpeningSpec, restaurantSummary } from "@/lib/tourExtra";
 import { nearbyPlaces, nearbyRestaurants, distanceLabel, foodTypeLabel, getRestaurantById, type Restaurant } from "@/lib/nearby";
 import TourCard from "@/components/TourCard";
 import { SIDO_SLUG } from "@/lib/classify";
@@ -36,7 +36,11 @@ export async function generateMetadata({
       const food = foodTypeLabel(r);
       const gu = (r.addr.match(/[가-힣]{2,}(?:구|군)/) || [])[0];
       const title = `${r.title} — ${r.area} ${food} 맛집`;
-      const description = `${r.area} ${r.addr}에 위치한 ${food} ${r.title}. 위치·지도·연락처와 주변 나들이 장소를 확인하세요.`;
+      // 수집된 영업정보(영업시간·메뉴 등)가 있으면 메타 설명에 그대로 반영 → 롱테일 키워드·정보성 강화
+      const summary = restaurantSummary(id);
+      const description = summary
+        ? `${gu ? `${r.area} ${gu}` : r.area} ${food} ${r.title}. ${summary}. 위치·지도·연락처를 확인하세요.`
+        : `${r.area} ${r.addr}에 위치한 ${food} ${r.title}. 위치·지도·연락처와 주변 나들이 장소를 확인하세요.`;
       return {
         title,
         description,
@@ -391,6 +395,7 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
 
   const openingHoursSpec = restaurantOpeningSpec(r.id);
   const menu = getRestaurantMenu(r.id);
+  const bizSummary = restaurantSummary(r.id);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
@@ -450,8 +455,10 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
       {overview ? (
         <p className="mt-5 whitespace-pre-line text-[15px] leading-[1.8] text-ink-soft">{overview}</p>
       ) : (
-        <p className="mt-5 text-[15px] leading-[1.8] text-ink-faint">
-          {r.area} {r.addr}에 위치한 {food}입니다. 방문 전 지도와 연락처로 영업 여부를 확인하세요.
+        <p className="mt-5 text-[15px] leading-[1.8] text-ink-soft">
+          {r.area} {r.addr}에 위치한 {food} <b className="font-bold text-ink">{r.title}</b>입니다.
+          {bizSummary && <> {bizSummary}.</>}{" "}
+          방문 전 지도와 연락처로 영업 여부를 확인하세요.
         </p>
       )}
 

@@ -113,6 +113,27 @@ export function getRestaurantMenu(id: string): string | undefined {
   return v || undefined;
 }
 
+/**
+ * 음식점 영업정보를 한 줄 자연어로 요약(메타 설명·본문 리드용). 값 있는 항목만.
+ * 예: "영업 11:30~22:30 · 매주 토요일 휴무 · 대표메뉴 유니짜장면 · 주차 불가"
+ * clip: 긴 취급메뉴 등은 잘라 메타 설명 길이 방어.
+ */
+export function restaurantSummary(id: string): string {
+  const it = restaurantIntro[id];
+  if (!it) return "";
+  const clip = (s: unknown, n = 40) => {
+    const v = String(s || "").trim();
+    return v.length > n ? v.slice(0, n).trim() + "…" : v;
+  };
+  const parts: string[] = [];
+  if (it.usetime) parts.push(`영업 ${clip(it.usetime, 30)}`);
+  if (it.restdate) parts.push(`${clip(it.restdate, 20)} 휴무`);
+  if (it.firstmenu) parts.push(`대표메뉴 ${clip(it.firstmenu, 24)}`);
+  else if (it.treatmenu) parts.push(`메뉴 ${clip(it.treatmenu, 30)}`);
+  if (it.parking) parts.push(`주차 ${clip(it.parking, 10)}`);
+  return parts.join(" · ");
+}
+
 const DAY_KO: Record<string, string> = {
   월: "Monday", 화: "Tuesday", 수: "Wednesday", 목: "Thursday",
   금: "Friday", 토: "Saturday", 일: "Sunday",

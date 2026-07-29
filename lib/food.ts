@@ -1,12 +1,27 @@
 // 맛집(음식점) 필터 — 지역(시도)·업종(cat3). data/restaurants.json 기반.
 import restaurantsData from "@/data/restaurants.json";
+import restaurantIntroData from "@/data/restaurant-intro.json";
 import { SIDO_LIST } from "@/lib/classify";
 
 export interface Restaurant {
   id: string; title: string; addr: string; area: string;
   image: string; mapx: string; mapy: string; tel: string; cat3?: string;
+  phone?: string; // restaurant-intro.json infocenter(문의처) — 목록·카드 노출용
 }
-const restaurants = (restaurantsData as unknown as { restaurants: Restaurant[] }).restaurants || [];
+
+// 수집된 영업정보(restaurant-intro)의 전화(infocenter)를 id→전화 맵으로
+const introMap = (restaurantIntroData as unknown as { intro?: Record<string, { infocenter?: string }> }).intro || {};
+function phoneOf(id: string): string | undefined {
+  const v = introMap[id]?.infocenter;
+  return v && String(v).trim() ? String(v).trim() : undefined;
+}
+
+// 목록의 tel은 전량 빈값 → 수집된 문의처 전화를 phone으로 병합(한 번만)
+const restaurants: Restaurant[] = ((restaurantsData as unknown as { restaurants: Restaurant[] }).restaurants || [])
+  .map((r) => {
+    const phone = phoneOf(r.id);
+    return phone ? { ...r, phone } : r;
+  });
 
 // 업종(cat3) — TourAPI 음식점 분류
 export const FOOD_CATS: { code: string; label: string }[] = [
