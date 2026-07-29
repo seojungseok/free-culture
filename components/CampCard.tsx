@@ -32,7 +32,18 @@ export default function CampCard({ camp }: { camp: Camp }) {
         <h3 className="line-clamp-1 text-[14px] font-bold text-ink group-hover:text-free">{camp.name}</h3>
         <p className="mt-0.5 line-clamp-1 text-[12px] text-ink-faint">{[camp.area, camp.sigungu].filter(Boolean).join(" · ")}</p>
         {facs.length > 0 && (
-          <p className="mt-0.5 text-[12px] text-ink-dim">{facs.slice(0, 5).map((f) => FAC_ICON[f]).join(" ")}</p>
+          <div className="mt-1 flex flex-wrap items-center gap-1">
+            {facs.map((f) => (
+              <span
+                key={f}
+                title={f}
+                aria-label={f}
+                className="inline-flex h-[19px] min-w-[19px] items-center justify-center rounded-md bg-neutral-100 px-1 text-[11px] leading-none ring-1 ring-black/[0.03]"
+              >
+                {FAC_ICON[f]}
+              </span>
+            ))}
+          </div>
         )}
       </div>
     </Link>
