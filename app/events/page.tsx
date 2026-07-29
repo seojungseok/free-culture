@@ -4,6 +4,9 @@ import { getAllEvents, slimForClient } from "@/lib/data";
 import DateBrowser from "@/components/DateBrowser";
 import { Band } from "@/components/Band";
 
+// 목록은 하루 1회 재생성 → 새 행사 하루 내 반영
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "전국 문화행사 — 무료·저렴 전시·공연·축제",
   description:

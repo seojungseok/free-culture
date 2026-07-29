@@ -10,7 +10,7 @@ import { Container } from "@/components/Band";
 import TourCard from "@/components/TourCard";
 
 export const dynamicParams = true;
-export const revalidate = 604800;
+export const revalidate = 2592000; // 30일 — 캠핑장 정보 거의 불변(대역폭 절감)
 export function generateStaticParams() { return []; }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {

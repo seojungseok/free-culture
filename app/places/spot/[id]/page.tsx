@@ -16,7 +16,7 @@ import ArticleBody from "@/components/ArticleBody";
 
 // 상세는 방문 시점에 detailCommon2로 overview를 받아 ISR 캐시 (빌드 시 전량 프리렌더 X)
 export const dynamicParams = true;
-export const revalidate = 604800; // 1주
+export const revalidate = 2592000; // 30일 — 상세 정보는 거의 안 바뀜(대역폭 절감). 새 글 발행 시 재배포/on-demand로 즉시 갱신
 
 export function generateStaticParams() {
   return []; // 모든 상세는 온디맨드 생성 후 캐시

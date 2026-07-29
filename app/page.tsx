@@ -17,6 +17,9 @@ import ScrollRail from "@/components/ScrollRail";
 import restaurantsData from "@/data/restaurants.json";
 import type { CultureEvent } from "@/lib/types";
 
+// 홈은 하루 1회 재생성 → 새 행사·새 글·새 데이터가 하루 안에 노출(엣지 캐시라 대역폭 부담 없음)
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: `${SITE.name} · 이번 주말 갈 만한 전국 무료·저렴 문화행사`,
   description: SITE.description,

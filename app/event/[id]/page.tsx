@@ -10,9 +10,9 @@ import AdSlot from "@/components/AdSlot";
 import PosterCard from "@/components/PosterCard";
 import ShareButtons from "@/components/ShareButtons";
 
-// ISR: 하루 1회 재검증. 전체를 빌드 때 만들지 않고 주목도 높은 일부만 사전 생성,
-// 나머지는 첫 요청 때 생성 후 캐시(dynamicParams 기본 true).
-export const revalidate = 86400;
+// ISR: 3일 재검증. 행사는 날짜 민감(종료 반영)하나 상세 자체는 자주 안 바뀜.
+// 전체를 빌드 때 만들지 않고 주목도 높은 일부만 사전 생성, 나머지는 첫 요청 때 생성 후 캐시.
+export const revalidate = 259200; // 3일
 
 export function generateStaticParams() {
   return getAllEvents()

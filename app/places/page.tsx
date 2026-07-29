@@ -4,6 +4,9 @@ import { getPlaceCount, getPlacesSample, getTourAreaCounts, getTypeCounts, slimT
 import PlacesBrowser from "@/components/PlacesBrowser";
 import { Band } from "@/components/Band";
 
+// 목록은 하루 1회 재생성 → 새 데이터 하루 내 반영
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "나들이·가볼만한 곳 — 전국 관광지·문화시설·체험 명소",
   keywords: ["나들이", "가볼만한 곳", "주말 나들이", "전국 관광지", "문화시설", "체험 명소"],
