@@ -3,6 +3,7 @@ import { getAllEvents } from "@/lib/data";
 import { getAllPlaces, getTourAreaCounts } from "@/lib/tour";
 import { getAllCamps, campAreaCounts, filterCamps, CAMP_TYPE_SLUG } from "@/lib/camping";
 import { getAllRestaurants, foodAreas, FOOD_CATS, filterRestaurants } from "@/lib/food";
+import { getAllArticles } from "@/lib/articles";
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 
@@ -12,11 +13,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url.replace(/\/$/, "");
   const now = new Date();
 
+  // 주요 목록/홈은 높은 우선순위·잦은 갱신. 정보성 정적 페이지는 낮게.
+  const MAJOR = new Set(["/events", "/places", "/camping", "/food"]);
+  const LOW = new Set(["/about", "/privacy", "/terms", "/contact"]);
   const staticRoutes = [
     "",
     "/events",
     "/places",
     "/camping",
+    "/food",
     "/free",
     "/cheap",
     "/weekend",
@@ -29,8 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((p) => ({
     url: `${base}${p}`,
     lastModified: now,
-    changeFrequency: "daily" as const,
-    priority: p === "" ? 1 : p === "/events" || p === "/places" ? 0.9 : 0.7,
+    changeFrequency: LOW.has(p) ? ("monthly" as const) : ("daily" as const),
+    priority: p === "" ? 1 : MAJOR.has(p) ? 0.9 : LOW.has(p) ? 0.3 : 0.6,
   }));
 
   const regionRoutes = Object.values(SIDO_SLUG).map((code) => ({
@@ -48,20 +53,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // 가볼만한 곳 상세 (전량 — 롱테일 색인)
-  const placeSpotRoutes = getAllPlaces().map((s) => ({
-    url: `${base}/places/spot/${s.id}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.5,
+  // 발행글 있는 상세 → 최신 lastmod + 높은 우선순위로 별도 그룹(구글이 새 글 먼저 크롤)
+  const articleAt = new Map<string, string>();
+  for (const a of getAllArticles()) {
+    if (a.status === "published") articleAt.set(a.id, a.publishedAt || a.generatedAt || now.toISOString());
+  }
+  const articleSpotRoutes = [...articleAt].map(([id, at]) => ({
+    url: `${base}/places/spot/${id}`,
+    lastModified: new Date(at),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
   }));
+
+  // 가볼만한 곳 상세 (전량 — 롱테일 색인). 발행글 있는 건 위 그룹에서 처리(중복 제외).
+  const placeSpotRoutes = getAllPlaces()
+    .filter((s) => !articleAt.has(s.id))
+    .map((s) => ({
+      url: `${base}/places/spot/${s.id}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.4,
+    }));
 
   // 음식점 상세 (전량 — 롱테일 색인, /places/spot/[id]로 렌더)
   const restaurantRoutes = getAllRestaurants().map((r) => ({
     url: `${base}/places/spot/${r.id}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.5,
+    priority: 0.4,
   }));
 
   // 맛집 지역 허브 (/food/[area]) — 데이터 있는 지역만
@@ -115,7 +134,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}/camping/${c.id}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.5,
+    priority: 0.4,
   }));
 
   const genreRoutes = GENRES.map((g) => ({
@@ -147,23 +166,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}/event/${e.id}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
-    priority: 0.5,
+    priority: 0.4,
   }));
 
   return [
+    // 1) 홈·주요 목록·허브 (높은 우선순위 — 크롤 예산 집중)
     ...staticRoutes,
     ...regionRoutes,
+    ...comboRoutes,
+    ...genreRoutes,
     ...placeAreaRoutes,
-    ...placeSpotRoutes,
-    ...restaurantRoutes,
     ...foodAreaRoutes,
     ...foodCatRoutes,
     ...foodComboRoutes,
     ...campRegionRoutes,
     ...campTypeRoutes,
+    // 2) 발행글 있는 상세 (최신 lastmod — 새 글 우선 크롤)
+    ...articleSpotRoutes,
+    // 3) 대량 롱테일 상세 (낮은 우선순위·가끔)
+    ...placeSpotRoutes,
+    ...restaurantRoutes,
     ...campRoutes,
-    ...genreRoutes,
-    ...comboRoutes,
     ...eventRoutes,
   ];
 }

@@ -20,6 +20,7 @@
     "articles": "node scripts/generateArticles.mjs",
     "audit": "node scripts/auditArticles.mjs",
     "articles:publish": "node scripts/publishDrafts.mjs",
+  "revalidate": "node scripts/revalidatePublished.mjs",
     "test:gemini": "node scripts/testGemini.mjs"
   },
   "dependencies": {
