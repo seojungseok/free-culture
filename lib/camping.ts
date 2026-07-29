@@ -24,6 +24,20 @@ const data = {
 export const CAMP_TYPES = ["일반야영장", "오토캠핑", "글램핑", "카라반"] as const;
 export const CAMP_FACILITIES = ["전기", "샤워실", "화장실", "와이파이", "온수", "마트"] as const;
 
+// 유형 → URL slug (영문). /camping/type/[type], /camping/region/[area] 라우트용.
+export const CAMP_TYPE_SLUG: { label: (typeof CAMP_TYPES)[number]; slug: string }[] = [
+  { label: "일반야영장", slug: "general" },
+  { label: "오토캠핑", slug: "auto" },
+  { label: "글램핑", slug: "glamping" },
+  { label: "카라반", slug: "caravan" },
+];
+export function campTypeFromSlug(slug?: string) {
+  return CAMP_TYPE_SLUG.find((t) => t.slug === slug);
+}
+export function campTypeSlug(label: string): string | undefined {
+  return CAMP_TYPE_SLUG.find((t) => t.label === label)?.slug;
+}
+
 export function getAllCamps(): Camp[] { return data.camps || []; }
 export function getCampCount(): number { return data.count ?? (data.camps || []).length; }
 export function getCamp(id: string): Camp | undefined { return (data.camps || []).find((c) => c.id === id); }

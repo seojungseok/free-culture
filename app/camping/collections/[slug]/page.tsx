@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllBundles, getBundle, bundleCamps, campBlurb } from "@/lib/campingCollections";
 import { SITE } from "@/lib/site";
+import { SIDO_SLUG } from "@/lib/classify";
 import { Container } from "@/components/Band";
 import CampCard from "@/components/CampCard";
 
@@ -77,7 +78,7 @@ export default async function BundlePage({ params }: { params: Promise<{ slug: s
       </div>
 
       <div className="mt-8">
-        <Link href={`/camping?area=${encodeURIComponent(b.area)}`} className="inline-flex rounded-full border border-line bg-white px-5 py-2.5 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free">{b.area} 캠핑장 전체 필터로 보기 →</Link>
+        <Link href={`/camping/region/${(SIDO_SLUG as Record<string, string>)[b.area]}`} className="inline-flex rounded-full border border-line bg-white px-5 py-2.5 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free">{b.area} 캠핑장 전체 보기 →</Link>
       </div>
       <p className="mt-6 text-[12px] text-ink-faint">캠핑정보 제공: 한국관광공사 고캠핑 · 목록은 데이터 기준으로 자동 정리되며 주관적 평가를 담지 않습니다.</p>
     </Container>

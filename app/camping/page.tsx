@@ -1,64 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { filterCamps, campAreaCounts, petCount, getCampCount, CAMP_TYPES, CAMP_FACILITIES, type CampFilter } from "@/lib/camping";
+import { filterCamps, campAreaCounts, getCampCount, getAllCamps, CAMP_TYPE_SLUG } from "@/lib/camping";
 import CampCard from "@/components/CampCard";
 import { Band, Container } from "@/components/Band";
 import { FilterRow, Chip } from "@/components/FilterChips";
+import { SIDO_SLUG } from "@/lib/classify";
 
-type SP = { area?: string; type?: string; facility?: string; pet?: string };
-const CAP = 120;
+const CAP = 60;
+// 정적 페이지(엣지 캐시). 하루 1회 재생성. 필터는 쿼리 대신 정적 라우트(/camping/region·type).
+export const revalidate = 86400;
 
-export async function generateMetadata({ searchParams }: { searchParams: Promise<SP> }): Promise<Metadata> {
-  const sp = await searchParams;
-  const parts = [sp.area, sp.type, sp.pet === "1" ? "반려동물" : "", sp.facility].filter(Boolean);
-  const label = parts.length ? parts.join(" ") : "전국";
-  const title = `${label} 캠핑장 — 글램핑·오토캠핑·카라반 · 주말에뭐하지`;
-  return {
-    title,
-    description: `${label} 캠핑장을 유형(글램핑·오토캠핑·카라반)·편의시설(전기·샤워·온수)·반려동물 동반으로 골라보세요. 요금·예약·지도 정보 제공.`,
-    keywords: [`${sp.area || ""} 캠핑장`, `${sp.area || ""} 글램핑`, `${sp.area || ""} 오토캠핑`, `${sp.area || ""} 반려동물 캠핑장`, "전국 캠핑장"].filter((k) => k.trim()),
-    alternates: { canonical: "/camping" },
-  };
-}
+export const metadata: Metadata = {
+  title: "전국 캠핑장 — 글램핑·오토캠핑·카라반",
+  description: "전국 캠핑장을 유형(글램핑·오토캠핑·카라반)·지역·반려동물 동반으로 골라보세요. 요금·예약·지도 정보 제공. 출처: 한국관광공사 고캠핑.",
+  keywords: ["캠핑장", "전국 캠핑장", "글램핑", "오토캠핑", "카라반", "반려동물 캠핑장"],
+  alternates: { canonical: "/camping" },
+};
 
-function qs(base: SP, patch: SP): string {
-  const merged: Record<string, string> = {};
-  for (const [k, v] of Object.entries({ ...base, ...patch })) if (v) merged[k] = v as string;
-  const s = new URLSearchParams(merged).toString();
-  return s ? `/camping?${s}` : "/camping";
-}
-
-export default async function CampingPage({ searchParams }: { searchParams: Promise<SP> }) {
-  const sp = await searchParams;
-  const typeSel = (sp.type || "").split(",").map((x) => x.trim()).filter(Boolean);   // 다중 유형
-  const facSel = (sp.facility || "").split(",").map((x) => x.trim()).filter(Boolean); // 다중 시설
-  const cur: CampFilter = { area: sp.area, types: typeSel, facilities: facSel, pet: sp.pet === "1" };
-  const list = filterCamps(cur);
-
-  // 패싯 카운트 — 해당 차원을 뺀 나머지 필터 기준
-  const baseExcept = (dim: "area" | "types" | "facilities" | "pet") =>
-    filterCamps({ ...cur, [dim]: dim === "pet" ? false : dim === "area" ? undefined : [] });
-  const areaC: Record<string, number> = {};
-  for (const c of baseExcept("area")) areaC[c.area] = (areaC[c.area] || 0) + 1;
-  const petC = petCount(baseExcept("pet"));
-  // 유형/시설 개별 카운트: 다른 조건 + 이미 선택된 것 + 이 항목 (AND) → 토글 URL
-  const typeCount = (t: string) => filterCamps({ area: cur.area, facilities: facSel, pet: cur.pet, types: Array.from(new Set([...typeSel, t])) }).length;
-  const typeHref = (t: string) => qs(sp, { type: (typeSel.includes(t) ? typeSel.filter((x) => x !== t) : [...typeSel, t]).join(",") || undefined });
-  const facCount = (f: string) => filterCamps({ area: cur.area, types: typeSel, pet: cur.pet, facilities: Array.from(new Set([...facSel, f])) }).length;
-  const facHref = (f: string) => qs(sp, { facility: (facSel.includes(f) ? facSel.filter((x) => x !== f) : [...facSel, f]).join(",") || undefined });
-
+export default function CampingPage() {
   const areas = campAreaCounts();
-  const shown = list.slice(0, CAP);
-  const heading = [sp.area, ...typeSel, sp.pet === "1" ? "반려동물" : "", ...facSel].filter(Boolean).join(" ") || "전국";
+  const total = getCampCount();
+  const shown = getAllCamps().slice(0, CAP);
 
   return (
     <>
       <Band tone="tint" innerClassName="py-5">
-        <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
-          <span className="text-free">⛺ 캠핑</span>
-        </h1>
+        <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]"><span className="text-free">⛺ 캠핑</span></h1>
         <p className="mt-1 text-[14px] text-ink-soft">
-          전국 캠핑장 <span className="whitespace-nowrap">{getCampCount().toLocaleString()}곳</span> — 유형·시설·지역으로 골라보세요 · 출처: 한국관광공사 고캠핑
+          전국 캠핑장 <span className="whitespace-nowrap">{total.toLocaleString()}곳</span> — 유형·지역으로 골라보세요 · 출처: 한국관광공사 고캠핑
         </p>
         <Link href="/camping/collections" className="mt-2 inline-flex items-center gap-1 rounded-full bg-white px-3.5 py-1.5 text-[13px] font-bold text-freedark ring-1 ring-free/30 transition hover:bg-tint">
           🏕️ 지역·유형별 캠핑장 모음 보기 →
@@ -67,55 +36,45 @@ export default async function CampingPage({ searchParams }: { searchParams: Prom
 
       <div className="bg-panel">
         <Container className="space-y-3 py-4">
-          {/* 유형 (다중 선택 가능) */}
           <FilterRow label="유형">
-            <Chip href={qs(sp, { type: undefined })} active={typeSel.length === 0} label="전체" count={baseExcept("types").length} />
-            {CAMP_TYPES.map((t) => (
-              <Chip key={t} href={typeHref(t)} active={typeSel.includes(t)} label={t} count={typeCount(t)} />
+            {CAMP_TYPE_SLUG.map((t) => (
+              <Chip key={t.slug} href={`/camping/type/${t.slug}`} active={false} label={t.label} count={filterCamps({ type: t.label }).length} />
             ))}
           </FilterRow>
-          {/* 시설 + 반려동물 (다중 선택 가능) */}
-          <FilterRow label="시설">
-            <Chip href={qs(sp, { pet: sp.pet === "1" ? undefined : "1" })} active={sp.pet === "1"} label="🐾 반려동물" count={petC} />
-            {CAMP_FACILITIES.map((f) => (
-              <Chip key={f} href={facHref(f)} active={facSel.includes(f)} label={f} count={facCount(f)} />
-            ))}
-          </FilterRow>
-          {/* 지역 */}
           <FilterRow label="지역">
-            <Chip href={qs(sp, { area: undefined })} active={!sp.area} label="전국" count={getCampCount()} />
+            <Chip href="/camping" active label="전국" count={total} />
             {areas.map((a) => (
-              <Chip key={a.area} href={qs(sp, { area: sp.area === a.area ? undefined : a.area })} active={sp.area === a.area} label={a.area} count={areaC[a.area] || 0} />
+              <Chip key={a.area} href={`/camping/region/${(SIDO_SLUG as Record<string, string>)[a.area]}`} active={false} label={a.area} count={a.count} />
             ))}
           </FilterRow>
-          {(sp.area || typeSel.length > 0 || sp.pet === "1" || facSel.length > 0) && (
-            <div className="flex items-center gap-2 pt-0.5 text-[12.5px]">
-              <span className="font-bold text-ink-faint">선택:</span>
-              <span className="font-semibold text-freedark">{heading}</span>
-              <Link href="/camping" className="ml-1 font-semibold text-ink-faint underline hover:text-ink">전체 초기화</Link>
-            </div>
-          )}
+          <p className="pt-0.5 text-[12.5px] text-ink-faint">시설·반려동물 조건은 <Link href="/camping/collections" className="font-semibold text-free hover:underline">모음</Link>에서 지역·유형별로 볼 수 있어요.</p>
         </Container>
 
         <Container className="pb-12 pt-2">
           <div className="mb-4 flex items-baseline gap-2">
-            <h2 className="text-[20px] font-extrabold tracking-tight text-ink sm:text-[22px]">{heading} 캠핑장</h2>
-            <span className="text-[14px] font-bold text-free">{list.length.toLocaleString()}곳</span>
+            <h2 className="text-[20px] font-extrabold tracking-tight text-ink sm:text-[22px]">전국 캠핑장</h2>
+            <span className="text-[14px] font-bold text-free">{total.toLocaleString()}곳</span>
           </div>
-          {shown.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-line bg-white py-16 text-center text-ink-soft">조건에 맞는 캠핑장이 없어요. 필터를 바꿔보세요.</div>
-          ) : (
-            <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-              {shown.map((c) => <CampCard key={c.id} camp={c} />)}
+          <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            {shown.map((c) => <CampCard key={c.id} camp={c} />)}
+          </div>
+          <p className="mt-8 text-center text-[13px] text-ink-faint">유형·지역을 선택하면 더 많은 캠핑장을 볼 수 있어요</p>
+
+          {/* 지역별 캠핑장 — 정적 라우트로 내부링크 */}
+          <section className="mt-12 border-t border-line pt-6">
+            <h2 className="mb-3 text-[15px] font-extrabold text-ink">지역별 캠핑장</h2>
+            <div className="flex flex-wrap gap-2">
+              {areas.map((a) => (
+                <Link key={a.area} href={`/camping/region/${(SIDO_SLUG as Record<string, string>)[a.area]}`}
+                  className="rounded-full border border-line bg-white px-3 py-1 text-[13px] text-ink-soft hover:border-free hover:text-free">
+                  {a.area} 캠핑장 <span className="text-ink-faint">{a.count}</span>
+                </Link>
+              ))}
             </div>
-          )}
-          {list.length > CAP && (
-            <p className="mt-8 text-center text-[13px] text-ink-faint">상위 {CAP}곳 표시 · 유형·시설·지역 필터로 좁혀보세요</p>
-          )}
+          </section>
           <p className="mt-6 text-[12px] text-ink-faint">캠핑정보 제공: 한국관광공사 고캠핑</p>
         </Container>
       </div>
     </>
   );
 }
-

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllEvents } from "@/lib/data";
 import { getAllPlaces, getTourAreaCounts } from "@/lib/tour";
-import { getAllCamps } from "@/lib/camping";
+import { getAllCamps, campAreaCounts, filterCamps, CAMP_TYPE_SLUG } from "@/lib/camping";
 import { getAllRestaurants, foodAreas, FOOD_CATS, filterRestaurants } from "@/lib/food";
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
@@ -96,6 +96,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // 캠핑 지역 허브 (/camping/region/[area]) + 전국 유형 (/camping/type/[type])
+  const campRegionRoutes = campAreaCounts().map(({ area }) => ({
+    url: `${base}/camping/region/${(SIDO_SLUG as Record<string, string>)[area]}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+  const campTypeRoutes = CAMP_TYPE_SLUG.filter((t) => filterCamps({ type: t.label }).length).map((t) => ({
+    url: `${base}/camping/type/${t.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   // 캠핑 상세 (전량 — 롱테일 색인)
   const campRoutes = getAllCamps().map((c) => ({
     url: `${base}/camping/${c.id}`,
@@ -145,6 +159,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...foodAreaRoutes,
     ...foodCatRoutes,
     ...foodComboRoutes,
+    ...campRegionRoutes,
+    ...campTypeRoutes,
     ...campRoutes,
     ...genreRoutes,
     ...comboRoutes,
