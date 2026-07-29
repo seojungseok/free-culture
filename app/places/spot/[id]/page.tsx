@@ -5,7 +5,7 @@ import { getTourById, tourTypeLabel, isCampingDupe, campingDupeTarget } from "@/
 import { getArticle } from "@/lib/articles";
 import { fetchPlaceOverview, fetchPlaceImages, fetchAdmission } from "@/lib/tourDetail";
 import { getAdmission } from "@/lib/fees";
-import { getIntro, introRows, getInfo, restaurantIntroRows, getRestaurantPhone } from "@/lib/tourExtra";
+import { getIntro, introRows, getInfo, restaurantIntroRows, getRestaurantPhone, getRestaurantMenu, restaurantOpeningSpec } from "@/lib/tourExtra";
 import { nearbyPlaces, nearbyRestaurants, distanceLabel, foodTypeLabel, getRestaurantById, type Restaurant } from "@/lib/nearby";
 import TourCard from "@/components/TourCard";
 import { SIDO_SLUG } from "@/lib/classify";
@@ -389,6 +389,8 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
   const canonical = `${SITE.url}/places/spot/${r.id}`;
   const nearPlaces = nearbyPlaces(r, 5);
 
+  const openingHoursSpec = restaurantOpeningSpec(r.id);
+  const menu = getRestaurantMenu(r.id);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
@@ -406,6 +408,8 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
     url: canonical,
     ...(homepage ? { sameAs: homepage } : {}),
     ...(tel ? { telephone: tel } : {}),
+    ...(openingHoursSpec ? { openingHoursSpecification: openingHoursSpec } : {}),
+    ...(menu ? { hasMenu: { "@type": "Menu", name: `${r.title} 대표메뉴`, description: menu } } : {}),
   };
   const breadcrumbLd = {
     "@context": "https://schema.org",

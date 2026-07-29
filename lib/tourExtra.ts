@@ -105,6 +105,55 @@ export function getRestaurantPhone(id: string): string | undefined {
   return v && String(v).trim() ? String(v) : undefined;
 }
 
+/** 대표/취급 메뉴 문자열 (JSON-LD·본문용) — 없으면 undefined */
+export function getRestaurantMenu(id: string): string | undefined {
+  const it = restaurantIntro[id];
+  if (!it) return undefined;
+  const v = [it.firstmenu, it.treatmenu].filter((s) => s && String(s).trim()).join(" / ");
+  return v || undefined;
+}
+
+const DAY_KO: Record<string, string> = {
+  월: "Monday", 화: "Tuesday", 수: "Wednesday", 목: "Thursday",
+  금: "Friday", 토: "Saturday", 일: "Sunday",
+};
+const ALL_DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+/**
+ * schema.org openingHoursSpecification 배열 — usetime에서 HH:MM~HH:MM 추출,
+ * restdate에서 정기 휴무 요일 제외. 시간 패턴이 확실할 때만 반환(불명확하면 undefined).
+ */
+export function restaurantOpeningSpec(id: string):
+  | { "@type": "OpeningHoursSpecification"; dayOfWeek: string[]; opens: string; closes: string }[]
+  | undefined {
+  const it = restaurantIntro[id];
+  if (!it?.usetime) return undefined;
+  const m = String(it.usetime).match(/(\d{1,2}):(\d{2})\s*[~\-–]\s*(\d{1,2}):(\d{2})/);
+  if (!m) return undefined;
+  const pad = (h: string, mm: string) => `${String(Number(h)).padStart(2, "0")}:${mm}`;
+  const opens = pad(m[1], m[2]);
+  const closes = pad(m[3], m[4]);
+
+  // 휴무 요일 파싱 — "매주 토요일", "토,일요일" 등. 24시간/연중무휴면 전체 유지.
+  // 주의: "토요일"의 "요일"에 든 "일"을 일요일로 오인하면 안 됨 → 요일 글자 바로 앞/구분자 앞만 인정.
+  const rest = String(it.restdate || "");
+  const closed = new Set<string>();
+  if (!/무휴|없음|24시간|연중/.test(rest)) {
+    for (const mm of rest.matchAll(/([월화수목금토일])(?=\s*요일|\s*[,·/])/g)) {
+      closed.add(DAY_KO[mm[1]]);
+    }
+    // 요일·구분자가 전혀 없는 축약형("화 휴무")만 단일 글자 스캔
+    if (!closed.size && !/요일|[,·/]/.test(rest)) {
+      for (const [ko, en] of Object.entries(DAY_KO)) {
+        if (rest.includes(ko)) closed.add(en);
+      }
+    }
+  }
+  const dayOfWeek = ALL_DAYS.filter((d) => !closed.has(d));
+  if (!dayOfWeek.length) return undefined;
+  return [{ "@type": "OpeningHoursSpecification", dayOfWeek, opens, closes }];
+}
+
 // ── 리포트용 통계 ───────────────────────────────────────────────
 export function introStats() {
   const ids = Object.keys(intro);

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllEvents } from "@/lib/data";
 import { getAllPlaces, getTourAreaCounts } from "@/lib/tour";
 import { getAllCamps } from "@/lib/camping";
+import { getAllRestaurants } from "@/lib/food";
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 
@@ -55,6 +56,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
+  // 음식점 상세 (전량 — 롱테일 색인, /places/spot/[id]로 렌더)
+  const restaurantRoutes = getAllRestaurants().map((r) => ({
+    url: `${base}/places/spot/${r.id}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.5,
+  }));
+
   // 캠핑 상세 (전량 — 롱테일 색인)
   const campRoutes = getAllCamps().map((c) => ({
     url: `${base}/camping/${c.id}`,
@@ -100,6 +109,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...regionRoutes,
     ...placeAreaRoutes,
     ...placeSpotRoutes,
+    ...restaurantRoutes,
     ...campRoutes,
     ...genreRoutes,
     ...comboRoutes,
