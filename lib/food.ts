@@ -23,17 +23,25 @@ const restaurants: Restaurant[] = ((restaurantsData as unknown as { restaurants:
     return phone ? { ...r, phone } : r;
   });
 
-// 업종(cat3) — TourAPI 음식점 분류
-export const FOOD_CATS: { code: string; label: string }[] = [
-  { code: "A05020100", label: "한식" },
-  { code: "A05020200", label: "서양식" },
-  { code: "A05020300", label: "일식" },
-  { code: "A05020400", label: "중식" },
-  { code: "A05020900", label: "카페·찻집" },
-  { code: "A05020700", label: "이색" },
+// 업종(cat3) — TourAPI 음식점 분류. slug는 /food/[area]/[cat] 라우트용(영문·SEO).
+export const FOOD_CATS: { code: string; label: string; slug: string }[] = [
+  { code: "A05020100", label: "한식", slug: "korean" },
+  { code: "A05020200", label: "서양식", slug: "western" },
+  { code: "A05020300", label: "일식", slug: "japanese" },
+  { code: "A05020400", label: "중식", slug: "chinese" },
+  { code: "A05020900", label: "카페·찻집", slug: "cafe" },
+  { code: "A05020700", label: "이색", slug: "unique" },
 ];
 export function foodCatLabel(cat3?: string): string {
   return FOOD_CATS.find((c) => c.code === cat3)?.label || "음식점";
+}
+/** slug → 업종 {code,label,slug}. 없으면 undefined */
+export function foodCatFromSlug(slug?: string) {
+  return FOOD_CATS.find((c) => c.slug === slug);
+}
+/** cat3 code → slug */
+export function foodCatSlug(cat3?: string): string | undefined {
+  return FOOD_CATS.find((c) => c.code === cat3)?.slug;
 }
 
 export function getAllRestaurants(): Restaurant[] { return restaurants; }

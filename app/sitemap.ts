@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllEvents } from "@/lib/data";
 import { getAllPlaces, getTourAreaCounts } from "@/lib/tour";
 import { getAllCamps } from "@/lib/camping";
-import { getAllRestaurants } from "@/lib/food";
+import { getAllRestaurants, foodAreas, FOOD_CATS, filterRestaurants } from "@/lib/food";
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 
@@ -64,6 +64,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
+  // 맛집 지역 허브 (/food/[area]) — 데이터 있는 지역만
+  const foodAreaRoutes = foodAreas().map((sido) => ({
+    url: `${base}/food/${(SIDO_SLUG as Record<string, string>)[sido]}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  // 맛집 지역×업종 조합 (/food/[area]/[cat]) — 음식점 ≥1 조합만(검색의도 높은 롱테일)
+  const foodComboRoutes: MetadataRoute.Sitemap = [];
+  for (const sido of foodAreas()) {
+    const areaSlug = (SIDO_SLUG as Record<string, string>)[sido];
+    for (const c of FOOD_CATS) {
+      if (filterRestaurants({ area: sido, cat3: c.code }).length) {
+        foodComboRoutes.push({
+          url: `${base}/food/${areaSlug}/${c.slug}`,
+          lastModified: now,
+          changeFrequency: "weekly" as const,
+          priority: 0.7,
+        });
+      }
+    }
+  }
+
   // 캠핑 상세 (전량 — 롱테일 색인)
   const campRoutes = getAllCamps().map((c) => ({
     url: `${base}/camping/${c.id}`,
@@ -110,6 +134,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...placeAreaRoutes,
     ...placeSpotRoutes,
     ...restaurantRoutes,
+    ...foodAreaRoutes,
+    ...foodComboRoutes,
     ...campRoutes,
     ...genreRoutes,
     ...comboRoutes,
