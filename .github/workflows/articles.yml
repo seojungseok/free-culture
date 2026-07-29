@@ -1,8 +1,7 @@
 name: 관광지 글 자동 생성 (3중 안전망 → 자동 발행)
 
+# ⚠️ 스케줄 중단 — daily.yml(통합)로 이관(1일 1배포). 수동 실행만 유지.
 on:
-  schedule:
-    - cron: "0 1 * * *" # UTC 01:00 = KST 10:00 매일 (시작일 이전엔 램프업이 0건 반환)
   workflow_dispatch: # 수동 실행 버튼
     inputs:
       test_count:

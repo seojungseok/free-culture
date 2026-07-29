@@ -1,0 +1,131 @@
+name: 일일 데이터·글 (통합, 1일 1배포)
+
+# 기존 collect·tour-backfill·camping-images·articles 를 하나로 통합.
+#  목적: 데이터 커밋을 하루 1회로 묶어 Vercel 재배포(=ISR 캐시 초기화) 횟수를 줄인다.
+#  → 재배포마다 크롤러가 상세페이지를 재생성하며 ISR Writes가 늘어나므로, 배포 빈도가 핵심 절감 레버.
+#  각 수집 스텝은 continue-on-error 로 독립 → 하나 실패해도 나머지 데이터는 그대로 커밋.
+on:
+  schedule:
+    - cron: "0 16 * * *" # UTC 16:00 = KST 01:00 (하루 1회)
+  workflow_dispatch:
+    inputs:
+      test_count:
+        description: "글 테스트 생성 개수 (비우면 램프업대로)"
+        required: false
+        default: ""
+      test_ids:
+        description: "특정 contentId만 글 생성 (콤마구분)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-data
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 의존성 설치
+        run: npm ci
+
+      # ── TourAPI(일 1,000회 공유) — 우선순위 순. 캠핑 이미지는 goCamping(별도 한도) ──
+      - name: 축제 수집 (searchFestival2)
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: node scripts/collectFestivals.mjs
+
+      - name: 음식점 수집 (areaBasedList2, 39)
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          RESTO_DAILY: "100"
+          RESTO_MAX: "6000"
+        run: node scripts/collectRestaurants.mjs
+
+      - name: 음식점 영업정보 (detailIntro2, 39) — 전화·영업시간
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          RIN_DAILY: "500"
+        run: node scripts/collectRestaurantIntro.mjs
+
+      - name: 방문 팁 수집 (detailIntro2)
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          INTRO_DAILY: "250"
+        run: node scripts/collectIntro.mjs
+
+      - name: 볼거리 수집 (detailInfo2)
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          INFO_DAILY: "150"
+        run: node scripts/collectInfo.mjs
+
+      - name: 문화행사 수집 (KorService2)
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          COLLECT_DAYS: "60"
+          COLLECT_MAX: "3000"
+          COLLECT_CONCURRENCY: "10"
+        run: node scripts/collect.mjs
+
+      - name: 캠핑 이미지 백필 (goCamping imageList — 별도 한도)
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          CIMG_DAILY: "1000"
+        run: node scripts/collectCampingImages.mjs
+
+      # ── 관광지 글 생성·발행 ──
+      - name: 발행글 재점검 (needsRewrite)
+        continue-on-error: true
+        run: node scripts/auditArticles.mjs --write
+
+      - name: 글 생성·검증·발행 (3중 안전망)
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+          FORCE_COUNT: ${{ github.event.inputs.test_count }}
+          TEST_IDS: ${{ github.event.inputs.test_ids }}
+        run: node scripts/generateArticles.mjs
+
+      # ── 변경분 한 번에 커밋 = 배포 1회 ──
+      - name: 변경분 커밋 (통합, 1회)
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/events.json data/festivals.json data/restaurants.json data/restaurant-intro.json \
+                  data/place-intro.json data/place-info.json data/camping-images.json data/place-articles.json
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 건너뜀"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "chore: 일일 데이터·글 갱신 ($(date -u +%Y-%m-%d))"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # 새 글 페이지만 on-demand 갱신(재배포 후에도 즉시 반영 보장 + 목록 갱신)
+      - name: 새 글 on-demand revalidate
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+          SITE_URL: https://mwohaji.kr
+        run: node scripts/revalidatePublished.mjs
