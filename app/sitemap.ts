@@ -72,6 +72,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // 맛집 전국 업종 (/food/category/[cat]) — "전국 한식 맛집" 등
+  const foodCatRoutes = FOOD_CATS.filter((c) => filterRestaurants({ cat3: c.code }).length).map((c) => ({
+    url: `${base}/food/category/${c.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   // 맛집 지역×업종 조합 (/food/[area]/[cat]) — 음식점 ≥1 조합만(검색의도 높은 롱테일)
   const foodComboRoutes: MetadataRoute.Sitemap = [];
   for (const sido of foodAreas()) {
@@ -135,6 +143,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...placeSpotRoutes,
     ...restaurantRoutes,
     ...foodAreaRoutes,
+    ...foodCatRoutes,
     ...foodComboRoutes,
     ...campRoutes,
     ...genreRoutes,
