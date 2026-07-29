@@ -33,7 +33,7 @@ export default async function CampingTypePage({ params }: { params: Promise<{ ty
   const t = campTypeFromSlug(type);
   if (!t) notFound();
 
-  const list = filterCamps({ type: t.label });
+  const list = [...filterCamps({ type: t.label })].sort((a, b) => (b.image ? 1 : 0) - (a.image ? 1 : 0));
   if (!list.length) notFound();
   const shown = list.slice(0, CAP);
   const areas = campAreaCounts();

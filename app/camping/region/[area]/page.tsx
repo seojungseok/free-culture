@@ -34,7 +34,7 @@ export default async function CampingRegionPage({ params }: { params: Promise<{ 
   const sido = sidoFromSlug(area);
   if (!sido) notFound();
 
-  const list = filterCamps({ area: sido });
+  const list = [...filterCamps({ area: sido })].sort((a, b) => (b.image ? 1 : 0) - (a.image ? 1 : 0));
   if (!list.length) notFound();
   const shown = list.slice(0, CAP);
   const typeCount = (label: string) => filterCamps({ area: sido, type: label }).length;

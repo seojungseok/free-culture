@@ -33,7 +33,9 @@ export default async function CampingPage({ searchParams }: { searchParams: Prom
   const typeSel = (sp.type || "").split(",").map((x) => x.trim()).filter(Boolean);   // 다중 유형
   const facSel = (sp.facility || "").split(",").map((x) => x.trim()).filter(Boolean); // 다중 시설
   const cur: CampFilter = { area: sp.area, types: typeSel, facilities: facSel, pet: sp.pet === "1" };
-  const list = filterCamps(cur);
+  // 사진 있는 캠핑장을 앞으로 → 초기화면·상단이 실제 사진으로 채워짐("사진 준비중" 뒤로).
+  // filterCamps는 무필터 시 원본 배열을 반환하므로 복사본([...])에 정렬(공유 데이터 변형 방지).
+  const list = [...filterCamps(cur)].sort((a, b) => (b.image ? 1 : 0) - (a.image ? 1 : 0));
 
   // 패싯 카운트 — 해당 차원을 뺀 나머지 필터 기준
   const baseExcept = (dim: "area" | "types" | "facilities" | "pet") =>
