@@ -12,7 +12,10 @@ export default function CampCard({ camp }: { camp: Camp }) {
         {camp.image ? (
           <Image src={camp.image} alt={camp.name} fill sizes="(max-width:640px) 50vw, 220px" className="object-cover transition group-hover:scale-105" loading="lazy" unoptimized />
         ) : (
-          <div className="flex h-full items-center justify-center text-2xl text-ink-faint">⛺</div>
+          <div className="flex h-full w-full flex-col items-center justify-center gap-1 bg-gradient-to-br from-freelight to-tint">
+            <span className="text-3xl opacity-80" aria-hidden>⛺</span>
+            <span className="text-[10.5px] font-semibold text-freedark/70">사진 준비중</span>
+          </div>
         )}
         {camp.types[0] && (
           <div className="absolute left-1.5 top-1.5">

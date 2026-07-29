@@ -1,5 +1,6 @@
 // 캠핑(고캠핑) 데이터 접근 — data/camping.json (scripts/collectCamping.mjs)
 import campingData from "@/data/camping.json";
+import campingImages from "@/data/camping-images.json";
 import { SIDO_LIST } from "@/lib/classify";
 
 export interface Camp {
@@ -9,7 +10,16 @@ export interface Camp {
   pet: boolean; petRaw: string; lctCl: string;
   resve: string; operPd: string; tel: string; homepage: string; image: string; intro: string;
 }
-const data = campingData as unknown as { count: number; camps: Camp[] };
+const raw = campingData as unknown as { count: number; camps: Camp[] };
+// 대표이미지(firstImageUrl) 없는 캠핑장은 imageList 백필분(camping-images.json)으로 보강.
+// camping.json은 수집 때 통째로 덮어써지므로 이미지는 별도 파일에 두고 로드 시 병합.
+const imgOverride = campingImages as unknown as Record<string, string>;
+const data = {
+  count: raw.count,
+  camps: (raw.camps || []).map((c) =>
+    c.image || !imgOverride[c.id] ? c : { ...c, image: imgOverride[c.id] }
+  ),
+};
 
 export const CAMP_TYPES = ["일반야영장", "오토캠핑", "글램핑", "카라반"] as const;
 export const CAMP_FACILITIES = ["전기", "샤워실", "화장실", "와이파이", "온수", "마트"] as const;

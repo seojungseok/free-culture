@@ -1,0 +1,44 @@
+name: 캠핑 이미지 백필 (대표사진 없는 곳)
+
+# 대표이미지(firstImageUrl) 없는 캠핑장을 goCamping imageList로 보강 → data/camping-images.json.
+# goCamping은 KorService2(일 1,000회)와 별도 서비스라 tour-backfill·fees 한도와 무관.
+# 미수집만 채우므로 며칠에 걸쳐 완주. 다 채워지면 스케줄 내려도 됨.
+on:
+  schedule:
+    - cron: "0 18 * * *" # UTC 18:00 = KST 03:00 (다른 수집과 분리)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: camping-images
+  cancel-in-progress: false
+
+jobs:
+  camping-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 캠핑 이미지 백필 (imageList)
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          CIMG_DAILY: "1000"
+        run: node scripts/collectCampingImages.mjs
+
+      - name: 변경분 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/camping-images.json
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 건너뜀"
+          else
+            git commit -m "chore: 캠핑 이미지 백필 ($(date -u +%Y-%m-%d))"
+            git push
+          fi

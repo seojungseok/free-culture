@@ -15,6 +15,7 @@
     "collect:restaurants": "node scripts/collectRestaurants.mjs",
     "collect:festivals": "node scripts/collectFestivals.mjs",
     "collect:camping": "node scripts/collectCamping.mjs",
+  "collect:camping-images": "node scripts/collectCampingImages.mjs",
     "dedup:camping": "node scripts/dedupCamping.mjs",
     "articles": "node scripts/generateArticles.mjs",
     "audit": "node scripts/auditArticles.mjs",
