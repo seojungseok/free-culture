@@ -1,16 +1,17 @@
 // 글 자동 생성·발행 (GitHub Action이 매일 실행)
-// 3중 안전망: Gemini 생성 → 정규식 패턴검사 → OpenAI 교차검증 → PASS만 자동 발행(published).
+// OpenAI 전용 파이프라인: OpenAI 생성 → 정규식 패턴검사 → OpenAI 교차검증·개선 → PASS만 자동 발행(published).
 // 계속 실패하면 "역사·인물 뺀 안전버전"으로 발행, 그것도 실패면 스킵(로그).
 //
 // 실행: node scripts/generateArticles.mjs
-// 필요: GEMINI_API_KEY, OPENAI_API_KEY, DATA_GO_KR_KEY(또는 TOUR_API_KEY)
+// 필요: OPENAI_API_KEY, DATA_GO_KR_KEY(또는 TOUR_API_KEY)
+// 모델: OPENAI_MODEL(GitHub repo Variables에서 지정, 없으면 gpt-4o-mini)
 
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  buildPrompt, buildMinimalPrompt, callGemini, qualityCheck, patternCheck,
-  verifyAndImprove, rampUpCount, pickQueue, tourTypeLabel,
+  buildPrompt, buildMinimalPrompt, callOpenAI, qualityCheck, patternCheck,
+  verifyAndImprove, buildFactsBlock, rampUpCount, pickQueue, tourTypeLabel,
 } from "./lib/articleGen.mjs";
 
 const MIN_OVERVIEW = 200; // 원본 200자 미만이면 글 생성 안 함(정보 페이지만)
@@ -34,8 +35,11 @@ function applyAdmission(content, id) {
   if (!label) return content;
   return content.replace(/(^|\n)(\s*[-*]\s*\*\*입장료\*\*\s*:)[^\n]*/, `$1$2 ${label}`);
 }
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
-const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o-mini";
+// 생성·검증 모두 OpenAI, 기본 모델은 gpt-5.6-luna(2026-07-30 80% 인하 $0.20/$1.20).
+// GitHub repo Variables의 OPENAI_MODEL로 덮어쓸 수 있지만, 미지정 시 항상 Luna로만 작성.
+// 생성/검증 모델을 나누고 싶으면 OPENAI_GEN_MODEL 로 생성만 따로 지정 가능(없으면 OPENAI_MODEL 공용).
+const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-5.6-luna";
+const MODEL = process.env.OPENAI_GEN_MODEL || OPENAI_MODEL; // 초안 생성 모델
 
 function envKey(name, fallback) {
   if (process.env[name]) return process.env[name].trim();
@@ -49,7 +53,6 @@ function envKey(name, fallback) {
   }
   return "";
 }
-const GEMINI = envKey("GEMINI_API_KEY");
 const OPENAI = envKey("OPENAI_API_KEY");
 const TOURKEY = envKey("TOUR_API_KEY", "DATA_GO_KR_KEY");
 
@@ -92,26 +95,23 @@ async function fetchOverview(id) {
 async function produceArticle(place, overview, existingTexts, extras = {}) {
   const reasons = [];
   const log = (m) => { console.log(`  · ${place.title} ${m}`); reasons.push(m); };
-  const gen = async (prompt, grounding = false) => {
-    const { text } = await callGemini(prompt, { apiKey: GEMINI, model: MODEL, grounding });
+  const gen = async (prompt) => {
+    const { text } = await callOpenAI(prompt, { apiKey: OPENAI, model: MODEL });
     return text;
   };
-  // [B] 원본 빈약 + 2단계 데이터도 부실 → 웹검색(grounding) 켜서 교차 보강 시도
-  const thin = (overview || "").length < MIN_OVERVIEW;
-  const hasFacts = Boolean(extras.intro && Object.keys(extras.intro).some((k) => k !== "type" && extras.intro[k])) ||
-    Boolean(extras.info && extras.info.length);
-  const useGrounding = thin && !hasFacts;
+  // 검증기에 넘길 "확정 사실"(주소 + intro/info) — overview에 없어도 정당한 근거로 인정받게 함
+  const verifyFacts = [`주소: ${place.addr}`, buildFactsBlock(extras)].filter(Boolean).join("\n");
 
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
-      const draft = await gen(buildPrompt(place, overview, extras), useGrounding);
-      if (!draft) { log(`시도${attempt} Gemini 빈 응답`); await sleep(1500); continue; }
+      const draft = await gen(buildPrompt(place, overview, extras));
+      if (!draft) { log(`시도${attempt} OpenAI 빈 응답`); await sleep(1500); continue; }
       const q = qualityCheck(draft, { overview, existingTexts });
       if (!q.ok) { log(`시도${attempt} 품질 반려: ${q.reason}`); await sleep(1000); continue; }
       const p = patternCheck(draft, overview);
       if (!p.ok) { log(`시도${attempt} 패턴 반려: ${p.reason}`); await sleep(1000); continue; }
 
-      const v = await verifyAndImprove(overview, draft, { apiKey: OPENAI, model: OPENAI_MODEL });
+      const v = await verifyAndImprove(overview, draft, { apiKey: OPENAI, model: OPENAI_MODEL, facts: verifyFacts });
       if (v.result === "FAIL") { log(`시도${attempt} 검증 FAIL: ${v.reason}`); await sleep(1000); continue; }
       if (v.result === "ERROR") { log(`시도${attempt} 검증오류: ${v.reason}`); await sleep(1500); continue; }
 
@@ -130,7 +130,7 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
   // 폴백: 원본 최소 가공
   try {
     const text = await gen(buildMinimalPrompt(place, overview));
-    if (!text) { log("최소가공 Gemini 빈 응답"); return { art: null, reasons }; }
+    if (!text) { log("최소가공 OpenAI 빈 응답"); return { art: null, reasons }; }
     const q = qualityCheck(text, { overview, existingTexts });
     const p = patternCheck(text, overview);
     if (q.ok && p.ok) return { art: { text, len: q.len, mode: "minimal", verify: "MINIMAL" }, reasons };
@@ -148,8 +148,7 @@ async function main() {
     : { startDate: "2026-07-27", generatedAt: null, articles: {} };
   store.articles ||= {};
 
-  if (!GEMINI) { console.error("❌ GEMINI_API_KEY 없음"); process.exit(1); }
-  if (!OPENAI) console.warn("⚠️ OPENAI_API_KEY 없음 — 검증·개선(안전망3) 건너뜀. 패턴검사만 적용됨.");
+  if (!OPENAI) { console.error("❌ OPENAI_API_KEY 없음 — 생성·검증 모두 OpenAI. 키 필수."); process.exit(1); }
 
   // TEST_IDS: 지정 장소만 생성(딜쿠샤 등 콕 집어 테스트). 있으면 큐/램프업 무시.
   const testIds = (process.env.TEST_IDS || "").split(",").map((s) => s.trim()).filter(Boolean);

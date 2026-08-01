@@ -184,13 +184,15 @@ export function patternCheck(text, overview) {
 }
 
 // ── 안전망 3: OpenAI 검증 + SEO/가독성 개선 (원본 범위 내에서만) ──
-export async function verifyAndImprove(overview, article, { apiKey, model } = {}) {
+// facts: 주소·이용시간·요금·시설 등 TourAPI intro/info에서 온 "확정 사실". 원본과 동등한 근거로 취급(오검출 방지).
+export async function verifyAndImprove(overview, article, { apiKey, model, facts = "" } = {}) {
   if (!apiKey) return { result: "SKIP", reason: "OPENAI_API_KEY 없음", improved: "" };
   const mdl = model || "gpt-4o-mini";
   const prompt = `아래 "원본"과 "글"을 받아 두 가지를 수행하라.
 
 <원본>
 ${overview || "(상세 소개 자료 없음 — 위치·유형·주소 외의 사실은 모두 근거 없음으로 간주)"}
+${facts ? `\n[확정 사실 — 아래는 공식 데이터에서 온 근거로, 원본과 동등하게 취급하라. 글에 이 값(주소·이용시간·휴무일·요금·주차·문의처·시설명 등)이 있어도 절대 FAIL하지 마라]\n${facts}` : ""}
 </원본>
 
 <글>
@@ -198,8 +200,9 @@ ${article}
 </글>
 
 ## 작업 1 - 팩트체크
-- 글에 원본에 없는 사실(연도·인물·사건·구체적 수치)이 있으면 FAIL. 어느 문장인지 reason에 지목.
-- 일반적 서술("오랜 역사를 지닌" 등)은 허용.
+- 근거 = "원본" + "[확정 사실]" 둘 다. 이 둘 어디에도 없는 사실(연도·인물·사건·구체적 수치)이 글에 있으면 FAIL. 어느 문장인지 reason에 지목.
+- ★ [확정 사실]에 있는 주소·이용시간·휴무일·요금·주차·문의처·시설명은 정당한 근거다. 이런 값이 글에 있다는 이유로 FAIL하지 마라.
+- 일반적 서술("오랜 역사를 지닌" 등)과 장소의 지역·유형·주소는 허용.
 - 추측성 문장("열릴 수 있습니다","운영될 경우","~것입니다","만날 수 있습니다")이 다수(2개 이상)면 FAIL.
 
 ## 작업 2 - SEO·가독성 개선 (PASS인 경우만)
@@ -218,7 +221,7 @@ ${article}
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
         model: mdl,
-        temperature: 0,
+        ...(supportsTemperature(mdl) ? { temperature: 0 } : {}),
         response_format: { type: "json_object" },
         messages: [
           { role: "system", content: "너는 사실 근거 검증기이자 한국어 SEO 에디터다. 원본에 없는 사실은 잡아내 FAIL하고, PASS면 원본 범위 내에서만 글을 개선한다. JSON만 답한다." },
@@ -379,7 +382,38 @@ ${EXAMPLES}
 이제 "${place.title}" 소개 글을 마크다운으로만 출력하세요(설명 없이 글만). 사실 근거에 없는 내용은 쓰지 마세요.`;
 }
 
-// ── Gemini 2.5 Flash-Lite 호출 ──
+// GPT-5 계열·o1/o3/o4 추론 모델은 chat completions에서 temperature 커스텀 값을 거부(400).
+// → 이런 모델엔 temperature를 아예 안 보내 기본값(1)을 쓰게 한다. (gpt-4o 등은 그대로 지정 가능)
+export function supportsTemperature(model) {
+  return !/^(gpt-5|o1|o3|o4)/i.test(String(model || ""));
+}
+
+// ── OpenAI 생성 호출 (초안 작성 — 매일 자동글은 이걸로만 생성) ──
+export async function callOpenAI(prompt, { apiKey, model = "gpt-4o-mini" } = {}) {
+  if (!apiKey) throw new Error("OPENAI_API_KEY 없음");
+  const res = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
+    body: JSON.stringify({
+      model,
+      ...(supportsTemperature(model) ? { temperature: 0.4 } : {}),
+      messages: [
+        { role: "system", content: "너는 한국의 나들이 정보를 정확하게 소개하는 에디터다. 주어진 사실 근거에 없는 내용(연도·인물·사건·수치)은 절대 지어내지 않는다. 요청한 마크다운 형식으로 글만 출력한다." },
+        { role: "user", content: prompt },
+      ],
+    }),
+    signal: AbortSignal.timeout(60000),
+  });
+  if (!res.ok) {
+    const t = await res.text();
+    throw new Error(`OpenAI HTTP ${res.status}: ${t.slice(0, 300)}`);
+  }
+  const j = await res.json();
+  const text = (j?.choices?.[0]?.message?.content || "").trim();
+  return { text, sources: [] };
+}
+
+// ── Gemini 2.5 Flash-Lite 호출 (레거시 — 현재 파이프라인 미사용, 참고용 보존) ──
 export async function callGemini(prompt, { apiKey, model = "gemini-2.5-flash-lite", grounding = false } = {}) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
   const body = {
