@@ -124,14 +124,16 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
       if (!q2.ok || !p2.ok) finalText = draft;
 
       // [보조] Gemini 독립 팩트체크 — 주 모델(Luna)과 다른 모델로 환각 최종 교차검증. FAIL이면 재시도.
+      let gemini = GEMINI ? "?" : "OFF";
       if (GEMINI) {
         const fc = await factCheckGemini(finalText, { apiKey: GEMINI, overview, facts: verifyFacts });
+        gemini = fc.result; // PASS / FAIL / ERROR / SKIP
         if (fc.result === "FAIL") { log(`시도${attempt} Gemini 팩트체크 FAIL: ${fc.reason.slice(0, 120)}`); await sleep(1000); continue; }
         if (fc.result === "ERROR") log(`시도${attempt} Gemini 팩트체크 오류(무시): ${fc.reason.slice(0, 80)}`);
       }
 
       const fin = qualityCheck(finalText, {});
-      return { art: { text: finalText, len: fin.len, mode: v.improved && finalText === v.improved ? "improved" : "normal", verify: v.result }, reasons };
+      return { art: { text: finalText, len: fin.len, mode: v.improved && finalText === v.improved ? "improved" : "normal", verify: v.result, gemini }, reasons };
     } catch (e) {
       log(`시도${attempt} 오류: ${e.message}`);
       await sleep(1500);
@@ -144,7 +146,7 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
     if (!text) { log("최소가공 OpenAI 빈 응답"); return { art: null, reasons }; }
     const q = qualityCheck(text, { overview, existingTexts });
     const p = patternCheck(text, overview);
-    if (q.ok && p.ok) return { art: { text, len: q.len, mode: "minimal", verify: "MINIMAL" }, reasons };
+    if (q.ok && p.ok) return { art: { text, len: q.len, mode: "minimal", verify: "MINIMAL", gemini: "SKIP(minimal)" }, reasons };
     log(`최소가공 반려: ${q.ok ? p.reason : q.reason}`);
   } catch (e) {
     log(`최소가공 오류: ${e.message}`);
@@ -250,14 +252,15 @@ async function main() {
       content: applyAdmission(art.text, place.id),
       sources: [],
       model: MODEL,
-      verify: art.verify, // PASS / SKIP / MINIMAL
+      verify: art.verify, // 주 Luna 검증: PASS / SKIP / MINIMAL
+      factcheck2: art.gemini, // 보조 Gemini 팩트체크: PASS / OFF / SKIP(minimal)
       minimalMode: art.mode === "minimal",
       length: art.len,
     };
     made++;
     if (mode === "rewrite") rewritten++; else { newPub++; existingTexts.push(art.text); }
-    report.push({ id: place.id, title: place.title, outcome: mode === "rewrite" ? "rewritten" : "published", detail: `${art.mode}/${art.verify}/${art.len}자` });
-    console.log(`  ${mode === "rewrite" ? "♻ 재작성" : "✓ 발행"} ${made}/${target}: ${place.title} (${art.len}자, ${art.mode}, 검증 ${art.verify})`);
+    report.push({ id: place.id, title: place.title, outcome: mode === "rewrite" ? "rewritten" : "published", detail: `${art.mode}/Luna:${art.verify}/G:${art.gemini}/${art.len}자` });
+    console.log(`  ${mode === "rewrite" ? "♻ 재작성" : "✓ 발행"} ${made}/${target}: ${place.title} (${art.len}자, ${art.mode}, Luna검증 ${art.verify}, Gemini ${art.gemini})`);
     await sleep(1000);
   }
 
