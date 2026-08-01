@@ -248,6 +248,36 @@ ${article}
   }
 }
 
+// ── 보조 안전망: Gemini 독립 팩트체크 (주=Luna와 다른 모델로 환각 교차검증. 판정만, 글 수정 안 함) ──
+export async function factCheckGemini(article, { apiKey, model = "gemini-2.5-flash-lite", overview = "", facts = "" } = {}) {
+  if (!apiKey) return { result: "SKIP", reason: "GEMINI_API_KEY 없음" };
+  const prompt = `너는 사실 근거 검증기다. "글"이 "근거"에 없는 사실을 지어냈는지만 판정하라. 글을 고치지 마라.
+
+<근거>
+${overview || "(상세 소개 없음 — 지역·유형·주소 외의 사실은 모두 근거 없음으로 간주)"}
+${facts ? `\n[확정 사실 — 아래도 근거로 인정]\n${facts}` : ""}
+</근거>
+
+<글>
+${article}
+</글>
+
+[판정 기준]
+- 근거(원본+확정사실)에 없는 구체적 사실(연도·인물·사건·수치·고유명사·시설명)이 글에 있으면 FAIL. 어느 부분인지 reason에 지목.
+- 일반적 서술("오랜 역사를 지닌" 등)과 장소의 지역·유형·주소는 허용.
+- 확정 사실에 있는 주소·이용시간·휴무일·요금·주차·문의처·시설명은 정당한 근거이므로 FAIL 사유가 아니다.
+
+JSON만 출력: {"result":"PASS 또는 FAIL","reason":"근거 없는 사실 지목 또는 이유"}`;
+  try {
+    const { text } = await callGemini(prompt, { apiKey, model });
+    const m = String(text || "").match(/\{[\s\S]*\}/);
+    const parsed = JSON.parse(m ? m[0] : text);
+    return { result: parsed.result === "FAIL" ? "FAIL" : "PASS", reason: String(parsed.reason || "") };
+  } catch (e) {
+    return { result: "ERROR", reason: String(e instanceof Error ? e.message : e) };
+  }
+}
+
 // ── 폴백: "원본 최소 가공" (원본 사실 그대로, 구조·말투만 손봄 → 틀릴 여지 0) ──
 export function buildMinimalPrompt(place, overview) {
   const type = tourTypeLabel(place.type);

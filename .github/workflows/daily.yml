@@ -104,7 +104,8 @@ jobs:
         continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: "gpt-5.6-luna" # 생성·검증 모두 Luna 고정(80% 인하). 바꾸려면 이 값만 수정.
+          OPENAI_MODEL: "gpt-5.6-luna" # 주 모델: 생성·검증 Luna 고정(80% 인하). 바꾸려면 이 값만 수정.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # 보조: 독립 팩트체크(환각 교차검증)
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
           FORCE_COUNT: ${{ github.event.inputs.test_count }}

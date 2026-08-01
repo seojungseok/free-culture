@@ -1,17 +1,19 @@
 // 글 자동 생성·발행 (GitHub Action이 매일 실행)
-// OpenAI 전용 파이프라인: OpenAI 생성 → 정규식 패턴검사 → OpenAI 교차검증·개선 → PASS만 자동 발행(published).
-// 계속 실패하면 "역사·인물 뺀 안전버전"으로 발행, 그것도 실패면 스킵(로그).
+// 주=OpenAI(gpt-5.6-luna)가 생성·개선, 보조=Gemini가 독립 팩트체크(환각 교차검증).
+// 파이프라인: [주]Luna 생성 → 로컬 품질검사 → 로컬 패턴검사 → [주]Luna 검증·개선
+//            → [보조]Gemini 팩트체크 → 둘 다 통과분만 자동 발행(published).
+// 계속 실패하면 "원본 최소가공 안전버전"으로 발행, 그것도 실패면 스킵(로그).
 //
 // 실행: node scripts/generateArticles.mjs
-// 필요: OPENAI_API_KEY, DATA_GO_KR_KEY(또는 TOUR_API_KEY)
-// 모델: OPENAI_MODEL(GitHub repo Variables에서 지정, 없으면 gpt-4o-mini)
+// 필요: OPENAI_API_KEY(주, 필수), GEMINI_API_KEY(보조 팩트체크, 없으면 건너뜀), DATA_GO_KR_KEY(또는 TOUR_API_KEY)
+// 모델: OPENAI_MODEL(GitHub repo Variables/워크플로에서 지정, 없으면 gpt-5.6-luna)
 
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   buildPrompt, buildMinimalPrompt, callOpenAI, qualityCheck, patternCheck,
-  verifyAndImprove, buildFactsBlock, rampUpCount, pickQueue, tourTypeLabel,
+  verifyAndImprove, factCheckGemini, buildFactsBlock, rampUpCount, pickQueue, tourTypeLabel,
 } from "./lib/articleGen.mjs";
 
 const MIN_OVERVIEW = 200; // 원본 200자 미만이면 글 생성 안 함(정보 페이지만)
@@ -54,6 +56,7 @@ function envKey(name, fallback) {
   return "";
 }
 const OPENAI = envKey("OPENAI_API_KEY");
+const GEMINI = envKey("GEMINI_API_KEY"); // 보조 팩트체크(환각 교차검증). 없으면 보조검증만 건너뜀.
 const TOURKEY = envKey("TOUR_API_KEY", "DATA_GO_KR_KEY");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -91,7 +94,7 @@ async function fetchOverview(id) {
   return { overview: "", err: lastErr };
 }
 
-// Gemini 생성 → 패턴검사 → OpenAI 검증+개선. { art, reasons } 반환(art=null이면 사유 담김).
+// Luna 생성 → 패턴검사 → Luna 검증·개선 → Gemini 보조 팩트체크. { art, reasons } 반환(art=null이면 사유 담김).
 async function produceArticle(place, overview, existingTexts, extras = {}) {
   const reasons = [];
   const log = (m) => { console.log(`  · ${place.title} ${m}`); reasons.push(m); };
@@ -119,6 +122,14 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
       const q2 = qualityCheck(finalText, { overview });
       const p2 = patternCheck(finalText, overview);
       if (!q2.ok || !p2.ok) finalText = draft;
+
+      // [보조] Gemini 독립 팩트체크 — 주 모델(Luna)과 다른 모델로 환각 최종 교차검증. FAIL이면 재시도.
+      if (GEMINI) {
+        const fc = await factCheckGemini(finalText, { apiKey: GEMINI, overview, facts: verifyFacts });
+        if (fc.result === "FAIL") { log(`시도${attempt} Gemini 팩트체크 FAIL: ${fc.reason.slice(0, 120)}`); await sleep(1000); continue; }
+        if (fc.result === "ERROR") log(`시도${attempt} Gemini 팩트체크 오류(무시): ${fc.reason.slice(0, 80)}`);
+      }
+
       const fin = qualityCheck(finalText, {});
       return { art: { text: finalText, len: fin.len, mode: v.improved && finalText === v.improved ? "improved" : "normal", verify: v.result }, reasons };
     } catch (e) {
@@ -180,7 +191,7 @@ async function main() {
     for (const id of rwIds) items.push({ place: byId.get(id), mode: "rewrite" });
     const rw = items.length;
     for (const p of pickQueue(places, doneIds, target * 3)) items.push({ place: p, mode: "new" });
-    console.log(`\n🖋️  목표 ${target}건 (재작성 ${rw} 우선) · 후보 ${items.length} · 기존 ${doneIds.size} · 검증 ${OPENAI ? OPENAI_MODEL : "없음"}`);
+    console.log(`\n🖋️  목표 ${target}건 (재작성 ${rw} 우선) · 후보 ${items.length} · 기존 ${doneIds.size} · 주 ${MODEL} · 보조 ${GEMINI ? "Gemini 팩트체크" : "없음"}`);
   }
   let made = 0, newPub = 0, rewritten = 0, removed = 0, skipped = 0;
   const report = []; // 진단: 각 후보 결과를 저장소에 남겨 로그 없이도 원인 파악
