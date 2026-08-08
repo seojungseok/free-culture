@@ -14,7 +14,6 @@ import BigEventModal from "@/components/BigEventModal";
 import { Band } from "@/components/Band";
 import { SITE } from "@/lib/site";
 import { season } from "@/lib/finder";
-import { search } from "@/lib/search";
 import HeroCarousel, { type HeroSlide } from "@/components/HeroCarousel";
 import ScrollRail from "@/components/ScrollRail";
 import restaurantsData from "@/data/restaurants.json";
@@ -63,13 +62,7 @@ export default function HomePage() {
     for (const pool of pools) if (pool[i] && heroSlides.length < 10) heroSlides.push(pool[i]);
   }
 
-  // 인기 검색어 — 발행된 여행코스 키워드를 매일(날짜 시드) 셔플해 새롭게 노출.
-  // 코스가 부족하면 지역+유형 조합(검색 결과 있는 것)으로 채움.
-  const POP_COMBOS = [
-    "가평 가볼만한 곳", "수원 맛집", "경주 나들이", "강릉 카페", "부산 캠핑장", "서울 무료 전시",
-    "인천 데이트", "제주 가볼만한 곳", "여수 나들이", "속초 맛집", "전주 한옥마을", "춘천 카페",
-    "해운대 맛집", "남해 캠핑장", "안동 가볼만한 곳", "포항 나들이", "양양 카페", "통영 맛집",
-  ];
+  // 인기 검색어 — 발행된 여행코스 키워드만(클릭하면 매칭 코스 페이지로). 무작위 검색어 X.
   // 날짜 시드 셔플(하루 내 안정, 매일 변동) — mulberry32
   const seed = Number(today.replace(/-/g, "")) || 1;
   const shuffle = <T,>(arr: T[]): T[] => {
@@ -79,10 +72,7 @@ export default function HomePage() {
     for (let i = c.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [c[i], c[j]] = [c[j], c[i]]; }
     return c;
   };
-  const courseKw = shuffle(getCourseKeywords());
-  const fallbackKw = POP_COMBOS.map((t) => ({ t, n: search(t).total })).filter((x) => x.n >= 5)
-    .map((x) => ({ label: x.t, href: `/search?q=${encodeURIComponent(x.t)}` }));
-  const popular = [...courseKw, ...fallbackKw].slice(0, 12);
+  const popular = shuffle(getCourseKeywords()).slice(0, 12);
 
   // 카드 섹션 데이터
   const eventCards = slimForClient(getFree(true).filter((e) => e.imgUrl && e.endDate >= today).slice(0, 12));
