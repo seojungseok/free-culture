@@ -44,6 +44,24 @@ const OV = ovStore.overviews || ovStore;
 let ovDirty = false;
 let enrichCalls = 0;
 
+// ── 요금·운영정보 캐시 (주소·이용요금·운영시간 보강용) ──
+const FEES_PATH = path.join(ROOT, "data", "place-fees.json");
+const INTRO_PATH = path.join(ROOT, "data", "place-intro.json");
+const FEE = fs.existsSync(FEES_PATH) ? (JSON.parse(fs.readFileSync(FEES_PATH, "utf8")).fees || {}) : {};
+const INTRO = fs.existsSync(INTRO_PATH) ? (JSON.parse(fs.readFileSync(INTRO_PATH, "utf8")).intro || {}) : {};
+const cleanTxt = (s) => String(s || "").replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/gi, " ").replace(/\s+/g, " ").trim();
+function feeOf(id) {
+  const it = INTRO[id];
+  if (it && it.usefee && cleanTxt(it.usefee)) return cleanTxt(it.usefee).slice(0, 60);
+  if (FEE[id] === "free") return "무료";
+  if (FEE[id] === "paid") return "유료(현장 확인)";
+  return "";
+}
+function usetimeOf(id) {
+  const it = INTRO[id];
+  return it && it.usetime ? cleanTxt(it.usetime).slice(0, 60) : "";
+}
+
 async function fetchOverview(id) {
   if (Object.prototype.hasOwnProperty.call(OV, id)) return String(OV[id] || "");
   if (!TOURKEY || enrichCalls >= ENRICH_MAX) return "";
@@ -65,12 +83,31 @@ async function fetchOverview(id) {
   return "";
 }
 
-// 자동 코스 스팟(placeId 있고 overview 빈 것)에 소개 보강
+// 스팟 보강: 소개(overview) + 주소·이용요금·운영시간(확정정보). placeId 있는 자동 코스가 주 대상.
 async function enrichStops(course) {
   for (const s of course.stops || []) {
     if (!s.overview && s.placeId) { s.overview = await fetchOverview(s.placeId); await sleep(120); }
+    if (s.placeId) {
+      if (!s.fee) s.fee = feeOf(s.placeId);
+      if (!s.usetime) s.usetime = usetimeOf(s.placeId);
+      // addr는 자동 코스 스팟에 이미 있음(placeId 기반). 공식 코스 스팟은 주소 없음.
+    }
   }
   return course;
+}
+
+// LLM 출력 첫 "# 제목" 줄을 SEO 제목으로 분리, 본문에서 제거(페이지가 자체 h1 렌더)
+function splitTitle(text, fallback) {
+  const lines = String(text || "").split(/\r?\n/);
+  let title = "", start = 0;
+  for (let i = 0; i < lines.length; i++) {
+    if (lines[i].trim() === "") { start = i + 1; continue; }
+    const m = lines[i].match(/^#\s+(.+)$/);
+    if (m) { title = m[1].trim(); start = i + 1; }
+    break;
+  }
+  const body = lines.slice(start).join("\n").trim();
+  return { title: title || fallback, body: body || String(text || "").trim() };
 }
 
 // 여름·지방 우선 큐: 지금 여름휴가철 → 지방·바다피서부터 채워 시즌 검색 트래픽 흡수
@@ -120,8 +157,9 @@ async function produceCourse(course, existingTexts) {
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
       const prompt = buildCoursePrompt(course, { summer }) + (retryHint ? `\n\n[❗ 직전 시도 반려 — 교정]\n${retryHint}` : "");
-      const { text } = await callOpenAI(prompt, { apiKey: OPENAI, model: MODEL });
-      if (!text) { log(`시도${attempt} 빈 응답`); await sleep(1500); continue; }
+      const { text: raw } = await callOpenAI(prompt, { apiKey: OPENAI, model: MODEL });
+      if (!raw) { log(`시도${attempt} 빈 응답`); await sleep(1500); continue; }
+      const { title, body: text } = splitTitle(raw, `${course.area} ${course.duration} 여행코스`);
 
       const q = courseQualityCheck(text, { source, existingTexts });
       if (!q.ok) {
@@ -147,7 +185,7 @@ async function produceCourse(course, existingTexts) {
         }
       }
       const fin = courseQualityCheck(finalText, {});
-      return { art: { text: finalText, len: fin.len }, reasons };
+      return { art: { text: finalText, len: fin.len, title }, reasons };
     } catch (e) {
       log(`시도${attempt} 오류: ${e.message}`);
       await sleep(1500);
@@ -203,7 +241,7 @@ async function main() {
       duration: course.duration,
       themes: course.themes || [],
       themeLabels: (course.themes || []).map((t) => COURSE_THEME_LABEL[t] || t),
-      title: course.title,
+      title: art.title || course.title, // LLM이 만든 SEO 제목 우선(지역+기간+여행코스)
       content: art.text,
       model: MODEL,
       length: art.len,

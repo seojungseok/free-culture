@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Band";
-import ArticleBody from "@/components/ArticleBody";
+import CourseArticleBody from "@/components/CourseArticleBody";
 import CourseCard from "@/components/CourseCard";
 import CourseShare from "@/components/CourseShare";
 import {
@@ -108,32 +108,21 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
         </div>
       )}
 
-      {/* 블로그 글 */}
-      <ArticleBody content={c.content} />
+      {/* 블로그 글 — 각 스팟 소제목 뒤에 사진 삽입 */}
+      <CourseArticleBody content={c.content} stops={c.stops} />
 
-      {/* 코스 한눈에 보기 — 동선 타임라인 */}
+      {/* 코스 한눈에 보기 — 장소명만 간결하게 (동선 순서) */}
       {mapStops.length > 0 && (
-        <section className="mt-9">
-          <h2 className="mb-4 text-[19px] font-extrabold tracking-tight text-ink sm:text-[20px]">🧭 코스 한눈에 보기</h2>
-          <ol className="relative space-y-3 before:absolute before:left-[15px] before:top-2 before:bottom-2 before:w-0.5 before:bg-line">
+        <section className="mt-9 rounded-2xl bg-panel px-4 py-5 sm:px-5">
+          <h2 className="mb-3 text-[17px] font-extrabold tracking-tight text-ink sm:text-[18px]">🧭 코스 한눈에 보기</h2>
+          <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-2">
             {mapStops.map((s, i) => (
-              <li key={i} className="relative flex gap-3">
-                <span className="z-10 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-free text-[13px] font-black text-white shadow-sm">
-                  {i + 1}
+              <li key={i} className="flex items-center gap-1.5">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[13px] font-bold text-ink ring-1 ring-line">
+                  <span className="text-[11px] font-black text-free">{i + 1}</span>
+                  {s.name}
                 </span>
-                <div className="flex flex-1 gap-3 rounded-2xl bg-panel p-2.5 ring-1 ring-black/[0.03]">
-                  {s.image ? (
-                    <div className="relative h-16 w-20 flex-none overflow-hidden rounded-xl bg-neutral-100 sm:h-20 sm:w-28">
-                      <Image src={s.image} alt={s.name} fill sizes="112px" className="object-cover" loading="lazy" unoptimized />
-                    </div>
-                  ) : null}
-                  <div className="min-w-0 flex-1 py-0.5">
-                    <h3 className="text-[14px] font-bold text-ink sm:text-[15px]">{s.name}</h3>
-                    {s.overview ? (
-                      <p className="mt-0.5 line-clamp-2 text-[12.5px] leading-[1.5] text-ink-soft">{s.overview}</p>
-                    ) : null}
-                  </div>
-                </div>
+                {i < mapStops.length - 1 && <span className="text-ink-faint">→</span>}
               </li>
             ))}
           </ol>
