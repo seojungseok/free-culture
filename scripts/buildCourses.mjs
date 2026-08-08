@@ -83,10 +83,12 @@ function main() {
     { key: "1박2일", days: 2, km: 45, per: 10 },
     { key: "2박3일", days: 3, km: 75, per: 8 },
   ];
-  const VISIT_MIN = 80;          // 한 곳 평균 관람 시간(분)
+  // 사람 기준 현실 계산: 한 곳 둘러보는 데 ~2시간 + 휴식, 이동시간 별도, 식사 제외.
+  //  → 당일 ≈ 3곳, 1박2일 ≈ 5~6곳, 2박3일 ≈ 8곳.
+  const VISIT_MIN = 130;         // 한 곳 관람+휴식(≈2시간 조금 넘게)
   const SPEED_KMH = 45;          // 지역 내 평균 이동 속도
-  const DAY_USABLE_MIN = 330;    // 하루 실사용 시간(≈5.5h; 식사·휴식·숙소이동 제외분)
-  const MIN_STOPS = 3, MAX_STOPS = 8;
+  const DAY_USABLE_MIN = 420;    // 하루 실사용(≈7h; 식사·숙소이동 제외분)
+  const MIN_STOPS = 2, MAX_STOPS = 9;
 
   const out = [];
   const seenSig = new Set(); // 코스 스팟조합 서명 → 완전 중복 방지(구글 duplicate 회피)

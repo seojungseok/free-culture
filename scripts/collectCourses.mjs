@@ -65,13 +65,12 @@ async function fetchJson(url) {
   }
 }
 
-// ── 기간 판별: 코스명·소개에서 "당일 / 1박2일 / 2박3일 …" 추출 ──
-function parseDuration(title, overview) {
-  const t = `${title} ${overview}`;
-  const m = t.match(/(\d)\s*박\s*(\d)\s*일/);
-  if (m) return `${m[1]}박${m[2]}일`;
-  if (/당일|하루|데이트/.test(t)) return "당일";
-  return "당일"; // 표기 없으면 당일로 (대부분 반나절~하루)
+// ── 기간 판별: 스팟 수 기반 현실 산정(정부 라벨은 "당일 9곳"처럼 비현실적이라 신뢰 안 함) ──
+//  사람 기준: 한 곳 ~2시간 + 이동·휴식 → 하루 잘해야 3~4곳.
+function realisticDuration(stopCount) {
+  if (stopCount <= 4) return "당일";
+  if (stopCount <= 7) return "1박2일";
+  return "2박3일";
 }
 
 // ── 테마 판별: 경유지 이름·설명 키워드로 태깅(복수 가능). 여름 피서 우선 노출용 태그 포함 ──
@@ -163,7 +162,7 @@ async function main() {
     if (!c.tel) c.tel = common.tel;
     c.stops = stops;
     c.stopCount = stops.length;
-    c.duration = parseDuration(c.title, c.overview);
+    c.duration = realisticDuration(stops.length);
     c.themes = detectThemes(c);
   }
 
