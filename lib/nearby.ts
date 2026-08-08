@@ -68,4 +68,27 @@ export function nearbyRestaurants(spot: { area: string; mapx?: string; mapy?: st
     .slice(0, n);
 }
 
+/**
+ * 코스용 근처 맛집 — 좌표 있으면 거리순, 없으면 주소(시/군)로 필터. (공식 코스는 좌표가 없어 주소 기반)
+ * 반환에 dist(있을 때만)·addr 포함 → 카드에 거리 또는 주소 표기.
+ */
+export function coursesNearbyFood(
+  { area, city, mapx, mapy }: { area: string; city?: string; mapx?: string; mapy?: string },
+  n = 6
+): (Restaurant & { dist?: number })[] {
+  const inArea = restaurants.filter((r) => r.area === area);
+  const lon = parseFloat(mapx || ""), lat = parseFloat(mapy || "");
+  const hasCoord = Number.isFinite(lon) && Number.isFinite(lat) && lon > 120 && lon < 132 && lat > 32 && lat < 40;
+  if (hasCoord) {
+    return inArea
+      .map((r) => ({ ...r, dist: distanceKm({ mapx, mapy }, r) }))
+      .filter((r) => Number.isFinite(r.dist!))
+      .sort((a, b) => a.dist! - b.dist!)
+      .slice(0, n);
+  }
+  // 좌표 없음 → 같은 시/군 주소로 필터
+  const byCity = city ? inArea.filter((r) => r.addr.includes(city)) : [];
+  return (byCity.length ? byCity : inArea).slice(0, n);
+}
+
 export { tourTypeLabel };

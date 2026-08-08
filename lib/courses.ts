@@ -5,6 +5,7 @@ import coursesAuto from "@/data/courses-auto.json";
 import courseArticles from "@/data/course-articles.json";
 import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { season } from "@/lib/finder";
+import { getAllPlaces } from "@/lib/tour";
 
 export interface CourseStop {
   num: number;
@@ -129,6 +130,59 @@ export function getThemeCounts(): Record<string, number> {
   const out: Record<string, number> = {};
   for (const c of PUBLISHED) for (const t of c.themes || []) out[t] = (out[t] || 0) + 1;
   return out;
+}
+
+// 한국 좌표 유효성(공식 코스는 0,0으로 비어있는 경우가 많음)
+const validCoord = (x?: string, y?: string) => {
+  const lon = parseFloat(x || ""), lat = parseFloat(y || "");
+  return Number.isFinite(lon) && Number.isFinite(lat) && lon > 120 && lon < 132 && lat > 32 && lat < 40;
+};
+
+const norm = (s: string) => String(s || "").replace(/\s|\(.*?\)/g, "");
+/** 경유지 → 관광지 데이터 매칭(정규화: 공백·괄호 제거). 공식 코스의 주소·좌표 복원용. */
+function matchPlace(name: string) {
+  if (!name) return undefined;
+  const places = getAllPlaces();
+  const n = norm(name);
+  return (
+    places.find((pl) => pl.title === name) ||
+    places.find((pl) => norm(pl.title) === n) ||
+    places.find((pl) => norm(pl.title).includes(n) || n.includes(norm(pl.title)))
+  );
+}
+
+/**
+ * 코스 중심 좌표 — 지도 링크용.
+ * 공식 코스는 좌표가 (0,0)이라, 경유지 이름을 관광지 데이터와 매칭해 좌표 평균으로 복원.
+ */
+export function courseCentroid(c: Course): { mapx: string; mapy: string } | null {
+  if (validCoord(c.mapx, c.mapy)) return { mapx: c.mapx, mapy: c.mapy };
+  const pts: { x: number; y: number }[] = [];
+  for (const s of c.stops || []) {
+    const p = matchPlace(s.name);
+    if (p && validCoord(p.mapx, p.mapy)) pts.push({ x: parseFloat(p.mapx), y: parseFloat(p.mapy) });
+  }
+  if (!pts.length) return null;
+  return {
+    mapx: String(pts.reduce((a, p) => a + p.x, 0) / pts.length),
+    mapy: String(pts.reduce((a, p) => a + p.y, 0) / pts.length),
+  };
+}
+
+/** 코스가 속한 대표 시/군/구 — 경유지 주소(자동) 또는 매칭한 관광지 주소(공식)에서 최빈값. 근처 맛집 필터용. */
+export function courseCity(c: Course): string {
+  const addrs: string[] = [];
+  for (const s of c.stops || []) {
+    const a = (s as { addr?: string }).addr || matchPlace(s.name)?.addr || "";
+    if (a) addrs.push(a);
+  }
+  const cnt: Record<string, number> = {};
+  for (const a of addrs) {
+    const city = a.split(/\s+/).find((t) => /(시|군|구)$/.test(t));
+    if (city) cnt[city] = (cnt[city] || 0) + 1;
+  }
+  const top = Object.entries(cnt).sort((a, b) => b[1] - a[1])[0];
+  return top ? top[0] : "";
 }
 
 /** 같은 지역 다른 코스 추천 */

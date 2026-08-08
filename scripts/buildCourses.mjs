@@ -76,12 +76,17 @@ function main() {
   })();
 
   const areas = [...new Set(places.map((p) => p.area))];
-  // 기간별 구성: 스팟 수·군집 반경(길수록 넓게 돌기)·라벨
+  // 기간별: 일수 기반 시간예산으로 스팟 수를 "현실적으로" 산출(고정 아님).
+  //  하루 예산 안에서 [방문시간 + 이동시간(거리÷속도)]을 누적, 초과 전까지만 담음. 식사시간은 예산에서 미리 뺌.
   const DURS = [
-    { key: "당일", stops: 5, km: 20, per: 12 },
-    { key: "1박2일", stops: 8, km: 45, per: 10 },
-    { key: "2박3일", stops: 11, km: 80, per: 8 },
+    { key: "당일", days: 1, km: 22, per: 12 },
+    { key: "1박2일", days: 2, km: 45, per: 10 },
+    { key: "2박3일", days: 3, km: 75, per: 8 },
   ];
+  const VISIT_MIN = 80;          // 한 곳 평균 관람 시간(분)
+  const SPEED_KMH = 45;          // 지역 내 평균 이동 속도
+  const DAY_USABLE_MIN = 330;    // 하루 실사용 시간(≈5.5h; 식사·휴식·숙소이동 제외분)
+  const MIN_STOPS = 3, MAX_STOPS = 8;
 
   const out = [];
   const seenSig = new Set(); // 코스 스팟조합 서명 → 완전 중복 방지(구글 duplicate 회피)
@@ -96,20 +101,27 @@ function main() {
       if (pool.length < 4) continue;
 
       for (const dur of DURS) {
-        const STOPS = dur.stops, MAX_KM = dur.km, PER = dur.per;
-        if (pool.length < STOPS) continue;
-        // 시드마다 이웃을 모아 서로 다른 조합의 코스를 여러 개 만든다(개별 스팟 재사용 허용, 조합 중복은 금지).
+        const MAX_KM = dur.km, PER = dur.per;
+        const budget = dur.days * DAY_USABLE_MIN; // 이 코스에 쓸 수 있는 총 활동 시간(분)
         const seeds = [...pool].sort((a, b) => (ovOf(b.id) ? 1 : 0) - (ovOf(a.id) ? 1 : 0));
         let made = 0;
         for (const seed of seeds) {
           if (made >= PER) break;
-          const near = pool
-            .filter((p) => p.id !== seed.id && km(seed, p) <= MAX_KM)
-            .sort((a, b) => km(seed, a) - km(seed, b))
-            .slice(0, STOPS - 1);
-          if (near.length < STOPS - 1) continue;
+          // 반경 내 후보를 최근접 이웃(a→b→c…)으로 이으며 시간예산이 찰 때까지만 담는다.
+          const byId = new Map(pool.filter((p) => p.id !== seed.id && km(seed, p) <= MAX_KM).map((p) => [p.id, p]));
+          if (byId.size < MIN_STOPS - 1) continue;
+          const cluster = [seed];
+          let cur = seed, mins = VISIT_MIN;
+          while (byId.size && cluster.length < MAX_STOPS) {
+            let best = null, bd = Infinity;
+            for (const [id, p] of byId) { const d = km(cur, p); if (d < bd) { bd = d; best = id; } }
+            const travel = (bd / SPEED_KMH) * 60;
+            if (mins + travel + VISIT_MIN > budget) break; // 하루 예산 초과 → 멈춤
+            cur = byId.get(best); cluster.push(cur); byId.delete(best);
+            mins += travel + VISIT_MIN;
+          }
+          if (cluster.length < MIN_STOPS) continue;
 
-          const cluster = routeOrder(seed, [seed, ...near]);
           const sig = cluster.map((p) => p.id).sort().join(",");
           if (seenSig.has(sig)) continue; // 같은 스팟 조합이면 스킵
           seenSig.add(sig);

@@ -5,6 +5,7 @@ import { getPlacesSample, getPlaceCount, getAllPlaces } from "@/lib/tour";
 import { getCampCount, getAllCamps } from "@/lib/camping";
 import { getCourseKeywords, getAllCourses, getCourseCount, slimCourse } from "@/lib/courses";
 import CourseCard from "@/components/CourseCard";
+import PopularKeywords from "@/components/PopularKeywords";
 import { todayYmd } from "@/lib/dates";
 import PosterCard from "@/components/PosterCard";
 import TourCard from "@/components/TourCard";
@@ -109,6 +110,9 @@ export default function HomePage() {
         <HeroCarousel slides={heroSlides} />
       </div>
 
+      {/* 인기 검색어 — 네이버 실시간형 한 줄 롤링(더보기로 전체). 상단 최적 위치. */}
+      <PopularKeywords items={popular} />
+
       {/* 오늘 무료 띠 */}
       <Band tone="white" border={false} innerClassName="pt-4 sm:pt-5">
         <Link href="/free" className="flex items-center justify-between gap-3 rounded-2xl bg-freelight px-4 py-3.5 transition hover:bg-[#dcf5e7] sm:px-5">
@@ -118,22 +122,6 @@ export default function HomePage() {
           <span className="shrink-0 text-[13px] font-bold text-free">바로 확인 →</span>
         </Link>
       </Band>
-
-      {/* 인기 검색어 */}
-      {popular.length > 0 && (
-        <Band tone="white" border={false} innerClassName="py-6 sm:py-7">
-          <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[22px]">인기 검색어</h2>
-          <p className="mt-0.5 text-[13px] text-ink-faint">요즘 뜨는 여행코스 — 매일 새롭게 골라드려요</p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {popular.map((p, i) => (
-              <Link key={p.label} href={p.href}
-                className={["items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-2 text-[13.5px] font-semibold text-ink-soft transition hover:border-free/40 hover:text-free", i >= 10 ? "hidden sm:inline-flex" : "inline-flex"].join(" ")}>
-                <span className="text-[12px] font-black text-free">{i + 1}</span>{p.label}
-              </Link>
-            ))}
-          </div>
-        </Band>
-      )}
 
       {/* 문화행사 */}
       {eventCards.length > 0 && (

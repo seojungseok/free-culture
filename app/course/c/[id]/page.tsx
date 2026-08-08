@@ -7,8 +7,9 @@ import CourseArticleBody from "@/components/CourseArticleBody";
 import CourseCard from "@/components/CourseCard";
 import CourseShare from "@/components/CourseShare";
 import {
-  getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse,
+  getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity,
 } from "@/lib/courses";
+import { coursesNearbyFood, distanceLabel, foodTypeLabel } from "@/lib/nearby";
 import { SITE } from "@/lib/site";
 
 export const revalidate = 86400;
@@ -41,6 +42,10 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   const slug = areaSlug(c.area);
   const related = relatedCourses(c, 4).map(slimCourse);
   const mapStops = c.stops.filter((s) => s.name);
+  // 근처 맛집(내부링크) — 좌표 있으면 거리순, 없으면 코스 도시(주소) 기준. 음식점 데이터 있는 지역만.
+  const centroid = courseCentroid(c);
+  const city = courseCity(c);
+  const nearFood = coursesNearbyFood({ area: c.area, city, mapx: centroid?.mapx, mapy: centroid?.mapy }, 6);
 
   const itemListLd = {
     "@context": "https://schema.org",
@@ -126,13 +131,41 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
               </li>
             ))}
           </ol>
-          {c.mapx && c.mapy && (
-            <a href={`https://map.kakao.com/link/map/${encodeURIComponent(c.title)},${c.mapy},${c.mapx}`}
+          {centroid && (
+            <a href={`https://map.kakao.com/link/map/${encodeURIComponent(c.title)},${centroid.mapy},${centroid.mapx}`}
               target="_blank" rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-1 rounded-full bg-white px-4 py-2 text-[13px] font-bold text-freedark ring-1 ring-line transition hover:bg-tint">
               🗺 지도에서 코스 위치 보기
             </a>
           )}
+        </section>
+      )}
+
+      {/* 근처 맛집 — 코스 좌표 기준, 내부링크로 상세 연결 (음식점 데이터 있는 지역만) */}
+      {nearFood.length > 0 && (
+        <section className="mt-9">
+          <h2 className="mb-1 text-[19px] font-extrabold tracking-tight text-ink sm:text-[20px]">🍽 이 코스 근처 맛집</h2>
+          <p className="mb-4 text-[13px] text-ink-faint">코스 동선 근처에서 한 끼 하기 좋은 곳이에요</p>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {nearFood.map((r) => (
+              <Link key={r.id} href={`/places/spot/${r.id}`} className="group block overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.05] shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
+                  {r.image ? (
+                    <Image src={r.image} alt={r.title} fill sizes="(max-width:640px) 50vw, 260px" className="object-cover transition group-hover:scale-105" loading="lazy" unoptimized />
+                  ) : (
+                    <div className="flex h-full items-center justify-center text-2xl text-ink-faint">🍽</div>
+                  )}
+                  <span className="absolute left-1.5 top-1.5 rounded-md bg-black/55 px-1.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-sm">{foodTypeLabel(r)}</span>
+                </div>
+                <div className="px-2.5 pb-2.5 pt-2">
+                  <h3 className="line-clamp-1 text-[14px] font-bold text-ink group-hover:text-free">{r.title}</h3>
+                  <p className="mt-0.5 line-clamp-1 text-[12px] text-ink-faint">
+                    {typeof r.dist === "number" ? `코스에서 ${distanceLabel(r.dist)}` : r.addr}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </section>
       )}
 

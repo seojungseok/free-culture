@@ -576,6 +576,13 @@ export function courseQualityCheck(text, { source = "", existingTexts = [] } = {
 // 정보 전달형(여행사가 자세히 안내). 경험담(1인칭 과거) 금지. 각 스팟에 주소·요금·시간 있으면 포함.
 export function buildCoursePrompt(course, { summer = false } = {}) {
   const themeLabels = (course.themes || []).map((t) => COURSE_THEME_LABEL[t] || t).join("·");
+  const nStops = (course.stops || []).length;
+  // 스팟이 적을수록 한 곳을 더 깊게 → 글이 부실해지지 않게 분량 배분
+  const perStopGuide = nStops <= 4
+    ? "경유지가 적으니 각 장소를 6~8문장으로 깊이 있게(역사·특징·볼거리·즐기는 법·주변 팁) 자세히 소개하세요."
+    : nStops <= 6
+      ? "각 장소를 4~6문장으로 충실히 설명하세요."
+      : "각 장소를 3~4문장으로 핵심 위주로 설명하세요.";
   const stopsBlock = (course.stops || [])
     .map((s, i) => {
       const facts = [];
@@ -627,7 +634,7 @@ ${summer ? "- 지금은 여름 휴가철이라, 더위를 피할 포인트(그�
   ※ 사람들이 실제로 검색하는 말(지역명 + 기간 + 여행코스)을 꼭 포함. 시적·추상적 제목 금지.
 - 2번째 줄: 이 코스의 핵심을 요약한 한 문장 **굵게**.
 - 도입 2~3문장: 이 코스가 어떤 여행인지, 누구에게 좋은지 (${course.area} 여행 / ${course.area} ${course.duration} 코스 키워드 자연스럽게).
-- 경유지마다 "## 1. ○○" 소제목 + 3~5문장 설명 + (확정정보 목록).
+- 경유지마다 "## 1. ○○" 소제목 + 설명 + (확정정보 목록). ${perStopGuide}
 - 마지막 "## 여행 팁": 이동수단·소요시간·계절 팁 등 실용 정보.
 - 전체 **1400~2600자**로 풍부하게. 정보가 많을수록 좋습니다(단, 지어내지 말 것).
 - 이모티콘·"ㅋㅋ/ㅎㅎ" 금지. 광고 문구 금지.
