@@ -185,6 +185,19 @@ export function courseCity(c: Course): string {
   return top ? top[0] : "";
 }
 
+/** 코스 스팟을 일차별로 분할 — 하루 3~4곳이 현실적. 1박2일=2일, 2박3일=3일로 나눔. */
+export function courseDays(c: Course): CourseStop[][] {
+  const stops = c.stops || [];
+  const n = stops.length;
+  const days = c.duration === "2박3일" ? 3 : c.duration === "1박2일" ? 2 : 1;
+  if (days <= 1) return [stops];
+  const perDay = Math.ceil(n / days);
+  const out: CourseStop[][] = [];
+  for (let i = 0; i < n; i += perDay) out.push(stops.slice(i, i + perDay));
+  // 마지막 날이 비면 제거, 일수보다 많으면 마지막에 합침
+  return out.slice(0, days).filter((d) => d.length);
+}
+
 /** 같은 지역 다른 코스 추천 */
 export function relatedCourses(course: Course, n = 4): Course[] {
   return PUBLISHED.filter((c) => c.id !== course.id && c.area === course.area).slice(0, n)

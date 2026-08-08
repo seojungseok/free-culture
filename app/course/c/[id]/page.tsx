@@ -7,7 +7,7 @@ import CourseArticleBody from "@/components/CourseArticleBody";
 import CourseCard from "@/components/CourseCard";
 import CourseShare from "@/components/CourseShare";
 import {
-  getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity,
+  getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays,
 } from "@/lib/courses";
 import { coursesNearbyFood, distanceLabel, foodTypeLabel } from "@/lib/nearby";
 import { areaFestivals, fmtMd } from "@/lib/festivals";
@@ -48,6 +48,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   const city = courseCity(c);
   const nearFood = coursesNearbyFood({ area: c.area, city, mapx: centroid?.mapx, mapy: centroid?.mapy }, 6);
   const festivals = areaFestivals(c.area, { limit: 4 }); // 보는 시점 날짜 연동
+  const days = courseDays(c); // 일차별 분할(하루 3~4곳)
 
   const itemListLd = {
     "@context": "https://schema.org",
@@ -118,21 +119,30 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
       {/* 블로그 글 — 각 스팟 소제목 뒤에 사진 삽입 */}
       <CourseArticleBody content={c.content} stops={c.stops} />
 
-      {/* 코스 한눈에 보기 — 장소명만 간결하게 (동선 순서) */}
+      {/* 코스 한눈에 보기 — 일차별로 묶어 장소명 표기 (하루 3~4곳) */}
       {mapStops.length > 0 && (
         <section className="mt-9 rounded-2xl bg-panel px-4 py-5 sm:px-5">
           <h2 className="mb-3 text-[17px] font-extrabold tracking-tight text-ink sm:text-[18px]">🧭 코스 한눈에 보기</h2>
-          <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-2">
-            {mapStops.map((s, i) => (
-              <li key={i} className="flex items-center gap-1.5">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[13px] font-bold text-ink ring-1 ring-line">
-                  <span className="text-[11px] font-black text-free">{i + 1}</span>
-                  {s.name}
-                </span>
-                {i < mapStops.length - 1 && <span className="text-ink-faint">→</span>}
-              </li>
+          <div className="space-y-3">
+            {days.map((dayStops, di) => (
+              <div key={di}>
+                {days.length > 1 && (
+                  <p className="mb-1.5 text-[13px] font-black text-free">{di + 1}일차</p>
+                )}
+                <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-2">
+                  {dayStops.map((s, i) => (
+                    <li key={i} className="flex items-center gap-1.5">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[13px] font-bold text-ink ring-1 ring-line">
+                        <span className="text-[11px] font-black text-free">{i + 1}</span>
+                        {s.name}
+                      </span>
+                      {i < dayStops.length - 1 && <span className="text-ink-faint">→</span>}
+                    </li>
+                  ))}
+                </ol>
+              </div>
             ))}
-          </ol>
+          </div>
           {centroid && (
             <a href={`https://map.kakao.com/link/map/${encodeURIComponent(c.title)},${centroid.mapy},${centroid.mapx}`}
               target="_blank" rel="noopener noreferrer"

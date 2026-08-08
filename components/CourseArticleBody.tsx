@@ -46,13 +46,24 @@ export default function CourseArticleBody({ content, stops }: { content: string;
 
     if (/^#{2,3}\s/.test(line)) {
       const headingText = line.replace(/^#{2,3}\s/, "");
+      const isDay = /^\d+\s*일차/.test(headingText);
+      if (isDay) {
+        // 일차 구분 — 눈에 띄는 밴드
+        blocks.push(
+          <h2 key={key++} className="mt-9 mb-1 inline-block rounded-full bg-free px-3.5 py-1.5 text-[15px] font-black text-white first:mt-0">
+            {renderInline(headingText)}
+          </h2>
+        );
+        i++;
+        continue;
+      }
+      // 장소 소제목 + 사진
       blocks.push(
-        <h2 key={key++} className="mt-8 text-[19px] font-extrabold tracking-tight text-ink first:mt-0 sm:text-[21px]">
+        <h3 key={key++} className="mt-6 text-[17px] font-extrabold tracking-tight text-ink sm:text-[18px]">
           {renderInline(headingText)}
-        </h2>
+        </h3>
       );
       i++;
-      // 스팟 소제목이면 사진 삽입
       const stop = findStop(headingText);
       if (stop?.image) blocks.push(<StopImage key={key++} stop={stop} />);
       continue;
