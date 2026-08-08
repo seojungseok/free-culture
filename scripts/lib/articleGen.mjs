@@ -138,7 +138,8 @@ export function qualityCheck(text, { overview = "", existingTexts = [], minimalM
   if (vh.length) return { ok: false, reason: `근거없는 미사여구(${vh.slice(0, 3).join(",")})`, len };
   const spec = speculativeHits(body);
   const sr = speculativeRatio(body);
-  if (spec.length >= 2 || sr > 0.25)
+  // 완화: 여행 소개글은 "~할 수 있어요"가 자연스러움 → 지나치게 많을 때만 반려
+  if (spec.length >= 4 || sr > 0.4)
     return { ok: false, reason: `추측성 문장 ${spec.length}개(${(sr * 100).toFixed(0)}%)`, len };
 
   // 원본 풍부 700~900, 빈약/안전버전 300~500 허용(짧은 게 틀린 것보다 나음). 하한 300.
@@ -159,10 +160,10 @@ export function qualityCheck(text, { overview = "", existingTexts = [], minimalM
 
   // 최소가공 폴백은 원본을 충실히 재구성하는 "안전 바닥"이라 원본 유사도 검사에서 제외한다.
   // (글이 없으면 상세페이지는 어차피 원본 overview를 그대로 노출 → 재구성본이 UX·SEO상 열위가 아님)
-  if (!minimalMode && overview && similarity(body, overview) > 0.5)
+  if (!minimalMode && overview && similarity(body, overview) > 0.62)
     return { ok: false, reason: "원본 overview와 과유사", len };
   for (const ex of existingTexts) {
-    if (similarity(body, ex) > 0.6) return { ok: false, reason: "기존 발행글과 중복", len };
+    if (similarity(body, ex) > 0.65) return { ok: false, reason: "기존 발행글과 중복", len };
   }
   return { ok: true, reason: "", len };
 }

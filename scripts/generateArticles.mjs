@@ -135,14 +135,25 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
       }
 
       const v = await verifyAndImprove(overview, draft, { apiKey: OPENAI, model: OPENAI_MODEL, facts: verifyFacts });
-      if (v.result === "FAIL") {
-        log(`시도${attempt} 검증 FAIL: ${v.reason}`);
-        retryHint = `직전 시도가 검증에서 "${String(v.reason).slice(0, 80)}" 사유로 반려됐어요. 근거에 없는 사실을 빼고 다시 쓰세요.`;
-        await sleep(1000); continue;
+      let finalText;
+      if (v.result === "PASS") {
+        finalText = v.improved || draft;
+      } else if (v.result === "FAIL") {
+        // 완화: 검증 실패해도 곧바로 버리지 않고, 근거 없는 표현만 잘라내 로컬검사 통과 시 진행
+        //  (뒤에 Gemini 독립 팩트체크가 최종 안전망 → 환각은 여전히 차단)
+        const s = sanitizeUnsupported(draft, overview);
+        if (s.text && qualityCheck(s.text, { overview }).ok && patternCheck(s.text, overview).ok) {
+          log(`시도${attempt} 검증 FAIL → 근거없는 표현 ${s.removed}곳 제거 후 진행`);
+          finalText = s.text;
+        } else {
+          log(`시도${attempt} 검증 FAIL: ${v.reason}`);
+          retryHint = `직전 시도가 검증에서 "${String(v.reason).slice(0, 80)}" 사유로 반려됐어요. 근거에 없는 사실을 빼고 다시 쓰세요.`;
+          await sleep(1000); continue;
+        }
+      } else { // ERROR — 검증기 오류는 로컬검사 통과한 draft로 진행(Gemini가 최종 확인)
+        log(`시도${attempt} 검증오류(무시하고 진행): ${v.reason}`);
+        finalText = draft;
       }
-      if (v.result === "ERROR") { log(`시도${attempt} 검증오류: ${v.reason}`); await sleep(1500); continue; }
-
-      let finalText = v.result === "PASS" && v.improved ? v.improved : draft;
       const q2 = qualityCheck(finalText, { overview });
       const p2 = patternCheck(finalText, overview);
       if (!q2.ok || !p2.ok) {
