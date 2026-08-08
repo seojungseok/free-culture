@@ -4,8 +4,14 @@ import { getAllPlaces, getTourAreaCounts } from "@/lib/tour";
 import { getAllCamps, campAreaCounts, filterCamps, CAMP_TYPE_SLUG } from "@/lib/camping";
 import { getAllRestaurants, foodAreas, FOOD_CATS, filterRestaurants } from "@/lib/food";
 import { getAllArticles } from "@/lib/articles";
+import {
+  getAllCourses, getCourseAreaCounts, getDurationCounts, getThemeCounts,
+  DURATIONS, THEMES,
+} from "@/lib/courses";
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
+
+const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
 const isFree = (t: string) => t === "free" || t === "free_estimated";
 
@@ -14,12 +20,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   // 주요 목록/홈은 높은 우선순위·잦은 갱신. 정보성 정적 페이지는 낮게.
-  const MAJOR = new Set(["/events", "/places", "/camping", "/food"]);
+  const MAJOR = new Set(["/events", "/places", "/course", "/camping", "/food"]);
   const LOW = new Set(["/about", "/privacy", "/terms", "/contact"]);
   const staticRoutes = [
     "",
     "/events",
     "/places",
+    "/course",
     "/camping",
     "/food",
     "/free",
@@ -169,6 +176,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.4,
   }));
 
+  // ── 여행코스 ──
+  // 지역 허브 (/course/[area])
+  const courseAreaRoutes = getCourseAreaCounts().map(({ area }) => ({
+    url: `${base}/course/${(SIDO_SLUG as Record<string, string>)[area]}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+  // 지역×기간 (/course/[area]/[duration]) — 코스 ≥3 조합만
+  const courseDurRoutes: MetadataRoute.Sitemap = [];
+  for (const { area } of getCourseAreaCounts()) {
+    const dc = getDurationCounts(area);
+    for (const d of DURATIONS) {
+      if ((dc[d.key] || 0) >= COURSE_INDEX_MIN) {
+        courseDurRoutes.push({
+          url: `${base}/course/${(SIDO_SLUG as Record<string, string>)[area]}/${d.slug}`,
+          lastModified: now, changeFrequency: "weekly" as const, priority: 0.7,
+        });
+      }
+    }
+  }
+  // 전국 테마 (/course/theme/[theme]) — 코스 ≥3 테마만
+  const themeCounts = getThemeCounts();
+  const courseThemeRoutes = THEMES.filter((t) => (themeCounts[t.key] || 0) >= COURSE_INDEX_MIN).map((t) => ({
+    url: `${base}/course/theme/${t.slug}`,
+    lastModified: now, changeFrequency: "weekly" as const, priority: 0.7,
+  }));
+  // 개별 코스 상세 (/course/c/[id])
+  const courseDetailRoutes = getAllCourses().map((c) => ({
+    url: `${base}/course/c/${c.id}`,
+    lastModified: c.publishedAt ? new Date(c.publishedAt) : now,
+    changeFrequency: "monthly" as const, priority: 0.6,
+  }));
+
   return [
     // 1) 홈·주요 목록·허브 (높은 우선순위 — 크롤 예산 집중)
     ...staticRoutes,
@@ -181,8 +222,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...foodComboRoutes,
     ...campRegionRoutes,
     ...campTypeRoutes,
+    ...courseAreaRoutes,
+    ...courseDurRoutes,
+    ...courseThemeRoutes,
     // 2) 발행글 있는 상세 (최신 lastmod — 새 글 우선 크롤)
     ...articleSpotRoutes,
+    ...courseDetailRoutes,
     // 3) 대량 롱테일 상세 (낮은 우선순위·가끔)
     ...placeSpotRoutes,
     ...restaurantRoutes,

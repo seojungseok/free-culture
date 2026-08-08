@@ -518,3 +518,104 @@ export async function callGemini(prompt, { apiKey, model = "gemini-2.5-flash-lit
   const sources = chunks.map((c) => c?.web?.uri).filter(Boolean).slice(0, 5);
   return { text, sources };
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   여행코스 블로그 생성 (OpenAI 전용, 제미나이 미사용)
+   - 정부 공식 코스(검증된 사실)를 "여행 블로거" 톤으로 리라이팅.
+   - 사실(연도·인물·수치)은 경유지 자료에서만 → patternCheck로 환각 차단.
+   - 감정·감각·이동 흐름은 허용(블로그 맛). 클리셰 미사여구는 계속 금지.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+export const COURSE_THEME_LABEL = {
+  바다피서: "바다·피서", 문화유적: "문화유적", 자연힐링: "자연·힐링",
+  가족체험: "가족·체험", 맛집: "맛집·먹거리",
+};
+
+// 코스 램프: 하루 발행 수. 초기 카탈로그 구축기엔 10/일, 이후 남은 만큼 자연 감속.
+export function rampCourses() {
+  return 10;
+}
+
+/** 경유지+소개를 "확정 사실 근거"로 합침(환각 검사 기준) */
+export function courseSourceFacts(course) {
+  const parts = [];
+  if (course.overview) parts.push(course.overview);
+  for (const s of course.stops || []) parts.push(`${s.name}. ${s.overview || ""}`);
+  return parts.join("\n");
+}
+
+// ── 코스용 품질검사: 블로그 길이·구조 + 클리셰 금지. 추측표현은 완화(여행글 자연스러움). ──
+export function courseQualityCheck(text, { source = "", existingTexts = [] } = {}) {
+  const body = String(text || "").trim();
+  const len = stripMd(body).length;
+
+  const vh = vagueHits(body);
+  if (vh.length) return { ok: false, reason: `근거없는 미사여구(${vh.slice(0, 3).join(",")})`, len };
+
+  if (len < 700) return { ok: false, reason: `길이 ${len}자(너무 짧음)`, len };
+  if (len > 3200) return { ok: false, reason: `길이 ${len}자(너무 김)`, len };
+
+  const headings = (body.match(/^##\s/gm) || []).length;
+  if (headings < 3) return { ok: false, reason: `소제목 ${headings}개(<3)`, len };
+
+  if (/[ㅋㅎ]{2,}|[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(body))
+    return { ok: false, reason: "이모티콘/채팅체", len };
+  if (/많은 관심 바랍|강력 추천합니다|후회 없는 선택/.test(body))
+    return { ok: false, reason: "광고성/상투구", len };
+
+  // 원본(경유지 자료)과 과유사(복붙) 방지 — 여러 스팟을 엮어 풀어 쓰므로 여유 있게 0.62.
+  if (source && similarity(body, source) > 0.62)
+    return { ok: false, reason: "원본 자료와 과유사", len };
+  for (const ex of existingTexts) {
+    if (similarity(body, ex) > 0.6) return { ok: false, reason: "기존 코스글과 중복", len };
+  }
+  return { ok: true, reason: "", len };
+}
+
+// ── 코스 블로그 프롬프트 ──
+export function buildCoursePrompt(course, { summer = false } = {}) {
+  const themeLabels = (course.themes || []).map((t) => COURSE_THEME_LABEL[t] || t).join("·");
+  const stopsBlock = (course.stops || [])
+    .map((s, i) => `${i + 1}. ${s.name}\n   - 자료: ${s.overview || "(상세 없음 — 이름·유형만 사실)"}`)
+    .join("\n");
+
+  return `당신은 국내 여행을 다녀와 생생하게 풀어내는 여행 블로거입니다.
+아래 "코스 자료"를 바탕으로, 실제 다녀온 듯한 여행기 형식의 블로그 글을 씁니다.
+
+[코스명] ${course.title}
+[지역] ${course.area}
+[기간] ${course.duration}
+[테마] ${themeLabels}
+${course.overview ? `[코스 소개 자료] ${course.overview}\n` : ""}
+[경유지 — 이 순서대로, 각 스팟의 '자료'에 있는 사실만 사용]
+${stopsBlock}
+
+[🎯 목표 — "블로그처럼" 쓰기]
+- 딱딱한 정보 나열 금지. "여기는 ○○로 유명하고, 조금만 가면 △△가 있어요" 식으로 장소를 이야기로 잇는다.
+- 경유지를 방문 순서대로 자연스럽게 연결: "다음으로", "차로 조금 이동하면", "걸어서 금방" 등 이동의 흐름을 넣는다.
+- 각 장소의 매력 포인트(무엇으로 유명한지)를 자료 사실로 콕 집어 설명하고, 감각적 묘사(풍경·분위기·계절감)를 곁들인다.
+- 먹거리·맛집 스팟이 있으면 "출출할 때쯤 ~에서 한 끼" 처럼 식사 흐름으로 녹인다.
+${summer ? "- 지금은 여름 휴가철. 더위를 피할 포인트(그늘·물가·바다·계곡·실내)를 자연스럽게 짚어준다.\n" : ""}
+[⚠️ 사실 정확성 — 가장 중요]
+- 각 경유지의 '자료'에 **없는** 연도·인물·수치·사건을 **절대 지어내지 마세요.** (틀린 정보는 최악)
+- 자료에 없으면 일반적으로만("오래된", "이름난"). 특정 숫자·연도·사람 이름을 상상해서 넣지 말 것.
+- 경유지 이름·지역은 자료 그대로.
+
+[🚫 금지 표현 — 근거 없는 클리셰]
+- "잊지 못할 추억을 선사", "특별한 시간을 선사", "힐링을 선사", "다채로운 볼거리", "오감 만족", "강력 추천"
+- 감정은 클리셰가 아니라 **구체적 묘사**로: (X)"힐링이 가득한 곳" → (O)"물소리만 들리는 그늘에 앉아 있으면 더위가 가셔요"
+
+[구조·분량]
+- 맨 위 첫 줄: 이 여행의 매력을 담은 한 문장 **굵게** (여정을 압축, 뻔한 인사 금지).
+- 도입 문단 2~3문장: 이 코스가 어떤 여행인지, 언제·누구와 가면 좋은지.
+- 경유지마다 소제목: "## 1. ○○" 형식으로, 각 2~4문장. (스팟 수만큼)
+- 마무리 문단: 하루/여정 총평 + 실용 팁 1~2개(자료에 시간·주차 있으면만, 없으면 "여유롭게 반나절" 정도).
+- 전체 900~1800자. 친근한 "~해요/~더라고요" 여행기 말투.
+- 이모티콘·"ㅋㅋ/ㅎㅎ" 금지(귀여움은 화면 디자인이 담당). 광고 문구 금지.
+
+[SEO]
+- 첫 문단과 마무리에 "${course.area} 여행", "${course.area} ${course.duration} 코스" 같은 검색어를 자연스럽게 1~2회.
+- 소제목·본문에 경유지 이름을 정확히 써서 지역+장소 키워드가 잡히게.
+
+이제 "${course.title}" 여행기를 마크다운으로만 출력하세요(설명 없이 글만). 자료에 없는 사실은 쓰지 마세요.`;
+}

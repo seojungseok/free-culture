@@ -4,6 +4,7 @@ import { SITE } from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
+import FloatingShare from "@/components/FloatingShare";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -69,6 +70,7 @@ export default function RootLayout({
         {/* 콘텐츠 자연 흐름 — 푸터가 내용 바로 뒤에 옴. 짧은 페이지에선 흰 배경이 푸터와 이어져 빈 띠가 안 생김 */}
         <main className="w-full">{children}</main>
         <Footer />
+        <FloatingShare />
         <Analytics />
       </body>
     </html>

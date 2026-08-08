@@ -18,6 +18,8 @@
   "collect:camping-images": "node scripts/collectCampingImages.mjs",
     "dedup:camping": "node scripts/dedupCamping.mjs",
     "articles": "node scripts/generateArticles.mjs",
+    "collect:courses": "node scripts/collectCourses.mjs",
+    "courses": "node scripts/generateCourses.mjs",
     "audit": "node scripts/auditArticles.mjs",
     "articles:publish": "node scripts/publishDrafts.mjs",
   "revalidate": "node scripts/revalidatePublished.mjs",

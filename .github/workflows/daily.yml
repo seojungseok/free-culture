@@ -18,6 +18,10 @@ on:
         description: "특정 contentId만 글 생성 (콤마구분)"
         required: false
         default: ""
+      course_ids:
+        description: "특정 여행코스만 생성 (콤마구분, 비우면 하루 10개)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -112,6 +116,16 @@ jobs:
           TEST_IDS: ${{ github.event.inputs.test_ids }}
         run: node scripts/generateArticles.mjs
 
+      # ── 여행코스 블로그 생성 (하루 10개, 여름·지방 우선). OpenAI 전용 ★제미나이 미사용★ ──
+      # 재료(data/courses.json)는 로컬/수동 collectCourses.mjs로 미리 수집(TourAPI 한도 절약).
+      - name: 여행코스 글 생성·발행 (OpenAI만)
+        continue-on-error: true
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: "gpt-5.6-luna" # 코스도 Luna로 저렴하게
+          COURSE_IDS: ${{ github.event.inputs.course_ids }}
+        run: node scripts/generateCourses.mjs
+
       # ── 변경분 한 번에 커밋 = 배포 1회 ──
       - name: 변경분 커밋 (통합, 1회)
         id: commit
@@ -119,7 +133,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/events.json data/festivals.json data/restaurants.json data/restaurant-intro.json \
-                  data/place-intro.json data/place-info.json data/camping-images.json data/place-articles.json
+                  data/place-intro.json data/place-info.json data/camping-images.json data/place-articles.json \
+                  data/courses.json data/course-articles.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
             echo "changed=false" >> "$GITHUB_OUTPUT"
