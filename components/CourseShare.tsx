@@ -37,12 +37,12 @@ export default function CourseShare({ title, compact = false }: { title: string;
         aria-label="이 코스 공유하기"
         className={
           compact
-            ? "inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-bold text-freedark ring-1 ring-line transition hover:bg-tint"
-            : "inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-free px-5 py-3.5 text-[15px] font-extrabold text-white shadow-sm transition hover:bg-freedark sm:w-auto"
+            ? "inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-white px-3.5 py-2 text-[13px] font-bold text-freedark ring-1 ring-line transition hover:bg-tint"
+            : "inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl bg-free px-5 py-3.5 text-[15px] font-extrabold text-white shadow-sm transition hover:bg-freedark sm:w-auto"
         }
       >
         <ShareIcon />
-        {canShare ? "이 코스 공유하기" : "링크 복사해서 공유"}
+        {compact ? "공유" : canShare ? "이 코스 공유하기" : "링크 복사해서 공유"}
       </button>
       {toast && (
         <span
@@ -58,7 +58,7 @@ export default function CourseShare({ title, compact = false }: { title: string;
 
 function ShareIcon() {
   return (
-    <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="18" cy="5" r="3" />
       <circle cx="6" cy="12" r="3" />
       <circle cx="18" cy="19" r="3" />

@@ -30,6 +30,7 @@ export interface CourseRaw {
 export interface CourseArticle {
   status: string;
   content: string;
+  title?: string; // LLM이 만든 SEO 제목(지역+기간+여행코스)
   publishedAt?: string;
   generatedAt?: string;
   length?: number;
@@ -87,6 +88,7 @@ const PUBLISHED: Course[] = RAW.filter((c) => ARTS[c.id]?.status === "published"
   const a = ARTS[c.id]!;
   return {
     ...c,
+    title: a.title || c.title, // SEO 제목 우선(발행글) → 없으면 원 코스명
     content: a.content,
     publishedAt: a.publishedAt || a.generatedAt || "",
     themeLabels: (c.themes || []).map(themeLabel),
