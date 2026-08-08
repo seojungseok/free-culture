@@ -12,7 +12,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  buildPrompt, buildMinimalPrompt, callOpenAI, qualityCheck, patternCheck,
+  buildPrompt, buildMinimalPrompt, callOpenAI, qualityCheck, patternCheck, sanitizeUnsupported,
   verifyAndImprove, factCheckGemini, buildFactsBlock, rampUpCount, pickQueue, tourTypeLabel,
 } from "./lib/articleGen.mjs";
 
@@ -105,30 +105,62 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
   // 검증기에 넘길 "확정 사실"(주소 + intro/info) — overview에 없어도 정당한 근거로 인정받게 함
   const verifyFacts = [`주소: ${place.addr}`, buildFactsBlock(extras)].filter(Boolean).join("\n");
 
+  let retryHint = ""; // 직전 반려 사유 → 다음 시도 프롬프트에 되먹임(같은 실수 반복 방지)
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
-      const draft = await gen(buildPrompt(place, overview, extras));
+      let draft = await gen(buildPrompt(place, overview, { ...extras, retryHint }));
       if (!draft) { log(`시도${attempt} OpenAI 빈 응답`); await sleep(1500); continue; }
+
       const q = qualityCheck(draft, { overview, existingTexts });
-      if (!q.ok) { log(`시도${attempt} 품질 반려: ${q.reason}`); await sleep(1000); continue; }
+      if (!q.ok) {
+        log(`시도${attempt} 품질 반려: ${q.reason}`);
+        retryHint = `직전 시도가 "${q.reason}" 사유로 반려됐어요. 이 문제를 반드시 고쳐 다시 쓰세요.`;
+        await sleep(1000); continue;
+      }
+
       const p = patternCheck(draft, overview);
-      if (!p.ok) { log(`시도${attempt} 패턴 반려: ${p.reason}`); await sleep(1000); continue; }
+      if (!p.ok) {
+        // 하드 반려 대신: 근거 없는 표현이 든 "문장만" 잘라내고 재검(글 전체를 버리지 않음 = 핵심 개선)
+        const s = sanitizeUnsupported(draft, overview);
+        const sq = qualityCheck(s.text, { overview, existingTexts });
+        const sp = patternCheck(s.text, overview);
+        if (s.text && sq.ok && sp.ok) {
+          log(`시도${attempt} 근거없는 표현 ${s.removed}곳 자동 제거 후 통과`);
+          draft = s.text;
+        } else {
+          log(`시도${attempt} 패턴 반려: ${p.reason}`);
+          retryHint = `직전 시도가 ${p.reason} 문제로 반려됐어요. 근거에 없는 연도·인물·수치는 한 개도 쓰지 마세요.`;
+          await sleep(1000); continue;
+        }
+      }
 
       const v = await verifyAndImprove(overview, draft, { apiKey: OPENAI, model: OPENAI_MODEL, facts: verifyFacts });
-      if (v.result === "FAIL") { log(`시도${attempt} 검증 FAIL: ${v.reason}`); await sleep(1000); continue; }
+      if (v.result === "FAIL") {
+        log(`시도${attempt} 검증 FAIL: ${v.reason}`);
+        retryHint = `직전 시도가 검증에서 "${String(v.reason).slice(0, 80)}" 사유로 반려됐어요. 근거에 없는 사실을 빼고 다시 쓰세요.`;
+        await sleep(1000); continue;
+      }
       if (v.result === "ERROR") { log(`시도${attempt} 검증오류: ${v.reason}`); await sleep(1500); continue; }
 
       let finalText = v.result === "PASS" && v.improved ? v.improved : draft;
       const q2 = qualityCheck(finalText, { overview });
       const p2 = patternCheck(finalText, overview);
-      if (!q2.ok || !p2.ok) finalText = draft;
+      if (!q2.ok || !p2.ok) {
+        // 개선본이 되레 규칙을 깼으면(개선 중 연도 재삽입 등) 정제 후 그래도 안 되면 검증 통과한 draft 사용
+        const s = sanitizeUnsupported(finalText, overview);
+        finalText = qualityCheck(s.text, {}).ok && patternCheck(s.text, overview).ok ? s.text : draft;
+      }
 
       // [보조] Gemini 독립 팩트체크 — 주 모델(Luna)과 다른 모델로 환각 최종 교차검증. FAIL이면 재시도.
       let gemini = GEMINI ? "?" : "OFF";
       if (GEMINI) {
         const fc = await factCheckGemini(finalText, { apiKey: GEMINI, overview, facts: verifyFacts });
         gemini = fc.result; // PASS / FAIL / ERROR / SKIP
-        if (fc.result === "FAIL") { log(`시도${attempt} Gemini 팩트체크 FAIL: ${fc.reason.slice(0, 120)}`); await sleep(1000); continue; }
+        if (fc.result === "FAIL") {
+          log(`시도${attempt} Gemini 팩트체크 FAIL: ${fc.reason.slice(0, 120)}`);
+          retryHint = `직전 시도가 교차검증에서 반려됐어요(${fc.reason.slice(0, 60)}). 근거에 없는 사실을 빼세요.`;
+          await sleep(1000); continue;
+        }
         if (fc.result === "ERROR") log(`시도${attempt} Gemini 팩트체크 오류(무시): ${fc.reason.slice(0, 80)}`);
       }
 
@@ -140,11 +172,12 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
     }
   }
 
-  // 폴백: 원본 최소 가공
+  // 폴백: 원본 최소 가공 (안전 바닥) — minimalMode로 "원본 과유사" 검사 면제 + 근거없는 표현은 정제
   try {
-    const text = await gen(buildMinimalPrompt(place, overview));
-    if (!text) { log("최소가공 OpenAI 빈 응답"); return { art: null, reasons }; }
-    const q = qualityCheck(text, { overview, existingTexts });
+    const raw = await gen(buildMinimalPrompt(place, overview));
+    if (!raw) { log("최소가공 OpenAI 빈 응답"); return { art: null, reasons }; }
+    const text = sanitizeUnsupported(raw, overview).text || raw;
+    const q = qualityCheck(text, { overview, existingTexts, minimalMode: true });
     const p = patternCheck(text, overview);
     if (q.ok && p.ok) return { art: { text, len: q.len, mode: "minimal", verify: "MINIMAL", gemini: "SKIP(minimal)" }, reasons };
     log(`최소가공 반려: ${q.ok ? p.reason : q.reason}`);
@@ -192,7 +225,7 @@ async function main() {
       .sort((a, b) => (store.articles[b].rewriteScore || 0) - (store.articles[a].rewriteScore || 0));
     for (const id of rwIds) items.push({ place: byId.get(id), mode: "rewrite" });
     const rw = items.length;
-    for (const p of pickQueue(places, doneIds, target * 3)) items.push({ place: p, mode: "new" });
+    for (const p of pickQueue(places, doneIds, target * 4)) items.push({ place: p, mode: "new" });
     console.log(`\n🖋️  목표 ${target}건 (재작성 ${rw} 우선) · 후보 ${items.length} · 기존 ${doneIds.size} · 주 ${MODEL} · 보조 ${GEMINI ? "Gemini 팩트체크" : "없음"}`);
   }
   let made = 0, newPub = 0, rewritten = 0, removed = 0, skipped = 0;

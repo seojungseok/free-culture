@@ -129,7 +129,7 @@ export function tipsAllEmpty(text) {
 }
 
 // ── 자동 품질검사 (통과분만 발행) ──
-export function qualityCheck(text, { overview = "", existingTexts = [] } = {}) {
+export function qualityCheck(text, { overview = "", existingTexts = [], minimalMode = false } = {}) {
   const body = String(text || "").trim();
   const len = stripMd(body).length;
 
@@ -142,7 +142,9 @@ export function qualityCheck(text, { overview = "", existingTexts = [] } = {}) {
     return { ok: false, reason: `추측성 문장 ${spec.length}개(${(sr * 100).toFixed(0)}%)`, len };
 
   // 원본 풍부 700~900, 빈약/안전버전 300~500 허용(짧은 게 틀린 것보다 나음). 하한 300.
-  if (len < 300) return { ok: false, reason: `길이 ${len}자(너무 짧음)`, len };
+  // 최소가공(minimalMode)은 근거 없는 문장이 잘려 짧아질 수 있어 하한을 280으로 완화.
+  const minLen = minimalMode ? 280 : 300;
+  if (len < minLen) return { ok: false, reason: `길이 ${len}자(너무 짧음)`, len };
   if (len > 1100) return { ok: false, reason: `길이 ${len}자(너무 김)`, len };
 
   const headings = (body.match(/^##\s/gm) || []).length;
@@ -155,7 +157,9 @@ export function qualityCheck(text, { overview = "", existingTexts = [] } = {}) {
   if (/즐거운 시간 되세요|많은 관심 바랍|강력 추천/.test(body))
     return { ok: false, reason: "광고성/상투구", len };
 
-  if (overview && similarity(body, overview) > 0.5)
+  // 최소가공 폴백은 원본을 충실히 재구성하는 "안전 바닥"이라 원본 유사도 검사에서 제외한다.
+  // (글이 없으면 상세페이지는 어차피 원본 overview를 그대로 노출 → 재구성본이 UX·SEO상 열위가 아님)
+  if (!minimalMode && overview && similarity(body, overview) > 0.5)
     return { ok: false, reason: "원본 overview와 과유사", len };
   for (const ex of existingTexts) {
     if (similarity(body, ex) > 0.6) return { ok: false, reason: "기존 발행글과 중복", len };
@@ -163,24 +167,65 @@ export function qualityCheck(text, { overview = "", existingTexts = [] } = {}) {
   return { ok: true, reason: "", len };
 }
 
-// ── 안전망 2: 정규식 패턴 검사 (원본에 없는 연도·인물 차단) ──
-export function patternCheck(text, overview) {
+// ── 안전망 2: 근거에 없는 연도·인물 탐지 ──
+// 인물 오탐 방지: 일반어("국내외/지역/여러 작가")·조사 붙은 지명("부산에는 작가")은 인물로 보지 않는다.
+const PERSON_TITLES = "화백|화가|선생|장군|박사|여사|작가|대사|창건자|설계자|시인|황제|국왕|왕비|대감|대군";
+const PERSON_STOP = new Set([
+  "국내외", "국내", "국외", "해외", "전국", "지역", "여러", "다양", "유명", "신진", "지방",
+  "현지", "원로", "중견", "세계", "각국", "국제", "동네", "마을", "우리", "젊은", "향토",
+]);
+const PARTICLE_TAIL = /(에서는|에게서|에서|에게|에는|으로|로서|로써|께서|이라|라는|들이|들의|들을|들과|에|은|는|이|가|의|을|를|도|과|와|들)$/;
+
+/** 글에서 "근거에 없는" 연도·인물을 찾아 목록으로 반환(빈 배열이면 문제 없음) */
+export function findUnsupported(text, overview) {
   const body = String(text || "");
   const srcTight = String(overview || "").replace(/\s+/g, "");
+  const out = [];
 
-  // 4자리 연도(1000~2099)가 글에 있는데 원본에 없으면 반려
+  // 4자리 연도(1000~2099)가 글에 있는데 근거에 없으면 근거없음
   const years = new Set([...body.matchAll(/\b(1\d{3}|20\d{2})\b/g)].map((m) => m[1]));
-  for (const y of years) {
-    if (!srcTight.includes(y)) return { ok: false, reason: `원본에 없는 연도 "${y}"` };
-  }
+  for (const y of years) if (!srcTight.includes(y)) out.push({ type: "year", value: y, phrase: y });
 
-  // 원본에 없는 인물 표현(OOO 화백/선생/장군/박사/…)이면 반려
-  const persons = body.matchAll(/([가-힣]{1,4})\s?(화백|화가|선생|장군|박사|여사|작가|대사|창건자|설계자|시인|황제|국왕|왕비|대감|대군)/g);
-  for (const m of persons) {
-    const name = m[1];
-    if (!srcTight.includes(name)) return { ok: false, reason: `원본에 없는 인물 표현 "${m[0]}"` };
+  // 인물 직함 앞 이름 토큰이 (조사 제거 후) 근거에 없고 일반어도 아니면 근거없음
+  for (const m of body.matchAll(new RegExp(`([가-힣]{2,4})\\s?(${PERSON_TITLES})`, "g"))) {
+    const name = m[1].replace(PARTICLE_TAIL, "");
+    if (name.length < 2) continue;         // 조사 떼고 1자면 이름으로 보기 어려움
+    if (PERSON_STOP.has(name)) continue;    // "국내외 작가" 같은 일반 표현 제외
+    if (srcTight.includes(name)) continue;  // 근거에 있는 이름
+    out.push({ type: "person", value: name, phrase: m[0] });
   }
-  return { ok: true, reason: "" };
+  return out;
+}
+
+// ── 안전망 2: 정규식 패턴 검사 (원본에 없는 연도·인물 차단) ──
+export function patternCheck(text, overview) {
+  const bad = findUnsupported(text, overview);
+  if (!bad.length) return { ok: true, reason: "" };
+  const f = bad[0];
+  return {
+    ok: false,
+    reason: f.type === "year" ? `원본에 없는 연도 "${f.value}"` : `원본에 없는 인물 표현 "${f.phrase}"`,
+  };
+}
+
+// ── 자가 치유: 글 전체를 버리지 말고, 근거 없는 표현이 든 "문장/줄"만 잘라낸다. ──
+// 환각 연도 하나 때문에 좋은 글 전체를 반려하던 손실을 막는 핵심 레버(반려율 급감).
+export function sanitizeUnsupported(text, overview) {
+  const bad = findUnsupported(text, overview);
+  if (!bad.length) return { text: String(text || ""), removed: 0 };
+  const needles = [...new Set(bad.map((b) => b.phrase))];
+  let removed = 0;
+  const outLines = [];
+  for (const line of String(text || "").split(/\r?\n/)) {
+    if (!needles.some((n) => line.includes(n))) { outLines.push(line); continue; }
+    if (/^#{1,6}\s/.test(line)) { outLines.push(line); continue; } // 소제목 줄은 유지
+    // 문장 단위로 나눠 "문제 문장"만 제거(나머지 문장은 살림)
+    const parts = line.split(/(?<=[.!?]|[요다])\s+/);
+    const kept = parts.filter((s) => !needles.some((n) => s.includes(n)));
+    if (kept.length) outLines.push(kept.join(" "));
+    else removed++;
+  }
+  return { text: outLines.join("\n").replace(/\n{3,}/g, "\n\n").trim(), removed: removed || bad.length };
 }
 
 // ── 안전망 3: OpenAI 검증 + SEO/가독성 개선 (원본 범위 내에서만) ──
@@ -357,6 +402,10 @@ export function buildFactsBlock({ intro, info } = {}) {
 export function buildPrompt(place, overview = "", extras = {}) {
   const type = tourTypeLabel(place.type);
   const facts = buildFactsBlock(extras);
+  // 직전 시도 반려 사유를 되먹여 같은 실수를 반복하지 않게 한다(재시도가 시도1의 복제가 되던 문제 해소).
+  const retry = extras.retryHint
+    ? `\n[❗ 직전 시도가 반려됐어요 — 아래를 반드시 교정하세요]\n${extras.retryHint}\n`
+    : "";
   const ref = overview
     ? `[사실 근거 — 아래 내용에 있는 사실만 사용하세요]
 """${overview}"""`
@@ -372,7 +421,7 @@ export function buildPrompt(place, overview = "", extras = {}) {
 [주소] ${place.addr}
 
 ${ref}
-${facts ? `\n${facts}\n` : ""}
+${facts ? `\n${facts}\n` : ""}${retry}
 [🚫 금지 표현 — 하나도 쓰지 말 것 (근거 없는 미사여구·추측)]
 - "유명한", "인기 있는", "맛있기로 소문난", "현지인 맛집", "다채로운 경험/볼거리", "즐거움을 선사", "특별한 시간을 선사"
 - "~할 수 있습니다", "열릴 경우", "운영될 경우", "~것입니다", "제공할 수 있는", "만날 수 있습니다" 같은 추측·불확실 표현
