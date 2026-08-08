@@ -41,65 +41,24 @@ jobs:
       - name: 의존성 설치
         run: npm ci
 
-      # ── 예산 자동 배분: RIN 완주 시 남는 몫을 방문팁·볼거리로 자동 이관(무인) ──
-      - name: TourAPI 예산 계획
-        id: plan
-        run: node scripts/planBudget.mjs
-
-      # ── TourAPI(일 1,000회 공유) — 우선순위 순. 캠핑 이미지는 goCamping(별도 한도) ──
-      - name: 축제 수집 (searchFestival2)
+      # ── 매일 수집은 "시간에 민감한 최신정보"만 (축제·문화행사). 나머지 정적 수집은 weekly.yml로 분리. ──
+      - name: 축제 수집 (searchFestival2) — 날짜 있는 정보라 매일 최신화
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          FEST_DAILY: "100" # TourAPI 1,000/일 안에서 intro·info가 안 굶게 축제 상한 축소
+          FEST_DAILY: "300"
         run: node scripts/collectFestivals.mjs
 
-      - name: 음식점 수집 (areaBasedList2, 39)
+      - name: 문화행사 수집 (KorService2) — 신규·종료 반영 위해 매일 최신화
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          RESTO_DAILY: "100"
-          RESTO_MAX: "6000"
-        run: node scripts/collectRestaurants.mjs
-
-      - name: 음식점 영업정보 (detailIntro2, 39) — 전화·영업시간
-        continue-on-error: true
-        env:
-          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          RIN_DAILY: ${{ steps.plan.outputs.rin_daily }} # 예산 계획이 자동 산정
-        run: node scripts/collectRestaurantIntro.mjs
-
-      - name: 방문 팁 수집 (detailIntro2)
-        continue-on-error: true
-        env:
-          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          INTRO_DAILY: ${{ steps.plan.outputs.intro_daily }} # RIN 완주 시 자동 상향
-        run: node scripts/collectIntro.mjs
-
-      - name: 볼거리 수집 (detailInfo2)
-        continue-on-error: true
-        env:
-          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          INFO_DAILY: ${{ steps.plan.outputs.info_daily }} # RIN 완주 시 자동 상향
-        run: node scripts/collectInfo.mjs
-
-      - name: 문화행사 수집 (KorService2)
-        continue-on-error: true
-        env:
-          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          COLLECT_DAYS: "60"
+          COLLECT_DAYS: "90"
           COLLECT_MAX: "3000"
           COLLECT_CONCURRENCY: "10"
         run: node scripts/collect.mjs
 
-      - name: 캠핑 이미지 백필 (goCamping imageList — 별도 한도)
-        continue-on-error: true
-        env:
-          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          CIMG_DAILY: "1000"
-        run: node scripts/collectCampingImages.mjs
-
-      # ── 관광지 글 생성·발행 ──
+      # ── 관광지 글 생성·발행 (재료는 이미 받아둔 캐시 사용, 신규 소개만 소량 on-demand) ──
       - name: 발행글 재점검 (needsRewrite)
         continue-on-error: true
         run: node scripts/auditArticles.mjs --write
@@ -138,8 +97,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/events.json data/festivals.json data/restaurants.json data/restaurant-intro.json \
-                  data/place-intro.json data/place-info.json data/camping-images.json data/place-articles.json \
+          git add data/events.json data/festivals.json data/place-articles.json \
                   data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"

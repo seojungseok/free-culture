@@ -1,0 +1,80 @@
+name: 주간 정적 수집 (관광지 정보·음식점·캠핑)
+
+# 잘 안 변하는 정적 데이터 백필 — 매일 할 필요 없어 주 1회로 분리(daily.yml 속도↑).
+#  방문팁·볼거리(관광지), 음식점 목록·영업정보, 캠핑 이미지. 재실행 시 신규만 이어서 수집.
+on:
+  schedule:
+    - cron: "0 18 * * 0" # 매주 일요일 18:00 UTC = 월요일 03:00 KST (daily와 시간 분리)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-static
+  cancel-in-progress: false
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 의존성 설치
+        run: npm ci
+
+      # 예산 자동 배분(RIN 완주 시 방문팁·볼거리로 이관)
+      - name: TourAPI 예산 계획
+        id: plan
+        run: node scripts/planBudget.mjs
+
+      - name: 음식점 수집 (areaBasedList2)
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          RESTO_DAILY: "300"
+          RESTO_MAX: "8000"
+        run: node scripts/collectRestaurants.mjs
+
+      - name: 음식점 영업정보 (detailIntro2) — 전화·영업시간
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          RIN_DAILY: ${{ steps.plan.outputs.rin_daily }}
+        run: node scripts/collectRestaurantIntro.mjs
+
+      - name: 방문 팁 수집 (detailIntro2)
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          INTRO_DAILY: ${{ steps.plan.outputs.intro_daily }}
+        run: node scripts/collectIntro.mjs
+
+      - name: 볼거리 수집 (detailInfo2)
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          INFO_DAILY: ${{ steps.plan.outputs.info_daily }}
+        run: node scripts/collectInfo.mjs
+
+      - name: 캠핑 이미지 백필 (goCamping imageList — 별도 한도)
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          CIMG_DAILY: "1000"
+        run: node scripts/collectCampingImages.mjs
+
+      - name: 변경분 커밋 (정적 데이터)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/restaurants.json data/restaurant-intro.json data/place-intro.json \
+                  data/place-info.json data/camping-images.json
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 건너뜀"
+          else
+            git commit -m "chore: 주간 정적 데이터 갱신 ($(date -u +%Y-%m-%d))"
+            git push
+          fi
