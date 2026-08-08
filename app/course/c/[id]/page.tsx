@@ -10,6 +10,7 @@ import {
   getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity,
 } from "@/lib/courses";
 import { coursesNearbyFood, distanceLabel, foodTypeLabel } from "@/lib/nearby";
+import { areaFestivals, fmtMd } from "@/lib/festivals";
 import { SITE } from "@/lib/site";
 
 export const revalidate = 86400;
@@ -46,6 +47,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   const centroid = courseCentroid(c);
   const city = courseCity(c);
   const nearFood = coursesNearbyFood({ area: c.area, city, mapx: centroid?.mapx, mapy: centroid?.mapy }, 6);
+  const festivals = areaFestivals(c.area, { limit: 4 }); // 보는 시점 날짜 연동
 
   const itemListLd = {
     "@context": "https://schema.org",
@@ -162,6 +164,34 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
                   <p className="mt-0.5 line-clamp-1 text-[12px] text-ink-faint">
                     {typeof r.dist === "number" ? `코스에서 ${distanceLabel(r.dist)}` : r.addr}
                   </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* 지역 축제·행사 — 보는 시점 날짜 연동(매일 수집). 여행 일정에 겹치면 함께 즐기기 */}
+      {festivals.length > 0 && (
+        <section className="mt-9">
+          <h2 className="mb-1 text-[19px] font-extrabold tracking-tight text-ink sm:text-[20px]">🎪 지금 {c.area} 축제·행사</h2>
+          <p className="mb-4 text-[13px] text-ink-faint">여행 날짜와 겹치면 함께 즐겨보세요 (날짜별 자동 갱신)</p>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {festivals.map((f) => (
+              <Link key={f.id} href={`/search?q=${encodeURIComponent(f.title)}`} className="group block overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.05] shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
+                  {f.image ? (
+                    <Image src={f.image} alt={f.title} fill sizes="(max-width:640px) 50vw, 200px" className="object-cover transition group-hover:scale-105" loading="lazy" unoptimized />
+                  ) : (
+                    <div className="flex h-full items-center justify-center text-2xl text-ink-faint">🎪</div>
+                  )}
+                  <span className={`absolute left-1.5 top-1.5 rounded-md px-1.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-sm ${f.ongoing ? "bg-free" : "bg-black/55"}`}>
+                    {f.ongoing ? "진행 중" : "예정"}
+                  </span>
+                </div>
+                <div className="px-2.5 pb-2.5 pt-2">
+                  <h3 className="line-clamp-2 text-[13.5px] font-bold text-ink group-hover:text-free">{f.title}</h3>
+                  <p className="mt-0.5 text-[12px] text-ink-faint">{fmtMd(f.startDate)}–{fmtMd(f.endDate)}</p>
                 </div>
               </Link>
             ))}
