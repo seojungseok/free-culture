@@ -128,21 +128,31 @@ function seasonTheme() {
 function pickQueue(courses, doneIds, n) {
   const seasonKey = seasonTheme();
   const cand = courses.filter((c) => !doneIds.has(c.id) && (c.stops?.length || 0) >= 2);
-  cand.sort((a, b) => {
-    // 1) 제철 테마 코스 먼저
-    const sa = a.themes?.includes(seasonKey) ? 1 : 0;
-    const sb = b.themes?.includes(seasonKey) ? 1 : 0;
-    if (sa !== sb) return sb - sa;
-    // 2) 공식 코스 우선(검증된 사실 → 품질)
+  const prio = (a, b) => {
+    const sa = a.themes?.includes(seasonKey) ? 1 : 0, sb = b.themes?.includes(seasonKey) ? 1 : 0;
+    if (sa !== sb) return sb - sa;                                  // 제철 테마 먼저
     const oa = a.source === "official" ? 1 : 0, ob = b.source === "official" ? 1 : 0;
-    if (oa !== ob) return ob - oa;
-    // 3) 지방 우선
+    if (oa !== ob) return ob - oa;                                  // 공식 우선
     const ra = REGION_PRIORITY[a.area] || 1, rb = REGION_PRIORITY[b.area] || 1;
-    if (ra !== rb) return rb - ra;
-    // 4) 경유지 많은(풍부한) 코스 먼저
+    if (ra !== rb) return rb - ra;                                  // 지방 우선
     return (b.stops?.length || 0) - (a.stops?.length || 0);
-  });
-  return cand.slice(0, n);
+  };
+  // 기간별 버킷 → 라운드로빈으로 뽑아 매 배치에 당일·1박2일·2박3일이 골고루 섞이게(다양성 보장)
+  const buckets = { "당일": [], "1박2일": [], "2박3일": [] };
+  for (const c of cand) (buckets[c.duration] || (buckets[c.duration] = [])).push(c);
+  for (const k of Object.keys(buckets)) buckets[k].sort(prio);
+  const order = ["당일", "1박2일", "2박3일"];
+  const idx = { "당일": 0, "1박2일": 0, "2박3일": 0 };
+  const out = [];
+  let progressed = true;
+  while (out.length < n && progressed) {
+    progressed = false;
+    for (const k of order) {
+      const b = buckets[k];
+      if (b && idx[k] < b.length) { out.push(b[idx[k]++]); progressed = true; if (out.length >= n) break; }
+    }
+  }
+  return out;
 }
 
 // 생성 → 로컬검사 → 패턴검사(자가치유) → 발행. 제미나이 없음.
