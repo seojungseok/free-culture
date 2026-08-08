@@ -181,11 +181,14 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
         </section>
       )}
 
-      {/* 지역 축제·행사 — 보는 시점 날짜 연동(매일 수집). 여행 일정에 겹치면 함께 즐기기 */}
+      {/* 지역 축제·행사 — 보는 시점 날짜 연동(매일 수집). 눈에 띄는 별도 칸으로 강조 */}
       {festivals.length > 0 && (
-        <section className="mt-9">
-          <h2 className="mb-1 text-[19px] font-extrabold tracking-tight text-ink sm:text-[20px]">🎪 지금 {c.area} 축제·행사</h2>
-          <p className="mb-4 text-[13px] text-ink-faint">여행 날짜와 겹치면 함께 즐겨보세요 (날짜별 자동 갱신)</p>
+        <section className="mt-9 rounded-2xl border-2 border-free/25 bg-freelight/60 px-4 py-5 sm:px-5">
+          <div className="mb-1 flex items-center gap-2">
+            <span className="rounded-full bg-free px-2.5 py-1 text-[11px] font-black text-white">지금 이맘때</span>
+            <h2 className="text-[18px] font-extrabold tracking-tight text-ink sm:text-[20px]">🎪 {c.area} 축제·행사</h2>
+          </div>
+          <p className="mb-4 text-[13px] text-ink-soft">여행 날짜에 열리는 축제예요 — 제철 먹거리가 있다면 아래 <b>근처 맛집</b>과 함께 즐겨보세요! (날짜별 자동 갱신)</p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {festivals.map((f) => (
               <Link key={f.id} href={`/search?q=${encodeURIComponent(f.title)}`} className="group block overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.05] shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover">
