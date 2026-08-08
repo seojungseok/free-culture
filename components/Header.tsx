@@ -27,16 +27,17 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* 홈 버튼 — 검색창(돋보기) 왼쪽 */}
+        {/* 홈 버튼 — 검색창(돋보기) 왼쪽. 테두리+라벨로 '버튼'임을 명확히(내 주변과 통일) */}
         <Link
           href="/"
           aria-label="홈으로"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-ink-soft transition hover:bg-black/5 hover:text-free"
+          className="inline-flex shrink-0 items-center gap-1 rounded-full border border-line bg-white px-2.5 py-2 text-[13px] font-bold text-ink-soft transition hover:border-free/40 hover:bg-tint hover:text-free sm:px-3"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-[22px] w-[22px]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-[18px] w-[18px]">
             <path d="M3 10.5 12 3l9 7.5" />
             <path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5" />
           </svg>
+          <span>홈</span>
         </Link>
 
         <div className="w-full flex-1 sm:mx-auto sm:max-w-[560px]">

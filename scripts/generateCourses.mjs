@@ -111,7 +111,8 @@ function pickQueue(courses, doneIds, n) {
 // 생성 → 로컬검사 → 패턴검사(자가치유) → 발행. 제미나이 없음.
 async function produceCourse(course, existingTexts) {
   const source = courseSourceFacts(course);
-  const summer = isSummerNow() && (course.themes || []).includes("바다피서");
+  const mth = new Date().getMonth() + 1;
+  const summer = mth >= 6 && mth <= 8 && (course.themes || []).includes("바다피서");
   const reasons = [];
   const log = (m) => { console.log(`  · ${course.title} ${m}`); reasons.push(m); };
   let retryHint = "";
