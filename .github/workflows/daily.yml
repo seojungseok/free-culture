@@ -18,6 +18,10 @@ on:
         description: "특정 contentId만 글 생성 (콤마구분)"
         required: false
         default: ""
+      course_ids:
+        description: "특정 여행코스만 생성 (콤마구분, 비우면 하루 10개)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -104,12 +108,29 @@ jobs:
         continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: "gpt-5.6-luna" # 생성·검증 모두 Luna 고정(80% 인하). 바꾸려면 이 값만 수정.
+          OPENAI_MODEL: "gpt-5.6-luna" # 주 모델: 생성·검증 Luna 고정(80% 인하). 바꾸려면 이 값만 수정.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # 보조: 독립 팩트체크(환각 교차검증)
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
           FORCE_COUNT: ${{ github.event.inputs.test_count }}
           TEST_IDS: ${{ github.event.inputs.test_ids }}
         run: node scripts/generateArticles.mjs
+
+      # ── 자동 코스 조합(좌표 기반, API 0) — 지역×테마×기간 코스 풀 갱신 ──
+      - name: 자동 여행코스 조합 (buildCourses)
+        continue-on-error: true
+        run: node scripts/buildCourses.mjs
+
+      # ── 여행코스 블로그 생성 (하루 10개, 계절·지방 우선). OpenAI 전용 ★제미나이 미사용★ ──
+      # 재료: data/courses.json(공식, 수동 수집) + data/courses-auto.json(자동). 스팟 소개는 발행분만 보강.
+      - name: 여행코스 글 생성·발행 (OpenAI만)
+        continue-on-error: true
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: "gpt-5.6-luna" # 코스도 Luna로 저렴하게
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }} # 발행 코스 스팟 소개 보강용(한도 내)
+          COURSE_IDS: ${{ github.event.inputs.course_ids }}
+        run: node scripts/generateCourses.mjs
 
       # ── 변경분 한 번에 커밋 = 배포 1회 ──
       - name: 변경분 커밋 (통합, 1회)
@@ -118,7 +139,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/events.json data/festivals.json data/restaurants.json data/restaurant-intro.json \
-                  data/place-intro.json data/place-info.json data/camping-images.json data/place-articles.json
+                  data/place-intro.json data/place-info.json data/camping-images.json data/place-articles.json \
+                  data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
             echo "changed=false" >> "$GITHUB_OUTPUT"

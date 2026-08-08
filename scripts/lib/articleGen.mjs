@@ -129,7 +129,7 @@ export function tipsAllEmpty(text) {
 }
 
 // ── 자동 품질검사 (통과분만 발행) ──
-export function qualityCheck(text, { overview = "", existingTexts = [] } = {}) {
+export function qualityCheck(text, { overview = "", existingTexts = [], minimalMode = false } = {}) {
   const body = String(text || "").trim();
   const len = stripMd(body).length;
 
@@ -142,7 +142,9 @@ export function qualityCheck(text, { overview = "", existingTexts = [] } = {}) {
     return { ok: false, reason: `추측성 문장 ${spec.length}개(${(sr * 100).toFixed(0)}%)`, len };
 
   // 원본 풍부 700~900, 빈약/안전버전 300~500 허용(짧은 게 틀린 것보다 나음). 하한 300.
-  if (len < 300) return { ok: false, reason: `길이 ${len}자(너무 짧음)`, len };
+  // 최소가공(minimalMode)은 근거 없는 문장이 잘려 짧아질 수 있어 하한을 280으로 완화.
+  const minLen = minimalMode ? 280 : 300;
+  if (len < minLen) return { ok: false, reason: `길이 ${len}자(너무 짧음)`, len };
   if (len > 1100) return { ok: false, reason: `길이 ${len}자(너무 김)`, len };
 
   const headings = (body.match(/^##\s/gm) || []).length;
@@ -155,7 +157,9 @@ export function qualityCheck(text, { overview = "", existingTexts = [] } = {}) {
   if (/즐거운 시간 되세요|많은 관심 바랍|강력 추천/.test(body))
     return { ok: false, reason: "광고성/상투구", len };
 
-  if (overview && similarity(body, overview) > 0.5)
+  // 최소가공 폴백은 원본을 충실히 재구성하는 "안전 바닥"이라 원본 유사도 검사에서 제외한다.
+  // (글이 없으면 상세페이지는 어차피 원본 overview를 그대로 노출 → 재구성본이 UX·SEO상 열위가 아님)
+  if (!minimalMode && overview && similarity(body, overview) > 0.5)
     return { ok: false, reason: "원본 overview와 과유사", len };
   for (const ex of existingTexts) {
     if (similarity(body, ex) > 0.6) return { ok: false, reason: "기존 발행글과 중복", len };
@@ -163,24 +167,65 @@ export function qualityCheck(text, { overview = "", existingTexts = [] } = {}) {
   return { ok: true, reason: "", len };
 }
 
-// ── 안전망 2: 정규식 패턴 검사 (원본에 없는 연도·인물 차단) ──
-export function patternCheck(text, overview) {
+// ── 안전망 2: 근거에 없는 연도·인물 탐지 ──
+// 인물 오탐 방지: 일반어("국내외/지역/여러 작가")·조사 붙은 지명("부산에는 작가")은 인물로 보지 않는다.
+const PERSON_TITLES = "화백|화가|선생|장군|박사|여사|작가|대사|창건자|설계자|시인|황제|국왕|왕비|대감|대군";
+const PERSON_STOP = new Set([
+  "국내외", "국내", "국외", "해외", "전국", "지역", "여러", "다양", "유명", "신진", "지방",
+  "현지", "원로", "중견", "세계", "각국", "국제", "동네", "마을", "우리", "젊은", "향토",
+]);
+const PARTICLE_TAIL = /(에서는|에게서|에서|에게|에는|으로|로서|로써|께서|이라|라는|들이|들의|들을|들과|에|은|는|이|가|의|을|를|도|과|와|들)$/;
+
+/** 글에서 "근거에 없는" 연도·인물을 찾아 목록으로 반환(빈 배열이면 문제 없음) */
+export function findUnsupported(text, overview) {
   const body = String(text || "");
   const srcTight = String(overview || "").replace(/\s+/g, "");
+  const out = [];
 
-  // 4자리 연도(1000~2099)가 글에 있는데 원본에 없으면 반려
+  // 4자리 연도(1000~2099)가 글에 있는데 근거에 없으면 근거없음
   const years = new Set([...body.matchAll(/\b(1\d{3}|20\d{2})\b/g)].map((m) => m[1]));
-  for (const y of years) {
-    if (!srcTight.includes(y)) return { ok: false, reason: `원본에 없는 연도 "${y}"` };
-  }
+  for (const y of years) if (!srcTight.includes(y)) out.push({ type: "year", value: y, phrase: y });
 
-  // 원본에 없는 인물 표현(OOO 화백/선생/장군/박사/…)이면 반려
-  const persons = body.matchAll(/([가-힣]{1,4})\s?(화백|화가|선생|장군|박사|여사|작가|대사|창건자|설계자|시인|황제|국왕|왕비|대감|대군)/g);
-  for (const m of persons) {
-    const name = m[1];
-    if (!srcTight.includes(name)) return { ok: false, reason: `원본에 없는 인물 표현 "${m[0]}"` };
+  // 인물 직함 앞 이름 토큰이 (조사 제거 후) 근거에 없고 일반어도 아니면 근거없음
+  for (const m of body.matchAll(new RegExp(`([가-힣]{2,4})\\s?(${PERSON_TITLES})`, "g"))) {
+    const name = m[1].replace(PARTICLE_TAIL, "");
+    if (name.length < 2) continue;         // 조사 떼고 1자면 이름으로 보기 어려움
+    if (PERSON_STOP.has(name)) continue;    // "국내외 작가" 같은 일반 표현 제외
+    if (srcTight.includes(name)) continue;  // 근거에 있는 이름
+    out.push({ type: "person", value: name, phrase: m[0] });
   }
-  return { ok: true, reason: "" };
+  return out;
+}
+
+// ── 안전망 2: 정규식 패턴 검사 (원본에 없는 연도·인물 차단) ──
+export function patternCheck(text, overview) {
+  const bad = findUnsupported(text, overview);
+  if (!bad.length) return { ok: true, reason: "" };
+  const f = bad[0];
+  return {
+    ok: false,
+    reason: f.type === "year" ? `원본에 없는 연도 "${f.value}"` : `원본에 없는 인물 표현 "${f.phrase}"`,
+  };
+}
+
+// ── 자가 치유: 글 전체를 버리지 말고, 근거 없는 표현이 든 "문장/줄"만 잘라낸다. ──
+// 환각 연도 하나 때문에 좋은 글 전체를 반려하던 손실을 막는 핵심 레버(반려율 급감).
+export function sanitizeUnsupported(text, overview) {
+  const bad = findUnsupported(text, overview);
+  if (!bad.length) return { text: String(text || ""), removed: 0 };
+  const needles = [...new Set(bad.map((b) => b.phrase))];
+  let removed = 0;
+  const outLines = [];
+  for (const line of String(text || "").split(/\r?\n/)) {
+    if (!needles.some((n) => line.includes(n))) { outLines.push(line); continue; }
+    if (/^#{1,6}\s/.test(line)) { outLines.push(line); continue; } // 소제목 줄은 유지
+    // 문장 단위로 나눠 "문제 문장"만 제거(나머지 문장은 살림)
+    const parts = line.split(/(?<=[.!?]|[요다])\s+/);
+    const kept = parts.filter((s) => !needles.some((n) => s.includes(n)));
+    if (kept.length) outLines.push(kept.join(" "));
+    else removed++;
+  }
+  return { text: outLines.join("\n").replace(/\n{3,}/g, "\n\n").trim(), removed: removed || bad.length };
 }
 
 // ── 안전망 3: OpenAI 검증 + SEO/가독성 개선 (원본 범위 내에서만) ──
@@ -245,6 +290,36 @@ ${article}
     };
   } catch (e) {
     return { result: "ERROR", reason: String(e instanceof Error ? e.message : e), improved: "" };
+  }
+}
+
+// ── 보조 안전망: Gemini 독립 팩트체크 (주=Luna와 다른 모델로 환각 교차검증. 판정만, 글 수정 안 함) ──
+export async function factCheckGemini(article, { apiKey, model = "gemini-2.5-flash-lite", overview = "", facts = "" } = {}) {
+  if (!apiKey) return { result: "SKIP", reason: "GEMINI_API_KEY 없음" };
+  const prompt = `너는 사실 근거 검증기다. "글"이 "근거"에 없는 사실을 지어냈는지만 판정하라. 글을 고치지 마라.
+
+<근거>
+${overview || "(상세 소개 없음 — 지역·유형·주소 외의 사실은 모두 근거 없음으로 간주)"}
+${facts ? `\n[확정 사실 — 아래도 근거로 인정]\n${facts}` : ""}
+</근거>
+
+<글>
+${article}
+</글>
+
+[판정 기준]
+- 근거(원본+확정사실)에 없는 구체적 사실(연도·인물·사건·수치·고유명사·시설명)이 글에 있으면 FAIL. 어느 부분인지 reason에 지목.
+- 일반적 서술("오랜 역사를 지닌" 등)과 장소의 지역·유형·주소는 허용.
+- 확정 사실에 있는 주소·이용시간·휴무일·요금·주차·문의처·시설명은 정당한 근거이므로 FAIL 사유가 아니다.
+
+JSON만 출력: {"result":"PASS 또는 FAIL","reason":"근거 없는 사실 지목 또는 이유"}`;
+  try {
+    const { text } = await callGemini(prompt, { apiKey, model });
+    const m = String(text || "").match(/\{[\s\S]*\}/);
+    const parsed = JSON.parse(m ? m[0] : text);
+    return { result: parsed.result === "FAIL" ? "FAIL" : "PASS", reason: String(parsed.reason || "") };
+  } catch (e) {
+    return { result: "ERROR", reason: String(e instanceof Error ? e.message : e) };
   }
 }
 
@@ -327,6 +402,10 @@ export function buildFactsBlock({ intro, info } = {}) {
 export function buildPrompt(place, overview = "", extras = {}) {
   const type = tourTypeLabel(place.type);
   const facts = buildFactsBlock(extras);
+  // 직전 시도 반려 사유를 되먹여 같은 실수를 반복하지 않게 한다(재시도가 시도1의 복제가 되던 문제 해소).
+  const retry = extras.retryHint
+    ? `\n[❗ 직전 시도가 반려됐어요 — 아래를 반드시 교정하세요]\n${extras.retryHint}\n`
+    : "";
   const ref = overview
     ? `[사실 근거 — 아래 내용에 있는 사실만 사용하세요]
 """${overview}"""`
@@ -342,7 +421,7 @@ export function buildPrompt(place, overview = "", extras = {}) {
 [주소] ${place.addr}
 
 ${ref}
-${facts ? `\n${facts}\n` : ""}
+${facts ? `\n${facts}\n` : ""}${retry}
 [🚫 금지 표현 — 하나도 쓰지 말 것 (근거 없는 미사여구·추측)]
 - "유명한", "인기 있는", "맛있기로 소문난", "현지인 맛집", "다채로운 경험/볼거리", "즐거움을 선사", "특별한 시간을 선사"
 - "~할 수 있습니다", "열릴 경우", "운영될 경우", "~것입니다", "제공할 수 있는", "만날 수 있습니다" 같은 추측·불확실 표현
@@ -438,4 +517,105 @@ export async function callGemini(prompt, { apiKey, model = "gemini-2.5-flash-lit
   const chunks = cand?.groundingMetadata?.groundingChunks || [];
   const sources = chunks.map((c) => c?.web?.uri).filter(Boolean).slice(0, 5);
   return { text, sources };
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   여행코스 블로그 생성 (OpenAI 전용, 제미나이 미사용)
+   - 정부 공식 코스(검증된 사실)를 "여행 블로거" 톤으로 리라이팅.
+   - 사실(연도·인물·수치)은 경유지 자료에서만 → patternCheck로 환각 차단.
+   - 감정·감각·이동 흐름은 허용(블로그 맛). 클리셰 미사여구는 계속 금지.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+export const COURSE_THEME_LABEL = {
+  바다피서: "바다·피서", 문화유적: "문화유적", 자연힐링: "자연·힐링",
+  가족체험: "가족·체험", 맛집: "맛집·먹거리",
+};
+
+// 코스 램프: 하루 발행 수. 초기 카탈로그 구축기엔 10/일, 이후 남은 만큼 자연 감속.
+export function rampCourses() {
+  return 10;
+}
+
+/** 경유지+소개를 "확정 사실 근거"로 합침(환각 검사 기준) */
+export function courseSourceFacts(course) {
+  const parts = [];
+  if (course.overview) parts.push(course.overview);
+  for (const s of course.stops || []) parts.push(`${s.name}. ${s.overview || ""}`);
+  return parts.join("\n");
+}
+
+// ── 코스용 품질검사: 블로그 길이·구조 + 클리셰 금지. 추측표현은 완화(여행글 자연스러움). ──
+export function courseQualityCheck(text, { source = "", existingTexts = [] } = {}) {
+  const body = String(text || "").trim();
+  const len = stripMd(body).length;
+
+  const vh = vagueHits(body);
+  if (vh.length) return { ok: false, reason: `근거없는 미사여구(${vh.slice(0, 3).join(",")})`, len };
+
+  if (len < 700) return { ok: false, reason: `길이 ${len}자(너무 짧음)`, len };
+  if (len > 3200) return { ok: false, reason: `길이 ${len}자(너무 김)`, len };
+
+  const headings = (body.match(/^##\s/gm) || []).length;
+  if (headings < 3) return { ok: false, reason: `소제목 ${headings}개(<3)`, len };
+
+  if (/[ㅋㅎ]{2,}|[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(body))
+    return { ok: false, reason: "이모티콘/채팅체", len };
+  if (/많은 관심 바랍|강력 추천합니다|후회 없는 선택/.test(body))
+    return { ok: false, reason: "광고성/상투구", len };
+
+  // 원본(경유지 자료)과 과유사(복붙) 방지 — 여러 스팟을 엮어 풀어 쓰므로 여유 있게 0.62.
+  if (source && similarity(body, source) > 0.62)
+    return { ok: false, reason: "원본 자료와 과유사", len };
+  for (const ex of existingTexts) {
+    if (similarity(body, ex) > 0.6) return { ok: false, reason: "기존 코스글과 중복", len };
+  }
+  return { ok: true, reason: "", len };
+}
+
+// ── 코스 블로그 프롬프트 ──
+export function buildCoursePrompt(course, { summer = false } = {}) {
+  const themeLabels = (course.themes || []).map((t) => COURSE_THEME_LABEL[t] || t).join("·");
+  const stopsBlock = (course.stops || [])
+    .map((s, i) => `${i + 1}. ${s.name}\n   - 자료: ${s.overview || "(상세 없음 — 이름·유형만 사실)"}`)
+    .join("\n");
+
+  return `당신은 국내 여행을 다녀와 생생하게 풀어내는 여행 블로거입니다.
+아래 "코스 자료"를 바탕으로, 실제 다녀온 듯한 여행기 형식의 블로그 글을 씁니다.
+
+[코스명] ${course.title}
+[지역] ${course.area}
+[기간] ${course.duration}
+[테마] ${themeLabels}
+${course.overview ? `[코스 소개 자료] ${course.overview}\n` : ""}
+[경유지 — 이 순서대로, 각 스팟의 '자료'에 있는 사실만 사용]
+${stopsBlock}
+
+[🎯 목표 — "블로그처럼" 쓰기]
+- 딱딱한 정보 나열 금지. "여기는 ○○로 유명하고, 조금만 가면 △△가 있어요" 식으로 장소를 이야기로 잇는다.
+- 경유지를 방문 순서대로 자연스럽게 연결: "다음으로", "차로 조금 이동하면", "걸어서 금방" 등 이동의 흐름을 넣는다.
+- 각 장소의 매력 포인트(무엇으로 유명한지)를 자료 사실로 콕 집어 설명하고, 감각적 묘사(풍경·분위기·계절감)를 곁들인다.
+- 먹거리·맛집 스팟이 있으면 "출출할 때쯤 ~에서 한 끼" 처럼 식사 흐름으로 녹인다.
+${summer ? "- 지금은 여름 휴가철. 더위를 피할 포인트(그늘·물가·바다·계곡·실내)를 자연스럽게 짚어준다.\n" : ""}
+[⚠️ 사실 정확성 — 가장 중요]
+- 각 경유지의 '자료'에 **없는** 연도·인물·수치·사건을 **절대 지어내지 마세요.** (틀린 정보는 최악)
+- 자료에 없으면 일반적으로만("오래된", "이름난"). 특정 숫자·연도·사람 이름을 상상해서 넣지 말 것.
+- 경유지 이름·지역은 자료 그대로.
+
+[🚫 금지 표현 — 근거 없는 클리셰]
+- "잊지 못할 추억을 선사", "특별한 시간을 선사", "힐링을 선사", "다채로운 볼거리", "오감 만족", "강력 추천"
+- 감정은 클리셰가 아니라 **구체적 묘사**로: (X)"힐링이 가득한 곳" → (O)"물소리만 들리는 그늘에 앉아 있으면 더위가 가셔요"
+
+[구조·분량]
+- 맨 위 첫 줄: 이 여행의 매력을 담은 한 문장 **굵게** (여정을 압축, 뻔한 인사 금지).
+- 도입 문단 2~3문장: 이 코스가 어떤 여행인지, 언제·누구와 가면 좋은지.
+- 경유지마다 소제목: "## 1. ○○" 형식으로, 각 2~4문장. (스팟 수만큼)
+- 마무리 문단: 하루/여정 총평 + 실용 팁 1~2개(자료에 시간·주차 있으면만, 없으면 "여유롭게 반나절" 정도).
+- 전체 900~1800자. 친근한 "~해요/~더라고요" 여행기 말투.
+- 이모티콘·"ㅋㅋ/ㅎㅎ" 금지(귀여움은 화면 디자인이 담당). 광고 문구 금지.
+
+[SEO]
+- 첫 문단과 마무리에 "${course.area} 여행", "${course.area} ${course.duration} 코스" 같은 검색어를 자연스럽게 1~2회.
+- 소제목·본문에 경유지 이름을 정확히 써서 지역+장소 키워드가 잡히게.
+
+이제 "${course.title}" 여행기를 마크다운으로만 출력하세요(설명 없이 글만). 자료에 없는 사실은 쓰지 마세요.`;
 }

@@ -27,6 +27,18 @@ export default function Header() {
           </span>
         </Link>
 
+        {/* 홈 버튼 — 검색창(돋보기) 왼쪽 */}
+        <Link
+          href="/"
+          aria-label="홈으로"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-ink-soft transition hover:bg-black/5 hover:text-free"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-[22px] w-[22px]">
+            <path d="M3 10.5 12 3l9 7.5" />
+            <path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5" />
+          </svg>
+        </Link>
+
         <div className="w-full flex-1 sm:mx-auto sm:max-w-[560px]">
           <SearchBox size="md" placeholder="인천 나들이, 반려동물 캠핑장, 무료 공연…" />
         </div>

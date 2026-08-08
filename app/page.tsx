@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { getAllEvents, getWeekend, getFree, getNow, getFeatured, slimForClient } from "@/lib/data";
 import { getPlacesSample, getPlaceCount, getAllPlaces } from "@/lib/tour";
 import { getCampCount, getAllCamps } from "@/lib/camping";
+import { getCourseKeywords, getAllCourses, getCourseCount, slimCourse } from "@/lib/courses";
+import CourseCard from "@/components/CourseCard";
 import { todayYmd } from "@/lib/dates";
 import PosterCard from "@/components/PosterCard";
 import TourCard from "@/components/TourCard";
@@ -60,18 +62,33 @@ export default function HomePage() {
     for (const pool of pools) if (pool[i] && heroSlides.length < 10) heroSlides.push(pool[i]);
   }
 
-  // 인기 검색어 — 지역+유형 조합(맛집·나들이·캠핑·전시·데이트·카페 골고루), 실제 결과 있는 것만
+  // 인기 검색어 — 발행된 여행코스 키워드를 매일(날짜 시드) 셔플해 새롭게 노출.
+  // 코스가 부족하면 지역+유형 조합(검색 결과 있는 것)으로 채움.
   const POP_COMBOS = [
     "가평 가볼만한 곳", "수원 맛집", "경주 나들이", "강릉 카페", "부산 캠핑장", "서울 무료 전시",
     "인천 데이트", "제주 가볼만한 곳", "여수 나들이", "속초 맛집", "전주 한옥마을", "춘천 카페",
     "해운대 맛집", "남해 캠핑장", "안동 가볼만한 곳", "포항 나들이", "양양 카페", "통영 맛집",
   ];
-  const popular = POP_COMBOS.map((t) => ({ t, n: search(t).total })).filter((x) => x.n >= 5).slice(0, 12).map((x) => x.t);
+  // 날짜 시드 셔플(하루 내 안정, 매일 변동) — mulberry32
+  const seed = Number(today.replace(/-/g, "")) || 1;
+  const shuffle = <T,>(arr: T[]): T[] => {
+    let a = seed >>> 0;
+    const rnd = () => { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+    const c = [...arr];
+    for (let i = c.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [c[i], c[j]] = [c[j], c[i]]; }
+    return c;
+  };
+  const courseKw = shuffle(getCourseKeywords());
+  const fallbackKw = POP_COMBOS.map((t) => ({ t, n: search(t).total })).filter((x) => x.n >= 5)
+    .map((x) => ({ label: x.t, href: `/search?q=${encodeURIComponent(x.t)}` }));
+  const popular = [...courseKw, ...fallbackKw].slice(0, 12);
 
   // 카드 섹션 데이터
   const eventCards = slimForClient(getFree(true).filter((e) => e.imgUrl && e.endDate >= today).slice(0, 12));
   const placeCards = sample.slice(0, 12);
   const campCards = camps.slice(0, 12);
+  const courseCards = shuffle(getAllCourses()).slice(0, 12).map(slimCourse); // 발행 코스 매일 셔플
+  const courseCount = getCourseCount();
 
   const popupPicks = slimForClient(
     [...getWeekend()].filter((e) => FREEISH.has(e.priceType) && e.imgUrl).sort((a, b) => b.featuredScore - a.featuredScore).slice(0, 5)
@@ -106,12 +123,12 @@ export default function HomePage() {
       {popular.length > 0 && (
         <Band tone="white" border={false} innerClassName="py-6 sm:py-7">
           <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[22px]">인기 검색어</h2>
-          <p className="mt-0.5 text-[13px] text-ink-faint">대한민국 대표 여행지부터 시작해요</p>
+          <p className="mt-0.5 text-[13px] text-ink-faint">요즘 뜨는 여행코스 — 매일 새롭게 골라드려요</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {popular.map((p, i) => (
-              <Link key={p} href={`/search?q=${encodeURIComponent(p)}`}
+              <Link key={p.label} href={p.href}
                 className={["items-center gap-1.5 rounded-full border border-line bg-white px-3.5 py-2 text-[13.5px] font-semibold text-ink-soft transition hover:border-free/40 hover:text-free", i >= 10 ? "hidden sm:inline-flex" : "inline-flex"].join(" ")}>
-                <span className="text-[12px] font-black text-free">{i + 1}</span>{p}
+                <span className="text-[12px] font-black text-free">{i + 1}</span>{p.label}
               </Link>
             ))}
           </div>
@@ -140,9 +157,20 @@ export default function HomePage() {
         </CardSection>
       )}
 
+      {/* 여행코스 */}
+      {courseCards.length > 0 && (
+        <CardSection tone="panel" title="여행코스" desc="여기 들렀다 밥 먹고 다음 코스로 — 하루·1박2일 여행 일정" href="/course" moreLabel={`전체 ${courseCount.toLocaleString()}개`}>
+          <ScrollRail ariaLabel="여행코스">
+            {courseCards.map((c) => (
+              <div key={c.id} className={RAIL_SPOT}><CourseCard course={c} /></div>
+            ))}
+          </ScrollRail>
+        </CardSection>
+      )}
+
       {/* 캠핑 */}
       {campCards.length > 0 && (
-        <CardSection tone="panel" title="캠핑" desc="숲·계곡·바다, 반려동물 동반까지" href="/camping" moreLabel={`전체 ${campCount.toLocaleString()}곳`}>
+        <CardSection tone="white" title="캠핑" desc="숲·계곡·바다, 반려동물 동반까지" href="/camping" moreLabel={`전체 ${campCount.toLocaleString()}곳`}>
           <ScrollRail ariaLabel="캠핑">
             {campCards.map((c) => (
               <div key={c.id} className={RAIL_SPOT}><CampCard camp={c} /></div>
