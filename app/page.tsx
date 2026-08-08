@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { getAllEvents, getWeekend, getFree, getNow, getFeatured, slimForClient } from "@/lib/data";
 import { getPlacesSample, getPlaceCount, getAllPlaces } from "@/lib/tour";
 import { getCampCount, getAllCamps } from "@/lib/camping";
-import { getCourseKeywords } from "@/lib/courses";
+import { getCourseKeywords, getAllCourses, getCourseCount, slimCourse } from "@/lib/courses";
+import CourseCard from "@/components/CourseCard";
 import { todayYmd } from "@/lib/dates";
 import PosterCard from "@/components/PosterCard";
 import TourCard from "@/components/TourCard";
@@ -86,6 +87,8 @@ export default function HomePage() {
   const eventCards = slimForClient(getFree(true).filter((e) => e.imgUrl && e.endDate >= today).slice(0, 12));
   const placeCards = sample.slice(0, 12);
   const campCards = camps.slice(0, 12);
+  const courseCards = shuffle(getAllCourses()).slice(0, 12).map(slimCourse); // 발행 코스 매일 셔플
+  const courseCount = getCourseCount();
 
   const popupPicks = slimForClient(
     [...getWeekend()].filter((e) => FREEISH.has(e.priceType) && e.imgUrl).sort((a, b) => b.featuredScore - a.featuredScore).slice(0, 5)
@@ -154,9 +157,20 @@ export default function HomePage() {
         </CardSection>
       )}
 
+      {/* 여행코스 */}
+      {courseCards.length > 0 && (
+        <CardSection tone="panel" title="여행코스" desc="여기 들렀다 밥 먹고 다음 코스로 — 하루·1박2일 여행 일정" href="/course" moreLabel={`전체 ${courseCount.toLocaleString()}개`}>
+          <ScrollRail ariaLabel="여행코스">
+            {courseCards.map((c) => (
+              <div key={c.id} className={RAIL_SPOT}><CourseCard course={c} /></div>
+            ))}
+          </ScrollRail>
+        </CardSection>
+      )}
+
       {/* 캠핑 */}
       {campCards.length > 0 && (
-        <CardSection tone="panel" title="캠핑" desc="숲·계곡·바다, 반려동물 동반까지" href="/camping" moreLabel={`전체 ${campCount.toLocaleString()}곳`}>
+        <CardSection tone="white" title="캠핑" desc="숲·계곡·바다, 반려동물 동반까지" href="/camping" moreLabel={`전체 ${campCount.toLocaleString()}곳`}>
           <ScrollRail ariaLabel="캠핑">
             {campCards.map((c) => (
               <div key={c.id} className={RAIL_SPOT}><CampCard camp={c} /></div>

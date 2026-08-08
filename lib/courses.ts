@@ -1,8 +1,10 @@
 // 여행코스 데이터 접근 — data/courses.json(공식 코스 재료) + data/course-articles.json(블로그 글)
 // 목록·상세는 "블로그 글이 발행된 코스"만 노출(품질 보장). 필터: 지역·기간·테마.
 import coursesData from "@/data/courses.json";
+import coursesAuto from "@/data/courses-auto.json";
 import courseArticles from "@/data/course-articles.json";
 import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
+import { season } from "@/lib/finder";
 
 export interface CourseStop {
   num: number;
@@ -38,7 +40,10 @@ export interface Course extends CourseRaw {
   themeLabels: string[];
 }
 
-const RAW = (coursesData as unknown as { courses: CourseRaw[] }).courses || [];
+const RAW: CourseRaw[] = [
+  ...((coursesData as unknown as { courses: CourseRaw[] }).courses || []),   // 공식(정부) 코스
+  ...((coursesAuto as unknown as { courses: CourseRaw[] }).courses || []),   // 자동 조합 코스
+];
 const ARTS = (courseArticles as unknown as { articles?: Record<string, CourseArticle> }).articles || {};
 
 // ── 기간·테마 라벨/슬러그 (URL·SEO용) ──
@@ -57,6 +62,20 @@ export const THEMES: { key: string; slug: string; label: string; emoji: string }
 export const durationFromSlug = (s?: string) => DURATIONS.find((d) => d.slug === s);
 export const durationSlug = (key: string) => DURATIONS.find((d) => d.key === key)?.slug || "day";
 export const durationLabel = (key: string) => DURATIONS.find((d) => d.key === key)?.label || key;
+// ── 계절 자동 적용 — 현재 계절에 맞는 테마·문구를 반환(여름=바다, 가을=단풍…) ──
+const SEASON_MAP: Record<string, { theme: string; phrase: string }> = {
+  spring: { theme: "자연힐링", phrase: "봄꽃·나들이" },
+  summer: { theme: "바다피서", phrase: "여름 바다·피서" },
+  autumn: { theme: "자연힐링", phrase: "가을 단풍·힐링" },
+  winter: { theme: "가족체험", phrase: "겨울 실내·체험" },
+};
+export function courseSeason() {
+  const s = season();
+  const m = SEASON_MAP[s.key] || SEASON_MAP.summer;
+  const t = THEMES.find((x) => x.key === m.theme);
+  return { key: s.key, label: s.label, emoji: s.emoji, theme: m.theme, themeSlug: t?.slug || "nature", phrase: m.phrase };
+}
+
 export const themeFromSlug = (s?: string) => THEMES.find((t) => t.slug === s);
 export const themeLabel = (key: string) => THEMES.find((t) => t.key === key)?.label || key;
 export const themeEmoji = (key: string) => THEMES.find((t) => t.key === key)?.emoji || "📍";
@@ -129,20 +148,23 @@ export function getCourseKeywords(): { label: string; href: string }[] {
     if (k && !seen.has(k)) { seen.add(k); out.push({ label: k, href }); }
   };
 
-  // 테마 기반(여름 우선) — 있으면
+  // 계절 자동 — 현재 계절 테마를 맨 앞에 (여름=바다, 가을=단풍…)
+  const se = courseSeason();
   const tc = getThemeCounts();
-  if (tc["바다피서"]) add("여름 바다·피서 여행코스", "/course/theme/beach");
-  if (tc["자연힐링"]) add("자연·힐링 여행코스", "/course/theme/nature");
-  if (tc["문화유적"]) add("문화유적 여행코스", "/course/theme/heritage");
-  if (tc["가족체험"]) add("아이랑 가족 여행코스", "/course/theme/family");
+  if (tc[se.theme]) add(`${se.phrase} 여행코스`, `/course/theme/${se.themeSlug}`);
 
-  // 지역 + 지역×기간
-  for (const { area } of getCourseAreaCounts()) {
+  // 지역별 계절 여행 + 지역 + 지역×기간
+  const areasWithCourses = getCourseAreaCounts();
+  for (const { area } of areasWithCourses) {
     const slug = areaSlug(area);
+    add(`${area} ${se.label}여행`, `/course/${slug}`); // 예: "전남 가을여행"
     add(`${area} 여행코스`, `/course/${slug}`);
     const dc = getDurationCounts(area);
     for (const d of DURATIONS) if (dc[d.key]) add(`${area} ${d.label} 코스`, `/course/${slug}/${d.slug}`);
   }
+
+  // 나머지 테마
+  for (const t of THEMES) if (tc[t.key]) add(`${t.label} 여행코스`, `/course/theme/${t.slug}`);
 
   // 개별 코스명(짧고 매력적인 것)
   for (const c of PUBLISHED) if (c.title.length <= 24) add(c.title, `/course/c/${c.id}`);

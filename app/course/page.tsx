@@ -4,7 +4,7 @@ import { Band } from "@/components/Band";
 import CourseCard from "@/components/CourseCard";
 import {
   getAllCourses, getCourseCount, getCourseAreaCounts, getThemeCounts,
-  THEMES, DURATIONS, areaSlug, slimCourse, filterCourses, themeEmoji,
+  THEMES, areaSlug, slimCourse, filterCourses, courseSeason,
 } from "@/lib/courses";
 
 export const revalidate = 86400;
@@ -21,7 +21,8 @@ export default function CoursePage() {
   const total = getCourseCount();
   const areas = getCourseAreaCounts();
   const themeCounts = getThemeCounts();
-  const beach = filterCourses({ theme: "바다피서", limit: 8 }).map(slimCourse);
+  const se = courseSeason(); // 계절 자동
+  const seasonal = filterCourses({ theme: se.theme, limit: 8 }).map(slimCourse);
   const all = getAllCourses().slice(0, 60).map(slimCourse);
 
   return (
@@ -36,15 +37,15 @@ export default function CoursePage() {
       </Band>
 
       <div className="mx-auto w-full max-w-[1280px] px-5 pb-16 pt-4 sm:px-6 lg:px-8">
-        {/* 여름 피서 피처 */}
-        {beach.length > 0 && (
+        {/* 계절 자동 피처 — 여름=바다, 가을=단풍… */}
+        {seasonal.length > 0 && (
           <section className="mb-6">
             <div className="mb-2 flex items-center justify-between">
-              <h2 className="text-[17px] font-extrabold text-ink">🌊 여름 바다·피서 코스</h2>
-              <Link href="/course/theme/beach" className="text-[12.5px] font-bold text-free hover:underline">더보기 ›</Link>
+              <h2 className="text-[17px] font-extrabold text-ink">{se.emoji} {se.phrase} 코스</h2>
+              <Link href={`/course/theme/${se.themeSlug}`} className="text-[12.5px] font-bold text-free hover:underline">더보기 ›</Link>
             </div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-              {beach.map((c) => <CourseCard key={c.id} course={c} />)}
+              {seasonal.map((c) => <CourseCard key={c.id} course={c} />)}
             </div>
           </section>
         )}
