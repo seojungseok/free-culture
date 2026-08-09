@@ -241,9 +241,10 @@ async function main() {
     console.log(`\n🧭 코스 글 목표 ${target}건 · 후보풀 ${courses.length - doneIds.size} · 기존 ${doneIds.size} · 모델 ${MODEL} · 제미나이 OFF`);
   }
 
-  let made = 0, skipped = 0;
+  let made = 0, skipped = 0, errored = 0;
   const report = [];
   for (const course of items) {
+   try { // 코스 하나가 에러나도 전체 중단 없이 다음으로 (부분 발행 + 커밋 보장)
     await enrichStops(course); // 자동 코스 스팟 소개 보강(캐시/한도 내 조회)
     // 코스 "구성" Gemini 교차검증 — 중복 종류·비현실 동선이면 스킵. (베스트 리스트형은 전부 해변이라 검증 제외)
     if (GEMINI && course.format !== "list") {
@@ -283,10 +284,15 @@ async function main() {
     report.push({ id: course.id, title: course.title, outcome: "published", detail: `${art.len}자/${course.duration}/${course.area}` });
     console.log(`  ✓ 발행 ${made}/${target}: ${course.title} (${art.len}자, ${course.area} ${course.duration})`);
     await sleep(800);
+   } catch (e) {
+    errored++;
+    report.push({ id: course.id, title: course.title, outcome: "error", reason: String(e && e.message || e).slice(0, 120) });
+    console.log(`  ⚠ 오류(스킵): ${course.title} — ${String(e && e.message || e).slice(0, 100)}`);
+   }
   }
 
   store.generatedAt = new Date().toISOString();
-  store._lastRun = { at: new Date().toISOString(), made, skipped, results: report };
+  store._lastRun = { at: new Date().toISOString(), made, skipped, errored, results: report };
   fs.writeFileSync(STORE, JSON.stringify(store, null, 0));
   const pub = Object.values(store.articles).filter((a) => a.status === "published").length;
   console.log(`\n💾 저장: 발행 ${made} · 스킵 ${skipped} | 총 코스글 ${pub} / 전체 코스 ${courses.length}\n`);
