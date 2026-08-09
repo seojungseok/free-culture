@@ -54,4 +54,10 @@ export const sfx = {
   // 낮은 '펑' — 폭탄/독박
   boom: () => { tone(95, 0.45, "sawtooth", 0.2); tone(62, 0.5, "square", 0.16, 0.02); tone(150, 0.2, "triangle", 0.1, 0); },
   roll: () => tone(300 + Math.random() * 400, 0.03, "square", 0.05),
+  // 두근 — 심장박동(뱀 사냥 긴장)
+  heartbeat: () => { tone(72, 0.1, "sine", 0.17); tone(56, 0.12, "sine", 0.13, 0.13); },
+  // 쉭 — 뱀 숨소리
+  hiss: () => tone(2400 + Math.random() * 400, 0.16, "sawtooth", 0.025),
+  // 콰악 — 무는 소리
+  bite: () => { tone(200, 0.05, "square", 0.22); tone(85, 0.28, "sawtooth", 0.24, 0.02); },
 };

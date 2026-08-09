@@ -28,7 +28,7 @@ const GAMES = [
   { href: "/game/dice", emoji: "🎲", name: "주사위 대결", desc: "다 같이 굴려 최저 눈이 독박", accent: "from-violet-500 to-purple-600", ready: true },
   { href: "/game/bomb", emoji: "💣", name: "폭탄 돌리기", desc: "넘기다 터지는 순간 든 사람 독박", accent: "from-rose-500 to-orange-500", ready: true },
   { href: "/game/mission", emoji: "🎡", name: "벌칙 룰렛", desc: "무슨 벌칙일지 랜덤으로 뽑기", accent: "from-amber-400 to-rose-500", ready: true },
-  { href: "/game/finger", emoji: "👆", name: "손가락 룰렛", desc: "손가락 올리면 한 명 지목", accent: "from-fuchsia-500 to-cyan-400", ready: true },
+  { href: "/game/finger", emoji: "🐍", name: "손가락 뱀 룰렛", desc: "뱀이 돌아다니다 문 사람이 독박", accent: "from-emerald-500 to-green-600", ready: true },
   { href: "/game/reaction", emoji: "⚡", name: "반응속도 대결", desc: "가장 느린 사람이 독박", accent: "from-lime-400 to-emerald-500", ready: true },
   { href: "/game/slot", emoji: "🎰", name: "독박 슬롯머신", desc: "💀 해골 잭팟 뜨면 독박", accent: "from-yellow-400 to-amber-500", ready: true },
   { href: "/game/balloon", emoji: "🎈", name: "풍선 터뜨리기", desc: "펌프하다 터뜨리면 독박", accent: "from-pink-400 to-rose-500", ready: true },
