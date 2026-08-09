@@ -573,6 +573,33 @@ export function courseQualityCheck(text, { source = "", existingTexts = [] } = {
   return { ok: true, reason: "", len };
 }
 
+// ── 코스 구성 교차검증(Gemini) — 본문은 OpenAI, "코스 짜임새"는 Gemini가 점검 ──
+//  같은 종류 중복(해수욕장→해수욕장), 비현실적 동선/일정, 기간 대비 과다 여부만 판정. 글은 안 봄.
+export async function checkCourseComposition(course, { apiKey, model = "gemini-2.5-flash-lite" } = {}) {
+  if (!apiKey) return { ok: true, reason: "SKIP(no key)" };
+  const list = (course.stops || []).map((s, i) => `${i + 1}. ${s.name}`).join("\n");
+  const prompt = `여행 코스 "구성"이 현실적인지만 판정해라(글이 아니라 장소 조합·순서).
+[지역] ${course.area}  [기간] ${course.duration}
+[방문 순서]
+${list}
+
+[판정 기준 — NG면 무엇이 문제인지 reason]
+- 같은 종류가 중복되면 NG (예: 해수욕장 두 곳, 비슷한 시장 두 곳).
+- 기간 대비 장소가 지나치게 많으면 NG (당일은 3곳 안팎, 1박2일 6곳 안팎, 2박3일 8~9곳).
+- 하루에 소화 불가능하게 멀거나 동선이 뒤엉키면 NG.
+- 위 문제 없이 하루 일정으로 무리 없으면 OK.
+
+JSON만: {"result":"OK 또는 NG","reason":"이유"}`;
+  try {
+    const { text } = await callGemini(prompt, { apiKey, model });
+    const m = String(text || "").match(/\{[\s\S]*\}/);
+    const parsed = JSON.parse(m ? m[0] : text);
+    return { ok: parsed.result !== "NG", reason: String(parsed.reason || "") };
+  } catch (e) {
+    return { ok: true, reason: "ERROR(무시): " + (e instanceof Error ? e.message : e) }; // 검증 오류 시 통과(글 생성은 진행)
+  }
+}
+
 // ── 코스 블로그 프롬프트 ──
 // 정보 전달형(여행사가 자세히 안내). 경험담(1인칭 과거) 금지. 각 스팟에 주소·요금·시간 있으면 포함.
 export function buildCoursePrompt(course, { summer = false } = {}) {
@@ -659,6 +686,16 @@ ${structureSpec}
 - 마지막 "## 여행 팁": 이동수단·소요시간·계절 팁 등 실용 정보.
 - 전체 **1400~2600자**로 풍부하게. 정보가 많을수록 좋습니다(단, 지어내지 말 것).
 - 이모티콘·"ㅋㅋ/ㅎㅎ" 금지. 광고 문구 금지.
+
+[📖 읽기 편하게 — 지루하지 않게]
+- **한 문단은 2~3문장으로 짧게**, 문단 사이는 빈 줄로 띄우세요. 벽처럼 빽빽하게 쓰지 말 것.
+- **핵심은 굵게 강조**: 장소의 대표 특징·꼭 볼 것·꿀팁·지역명을 문단마다 1~2개 **굵게**.
+- 문장 길이를 다양하게(짧은 문장 섞기), 같은 어미("~습니다"만) 반복 피하기. 읽는 재미가 있게.
+
+[🔍 SEO·키워드 최적화]
+- 소제목과 본문에 **경유지 이름을 정확히** 써서 "장소명" 키워드가 잡히게.
+- "${course.area} 여행", "${course.area} ${course.duration} 코스", "${course.area} ${mainTheme}", "${course.area} 가볼만한곳" 같은 검색어를 도입·본문·마무리에 **자연스럽게** 녹이기(억지 반복 금지).
+- 각 장소 문단 첫 문장에 그 장소가 "어디에 있는 무엇"인지 넣어 지역+장소 조합 키워드가 잡히게.
 
 이제 위 형식대로 마크다운만 출력하세요(설명 없이 글만). 1번째 줄은 반드시 "# ${course.area} ${course.duration} ${mainTheme} 여행코스 — …" 제목입니다.`;
 }

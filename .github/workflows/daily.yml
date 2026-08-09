@@ -86,7 +86,8 @@ jobs:
         continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: "gpt-5.6-luna" # 코스도 Luna로 저렴하게
+          OPENAI_MODEL: "gpt-5.6-luna" # 본문 생성은 Luna로 저렴하게
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # 코스 "구성" 교차검증(중복·비현실 동선 차단)
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }} # 발행 코스 스팟 소개 보강용(한도 내)
           COURSE_IDS: ${{ github.event.inputs.course_ids }}
         run: node scripts/generateCourses.mjs

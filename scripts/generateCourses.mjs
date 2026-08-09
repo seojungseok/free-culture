@@ -12,7 +12,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   buildCoursePrompt, courseQualityCheck, courseSourceFacts, patternCheck, sanitizeUnsupported,
-  callOpenAI, rampCourses, COURSE_THEME_LABEL,
+  callOpenAI, rampCourses, COURSE_THEME_LABEL, checkCourseComposition,
 } from "./lib/articleGen.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -35,6 +35,7 @@ function envKey(name) {
   return "";
 }
 const OPENAI = envKey("OPENAI_API_KEY");
+const GEMINI = envKey("GEMINI_API_KEY"); // 코스 "구성" 교차검증용(본문 생성은 OpenAI)
 const TOURKEY = envKey("DATA_GO_KR_KEY") || envKey("TOUR_API_KEY");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -236,6 +237,16 @@ async function main() {
   const report = [];
   for (const course of items) {
     await enrichStops(course); // 자동 코스 스팟 소개 보강(캐시/한도 내 조회)
+    // 코스 "구성" Gemini 교차검증 — 중복 종류·비현실 동선이면 스킵(글 생성 안 함)
+    if (GEMINI) {
+      const comp = await checkCourseComposition(course, { apiKey: GEMINI });
+      if (!comp.ok) {
+        skipped++;
+        report.push({ id: course.id, title: course.title, outcome: "skip", reason: `구성 NG: ${comp.reason.slice(0, 80)}` });
+        console.log(`  ✗ 구성 반려: ${course.title} (${comp.reason.slice(0, 60)})`);
+        continue;
+      }
+    }
     const { art, reasons } = await produceCourse(course, existingTexts);
     if (!art) {
       skipped++;

@@ -9,7 +9,7 @@ import CourseShare from "@/components/CourseShare";
 import {
   getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays,
 } from "@/lib/courses";
-import { coursesNearbyFood, distanceLabel, foodTypeLabel } from "@/lib/nearby";
+import { coursesNearbyFood, distanceLabel, foodTypeLabel, distanceKm } from "@/lib/nearby";
 import { areaFestivals, fmtMd } from "@/lib/festivals";
 import { SITE } from "@/lib/site";
 
@@ -47,6 +47,13 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   const centroid = courseCentroid(c);
   const city = courseCity(c);
   const nearFood = coursesNearbyFood({ area: c.area, city, mapx: centroid?.mapx, mapy: centroid?.mapy }, 6);
+  // 각 맛집을 "가장 가까운 코스 스팟" 기준으로 라벨 (예: "경포해변 근처"). 좌표 있는 스팟만.
+  const stopsWithCoord = c.stops.filter((s) => s.mapx && s.mapy);
+  const nearStopName = (r: { mapx?: string; mapy?: string }): string => {
+    let best = "", bd = Infinity;
+    for (const s of stopsWithCoord) { const d = distanceKm(r, s); if (d < bd) { bd = d; best = s.name; } }
+    return best && bd <= 8 ? best : "";
+  };
   const festivals = areaFestivals(c.area, { limit: 4 }); // 보는 시점 날짜 연동
   const days = courseDays(c); // 일차별 분할(하루 3~4곳)
 
@@ -172,7 +179,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
                 <div className="px-2.5 pb-2.5 pt-2">
                   <h3 className="line-clamp-1 text-[14px] font-bold text-ink group-hover:text-free">{r.title}</h3>
                   <p className="mt-0.5 line-clamp-1 text-[12px] text-ink-faint">
-                    {typeof r.dist === "number" ? `코스에서 ${distanceLabel(r.dist)}` : r.addr}
+                    {nearStopName(r) ? `${nearStopName(r)} 근처` : typeof r.dist === "number" ? `코스에서 ${distanceLabel(r.dist)}` : r.addr}
                   </p>
                 </div>
               </Link>

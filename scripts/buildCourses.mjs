@@ -88,39 +88,70 @@ function main() {
   const VISIT_MIN = 130;         // 한 곳 관람+휴식(≈2시간 조금 넘게)
   const SPEED_KMH = 45;          // 지역 내 평균 이동 속도
   const DAY_USABLE_MIN = 420;    // 하루 실사용(≈7h; 식사·숙소이동 제외분)
-  const MIN_STOPS = 2, MAX_STOPS = 9;
+  const MIN_STOPS = 3;           // 최소 3곳
+  const MAX_PER_DUR = { "당일": 3, "1박2일": 6, "2박3일": 9 }; // 하루 3곳 기준(당일 4곳은 빡셈)
+
+  // 장소 "종류" — 같은 종류가 한 코스에 중복되지 않게(해수욕장→해수욕장 방지). 최대 1곳/종류.
+  const kindOf = (p) => {
+    const t = `${p.title} ${p.addr || ""}`;
+    if (/해수욕장|해변|해빈|해수욕/.test(t)) return "해변";
+    if (/계곡/.test(t)) return "계곡";
+    if (/박물관|미술관|전시관|기념관|과학관|갤러리/.test(t)) return "관람";
+    if (/시장/.test(t)) return "시장";
+    if (/수목원|식물원|정원|숲|공원|자연휴양림/.test(t)) return "공원";
+    if (/폭포/.test(t)) return "폭포";
+    if (/동굴/.test(t)) return "동굴";
+    if (/사찰|사(?=\s|$)|절(?=\s|$)|암자|향교|서원|고택|한옥/.test(t)) return "역사";
+    if (/항\b|포구|부두|어항/.test(t)) return "항구";
+    if (/호수|호(?=\s|$)|저수지|석호/.test(t)) return "호수";
+    if (/전망대|전망/.test(t)) return "전망대";
+    if (/산(?!업)|봉\b|령\b|고개/.test(t)) return "산";
+    return `기타:${(p.cat2 || p.title).slice(0, 6)}`; // 기타는 세분화해 과도한 중복만 방지
+  };
 
   const out = [];
   const seenSig = new Set(); // 코스 스팟조합 서명 → 완전 중복 방지(구글 duplicate 회피)
 
   for (const area of areas) {
     const areaPlaces = places.filter((p) => p.area === area);
-    const areaRest = restaurants.filter((r) => r.area === area);
 
     for (const th of THEMES) {
       let pool = areaPlaces.filter((p) => th.cat.test(p.cat2 || "") || th.re.test(`${p.title} ${p.addr}`));
       pool = pool.filter((p, i, arr) => arr.findIndex((x) => x.title === p.title) === i);
       if (pool.length < 4) continue;
 
+      // 씨앗(코스 첫 장소)은 테마를 확실히 대표하는 곳만 → "서울 바다코스"처럼 엉뚱한 조합 방지.
+      const strongSeed = (p) =>
+        th.key === "바다피서" ? /해수욕장|해변|해안|해빈/.test(`${p.title} ${p.addr}`)
+        : th.key === "문화유적" ? (/A0201/.test(p.cat2 || "") || kindOf(p) === "역사")
+        : true;
+      const seedPool = pool.filter(strongSeed);
+      if (seedPool.length < 1) continue; // 그 테마 대표지가 없으면 이 지역엔 이 테마 코스 안 만듦
+
       for (const dur of DURS) {
         const MAX_KM = dur.km, PER = dur.per;
+        const MAX_STOPS = MAX_PER_DUR[dur.key] || 6;
         const budget = dur.days * DAY_USABLE_MIN; // 이 코스에 쓸 수 있는 총 활동 시간(분)
-        const seeds = [...pool].sort((a, b) => (ovOf(b.id) ? 1 : 0) - (ovOf(a.id) ? 1 : 0));
+        const seeds = [...seedPool].sort((a, b) => (ovOf(b.id) ? 1 : 0) - (ovOf(a.id) ? 1 : 0));
         let made = 0;
         for (const seed of seeds) {
           if (made >= PER) break;
-          // 반경 내 후보를 최근접 이웃(a→b→c…)으로 이으며 시간예산이 찰 때까지만 담는다.
-          const byId = new Map(pool.filter((p) => p.id !== seed.id && km(seed, p) <= MAX_KM).map((p) => [p.id, p]));
+          // 이웃은 테마풀이 아니라 "지역 전체"에서 → 해변만 5개 X, 다양한 종류로 자연스럽게.
+          const byId = new Map(areaPlaces.filter((p) => p.id !== seed.id && km(seed, p) <= MAX_KM).map((p) => [p.id, p]));
           if (byId.size < MIN_STOPS - 1) continue;
           const cluster = [seed];
+          const usedKinds = new Set([kindOf(seed)]); // 같은 종류 중복 방지
           let cur = seed, mins = VISIT_MIN;
           while (byId.size && cluster.length < MAX_STOPS) {
-            let best = null, bd = Infinity;
-            for (const [id, p] of byId) { const d = km(cur, p); if (d < bd) { bd = d; best = id; } }
-            const travel = (bd / SPEED_KMH) * 60;
+            // 가까운 순으로 보되, 이미 담은 "종류"는 건너뜀(해수욕장→해수욕장 방지)
+            const sorted = [...byId.values()].sort((a, b) => km(cur, a) - km(cur, b));
+            let picked = null;
+            for (const p of sorted) { if (!usedKinds.has(kindOf(p))) { picked = p; break; } }
+            if (!picked) break; // 남은 게 전부 이미 담은 종류면 멈춤
+            const travel = (km(cur, picked) / SPEED_KMH) * 60;
             if (mins + travel + VISIT_MIN > budget) break; // 하루 예산 초과 → 멈춤
-            cur = byId.get(best); cluster.push(cur); byId.delete(best);
-            mins += travel + VISIT_MIN;
+            cluster.push(picked); usedKinds.add(kindOf(picked)); byId.delete(picked.id);
+            cur = picked; mins += travel + VISIT_MIN;
           }
           if (cluster.length < MIN_STOPS) continue;
 
@@ -128,23 +159,11 @@ function main() {
           if (seenSig.has(sig)) continue; // 같은 스팟 조합이면 스킵
           seenSig.add(sig);
 
-          // 스팟 구성
+          // 스팟 구성 (맛집은 별도 '근처 맛집' 섹션에서 표시 → 인라인 삽입 안 함)
           const stops = cluster.map((p, i) => ({
             num: i, name: p.title, overview: ovOf(p.id), image: p.image, placeId: p.id, addr: p.addr,
+            mapx: p.mapx, mapy: p.mapy, // 근처 맛집 "○○ 근처" 라벨용
           }));
-
-          // 맛집 데이터 있는 지역(현재 제주)은 동선 중간에 근처 맛집 1곳 삽입("밥먹고")
-          if (areaRest.length) {
-            const mid = cluster[Math.floor(cluster.length / 2)];
-            let best = null, bd = Infinity;
-            for (const r of areaRest) { const d = km(mid, r); if (d < bd && d <= MAX_KM) { bd = d; best = r; } }
-            if (best) {
-              stops.splice(Math.ceil(stops.length / 2), 0, {
-                num: -1, name: best.title, overview: "", image: best.image || "", placeId: best.id, addr: best.addr, food: true,
-              });
-              stops.forEach((s, i) => (s.num = i));
-            }
-          }
 
           const themeLabel = th.key === "바다피서" ? "바다·피서" : th.key === "문화유적" ? "문화유적" : th.key === "자연힐링" ? "자연·힐링" : "가족·체험";
           const dist = districtOf(seed.addr);

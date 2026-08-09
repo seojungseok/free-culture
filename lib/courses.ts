@@ -12,6 +12,9 @@ export interface CourseStop {
   name: string;
   overview: string;
   image: string;
+  mapx?: string;
+  mapy?: string;
+  addr?: string;
 }
 export interface CourseRaw {
   id: string;
