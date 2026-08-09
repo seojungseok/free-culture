@@ -73,17 +73,17 @@ function realisticDuration(stopCount) {
   return "2박3일";
 }
 
-// ── 테마 판별: 경유지 이름·설명 키워드로 태깅(복수 가능). 여름 피서 우선 노출용 태그 포함 ──
+// ── 테마 판별. 바다피서는 "실제 해수욕장/해변" 경유지가 있을 때만(느슨한 섬·항 매칭 금지) ──
 const THEME_RULES = [
-  { key: "바다피서", label: "바다·피서", re: /해수욕장|해변|바다|해안|계곡|워터|수상|해빈|섬|항|포구|해양/ },
   { key: "문화유적", label: "문화유적", re: /궁|사찰|사(?=\s|$)|유적|고택|한옥|서원|향교|성곽|왕릉|문화재|유물|고분|읍성|종묘|서당/ },
   { key: "자연힐링", label: "자연·힐링", re: /숲|수목원|공원|산|정원|호수|둘레길|생태|습지|폭포|계곡|전망대|휴양림|허브/ },
   { key: "가족체험", label: "가족·체험", re: /체험|박물관|과학관|미술관|테마파크|농원|목장|동물원|아쿠아리움|어린이|키즈|기념관/ },
-  { key: "맛집", label: "맛집·먹거리", re: /맛집|먹거리|시장|유통|카페|빵|특산|미식|한정식|막걸리/ },
 ];
 function detectThemes(course) {
   const hay = [course.title, course.overview, ...course.stops.map((s) => `${s.name} ${s.overview}`)].join(" ");
   const hit = THEME_RULES.filter((r) => r.re.test(hay)).map((r) => r.key);
+  // 실제 해수욕장/해변 경유지가 있으면만 바다피서 추가
+  if (course.stops.some((s) => /해수욕장|해변/.test(s.name))) hit.unshift("바다피서");
   return hit.length ? hit : ["자연힐링"];
 }
 

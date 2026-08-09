@@ -143,7 +143,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
                         <span className="text-[11px] font-black text-free">{i + 1}</span>
                         {s.name}
                       </span>
-                      {i < dayStops.length - 1 && <span className="text-ink-faint">→</span>}
+                      {i < dayStops.length - 1 && c.format !== "list" && <span className="text-ink-faint">→</span>}
                     </li>
                   ))}
                 </ol>
@@ -160,8 +160,8 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
         </section>
       )}
 
-      {/* 근처 맛집 — 코스 좌표 기준, 내부링크로 상세 연결 (음식점 데이터 있는 지역만) */}
-      {nearFood.length > 0 && (
+      {/* 근처 맛집 — 코스 좌표 기준, 내부링크. 해수욕장 베스트(리스트형)엔 맛집 표시 안 함. */}
+      {nearFood.length > 0 && c.format !== "list" && (
         <section className="mt-9">
           <h2 className="mb-1 text-[19px] font-extrabold tracking-tight text-ink sm:text-[20px]">🍽 이 코스 근처 맛집</h2>
           <p className="mb-4 text-[13px] text-ink-faint">코스 동선 근처에서 한 끼 하기 좋은 곳이에요</p>
