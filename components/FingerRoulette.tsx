@@ -88,18 +88,24 @@ export default function FingerRoulette() {
     const rect = areaRef.current!.getBoundingClientRect();
     const center: Pt = [rect.width / 2, rect.height / 2];
     const target = ids[Math.floor(Math.random() * ids.length)];
-    const others = ids.filter((i) => i !== target);
-    const p = (id: number): Pt => [jit(snap[id].x), jit(snap[id].y)];
+    const near = (id: number): Pt => [jit(snap[id].x, 42), jit(snap[id].y, 42)]; // 근처만(정확히 안 앉음)
 
-    // 인원 많을수록 더 많이 돌아다님(경유지 ↑)
-    const rounds = Math.max(7, ids.length * 3);
-    const seq = shuffle(others.length ? others : ids);
-    const way: Pt[] = [center];
-    for (let i = 0; i < rounds; i++) {
-      way.push(p(seq[i % seq.length]));
-      if (i % 2 === 1) way.push([jit(center[0], 50), jit(center[1], 50)]);
+    // 전원(타깃 포함)을 골고루 근처까지 훑어 누가 걸릴지 못 알아채게. 인원 많을수록 더 오래.
+    const rounds = Math.max(8, ids.length * 3);
+    let seq: number[] = [];
+    while (seq.length < rounds) seq = seq.concat(shuffle(ids));
+    seq = seq.slice(0, rounds);
+    // 마지막 로밍이 곧장 타깃이 되지 않도록: 끝에서 두 번째는 타깃이 아닌 손가락으로
+    if (ids.length > 1 && seq[seq.length - 1] === target) {
+      const alt = seq[seq.length - 2] !== target ? seq[seq.length - 2] : ids.find((i) => i !== target)!;
+      seq[seq.length - 1] = alt;
     }
-    way.push(p(target), [snap[target].x, snap[target].y]); // 마지막에 정확히 물기
+    const way: Pt[] = [center];
+    for (let i = 0; i < seq.length; i++) {
+      way.push(near(seq[i]));
+      if (i % 3 === 2) way.push([jit(center[0], 60), jit(center[1], 60)]);
+    }
+    way.push(near(target), [snap[target].x, snap[target].y]); // 마지막에만 정확히 물기
 
     // 세그먼트 길이
     const seg: number[] = [0]; let total = 0;
@@ -170,7 +176,7 @@ export default function FingerRoulette() {
           <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
             <div className="text-[46px]">🐍</div>
             <p className="mt-2 text-[16px] font-black text-white">여기에 다 같이 손가락을 올려요</p>
-            <p className="mt-1 text-[13px] text-white/55">2명 이상 올리면 뱀이 나와<br /><b className="text-white">돌아다니다 한 명을 콱! 물어요</b></p>
+            <p className="mt-1 text-[13px] text-white/55">2~8명이 올리면 뱀이 나와<br /><b className="text-white">돌아다니다 한 명을 콱! 물어요</b></p>
           </div>
         )}
         {phase === "counting" && (
@@ -231,7 +237,8 @@ export default function FingerRoulette() {
           {phase === "bitten" ? "다시 하기" : "초기화"}
         </button>
       </div>
-      <p className="mt-3 text-center text-[12px] text-white/40">현재 {n}명 올림 · 2명 이상이면 시작 · 인원 많을수록 뱀이 더 오래 돌아다녀요</p>
+      <p className="mt-3 text-center text-[12px] text-white/40">현재 {n}명 올림 · <b className="text-white/70">최대 8명</b> (2명부터 시작) · 인원 많을수록 뱀이 더 오래 돌아다녀요</p>
+      <p className="mt-1 text-center text-[11px] text-white/30">※ 동시에 인식되는 손가락 수는 기기·화면에 따라 달라요(5~10개)</p>
     </div>
   );
 }
