@@ -27,9 +27,10 @@ export interface CourseRaw {
   overview: string;
   stops: CourseStop[];
   stopCount: number;
-  duration: string; // "당일" | "1박2일" | "2박3일" ...
+  duration: string; // "당일" | "1박2일" | "2박3일" | "베스트"
   themes: string[];
   source: string; // "official" | "auto"
+  format?: string; // "list" = 베스트 리스트형(동선 아님)
 }
 export interface CourseArticle {
   status: string;

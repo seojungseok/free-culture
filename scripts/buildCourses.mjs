@@ -21,13 +21,14 @@ const AREA_SLUG = {
   전북: "jeonbuk", 전남: "jeonnam", 경북: "gyeongbuk", 경남: "gyeongnam", 제주: "jeju",
 };
 
-// 테마 정의 — cat 코드 + 제목 키워드. 맛집은 별도 스팟(제주 restaurants)으로만 삽입.
+// route(동선) 코스 테마 — 해수욕장은 여기서 제외(별도 "해수욕장 베스트" 리스트로만 다룸).
 const THEMES = [
   { key: "문화유적", slug: "heritage", cat: /A0201/, re: /궁|사찰|유적|고택|한옥|서원|향교|성곽|왕릉|문화재|고분|읍성|종묘|사(?=\s|$)/ },
-  { key: "자연힐링", slug: "nature", cat: /A0101/, re: /숲|수목원|공원|산(?!업)|정원|호수|둘레길|생태|습지|폭포|계곡|전망대|휴양림|해변|해수욕장|섬/ },
+  { key: "자연힐링", slug: "nature", cat: /A0101/, re: /숲|수목원|공원|산(?!업)|정원|호수|둘레길|생태|습지|폭포|계곡|전망대|휴양림/ },
   { key: "가족체험", slug: "family", cat: /A0203|A0206/, re: /체험|박물관|과학관|미술관|테마파크|농원|목장|동물원|아쿠아리움|어린이|기념관|천문/ },
-  { key: "바다피서", slug: "beach", cat: /X/, re: /해수욕장|해변|해안|바닷가|해양|계곡|워터|물놀이|섬|포구|항구/ },
 ];
+// 해수욕장 판별 — route 코스에서 제외 + 베스트 리스트 대상
+const isBeach = (p) => /해수욕장|해변|해수욕/.test(String(p.title || ""));
 
 const overviewsRaw = fs.existsSync(OVERVIEWS) ? JSON.parse(fs.readFileSync(OVERVIEWS, "utf8")) : {};
 const OV = overviewsRaw.overviews || overviewsRaw; // {id: overviewText}
@@ -120,11 +121,9 @@ function main() {
       pool = pool.filter((p, i, arr) => arr.findIndex((x) => x.title === p.title) === i);
       if (pool.length < 4) continue;
 
-      // 씨앗(코스 첫 장소)은 테마를 확실히 대표하는 곳만 → "서울 바다코스"처럼 엉뚱한 조합 방지.
+      // 씨앗(코스 첫 장소)은 테마를 확실히 대표하는 곳만. 해수욕장은 route에서 제외.
       const strongSeed = (p) =>
-        th.key === "바다피서" ? /해수욕장|해변|해안|해빈/.test(`${p.title} ${p.addr}`)
-        : th.key === "문화유적" ? (/A0201/.test(p.cat2 || "") || kindOf(p) === "역사")
-        : true;
+        !isBeach(p) && (th.key === "문화유적" ? (/A0201/.test(p.cat2 || "") || kindOf(p) === "역사") : true);
       const seedPool = pool.filter(strongSeed);
       if (seedPool.length < 1) continue; // 그 테마 대표지가 없으면 이 지역엔 이 테마 코스 안 만듦
 
@@ -136,8 +135,8 @@ function main() {
         let made = 0;
         for (const seed of seeds) {
           if (made >= PER) break;
-          // 이웃은 테마풀이 아니라 "지역 전체"에서 → 해변만 5개 X, 다양한 종류로 자연스럽게.
-          const byId = new Map(areaPlaces.filter((p) => p.id !== seed.id && km(seed, p) <= MAX_KM).map((p) => [p.id, p]));
+          // 이웃은 지역 전체에서 다양하게. 단 해수욕장은 route에서 제외(베스트 리스트로만).
+          const byId = new Map(areaPlaces.filter((p) => p.id !== seed.id && !isBeach(p) && km(seed, p) <= MAX_KM).map((p) => [p.id, p]));
           if (byId.size < MIN_STOPS - 1) continue;
           const cluster = [seed];
           const usedKinds = new Set([kindOf(seed)]); // 같은 종류 중복 방지
@@ -180,6 +179,33 @@ function main() {
           made++;
         }
       }
+    }
+
+    // ── "지역 해수욕장 베스트 N" 리스트(코스 아님) — 해안 지역만. 인기(소개 있는 명소·정식 해수욕장) 우선. ──
+    // 전국 유명 해수욕장(인기 상위) 가점 — 이런 게 있으면 베스트 앞순위로
+    const FAMOUS = /해운대|광안리|송정|경포|낙산|정동진|속초|망상|대천|무창포|만리포|을왕리|왕산|협재|함덕|이호테우|중문|월정|김녕|구룡포|영일대|나정|상주|송정|일광|진하|다대포|변산|채석강|명사십리|천리포|꽃지|안면/;
+    const beachScore = (p) =>
+      (FAMOUS.test(p.title) ? 8 : 0) +               // 전국구 유명 해수욕장 최우선
+      (ovOf(p.id) ? 4 : 0) +                        // 소개 자료 있음 = 문서화된 명소(인기 신호)
+      (/해수욕장/.test(p.title) ? 2 : 0) +           // 정식 "해수욕장"이 "해변"보다 대체로 유명
+      (p.title.length <= 8 ? 1 : 0);                 // 짧은 대표 지명 가점
+    const beaches = areaPlaces
+      .filter(isBeach)
+      .filter((p, i, arr) => arr.findIndex((x) => x.title === p.title) === i)
+      .sort((a, b) => beachScore(b) - beachScore(a) || a.title.length - b.title.length);
+    if (beaches.length >= 5) {
+      const top = beaches.slice(0, 10);
+      const stops = top.map((p, i) => ({
+        num: i, name: p.title, overview: ovOf(p.id), image: p.image, placeId: p.id, addr: p.addr, mapx: p.mapx, mapy: p.mapy,
+      }));
+      const hero = top.find((p) => p.image)?.image || "";
+      out.push({
+        id: `auto-${AREA_SLUG[area] || area}-beach-best`,
+        title: `${area} 해수욕장 베스트 ${top.length}`,
+        area, image: hero, mapx: "", mapy: "", tel: "",
+        overview: "", stops, stopCount: stops.length,
+        duration: "베스트", format: "list", themes: ["바다피서"], source: "auto",
+      });
     }
   }
 

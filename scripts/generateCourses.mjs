@@ -11,7 +11,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  buildCoursePrompt, courseQualityCheck, courseSourceFacts, patternCheck, sanitizeUnsupported,
+  buildCoursePrompt, buildListPrompt, courseQualityCheck, courseSourceFacts, patternCheck, sanitizeUnsupported,
   callOpenAI, rampCourses, COURSE_THEME_LABEL, checkCourseComposition,
 } from "./lib/articleGen.mjs";
 
@@ -139,11 +139,11 @@ function pickQueue(courses, doneIds, n) {
     return (b.stops?.length || 0) - (a.stops?.length || 0);
   };
   // 기간별 버킷 → 라운드로빈으로 뽑아 매 배치에 당일·1박2일·2박3일이 골고루 섞이게(다양성 보장)
-  const buckets = { "당일": [], "1박2일": [], "2박3일": [] };
+  const buckets = { "당일": [], "1박2일": [], "2박3일": [], "베스트": [] };
   for (const c of cand) (buckets[c.duration] || (buckets[c.duration] = [])).push(c);
   for (const k of Object.keys(buckets)) buckets[k].sort(prio);
-  const order = ["당일", "1박2일", "2박3일"];
-  const idx = { "당일": 0, "1박2일": 0, "2박3일": 0 };
+  const order = ["당일", "1박2일", "2박3일", "베스트"];
+  const idx = { "당일": 0, "1박2일": 0, "2박3일": 0, "베스트": 0 };
   const out = [];
   let progressed = true;
   while (out.length < n && progressed) {
@@ -167,7 +167,8 @@ async function produceCourse(course, existingTexts) {
 
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
-      const prompt = buildCoursePrompt(course, { summer }) + (retryHint ? `\n\n[❗ 직전 시도 반려 — 교정]\n${retryHint}` : "");
+      const base = course.format === "list" ? buildListPrompt(course) : buildCoursePrompt(course, { summer });
+      const prompt = base + (retryHint ? `\n\n[❗ 직전 시도 반려 — 교정]\n${retryHint}` : "");
       const { text: raw } = await callOpenAI(prompt, { apiKey: OPENAI, model: MODEL });
       if (!raw) { log(`시도${attempt} 빈 응답`); await sleep(1500); continue; }
       const { title, body: text } = splitTitle(raw, `${course.area} ${course.duration} 여행코스`);
@@ -237,8 +238,8 @@ async function main() {
   const report = [];
   for (const course of items) {
     await enrichStops(course); // 자동 코스 스팟 소개 보강(캐시/한도 내 조회)
-    // 코스 "구성" Gemini 교차검증 — 중복 종류·비현실 동선이면 스킵(글 생성 안 함)
-    if (GEMINI) {
+    // 코스 "구성" Gemini 교차검증 — 중복 종류·비현실 동선이면 스킵. (베스트 리스트형은 전부 해변이라 검증 제외)
+    if (GEMINI && course.format !== "list") {
       const comp = await checkCourseComposition(course, { apiKey: GEMINI });
       if (!comp.ok) {
         skipped++;

@@ -129,7 +129,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
       {/* 코스 한눈에 보기 — 일차별로 묶어 장소명 표기 (하루 3~4곳) */}
       {mapStops.length > 0 && (
         <section className="mt-9 rounded-2xl bg-panel px-4 py-5 sm:px-5">
-          <h2 className="mb-3 text-[17px] font-extrabold tracking-tight text-ink sm:text-[18px]">🧭 코스 한눈에 보기</h2>
+          <h2 className="mb-3 text-[17px] font-extrabold tracking-tight text-ink sm:text-[18px]">{c.format === "list" ? "🏖 해수욕장 목록" : "🧭 코스 한눈에 보기"}</h2>
           <div className="space-y-3">
             {days.map((dayStops, di) => (
               <div key={di}>
