@@ -138,17 +138,24 @@ function pickQueue(courses, doneIds, n) {
     if (ra !== rb) return rb - ra;                                  // 지방 우선
     return (b.stops?.length || 0) - (a.stops?.length || 0);
   };
-  // 기간별 버킷 → 라운드로빈으로 뽑아 매 배치에 당일·1박2일·2박3일이 골고루 섞이게(다양성 보장)
+  // 기간별 비율 배분: 당일 50% · 1박2일 30% · 2박3일 20% (예: 10개 → 5·3·2).
+  //  베스트 해수욕장(finite 8개)은 데일리 비율에서 제외 — 필요시 남는 자리 채움용으로만.
   const buckets = { "당일": [], "1박2일": [], "2박3일": [], "베스트": [] };
   for (const c of cand) (buckets[c.duration] || (buckets[c.duration] = [])).push(c);
   for (const k of Object.keys(buckets)) buckets[k].sort(prio);
-  const order = ["당일", "1박2일", "2박3일", "베스트"];
+  const quota = { "당일": Math.round(n * 0.5), "1박2일": Math.round(n * 0.3), "2박3일": n - Math.round(n * 0.5) - Math.round(n * 0.3) };
   const idx = { "당일": 0, "1박2일": 0, "2박3일": 0, "베스트": 0 };
   const out = [];
+  // 1) 비율만큼 우선 채움
+  for (const k of ["당일", "1박2일", "2박3일"]) {
+    const b = buckets[k];
+    for (let i = 0; i < (quota[k] || 0) && idx[k] < b.length; i++) out.push(b[idx[k]++]);
+  }
+  // 2) 부족분은 남은 코스(당일→1박2일→2박3일→베스트)에서 채워 목표 n 맞춤
   let progressed = true;
   while (out.length < n && progressed) {
     progressed = false;
-    for (const k of order) {
+    for (const k of ["당일", "1박2일", "2박3일", "베스트"]) {
       const b = buckets[k];
       if (b && idx[k] < b.length) { out.push(b[idx[k]++]); progressed = true; if (out.length >= n) break; }
     }

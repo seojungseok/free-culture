@@ -171,7 +171,7 @@ function main() {
           const cy = cluster.reduce((s, p) => s + +p.mapy, 0) / cluster.length;
 
           out.push({
-            id: `auto-${AREA_SLUG[area] || area}-${th.slug}-${DUR_SLUG[dur.key]}-${hash(sig)}`,
+            id: `${AREA_SLUG[area] || area}-${th.slug}-${DUR_SLUG[dur.key]}-${hash(sig)}`,
             title, area, image: seed.image, mapx: String(cx), mapy: String(cy), tel: "",
             overview: "", stops, stopCount: stops.length,
             duration: dur.key, themes: [th.key], source: "auto",
@@ -200,7 +200,7 @@ function main() {
       }));
       const hero = top.find((p) => p.image)?.image || "";
       out.push({
-        id: `auto-${AREA_SLUG[area] || area}-beach-best`,
+        id: `${AREA_SLUG[area] || area}-beaches`,
         title: `${area} 해수욕장 베스트 ${top.length}`,
         area, image: hero, mapx: "", mapy: "", tel: "",
         overview: "", stops, stopCount: stops.length,
