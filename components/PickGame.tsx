@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { sfx } from "@/lib/sfx";
 
 // 제비뽑기(폭탄 카드) — 순서대로 카드를 한 장씩 뒤집고, 💣 폭탄을 뽑은 사람이 독박.
 // 카드 수 = 인원 수, 폭탄 1장 → 누군가는 반드시 걸림. 회식·술자리 벌칙용.
@@ -42,8 +43,8 @@ export default function PickGame() {
     if (!order || loser || flipped[pos] !== undefined) return;
     const player = order[turn];
     setFlipped((f) => ({ ...f, [pos]: turn }));
-    if (pos === bomb) setLoser(names[player]);
-    else setTurn((t) => t + 1);
+    if (pos === bomb) { setLoser(names[player]); sfx.boom(); }
+    else { sfx.pop(); setTurn((t) => t + 1); }
   }
 
   const curPlayer = order && !loser ? names[order[turn]] : null;

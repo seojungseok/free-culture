@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo, useRef } from "react";
+import { useState, useRef } from "react";
+import { sfx } from "@/lib/sfx";
 
 // 독박 룰렛 — 이름 입력 → 돌려서 한 명씩 "세이프"로 빠지고, 최후 1인이 독박(벌칙).
 const COLORS = ["#ff2e88", "#00e5ff", "#a6ff00", "#ffb020", "#b14bff", "#00ff9d", "#ff5252", "#40a9ff", "#ffd23f", "#ff7ac6"];
@@ -47,6 +48,7 @@ export default function RouletteGame() {
   function spin() {
     if (!alive || spinning || alive.length <= 1) return;
     setSpinning(true);
+    sfx.whoosh();
     const winPos = Math.floor(Math.random() * alive.length); // 이번에 "세이프"로 빠질 자리
     const center = winPos * seg + seg / 2;
     const target = rotRef.current + 360 * (5 + Math.floor(Math.random() * 3)) + ((360 - (center % 360)) - (rotRef.current % 360) + 720) % 360;
@@ -60,6 +62,9 @@ export default function RouletteGame() {
       if (remain.length === 1) {
         setLoser(names[remain[0]]);
         setLog((l) => [...l, `💀 ${names[remain[0]]} 독박! (벌칙 당첨)`]);
+        sfx.boom();
+      } else {
+        sfx.click();
       }
       setAlive(remain);
       setSpinning(false);

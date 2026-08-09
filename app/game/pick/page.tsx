@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PickGame from "@/components/PickGame";
 import GameShare from "@/components/GameShare";
+import SoundToggle from "@/components/SoundToggle";
 
 export const metadata: Metadata = {
   title: "제비뽑기 폭탄게임 — 카드 뒤집어 벌칙 뽑기 (무료, 최대 10명)",
@@ -27,7 +28,10 @@ export default function PickPage() {
             <Link href="/game" className="hover:text-amber-300">← 독박게임</Link>
             <span>›</span><span>제비뽑기</span>
           </nav>
-          <GameShare label="🔗 제비뽑기 공유하기" text="💣 순서대로 카드 뒤집어 폭탄 뽑는 사람이 독박! 무료 제비뽑기" />
+          <div className="flex items-center gap-2">
+            <SoundToggle />
+            <GameShare label="🔗 제비뽑기 공유하기" text="💣 순서대로 카드 뒤집어 폭탄 뽑는 사람이 독박! 무료 제비뽑기" />
+          </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🃏 제비뽑기 폭탄게임</h1>
         <p className="mt-1 text-[14px] text-white/60">순서대로 카드를 뒤집다가 <b className="text-white">💣 폭탄을 뽑은 사람이 독박!</b> 최대 10명.</p>

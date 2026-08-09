@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { sfx } from "@/lib/sfx";
 
 // 사다리타기 — 가로줄은 가려두고(안 보임), 클릭하면 공이 쭉쭉 내려가며 길을 그림 → 벌칙 도착 순간 공개.
 const COLORS = ["#ff2e88", "#00e5ff", "#a6ff00", "#ffb020", "#b14bff", "#00ff9d", "#ff5252", "#40a9ff", "#ffd23f", "#ff7ac6"];
@@ -85,7 +86,9 @@ export default function LadderGame() {
     let total = 0;
     for (let i = 1; i < pts.length; i++) { total += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); seg.push(total); }
     setAnimCol(startCol);
+    sfx.whoosh();
     const t0 = performance.now();
+    let lastTick = 0;
     const step = (now: number) => {
       const frac = Math.min(1, (now - t0) / DURATION);
       const d = frac * total;
@@ -96,12 +99,14 @@ export default function LadderGame() {
       const cur: Pt = [p0[0] + (p1[0] - p0[0]) * k, p0[1] + (p1[1] - p0[1]) * k];
       setBall(cur);
       setLive([...pts.slice(0, i), cur]);
+      if (i !== lastTick) { lastTick = i; sfx.tick(); }
       if (frac < 1) { raf.current = requestAnimationFrame(step); }
       else {
         setTrails((t) => ({ ...t, [startCol]: pts }));
         setDone((dd) => ({ ...dd, [startCol]: end }));
         setLive(null); setBall(null); setAnimCol(null);
-        if (end === penaltyCol) setLoser(names[startCol]);
+        if (end === penaltyCol) { setLoser(names[startCol]); sfx.boom(); }
+        else sfx.click();
       }
     };
     raf.current = requestAnimationFrame(step);

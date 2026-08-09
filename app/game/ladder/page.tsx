@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import LadderGame from "@/components/LadderGame";
 import GameShare from "@/components/GameShare";
+import SoundToggle from "@/components/SoundToggle";
 
 export const metadata: Metadata = {
   title: "사다리타기 — 이름 넣고 벌칙 뽑기 (무료, 최대 10명)",
@@ -30,7 +31,10 @@ export default function LadderPage() {
             <Link href="/game" className="hover:text-cyan-300">← 독박게임</Link>
             <span>›</span><span>사다리타기</span>
           </nav>
-          <GameShare label="🔗 사다리게임 공유하기" text="🪜 이름 넣고 쭉쭉 내려와 벌칙 뽑기! 무료 사다리타기" />
+          <div className="flex items-center gap-2">
+            <SoundToggle />
+            <GameShare label="🔗 사다리게임 공유하기" text="🪜 이름 넣고 쭉쭉 내려와 벌칙 뽑기! 무료 사다리타기" />
+          </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🪜 사다리타기</h1>
         <p className="mt-1 text-[14px] text-white/60">이름 적고 쭉~ 내려와 <b className="text-white">벌칙 칸에 도착한 한 명이 독박!</b> 최대 10명.</p>

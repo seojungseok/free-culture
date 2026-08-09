@@ -3,10 +3,10 @@ import Link from "next/link";
 import GameShare from "@/components/GameShare";
 
 export const metadata: Metadata = {
-  title: "독박게임 — 룰렛·사다리·제비뽑기·주사위로 벌칙 정하기 (무료, 최대 10명)",
+  title: "독박게임 — 룰렛·사다리·제비뽑기·주사위·폭탄·손가락룰렛 (무료, 최대 10명)",
   description:
-    "친구·회식·술자리에서 벌칙 정할 때! 이름만 입력하면 끝나는 무료 독박게임 4종 — 룰렛 돌리기·사다리타기·제비뽑기·주사위 대결. 설치 없이 바로, 최대 10명.",
-  keywords: ["독박게임", "벌칙게임", "룰렛 돌리기", "사다리타기", "제비뽑기", "주사위 게임", "술자리 게임", "회식 벌칙", "복불복 게임", "랜덤 뽑기"],
+    "친구·회식·술자리에서 벌칙 정할 때! 이름만 입력하면 끝나는 무료 독박게임 8종 — 룰렛·사다리·제비뽑기·주사위·폭탄 돌리기·벌칙 룰렛·손가락 룰렛·반응속도 대결. 설치 없이 바로, 최대 10명.",
+  keywords: ["독박게임", "벌칙게임", "룰렛 돌리기", "사다리타기", "제비뽑기", "주사위 게임", "폭탄 돌리기", "손가락 룰렛", "반응속도 게임", "술자리 게임", "회식 벌칙", "복불복 게임"],
   alternates: { canonical: "/game" },
   openGraph: { title: "독박게임 — 룰렛·사다리로 벌칙 정하기", description: "이름만 입력하면 끝! 무료 벌칙 뽑기 게임", type: "website" },
 };
@@ -26,6 +26,10 @@ const GAMES = [
   { href: "/game/ladder", emoji: "🪜", name: "사다리타기", desc: "이름 적고 쭉~ 내려와 벌칙 한 명 당첨", accent: "from-cyan-400 to-sky-500", ready: true },
   { href: "/game/pick", emoji: "🃏", name: "제비뽑기", desc: "카드 뒤집다 💣 폭탄 뽑으면 독박", accent: "from-amber-400 to-orange-500", ready: true },
   { href: "/game/dice", emoji: "🎲", name: "주사위 대결", desc: "다 같이 굴려 최저 눈이 독박", accent: "from-violet-500 to-purple-600", ready: true },
+  { href: "/game/bomb", emoji: "💣", name: "폭탄 돌리기", desc: "넘기다 터지는 순간 든 사람 독박", accent: "from-rose-500 to-orange-500", ready: true },
+  { href: "/game/mission", emoji: "🎡", name: "벌칙 룰렛", desc: "무슨 벌칙일지 랜덤으로 뽑기", accent: "from-amber-400 to-rose-500", ready: true },
+  { href: "/game/finger", emoji: "👆", name: "손가락 룰렛", desc: "손가락 올리면 한 명 지목", accent: "from-fuchsia-500 to-cyan-400", ready: true },
+  { href: "/game/reaction", emoji: "⚡", name: "반응속도 대결", desc: "가장 느린 사람이 독박", accent: "from-lime-400 to-emerald-500", ready: true },
 ];
 
 export default function GameHub() {
@@ -41,7 +45,7 @@ export default function GameHub() {
           친구·회식·모임에서 벌칙 정할 때. <b className="text-white">이름만 입력하면 끝.</b> 설치도 회원가입도 없이 바로, 최대 10명.
         </p>
         <div className="mt-4">
-          <GameShare label="🔗 독박게임 공유하기" text="🎯🪜🃏🎲 룰렛·사다리·제비뽑기·주사위로 벌칙 정하기! 무료 독박게임" />
+          <GameShare label="🔗 독박게임 공유하기" text="🎯🪜🃏🎲💣🎡👆⚡ 룰렛·사다리·제비뽑기·주사위·폭탄·벌칙룰렛·손가락·반응속도! 무료 독박게임 8종" />
         </div>
 
         {/* 게임 카드 */}
@@ -63,49 +67,7 @@ export default function GameHub() {
           })}
         </div>
 
-        {/* 규칙 */}
-        <section className="mt-10 rounded-3xl border border-white/10 bg-white/[0.03] p-5 sm:p-6">
-          <h2 className="text-[18px] font-black">규칙은 아주 간단해요</h2>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div>
-              <p className="text-[14px] font-black text-fuchsia-300">🎯 독박 룰렛</p>
-              <ol className="mt-2 space-y-1 text-[13.5px] text-white/70">
-                <li>1. 인원(2~10명)과 이름을 입력</li>
-                <li>2. GO를 눌러 룰렛을 돌려요</li>
-                <li>3. 걸린 사람은 <b className="text-white">세이프</b>로 빠짐</li>
-                <li>4. 끝까지 남은 <b className="text-white">최후 1인이 독박(벌칙)!</b></li>
-              </ol>
-            </div>
-            <div>
-              <p className="text-[14px] font-black text-cyan-300">🪜 사다리타기</p>
-              <ol className="mt-2 space-y-1 text-[13.5px] text-white/70">
-                <li>1. 인원과 이름을 입력</li>
-                <li>2. ‘사다리 만들기’로 랜덤 생성 (가로줄 숨김)</li>
-                <li>3. 번호·랜덤 버튼으로 <b className="text-white">쭉쭉 자동 하강</b></li>
-                <li>4. <b className="text-white">벌칙 칸</b>에 도착하면 독박 당첨!</li>
-              </ol>
-            </div>
-            <div>
-              <p className="text-[14px] font-black text-amber-300">🃏 제비뽑기</p>
-              <ol className="mt-2 space-y-1 text-[13.5px] text-white/70">
-                <li>1. 인원과 이름을 입력</li>
-                <li>2. ‘카드 섞기’로 폭탄 숨기기</li>
-                <li>3. 순서대로 카드를 한 장씩 뒤집어요</li>
-                <li>4. <b className="text-white">💣 폭탄</b>을 뽑은 사람이 독박!</li>
-              </ol>
-            </div>
-            <div>
-              <p className="text-[14px] font-black text-violet-300">🎲 주사위 대결</p>
-              <ol className="mt-2 space-y-1 text-[13.5px] text-white/70">
-                <li>1. 인원과 이름을 입력</li>
-                <li>2. ‘주사위 굴리기’로 다 함께 굴려요</li>
-                <li>3. <b className="text-white">가장 낮은 눈</b>이 독박</li>
-                <li>4. 동점이면 그들끼리 자동 재대결!</li>
-              </ol>
-            </div>
-          </div>
-          <p className="mt-4 text-[12px] text-white/40">✦ 한 번의 클릭, 피할 수 없는 운명 ✦</p>
-        </section>
+        <p className="mt-8 text-center text-[12px] text-white/40">✦ 게임을 고르면 각자 짧은 규칙이 있어요 · 한 번의 클릭, 피할 수 없는 운명 ✦</p>
       </div>
     </div>
   );

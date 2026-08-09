@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { sfx } from "@/lib/sfx";
 
 // 주사위 대결 — 다 함께 굴려 가장 낮은 눈이 독박. 동점이면 그 사람들끼리 자동 재대결.
 const COLORS = ["#ff2e88", "#00e5ff", "#a6ff00", "#ffb020", "#b14bff", "#00ff9d", "#ff5252", "#40a9ff", "#ffd23f", "#ff7ac6"];
@@ -59,6 +60,7 @@ export default function DiceGame() {
     timer.current = setInterval(() => {
       ticks++;
       setDice(names.map((_, i) => (targets.includes(i) ? 1 + Math.floor(Math.random() * 6) : final[i])));
+      if (ticks % 2 === 0) sfx.roll();
       if (ticks >= 14) {
         clearInterval(timer.current!);
         setDice(final);
@@ -71,9 +73,11 @@ export default function DiceGame() {
           setLoser(names[low[0]]);
           setMsg(`최저 ${min} — 독박 결정!`);
           setAlive([]);
+          sfx.boom();
         } else {
           setAlive(low);
           setMsg(`${min} 동점 ${low.length}명! 잠시 후 재대결`);
+          sfx.suspense();
           setTimeout(() => roll(low), 1100);
         }
       }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import RouletteGame from "@/components/RouletteGame";
 import GameShare from "@/components/GameShare";
+import SoundToggle from "@/components/SoundToggle";
 
 export const metadata: Metadata = {
   title: "독박 룰렛 돌리기 — 벌칙 정하기 (무료, 최대 10명)",
@@ -30,7 +31,10 @@ export default function RoulettePage() {
             <Link href="/game" className="hover:text-lime-300">← 독박게임</Link>
             <span>›</span><span>독박 룰렛</span>
           </nav>
-          <GameShare label="🔗 룰렛게임 공유하기" text="🎯 돌려서 최후 1인이 독박! 무료 벌칙 룰렛" />
+          <div className="flex items-center gap-2">
+            <SoundToggle />
+            <GameShare label="🔗 룰렛게임 공유하기" text="🎯 돌려서 최후 1인이 독박! 무료 벌칙 룰렛" />
+          </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🎯 독박 룰렛</h1>
         <p className="mt-1 text-[14px] text-white/60">돌려서 한 명씩 세이프로 빠지고, <b className="text-white">마지막 1인이 독박(벌칙)!</b> 최대 10명.</p>

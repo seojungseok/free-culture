@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import DiceGame from "@/components/DiceGame";
 import GameShare from "@/components/GameShare";
+import SoundToggle from "@/components/SoundToggle";
 
 export const metadata: Metadata = {
   title: "주사위 대결 — 최저 눈이 벌칙 (무료, 최대 10명)",
@@ -27,7 +28,10 @@ export default function DicePage() {
             <Link href="/game" className="hover:text-violet-300">← 독박게임</Link>
             <span>›</span><span>주사위 대결</span>
           </nav>
-          <GameShare label="🔗 주사위게임 공유하기" text="🎲 다 같이 굴려서 최저 눈이 독박! 동점은 자동 재대결. 무료 주사위 대결" />
+          <div className="flex items-center gap-2">
+            <SoundToggle />
+            <GameShare label="🔗 주사위게임 공유하기" text="🎲 다 같이 굴려서 최저 눈이 독박! 동점은 자동 재대결. 무료 주사위 대결" />
+          </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🎲 주사위 대결</h1>
         <p className="mt-1 text-[14px] text-white/60">다 함께 굴려서 <b className="text-white">가장 낮은 눈이 나온 사람이 독박!</b> 동점은 자동 재대결. 최대 10명.</p>
