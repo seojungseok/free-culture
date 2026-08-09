@@ -5,7 +5,7 @@ import GameShare from "@/components/GameShare";
 export const metadata: Metadata = {
   title: "독박게임 — 룰렛·사다리·러시안룰렛·데시벨·기억력 등 18종 (무료, 최대 10명)",
   description:
-    "친구·회식·술자리에서 벌칙 정할 때! 이름만 입력하면 끝나는 무료 독박게임 18종 — 룰렛·사다리·주사위·폭탄·벌칙룰렛·손가락·반응속도·슬롯·풍선·타이머·바스톱·러시안룰렛·연타·데시벨2종·숫자폭탄·기억력순서. 설치 없이 바로.",
+    "친구·회식·술자리에서 벌칙 정할 때! 이름만 입력하면 끝나는 무료 독박게임 18종 — 룰렛·사다리·주사위·폭탄·벌칙룰렛·손가락·반응속도·슬롯·풍선·타이머·바스톱·러시안룰렛·연타·데시벨·숫자폭탄·기억력순서·뱀잡기. 설치 없이 바로.",
   keywords: ["독박게임", "벌칙게임", "룰렛 돌리기", "사다리타기", "러시안룰렛", "연타 게임", "데시벨 게임", "목소리 크기 게임", "주사위 게임", "폭탄 돌리기", "슬롯머신 게임", "타이밍 게임", "타이머 게임", "멈추기 게임", "술자리 게임", "회식 벌칙"],
   alternates: { canonical: "/game" },
   openGraph: { title: "독박게임 — 룰렛·사다리로 벌칙 정하기", description: "이름만 입력하면 끝! 무료 벌칙 뽑기 게임", type: "website" },
@@ -37,7 +37,7 @@ const GAMES = [
   { href: "/game/russian", emoji: "🔫", name: "러시안룰렛", desc: "불발되는 사람이 독박 (스릴)", accent: "from-rose-500 to-red-700", ready: true },
   { href: "/game/tap", emoji: "🔥", name: "연타 대결", desc: "5초 광클, 제일 적으면 독박", accent: "from-orange-400 to-red-500", ready: true },
   { href: "/game/voice", emoji: "🎤", name: "데시벨 배틀", desc: "제일 작게 지르면 독박 (마이크)", accent: "from-rose-400 to-orange-500", ready: true },
-  { href: "/game/voice-target", emoji: "🎯", name: "목표 데시벨 맞히기", desc: "목표에 제일 먼 사람 독박 (마이크)", accent: "from-amber-400 to-red-500", ready: true },
+  { href: "/game/catch", emoji: "🐍", name: "뱀 잡기", desc: "도망치는 뱀 잡기, 제일 적으면 독박", accent: "from-emerald-500 to-green-600", ready: true },
   { href: "/game/number", emoji: "🔢", name: "숫자 폭탄", desc: "목표에 가장 근접하면 독박", accent: "from-amber-400 to-orange-600", ready: true },
   { href: "/game/memory", emoji: "🧠", name: "기억력 순서", desc: "제일 짧게 기억하면 독박", accent: "from-violet-500 to-indigo-600", ready: true },
 ];

@@ -13,6 +13,21 @@ type Pt = [number, number];
 function shuffle<T>(a: T[]): T[] { const r = [...a]; for (let i = r.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [r[i], r[j]] = [r[j], r[i]]; } return r; }
 const jit = (v: number, d = 26) => v + (Math.random() - 0.5) * d;
 
+// 뱀 머리가 손가락에 가까울수록 진동을 더 자주·길게(안드로이드 등). iOS Safari는 vibrate 미지원이라 무시됨.
+let lastVibeTs = 0;
+function vibeNear(h: Pt, fingers: { x: number; y: number }[]) {
+  if (typeof navigator === "undefined" || typeof navigator.vibrate !== "function") return;
+  let nd = Infinity;
+  for (const f of fingers) { const d = Math.hypot(h[0] - f.x, h[1] - f.y); if (d < nd) nd = d; }
+  const NEAR = 95;
+  if (nd > NEAR) return;
+  const now = performance.now();
+  const closeness = 1 - nd / NEAR; // 0(경계)~1(딱 붙음)
+  if (now - lastVibeTs < 150 - closeness * 100) return; // 가까울수록 자주(50~150ms)
+  lastVibeTs = now;
+  navigator.vibrate(Math.round(12 + closeness * 55)); // 가까울수록 길게(12~67ms)
+}
+
 export default function FingerRoulette() {
   const [fingers, setFingers] = useState<Record<number, Finger>>({});
   const [phase, setPhase] = useState<"idle" | "counting" | "hunting" | "bitten">("idle");
@@ -129,6 +144,8 @@ export default function FingerRoulette() {
       setHead([snap[target].x, snap[target].y]);
       setChosen(target); setPh("bitten");
       sfx.bite(); setTimeout(() => sfx.boom(), 90);
+      // 물리는 순간 강한 진동(안드로이드 등; iOS Safari는 미지원)
+      if (typeof navigator !== "undefined" && typeof navigator.vibrate === "function") navigator.vibrate([120, 60, 200]);
     };
     biteT.current = setTimeout(finalize, DUR + 300); // 절전·백그라운드에서도 확실히 종료
 
@@ -153,6 +170,8 @@ export default function FingerRoulette() {
       const h: Pt = [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k];
       trailArr.push(h); if (trailArr.length > 24) trailArr.shift();
       setHead(h); setTrail([...trailArr]);
+      // 손가락에 가까워질수록 진동을 더 자주·강하게 → 긴장감 UP
+      vibeNear(h, ids.map((id) => snap[id]));
       if (prog < 1) { raf.current = requestAnimationFrame(step); }
       else { finalize(); }
     };

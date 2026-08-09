@@ -31,6 +31,9 @@ body {
   color: theme("colors.ink.DEFAULT");
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* 게임 흔들림(shake) 등 가로 이동이 모바일에서 가로 스크롤을 만들어 화면이 튀는 것 방지.
+     clip은 스크롤 컨테이너를 만들지 않아 sticky 헤더에 영향 없음. */
+  overflow-x: clip;
 }
 
 /* 포스터 로딩 스켈레톤 shimmer */
@@ -61,12 +64,13 @@ body {
 /* 게임 긴장 연출: 화면 흔들림 */
 .game-shake {
   animation: gameShake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  will-change: transform;
 }
 @keyframes gameShake {
-  10%, 90% { transform: translateX(-2px); }
-  20%, 80% { transform: translateX(4px); }
-  30%, 50%, 70% { transform: translateX(-8px); }
-  40%, 60% { transform: translateX(8px); }
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-5px, 0, 0); }
+  40%, 60% { transform: translate3d(5px, 0, 0); }
 }
 
 /* 독박게임 CTA: 흐르는 그라데이션 + 클릭 유도(은은한 펄스/광택) */

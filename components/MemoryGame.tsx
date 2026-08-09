@@ -46,11 +46,14 @@ export default function MemoryGame() {
   function showSeq() {
     setPhase("watch"); setInputIdx(0); setActive(-1);
     const seq = seqRef.current;
+    // 단계가 올라갈수록 점점 빨라져요(640ms → 최소 230ms) — 금방 떨어뜨려야 함
+    const stepMs = Math.max(230, 640 - (seq.length - 1) * 58);
+    const litMs = Math.max(130, stepMs - 150);
     seq.forEach((pad, idx) => {
-      after(idx * 620 + 100, () => { setActive(pad); sfx.pad(pad); });
-      after(idx * 620 + 480, () => setActive(-1));
+      after(idx * stepMs + 100, () => { setActive(pad); sfx.pad(pad); });
+      after(idx * stepMs + 100 + litMs, () => setActive(-1));
     });
-    after(seq.length * 620 + 250, () => setPhase("input"));
+    after(seq.length * stepMs + 250, () => setPhase("input"));
   }
   function tapPad(p: number) {
     if (phase !== "input") return;

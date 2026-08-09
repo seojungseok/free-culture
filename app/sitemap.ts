@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/game/russian",
     "/game/tap",
     "/game/voice",
-    "/game/voice-target",
+    "/game/catch",
     "/game/number",
     "/game/memory",
     "/about",
