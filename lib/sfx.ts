@@ -60,4 +60,6 @@ export const sfx = {
   hiss: () => tone(2400 + Math.random() * 400, 0.16, "sawtooth", 0.025),
   // 콰악 — 무는 소리
   bite: () => { tone(200, 0.05, "square", 0.22); tone(85, 0.28, "sawtooth", 0.24, 0.02); },
+  // 기억력 게임 패드 음(4색)
+  pad: (i: number) => tone([330, 415, 494, 622][i % 4], 0.24, "sine", 0.16),
 };

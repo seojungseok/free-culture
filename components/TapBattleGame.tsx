@@ -6,7 +6,7 @@ import { sfx } from "@/lib/sfx";
 // 연타 대결 — 한 명씩 5초 안에 버튼을 최대한 많이 눌러요. 모두 같은 조건, 순수 실력·노력으로 순위 결정.
 // 가장 적게 누른 사람이 독박(제일 많이 누른 사람 🏆). 턴 순서 운이 없는 '정직한' 게임.
 const COLORS = ["#ff2e88", "#00e5ff", "#a6ff00", "#ffb020", "#b14bff", "#00ff9d", "#ff5252", "#40a9ff", "#ffd23f", "#ff7ac6"];
-const DUR = 5000;
+const DURATIONS = [5, 10, 20, 30];
 
 export default function TapBattleGame() {
   const [count, setCount] = useState(4);
@@ -15,31 +15,34 @@ export default function TapBattleGame() {
   const [cur, setCur] = useState(0);
   const [counts, setCounts] = useState<number[]>([]);
   const [live, setLive] = useState(0);
-  const [remain, setRemain] = useState(5);
+  const [remain, setRemain] = useState(10);
+  const [durSec, setDurSec] = useState(10);
+  const [cool, setCool] = useState(false); // 종료 직후 잠금(다음버튼 오터치 방지)
   const tapRef = useRef(0);
   const raf = useRef<number | null>(null);
   const endT = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const coolT = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const n = names.length;
-  useEffect(() => () => { if (raf.current) cancelAnimationFrame(raf.current); if (endT.current) clearTimeout(endT.current); }, []);
+  useEffect(() => () => { if (raf.current) cancelAnimationFrame(raf.current); if (endT.current) clearTimeout(endT.current); if (coolT.current) clearTimeout(coolT.current); }, []);
 
   function setN(k: number) {
     setCount(k);
     setNames((p) => Array.from({ length: k }, (_, i) => p[i] || `참가자${i + 1}`));
     reset();
   }
-  function reset() { if (raf.current) cancelAnimationFrame(raf.current); if (endT.current) clearTimeout(endT.current); setPhase("setup"); setCur(0); setCounts([]); setLive(0); }
+  function reset() { if (raf.current) cancelAnimationFrame(raf.current); if (endT.current) clearTimeout(endT.current); if (coolT.current) clearTimeout(coolT.current); setPhase("setup"); setCur(0); setCounts([]); setLive(0); setCool(false); }
   function start() {
     const clean = names.map((s, i) => s.trim() || `참가자${i + 1}`);
     setNames(clean); setCounts([]); setCur(0); setPhase("ready");
   }
   function begin() {
     if (phase !== "ready") return;
-    setPhase("tapping"); tapRef.current = 0; setLive(0); setRemain(5);
+    setPhase("tapping"); tapRef.current = 0; setLive(0); setRemain(durSec); setCool(false);
     sfx.go();
     const t0 = performance.now();
     const loop = () => {
-      const left = Math.max(0, DUR - (performance.now() - t0));
+      const left = Math.max(0, durSec * 1000 - (performance.now() - t0));
       setRemain(Math.ceil(left / 1000));
       if (left > 0) raf.current = requestAnimationFrame(loop);
     };
@@ -48,8 +51,10 @@ export default function TapBattleGame() {
       if (raf.current) cancelAnimationFrame(raf.current);
       const c = tapRef.current;
       setCounts((s) => { const a = [...s]; a[cur] = c; return a; });
-      setPhase("between");
-    }, DUR);
+      setPhase("between"); setCool(true);
+      if (coolT.current) clearTimeout(coolT.current);
+      coolT.current = setTimeout(() => setCool(false), 1000); // 1초 잠금 후 다음버튼 노출
+    }, durSec * 1000);
   }
   function tap() {
     if (phase !== "tapping") return;
@@ -57,6 +62,7 @@ export default function TapBattleGame() {
     setLive(tapRef.current);
   }
   function next() {
+    if (coolT.current) clearTimeout(coolT.current); setCool(false);
     if (cur + 1 < n) { setCur(cur + 1); setPhase("ready"); setLive(0); return; }
     setPhase("done"); sfx.boom();
   }
@@ -73,7 +79,15 @@ export default function TapBattleGame() {
         <p className="mt-4 rounded-xl bg-black/30 px-3 py-2 text-[12.5px] font-bold text-white/70 ring-1 ring-white/10">
           모두 <b className="text-white">같은 5초</b> 동안 버튼 연타 · <b className="text-white">가장 적게 누른 사람이 독박!</b> (순서 운 없음)
         </p>
-        <p className="mt-4 text-[13px] font-bold text-white/60">인원 (최대 10명)</p>
+        <p className="mt-4 text-[13px] font-bold text-white/60">시간 (길수록 힘 빠져서 더 재밌어요)</p>
+        <div className="mt-2 grid grid-cols-4 gap-2">
+          {DURATIONS.map((d) => (
+            <button key={d} onClick={() => phase === "setup" && setDurSec(d)} disabled={phase !== "setup"}
+              className={`rounded-xl py-2.5 text-[14px] font-black transition disabled:opacity-40 ${durSec === d ? "bg-orange-400 text-black shadow-[0_0_20px_rgba(255,140,32,0.5)]" : "bg-white/5 text-white/70 hover:bg-white/10"}`}>{d}초</button>
+          ))}
+        </div>
+
+        <p className="mt-5 text-[13px] font-bold text-white/60">인원 (최대 10명)</p>
         <div className="mt-2 grid grid-cols-5 gap-2">
           {Array.from({ length: 9 }, (_, i) => i + 2).map((k) => (
             <button key={k} onClick={() => setN(k)} className={`rounded-xl py-2.5 text-[14px] font-black transition ${count === k ? "bg-orange-400 text-black shadow-[0_0_20px_rgba(255,140,32,0.5)]" : "bg-white/5 text-white/70 hover:bg-white/10"}`}>{k}</button>
@@ -152,11 +166,13 @@ export default function TapBattleGame() {
                 <p className="mt-3 text-[18px] font-black text-orange-300">{remain}초 남음 — 계속 눌러!</p>
               </>
             )}
-            {phase === "between" && (
-              <button onClick={next} className="mt-2 rounded-2xl bg-orange-400 px-6 py-3 text-[15px] font-black text-black transition hover:brightness-110">
+            {phase === "between" && (cool ? (
+              <p className="mt-4 text-[17px] font-black text-orange-300">끝! {live}회 — 손 떼세요 ✋</p>
+            ) : (
+              <button onClick={next} className="mt-6 rounded-2xl bg-orange-400 px-10 py-4 text-[15px] font-black text-black shadow-[0_0_18px_rgba(255,140,32,0.4)] transition hover:brightness-110">
                 {cur + 1 < n ? "다음 사람 →" : "결과 보기 🏁"}
               </button>
-            )}
+            ))}
           </div>
         )}
       </div>

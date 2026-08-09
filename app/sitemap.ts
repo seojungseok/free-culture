@@ -51,6 +51,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/game/tap",
     "/game/voice",
     "/game/voice-target",
+    "/game/number",
+    "/game/memory",
     "/about",
     "/privacy",
     "/terms",
