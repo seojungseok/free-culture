@@ -245,12 +245,7 @@ async function main() {
   const report = [];
   for (const course of items) {
    try { // 코스 하나가 에러나도 전체 중단 없이 다음으로 (부분 발행 + 커밋 보장)
-    // 기간 대비 스팟이 많으면 앞쪽(대표) 위주로 잘라 최적화 — 반려 대신. (베스트 리스트는 유지)
-    const CAP = { "당일": 4, "1박2일": 6, "2박3일": 9 }[course.duration];
-    if (course.format !== "list" && CAP && (course.stops?.length || 0) > CAP) {
-      course.stops = course.stops.slice(0, CAP);
-      course.stopCount = course.stops.length;
-    }
+    // 스팟 상한은 buildCoursePrompt·lib(courseAttractions)가 "식당 제외 관광지 기준"으로 동일 적용 → 여기선 자르지 않음(요약↔글 일치).
     await enrichStops(course); // 자동 코스 스팟 소개 보강(캐시/한도 내 조회)
     // 코스 "구성" Gemini 교차검증 — 자동 코스만(공식은 정부 큐레이션이라 신뢰). 리스트형·공식 제외.
     if (GEMINI && course.format !== "list" && course.source !== "official") {

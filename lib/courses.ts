@@ -194,7 +194,13 @@ export function courseCity(c: Course): string {
 // 식당/카페 스팟 판별 — 코스(관광 동선)에선 빼고 '근처 맛집'으로 보냄. 이름·소개 앞부분 키워드.
 const FOOD_RE = /횟집|식당|맛집|푸줏간|고기집|한정식|정식|국밥|국수|갈비|막국수|분식|카페|찻집|베이커리|빵집|커피|치킨|피자|해장|먹거리/;
 export const isFoodStop = (s: CourseStop) => FOOD_RE.test(`${s.name} ${String(s.overview || "").slice(0, 80)}`);
-export const courseAttractions = (c: Course): CourseStop[] => (c.stops || []).filter((s) => !isFoodStop(s));
+// 관광지 상한(식당 제외 기준) — 페이지 요약과 블로그가 "똑같은 규칙"으로 잘라 항상 일치.
+const ATT_CAP: Record<string, number> = { "당일": 4, "1박2일": 6, "2박3일": 9 };
+export const courseAttractions = (c: Course): CourseStop[] => {
+  const atts = (c.stops || []).filter((s) => !isFoodStop(s));
+  const cap = ATT_CAP[c.duration];
+  return cap ? atts.slice(0, cap) : atts;
+};
 export const courseFoodStops = (c: Course): CourseStop[] => (c.stops || []).filter((s) => isFoodStop(s));
 
 /** 코스 스팟(관광지만)을 일차별로 분할 — 하루 3~4곳. 1박2일=2일, 2박3일=3일. */

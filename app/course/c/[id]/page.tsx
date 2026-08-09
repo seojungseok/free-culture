@@ -199,9 +199,12 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
                 </div>
                 <div className="px-2.5 pb-2.5 pt-2">
                   <h3 className="line-clamp-1 text-[14px] font-bold text-ink group-hover:text-free">{r.title}</h3>
-                  <p className="mt-0.5 line-clamp-1 text-[12px] text-ink-faint">
-                    {r.onCourse ? "코스에서 안내하는 맛집" : nearStopName(r) ? `${nearStopName(r)} 근처` : typeof r.dist === "number" ? `코스에서 ${distanceLabel(r.dist)}` : r.addr}
-                  </p>
+                  {(() => {
+                    const cap = r.onCourse
+                      ? (r.addr || "")
+                      : nearStopName(r) ? `${nearStopName(r)} 근처` : typeof r.dist === "number" ? `코스에서 ${distanceLabel(r.dist)}` : r.addr;
+                    return cap ? <p className="mt-0.5 line-clamp-1 text-[12px] text-ink-faint">{cap}</p> : null;
+                  })()}
                 </div>
               </Link>
               );

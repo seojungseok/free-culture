@@ -648,7 +648,9 @@ export function buildCoursePrompt(course, { summer = false } = {}) {
   const mainTheme = COURSE_THEME_LABEL[(course.themes || [])[0]] || "여행"; // 제목에 넣을 대표 테마
   // 식당 스팟은 동선(관광 소제목)에서 빼고 "식사 장소"로만 안내 — 상세는 페이지 '근처 맛집'에서.
   const isFood = (s) => COURSE_FOOD_RE.test(`${s.name} ${String(s.overview || "").slice(0, 80)}`);
-  const attractions = (course.stops || []).filter((s) => !isFood(s));
+  const ATT_CAP = { "당일": 4, "1박2일": 6, "2박3일": 9 }[course.duration];
+  let attractions = (course.stops || []).filter((s) => !isFood(s));
+  if (ATT_CAP && attractions.length > ATT_CAP) attractions = attractions.slice(0, ATT_CAP); // 페이지 요약과 동일 규칙
   const foods = (course.stops || []).filter(isFood);
   const nStops = attractions.length;
   const days = course.duration === "2박3일" ? 3 : course.duration === "1박2일" ? 2 : 1;
