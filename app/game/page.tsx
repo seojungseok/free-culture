@@ -3,10 +3,10 @@ import Link from "next/link";
 import GameShare from "@/components/GameShare";
 
 export const metadata: Metadata = {
-  title: "독박게임 — 룰렛·사다리·제비뽑기·주사위·폭탄·손가락룰렛 (무료, 최대 10명)",
+  title: "독박게임 — 룰렛·사다리·제비뽑기·주사위·폭탄·슬롯·풍선 (무료, 최대 10명)",
   description:
-    "친구·회식·술자리에서 벌칙 정할 때! 이름만 입력하면 끝나는 무료 독박게임 8종 — 룰렛·사다리·제비뽑기·주사위·폭탄 돌리기·벌칙 룰렛·손가락 룰렛·반응속도 대결. 설치 없이 바로, 최대 10명.",
-  keywords: ["독박게임", "벌칙게임", "룰렛 돌리기", "사다리타기", "제비뽑기", "주사위 게임", "폭탄 돌리기", "손가락 룰렛", "반응속도 게임", "술자리 게임", "회식 벌칙", "복불복 게임"],
+    "친구·회식·술자리에서 벌칙 정할 때! 이름만 입력하면 끝나는 무료 독박게임 10종 — 룰렛·사다리·제비뽑기·주사위·폭탄·벌칙룰렛·손가락룰렛·반응속도·슬롯머신·풍선 터뜨리기. 설치 없이 바로.",
+  keywords: ["독박게임", "벌칙게임", "룰렛 돌리기", "사다리타기", "제비뽑기", "주사위 게임", "폭탄 돌리기", "슬롯머신 게임", "풍선 터뜨리기", "손가락 룰렛", "반응속도 게임", "술자리 게임", "회식 벌칙", "복불복 게임"],
   alternates: { canonical: "/game" },
   openGraph: { title: "독박게임 — 룰렛·사다리로 벌칙 정하기", description: "이름만 입력하면 끝! 무료 벌칙 뽑기 게임", type: "website" },
 };
@@ -30,6 +30,8 @@ const GAMES = [
   { href: "/game/mission", emoji: "🎡", name: "벌칙 룰렛", desc: "무슨 벌칙일지 랜덤으로 뽑기", accent: "from-amber-400 to-rose-500", ready: true },
   { href: "/game/finger", emoji: "👆", name: "손가락 룰렛", desc: "손가락 올리면 한 명 지목", accent: "from-fuchsia-500 to-cyan-400", ready: true },
   { href: "/game/reaction", emoji: "⚡", name: "반응속도 대결", desc: "가장 느린 사람이 독박", accent: "from-lime-400 to-emerald-500", ready: true },
+  { href: "/game/slot", emoji: "🎰", name: "독박 슬롯머신", desc: "💀 해골 잭팟 뜨면 독박", accent: "from-yellow-400 to-amber-500", ready: true },
+  { href: "/game/balloon", emoji: "🎈", name: "풍선 터뜨리기", desc: "펌프하다 터뜨리면 독박", accent: "from-pink-400 to-rose-500", ready: true },
 ];
 
 export default function GameHub() {
@@ -45,7 +47,7 @@ export default function GameHub() {
           친구·회식·모임에서 벌칙 정할 때. <b className="text-white">이름만 입력하면 끝.</b> 설치도 회원가입도 없이 바로, 최대 10명.
         </p>
         <div className="mt-4">
-          <GameShare label="🔗 독박게임 공유하기" text="🎯🪜🃏🎲💣🎡👆⚡ 룰렛·사다리·제비뽑기·주사위·폭탄·벌칙룰렛·손가락·반응속도! 무료 독박게임 8종" />
+          <GameShare label="🔗 독박게임 공유하기" text="🎯🪜🃏🎲💣🎡👆⚡🎰🎈 룰렛·사다리·제비뽑기·주사위·폭탄·벌칙룰렛·손가락·반응속도·슬롯·풍선! 무료 독박게임 10종" />
         </div>
 
         {/* 게임 카드 */}
