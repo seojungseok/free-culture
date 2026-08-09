@@ -47,6 +47,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/game/balloon",
     "/game/timer",
     "/game/bottle",
+    "/game/russian",
+    "/game/bust",
     "/about",
     "/privacy",
     "/terms",
