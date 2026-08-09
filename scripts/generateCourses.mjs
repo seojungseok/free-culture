@@ -246,8 +246,8 @@ async function main() {
   for (const course of items) {
    try { // 코스 하나가 에러나도 전체 중단 없이 다음으로 (부분 발행 + 커밋 보장)
     await enrichStops(course); // 자동 코스 스팟 소개 보강(캐시/한도 내 조회)
-    // 코스 "구성" Gemini 교차검증 — 중복 종류·비현실 동선이면 스킵. (베스트 리스트형은 전부 해변이라 검증 제외)
-    if (GEMINI && course.format !== "list") {
+    // 코스 "구성" Gemini 교차검증 — 자동 코스만(공식은 정부 큐레이션이라 신뢰). 리스트형·공식 제외.
+    if (GEMINI && course.format !== "list" && course.source !== "official") {
       const comp = await checkCourseComposition(course, { apiKey: GEMINI });
       if (!comp.ok) {
         skipped++;
