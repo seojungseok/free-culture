@@ -5,7 +5,8 @@ import { sfx } from "@/lib/sfx";
 
 // 손가락 뱀 룰렛 — 다 같이 손가락을 올리면 가운데서 뱀이 나와 손가락 사이를 돌아다니다가 한 명을 콱! 물어요.
 // 물린 사람이 독박. 참가 인원이 많을수록 뱀이 더 오래(10초+) 돌아다녀 긴장감 UP.
-const COLORS = ["#ff2e88", "#00e5ff", "#a6ff00", "#ffb020", "#b14bff", "#00ff9d", "#ff5252", "#40a9ff", "#ffd23f", "#ff7ac6"];
+// 기기 최대치(아이패드 11개 등)까지 각자 다른 색이 나오도록 넉넉히. 인위적 인원 제한 없음.
+const COLORS = ["#ff2e88", "#00e5ff", "#a6ff00", "#ffb020", "#b14bff", "#00ff9d", "#ff5252", "#40a9ff", "#ffd23f", "#ff7ac6", "#ff6b35", "#18e0d8"];
 type Finger = { x: number; y: number; color: string };
 type Pt = [number, number];
 
@@ -176,7 +177,7 @@ export default function FingerRoulette() {
           <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
             <div className="text-[46px]">🐍</div>
             <p className="mt-2 text-[16px] font-black text-white">여기에 다 같이 손가락을 올려요</p>
-            <p className="mt-1 text-[13px] text-white/55">2~8명이 올리면 뱀이 나와<br /><b className="text-white">돌아다니다 한 명을 콱! 물어요</b></p>
+            <p className="mt-1 text-[13px] text-white/55">2명 이상 올리면 뱀이 나와<br /><b className="text-white">돌아다니다 한 명을 콱! 물어요</b> (기기가 되는 만큼)</p>
           </div>
         )}
         {phase === "counting" && (
@@ -237,8 +238,12 @@ export default function FingerRoulette() {
           {phase === "bitten" ? "다시 하기" : "초기화"}
         </button>
       </div>
-      <p className="mt-3 text-center text-[12px] text-white/40">현재 {n}명 올림 · <b className="text-white/70">최대 8명</b> (2명부터 시작) · 인원 많을수록 뱀이 더 오래 돌아다녀요</p>
-      <p className="mt-1 text-center text-[11px] text-white/30">※ 동시에 인식되는 손가락 수는 기기·화면에 따라 달라요(5~10개)</p>
+      <p className="mt-3 text-center text-[12px] text-white/40">현재 {n}명 올림 · 2명부터 시작 · 인원 많을수록 뱀이 더 오래 돌아다녀요</p>
+      <div className="mx-auto mt-2 max-w-[440px] rounded-xl bg-white/[0.03] px-3 py-2 text-center ring-1 ring-white/10">
+        <p className="text-[11px] font-bold text-white/50">📱 기기별 동시에 올릴 수 있는 손가락 수</p>
+        <p className="mt-0.5 text-[11px] text-white/40">아이폰 <b className="text-white/70">5개</b> · 아이패드 <b className="text-white/70">최대 11개</b> · 안드로이드 대부분 <b className="text-white/70">10개</b> · PC 터치스크린은 기기마다 달라요</p>
+        <p className="mt-0.5 text-[10.5px] text-white/30">※ 하드웨어 제한이라 그 수만큼만 동시에 인식돼요(사이트로는 못 늘려요)</p>
+      </div>
     </div>
   );
 }
