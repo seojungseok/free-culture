@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RouletteGame from "@/components/RouletteGame";
+import GameShare from "@/components/GameShare";
 
 export const metadata: Metadata = {
   title: "독박 룰렛 돌리기 — 벌칙 정하기 (무료, 최대 10명)",
@@ -24,10 +25,13 @@ export default function RoulettePage() {
     <div className="min-h-[85vh] bg-[#0b0b18] bg-[radial-gradient(circle_at_15%_0%,rgba(255,46,136,0.2),transparent_45%),radial-gradient(circle_at_90%_10%,rgba(0,229,255,0.15),transparent_40%)] text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="mx-auto w-full max-w-[1000px] px-5 py-8 sm:px-6">
-        <nav className="mb-4 flex items-center gap-1 text-[12.5px] text-white/40">
-          <Link href="/game" className="hover:text-lime-300">독박게임</Link>
-          <span>›</span><span>독박 룰렛</span>
-        </nav>
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <nav className="flex items-center gap-1 text-[12.5px] text-white/40">
+            <Link href="/game" className="hover:text-lime-300">← 독박게임</Link>
+            <span>›</span><span>독박 룰렛</span>
+          </nav>
+          <GameShare label="🔗 룰렛게임 공유하기" text="🎯 돌려서 최후 1인이 독박! 무료 벌칙 룰렛" />
+        </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🎯 독박 룰렛</h1>
         <p className="mt-1 text-[14px] text-white/60">돌려서 한 명씩 세이프로 빠지고, <b className="text-white">마지막 1인이 독박(벌칙)!</b> 최대 10명.</p>
 

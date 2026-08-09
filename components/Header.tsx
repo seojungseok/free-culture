@@ -57,6 +57,20 @@ export default function Header() {
       <div className="border-t border-line/70">
         <HeaderNav seasonLabel={s.label} />
       </div>
+
+      {/* 3줄: 독박게임 CTA — 한 줄 전체, 흐르는 그라데이션 + 광택으로 클릭 유도 */}
+      <Link
+        href="/game"
+        aria-label="나만 아니면 돼 · 독박게임 하러 가기"
+        className="game-cta relative flex items-center justify-center gap-2 overflow-hidden px-4 py-2.5 text-center text-white"
+      >
+        <span className="relative z-10 flex items-center gap-2 text-[14px] font-black tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)] sm:text-[15px]">
+          <span className="text-[17px]">🎮</span>
+          나만 아니면 돼
+          <span className="rounded-full bg-black/25 px-2 py-0.5 text-[11px] font-bold ring-1 ring-white/20">독박게임</span>
+          <span className="animate-pulse text-[16px]">›</span>
+        </span>
+      </Link>
     </header>
   );
 }

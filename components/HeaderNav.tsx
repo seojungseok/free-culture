@@ -18,7 +18,6 @@ export default function HeaderNav({ seasonLabel }: { seasonLabel: string }) {
     { href: "/date", label: "데이트 코스", path: "/date" },
     { href: "/season", label: `${seasonLabel} 나들이`, path: "/season" },
     { href: "/near", label: "내 주변", path: "/near" },
-    { href: "/game", label: "🎮 독박게임", path: "/game" },
   ];
 
   const isActive = (path: string) =>

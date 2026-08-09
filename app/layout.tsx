@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import FloatingShare from "@/components/FloatingShare";
+import ChromeGate from "@/components/ChromeGate";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -66,11 +67,10 @@ export default function RootLayout({
       <body className="bg-white font-sans antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
-        <Header />
-        {/* 콘텐츠 자연 흐름 — 푸터가 내용 바로 뒤에 옴. 짧은 페이지에선 흰 배경이 푸터와 이어져 빈 띠가 안 생김 */}
-        <main className="w-full">{children}</main>
-        <Footer />
-        <FloatingShare />
+        {/* 게임 상세는 집중 화면(헤더·푸터 숨김), 그 외는 사이트 크롬 유지 */}
+        <ChromeGate header={<Header />} footer={<Footer />} floating={<FloatingShare />}>
+          {children}
+        </ChromeGate>
         <Analytics />
       </body>
     </html>

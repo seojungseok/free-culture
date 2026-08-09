@@ -58,6 +58,64 @@ body {
   }
 }
 
+/* 독박게임 CTA: 흐르는 그라데이션 + 클릭 유도(은은한 펄스/광택) */
+.game-cta {
+  background-image: linear-gradient(
+    100deg,
+    #ff2e88 0%,
+    #b14bff 22%,
+    #4361ff 44%,
+    #00e5ff 64%,
+    #a6ff00 82%,
+    #ff2e88 100%
+  );
+  background-size: 220% 100%;
+  animation: gameGradient 5s linear infinite;
+}
+@keyframes gameGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 220% 50%;
+  }
+}
+/* 위로 지나가는 광택 — '눌러보고 싶은' 반짝임 */
+.game-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 45%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transform: skewX(-18deg);
+  animation: gameShine 3.2s ease-in-out infinite;
+}
+@keyframes gameShine {
+  0%,
+  60% {
+    left: -60%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+.game-cta:hover {
+  filter: brightness(1.08) saturate(1.1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-cta,
+  .game-cta::before {
+    animation: none;
+  }
+}
+
 /* 홈 미리보기: 열 수에 맞춰 딱 2줄만 노출 (그리드 열: 2/3/4/6/7) */
 .preview-2rows > * {
   display: none !important;
