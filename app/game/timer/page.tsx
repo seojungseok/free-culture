@@ -40,7 +40,7 @@ export default function TimerPage() {
 
         <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-[13px] text-white/60">
           <b className="text-white">규칙</b> · 목표 시간(3·5·7·10초)과 이름을 정하고 시작 → 한 명씩 ‘시작’ 후 타이머(숫자 숨김)를 목표에 맞춰 ‘멈춰!’. 목표에서 가장 많이 벗어난 사람이 벌칙 독박!
-          <Link href="/game/bottle" className="ml-2 font-bold text-emerald-300 hover:underline">병 돌리기도 →</Link>
+          <Link href="/game/stop" className="ml-2 font-bold text-emerald-300 hover:underline">멈춰! 바 스톱도 →</Link>
         </div>
       </div>
     </div>

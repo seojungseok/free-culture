@@ -3,10 +3,10 @@ import Link from "next/link";
 import GameShare from "@/components/GameShare";
 
 export const metadata: Metadata = {
-  title: "독박게임 — 룰렛·사다리·러시안룰렛·슬롯·타이머 등 14종 (무료, 최대 10명)",
+  title: "독박게임 — 룰렛·사다리·러시안룰렛·데시벨·슬롯 등 16종 (무료, 최대 10명)",
   description:
-    "친구·회식·술자리에서 벌칙 정할 때! 이름만 입력하면 끝나는 무료 독박게임 14종 — 룰렛·사다리·제비뽑기·주사위·폭탄·벌칙룰렛·손가락·반응속도·슬롯·풍선·타이머·병돌리기·러시안룰렛·버스트21. 설치 없이 바로.",
-  keywords: ["독박게임", "벌칙게임", "룰렛 돌리기", "사다리타기", "러시안룰렛", "제비뽑기", "주사위 게임", "폭탄 돌리기", "슬롯머신 게임", "풍선 터뜨리기", "타이머 게임", "병 돌리기", "버스트 21", "술자리 게임", "회식 벌칙", "복불복 게임"],
+    "친구·회식·술자리에서 벌칙 정할 때! 이름만 입력하면 끝나는 무료 독박게임 16종 — 룰렛·사다리·제비뽑기·주사위·폭탄·벌칙룰렛·손가락·반응속도·슬롯·풍선·타이머·바스톱·러시안룰렛·연타대결·데시벨배틀·목표데시벨. 설치 없이 바로.",
+  keywords: ["독박게임", "벌칙게임", "룰렛 돌리기", "사다리타기", "러시안룰렛", "연타 게임", "데시벨 게임", "목소리 크기 게임", "주사위 게임", "폭탄 돌리기", "슬롯머신 게임", "타이밍 게임", "타이머 게임", "멈추기 게임", "술자리 게임", "회식 벌칙"],
   alternates: { canonical: "/game" },
   openGraph: { title: "독박게임 — 룰렛·사다리로 벌칙 정하기", description: "이름만 입력하면 끝! 무료 벌칙 뽑기 게임", type: "website" },
 };
@@ -33,9 +33,11 @@ const GAMES = [
   { href: "/game/slot", emoji: "🎰", name: "독박 슬롯머신", desc: "💀 해골 잭팟 뜨면 독박", accent: "from-yellow-400 to-amber-500", ready: true },
   { href: "/game/balloon", emoji: "🎈", name: "풍선 터뜨리기", desc: "펌프하다 터뜨리면 독박", accent: "from-pink-400 to-rose-500", ready: true },
   { href: "/game/timer", emoji: "⏱️", name: "근접 타이머", desc: "5초·10초에 가깝게 멈추기", accent: "from-cyan-400 to-sky-500", ready: true },
-  { href: "/game/bottle", emoji: "🍾", name: "병 돌리기", desc: "병이 가리킨 사람이 독박", accent: "from-emerald-400 to-teal-500", ready: true },
+  { href: "/game/stop", emoji: "🎯", name: "멈춰! 바 스톱", desc: "과녁에 정확히 멈추기, 제일 부정확하면 독박", accent: "from-emerald-400 to-teal-500", ready: true },
   { href: "/game/russian", emoji: "🔫", name: "러시안룰렛", desc: "불발되는 사람이 독박 (스릴)", accent: "from-rose-500 to-red-700", ready: true },
-  { href: "/game/bust", emoji: "🎴", name: "버스트 21", desc: "합이 21 넘기면 독박", accent: "from-amber-400 to-orange-600", ready: true },
+  { href: "/game/tap", emoji: "🔥", name: "연타 대결", desc: "5초 광클, 제일 적으면 독박", accent: "from-orange-400 to-red-500", ready: true },
+  { href: "/game/voice", emoji: "🎤", name: "데시벨 배틀", desc: "제일 작게 지르면 독박 (마이크)", accent: "from-rose-400 to-orange-500", ready: true },
+  { href: "/game/voice-target", emoji: "🎯", name: "목표 데시벨 맞히기", desc: "목표에 제일 먼 사람 독박 (마이크)", accent: "from-amber-400 to-red-500", ready: true },
 ];
 
 export default function GameHub() {
@@ -51,7 +53,7 @@ export default function GameHub() {
           친구·회식·모임에서 벌칙 정할 때. <b className="text-white">이름만 입력하면 끝.</b> 설치도 회원가입도 없이 바로, 최대 10명.
         </p>
         <div className="mt-4">
-          <GameShare label="🔗 독박게임 공유하기" text="🎯🪜🃏🎲💣🎡👆⚡🎰🎈⏱️🍾🔫🎴 룰렛·사다리·러시안룰렛·슬롯·타이머 등! 무료 독박게임 14종" />
+          <GameShare label="🔗 독박게임 공유하기" text="🎯🪜🃏🎲💣🎡👆⚡🎰🎈⏱️🍾🔫🎴🎤 룰렛·사다리·러시안룰렛·데시벨·슬롯 등! 무료 독박게임 16종" />
         </div>
 
         {/* 게임 카드 */}

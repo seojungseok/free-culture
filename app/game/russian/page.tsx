@@ -34,13 +34,13 @@ export default function RussianPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🔫 러시안룰렛</h1>
-        <p className="mt-1 text-[14px] text-white/60">순서대로 방아쇠를 당기다 <b className="text-white">불발되는 한 명이 독박!</b> 자기 차례에 <b className="text-white">재장전</b>으로 운명을 바꿀 수 있어요. 최대 10명.</p>
+        <p className="mt-1 text-[14px] text-white/60">총알 1발, 순서대로 방아쇠를 당기다 <b className="text-white">총알 든 약실을 당긴 한 명이 독박!</b> 당기기 전 <b className="text-white">실린더를 돌려</b> 총알 위치를 섞을 수 있어요. 최대 10명.</p>
 
         <div className="mt-6"><RussianRoulette /></div>
 
         <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-[13px] text-white/60">
-          <b className="text-white">규칙</b> · N명이면 N-1발 장전(빈 약실 1개). 자기 차례에 <b className="text-white">방아쇠 당기기</b>(‘탕!’ 세이프 / 불발되면 독박) 또는 <b className="text-white">재장전(각자 1회)</b>을 선택해요. 재장전하면 실린더를 다시 돌려 빈 약실을 남은 사람에게 무작위로 재배치하고 이번 차례는 넘어가요 — 하지만 위험은 다음 바퀴에 다시 올 수 있죠. <b className="text-white">언제 재장전을 쓸지가 승부!</b>
-          <Link href="/game/bust" className="ml-2 font-bold text-amber-300 hover:underline">버스트 21도 →</Link>
+          <b className="text-white">규칙</b> · 리볼버에 총알 1발. 자기 차례엔 <b className="text-white">방아쇠를 반드시 당겨야</b> 해요(찰칵=세이프, 총알=독박). 당기기 전에 원하면 <b className="text-white">실린더 돌리기</b>로 총알 위치를 랜덤으로 섞을 수 있어요 — 원래 걸릴 차례여도 돌려서 운 좋게 넘어갈 수도, 그대로 걸릴 수도 있죠. 순수 랜덤이라 <b className="text-white">누구에게나 공평</b>해요.
+          <Link href="/game/tap" className="ml-2 font-bold text-orange-300 hover:underline">연타 대결도 →</Link>
         </div>
       </div>
     </div>
