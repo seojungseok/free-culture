@@ -642,10 +642,15 @@ ${items}
 
 // ── 코스 블로그 프롬프트 ──
 // 정보 전달형(여행사가 자세히 안내). 경험담(1인칭 과거) 금지. 각 스팟에 주소·요금·시간 있으면 포함.
+const COURSE_FOOD_RE = /횟집|식당|맛집|푸줏간|고기집|한정식|정식|국밥|국수|갈비|막국수|분식|카페|찻집|베이커리|빵집|커피|치킨|피자|해장|먹거리/;
 export function buildCoursePrompt(course, { summer = false } = {}) {
   const themeLabels = (course.themes || []).map((t) => COURSE_THEME_LABEL[t] || t).join("·");
   const mainTheme = COURSE_THEME_LABEL[(course.themes || [])[0]] || "여행"; // 제목에 넣을 대표 테마
-  const nStops = (course.stops || []).length;
+  // 식당 스팟은 동선(관광 소제목)에서 빼고 "식사 장소"로만 안내 — 상세는 페이지 '근처 맛집'에서.
+  const isFood = (s) => COURSE_FOOD_RE.test(`${s.name} ${String(s.overview || "").slice(0, 80)}`);
+  const attractions = (course.stops || []).filter((s) => !isFood(s));
+  const foods = (course.stops || []).filter(isFood);
+  const nStops = attractions.length;
   const days = course.duration === "2박3일" ? 3 : course.duration === "1박2일" ? 2 : 1;
   // 다일 코스는 일차별로 나눠 하루 3~4곳씩 — "1박2일에 7곳 한 줄" 같은 비현실 방지
   const structureSpec = days > 1
@@ -659,17 +664,20 @@ export function buildCoursePrompt(course, { summer = false } = {}) {
     : nStops <= 6
       ? "각 장소를 4~6문장으로 충실히 설명하세요."
       : "각 장소를 3~4문장으로 핵심 위주로 설명하세요.";
-  const stopsBlock = (course.stops || [])
+  const stopsBlock = attractions
     .map((s, i) => {
       const facts = [];
       if (s.addr) facts.push(`주소=${s.addr}`);
       if (s.fee) facts.push(`이용요금=${s.fee}`);
       if (s.usetime) facts.push(`운영시간=${s.usetime}`);
       const factStr = facts.length ? `\n   - 확정정보: ${facts.join(" / ")}` : "";
-      const tag = s.food ? " [식사 장소]" : "";
-      return `${i + 1}. ${s.name}${tag}\n   - 자료: ${s.overview || "(상세 없음 — 이름만 사실. 위치·유형 중심으로만)"}${factStr}`;
+      return `${i + 1}. ${s.name}\n   - 자료: ${s.overview || "(상세 없음 — 이름만 사실. 위치·유형 중심으로만)"}${factStr}`;
     })
     .join("\n");
+  // 식당은 동선 소제목으로 넣지 말고, 식사 흐름에서만 언급(상세는 페이지 하단 '근처 맛집')
+  const foodsNote = foods.length
+    ? `\n[식사 장소 — 별도 소제목 만들지 말 것. 점심/저녁 흐름에서 이름만 짧게 언급하고 "자세한 정보는 아래 '근처 맛집' 참고"로]\n${foods.map((s) => `- ${s.name}`).join("\n")}`
+    : "";
 
   return `당신은 국내 여행지를 자세히 소개하는 여행 전문 에디터입니다.
 아래 "코스 자료"만을 근거로, 독자가 실제로 이 코스를 따라 여행할 수 있게 **정보를 자세히 안내하는** 글을 씁니다.
@@ -679,8 +687,9 @@ export function buildCoursePrompt(course, { summer = false } = {}) {
 [기간] ${course.duration}
 [테마] ${themeLabels}
 ${course.overview ? `[코스 소개 자료] ${course.overview}\n` : ""}
-[경유지 — 이 순서대로, 각 스팟의 '자료'와 '확정정보'에 있는 사실만 사용]
+[관광 경유지 — 이 순서대로. 소제목(##/###)은 이 관광지들로만 만드세요]
 ${stopsBlock}
+${foodsNote}
 
 [✍️ 글 톤 — 정보 전달형 (가장 중요)]
 - ★ "다녀왔어요 / 맛봤어요 / 느껴봤어요 / 걸어봤어요" 같은 **1인칭 경험담 금지.** 나는 안 가봤습니다.

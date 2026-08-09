@@ -7,7 +7,7 @@ import CourseArticleBody from "@/components/CourseArticleBody";
 import CourseCard from "@/components/CourseCard";
 import CourseShare from "@/components/CourseShare";
 import {
-  getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays,
+  getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays, courseFoodStops,
 } from "@/lib/courses";
 import { coursesNearbyFood, distanceLabel, foodTypeLabel, distanceKm } from "@/lib/nearby";
 import { areaFestivals, fmtMd } from "@/lib/festivals";
@@ -46,7 +46,22 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   // 근처 맛집(내부링크) — 좌표 있으면 거리순, 없으면 코스 도시(주소) 기준. 음식점 데이터 있는 지역만.
   const centroid = courseCentroid(c);
   const city = courseCity(c);
-  const nearFood = coursesNearbyFood({ area: c.area, city, mapx: centroid?.mapx, mapy: centroid?.mapy }, 6);
+  const coordFood = coursesNearbyFood({ area: c.area, city, mapx: centroid?.mapx, mapy: centroid?.mapy }, 6);
+  // 코스가 안내하는 식당(영빈관횟집 등)을 먼저, 그 뒤 좌표 근처 맛집. 상세 없으면 카카오맵 검색으로 연결.
+  const courseFoods = c.format === "list" ? [] : courseFoodStops(c).map((s) => ({
+    id: s.placeId || s.name, title: s.name, image: s.image, addr: s.addr || "", cat3: "",
+    mapx: s.mapx || "", mapy: s.mapy || "",
+    href: s.placeId ? `/places/spot/${s.placeId}` : `https://map.kakao.com/link/search/${encodeURIComponent(`${c.area} ${s.name}`)}`,
+    onCourse: true, dist: undefined as number | undefined,
+  }));
+  const nearFood = [
+    ...courseFoods,
+    ...coordFood.filter((r) => !courseFoods.some((f) => f.title === r.title)).map((r) => ({
+      id: r.id, title: r.title, image: r.image, addr: r.addr, cat3: r.cat3 || "",
+      mapx: r.mapx || "", mapy: r.mapy || "",
+      href: `/places/spot/${r.id}`, onCourse: false, dist: r.dist as number | undefined,
+    })),
+  ].slice(0, 8);
   // 각 맛집을 "가장 가까운 코스 스팟" 기준으로 라벨 (예: "경포해변 근처"). 좌표 있는 스팟만.
   const stopsWithCoord = c.stops.filter((s) => s.mapx && s.mapy);
   const nearStopName = (r: { mapx?: string; mapy?: string }): string => {
@@ -166,24 +181,31 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
           <h2 className="mb-1 text-[19px] font-extrabold tracking-tight text-ink sm:text-[20px]">🍽 이 코스 근처 맛집</h2>
           <p className="mb-4 text-[13px] text-ink-faint">코스 동선 근처에서 한 끼 하기 좋은 곳이에요</p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {nearFood.map((r) => (
-              <Link key={r.id} href={`/places/spot/${r.id}`} className="group block overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.05] shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover">
+            {nearFood.map((r) => {
+              const ext = r.href.startsWith("http");
+              return (
+              <Link key={r.id} href={r.href} {...(ext ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="group block overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.05] shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover">
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
                   {r.image ? (
                     <Image src={r.image} alt={r.title} fill sizes="(max-width:640px) 50vw, 260px" className="object-cover transition group-hover:scale-105" loading="lazy" unoptimized />
                   ) : (
                     <div className="flex h-full items-center justify-center text-2xl text-ink-faint">🍽</div>
                   )}
-                  <span className="absolute left-1.5 top-1.5 rounded-md bg-black/55 px-1.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-sm">{foodTypeLabel(r)}</span>
+                  {r.onCourse ? (
+                    <span className="absolute left-1.5 top-1.5 rounded-md bg-free px-1.5 py-0.5 text-[10px] font-bold text-white shadow-sm">코스 추천</span>
+                  ) : r.cat3 ? (
+                    <span className="absolute left-1.5 top-1.5 rounded-md bg-black/55 px-1.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-sm">{foodTypeLabel({ cat3: r.cat3 } as never)}</span>
+                  ) : null}
                 </div>
                 <div className="px-2.5 pb-2.5 pt-2">
                   <h3 className="line-clamp-1 text-[14px] font-bold text-ink group-hover:text-free">{r.title}</h3>
                   <p className="mt-0.5 line-clamp-1 text-[12px] text-ink-faint">
-                    {nearStopName(r) ? `${nearStopName(r)} 근처` : typeof r.dist === "number" ? `코스에서 ${distanceLabel(r.dist)}` : r.addr}
+                    {r.onCourse ? "코스에서 안내하는 맛집" : nearStopName(r) ? `${nearStopName(r)} 근처` : typeof r.dist === "number" ? `코스에서 ${distanceLabel(r.dist)}` : r.addr}
                   </p>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </section>
       )}
