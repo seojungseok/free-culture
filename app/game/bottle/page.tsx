@@ -34,12 +34,12 @@ export default function BottlePage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🍾 병 돌리기</h1>
-        <p className="mt-1 text-[14px] text-white/60">가운데 병을 돌리면 <b className="text-white">가리키며 멈춘 사람이 독박!</b> 최대 10명.</p>
+        <p className="mt-1 text-[14px] text-white/60">다 같이 <b className="text-white">터치로 횟수를 쌓고</b> 시작하면, 병이 그 횟수만큼 돌아 <b className="text-white">멈춘 곳의 사람이 독박!</b> 최대 10명.</p>
 
         <div className="mt-6"><BottleGame /></div>
 
         <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-[13px] text-white/60">
-          <b className="text-white">규칙</b> · 인원·이름을 입력하고 ‘병 준비’ → ‘병 돌리기’를 누르면 병이 빙그르르 돌다 한 명을 가리키며 멈춰요. 가리킨 사람이 벌칙 독박!
+          <b className="text-white">규칙</b> · 인원·이름을 입력하고 ‘병 준비’ → 다 같이 ‘터치 +1’로 원하는 만큼 횟수를 쌓아요(터치 카운트 표시). ‘시작’을 누르면 병이 그 횟수만큼 칸을 돌다 감속하며 멈춰요. 멈춘 곳의 사람이 벌칙 독박! 횟수가 달라지면 결과도 달라져요.
           <Link href="/game/timer" className="ml-2 font-bold text-cyan-300 hover:underline">근접 타이머도 →</Link>
         </div>
       </div>
