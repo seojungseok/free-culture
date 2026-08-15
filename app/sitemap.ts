@@ -10,6 +10,7 @@ import {
 } from "@/lib/courses";
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
+import { getDateCourses, dateAreaCounts } from "@/lib/dateCourses";
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
@@ -100,6 +101,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.4,
     }));
+
+  // 카페데이트 — 허브 + 지역 + 코스 상세(롱테일: "OO 카페데이트")
+  const dateRoutes = [
+    { url: `${base}/date`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 },
+    ...dateAreaCounts().map((a) => ({
+      url: `${base}/date/${a.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
+    ...getDateCourses().map((c) => ({
+      url: `${base}/date/c/${c.id}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    })),
+  ];
 
   // 음식점 상세 (전량 — 롱테일 색인, /food/spot/[id]로 렌더)
   const restaurantRoutes = getAllRestaurants().map((r) => ({
@@ -242,6 +260,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...campRegionRoutes,
     ...campTypeRoutes,
     ...courseAreaRoutes,
+    ...dateRoutes,
     ...courseDurRoutes,
     ...courseThemeRoutes,
     // 2) 발행글 있는 상세 (최신 lastmod — 새 글 우선 크롤)

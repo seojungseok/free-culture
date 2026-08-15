@@ -1,101 +1,63 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Band, Container } from "@/components/Band";
-import { FilterRow, Chip } from "@/components/FilterChips";
-import SearchCard from "@/components/SearchCard";
-import { search } from "@/lib/search";
-import { SIDO_LIST } from "@/lib/classify";
+import DateCourseCard from "@/components/DateCourseCard";
+import { getDateCourses, dateAreaCounts } from "@/lib/dateCourses";
 
-type SP = { area?: string; theme?: string };
-const CAP = 60;
+export const revalidate = 86400;
 
-// 데이트 테마 → 검색어
-const DATE_THEMES: { key: string; term: string; label: string }[] = [
-  { key: "park", term: "공원", label: "공원" },
-  { key: "cafe", term: "카페", label: "카페" },
-  { key: "food", term: "맛집", label: "맛집" },
-  { key: "art", term: "미술관", label: "미술관·전시" },
-  { key: "garden", term: "수목원", label: "수목원" },
-  { key: "water", term: "호수", label: "강변·호수" },
-];
-const themeByKey = (k?: string) => DATE_THEMES.find((t) => t.key === k) || DATE_THEMES[0];
-
-export async function generateMetadata({ searchParams }: { searchParams: Promise<SP> }): Promise<Metadata> {
-  const sp = await searchParams;
-  const th = themeByKey(sp.theme);
-  const label = [sp.area, th.label].filter(Boolean).join(" ");
+export async function generateMetadata(): Promise<Metadata> {
+  const n = getDateCourses().length;
   return {
-    title: `${label} 데이트 코스 — 지역·테마별 데이트 장소`,
-    description: `${label} 데이트하기 좋은 공원·카페·미술관·수목원·강변을 지역과 테마로 골라보세요.`,
-    keywords: [`${sp.area || ""} 데이트`, `${sp.area || ""} ${th.label}`, "데이트 코스"].filter((k) => k.trim()),
+    title: `전국 카페데이트 — 카페·공원·맛집 반나절 코스 ${n}곳`,
+    description: `카페에서 시작해 걸어서 닿는 공원과 맛집까지, 반나절이면 충분한 카페데이트 코스 ${n}곳. 지역별로 골라보세요.`,
+    keywords: ["카페데이트", "전국 카페데이트", "카페 데이트 코스", "반나절 데이트 코스", "카페 공원 맛집 코스"],
     alternates: { canonical: "/date" },
   };
 }
 
-function qs(patch: SP, base: SP): string {
-  const m: Record<string, string> = {};
-  for (const [k, v] of Object.entries({ ...base, ...patch })) if (v) m[k] = v as string;
-  const s = new URLSearchParams(m).toString();
-  return s ? `/date?${s}` : "/date";
-}
-
-export default async function DatePage({ searchParams }: { searchParams: Promise<SP> }) {
-  const sp = await searchParams;
-  const th = themeByKey(sp.theme);
-  const q = [sp.area, th.term].filter(Boolean).join(" ");
-  const res = search(q);
-  const items = res.groups.flatMap((g) => g.items).slice(0, CAP);
-  const heading = [sp.area, th.label].filter(Boolean).join(" ") || `${th.label} 데이트`;
-
-  // 지역 칩: 선택 테마에서 결과 있는 시도만
-  const regionCount = (a: string) => search(`${a} ${th.term}`).total;
-  const areas = SIDO_LIST.map((a) => ({ a, n: regionCount(a) })).filter((x) => x.n > 0);
+export default function DateHubPage() {
+  const all = getDateCourses();
+  const areas = dateAreaCounts();
+  const featured = all.slice(0, 12); // 이동거리 짧은 순 = 걷기 좋은 순
 
   return (
     <>
       <Band tone="tint" innerClassName="py-5">
-        <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">💑 <span className="text-free">데이트 코스</span></h1>
-        <p className="mt-1 text-[14px] text-ink-soft">데이트하기 좋은 곳을 지역·테마로 골라보세요 · 상세에서 &lsquo;근처 추천&rsquo;도 확인하세요</p>
+        <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
+          ☕ <span className="text-free">전국 카페데이트</span>
+        </h1>
+        <p className="mt-1 text-[14px] text-ink-soft">
+          카페 → 공원 → 맛집, 걸어서 이어지는 반나절 코스 {all.length}곳 — 하루를 통째로 비우지 않아도 되는 동선이에요
+        </p>
       </Band>
 
       <div className="bg-panel">
-        <Container className="space-y-2.5 py-4">
-          <FilterRow label="테마">
-            {DATE_THEMES.map((t) => (
-              <Chip key={t.key} href={qs({ theme: t.key }, sp)} active={th.key === t.key} label={t.label} count={search([sp.area, t.term].filter(Boolean).join(" ")).total} />
+        <Container className="py-5">
+          <h2 className="mb-3 text-[17px] font-extrabold text-ink">지역별 카페데이트</h2>
+          <div className="flex flex-wrap gap-2">
+            {areas.map((a) => (
+              <Link key={a.area} href={`/date/${a.slug}`}
+                className="rounded-full border border-line bg-white px-3.5 py-2 text-[13.5px] font-bold text-ink-soft transition hover:border-free hover:text-free">
+                {a.area} 카페데이트 <span className="text-[12px] font-black text-free">{a.count}</span>
+              </Link>
             ))}
-          </FilterRow>
-          <FilterRow label="지역">
-            <Chip href={qs({ area: undefined }, sp)} active={!sp.area} label="전국" count={search(th.term).total} />
-            {areas.map(({ a, n }) => (
-              <Chip key={a} href={qs({ area: sp.area === a ? undefined : a }, sp)} active={sp.area === a} label={a} count={n} />
-            ))}
-          </FilterRow>
-          {(sp.area || sp.theme) && (
-            <div className="flex items-center gap-2 pt-0.5 text-[12.5px]">
-              <span className="font-bold text-ink-faint">선택:</span>
-              <span className="font-semibold text-freedark">{heading}</span>
-              <Link href="/date" className="ml-1 font-semibold text-ink-faint underline hover:text-ink">초기화</Link>
-            </div>
-          )}
+          </div>
         </Container>
 
         <Container className="pb-12 pt-2">
-          <div className="mb-4 flex items-baseline gap-2">
-            <h2 className="text-[20px] font-extrabold tracking-tight text-ink sm:text-[22px]">{heading}</h2>
-            <span className="text-[14px] font-bold text-free">{res.total.toLocaleString()}곳</span>
+          <div className="mb-1 flex items-baseline gap-2">
+            <h2 className="text-[20px] font-extrabold tracking-tight text-ink sm:text-[22px]">가장 걷기 좋은 코스</h2>
+            <span className="text-[14px] font-bold text-free">{featured.length}곳</span>
           </div>
-          {items.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-line bg-white py-16 text-center text-ink-soft">
-              {sp.area ? `${sp.area}에는 아직 ${th.label} 결과가 적어요.` : "결과가 없어요."}
-              {sp.area && <div className="mt-2"><Link href={qs({ area: undefined }, sp)} className="font-bold text-free underline">전국으로 보기 →</Link></div>}
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-              {items.map((doc) => <SearchCard key={`${doc.kind}-${doc.id}`} doc={doc} />)}
-            </div>
-          )}
-          <p className="mt-6 text-[12.5px] text-ink-faint">각 장소 상세에서 &lsquo;주변 나들이 장소&rsquo;·&lsquo;주변에서 식사하기&rsquo;로 근처 코스를 이어보세요.</p>
+          <p className="mb-4 text-[13px] text-ink-faint">세 곳 사이 이동거리가 가장 짧은 순서예요</p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((c) => <DateCourseCard key={c.id} course={c} />)}
+          </div>
+
+          <p className="mt-8 text-[12px] text-ink-faint">
+            코스는 카페를 기준으로 반경 3km 안의 공원·맛집을 좌표로 묶어 자동 구성했어요 · 정보 제공: 한국관광공사
+          </p>
         </Container>
       </div>
     </>
