@@ -14,6 +14,7 @@ import { fileURLToPath } from "node:url";
 import {
   buildPrompt, buildMinimalPrompt, callOpenAI, qualityCheck, patternCheck, sanitizeUnsupported,
   verifyAndImprove, factCheckGemini, buildFactsBlock, rampUpCount, pickQueue, tourTypeLabel,
+  researchFacts,
 } from "./lib/articleGen.mjs";
 
 const MIN_OVERVIEW = 200; // 원본 200자 미만이면 글 생성 안 함(정보 페이지만)
@@ -42,6 +43,10 @@ function applyAdmission(content, id) {
 // 생성/검증 모델을 나누고 싶으면 OPENAI_GEN_MODEL 로 생성만 따로 지정 가능(없으면 OPENAI_MODEL 공용).
 const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-5.6-luna";
 const MODEL = process.env.OPENAI_GEN_MODEL || OPENAI_MODEL; // 초안 생성 모델
+// 웹 검색 근거 수집(정보성 강화). ARTICLE_RESEARCH=off 로 끌 수 있음.
+// 검색은 web_search 도구를 지원하는 모델이 필요 → OPENAI_RESEARCH_MODEL로 따로 지정 가능.
+const RESEARCH = (process.env.ARTICLE_RESEARCH || "on").toLowerCase() !== "off";
+const RESEARCH_MODEL = process.env.OPENAI_RESEARCH_MODEL || OPENAI_MODEL;
 
 function envKey(name, fallback) {
   if (process.env[name]) return process.env[name].trim();
@@ -102,8 +107,11 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
     const { text } = await callOpenAI(prompt, { apiKey: OPENAI, model: MODEL });
     return text;
   };
-  // 검증기에 넘길 "확정 사실"(주소 + intro/info) — overview에 없어도 정당한 근거로 인정받게 함
-  const verifyFacts = [`주소: ${place.addr}`, buildFactsBlock(extras)].filter(Boolean).join("\n");
+  // 검증기에 넘길 "확정 사실"(주소 + intro/info + 웹 검색 근거) — overview에 없어도 정당한 근거로 인정받게 함
+  const verifyFacts = [`주소: ${place.addr}`, buildFactsBlock(extras), extras.research].filter(Boolean).join("\n");
+  // 연도·인물 패턴검사의 "근거" — overview뿐 아니라 확정 사실·검색 근거까지 포함해야
+  // 검색으로 확보한 지정연도·수치가 환각으로 오인돼 잘려나가지 않는다.
+  const grounds = [overview, verifyFacts].filter(Boolean).join("\n");
 
   let retryHint = ""; // 직전 반려 사유 → 다음 시도 프롬프트에 되먹임(같은 실수 반복 방지)
   for (let attempt = 1; attempt <= 2; attempt++) {
@@ -118,12 +126,12 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
         await sleep(1000); continue;
       }
 
-      const p = patternCheck(draft, overview);
+      const p = patternCheck(draft, grounds);
       if (!p.ok) {
         // 하드 반려 대신: 근거 없는 표현이 든 "문장만" 잘라내고 재검(글 전체를 버리지 않음 = 핵심 개선)
-        const s = sanitizeUnsupported(draft, overview);
+        const s = sanitizeUnsupported(draft, grounds);
         const sq = qualityCheck(s.text, { overview, existingTexts });
-        const sp = patternCheck(s.text, overview);
+        const sp = patternCheck(s.text, grounds);
         if (s.text && sq.ok && sp.ok) {
           log(`시도${attempt} 근거없는 표현 ${s.removed}곳 자동 제거 후 통과`);
           draft = s.text;
@@ -141,8 +149,8 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
       } else if (v.result === "FAIL") {
         // 완화: 검증 실패해도 곧바로 버리지 않고, 근거 없는 표현만 잘라내 로컬검사 통과 시 진행
         //  (뒤에 Gemini 독립 팩트체크가 최종 안전망 → 환각은 여전히 차단)
-        const s = sanitizeUnsupported(draft, overview);
-        if (s.text && qualityCheck(s.text, { overview }).ok && patternCheck(s.text, overview).ok) {
+        const s = sanitizeUnsupported(draft, grounds);
+        if (s.text && qualityCheck(s.text, { overview }).ok && patternCheck(s.text, grounds).ok) {
           log(`시도${attempt} 검증 FAIL → 근거없는 표현 ${s.removed}곳 제거 후 진행`);
           finalText = s.text;
         } else {
@@ -155,11 +163,11 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
         finalText = draft;
       }
       const q2 = qualityCheck(finalText, { overview });
-      const p2 = patternCheck(finalText, overview);
+      const p2 = patternCheck(finalText, grounds);
       if (!q2.ok || !p2.ok) {
         // 개선본이 되레 규칙을 깼으면(개선 중 연도 재삽입 등) 정제 후 그래도 안 되면 검증 통과한 draft 사용
-        const s = sanitizeUnsupported(finalText, overview);
-        finalText = qualityCheck(s.text, {}).ok && patternCheck(s.text, overview).ok ? s.text : draft;
+        const s = sanitizeUnsupported(finalText, grounds);
+        finalText = qualityCheck(s.text, {}).ok && patternCheck(s.text, grounds).ok ? s.text : draft;
       }
 
       // [보조] Gemini 독립 팩트체크 — 주 모델(Luna)과 다른 모델로 환각 최종 교차검증. FAIL이면 재시도.
@@ -270,6 +278,18 @@ async function main() {
       ? Object.entries(store.articles).filter(([id]) => id !== place.id).map(([, a]) => a.content)
       : existingTexts;
 
+    // 웹 검색으로 공식 출처 사실 수집 → 정보성 강화. 실패해도 그냥 넘어감(기존 동작 유지).
+    if (RESEARCH) {
+      const r = await researchFacts(place, { apiKey: OPENAI, model: RESEARCH_MODEL });
+      if (r.text) {
+        extras.research = r.text;
+        extras.sources = r.sources;
+        console.log(`  🔎 검색 근거 ${r.text.split("\n").length}건 · 출처 ${r.sources.length}곳: ${place.title}`);
+      } else {
+        console.log(`  🔎 검색 근거 없음(${r.reason || "0건"}): ${place.title}`);
+      }
+    }
+
     const { art, reasons } = await produceArticle(place, overview, exTexts, extras);
     if (!art) {
       if (mode === "rewrite") {
@@ -294,7 +314,7 @@ async function main() {
       typeLabel: tourTypeLabel(place.type),
       title: place.title,
       content: applyAdmission(art.text, place.id),
-      sources: [],
+      sources: extras.sources || [], // 웹 검색 근거의 공식 출처 URL (글 하단 표기)
       model: MODEL,
       verify: art.verify, // 주 Luna 검증: PASS / SKIP / MINIMAL
       factcheck2: art.gemini, // 보조 Gemini 팩트체크: PASS / OFF / SKIP(minimal)

@@ -206,8 +206,25 @@ export default async function SpotDetailPage({
       )}
 
       {article ? (
-        // 본문 소제목마다 사진 한 장씩 — 대표사진은 위 갤러리에 이미 크게 있으므로 2번째부터 사용
-        <ArticleBody content={article.content} images={gallery.slice(1).map((g) => g.full)} title={spot.title} />
+        <>
+          {/* 본문 소제목마다 사진 한 장씩 — 대표사진은 위 갤러리에 이미 크게 있으므로 2번째부터 사용 */}
+          <ArticleBody content={article.content} images={gallery.slice(1).map((g) => g.full)} title={spot.title} />
+          {/* 글 작성에 참고한 공식 출처 — 신뢰도(E-E-A-T) 표기 */}
+          {article.sources && article.sources.length > 0 && (
+            <div className="mt-6 rounded-xl bg-panel px-4 py-3">
+              <p className="text-[12px] font-bold text-ink-faint">참고 자료</p>
+              <ul className="mt-1.5 space-y-1">
+                {article.sources.map((s) => (
+                  <li key={s} className="truncate text-[12px]">
+                    <a href={s} target="_blank" rel="nofollow noopener noreferrer" className="text-ink-faint underline underline-offset-2 hover:text-free">
+                      {s.replace(/^https?:\/\//, "").slice(0, 70)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </>
       ) : overview ? (
         <p className="mt-5 whitespace-pre-line text-[15px] leading-[1.8] text-ink-soft">
           {overview}

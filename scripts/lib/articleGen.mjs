@@ -406,6 +406,78 @@ export function buildFactsBlock({ intro, info } = {}) {
   return lines.join("\n\n");
 }
 
+// ── 웹 검색 근거 수집 (정보성 강화의 핵심) ──────────────────────────
+// TourAPI overview는 3~5문장뿐이라 "정보성 블로그"가 나올 수 없다.
+// 생성 전에 공식 출처를 검색해 검증 가능한 사실만 뽑아 근거로 추가한다.
+// ⚠️ 실패(모델이 web_search 미지원·HTTP 오류·파싱 실패)해도 절대 던지지 않는다.
+//    빈 결과를 돌려주면 파이프라인은 기존과 똑같이 overview만으로 동작한다.
+const RESEARCH_DOMAINS = "go.kr(정부·지자체), or.kr(공공기관), visitkorea.or.kr, 해당 시설 공식 홈페이지";
+
+export async function researchFacts(place, { apiKey, model, timeoutMs = 90000 } = {}) {
+  const empty = { text: "", sources: [], reason: "" };
+  if (!apiKey) return { ...empty, reason: "OPENAI_API_KEY 없음" };
+  const type = tourTypeLabel(place.type);
+  const prompt = `"${place.title}"(${place.area}, ${type}, 주소: ${place.addr})에 대해 웹에서 검증 가능한 사실만 수집하라.
+
+[수집 대상 — 방문자에게 실제로 필요한 정보]
+- 규모·구성(면적, 길이, 구역 구성), 주요 시설·볼거리의 정확한 이름
+- 이용시간, 휴무일, 이용요금(무료 여부 포함)
+- 주차장 위치·면수·요금
+- 대중교통(지하철역·출구, 버스 노선번호), 도보 소요시간
+- 계절별 볼거리, 아이·가족 관련 시설, 지정·인증 사항
+
+[규칙]
+- 출처는 ${RESEARCH_DOMAINS} 위주. 개인 블로그·카페·커뮤니티는 쓰지 마라.
+- 확인되지 않은 것은 넣지 마라. 추측·요약 과장 금지. **사실이 적으면 적은 대로 반환**한다.
+- 각 사실은 한 줄로 짧게, 숫자는 출처에 나온 그대로.
+- 같은 장소가 아닌 동명이인·유사명 장소의 정보를 섞지 마라(주소로 반드시 확인).
+- 요금·시간처럼 자주 바뀌는 값은 출처에 명시된 것만.
+
+JSON만 출력:
+{"facts":[{"fact":"한 줄 사실","source":"출처 URL"}],"notFound":true 또는 false}`;
+
+  try {
+    const res = await fetch("https://api.openai.com/v1/responses", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
+      body: JSON.stringify({
+        model: model || "gpt-5.6-luna",
+        tools: [{ type: "web_search" }],
+        input: prompt,
+      }),
+      signal: AbortSignal.timeout(timeoutMs),
+    });
+    if (!res.ok) {
+      const t = await res.text();
+      return { ...empty, reason: `HTTP ${res.status}: ${t.slice(0, 120)}` };
+    }
+    const j = await res.json();
+    // output_text(단축 필드)가 없으면 output 배열에서 텍스트 조각을 모은다
+    let raw = typeof j.output_text === "string" ? j.output_text : "";
+    if (!raw && Array.isArray(j.output)) {
+      raw = j.output
+        .flatMap((o) => (Array.isArray(o?.content) ? o.content : []))
+        .map((c) => c?.text || "")
+        .filter(Boolean)
+        .join("\n");
+    }
+    const m = String(raw).match(/\{[\s\S]*\}/);
+    if (!m) return { ...empty, reason: "JSON 없음" };
+    const parsed = JSON.parse(m[0]);
+    const facts = Array.isArray(parsed.facts) ? parsed.facts : [];
+    const clean = facts
+      .map((f) => ({ fact: String(f?.fact || "").replace(/\s+/g, " ").trim(), source: String(f?.source || "").trim() }))
+      .filter((f) => f.fact.length > 3)
+      .slice(0, 20);
+    if (!clean.length) return { ...empty, reason: "수집된 사실 없음" };
+    const sources = [...new Set(clean.map((f) => f.source).filter((u) => /^https?:\/\//.test(u)))].slice(0, 6);
+    const text = clean.map((f) => `- ${f.fact}${f.source ? ` (출처: ${f.source})` : ""}`).join("\n");
+    return { text, sources, reason: "" };
+  } catch (e) {
+    return { ...empty, reason: String(e instanceof Error ? e.message : e) };
+  }
+}
+
 // ── 프롬프트 생성 ──
 export function buildPrompt(place, overview = "", extras = {}) {
   const type = tourTypeLabel(place.type);
@@ -413,6 +485,12 @@ export function buildPrompt(place, overview = "", extras = {}) {
   // 직전 시도 반려 사유를 되먹여 같은 실수를 반복하지 않게 한다(재시도가 시도1의 복제가 되던 문제 해소).
   const retry = extras.retryHint
     ? `\n[❗ 직전 시도가 반려됐어요 — 아래를 반드시 교정하세요]\n${extras.retryHint}\n`
+    : "";
+  // 웹 검색으로 모은 검증 사실 — overview와 동등한 근거로 취급(정보성 강화의 핵심 재료)
+  const research = extras.research
+    ? `\n[검증된 추가 사실 — 공식 출처에서 수집. overview와 동등한 근거이니 적극 활용하세요]
+${extras.research}
+★ 위 항목의 숫자·시설명·노선번호는 그대로 쓰되, "(출처: ...)" 표기는 본문에 옮기지 마세요.\n`
     : "";
   const ref = overview
     ? `[사실 근거 — 아래 내용에 있는 사실만 사용하세요]
@@ -429,7 +507,7 @@ export function buildPrompt(place, overview = "", extras = {}) {
 [주소] ${place.addr}
 
 ${ref}
-${facts ? `\n${facts}\n` : ""}${retry}
+${research}${facts ? `\n${facts}\n` : ""}${retry}
 [🚫 금지 표현 — 하나도 쓰지 말 것 (근거 없는 미사여구·추측)]
 - "유명한", "인기 있는", "맛있기로 소문난", "현지인 맛집", "다채로운 경험/볼거리", "즐거움을 선사", "특별한 시간을 선사"
 - "~할 수 있습니다", "열릴 경우", "운영될 경우", "~것입니다", "제공할 수 있는", "만날 수 있습니다" 같은 추측·불확실 표현
@@ -466,8 +544,11 @@ ${facts ? `\n${facts}\n` : ""}${retry}
 - 검색 결과에 그대로 뜨는 첫 문장은 그 장소만의 구체적 특징으로 시작하세요(어디에나 쓸 수 있는 문장 금지).
 - 각 소제목은 독자가 실제로 검색하는 질문에 답하는 내용이어야 합니다(무엇이 있나 / 무엇을 하나 / 언제 가면 좋나).
 
-[톤]
-- 쉬운 말, 한 문장에 한 정보. 친근한 안내체("~해요","~추천해요").
+[톤 — 정보 전달이 최우선]
+- 감상·형용사보다 **구체적 정보**를 앞세우세요. 방문자가 실제로 알아야 할 것(무엇이 있는지, 얼마인지, 언제 여는지, 어떻게 가는지)을 먼저 씁니다.
+- 근거에 숫자·시설명·노선번호가 있으면 뭉개지 말고 그대로 적으세요("주차 가능"보다 "주차장 99면, 06:00~24:00").
+- "아름다운 풍경이 펼쳐집니다" 같은 내용 없는 묘사로 줄을 채우지 마세요. 한 문장에 최소 하나의 사실.
+- 말투는 쉬운 안내체("~해요","~예요")로 통일합니다(사이트 기존 글과 동일).
 - 이모티콘·"ㅋㅋ/ㅎㅎ"·채팅체·과장 광고·공문서 톤 금지.
 
 아래는 톤·형식 예시입니다. 형식만 따르고 내용은 이 장소의 사실 근거로만 새로 쓰세요.
