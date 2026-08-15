@@ -279,14 +279,17 @@ async function main() {
       : existingTexts;
 
     // 웹 검색으로 공식 출처 사실 수집 → 정보성 강화. 실패해도 그냥 넘어감(기존 동작 유지).
+    let researchNote = RESEARCH ? "" : "off";
     if (RESEARCH) {
       const r = await researchFacts(place, { apiKey: OPENAI, model: RESEARCH_MODEL });
       if (r.text) {
         extras.research = r.text;
         extras.sources = r.sources;
-        console.log(`  🔎 검색 근거 ${r.text.split("\n").length}건 · 출처 ${r.sources.length}곳: ${place.title}`);
+        researchNote = `${r.text.split("\n").length}건/출처${r.sources.length}`;
+        console.log(`  🔎 검색 근거 ${researchNote}: ${place.title}`);
       } else {
-        console.log(`  🔎 검색 근거 없음(${r.reason || "0건"}): ${place.title}`);
+        researchNote = `실패: ${String(r.reason || "0건").slice(0, 100)}`;
+        console.log(`  🔎 ${researchNote}: ${place.title}`);
       }
     }
 
@@ -299,7 +302,7 @@ async function main() {
         console.log(`  🗑  재생성 실패→정보카드(삭제): ${place.title}`);
       } else {
         skipped++;
-        report.push({ id: place.id, title: place.title, outcome: "skip", overview: overview.length, reason: reasons.slice(-3).join(" | ") });
+        report.push({ id: place.id, title: place.title, outcome: "skip", overviewLen: overview.length, research: researchNote, reason: reasons.slice(-3).join(" | ") });
         console.log(`  ✗ 스킵: ${place.title}`);
       }
       continue;
@@ -323,7 +326,7 @@ async function main() {
     };
     made++;
     if (mode === "rewrite") rewritten++; else { newPub++; existingTexts.push(art.text); }
-    report.push({ id: place.id, title: place.title, outcome: mode === "rewrite" ? "rewritten" : "published", detail: `${art.mode}/Luna:${art.verify}/G:${art.gemini}/${art.len}자` });
+    report.push({ id: place.id, title: place.title, outcome: mode === "rewrite" ? "rewritten" : "published", detail: `${art.mode}/Luna:${art.verify}/G:${art.gemini}/${art.len}자`, overviewLen: overview.length, research: researchNote });
     console.log(`  ${mode === "rewrite" ? "♻ 재작성" : "✓ 발행"} ${made}/${target}: ${place.title} (${art.len}자, ${art.mode}, Luna검증 ${art.verify}, Gemini ${art.gemini})`);
     await sleep(1000);
   }
