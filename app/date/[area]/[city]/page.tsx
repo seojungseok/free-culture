@@ -3,9 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Band, Container } from "@/components/Band";
+import { FilterRow, Chip } from "@/components/FilterChips";
+import ScrollRail from "@/components/ScrollRail";
+import DateCourseCard from "@/components/DateCourseCard";
 import CoupangBanner from "@/components/CoupangBanner";
 import {
-  dateCoursesByCity, dateCityCounts, dateCityParams, distLabel, sidoFromSlug,
+  dateCoursesByCity, dateCityCounts, dateAreaCounts, dateCityParams, distLabel, sidoFromSlug,
 } from "@/lib/dateCourses";
 import { getRestaurantMenu } from "@/lib/tourExtra";
 import { SITE } from "@/lib/site";
@@ -52,7 +55,8 @@ export default async function DateCityPage({
   const list = dateCoursesByCity(sido, city);
   if (!list.length) notFound();
 
-  const siblings = dateCityCounts(sido).filter((c) => c.city !== city).slice(0, 12);
+  const areas = dateAreaCounts();
+  const cities = dateCityCounts(sido);
 
   const itemListLd = {
     "@context": "https://schema.org",
@@ -96,56 +100,53 @@ export default async function DateCityPage({
       </Band>
 
       <div className="bg-panel">
-        <Container className="pb-12 pt-4">
-          {/* 카페 목록 — 모바일에서 한 손으로 고르기 좋게 세로 리스트 */}
-          <ul className="space-y-2">
-            {list.map((c) => (
-              <li key={c.id}>
-                <Link
-                  href={`/date/c/${c.id}`}
-                  className="flex min-h-[76px] items-center gap-3 rounded-2xl border border-line bg-white p-2.5 transition active:scale-[0.99] hover:border-free/50"
-                >
-                  <span className="relative h-[62px] w-[62px] shrink-0 overflow-hidden rounded-xl bg-neutral-100">
-                    {c.cafe.image ? (
-                      <Image src={c.cafe.image} alt={`${c.cafe.title} 카페`} fill sizes="62px" className="object-cover" loading="lazy" unoptimized />
-                    ) : (
-                      <span className="flex h-full items-center justify-center text-xl">☕</span>
-                    )}
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate text-[15.5px] font-bold text-ink">{c.cafe.title}</span>
-                    <span className="mt-0.5 block truncate text-[12.5px] text-ink-soft">
-                      🌳 {c.park.title} · 🍽 {c.food.title}
-                      {(() => { const m = getRestaurantMenu(c.food.id); return m ? <span className="text-ink-faint">({m.split(" / ")[0]})</span> : null; })()}
-                    </span>
-                    <span className="mt-0.5 block text-[12px] text-ink-faint">
-                      도보 {c.walkMin}분 · 총 {distLabel(c.totalKm)}
-                    </span>
-                  </span>
-                  <span className="shrink-0 pr-1 text-[18px] leading-none text-ink-faint">›</span>
-                </Link>
-              </li>
+        {/* 지역 · 동네 — 캠핑과 같은 칩 방식 */}
+        <Container className="space-y-2.5 py-4">
+          <FilterRow label="지역">
+            {areas.map((a) => (
+              <Chip key={a.area} href={`/date/${a.slug}`} active={a.area === sido} label={a.area} count={a.count} />
             ))}
+          </FilterRow>
+          <FilterRow label="동네">
+            {cities.map((c) => (
+              <Chip key={c.city} href={`/date/${slug}/${encodeURIComponent(c.city)}`} active={c.city === city} label={c.city} count={c.count} />
+            ))}
+          </FilterRow>
+        </Container>
+
+        <Container className="pb-12 pt-2">
+          <div className="mb-1 flex items-baseline gap-2">
+            <h2 className="text-[18px] font-extrabold tracking-tight text-ink sm:text-[20px]">{city} 카페데이트</h2>
+            <span className="text-[13.5px] font-bold text-free">총 {list.length}곳</span>
+          </div>
+          <p className="mb-3 text-[12.5px] text-ink-faint">옆으로 넘겨보세요 · 카페를 누르면 코스가 나와요</p>
+          <ScrollRail ariaLabel={`${city} 카페데이트 코스`}>
+            {list.map((c) => <DateCourseCard key={c.id} course={c} rail />)}
+          </ScrollRail>
+
+          {/* 코스 요약 — 검색엔진·훑어보기용 텍스트 목록 */}
+          <ul className="mt-6 space-y-1.5">
+            {list.map((c) => {
+              const menu = getRestaurantMenu(c.food.id);
+              return (
+                <li key={c.id}>
+                  <Link href={`/date/c/${c.id}`} className="flex items-center gap-2 rounded-xl border border-line bg-white px-3.5 py-2.5 text-[13.5px] transition active:scale-[0.99] hover:border-free/40">
+                    <span className="min-w-0 flex-1">
+                      <b className="font-bold text-ink">{c.cafe.title}</b>
+                      <span className="ml-1.5 text-[12px] text-ink-faint">
+                        {c.park.title} · {c.food.title}{menu ? `(${menu.split(" / ")[0]})` : ""}
+                      </span>
+                    </span>
+                    <span className="shrink-0 text-[12px] font-semibold text-free">도보 {c.walkMin}분</span>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
-          {/* 관심 기반 제휴 배너 (쿠팡 파트너스) */}
           <div className="mt-8">
             <CoupangBanner />
           </div>
-
-          {siblings.length > 0 && (
-            <section className="mt-8 border-t border-line pt-5">
-              <h2 className="mb-2.5 text-[14px] font-extrabold text-ink">{sido} 다른 동네</h2>
-              <div className="flex flex-wrap gap-1.5">
-                {siblings.map((s) => (
-                  <Link key={s.city} href={`/date/${slug}/${encodeURIComponent(s.city)}`}
-                    className="rounded-full border border-line bg-white px-3 py-1.5 text-[12.5px] text-ink-soft hover:border-free hover:text-free">
-                    {s.city} <span className="text-ink-faint">{s.count}</span>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
         </Container>
       </div>
     </>
