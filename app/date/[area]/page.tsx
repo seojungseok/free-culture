@@ -89,7 +89,7 @@ export default async function DateAreaPage({ params }: { params: Promise<{ area:
             <h2 className="text-[18px] font-extrabold tracking-tight text-ink sm:text-[20px]">{sido} 전체 코스</h2>
             <span className="text-[13.5px] font-bold text-free">총 {list.length}곳</span>
           </div>
-          <p className="mb-3 text-[12.5px] text-ink-faint">옆으로 넘겨보세요 · 걷기 좋은 순</p>
+          <p className="mb-3 text-[12.5px] text-ink-faint">옆으로 넘겨보세요 · 세 곳이 가까운 순</p>
           <ScrollRail ariaLabel={`${sido} 카페데이트 코스`}>
             {list.map((c) => <DateCourseCard key={c.id} course={c} rail />)}
           </ScrollRail>

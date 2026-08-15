@@ -6,7 +6,7 @@ import { Container } from "@/components/Band";
 import CoupangBanner from "@/components/CoupangBanner";
 import { fetchPlaceOverview } from "@/lib/tourDetail";
 import { getRestaurantMenu, restaurantIntroRows } from "@/lib/tourExtra";
-import { getDateCourse, getDateCourses, dateCoursesByArea, distLabel, walkMinutes, type CourseStop } from "@/lib/dateCourses";
+import { getDateCourse, getDateCourses, dateCoursesByArea, distLabel, type CourseStop } from "@/lib/dateCourses";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const title = `${c.cafe.title} 카페데이트 — ${c.area} ${c.city} 카페·공원·맛집 코스`;
   const menu = getRestaurantMenu(c.food.id);
   const menuHead = menu ? menu.split(" / ")[0] : "";
-  const description = `${c.area} ${c.city} 카페데이트 코스. ${c.cafe.title}에서 커피 한잔 하고 ${distLabel(c.park.distKm)} 거리의 ${c.park.title}을 걷다가 ${c.food.title}${menuHead ? `(${menuHead})` : ""}에서 식사까지, 도보 ${c.walkMin}분이면 이어지는 반나절 동선이에요.`;
+  const description = `${c.area} ${c.city} 카페데이트 코스. ${c.cafe.title}에서 커피 한잔 하고 ${distLabel(c.park.distKm)} 거리의 ${c.park.title}을 걷다가 ${c.food.title}${menuHead ? `(${menuHead})` : ""}에서 식사까지. 세 곳이 ${distLabel(c.totalKm)} 안에 모여 있어 반나절이면 충분해요.`;
   return {
     title,
     description,
@@ -58,7 +58,7 @@ function StopSection({
         <span className="rounded-full bg-free px-2.5 py-0.5 text-[11px] font-black text-white">{label}</span>
         {fromTitle && (
           <span className="text-[12.5px] text-ink-faint">
-            {fromTitle}에서 {distLabel(stop.distKm)} · 도보 {walkMinutes(stop.distKm)}분
+            {fromTitle}에서 {distLabel(stop.distKm)}
           </span>
         )}
       </div>
@@ -171,7 +171,7 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
       </nav>
 
       <div className="mb-2 flex flex-wrap items-center gap-1.5">
-        <span className="rounded-full bg-free px-2.5 py-0.5 text-[11px] font-black text-white">도보 {c.walkMin}분</span>
+        <span className="rounded-full bg-free px-2.5 py-0.5 text-[11px] font-black text-white">세 곳 {distLabel(c.totalKm)} 안</span>
         <span className="rounded-full bg-tint px-2 py-0.5 text-[11px] font-bold text-freedark">{c.area} {c.city}</span>
         <span className="text-[12px] text-ink-faint">· 총 {distLabel(c.totalKm)}</span>
       </div>
@@ -184,8 +184,8 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
         <b className="font-bold text-ink">{c.area} {c.city}</b>에서 반나절이면 충분한 카페데이트 코스예요.
         커피 한잔으로 시작해 가까운 <b className="font-bold text-ink">{c.park.title}</b>을 걷고,
         마지막에 <b className="font-bold text-ink">{c.food.title}</b>에서 식사까지 이어집니다.
-        세 곳을 모두 도는 데 이동은 <b className="font-bold text-ink">도보 {c.walkMin}분</b>(총 {distLabel(c.totalKm)}) 정도라
-        하루를 통째로 비우지 않아도 돼요.
+        세 곳이 <b className="font-bold text-ink">{distLabel(c.totalKm)}</b> 안에 모여 있어 걸어도, 차로 움직여도 부담이 없어요.
+        하루를 통째로 비우지 않아도 되는 동선이에요.
       </p>
 
       {/* 코스 한눈에 */}
@@ -193,8 +193,8 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
         <h2 className="mb-2 text-[15px] font-extrabold text-ink">🧭 코스 한눈에 보기</h2>
         <ol className="space-y-1.5 text-[14px]">
           <li className="flex gap-2"><span>①</span><span><b className="font-bold text-ink">☕ {c.cafe.title}</b> <span className="text-ink-faint">— 출발</span></span></li>
-          <li className="flex gap-2"><span>②</span><span><b className="font-bold text-ink">🌳 {c.park.title}</b> <span className="text-ink-faint">— {distLabel(c.park.distKm)} · 도보 {walkMinutes(c.park.distKm)}분</span></span></li>
-          <li className="flex gap-2"><span>③</span><span><b className="font-bold text-ink">🍽 {c.food.title}</b> <span className="text-ink-faint">— {distLabel(c.food.distKm)} · 도보 {walkMinutes(c.food.distKm)}분</span></span></li>
+          <li className="flex gap-2"><span>②</span><span><b className="font-bold text-ink">🌳 {c.park.title}</b> <span className="text-ink-faint">— 카페에서 {distLabel(c.park.distKm)}</span></span></li>
+          <li className="flex gap-2"><span>③</span><span><b className="font-bold text-ink">🍽 {c.food.title}</b> <span className="text-ink-faint">— 공원에서 {distLabel(c.food.distKm)}</span></span></li>
         </ol>
       </div>
 
@@ -204,11 +204,11 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
       />
       <StopSection
         stop={c.park} label="2. 산책" emoji="🌳" overview={parkOv.overview} fromTitle={c.cafe.title}
-        intro={`카페에서 ${distLabel(c.park.distKm)}, 걸어서 ${walkMinutes(c.park.distKm)}분 거리예요. 커피를 들고 이동해 천천히 걷기 좋은 구간이라 이 코스의 가운데에 뒀어요.`}
+        intro={`카페 바로 근처, ${distLabel(c.park.distKm)} 거리예요. 커피를 마신 뒤 천천히 둘러보기 좋은 구간이라 이 코스의 가운데에 뒀어요.`}
       />
       <StopSection
         stop={c.food} label="3. 맛집" emoji="🍽" overview={foodOv.overview} fromTitle={c.park.title} menu={foodMenu} rows={foodRows}
-        intro={`산책을 마치고 ${distLabel(c.food.distKm)}, 도보 ${walkMinutes(c.food.distKm)}분이면 닿아요. 걷고 난 뒤 식사로 마무리하기 좋은 위치예요.${foodMenu ? ` 대표메뉴는 ${foodMenu.split(" / ")[0]}이에요.` : ""}`}
+        intro={`공원에서 ${distLabel(c.food.distKm)}, 바로 근처예요. 둘러본 뒤 식사로 마무리하기 좋은 위치예요.${foodMenu ? ` 대표메뉴는 ${foodMenu.split(" / ")[0]}이에요.` : ""}`}
       />
 
       {/* 관심 기반 제휴 배너 (쿠팡 파트너스) */}
@@ -227,7 +227,7 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
                     <b className="font-bold text-ink">{r.cafe.title}</b>
                     <span className="ml-1.5 text-[12.5px] text-ink-faint">{r.city} · {r.park.title} · {r.food.title}</span>
                   </span>
-                  <span className="shrink-0 text-[12.5px] font-semibold text-free">도보 {r.walkMin}분</span>
+                  <span className="shrink-0 text-[12.5px] font-semibold text-free">{distLabel(r.totalKm)}</span>
                 </Link>
               </li>
             ))}

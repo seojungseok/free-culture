@@ -30,7 +30,7 @@ export default function DateHubPage() {
           ☕ <span className="text-free">전국 카페데이트</span>
         </h1>
         <p className="mt-1 text-[13.5px] text-ink-soft">
-          카페 → 공원 → 맛집으로 걸어서 이어지는 반나절 코스 {all.length}곳
+          카페 → 공원 → 맛집이 서로 가까이 붙어 있는 반나절 코스 {all.length}곳
         </p>
       </Band>
 
@@ -50,7 +50,7 @@ export default function DateHubPage() {
             <h2 className="text-[18px] font-extrabold tracking-tight text-ink sm:text-[20px]">가장 가까운 코스</h2>
             <span className="text-[13.5px] font-bold text-free">{preview.length}곳</span>
           </div>
-          <p className="mb-3 text-[12.5px] text-ink-faint">세 곳 사이 거리가 가장 짧은 순서예요 · 옆으로 넘겨보세요</p>
+          <p className="mb-3 text-[12.5px] text-ink-faint">세 곳이 서로 가장 가까운 순서예요 · 옆으로 넘겨보세요</p>
           <ScrollRail ariaLabel="가장 가까운 카페데이트 코스">
             {preview.map((c) => <DateCourseCard key={c.id} course={c} rail />)}
           </ScrollRail>

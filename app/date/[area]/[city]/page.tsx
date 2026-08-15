@@ -8,9 +8,8 @@ import ScrollRail from "@/components/ScrollRail";
 import DateCourseCard from "@/components/DateCourseCard";
 import CoupangBanner from "@/components/CoupangBanner";
 import {
-  dateCoursesByCity, dateCityCounts, dateAreaCounts, dateCityParams, distLabel, sidoFromSlug,
+  dateCoursesByCity, dateCityCounts, dateAreaCounts, dateCityParams, sidoFromSlug,
 } from "@/lib/dateCourses";
-import { getRestaurantMenu } from "@/lib/tourExtra";
 import { SITE } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -123,26 +122,6 @@ export default async function DateCityPage({
           <ScrollRail ariaLabel={`${city} 카페데이트 코스`}>
             {list.map((c) => <DateCourseCard key={c.id} course={c} rail />)}
           </ScrollRail>
-
-          {/* 코스 요약 — 검색엔진·훑어보기용 텍스트 목록 */}
-          <ul className="mt-6 space-y-1.5">
-            {list.map((c) => {
-              const menu = getRestaurantMenu(c.food.id);
-              return (
-                <li key={c.id}>
-                  <Link href={`/date/c/${c.id}`} className="flex items-center gap-2 rounded-xl border border-line bg-white px-3.5 py-2.5 text-[13.5px] transition active:scale-[0.99] hover:border-free/40">
-                    <span className="min-w-0 flex-1">
-                      <b className="font-bold text-ink">{c.cafe.title}</b>
-                      <span className="ml-1.5 text-[12px] text-ink-faint">
-                        {c.park.title} · {c.food.title}{menu ? `(${menu.split(" / ")[0]})` : ""}
-                      </span>
-                    </span>
-                    <span className="shrink-0 text-[12px] font-semibold text-free">도보 {c.walkMin}분</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
 
           <div className="mt-8">
             <CoupangBanner />

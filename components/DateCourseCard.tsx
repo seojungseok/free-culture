@@ -21,9 +21,6 @@ export default function DateCourseCard({ course, rail = false }: { course: DateC
         ) : (
           <div className="flex h-full items-center justify-center text-3xl text-ink-faint">☕</div>
         )}
-        <span className="absolute left-2 top-2 rounded-md bg-free px-2 py-0.5 text-[11px] font-bold text-white shadow-sm">
-          도보 {course.walkMin}분
-        </span>
       </div>
       <div className="px-3.5 pb-3.5 pt-2.5">
         <p className="text-[11.5px] font-bold text-free">{course.city}</p>
@@ -32,7 +29,7 @@ export default function DateCourseCard({ course, rail = false }: { course: DateC
         </h3>
         <p className="mt-1.5 line-clamp-1 text-[12.5px] text-ink-soft">🌳 {course.park.title}</p>
         <p className="mt-0.5 line-clamp-1 text-[12.5px] text-ink-soft">🍽 {course.food.title}</p>
-        <p className="mt-1 text-[11.5px] text-ink-faint">총 {distLabel(course.totalKm)}</p>
+        <p className="mt-1 text-[11.5px] text-ink-faint">세 곳 모두 {distLabel(course.totalKm)} 안</p>
       </div>
     </Link>
   );
