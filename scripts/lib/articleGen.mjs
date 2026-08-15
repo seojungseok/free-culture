@@ -20,7 +20,7 @@ export function rampUpCount(startDate, today = new Date()) {
   const day = Math.floor((t - s) / 86400000) + 1; // 시작일 당일 = 1일차
   if (day < 1) return 0;
   if (day <= 14) return 5;
-  return 20; // 하루 20건 고정 (건당 약 40초 → 회당 15분 안팎, 비용·부하 안정선)
+  return 45; // 하루 45건 고정 (건당 약 40초 → 회당 30분 안팎). 숫자만 바꾸면 조절됨
 }
 
 // ── 우선순위 큐: 미발행 장소를 지역 라운드로빈으로 N개 ──
