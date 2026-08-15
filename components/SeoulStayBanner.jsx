@@ -55,13 +55,10 @@ export default function SeoulStayBanner({
             <span>가격 비교 무료</span>
             <span className="ssb-dot" />
             <span>취소 수수료 없는 숙소 다수</span>
-            <span className="ssb-dot" />
-            <span>지역별 시세 확인</span>
           </div>
         </div>
 
         <div className="ssb-right">
-          <span className="ssb-badge">실시간 특가</span>
           <span
             className="ssb-cta"
             style={{ background: hover ? "#0b5a61" : "#0f6f77" }}
@@ -86,8 +83,8 @@ export default function SeoulStayBanner({
           display: grid;
           grid-template-columns: 1fr auto;
           align-items: center;
-          column-gap: 48px;
-          padding: 32px 56px;
+          column-gap: 32px;
+          padding: 24px 30px;
           box-sizing: border-box;
           cursor: pointer;
         }
@@ -103,7 +100,7 @@ export default function SeoulStayBanner({
           position: relative;
           display: flex;
           flex-direction: column;
-          gap: 14px;
+          gap: 9px;
           align-items: flex-start;
           min-width: 0;
         }
@@ -115,16 +112,19 @@ export default function SeoulStayBanner({
         }
         .ssb-title {
           margin: 0;
-          font-size: 34px;
-          line-height: 1.24;
+          font-size: 25px;
+          line-height: 1.28;
           font-weight: 900;
           color: #10262c;
           letter-spacing: -0.025em;
+          /* 한글은 단어 단위로 줄바꿈 — "정하셨/어요?" 같은 어중 분리 방지 */
+          word-break: keep-all;
         }
         .ssb-sub {
           margin: 0;
-          font-size: 17px;
+          font-size: 15px;
           line-height: 1.5;
+          word-break: keep-all;
           font-weight: 500;
           color: #55737a;
         }
@@ -132,9 +132,10 @@ export default function SeoulStayBanner({
           display: flex;
           align-items: center;
           flex-wrap: wrap;
-          gap: 12px;
-          margin-top: 4px;
-          font-size: 13px;
+          gap: 10px;
+          margin-top: 2px;
+          font-size: 12.5px;
+          white-space: nowrap;
           font-weight: 500;
           color: #7b959b;
         }
@@ -150,23 +151,17 @@ export default function SeoulStayBanner({
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 12px;
+          gap: 8px;
           flex-shrink: 0;
-        }
-        .ssb-badge {
-          font-size: 12px;
-          font-weight: 700;
-          letter-spacing: 0.02em;
-          color: #c2410c;
         }
         .ssb-cta {
           display: flex;
           align-items: center;
           gap: 10px;
-          padding: 18px 30px;
+          padding: 15px 26px;
           border-radius: 10px;
           color: #fff;
-          font-size: 18px;
+          font-size: 16px;
           font-weight: 700;
           letter-spacing: -0.01em;
           white-space: nowrap;
@@ -205,14 +200,17 @@ export default function SeoulStayBanner({
         /* 태블릿 */
         @media (max-width: 768px) {
           .ssb-root {
-            column-gap: 28px;
-            padding: 26px 32px;
+            column-gap: 24px;
+            padding: 22px 24px;
           }
           .ssb-title {
-            font-size: 26px;
+            font-size: 22px;
           }
           .ssb-sub {
-            font-size: 15px;
+            font-size: 14px;
+          }
+          .ssb-trust {
+            display: none;
           }
         }
 
@@ -235,12 +233,6 @@ export default function SeoulStayBanner({
             font-size: 13px;
           }
           /* 모바일에서는 덜어내서 높이 압축 */
-          .ssb-trust {
-            display: none;   /* 신뢰요소 3줄 숨김 */
-          }
-          .ssb-badge {
-            display: none;   /* '실시간 특가' 뱃지 숨김 */
-          }
           .ssb-date {
             display: none;   /* 날짜 문구 숨김 */
           }
