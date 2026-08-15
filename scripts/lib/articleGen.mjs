@@ -9,6 +9,22 @@ export const REGION_PRIORITY = {
   세종: 2,
 };
 
+// ── 토큰 사용량 집계 (실비 측정용) ─────────────────────────────
+// Luna 5.6 단가: 입력 $0.20 / 출력 $1.20 per 1M (2026-07-30 인하분)
+export const PRICE = { in: 0.20 / 1e6, out: 1.20 / 1e6 };
+export const usageTotal = { in: 0, out: 0, calls: 0, search: 0 };
+export function addUsage(u, { search = false } = {}) {
+  if (!u) return;
+  usageTotal.in += u.prompt_tokens || u.input_tokens || 0;
+  usageTotal.out += u.completion_tokens || u.output_tokens || 0;
+  usageTotal.calls += 1;
+  if (search) usageTotal.search += 1;
+}
+export function usageCost(t = usageTotal) {
+  return t.in * PRICE.in + t.out * PRICE.out; // 검색 도구 호출료는 별도(대시보드 확인)
+}
+export function resetUsage() { usageTotal.in = 0; usageTotal.out = 0; usageTotal.calls = 0; usageTotal.search = 0; }
+
 export function tourTypeLabel(type) {
   return type === "14" ? "문화시설" : type === "28" ? "체험·레포츠" : "관광지";
 }
@@ -308,6 +324,7 @@ ${article}
       return { result: "ERROR", reason: `OpenAI HTTP ${res.status}: ${t.slice(0, 150)}`, improved: "" };
     }
     const j = await res.json();
+    addUsage(j?.usage);
     const content = j?.choices?.[0]?.message?.content || "";
     const m = content.match(/\{[\s\S]*\}/);
     const parsed = JSON.parse(m ? m[0] : content);
@@ -453,15 +470,16 @@ export async function researchFacts(place, { apiKey, model, timeoutMs = 90000 } 
 - 대중교통(지하철역·출구, 버스 노선번호), 도보 소요시간
 - 계절별 볼거리, 아이·가족 관련 시설, 지정·인증 사항
 
-[검색 방법 — 간단하게]
-- 웹 검색은 "${place.title} ${place.area}" 정도로 한 번만 하고, 상위 결과(첫 페이지) 안에서만 사실을 뽑아라.
-- 깊게 파고들지 말고, 상위 결과에 명확히 적힌 것만 가져와라.
+[검색 방법 — 최소한으로]
+- 웹 검색은 "${place.title} ${place.area}"로 **딱 한 번만** 실행하라. 추가 검색·재검색 금지.
+- 검색 결과 첫 페이지의 상위 2~3개 문서만 보고, 거기 명확히 적힌 것만 뽑아라.
+- 페이지를 더 열어보거나 깊이 파고들지 마라. 사실이 적으면 적은 대로 끝내라.
 
 [규칙]
 - 출처는 ${RESEARCH_DOMAINS} 위주. 개인 블로그·카페·커뮤니티는 쓰지 마라.
 - 확인되지 않은 것은 넣지 마라. 추측·요약 과장 금지. **사실이 적으면 적은 대로 반환**한다.
 - 각 사실은 한 줄로 짧게, 숫자는 출처에 나온 그대로.
-- **가능한 한 많이 모아라(20~35건 목표).** 시설 하나마다 별도 줄로, 규모·구성·이용 조건까지 나누어 적어라.
+- **12~18건만 모아라.** 많이 모으지 말고 방문자에게 가장 중요한 것부터 골라라(정체·대표 시설·규모·요금·시간·교통). 시설마다 '무엇인지' 한 줄 설명을 붙여라.
 - 같은 장소가 아닌 동명이인·유사명 장소의 정보를 섞지 마라(주소로 반드시 확인).
 - 요금·시간처럼 자주 바뀌는 값은 출처에 명시된 것만.
 
@@ -492,6 +510,7 @@ JSON만 출력:
     }
     if (!res) return { ...empty, reason: lastErr || "요청 실패" };
     const j = await res.json();
+    addUsage(j?.usage, { search: true });
     // output_text(단축 필드)가 없으면 output 배열에서 텍스트 조각을 모은다
     let raw = typeof j.output_text === "string" ? j.output_text : "";
     if (!raw && Array.isArray(j.output)) {
@@ -508,7 +527,7 @@ JSON만 출력:
     const clean = facts
       .map((f) => ({ fact: String(f?.fact || "").replace(/\s+/g, " ").trim(), source: String(f?.source || "").trim() }))
       .filter((f) => f.fact.length > 3)
-      .slice(0, 35);
+      .slice(0, 18);
     if (!clean.length) return { ...empty, reason: "수집된 사실 없음" };
     const sources = [...new Set(clean.map((f) => f.source).filter((u) => /^https?:\/\//.test(u)))].slice(0, 6);
     const text = clean.map((f) => `- ${f.fact}${f.source ? ` (출처: ${f.source})` : ""}`).join("\n");
@@ -567,7 +586,9 @@ ${research}${facts ? `\n${facts}\n` : ""}${retry}
 
 [분량 — 거짓 없이 "풀어서" 채우기]
 - 근거가 풍부하면 1,600~2,200자(공백 제외). 근거가 빈약하면 400~600자도 좋습니다.
-- ★ 근거 목록에 사실이 15건 이상 있으면 **한 건도 버리지 말고** 관련 소제목에 배치해 쓰세요. 남기면 손해입니다.
+- ★ 근거가 12~18건으로 적습니다. **한 건도 버리지 말고**, 각 사실을 최소 3문장으로 풀어 써서 분량을 채우세요.
+  적은 재료로 길게 쓰는 것이 핵심입니다. 사실을 나열해 끝내지 말고, 아래 [정보성 서술법]대로 늘리세요.
+  사실 하나 = 한 문장이 아니라, '무엇인지 → 어떻게 생겼는지/얼마나 되는지 → 방문자가 무엇을 하게 되는지' 순으로 늘려 쓰세요.
 - ★ 분량 채우려고 없는 내용 지어내기 절대 금지. **짧은 게 틀린 것보다 낫습니다.**
 - 분량은 "내용 없는 인사말·채우기 문장"이 아니라, **근거에 있는 사실 하나하나를 여러 문장으로 풀어서** 채웁니다.
   근거의 한 단어도 그냥 나열하지 말고, 방문자가 실제로 무엇을 보고 겪게 되는지로 바꿔 쓰세요.
@@ -585,6 +606,14 @@ ${research}${facts ? `\n${facts}\n` : ""}${retry}
   · "## 가는 길·주차"는 [운영 정보]에 주차·문의처가 있거나 근거에 교통 언급이 있을 때만 쓰고, 없으면 소제목째 빼세요.
   · "## 언제 가면 좋을까요"는 근거에 계절·운영기간·시기별 시설(물놀이장·단풍·축제 등) 언급이 있을 때만 쓰세요.
 - ★ 볼거리가 여러 개면 한 문단에 몰아넣지 말고 **시설·구역마다 문단을 나눠** 각각 2~3문장으로 설명하세요.
+[정보성 서술법 — 사실 하나를 3문장으로 늘리는 방법]
+사실 한 건마다 아래 3단계를 순서대로 쓰면 자연스럽게 분량이 채워집니다.
+  ① 그것이 무엇인지 (정의·성격)  ② 얼마나·어떻게 되어 있는지 (규모·구성·운영)  ③ 방문자에게 어떤 의미인지 (그래서 뭘 할 수 있나)
+예시 — 근거: "난지물놀이장 수심 80cm, 길이 140m"
+  ✗ "난지물놀이장은 수심 80cm, 길이 140m예요." (한 문장에 끝냄 — 나쁨)
+  ✓ "난지물놀이장은 한강을 바라보며 물놀이를 하는 강변 풀장이에요. 길이 140m에 수심은 80cm로 맞춰져 있어요. 어른 무릎에서 허리 사이 깊이라 초등 저학년도 발이 닿아, 아이와 함께 온 가족이 이용하기 무난해요."
+- ★ ③단계(방문자에게 어떤 의미인지)를 빠뜨리지 마세요. 이게 정보 나열과 정보성 블로그를 가르는 차이입니다.
+- 단, ③은 근거에서 논리적으로 따라오는 범위까지만 씁니다. 없는 사실을 만들어 붙이지 마세요.
 - ★ 한 소제목 아래 문단이 하나뿐이면 안 됩니다. 문단은 2~4문장으로 끊고 사이에 빈 줄. 긴 덩어리 금지.
 - ## 방문 팁은 목록(-), 라벨 굵게: 위 [운영 정보]에 **값이 있는 항목만** 넣으세요(예: **이용시간**, **휴무일**, **주차**, **이용요금**). 값이 없는 항목은 줄째 빼고, "정보 없음"을 여러 줄 반복하지 마세요. 운영 정보가 하나도 없으면 방문 팁 목록에 **추천 시기** 한 줄 정도만.
 - **굵게**는 핵심 키워드만(명소명·지역명·입장료·계절), 문단당 2~3개.
@@ -636,6 +665,7 @@ export async function callOpenAI(prompt, { apiKey, model = "gpt-4o-mini" } = {})
     throw new Error(`OpenAI HTTP ${res.status}: ${t.slice(0, 300)}`);
   }
   const j = await res.json();
+  addUsage(j?.usage);
   const text = (j?.choices?.[0]?.message?.content || "").trim();
   return { text, sources: [] };
 }

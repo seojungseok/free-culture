@@ -14,7 +14,7 @@ import { fileURLToPath } from "node:url";
 import {
   buildPrompt, buildMinimalPrompt, callOpenAI, qualityCheck, patternCheck, sanitizeUnsupported,
   verifyAndImprove, factCheckGemini, buildFactsBlock, rampUpCount, pickQueue, tourTypeLabel,
-  researchFacts,
+  researchFacts, usageTotal, usageCost,
 } from "./lib/articleGen.mjs";
 
 const MIN_OVERVIEW = 200; // 원본 200자 미만이면 글 생성 안 함(정보 페이지만)
@@ -331,9 +331,16 @@ async function main() {
     await sleep(1000);
   }
 
+  // 실비 측정 — 토큰 요금(검색 도구 호출료는 별도로 대시보드에서 확인)
+  const cost = usageCost();
+  const per = made > 0 ? cost / made : 0;
+  console.log(`
+💰 토큰 사용: 입력 ${usageTotal.in.toLocaleString()} · 출력 ${usageTotal.out.toLocaleString()} · 호출 ${usageTotal.calls}회(검색 ${usageTotal.search}회)`);
+  console.log(`   토큰 요금 $${cost.toFixed(4)} · 건당 $${per.toFixed(5)} (약 ${Math.round(per * 1400)}원) — 검색 도구 호출료 별도`);
+
   const keyFp = TOURKEY ? `${TOURKEY.slice(0, 6)}...${TOURKEY.slice(-4)} (${TOURKEY.length}자)` : "❌비어있음(secret 못 읽음)";
   store.generatedAt = new Date().toISOString();
-  store._lastRun = { at: new Date().toISOString(), newPub, rewritten, removed, skipped, keyFp, results: report }; // 진단용
+  store._lastRun = { at: new Date().toISOString(), newPub, rewritten, removed, skipped, keyFp, usage: { ...usageTotal, costUsd: Number(cost.toFixed(4)), perArticleUsd: Number(per.toFixed(5)) }, results: report }; // 진단용
   fs.writeFileSync(STORE, JSON.stringify(store, null, 0));
   const pub = Object.values(store.articles).filter((a) => a.status === "published").length;
   console.log(`\n💾 저장: 신규 ${newPub} · 재작성 ${rewritten} · 정보카드전환 ${removed} · 스킵 ${skipped} | 총 발행 ${pub}\n`);
