@@ -99,6 +99,16 @@ export function metaHits(text) {
   const b = String(text || "");
   return META_BANNED.filter((w) => b.includes(w));
 }
+// 전달체 — 근거를 그대로 옮기며 "~라고 소개돼 있어요"로 쓰는 문장.
+// 독자는 그 장소가 "어떤 곳인지"를 알고 싶지, 어디에 뭐라고 적혀 있는지는 궁금하지 않다.
+export const TRANSFER_PATTERNS = [
+  /소개(?:돼|되어|되고) ?있/, /소개된 (?:시설|볼거리|공간|장소)/, /(?:라고|으로) 소개(?:해|하고|된|됩니다|돼요)/,
+  /기재(?:돼|되어) ?있/, /안내(?:돼|되어) ?있/, /명시(?:돼|되어) ?있/, /표기(?:돼|되어) ?있/,
+  /확인할 수 있는 (?:지점|곳)이에요/, /살펴볼 수 있어요/,
+];
+export function transferHits(text) {
+  return sentences(text).filter((s) => TRANSFER_PATTERNS.some((re) => re.test(s)));
+}
 // 추측성(불확실한 존재를 단정처럼 말하는) 패턴 — 여러 개면 속 빈 글
 export const SPECULATIVE_PATTERNS = [
   /열릴 수 있|열릴 경우|열릴 예정|열리기도 합니다/,
@@ -150,6 +160,9 @@ export function qualityCheck(text, { overview = "", existingTexts = [], minimalM
   // "자료가 없다"는 메타 서술은 독자에게 무의미 → 근거가 생길 때까지 발행하지 않는다
   const mh = metaHits(body);
   if (mh.length) return { ok: false, reason: `자료없음 메타문장(${mh.slice(0, 2).join(",")})`, len };
+  // 전달체("~소개돼 있어요")가 여러 개면 근거를 옮기기만 한 글 → 반려
+  const th = transferHits(body);
+  if (th.length >= 2) return { ok: false, reason: `전달체 문장 ${th.length}개("${th[0].slice(0, 24)}…")`, len };
   const spec = speculativeHits(body);
   const sr = speculativeRatio(body);
   // 완화: 여행 소개글은 "~할 수 있어요"가 자연스러움 → 지나치게 많을 때만 반려
@@ -434,11 +447,17 @@ export async function researchFacts(place, { apiKey, model, timeoutMs = 90000 } 
   const prompt = `"${place.title}"(${place.area}, ${type}, 주소: ${place.addr})에 대해 웹에서 검증 가능한 사실만 수집하라.
 
 [수집 대상 — 방문자에게 실제로 필요한 정보]
-- 규모·구성(면적, 길이, 구역 구성), 주요 시설·볼거리의 정확한 이름
+- ★ 이곳이 "어떤 곳인지" 설명하는 개요: 무엇을 위해 만든 곳인지(조성 목적·배경), 어떤 지형·성격의 공간인지
+- 주요 시설·볼거리는 이름만 나열하지 말고 **그게 무엇인지 한 줄 설명까지** 함께(예: "링 워크 = 습지를 한 바퀴 도는 탐방로")
+- 규모·구성(면적, 길이, 구역 구성)
 - 이용시간, 휴무일, 이용요금(무료 여부 포함)
 - 주차장 위치·면수·요금
 - 대중교통(지하철역·출구, 버스 노선번호), 도보 소요시간
 - 계절별 볼거리, 아이·가족 관련 시설, 지정·인증 사항
+
+[검색 방법 — 간단하게]
+- 웹 검색은 "${place.title} ${place.area}" 정도로 한 번만 하고, 상위 결과(첫 페이지) 안에서만 사실을 뽑아라.
+- 깊게 파고들지 말고, 상위 결과에 명확히 적힌 것만 가져와라.
 
 [규칙]
 - 출처는 ${RESEARCH_DOMAINS} 위주. 개인 블로그·카페·커뮤니티는 쓰지 마라.
@@ -450,21 +469,29 @@ export async function researchFacts(place, { apiKey, model, timeoutMs = 90000 } 
 JSON만 출력:
 {"facts":[{"fact":"한 줄 사실","source":"출처 URL"}],"notFound":true 또는 false}`;
 
+  // 검색 도구 이름은 계정·모델에 따라 web_search / web_search_preview 두 가지가 쓰인다.
+  // 하나가 400이면 다른 이름으로 자동 재시도(어느 쪽이 먹는지 몰라도 되게).
+  const toolTypes = ["web_search", "web_search_preview"];
+  let res = null, lastErr = "";
   try {
-    const res = await fetch("https://api.openai.com/v1/responses", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
-      body: JSON.stringify({
-        model: model || "gpt-5.6-luna",
-        tools: [{ type: "web_search" }],
-        input: prompt,
-      }),
-      signal: AbortSignal.timeout(timeoutMs),
-    });
-    if (!res.ok) {
-      const t = await res.text();
-      return { ...empty, reason: `HTTP ${res.status}: ${t.slice(0, 120)}` };
+    for (const toolType of toolTypes) {
+      const r = await fetch("https://api.openai.com/v1/responses", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
+        body: JSON.stringify({
+          model: model || "gpt-5.6-luna",
+          tools: [{ type: toolType }],
+          input: prompt,
+        }),
+        signal: AbortSignal.timeout(timeoutMs),
+      });
+      if (r.ok) { res = r; break; }
+      const t = await r.text();
+      lastErr = `${toolType} → HTTP ${r.status}: ${t.slice(0, 160).replace(/\s+/g, " ")}`;
+      // 400(도구 미지원)만 다음 이름으로 재시도. 401/429 등은 재시도해도 같음.
+      if (r.status !== 400) break;
     }
+    if (!res) return { ...empty, reason: lastErr || "요청 실패" };
     const j = await res.json();
     // output_text(단축 필드)가 없으면 output 배열에서 텍스트 조각을 모은다
     let raw = typeof j.output_text === "string" ? j.output_text : "";
@@ -528,6 +555,10 @@ ${research}${facts ? `\n${facts}\n` : ""}${retry}
 - 근거에 없으면 그 항목 자체를 쓰지 말 것(빈 말로 채우지 말 것). 확실한 사실만.
 - ★ "제공된 자료에는 ~ 없어요", "근거에 기재되어 있지 않아요", "이번 안내에서는 ~ 중심으로" 같은 **자료 사정을 설명하는 문장은 절대 금지**입니다.
   독자는 자료 사정에 관심이 없습니다. 쓸 내용이 없으면 그 소제목을 통째로 빼세요. 짧은 글이 낫습니다.
+- ★ **전달체 금지**: "~라고 소개돼 있어요", "~시설이 소개된 곳이에요", "기재돼 있어요", "확인할 수 있는 지점이에요".
+  근거를 옮기지 말고 **그 장소가 어떤 곳인지 직접 설명**하세요.
+  ✗ "난지생태습지원과 링 워크가 소개돼 있어요"
+  ✓ "난지생태습지원은 한강 하류 생태계를 되살리려고 만든 인공 습지예요. 습지를 한 바퀴 도는 탐방로 '링 워크'를 따라 걸으면 물가 식생과 한강을 함께 볼 수 있어요."
 
 [⚠️ 사실 정확성 — 가장 중요]
 - 사실 근거에 **없는** 인물 이름·건립 연도·역사적 사건·건립 배경을 **절대 지어내지 마세요.** (틀린 정보는 최악입니다.)
@@ -543,6 +574,9 @@ ${research}${facts ? `\n${facts}\n` : ""}${retry}
   예: "자연관찰로 있음" → "자연관찰로를 따라 걸으면 계절마다 다른 식물과 물새를 가까이서 볼 수 있어요. 길이 평탄해 아이와 천천히 걸으며 자연 학습 나들이를 하기에도 좋아요."
   예: "습지생태공원" → 어떤 지형인지 · 무엇이 복원돼 있는지 · 그래서 방문자가 무엇을 보게 되는지 3문장으로.
 - 소제목별 최소 분량: 어떤 곳인가요 2문단(각 2~4문장), 볼거리·즐길거리 2~3문단(근거의 시설·지형·명소를 하나씩 풀어서), 아이·가족 1~2문단(해당 시), 방문 팁 목록 3~5줄.
+- ★ "## 어떤 곳인가요"는 주소 나열이 아니라 **정체 설명**입니다. 이 세 가지에 답하세요:
+  ① 무엇을 위해 만들어진 어떤 성격의 공간인가 ② 어떤 지형·구성으로 되어 있나 ③ 방문자는 여기서 주로 무엇을 하나.
+  주소는 방문 팁이나 가는 길에서 다루고, 이 섹션에서 반복하지 마세요.
 
 [구조·서식]
 - 맨 위 첫 줄: 그 장소 특징을 담은 매력적인 한 문장을 **굵게**(뻔한 인사 금지, 장소마다 다르게).
