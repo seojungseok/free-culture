@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Band, Container } from "@/components/Band";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import FoodCard from "@/components/FoodCard";
+import CoupangBanner from "@/components/CoupangBanner";
 import { filterRestaurants, foodAreas, FOOD_CATS, foodCatFromSlug } from "@/lib/food";
 import { SIDO_SLUG } from "@/lib/classify";
 
@@ -73,6 +74,11 @@ export default async function FoodCategoryPage({ params }: { params: Promise<{ c
             {shown.map((r) => <FoodCard key={r.id} r={r} />)}
           </div>
           <p className="mt-8 text-center text-[13px] text-ink-faint">지역을 선택하면 더 많은 {c.label} 맛집을 볼 수 있어요</p>
+
+          {/* 쿠팡 제휴 배너 — 목록 끝, 광고와 간격 확보 */}
+          <div className="mt-8">
+            <CoupangBanner />
+          </div>
 
           {/* 지역별 {업종} 맛집 — /food/[지역]/[업종] 정적 라우트로 내부링크 */}
           <section className="mt-12 border-t border-line pt-6">

@@ -13,8 +13,8 @@ import { useEffect, useState } from "react";
  * - 공정위 필수 고지 문구 포함
  *
  * 사용법:
- *   import CoupangCampingBanner from "@/components/CoupangCampingBanner";
- *   <CoupangCampingBanner />
+ *   import CoupangBanner from "@/components/CoupangBanner";
+ *   <CoupangBanner />
  *
  * ⚠️ 공정위/쿠팡 정책
  *  - 고지 문구는 반드시 노출되어야 함 (제거 금지)
@@ -28,7 +28,7 @@ const MOBILE_MAX = 767; // 이하이면 모바일 배너
 const PC = { width: 680, height: 140 };
 const MOBILE = { width: 320, height: 140 };
 
-export default function CoupangCampingBanner() {
+export default function CoupangBanner() {
   // null = 아직 폭 미확정(SSR·마운트 직전). 폭이 정해진 뒤에만 iframe을 그려
   // 잘못된 크기로 광고를 한 번 더 호출하는 일을 막는다.
   const [isMobile, setIsMobile] = useState(null);

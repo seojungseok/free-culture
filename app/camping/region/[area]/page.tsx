@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { filterCamps, campAreaCounts, CAMP_TYPE_SLUG } from "@/lib/camping";
 import { getAllBundles } from "@/lib/campingCollections";
 import CampCard from "@/components/CampCard";
-import CoupangCampingBanner from "@/components/CoupangCampingBanner";
+import CoupangBanner from "@/components/CoupangBanner";
 import { Band, Container } from "@/components/Band";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import { SIDO_SLUG, sidoFromSlug } from "@/lib/classify";
@@ -85,7 +85,7 @@ export default async function CampingRegionPage({ params }: { params: Promise<{ 
 
           {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 목록 끝, 광고와 간격 확보 */}
           <div className="mt-8">
-            <CoupangCampingBanner />
+            <CoupangBanner />
           </div>
 
           {otherAreas.length > 0 && (

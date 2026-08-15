@@ -6,7 +6,7 @@ import { SITE } from "@/lib/site";
 import { SIDO_SLUG } from "@/lib/classify";
 import { Container } from "@/components/Band";
 import CampCard from "@/components/CampCard";
-import CoupangCampingBanner from "@/components/CoupangCampingBanner";
+import CoupangBanner from "@/components/CoupangBanner";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -80,7 +80,7 @@ export default async function BundlePage({ params }: { params: Promise<{ slug: s
 
       {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 본문 끝, 광고와 간격 확보 */}
       <div className="mt-8">
-        <CoupangCampingBanner />
+        <CoupangBanner />
       </div>
 
       <div className="mt-8">

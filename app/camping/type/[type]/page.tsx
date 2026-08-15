@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { filterCamps, campAreaCounts, CAMP_TYPE_SLUG, campTypeFromSlug } from "@/lib/camping";
 import CampCard from "@/components/CampCard";
-import CoupangCampingBanner from "@/components/CoupangCampingBanner";
+import CoupangBanner from "@/components/CoupangBanner";
 import { Band, Container } from "@/components/Band";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import { SIDO_SLUG } from "@/lib/classify";
@@ -73,7 +73,7 @@ export default async function CampingTypePage({ params }: { params: Promise<{ ty
 
           {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 목록 끝, 광고와 간격 확보 */}
           <div className="mt-8">
-            <CoupangCampingBanner />
+            <CoupangBanner />
           </div>
 
           {/* 지역별 {유형} — 지역 캠핑장 라우트로 내부링크 */}

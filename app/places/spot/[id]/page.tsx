@@ -14,6 +14,7 @@ import { Container } from "@/components/Band";
 import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
 import ArticleBody from "@/components/ArticleBody";
 import SeoulStayBanner from "@/components/SeoulStayBanner";
+import CoupangBanner from "@/components/CoupangBanner";
 
 // 서울 숙소 제휴 배너 노출 조건 — 지역이 서울이거나 주소에 서울이 포함될 때만
 const isSeoulPlace = (p: { area?: string; addr?: string }) =>
@@ -432,8 +433,8 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "나들이", item: `${SITE.url}/places` },
-      { "@type": "ListItem", position: 2, name: r.area, item: `${SITE.url}/places/${areaSlug}` },
+      { "@type": "ListItem", position: 1, name: "맛집 탐방", item: `${SITE.url}/food` },
+      { "@type": "ListItem", position: 2, name: r.area, item: `${SITE.url}/food/${areaSlug}` },
       { "@type": "ListItem", position: 3, name: r.title, item: canonical },
     ],
   };
@@ -442,11 +443,12 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
     <Container className="max-w-[820px] pb-16 pt-5">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      {/* 음식점 상세는 맛집 탐방(/food) 소속 — 나들이로 표시하지 않는다 */}
       <nav className="mb-3 flex flex-wrap items-center gap-1 text-[12.5px] text-ink-faint">
-        <Link href="/places" className="hover:text-free">나들이</Link>
+        <Link href="/food" className="hover:text-free">맛집 탐방</Link>
         <span>›</span>
         {areaSlug ? (
-          <Link href={`/places/${areaSlug}`} className="hover:text-free">{r.area}</Link>
+          <Link href={`/food/${areaSlug}`} className="hover:text-free">{r.area}</Link>
         ) : (
           <span>{r.area}</span>
         )}
@@ -518,12 +520,10 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
         </section>
       )}
 
-      {/* 서울 숙소 제휴 배너 — 서울 음식점에서만 (광고, 위아래 여백 확보) */}
-      {isSeoulPlace(r) && (
-        <div className="my-8">
-          <SeoulStayBanner />
-        </div>
-      )}
+      {/* 쿠팡 제휴 배너 — 맛집 상세(맛집 탐방 소속). 숙소 배너는 나들이 전용이라 여기 안 넣음 */}
+      <div className="mt-8">
+        <CoupangBanner />
+      </div>
 
       <p className="mt-3 rounded-xl bg-tint/50 px-4 py-3 text-[13px] leading-[1.6] text-ink-soft">
         영업시간·휴무는 바뀔 수 있어요. 방문 전 전화나 지도로 <b className="font-bold text-ink">영업 여부를 확인</b>하시길 권해요.
@@ -552,10 +552,10 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
           </a>
         )}
         <Link
-          href={areaSlug ? `/places/${areaSlug}` : "/places"}
+          href={areaSlug ? `/food/${areaSlug}` : "/food"}
           className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free"
         >
-          {r.area} 나들이 장소 보기 →
+          {r.area} 맛집 더 보기 →
         </Link>
       </div>
 

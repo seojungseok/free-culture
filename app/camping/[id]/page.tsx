@@ -8,7 +8,7 @@ import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
 import TourCard from "@/components/TourCard";
-import CoupangCampingBanner from "@/components/CoupangCampingBanner";
+import CoupangBanner from "@/components/CoupangBanner";
 
 export const dynamicParams = true;
 export const revalidate = 2592000; // 30일 — 캠핑장 정보 거의 불변(대역폭 절감)
@@ -122,7 +122,7 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
 
       {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 본문 끝, 광고와 간격 확보 */}
       <div className="mt-8">
-        <CoupangCampingBanner />
+        <CoupangBanner />
       </div>
 
       {nearFood.length > 0 && (

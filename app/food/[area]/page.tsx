@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Band, Container } from "@/components/Band";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import FoodCard from "@/components/FoodCard";
+import CoupangBanner from "@/components/CoupangBanner";
 import { filterRestaurants, foodAreas, FOOD_CATS } from "@/lib/food";
 import { SIDO_SLUG, sidoFromSlug } from "@/lib/classify";
 
@@ -74,6 +75,11 @@ export default async function FoodAreaPage({ params }: { params: Promise<{ area:
             {sido} 맛집 {list.length.toLocaleString()}곳 중 {CAP}곳 표시 — 업종을 선택해 더 좁혀보세요.
           </p>
         )}
+
+        {/* 쿠팡 제휴 배너 — 목록 끝, 광고와 간격 확보 */}
+        <div className="mt-8">
+          <CoupangBanner />
+        </div>
 
         {/* 다른 지역 맛집 — 내부링크(크롤 유도) */}
         {otherAreas.length > 0 && (

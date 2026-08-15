@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Band, Container } from "@/components/Band";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import FoodCard from "@/components/FoodCard";
+import CoupangBanner from "@/components/CoupangBanner";
 import { filterRestaurants, foodAreas, foodCatLabel, FOOD_CATS, getAllRestaurants } from "@/lib/food";
 import { SIDO_SLUG } from "@/lib/classify";
 
@@ -84,6 +85,11 @@ export default async function FoodPage({ searchParams }: { searchParams: Promise
             </div>
           )}
           {list.length > CAP && <p className="mt-8 text-center text-[13px] text-ink-faint">상위 {CAP}곳 표시 · 지역·업종 필터로 좁혀보세요</p>}
+
+          {/* 쿠팡 제휴 배너 — 목록 끝, 광고와 간격 확보 */}
+          <div className="mt-8">
+            <CoupangBanner />
+          </div>
 
           {/* 지역별 맛집 바로가기 — 정적 허브(/food/[area])로 내부링크(색인·크롤 유도) */}
           <section className="mt-12 border-t border-line pt-6">
