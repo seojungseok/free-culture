@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { filterCamps, campAreaCounts, CAMP_TYPE_SLUG, campTypeFromSlug } from "@/lib/camping";
 import CampCard from "@/components/CampCard";
+import CoupangCampingBanner from "@/components/CoupangCampingBanner";
 import { Band, Container } from "@/components/Band";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import { SIDO_SLUG } from "@/lib/classify";
@@ -69,6 +70,11 @@ export default async function CampingTypePage({ params }: { params: Promise<{ ty
             {shown.map((c) => <CampCard key={c.id} camp={c} />)}
           </div>
           <p className="mt-8 text-center text-[13px] text-ink-faint">지역을 선택하면 더 많은 {t.label}을 볼 수 있어요</p>
+
+          {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 목록 끝, 광고와 간격 확보 */}
+          <div className="mt-8">
+            <CoupangCampingBanner />
+          </div>
 
           {/* 지역별 {유형} — 지역 캠핑장 라우트로 내부링크 */}
           <section className="mt-12 border-t border-line pt-6">

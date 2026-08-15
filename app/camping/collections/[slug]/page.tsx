@@ -6,6 +6,7 @@ import { SITE } from "@/lib/site";
 import { SIDO_SLUG } from "@/lib/classify";
 import { Container } from "@/components/Band";
 import CampCard from "@/components/CampCard";
+import CoupangCampingBanner from "@/components/CoupangCampingBanner";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -75,6 +76,11 @@ export default async function BundlePage({ params }: { params: Promise<{ slug: s
       <h2 className="mb-3 mt-10 text-[16px] font-extrabold text-ink">사진으로 보기</h2>
       <div className="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 md:grid-cols-4">
         {camps.filter((c) => c.image).slice(0, 12).map((c) => <CampCard key={c.id} camp={c} />)}
+      </div>
+
+      {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 본문 끝, 광고와 간격 확보 */}
+      <div className="mt-8">
+        <CoupangCampingBanner />
       </div>
 
       <div className="mt-8">

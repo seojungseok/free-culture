@@ -8,6 +8,7 @@ import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
 import TourCard from "@/components/TourCard";
+import CoupangCampingBanner from "@/components/CoupangCampingBanner";
 
 export const dynamicParams = true;
 export const revalidate = 2592000; // 30일 — 캠핑장 정보 거의 불변(대역폭 절감)
@@ -117,6 +118,11 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
       <div className="mt-5 flex flex-wrap gap-2.5">
         {mapUrl && <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-free px-5 py-2.5 text-sm font-bold text-white transition hover:bg-freedark">🗺️ 카카오맵 길찾기</a>}
         <Link href={`/camping?area=${encodeURIComponent(c.area)}`} className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free">{c.area} 다른 캠핑장 →</Link>
+      </div>
+
+      {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 본문 끝, 광고와 간격 확보 */}
+      <div className="mt-8">
+        <CoupangCampingBanner />
       </div>
 
       {nearFood.length > 0 && (
