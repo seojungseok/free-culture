@@ -20,9 +20,9 @@ export function rampUpCount(startDate, today = new Date()) {
   const day = Math.floor((t - s) / 86400000) + 1; // 시작일 당일 = 1일차
   if (day < 1) return 0;
   if (day <= 14) return 5;
-  if (day <= 30) return 10;
-  if (day <= 90) return 20;
-  return 30;
+  if (day <= 30) return 60;   // 웹 검색 근거가 붙어 품질이 확보된 뒤 상향(건당 약 40초)
+  if (day <= 90) return 80;
+  return 100;
 }
 
 // ── 우선순위 큐: 미발행 장소를 지역 라운드로빈으로 N개 ──
@@ -104,7 +104,7 @@ export function metaHits(text) {
 export const TRANSFER_PATTERNS = [
   /소개(?:돼|되어|되고) ?있/, /소개된 (?:시설|볼거리|공간|장소)/, /(?:라고|으로) 소개(?:해|하고|된|됩니다|돼요)/,
   /기재(?:돼|되어) ?있/, /안내(?:돼|되어) ?있/, /명시(?:돼|되어) ?있/, /표기(?:돼|되어) ?있/,
-  /확인할 수 있는 (?:지점|곳)이에요/, /살펴볼 수 있어요/,
+  /자료에 따라/, /함께 소개되는/,
 ];
 export function transferHits(text) {
   return sentences(text).filter((s) => TRANSFER_PATTERNS.some((re) => re.test(s)));
@@ -162,7 +162,7 @@ export function qualityCheck(text, { overview = "", existingTexts = [], minimalM
   if (mh.length) return { ok: false, reason: `자료없음 메타문장(${mh.slice(0, 2).join(",")})`, len };
   // 전달체("~소개돼 있어요")가 여러 개면 근거를 옮기기만 한 글 → 반려
   const th = transferHits(body);
-  if (th.length >= 2) return { ok: false, reason: `전달체 문장 ${th.length}개("${th[0].slice(0, 24)}…")`, len };
+  if (th.length >= 3) return { ok: false, reason: `전달체 문장 ${th.length}개("${th[0].slice(0, 24)}…")`, len };
   const spec = speculativeHits(body);
   const sr = speculativeRatio(body);
   // 완화: 여행 소개글은 "~할 수 있어요"가 자연스러움 → 지나치게 많을 때만 반려
