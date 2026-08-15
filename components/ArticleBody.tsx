@@ -1,6 +1,8 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 // 통제된 마크다운(우리 생성물) 전용 경량 렌더러 — ## 소제목 / - 목록 / **굵게** / 문단
+// 소제목마다 그 장소 사진을 한 장씩 끼워 본문을 풍부하게(코스 글과 같은 방식).
 function renderInline(s: string): ReactNode[] {
   return s.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
     part.startsWith("**") && part.endsWith("**") ? (
@@ -11,11 +13,22 @@ function renderInline(s: string): ReactNode[] {
   );
 }
 
-export default function ArticleBody({ content }: { content: string }) {
+export default function ArticleBody({
+  content,
+  images = [],
+  title = "",
+}: {
+  content: string;
+  /** 본문 소제목 뒤에 순서대로 끼울 사진 URL (대표사진은 보통 상단 갤러리에 쓰므로 제외하고 넘김) */
+  images?: string[];
+  /** 사진 alt에 쓸 장소명 */
+  title?: string;
+}) {
   const lines = content.split(/\r?\n/);
   const blocks: ReactNode[] = [];
   let i = 0;
   let key = 0;
+  let imgAt = 0; // 다음에 끼울 사진 인덱스 (소진되면 더 안 넣음)
 
   while (i < lines.length) {
     const line = lines[i];
@@ -23,12 +36,34 @@ export default function ArticleBody({ content }: { content: string }) {
 
     // 소제목 (## 또는 ###)
     if (/^#{2,3}\s/.test(line)) {
+      const headingText = line.replace(/^#{2,3}\s/, "");
       blocks.push(
         <h2 key={key++} className="mt-7 text-[19px] font-extrabold tracking-tight text-ink first:mt-0 sm:text-[20px]">
-          {renderInline(line.replace(/^#{2,3}\s/, ""))}
+          {renderInline(headingText)}
         </h2>
       );
       i++;
+      // 소제목 바로 뒤에 사진 한 장 — alt는 "장소명 소제목"(이미지 검색 노출)
+      const src = images[imgAt];
+      if (src) {
+        imgAt++;
+        // 소제목에 이미 장소명이 들어간 경우(SEO 소제목) 앞에 또 붙이지 않는다
+        const plain = headingText.replace(/\*\*/g, "").trim();
+        const alt = title && !plain.includes(title) ? `${title} ${plain}` : plain || title;
+        blocks.push(
+          <div key={key++} className="relative mt-3 aspect-[16/10] w-full overflow-hidden rounded-2xl bg-neutral-100 ring-1 ring-black/[0.04]">
+            <Image
+              src={src}
+              alt={alt}
+              fill
+              sizes="(max-width:820px) 100vw, 820px"
+              className="object-cover"
+              loading="lazy"
+              unoptimized
+            />
+          </div>
+        );
+      }
       continue;
     }
 

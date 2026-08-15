@@ -206,7 +206,8 @@ export default async function SpotDetailPage({
       )}
 
       {article ? (
-        <ArticleBody content={article.content} />
+        // 본문 소제목마다 사진 한 장씩 — 대표사진은 위 갤러리에 이미 크게 있으므로 2번째부터 사용
+        <ArticleBody content={article.content} images={gallery.slice(1).map((g) => g.full)} title={spot.title} />
       ) : overview ? (
         <p className="mt-5 whitespace-pre-line text-[15px] leading-[1.8] text-ink-soft">
           {overview}
