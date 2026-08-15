@@ -5,6 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { TourSpot } from "@/lib/tour";
 import { SIDO_SLUG } from "@/lib/classify";
 import TourCard from "./TourCard";
+import SeoulStayBanner from "./SeoulStayBanner";
 import { Container } from "./Band";
 
 const PAGE = 24;
@@ -155,6 +156,13 @@ export default function PlacesBrowser({
             {shown.map((s) => (
               <TourCard key={s.id} spot={s} />
             ))}
+          </div>
+        )}
+
+        {/* 서울 숙소 제휴 배너 — 지역이 서울일 때만(칩 선택 포함). 광고, 위아래 여백 확보 */}
+        {area === "서울" && shown.length > 0 && (
+          <div className="mt-10">
+            <SeoulStayBanner />
           </div>
         )}
 

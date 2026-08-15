@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Band } from "@/components/Band";
 import CourseCard from "@/components/CourseCard";
+import SeoulStayBanner from "@/components/SeoulStayBanner";
 import {
   filterCourses, getCourseAreaCounts, getDurationCounts, getThemeCounts,
   DURATIONS, THEMES, areaSlug, sidoFromSlug, durationSlug, slimCourse,
@@ -79,6 +80,13 @@ export default async function CourseAreaPage({ params }: { params: Promise<{ are
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {list.map((c) => <CourseCard key={c.id} course={c} />)}
         </div>
+
+        {/* 서울 숙소 제휴 배너 — 서울 지역에서만 (광고, 위아래 여백 확보) */}
+        {area === "서울" && (
+          <div className="my-10">
+            <SeoulStayBanner />
+          </div>
+        )}
 
         {otherAreas.length > 0 && (
           <div className="mt-8 border-t border-line pt-5">

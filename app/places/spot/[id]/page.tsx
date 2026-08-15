@@ -13,6 +13,11 @@ import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
 import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
 import ArticleBody from "@/components/ArticleBody";
+import SeoulStayBanner from "@/components/SeoulStayBanner";
+
+// 서울 숙소 제휴 배너 노출 조건 — 지역이 서울이거나 주소에 서울이 포함될 때만
+const isSeoulPlace = (p: { area?: string; addr?: string }) =>
+  p.area === "서울" || (p.addr || "").includes("서울");
 
 // 상세는 방문 시점에 detailCommon2로 overview를 받아 ISR 캐시 (빌드 시 전량 프리렌더 X)
 export const dynamicParams = true;
@@ -266,6 +271,13 @@ export default async function SpotDetailPage({
         )}
       </dl>
 
+      {/* 서울 숙소 제휴 배너 — 서울 장소에서만 (광고, 위아래 여백 확보) */}
+      {isSeoulPlace(spot) && (
+        <div className="my-8">
+          <SeoulStayBanner />
+        </div>
+      )}
+
       {/* 방문 정보 (detailIntro2 캐시) — 이용시간·휴무일·주차·요금 등 */}
       {tipRows.length > 0 && (
         <section className="mt-6">
@@ -504,6 +516,13 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
             ))}
           </dl>
         </section>
+      )}
+
+      {/* 서울 숙소 제휴 배너 — 서울 음식점에서만 (광고, 위아래 여백 확보) */}
+      {isSeoulPlace(r) && (
+        <div className="my-8">
+          <SeoulStayBanner />
+        </div>
       )}
 
       <p className="mt-3 rounded-xl bg-tint/50 px-4 py-3 text-[13px] leading-[1.6] text-ink-soft">

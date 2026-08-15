@@ -6,6 +6,7 @@ import { Container } from "@/components/Band";
 import CourseArticleBody from "@/components/CourseArticleBody";
 import CourseCard from "@/components/CourseCard";
 import CourseShare from "@/components/CourseShare";
+import SeoulStayBanner from "@/components/SeoulStayBanner";
 import {
   getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays, courseFoodStops,
 } from "@/lib/courses";
@@ -71,6 +72,8 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   };
   const festivals = areaFestivals(c.area, { limit: 4 }); // 보는 시점 날짜 연동
   const days = courseDays(c); // 일차별 분할(하루 3~4곳)
+  // 서울 코스에만 숙소 제휴 배너 (링크가 서울 고정)
+  const isSeoul = c.area === "서울" || c.stops.some((s) => (s.addr || "").includes("서울"));
 
   const itemListLd = {
     "@context": "https://schema.org",
@@ -173,6 +176,13 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
             </a>
           )}
         </section>
+      )}
+
+      {/* 서울 숙소 제휴 배너 — 서울 코스에서만 (광고, 위아래 여백 확보) */}
+      {isSeoul && (
+        <div className="my-10">
+          <SeoulStayBanner />
+        </div>
       )}
 
       {/* 근처 맛집 — 코스 좌표 기준, 내부링크. 해수욕장 베스트(리스트형)엔 맛집 표시 안 함. */}

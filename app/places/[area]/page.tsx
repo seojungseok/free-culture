@@ -59,6 +59,7 @@ export default async function PlacesAreaPage({
       <Suspense fallback={null}>
         <PlacesBrowser spots={spots} areas={areas} initialArea={sido} total={regionSpots.length} typeTotals={getTypeCounts(sido)} />
       </Suspense>
+      {/* 서울 숙소 제휴 배너는 PlacesBrowser 안에서 지역 선택(서울) 기준으로 렌더 */}
     </>
   );
 }
