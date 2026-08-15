@@ -35,6 +35,7 @@ export default function SeoulStayBanner({
   }, []);
 
   return (
+    <div className="ssb-outer">
     <a
       href={href}
       target="_blank"
@@ -248,5 +249,21 @@ export default function SeoulStayBanner({
         }
       `}</style>
     </a>
+
+      {/* 공정위 고지 — 있는 듯 없는 듯, 작고 흐리게 */}
+      <p
+        style={{
+          margin: "8px 0 0",
+          textAlign: "center",
+          fontSize: "11px",
+          lineHeight: 1.5,
+          color: "#9aa5ab",
+          fontFamily: '"Noto Sans KR", "Apple SD Gothic Neo", sans-serif',
+        }}
+      >
+        본 포스팅은 제휴 링크가 포함되어 있으며 소정의 수수료를 제공받습니다.
+      </p>
+
+    </div>
   );
 }
