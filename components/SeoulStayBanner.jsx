@@ -220,37 +220,38 @@ export default function SeoulStayBanner({
         @media (max-width: 560px) {
           .ssb-root {
             grid-template-columns: 1fr;
-            row-gap: 20px;
-            padding: 24px 22px 26px;
+            row-gap: 14px;
+            padding: 18px 18px 18px;
             text-align: left;
           }
           .ssb-left {
-            gap: 10px;
+            gap: 7px;
           }
           .ssb-title {
-            font-size: 22px;
+            font-size: 19px;
+            line-height: 1.3;
           }
           .ssb-sub {
-            font-size: 14px;
+            font-size: 13px;
           }
+          /* 모바일에서는 덜어내서 높이 압축 */
           .ssb-trust {
-            gap: 8px;
-            font-size: 12px;
+            display: none;   /* 신뢰요소 3줄 숨김 */
+          }
+          .ssb-badge {
+            display: none;   /* '실시간 특가' 뱃지 숨김 */
+          }
+          .ssb-date {
+            display: none;   /* 날짜 문구 숨김 */
           }
           .ssb-right {
             align-items: stretch;
             width: 100%;
           }
-          .ssb-badge {
-            text-align: left;
-          }
           .ssb-cta {
             justify-content: center;
-            padding: 16px 24px;
-            font-size: 16px;
-          }
-          .ssb-date {
-            text-align: center;
+            padding: 13px 20px;
+            font-size: 15px;
           }
         }
       `}</style>
