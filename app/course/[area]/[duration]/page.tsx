@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Band } from "@/components/Band";
 import CourseCard from "@/components/CourseCard";
 import SeoulStayBanner from "@/components/SeoulStayBanner";
+import { stayLinkFor } from "@/lib/stayLinks";
 import {
   filterCourses, getCourseAreaCounts, getDurationCounts,
   DURATIONS, durationFromSlug, durationLabel, areaSlug, sidoFromSlug, slimCourse,
@@ -86,10 +87,10 @@ export default async function CourseAreaDurationPage({ params }: { params: Promi
           {list.map((c) => <CourseCard key={c.id} course={c} />)}
         </div>
 
-        {/* 서울 숙소 제휴 배너 — 서울 지역에서만 (광고, 위아래 여백 확보) */}
-        {area === "서울" && (
+        {/* 숙소 제휴 배너 — 제휴 링크가 등록된 지역에서만 (광고, 위아래 여백 확보) */}
+        {stayLinkFor(area) && (
           <div className="mt-10">
-            <SeoulStayBanner />
+            <SeoulStayBanner region={stayLinkFor(area)!.region} href={stayLinkFor(area)!.href} />
           </div>
         )}
       </div>

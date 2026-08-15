@@ -6,6 +6,7 @@ import type { TourSpot } from "@/lib/tour";
 import { SIDO_SLUG } from "@/lib/classify";
 import TourCard from "./TourCard";
 import SeoulStayBanner from "./SeoulStayBanner";
+import { stayLinkFor } from "@/lib/stayLinks";
 import { Container } from "./Band";
 
 const PAGE = 24;
@@ -65,6 +66,7 @@ export default function PlacesBrowser({
     [areaSpots, type]
   );
   const shown = filtered.slice(0, visible);
+  const stay = stayLinkFor(area); // 선택한 지역에 숙소 제휴 링크가 있으면 배너 노출
   const grandTotal = total ?? spots.length;
   const isNationSample = !area && total != null && total > spots.length;
   // 제목 옆 개수 — 전체 집계가 있으면 현재 유형의 전체 수, 없으면 기존 로직
@@ -159,10 +161,10 @@ export default function PlacesBrowser({
           </div>
         )}
 
-        {/* 서울 숙소 제휴 배너 — 지역이 서울일 때만(칩 선택 포함). 광고, 위아래 여백 확보 */}
-        {area === "서울" && shown.length > 0 && (
+        {/* 숙소 제휴 배너 — 제휴 링크가 등록된 지역을 고른 경우만. 광고, 위아래 여백 확보 */}
+        {stay && shown.length > 0 && (
           <div className="mt-10">
-            <SeoulStayBanner />
+            <SeoulStayBanner region={stay.region} href={stay.href} />
           </div>
         )}
 

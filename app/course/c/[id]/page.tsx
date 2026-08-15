@@ -7,6 +7,7 @@ import CourseArticleBody from "@/components/CourseArticleBody";
 import CourseCard from "@/components/CourseCard";
 import CourseShare from "@/components/CourseShare";
 import SeoulStayBanner from "@/components/SeoulStayBanner";
+import { stayLinkFor } from "@/lib/stayLinks";
 import {
   getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays, courseFoodStops,
 } from "@/lib/courses";
@@ -72,8 +73,8 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   };
   const festivals = areaFestivals(c.area, { limit: 4 }); // 보는 시점 날짜 연동
   const days = courseDays(c); // 일차별 분할(하루 3~4곳)
-  // 서울 코스에만 숙소 제휴 배너 (링크가 서울 고정)
-  const isSeoul = c.area === "서울" || c.stops.some((s) => (s.addr || "").includes("서울"));
+  // 제휴 링크가 등록된 지역의 코스에만 숙소 배너
+  const stay = stayLinkFor(c.area, c.stops.map((s) => s.addr || "").join(" "));
 
   const itemListLd = {
     "@context": "https://schema.org",
@@ -178,10 +179,10 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
         </section>
       )}
 
-      {/* 서울 숙소 제휴 배너 — 서울 코스에서만 (광고, 위아래 여백 확보) */}
-      {isSeoul && (
+      {/* 숙소 제휴 배너 — 제휴 링크가 등록된 지역에서만 (광고, 위아래 여백 확보) */}
+      {stay && (
         <div className="my-10">
-          <SeoulStayBanner />
+          <SeoulStayBanner region={stay.region} href={stay.href} />
         </div>
       )}
 
