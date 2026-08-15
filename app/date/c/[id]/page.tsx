@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/Band";
 import CoupangBanner from "@/components/CoupangBanner";
 import { fetchPlaceOverview } from "@/lib/tourDetail";
+import { getRestaurantMenu, restaurantIntroRows } from "@/lib/tourExtra";
 import { getDateCourse, getDateCourses, dateCoursesByArea, distLabel, walkMinutes, type CourseStop } from "@/lib/dateCourses";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
@@ -21,7 +22,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const c = getDateCourse(id);
   if (!c) return { title: "코스를 찾을 수 없습니다" };
   const title = `${c.cafe.title} 카페데이트 — ${c.area} ${c.city} 카페·공원·맛집 코스`;
-  const description = `${c.area} ${c.city} 카페데이트 코스. ${c.cafe.title}에서 커피 한잔 하고 ${distLabel(c.park.distKm)} 거리의 ${c.park.title}을 걷다가 ${c.food.title}에서 식사까지, 도보 ${c.walkMin}분이면 이어지는 반나절 동선이에요.`;
+  const menu = getRestaurantMenu(c.food.id);
+  const menuHead = menu ? menu.split(" / ")[0] : "";
+  const description = `${c.area} ${c.city} 카페데이트 코스. ${c.cafe.title}에서 커피 한잔 하고 ${distLabel(c.park.distKm)} 거리의 ${c.park.title}을 걷다가 ${c.food.title}${menuHead ? `(${menuHead})` : ""}에서 식사까지, 도보 ${c.walkMin}분이면 이어지는 반나절 동선이에요.`;
   return {
     title,
     description,
@@ -32,6 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       `${c.cafe.title} 데이트`,
       `${c.city} 카페 추천`,
       `${c.area} 데이트 코스`,
+      ...(menuHead ? [`${c.city} ${menuHead}`, `${c.food.title} ${menuHead}`] : []),
     ],
     alternates: { canonical: `/date/c/${id}` },
     openGraph: { title, description, ...(c.image ? { images: [{ url: c.image }] } : {}), type: "article" },
@@ -40,9 +44,13 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 /** 코스 한 지점 — 사진 + 소개 + 이동 정보 */
 function StopSection({
-  stop, label, emoji, overview, fromTitle, intro,
+  stop, label, emoji, overview, fromTitle, intro, menu, rows,
 }: {
   stop: CourseStop; label: string; emoji: string; overview: string; fromTitle?: string; intro: string;
+  /** 대표메뉴 / 취급메뉴 (음식점·카페만) */
+  menu?: string;
+  /** 영업시간·휴무 등 (값 있는 항목만) */
+  rows?: { label: string; value: string }[];
 }) {
   return (
     <section className="mt-9">
@@ -65,8 +73,23 @@ function StopSection({
       )}
 
       <p className="mt-3 text-[15px] leading-[1.85] text-ink-soft">{intro}</p>
+      {menu && (
+        <p className="mt-3 rounded-xl bg-tint/50 px-4 py-3 text-[14px] leading-[1.7] text-ink-soft">
+          🍴 <b className="font-bold text-ink">뭘 먹나요</b> — {menu}
+        </p>
+      )}
       {overview && (
         <p className="mt-3 whitespace-pre-line text-[15px] leading-[1.85] text-ink-soft">{overview}</p>
+      )}
+      {rows && rows.length > 0 && (
+        <dl className="mt-3 divide-y divide-line rounded-2xl border border-line bg-white">
+          {rows.map((r) => (
+            <div key={r.label} className="flex gap-3 px-4 py-2.5">
+              <dt className="w-16 shrink-0 text-[12.5px] font-bold text-ink-faint">{r.label}</dt>
+              <dd className="min-w-0 flex-1 whitespace-pre-line text-[13.5px] text-ink">{r.value}</dd>
+            </div>
+          ))}
+        </dl>
       )}
 
       <div className="mt-3 flex flex-wrap gap-2">
@@ -96,6 +119,11 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
     fetchPlaceOverview(c.park.id),
     fetchPlaceOverview(c.food.id),
   ]);
+  // 메뉴·영업정보는 수집 캐시에서 (API 호출 없음)
+  const cafeMenu = getRestaurantMenu(c.cafe.id);
+  const foodMenu = getRestaurantMenu(c.food.id);
+  const cafeRows = restaurantIntroRows(c.cafe.id).filter((r) => r.label !== "대표메뉴" && r.label !== "취급메뉴").slice(0, 3);
+  const foodRows = restaurantIntroRows(c.food.id).filter((r) => r.label !== "대표메뉴" && r.label !== "취급메뉴").slice(0, 3);
 
   const areaSlug = (SIDO_SLUG as Record<string, string>)[c.area] || "";
   const canonical = `${SITE.url}/date/c/${id}`;
@@ -171,7 +199,7 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
       </div>
 
       <StopSection
-        stop={c.cafe} label="1. 카페" emoji="☕" overview={cafeOv.overview}
+        stop={c.cafe} label="1. 카페" emoji="☕" overview={cafeOv.overview} menu={cafeMenu} rows={cafeRows}
         intro={`${c.cafe.addr}에 있는 카페예요. 이 코스의 출발점으로, 먼저 여기서 커피를 마시며 쉬었다가 걷기 시작하면 동선이 자연스러워요.`}
       />
       <StopSection
@@ -179,8 +207,8 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
         intro={`카페에서 ${distLabel(c.park.distKm)}, 걸어서 ${walkMinutes(c.park.distKm)}분 거리예요. 커피를 들고 이동해 천천히 걷기 좋은 구간이라 이 코스의 가운데에 뒀어요.`}
       />
       <StopSection
-        stop={c.food} label="3. 맛집" emoji="🍽" overview={foodOv.overview} fromTitle={c.park.title}
-        intro={`산책을 마치고 ${distLabel(c.food.distKm)}, 도보 ${walkMinutes(c.food.distKm)}분이면 닿아요. 걷고 난 뒤 식사로 마무리하기 좋은 위치예요.`}
+        stop={c.food} label="3. 맛집" emoji="🍽" overview={foodOv.overview} fromTitle={c.park.title} menu={foodMenu} rows={foodRows}
+        intro={`산책을 마치고 ${distLabel(c.food.distKm)}, 도보 ${walkMinutes(c.food.distKm)}분이면 닿아요. 걷고 난 뒤 식사로 마무리하기 좋은 위치예요.${foodMenu ? ` 대표메뉴는 ${foodMenu.split(" / ")[0]}이에요.` : ""}`}
       />
 
       {/* 관심 기반 제휴 배너 (쿠팡 파트너스) */}

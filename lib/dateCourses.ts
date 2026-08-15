@@ -163,6 +163,26 @@ export function dateAreaCounts(): { area: string; slug: string; count: number }[
     .sort((a, b) => b.count - a.count);
 }
 
+/** 시군구의 코스 목록 (이동거리 짧은 순) */
+export function dateCoursesByCity(area: string, city: string): DateCourse[] {
+  return dateCoursesByArea(area).filter((c) => c.city === city);
+}
+
+/** 시군구 페이지 정적 생성용 — 전체 (지역슬러그, 시군구) 조합 */
+export function dateCityParams(): { area: string; city: string }[] {
+  const seen = new Set<string>();
+  const out: { area: string; city: string }[] = [];
+  for (const c of getDateCourses()) {
+    const slug = (SIDO_SLUG as Record<string, string>)[c.area];
+    if (!slug || !c.city) continue;
+    const key = `${slug}|${c.city}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ area: slug, city: c.city });
+  }
+  return out;
+}
+
 /** 시군구별 코스 수 — "해운대구 카페데이트" 같은 롱테일 내부링크용 */
 export function dateCityCounts(area: string): { city: string; count: number }[] {
   const m: Record<string, number> = {};

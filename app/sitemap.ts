@@ -10,7 +10,7 @@ import {
 } from "@/lib/courses";
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
-import { getDateCourses, dateAreaCounts } from "@/lib/dateCourses";
+import { getDateCourses, dateAreaCounts, dateCityParams } from "@/lib/dateCourses";
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
@@ -107,6 +107,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/date`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 },
     ...dateAreaCounts().map((a) => ({
       url: `${base}/date/${a.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
+    // 시군구 — "종로구 카페데이트" 같은 롱테일
+    ...dateCityParams().map((p) => ({
+      url: `${base}/date/${p.area}/${encodeURIComponent(p.city)}`,
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: 0.6,
