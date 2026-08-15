@@ -6,6 +6,7 @@ import { getAllBundles } from "@/lib/campingCollections";
 import CampCard from "@/components/CampCard";
 import CoupangBanner from "@/components/CoupangBanner";
 import { Band, Container } from "@/components/Band";
+import AffiliateNotice from "@/components/AffiliateNotice";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import { SIDO_SLUG, sidoFromSlug } from "@/lib/classify";
 
@@ -51,6 +52,7 @@ export default async function CampingRegionPage({ params }: { params: Promise<{ 
           <span className="text-ink-soft">{sido}</span>
         </nav>
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]"><span className="text-free">{sido}</span> 캠핑장</h1>
+        <AffiliateNotice className="mt-1.5" />
         <p className="mt-1 text-[14px] text-ink-soft">{sido} 캠핑장 {list.length.toLocaleString()}곳 · 출처: 한국관광공사 고캠핑</p>
       </Band>
 

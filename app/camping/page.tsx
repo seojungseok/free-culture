@@ -4,6 +4,7 @@ import { filterCamps, campAreaCounts, petCount, getCampCount, CAMP_TYPES, CAMP_F
 import CampCard from "@/components/CampCard";
 import CoupangBanner from "@/components/CoupangBanner";
 import { Band, Container } from "@/components/Band";
+import AffiliateNotice from "@/components/AffiliateNotice";
 import { FilterRow, Chip } from "@/components/FilterChips";
 
 type SP = { area?: string; type?: string; facility?: string; pet?: string };
@@ -60,6 +61,7 @@ export default async function CampingPage({ searchParams }: { searchParams: Prom
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
           <span className="text-free">⛺ 캠핑</span>
         </h1>
+        <AffiliateNotice className="mt-1.5" />
         <p className="mt-1 text-[14px] text-ink-soft">
           전국 캠핑장 <span className="whitespace-nowrap">{getCampCount().toLocaleString()}곳</span> — 유형·시설·지역으로 골라보세요 · 출처: 한국관광공사 고캠핑
         </p>

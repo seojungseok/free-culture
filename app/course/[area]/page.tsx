@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Band } from "@/components/Band";
+import AffiliateNotice from "@/components/AffiliateNotice";
 import CourseCard from "@/components/CourseCard";
 import SeoulStayBanner from "@/components/SeoulStayBanner";
 import { stayLinkFor } from "@/lib/stayLinks";
@@ -52,6 +53,7 @@ export default async function CourseAreaPage({ params }: { params: Promise<{ are
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
           <span className="text-free">{area}</span> 여행코스
         </h1>
+        {stayLinkFor(area) && <AffiliateNotice className="mt-1.5" />}
         <p className="mt-1 text-[14px] text-ink-soft">
           {area} 가볼만한 곳을 이어 만든 하루 여행 <span className="whitespace-nowrap">{list.length}개</span> — 밥집까지 함께
         </p>

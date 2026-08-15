@@ -7,6 +7,7 @@ import { nearbyPlaces, nearbyRestaurants, distanceLabel, foodTypeLabel } from "@
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
+import AffiliateNotice from "@/components/AffiliateNotice";
 import TourCard from "@/components/TourCard";
 import CoupangBanner from "@/components/CoupangBanner";
 
@@ -83,6 +84,7 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
         {c.pet && <span className="rounded-md bg-free/10 px-2 py-0.5 text-[11px] font-bold text-freedark">🐾 반려동물</span>}
       </div>
       <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">{c.name}</h1>
+        <AffiliateNotice className="mt-1.5" />
       <p className="mt-1 text-[13px] text-ink-faint">{region}</p>
 
       {c.image && (

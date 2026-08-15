@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Band, Container } from "@/components/Band";
+import AffiliateNotice from "@/components/AffiliateNotice";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import ScrollRail from "@/components/ScrollRail";
 import DateCourseCard from "@/components/DateCourseCard";
@@ -93,6 +94,7 @@ export default async function DateCityPage({
         <h1 className="text-[22px] font-black tracking-[-0.02em] text-ink sm:text-[28px]">
           <span className="text-free">{city} 카페데이트</span>
         </h1>
+        <AffiliateNotice className="mt-1.5" />
         <p className="mt-1 text-[13.5px] text-ink-soft">
           카페를 고르면 공원·맛집까지 이어지는 코스가 나와요 · {list.length}곳
         </p>

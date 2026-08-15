@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Band } from "@/components/Band";
+import AffiliateNotice from "@/components/AffiliateNotice";
 import CourseCard from "@/components/CourseCard";
 import SeoulStayBanner from "@/components/SeoulStayBanner";
 import { stayLinkFor } from "@/lib/stayLinks";
@@ -64,6 +65,7 @@ export default async function CourseAreaDurationPage({ params }: { params: Promi
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
           <span className="text-free">{area}</span> {dur.label} 여행코스
         </h1>
+        {stayLinkFor(area) && <AffiliateNotice className="mt-1.5" />}
         <p className="mt-1 text-[14px] text-ink-soft">{area}에서 {dur.label}로 다녀오기 좋은 코스 {list.length}개</p>
       </Band>
 

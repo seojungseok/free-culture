@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Band, Container } from "@/components/Band";
+import AffiliateNotice from "@/components/AffiliateNotice";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import FoodCard from "@/components/FoodCard";
 import CoupangBanner from "@/components/CoupangBanner";
@@ -53,6 +54,7 @@ export default async function FoodAreaPage({ params }: { params: Promise<{ area:
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
           <span className="text-free">{sido}</span> 맛집
         </h1>
+        <AffiliateNotice className="mt-1.5" />
         <p className="mt-1 text-[14px] text-ink-soft">{sido} 음식점 {list.length.toLocaleString()}곳 — 업종별로 골라보세요 · 출처: 한국관광공사</p>
       </Band>
 

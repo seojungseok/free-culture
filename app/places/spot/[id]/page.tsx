@@ -11,6 +11,7 @@ import TourCard from "@/components/TourCard";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
+import AffiliateNotice from "@/components/AffiliateNotice";
 import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
 import ArticleBody from "@/components/ArticleBody";
 import SeoulStayBanner from "@/components/SeoulStayBanner";
@@ -196,6 +197,7 @@ export default async function SpotDetailPage({
       <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
         {spot.title}
       </h1>
+      {stay && <AffiliateNotice className="mt-1.5" />}
 
       {gallery.length > 0 && (
         <div className="mt-4">

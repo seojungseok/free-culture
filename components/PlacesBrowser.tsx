@@ -8,6 +8,7 @@ import TourCard from "./TourCard";
 import SeoulStayBanner from "./SeoulStayBanner";
 import { stayLinkFor } from "@/lib/stayLinks";
 import { Container } from "./Band";
+import AffiliateNotice from "./AffiliateNotice";
 
 const PAGE = 24;
 
@@ -143,6 +144,7 @@ export default function PlacesBrowser({
             {displayCount.toLocaleString()}곳
           </span>
         </div>
+        {stay && <AffiliateNotice className="mb-1" />}
         {isNationSample && (
           <p className="mb-4 text-[12.5px] text-ink-faint">
             추천 {spots.length.toLocaleString()}곳 미리보기 · <b className="font-bold text-ink-soft">지역을 선택하면 전부 볼 수 있어요</b>

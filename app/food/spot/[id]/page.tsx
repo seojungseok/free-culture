@@ -11,6 +11,7 @@ import CoupangBanner from "@/components/CoupangBanner";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
+import AffiliateNotice from "@/components/AffiliateNotice";
 import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
 
 // 음식점 상세 — 맛집 탐방(/food) 소속. 예전 주소(/places/spot/[id])는 여기로 301.
@@ -143,6 +144,7 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
         <span className="text-[12.5px] text-ink-faint">{r.area}</span>
       </div>
       <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">{r.title}</h1>
+        <AffiliateNotice className="mt-1.5" />
 
       {gallery.length > 0 && (
         <div className="mt-4">

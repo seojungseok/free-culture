@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Band";
+import AffiliateNotice from "@/components/AffiliateNotice";
 import CourseArticleBody from "@/components/CourseArticleBody";
 import CourseCard from "@/components/CourseCard";
 import CourseShare from "@/components/CourseShare";
@@ -135,6 +136,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
           <CourseShare title={c.title} compact />
         </div>
       </div>
+      {stay && <AffiliateNotice className="mt-1.5" />}
 
       {c.image && (
         <div className="relative mt-4 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-neutral-100 ring-1 ring-black/[0.04]">
