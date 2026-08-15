@@ -30,7 +30,7 @@ export default function DateHubPage() {
         <h1 className="text-[22px] font-black tracking-[-0.02em] text-ink sm:text-[28px]">
           ☕ <span className="text-free">전국 카페데이트</span>
         </h1>
-        <AffiliateNotice className="mt-1.5" />
+        <AffiliateNotice className="mt-1.5" partner="coupang" />
         <p className="mt-1 text-[13.5px] text-ink-soft">
           카페 → 공원 → 맛집이 서로 가까이 붙어 있는 반나절 코스 {all.length}곳
         </p>

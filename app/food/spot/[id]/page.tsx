@@ -144,7 +144,7 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
         <span className="text-[12.5px] text-ink-faint">{r.area}</span>
       </div>
       <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">{r.title}</h1>
-        <AffiliateNotice className="mt-1.5" />
+        <AffiliateNotice className="mt-1.5" partner="coupang" />
 
       {gallery.length > 0 && (
         <div className="mt-4">

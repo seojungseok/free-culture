@@ -180,7 +180,7 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
       <h1 className="text-[24px] font-black leading-tight tracking-[-0.02em] text-ink sm:text-[30px]">
         {c.cafe.title} 카페데이트 코스
       </h1>
-        <AffiliateNotice className="mt-1.5" />
+        <AffiliateNotice className="mt-1.5" partner="coupang" />
 
       <p className="mt-3 text-[15px] leading-[1.85] text-ink-soft">
         <b className="font-bold text-ink">{c.area} {c.city}</b>에서 반나절이면 충분한 카페데이트 코스예요.

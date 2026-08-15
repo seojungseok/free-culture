@@ -10,14 +10,14 @@ import { useEffect, useState } from "react";
  * - 화면 크기에 따라 자동 전환 (리사이즈 시 key 변경 → iframe 재로드)
  * - g.js 대신 iframe 직접 삽입: g.js 방식은 리퍼러가 잘려 PC(680)에서
  *   iframe이 0x0으로 접히는 문제가 있었음. referrerpolicy="unsafe-url" 필수.
- * - 공정위 필수 고지 문구 포함
+ * - 공정위 고지는 페이지 상단 AffiliateNotice가 담당(중복 방지)
  *
  * 사용법:
  *   import CoupangBanner from "@/components/CoupangBanner";
  *   <CoupangBanner />
  *
  * ⚠️ 공정위/쿠팡 정책
- *  - 고지 문구는 반드시 노출되어야 함 (제거 금지)
+ *  - 고지 문구는 반드시 노출되어야 함 → 페이지 상단 AffiliateNotice(partner="coupang")로 표시
  *  - 쿠팡 다이나믹 배너는 방문자 관심 기반이라
  *    캠핑용품이 아닌 다른 상품이 뜰 수 있음 (쿠팡 특성)
  */
@@ -71,9 +71,6 @@ export default function CoupangBanner() {
           />
         )}
       </div>
-      <p className="ccb-notice">
-        이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
-      </p>
 
       <style jsx>{`
         .ccb-wrap {
@@ -93,13 +90,6 @@ export default function CoupangBanner() {
           border: 0;
           max-width: 100%;
           vertical-align: top;
-        }
-        .ccb-notice {
-          margin: 8px 0 0;
-          font-size: 11px;
-          line-height: 1.5;
-          color: #9aa5ab;
-          font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
         }
       `}</style>
     </div>

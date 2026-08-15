@@ -50,7 +50,7 @@ export default async function BundlePage({ params }: { params: Promise<{ slug: s
       </nav>
 
       <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">{b.title} <span className="text-free">{b.count}곳</span></h1>
-        <AffiliateNotice className="mt-1.5" />
+        <AffiliateNotice className="mt-1.5" partner="coupang" />
       <p className="mt-1.5 text-[14px] leading-[1.7] text-ink-soft">
         {b.area}의 {b.label} {b.count}곳을 데이터로 추렸어요. 아래 목록에서 유형·편의시설·반려동물 동반 여부를 확인하고, 각 캠핑장 페이지에서 요금·예약·지도를 볼 수 있어요.
       </p>

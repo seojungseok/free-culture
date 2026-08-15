@@ -63,7 +63,7 @@ export default async function FoodAreaCatPage({ params }: { params: Promise<{ ar
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
           <span className="text-free">{sido} {c.label}</span> 맛집
         </h1>
-        <AffiliateNotice className="mt-1.5" />
+        <AffiliateNotice className="mt-1.5" partner="coupang" />
         <p className="mt-1 text-[14px] text-ink-soft">{sido}의 {c.label} 음식점 {list.length.toLocaleString()}곳 · 출처: 한국관광공사</p>
       </Band>
 

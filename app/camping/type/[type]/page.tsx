@@ -50,7 +50,7 @@ export default async function CampingTypePage({ params }: { params: Promise<{ ty
           <span className="text-ink-soft">전국 {t.label}</span>
         </nav>
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">전국 <span className="text-free">{t.label}</span></h1>
-        <AffiliateNotice className="mt-1.5" />
+        <AffiliateNotice className="mt-1.5" partner="coupang" />
         <p className="mt-1 text-[14px] text-ink-soft">전국 {t.label} {list.length.toLocaleString()}곳 · 출처: 한국관광공사 고캠핑</p>
       </Band>
 

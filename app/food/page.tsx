@@ -43,7 +43,7 @@ export default async function FoodPage({ searchParams }: { searchParams: Promise
     <>
       <Band tone="tint" innerClassName="py-5">
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">🍽️ <span className="text-free">맛집 탐방</span></h1>
-        <AffiliateNotice className="mt-1.5" />
+        <AffiliateNotice className="mt-1.5" partner="coupang" />
         <p className="mt-1 text-[14px] text-ink-soft">전국 음식점 {getAllRestaurants().length.toLocaleString()}곳 — 지역·업종으로 골라보세요 · 출처: 한국관광공사</p>
       </Band>
 
