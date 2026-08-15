@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { foodCatLabel, type Restaurant } from "@/lib/food";
 
-/** 음식점 카드 — /food, /food/[area], /food/[area]/[cat] 공용. 상세(/places/spot/[id])로 링크 */
+/** 음식점 카드 — /food, /food/[area], /food/[area]/[cat] 공용. 상세(/food/spot/[id])로 링크 */
 export default function FoodCard({ r }: { r: Restaurant }) {
   const gu = (r.addr.match(/[가-힣]{2,}(?:구|군|시)/) || [])[0] || "";
   return (
-    <Link href={`/places/spot/${r.id}`} className="group block" aria-label={`${r.title} 상세 보기`}>
+    <Link href={`/food/spot/${r.id}`} className="group block" aria-label={`${r.title} 상세 보기`}>
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-100 ring-1 ring-black/[0.04] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-cardhover">
         {r.image ? (
           <Image src={r.image} alt={r.title} fill sizes="(max-width:640px) 50vw, 220px" className="object-cover transition group-hover:scale-105" loading="lazy" unoptimized />

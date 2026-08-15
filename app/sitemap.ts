@@ -101,9 +101,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.4,
     }));
 
-  // 음식점 상세 (전량 — 롱테일 색인, /places/spot/[id]로 렌더)
+  // 음식점 상세 (전량 — 롱테일 색인, /food/spot/[id]로 렌더)
   const restaurantRoutes = getAllRestaurants().map((r) => ({
-    url: `${base}/places/spot/${r.id}`,
+    url: `${base}/food/spot/${r.id}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.4,

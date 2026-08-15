@@ -53,7 +53,7 @@ export default function HomePage() {
   const pools: HeroSlide[][] = [
     featured.map((e) => ({ image: e.imgUrl, badge: "무료 문화행사", title: e.title, sub: [e.area, e.place].filter(Boolean).join(" · "), href: `/event/${e.id}` })),
     sample.map((p) => ({ image: p.image, badge: "인기 나들이 명소", title: p.title, sub: p.area, href: `/places/spot/${p.id}` })),
-    foods.map((r) => ({ image: r.image, badge: "맛집 탐방", title: r.title, sub: r.area, href: `/places/spot/${r.id}` })),
+    foods.map((r) => ({ image: r.image, badge: "맛집 탐방", title: r.title, sub: r.area, href: `/food/spot/${r.id}` })),
     camps.map((c) => ({ image: c.image, badge: "캠핑", title: c.name, sub: [c.area, c.sigungu].filter(Boolean).join(" · "), href: `/camping/${c.id}` })),
     seasonSpots.map((p) => ({ image: p.image, badge: `${s.label} 나들이`, title: p.title, sub: p.area, href: `/places/spot/${p.id}` })),
   ];

@@ -60,7 +60,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
     ...coordFood.filter((r) => !courseFoods.some((f) => f.title === r.title)).map((r) => ({
       id: r.id, title: r.title, image: r.image, addr: r.addr, cat3: r.cat3 || "",
       mapx: r.mapx || "", mapy: r.mapy || "",
-      href: `/places/spot/${r.id}`, onCourse: false, dist: r.dist as number | undefined,
+      href: `/food/spot/${r.id}`, onCourse: false, dist: r.dist as number | undefined,
     })),
   ].slice(0, 8);
   // 각 맛집을 "가장 가까운 코스 스팟" 기준으로 라벨 (예: "경포해변 근처"). 좌표 있는 스팟만.

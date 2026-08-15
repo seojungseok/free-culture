@@ -130,7 +130,7 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
           <h2 className="mb-2 text-[16px] font-extrabold text-ink">🍽️ 주변에서 식사하기</h2>
           <div className="divide-y divide-line rounded-2xl border border-line bg-white">
             {nearFood.map((r) => (
-              <Link key={r.id} href={`/places/spot/${r.id}`} className="flex items-center gap-3 px-4 py-3 hover:bg-tint/40">
+              <Link key={r.id} href={`/food/spot/${r.id}`} className="flex items-center gap-3 px-4 py-3 hover:bg-tint/40">
                 <span className="min-w-0 flex-1"><span className="text-[14px] font-bold text-ink">{r.title}</span><span className="ml-1.5 text-[12px] text-ink-faint">{foodTypeLabel(r)}</span></span>
                 <span className="shrink-0 text-[12.5px] font-semibold text-free">{distanceLabel(r.dist)}</span>
               </Link>

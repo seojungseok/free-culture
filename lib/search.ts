@@ -84,7 +84,7 @@ function build(): SearchDoc[] {
     const catHay = FOOD_CAT_HAY[r.cat3 || ""] || "";
     docs.push({
       kind: "food", id: r.id, title: r.title, area: r.area, sub: guOf(r.addr || ""),
-      url: `/places/spot/${r.id}`, image: r.image || "", price: "unknown", hasImg: Boolean(r.image),
+      url: `/food/spot/${r.id}`, image: r.image || "", price: "unknown", hasImg: Boolean(r.image),
       titleN: norm(r.title), hay: norm(`${r.title} ${r.addr} ${r.area} 맛집 음식점 식당 ${catHay}`),
     });
   }
