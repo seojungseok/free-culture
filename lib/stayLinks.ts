@@ -9,6 +9,7 @@ export const STAY_LINKS: Record<string, string> = {
   서울: "https://3ha.in/r/628670",
   부산: "https://3ha.in/r/629231",
   대구: "https://3ha.in/r/629242",
+  인천: "https://3ha.in/r/629244",
 };
 
 /**
