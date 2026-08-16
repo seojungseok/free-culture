@@ -15,7 +15,7 @@ export default function AffiliateNotice({
 }) {
   const text =
     partner === "coupang"
-      ? "이 글에는 제휴 링크가 포함되어 있습니다. 쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를 제공받습니다."
+      ? "쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를 제공받습니다."
       : "이 글에는 제휴 링크가 포함되어 있으며, 이를 통해 소정의 수수료를 제공받습니다.";
   return <p className={`text-[11.5px] leading-[1.5] text-ink-faint ${className}`}>{text}</p>;
 }
