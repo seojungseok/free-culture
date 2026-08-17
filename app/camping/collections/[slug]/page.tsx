@@ -7,7 +7,7 @@ import { SIDO_SLUG } from "@/lib/classify";
 import { Container } from "@/components/Band";
 import AffiliateNotice from "@/components/AffiliateNotice";
 import CampCard from "@/components/CampCard";
-import CoupangBanner from "@/components/CoupangBanner";
+import CoupangDeals from "@/components/CoupangDeals";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -82,7 +82,7 @@ export default async function BundlePage({ params }: { params: Promise<{ slug: s
 
       {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 본문 끝, 광고와 간격 확보 */}
       <div className="mt-8">
-        <CoupangBanner />
+        <CoupangDeals />
       </div>
 
       <div className="mt-8">

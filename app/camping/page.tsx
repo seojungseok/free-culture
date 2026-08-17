@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { filterCamps, campAreaCounts, petCount, getCampCount, CAMP_TYPES, CAMP_FACILITIES, type CampFilter } from "@/lib/camping";
 import CampCard from "@/components/CampCard";
-import CoupangBanner from "@/components/CoupangBanner";
+import CoupangDeals from "@/components/CoupangDeals";
 import { Band, Container } from "@/components/Band";
 import AffiliateNotice from "@/components/AffiliateNotice";
 import { FilterRow, Chip } from "@/components/FilterChips";
@@ -117,7 +117,7 @@ export default async function CampingPage({ searchParams }: { searchParams: Prom
 
           {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 목록 끝, 광고와 간격 확보 */}
           <div className="mt-8">
-            <CoupangBanner />
+            <CoupangDeals />
           </div>
 
           <p className="mt-6 text-[12px] text-ink-faint">캠핑정보 제공: 한국관광공사 고캠핑</p>

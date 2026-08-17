@@ -1,12 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
-import { distLabel, type DateCourse } from "@/lib/dateCourses";
+import { distLabel, walkMinutes, driveMinutes, type DateCourse } from "@/lib/dateCourses";
 
 /**
  * 카페데이트 코스 카드 — 카페 사진 + 세 지점 요약.
  * rail=true면 가로 슬라이드용 고정 폭(모바일 스와이프).
+ * mode="walk"|"drive"면 하단에 도보/차량 소요를 표시.
  */
-export default function DateCourseCard({ course, rail = false }: { course: DateCourse; rail?: boolean }) {
+export default function DateCourseCard({
+  course,
+  rail = false,
+  mode = "walk",
+}: {
+  course: DateCourse;
+  rail?: boolean;
+  mode?: "walk" | "drive";
+}) {
+  const moveLabel =
+    mode === "drive"
+      ? `🚗 차로 약 ${driveMinutes(course.totalKm)}분 · 총 ${distLabel(course.totalKm)}`
+      : `🚶 걸어서 약 ${walkMinutes(course.totalKm)}분 · 총 ${distLabel(course.totalKm)}`;
   return (
     <Link
       href={`/date/c/${course.id}`}
@@ -29,7 +42,7 @@ export default function DateCourseCard({ course, rail = false }: { course: DateC
         </h3>
         <p className="mt-1.5 line-clamp-1 text-[12.5px] text-ink-soft">🌳 {course.park.title}</p>
         <p className="mt-0.5 line-clamp-1 text-[12.5px] text-ink-soft">🍽 {course.food.title}</p>
-        <p className="mt-1 text-[11.5px] text-ink-faint">세 곳 모두 {distLabel(course.totalKm)} 안</p>
+        <p className="mt-1 text-[11.5px] font-semibold text-ink-faint">{moveLabel}</p>
       </div>
     </Link>
   );

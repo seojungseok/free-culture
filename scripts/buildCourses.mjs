@@ -30,6 +30,19 @@ const THEMES = [
 // 해수욕장 판별 — route 코스에서 제외 + 베스트 리스트 대상
 const isBeach = (p) => /해수욕장|해변|해수욕/.test(String(p.title || ""));
 
+// 배편(다리 없음) 섬 — addr 기준. 같은 섬끼리만 코스로 묶어 "육지↔배편섬 혼합"을 원천 차단하고,
+//  섬 안에서만 도는 "섬 단독 코스"가 자연스럽게 만들어지게 한다. (다리 섬: 강화·거제·남해·안면·영흥·대부·선유·진도·완도 → 육지 취급)
+const FERRY_ISLE = [
+  ["울릉", /울릉군/], ["백령", /옹진군\s*백령/], ["대청", /옹진군\s*대청/], ["연평", /옹진군\s*연평/],
+  ["덕적", /옹진군\s*덕적/], ["자월", /옹진군\s*자월/],
+  ["거문", /여수시\s*삼산면/], ["욕지", /통영시\s*욕지/], ["한산", /통영시\s*한산/], ["사량", /통영시\s*사량/],
+  ["청산", /완도군\s*청산면/], ["보길", /완도군\s*보길면/], ["노화", /완도군\s*노화면/], ["소안", /완도군\s*소안면/],
+  ["흑산", /신안군\s*흑산면/], ["추자", /제주시\s*추자면/], ["조도", /진도군\s*조도면/],
+];
+const ferryIsleOf = (p) => { const a = String(p.addr || ""); for (const [k, re] of FERRY_ISLE) if (re.test(a)) return k; return ""; };
+// 같은 섬(또는 둘 다 육지)일 때만 한 코스로 묶을 수 있음
+const sameReach = (a, b) => ferryIsleOf(a) === ferryIsleOf(b);
+
 const overviewsRaw = fs.existsSync(OVERVIEWS) ? JSON.parse(fs.readFileSync(OVERVIEWS, "utf8")) : {};
 const OV = overviewsRaw.overviews || overviewsRaw; // {id: overviewText}
 const ovOf = (id) => (typeof OV[id] === "string" ? OV[id] : "");
@@ -137,7 +150,8 @@ function main() {
         for (const seed of seeds) {
           if (made >= PER) break;
           // 이웃은 지역 전체에서 다양하게. 단 해수욕장은 route에서 제외(베스트 리스트로만).
-          const byId = new Map(areaPlaces.filter((p) => p.id !== seed.id && !isBeach(p) && km(seed, p) <= MAX_KM).map((p) => [p.id, p]));
+          //  ★ 배편 섬은 같은 섬끼리만(sameReach) — 육지↔배편섬 혼합 방지 + 섬 단독 코스 형성.
+          const byId = new Map(areaPlaces.filter((p) => p.id !== seed.id && !isBeach(p) && sameReach(seed, p) && km(seed, p) <= MAX_KM).map((p) => [p.id, p]));
           if (byId.size < MIN_STOPS - 1) continue;
           const cluster = [seed];
           const usedKinds = new Set([kindOf(seed)]); // 같은 종류 중복 방지

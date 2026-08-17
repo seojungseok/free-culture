@@ -65,6 +65,43 @@ export function distLabel(km: number): string {
 export function walkMinutes(km: number): number {
   return Math.max(1, Math.round(km * WALK_MIN_PER_KM));
 }
+/** 차량 소요(분) — 도심 평균 22km/h 가정 */
+export function driveMinutes(km: number): number {
+  return Math.max(1, Math.round((km / 22) * 60));
+}
+
+// 걷기 좋은 코스 판별 — 세 지점 총 이동거리 1.5km 이내(도보 약 20분)면 "도보",
+// 그보다 떨어져 있으면 차로 움직이는 편이 편한 "차량" 코스로 나눈다.
+const WALK_MAX_KM = 1.5;
+export function isWalkCourse(c: DateCourse): boolean {
+  return c.totalKm <= WALK_MAX_KM;
+}
+/** 도보 코스만 (총 이동거리 짧은 순) */
+export function walkCourses(): DateCourse[] {
+  return getDateCourses().filter(isWalkCourse);
+}
+/** 차량 코스만 (총 이동거리 짧은 순) */
+export function driveCourses(): DateCourse[] {
+  return getDateCourses().filter((c) => !isWalkCourse(c));
+}
+
+/** 위치기반(내 위치) 계산용 경량 좌표 목록 — 클라이언트로 넘겨 브라우저에서 거리 계산 */
+export interface CourseGeo {
+  id: string; title: string; city: string; area: string;
+  image: string; lat: number; lng: number; totalKm: number;
+}
+export function dateCourseGeo(): CourseGeo[] {
+  return getDateCourses().map((c) => ({
+    id: c.id,
+    title: c.cafe.title,
+    city: c.city,
+    area: c.area,
+    image: c.cafe.image,
+    lat: num(c.cafe.mapy),
+    lng: num(c.cafe.mapx),
+    totalKm: c.totalKm,
+  }));
+}
 
 function build(): DateCourse[] {
   const restaurants = (restaurantsData as unknown as { restaurants: Row[] }).restaurants;

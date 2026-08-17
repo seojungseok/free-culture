@@ -3,13 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCamp, type Camp } from "@/lib/camping";
+import { campingStory } from "@/lib/campingStory";
 import { nearbyPlaces, nearbyRestaurants, distanceLabel, foodTypeLabel } from "@/lib/nearby";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
 import AffiliateNotice from "@/components/AffiliateNotice";
 import TourCard from "@/components/TourCard";
-import CoupangBanner from "@/components/CoupangBanner";
+import CoupangDeals from "@/components/CoupangDeals";
 
 export const dynamicParams = true;
 export const revalidate = 2592000; // 30일 — 캠핑장 정보 거의 불변(대역폭 절감)
@@ -44,6 +45,13 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
   const spotLike = { id: c.id, area: c.area, mapx: c.mapx, mapy: c.mapy } as unknown as Parameters<typeof nearbyPlaces>[0];
   const nearPlaces = nearbyPlaces(spotLike, 6);
   const nearFood = nearbyRestaurants({ area: c.area, mapx: c.mapx, mapy: c.mapy }, 3);
+  const story = campingStory({
+    camp: c,
+    region,
+    facilities: facs,
+    nearFood: nearFood.map((r) => r.title),
+    nearPlaces: nearPlaces.map((p) => p.title),
+  });
 
   const jsonLd = {
     "@context": "https://schema.org", "@type": "Campground",
@@ -101,7 +109,19 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
         </div>
       )}
 
-      <dl className="mt-5 divide-y divide-line rounded-2xl border border-line bg-white">
+      {/* 소개글 — 구조화 데이터로 조합한 읽을거리(네이버블로그식 여백) */}
+      <section className="mt-6">
+        <h2 className="mb-3 flex items-center gap-1.5 text-[17px] font-extrabold text-ink">
+          <span>📖</span> 이런 곳이에요
+        </h2>
+        <div className="space-y-4 text-[15px] leading-[1.85] text-ink-soft">
+          {story.map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
+      </section>
+
+      <dl className="mt-7 divide-y divide-line rounded-2xl border border-line bg-white">
         {c.addr && <Row label="주소" value={c.addr} />}
         {c.tel && <Row label="전화" value={c.tel} />}
         {c.operPd && <Row label="운영기간" value={c.operPd} />}
@@ -122,10 +142,8 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
         <Link href={`/camping?area=${encodeURIComponent(c.area)}`} className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free">{c.area} 다른 캠핑장 →</Link>
       </div>
 
-      {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 본문 끝, 광고와 간격 확보 */}
-      <div className="mt-8">
-        <CoupangBanner />
-      </div>
+      {/* 계절별 캠핑용품 추천 (쿠팡 오픈 API 수집) — 상단 AffiliateNotice가 고지 담당 */}
+      <CoupangDeals />
 
       {nearFood.length > 0 && (
         <section className="mt-8">

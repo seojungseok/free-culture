@@ -92,6 +92,16 @@ jobs:
           COURSE_IDS: ${{ github.event.inputs.course_ids }}
         run: node scripts/generateCourses.mjs
 
+      # ── 계절별 캠핑용품 수집 (쿠팡 오픈 API) — 오늘 날짜로 봄/여름/가을/겨울 자동 판단 ──
+      #    GitHub Secrets 에 COUPANG_ACCESS_KEY / COUPANG_SECRET_KEY 등록 필요.
+      #    (없으면 이 스텝만 실패하고 나머지는 그대로 진행 — coupang.json은 직전 값 유지)
+      - name: 계절별 쿠팡 상품 수집 (collectCoupang)
+        continue-on-error: true
+        env:
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+        run: node scripts/collectCoupang.mjs
+
       # ── 변경분 한 번에 커밋 = 배포 1회 ──
       - name: 변경분 커밋 (통합, 1회)
         id: commit
@@ -99,7 +109,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/events.json data/festivals.json data/place-articles.json \
-                  data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json
+                  data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json \
+                  data/coupang.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
             echo "changed=false" >> "$GITHUB_OUTPUT"

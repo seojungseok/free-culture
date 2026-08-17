@@ -9,6 +9,7 @@
 # Next.js 빌드 산출물
 /.next
 /out
+tsconfig.tsbuildinfo
 
 # 로그
 *.log

@@ -12,12 +12,13 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   buildCoursePrompt, buildListPrompt, courseQualityCheck, courseSourceFacts, patternCheck, sanitizeUnsupported,
-  callOpenAI, rampCourses, COURSE_THEME_LABEL, checkCourseComposition,
+  callOpenAI, rampCourses, COURSE_THEME_LABEL, checkCourseComposition, courseGeoFeasible,
 } from "./lib/articleGen.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const COURSES = path.join(ROOT, "data", "courses.json");         // 공식(정부) 코스
 const COURSES_AUTO = path.join(ROOT, "data", "courses-auto.json"); // 자동 조합 코스
+const PLACES = path.join(ROOT, "data", "places.json");           // 경유지→좌표 매칭(지리 실현성 검사)
 const OVERVIEWS = path.join(ROOT, "data", "place-overviews.json"); // 스팟 소개 캐시(글 파이프라인과 공유)
 const STORE = path.join(ROOT, "data", "course-articles.json");
 const ENRICH_MAX = Number(process.env.ENRICH_MAX || 80); // 발행분 스팟 소개 보강 최대 호출(한도 방어)
@@ -38,6 +39,31 @@ const OPENAI = envKey("OPENAI_API_KEY");
 const GEMINI = envKey("GEMINI_API_KEY"); // 코스 "구성" 교차검증용(본문 생성은 OpenAI)
 const TOURKEY = envKey("DATA_GO_KR_KEY") || envKey("TOUR_API_KEY");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// ── 경유지명 → 좌표 해석기(places.json 정규화 매칭). 지리 실현성 검사(courseGeoFeasible)에 사용. ──
+const _norm = (s) => String(s || "").replace(/\s|\(.*?\)/g, "");
+function buildResolver() {
+  let idx = null;
+  return (name) => {
+    if (!idx) {
+      idx = new Map();
+      try {
+        const spots = JSON.parse(fs.readFileSync(PLACES, "utf8")).spots || [];
+        for (const p of spots) {
+          if (!p.mapx || !p.mapy) continue;
+          const k = _norm(p.title);
+          if (k && !idx.has(k)) idx.set(k, p);
+        }
+      } catch { /* places.json 없으면 빈 인덱스(검사 통과) */ }
+    }
+    const n = _norm(name);
+    if (!n) return null;
+    if (idx.has(n)) return idx.get(n);
+    for (const [k, p] of idx) if (k && (k.includes(n) || n.includes(k))) return p;
+    return null;
+  };
+}
+const resolvePlace = buildResolver();
 
 // ── 스팟 소개 캐시 로드/저장 (글 파이프라인과 공유) ──
 const ovStore = fs.existsSync(OVERVIEWS) ? JSON.parse(fs.readFileSync(OVERVIEWS, "utf8")) : {};
@@ -247,6 +273,17 @@ async function main() {
    try { // 코스 하나가 에러나도 전체 중단 없이 다음으로 (부분 발행 + 커밋 보장)
     // 스팟 상한은 buildCoursePrompt·lib(courseAttractions)가 "식당 제외 관광지 기준"으로 동일 적용 → 여기선 자르지 않음(요약↔글 일치).
     await enrichStops(course); // 자동 코스 스팟 소개 보강(캐시/한도 내 조회)
+
+    // ── 지리 실현성 검사(결정적) — 공식·자동 모두 적용. "원거리 배편 섬 + 육지" 혼합 코스 차단.
+    //    섬 안에서만 도는 코스(유명 섬 단독)는 통과. 연평도·굴업도 등 배 타고 가는 섬을 육지 일정에 섞은 것 방지.
+    const geo = courseGeoFeasible(course, resolvePlace);
+    if (!geo.ok) {
+      skipped++;
+      report.push({ id: course.id, title: course.title, outcome: "skip", reason: `지리 NG: ${geo.reason}` });
+      console.log(`  ✗ 지리 반려: ${course.title} (${geo.reason})`);
+      continue;
+    }
+
     // 코스 "구성" Gemini 교차검증 — 자동 코스만(공식은 정부 큐레이션이라 신뢰). 리스트형·공식 제외.
     if (GEMINI && course.format !== "list" && course.source !== "official") {
       const comp = await checkCourseComposition(course, { apiKey: GEMINI });
