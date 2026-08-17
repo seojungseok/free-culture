@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Band, Container } from "@/components/Band";
 import AffiliateNotice from "@/components/AffiliateNotice";
-import { FilterRow, Chip } from "@/components/FilterChips";
+import DateRegionBrowser from "@/components/DateRegionBrowser";
 import NearbyDateCourses from "@/components/NearbyDateCourses";
 import CoupangBanner from "@/components/CoupangBanner";
 import { SITE } from "@/lib/site";
@@ -78,23 +79,30 @@ export default function DateHubPage() {
       </Band>
 
       <div className="bg-panel">
-        {/* 지역 선택 — 평상시 화면의 메인 */}
-        <Container className="space-y-2.5 py-5">
-          <FilterRow label="지역">
-            {areas.map((a) => (
-              <Chip key={a.area} href={`/date/${a.slug}`} active={false} label={a.area} count={a.count} />
-            ))}
-          </FilterRow>
-          <p className="pl-11 text-[12.5px] text-ink-faint">지역을 고르면 동네별 코스가 나와요</p>
+        {/* 지역 선택기 — 전국 + 시도. 기본 서울, 걸어서/차량 데이트로 나눠 미리보기 */}
+        <Container className="py-6">
+          <DateRegionBrowser courses={geo} areas={areas} />
         </Container>
 
-        {/* 위치기반 — 버튼을 눌러야만 코스(걷기/차량)가 나온다 */}
+        {/* 위치기반 — 버튼을 누르면 내 위치 기준 걷기/차량 코스 */}
         <Container className="pb-10">
           <NearbyDateCourses courses={geo} />
         </Container>
 
-        <Container className="pb-12">
+        <Container className="pb-8">
           <CoupangBanner />
+        </Container>
+
+        {/* SEO — 지역별 페이지 크롤 링크 */}
+        <Container className="pb-12">
+          <p className="mb-2 text-[12.5px] font-bold text-ink-faint">지역별 카페데이트</p>
+          <div className="flex flex-wrap gap-x-3 gap-y-1.5">
+            {areas.map((a) => (
+              <Link key={a.slug} href={`/date/${a.slug}`} className="text-[13px] text-ink-soft hover:text-free">
+                {a.area} 카페데이트
+              </Link>
+            ))}
+          </div>
         </Container>
       </div>
     </>

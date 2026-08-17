@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllEvents, getEventById } from "@/lib/data";
+import { eventStory } from "@/lib/eventStory";
 import { fmtRange, placeText, dday } from "@/lib/format";
 import { SITE } from "@/lib/site";
 import PriceBadge from "@/components/PriceBadge";
@@ -65,6 +66,11 @@ export default async function EventPage({
   if (!ev) notFound();
 
   const d = dday(ev.startDate, ev.endDate);
+  const story = eventStory({
+    title: ev.title, realmName: ev.realmName, area: ev.area, sigungu: ev.sigungu,
+    place: ev.place, startDate: ev.startDate, endDate: ev.endDate,
+    priceLabel: ev.priceLabel, priceType: ev.priceType, audiences: ev.audiences,
+  });
   const related = getAllEvents()
     .filter((e) => e.id !== ev.id && e.genreKey === ev.genreKey && e.imgUrl)
     .slice(0, 5);
@@ -207,6 +213,18 @@ export default async function EventPage({
               {ev.contents}
             </div>
           )}
+
+          {/* 소개글 — 구조화 데이터로 조합(공식 소개 없는 행사도 읽을거리 확보) */}
+          <section className="mt-6">
+            <h2 className="mb-3 flex items-center gap-1.5 text-[16px] font-extrabold text-ink">
+              <span>📖</span> 행사 소개
+            </h2>
+            <div className="space-y-3.5 text-[15px] leading-[1.85] text-ink-soft">
+              {story.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          </section>
 
           <ShareButtons title={ev.title} officialUrl={ev.officialUrl} />
 
