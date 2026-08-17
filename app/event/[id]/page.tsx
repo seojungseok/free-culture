@@ -116,9 +116,9 @@ export default async function EventPage({
         </Link>
       </nav>
 
-      <div className="grid gap-8 md:grid-cols-[minmax(0,420px)_1fr]">
+      <div className="grid gap-8 md:grid-cols-[minmax(0,420px)_minmax(0,1fr)]">
         {/* 포스터 */}
-        <div className="md:sticky md:top-32 md:self-start">
+        <div className="min-w-0 md:sticky md:top-32 md:self-start">
           <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-neutral-100 shadow-card">
             {ev.imgUrl ? (
               <Image
@@ -142,7 +142,7 @@ export default async function EventPage({
         </div>
 
         {/* 정보 */}
-        <div>
+        <div className="min-w-0">
           <div className="mb-2 flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-black/[0.05] px-2.5 py-1 text-xs font-semibold text-ink-soft">
               {ev.realmName || "문화행사"}
