@@ -35,15 +35,22 @@ export function kidHeadline(theme: KidTheme, spot: string): string {
   return THEME_HEADLINE[theme](spot);
 }
 
-const RADIUS_KM = 8; // 차량으로 가까운 범위
+const RADIUS_KM = 8; // 공원(산책)까지 묶는 범위
+const FOOD_RADIUS_KM = 6; // 밥집은 좀 더 가깝게 — 놀고 나서 바로 갈 만한 거리
 const ANIMAL_RE = /아쿠아리움|아쿠아플라넷|동물원|수족관|목장|아쿠아|동물/;
 const PLAY_RE = /테마파크|놀이공원|유원지|워터파크|키즈|놀이동산|어드벤처|랜드파크/;
 const LEARN_RE = /과학관|박물관|미술관|기념관|전시관|천문대|역사관|체험관|문학관|도서관|교육관/;
 const NATURE_RE = /수목원|식물원|생태|자연휴양림|숲|정원|공원|해수욕장|계곡|둘레길|산림/;
 const INDOOR_RE = /과학관|박물관|미술관|기념관|전시관|아쿠아리움|아쿠아플라넷|천문대|도서관|체험관|키즈|실내|아트센터|문학관|수족관/;
 const PARK_RE = /공원|수목원|정원|호수|산책로|둘레길|숲|생태|놀이터|어린이|해변/;
-// 아이가 좋아하는 음식
-const KID_FOOD_RE = /돈까스|돈가스|피자|햄버거|버거|파스타|스파게티|떡볶이|분식|치킨|김밥|국수|칼국수|우동|라멘|라면|짜장|짬뽕|탕수육|중화|카레|오므라이스|스테이크|뷔페|갈비|삼겹|고기|쌀국수|샤브|만두|왕돈까스|경양식/;
+// 밥 마무리 로직 --------------------------------------------------------
+const CAFE_CAT = "A05020900"; // TourAPI 카페·찻집 — 밥 마무리로는 제외
+// 아이와 함께 가기 부담스러운 곳(날것·매운탕·술집 등)은 가족 코스에서 제외.
+//  ("회관"의 회는 걸리지 않도록 "횟집/생선회"처럼 구체적으로만)
+const FOOD_EXCLUDE_RE = /게장|횟집|물회|생선회|육회|참치회|모둠회|모듬회|곱창|막창|대창|막걸리|이자카야|포차|포장마차|호프|주점|와인바|칵테일|하이볼|아구찜|홍어|마라|훠궈|불닭|디저트|베이커리|빵집|제과/;
+// 아이도 부담 없이 먹는 대표 메뉴 — 거리가 비슷하면 이런 곳을 우선(강제는 아님)
+const KID_FAVORITE_RE = /돈까스|돈가스|피자|파스타|스파게티|햄버거|버거|떡볶이|분식|치킨|김밥|국수|칼국수|우동|짜장|짬뽕|중화|중국집|탕수육|카레|오므라이스|스테이크|갈비|삼겹|고기|만두|경양식|국밥|백반|가정식|비빔밥|샤브|쌀국수|한식|뷔페/;
+const KID_PREF_SLACK_KM = 1.2; // 대표메뉴가 최근접보다 이 이내로만 더 멀면 우선
 
 function classify(title: string, type: string): KidTheme {
   const t = title || "";
@@ -91,24 +98,44 @@ function build(): KidCourse[] {
   const parksBy = byArea(places.filter((p) => PARK_RE.test(p.title)));
   const foodsBy = byArea(restaurants);
 
-  const nearest = <T extends Row>(from: { mapx: string; mapy: string }, list: T[] | undefined, pref?: RegExp, excludeId?: string) => {
+  // 공원(산책) 최근접 — 반경 안에서 가장 가까운 곳
+  const nearest = <T extends Row>(from: { mapx: string; mapy: string }, list: T[] | undefined, excludeId?: string) => {
     if (!list) return null as (T & { d: number }) | null;
-    let best: (T & { d: number }) | null = null, bestPref: (T & { d: number }) | null = null;
+    let best: (T & { d: number }) | null = null;
     for (const x of list) {
       if (excludeId && x.id === excludeId) continue;
       const d = distKm(from, x);
       if (d > RADIUS_KM) continue;
       if (!best || d < best.d) best = { ...x, d };
-      if (pref && pref.test(x.title) && (!bestPref || d < bestPref.d)) bestPref = { ...x, d };
     }
-    return bestPref || best;
+    return best;
+  };
+
+  // 밥집 선정 — 카페·부담메뉴 제외 후 "가장 가까운 가족식당".
+  // 거리가 비슷하면(±SLACK) 아이 대표메뉴(짜장·돈까스·김밥 등)를 우선한다.
+  const nearestFood = <T extends Row>(from: { mapx: string; mapy: string }, list: T[] | undefined, excludeId?: string) => {
+    if (!list) return null as (T & { d: number }) | null;
+    const cands: (T & { d: number })[] = [];
+    for (const x of list) {
+      if (excludeId && x.id === excludeId) continue;
+      if (x.cat3 === CAFE_CAT) continue;              // 카페는 밥 마무리 아님
+      if (FOOD_EXCLUDE_RE.test(x.title)) continue;    // 아이 부담 메뉴 제외
+      const d = distKm(from, x);
+      if (d > FOOD_RADIUS_KM) continue;
+      cands.push({ ...x, d });
+    }
+    if (!cands.length) return null;
+    cands.sort((a, b) => a.d - b.d);
+    const near = cands[0];
+    const fav = cands.find((c) => KID_FAVORITE_RE.test(c.title) && c.d <= near.d + KID_PREF_SLACK_KM);
+    return fav || near;
   };
 
   const out: KidCourse[] = [];
   const push = (anchor: { id: string; title: string; image: string; addr: string; area: string; mapx: string; mapy: string; href: string }, theme: KidTheme, indoor: boolean) => {
-    const park = nearest(anchor, parksBy.get(anchor.area), undefined, anchor.id);
+    const park = nearest(anchor, parksBy.get(anchor.area), anchor.id);
     const foodFrom = park || anchor;
-    const food = nearest(foodFrom, foodsBy.get(anchor.area), KID_FOOD_RE, anchor.id);
+    const food = nearestFood(foodFrom, foodsBy.get(anchor.area), anchor.id);
     if (!food) return; // 밥(마무리)이 없으면 코스 아님
     const dPark = park ? distKm(anchor, park) : 0;
     const dFood = distKm(foodFrom, food);
