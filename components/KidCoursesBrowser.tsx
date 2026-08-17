@@ -112,23 +112,28 @@ export default function KidCoursesBrowser({ courses, areas }: { courses: KidCour
 }
 
 function CourseCard({ c, rail = false }: { c: KidCourseLite; rail?: boolean }) {
+  const mobility = c.totalKm < 1
+    ? `🚶 걸어서 이동 · 총 ${kmLabel(c.totalKm)}`
+    : `🚗 차로 약 ${c.driveMin}분 · 총 ${kmLabel(c.totalKm)}`;
   return (
-    <Link href={`/kids/c/${c.id}`} className={["group block overflow-hidden rounded-2xl border border-line bg-white shadow-[0_2px_12px_-6px_rgba(0,0,0,0.15)] transition hover:-translate-y-0.5 hover:border-free/40 hover:shadow-cardhover", rail ? "w-[250px] shrink-0 snap-start sm:w-[270px]" : ""].join(" ")}>
+    <Link href={`/kids/c/${c.id}`} className={["group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-[0_2px_12px_-6px_rgba(0,0,0,0.15)] transition hover:-translate-y-0.5 hover:border-free/50 hover:shadow-cardhover", rail ? "w-[250px] shrink-0 snap-start sm:w-[270px]" : ""].join(" ")}>
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
         {c.image ? (
-          <Image src={c.image} alt={`${c.spot} 아이와 함께 코스`} fill sizes="270px" className="object-cover transition group-hover:scale-105" loading="lazy" unoptimized />
+          <Image src={c.image} alt={c.headline} fill sizes="270px" className="object-cover transition group-hover:scale-105" loading="lazy" unoptimized />
         ) : (
           <div className="flex h-full items-center justify-center text-3xl text-ink-faint">🧸</div>
         )}
-        <span className="absolute left-2 top-2 rounded-full bg-white/95 px-2 py-0.5 text-[11px] font-extrabold text-ink shadow-sm">{BADGE[c.theme]}</span>
+        <span className="absolute left-2 top-2 rounded-full bg-white/95 px-2 py-0.5 text-[11px] font-extrabold text-ink shadow-sm">{BADGE[c.theme]} {c.themeLabel}</span>
         {c.indoor && <span className="absolute right-2 top-2 rounded-full bg-[#3b82f6] px-2 py-0.5 text-[10.5px] font-extrabold text-white shadow-sm">🌧️ 실내</span>}
       </div>
-      <div className="px-3.5 pb-3.5 pt-2.5">
-        <p className="text-[11.5px] font-bold text-free">{c.city}</p>
-        <h3 className="mt-0.5 line-clamp-1 text-[15px] font-extrabold text-ink group-hover:text-free">{c.spot}</h3>
-        {c.park && <p className="mt-1.5 line-clamp-1 text-[12.5px] text-ink-soft">🌳 {c.park}</p>}
-        <p className="mt-0.5 line-clamp-1 text-[12.5px] text-ink-soft">🍽 {c.food}</p>
-        <p className="mt-1 text-[11.5px] font-semibold text-ink-faint">🚗 차로 약 {c.driveMin}분 · 총 {kmLabel(c.totalKm)}</p>
+      <div className="flex flex-1 flex-col px-3.5 pb-3.5 pt-2.5">
+        <p className="text-[11px] font-bold text-free">📍 {c.city}</p>
+        <h3 className="mt-1 line-clamp-2 text-[14.5px] font-extrabold leading-snug text-ink group-hover:text-free">{c.headline}</h3>
+        <div className="mt-2 space-y-0.5 rounded-lg bg-tint/50 px-2 py-1.5">
+          {c.park && <p className="line-clamp-1 text-[11.5px] text-ink-soft">🌳 {c.park}</p>}
+          <p className="line-clamp-1 text-[11.5px] text-ink-soft">🍽 {c.food}</p>
+        </div>
+        <p className="mt-auto pt-2 text-[11px] font-semibold text-ink-faint">{mobility}</p>
       </div>
     </Link>
   );

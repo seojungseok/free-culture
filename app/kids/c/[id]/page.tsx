@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/Band";
 import AffiliateNotice from "@/components/AffiliateNotice";
 import KidCoupangDeals from "@/components/KidCoupangDeals";
-import { getKidCourse, getKidCourses, kidCoursesByArea, kmLabel, type KidStop } from "@/lib/kidCourses";
+import { getKidCourse, getKidCourses, kidCoursesByArea, kmLabel, kidHeadline, type KidStop } from "@/lib/kidCourses";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 
@@ -26,11 +26,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const c = getKidCourse(id);
   if (!c) return { title: "코스를 찾을 수 없습니다" };
   const th = THEME_LABEL[c.theme]?.label || "아이와 함께";
-  const title = `${c.spot.title} — ${c.area} ${c.city} 아이와 함께 코스`;
+  const headline = kidHeadline(c.theme, c.spot.title);
+  const title = `${headline} — ${c.area} ${c.city} 아이와 함께 코스`;
   const description = `${c.area} ${c.city} 아이와 함께 ${th} 코스. ${c.spot.title}에서 놀고${c.park ? `, 근처 ${c.park.title}을 걷다가` : ""} ${c.food ? `${c.food.title}에서 아이가 좋아하는 음식으로 마무리` : ""}. 차로 가까운 동선으로 반나절이면 충분해요.`;
   return {
     title, description,
-    keywords: [`${c.city} 아이와 갈만한 곳`, `${c.area} 아이와 함께`, c.spot.title, `${c.city} 아이 나들이`, `${c.city} 키즈`],
+    keywords: [`${c.city} 아이와 갈만한 곳`, `${c.area} 아이와 함께`, `${c.city} ${th}`, c.spot.title, headline, `${c.city} 아이 나들이`, `${c.city} 키즈`],
     alternates: { canonical: `/kids/c/${id}` },
     openGraph: { title, description, ...(c.image ? { images: [{ url: c.image }] } : {}), type: "article" },
   };
@@ -103,12 +104,13 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
         <span className="rounded-full bg-free px-2.5 py-0.5 text-[11px] font-black text-white">{th.emoji} {th.label}</span>
         <span className="rounded-full bg-tint px-2 py-0.5 text-[11px] font-bold text-freedark">{c.area} {c.city}</span>
         {c.indoor && <span className="rounded-full bg-[#3b82f6] px-2 py-0.5 text-[11px] font-bold text-white">🌧️ 비 오는 날 실내</span>}
-        <span className="text-[12px] text-ink-faint">· 차로 약 {c.driveMin}분</span>
+        <span className="text-[12px] text-ink-faint">· {c.totalKm < 1 ? "걸어서 이동 가능" : `차로 약 ${c.driveMin}분`}</span>
       </div>
 
       <h1 className="text-[24px] font-black leading-tight tracking-[-0.02em] text-ink sm:text-[30px]">
-        {c.spot.title} 아이와 함께 코스
+        {kidHeadline(c.theme, c.spot.title)}
       </h1>
+      <p className="mt-1 text-[13.5px] text-ink-faint">{c.area} {c.city} · 아이와 함께 {th.label} 코스</p>
       <AffiliateNotice className="mt-1.5" partner="coupang" />
 
       <p className="mt-3 text-[15px] leading-[1.85] text-ink-soft">
@@ -145,9 +147,12 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
           <ul className="space-y-2">
             {related.map((r) => (
               <li key={r.id}>
-                <Link href={`/kids/c/${r.id}`} className="flex items-center gap-2 rounded-xl border border-line bg-white px-3.5 py-2.5 text-[14px] transition hover:border-free/40">
-                  <span className="min-w-0 flex-1"><b className="font-bold text-ink">{r.spot.title}</b><span className="ml-1.5 text-[12.5px] text-ink-faint">{r.city}{r.food ? ` · ${r.food.title}` : ""}</span></span>
-                  <span className="shrink-0 text-[12.5px] font-semibold text-free">차 {r.driveMin}분</span>
+                <Link href={`/kids/c/${r.id}`} className="flex items-center gap-2 rounded-xl border border-line bg-white px-3.5 py-2.5 transition hover:border-free/40">
+                  <span className="min-w-0 flex-1">
+                    <b className="block truncate text-[14px] font-bold text-ink">{th.emoji} {kidHeadline(r.theme, r.spot.title)}</b>
+                    <span className="mt-0.5 block truncate text-[12px] text-ink-faint">📍 {r.city}{r.food ? ` · 🍽 ${r.food.title}` : ""}</span>
+                  </span>
+                  <span className="shrink-0 text-[15px] font-bold text-free">→</span>
                 </Link>
               </li>
             ))}

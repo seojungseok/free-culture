@@ -19,6 +19,21 @@ export const KID_THEMES: { key: KidTheme; label: string; emoji: string }[] = [
   { key: "nature", label: "자연 탐험", emoji: "🌳" },
   { key: "show", label: "공연·전시", emoji: "🎪" },
 ];
+export const THEME_LABEL_MAP: Record<KidTheme, string> = {
+  animal: "동물 친구", play: "신나는 놀이", learn: "배우는 나들이", nature: "자연 탐험", show: "공연·전시",
+};
+export const THEME_EMOJI_MAP: Record<KidTheme, string> = { animal: "🦁", play: "🎡", learn: "🔬", nature: "🌳", show: "🎪" };
+// 코스별 "의미"가 담긴 제목 — 테마에 따라 다르게 (카드·상세·SEO 공통)
+const THEME_HEADLINE: Record<KidTheme, (spot: string) => string> = {
+  animal: (s) => `${s}에서 동물 친구 만나기`,
+  play: (s) => `${s}에서 신나게 놀기`,
+  learn: (s) => `${s}에서 보고 배우기`,
+  nature: (s) => `${s} 자연 나들이`,
+  show: (s) => `${s} 공연·전시 나들이`,
+};
+export function kidHeadline(theme: KidTheme, spot: string): string {
+  return THEME_HEADLINE[theme](spot);
+}
 
 const RADIUS_KM = 8; // 차량으로 가까운 범위
 const ANIMAL_RE = /아쿠아리움|아쿠아플라넷|동물원|수족관|목장|아쿠아|동물/;
@@ -138,12 +153,14 @@ export function kidAreaCounts(): { area: string; slug: string; count: number }[]
 
 /** 클라이언트 브라우저용 슬림 코스 */
 export interface KidCourseLite {
-  id: string; theme: KidTheme; area: string; city: string; indoor: boolean;
+  id: string; theme: KidTheme; themeLabel: string; headline: string;
+  area: string; city: string; indoor: boolean;
   image: string; spot: string; park: string; food: string; totalKm: number; driveMin: number;
 }
 export function kidCoursesLite(): KidCourseLite[] {
   return getKidCourses().map((c) => ({
-    id: c.id, theme: c.theme, area: c.area, city: c.city, indoor: c.indoor,
+    id: c.id, theme: c.theme, themeLabel: THEME_LABEL_MAP[c.theme], headline: kidHeadline(c.theme, c.spot.title),
+    area: c.area, city: c.city, indoor: c.indoor,
     image: c.image, spot: c.spot.title, park: c.park?.title || "", food: c.food?.title || "",
     totalKm: c.totalKm, driveMin: c.driveMin,
   }));
