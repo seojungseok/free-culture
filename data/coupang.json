@@ -1,162 +1,499 @@
 {
+  "generatedAt": "2026-08-17T02:45:13.449Z",
   "season": "summer",
-  "label": "여름",
-  "heading": "☀️ 여름 캠핑, 이건 챙기셨어요?",
-  "subtitle": "무더위·모기 대비, 여름 캠핑 필수템",
-  "generatedAt": "2026-08-17T01:54:54.872Z",
-  "products": [
+  "seasonLabel": "여름",
+  "sections": [
     {
-      "id": "9560763872",
-      "name": "귀월미 대형 야외 모기장 캠핑 피크닉 방충 텐트 간편 설치 그늘막",
-      "price": 28000,
-      "image": "https://ads-partners.coupang.com/image1/MHt6KzU1L2x3b1H8MOFzMDilRUKneon17az-2K0ytXDtB-TWoIrgvTWb3jvMA9autw7JCk4wZuxAFB7AMF17_db7L-SRnlLMXo3DmCkOivLplWHtBrMYG5knzd2YjRKfNHHViULbstCARBQcTcsOqUd4o3aJzkH_Bch-mCA8Yf1nwd298P613aBstqCcUct3YN7O3kJPlyeA25wgwdP0Um5Ij1xR7w5_pn04IY_aRgyNufdZxlEQtMflowKfDlG1gJqW1pJ-hO5fQEDZIg_ZAEEhPFMKPcxek05J6mSfkH7A65urvUX-vyyCxxkuobJLP4B64w==",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9560763872&itemId=28530896416&vendorItemId=95648186048&traceid=V0-153-f9591d746849a9af&requestid=20260817105454714268604857&token=31850C%7CGM",
-      "isRocket": true,
-      "keyword": "캠핑 모기장"
+      "key": "staples",
+      "heading": "🏕️ 캠핑 필수템",
+      "subtitle": "텐트·의자·코펠·버너까지, 빠지면 아쉬운 준비물",
+      "products": [
+        {
+          "id": "9198886543",
+          "name": "Axylon 3000mAh 대용량 배터리 다기능 캠핑 랜턴 손전등 겸용 휴대용 LED 조명, 1개, 카키색",
+          "price": 26000,
+          "image": "https://ads-partners.coupang.com/image1/RuWfvoF2DDpSSQY-RruJXMXHACr80Ef2GLFLK3Tpiw5D5t60p3KBf5sr5FdY0C-P-ad8o2RSuRmY64ZTyZRkAoJgpmPcq44je0h3yxKDhR5tL-Dyunn3g8Sn_2FerjeSUEhrDup47EWyL6xjPpL37Ug1NzCh4RTVVoU-Yv0rFvCw5kbqQR02PInt6wnvZAANimcvoCy6gMw6K7NdrAsgsryRp-buTCh_m4wffSCL0lLPm7pWUQ53bhRxnqy5neym18tPXRY9o4pg7rIyXWnnUAphAJM_X7u1r1frtGGbqkdC_yL31Em1NGQ=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9198886543&itemId=27157194384&vendorItemId=95384280277&traceid=V0-153-83e535b7c176246e&clickBeacon=acb52830-99e5-11f1-a684-51758ae6c0fe%7E3&requestid=20260817114514862031132221&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8220565501",
+          "name": "Bonjour 아웃도어 접이식 캠핑 테이블 휴대용 캠핑 경량 테이블 내모마성 스프레이 기술",
+          "price": 28800,
+          "image": "https://ads-partners.coupang.com/image1/VMibgb6UaADhXNB2VDUFPgNbljRdD1YwXp4Tq8-yKJV57lG7TiZ2lpHxN26Meyg75RfsDBSjLPeCT2fTm2Xhfu8nFSfITts7fw5D0uoKIjCZ0zlMp1Q8mURc0qG2h8f5KgCGS0pyBi4sv5QVslR01eG-KivqOapVBE3G3TsX4T-OSCT33_RMPZj0pkzDV6CbUWj8982EVT8GFwdH-1sz7rMqTj9CFVuFr-AFXwc1OMbVJndweih3lYWG67IeuFJTkfenmK6CNFe_twf1GDMk0fDYnIi4gMh4fP3Vibbk7tWfBq8SdTmfqoM=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8220565501&itemId=23626210207&vendorItemId=95637212851&traceid=V0-153-4e7e148f294da0f1&clickBeacon=ad201f00-99e5-11f1-8807-c8db2030f08e%7E3&requestid=20260817114515561290453339&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "9228518480",
+          "name": "제드 마티렉타타프 스크린 세트 대형 블랙코팅 장박 풀세트 5.5x4.4m, 크림, 크림",
+          "price": 429000,
+          "image": "https://ads-partners.coupang.com/image1/gQ_jxlLxTKReQgrBgRit41aW30QsNILeuiP0dbuA7zf91dl8cX7JghIpYIzRJVo9xEAK_9xBTrKKOjRoOFCZdqYIO8wC3OxAsA1f_boNMZZ3aFFywiUewkD5gZ3SI4bRlQ1QDmrpb9tneeMZkBAB8ChK9MABZRYLtPSd0nBHdWAx_RAViJx7ZrBHJR8drN9891NEyGrKcoHAAVaVzskfWIm6UO3dg3yeA-OXq7RErjwpRo23JuuUGA4CEpz25cP007-i_Qb3Q2fvA5j5diY2udTOKR7lylDFJIWgEL--n8oq609AgMLCfXxO",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9228518480&itemId=27278124655&vendorItemId=94244825827&traceid=V0-153-05c4df881e8babed&clickBeacon=ad4bc2e0-99e5-11f1-bd67-94d2bfbfbcb4%7E3&requestid=20260817114515894002961030&token=31850C%7CMIXED",
+          "isRocket": false
+        },
+        {
+          "id": "8337763681",
+          "name": "크크라이프 실버 블랙 코팅 210D 렉타 타프",
+          "price": 33800,
+          "image": "https://ads-partners.coupang.com/image1/wKAaCRBEzO_Qcdi4wOihcqZsO08bnGIgEkL4-ygd8GKFs1-zTCwY9fxrWZWqQGqpZfFEQosKnuGaZF98q6OH10ruyawcm-4CQ9q_wrAgpDYzsAKwhCSoi2mU1qVidlVEHAf5Jq7WBGnicUIFE9lN53AQQWOO5Znf7NG9BbOyX24lYe1U6RrKqkZJvxtIslrbwscwMN89VlIxuUuDpMDVfq4CzIVAHTSBlOnE81-bdT6MQB_XgDY22MJ0C3U-9QPcbrmxUcrA2Di48m_Ip3XYh5i9A0f-i_kTlSQR_W9TLCpRUxVQbCZBUewaI8wBkeGLUG5I4Q==",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8337763681&itemId=24076497388&vendorItemId=87042583860&traceid=V0-153-40e3ab421eddae4d&requestid=20260817114515894002961030&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "9527552426",
+          "name": "캠핑힐스 높이조절 접이식 캠핑 테이블",
+          "price": 24800,
+          "image": "https://ads-partners.coupang.com/image1/msIWq7DVVIk1w19KmiES1W16RPwQIiNLWgGZkb4k0v1WYUtargWXQzoylZoAOEyG16XYKQU1J3CFwW-Eh5qu9N3Jd6mQCOgM2BgykfD3d4AbQoE3w4ViFYSJ2VKPAX1FLQfABB0y1VOSvkCZFOO3LVdHtc3S_gLbsUELX1ooRZTdnezXxfaSyzIz5AIT02KxNyEb-iTacuoVgARBQytnglmO5n1PIAw_Ozsv2JNOYueccv00J-jSu6YNftdKJehQWUdF12LYBdu1AyKu9sFAz7pdlJ0OZemZxRKJzATzB0X3e8Kwj_ZXJ80USfrB_hGVftkTAKF5",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9527552426&itemId=28409249547&vendorItemId=95360455390&traceid=V0-153-8243fda57dc1a363&requestid=20260817114515561290453339&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "9468864974",
+          "name": "대형 에어텐트 사계절 캠핑텐트 간편설치 넓은 실내공간 프리미엄 자동에어텐트 가족캠핑 차박 야외휴식 방수 내한 대형숙박텐트, 2~4, 연한 살구색",
+          "price": 376800,
+          "image": "https://ads-partners.coupang.com/image1/v846u11ZaQALvDyDvweN7zCZ_Ym5Peera_Olvohyb33SnztA8oenwAf9lvatmBHUxfsPTw_pElCYNSx0FVU65itHTEUhYv4dGv4xea_1mo4w_GvX7cNnbLX7HSjiYp2WwLOS6ZdRRhv44HvodI0o9MCpFpvOG_bxOeRuLQZWge6lqQxWev0k-3V1Thx5sF8-sZbfyp_ClrimD1KZ20CjqJMtDi8RfTIkTlt_5r9Xc-8POpNz6zmJ8r4bvPC72aKsdyiu1Q0qqplYYFtzgeywagFmArk7_82rrGKav_sG0DkOyq21sQOuBoA=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9468864974&itemId=28181781476&vendorItemId=95136365606&traceid=V0-153-be16099f455e92f4&clickBeacon=abda7fa0-99e5-11f1-bfe1-d4c1d53533ed%7E3&requestid=20260817114513423012086796&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "7298038337",
+          "name": "코멧 아웃도어 타프 특대형 450x435x270cm",
+          "price": 39090,
+          "image": "https://ads-partners.coupang.com/image1/w_698psEJzcMM1nAwwSav37I78KiCdoRFBTvercV27mW7c_xcyyuVsDOawZvxpHm_nPEHDe_TAbzWbgi9rafNzFxzBl2ZSlJna1zYKyuBkGHip7uzCQOMwJiYdckguYcemPpJX83J1i1JylaJE-uPe8FnOYtopjQx6_mSbUdQH7B-cljm7TB-odGY0scyjIBoNJnBi6JCKKyVcTyKMgM_E4vv__3zIPjyeBtCZKiWi06lOVaYe3VyxgvocHhWkvYM4JohtN61XuydhICN7UcLQC8PtQ9JrY7vF67VGGtU5e29cOmPZE=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7298038337&itemId=18668373285&vendorItemId=85802785915&traceid=V0-153-9187a4fe2cdb38d4&requestid=20260817114515894002961030&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8118221139",
+          "name": "브리즈문 연마제 세척 3중 스텐 캠핑 코펠 냄비 15p 세트",
+          "price": 45800,
+          "image": "https://ads-partners.coupang.com/image1/ph2qnFA-mYivtlqNpkalZeajAuOyVDebhabgXTv72PNrd4oVsnVzxFCXECeBCsePP7oO_w_srC2-nVM5q1DcOeEnUSU0hrZCZlayQfeF1-Bt_IlwkMhBnxxQCb3jxqLrkB2WC1SIL2X8cj1DJtKXrtmidk_NftRMxWKoQRMvQGh5oY3oZrt8YeVY_OQOaQMx_sTs84NWqiVvp61QJpGweiav9PqZ23_ojdjv8gS6pVFs0QkSBQ9YHYFlxcZSlyGg2BQq7Ct1FT2eL3VtaLq_4L6lgV8ER4F3e10SPmLQblDb2d1qJZSj2zic3cFBwkpbTSaCaQZIUu0OxwcKbgo=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8118221139&itemId=23018795728&vendorItemId=90052587706&traceid=V0-153-94edf298680173ff&requestid=20260817114514141290452844&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8951131814",
+          "name": "아오란 아웃도어 릴렉스 접이식 캠핑 의자, 블랙, 2개",
+          "price": 37900,
+          "image": "https://ads-partners.coupang.com/image1/NbM_INwtA6lgvm-pNYXMTDUeRo7Bqm2N5elA4HbdqJMS3xrVqYutkWyeGlOvp5_3Ary88TJN9C_IuoAA-f6ITlDVuFCGJoMrTUBDMCk3b3nTZNvRMhC1yhi6teFcxR_i3fMsnIxT98YWIDe06HCLYr1aS1Vl0sFl4SgRapc_3mpPaF3lXJrMpvPBbPJmSdhy70FMmcvK-V6XVD5JEuUQDNdgmAa2c4Kk3QWJYXHCI-CzTve-4ESlet63zwRIXxEOer-7fyXl2See-5I7okTEU1UbysDCcf0t5Bw=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8951131814&itemId=28538348950&vendorItemId=92314049305&traceid=V0-153-35e9cf00eea1d891&clickBeacon=ac10aad0-99e5-11f1-b7f6-e6c55c155bc1%7E3&requestid=20260817114513797150757202&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "5264028363",
+          "name": "올리빙 도트 캠핑용 아이스박스",
+          "price": 29900,
+          "image": "https://ads-partners.coupang.com/image1/MVu2YkPnMK2vKOvQMSbVspagUKPgOSGoLMfZ_SP3xWYGKd4KEuFdYzgZDAzUbpQSKS8gLJRaOrn3TKdJC-UiLtEJBKxGMEB8mpxcaeEiEIMJadrCD42YxIZQrjS3u7C_Jkep-SWIv7rXKrh6T76rkxaRM8fzaayunLk0b5GbjnzYckrH-fK20C77kgRiejCmKpd0GMLFLYPhZJAmlTVpxkw06uQnSfAERx7-zTenei5B6g1PS2xZa1bVB_tglLQwtqvNjx9hVFHpjVHEPmsi3srWHhldaq8PmewGOmSUEjkMaVAzanU=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=5264028363&itemId=10506861291&vendorItemId=77788522889&traceid=V0-153-765bc95630ac7b62&requestid=20260817114515214112060422&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "4760383959",
+          "name": "코멧 편안한 아웃도어 와이드 캠핑 의자 2개 + 수납가방 2개",
+          "price": 27990,
+          "image": "https://ads-partners.coupang.com/image1/3LzwHO71zLnZ9Ajd3IVJxunXh5Z9wq3F5nhCE_FxlFhwTjHC_Dkitn0yEcckCWCLwrpH3SITsl6dmQhsfDRV7S6kThjGa2SvDdynw7ZAtO0IZl2YYVSY1xvr4MKZ3dlFhp2uAZolIMQl6uh1Btdapst9oEujaKSHENPJyW3WLMG70qfaKSravdy44MKsfXEXxVCoBRlRT2V9w9A0TL0hnLlIR1o9YnA48WFq55lHmr5pxXleFez0dCUTsLug0KUu4mHtrJJOBKGwx1gfCJfNHtiGm_dCcX6nvjEcyIKXQwNK-QQRMw==",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=4760383959&itemId=13824961110&vendorItemId=81075175139&traceid=V0-153-d534b549bbe60a1e&requestid=20260817114513797150757202&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8698287549",
+          "name": "자외선차단 원터치 자동 텐트 2-4인 가족 캠핑 그늘막 텐트 초간편 설치",
+          "price": 36600,
+          "image": "https://ads-partners.coupang.com/image1/NSVZyV1QjUrEER7yNbW_gHzV0C_hoCavia9IJ4yDpFfMI6SAIPNuJGnkSzC6N5ldfmyv36shjFtVjcpdcgfe9AqggeOuDudiyVvEjNT3l3GaZBNONtGdL4Idw9g_08Yi7ou11Jge6iA4EXAW1BeZ8zzNs9ltWaoaaZKF5mpCag0knb1qV_OntMdMeZyBpLQ0E7mkeeMsl-LCF_lXPzKxV-XXv2Lgw5xkbERHm1G3t6Va5Mc4T45zOa8o0qmEMvSe_vHX6m6KKGpWVJav9sM0Mg2XKWaRp0iXIcxss8o-1Z2ITjaO6F1pB0kLWrUSOziyH_-vfw==",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8698287549&itemId=25042467185&vendorItemId=92047067844&traceid=V0-153-e01d79d0f5f06095&requestid=20260817114513423012086796&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "9629279587",
+          "name": "GERDU 휴대용 캠핑의자 초경량 접이식 낚시의자",
+          "price": 25710,
+          "image": "https://ads-partners.coupang.com/image1/UCBEuuJiD-yEiy7_UIK2QVSupPAPk5_KP9CX-wEstGVPhiBGRsb_QoVoZMQgQdMEOCtr_Z3XRu6audIUF0R7puUxYHpF4q6yPHIFfvuGmhBgnGV2tVNI3UnEWITZKLgqE4BT54ckz4Gw2NWLEvao4d62SToPvvhLiciDvvNYDtVlncn-rPYeHZDCuwdRutLld37BB9qWuvkY3hUpNxOniWsZziTlaITvfg_2WJ3fyENQ5h_R_lov50urjmASVsJ-AI3Wpp_g2iaT5dgtCmVqOCXFHmfpdYQxhtlSJwkLW2xxL5YrXjBX9Sepjnjhh7-CMsPopoWcEtErTHFw",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9629279587&itemId=28760369590&vendorItemId=95698942244&traceid=V0-153-100a11ce0dd4c512&requestid=20260817114513797150757202&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8921895501",
+          "name": "Keebright 3in1감성 캠핑랜턴 3000mAh 숫자표시 IP65방수 접이식 무드등 차박 비상조명",
+          "price": 13020,
+          "image": "https://ads-partners.coupang.com/image1/wyduscdMLz0PHu0Kw9A2B6fxKNa3uL7glzoY8i59ONSpGhMly9d0oB0Vef8i3YkSckgXh1SxpwOoeLXC0JexuXZa7UNKWCS54UpPzW4iQO00Aw0ztVonAoGwT5Q_dpwEw5NclJOVSPumDGwy6UXjzwNWEVwymXmSVJ44W7Qdo4sbDNhJmiFObtk1mCXknsu23QRoLoOP_Dh7QJJbQbFXGwjP00NJ1SGzRlVkTuNvwTtWa2Gs67Aq9PLa2vIMIyEIXFqdArsv6bZTJSI1umH9tR0oqanZCysQIIqvD3NXHxzMEb9WD59ha5XeKVV07K27ntuliA==",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8921895501&itemId=26072727304&vendorItemId=93053750114&traceid=V0-153-167d683faef1a8b5&requestid=20260817114514862031132221&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8505779367",
+          "name": "썬연료 초고화력 그리들버너 캠핑 이소 가스 강염버너 TY-2400, 1개, 밀리터리",
+          "price": 51000,
+          "image": "https://ads-partners.coupang.com/image1/xzPl0ph9tV2iWfzpx7We3c_V1JJyUa6NJXtuRuIlA_rJJoUqsXxoYPYQwUNxePSmXTInHqEkFfioYFz5p1Pmoom3mV4JjMjkGySsqUpzmRVSg_DynmZ8ynFTcRDDbRt1WmojILOkaM5ZZgRGAlkMFC_QP9c2NXOPzHVpVRZ-KjQiHsxAHYR9TGmuQ6GcjTGsIh8M0oYJ5pCrMiJAw1WzP8osmG8xIgXgYkuij-qPA0bML7Fg-d7HsBPQNsptOQqmnmeYkz7jcebPgIi4uhftlD5Iygo7bT1gHSK8dUB-P-fvu6J8iongzaM=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8505779367&itemId=24619106628&vendorItemId=91630241678&traceid=V0-153-a28090cd1dd2836c&clickBeacon=ac7a9030-99e5-11f1-b3bf-329780c62503%7E3&requestid=20260817114514490096811415&token=31850C%7CMIXED",
+          "isRocket": false
+        },
+        {
+          "id": "9640958402",
+          "name": "신뢰가 튼튼한 경량 캠핑 테이블 접이식 낚시 피크닉 차박 롤테이블, 매트블랙",
+          "price": 48900,
+          "image": "https://ads-partners.coupang.com/image1/Tes6SUlhsm4Y21tMTZeGMNeCfyNZdKa3hbcQz0fPquH_VdFpe3IAhoZOKk4LTv4YO--77oDazNoPrP4BJQ1LeSdpmRQ-WeQFOJk2qeKRro3t43IM2F2qogfJUfNrCaJ5s2NKr6HDEGhecT3plK0uV4-JcRlaYUToqOEA8kX0jyvD5zrvpbgpqH1m2Wq9Hd0kE9wy7k-SAiHwZ7tmAt-YbrGKe9rqt7KgCBD7q8M927fDB52S6DhrO5fiiPr4U5a8qgxqDTJ7ksYjhXLlFB8OUzpnMLkjEzMYtQoNjPlApQdH-hjGV3Sud4df",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9640958402&itemId=28806836435&vendorItemId=95742048511&traceid=V0-153-9a7e917bff8a2896&clickBeacon=ad204610-99e5-11f1-ac6b-05ee9bf093d7%7E3&requestid=20260817114515561290453339&token=31850C%7CMIXED",
+          "isRocket": false
+        }
+      ]
     },
     {
-      "id": "8286165140",
-      "name": "캠핑 침대 원터치모기장 사각특대형 지퍼형  베란다 2인용 4인용  대형 모기장 사각 침대",
-      "price": 26200,
-      "image": "https://ads-partners.coupang.com/image1/Ht3pJMI5HTbkBv0gHjcne-IUoER011A1GRVbzKRwXjficSCtd9VwxV3tay1nVA6_vlJ5V6-S_lTZ8wVmvCZCbHXPR2e61OudXzauEaP485tgglC847uDfRXM1nJhILCG1Qxj2os91xzGKe2KnA77gUZW4miagSsRLNse2j7leeOAByXHnEKpvD-gWkvglNuGdzSujghpDT154xL-ZVNQC7gNkFe7-IWHKfRHXDGk-GB70UBtmTwB_u0P5fChvXs-BjewYaGu4q36dpdEK4QdhXaH9u5KztqkbzY3S86MPb0VrL0XCx7Whk-L7eWb8MekRm-F",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8286165140&itemId=23893690834&vendorItemId=90916354196&traceid=V0-153-26853e4946cc74b9&requestid=20260817105454714268604857&token=31850C%7CGM",
-      "isRocket": true,
-      "keyword": "캠핑 모기장"
+      "key": "seasonal",
+      "heading": "☀️ 여름 캠핑 용품",
+      "subtitle": "무더위·모기 대비, 여름 캠핑 필수템",
+      "products": [
+        {
+          "id": "7298038337",
+          "name": "코멧 아웃도어 타프 특대형 450x435x270cm",
+          "price": 39090,
+          "image": "https://ads-partners.coupang.com/image1/za9DSAOqLxkR8-WozbfGifCsD736SflV-JEnfLxMZuS7FAUg78EHD39Rp-imD4pK-2BGw8iMGItzebRMkHugrVqcA18vZoGSDBA2xe552bR0cLpsLMYAMcuLln4ttiEyxQDm4Vos8PDjTxdUHMzlX1czhZzHYtSsahWWF7o400-2J4O_53RuyZ1xvaDM8GqbwpIp3uV-ih5MI7BQPwyA6TCrY7tYrq2gxV9jycaC2LCxqhkgXnHHTTFO04Ga0QHHYWeFo4KFhWvQIoDkk3fNMP-rKEZrMd3S-2tP1wks-_xZvaY8UNY=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7298038337&itemId=18668373285&vendorItemId=85802785915&traceid=V0-153-9187a4fe2cdb38d4&requestid=20260817114517277057062961&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "9560763872",
+          "name": "귀월미 대형 야외 모기장 캠핑 피크닉 방충 텐트 간편 설치 그늘막",
+          "price": 28000,
+          "image": "https://ads-partners.coupang.com/image1/ichjGtKpXP8lFC8iiRoUEOegT8MhKjuQLzFXz2PnGdLu-NNxRTDm_SoJgGPCuvwtKGPNRKUPpk4MT8rxFDlPT6388nPTD12k_-EDIaDEN1FIAhHUGvpM4lnzmiwNOWluWTN7B10zwycKP09mSCszKBqz4ZnP_lkrAxtDhNEo8NjJCC71goP_bLgaCMhpCzMe7Ew0A1PEGwX0gflP7K5QJLUK7MK4698_XbWsc9MuDKeIadUgmETdSuxQoz3NR0L0Rmak6IM31oL2s4ks9lRDvBiyzeB40xaj3d1Pcp-y9lu-AD3nT-RgTmYcESLaI47x7gpnw1hW",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9560763872&itemId=28530896416&vendorItemId=95648186048&traceid=V0-153-f9591d746849a9af&requestid=20260817114516227249883761&token=31850C%7CGM",
+          "isRocket": true
+        },
+        {
+          "id": "8990367527",
+          "name": "씽크라이프 3.30x3.30m 초대형 타프 스크린 쉘터 메쉬 텐트 모기장 그늘막 텐트 대형 타프쉘",
+          "price": 81900,
+          "image": "https://ads-partners.coupang.com/image1/D59TUFWkSAQklvVYD4GS07lSd5JWf2wFI9bKuK6VUGCcFLv3lbX0S6ph0tERboRktFRfYGI7aJ_Fy-AGfNyzq8rd7_p6zNmAgh9LiWoWaaJ9PFAQ-g2olyKDnI8uZj_strOLPmREffVa73pTChl7CTI-hMSnwPDLzQUfwRwErA9Vuaon0wk6B9-SYAazZpSiUtOvuZW4qRVssi1FabKW1uzbkJJqhWzXvHDV9IvfPgRsV_DZ-jdqewqZZVOtEBpcydSirVfWNXsc8DsSsdk0s5drGmYPVVI04Mhu-bc6wGKYx6Eh1bvSuiqC4WcmhipkBWDpPzvEAAGoT_T0mlvUOQ==",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8990367527&itemId=26334496122&vendorItemId=93311681571&traceid=V0-153-49b085e09b928589&requestid=20260817114516227249883761&token=31850C%7CGM",
+          "isRocket": false
+        },
+        {
+          "id": "9530983694",
+          "name": "New 대형냉각패드 위니쿨 급속냉각 휴대용 목 넥 선풍기 BLDC 대용량5200mAh",
+          "price": 50050,
+          "image": "https://ads-partners.coupang.com/image1/FPumY3jU3rPweZYLFHSw8nT7laUYa50949yjtKZckYYOuA3Z6x7SteHWI9CeFN5dU4EWh_eTL094l-yNp8wOC_s23gS-UqFNioQpGerPWieT1nBWE_c87D6fMgiD6X9kooNcQlmSSc_9qre9OLqocZAuXIJ_mjQB_UCz-LLk8sxX8KErW1llwNeP7yRCYzqqYdbQY-rWQHY4sAEJBkx0Jauwuc1pocKEZi5rTu6fbsVd_cv-zQ3y-UghuX4xIgqjMtfUka-gnF4TaQ1bM1oclEH4Az62PR2nZK2JMbAb6KgSH_TbUaZ9KRPUSWoQBAnR9m_4mQ==",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9530983694&itemId=28422964479&vendorItemId=90727418152&traceid=V0-153-b2175c2d8d40ede3&requestid=20260817114516585112061069&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8651904995",
+          "name": "쿨베어 국내생산 프리즌 여름 차가운 냉감패드 고정밴드 쿨매트, 화이트",
+          "price": 35900,
+          "image": "https://ads-partners.coupang.com/image1/FbX5B-kaQiLxavSXFVYrDSJwbMzzPpH5B4CFU7RjK0nc-VzHvRds_Z5roSaUfiaOAnbMtM_Ae_D9zcwpxEEjPor7XAGWHgajMmION2ZDuFYtn9gS8IF34OUJuPuzeGPOdbktHO_BzwIgrHvs3ScN6Opze5HsAO5rCfX4hqy0qY_jU3jxzr35-MIfr4T_ydIMHUukHdp-5buC4dtxfV_PKIz31JlfBQMnzs7AYMoFcWNozoUEfyEhe21kyFFm8EsgWIJ-fm4ZfBTf5mWQ6C8G1EdifBTqsM3kQ5ZzlqLaSLp-AaysQ3cdiCZjkA==",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8651904995&itemId=28249000804&vendorItemId=92188994833&traceid=V0-153-63b040c5a352c7ca&clickBeacon=aded0bf0-99e5-11f1-bff5-2aa11e6c4012%7E3&requestid=20260817114516947249883987&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "9532187358",
+          "name": "Quictent 원터치 팝업 캐노피 3단 높이조절 UV 99% 차단 방수 210D 옥스퍼드 스테인리스 프레임 사이드시트 4개 + 로프 4개 + 팩 8개 + 모래주머니 4개 풀세트,, 블루",
+          "price": 165000,
+          "image": "https://ads-partners.coupang.com/image1/2MWB3_y3oFILIPTe2JI8P9p3g9d-LBDZMYpzXoOUO40KSoMKm4cQk5ORPWaug4qYrbBAj0AXISA5NtRGkpzSnNDC5UmO7Oaq8F2yXVYqWXuemcUttQZZSZKO7A2kisUNntA3b7j_1ZFgp048WIlP5xIg_4EI-tiX6hjSot5ekCKJfZBFHvSBTK44Bt16zLoJE1D9nKsH79jPTtAJC315xJTzRZsnFYaq9MVdiAqRVrDICa5uED63lW4NQZf3UFDjg6cQjnAgv7FA7d9b0dde196S0zzRiXZXAvbuW9W7cbbVpxRsSLmTOkI=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9532187358&itemId=28427438060&vendorItemId=95378354336&traceid=V0-153-40e6defafd861dc0&clickBeacon=ae1e0700-99e5-11f1-9477-ae8d7961d266%7E3&requestid=20260817114517277057062961&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "9510014977",
+          "name": "EXTEDRG 스마트 온도표시 아이스박스 캠핑 보온보냉 휴대용 대용량 쿨러박스 차박 피크닉 낚시 야외용, 26L, 아보카도 그린",
+          "price": 99800,
+          "image": "https://ads-partners.coupang.com/image1/8BkDUdPeNIqQ62V08Ey19TL12bpofJm591egUla23QBkhzpOOK5UxJUX9bJ9EplM1IutXAkv5khWdZbuX75l1KaictoY_fzde6ofVLpaOBhyEyb6tRZ8x4L8b3RuOtm8bmuFGcFBdMjUkmiczbMrytfO_jmJxx6_BI4Vgxp6lYjjOVWNm0ufECbg2W98vlhIWdA-A4uQG_iXaIz77auvmF2JfG9EwSZbMYIrEcF5owS_pFeoWcmix0AmbuxELBttPmbHkykMFH5FWdWQpinSm3fuli75uknMJlKAEx35rmCWhPhBfD7fk5oDjw==",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9510014977&itemId=28339177872&vendorItemId=95291425204&traceid=V0-153-774c99c71c848392&clickBeacon=ae528480-99e5-11f1-b316-dc9ca7636bd4%7E3&requestid=20260817114517574264793522&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8915431994",
+          "name": "Kingfishe 캠핑 타프 옥스퍼드 원단 방수 타프 아웃도어 대형 실버코팅 랜덤발송사은품",
+          "price": 19800,
+          "image": "https://ads-partners.coupang.com/image1/Vi5tdJffyLkny2kNVhrhgm4ItVUd1kMvkLyjScPljtadbtnOSG24K5uGPb331shyLkfWwLbygi5BMsR4QcDetsQmHCzgiFs9zVqZ_r2MfPr_s4mzaGDQp2LTyYpXv0ytCGIdGq6Fd5qYWgAzh0BKKlceajK_XGFYMHbCIRgTQx_UuIooryEoT8DHjHHhO5hF3dYhSOTmO5WUgxhCsZig5z2eQijwTULtMFYBW0ZpGYBK5dxb-Lz4VnQaLC1FG09xLxLK24JR24fN_TLAKprqXHA3tivDU-vVDSZSWcwJeqFp3p96lIkI1IO8vDWaWAnDrhOIqA==",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8915431994&itemId=26047921700&vendorItemId=93553574196&traceid=V0-153-4e61df2d04e7cb38&requestid=20260817114517277057062961&token=31850C%7CMIXED",
+          "isRocket": false
+        },
+        {
+          "id": "8286165140",
+          "name": "캠핑 침대 원터치모기장 사각특대형 지퍼형  베란다 2인용 4인용  대형 모기장 사각 침대",
+          "price": 26200,
+          "image": "https://ads-partners.coupang.com/image1/toXooHTzhZ8PZd4_ttGU4c3aaRJCtnwqeaxqtMxqJqSSvkowSpk0SiaAyLNYfIfh6e4iWMlcy8zDqxzNG1-fR2d4LRBv_Zaq2omhzK9qqeYVOmvlQvjc0EasO8f6Rv3C5n0DJ-auOybUA4ZrYlXim8VoB_Fm1m9vtckVzMHCMX6RqOuyeTb0RVt0leIhzYZvTDa2mLli2yzn14RF1UPA0ytWrEhyctmkiARnaGnxjovD0ujVte2zHoZI6Ar5ra2aNwN8s2MaC-R_tmoE8UdOYfoHAPHVtO99u1JtvL5JaDprquRvFHP4LHmdRw4-Ya4D1ZcJZg==",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8286165140&itemId=23893690834&vendorItemId=90916354196&traceid=V0-153-26853e4946cc74b9&requestid=20260817114516227249883761&token=31850C%7CGM",
+          "isRocket": true
+        },
+        {
+          "id": "9466007886",
+          "name": "NOVALIVE 접촉 냉감 차가운 아이스웰 여름 침대 패드 쿨매트, 화이트",
+          "price": 37000,
+          "image": "https://ads-partners.coupang.com/image1/qqdevKDL2CK87JcHqgy4D6veM05UwWJiPxdw_WwpWmnbwB6mN-WHQVadhgJmNIHvDCnCjsAHkpc7xcxjHiHDpyR7V4Y2fz7weHRdCbjH58ChTavKY4V7ZuN1Z1VvIjr2hiOUuVO0KJUFu0KM8Jg0AHklsgF7y1r7ZlGbIMdFqD1RZsKxA3pgqBW4kpvsbunEL9M1M2l79SNTKS66dvDYpqZhBhM2260GNEurMh9mZc0u3QUuAQen91nrB2D5LxZs7rF4pMWWcporg9waIMmSy-aEjo4L2hXp1Lizjo0qYv80Aov4v9ecNwg=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9466007886&itemId=28914251571&vendorItemId=95804478713&traceid=V0-153-86a86122e2e5a530&clickBeacon=aded0bf0-99e5-11f1-b4a7-ca65a960bac9%7E3&requestid=20260817114516947249883987&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8658572322",
+          "name": "Space Player 급속 냉각 휴대용 대용량 선풍기 100단 접이식 무선 선풍기 아웃도어 캠핑용 9000mAh 손선풍기 아이스제트 스톰 각도조절 탁상용 BLDC 넥선풍기 손풍기, 화이트, MF119",
+          "price": 49910,
+          "image": "https://ads-partners.coupang.com/image1/Yx3C_dH0Ev60gNrlY9jdjRzOgH1aiIRZ0tY0cLEtVZBjLg1oMEEu7saxpdMZsuXffo5mM3dcfSXTI_nRVMnFsyIeGz0EelzXBbHSfV4i1AnkesneSzydXCZr9c3J--iD4wj01MQcYVG8ln9EiLau7addmv0BSdLXRHFFTVaMztUM_bQ7bdXzoYr9ToQO72Nd8ijtCbnMPTM3jtYKXZfFI2iovJcZg0d715h51FO8gbOCoLk3nRfQnCLP-y2fpT2RmwCBcPm6Op5_jGuz3yjra6xitVK1ZG5FHyT-guJRrAvICuTtR9Rxo62m",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8658572322&itemId=25130132424&vendorItemId=93983808305&traceid=V0-153-b00fee6d550358e9&clickBeacon=adb707d0-99e5-11f1-abcd-4184787c3ef5%7E3&requestid=20260817114516585112061069&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8719219704",
+          "name": "알리사 100단 아이스 터보 MAX 휴대용 선풍기",
+          "price": 27390,
+          "image": "https://ads-partners.coupang.com/image1/1VvDYhPVbbqRm7tP1TpMuR4YqySGbM1c98tbC-MsQ3w1JD2LSWju6tirufx_TZfu4Ys5_QxAU1shXfipkxW5wNZvcvDHOleq54WDUKDwJdfkQj0SidjZnK1ZPFBHvVS2agQ6CBcV2rd5qRo96LgYKlpdcue0NAaSAMzY_mXhfgupv2xMv4Qjw6mAEDFuS5g9X5ar5WhAsw2HdJ6GIZ9cuQWW1sSXIcjX6U75_e6g5Y4RiLxQgVPkLvH4pGitXWySV88UhJdwd8NMkJq9Y3pRPQXTKw_jJKnUUjxAfOfZwzMoG_hJWPU=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8719219704&itemId=25325956860&vendorItemId=92859054401&traceid=V0-153-3390c08a48f3cae9&requestid=20260817114516585112061069&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "9574392877",
+          "name": "차량용 듀얼 선풍기 자동차 뒷좌석 헤드레스트 바람막이",
+          "price": 19930,
+          "image": "https://ads-partners.coupang.com/image1/RCqhuagJ-h1BJwLTRHnn8EhN1adDtomLvc3jtPjtr7-X4yqggzyK544jaG1UHG0p-T98dyH9LWuSGFvamy8k2iCv46m0wyFe4pxFnlLWXYt3-nT4aRA4ks0ZYImmJMIjzRNoFE3ovQdU5w2vUyOPE3JJqnLPF2zKzlalmvWGGTCd2b4F96HQ4EviCRnbPn86TL3O8iUEGQijorrUYVOZPaFfTGKzVxWUIZmgSPWCRgn0e3bMYrTBRDf8KG0YfPczBIfVoxwOj_vSc18Dztt29ozoPpx_q_4-bmKwMIyTCUj870LMyd6iFfkStx5dphor24tkOw==",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9574392877&itemId=28578414762&vendorItemId=95522555605&traceid=V0-153-b851c3085b56f47c&requestid=20260817114517935308272411&token=31850C%7CMIXED",
+          "isRocket": false
+        },
+        {
+          "id": "9546123098",
+          "name": "오토코스 듀얼터보 대형 차량용 선풍기, ACP-F1, 블루",
+          "price": 46900,
+          "image": "https://ads-partners.coupang.com/image1/mbiu7xOOrRcgW7mamZswKi8nmp9N2C8NIoYECkKTMGnuGHFtOa54iEGU22C6nbiHMGna5huGiHrw11Wot_uww5Gpp-sH8jzesVn0qd8MGiOTGi1Qm7ktLUZ61ouprZNNadC78whk46Cjsd5z4Or4RAwQtBDpFjcbovcKHaUk58I47UyJvopIYoeEb8iULOwqD10XPOmKwUml1rXsA-Mdn4dbXKnhqIpQKccKt46_Qng512cHNbLtxCZwFmeJYWPCXp-e1PttzwRPPgizPTh04uAJdMAVToPMTQU=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9546123098&itemId=28479486795&vendorItemId=95429654563&traceid=V0-153-5746d764e9adcbae&clickBeacon=ae875020-99e5-11f1-b869-64401f957021%7E3&requestid=20260817114517935308272411&token=31850C%7CMIXED",
+          "isRocket": true
+        }
+      ]
     },
     {
-      "id": "8990367527",
-      "name": "씽크라이프 3.30x3.30m 초대형 타프 스크린 쉘터 메쉬 텐트 모기장 그늘막 텐트 대형 타프쉘",
-      "price": 81900,
-      "image": "https://ads-partners.coupang.com/image1/y_uLcZWpPFRMBXJEy58OghVb5ZtZj3g1oUiWmgQwFEGIV6WI6DAFKpfN_WADULKkNcisKHMSMYAOMDs6ay_QZOH5acEgccaHYwp7CbkgLJgWG-1tLEYO-2qHNuBVfu32OoNN3wxJ6mgItrlLyCXmWt1kU7vTHe0YfecX02t9WWAR3hvenzX3GxHHG2oStIk5QlycL2gQMTWj5EFRV0hERR-kjDbfiv954_4GsX_MUQewTpxD_e_DjjXTAoVAMPb2XDdVZAHFafikQCYAmUZ6Mop2jHLKy_oplTe4jeVJTkVxDQLunA8xGbzfu52cXPYDrmPmUjsNoxXyG_D1NIMZjA==",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8990367527&itemId=26334496122&vendorItemId=93311681571&traceid=V0-153-49b085e09b928589&requestid=20260817105454714268604857&token=31850C%7CGM",
-      "isRocket": false,
-      "keyword": "캠핑 모기장"
+      "key": "food",
+      "heading": "🍜 캠핑 간편음식",
+      "subtitle": "불만 있으면 끝! 간단하게 즐기는 캠핑 먹거리",
+      "products": [
+        {
+          "id": "5579402",
+          "name": "오뚜기 바베큐소스",
+          "price": 10860,
+          "image": "https://ads-partners.coupang.com/image1/zmx7Ap7RxsCWh5A-zngMvlcaoBUKYc0S34sjDIy7wESu4ZzlEiJWKn_0NcA4lCv2L1SiL5jvgZxRtHHWEXoaDmrQislEYjKoqYbejhciiXmKPeaqhq_H6GOIjpCcLe8Fwghu20mIlz6nGAdC9ygfEmsiyEnYe6nXWz8fgYSs1EHu18nzdKw7J90YzpC_ogTcp51Bt7ekIb99LXezV2M5ESfP_B6l0JewLmfnXy9QzXtXzYm3RzwDm0gMlxV_AExLBCk5Fr5-HVzpGwDzmZ0yeXCIpGMw2KKl9jvhFndZSEqRuVlL",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=5579402&itemId=18626122033&vendorItemId=85761500785&traceid=V0-153-5fade1b7b7068885&requestid=20260817114520478264794436&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8734164202",
+          "name": "주부구단 목우촌 비엔나 소시지",
+          "price": 10280,
+          "image": "https://ads-partners.coupang.com/image1/Ji4oNuk4VfUY88BMJppkMRl1munn3XzKBsedKntFKV-v5JtMEKTdb5Bh5dMeBVLn1_29UYBPiv6mdjU9bDXEftdekqf94VgFw-0IgTQdpERerl5j6OeEIJlwJeCrFpUDEwgxqjzkeDjxVV3JvoApAw8__UBQbDrbISDYaPCnIPUSIb7ENowjHwoKhF6nEQjXVYlilYt16ImYVwIWVfz1SgP3Wz-J6Va08TwBndpH5trYJCRuZBlWAkpUoMbeBVUfHYWxXKiWMhs9RJsJ0lUIERy-FyCbpIo3ixDaUPZN9eAifqM88D4=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8734164202&itemId=3601135318&vendorItemId=71586846316&traceid=V0-153-6e369c195d549441&requestid=20260817114520078195944269&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "6495613600",
+          "name": "휘카레 한남동 비프양송이카레 순한맛, 180g, 9개",
+          "price": 41900,
+          "image": "https://ads-partners.coupang.com/image1/ylDbdybePaFQBevzyrjbbl9W-qnfdrf6wGodOO599a_1ad3QwXJJ04h12hQuwp8_zg6O16SBpXqsKvuX50wDnCjwIa2XKG4T90CW5A2U1LpDB0gkzH8Ty1GpQDygf5IpZ8uoWsmG8_QaGPNtPndWevBrCvOLlNwb4MJSAheVIPucnYyfyomeZKDSZ1lrMPzY4Fz-hzJaXkYehJHk9-aTgzY2rr1I7Q2D6giSIpmScai5L50uvBVjAgdmOYmcCrpaDCCKK_A7zUcT5-DdfyDbE-NDhEdfIaAcGNeF",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6495613600&itemId=18729074505&vendorItemId=85861674348&traceid=V0-153-8de61a389f84b28b&clickBeacon=af8f4a40-99e5-11f1-83af-343d20d6f92b%7E3&requestid=20260817114519657129853264&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "9527783653",
+          "name": "멀티라면 각 1봉씩 기획세트 9호 (신라면+너구리+짜파게티+배홍동비빔면+사리곰탕+무파마), 1세트",
+          "price": 32980,
+          "image": "https://ads-partners.coupang.com/image1/pSaBJprPoRg2zLfUpTEU1recziIdfe2o73S0B_49rbfKjgRfcCkBfh39KgmKaflxXdTglNJXbZcvUAcd1_X6Ymihirj1ZLO5v_uTmGenF0YHE0J1a3OT22rlx2UGvCVIec_i6pM2c19Gz6XIe9EaePAB5kxJVixiQmGgADoVwc0VsZ9Qex49iT-RQvR4O0HW15wBNvcqcsu-OtBcYMhA3TN6IzlMqnuaNAkUn5ZmQqCag15L_hLD7xtsN902KdNgAkJNHN_fLxZORQswouXrG5WdwXbZS6OkdSdvDEP2i-IsNwOCJx98XssE",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9527783653&itemId=28410256289&vendorItemId=95361444574&traceid=V0-153-6701333deeac9b10&clickBeacon=af2f28e0-99e5-11f1-91bf-512cc21e02b6%7E3&requestid=20260817114519027012088551&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8956353201",
+          "name": "오즈키친 브라운 비프 카레",
+          "price": 7960,
+          "image": "https://ads-partners.coupang.com/image1/YUF02P4n8bQKrxDsYc_MPwpOOHovlI3Thy7qeVxksW3txrty4zifvd5PASmqfZ8EFj_PtIVAANCjEgsd2zXN0Js630QBLOaukhyKf9xQqM_7yMi4s0nbR9D0eghfRIYPiLBFXpd6ieYCBKEJVkqQDF1FYh0TQcXvQhOQBIURfElyGn0zo_l1o--McuE1KIg8nRkZpTlJsMFx17I6Ra4CsPdjZsDNcLzOyA_VzJJ3RHvYCI7Q4EO5tR-2LPxLho9QeBbCmuyfaDnjaKbnpH17WyR4FB_OiOu_x91ZKbg7G7Q-8g216YqWjOI=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8956353201&itemId=26203953336&vendorItemId=93288231228&traceid=V0-153-dd02497be584cd82&requestid=20260817114519657129853264&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "9052582961",
+          "name": "오뚜기 흰밥",
+          "price": 22400,
+          "image": "https://ads-partners.coupang.com/image1/k2xKu15_1eZLeKLKk2liB3oQn3IL1SX4LWWf5f5SfTIy8V9y695feoG8-aHGrXTt4IXTvfMH8rDugwokBxlD2_dB-PI8qrJT8v6wmYo509Wftl1quFLMi92L8ZJXmpm9GvBxrWtupQIn55jUS89V-X0vtBaTjZn6NbkAziQ0bl0p1_r_SxyCjxIyIYy66Ktv9OGNMDuWsBUDuEIWonLcLYQz22Bw2phuz3ZdIWNXXxDiSuaOlIoMl7Q8gTYWy-A0zRF0CI33tW6tCIejrLguxYL9qJonju7BvB3V3Wz9c68DUZJPkU8=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9052582961&itemId=22540128014&vendorItemId=3050972695&traceid=V0-153-2ebe9079b13a94d7&requestid=20260817114518684035403149&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "7958974",
+          "name": "신라면 120g",
+          "price": 8300,
+          "image": "https://ads-partners.coupang.com/image1/PYlLLR1Sawi5EyGzPf2tKJ5VA7DrkmwMyZ-JjKdID5Txy5ZYukfFNyDLYQvYzTZBfQV9WigmCvgaS4fq7imbpDoKk9rsoRfeQHZzD8DoElOy2zxZBS6srqbAGbKknPnqul4rTFOwRdy9N3OS8YesLTrBFRzxcLOujCArz4xY79OAT7Rma-MpPtye7_u8d7gckQLHga8PUYwjIzKDyAFJ-LjSX02vtjZJScX4e02SP-K02jOdTziVj0z2TqK3PxttYRXjtWJaJsE6GBwnABMpKsTmr0IBUFMJJOQeUtWqqgEvZL8nzqs=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7958974&itemId=1035120754&vendorItemId=84993760041&traceid=V0-153-2d25f09476b2dcfc&requestid=20260817114519027012088551&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "1598209262",
+          "name": "플레잇 국내산 파닭꼬치 50g x 12p + 숯불데리양념소스 150g 세트 (냉동)",
+          "price": 14900,
+          "image": "https://ads-partners.coupang.com/image1/sX0OSklSGUaE3pBFsSFeIzZs8l7gjgQ0TAXEuv2SFB9GM3Xy-nyhDz7mAkJbT5A6t_80ZQAgcPCtEQsx8G9T_ja7WqIcyUGrfql0s-IwDWoiuddpKtgNVgjWoyIDg6pQLLQAVnrj20EePHx_zRHZfbbGCts-O5yMmAB7jvpXPyutsTeLNU1mjPrHlrzAf5fRCK3yJhdZvrZwCI7RZiDq5wOZr6U3Lguap9tFxRWqUKvda_Rbg76rlG5jlpQ-f9bet-UP1opi-Uf0xoQSet4DzDeUWtiC_M1taUHe23mHJ89Z4NKJ",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=1598209262&itemId=2730331381&vendorItemId=70720473424&traceid=V0-153-8bb912ed87aafa40&requestid=20260817114518262031133304&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "7235457880",
+          "name": "오뚜기 흰밥",
+          "price": 33350,
+          "image": "https://ads-partners.coupang.com/image1/AS1JtSw7zpMg9lQwAeHzjFWCZOqWk1MaZmhIfKFGXVGCHZ2HObiRcopKy4hc6PQMQEUUIF74pmS2Haj-PmdMWrPgopuH6YXQelHwVLon1ppS8UcvdzhvURNuM29cwthnfVAuF-neQR7Kw9b4YUVkKKjmct0H9iyJGMlxFxqS32tiX1_HoAowDHlNb7oHmGtFuOL3acW0XOehfOytiWyqLI1Ccr-WEOD97BA2WbcalrRUJ_xwd0cSeGh8v275dLUewzne803S0hkOzWNJ5SoxngPcZhHyg-swqNxCuXNBqsxr0nL6yw==",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7235457880&itemId=16059698868&vendorItemId=81917799353&traceid=V0-153-2b0529fa87300efd&requestid=20260817114518684035403149&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "6792655549",
+          "name": "목우촌 뚝심 햄 통조림",
+          "price": 23320,
+          "image": "https://ads-partners.coupang.com/image1/bzV0tsMGyUlMX2-TbzwlA1NAKVHztWDqyA3FJPMpdBfBDE0TjDOlcNPASilffvsUgsbNDs50REQfNezs6VEYQlr2TP-thnWTeZVc9C39s6kQALoPCdNGit5-ulfBindl2_9A_sdM7syIoyUd-sOITpcbQ0lpNRx1guNZ_yeLJd0q5mRuGrDHpp2NIIYhkwnZ8aU6Wb8JViK3pNy7MHPLnQQjSWainywUGdxg8nYkYQ9Rer8Dsh9NvVycg_pPjtwj_W6DjX_ow-RxP5UKWPfF21WlZ0fKkAydPqPnb6_GeQCLRZOCBQw=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6792655549&itemId=19610819039&vendorItemId=86717789956&traceid=V0-153-ea4c62fe6549f6b5&requestid=20260817114519364217662339&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "9556184849",
+          "name": "농심 봉지라면 세트 안성탕면2 배홍동비빔면2 신라면툼바2 신라면2 얼큰너구리2 짜파게티2 오징어짬뽕2 사리곰탕면2 멸치칼국수2 무파마탕면2, 1박스",
+          "price": 25900,
+          "image": "https://ads-partners.coupang.com/image1/tG94T5Hw7d4yXyNatI3idzK-sLRWdcVymI5sGrsxD7DJTcPnyOXkLIUmgOIu8n2wQeyWO3M_oMTUfvohG_eMsozyOL3fr50Gaz5ZNWBQc8gvsDnDg10sVPPXXe-7DoMu3FDetBvFjQTvzfRuUpbVbwR_BrYfyzuyhjTyR48spK2sH8MQEQwlA4g9Z1KrB37GPl8Y_xPJgP62GgBAzKT6-MTgO31fPxdcItjyHsOuiUGYO5P46a6gxZtKa7nXt7w7b6C9erEb5itiauCSShtZoHWpeT1816Sjs1xju36gGxGbwAtArGb-4m_t",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9556184849&itemId=28514870672&vendorItemId=95456522513&traceid=V0-153-bcb60e79493d77d2&clickBeacon=af2f01d0-99e5-11f1-a543-571bd0543b18%7E3&requestid=20260817114519027012088551&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "8647582375",
+          "name": "[로켓프레시] 대림선 애니쿡 비엔나, 1kg, 3개",
+          "price": 17310,
+          "image": "https://ads-partners.coupang.com/image1/nnz4WGk2xtJI_yqvntDzzEfssdrT0ZAreEFsiesahGBcqPGJ6pmj5pojKpgc7QvKYRyD5hYndCXeij4neIgsItahsPipJGWzByy1rsb0WAitizexznDMYsLYgKaLsL-DcPVaCgw8nT4vYPV62V3_D8WYBqLz-3S3zFRTvGM1ptu2D1T2je-fL5WmFMIzcZNdH_NTaJ2zALkH19kpc4dNR_TgRhJe0Cd0Ya5kOh_lQ5M8BwRwKoO2YnkY-nP_zpvSMO4u116z5PUYIBCDzt3bfv7esldWF9OxBuo1SrP5",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8647582375&itemId=25176571982&vendorItemId=92173596297&traceid=V0-153-ba3580e6dcb694cc&clickBeacon=afc94600-99e5-11f1-8026-3beaf94d612e%7E3&requestid=20260817114520078195944269&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "7823139359",
+          "name": "아이엠소스 레피숯불바베큐소스, 1kg, 3개",
+          "price": 44500,
+          "image": "https://ads-partners.coupang.com/image1/t7OWhHcvLzOKSpgxt-nyCjNYu_B7mM3_ewQxNiv4ldC3pM5uswVY4NW-oxlTxEqXhJlEmP4qCblUaodiuXwdeB3UK8PkPuMuejOdUhS09vy3SpkJgcFd7yNuVds6urI6XOIu8G1aOka-ncnqa49KGiD5i6XxUU7aHIGvKBi4yJKo3TnuFOBS4qJRTuj5agIEYkcX60oEnc59iyUTXE1ujoIU1p864wk7AfOg1CfCuZBO71MysmnhvrbMMRWu6BD9ma_9xiBAX1rw2D04En2b-abCZ2dBxxnx4KDFLiw=",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7823139359&itemId=24476634623&vendorItemId=95556877359&traceid=V0-153-fca926066ab3cd9b&clickBeacon=b00b5810-99e5-11f1-a3d5-a66ef587149a%7E3&requestid=20260817114520478264794436&token=31850C%7CMIXED",
+          "isRocket": true
+        },
+        {
+          "id": "1339409983",
+          "name": "한성기업 런천미트",
+          "price": 10500,
+          "image": "https://ads-partners.coupang.com/image1/Zx28g3bWQ6YZ3QxaZ9wgnGoj_UfNc4_lUGySxFJ4s2E5Ih8rzE_os0ihWHPC7rf0X30ykSDxc2lf8Z_gt6ms_4eFm_IHx9aiMvJoeQQ9Ta24Ubk0bQ5wiEne8sPRa9Ggp_GBwCKTKWyH0CoCUE_Ys34E91jntZPoIb1kH9Fh87Refee6aLV69SHwZM9zI6EQA3SsMklV1rnxV7mh-CHOVxuwVLM3uxFs4OBMWP2iHQI1J1Wks45fSnvLRYbaMe83DetnottyNWN0AYOZ6K-TZXJzhwAE-wR2wXO7Cjs8gkZzxBph",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=1339409983&itemId=19303081224&vendorItemId=87418624019&traceid=V0-153-2dd1c17c3211ffcd&requestid=20260817114519364217662339&token=31850C%7CMIXED",
+          "isRocket": true
+        }
+      ]
     },
     {
-      "id": "9510014977",
-      "name": "EXTEDRG 스마트 온도표시 아이스박스 캠핑 보온보냉 휴대용 대용량 쿨러박스 차박 피크닉 낚시 야외용, 26L, 아보카도 그린",
-      "price": 99800,
-      "image": "https://ads-partners.coupang.com/image1/1gTWSs6x8mo9jL9Q1uiilvuAHZ98QAnVaKJL4xLNgjf3JBKI45aEnFYBYsyjHNyULMIuWAgj6z00TGC3dWoV4N5-QFkX2Q3adbj0QE0inFcK4outjL6AszqtqizHMkje8uOEzpQPqyJuyaV8sWl3rBShsU4zmbFXkT7oO4jvkIR10Z9PqABFm5ENfvVHxezFy_kIY6bPBGrCTxI5MrbGERheZuyjq-p4oVxYew3v57GCJKd2G2zjDNCSvs71cSFRd10vLm97MfR3poKRWRiK2UQae5cosPn1WTRxchxGBza9Il6YUW9J0HhmhA==",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9510014977&itemId=28339177872&vendorItemId=95291425204&traceid=V0-153-774c99c71c848392&clickBeacon=a4cb91b0-99de-11f1-8e08-76259e5cd8e4%7E3&requestid=20260817105455135249880640&token=31850C%7CMIXED",
-      "isRocket": true,
-      "keyword": "아이스박스"
-    },
-    {
-      "id": "5264028363",
-      "name": "올리빙 도트 캠핑용 아이스박스",
-      "price": 29900,
-      "image": "https://ads-partners.coupang.com/image1/_co0Us_1TOqLGbyX_VNLvZ9FnBTVztgNOVE8M3GhZIsseqPhE12zybIhK5M7ffkispoy5V9Hc7oa24hCimBNwKUkvVkk3-Y3vpo-n-XcIuJx7oshQ9Ew2HamN0QVJdl7_YR2mUDSBJHW5AI6qIlG_kL_2YKV8g3b3tvDA-rXAeYxrpQ29pGcsTXrUhM-BVSfm_Ejtm2jDKWo8pYXPh1xAmsbGuEG5VdDCei2XnBoadJW6mHqxiNnwCS7pH4SPogFtKcnk7hq4TY_204-cSLWZLiqq2bOvTZerleFZdE0SmiYzwIbjxk=",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=5264028363&itemId=10506861291&vendorItemId=77788522889&traceid=V0-153-765bc95630ac7b62&requestid=20260817105455135249880640&token=31850C%7CMIXED",
-      "isRocket": true,
-      "keyword": "아이스박스"
-    },
-    {
-      "id": "7327986084",
-      "name": "코멧 테이블 아이스 박스 대용량 27L",
-      "price": 34990,
-      "image": "https://ads-partners.coupang.com/image1/yfqP-BS5Pb9PpoYAybRNyeEVPRQhlLY1EURI1xQ1_hrQgudTUR2bve_RSYGKzutJIYaPHdazciUJIOXtw0JT0Duic7B5k19UaOs9n1hoHLRJD7Oty0pQN4yUdAfzJrEl7UM1JgLcvqchoSbIhYg9eUh311aBBBM3P2OPWLIXHu99c_13Krht8WBjcuzyqLY60mkbbTG1iW0rKbrcgLpt5kKzfPWhzYP6yrYVCHY5ScxHtXFlGqdeTz744ue2ovDG38sXbeej6vCP1kWZNyPSca4bXFp138o70WavouOHK_r8ItMe14OC2NXy60tsLTnWbb2g-fBCaiBxhy2BbA==",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7327986084&itemId=18807686149&vendorItemId=85938298410&traceid=V0-153-51c216ffacec4035&requestid=20260817105455135249880640&token=31850C%7CMIXED",
-      "isRocket": true,
-      "keyword": "아이스박스"
-    },
-    {
-      "id": "8658572322",
-      "name": "Space Player 급속 냉각 휴대용 대용량 선풍기 100단 접이식 무선 선풍기 아웃도어 캠핑용 9000mAh 손선풍기 아이스제트 스톰 각도조절 탁상용 BLDC 넥선풍기 손풍기, 화이트, MF119",
-      "price": 49910,
-      "image": "https://ads-partners.coupang.com/image1/wtYZpV6gUPr6OCwGwlka1FqEg6yzxXsfPQHD_oljSKBLIWRGvH0NTKxzwMMVe0ifZr4O00YfTbMLDVyJpl0KS0cat8BSrCX3suZHknu0Ewwok1pXIQ4Rc9eInJyOwIzEdMNFELqRiD-6VwYP5rTlEB6tN0u2CKGYx7h6najCPdPXJur4IApD_mlukUNXB_r9G1MbKWnxCQiR3mi9UL70Kg1dMS6yIRzBVGfI-lKZYB8wpRea8cn2NX_yg-6Sralmcp5MgohtH18XuMXRPUxZ5qDQpfNAO1R7hOW3Pq025peaX2RVhT9jRb0=",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8658572322&itemId=25130132424&vendorItemId=93983808305&traceid=V0-153-b00fee6d550358e9&clickBeacon=a5047c00-99de-11f1-a16b-af150302167e%7E3&requestid=20260817105455475216211894&token=31850C%7CMIXED",
-      "isRocket": true,
-      "keyword": "휴대용 선풍기"
-    },
-    {
-      "id": "9530983694",
-      "name": "New 대형냉각패드 위니쿨 급속냉각 휴대용 목 넥 선풍기 BLDC 대용량5200mAh",
-      "price": 50050,
-      "image": "https://ads-partners.coupang.com/image1/A7_OZ5NdJecG1SN1AzNQUSAhzU1PWf6ioBIZDjJzyOM1m52jBaIBwz3icwowM2h298cTgNz5dTJqcFYUuXQ-E9brb4uW-Cji3hjt1Cs02eoO64D8JXPQErXhK5qqVCZe1yzr7UQdzRKpUbSvCn0yqDh9eUJ1c60im3c9qPDUOdeBX-iC5JseC8ODZ_g-PaNwmQhLoWMbB6Ee3D80phwhDyU7P0Bt9dztQYk0N2ACm11Vd8A9fY8pGrLUejquhUXQhw49ctrhU0SA2jXZ5L2G_ZT2urJnQuaDvtrfu4_DdTE-BH3gzEMS07IBqzjNu93pgEiivQve",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9530983694&itemId=28422964479&vendorItemId=90727418152&traceid=V0-153-b2175c2d8d40ede3&requestid=20260817105455475216211894&token=31850C%7CMIXED",
-      "isRocket": true,
-      "keyword": "휴대용 선풍기"
-    },
-    {
-      "id": "8719219704",
-      "name": "알리사 100단 아이스 터보 MAX 휴대용 선풍기",
-      "price": 27390,
-      "image": "https://ads-partners.coupang.com/image1/wthSiYTW-MGgYhZWwpScDUbyw-um1qeLEqRooAqlW6nM1ntilvvrSvQ9jVCNKvn9LQmeMLIUqz08H3goC8pascGS2NNBpmn-SaupXiwPkP9up7K6Oy26PJGd0xaa2O3V8CXk4kXgmJLooww4Ko7v3QFC1oz4uqTsjCHxRs3OahEXv-5iYNl5anWkt8AJXqYFwwbmkE2lyeV2MIwBq2WHkoCSrDQkLhk_eT0lV9luyFhBuHhcnQgODazRpEF5sLanGuHAGQXRUoExG-BBp0wbSJSXm1CetOvjLwsG9zh_e11dIL-5AA==",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8719219704&itemId=25325956860&vendorItemId=92859054401&traceid=V0-153-3390c08a48f3cae9&requestid=20260817105455475216211894&token=31850C%7CMIXED",
-      "isRocket": true,
-      "keyword": "휴대용 선풍기"
-    },
-    {
-      "id": "9228518480",
-      "name": "제드 마티렉타타프 스크린 세트 대형 블랙코팅 장박 풀세트 5.5x4.4m, 크림, 크림",
-      "price": 429000,
-      "image": "https://ads-partners.coupang.com/image1/1jWUFnlJsh4CoDnn1uoCc-O43g9_ZN03LVGqZjCBOHMwx1mWZ03J1Quns7HM3nOt7bdg5QMsfwsegkM-cwU11x-lFvAPFciV2EluPHMGj0Wjt9_izWVa-J1L8-IZLm1Ux-vvCzAwa___rRjgsAwW9pKxFTR81Ve2V9fvYPxwm4tksXbhl04w1Tcjg8AqWyU4sl2wcO9DNLSmQ17JWF9d_LDjyw_-9iUAJdQpQlS6b4LGUWPb-yesVcE4D3Ho8nfZzbsZeMW30viXieyPmafA4eNa6JmzX3UAABbeuQpuyoyHgqjxH0KsttGr-lE=",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9228518480&itemId=27278124655&vendorItemId=94244825827&traceid=V0-153-05c4df881e8babed&clickBeacon=a53f1400-99de-11f1-9013-0b8806f9ae2f%7E3&requestid=20260817105455854179922947&token=31850C%7CMIXED",
-      "isRocket": false,
-      "keyword": "캠핑 타프"
-    },
-    {
-      "id": "9544179935",
-      "name": "타프 아웃도어 옥스퍼드 원단 그늘막 천막 차광막, 베이지",
-      "price": 24500,
-      "image": "https://ads-partners.coupang.com/image1/Sb3UsyJTQHb_wezrSU2knPavRppQZRDuE4DxWvscXYmnOfogw4G7eWp0VSehFayt9_-1vBpPJJTSng0t2cXH_gX20fX3n6tFbR9bQm3J83jGEm8NjiJ1UxV-EGyjFduRXdnAWHF2IDEhkH2lHoSkEA2QJxGTmv7QIuuo2fqFoSNfrEBa8z1xoH3qstWGFW36H-AMxU9f1EE2kHiNs6-_1uNhCsbetSXzIl1L_mKGzxD9sPRiDOoeIo4_30fgpCRcq1uo9IdvHHONMLqqMbLspCYBh6V-px-FoVdpmKSDGgDrDD74QP34TE8=",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9544179935&itemId=28472147692&vendorItemId=95422443171&traceid=V0-153-0cad7b5a912f357e&clickBeacon=a53f1400-99de-11f1-8154-3b8a0c331ec4%7E3&requestid=20260817105455854179922947&token=31850C%7CMIXED",
-      "isRocket": true,
-      "keyword": "캠핑 타프"
-    },
-    {
-      "id": "7298038337",
-      "name": "코멧 아웃도어 타프 특대형 450x435x270cm",
-      "price": 39090,
-      "image": "https://ads-partners.coupang.com/image1/hsjNmcEyZelDVfibhitMwrsXjPvthcSc2r7O_sOuu2jFOqMV63AiPEDvLxdABVMgUZDbiihPXJBipRwJrsR3NYcRAApjI91WFdGrmGUFfBMcexMm8uUFxMJYBKvSjAk74pxe-BzFqoF7vEVsWWJtjm1ZGIEoWMT1aZBimc3XRTElrl3Dyc-Pz_KGy05vLHwC8-dN93rlkEKJWVRVseFIeKx8Rf0w9_Ob6alEUxi0W8oLXz5iwaw2POI_gO-2b8Q1s_aYRgldzBkgxNXTgPWzRW4jTEc_C0suSjffASZ0GUjlETbe2aY=",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7298038337&itemId=18668373285&vendorItemId=85802785915&traceid=V0-153-9187a4fe2cdb38d4&requestid=20260817105455854179922947&token=31850C%7CMIXED",
-      "isRocket": true,
-      "keyword": "캠핑 타프"
-    },
-    {
-      "id": "8651904995",
-      "name": "쿨베어 국내생산 프리즌 여름 차가운 냉감패드 고정밴드 쿨매트, 화이트",
-      "price": 35900,
-      "image": "https://ads-partners.coupang.com/image1/hU40WD4oRKykgmVmhaBAk_ZptAn8kZRgr4oV5PBm1rdx1fqfPLrcB78uG2EAhugAWXHNI9sSWh8CvDibUaOnKLTXTf-E0gv1q9Ha4owoxm8789uRGiiTlrDshGSbMYsNQfqtnaUypQTW_0LXoXOZ-b6WbVcUrApyUrkn9ZfPxIbLLG5MpW9vZvKe9mBOCwMHlxRCFdF5Sf7tW288P7fWXnTkdzGHjv_GbUl7xH5rM5EaHExzC4p38Frc5oX68keOeyR323QUedgV5Bc6xDzpJHFMC9cdQGFDxrs4sVkLVXbfgfATWEYkySlG",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8651904995&itemId=28249000804&vendorItemId=92188994833&traceid=V0-153-63b040c5a352c7ca&clickBeacon=a57da3a0-99de-11f1-a278-96db8b417e58%7E3&requestid=20260817105456245308276990&token=31850C%7CMIXED",
-      "isRocket": true,
-      "keyword": "쿨매트"
-    },
-    {
-      "id": "8757043975",
-      "name": "KURUA 100% 쿨잠 쿨매트 여름 냉감 패드 쿨링 냉패드 여름 침대 매트리스 카페트",
-      "price": 11900,
-      "image": "https://ads-partners.coupang.com/image1/-KuR-G5QkVKElDOP-GXHb_u5Cfv0J_PFIJa6R4BwnpezYmWYxO1vDcZuVhE981TrYdhY1Wnv1YqngvnmO8SRooZ9F5j4yd2GVUZlhOUz5GghVQZy6K5zcbOW4o7WfSYOBVcCoWjjtXhiZPRVcfq6FzagiPTLupByGkzgIk3VUYd2r36Jd5UkULJvEwrQH7Fz3tvYc-J6dofQ008KZRXuVq0Qc1GOl4SnW4598yC5nUpHH-DSPBdystQooO-JAFdO9DeHJ6PvqQlvaxRT_UH3qV_p9XazvniMG1eyExF6VlUdvyCQOneWAkOE3lS9wnIHcG8YTqMj",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8757043975&itemId=25466425562&vendorItemId=95815540002&traceid=V0-153-7de9b38332ed2e14&requestid=20260817105456245308276990&token=31850C%7CMIXED",
-      "isRocket": true,
-      "keyword": "쿨매트"
-    },
-    {
-      "id": "9540342280",
-      "name": "하루모음 시원한 아이스 여름 냉감 침대 패드 쿨매트",
-      "price": 12900,
-      "image": "https://ads-partners.coupang.com/image1/-NMfjBNTTmkNQI4U-NPi9YNYbtF9UuOMih8A54XvCAOiSePz7EsLa7AXn2w7jpEhdp4Gj6dghP8amisr_ZvQulTyTNOWTgJ3sNI8ChXoKko9L6iJJA9PkC8H_MueX5eZJTqYePqqgx8Qe01YJMHjfpMdgzkw0O7EovTWBf3LtyCKObNrPLFbSOvJS_lxxxg6BS2UExdKoGTvbY-rqwWkT8RLFEUc_JK1_HSdYC35pDRZjUacH2VMYSecFHRFhPSmCg5G87rFZ0f_bjBsV-cHPhfjlo9DfDowx5ov3BfmpXoJNSxOmdFfnEx7V3zpGz5wo5OLAlcf",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9540342280&itemId=28457533831&vendorItemId=95406714669&traceid=V0-153-8ad865325c31d564&requestid=20260817105456245308276990&token=31850C%7CMIXED",
-      "isRocket": true,
-      "keyword": "쿨매트"
-    },
-    {
-      "id": "9532187358",
-      "name": "Quictent 원터치 팝업 캐노피 3단 높이조절 UV 99% 차단 방수 210D 옥스퍼드 스테인리스 프레임 사이드시트 4개 + 로프 4개 + 팩 8개 + 모래주머니 4개 풀세트,, 블루",
-      "price": 165000,
-      "image": "https://ads-partners.coupang.com/image1/Fh0WcaRPkTwddGhDFvPj6Fg1EwQbNsFXj3SEamkPuJQf_7xdrXMZruFfE3Oi6Q5cdbmoEfLdvo8KAeB8tQDj8QO8tOprSsd4CddSLuj5i9atJaM7r_fa_TFAVzhGA3DJQ6gmTY71a8G6ZEajePQs_K10K4sg17SwqxPhazsMYcytcsixCqZuM2ouOMwyIR811yj3zC56bvtiMKYFIENrYJApdhLmLQKsvgNGoz6xlDzRNMl8Aef_CF6D7VabcNZt9goij-XjlBLaedzfH4U0AGV54wOBPZW1nAsfKhrHBP3l8u_r_d6NVKz-qw==",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9532187358&itemId=28427438060&vendorItemId=95378354336&traceid=V0-153-40e6defafd861dc0&clickBeacon=a5b46b10-99de-11f1-abb8-80da9f6ca743%7E3&requestid=20260817105456644195940828&token=31850C%7CMIXED",
-      "isRocket": true,
-      "keyword": "캠핑 그늘막"
-    },
-    {
-      "id": "8616587384",
-      "name": "리치탑 행사천막 방수천막 야외천막 캐노피천막 차광막 차양막 그늘막 접이식캐노피 접이식천막",
-      "price": 330000,
-      "image": "https://ads-partners.coupang.com/image1/XkBHCyf9pGPFpyDBXtc5fuhWoeu3auJ-yc7jIYD1TJII4kTvKFcUuixl16Nv5g9QPmMXGiFUda_vcOUI1PmyYkq-nuRAVVAqktnK9PIzTorpkA53fjBpbcezdvbdrHOHi0KVig2KwiJVv0T1F9FsnMFFMXWT4slHACctXgmeOSQTdKJ7dKHUmXXfEFHbsup_ZMp6tXVrZ4syaS9Mfy-8_5REgC1sm-Igx3HNZo0Tg8ORYZBB36t_CW4CDq9YmkP9RTbKddDOtcRshyV6CR1_nN0hGptiLs1TA0FT7IFRzOkh-jr9Tn-XYa8=",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8616587384&itemId=24995919886&vendorItemId=92001162790&traceid=V0-153-a78fb0abcf97ffcd&clickBeacon=a5b49220-99de-11f1-9fa2-34c8ccb0ddb5%7E3&requestid=20260817105456644195940828&token=31850C%7CMIXED",
-      "isRocket": false,
-      "keyword": "캠핑 그늘막"
+      "key": "goldbox",
+      "heading": "⚡ 오늘의 쿠팡 특가",
+      "subtitle": "쿠팡이 매일 고르는 특가 (캠핑 외 상품도 섞여 있어요)",
+      "products": [
+        {
+          "id": "6499998087",
+          "name": "헤드앤숄더 두피 토탈 솔루션 샴푸 쿨 멘솔",
+          "price": 13580,
+          "image": "https://image5.coupangcdn.com/image/retail/images/125622933282601-487a171d-85dc-4610-81ab-7682d36a4156.jpg",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6499998087&itemId=1034338771&vendorItemId=5485477876&traceid=V0-143-94c60a2d8ad6b093",
+          "isRocket": true
+        },
+        {
+          "id": "8204279358",
+          "name": "[로켓프레시] 미국산 블루베리",
+          "price": 8730,
+          "image": "https://image1.coupangcdn.com/image/retail/images/3ca1eb14-bf2c-4037-9cbd-92122539800e8495710824301004565.png",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8204279358&itemId=23764783948&vendorItemId=90789149947&traceid=V0-143-8f3490d499afccb1",
+          "isRocket": true
+        },
+        {
+          "id": "5221721596",
+          "name": "필립스 SkinIQ 5000 시리즈 전기면도기",
+          "price": 129000,
+          "image": "https://img5a.coupangcdn.com/image/retail/images/413910405199822-2de5fc12-5a00-49c3-af64-5c636d5f86b6.jpg",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=5221721596&itemId=20914116725&vendorItemId=87981035302&traceid=V0-143-e150df9f7c8dbb0f",
+          "isRocket": true
+        },
+        {
+          "id": "7464904073",
+          "name": "도블레 칼집나지 않는 도마세트",
+          "price": 59800,
+          "image": "https://img5c.coupangcdn.com/image/retail/images/306693658418115-dec59fe5-7a00-4a7b-ae65-41b82b10c1f2.jpg",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7464904073&itemId=14434597577&vendorItemId=81678298294&traceid=V0-143-31b0717a9dd5ffbc",
+          "isRocket": true
+        },
+        {
+          "id": "2305830613",
+          "name": "쿠쿠 W8300 공기청정기 96.8㎡",
+          "price": 287250,
+          "image": "https://img2a.coupangcdn.com/image/vendor_inventory/3805/e3f354c4380040f44de9638ab15bdd199d45209987b3784ec62b96177bab.jpg",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=2305830613&itemId=3974357873&vendorItemId=71958694734&traceid=V0-143-5f24038e8dde1a46",
+          "isRocket": true
+        },
+        {
+          "id": "8245782294",
+          "name": "햇반 흑미밥",
+          "price": 20060,
+          "image": "https://image5.coupangcdn.com/image/retail/images/23975530471788-63e1c513-5de4-4bc3-95a5-727cddc3cde9.png",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8245782294&itemId=23572801239&vendorItemId=86533286436&traceid=V0-143-22322ca92efa8934",
+          "isRocket": true
+        },
+        {
+          "id": "6902113163",
+          "name": "르무통 메이트 발 편한 메리노울 운동화",
+          "price": 118000,
+          "image": "https://img5c.coupangcdn.com/image/vendor_inventory/391a/c27060af9afbc371dd1acdba23df250246fbe0fb6cc76b3597a2abefcc47.jpg",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6902113163&itemId=22416573062&vendorItemId=91605667502&traceid=V0-143-91d7f95e842a48ba",
+          "isRocket": true
+        },
+        {
+          "id": "10000011381705",
+          "name": "☆레스트리☆ S20 타워 클린",
+          "price": 279400,
+          "image": "https://img5c.coupangcdn.com/image/travel_reactor/travelSeller/resort/A00161284/6d8216a9-c633-49c7-a3be-806ca235561b.jpg",
+          "url": "https://link.coupang.com/re/AFFTDP?lptag=AF0215515&pageKey=10000011381705&vendorItemId=70000286493168&itemId=20002212539292&traceid=V0-143-d57c7d5eaf3424a7",
+          "isRocket": false
+        },
+        {
+          "id": "9354349642",
+          "name": "퍼실 딥클린 초미세세탁 라벤더젤 맥스 드럼용 액체세제 리필",
+          "price": 19900,
+          "image": "https://image13.coupangcdn.com/image/retail/images/183527831882073-ded2962c-cfa7-407a-ad28-183e4ac05fa2.jpg",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9354349642&itemId=27981747687&vendorItemId=94939514389&traceid=V0-143-1cf30c2492450ec3",
+          "isRocket": true
+        },
+        {
+          "id": "6855883657",
+          "name": "포트메리온 보타닉가든 테라스 딥볼 12cm 3종 세트",
+          "price": 21900,
+          "image": "https://image3.coupangcdn.com/image/retail/images/13495700626159-c1d71c09-f888-4c75-b552-049aaf7bf85e.png",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6855883657&itemId=16349829920&vendorItemId=83541580742&traceid=V0-143-1e7d898defb44116",
+          "isRocket": true
+        },
+        {
+          "id": "9643470977",
+          "name": "BYO 코어 건강한 생유산균 500억",
+          "price": 31040,
+          "image": "https://image15.coupangcdn.com/image/vendor_inventory/7c95/06272c3154d11680cc7ab88b11ce3296811e1346d7de5130bf75341f0a33.jpg",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9643470977&itemId=28817000539&vendorItemId=84993541539&traceid=V0-143-9c0e89ce40906c8a",
+          "isRocket": false
+        },
+        {
+          "id": "8869279257",
+          "name": "브라이튼 엘론 확장형 전면오픈 경량 캐리어 20인치, 24인치, 28인치",
+          "price": 109900,
+          "image": "https://image1.coupangcdn.com/image/retail/images/2025/06/25/17/0/aab467f6-3516-4155-b30d-48b2aa51e925.jpg",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8869279257&itemId=25873004938&vendorItemId=92859119032&traceid=V0-143-b36e16f0f0d4badd",
+          "isRocket": true
+        },
+        {
+          "id": "9088829309",
+          "name": "핑크퐁 말놀이 베베핀펜",
+          "price": 72240,
+          "image": "https://image8.coupangcdn.com/image/retail/images/132725829516837-76839667-1e5b-4089-90a5-ba8b595dbbb7.jpg",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9088829309&itemId=26707644234&vendorItemId=93670847808&traceid=V0-143-85aad91770131ffc",
+          "isRocket": true
+        },
+        {
+          "id": "8541469943",
+          "name": "미쟝센 살롱10 펩타이드 리페어 단백질 트리트먼트 에센스팩",
+          "price": 18900,
+          "image": "https://img5a.coupangcdn.com/image/retail/images/2026/07/14/12/1/63f10091-fd1d-4341-b352-04acf9b78324.jpg",
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8541469943&itemId=28244515437&vendorItemId=95774795517&traceid=V0-143-a6e77439a0ea5f26",
+          "isRocket": true
+        }
+      ]
     }
   ]
 }
