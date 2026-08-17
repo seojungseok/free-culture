@@ -26,7 +26,7 @@ function Card({ p, highlight }: { p: Product; highlight?: boolean }) {
         <p className="line-clamp-2 text-[12.5px] font-semibold leading-[1.4] text-ink">{p.name}</p>
         <div className="mt-auto pt-2">
           <p className="text-[15px] font-black text-ink">{won(p.price)}<span className="ml-0.5 text-[12px] font-bold text-ink-soft">원</span></p>
-          <p className="mt-0.5 text-[11.5px] font-bold text-free opacity-0 transition group-hover:opacity-100">쿠팡에서 보기 →</p>
+          <p className="mt-0.5 text-[11.5px] font-bold text-free opacity-0 transition group-hover:opacity-100">특가 확인하기 →</p>
         </div>
       </div>
     </a>
