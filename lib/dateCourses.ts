@@ -89,6 +89,7 @@ export function driveCourses(): DateCourse[] {
 export interface CourseGeo {
   id: string; title: string; city: string; area: string;
   image: string; lat: number; lng: number; totalKm: number;
+  park: string; food: string; walk: boolean;
 }
 export function dateCourseGeo(): CourseGeo[] {
   return getDateCourses().map((c) => ({
@@ -100,6 +101,9 @@ export function dateCourseGeo(): CourseGeo[] {
     lat: num(c.cafe.mapy),
     lng: num(c.cafe.mapx),
     totalKm: c.totalKm,
+    park: c.park.title,
+    food: c.food.title,
+    walk: isWalkCourse(c),
   }));
 }
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { distLabel, walkMinutes, driveMinutes, type DateCourse } from "@/lib/dateCourses";
+import { distLabel, walkMinutes, driveMinutes, isWalkCourse, type DateCourse } from "@/lib/dateCourses";
 
 /**
  * 카페데이트 코스 카드 — 카페 사진 + 세 지점 요약.
@@ -10,14 +10,15 @@ import { distLabel, walkMinutes, driveMinutes, type DateCourse } from "@/lib/dat
 export default function DateCourseCard({
   course,
   rail = false,
-  mode = "walk",
+  mode,
 }: {
   course: DateCourse;
   rail?: boolean;
   mode?: "walk" | "drive";
 }) {
+  const m = mode ?? (isWalkCourse(course) ? "walk" : "drive");
   const moveLabel =
-    mode === "drive"
+    m === "drive"
       ? `🚗 차로 약 ${driveMinutes(course.totalKm)}분 · 총 ${distLabel(course.totalKm)}`
       : `🚶 걸어서 약 ${walkMinutes(course.totalKm)}분 · 총 ${distLabel(course.totalKm)}`;
   return (
