@@ -98,7 +98,7 @@ export default function KidCoursesBrowser({ courses, areas }: { courses: KidCour
               {regionCourses.length > GRID_CAP ? ` (가까운 순 ${GRID_CAP}개)` : ""}
             </p>
             {regionCourses.length ? (
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-2 gap-x-3 gap-y-6 sm:grid-cols-3 lg:grid-cols-4">
                 {regionCourses.slice(0, GRID_CAP).map((c) => <CourseCard key={c.id} c={c} />)}
               </div>
             ) : (
@@ -113,7 +113,7 @@ export default function KidCoursesBrowser({ courses, areas }: { courses: KidCour
 
 function CourseCard({ c, rail = false }: { c: KidCourseLite; rail?: boolean }) {
   return (
-    <Link href={`/kids/c/${c.id}`} className={["group block overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.05] shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover", rail ? "w-[250px] shrink-0 snap-start sm:w-[270px]" : ""].join(" ")}>
+    <Link href={`/kids/c/${c.id}`} className={["group block overflow-hidden rounded-2xl border border-line bg-white shadow-[0_2px_12px_-6px_rgba(0,0,0,0.15)] transition hover:-translate-y-0.5 hover:border-free/40 hover:shadow-cardhover", rail ? "w-[250px] shrink-0 snap-start sm:w-[270px]" : ""].join(" ")}>
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
         {c.image ? (
           <Image src={c.image} alt={`${c.spot} 아이와 함께 코스`} fill sizes="270px" className="object-cover transition group-hover:scale-105" loading="lazy" unoptimized />
