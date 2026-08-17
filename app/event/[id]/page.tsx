@@ -7,6 +7,8 @@ import { eventStory } from "@/lib/eventStory";
 import { fmtRange, placeText, dday } from "@/lib/format";
 import { SITE } from "@/lib/site";
 import PriceBadge from "@/components/PriceBadge";
+import AffiliateNotice from "@/components/AffiliateNotice";
+import EventCoupangDeals from "@/components/EventCoupangDeals";
 import AdSlot from "@/components/AdSlot";
 import PosterCard from "@/components/PosterCard";
 import ShareButtons from "@/components/ShareButtons";
@@ -160,6 +162,7 @@ export default async function EventPage({
           <h1 className="text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
             {ev.title}
           </h1>
+          <AffiliateNotice className="mt-2" partner="coupang" />
 
           <dl className="mt-6 divide-y divide-black/5 rounded-2xl border border-black/5 bg-white">
             <Row label="요금">
@@ -214,14 +217,15 @@ export default async function EventPage({
             </div>
           )}
 
-          {/* 소개글 — 구조화 데이터로 조합(공식 소개 없는 행사도 읽을거리 확보) */}
-          <section className="mt-6">
-            <h2 className="mb-3 flex items-center gap-1.5 text-[16px] font-extrabold text-ink">
+          {/* 소개글 — 구조화 데이터로 조합(공식 소개 없는 행사도 읽을거리 확보).
+              네이버블로그처럼 여백 있고 읽기 편하게(짧은 문단, 넉넉한 줄간격) */}
+          <section className="mt-7 rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6">
+            <h2 className="mb-4 flex items-center gap-1.5 text-[17px] font-extrabold text-ink">
               <span>📖</span> 행사 소개
             </h2>
-            <div className="space-y-3.5 text-[15px] leading-[1.85] text-ink-soft">
+            <div className="space-y-4 text-[15.5px] leading-[1.95] text-ink-soft">
               {story.map((para, i) => (
-                <p key={i}>{para}</p>
+                <p key={i} className={i === 0 ? "font-medium text-ink" : ""}>{para}</p>
               ))}
             </div>
           </section>
@@ -239,6 +243,9 @@ export default async function EventPage({
               제보하기
             </a>
           </p>
+
+          {/* 쿠팡 4줄 — 관람 아이템·장르 맞춤·나들이 소품·골드박스 (상단 AffiliateNotice가 고지) */}
+          <EventCoupangDeals realmName={ev.realmName} />
 
           <AdSlot label="상세 하단 광고" />
         </div>

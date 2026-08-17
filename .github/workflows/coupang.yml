@@ -29,15 +29,21 @@ jobs:
           COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
         run: node scripts/collectCoupang.mjs
 
+      - name: 문화행사 쿠팡 상품 수집
+        env:
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+        run: node scripts/collectEventCoupang.mjs
+
       - name: 변경분 커밋
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/coupang.json
+          git add data/coupang.json data/eventCoupang.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
           else
-            git commit -m "chore: 쿠팡 계절 상품 갱신 ($(date -u +%Y-%m-%d))"
+            git commit -m "chore: 쿠팡 상품 갱신 ($(date -u +%Y-%m-%d))"
             for i in 1 2 3; do
               git pull --rebase --autostash origin main && git push && break
               echo "push 재시도 $i…"; sleep 5

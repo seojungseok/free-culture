@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { CourseGeo } from "@/lib/dateCourses"; // 타입만(런타임 번들 X)
@@ -12,7 +12,7 @@ const kmLabel = (km: number) => (km < 1 ? `${Math.round(km * 10) * 100}m` : `${k
 const walkMin = (km: number) => Math.max(1, Math.round(km * 15));
 const driveMin = (km: number) => Math.max(1, Math.round((km / 22) * 60));
 
-export default function DateRegionBrowser({ courses, areas }: { courses: CourseGeo[]; areas: Area[] }) {
+export default function DateRegionBrowser({ courses, areas, belowTabs }: { courses: CourseGeo[]; areas: Area[]; belowTabs?: ReactNode }) {
   const [sel, setSel] = useState("서울");
   const tabs: Area[] = [{ area: "전국", slug: "", count: courses.length }, ...areas];
 
@@ -39,6 +39,9 @@ export default function DateRegionBrowser({ courses, areas }: { courses: CourseG
           </button>
         ))}
       </div>
+
+      {/* 지역 탭 바로 아래 슬롯 — 내 위치 찾기 버튼 등 */}
+      {belowTabs && <div className="mt-4">{belowTabs}</div>}
 
       <div className="mt-6 space-y-8">
         <Group emoji="🚶" title="걸어서 데이트" desc="카페·공원·맛집이 걸어서 이어지는 코스" items={walk} kind="walk" />

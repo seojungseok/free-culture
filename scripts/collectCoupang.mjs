@@ -36,7 +36,8 @@ const DOMAIN = "https://api-gateway.coupang.com";
 
 // --- 섹션별 키워드 ------------------------------------------------------
 const STAPLE_KEYWORDS = ["캠핑 텐트", "캠핑 의자", "코펠", "캠핑 버너", "캠핑 랜턴", "아이스박스", "캠핑 테이블", "캠핑 타프"];
-const FOOD_KEYWORDS = ["캠핑 밀키트", "즉석밥", "봉지 라면", "통조림 햄", "레토르트 카레", "비엔나 소시지", "바베큐 양념"];
+// 간편음식: 불 없이 먹는 "신기한" 것 위주 (당기면 데워지는 발열도시락 등)
+const FOOD_KEYWORDS = ["발열 도시락", "자가발열 국밥", "전투식량", "발열팩 즉석식", "휴대용 발열도시락", "캠핑 마시멜로", "즉석 짜장밥"];
 
 const SEASONS = {
   spring: { label: "봄", heading: "🌸 봄 캠핑 용품", subtitle: "선선한 봄, 캠핑 나서기 전 챙기면 좋은 것들",
@@ -125,7 +126,7 @@ async function main() {
     sections: [
       { key: "staples", heading: "🏕️ 캠핑 필수템", subtitle: "텐트·의자·코펠·버너까지, 빠지면 아쉬운 준비물", products: staples },
       { key: "seasonal", heading: scfg.heading, subtitle: scfg.subtitle, products: seasonal },
-      { key: "food", heading: "🍜 캠핑 간편음식", subtitle: "불만 있으면 끝! 간단하게 즐기는 캠핑 먹거리", products: food },
+      { key: "food", heading: "🍲 불 없이 먹는 신기한 캠핑 음식", subtitle: "당기면 뜨거워지는 발열도시락처럼, 신기하게 즐기는 먹거리", products: food },
       { key: "goldbox", heading: "⚡ 오늘의 쿠팡 특가", subtitle: "쿠팡이 매일 고르는 특가 (캠핑 외 상품도 섞여 있어요)", products: gold },
     ],
   };

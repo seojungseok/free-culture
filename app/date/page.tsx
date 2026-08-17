@@ -79,14 +79,10 @@ export default function DateHubPage() {
       </Band>
 
       <div className="bg-panel">
-        {/* 지역 선택기 — 전국 + 시도. 기본 서울, 걸어서/차량 데이트로 나눠 미리보기 */}
+        {/* 지역 선택기 — 전국 + 시도. 기본 서울, 걸어서/차량 데이트로 나눠 미리보기.
+            내 위치 찾기 버튼은 지역 탭 바로 아래(잘 보이게) 배치 */}
         <Container className="py-6">
-          <DateRegionBrowser courses={geo} areas={areas} />
-        </Container>
-
-        {/* 위치기반 — 버튼을 누르면 내 위치 기준 걷기/차량 코스 */}
-        <Container className="pb-10">
-          <NearbyDateCourses courses={geo} />
+          <DateRegionBrowser courses={geo} areas={areas} belowTabs={<NearbyDateCourses courses={geo} />} />
         </Container>
 
         <Container className="pb-8">
