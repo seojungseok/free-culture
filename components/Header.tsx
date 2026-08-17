@@ -45,11 +45,11 @@ export default function Header() {
         </div>
 
         <Link
-          href="/near"
+          href="/kids"
           className="hidden shrink-0 items-center gap-1 rounded-full border border-line bg-white px-3 py-2 text-[13px] font-bold text-ink-soft transition hover:border-free/40 hover:text-free sm:inline-flex"
         >
-          <span aria-hidden>📍</span>
-          <span>내 주변</span>
+          <span aria-hidden>👶</span>
+          <span>아이와 함께</span>
         </Link>
       </div>
 

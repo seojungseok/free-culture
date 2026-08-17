@@ -21,6 +21,7 @@
     "collect:courses": "node scripts/collectCourses.mjs",
     "collect:coupang": "node scripts/collectCoupang.mjs",
     "collect:event-coupang": "node scripts/collectEventCoupang.mjs",
+    "collect:kid-coupang": "node scripts/collectKidCoupang.mjs",
     "courses": "node scripts/generateCourses.mjs",
     "audit": "node scripts/auditArticles.mjs",
     "articles:publish": "node scripts/publishDrafts.mjs",
