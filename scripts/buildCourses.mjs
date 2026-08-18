@@ -1,5 +1,7 @@
 // 자동 여행코스 생성 엔진 — data/places.json(+제주 restaurants.json) 좌표로 코스를 "조합"한다.
-//  지역 × 테마 × 근접 군집 → 최근접 동선 정렬 → (제주는 근처 맛집 삽입) → data/courses-auto.json
+//  지역 × 테마 × 근접 군집 → 최근접 동선 정렬 → 체력 페이싱(하루 힘든 곳 1곳·뒤엔 휴식) → data/courses-auto.json
+//  ※ 체력 페이싱: 수영·물놀이·등산 같은 "지치는 곳"은 하루 1곳까지, 그 뒤엔 실내·정적 휴식지를 배치.
+//    → "바다-계곡", "계곡-폭포-산" 같이 하루에 불가능한 코스를 원천 방지(사람이 소화 가능하게).
 //  ★ TourAPI 호출 없음(좌표·기존 데이터만). 스팟명·지역·동선은 모두 사실. 소개글 보강은 generateCourses가 발행 때 수행.
 //
 // 실행: node scripts/buildCourses.mjs
@@ -151,6 +153,21 @@ function main() {
     return `기타:${(p.cat2 || p.title).slice(0, 6)}`; // 기타는 세분화해 과도한 중복만 방지
   };
 
+  // 체력·피서 강도 — "사람이 하루에 소화 가능한" 현실적 코스를 위해.
+  //  high = 지치는 활동(수영·물놀이·등산): 하루 1곳까지, 연속 배치 금지.
+  //  low  = 쉬는·시원한 곳(실내 관람·정적): 힘든 곳 다음에 오면 좋음(오후 휴식).
+  //  mid  = 보통(공원·시장·전망대·호수·폭포·항구 등).
+  //  ★ 반드시 "제목"만 본다 — 주소를 넣으면 '용산구·갈산' 같은 지명 속 '산'이 등산으로 오인됨.
+  const exertionOf = (p) => {
+    const t = String(p.title || "");
+    // 지치는 곳: 수영·물놀이·계곡·해변, 등산·둘레길(제목이 '~산/~봉'으로 끝나거나 등산 키워드)
+    if (/해수욕장|해변|해수욕|해빈|계곡|물놀이|워터파크|수영장/.test(t)) return "high";
+    if (/(산|봉|岳|령|재)$|등산|둘레길|출렁다리|국립공원|자연휴양림/.test(t)) return "high";
+    // 쉬는·시원한 곳: 실내 관람·도서관·카페·온천·사찰·정적
+    if (/박물관|미술관|전시관|기념관|과학관|갤러리|아쿠아리움|도서관|카페|찻집|온천|스파|찜질|사찰|암자|향교|서원|고택|한옥|성당|성지|수목원|식물원/.test(t)) return "low";
+    return "mid"; // 그 외(공원·시장·전망대·호수·폭포·항구·거리 등) 보통 강도
+  };
+
   const out = [];
   const seenSig = new Set(); // 코스 스팟조합 서명 → 완전 중복 방지(구글 duplicate 회피)
 
@@ -185,15 +202,34 @@ function main() {
           const cluster = [seed];
           const usedKinds = new Set([kindOf(seed)]); // 같은 종류 중복 방지
           let cur = seed, mins = VISIT_MIN;
+          // ── 체력 페이싱: 하루 힘든 곳 1곳까지 + 힘든 곳 연속 금지(다음은 쉬는 곳) ──
+          const maxHigh = dur.days;              // 하루에 지치는 활동 1곳 → 총 일수만큼만
+          let highCount = 0, lastWasHigh = false;
+          if (exertionOf(seed) === "high") { highCount = 1; lastWasHigh = true; }
           while (byId.size && cluster.length < MAX_STOPS) {
-            // 가까운 순으로 보되, 이미 담은 "종류"는 건너뜀(해수욕장→해수욕장 방지)
+            // 가까운 순으로 보되: 이미 담은 "종류" 제외 + 힘든 곳 하루 1개·연속 금지.
             const sorted = [...byId.values()].sort((a, b) => km(cur, a) - km(cur, b));
-            let picked = null;
-            for (const p of sorted) { if (!usedKinds.has(kindOf(p))) { picked = p; break; } }
-            if (!picked) break; // 남은 게 전부 이미 담은 종류면 멈춤
+            const allow = (p) => {
+              if (usedKinds.has(kindOf(p))) return false;           // 같은 종류 중복 방지
+              if (exertionOf(p) === "high") {
+                if (highCount >= maxHigh) return false;             // 하루 힘든 곳 상한
+                if (lastWasHigh) return false;                      // 힘든 곳 바로 뒤 또 힘든 곳 금지
+              }
+              return true;
+            };
+            // 힘든 활동 직후엔 "쉬는 곳(실내·정적)"을 우선 배치 → 가까운 low → 없으면 mid → 그다음 아무거나
+            let picked = lastWasHigh
+              ? (sorted.find((p) => allow(p) && exertionOf(p) === "low")
+                || sorted.find((p) => allow(p) && exertionOf(p) === "mid")
+                || sorted.find((p) => allow(p)))
+              : sorted.find((p) => allow(p));
+            if (!picked) break; // 조건 맞는 다음 장소 없음 → 멈춤(짧아도 현실적으로)
             const travel = (km(cur, picked) / SPEED_KMH) * 60;
             if (mins + travel + VISIT_MIN > budget) break; // 하루 예산 초과 → 멈춤
             cluster.push(picked); usedKinds.add(kindOf(picked)); byId.delete(picked.id);
+            const pex = exertionOf(picked);
+            if (pex === "high") highCount++;
+            lastWasHigh = (pex === "high");
             cur = picked; mins += travel + VISIT_MIN;
           }
           if (cluster.length < MIN_STOPS) continue;
