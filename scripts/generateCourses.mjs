@@ -152,10 +152,23 @@ function seasonTheme() {
   return "자연힐링"; // 봄
 }
 
+// 현재 계절(월 기준) — 코스의 계절 태그(seasons)와 매칭해 제철 코스 우선 발행.
+function currentSeason() {
+  const m = new Date().getMonth() + 1;
+  if (m >= 3 && m <= 5) return "spring";
+  if (m >= 6 && m <= 8) return "summer";
+  if (m >= 9 && m <= 11) return "autumn";
+  return "winter";
+}
+
 function pickQueue(courses, doneIds, n) {
   const seasonKey = seasonTheme();
+  const curSeason = currentSeason();
   const cand = courses.filter((c) => !doneIds.has(c.id) && (c.stops?.length || 0) >= 2);
   const prio = (a, b) => {
+    // ① 제철 스팟(온천·꽃·단풍·물가 등)을 가진 코스를 최우선 — 계절별 다양화
+    const na = a.seasons?.includes(curSeason) ? 1 : 0, nb = b.seasons?.includes(curSeason) ? 1 : 0;
+    if (na !== nb) return nb - na;
     const sa = a.themes?.includes(seasonKey) ? 1 : 0, sb = b.themes?.includes(seasonKey) ? 1 : 0;
     if (sa !== sb) return sb - sa;                                  // 제철 테마 먼저
     const oa = a.source === "official" ? 1 : 0, ob = b.source === "official" ? 1 : 0;

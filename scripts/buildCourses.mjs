@@ -85,6 +85,21 @@ function hash(s) {
 }
 const DUR_SLUG = { "당일": "day", "1박2일": "1n2d", "2박3일": "2n3d" };
 
+// ── 계절 태그 — 코스에 "제철 스팟"이 있으면 그 계절로 태그(발행·노출 우선순위에 사용) ──
+//  봄=꽃·정원, 여름=물가·바다·계곡(시원), 가을=단풍·산·억새, 겨울=온천·실내(따뜻/시원한 실내).
+const SEASON_KW = {
+  spring: /꽃|벚꽃|유채|튤립|장미|철쭉|매화|연꽃|수목원|식물원|정원|허브|꽃밭/,
+  summer: /해수욕장|해변|해수욕|해빈|계곡|물놀이|워터파크|수영장|폭포|해상|해안|섬/,
+  autumn: /단풍|억새|국화|은행|자연휴양림|둘레길|산림|수목원/,
+  winter: /온천|스파|찜질|아쿠아리움|박물관|미술관|전시관|과학관|실내|눈꽃|빙어|얼음|스키/,
+};
+function seasonsOf(stops) {
+  const text = (stops || []).map((s) => s.name || "").join(" ");
+  const out = [];
+  for (const [k, re] of Object.entries(SEASON_KW)) if (re.test(text)) out.push(k);
+  return out;
+}
+
 function main() {
   const places = JSON.parse(fs.readFileSync(PLACES, "utf8")).spots.filter((p) => p.mapx && p.mapy && p.image);
   const restaurants = (() => {
@@ -254,7 +269,7 @@ function main() {
             id: `${AREA_SLUG[area] || area}-${th.slug}-${DUR_SLUG[dur.key]}-${hash(sig)}`,
             title, area, image: seed.image, mapx: String(cx), mapy: String(cy), tel: "",
             overview: "", stops, stopCount: stops.length,
-            duration: dur.key, themes: [th.key], source: "auto",
+            duration: dur.key, themes: [th.key], seasons: seasonsOf(stops), source: "auto",
           });
           made++;
         }
@@ -284,7 +299,7 @@ function main() {
         title: `${area} 해수욕장 베스트 ${top.length}`,
         area, image: hero, mapx: "", mapy: "", tel: "",
         overview: "", stops, stopCount: stops.length,
-        duration: "베스트", format: "list", themes: ["바다피서"], source: "auto",
+        duration: "베스트", format: "list", themes: ["바다피서"], seasons: ["summer"], source: "auto",
       });
     }
   }
