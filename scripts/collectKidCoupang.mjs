@@ -6,6 +6,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import { gate, MIN_INTERVAL_MS } from "./coupangThrottle.mjs";
 
 function loadEnvLocal() {
   const p = path.join(process.cwd(), ".env.local");
@@ -31,19 +32,20 @@ function generateHmac(method, u) {
   return `CEA algorithm=HmacSHA256, access-key=${ACCESS_KEY}, signed-date=${dt}, signature=${sig}`;
 }
 const mapP = (p) => ({ id: String(p.productId), name: p.productName, price: p.productPrice, image: p.productImage, url: p.productUrl, isRocket: !!p.isRocket });
-async function apiGet(u) { const r = await fetch(DOMAIN + u, { headers: { Authorization: generateHmac("GET", u) } }); if (!r.ok) { console.warn(`  ⚠️ HTTP ${r.status}`); return null; } return r.json().catch(() => null); }
+async function apiGet(u) { await gate(); const r = await fetch(DOMAIN + u, { headers: { Authorization: generateHmac("GET", u) } }); if (!r.ok) { console.warn(`  ⚠️ HTTP ${r.status}`); return null; } return r.json().catch(() => null); }
 async function search(kw, n = 3) { const j = await apiGet(`/v2/providers/affiliate_open_api/apis/openapi/v1/products/search?keyword=${encodeURIComponent(kw)}&limit=${n}`); return (j?.data?.productData || []).map(mapP); }
 async function goldbox() { const j = await apiGet(`/v2/providers/affiliate_open_api/apis/openapi/v1/products/goldbox`); return (j?.data || []).map(mapP); }
 const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 async function collect(keywords, cap, tag) {
   console.log(tag); const seen = new Set(); const out = [];
-  for (const kw of keywords) { const it = await search(kw, 3); for (const x of it) if (!seen.has(x.id)) { seen.add(x.id); out.push(x); } console.log(`  · ${kw}: ${it.length}개`); await new Promise((r) => setTimeout(r, 220)); }
+  for (const kw of keywords) { const it = await search(kw, 3); for (const x of it) if (!seen.has(x.id)) { seen.add(x.id); out.push(x); } console.log(`  · ${kw}: ${it.length}개`); }
   return shuffle(out).slice(0, cap);
 }
 
 async function main() {
   const now = new Date();
-  console.log(`🧸 아이 쿠팡 수집 (${now.toISOString().slice(0, 10)})\n`);
+  console.log(`🧸 아이 쿠팡 수집 (${now.toISOString().slice(0, 10)})`);
+  console.log(`⏳ 레이트리밋 보호: 호출 간격 최소 ${(MIN_INTERVAL_MS / 1000).toFixed(1)}초 (분당 약 ${Math.floor(60000 / MIN_INTERVAL_MS)}회)\n`);
   const toys = await collect(TOYS, 14, "① 장난감");
   const picnic = await collect(PICNIC, 14, "\n② 피크닉 준비물");
   const household = await collect(HOUSEHOLD, 14, "\n④ 나들이 생활용품");

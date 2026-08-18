@@ -6,6 +6,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import { gate, MIN_INTERVAL_MS } from "./coupangThrottle.mjs";
 
 function loadEnvLocal() {
   const p = path.join(process.cwd(), ".env.local");
@@ -45,6 +46,7 @@ function generateHmac(method, urlPathWithQuery) {
 }
 const mapProduct = (p) => ({ id: String(p.productId), name: p.productName, price: p.productPrice, image: p.productImage, url: p.productUrl, isRocket: !!p.isRocket });
 async function apiGet(urlPath) {
+  await gate(); // 분당 8회 이하로 호출 간격 강제 (쿠팡 레이트리밋 패널티 방지)
   const res = await fetch(DOMAIN + urlPath, { headers: { Authorization: generateHmac("GET", urlPath) } });
   if (!res.ok) { console.warn(`  ⚠️ HTTP ${res.status} — ${urlPath.slice(0, 60)}`); return null; }
   return res.json().catch(() => null);
@@ -64,14 +66,14 @@ async function collect(keywords, perKw, cap, tag) {
     const items = await search(kw, perKw);
     for (const it of items) if (!seen.has(it.id)) { seen.add(it.id); out.push(it); }
     console.log(`  · ${kw}: ${items.length}개`);
-    await new Promise((r) => setTimeout(r, 220));
   }
   return shuffle(out).slice(0, cap);
 }
 
 async function main() {
   const now = new Date();
-  console.log(`🎭 문화행사 쿠팡 수집 시작 (${now.toISOString().slice(0, 10)})\n`);
+  console.log(`🎭 문화행사 쿠팡 수집 시작 (${now.toISOString().slice(0, 10)})`);
+  console.log(`⏳ 레이트리밋 보호: 호출 간격 최소 ${(MIN_INTERVAL_MS / 1000).toFixed(1)}초 (분당 약 ${Math.floor(60000 / MIN_INTERVAL_MS)}회)\n`);
 
   console.log("① 관람 필수템");
   const essentials = await collect(ESSENTIALS, 3, 14);

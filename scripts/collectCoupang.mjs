@@ -14,6 +14,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import { gate, MIN_INTERVAL_MS } from "./coupangThrottle.mjs";
 
 function loadEnvLocal() {
   const p = path.join(process.cwd(), ".env.local");
@@ -75,6 +76,7 @@ function mapProduct(p) {
   };
 }
 async function apiGet(urlPath) {
+  await gate(); // 분당 8회 이하로 호출 간격 강제 (쿠팡 레이트리밋 패널티 방지)
   const res = await fetch(DOMAIN + urlPath, { method: "GET", headers: { Authorization: generateHmac("GET", urlPath) } });
   if (!res.ok) { console.warn(`  ⚠️ HTTP ${res.status} — ${urlPath.slice(0, 70)}`); return null; }
   return res.json().catch(() => null);
@@ -98,7 +100,6 @@ async function collectByKeywords(keywords, perKw, cap) {
     const items = await searchProducts(kw, perKw);
     for (const it of items) { if (!seen.has(it.id)) { seen.add(it.id); out.push(it); } }
     process.stdout.write(`  · ${kw}: ${items.length}개\n`);
-    await new Promise((r) => setTimeout(r, 220));
   }
   return shuffle(out).slice(0, cap); // 매 수집마다 순서 셔플 → "매번 바뀌는" 느낌
 }
@@ -107,7 +108,8 @@ async function main() {
   const now = new Date();
   const season = seasonOf(now.getMonth() + 1);
   const scfg = SEASONS[season];
-  console.log(`🗓️  ${now.toISOString().slice(0, 10)} · ${scfg.label} 시즌 — 4개 섹션 수집\n`);
+  console.log(`🗓️  ${now.toISOString().slice(0, 10)} · ${scfg.label} 시즌 — 4개 섹션 수집`);
+  console.log(`⏳ 레이트리밋 보호: 호출 간격 최소 ${(MIN_INTERVAL_MS / 1000).toFixed(1)}초 (분당 약 ${Math.floor(60000 / MIN_INTERVAL_MS)}회)\n`);
 
   console.log("① 캠핑 필수템");
   const staples = await collectByKeywords(STAPLE_KEYWORDS, 3, 16);
