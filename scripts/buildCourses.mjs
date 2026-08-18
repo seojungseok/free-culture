@@ -14,6 +14,7 @@ const PLACES = path.join(ROOT, "data", "places.json");
 const RESTAURANTS = path.join(ROOT, "data", "restaurants.json");
 const OVERVIEWS = path.join(ROOT, "data", "place-overviews.json");
 const OUT = path.join(ROOT, "data", "courses-auto.json");
+const ARTICLES = path.join(ROOT, "data", "course-articles.json"); // 발행글 저장소(발행된 코스 ID 보존용)
 
 const AREA_SLUG = {
   서울: "seoul", 부산: "busan", 대구: "daegu", 인천: "incheon", 광주: "gwangju", 대전: "daejeon",
@@ -89,6 +90,31 @@ function main() {
     catch { return []; }
   })();
 
+  // ── 이미 "발행된" 자동 코스는 그대로 보존 ──────────────────────────────
+  //  상한을 낮추면 스팟 조합이 바뀌어 코스 ID(스팟해시)도 바뀐다 → 기존 발행글이 사이트에서
+  //  사라지고(고아화) 새 ID로 다시 쓰게 되어 API 비용이 든다. 이를 막기 위해:
+  //   · 지금까지 발행된 코스는 이전 courses-auto.json에서 "원본 그대로" 유지(ID·스팟 불변).
+  //   · 그 코스가 차지한 슬롯(지역|테마|기간|씨앗)은 새로 만들지 않음(작은 쌍둥이 방지).
+  //  → 발행 안 된 나머지(대다수)만 새 상한으로 재조합. 새로 발행되면 다음 빌드부터 자동 보존.
+  const prevCourses = (() => {
+    try { return JSON.parse(fs.readFileSync(OUT, "utf8")).courses || []; } catch { return []; }
+  })();
+  const publishedIds = (() => {
+    try {
+      const arts = JSON.parse(fs.readFileSync(ARTICLES, "utf8")).articles || {};
+      return new Set(Object.keys(arts).filter((id) => arts[id]?.status === "published"));
+    } catch { return new Set(); }
+  })();
+  const prevById = new Map(prevCourses.map((c) => [c.id, c]));
+  const preserved = [...publishedIds].map((id) => prevById.get(id)).filter(Boolean);
+  // 슬롯키: 지역|테마|기간|씨앗(placeId). 리스트형(해수욕장 베스트)은 ID가 안정적이라 제외.
+  const slotKey = (area, theme, dur, seedId) => `${area}|${theme}|${dur}|${seedId}`;
+  const preservedSlots = new Set(
+    preserved
+      .filter((c) => c.format !== "list" && c.stops?.[0]?.placeId)
+      .map((c) => slotKey(c.area, (c.themes || [])[0], c.duration, c.stops[0].placeId))
+  );
+
   const areas = [...new Set(places.map((p) => p.area))];
   // 기간별: 일수 기반 시간예산으로 스팟 수를 "현실적으로" 산출(고정 아님).
   //  하루 예산 안에서 [방문시간 + 이동시간(거리÷속도)]을 누적, 초과 전까지만 담음. 식사시간은 예산에서 미리 뺌.
@@ -98,13 +124,14 @@ function main() {
     { key: "2박3일", days: 3, km: 75, per: 8 },
   ];
   // 사람 기준 현실 계산: 한 곳 둘러보는 데 ~2시간 + 휴식, 이동시간 별도, 식사 제외.
-  //  → 당일 ≈ 3곳, 1박2일 ≈ 5~6곳, 2박3일 ≈ 8곳.
+  //  → 당일 ≈ 3곳, 1박2일 ≈ 4~5곳, 2박3일 ≈ 5~6곳. (2박3일 8곳은 너무 빡세 → 상한 6으로)
   const VISIT_MIN = 100;         // 한 곳 관람+휴식(≈1.5~2시간)
   const SPEED_KMH = 45;          // 지역 내 평균 이동 속도
   const DAY_USABLE_MIN = 420;    // 하루 실사용(≈7h; 식사·숙소이동 제외분)
   const MIN_STOPS = 2;           // 최소 2곳(멀면 적게)
-  //  상한은 당일 4곳. 실제 개수는 시간예산(방문+이동거리)으로 산출 → 가까우면 4, 멀면 2~3으로 자동.
-  const MAX_PER_DUR = { "당일": 4, "1박2일": 6, "2박3일": 9 };
+  //  ★ 상한(테두리) — 실제 개수는 시간예산(방문+이동거리)으로 이 상한 "안에서" 유동 산출.
+  //     가까우면 상한까지, 멀면 2~3곳으로 자동. 당일 3 · 1박2일 5 · 2박3일 6.
+  const MAX_PER_DUR = { "당일": 3, "1박2일": 5, "2박3일": 6 };
 
   // 장소 "종류" — 같은 종류가 한 코스에 중복되지 않게(해수욕장→해수욕장 방지). 최대 1곳/종류.
   const kindOf = (p) => {
@@ -149,6 +176,8 @@ function main() {
         let made = 0;
         for (const seed of seeds) {
           if (made >= PER) break;
+          // 이미 발행된 코스가 이 슬롯(지역|테마|기간|씨앗)을 차지 → 원본 보존, 재조합 스킵.
+          if (preservedSlots.has(slotKey(area, th.key, dur.key, seed.id))) continue;
           // 이웃은 지역 전체에서 다양하게. 단 해수욕장은 route에서 제외(베스트 리스트로만).
           //  ★ 배편 섬은 같은 섬끼리만(sameReach) — 육지↔배편섬 혼합 방지 + 섬 단독 코스 형성.
           const byId = new Map(areaPlaces.filter((p) => p.id !== seed.id && !isBeach(p) && sameReach(seed, p) && km(seed, p) <= MAX_KM).map((p) => [p.id, p]));
@@ -224,6 +253,11 @@ function main() {
     }
   }
 
+  // 발행된 코스 원본을 합침(이미 있으면 보존본 우선). 리스트형 해수욕장 베스트도 여기서 유지.
+  const outIds = new Set(out.map((c) => c.id));
+  let keptCount = 0;
+  for (const c of preserved) if (!outIds.has(c.id)) { out.push(c); outIds.add(c.id); keptCount++; }
+
   const byArea = {}, byTheme = {}, byDur = {};
   for (const c of out) {
     byArea[c.area] = (byArea[c.area] || 0) + 1;
@@ -233,6 +267,7 @@ function main() {
 
   fs.writeFileSync(OUT, JSON.stringify({ generatedAt: new Date().toISOString(), count: out.length, courses: out }, null, 0));
   console.log(`\n🧩 자동 코스 ${out.length}개 생성 → data/courses-auto.json`);
+  console.log(`   보존(발행됨) ${keptCount}개 · 상한 당일 ${MAX_PER_DUR["당일"]} · 1박2일 ${MAX_PER_DUR["1박2일"]} · 2박3일 ${MAX_PER_DUR["2박3일"]}`);
   console.log(`   기간: ${Object.entries(byDur).map(([k, n]) => `${k} ${n}`).join(" · ")}`);
   console.log(`   테마: ${Object.entries(byTheme).map(([k, n]) => `${k} ${n}`).join(" · ")}`);
   console.log(`   지역: ${Object.entries(byArea).sort((a, b) => b[1] - a[1]).map(([a, n]) => `${a} ${n}`).join(" · ")}\n`);
