@@ -11,6 +11,7 @@ import { Container } from "@/components/Band";
 import AffiliateNotice from "@/components/AffiliateNotice";
 import TourCard from "@/components/TourCard";
 import CoupangDeals from "@/components/CoupangDeals";
+import CampEssentialPeek from "@/components/CampEssentialPeek";
 
 export const dynamicParams = true;
 export const revalidate = 2592000; // 30일 — 캠핑장 정보 거의 불변(대역폭 절감)
@@ -52,6 +53,9 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
     nearFood: nearFood.map((r) => r.title),
     nearPlaces: nearPlaces.map((p) => p.title),
   });
+
+  // 생필품 카드를 끼울 위치 — 문단이 적으면 중간, 많으면 두 번째 문단 뒤(글을 읽기 시작한 직후).
+  const peekAfter = story.length >= 4 ? 1 : Math.max(0, Math.floor(story.length / 2) - 1);
 
   const jsonLd = {
     "@context": "https://schema.org", "@type": "Campground",
@@ -116,7 +120,12 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
         </h2>
         <div className="space-y-4 text-[15px] leading-[1.85] text-ink-soft">
           {story.map((para, i) => (
-            <p key={i}>{para}</p>
+            <div key={i}>
+              <p>{para}</p>
+              {/* 글 "중간"에 생필품 카드 1개 — 맨 아래 배너는 그냥 지나쳐 버리기 때문.
+                  읽던 흐름이 끊기지 않게 문단 사이(2번째 문단 뒤)에 딱 한 번만. */}
+              {i === peekAfter && <CampEssentialPeek seed={c.id} campName={c.name} />}
+            </div>
           ))}
         </div>
       </section>

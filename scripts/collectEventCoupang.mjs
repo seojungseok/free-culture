@@ -46,7 +46,7 @@ function generateHmac(method, urlPathWithQuery) {
 }
 const mapProduct = (p) => ({ id: String(p.productId), name: p.productName, price: p.productPrice, image: p.productImage, url: p.productUrl, isRocket: !!p.isRocket });
 async function apiGet(urlPath) {
-  await gate(); // 분당 8회 이하로 호출 간격 강제 (쿠팡 레이트리밋 패널티 방지)
+  await gate(); // 분당 6회 미만으로 호출 간격 강제 (쿠팡 레이트리밋 패널티 방지)
   const res = await fetch(DOMAIN + urlPath, { headers: { Authorization: generateHmac("GET", urlPath) } });
   if (!res.ok) { console.warn(`  ⚠️ HTTP ${res.status} — ${urlPath.slice(0, 60)}`); return null; }
   return res.json().catch(() => null);

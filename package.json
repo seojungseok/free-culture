@@ -17,6 +17,8 @@
     "collect:camping": "node scripts/collectCamping.mjs",
   "collect:camping-images": "node scripts/collectCampingImages.mjs",
     "dedup:camping": "node scripts/dedupCamping.mjs",
+    "collect:coupang": "node scripts/collectCoupang.mjs",
+    "collect:coupang-essentials": "node scripts/collectCoupangEssentials.mjs",
     "articles": "node scripts/generateArticles.mjs",
     "collect:courses": "node scripts/collectCourses.mjs",
     "collect:coupang": "node scripts/collectCoupang.mjs",

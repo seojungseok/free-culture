@@ -102,6 +102,16 @@ jobs:
           COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
         run: node scripts/collectCoupang.mjs
 
+      # ── 캠핑글 "중간"에 넣을 생필품 링크(물·화장지·물티슈 등) ──
+      #    쿠팡 API는 분당 6회 미만이라 한 번에 다 못 긁는다.
+      #    → 키워드를 매 실행 4개씩 돌려가며(1회 5콜) 풀에 "누적"한다. 3회 실행이면 한 바퀴.
+      - name: 캠핑 생필품 링크 수집 (collectCoupangEssentials, 로테이션 누적)
+        continue-on-error: true
+        env:
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+        run: node scripts/collectCoupangEssentials.mjs
+
       - name: 문화행사 쿠팡 상품 수집 (collectEventCoupang)
         continue-on-error: true
         env:
@@ -124,7 +134,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/events.json data/festivals.json data/place-articles.json \
                   data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json \
-                  data/coupang.json data/eventCoupang.json data/kidCoupang.json
+                  data/coupang.json data/coupangEssentials.json data/eventCoupang.json data/kidCoupang.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
             echo "changed=false" >> "$GITHUB_OUTPUT"

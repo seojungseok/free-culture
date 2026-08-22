@@ -76,7 +76,7 @@ function mapProduct(p) {
   };
 }
 async function apiGet(urlPath) {
-  await gate(); // 분당 8회 이하로 호출 간격 강제 (쿠팡 레이트리밋 패널티 방지)
+  await gate(); // 분당 6회 미만으로 호출 간격 강제 (쿠팡 레이트리밋 패널티 방지)
   const res = await fetch(DOMAIN + urlPath, { method: "GET", headers: { Authorization: generateHmac("GET", urlPath) } });
   if (!res.ok) { console.warn(`  ⚠️ HTTP ${res.status} — ${urlPath.slice(0, 70)}`); return null; }
   return res.json().catch(() => null);
