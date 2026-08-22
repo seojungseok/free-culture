@@ -124,7 +124,7 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
               <p>{para}</p>
               {/* 글 "중간"에 생필품 카드 1개 — 맨 아래 배너는 그냥 지나쳐 버리기 때문.
                   읽던 흐름이 끊기지 않게 문단 사이(2번째 문단 뒤)에 딱 한 번만. */}
-              {i === peekAfter && <CampEssentialPeek seed={c.id} campName={c.name} />}
+              {i === peekAfter && <CampEssentialPeek seed={c.id} />}
             </div>
           ))}
         </div>

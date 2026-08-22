@@ -11,14 +11,15 @@
 //   ③ 실무적으로도 안전 — 쿠팡 가격은 수시로 바뀌어서 캐시된 페이지에 옛 가격이 남는 사고가 없다.
 //   그래서 수집 단계(collectCoupangEssentials.mjs)부터 아예 가격을 저장하지 않는다.
 //
-// 노출 개수는 2~3개만. 많이 깔면 광고 티가 나서 오히려 안 눌린다.
+// 무엇을 보여주나 — 쿠팡 **판매량 상위**(bestcategories) 생필품. 노출은 2~3개만.
+// 많이 깔면 광고 티가 나서 오히려 안 눌린다. 군더더기 문구도 두지 않는다(설명이 길면 광고로 읽힘).
 // 캠핑장 id로 고르므로 페이지마다 다른 상품이 나오고, 같은 페이지는 항상 같은 상품(캐시 안전).
 
 import essentials from "@/data/coupangEssentials.json";
 
 interface Item {
   id: string; name: string; image: string; url: string;
-  isRocket?: boolean; kind: string; label: string; deal?: boolean;
+  isRocket?: boolean; kind: string; label: string; best?: boolean; deal?: boolean;
 }
 
 /** 캠핑장 id → 항상 같은 값(페이지별로는 다름). 재생성해도 결과가 안 바뀌게 결정적으로. */
@@ -57,38 +58,29 @@ function pickItems(pool: Item[], seed: string, n: number): Item[] {
   for (const k of kinds) {
     if (out.length >= n) break;
     const list = byKind.get(k)!;
-    // 특가로 잡힌 게 있으면 그걸 우선(진짜 할인 상품), 없으면 페이지별로 돌아가며 하나
+    // 골드박스 특가 > 판매량 상위 > 나머지. 같은 등급 안에서는 페이지별로 돌아가며 하나.
     const deals = list.filter((p) => p.deal);
-    const from = deals.length ? deals : list;
+    const bests = list.filter((p) => p.best);
+    const from = deals.length ? deals : bests.length ? bests : list;
     out.push(from[Math.floor(rng() * from.length) % from.length]);
   }
   return out.slice(0, n);
 }
 
-export default function CampEssentialPeek({ seed, campName }: { seed: string; campName?: string }) {
+export default function CampEssentialPeek({ seed }: { seed: string }) {
   const pool = ((essentials as { pool?: Item[] }).pool || []).filter((p) => p.url && p.image);
   if (pool.length < 2) return null;
   const items = pickItems(pool, seed, 3);
   if (items.length < 2) return null;
 
-  const labels = [...new Set(items.map((i) => i.label))].join("·");
-
   return (
     <aside className="peek my-7 overflow-hidden rounded-2xl border border-[#ffd9cc] bg-gradient-to-b from-[#fff7f4] to-white">
-      <div className="flex items-center justify-between gap-2 border-b border-[#ffe4d9] bg-white/70 px-4 py-2">
-        <p className="text-[12.5px] font-extrabold text-[#e8481c]">
-          ⛺ 짐 싸기 전에 — {labels}, 지금 얼마일까요?
-        </p>
+      <div className="flex items-center justify-between gap-2 border-b border-[#ffe4d9] bg-white/70 px-4 py-2.5">
+        <p className="text-[13px] font-extrabold text-[#e8481c]">⛺ 캠핑 갈 때 많이 담는 것</p>
         <span className="shrink-0 rounded-full bg-neutral-100 px-1.5 py-0.5 text-[9.5px] font-bold text-ink-faint">광고</span>
       </div>
 
-      <p className="px-4 pt-3 text-[13px] leading-[1.6] text-ink-soft">
-        {campName ? `${campName} 가기 전에 ` : "캠핑 가기 전에 "}
-        한 번씩 담게 되는 것들이에요. <b className="text-ink">가격은 일부러 적지 않았어요</b> — 수시로 바뀌거든요.
-        눌러서 <b className="text-ink">지금 가격만</b> 확인해 보세요.
-      </p>
-
-      <ul className="mt-2.5 divide-y divide-[#ffe4d9]/70 px-1.5">
+      <ul className="mt-1 divide-y divide-[#ffe4d9]/70 px-1.5">
         {items.map((p) => (
           <li key={p.id}>
             <a
@@ -111,6 +103,8 @@ export default function CampEssentialPeek({ seed, campName }: { seed: string; ca
               <span className="min-w-0 flex-1">
                 <span className="flex items-center gap-1.5">
                   <span className="rounded-md bg-[#ffefe9] px-1.5 py-[1px] text-[10.5px] font-extrabold text-[#e8481c]">{p.label}</span>
+                  {/* 판매량 상위 목록(bestcategories)에서 온 것만. "몇 위"는 금방 낡아서 쓰지 않는다. */}
+                  {p.best && <span className="text-[10.5px] font-extrabold text-ink-soft">판매량 상위</span>}
                   {p.isRocket && <span className="text-[10.5px] font-extrabold text-[#2c62f6]">로켓배송</span>}
                 </span>
                 <span className="mt-0.5 block truncate text-[13.5px] font-bold text-ink">{shortName(p.name)}</span>
@@ -137,12 +131,9 @@ export default function CampEssentialPeek({ seed, campName }: { seed: string; ca
           rel="sponsored nofollow noopener noreferrer"
           className="peek-cta relative flex w-full items-center justify-center gap-1.5 overflow-hidden rounded-xl px-4 py-3 text-[14px] font-black text-white"
         >
-          <span className="relative z-10">가격만 살짝 보고 오기</span>
+          <span className="relative z-10">가격 확인</span>
           <span className="peek-arrow relative z-10">→</span>
         </a>
-        <p className="mt-2 text-center text-[11px] leading-[1.5] text-ink-faint">
-          클릭하면 쿠팡에서 지금 가격이 바로 보여요. 안 사도 괜찮아요.
-        </p>
       </div>
     </aside>
   );
