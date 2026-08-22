@@ -1,6 +1,8 @@
 // components/CoupangDeals.tsx
-// 캠핑 페이지용 쿠팡 상품 — 4개 섹션 가로 드래그 카드 (scripts/collectCoupang.mjs → data/coupang.json).
-//   ① 캠핑 필수템  ② 계절별 용품  ③ 캠핑 간편음식  ④ 오늘의 쿠팡 특가(골드박스)
+// 캠핑 페이지용 쿠팡 상품 — 가로 드래그 카드 (scripts/collectCoupang.mjs → data/coupang.json).
+//   ① 캠핑 필수템  ② 계절별 용품  ③ 오늘의 쿠팡 특가(골드박스)
+//   ※ "불 없이 먹는 캠핑 음식"(food)은 여기서 렌더하지 않는다 — 본문 중간 CampNoFireFood 로 옮겼다.
+//     아래에 있으면 대부분 스크롤로 지나쳐서. 한 페이지에 같은 상품이 두 번 나오지 않게 여기선 제외.
 // 서버 컴포넌트: 방문자마다 API를 호출하지 않고, 미리 수집한 JSON을 렌더한다.
 // 공정위 고지는 페이지 상단 <AffiliateNotice partner="coupang" /> 가 담당(중복 방지).
 
@@ -59,7 +61,7 @@ function Card({ p, highlight }: { p: Product; highlight?: boolean }) {
 
 export default function CoupangDeals() {
   const d = deals as unknown as Deals;
-  const sections = (d?.sections || []).filter((s) => s.products?.length);
+  const sections = (d?.sections || []).filter((s) => s.products?.length && s.key !== "food");
   if (!sections.length) return null;
 
   return (

@@ -7,7 +7,7 @@
 //
 // 왜 "가격을 안 보여주나" — 이게 이 카드의 핵심 장치다.
 //   ① 가격을 가려두면 "이거 진짜 싼가? 얼마지?" 하는 궁금증(정보 격차)이 생기고, 그 답을 보려면 눌러야 한다.
-//   ② 물·화장지·물티슈처럼 **다들 대충 얼마인지 아는 물건**이라 비교 욕구가 바로 걸린다.
+//   ② 생수·위생장갑·지퍼백처럼 **다들 대충 얼마인지 아는 물건**이라 비교 욕구가 바로 걸린다.
 //   ③ 실무적으로도 안전 — 쿠팡 가격은 수시로 바뀌어서 캐시된 페이지에 옛 가격이 남는 사고가 없다.
 //   그래서 수집 단계(collectCoupangEssentials.mjs)부터 아예 가격을 저장하지 않는다.
 //
@@ -40,7 +40,12 @@ function shortName(n: string): string {
   return (cut.length >= 6 ? cut : n).slice(0, 28);
 }
 
-/** 종류를 섞어 n개 고른다 — 물·화장지·물티슈처럼 서로 다른 게 나와야 "생필품 코너"로 읽힌다. */
+// 생수는 항상 첫 줄(캠핑에 물은 무조건 담으니까). 나머지 줄은 이 순서로 서로 다른 종류를 채운다.
+//  화장지·물티슈는 캠핑보다 집에서 사는 물건이라 맨 뒤 — 앞의 것이 없을 때만 나온다.
+const BASE_KIND = "물";
+const CAMP_ORDER = ["장갑", "봉투", "식기", "타월", "랩", "정리", "물티슈", "화장지"];
+
+/** 생수 1 + 캠핑에서 많이 담는 것 (n-1). 종류는 서로 겹치지 않게. */
 function pickItems(pool: Item[], seed: string, n: number): Item[] {
   const rng = seeded(seed);
   const byKind = new Map<string, Item[]>();
@@ -48,21 +53,22 @@ function pickItems(pool: Item[], seed: string, n: number): Item[] {
     if (!byKind.has(p.kind)) byKind.set(p.kind, []);
     byKind.get(p.kind)!.push(p);
   }
-  // 물 → 화장지 → 물티슈 순서를 우선(사용자가 가장 자주 사는 것), 나머지는 뒤에
-  const order = ["물", "화장지", "물티슈", "주방", "정리"];
-  const kinds = [...byKind.keys()].sort((a, b) => {
-    const ia = order.indexOf(a), ib = order.indexOf(b);
-    return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
-  });
-  const out: Item[] = [];
-  for (const k of kinds) {
-    if (out.length >= n) break;
-    const list = byKind.get(k)!;
-    // 골드박스 특가 > 판매량 상위 > 나머지. 같은 등급 안에서는 페이지별로 돌아가며 하나.
+  // 골드박스 특가 > 판매량 상위 > 나머지. 같은 등급 안에서는 페이지별로 돌아가며 하나.
+  const pickOne = (list: Item[]) => {
     const deals = list.filter((p) => p.deal);
     const bests = list.filter((p) => p.best);
     const from = deals.length ? deals : bests.length ? bests : list;
-    out.push(from[Math.floor(rng() * from.length) % from.length]);
+    return from[Math.floor(rng() * from.length) % from.length];
+  };
+
+  const out: Item[] = [];
+  const base = byKind.get(BASE_KIND);
+  if (base?.length) out.push(pickOne(base));
+  // 매 페이지 같은 종류만 나오지 않게 시작점을 시드로 돌린다(장갑→봉투→식기…).
+  const start = Math.floor(rng() * CAMP_ORDER.length);
+  for (let i = 0; i < CAMP_ORDER.length && out.length < n; i++) {
+    const list = byKind.get(CAMP_ORDER[(start + i) % CAMP_ORDER.length]);
+    if (list?.length) out.push(pickOne(list));
   }
   return out.slice(0, n);
 }

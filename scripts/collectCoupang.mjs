@@ -39,6 +39,8 @@ const DOMAIN = "https://api-gateway.coupang.com";
 const STAPLE_KEYWORDS = ["캠핑 텐트", "캠핑 의자", "코펠", "캠핑 버너", "캠핑 랜턴", "아이스박스", "캠핑 테이블", "캠핑 타프"];
 // 간편음식: 불 없이 "물만 부으면 데워지는" 자가발열 즉석식만. (마시멜로·냉동국밥·일반 짜장밥 등 제외)
 const FOOD_KEYWORDS = ["발열도시락", "전투식량", "비화식 발열도시락", "자가발열 도시락", "핫앤쿡 발열", "발열 라면밥", "발열 비빔밥"];
+// "발열도시락"으로 검색해도 전기로 데우는 도시락통이 딸려 온다 — 섹션 주제("불 없이")와 정반대라 제외.
+const FOOD_REJECT = /전기|충전|차량용|보온\s?도시락/;
 
 const SEASONS = {
   spring: { label: "봄", heading: "🌸 봄 캠핑 용품", subtitle: "선선한 봄, 캠핑 나서기 전 챙기면 좋은 것들",
@@ -93,14 +95,20 @@ async function goldbox() {
 
 const shuffle = (arr) => { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; };
 
-async function collectByKeywords(keywords, perKw, cap) {
+async function collectByKeywords(keywords, perKw, cap, reject) {
   const seen = new Set();
   const out = [];
+  let dropped = 0;
   for (const kw of keywords) {
     const items = await searchProducts(kw, perKw);
-    for (const it of items) { if (!seen.has(it.id)) { seen.add(it.id); out.push(it); } }
+    for (const it of items) {
+      if (seen.has(it.id)) continue;
+      if (reject && reject.test(it.name)) { dropped++; continue; } // 섹션 주제와 안 맞는 상품 제외
+      seen.add(it.id); out.push(it);
+    }
     process.stdout.write(`  · ${kw}: ${items.length}개\n`);
   }
+  if (dropped) process.stdout.write(`  · 주제와 안 맞아 제외: ${dropped}개\n`);
   return shuffle(out).slice(0, cap); // 매 수집마다 순서 셔플 → "매번 바뀌는" 느낌
 }
 
@@ -116,7 +124,7 @@ async function main() {
   console.log(`\n② 계절별(${scfg.label})`);
   const seasonal = await collectByKeywords(scfg.keywords, 3, 14);
   console.log("\n③ 캠핑 간편음식");
-  const food = await collectByKeywords(FOOD_KEYWORDS, 3, 14);
+  const food = await collectByKeywords(FOOD_KEYWORDS, 3, 14, FOOD_REJECT);
   console.log("\n④ 골드박스(매일 특가)");
   const gold = shuffle(await goldbox()).slice(0, 14);
   console.log(`  · 골드박스: ${gold.length}개`);
