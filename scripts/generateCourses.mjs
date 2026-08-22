@@ -12,7 +12,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   buildCoursePrompt, buildListPrompt, courseQualityCheck, courseSourceFacts, patternCheck, sanitizeUnsupported,
-  callOpenAI, rampCourses, COURSE_THEME_LABEL, checkCourseComposition, courseGeoFeasible,
+  callOpenAI, rampCourses, COURSE_THEME_LABEL, checkCourseComposition, courseGeoFeasible, courseStopsCheck,
+  selectCourseStops, COURSE_CAP_VERSION, COURSE_ATT_CAP,
 } from "./lib/articleGen.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -22,6 +23,7 @@ const PLACES = path.join(ROOT, "data", "places.json");           // 경유지→
 const OVERVIEWS = path.join(ROOT, "data", "place-overviews.json"); // 스팟 소개 캐시(글 파이프라인과 공유)
 const STORE = path.join(ROOT, "data", "course-articles.json");
 const ENRICH_MAX = Number(process.env.ENRICH_MAX || 80); // 발행분 스팟 소개 보강 최대 호출(한도 방어)
+const REBUILD_MAX = Number(process.env.COURSE_REBUILD_MAX || 8); // 상한 초과 옛 글 재생성 한도(1회 실행당)
 
 const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-5.6-luna";
 const MODEL = process.env.OPENAI_GEN_MODEL || OPENAI_MODEL;
@@ -202,6 +204,33 @@ function pickQueue(courses, doneIds, n) {
   return out;
 }
 
+// ── 상한 재적용 큐 ──
+// 기간별 관광지 상한(당일 3 · 1박2일 6 · 2박3일 7 = 하루 최대 3곳)은 페이지에 "즉시" 적용되지만,
+// 이미 발행된 글의 본문은 옛 상한(4/6/9)으로 쓰여 있어 글과 페이지가 어긋난다.
+//  → 발행글을 전부 점검해서
+//     · 새 상한을 이미 지키는 글: 도장(capV)만 찍고 넘어감(API 0)
+//     · 어긋난 글: 재생성 큐(하루 REBUILD_MAX개까지)
+// 재생성이 끝날 때까지 옛 글은 그대로 노출된다(빈 페이지 만들지 않음).
+function planRebuilds(store, courses) {
+  const byId = new Map(courses.map((c) => [c.id, c]));
+  const queue = [];
+  let stamped = 0, orphan = 0;
+  for (const [id, a] of Object.entries(store.articles)) {
+    if (a.capV === COURSE_CAP_VERSION) continue;
+    const c = byId.get(id);
+    if (!c) { orphan++; continue; } // 재료가 사라진 글(코스 풀 재조합) — 손대지 않음
+    const want = selectCourseStops(c);
+    if (courseStopsCheck(c, a.content).ok) {   // 본문이 새 선별과 정확히 일치 → 재생성 불필요
+      a.capV = COURSE_CAP_VERSION;
+      a.stopCount = want.length;
+      stamped++;
+      continue;
+    }
+    queue.push(c);
+  }
+  return { queue, stamped, orphan };
+}
+
 // 생성 → 로컬검사 → 패턴검사(자가치유) → 발행. 제미나이 없음.
 async function produceCourse(course, existingTexts) {
   const source = courseSourceFacts(course);
@@ -226,6 +255,14 @@ async function produceCourse(course, existingTexts) {
         await sleep(1000); continue;
       }
 
+      // 경유지 일치 검사 — 자료에 없는 장소를 지어내거나 관광지를 빼먹은 글은 발행 금지(환각 차단)
+      const sc = courseStopsCheck(course, text);
+      if (!sc.ok) {
+        log(`시도${attempt} 경유지 반려: ${sc.reason}`);
+        retryHint = `직전 시도가 "${sc.reason}" 사유로 반려됐어요. 소제목은 위 [관광 경유지] 목록에 있는 장소 이름만 그대로 쓰고, 목록에 없는 장소는 절대 등장시키지 마세요. 목록의 관광지는 하나도 빠뜨리지 마세요.`;
+        await sleep(1000); continue;
+      }
+
       let finalText = text;
       const p = patternCheck(text, source);
       if (!p.ok) {
@@ -233,7 +270,7 @@ async function produceCourse(course, existingTexts) {
         const s = sanitizeUnsupported(text, source);
         const sq = courseQualityCheck(s.text, { source, existingTexts });
         const sp = patternCheck(s.text, source);
-        if (s.text && sq.ok && sp.ok) {
+        if (s.text && sq.ok && sp.ok && courseStopsCheck(course, s.text).ok) {
           log(`시도${attempt} 근거없는 표현 ${s.removed}곳 자동 제거 후 통과`);
           finalText = s.text;
         } else {
@@ -272,19 +309,27 @@ async function main() {
   const target = Number(process.env.FORCE_COUNT) || rampCourses();
 
   let items;
+  const rebuildIds = new Set();
   if (forcedIds.length) {
     items = forcedIds.map((id) => courses.find((c) => c.id === id)).filter(Boolean);
+    for (const c of items) if (doneIds.has(c.id)) rebuildIds.add(c.id);
     console.log(`\n🧪 지정 코스 ${items.length}건`);
   } else {
-    items = pickQueue(courses, doneIds, target);
-    console.log(`\n🧭 코스 글 목표 ${target}건 · 후보풀 ${courses.length - doneIds.size} · 기존 ${doneIds.size} · 모델 ${MODEL} · 제미나이 OFF`);
+    // (1) 상한 초과 옛 글 재생성이 먼저 — 글과 페이지가 어긋난 상태를 푸는 게 신규 발행보다 급하다. (2) 그다음 신규.
+    const { queue: rebuilds, stamped, orphan } = planRebuilds(store, courses);
+    const todo = rebuilds.slice(0, REBUILD_MAX);
+    for (const c of todo) rebuildIds.add(c.id);
+    items = [...todo, ...pickQueue(courses, doneIds, target)];
+    console.log(`\n🧭 코스 글 신규 목표 ${target}건 · 후보풀 ${courses.length - doneIds.size} · 기존 ${doneIds.size} · 모델 ${MODEL} · 제미나이 OFF`);
+    console.log(`   상한 재적용(당일 ${COURSE_ATT_CAP["당일"]}·1박2일 ${COURSE_ATT_CAP["1박2일"]}·2박3일 ${COURSE_ATT_CAP["2박3일"]}, 하루 3곳) — 적합 ${stamped}건 통과 · 재생성 ${todo.length}/${rebuilds.length}건${orphan ? ` · 재료없음 ${orphan}건` : ""}`);
   }
 
-  let made = 0, skipped = 0, errored = 0;
+  let made = 0, skipped = 0, errored = 0, rebuilt = 0;
   const report = [];
   for (const course of items) {
    try { // 코스 하나가 에러나도 전체 중단 없이 다음으로 (부분 발행 + 커밋 보장)
-    // 스팟 상한은 buildCoursePrompt·lib(courseAttractions)가 "식당 제외 관광지 기준"으로 동일 적용 → 여기선 자르지 않음(요약↔글 일치).
+    // 스팟 상한은 buildCoursePrompt·lib(courseAttractions) 모두 lib/courseSelect.js 하나를 쓰므로 여기선 자르지 않음(요약↔글 일치).
+    const isRebuild = rebuildIds.has(course.id);
     await enrichStops(course); // 자동 코스 스팟 소개 보강(캐시/한도 내 조회)
 
     // ── 지리 실현성 검사(결정적) — 공식·자동 모두 적용. "원거리 배편 섬 + 육지" 혼합 코스 차단.
@@ -307,11 +352,14 @@ async function main() {
         continue;
       }
     }
-    const { art, reasons } = await produceCourse(course, existingTexts);
+    // 재생성이면 "자기 자신"을 중복 비교 대상에서 뺀다(옛 글과 비슷하다고 스스로 반려되는 것 방지).
+    const prevText = store.articles[course.id]?.content || "";
+    const compareTexts = isRebuild ? existingTexts.filter((t) => t !== prevText) : existingTexts;
+    const { art, reasons } = await produceCourse(course, compareTexts);
     if (!art) {
       skipped++;
       report.push({ id: course.id, title: course.title, outcome: "skip", reason: reasons.slice(-2).join(" | ") });
-      console.log(`  ✗ 스킵: ${course.title}`);
+      console.log(`  ✗ ${isRebuild ? "재생성 실패(옛 글 유지)" : "스킵"}: ${course.title}`);
       continue;
     }
     store.articles[course.id] = {
@@ -326,14 +374,16 @@ async function main() {
       content: art.text,
       model: MODEL,
       length: art.len,
-      stopCount: course.stopCount || (course.stops?.length || 0),
+      stopCount: selectCourseStops(course).length, // 실제 노출 관광지 수(식당 제외·상한 적용)
+      capV: COURSE_CAP_VERSION,                     // 이 상한 규칙으로 쓰인 글이라는 도장
       image: course.image || "",
       source: course.source || "official",
     };
     made++;
+    if (isRebuild) { rebuilt++; const i = existingTexts.indexOf(prevText); if (i >= 0) existingTexts.splice(i, 1); }
     existingTexts.push(art.text);
-    report.push({ id: course.id, title: course.title, outcome: "published", detail: `${art.len}자/${course.duration}/${course.area}` });
-    console.log(`  ✓ 발행 ${made}/${target}: ${course.title} (${art.len}자, ${course.area} ${course.duration})`);
+    report.push({ id: course.id, title: course.title, outcome: isRebuild ? "rebuilt" : "published", detail: `${art.len}자/${course.duration}/${course.area}` });
+    console.log(`  ✓ ${isRebuild ? "재생성" : `발행 ${made - rebuilt}/${target}`}: ${course.title} (${art.len}자, ${course.area} ${course.duration}, 관광지 ${selectCourseStops(course).length}곳)`);
     await sleep(800);
    } catch (e) {
     errored++;
@@ -343,10 +393,10 @@ async function main() {
   }
 
   store.generatedAt = new Date().toISOString();
-  store._lastRun = { at: new Date().toISOString(), made, skipped, errored, results: report };
+  store._lastRun = { at: new Date().toISOString(), made, rebuilt, skipped, errored, results: report };
   fs.writeFileSync(STORE, JSON.stringify(store, null, 0));
   const pub = Object.values(store.articles).filter((a) => a.status === "published").length;
-  console.log(`\n💾 저장: 발행 ${made} · 스킵 ${skipped} | 총 코스글 ${pub} / 전체 코스 ${courses.length}\n`);
+  console.log(`\n💾 저장: 신규 ${made - rebuilt} · 재생성 ${rebuilt} · 스킵 ${skipped} | 총 코스글 ${pub} / 전체 코스 ${courses.length}\n`);
 }
 
 main().catch((e) => { console.error("❌ 실패:", e.message); process.exit(1); });

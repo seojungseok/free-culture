@@ -10,6 +10,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+// 기간별 관광지 상한 = 사이트·글 생성과 같은 단일 모듈(하루 최대 3곳).
+import { COURSE_ATT_CAP, COURSE_MAX_PER_DAY } from "../lib/courseSelect.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PLACES = path.join(ROOT, "data", "places.json");
@@ -141,14 +143,14 @@ function main() {
     { key: "2박3일", days: 3, km: 75, per: 8 },
   ];
   // 사람 기준 현실 계산: 한 곳 둘러보는 데 ~2시간 + 휴식, 이동시간 별도, 식사 제외.
-  //  → 당일 ≈ 3곳, 1박2일 ≈ 4~5곳, 2박3일 ≈ 5~6곳. (2박3일 8곳은 너무 빡세 → 상한 6으로)
+  //  → 당일 ≈ 3곳, 1박2일 ≈ 4~6곳, 2박3일 ≈ 5~7곳. (하루 3곳을 넘기지 않는다)
   const VISIT_MIN = 100;         // 한 곳 관람+휴식(≈1.5~2시간)
   const SPEED_KMH = 45;          // 지역 내 평균 이동 속도
   const DAY_USABLE_MIN = 420;    // 하루 실사용(≈7h; 식사·숙소이동 제외분)
   const MIN_STOPS = 2;           // 최소 2곳(멀면 적게)
   //  ★ 상한(테두리) — 실제 개수는 시간예산(방문+이동거리)으로 이 상한 "안에서" 유동 산출.
-  //     가까우면 상한까지, 멀면 2~3곳으로 자동. 당일 3 · 1박2일 5 · 2박3일 6.
-  const MAX_PER_DUR = { "당일": 3, "1박2일": 5, "2박3일": 6 };
+  //     가까우면 상한까지, 멀면 2~3곳으로 자동. lib/courseSelect.js와 같은 값(당일 3 · 1박2일 6 · 2박3일 7).
+  const MAX_PER_DUR = COURSE_ATT_CAP;
 
   // 장소 "종류" — 같은 종류가 한 코스에 중복되지 않게(해수욕장→해수욕장 방지). 최대 1곳/종류.
   const kindOf = (p) => {
@@ -202,7 +204,8 @@ function main() {
 
       for (const dur of DURS) {
         const MAX_KM = dur.km, PER = dur.per;
-        const MAX_STOPS = MAX_PER_DUR[dur.key] || 6;
+        //  상한 + "하루 3곳" 이중 안전장치 — 일수가 늘어도 하루 정원을 넘지 않게.
+        const MAX_STOPS = Math.min(MAX_PER_DUR[dur.key] || 6, dur.days * COURSE_MAX_PER_DAY);
         const budget = dur.days * DAY_USABLE_MIN; // 이 코스에 쓸 수 있는 총 활동 시간(분)
         const seeds = [...seedPool].sort((a, b) => (ovOf(b.id) ? 1 : 0) - (ovOf(a.id) ? 1 : 0));
         let made = 0;

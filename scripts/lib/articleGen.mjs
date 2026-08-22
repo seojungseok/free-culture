@@ -1,6 +1,13 @@
 // 글 자동화 코어 — 프롬프트/Gemini호출/품질검사/우선순위 큐/램프업
 // 사이트와 분리된 Node 전용 모듈. 사이트는 data/place-articles.json을 읽기만 함.
 
+// 코스 관광지 선별 규칙은 사이트(lib/courses.ts)와 공유 — 글과 페이지가 어긋나지 않게 단일 모듈 사용.
+import {
+  selectCourseStops, splitCourseDays, isCourseFoodStop,
+  COURSE_ATT_CAP, COURSE_DAY_COUNT, COURSE_MAX_PER_DAY, COURSE_CAP_VERSION,
+} from "../../lib/courseSelect.js";
+export { COURSE_ATT_CAP, COURSE_DAY_COUNT, COURSE_MAX_PER_DAY, COURSE_CAP_VERSION, selectCourseStops, isCourseFoodStop };
+
 // ── 지역 우선순위 (서울/경기/부산 우선, 여러 지역 섞기용) ──
 export const REGION_PRIORITY = {
   서울: 10, 경기: 9, 부산: 8,
@@ -801,11 +808,36 @@ export function courseQualityCheck(text, { source = "", existingTexts = [] } = {
   return { ok: true, reason: "", len };
 }
 
+// ── 경유지 일치 검사 — 자료에 없는 장소를 소제목으로 지어내거나(환각), 자료의 관광지를 빼먹은 글을 반려 ──
+//  예: 경유지가 "강화성당·소창체험관·대룡시장"인데 본문 소제목에 "연평도"가 등장하는 사고 방지.
+const COURSE_SECTION_HEADS = /^(한눈에|코스 한눈에|여행 팁|자주 묻는|마무리|확정정보|기본 정보|Q\.|\d+\s*일차)/;
+const normPlace = (v) => String(v || "").replace(/\*\*/g, "").replace(/\(.*?\)|\[.*?\]/g, "").replace(/[\s·,'"“”‘’\-—~!?]/g, "");
+export function courseStopsCheck(course, text) {
+  if (course.format === "list") return { ok: true, reason: "" };
+  const atts = courseAttractionStops(course);
+  if (!atts.length) return { ok: true, reason: "" };
+  const body = String(text || "");
+  const names = atts.map((s) => normPlace(s.name)).filter(Boolean);
+
+  const heads = (body.match(/^#{2,3}\s+.+$/gm) || [])
+    .map((h) => h.replace(/^#+\s*/, "").replace(/^\d+\.\s*/, "").trim())
+    .filter((h) => !COURSE_SECTION_HEADS.test(h));
+  const hit = (n, m) => n && m && (n.includes(m) || m.includes(n));
+  const orphan = heads.find((h) => { const n = normPlace(h); return n && !names.some((m) => hit(n, m)); });
+  if (orphan) return { ok: false, reason: `자료에 없는 장소 소제목("${orphan}")` };
+
+  const flat = normPlace(body);
+  const missing = atts.find((s) => { const m = normPlace(s.name); return m && !flat.includes(m); });
+  if (missing) return { ok: false, reason: `경유지 누락("${missing.name}")` };
+  return { ok: true, reason: "" };
+}
+
 // ── 코스 구성 교차검증(Gemini) — 본문은 OpenAI, "코스 짜임새"는 Gemini가 점검 ──
 //  같은 종류 중복(해수욕장→해수욕장), 비현실적 동선/일정, 기간 대비 과다 여부만 판정. 글은 안 봄.
 export async function checkCourseComposition(course, { apiKey, model = "gemini-2.5-flash-lite" } = {}) {
   if (!apiKey) return { ok: true, reason: "SKIP(no key)" };
-  const list = (course.stops || []).map((s, i) => `${i + 1}. ${s.name}`).join("\n");
+  // 실제로 글·페이지에 나가는 관광지(상한 적용분)만 검증 — 잘려나갈 스팟 때문에 "과다" NG가 나던 문제 방지.
+  const list = selectCourseStops(course).map((s, i) => `${i + 1}. ${s.name}`).join("\n");
   const prompt = `여행 코스 "구성"이 현실적인지만 판정해라(글이 아니라 장소 조합·순서).
 [지역] ${course.area}  [기간] ${course.duration}
 [방문 순서]
@@ -813,7 +845,7 @@ ${list}
 
 [판정 기준 — NG면 무엇이 문제인지 reason]
 - ★ 같은 종류 중복(예: 해수욕장 두 곳, 비슷한 시장 두 곳)이면 NG — 이게 핵심.
-- 장소 수는 일차로 나눠 하루 3~4곳이면 정상: 당일 ≤4곳, 1박2일 ≤8곳, 2박3일 ≤10곳까지 OK(총량으로 NG 주지 말 것).
+- 장소 수는 이미 상한(당일 ${COURSE_ATT_CAP["당일"]}곳 · 1박2일 ${COURSE_ATT_CAP["1박2일"]}곳 · 2박3일 ${COURSE_ATT_CAP["2박3일"]}곳 = 하루 최대 ${COURSE_MAX_PER_DAY}곳)을 적용한 목록이니 **개수로는 NG 주지 마세요.**
 - 동선이 완전히 뒤엉켜 하루에 도저히 불가능하면 NG.
 - 위 문제(특히 종류 중복) 없으면 OK.
 
@@ -870,24 +902,31 @@ ${items}
 
 // ── 코스 블로그 프롬프트 ──
 // 정보 전달형(여행사가 자세히 안내). 경험담(1인칭 과거) 금지. 각 스팟에 주소·요금·시간 있으면 포함.
-const COURSE_FOOD_RE = /횟집|식당|맛집|푸줏간|고기집|한정식|정식|국밥|국수|갈비|막국수|분식|카페|찻집|베이커리|빵집|커피|치킨|피자|해장|먹거리/;
+// 식당 스팟은 동선(관광 소제목)에서 빼고 "식사 장소"로만 안내 — 상세는 페이지 '근처 맛집'에서.
+// 글에 소제목으로 쓸 관광지 = lib/courses.ts의 courseAttractions와 **같은 모듈**(lib/courseSelect.js).
+export const courseAttractionStops = selectCourseStops;
+
 export function buildCoursePrompt(course, { summer = false } = {}) {
   const themeLabels = (course.themes || []).map((t) => COURSE_THEME_LABEL[t] || t).join("·");
   const mainTheme = COURSE_THEME_LABEL[(course.themes || [])[0]] || "여행"; // 제목에 넣을 대표 테마
-  // 식당 스팟은 동선(관광 소제목)에서 빼고 "식사 장소"로만 안내 — 상세는 페이지 '근처 맛집'에서.
-  const isFood = (s) => COURSE_FOOD_RE.test(`${s.name} ${String(s.overview || "").slice(0, 80)}`);
-  const ATT_CAP = { "당일": 4, "1박2일": 6, "2박3일": 9 }[course.duration];
-  let attractions = (course.stops || []).filter((s) => !isFood(s));
-  if (ATT_CAP && attractions.length > ATT_CAP) attractions = attractions.slice(0, ATT_CAP); // 페이지 요약과 동일 규칙
+  const isFood = isCourseFoodStop;
+  const attractions = courseAttractionStops(course);
   const foods = (course.stops || []).filter(isFood);
   const nStops = attractions.length;
-  const days = course.duration === "2박3일" ? 3 : course.duration === "1박2일" ? 2 : 1;
-  // 다일 코스는 일차별로 나눠 하루 3~4곳씩 — "1박2일에 7곳 한 줄" 같은 비현실 방지
+  const days = COURSE_DAY_COUNT[course.duration] || 1;
+  // 일차 배분은 "코드가" 확정해 프롬프트에 그대로 못박는다(하루 최대 3곳).
+  //  예전엔 "하루 3~4곳"이라고만 일러줘 모델이 마음대로 몰아넣었다 → 페이지 동선과 어긋남.
+  const dayPlan = splitCourseDays(attractions, course.duration);
+  const dayPlanText = dayPlan
+    .map((d, i) => `  · ${i + 1}일차(${d.length}곳): ${d.map((s) => s.name).join(" → ")}`)
+    .join("\n");
   const structureSpec = days > 1
     ? `- 반드시 **일차별로 나눠** 쓰세요: "## 1일차", "## 2일차"${days === 3 ? ', "## 3일차"' : ""} 소제목으로.
-- 각 일차는 하루에 소화 가능한 3~4곳만 배치(오전 관광 → 점심 → 오후 관광 → (선택) 저녁/야경).
+- ★ 일차별 장소 배치는 **아래 [일차 배분]을 그대로** 따르세요. 옮기거나 합치지 말 것(하루 최대 ${COURSE_MAX_PER_DAY}곳).
+- 각 일차는 오전 관광 → 점심 → 오후 관광 → (선택) 저녁/야경 흐름으로.
 - 각 방문 장소는 일차 아래 "### 장소명" 소제목으로 쓰고, 그 아래 설명 + (확정정보).`
-    : `- 방문 장소마다 "## 1. 장소명" 소제목 + 설명 + (확정정보). 당일치기이니 3곳 안팎을 깊이 있게.`;
+    : `- 방문 장소마다 "## 1. 장소명" 소제목 + 설명 + (확정정보). 당일치기라 **${nStops}곳뿐**이니 한 곳씩 깊이 있게.
+- ★ 하루 최대 ${COURSE_MAX_PER_DAY}곳입니다. 위 목록에 없는 장소를 더 넣지 마세요.`;
   // 스팟이 적을수록 한 곳을 더 깊게 → 글이 부실해지지 않게 분량 배분(상한 축소로 대부분 3~6곳)
   const perStopGuide = nStops <= 3
     ? "경유지가 적으니 각 장소를 7~9문장으로 깊이 있게(어떤 곳인지·역사/유래·대표 볼거리·즐기는 법·소요시간·주변 팁) 아주 자세히 소개하세요."
@@ -917,9 +956,9 @@ export function buildCoursePrompt(course, { summer = false } = {}) {
 [기간] ${course.duration}
 [테마] ${themeLabels}
 ${course.overview ? `[코스 소개 자료] ${course.overview}\n` : ""}
-[관광 경유지 — 이 순서대로. 소제목(##/###)은 이 관광지들로만 만드세요]
+[관광 경유지 — 이 순서대로. 소제목(##/###)은 이 관광지들로만 만드세요. 총 ${nStops}곳이 전부입니다]
 ${stopsBlock}
-${foodsNote}
+${days > 1 ? `\n[일차 배분 — 이대로 배치. 하루 최대 ${COURSE_MAX_PER_DAY}곳]\n${dayPlanText}\n` : ""}${foodsNote}
 
 [✍️ 글 톤 — 정보 전달형 (가장 중요)]
 - ★ "다녀왔어요 / 맛봤어요 / 느껴봤어요 / 걸어봤어요" 같은 **1인칭 경험담 금지.** 나는 안 가봤습니다.

@@ -10,7 +10,7 @@ import CourseShare from "@/components/CourseShare";
 import SeoulStayBanner from "@/components/SeoulStayBanner";
 import { stayLinkFor } from "@/lib/stayLinks";
 import {
-  getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays, courseFoodStops,
+  getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays, courseFoodStops, courseAttractions, courseStopCount,
 } from "@/lib/courses";
 import { coursesNearbyFood, distanceLabel, foodTypeLabel, distanceKm } from "@/lib/nearby";
 import { areaFestivals, fmtMd } from "@/lib/festivals";
@@ -28,10 +28,11 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const c = getCourse(id);
   if (!c) return {};
   const desc = c.content.replace(/[#*>`-]/g, " ").replace(/\s+/g, " ").trim().slice(0, 150);
+  const atts = courseAttractions(c); // 실제 노출 관광지(식당 제외·상한 적용)
   return {
     title: `${c.title} — ${c.area} ${durationLabel(c.duration)} 여행코스`,
-    description: desc || `${c.area} ${durationLabel(c.duration)} 여행코스. ${c.stops.map((s) => s.name).slice(0, 4).join(", ")} 등을 잇는 여행 일정.`,
-    keywords: [`${c.area} 여행코스`, `${c.area} ${durationLabel(c.duration)}`, ...c.stops.slice(0, 3).map((s) => s.name)],
+    description: desc || `${c.area} ${durationLabel(c.duration)} 여행코스. ${atts.map((s) => s.name).slice(0, 4).join(", ")} 등을 잇는 여행 일정.`,
+    keywords: [`${c.area} 여행코스`, `${c.area} ${durationLabel(c.duration)}`, ...atts.slice(0, 3).map((s) => s.name)],
     alternates: { canonical: `/course/c/${id}` },
     openGraph: { title: c.title, description: desc, images: c.image ? [c.image] : [], type: "article" },
   };
@@ -45,7 +46,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   const canonical = `${SITE.url}/course/c/${id}`;
   const slug = areaSlug(c.area);
   const related = relatedCourses(c, 4).map(slimCourse);
-  const mapStops = c.stops.filter((s) => s.name);
+  const mapStops = courseAttractions(c).filter((s) => s.name); // 글·동선에 실제 노출되는 관광지만(식당 제외·상한 적용)
   // 근처 맛집(내부링크) — 좌표 있으면 거리순, 없으면 코스 도시(주소) 기준. 음식점 데이터 있는 지역만.
   const centroid = courseCentroid(c);
   const city = courseCity(c);
@@ -66,14 +67,14 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
     })),
   ].slice(0, 8);
   // 각 맛집을 "가장 가까운 코스 스팟" 기준으로 라벨 (예: "경포해변 근처"). 좌표 있는 스팟만.
-  const stopsWithCoord = c.stops.filter((s) => s.mapx && s.mapy);
+  const stopsWithCoord = mapStops.filter((s) => s.mapx && s.mapy); // 코스에서 빠진 스팟으로 "○○ 근처" 라벨이 붙지 않게
   const nearStopName = (r: { mapx?: string; mapy?: string }): string => {
     let best = "", bd = Infinity;
     for (const s of stopsWithCoord) { const d = distanceKm(r, s); if (d < bd) { bd = d; best = s.name; } }
     return best && bd <= 8 ? best : "";
   };
   const festivals = areaFestivals(c.area, { limit: 4 }); // 보는 시점 날짜 연동
-  const days = courseDays(c); // 일차별 분할(하루 3~4곳)
+  const days = courseDays(c); // 일차별 분할(하루 최대 3곳)
   // 제휴 링크가 등록된 지역의 코스에만 숙소 배너
   const stay = stayLinkFor(c.area, c.stops.map((s) => s.addr || "").join(" "));
 
@@ -127,7 +128,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
             {themeEmoji(t)} {t === "바다피서" ? "바다·피서" : t === "문화유적" ? "문화유적" : t === "자연힐링" ? "자연·힐링" : t === "가족체험" ? "가족·체험" : "맛집"}
           </span>
         ))}
-        <span className="text-[12px] text-ink-faint">· 📍 {c.stopCount}곳</span>
+        <span className="text-[12px] text-ink-faint">· 📍 {courseStopCount(c)}곳</span>
       </div>
 
       <div className="mt-1 flex items-start justify-between gap-3">
@@ -145,9 +146,9 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
       )}
 
       {/* 블로그 글 — 각 스팟 소제목 뒤에 사진 삽입 */}
-      <CourseArticleBody content={c.content} stops={c.stops} />
+      <CourseArticleBody content={c.content} stops={mapStops} />
 
-      {/* 코스 한눈에 보기 — 일차별로 묶어 장소명 표기 (하루 3~4곳) */}
+      {/* 코스 한눈에 보기 — 일차별로 묶어 장소명 표기 (하루 최대 3곳) */}
       {mapStops.length > 0 && (
         <section className="mt-9 rounded-2xl bg-panel px-4 py-5 sm:px-5">
           <h2 className="mb-3 text-[17px] font-extrabold tracking-tight text-ink sm:text-[18px]">{c.format === "list" ? "🏖 해수욕장 목록" : "🧭 코스 한눈에 보기"}</h2>

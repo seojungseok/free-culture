@@ -6,6 +6,8 @@ import courseArticles from "@/data/course-articles.json";
 import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { season } from "@/lib/finder";
 import { getAllPlaces } from "@/lib/tour";
+// 관광지 선별(식당 제외 + 기간별 상한 + 동선 최적화)은 생성 스크립트와 공유하는 단일 모듈에서.
+import { selectCourseStops, splitCourseDays, isCourseFoodStop } from "@/lib/courseSelect";
 
 export interface CourseStop {
   num: number;
@@ -191,29 +193,18 @@ export function courseCity(c: Course): string {
   return top ? top[0] : "";
 }
 
-// 식당/카페 스팟 판별 — 코스(관광 동선)에선 빼고 '근처 맛집'으로 보냄. 이름·소개 앞부분 키워드.
-const FOOD_RE = /횟집|식당|맛집|푸줏간|고기집|한정식|정식|국밥|국수|갈비|막국수|분식|카페|찻집|베이커리|빵집|커피|치킨|피자|해장|먹거리/;
-export const isFoodStop = (s: CourseStop) => FOOD_RE.test(`${s.name} ${String(s.overview || "").slice(0, 80)}`);
-// 관광지 상한(식당 제외 기준) — 페이지 요약과 블로그가 "똑같은 규칙"으로 잘라 항상 일치.
-const ATT_CAP: Record<string, number> = { "당일": 4, "1박2일": 6, "2박3일": 9 };
-export const courseAttractions = (c: Course): CourseStop[] => {
-  const atts = (c.stops || []).filter((s) => !isFoodStop(s));
-  const cap = ATT_CAP[c.duration];
-  return cap ? atts.slice(0, cap) : atts;
-};
+// 식당/카페 스팟 판별 — 코스(관광 동선)에선 빼고 '근처 맛집'으로 보냄. 판별 규칙은 lib/courseSelect.js 공유.
+export const isFoodStop = (s: CourseStop) => isCourseFoodStop(s);
+// 관광지 상한(당일 3 · 1박2일 6 · 2박3일 7 = 하루 최대 3곳) + 동선 최적화.
+// 페이지 요약과 블로그가 "똑같은 모듈"로 고르므로 항상 일치한다.
+export const courseAttractions = (c: Course): CourseStop[] => selectCourseStops(c) as CourseStop[];
 export const courseFoodStops = (c: Course): CourseStop[] => (c.stops || []).filter((s) => isFoodStop(s));
+// 화면에 표시하는 "○곳" — 실제 노출되는 관광지 수(식당 제외·상한 적용). 원본 stopCount와 다를 수 있음.
+export const courseStopCount = (c: Course): number => courseAttractions(c).length;
 
-/** 코스 스팟(관광지만)을 일차별로 분할 — 하루 3~4곳. 1박2일=2일, 2박3일=3일. */
+/** 코스 스팟(관광지만)을 일차별로 균등 분할 — 하루 최대 3곳. 1박2일=2일, 2박3일=3일(7곳→3·2·2). */
 export function courseDays(c: Course): CourseStop[][] {
-  const stops = courseAttractions(c); // 식당 제외
-  const n = stops.length;
-  const days = c.duration === "2박3일" ? 3 : c.duration === "1박2일" ? 2 : 1;
-  if (days <= 1) return [stops];
-  const perDay = Math.ceil(n / days);
-  const out: CourseStop[][] = [];
-  for (let i = 0; i < n; i += perDay) out.push(stops.slice(i, i + perDay));
-  // 마지막 날이 비면 제거, 일수보다 많으면 마지막에 합침
-  return out.slice(0, days).filter((d) => d.length);
+  return splitCourseDays(courseAttractions(c), c.duration) as CourseStop[][];
 }
 
 /** 같은 지역 다른 코스 추천 */
@@ -263,7 +254,7 @@ export function getCourseKeywords(): { label: string; href: string }[] {
 export function slimCourse(c: Course) {
   return {
     id: c.id, title: c.title, area: c.area, image: c.image,
-    duration: c.duration, themes: c.themes, stopCount: c.stopCount,
+    duration: c.duration, themes: c.themes, stopCount: courseStopCount(c),
   };
 }
 export type CourseCardData = ReturnType<typeof slimCourse>;
