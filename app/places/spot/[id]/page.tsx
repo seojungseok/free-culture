@@ -6,8 +6,10 @@ import { getArticle } from "@/lib/articles";
 import { fetchPlaceOverview, fetchPlaceImages, fetchAdmission } from "@/lib/tourDetail";
 import { getAdmission } from "@/lib/fees";
 import { getIntro, introRows, getInfo } from "@/lib/tourExtra";
-import { nearbyPlaces, nearbyRestaurants, distanceLabel, foodTypeLabel, getRestaurantById } from "@/lib/nearby";
+import { nearbyPlaces, nearbyPlacesByDistance, nearbyRestaurants, distanceLabel, foodTypeLabel, getRestaurantById } from "@/lib/nearby";
 import TourCard from "@/components/TourCard";
+import CourseCard from "@/components/CourseCard";
+import { coursesContaining, slimCourse } from "@/lib/courses";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
@@ -107,6 +109,16 @@ export default async function SpotDetailPage({
   // 주변 나들이 장소·맛집: 좌표 거리 계산(결정론적, 사실만)
   const nearPlaces = nearbyPlaces(spot, 5);
   const nearFood = nearbyRestaurants(spot, 3);
+  // 이 장소가 들어간 발행 코스 — 날짜에 매이지 않아 30일 ISR 캐시에도 낡지 않는다.
+  const placeCourses = coursesContaining(id, 3);
+  // 본문 내부 링크 후보 — 글을 쓸 때 프롬프트에 넣었던 주변 맛집·장소·코스와 같은 풀에서 뽑는다.
+  //  카드로만 있던 이름이 문장 안에서 바로 눌리게 되어, 하단까지 스크롤하지 않아도 다음 글로 이어진다.
+  //  ★ 여기서 만든 것만 링크되므로 죽은 링크가 생기지 않는다(존재하는 페이지만 넘어감).
+  const bodyLinks = [
+    ...nearbyPlacesByDistance(spot, 8).map((p) => ({ name: p.title, href: `/places/spot/${p.id}` })),
+    ...nearbyRestaurants(spot, 10).map((r) => ({ name: r.title, href: `/food/spot/${r.id}` })),
+    ...placeCourses.map((c) => ({ name: c.title, href: `/course/c/${c.id}` })),
+  ].filter((l) => l.name && l.name !== spot.title);
   // 입장료: 캐시 우선(intro → fees) → 없을 때만 런타임 조회(ISR 1주 캐시)
   const cachedAdmission = getIntro(id)?.admission ?? getAdmission(id);
 
@@ -208,7 +220,7 @@ export default async function SpotDetailPage({
       {article ? (
         <>
           {/* 본문 소제목마다 사진 한 장씩 — 대표사진은 위 갤러리에 이미 크게 있으므로 2번째부터 사용 */}
-          <ArticleBody content={article.content} images={gallery.slice(1).map((g) => g.full)} title={spot.title} />
+          <ArticleBody content={article.content} images={gallery.slice(1).map((g) => g.full)} title={spot.title} links={bodyLinks} />
           {/* 글 작성에 참고한 공식 출처 — 신뢰도(E-E-A-T) 표기 */}
           {article.sources && article.sources.length > 0 && (
             <div className="mt-6 rounded-xl bg-panel px-4 py-3">
@@ -317,7 +329,22 @@ export default async function SpotDetailPage({
         </section>
       )}
 
-      {/* 주변 나들이 장소 (같은 지역, 가까운 순) */}
+      {/* 이 장소가 포함된 여행코스 — 하루 동선을 통째로 제안해 다음 페이지로 이어준다 */}
+      {placeCourses.length > 0 && (
+        <section className="mt-6">
+          <h2 className="mb-1 text-[16px] font-extrabold text-ink">🧭 이곳이 포함된 여행코스</h2>
+          <p className="mb-3 text-[13.5px] text-ink-faint">
+            {spot.title}을(를) 넣어 짠 코스예요. 주변 일정까지 한 번에 볼 수 있어요.
+          </p>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3">
+            {placeCourses.map((c) => (
+              <CourseCard key={c.id} course={slimCourse(c)} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* 주변 나들이 장소 (가까운 2곳 + 읽을 글이 있는 곳 우선) */}
       {nearPlaces.length > 0 && (
         <section className="mt-6">
           <h2 className="mb-3 text-[16px] font-extrabold text-ink">📍 주변 나들이 장소</h2>

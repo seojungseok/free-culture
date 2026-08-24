@@ -18,19 +18,23 @@ export const REGION_PRIORITY = {
 
 // ── 토큰 사용량 집계 (실비 측정용) ─────────────────────────────
 // Luna 5.6 단가: 입력 $0.20 / 출력 $1.20 per 1M (2026-07-30 인하분)
-export const PRICE = { in: 0.20 / 1e6, out: 1.20 / 1e6 };
-export const usageTotal = { in: 0, out: 0, calls: 0, search: 0 };
+// 캐시된 입력은 90% 싸다($0.20 → $0.02/1M). 프롬프트 앞에 고정 지침을 두는 이유.
+export const PRICE = { in: 0.20 / 1e6, cached: 0.02 / 1e6, out: 1.20 / 1e6 };
+export const usageTotal = { in: 0, cached: 0, out: 0, calls: 0, search: 0 };
 export function addUsage(u, { search = false } = {}) {
   if (!u) return;
   usageTotal.in += u.prompt_tokens || u.input_tokens || 0;
   usageTotal.out += u.completion_tokens || u.output_tokens || 0;
+  // OpenAI가 돌려주는 캐시 적중 토큰 수 — 이게 0이면 프롬프트 접두가 깨진 것이니 바로 알 수 있다.
+  usageTotal.cached += u.prompt_tokens_details?.cached_tokens || u.input_tokens_details?.cached_tokens || 0;
   usageTotal.calls += 1;
   if (search) usageTotal.search += 1;
 }
 export function usageCost(t = usageTotal) {
-  return t.in * PRICE.in + t.out * PRICE.out; // 검색 도구 호출료는 별도(대시보드 확인)
+  const cached = Math.min(t.cached || 0, t.in);
+  return (t.in - cached) * PRICE.in + cached * PRICE.cached + t.out * PRICE.out; // 검색 도구 호출료는 별도
 }
-export function resetUsage() { usageTotal.in = 0; usageTotal.out = 0; usageTotal.calls = 0; usageTotal.search = 0; }
+export function resetUsage() { usageTotal.in = 0; usageTotal.cached = 0; usageTotal.out = 0; usageTotal.calls = 0; usageTotal.search = 0; }
 
 export function tourTypeLabel(type) {
   return type === "14" ? "문화시설" : type === "28" ? "체험·레포츠" : "관광지";
@@ -174,7 +178,26 @@ export function tipsAllEmpty(text) {
 }
 
 // ── 자동 품질검사 (통과분만 발행) ──
-export function qualityCheck(text, { overview = "", existingTexts = [], minimalMode = false } = {}) {
+// ── 동어반복 검사 (로컬, API 0회) ────────────────────────────────
+//  재료가 부족하면 모델은 같은 사실을 표현만 바꿔 되풀이해 분량을 채운다.
+//  발행분 실측 결과 11%(59/528)가 같은 두 어절을 4회 이상 반복하고 있었다
+//  (예: "전시 관람" 5회, "손재형 선생의" 7회). 독자에게는 "내용 없는 글"로 읽혀 이탈로 이어진다.
+//  장소명이 들어간 구절은 자연스러운 반복이므로 제외한다.
+export function repetitionHits(text, title = "") {
+  const body = String(text || "").replace(/[#*`>\-]/g, " ").replace(/\s+/g, " ");
+  const t = String(title || "").replace(/\s+/g, "");
+  const words = body.split(" ").filter((w) => w.length > 1);
+  const count = new Map();
+  for (let i = 0; i < words.length - 1; i++) {
+    const g = `${words[i]} ${words[i + 1]}`;
+    if (g.length < 7) continue;
+    if (t && (t.includes(words[i]) || t.includes(words[i + 1]))) continue; // 장소명 반복은 정상
+    count.set(g, (count.get(g) || 0) + 1);
+  }
+  return [...count.entries()].filter(([, n]) => n >= 5).sort((a, b) => b[1] - a[1]);
+}
+
+export function qualityCheck(text, { overview = "", existingTexts = [], minimalMode = false, title = "" } = {}) {
   const body = String(text || "").trim();
   const len = stripMd(body).length;
 
@@ -197,12 +220,15 @@ export function qualityCheck(text, { overview = "", existingTexts = [], minimalM
   // 최소가공(minimalMode)은 근거 없는 문장이 잘려 짧아질 수 있어 하한을 280으로 완화.
   const minLen = minimalMode ? 280 : 300;
   if (len < minLen) return { ok: false, reason: `길이 ${len}자(너무 짧음)`, len };
-  // 상한 2600 — 목표 1,600~2,200자(정보성 블로그 분량)에 여유를 둔 값.
-  if (len > 2600) return { ok: false, reason: `길이 ${len}자(너무 김)`, len };
+  // 상한 3400 — 목표 2,000~2,800자(주변 정보까지 담는 분량)에 여유를 둔 값.
+  if (len > 3400) return { ok: false, reason: `길이 ${len}자(너무 김)`, len };
 
   const headings = (body.match(/^##\s/gm) || []).length;
   if (headings < 3) return { ok: false, reason: `소제목 ${headings}개(<3)`, len };
   if (!/방문\s*팁/.test(body)) return { ok: false, reason: "방문 팁 없음", len };
+  // 형식은 갖췄는데 같은 말만 되풀이하는 글 반려 → 재시도 프롬프트로 되먹여 다시 쓰게 한다.
+  const rep = repetitionHits(body, title);
+  if (rep.length) return { ok: false, reason: `동어반복("${rep[0][0]}" ${rep[0][1]}회)`, len };
   if (!/^\s*[-*]\s+\S/m.test(body)) return { ok: false, reason: "목록 없음", len };
 
   if (/[ㅋㅎ]{2,}|[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(body))
@@ -306,7 +332,8 @@ ${article}
 ## 작업 2 - SEO·가독성 개선 (PASS인 경우만)
 - 원본에 있는 사실 범위 내에서만 개선한다. 새 사실(연도·인물·사건·수치) 절대 추가 금지.
 - ★ 금지 표현 제거: "유명한/인기 있는/맛있기로 소문난/현지인 맛집/다채로운 경험·볼거리/즐거움을 선사/특별한 시간을 선사" 같은 근거 없는 미사여구와 "~할 수 있습니다/열릴 경우/운영될 경우/~것입니다" 같은 추측 표현은 삭제하거나 근거 있는 구체 표현으로 교체한다. 근거가 없으면 그 문장을 통째로 뺀다(짧아져도 됨).
-- ★ 분량은 1,600~2,200자를 지향한다. 원본 근거가 충분하면 문장을 줄이지 말고, 오히려 근거 안에서 풀어 써 채운다. 근거가 빈약하면 억지로 늘리지 말고 짧게 둔다.
+- ★ 분량은 2,000~2,800자를 지향한다. 원본 근거가 충분하면 문장을 줄이지 말고, 오히려 근거 안에서 풀어 써 채운다. 근거가 빈약하면 억지로 늘리지 말고 짧게 둔다.
+- ★ "## 근처에서 함께 둘러보기"의 업소명·장소명·거리는 [확정 사실]에서 온 값이다. 지우지 말고 FAIL하지도 마라.
 - ★ 한 소제목 아래 문단이 하나뿐이면 2~4문장 단위로 쪼갠다. 긴 덩어리 금지.
 - 개선: 어색한 문장 자연스럽게 / SEO 키워드(지역명+장소유형+장소명) 문맥에 맞게 보강 / 소제목(##)·문단 구조 정리 / 뻔한 미사여구("특별한 시간을 선사" 등)를 원본 근거의 구체적 표현으로.
 - 형식 유지: 첫 줄 굵은 한 문장 + ## 어떤 곳인가요 / ## 볼거리·즐길거리 / (## 아이·가족과 함께라면) / (## 가는 길·주차) / ## 방문 팁(목록). 친근한 ~해요체.
@@ -548,36 +575,14 @@ JSON만 출력:
 }
 
 // ── 프롬프트 생성 ──
-export function buildPrompt(place, overview = "", extras = {}) {
-  const type = tourTypeLabel(place.type);
-  const facts = buildFactsBlock(extras);
-  // 직전 시도 반려 사유를 되먹여 같은 실수를 반복하지 않게 한다(재시도가 시도1의 복제가 되던 문제 해소).
-  const retry = extras.retryHint
-    ? `\n[❗ 직전 시도가 반려됐어요 — 아래를 반드시 교정하세요]\n${extras.retryHint}\n`
-    : "";
-  // 웹 검색으로 모은 검증 사실 — overview와 동등한 근거로 취급(정보성 강화의 핵심 재료)
-  const research = extras.research
-    ? `\n[검증된 추가 사실 — 공식 출처에서 수집. overview와 동등한 근거이니 적극 활용하세요]
-${extras.research}
-★ 위 항목의 숫자·시설명·노선번호는 그대로 쓰되, "(출처: ...)" 표기는 본문에 옮기지 마세요.\n`
-    : "";
-  const ref = overview
-    ? `[사실 근거 — 아래 내용에 있는 사실만 사용하세요]
-"""${overview}"""`
-    : `[사실 근거 없음]
-이 장소는 상세 소개 자료가 없습니다. 제목·지역·유형·주소만 확실한 사실입니다. 인물·연도·역사·건립배경 등은 절대 지어내지 말고, 위치와 유형 중심으로 짧고 일반적으로만 쓰세요.`;
-
-  return `당신은 한국의 나들이 정보를 정확하게 소개하는 에디터입니다.
-아래 장소 소개 글을, 주어진 "사실 근거"를 바탕으로 읽기 좋게 재구성합니다.
-
-[장소] ${place.title}
-[지역] ${place.area}
-[유형] ${type}
-[주소] ${place.addr}
-
-${ref}
-${research}${facts ? `\n${facts}\n` : ""}${retry}
-[🚫 금지 표현 — 하나도 쓰지 말 것 (근거 없는 미사여구·추측)]
+// ── 작성 지침(전 장소 공통) ─────────────────────────────────────
+//  ⚠️ 프롬프트 캐싱으로 이걸 앞에 두는 시도는 하지 말 것 — 2026-08-24 실측으로 무의미함이 확인됐다.
+//     gpt-5.6-luna의 캐싱은 "접두 일치"가 아니라 "프롬프트 완전 일치"에만 걸린다.
+//     (같은 지침 접두 + 다른 장소 = cached_tokens 0 / 완전히 같은 프롬프트 = 3,959 적중)
+//     게다가 캐시 기록은 $0.25/1M로 일반 입력 $0.20/1M보다 비싸다. 장소마다 프롬프트가 다르니 이득이 없다.
+//  순서는 원래대로 "자료 먼저 → 지침 나중". 그 편이 실측 품질이 좋았다(2,093자 PASS vs 1,535자 FAIL).
+function writingGuide(place, type) {
+  return `[🚫 금지 표현 — 하나도 쓰지 말 것 (근거 없는 미사여구·추측)]
 - "유명한", "인기 있는", "맛있기로 소문난", "현지인 맛집", "다채로운 경험/볼거리", "즐거움을 선사", "특별한 시간을 선사"
 - "~할 수 있습니다", "열릴 경우", "운영될 경우", "~것입니다", "제공할 수 있는", "만날 수 있습니다" 같은 추측·불확실 표현
 - 근거에 없으면 그 항목 자체를 쓰지 말 것(빈 말로 채우지 말 것). 확실한 사실만.
@@ -595,7 +600,8 @@ ${research}${facts ? `\n${facts}\n` : ""}${retry}
 - 문장은 새로 쓰되(그대로 베끼지 말 것), 담긴 사실은 근거를 벗어나지 마세요.
 
 [분량 — 거짓 없이 "풀어서" 채우기]
-- 근거가 풍부하면 1,600~2,200자(공백 제외). 근거가 빈약하면 400~600자도 좋습니다.
+- 근거가 풍부하면 2,000~2,800자(공백 제외). 근거가 빈약하면 400~600자도 좋습니다.
+  [주변 정보]가 주어졌다면 근거가 풍부한 경우입니다 — 2,000자 아래로 끝내지 마세요.
 - ★ 근거가 12~18건으로 적습니다. **한 건도 버리지 말고**, 각 사실을 최소 3문장으로 풀어 써서 분량을 채우세요.
   적은 재료로 길게 쓰는 것이 핵심입니다. 사실을 나열해 끝내지 말고, 아래 [정보성 서술법]대로 늘리세요.
   사실 하나 = 한 문장이 아니라, '무엇인지 → 어떻게 생겼는지/얼마나 되는지 → 방문자가 무엇을 하게 되는지' 순으로 늘려 쓰세요.
@@ -612,7 +618,11 @@ ${research}${facts ? `\n${facts}\n` : ""}${retry}
 [구조·서식]
 - 맨 위 첫 줄: 그 장소 특징을 담은 매력적인 한 문장을 **굵게**(뻔한 인사 금지, 장소마다 다르게).
 - 소제목 순서(근거가 있는 것만 쓰되 최소 4개, 근거가 많으면 6개까지):
-  ## 어떤 곳인가요 → ## 볼거리·즐길거리 → (## 아이·가족과 함께라면) → (## 언제 가면 좋을까요) → (## 가는 길·주차) → ## 방문 팁
+  ## 어떤 곳인가요 → ## 볼거리·즐길거리 → (## 아이·가족과 함께라면) → (## 언제 가면 좋을까요) → (## 가는 길·주차) → (## 근처에서 함께 둘러보기) → ## 방문 팁
+  · "## 근처에서 함께 둘러보기"는 [주변 정보]가 주어졌을 때만 쓰세요. 목록을 그대로 옮겨 적지 말고,
+    "이 장소를 보고 나서 어디로 이어 가면 좋은지"를 동선으로 설명하세요(가까운 순으로 묶고, 맛집은 식사 타이밍과 함께).
+    예: "관람을 마치고 남쪽으로 500m쯤 내려가면 나누미떡볶이가 있어요. 대표메뉴는 쌀떡볶이예요.
+        조금 더 걸어 창덕궁 인정문까지 이어 보면 궁궐 두 곳을 하루에 묶을 수 있어요."
   · "## 가는 길·주차"는 [운영 정보]에 주차·문의처가 있거나 근거에 교통 언급이 있을 때만 쓰고, 없으면 소제목째 빼세요.
   · "## 언제 가면 좋을까요"는 근거에 계절·운영기간·시기별 시설(물놀이장·단풍·축제 등) 언급이 있을 때만 쓰세요.
 - ★ 볼거리가 여러 개면 한 문단에 몰아넣지 말고 **시설·구역마다 문단을 나눠** 각각 2~3문장으로 설명하세요.
@@ -644,6 +654,48 @@ ${research}${facts ? `\n${facts}\n` : ""}${retry}
 
 아래는 톤·형식 예시입니다. 형식만 따르고 내용은 이 장소의 사실 근거로만 새로 쓰세요.
 ${EXAMPLES}
+`;
+}
+
+export function buildPrompt(place, overview = "", extras = {}) {
+  const type = tourTypeLabel(place.type);
+  const facts = buildFactsBlock(extras);
+  // 직전 시도 반려 사유를 되먹여 같은 실수를 반복하지 않게 한다(재시도가 시도1의 복제가 되던 문제 해소).
+  const retry = extras.retryHint
+    ? `\n[❗ 직전 시도가 반려됐어요 — 아래를 반드시 교정하세요]\n${extras.retryHint}\n`
+    : "";
+  // 웹 검색으로 모은 검증 사실 — overview와 동등한 근거로 취급(정보성 강화의 핵심 재료)
+  const research = extras.research
+    ? `\n[검증된 추가 사실 — 공식 출처에서 수집. overview와 동등한 근거이니 적극 활용하세요]
+${extras.research}
+★ 위 항목의 숫자·시설명·노선번호는 그대로 쓰되, "(출처: ...)" 표기는 본문에 옮기지 마세요.\n`
+    : "";
+  // 로컬 데이터(맛집·근처 명소·코스·행사) — API 0회로 얻은 확정 사실.
+  //  재료가 없어 같은 말을 돌려쓰던 문제의 직접 해법이자, 독자가 다음 페이지로 넘어갈 이유다.
+  const local = extras.local
+    ? `\n[주변 정보 — 우리 사이트가 보유한 실제 데이터입니다. 확정 사실로 취급하고 "## 근처에서 함께 둘러보기"에 활용하세요]
+${extras.local}
+★ 업소명·장소명·거리·행사명은 **위에 적힌 것만** 쓰세요. 목록에 없는 곳을 지어내지 마세요.
+★ 거리는 직선거리입니다. "도보 O분", "차로 O분" 같은 소요시간은 계산해 붙이지 마세요.
+★ "직선거리"라는 말을 문장마다 반복하지 마세요. 처음 한 번만 밝히고 이후에는 "500m 거리에", "1.2km 떨어진" 처럼 자연스럽게 쓰세요.\n`
+    : "";
+  const ref = overview
+    ? `[사실 근거 — 아래 내용에 있는 사실만 사용하세요]
+"""${overview}"""`
+    : `[사실 근거 없음]
+이 장소는 상세 소개 자료가 없습니다. 제목·지역·유형·주소만 확실한 사실입니다. 인물·연도·역사·건립배경 등은 절대 지어내지 말고, 위치와 유형 중심으로 짧고 일반적으로만 쓰세요.`;
+
+  return `당신은 한국의 나들이 정보를 정확하게 소개하는 에디터입니다.
+아래 장소 소개 글을, 주어진 "사실 근거"를 바탕으로 읽기 좋게 재구성합니다.
+
+[장소] ${place.title}
+[지역] ${place.area}
+[유형] ${type}
+[주소] ${place.addr}
+
+${ref}
+${research}${facts ? `\n${facts}\n` : ""}${local}${retry}
+${writingGuide(place, type)}
 
 이제 "${place.title}" 소개 글을 마크다운으로만 출력하세요(설명 없이 글만). 사실 근거에 없는 내용은 쓰지 마세요.`;
 }

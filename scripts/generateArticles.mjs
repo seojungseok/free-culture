@@ -16,6 +16,7 @@ import {
   verifyAndImprove, factCheckGemini, buildFactsBlock, rampUpCount, pickQueue, tourTypeLabel,
   researchFacts, usageTotal, usageCost,
 } from "./lib/articleGen.mjs";
+import { buildLocalContext } from "./lib/localContext.mjs";
 
 const MIN_OVERVIEW = 200; // 원본 200자 미만이면 글 생성 안 함(정보 페이지만)
 
@@ -118,7 +119,7 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
     return text;
   };
   // 검증기에 넘길 "확정 사실"(주소 + intro/info + 웹 검색 근거) — overview에 없어도 정당한 근거로 인정받게 함
-  const verifyFacts = [`주소: ${place.addr}`, buildFactsBlock(extras), extras.research].filter(Boolean).join("\n");
+  const verifyFacts = [`주소: ${place.addr}`, buildFactsBlock(extras), extras.research, extras.local].filter(Boolean).join("\n");
   // 연도·인물 패턴검사의 "근거" — overview뿐 아니라 확정 사실·검색 근거까지 포함해야
   // 검색으로 확보한 지정연도·수치가 환각으로 오인돼 잘려나가지 않는다.
   const grounds = [overview, verifyFacts].filter(Boolean).join("\n");
@@ -129,7 +130,7 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
       let draft = await gen(buildPrompt(place, overview, { ...extras, retryHint }));
       if (!draft) { log(`시도${attempt} OpenAI 빈 응답`); await sleep(1500); continue; }
 
-      const q = qualityCheck(draft, { overview, existingTexts });
+      const q = qualityCheck(draft, { overview, existingTexts, title: place.title });
       if (!q.ok) {
         log(`시도${attempt} 품질 반려: ${q.reason}`);
         retryHint = `직전 시도가 "${q.reason}" 사유로 반려됐어요. 이 문제를 반드시 고쳐 다시 쓰세요.`;
@@ -140,7 +141,7 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
       if (!p.ok) {
         // 하드 반려 대신: 근거 없는 표현이 든 "문장만" 잘라내고 재검(글 전체를 버리지 않음 = 핵심 개선)
         const s = sanitizeUnsupported(draft, grounds);
-        const sq = qualityCheck(s.text, { overview, existingTexts });
+        const sq = qualityCheck(s.text, { overview, existingTexts, title: place.title });
         const sp = patternCheck(s.text, grounds);
         if (s.text && sq.ok && sp.ok) {
           log(`시도${attempt} 근거없는 표현 ${s.removed}곳 자동 제거 후 통과`);
@@ -206,7 +207,7 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
     const raw = await gen(buildMinimalPrompt(place, overview));
     if (!raw) { log("최소가공 OpenAI 빈 응답"); return { art: null, reasons }; }
     const text = sanitizeUnsupported(raw, overview).text || raw;
-    const q = qualityCheck(text, { overview, existingTexts, minimalMode: true });
+    const q = qualityCheck(text, { overview, existingTexts, minimalMode: true, title: place.title });
     const p = patternCheck(text, overview);
     if (q.ok && p.ok) return { art: { text, len: q.len, mode: "minimal", verify: "MINIMAL", gemini: "SKIP(minimal)" }, reasons };
     log(`최소가공 반려: ${q.ok ? p.reason : q.reason}`);
@@ -264,7 +265,9 @@ async function main() {
   for (const { place, mode } of items) {
     if (made >= target) break;
     const { overview, err } = await fetchOverview(place.id);
-    const extras = { intro: INTRO_CACHE[place.id], info: INFO_CACHE[place.id] };
+    // 주변 맥락(맛집·근처 명소·코스·진행중 행사) — 전부 로컬 JSON, API 호출 0회·추가비용 0원.
+    const lc = buildLocalContext(place);
+    const extras = { intro: INTRO_CACHE[place.id], info: INFO_CACHE[place.id], local: lc.text };
     const hasFacts =
       (extras.intro && Object.keys(extras.intro).some((k) => k !== "type" && extras.intro[k])) ||
       (extras.info && extras.info.length > 0);
@@ -364,7 +367,7 @@ async function main() {
     };
     made++;
     if (mode === "rewrite") rewritten++; else { newPub++; existingTexts.push(art.text); }
-    report.push({ id: place.id, title: place.title, outcome: mode === "rewrite" ? "rewritten" : "published", detail: `${art.mode}/Luna:${art.verify}/G:${art.gemini}/${art.len}자`, overviewLen: overview.length, research: researchNote });
+    report.push({ id: place.id, title: place.title, outcome: mode === "rewrite" ? "rewritten" : "published", detail: `${art.mode}/Luna:${art.verify}/G:${art.gemini}/${art.len}자`, overviewLen: overview.length, research: researchNote, local: `맛집${lc.counts.food}/명소${lc.counts.spots}/코스${lc.counts.courses}/행사${lc.counts.events}` });
     console.log(`  ${mode === "rewrite" ? "♻ 재작성" : "✓ 발행"} ${made}/${target}: ${place.title} (${art.len}자, ${art.mode}, Luna검증 ${art.verify}, Gemini ${art.gemini})`);
     await sleep(1000);
   }
@@ -373,7 +376,7 @@ async function main() {
   const cost = usageCost();
   const per = made > 0 ? cost / made : 0;
   console.log(`
-💰 토큰 사용: 입력 ${usageTotal.in.toLocaleString()} · 출력 ${usageTotal.out.toLocaleString()} · 호출 ${usageTotal.calls}회(검색 ${usageTotal.search}회)`);
+💰 토큰 사용: 입력 ${usageTotal.in.toLocaleString()}(캐시적중 ${usageTotal.cached.toLocaleString()} = ${usageTotal.in ? Math.round(usageTotal.cached / usageTotal.in * 100) : 0}%) · 출력 ${usageTotal.out.toLocaleString()} · 호출 ${usageTotal.calls}회(검색 ${usageTotal.search}회)`);
   console.log(`   토큰 요금 $${cost.toFixed(4)} · 건당 $${per.toFixed(5)} (약 ${Math.round(per * 1400)}원) — 검색 도구 호출료 별도`);
 
   // 검색 근거 캐시 저장 — 다음부터 같은 장소는 호출 0회(재작성·프롬프트 개선 라운드 전부 무료)

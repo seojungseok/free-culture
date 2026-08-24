@@ -208,6 +208,28 @@ export function courseDays(c: Course): CourseStop[][] {
 }
 
 /** 같은 지역 다른 코스 추천 */
+/**
+ * 특정 나들이 장소가 경유지로 들어간 "발행된" 여행코스 — 상세페이지 내부 링크용.
+ *  코스는 행사와 달리 날짜에 매이지 않아(evergreen) 30일 ISR 캐시에도 낡지 않는다.
+ *  발행 코스가 늘수록 커버리지가 함께 오른다(하루 10개씩 발행).
+ */
+const COURSES_BY_PLACE: Map<string, Course[]> = (() => {
+  const m = new Map<string, Course[]>();
+  for (const c of PUBLISHED) {
+    for (const st of c.stops || []) {
+      const k = String((st as { placeId?: string }).placeId || "");
+      if (!k) continue;
+      if (!m.has(k)) m.set(k, []);
+      const list = m.get(k)!;
+      if (!list.some((x) => x.id === c.id)) list.push(c);
+    }
+  }
+  return m;
+})();
+export function coursesContaining(placeId: string, n = 3): Course[] {
+  return (COURSES_BY_PLACE.get(String(placeId)) || []).slice(0, n);
+}
+
 export function relatedCourses(course: Course, n = 4): Course[] {
   return PUBLISHED.filter((c) => c.id !== course.id && c.area === course.area).slice(0, n)
     .concat(PUBLISHED.filter((c) => c.id !== course.id && c.area !== course.area))
