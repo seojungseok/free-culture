@@ -144,6 +144,28 @@ export default function ArticleBody({
       continue;
     }
 
+    // 번호 목록 (1. 2. 3.) — 처리하지 않으면 문단으로 합쳐져 모바일에서 벽처럼 보인다.
+    if (/^\s*\d+\.\s+/.test(line)) {
+      const items: string[] = [];
+      while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) {
+        items.push(lines[i].replace(/^\s*\d+\.\s+/, "").trim());
+        i++;
+      }
+      blocks.push(
+        <ol key={key++} className="mt-3 space-y-2">
+          {items.map((it, j) => (
+            <li key={j} className="flex gap-2.5 text-[15px] leading-[1.7] text-ink-soft">
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-free/10 text-[12px] font-black text-free">
+                {j + 1}
+              </span>
+              <span className="min-w-0 flex-1">{renderInline(it, picker, `o${key}-${j}`)}</span>
+            </li>
+          ))}
+        </ol>
+      );
+      continue;
+    }
+
     // 목록
     if (/^\s*[-*]\s+/.test(line)) {
       const items: string[] = [];
@@ -167,7 +189,7 @@ export default function ArticleBody({
     // 문단 (빈 줄/소제목/목록 전까지)
     const para: string[] = [line];
     i++;
-    while (i < lines.length && lines[i].trim() && !/^(#{2,3}\s|\s*[-*]\s)/.test(lines[i])) {
+    while (i < lines.length && lines[i].trim() && !/^(#{2,3}\s|\s*[-*]\s|\s*\d+\.\s)/.test(lines[i])) {
       para.push(lines[i]);
       i++;
     }

@@ -13,6 +13,56 @@ function renderInline(s: string): ReactNode[] {
   );
 }
 
+/**
+ * "한눈에 보는 코스" 항목 파싱.
+ *  실제 생성물 형태(3가지 모두 대응):
+ *   "**국형사** — 원주시 행구동에 있는 첫 방문지"
+ *   "**1일차 오륙도 (부산 국가지질공원)** — 화산암 섬과 해안지질탐방로"
+ *   "**1일차 ┃ 국형사** — 치악산 인근 천년 고찰"
+ */
+function parseStep(raw: string): { day: string; name: string; desc: string } {
+  const m = raw.match(/^\*\*(.+?)\*\*\s*(?:[—–-]\s*)?(.*)$/);
+  const plain = raw.replace(/\*\*/g, "");
+  let head = m ? m[1].trim() : plain.split(/\s[—–-]\s/)[0].trim();
+  const desc = (m ? m[2] : plain.split(/\s[—–-]\s/).slice(1).join(" — ")).trim();
+  const d = head.match(/^(\d+\s*일차)\s*[┃|:·\-]?\s*(.*)$/);
+  const day = d ? d[1].replace(/\s+/g, "") : "";
+  if (d) head = d[2].trim();
+  return { day, name: head, desc };
+}
+
+/**
+ * 번호 목록 = 코스 경로 요약. 모바일에서 한 문단으로 뭉쳐 읽기 힘들던 부분.
+ *  → 항목마다 한 줄씩, 번호 뱃지 + 일차 칩 + 장소명(굵게) + 설명(줄바꿈)으로 끊어 준다.
+ */
+function StepList({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-3 space-y-2">
+      {items.map((raw, j) => {
+        const { day, name, desc } = parseStep(raw);
+        return (
+          <li key={j} className="flex gap-3 rounded-xl bg-panel px-3.5 py-3">
+            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-free text-[12.5px] font-black text-white">
+              {j + 1}
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="flex flex-wrap items-baseline gap-x-1.5 gap-y-1">
+                {day && (
+                  <span className="rounded-md bg-free/10 px-1.5 py-0.5 text-[11.5px] font-bold text-free">{day}</span>
+                )}
+                <span className="text-[15px] font-extrabold text-ink">{name}</span>
+              </span>
+              {desc && (
+                <span className="mt-1 block text-[13.5px] leading-[1.65] text-ink-soft">{renderInline(desc)}</span>
+              )}
+            </span>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
 function StopImage({ stop }: { stop: CourseStop }) {
   if (!stop?.image) return null;
   return (
@@ -69,6 +119,17 @@ export default function CourseArticleBody({ content, stops }: { content: string;
       continue;
     }
 
+    // 번호 목록 (1. 2. 3.) — 예전엔 처리하지 않아 문단으로 합쳐져 모바일에서 벽처럼 보였다.
+    if (/^\s*\d+\.\s+/.test(line)) {
+      const items: string[] = [];
+      while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) {
+        items.push(lines[i].replace(/^\s*\d+\.\s+/, "").trim());
+        i++;
+      }
+      blocks.push(<StepList key={key++} items={items} />);
+      continue;
+    }
+
     if (/^\s*[-*]\s+/.test(line)) {
       const items: string[] = [];
       while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) { items.push(lines[i].replace(/^\s*[-*]\s+/, "")); i++; }
@@ -87,7 +148,7 @@ export default function CourseArticleBody({ content, stops }: { content: string;
 
     const para: string[] = [line];
     i++;
-    while (i < lines.length && lines[i].trim() && !/^(#{2,3}\s|\s*[-*]\s)/.test(lines[i])) { para.push(lines[i]); i++; }
+    while (i < lines.length && lines[i].trim() && !/^(#{2,3}\s|\s*[-*]\s|\s*\d+\.\s)/.test(lines[i])) { para.push(lines[i]); i++; }
     blocks.push(
       <p key={key++} className="mt-3 text-[15px] leading-[1.85] text-ink-soft">
         {renderInline(para.join(" "))}
