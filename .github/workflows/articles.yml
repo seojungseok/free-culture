@@ -45,6 +45,8 @@ jobs:
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
           FORCE_COUNT: ${{ github.event.inputs.test_count }}
           TEST_IDS: ${{ github.event.inputs.test_ids }}
+          ARTICLE_DAILY: "20" # daily.yml과 같은 값 유지
+          ARTICLE_RESEARCH_MAX: "8" # 1회 실행당 신규 웹검색 상한
         run: node scripts/generateArticles.mjs
 
       - name: 변경분 커밋 (발행)
@@ -52,7 +54,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/place-articles.json
+          git add data/place-articles.json data/place-research.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
             echo "changed=false" >> "$GITHUB_OUTPUT"

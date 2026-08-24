@@ -43,7 +43,10 @@ export function rampUpCount(startDate, today = new Date()) {
   const day = Math.floor((t - s) / 86400000) + 1; // 시작일 당일 = 1일차
   if (day < 1) return 0;
   if (day <= 14) return 5;
-  return 45; // 하루 45건 고정 (건당 약 40초 → 회당 30분 안팎). 숫자만 바꾸면 조절됨
+  // 하루 발행량 — daily.yml의 ARTICLE_DAILY로 조절(코드 수정 없이).
+  //  비용: 검색 붙는 글 약 $0.019/건, 검색 없는 글 약 $0.0055/건.
+  //  20건 + 검색 8회 ≈ $0.26/일. 올리려면 워크플로의 ARTICLE_DAILY만 바꾼다.
+  return Number(process.env.ARTICLE_DAILY) || 20;
 }
 
 // ── 우선순위 큐: 미발행 장소를 지역 라운드로빈으로 N개 ──

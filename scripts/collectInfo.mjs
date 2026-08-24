@@ -10,18 +10,21 @@ import {
   readCache, writeCache, createBudget, QuotaError,
   detailInfoRaw, normalizeInfo, sleep, hasKey,
 } from "./lib/tourClient.mjs";
+import { pickQueue } from "./lib/articleGen.mjs";
 
 if (!hasKey()) { console.error("❌ TOUR_API_KEY / DATA_GO_KR_KEY 없음"); process.exit(1); }
 
 const DAILY = Number(process.env.INFO_DAILY || 800);
 const OUT = "place-info.json";
 
+// 글 발행 큐(pickQueue)와 **같은 순서**로 채운다.
+//  예전엔 places.json 원본 순서로 모으다 보니, 캐시를 수천 곳 쌓아놔도
+//  정작 오늘 글 쓸 상위 300곳에는 6%만 걸렸다(= 그 빈자리를 유료 웹검색이 메우고 있었다).
 function orderTargets(spots, done) {
+  const remaining = spots.filter((s) => !(s.id in done));
+  const ordered = pickQueue(remaining, new Set(), remaining.length);
   const kid = [], rest = [];
-  for (const s of spots) {
-    if (s.id in done) continue;
-    (s.isKid ? kid : rest).push(s);
-  }
+  for (const s of ordered) (s.isKid ? kid : rest).push(s);
   return [...kid, ...rest];
 }
 

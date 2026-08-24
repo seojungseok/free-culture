@@ -73,6 +73,14 @@ jobs:
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
           FORCE_COUNT: ${{ github.event.inputs.test_count }}
           TEST_IDS: ${{ github.event.inputs.test_ids }}
+          # ── 비용 조절 손잡이 (여기 숫자만 바꾸면 됨) ──────────────────
+          #  실측 단가(2026-08-24, gpt-5.6-luna $0.20/$1.20 + web_search $10/1k콜):
+          #    · 검색 붙는 글 $0.0194  · 검색 없는 글 $0.0050  · 여행코스 $0.0037
+          #  하루 = RESEARCH_MAX×$0.0194 + (DAILY−RESEARCH_MAX)×$0.0050 + 코스(최대 18건)×$0.0037
+          #  현재값(20 / 8) = 0.155 + 0.060 + 최대 0.067 → 최악 $0.28/일 = 월 약 $8.5.
+          #  web_search는 토큰과 별개로 호출 1회당 약 $0.01 → 검색 상한이 비용의 핵심.
+          ARTICLE_DAILY: "20" # 하루 발행 건수
+          ARTICLE_RESEARCH_MAX: "8" # 1회 실행당 신규 웹검색 상한(캐시 재사용은 무제한·무료)
         run: node scripts/generateArticles.mjs
 
       # ── 자동 코스 조합(좌표 기반, API 0) — 지역×테마×기간 코스 풀 갱신 ──
@@ -132,7 +140,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/events.json data/festivals.json data/place-articles.json \
+          git add data/events.json data/festivals.json data/place-articles.json data/place-research.json \
                   data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json \
                   data/coupang.json data/coupangEssentials.json data/eventCoupang.json data/kidCoupang.json
           if git diff --staged --quiet; then

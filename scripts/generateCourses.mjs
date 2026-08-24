@@ -13,6 +13,7 @@ import { fileURLToPath } from "node:url";
 import {
   buildCoursePrompt, buildListPrompt, courseQualityCheck, courseSourceFacts, patternCheck, sanitizeUnsupported,
   callOpenAI, rampCourses, COURSE_THEME_LABEL, checkCourseComposition, courseGeoFeasible, courseStopsCheck,
+  usageTotal, usageCost,
   selectCourseStops, COURSE_CAP_VERSION, COURSE_ATT_CAP,
 } from "./lib/articleGen.mjs";
 
@@ -392,8 +393,17 @@ async function main() {
    }
   }
 
+  // 실비 측정 — 코스 글에는 web_search를 쓰지 않으므로 토큰 요금이 곧 전부다.
+  const cost = usageCost();
+  console.log(`
+💰 코스 토큰: 입력 ${usageTotal.in.toLocaleString()} · 출력 ${usageTotal.out.toLocaleString()} · 호출 ${usageTotal.calls}회 → $${cost.toFixed(4)}`);
+
   store.generatedAt = new Date().toISOString();
-  store._lastRun = { at: new Date().toISOString(), made, rebuilt, skipped, errored, results: report };
+  store._lastRun = {
+    at: new Date().toISOString(), made, rebuilt, skipped, errored,
+    usage: { ...usageTotal, costUsd: Number(cost.toFixed(4)) },
+    results: report,
+  };
   fs.writeFileSync(STORE, JSON.stringify(store, null, 0));
   const pub = Object.values(store.articles).filter((a) => a.status === "published").length;
   console.log(`\n💾 저장: 신규 ${made - rebuilt} · 재생성 ${rebuilt} · 스킵 ${skipped} | 총 코스글 ${pub} / 전체 코스 ${courses.length}\n`);

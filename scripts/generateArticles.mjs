@@ -47,6 +47,16 @@ const MODEL = process.env.OPENAI_GEN_MODEL || OPENAI_MODEL; // 초안 생성 모
 // 검색은 web_search 도구를 지원하는 모델이 필요 → OPENAI_RESEARCH_MODEL로 따로 지정 가능.
 const RESEARCH = (process.env.ARTICLE_RESEARCH || "on").toLowerCase() !== "off";
 const RESEARCH_MODEL = process.env.OPENAI_RESEARCH_MODEL || OPENAI_MODEL;
+// web_search는 토큰과 별개로 "호출 1회당" 과금된다(약 $0.01). 그래서 두 가지로 막는다.
+//  ① 캐시: 장소당 평생 1회만 검색 → 재작성·프롬프트 개선 라운드는 호출 0회.
+//  ② 예산: 1회 실행당 신규 검색 상한 → 하루 비용이 예측 가능해진다.
+const RESEARCH_MAX = Number(process.env.ARTICLE_RESEARCH_MAX || 8);
+const RESEARCH_TTL_DAYS = Number(process.env.ARTICLE_RESEARCH_TTL || 180);
+const RESEARCH_STORE = path.join(ROOT, "data", "place-research.json");
+const RESEARCH_CACHE = fs.existsSync(RESEARCH_STORE)
+  ? JSON.parse(fs.readFileSync(RESEARCH_STORE, "utf8"))
+  : { generatedAt: null, research: {} };
+RESEARCH_CACHE.research ||= {};
 
 function envKey(name, fallback) {
   if (process.env[name]) return process.env[name].trim();
@@ -248,6 +258,7 @@ async function main() {
     console.log(`\n🖋️  목표 ${target}건 (재작성 ${rw} 우선) · 후보 ${items.length} · 기존 ${doneIds.size} · 주 ${MODEL} · 보조 ${GEMINI ? "Gemini 팩트체크" : "없음"}`);
   }
   let made = 0, newPub = 0, rewritten = 0, removed = 0, skipped = 0;
+  let searched = 0; // 이번 실행의 신규 web_search 호출 수(캐시 재사용분은 제외 — 이게 곧 검색 요금)
   const report = []; // 진단: 각 후보 결과를 저장소에 남겨 로그 없이도 원인 파악
 
   for (const { place, mode } of items) {
@@ -279,17 +290,44 @@ async function main() {
       : existingTexts;
 
     // 웹 검색으로 공식 출처 사실 수집 → 정보성 강화. 실패해도 그냥 넘어감(기존 동작 유지).
+    //  캐시 우선(호출 0회) → 없으면 예산 안에서만 신규 검색 → 예산 소진 시 로컬 재료로만 작성.
     let researchNote = RESEARCH ? "" : "off";
     if (RESEARCH) {
-      const r = await researchFacts(place, { apiKey: OPENAI, model: RESEARCH_MODEL });
-      if (r.text) {
-        extras.research = r.text;
-        extras.sources = r.sources;
-        researchNote = `${r.text.split("\n").length}건/출처${r.sources.length}`;
-        console.log(`  🔎 검색 근거 ${researchNote}: ${place.title}`);
+      const cached = RESEARCH_CACHE.research[place.id];
+      const fresh = cached && Date.now() - new Date(cached.at).getTime() < RESEARCH_TTL_DAYS * 86400000;
+      if (fresh) {
+        // 수확 0건도 캐시에 남긴다 → 소득 없는 장소를 매일 다시 검색하지 않는다.
+        if (cached.text) {
+          extras.research = cached.text;
+          extras.sources = cached.sources || [];
+          researchNote = `캐시 ${cached.text.split("\n").length}건`;
+          console.log(`  ♻ 검색 캐시 재사용(호출 0회): ${place.title}`);
+        } else {
+          researchNote = "캐시 0건(재검색 안 함)";
+        }
+      } else if (searched >= RESEARCH_MAX) {
+        researchNote = `검색예산 소진(${RESEARCH_MAX}회) — 로컬 재료로만`;
       } else {
-        researchNote = `실패: ${String(r.reason || "0건").slice(0, 100)}`;
-        console.log(`  🔎 ${researchNote}: ${place.title}`);
+        searched++;
+        const r = await researchFacts(place, { apiKey: OPENAI, model: RESEARCH_MODEL });
+        // 캐시는 "결론이 난" 경우만 저장한다. HTTP 오류·타임아웃까지 캐시하면
+        // 일시적 장애 하나로 그 장소가 180일간 영영 검색 대상에서 빠져버린다.
+        const settled = Boolean(r.text) || /수집된 사실 없음|JSON 없음/.test(r.reason || "");
+        if (settled) {
+          RESEARCH_CACHE.research[place.id] = {
+            at: new Date().toISOString(), title: place.title,
+            text: r.text, sources: r.sources, reason: r.reason,
+          };
+        }
+        if (r.text) {
+          extras.research = r.text;
+          extras.sources = r.sources;
+          researchNote = `${r.text.split("\n").length}건/출처${r.sources.length}`;
+          console.log(`  🔎 검색 ${searched}/${RESEARCH_MAX} 근거 ${researchNote}: ${place.title}`);
+        } else {
+          researchNote = `실패: ${String(r.reason || "0건").slice(0, 100)}`;
+          console.log(`  🔎 검색 ${searched}/${RESEARCH_MAX} ${researchNote}: ${place.title}`);
+        }
       }
     }
 
@@ -338,9 +376,17 @@ async function main() {
 💰 토큰 사용: 입력 ${usageTotal.in.toLocaleString()} · 출력 ${usageTotal.out.toLocaleString()} · 호출 ${usageTotal.calls}회(검색 ${usageTotal.search}회)`);
   console.log(`   토큰 요금 $${cost.toFixed(4)} · 건당 $${per.toFixed(5)} (약 ${Math.round(per * 1400)}원) — 검색 도구 호출료 별도`);
 
+  // 검색 근거 캐시 저장 — 다음부터 같은 장소는 호출 0회(재작성·프롬프트 개선 라운드 전부 무료)
+  if (RESEARCH) {
+    RESEARCH_CACHE.generatedAt = new Date().toISOString();
+    fs.writeFileSync(RESEARCH_STORE, JSON.stringify(RESEARCH_CACHE, null, 0));
+    const cachedTotal = Object.keys(RESEARCH_CACHE.research).length;
+    console.log(`   🔎 신규 검색 ${searched}회(상한 ${RESEARCH_MAX}) · 검색요금 약 $${(searched * 0.01).toFixed(2)} · 누적 캐시 ${cachedTotal}곳`);
+  }
+
   const keyFp = TOURKEY ? `${TOURKEY.slice(0, 6)}...${TOURKEY.slice(-4)} (${TOURKEY.length}자)` : "❌비어있음(secret 못 읽음)";
   store.generatedAt = new Date().toISOString();
-  store._lastRun = { at: new Date().toISOString(), newPub, rewritten, removed, skipped, keyFp, usage: { ...usageTotal, costUsd: Number(cost.toFixed(4)), perArticleUsd: Number(per.toFixed(5)) }, results: report }; // 진단용
+  store._lastRun = { at: new Date().toISOString(), newPub, rewritten, removed, skipped, keyFp, usage: { ...usageTotal, newSearches: searched, searchFeeUsd: Number((searched * 0.01).toFixed(3)), costUsd: Number(cost.toFixed(4)), totalUsd: Number((cost + searched * 0.01).toFixed(4)), perArticleUsd: Number(per.toFixed(5)) }, results: report }; // 진단용
   fs.writeFileSync(STORE, JSON.stringify(store, null, 0));
   const pub = Object.values(store.articles).filter((a) => a.status === "published").length;
   console.log(`\n💾 저장: 신규 ${newPub} · 재작성 ${rewritten} · 정보카드전환 ${removed} · 스킵 ${skipped} | 총 발행 ${pub}\n`);
