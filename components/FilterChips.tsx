@@ -18,6 +18,7 @@ export function Chip({ href, active, label, count }: { href: string; active: boo
   return (
     <Link
       href={href}
+      prefetch={false}
       className={[
         "flex min-h-[36px] shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-3.5 text-[13px] font-bold transition",
         active ? "bg-free text-white shadow-sm" : "border border-line bg-white text-ink-soft hover:border-free/40 hover:text-free",

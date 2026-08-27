@@ -1,6 +1,12 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  outputFileTracingRoot: __dirname,
   images: {
     // 문화포털 포스터 이미지는 http(www.culture.go.kr)로 제공됨
     remotePatterns: [

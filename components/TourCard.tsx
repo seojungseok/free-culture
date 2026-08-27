@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { TourSpot } from "@/lib/tour";
-import { tourTypeLabel } from "@/lib/tour";
 import { getAdmission } from "@/lib/fees";
+
+function tourTypeLabel(type: string): string {
+  return type === "14" ? "문화시설" : type === "28" ? "체험·레포츠" : "관광지";
+}
 
 export default function TourCard({ spot }: { spot: TourSpot }) {
   return (
-    <Link href={`/places/spot/${spot.id}`} className="group block" aria-label={`${spot.title} 상세 보기`}>
+    <Link href={`/places/spot/${spot.id}`} prefetch={false} className="group block" aria-label={`${spot.title} 상세 보기`}>
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-100 ring-1 ring-black/[0.04] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-cardhover">
         {spot.image ? (
           <Image

@@ -7,7 +7,7 @@ const FAC_ICON: Record<string, string> = { 전기: "⚡", 샤워실: "🚿", 화
 export default function CampCard({ camp }: { camp: Camp }) {
   const facs = Object.entries(camp.facilities).filter(([, v]) => v).map(([k]) => k);
   return (
-    <Link href={`/camping/${camp.id}`} className="group block" aria-label={`${camp.name} 캠핑장 정보`}>
+    <Link href={`/camping/${camp.id}`} prefetch={false} className="group block" aria-label={`${camp.name} 캠핑장 정보`}>
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-100 ring-1 ring-black/[0.04] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-cardhover">
         {camp.image ? (
           <Image src={camp.image} alt={camp.name} fill sizes="(max-width:640px) 50vw, 220px" className="object-cover transition group-hover:scale-105" loading="lazy" unoptimized />

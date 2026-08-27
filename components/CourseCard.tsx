@@ -1,12 +1,37 @@
 import Image from "next/image";
 import Link from "next/link";
-import { themeEmoji, durationLabel, type CourseCardData } from "@/lib/courses";
+
+export interface CourseCardData {
+  id: string;
+  title: string;
+  area: string;
+  image: string;
+  duration: string;
+  themes: string[];
+  stopCount: number;
+}
+
+const DURATIONS: { key: string; label: string }[] = [
+  { key: "당일", label: "당일치기" },
+  { key: "1박2일", label: "1박2일" },
+  { key: "2박3일", label: "2박3일" },
+];
+const THEMES: { key: string; emoji: string }[] = [
+  { key: "바다피서", emoji: "🌊" },
+  { key: "문화유적", emoji: "🏛" },
+  { key: "자연힐링", emoji: "🌿" },
+  { key: "가족체험", emoji: "👨‍👩‍👧" },
+  { key: "맛집", emoji: "🍴" },
+];
+const durationLabel = (key: string) => DURATIONS.find((d) => d.key === key)?.label || key;
+const themeEmoji = (key: string) => THEMES.find((t) => t.key === key)?.emoji || "📍";
 
 // 아기자기·모바일 우선 코스 카드. 이미지 위 기간 배지 + 테마 이모지 칩.
 export default function CourseCard({ course }: { course: CourseCardData }) {
   return (
     <Link
       href={`/course/c/${course.id}`}
+      prefetch={false}
       className="group block overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.05] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cardhover"
       aria-label={`${course.title} 코스 보기`}
     >
