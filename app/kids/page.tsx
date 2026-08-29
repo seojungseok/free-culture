@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Band, Container } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
 import KidCoursesBrowser from "@/components/KidCoursesBrowser";
 import KidCoupangDeals from "@/components/KidCoupangDeals";
 import { getKidCourses, kidCoursesLite, kidAreaCounts } from "@/lib/kidCourses";
@@ -54,7 +53,6 @@ export default function KidsPage() {
         <h1 className="mt-2 text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[32px]">
           아이와 <span className="text-free">함께</span>
         </h1>
-        <AffiliateNotice className="mt-1.5" partner="coupang" />
         <p className="mt-1.5 text-[14px] leading-relaxed text-ink-soft">
           아이랑 놀고 → 근처 공원 걷고 → 아이가 좋아하는 음식으로 마무리.
           <br className="hidden sm:block" />

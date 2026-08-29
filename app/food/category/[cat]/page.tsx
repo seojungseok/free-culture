@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Band, Container } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import FoodCard from "@/components/FoodCard";
-import CoupangBanner from "@/components/CoupangBanner";
 import { filterRestaurants, foodAreas, FOOD_CATS, foodCatFromSlug } from "@/lib/food";
 import { SIDO_SLUG } from "@/lib/classify";
 
@@ -53,7 +51,6 @@ export default async function FoodCategoryPage({ params }: { params: Promise<{ c
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
           전국 <span className="text-free">{c.label}</span> 맛집
         </h1>
-        <AffiliateNotice className="mt-1.5" partner="coupang" />
         <p className="mt-1 text-[14px] text-ink-soft">전국 {c.label} 음식점 {list.length.toLocaleString()}곳 · 출처: 한국관광공사</p>
       </Band>
 
@@ -78,10 +75,6 @@ export default async function FoodCategoryPage({ params }: { params: Promise<{ c
           <p className="mt-8 text-center text-[13px] text-ink-faint">지역을 선택하면 더 많은 {c.label} 맛집을 볼 수 있어요</p>
 
           {/* 쿠팡 제휴 배너 — 목록 끝, 광고와 간격 확보 */}
-          <div className="mt-8">
-            <CoupangBanner />
-          </div>
-
           {/* 지역별 {업종} 맛집 — /food/[지역]/[업종] 정적 라우트로 내부링크 */}
           <section className="mt-12 border-t border-line pt-6">
             <h2 className="mb-3 text-[15px] font-extrabold text-ink">지역별 {c.label} 맛집</h2>

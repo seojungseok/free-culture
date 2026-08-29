@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Band, Container } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import FoodCard from "@/components/FoodCard";
-import CoupangBanner from "@/components/CoupangBanner";
 import { filterRestaurants, foodAreas, FOOD_CATS } from "@/lib/food";
 import { SIDO_SLUG, sidoFromSlug } from "@/lib/classify";
 
@@ -54,7 +52,6 @@ export default async function FoodAreaPage({ params }: { params: Promise<{ area:
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
           <span className="text-free">{sido}</span> 맛집
         </h1>
-        <AffiliateNotice className="mt-1.5" partner="coupang" />
         <p className="mt-1 text-[14px] text-ink-soft">{sido} 음식점 {list.length.toLocaleString()}곳 — 업종별로 골라보세요 · 출처: 한국관광공사</p>
       </Band>
 
@@ -79,10 +76,6 @@ export default async function FoodAreaPage({ params }: { params: Promise<{ area:
         )}
 
         {/* 쿠팡 제휴 배너 — 목록 끝, 광고와 간격 확보 */}
-        <div className="mt-8">
-          <CoupangBanner />
-        </div>
-
         {/* 다른 지역 맛집 — 내부링크(크롤 유도) */}
         {otherAreas.length > 0 && (
           <section className="mt-10 border-t border-line pt-6">

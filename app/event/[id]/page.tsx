@@ -7,8 +7,8 @@ import { eventStory } from "@/lib/eventStory";
 import { fmtRange, placeText, dday } from "@/lib/format";
 import { SITE } from "@/lib/site";
 import PriceBadge from "@/components/PriceBadge";
-import AffiliateNotice from "@/components/AffiliateNotice";
 import EventCoupangDeals from "@/components/EventCoupangDeals";
+import DetailGuidance from "@/components/DetailGuidance";
 import AdSlot from "@/components/AdSlot";
 import PosterCard from "@/components/PosterCard";
 import ShareButtons from "@/components/ShareButtons";
@@ -162,7 +162,6 @@ export default async function EventPage({
           <h1 className="text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
             {ev.title}
           </h1>
-          <AffiliateNotice className="mt-2" partner="coupang" />
 
           <dl className="mt-6 divide-y divide-black/5 rounded-2xl border border-black/5 bg-white">
             <Row label="요금">
@@ -244,8 +243,11 @@ export default async function EventPage({
             </a>
           </p>
 
-          {/* 쿠팡 4줄 — 관람 아이템·장르 맞춤·나들이 소품·골드박스 (상단 AffiliateNotice가 고지) */}
-          <EventCoupangDeals realmName={ev.realmName} />
+          <DetailGuidance
+            recommended={[`${ev.realmName || "문화행사"}를 관심 있게 보고 있는 분`, "행사 기간과 장소를 확인한 뒤 여유 있게 방문하려는 분"]}
+            checks={["행사 일정과 운영 여부는 방문 전 공식 페이지에서 다시 확인해 주세요.", ev.officialUrl ? "예매·관람 방법은 공식 페이지 안내를 우선 확인해 주세요." : "공식 홈페이지나 주최 측 안내가 있다면 방문 전 확인해 주세요.", ev.phone ? `문의가 필요하면 안내된 전화번호(${ev.phone})로 확인해 주세요.` : "날짜·장소가 변경될 수 있으니 출발 전 최신 안내를 확인해 주세요."]}
+            tips={["주소와 장소명을 지도에 미리 저장하면 이동 동선을 잡기 편합니다.", "요금 정보가 불확실한 경우 현장 방문 전 공식 안내를 기준으로 준비해 주세요."]}
+          />
 
           <AdSlot label="상세 하단 광고" />
         </div>
@@ -263,6 +265,7 @@ export default async function EventPage({
           </div>
         </section>
       )}
+      <EventCoupangDeals realmName={ev.realmName} />
     </article>
   );
 }

@@ -5,6 +5,7 @@
 
 import deals from "@/data/eventCoupang.json";
 import ScrollRail from "@/components/ScrollRail";
+import AffiliateNotice from "@/components/AffiliateNotice";
 
 interface Product { id: string; name: string; price: number; image: string; url: string; isRocket: boolean }
 interface Sec { heading: string; subtitle: string; products: Product[] }
@@ -69,13 +70,17 @@ export default function EventCoupangDeals({ realmName }: { realmName: string }) 
   if (!d?.essentials) return null;
   const gk = genreKey(realmName);
   const genre = gk ? d.genres?.[gk] : undefined;
+  const products = [...(d.essentials.products || []), ...(genre?.products || [])]
+    .filter((p, i, all) => p.url && p.image && all.findIndex((x) => x.id === p.id) === i)
+    .slice(0, 4);
+  if (!products.length) return null;
 
   return (
-    <div className="mt-10 space-y-8">
-      <Row sec={d.essentials} />
-      <Row sec={genre} />
-      <Row sec={d.outing} />
-      <Row sec={d.goldbox} highlight />
-    </div>
+    <section className="mt-10 border-t border-line pt-8">
+      <h2 className="text-[17px] font-extrabold text-ink">관람에 필요한 준비물</h2>
+      <p className="mt-0.5 text-[13px] text-ink-faint">공연·전시 관람과 직접 관련된 상품만 골라봤어요.</p>
+      <AffiliateNotice className="mt-2" partner="coupang" />
+      <div className="mt-3"><ScrollRail ariaLabel="관람에 필요한 준비물">{products.map((p) => <Card key={p.id} p={p} />)}</ScrollRail></div>
+    </section>
   );
 }

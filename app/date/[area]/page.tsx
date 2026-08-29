@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Band, Container } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import DateCourseSections from "@/components/DateCourseSections";
-import CoupangBanner from "@/components/CoupangBanner";
 import { dateCoursesByArea, dateAreaCounts, dateCityCounts, sidoFromSlug } from "@/lib/dateCourses";
 import { SITE } from "@/lib/site";
 
@@ -66,7 +64,6 @@ export default async function DateAreaPage({ params }: { params: Promise<{ area:
         <h1 className="text-[22px] font-black tracking-[-0.02em] text-ink sm:text-[28px]">
           <span className="text-free">{sido} 카페데이트</span>
         </h1>
-        <AffiliateNotice className="mt-1.5" partner="coupang" />
         <p className="mt-1 text-[13.5px] text-ink-soft">동네를 고르면 그 동네 코스만 볼 수 있어요</p>
       </Band>
 
@@ -88,9 +85,6 @@ export default async function DateAreaPage({ params }: { params: Promise<{ area:
         <Container className="pb-12 pt-2">
           <DateCourseSections courses={list} />
 
-          <div className="mt-8">
-            <CoupangBanner />
-          </div>
         </Container>
       </div>
     </>

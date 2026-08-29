@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
 import KidCoupangDeals from "@/components/KidCoupangDeals";
 import { getKidCourse, getKidCourses, kidCoursesByArea, kmLabel, kidHeadline, type KidStop } from "@/lib/kidCourses";
 import { SIDO_SLUG } from "@/lib/classify";
@@ -111,7 +110,6 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
         {kidHeadline(c.theme, c.spot.title)}
       </h1>
       <p className="mt-1 text-[13.5px] text-ink-faint">{c.area} {c.city} · 아이와 함께 {th.label} 코스</p>
-      <AffiliateNotice className="mt-1.5" partner="coupang" />
 
       <p className="mt-3 text-[15px] leading-[1.85] text-ink-soft">
         <b className="font-bold text-ink">{c.area} {c.city}</b>에서 아이와 반나절 보내기 좋은 코스예요.
@@ -135,12 +133,6 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
       {c.park && <Stop stop={c.park} label="2. 공원 산책" emoji="🌳" fromTitle={c.spot.title} intro={`명소에서 ${kmLabel(c.park.distKm)}, 차로 금방이에요. 실컷 논 뒤 아이와 천천히 걷고 뛰어놀기 좋은 곳이에요.`} />}
       {c.food && <Stop stop={c.food} label={c.park ? "3. 아이 맛집" : "2. 아이 맛집"} emoji="🍽" fromTitle={c.park ? c.park.title : c.spot.title} intro={`${kmLabel(c.food.distKm)} 거리예요. 아이가 좋아할 만한 메뉴로 하루를 마무리하기 좋아요. 방문 전 영업시간은 확인해 주세요.`} />}
 
-      {/* 쿠팡 상품 (숙소 광고 없음 — 쿠팡만) */}
-      <div className="mt-10 border-t border-line pt-8">
-        <h2 className="mb-4 text-[19px] font-extrabold text-ink">🛒 아이와 나들이, 이런 것도 챙겨요</h2>
-        <KidCoupangDeals />
-      </div>
-
       {related.length > 0 && (
         <section className="mt-10 border-t border-line pt-6">
           <h2 className="mb-3 text-[17px] font-extrabold text-ink">{c.area} {th.label} 다른 코스</h2>
@@ -160,6 +152,11 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
           <Link href="/kids" className="mt-4 inline-flex rounded-full border border-line bg-white px-5 py-2.5 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free">아이와 함께 코스 전체 보기 →</Link>
         </section>
       )}
+
+      <div className="mt-10 border-t border-line pt-8">
+        <h2 className="mb-4 text-[19px] font-extrabold text-ink">🛒 아이와 나들이, 이런 것도 챙겨요</h2>
+        <KidCoupangDeals />
+      </div>
 
       <p className="mt-8 text-[12px] text-ink-faint">아이와 함께 코스 {total.toLocaleString()}개 중 하나예요 · 코스는 좌표 거리로 자동 구성했고, 영업시간·휴무는 방문 전 확인을 권해요 · 정보 제공: 한국관광공사</p>
     </Container>

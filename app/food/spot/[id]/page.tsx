@@ -7,11 +7,10 @@ import {
 } from "@/lib/tourExtra";
 import { nearbyPlaces, foodTypeLabel, getRestaurantById, type Restaurant } from "@/lib/nearby";
 import TourCard from "@/components/TourCard";
-import CoupangBanner from "@/components/CoupangBanner";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
+import DetailGuidance from "@/components/DetailGuidance";
 import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
 
 // 음식점 상세 — 맛집 탐방(/food) 소속. 예전 주소(/places/spot/[id])는 여기로 301.
@@ -144,7 +143,6 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
         <span className="text-[12.5px] text-ink-faint">{r.area}</span>
       </div>
       <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">{r.title}</h1>
-        <AffiliateNotice className="mt-1.5" partner="coupang" />
 
       {gallery.length > 0 && (
         <div className="mt-4">
@@ -206,14 +204,15 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
         </section>
       )}
 
-      {/* 쿠팡 제휴 배너 — 맛집 상세. 숙소 배너는 나들이 전용이라 여기 안 넣음 */}
-      <div className="mt-8">
-        <CoupangBanner />
-      </div>
-
       <p className="mt-3 rounded-xl bg-tint/50 px-4 py-3 text-[13px] leading-[1.6] text-ink-soft">
         영업시간·휴무는 바뀔 수 있어요. 방문 전 전화나 지도로 <b className="font-bold text-ink">영업 여부를 확인</b>하시길 권해요.
       </p>
+
+      <DetailGuidance
+        recommended={[`${r.area}에서 ${food} 정보를 찾는 분`, "메뉴와 영업정보를 확인한 뒤 방문하려는 분"]}
+        checks={["영업시간·휴무는 바뀔 수 있으니 방문 전 전화나 공식 안내를 확인해 주세요.", homepage ? "메뉴와 운영 정보는 안내된 홈페이지에서 최신 내용을 확인해 주세요." : "대표 메뉴와 가격은 매장이나 공식 안내에서 확인해 주세요.", tel ? `문의가 필요하면 안내된 전화번호(${tel})로 확인해 주세요.` : "전화번호가 없으면 지도에 표시된 최신 정보를 확인해 주세요."]}
+        tips={["주소를 지도에 저장하고 주차·대중교통 이용 방법을 출발 전에 확인해 주세요.", "방문 시점에 따라 대표 메뉴와 제공 여부가 달라질 수 있습니다."]}
+      />
 
       {nearPlaces.length > 0 && (
         <section className="mt-6">

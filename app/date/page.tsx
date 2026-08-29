@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Band, Container } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
 import DateRegionBrowser from "@/components/DateRegionBrowser";
 import NearbyDateCourses from "@/components/NearbyDateCourses";
-import CoupangBanner from "@/components/CoupangBanner";
 import { SITE } from "@/lib/site";
 import { getDateCourses, dateAreaCounts, dateCourseGeo } from "@/lib/dateCourses";
 
@@ -72,7 +70,6 @@ export default function DateHubPage() {
         <h1 className="text-[22px] font-black tracking-[-0.02em] text-ink sm:text-[28px]">
           ☕ <span className="text-free">전국 카페데이트</span>
         </h1>
-        <AffiliateNotice className="mt-1.5" partner="coupang" />
         <p className="mt-1 text-[13.5px] text-ink-soft">
           카페 → 공원 → 맛집으로 이어지는 반나절 데이트 코스 {all.length}곳
         </p>
@@ -83,10 +80,6 @@ export default function DateHubPage() {
             내 위치 찾기 버튼은 지역 탭 바로 아래(잘 보이게) 배치 */}
         <Container className="py-6">
           <DateRegionBrowser courses={geo} areas={areas} belowTabs={<NearbyDateCourses courses={geo} />} />
-        </Container>
-
-        <Container className="pb-8">
-          <CoupangBanner />
         </Container>
 
         {/* SEO — 지역별 페이지 크롤 링크 */}

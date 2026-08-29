@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
-import CoupangBanner from "@/components/CoupangBanner";
 import { fetchPlaceOverview } from "@/lib/tourDetail";
 import { getRestaurantMenu, restaurantIntroRows } from "@/lib/tourExtra";
 import { getDateCourse, getDateCourses, dateCoursesByArea, distLabel, type CourseStop } from "@/lib/dateCourses";
@@ -180,7 +178,6 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
       <h1 className="text-[24px] font-black leading-tight tracking-[-0.02em] text-ink sm:text-[30px]">
         {c.cafe.title} 카페데이트 코스
       </h1>
-        <AffiliateNotice className="mt-1.5" partner="coupang" />
 
       <p className="mt-3 text-[15px] leading-[1.85] text-ink-soft">
         <b className="font-bold text-ink">{c.area} {c.city}</b>에서 반나절이면 충분한 카페데이트 코스예요.
@@ -212,11 +209,6 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
         stop={c.food} label="3. 맛집" emoji="🍽" overview={foodOv.overview} fromTitle={c.park.title} menu={foodMenu} rows={foodRows}
         intro={`공원에서 ${distLabel(c.food.distKm)}, 바로 근처예요. 둘러본 뒤 식사로 마무리하기 좋은 위치예요.${foodMenu ? ` 대표메뉴는 ${foodMenu.split(" / ")[0]}이에요.` : ""}`}
       />
-
-      {/* 관심 기반 제휴 배너 (쿠팡 파트너스) */}
-      <div className="mt-9">
-        <CoupangBanner />
-      </div>
 
       {related.length > 0 && (
         <section className="mt-10 border-t border-line pt-6">

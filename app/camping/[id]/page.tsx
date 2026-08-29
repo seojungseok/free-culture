@@ -8,11 +8,9 @@ import { nearbyPlaces, nearbyRestaurants, distanceLabel, foodTypeLabel } from "@
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
 import TourCard from "@/components/TourCard";
 import CoupangDeals from "@/components/CoupangDeals";
-import CampEssentialPeek from "@/components/CampEssentialPeek";
-import CampNoFireFood from "@/components/CampNoFireFood";
+import DetailGuidance from "@/components/DetailGuidance";
 
 export const dynamicParams = true;
 export const revalidate = 2592000; // 30일 — 캠핑장 정보 거의 불변(대역폭 절감)
@@ -55,12 +53,6 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
     nearPlaces: nearPlaces.map((p) => p.title),
   });
 
-  // 본문 중간에 끼울 카드 두 장의 위치. 붙어 나오면 광고 띠처럼 보이므로 사이를 벌린다.
-  //  · 생필품(짐 싸기)   — 글을 읽기 시작한 직후
-  //  · 발열도시락(먹거리) — 좀 더 내려간 자리
-  const peekAfter = story.length >= 4 ? 1 : Math.max(0, Math.floor(story.length / 2) - 1);
-  const foodAfter = story.length >= 6 ? story.length - 3 : -1;
-
   const jsonLd = {
     "@context": "https://schema.org", "@type": "Campground",
     name: c.name,
@@ -100,7 +92,6 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
         {c.pet && <span className="rounded-md bg-free/10 px-2 py-0.5 text-[11px] font-bold text-freedark">🐾 반려동물</span>}
       </div>
       <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">{c.name}</h1>
-        <AffiliateNotice className="mt-1.5" partner="coupang" />
       <p className="mt-1 text-[13px] text-ink-faint">{region}</p>
 
       {c.image && (
@@ -124,13 +115,7 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
         </h2>
         <div className="space-y-4 text-[15px] leading-[1.85] text-ink-soft">
           {story.map((para, i) => (
-            <div key={i}>
-              <p>{para}</p>
-              {/* 글 "중간"에 생필품 카드 1개 — 맨 아래 배너는 그냥 지나쳐 버리기 때문.
-                  읽던 흐름이 끊기지 않게 문단 사이(2번째 문단 뒤)에 딱 한 번만. */}
-              {i === peekAfter && <CampEssentialPeek seed={c.id} />}
-              {i === foodAfter && <CampNoFireFood seed={c.id} />}
-            </div>
+            <p key={i}>{para}</p>
           ))}
         </div>
       </section>
@@ -151,13 +136,16 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
 
       <p className="mt-3 rounded-xl bg-tint/60 px-4 py-3 text-[13px] text-ink-soft">⚠️ 시설·요금·운영은 바뀔 수 있어요. 방문 전 예약처·공식 채널에서 다시 확인해 주세요.</p>
 
+      <DetailGuidance
+        recommended={[`${region}에서 캠핑장 시설과 운영기간을 미리 확인하고 싶은 분`, c.types.length ? `${c.types.slice(0, 2).join("·")} 형태의 캠핑을 찾는 분` : "자연 속에서 쉬어갈 캠핑장을 찾는 분"]}
+        checks={[c.operPd ? `운영기간은 ${c.operPd}로 안내되어 있습니다. 계절별 운영 여부를 다시 확인해 주세요.` : "운영기간과 이용 가능 여부는 방문 전 공식 채널에서 확인해 주세요.", c.resve ? `예약 방법은 ${c.resve}로 안내되어 있습니다.` : "예약 방법과 요금은 예약처·공식 채널에서 확인해 주세요.", "날씨와 현장 상황에 따라 이용 조건이 달라질 수 있습니다."]}
+        tips={[facs.length ? `등록된 시설은 ${facs.slice(0, 3).join("·")}입니다.` : "필요한 시설이 있는지 출발 전 확인해 주세요.", c.mapx && c.mapy ? "지도에서 위치와 이동 경로를 미리 확인하면 도착 후 동선을 줄일 수 있습니다." : "주소를 지도에 저장하고 출발 전 이동 경로를 확인해 주세요."]}
+      />
+
       <div className="mt-5 flex flex-wrap gap-2.5">
         {mapUrl && <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-free px-5 py-2.5 text-sm font-bold text-white transition hover:bg-freedark">🗺️ 카카오맵 길찾기</a>}
         <Link href={`/camping?area=${encodeURIComponent(c.area)}`} className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free">{c.area} 다른 캠핑장 →</Link>
       </div>
-
-      {/* 계절별 캠핑용품 추천 (쿠팡 오픈 API 수집) — 상단 AffiliateNotice가 고지 담당 */}
-      <CoupangDeals />
 
       {nearFood.length > 0 && (
         <section className="mt-8">
@@ -181,6 +169,8 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
           </div>
         </section>
       )}
+
+      <CoupangDeals />
 
       <p className="mt-8 text-[12px] text-ink-faint">캠핑정보 제공: 한국관광공사 고캠핑</p>
     </Container>

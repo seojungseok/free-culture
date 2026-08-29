@@ -8,6 +8,7 @@
 
 import deals from "@/data/coupang.json";
 import ScrollRail from "@/components/ScrollRail";
+import AffiliateNotice from "@/components/AffiliateNotice";
 
 interface Product { id: string; name: string; price: number; image: string; url: string; isRocket: boolean }
 interface Section { key: string; heading: string; subtitle: string; products: Product[] }
@@ -61,26 +62,23 @@ function Card({ p, highlight }: { p: Product; highlight?: boolean }) {
 
 export default function CoupangDeals() {
   const d = deals as unknown as Deals;
-  const sections = (d?.sections || []).filter((s) => s.products?.length && s.key !== "food");
-  if (!sections.length) return null;
+  const products = (d?.sections || [])
+    .filter((s) => s.key === "staples" || s.key === "seasonal")
+    .flatMap((s) => s.products || [])
+    .filter((p) => p.url && p.image)
+    .slice(0, 4);
+  if (!products.length) return null;
 
   return (
-    <div className="mt-10 space-y-8">
-      {sections.map((s) => (
-        <section key={s.key}>
-          <div className="mb-0.5">
-            <h2 className="text-[17px] font-extrabold text-ink">{s.heading}</h2>
-            <p className="mt-0.5 text-[13px] text-ink-faint">{s.subtitle}</p>
-          </div>
-          <div className="mt-3">
-            <ScrollRail ariaLabel={s.heading}>
-              {s.products.map((p) => (
-                <Card key={p.id} p={p} highlight={s.key === "goldbox"} />
-              ))}
-            </ScrollRail>
-          </div>
-        </section>
-      ))}
-    </div>
+    <section className="mt-10 border-t border-line pt-8">
+      <h2 className="text-[17px] font-extrabold text-ink">캠핑에 필요한 준비물</h2>
+      <p className="mt-0.5 text-[13px] text-ink-faint">캠핑과 직접 관련된 상품만 골라봤어요.</p>
+      <AffiliateNotice className="mt-2" partner="coupang" />
+      <div className="mt-3">
+        <ScrollRail ariaLabel="캠핑에 필요한 준비물">
+          {products.map((p) => <Card key={p.id} p={p} />)}
+        </ScrollRail>
+      </div>
+    </section>
   );
 }

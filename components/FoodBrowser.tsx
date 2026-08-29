@@ -6,7 +6,6 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Container } from "@/components/Band";
 import { FilterRow } from "@/components/FilterChips";
 import FoodCard from "@/components/FoodCard";
-import CoupangBanner from "@/components/CoupangBanner";
 import type { Restaurant } from "@/lib/food";
 import { SIDO_SLUG } from "@/lib/classify";
 
@@ -117,7 +116,6 @@ export default function FoodBrowser({
         {list.length > CAP && <p className="mt-8 text-center text-[13px] text-ink-faint">상위 {CAP}곳 표시 · 지역·업종 필터로 좁혀보세요</p>}
 
         <div className="mt-8">
-          <CoupangBanner />
         </div>
 
         <section className="mt-12 border-t border-line pt-6">

@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Band } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
 import CampingBrowser, { type CampRow } from "@/components/CampingBrowser";
 import { CAMP_FACILITIES, CAMP_TYPES, campAreaCounts, getAllCamps, getCampCount, type Camp } from "@/lib/camping";
 
@@ -36,7 +35,6 @@ export default function CampingPage() {
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
           <span className="text-free">⛺ 캠핑</span>
         </h1>
-        <AffiliateNotice className="mt-1.5" partner="coupang" />
         <p className="mt-1 text-[14px] text-ink-soft">
           전국 캠핑장 <span className="whitespace-nowrap">{total.toLocaleString()}곳</span> — 유형·시설·지역으로 골라보세요 · 출처: 한국관광공사 고캠핑
         </p>

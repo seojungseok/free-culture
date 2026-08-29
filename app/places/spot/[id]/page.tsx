@@ -14,6 +14,7 @@ import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
 import AffiliateNotice from "@/components/AffiliateNotice";
+import DetailGuidance from "@/components/DetailGuidance";
 import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
 import ArticleBody from "@/components/ArticleBody";
 import SeoulStayBanner from "@/components/SeoulStayBanner";
@@ -310,6 +311,12 @@ export default async function SpotDetailPage({
           </div>
         </section>
       )}
+
+      <DetailGuidance
+        recommended={[`${spot.area}에서 ${tourTypeLabel(spot.type)} 정보를 찾는 분`, "운영시간과 위치를 확인하고 나들이 동선을 계획하는 분"]}
+        checks={[tipRows.length ? "방문 정보에 표시된 이용시간·휴무일·주차 안내를 출발 전에 확인해 주세요." : "이용시간·휴무일·주차 정보는 방문 전 공식 안내에서 확인해 주세요.", homepage ? "요금과 이용 방법은 안내된 홈페이지의 최신 내용을 우선 확인해 주세요." : "요금과 이용 조건은 현장 또는 공식 안내를 기준으로 확인해 주세요.", tel ? `문의가 필요하면 안내된 전화번호(${tel})로 확인해 주세요.` : "날씨와 현장 상황에 따라 이용 조건이 달라질 수 있습니다."]}
+        tips={["주소를 지도에 저장하고 주변 식사 장소나 여행코스와 함께 동선을 계획해 보세요.", "사진과 소개가 실제 방문 시점과 다를 수 있으니 출발 전 최신 안내를 확인해 주세요."]}
+      />
 
       {/* 주변에서 식사하기 (좌표 거리 계산, restaurants.json) */}
       {nearFood.length > 0 && (
