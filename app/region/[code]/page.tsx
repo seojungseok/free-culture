@@ -3,13 +3,57 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllEvents, getByRegion, slimForClient } from "@/lib/data";
-import { getKidTours } from "@/lib/tour";
+import { getKidTours, getPlaces } from "@/lib/tour";
+import { filterCamps } from "@/lib/camping";
+import { filterCourses, slimCourse } from "@/lib/courses";
 import { GENRES, SIDO_SLUG, sidoFromSlug } from "@/lib/classify";
 import DateBrowser from "@/components/DateBrowser";
+import PosterCard from "@/components/PosterCard";
 import TourCard from "@/components/TourCard";
+import CampCard from "@/components/CampCard";
+import CourseCard from "@/components/CourseCard";
 import { Band, Container } from "@/components/Band";
+import { todayYmd, weekendRangeYmd } from "@/lib/dates";
 
 const isFree = (t: string) => t === "free" || t === "free_estimated";
+const SIDO_NAME: Record<string, string> = {
+  경기: "경기도",
+  강원: "강원도",
+  충북: "충청북도",
+  충남: "충청남도",
+  전북: "전라북도",
+  전남: "전라남도",
+  경북: "경상북도",
+  경남: "경상남도",
+  제주: "제주도",
+};
+const displaySido = (sido: string) => SIDO_NAME[sido] || sido;
+
+const REGION_CONTEXT: Record<string, { scene: string; pace: string; travel: string }> = {
+  서울: { scene: "도심 전시관과 공연장, 한강 공원, 박물관이 촘촘해 짧은 이동으로 여러 코스를 묶기 좋습니다", pace: "대중교통으로 움직이기 쉬워 반나절 나들이부터 저녁 공연까지 계획하기 편합니다", travel: "실내 문화시설과 야외 산책지를 함께 비교해 날씨에 맞는 일정을 고를 수 있습니다" },
+  부산: { scene: "바다와 시장, 공연장, 문화마을이 가까워 해변 산책과 전시 관람을 함께 즐기기 좋습니다", pace: "가족 나들이와 데이트 코스가 모두 풍부해 하루 일정으로도 만족도가 높습니다", travel: "해운대와 원도심, 기장권까지 지역별 분위기를 나눠 살펴볼 수 있습니다" },
+  대구: { scene: "도심 공원과 전시 공간, 근대 골목, 공연장이 가까이 모여 있어 가볍게 둘러보기 좋습니다", pace: "아이와 갈 만한 실내 시설과 계절 축제를 함께 확인하면 이동 부담을 줄일 수 있습니다", travel: "중심가 문화행사와 외곽 나들이 장소를 한 번에 비교할 수 있습니다" },
+  인천: { scene: "바다, 섬, 차이나타운, 공원과 문화공간이 어우러져 주말 선택지가 넓습니다", pace: "서울 근교 당일 나들이부터 아이와 함께 가기 좋은 체험 시설까지 고르기 쉽습니다", travel: "실내 행사와 해안 산책 코스를 함께 살펴 날씨와 이동거리에 맞춰 정할 수 있습니다" },
+  광주: { scene: "예술 전시와 공연, 역사 공간, 가족 체험지가 가까워 문화 나들이에 잘 어울립니다", pace: "도심 안에서 반나절 코스를 만들기 좋고 근교 자연 명소와도 연결하기 쉽습니다", travel: "무료 행사와 아이 동반 장소를 함께 비교해 부담 없는 일정을 찾을 수 있습니다" },
+  대전: { scene: "과학관과 공원, 전시 공간, 공연장이 고르게 있어 아이와 배우며 쉬기 좋습니다", pace: "도심 이동이 비교적 단순해 짧은 주말 일정에도 여러 장소를 묶기 편합니다", travel: "실내 체험과 야외 산책지를 함께 확인해 계절과 날씨에 맞춰 고를 수 있습니다" },
+  울산: { scene: "바다와 강변, 산업문화 공간, 공원이 어우러져 가족 나들이 선택지가 다양합니다", pace: "자연 풍경을 즐기는 일정과 전시·공연 관람을 하루 안에 함께 넣기 좋습니다", travel: "동구 해안권과 도심 문화시설을 나눠 살펴볼 수 있습니다" },
+  세종: { scene: "호수공원과 수목원, 공공문화시설이 가까워 아이와 산책하듯 둘러보기 좋습니다", pace: "도시 규모가 부담스럽지 않아 반나절 나들이와 주말 체험 일정을 짜기 쉽습니다", travel: "실내 시설과 공원형 장소를 함께 비교해 편한 동선을 고를 수 있습니다" },
+  경기: { scene: "서울 근교 전시관, 대형 공원, 체험시설, 캠핑장이 넓게 퍼져 선택지가 많습니다", pace: "가족 나들이와 당일치기 코스를 지역별로 나눠 보면 이동 시간을 줄이기 좋습니다", travel: "북부와 남부, 서해안권까지 분위기가 달라 목적에 맞는 장소를 고를 수 있습니다" },
+  강원: { scene: "산과 바다, 계곡, 미술관과 축제가 어우러져 자연 중심 주말 여행에 잘 맞습니다", pace: "캠핑과 드라이브, 아이와 체험할 장소를 함께 보면 1박 일정도 잡기 쉽습니다", travel: "동해안과 내륙권을 나눠 날씨와 이동거리에 맞는 코스를 살펴볼 수 있습니다" },
+  충북: { scene: "호수와 산, 체험마을, 문화시설이 어우러져 조용한 가족 나들이에 좋습니다", pace: "당일치기와 캠핑을 함께 고려하기 좋아 부담 없는 주말 계획을 세우기 쉽습니다", travel: "청주 도심권과 제천·단양권의 자연 여행지를 나눠 확인할 수 있습니다" },
+  충남: { scene: "서해 바다와 역사 유적, 온천, 축제가 어우러져 계절별 나들이가 풍부합니다", pace: "아이와 체험하기 좋은 장소와 캠핑장을 함께 보면 하루 또는 1박 일정으로 연결하기 쉽습니다", travel: "천안·아산 도심권과 서해안 여행지를 함께 비교할 수 있습니다" },
+  전북: { scene: "한옥마을, 산과 강, 지역 축제와 전시가 어우러져 느긋한 여행에 어울립니다", pace: "아이와 갈 만한 체험지와 무료 행사를 함께 보면 비용 부담을 줄이기 좋습니다", travel: "전주 도심권과 무주·남원 등 자연권 일정을 나눠 살펴볼 수 있습니다" },
+  전남: { scene: "섬과 바다, 정원, 역사 공간, 지역 축제가 많아 풍경 중심 여행에 잘 맞습니다", pace: "캠핑과 드라이브 코스를 함께 고려하면 주말 1박 일정도 자연스럽게 잡힙니다", travel: "동부권과 서남해권의 분위기를 나눠 취향에 맞는 장소를 찾을 수 있습니다" },
+  경북: { scene: "문화유산과 산, 바다, 전통 마을이 넓게 퍼져 주말 여행 선택지가 다양합니다", pace: "가족 체험과 역사 나들이, 캠핑을 함께 보면 일정의 밀도를 조절하기 좋습니다", travel: "경주·안동 같은 역사권과 동해안 자연권을 함께 비교할 수 있습니다" },
+  경남: { scene: "남해 바다와 산, 공원, 축제가 어우러져 계절 나들이에 잘 어울립니다", pace: "아이와 갈 만한 체험지와 캠핑장을 함께 보면 가족 여행 계획이 쉬워집니다", travel: "창원·김해 도심권과 남해안 여행지를 나눠 살펴볼 수 있습니다" },
+  제주: { scene: "바다와 오름, 숲길, 박물관과 체험시설이 가까워 날씨에 따라 코스를 바꾸기 좋습니다", pace: "아이와 가기 좋은 실내 장소와 야외 명소를 함께 확인하면 여행 중 일정 조정이 편합니다", travel: "동서남북 권역별 분위기가 달라 숙소 위치와 이동거리 기준으로 고르기 좋습니다" },
+};
+
+function regionIntro(sido: string): string {
+  const name = displaySido(sido);
+  const ctx = REGION_CONTEXT[sido] || REGION_CONTEXT.서울;
+  return `${name}에서 이번 주말 갈 곳을 찾고 있다면 무료 전시와 공연, 아이와 함께 가기 좋은 박물관·공원·체험시설, 캠핑장과 여행코스까지 한 번에 확인해 보세요. ${ctx.scene}. ${ctx.pace}. 비용, 날씨, 이동거리, 아이 동반 여부를 함께 고려해 ${name}의 문화행사와 나들이 장소를 자연스럽게 비교할 수 있습니다. ${ctx.travel}.`;
+}
 
 export function generateStaticParams() {
   return Object.values(SIDO_SLUG).map((code) => ({ code }));
@@ -23,11 +67,13 @@ export async function generateMetadata({
   const { code } = await params;
   const sido = sidoFromSlug(code);
   if (!sido) return { title: "지역을 찾을 수 없습니다" };
-  const n = getByRegion(sido).length;
+  const name = displaySido(sido);
   return {
-    title: `${sido} 문화행사 — 무료·저렴한 전시·공연`,
-    description: `${sido}에서 지금 열리는 전시·공연·문화행사 ${n}건. 날짜별로 골라 보고 무료 행사를 먼저 확인하세요.`,
-    keywords: [`${sido} 문화행사`, `${sido} 무료 전시`, `${sido} 무료 공연`, `${sido} 나들이`, `${sido} 가볼만한 곳`, `${sido} 주말 나들이`],
+    title: {
+      absolute: `${name} 무료 문화행사·가볼만한곳·아이와 나들이 | 주말에뭐하지`,
+    },
+    description: `${name}에서 지금 열리는 전시·공연·문화행사와 이번 주말 갈만한 곳을 한눈에 확인하세요. 무료 행사, 아이와 가볼만한곳, 나들이, 캠핑 등 ${name}의 다양한 장소와 행사를 소개합니다.`,
+    keywords: [`${name} 문화행사`, `${name} 무료 전시`, `${name} 무료 공연`, `${name} 나들이`, `${name} 가볼만한곳`, `${name} 주말 나들이`, `${name} 캠핑장`],
     alternates: { canonical: `/region/${code}` },
   };
 }
@@ -40,8 +86,12 @@ export default async function RegionPage({
   const { code } = await params;
   const sido = sidoFromSlug(code);
   if (!sido) notFound();
+  const name = displaySido(sido);
   const all = getAllEvents();
-  const regionCount = getByRegion(sido).length;
+  const today = todayYmd();
+  const weekend = weekendRangeYmd(today);
+  const regionEvents = getByRegion(sido);
+  const regionCount = regionEvents.length;
   const events = slimForClient(all);
 
   // 이 지역에서 무료 행사 있는 분야 (조합 페이지 링크)
@@ -49,15 +99,33 @@ export default async function RegionPage({
     (g) => g.key !== "etc" && all.some((e) => e.area === sido && e.genreKey === g.key && isFree(e.priceType))
   );
   const tours = getKidTours(sido, 12);
+  const places = getPlaces({ area: sido, limit: 12 });
+  const camps = filterCamps({ area: sido }).filter((c) => c.image).slice(0, 12);
+  const courses = filterCourses({ area: sido, limit: 12 }).map(slimCourse);
+  const eventCards = regionEvents
+    .filter((e) => e.imgUrl && e.startDate <= weekend.end && e.endDate >= weekend.start)
+    .sort((a, b) => b.featuredScore - a.featuredScore || a.endDate.localeCompare(b.endDate))
+    .slice(0, 12);
+  const campAreaSlug = (SIDO_SLUG as Record<string, string>)[sido];
+  const internalLinks = [
+    { href: `/places/${code}`, label: `${name} 나들이 더보기` },
+    { href: `/region/${code}`, label: `${name} 무료 행사 더보기` },
+    { href: `/camping/region/${campAreaSlug}`, label: `${name} 캠핑장 더보기` },
+    { href: `/places/${code}`, label: `${name} 아이와 가볼만한곳 더보기` },
+    ...(courses.length ? [{ href: `/course/${code}`, label: `${name} 여행코스 더보기` }] : []),
+  ];
 
   return (
     <>
       <Band tone="tint" innerClassName="py-6">
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
-          <span className="text-free">{sido}</span> 문화행사
+          <span className="text-free">{name}</span> 문화행사·가볼만한곳·주말 나들이
         </h1>
-        <p className="mt-1 text-[14px] text-ink-soft">
-          {sido}에서 열리는 전시·공연 {regionCount.toLocaleString()}건 — 지역·분야·가격·날짜로 골라보세요
+        <p className="mt-2 max-w-4xl text-[13.5px] leading-7 text-ink-soft sm:text-[14px]">
+          {regionIntro(sido)}
+        </p>
+        <p className="mt-2 text-[13px] text-ink-faint">
+          {name} 문화행사 {regionCount.toLocaleString()}건 — 지역·분야·가격·날짜로 골라보세요
         </p>
         {freeGenres.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-1.5">
@@ -67,37 +135,98 @@ export default async function RegionPage({
                 href={`/region/${code}/${g.key}`}
                 className="rounded-full border border-free/30 bg-white px-3 py-1 text-[12.5px] font-bold text-free transition hover:bg-free hover:text-white"
               >
-                {sido} 무료 {g.label}
+                {name} 무료 {g.label}
               </Link>
             ))}
           </div>
         )}
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {internalLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              prefetch={false}
+              className="rounded-full border border-line bg-white px-3 py-1.5 text-[12.5px] font-bold text-ink-soft transition hover:border-free/40 hover:text-free"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
       </Band>
       <Suspense fallback={null}>
         <DateBrowser events={events} initial={{ region: sido }} />
       </Suspense>
 
+      {eventCards.length > 0 && (
+        <RegionSection title={`${name} 이번 주말 문화행사`} desc="대표 행사만 먼저 보고, 전체 목록은 위 필터에서 날짜와 가격으로 더 좁혀보세요." moreHref={`/region/${code}`} moreLabel={`${name} 무료 행사 더보기`}>
+          <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            {eventCards.map((ev) => <PosterCard key={ev.id} ev={ev} />)}
+          </div>
+        </RegionSection>
+      )}
+
       {/* 아이와 가볼만한 곳 (TourAPI) */}
       {tours.length > 0 && (
-        <div className="border-t border-line bg-white">
-          <Container className="pb-12 pt-8">
-            <h2 className="text-[18px] font-extrabold text-ink">
-              🏞️ {sido} 아이와 나들이
-            </h2>
-            <p className="mt-1 text-[13px] text-ink-faint">
-              박물관·과학관·체험 등 {sido}에서 아이와 나들이하기 좋은 명소 (지도 링크 제공)
-            </p>
-            <div className="mt-4 grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-              {tours.map((t) => (
-                <TourCard key={t.id} spot={t} />
-              ))}
-            </div>
-            <p className="mt-6 text-[12px] text-ink-faint">
-              관광정보 제공: 한국관광공사 (TourAPI)
-            </p>
-          </Container>
-        </div>
+        <RegionSection title={`${name} 아이와 가볼만한곳 / 나들이`} desc={`박물관·과학관·체험 등 ${name}에서 아이와 나들이하기 좋은 명소입니다.`} moreHref={`/places/${code}`} moreLabel={`${name} 아이와 가볼만한곳 더보기`}>
+          <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            {tours.map((t) => <TourCard key={t.id} spot={t} />)}
+          </div>
+          <p className="mt-6 text-[12px] text-ink-faint">관광정보 제공: 한국관광공사 (TourAPI)</p>
+        </RegionSection>
+      )}
+
+      {camps.length > 0 && (
+        <RegionSection title={`${name} 캠핑장`} desc="글램핑·오토캠핑·카라반 등 지역 대표 캠핑장을 일부만 보여드립니다." moreHref={`/camping/region/${campAreaSlug}`} moreLabel={`${name} 캠핑장 더보기`}>
+          <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            {camps.map((c) => <CampCard key={c.id} camp={c} />)}
+          </div>
+        </RegionSection>
+      )}
+
+      {courses.length > 0 ? (
+        <RegionSection title={`${name} 여행코스`} desc="당일치기와 1박2일로 묶어 보기 좋은 추천 코스입니다." moreHref={`/course/${code}`} moreLabel={`${name} 여행코스 더보기`}>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {courses.slice(0, 8).map((c) => <CourseCard key={c.id} course={c} />)}
+          </div>
+        </RegionSection>
+      ) : places.length > 0 && (
+        <RegionSection title={`${name} 추천 장소`} desc="문화시설·관광지·체험 장소 중 대표 장소만 골라 보여드립니다." moreHref={`/places/${code}`} moreLabel={`${name} 나들이 더보기`}>
+          <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            {places.map((p) => <TourCard key={p.id} spot={p} />)}
+          </div>
+        </RegionSection>
       )}
     </>
+  );
+}
+
+function RegionSection({
+  title,
+  desc,
+  moreHref,
+  moreLabel,
+  children,
+}: {
+  title: string;
+  desc: string;
+  moreHref: string;
+  moreLabel: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="border-t border-line bg-white">
+      <Container className="pb-12 pt-8">
+        <div className="flex items-end justify-between gap-3">
+          <div>
+            <h2 className="text-[18px] font-extrabold text-ink">{title}</h2>
+            <p className="mt-1 text-[13px] text-ink-faint">{desc}</p>
+          </div>
+          <Link href={moreHref} prefetch={false} className="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-[13px] font-bold text-ink-soft transition hover:bg-black/5 hover:text-ink">
+            {moreLabel} →
+          </Link>
+        </div>
+        <div className="mt-4">{children}</div>
+      </Container>
+    </div>
   );
 }

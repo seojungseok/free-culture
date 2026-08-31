@@ -24,7 +24,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const region = [c.area, c.sigungu].filter(Boolean).join(" ");
   const facs = Object.entries(c.facilities).filter(([, v]) => v).map(([k]) => k);
   return {
-    title: `${c.name} - ${region} ${type} · ${SITE.name}`,
+    title: {
+      absolute: `${c.name} - ${region} ${type} | ${SITE.name}`,
+    },
     description: `${region}의 ${type} 캠핑장 ${c.name}. ${facs.length ? facs.slice(0, 4).join("·") + " 등 시설" : "시설"}${c.pet ? " · 반려동물 동반 가능" : ""}. 요금·예약·지도 정보를 확인하세요.`,
     keywords: [`${c.area} ${type}`, `${c.sigungu} 캠핑장`, `${c.area} 캠핑장`, c.pet ? `${c.area} 반려동물 캠핑장` : "", c.name].filter((k) => k && k.trim()),
     alternates: { canonical: `/camping/${id}` },

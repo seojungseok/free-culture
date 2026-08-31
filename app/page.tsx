@@ -7,6 +7,7 @@ import { getCourseKeywords, getAllCourses, getCourseCount, slimCourse } from "@/
 import CourseCard from "@/components/CourseCard";
 import PopularKeywords from "@/components/PopularKeywords";
 import { todayYmd } from "@/lib/dates";
+import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import PosterCard from "@/components/PosterCard";
 import TourCard from "@/components/TourCard";
 import CampCard from "@/components/CampCard";
@@ -23,7 +24,9 @@ import type { CultureEvent } from "@/lib/types";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: `${SITE.name} · 이번 주말 갈 만한 전국 무료·저렴 문화행사`,
+  title: {
+    absolute: `${SITE.name} · 이번 주말 갈 만한 전국 무료·저렴 문화행사`,
+  },
   description: SITE.description,
   alternates: { canonical: "/" },
 };
@@ -32,6 +35,18 @@ const FREEISH = new Set(["free", "free_estimated", "partial_free"]);
 const RAIL_SPOT = "w-[64%] shrink-0 snap-start sm:w-[31%] md:w-[23.5%] lg:w-[19%]";
 const RAIL_POSTER = "w-[54%] shrink-0 snap-start sm:w-[27%] md:w-[21%] lg:w-[16%]";
 const restaurants = (restaurantsData as unknown as { restaurants: { id: string; title: string; area: string; image: string }[] }).restaurants || [];
+const SIDO_NAME: Record<string, string> = {
+  경기: "경기도",
+  강원: "강원도",
+  충북: "충청북도",
+  충남: "충청남도",
+  전북: "전라북도",
+  전남: "전라남도",
+  경북: "경상북도",
+  경남: "경상남도",
+  제주: "제주도",
+};
+const displaySido = (sido: string) => SIDO_NAME[sido] || sido;
 
 export default function HomePage() {
   const all = getAllEvents();
@@ -102,6 +117,30 @@ export default function HomePage() {
 
       {/* 인기 검색어 — 네이버 실시간형 한 줄 롤링(더보기로 전체). 상단 최적 위치. */}
       <PopularKeywords items={popular} />
+
+      <Band tone="white" border={false} innerClassName="pt-4 sm:pt-5">
+        <div className="flex items-end justify-between gap-3">
+          <div>
+            <h2 className="text-[18px] font-extrabold tracking-tight text-ink sm:text-[20px]">지역별로 찾아보기</h2>
+            <p className="mt-0.5 text-[13px] text-ink-faint sm:text-[14px]">서울·경기·부산·제주까지 지역별 무료 행사와 나들이를 바로 확인하세요</p>
+          </div>
+          <Link href="/events" className="hidden shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-[13px] font-bold text-ink-soft transition hover:bg-black/5 hover:text-ink sm:inline-flex">
+            전국 행사 보기 →
+          </Link>
+        </div>
+        <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9">
+          {SIDO_LIST.map((sido) => (
+            <Link
+              key={sido}
+              href={`/region/${(SIDO_SLUG as Record<string, string>)[sido]}`}
+              prefetch={false}
+              className="rounded-xl border border-line bg-panel px-3 py-2.5 text-center text-[13px] font-extrabold text-ink-soft transition hover:border-free/40 hover:bg-freelight hover:text-freedark sm:text-[13.5px]"
+            >
+              {displaySido(sido)}
+            </Link>
+          ))}
+        </div>
+      </Band>
 
       {/* 오늘 무료 띠 */}
       <Band tone="white" border={false} innerClassName="pt-4 sm:pt-5">

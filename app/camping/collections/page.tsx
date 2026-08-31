@@ -6,7 +6,9 @@ import { Band, Container } from "@/components/Band";
 import CoupangDeals from "@/components/CoupangDeals";
 
 export const metadata: Metadata = {
-  title: `캠핑장 모음 — 지역·유형별 큐레이션 · ${SITE.name}`,
+  title: {
+    absolute: `캠핑장 모음 — 지역·유형별 큐레이션 | ${SITE.name}`,
+  },
   description: "지역별 반려동물 캠핑장·글램핑·오토캠핑·카라반 모음. 데이터로 자동 정리한 캠핑장 큐레이션.",
   alternates: { canonical: "/camping/collections" },
 };

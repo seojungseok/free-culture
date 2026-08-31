@@ -18,7 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const b = getBundle(slug);
   if (!b) return { title: "캠핑 모음을 찾을 수 없습니다" };
   return {
-    title: `${b.title} ${b.count}곳 · ${SITE.name}`,
+    title: {
+      absolute: `${b.title} ${b.count}곳 | ${SITE.name}`,
+    },
     description: `${b.title} ${b.count}곳을 한눈에. 유형·편의시설·반려동물 동반 여부와 요금·예약·지도 정보를 데이터로 정리했어요.`,
     keywords: b.keywords,
     alternates: { canonical: `/camping/collections/${b.slug}` },
