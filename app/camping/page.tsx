@@ -59,18 +59,21 @@ export default function CampingPage() {
         <p className="mt-2 text-[13px] text-ink-faint">
           전국 캠핑장 <span className="whitespace-nowrap">{total.toLocaleString()}곳</span> — 유형·시설·지역으로 골라보세요 · 출처: 한국관광공사 고캠핑
         </p>
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {areas.map(({ area, count }) => (
-            <Link
-              key={area}
-              href={`/camping/region/${(SIDO_SLUG as Record<string, string>)[area]}`}
-              prefetch={false}
-              className="rounded-full border border-line bg-white px-3 py-1.5 text-[12.5px] font-bold text-ink-soft transition hover:border-free/40 hover:text-free"
-            >
-              {displaySido(area)} 캠핑장 <span className="font-semibold text-ink-faint">{count.toLocaleString()}</span>
-            </Link>
+        <nav aria-label="지역별 캠핑장" className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12.5px] leading-6 text-ink-faint">
+          <span className="font-semibold text-ink-soft">지역별 캠핑장:</span>
+          {areas.map(({ area, count }, index) => (
+            <span key={area} className="inline-flex items-center gap-2">
+              {index > 0 ? <span aria-hidden="true">·</span> : null}
+              <Link
+                href={`/camping/region/${(SIDO_SLUG as Record<string, string>)[area]}`}
+                prefetch={false}
+                className="font-semibold text-ink-soft underline decoration-line underline-offset-2 transition hover:text-free"
+              >
+                {displaySido(area)} 캠핑장 <span className="font-normal text-ink-faint">{count.toLocaleString()}</span>
+              </Link>
+            </span>
           ))}
-        </div>
+        </nav>
       </Band>
       <Suspense fallback={null}>
         <CampingBrowser camps={camps} areas={areas} total={total} />
