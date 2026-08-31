@@ -59,21 +59,25 @@ export default function CampingPage() {
         <p className="mt-2 text-[13px] text-ink-faint">
           전국 캠핑장 <span className="whitespace-nowrap">{total.toLocaleString()}곳</span> — 유형·시설·지역으로 골라보세요 · 출처: 한국관광공사 고캠핑
         </p>
-        <nav aria-label="지역별 캠핑장" className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12.5px] leading-6 text-ink-faint">
-          <span className="font-semibold text-ink-soft">지역별 캠핑장:</span>
-          {areas.map(({ area, count }, index) => (
-            <span key={area} className="inline-flex items-center gap-2">
-              {index > 0 ? <span aria-hidden="true">·</span> : null}
-              <Link
-                href={`/camping/region/${(SIDO_SLUG as Record<string, string>)[area]}`}
-                prefetch={false}
-                className="font-semibold text-ink-soft underline decoration-line underline-offset-2 transition hover:text-free"
-              >
-                {displaySido(area)} 캠핑장 <span className="font-normal text-ink-faint">{count.toLocaleString()}</span>
-              </Link>
-            </span>
-          ))}
-        </nav>
+        <details className="mt-3 text-[12.5px] leading-6 text-ink-faint">
+          <summary className="cursor-pointer font-semibold text-ink-soft underline decoration-line underline-offset-2">
+            지역별 캠핑장 더보기
+          </summary>
+          <nav aria-label="지역별 캠핑장" className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1">
+            {areas.map(({ area, count }, index) => (
+              <span key={area} className="inline-flex items-center gap-2">
+                {index > 0 ? <span aria-hidden="true">·</span> : null}
+                <Link
+                  href={`/camping/region/${(SIDO_SLUG as Record<string, string>)[area]}`}
+                  prefetch={false}
+                  className="font-semibold text-ink-soft underline decoration-line underline-offset-2 transition hover:text-free"
+                >
+                  {displaySido(area)} 캠핑장 <span className="font-normal text-ink-faint">{count.toLocaleString()}</span>
+                </Link>
+              </span>
+            ))}
+          </nav>
+        </details>
       </Band>
       <Suspense fallback={null}>
         <CampingBrowser camps={camps} areas={areas} total={total} />
