@@ -1,18 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getAllEvents, getWeekend, getFree, getFeatured, slimForClient } from "@/lib/data";
+import { getAllEvents, getWeekend, getFree, getFeatured, getEndingSoon, slimForClient } from "@/lib/data";
 import { getPlacesSample, getAllPlaces, type TourSpot } from "@/lib/tour";
 import { getCampCount, getAllCamps, type Camp } from "@/lib/camping";
 import { getAllCourses, getCourseCount, slimCourse } from "@/lib/courses";
-import { getAllRestaurants } from "@/lib/food";
-import { getDateCourses } from "@/lib/dateCourses";
 import { todayYmd } from "@/lib/dates";
 import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { season } from "@/lib/finder";
 import { SITE } from "@/lib/site";
-import SearchBox from "@/components/SearchBox";
-import HomeCategoryBrowser, { type HomeExploreCategory, type HomeExploreItem } from "@/components/HomeCategoryBrowser";
+import { type HomeExploreItem } from "@/components/HomeCategoryBrowser";
 import PriceBadge from "@/components/PriceBadge";
 import { fmtRange } from "@/lib/format";
 import type { CultureEvent } from "@/lib/types";
@@ -67,15 +64,13 @@ export default function HomePage() {
   const courseCount = getCourseCount();
 
   const featuredEvents = slimForClient(getFeatured(8).filter((e) => e.imgUrl));
-  const freeCards = slimForClient(getFree(true).filter((e) => e.imgUrl && e.endDate >= today).slice(0, 4));
+  const freeCards = slimForClient(getFree(true).filter((e) => e.imgUrl && e.endDate >= today).slice(0, 10));
   const weekendCards = slimForClient(getWeekend().filter((e) => e.imgUrl).slice(0, 4));
   const placeCards = getPlacesSample(40).filter((p) => p.image).slice(0, 8);
   const courseCards = shuffleByDay(getAllCourses(), today).slice(0, 8).map(slimCourse);
   const campCards = getAllCamps().filter((c) => c.image).slice(0, 8);
   const allPlaces = getAllPlaces().filter((p) => p.image);
   const kidsPick = allPlaces.find((p) => p.isKid) || placeCards[0];
-  const restaurants = getAllRestaurants().filter((r) => r.image).slice(0, 8);
-  const dateCourses = getDateCourses().filter((c) => c.image).slice(0, 8);
   const seasonPlaces = allPlaces
     .filter((p) => `${p.title} ${p.addr} ${p.overview || ""}`.includes(seasonal.label))
     .slice(0, 8);
@@ -127,66 +122,15 @@ export default function HomePage() {
       aside: "더보기",
     },
   ];
-  const homeCategories: HomeExploreCategory[] = [
-    {
-      key: "events",
-      label: "문화행사",
-      href: "/events",
-      items: [...featuredEvents, ...weekendCards].slice(0, 8).map(eventToExplore),
-    },
-    {
-      key: "places",
-      label: "나들이",
-      href: "/places",
-      items: placeCards.map(placeToExplore),
-    },
-    {
-      key: "course",
-      label: "여행코스",
-      href: "/course",
-      items: courseCards.map(courseToExplore),
-    },
-    {
-      key: "camping",
-      label: "캠핑",
-      href: "/camping",
-      items: campCards.map(campToExplore),
-    },
-    {
-      key: "food",
-      label: "맛집탐방",
-      href: "/food",
-      items: restaurants.map(foodToExplore),
-    },
-    {
-      key: "kids",
-      label: "아이와함께",
-      href: "/kids",
-      items: allPlaces.filter((p) => p.isKid).slice(0, 8).map(placeToExplore),
-    },
-    {
-      key: "date",
-      label: "데이트",
-      href: "/date",
-      items: dateCourses.map(dateToExplore),
-    },
-    {
-      key: "season",
-      label: `${seasonal.label}나들이`,
-      href: "/season",
-      items: (seasonPlaces.length ? seasonPlaces : placeCards).map(placeToExplore),
-    },
-  ];
+  const endingCards = slimForClient(getEndingSoon(14).filter((e) => e.imgUrl).slice(0, 10));
+  const kidsCards = allPlaces.filter((p) => p.isKid).slice(0, 10);
+  const seasonCards = (seasonPlaces.length ? seasonPlaces : placeCards).slice(0, 10);
 
   return (
     <>
-      <Hero image={hero.image} position={hero.position} />
+      <Hero image={hero.image} position={hero.position} seasonalLabel={seasonal.label} />
 
       <main className="bg-white pb-10">
-        <GamePromoBanner />
-
-        <HomeCategoryBrowser categories={homeCategories} />
-
         <HomeSection title="지금 가장 인기 있는 콘텐츠" href="/events">
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
             {popularCards.map((card) => (
@@ -195,15 +139,15 @@ export default function HomePage() {
           </div>
         </HomeSection>
 
-        <HomeSection title="오늘 무료로 즐기세요!" href="/free" compactMobile>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
-            {freeCards.map((ev, i) => (
-              <div key={ev.id} className={i > 1 ? "hidden md:block" : ""}>
-                <FreeEventCard ev={ev} />
-              </div>
-            ))}
-          </div>
-        </HomeSection>
+        <GamePromoBanner />
+
+        <RailSection title="오늘의 무료 문화행사" href="/free" items={freeCards.map(eventToExplore)} />
+        <RailSection title="인기 문화행사" href="/ending-soon" items={endingCards.map(eventToExplore)} />
+        <RailSection title="나들이" href="/places" items={placeCards.map(placeToExplore)} />
+        <RailSection title="아이와 가볼만한곳" href="/kids" items={kidsCards.map(placeToExplore)} />
+        <RailSection title="추천 여행코스" href="/course" items={courseCards.map(courseToExplore)} />
+        <RailSection title="캠핑" href="/camping" items={campCards.map(campToExplore)} />
+        <RailSection title={`${seasonal.label}나들이`} href="/season" items={seasonCards.map(placeToExplore)} />
 
         <HomeSection title="어디로 갈까요?" compactMobile>
           <div className="-mx-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:px-0">
@@ -258,7 +202,18 @@ export default function HomePage() {
   );
 }
 
-function Hero({ image, position }: { image: string; position: string }) {
+function Hero({ image, position, seasonalLabel }: { image: string; position: string; seasonalLabel: string }) {
+  const cats = [
+    ["문화행사", "#section-events"],
+    ["나들이", "#section-places"],
+    ["여행코스", "#section-course"],
+    ["캠핑", "#section-camping"],
+    ["맛집탐방", "/food"],
+    ["아이와함께", "#section-kids"],
+    ["데이트", "/date"],
+    [`${seasonalLabel}나들이`, "#section-season"],
+  ];
+
   return (
     <section
       className="relative overflow-hidden bg-[#dcebf8]"
@@ -276,17 +231,14 @@ function Hero({ image, position }: { image: string; position: string }) {
         <p className="mt-2 text-[14px] font-semibold text-[#13243d] sm:mt-3 sm:text-[18px]">
           전국 문화행사, 나들이, 여행코스, 캠핑까지 한 번에!
         </p>
-        <div className="mt-5 w-full max-w-[700px] sm:mt-7">
-          <SearchBox size="lg" placeholder="지역이나 키워드를 검색해보세요" submitButton />
-        </div>
-        <div className="mt-4 flex w-full max-w-[620px] flex-wrap justify-center gap-2 sm:mt-5 sm:gap-3">
-          {["오늘", "이번 주말", "무료", "아이와", "데이트"].map((q) => (
+        <div className="mt-5 grid w-full max-w-[680px] grid-cols-4 gap-2 sm:mt-7 sm:gap-3">
+          {cats.map(([label, href]) => (
             <Link
-              key={q}
-              href={`/search?q=${encodeURIComponent(q)}`}
-              className="min-w-[78px] rounded-full bg-white/95 px-3.5 py-2 text-[13px] font-extrabold text-[#102344] shadow-sm ring-1 ring-black/5 backdrop-blur transition hover:bg-white hover:text-brandblue sm:min-w-[96px] sm:px-4 sm:py-2.5 sm:text-[15px]"
+              key={label}
+              href={href}
+              className="flex min-h-[46px] items-center justify-center rounded-2xl bg-white/95 px-2 text-center text-[13px] font-extrabold text-[#102344] shadow-sm ring-1 ring-black/5 backdrop-blur transition hover:bg-white hover:text-brandblue sm:min-h-[52px] sm:text-[15px]"
             >
-              {q}
+              {label}
             </Link>
           ))}
         </div>
@@ -368,6 +320,45 @@ function campToPopular(camp?: Camp): PopularCard | null {
   };
 }
 
+function RailSection({ title, href, items }: { title: string; href: string; items: HomeExploreItem[] }) {
+  if (!items.length) return null;
+  const id =
+    title.includes("무료") ? "section-events" :
+    title.includes("인기 문화") ? "section-ending" :
+    title === "나들이" ? "section-places" :
+    title.includes("아이") ? "section-kids" :
+    title.includes("여행") ? "section-course" :
+    title.includes("캠핑") ? "section-camping" :
+    "section-season";
+
+  return (
+    <section id={id} className="mx-auto w-full max-w-[1180px] px-5 pt-6 sm:px-6 sm:pt-9 lg:px-8">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h2 className="text-[20px] font-black tracking-tight text-ink sm:text-[24px]">{title}</h2>
+        <Link href={href} className="shrink-0 text-[13px] font-bold text-ink-soft transition hover:text-brandblue">더보기 ›</Link>
+      </div>
+      <div className="relative">
+        <div className="-mx-5 flex snap-x gap-3 overflow-x-auto px-5 pb-3 sm:mx-0 sm:px-0">
+          {items.slice(0, 10).map((item) => (
+            <Link key={item.id} href={item.href} prefetch={false} className="group w-[168px] shrink-0 snap-start overflow-hidden rounded-2xl border border-[#e3e7ee] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover sm:w-[220px]">
+              <div className="relative aspect-[1.45/1] overflow-hidden bg-neutral-100">
+                <CardImage src={item.image} alt={item.title} />
+                <span className="absolute left-2 top-2 rounded-md bg-black/55 px-1.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-sm">{item.badge}</span>
+              </div>
+              <div className="p-3">
+                <h3 className="line-clamp-2 min-h-[38px] text-[14px] font-black leading-snug text-ink">{item.title}</h3>
+                <p className="mt-1 line-clamp-1 text-[12px] text-ink-faint">{item.meta}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="pointer-events-none absolute inset-y-0 right-[-1px] w-12 bg-gradient-to-l from-white to-transparent" />
+      </div>
+      <p className="mt-1 text-right text-[11.5px] font-bold text-ink-faint sm:hidden">오른쪽으로 밀어서 더보기 ›</p>
+    </section>
+  );
+}
+
 function eventToExplore(ev: CultureEvent): HomeExploreItem {
   return {
     id: `event-${ev.id}`,
@@ -409,29 +400,6 @@ function campToExplore(camp: Camp): HomeExploreItem {
     meta: [camp.area, camp.sigungu].filter(Boolean).join(" · "),
     image: camp.image,
     badge: "캠핑",
-  };
-}
-
-function foodToExplore(food: { id: string; title: string; area: string; addr: string; image: string }): HomeExploreItem {
-  const gu = (food.addr.match(/[가-힣]{2,}(?:구|군|시)/) || [])[0] || food.area;
-  return {
-    id: `food-${food.id}`,
-    href: `/food/spot/${food.id}`,
-    title: food.title,
-    meta: [food.area, gu].filter(Boolean).join(" · "),
-    image: food.image,
-    badge: "맛집",
-  };
-}
-
-function dateToExplore(course: { id: string; title: string; area: string; city: string; image: string }): HomeExploreItem {
-  return {
-    id: `date-${course.id}`,
-    href: `/date/c/${course.id}`,
-    title: course.title,
-    meta: [course.area, course.city].filter(Boolean).join(" · "),
-    image: course.image,
-    badge: "데이트",
   };
 }
 
