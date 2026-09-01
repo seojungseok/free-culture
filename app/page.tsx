@@ -1,16 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getAllEvents, getWeekend, getFree, getFeatured, getEndingSoon, slimForClient } from "@/lib/data";
+import { getWeekend, getFree, getFeatured, getEndingSoon, slimForClient } from "@/lib/data";
 import { getPlacesSample, getAllPlaces, type TourSpot } from "@/lib/tour";
-import { getCampCount, getAllCamps, type Camp } from "@/lib/camping";
-import { getAllCourses, getCourseCount, slimCourse } from "@/lib/courses";
+import { getAllCamps, type Camp } from "@/lib/camping";
+import { getAllCourses, slimCourse } from "@/lib/courses";
 import { todayYmd } from "@/lib/dates";
 import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { season } from "@/lib/finder";
 import { SITE } from "@/lib/site";
-import { type HomeExploreItem } from "@/components/HomeCategoryBrowser";
-import PriceBadge from "@/components/PriceBadge";
 import { fmtRange } from "@/lib/format";
 import type { CultureEvent } from "@/lib/types";
 
@@ -55,13 +53,19 @@ const regionImages: Record<string, string> = {
 
 type HomeCourse = ReturnType<typeof slimCourse>;
 
+interface HomeExploreItem {
+  id: string;
+  href: string;
+  title: string;
+  meta: string;
+  image: string;
+  badge: string;
+}
+
 export default function HomePage() {
   const today = todayYmd();
   const seasonal = season();
   const hero = heroImages[seasonal.key] || heroImages.default;
-  const all = getAllEvents();
-  const campCount = getCampCount();
-  const courseCount = getCourseCount();
 
   const featuredEvents = slimForClient(getFeatured(8).filter((e) => e.imgUrl));
   const freeCards = slimForClient(getFree(true).filter((e) => e.imgUrl && e.endDate >= today).slice(0, 10));
@@ -70,10 +74,9 @@ export default function HomePage() {
   const courseCards = shuffleByDay(getAllCourses(), today).slice(0, 8).map(slimCourse);
   const campCards = getAllCamps().filter((c) => c.image).slice(0, 8);
   const allPlaces = getAllPlaces().filter((p) => p.image);
-  const kidsPick = allPlaces.find((p) => p.isKid) || placeCards[0];
   const seasonPlaces = allPlaces
-    .filter((p) => `${p.title} ${p.addr} ${p.overview || ""}`.includes(seasonal.label))
-    .slice(0, 8);
+    .filter((p) => seasonPlaceMatch(p, seasonal.key, seasonal.label))
+    .slice(0, 5);
   const regionImageByArea = Object.fromEntries(
     SIDO_LIST.map((area) => [
       area,
@@ -88,49 +91,17 @@ export default function HomePage() {
     campToPopular(campCards[0]),
   ].filter(Boolean) as PopularCard[];
 
-  const summary = [
-    {
-      title: "문화행사",
-      href: "/events",
-      image: featuredEvents[1]?.imgUrl || freeCards[0]?.imgUrl || "",
-      main: featuredEvents[1]?.title || "전국 문화행사",
-      sub: featuredEvents[1] ? [featuredEvents[1].area, featuredEvents[1].place].filter(Boolean).join(" ") : `전체 ${all.length.toLocaleString()}건`,
-      aside: featuredEvents[1] ? fmtRange(featuredEvents[1].startDate, featuredEvents[1].endDate) : "더보기",
-    },
-    {
-      title: "아이와 가볼만한 곳",
-      href: "/kids",
-      image: kidsPick?.image || "",
-      main: kidsPick?.title || "아이와 함께",
-      sub: kidsPick?.area || "전국",
-      aside: "더보기",
-    },
-    {
-      title: "추천 여행코스",
-      href: "/course",
-      image: courseCards[1]?.image || courseCards[0]?.image || "",
-      main: courseCards[1]?.title || courseCards[0]?.title || "전국 여행코스",
-      sub: courseCards[1]?.area || courseCards[0]?.area || `전체 ${courseCount.toLocaleString()}개`,
-      aside: "더보기",
-    },
-    {
-      title: "캠핑 떠날까요?",
-      href: "/camping",
-      image: campCards[1]?.image || campCards[0]?.image || "",
-      main: campCards[1]?.name || campCards[0]?.name || "전국 캠핑장",
-      sub: campCards[1] ? [campCards[1].area, campCards[1].sigungu].filter(Boolean).join(" ") : `전체 ${campCount.toLocaleString()}곳`,
-      aside: "더보기",
-    },
-  ];
   const endingCards = slimForClient(getEndingSoon(14).filter((e) => e.imgUrl).slice(0, 10));
   const kidsCards = allPlaces.filter((p) => p.isKid).slice(0, 10);
-  const seasonCards = (seasonPlaces.length ? seasonPlaces : placeCards).slice(0, 10);
+  const seasonCards = (seasonPlaces.length ? seasonPlaces : placeCards).slice(0, 5);
 
   return (
     <>
       <Hero image={hero.image} position={hero.position} seasonalLabel={seasonal.label} />
 
       <main className="bg-white pb-10">
+        <GamePromoBanner />
+
         <HomeSection title="지금 가장 인기 있는 콘텐츠" href="/events">
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
             {popularCards.map((card) => (
@@ -139,15 +110,13 @@ export default function HomePage() {
           </div>
         </HomeSection>
 
-        <GamePromoBanner />
-
         <RailSection title="오늘의 무료 문화행사" href="/free" items={freeCards.map(eventToExplore)} />
         <RailSection title="인기 문화행사" href="/ending-soon" items={endingCards.map(eventToExplore)} />
-        <RailSection title="나들이" href="/places" items={placeCards.map(placeToExplore)} />
-        <RailSection title="아이와 가볼만한곳" href="/kids" items={kidsCards.map(placeToExplore)} />
+        <RailSection title="나들이" href="/places" items={placeCards.map((spot) => placeToExplore(spot))} />
+        <RailSection title="아이와 가볼만한곳" href="/kids" items={kidsCards.map((spot) => placeToExplore(spot))} />
         <RailSection title="추천 여행코스" href="/course" items={courseCards.map(courseToExplore)} />
         <RailSection title="캠핑" href="/camping" items={campCards.map(campToExplore)} />
-        <RailSection title={`${seasonal.label}나들이`} href="/season" items={seasonCards.map(placeToExplore)} />
+        <RailSection title={`${seasonal.label}나들이`} href="/season" items={seasonCards.map((spot) => placeToExplore(spot, `${seasonal.label} 여행`))} desc={seasonSeoText(seasonal.label)} limit={5} />
 
         <HomeSection title="어디로 갈까요?" compactMobile>
           <div className="-mx-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:px-0">
@@ -157,31 +126,7 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <Link
-            href="/events"
-            className="mt-4 flex h-14 items-center justify-center gap-2 rounded-2xl border border-[#dfe4ee] bg-white text-[15px] font-extrabold text-[#102344] shadow-sm transition hover:border-brandblue/40 hover:text-brandblue"
-          >
-            <PinIcon className="h-5 w-5 text-brandblue" />
-            전체 지역 보기
-          </Link>
         </HomeSection>
-
-        <section className="mx-auto w-full max-w-[1180px] px-5 pt-4 sm:px-6 sm:pt-5 lg:px-8">
-          <div className="grid gap-3 md:grid-cols-2 md:gap-5">
-            {summary.map((item) => (
-              <SummaryCard key={item.title} item={item} />
-            ))}
-          </div>
-        </section>
-
-        <section className="mx-auto mt-8 hidden w-full max-w-[1180px] px-5 sm:block sm:px-6 lg:px-8">
-          <div className="grid grid-cols-4 gap-4 rounded-2xl border border-[#e6eaf1] bg-white px-7 py-5 shadow-sm">
-            <FeatureNote icon="gift" title="다양한 정보" desc="전국 문화행사와 나들이를 한곳에서" />
-            <FeatureNote icon="refresh" title="실시간 업데이트" desc="매일 새로운 정보로 최신화" />
-            <FeatureNote icon="pin" title="지역별 추천" desc="내 주변, 원하는 지역별 탐색" />
-            <FeatureNote icon="heart" title="찜한 곳 관리" desc="마음에 드는 곳을 다시 확인" />
-          </div>
-        </section>
 
         <section className="mx-auto hidden w-full max-w-[1180px] px-5 pt-5 sm:block sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 text-[12px] text-ink-faint">
@@ -320,7 +265,7 @@ function campToPopular(camp?: Camp): PopularCard | null {
   };
 }
 
-function RailSection({ title, href, items }: { title: string; href: string; items: HomeExploreItem[] }) {
+function RailSection({ title, href, items, desc, limit = 10 }: { title: string; href: string; items: HomeExploreItem[]; desc?: string; limit?: number }) {
   if (!items.length) return null;
   const id =
     title.includes("무료") ? "section-events" :
@@ -334,12 +279,15 @@ function RailSection({ title, href, items }: { title: string; href: string; item
   return (
     <section id={id} className="mx-auto w-full max-w-[1180px] px-5 pt-6 sm:px-6 sm:pt-9 lg:px-8">
       <div className="mb-3 flex items-center justify-between gap-3">
-        <h2 className="text-[20px] font-black tracking-tight text-ink sm:text-[24px]">{title}</h2>
+        <div>
+          <h2 className="text-[20px] font-black tracking-tight text-ink sm:text-[24px]">{title}</h2>
+          {desc ? <p className="mt-1 max-w-3xl text-[13px] leading-6 text-ink-soft sm:text-[14px]">{desc}</p> : null}
+        </div>
         <Link href={href} className="shrink-0 text-[13px] font-bold text-ink-soft transition hover:text-brandblue">더보기 ›</Link>
       </div>
       <div className="relative">
         <div className="-mx-5 flex snap-x gap-3 overflow-x-auto px-5 pb-3 sm:mx-0 sm:px-0">
-          {items.slice(0, 10).map((item) => (
+          {items.slice(0, limit).map((item) => (
             <Link key={item.id} href={item.href} prefetch={false} className="group w-[168px] shrink-0 snap-start overflow-hidden rounded-2xl border border-[#e3e7ee] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover sm:w-[220px]">
               <div className="relative aspect-[1.45/1] overflow-hidden bg-neutral-100">
                 <CardImage src={item.image} alt={item.title} />
@@ -370,14 +318,14 @@ function eventToExplore(ev: CultureEvent): HomeExploreItem {
   };
 }
 
-function placeToExplore(spot: TourSpot): HomeExploreItem {
+function placeToExplore(spot: TourSpot, badge = "나들이"): HomeExploreItem {
   return {
     id: `place-${spot.id}`,
     href: `/places/spot/${spot.id}`,
     title: spot.title,
     meta: spot.area,
     image: spot.image,
-    badge: spot.isKid ? "아이와" : "나들이",
+    badge: spot.isKid ? "아이와" : badge,
   };
 }
 
@@ -420,24 +368,6 @@ function PopularContentCard({ card }: { card: PopularCard }) {
   );
 }
 
-function FreeEventCard({ ev }: { ev: CultureEvent }) {
-  return (
-    <Link href={`/event/${ev.id}`} className="group overflow-hidden rounded-2xl border border-[#e3e7ee] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover">
-      <div className="relative aspect-[1.58/1] overflow-hidden bg-neutral-100">
-        <CardImage src={ev.imgUrl || ""} alt={ev.title} />
-        <div className="absolute left-3 top-3">
-          <PriceBadge type={ev.priceType} label={ev.priceLabel || "무료"} size="sm" />
-        </div>
-      </div>
-      <div className="p-4">
-        <h3 className="line-clamp-2 min-h-[44px] text-[16px] font-extrabold leading-snug text-ink">{ev.title}</h3>
-        <p className="mt-2 line-clamp-1 text-[13px] font-medium text-ink-soft">{[ev.area, ev.place].filter(Boolean).join(" ")}</p>
-        <p className="mt-1 text-[13px] font-medium tabular-nums text-ink-faint">{fmtRange(ev.startDate, ev.endDate)}</p>
-      </div>
-    </Link>
-  );
-}
-
 function RegionPhotoCard({ area, image }: { area: string; image: string }) {
   return (
     <Link href={`/region/${(SIDO_SLUG as Record<string, string>)[area]}`} prefetch={false} className="group relative block aspect-[1.28/1] w-[132px] shrink-0 overflow-hidden rounded-2xl bg-neutral-200 shadow-sm ring-1 ring-black/[0.04] sm:w-[168px] md:w-[186px]">
@@ -473,40 +403,22 @@ function GamePromoBanner() {
   );
 }
 
-function SummaryCard({ item }: { item: { title: string; href: string; image: string; main: string; sub: string; aside: string } }) {
-  return (
-    <Link href={item.href} className="group flex items-center gap-4 rounded-2xl border border-[#e3e7ee] bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover">
-      <div className="relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl bg-neutral-100">
-        <CardImage src={item.image} alt={item.main} />
-      </div>
-      <div className="min-w-0 flex-1">
-        <div className="mb-1 flex items-center justify-between gap-2">
-          <h3 className="text-[17px] font-black text-ink">{item.title}</h3>
-          <span className="shrink-0 text-[13px] font-bold text-ink-faint group-hover:text-brandblue">{item.aside} ›</span>
-        </div>
-        <p className="line-clamp-1 text-[15px] font-bold text-ink-soft">{item.main}</p>
-        <p className="mt-0.5 line-clamp-1 text-[13px] text-ink-faint">{item.sub}</p>
-      </div>
-    </Link>
-  );
-}
-
-function FeatureNote({ icon, title, desc }: { icon: "gift" | "refresh" | "pin" | "heart"; title: string; desc: string }) {
-  const Icon = icon === "gift" ? GiftIcon : icon === "refresh" ? RefreshIcon : icon === "pin" ? PinIcon : HeartIcon;
-  return (
-    <div className="flex items-center gap-3">
-      <Icon className="h-9 w-9 shrink-0 text-brandblue/70" />
-      <div>
-        <p className="text-[15px] font-black text-ink">{title}</p>
-        <p className="mt-0.5 text-[13px] leading-snug text-ink-soft">{desc}</p>
-      </div>
-    </div>
-  );
-}
-
 function CardImage({ src, alt }: { src: string; alt: string }) {
   if (!src) return <div className="h-full w-full bg-gradient-to-br from-[#eef4fb] to-[#dfe9f5]" />;
   return <Image src={src} alt={alt} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition duration-500 group-hover:scale-105" unoptimized />;
+}
+
+function seasonPlaceMatch(spot: TourSpot, key: string, label: string): boolean {
+  const text = `${spot.title} ${spot.addr} ${spot.overview || ""}`;
+  if (key === "autumn") return /가을|단풍|은행|억새|갈대|코스모스|수목원|정원|숲|둘레길|호수|산|오름/.test(text);
+  return text.includes(label);
+}
+
+function seasonSeoText(label: string): string {
+  if (label === "가을") {
+    return "단풍길, 수목원, 호수 산책, 숲길처럼 가을 분위기가 좋은 여행지를 5곳만 골랐어요. 이번 주말 가을 나들이와 당일치기 여행 코스를 찾는 분들이 빠르게 고를 수 있게 지역과 사진 중심으로 정리했습니다.";
+  }
+  return `${label} 분위기에 맞는 나들이 장소를 사진과 지역 기준으로 골랐어요. 이번 주말 여행지와 당일치기 코스를 빠르게 비교해보세요.`;
 }
 
 function shuffleByDay<T>(arr: T[], today: string): T[] {
@@ -526,42 +438,10 @@ function shuffleByDay<T>(arr: T[], today: string): T[] {
   return copy;
 }
 
-function PinIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-      <path d="M12 21s7-6.2 7-12A7 7 0 0 0 5 9c0 5.8 7 12 7 12Z" />
-      <circle cx="12" cy="9" r="2.4" />
-    </svg>
-  );
-}
-
 function HeartIcon({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
       <path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 1 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z" />
-    </svg>
-  );
-}
-
-function GiftIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className={className}>
-      <path d="M20 12v8H4v-8" />
-      <path d="M2.5 7h19v5h-19z" />
-      <path d="M12 7v13" />
-      <path d="M12 7H8.5a2.5 2.5 0 1 1 2.5-2.5V7Z" />
-      <path d="M12 7h3.5A2.5 2.5 0 1 0 13 4.5V7Z" />
-    </svg>
-  );
-}
-
-function RefreshIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className={className}>
-      <path d="M20 7v5h-5" />
-      <path d="M4 17v-5h5" />
-      <path d="M18.2 10A7 7 0 0 0 6.4 6.6L4 9" />
-      <path d="M5.8 14A7 7 0 0 0 17.6 17.4L20 15" />
     </svg>
   );
 }
