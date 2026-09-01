@@ -8,12 +8,10 @@ import { filterCamps } from "@/lib/camping";
 import { filterCourses, slimCourse } from "@/lib/courses";
 import { GENRES, SIDO_SLUG, sidoFromSlug } from "@/lib/classify";
 import DateBrowser from "@/components/DateBrowser";
-import PosterCard from "@/components/PosterCard";
-import TourCard from "@/components/TourCard";
-import CampCard from "@/components/CampCard";
-import CourseCard from "@/components/CourseCard";
-import { Band, Container } from "@/components/Band";
+import RegionContentFilter, { type RegionFilterCategory, type RegionFilterItem } from "@/components/RegionContentFilter";
+import { Band } from "@/components/Band";
 import { todayYmd, weekendRangeYmd } from "@/lib/dates";
+import { fmtRange } from "@/lib/format";
 
 const isFree = (t: string) => t === "free" || t === "free_estimated";
 const SIDO_NAME: Record<string, string> = {
@@ -114,6 +112,48 @@ export default async function RegionPage({
     { href: `/places/${code}`, label: `${name} 아이와 가볼만한곳 더보기` },
     ...(courses.length ? [{ href: `/course/${code}`, label: `${name} 여행코스 더보기` }] : []),
   ];
+  const filterCategories: RegionFilterCategory[] = [
+    {
+      key: "events",
+      label: "문화행사",
+      desc: `${name}에서 이번 주말 보기 좋은 전시·공연·축제만 모았습니다.`,
+      moreHref: `/region/${code}`,
+      moreLabel: `${name} 문화행사 전체보기`,
+      items: eventCards.map(regionEventToItem),
+    },
+    {
+      key: "kids",
+      label: "아이와 가볼만한곳",
+      desc: `박물관·과학관·체험 등 ${name}에서 아이와 가기 좋은 장소입니다.`,
+      moreHref: `/places/${code}`,
+      moreLabel: `${name} 아이와 장소 전체보기`,
+      items: tours.map(regionTourToItem),
+    },
+    {
+      key: "places",
+      label: "나들이",
+      desc: `${name}에서 가볍게 다녀오기 좋은 관광지와 문화시설입니다.`,
+      moreHref: `/places/${code}`,
+      moreLabel: `${name} 나들이 전체보기`,
+      items: places.map(regionTourToItem),
+    },
+    {
+      key: "camping",
+      label: "캠핑장",
+      desc: `${name}의 글램핑·오토캠핑·카라반 등 대표 캠핑장입니다.`,
+      moreHref: `/camping/region/${campAreaSlug}`,
+      moreLabel: `${name} 캠핑장 전체보기`,
+      items: camps.map(regionCampToItem),
+    },
+    {
+      key: "course",
+      label: "여행코스",
+      desc: `${name}에서 당일치기와 1박2일로 묶어 보기 좋은 코스입니다.`,
+      moreHref: `/course/${code}`,
+      moreLabel: `${name} 여행코스 전체보기`,
+      items: courses.map(regionCourseToItem),
+    },
+  ];
 
   return (
     <>
@@ -127,106 +167,88 @@ export default async function RegionPage({
         <p className="mt-2 text-[13px] text-ink-faint">
           {name} 문화행사 {regionCount.toLocaleString()}건 — 지역·분야·가격·날짜로 골라보세요
         </p>
-        {freeGenres.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {freeGenres.map((g) => (
-              <Link
-                key={g.key}
-                href={`/region/${code}/${g.key}`}
-                className="rounded-full border border-free/30 bg-white px-3 py-1 text-[12.5px] font-bold text-free transition hover:bg-free hover:text-white"
-              >
-                {name} 무료 {g.label}
-              </Link>
-            ))}
-          </div>
+        <Link
+          href="#region-content-filter"
+          className="mt-4 inline-flex rounded-full bg-brandblue px-4 py-2 text-[13px] font-black text-white shadow-sm transition hover:bg-freedark"
+        >
+          종류별로 골라보기
+        </Link>
+        {(freeGenres.length > 0 || internalLinks.length > 0) && (
+          <details className="mt-3 max-w-3xl rounded-2xl border border-line bg-white/70 px-4 py-2 text-[12.5px] text-ink-soft">
+            <summary className="cursor-pointer font-bold text-ink-soft">세부 페이지 바로가기</summary>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {freeGenres.map((g) => (
+                <Link
+                  key={g.key}
+                  href={`/region/${code}/${g.key}`}
+                  className="rounded-full border border-free/30 bg-white px-3 py-1 font-bold text-free transition hover:bg-free hover:text-white"
+                >
+                  {name} 무료 {g.label}
+                </Link>
+              ))}
+              {internalLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  prefetch={false}
+                  className="rounded-full border border-line bg-white px-3 py-1 font-bold text-ink-soft transition hover:border-free/40 hover:text-free"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </details>
         )}
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {internalLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              prefetch={false}
-              className="rounded-full border border-line bg-white px-3 py-1.5 text-[12.5px] font-bold text-ink-soft transition hover:border-free/40 hover:text-free"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
       </Band>
       <Suspense fallback={null}>
         <DateBrowser events={events} initial={{ region: sido }} />
       </Suspense>
 
-      {eventCards.length > 0 && (
-        <RegionSection title={`${name} 이번 주말 문화행사`} desc="대표 행사만 먼저 보고, 전체 목록은 위 필터에서 날짜와 가격으로 더 좁혀보세요." moreHref={`/region/${code}`} moreLabel={`${name} 무료 행사 더보기`}>
-          <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {eventCards.map((ev) => <PosterCard key={ev.id} ev={ev} />)}
-          </div>
-        </RegionSection>
-      )}
-
-      {/* 아이와 가볼만한 곳 (TourAPI) */}
-      {tours.length > 0 && (
-        <RegionSection title={`${name} 아이와 가볼만한곳 / 나들이`} desc={`박물관·과학관·체험 등 ${name}에서 아이와 나들이하기 좋은 명소입니다.`} moreHref={`/places/${code}`} moreLabel={`${name} 아이와 가볼만한곳 더보기`}>
-          <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {tours.map((t) => <TourCard key={t.id} spot={t} />)}
-          </div>
-          <p className="mt-6 text-[12px] text-ink-faint">관광정보 제공: 한국관광공사 (TourAPI)</p>
-        </RegionSection>
-      )}
-
-      {camps.length > 0 && (
-        <RegionSection title={`${name} 캠핑장`} desc="글램핑·오토캠핑·카라반 등 지역 대표 캠핑장을 일부만 보여드립니다." moreHref={`/camping/region/${campAreaSlug}`} moreLabel={`${name} 캠핑장 더보기`}>
-          <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {camps.map((c) => <CampCard key={c.id} camp={c} />)}
-          </div>
-        </RegionSection>
-      )}
-
-      {courses.length > 0 ? (
-        <RegionSection title={`${name} 여행코스`} desc="당일치기와 1박2일로 묶어 보기 좋은 추천 코스입니다." moreHref={`/course/${code}`} moreLabel={`${name} 여행코스 더보기`}>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {courses.slice(0, 8).map((c) => <CourseCard key={c.id} course={c} />)}
-          </div>
-        </RegionSection>
-      ) : places.length > 0 && (
-        <RegionSection title={`${name} 추천 장소`} desc="문화시설·관광지·체험 장소 중 대표 장소만 골라 보여드립니다." moreHref={`/places/${code}`} moreLabel={`${name} 나들이 더보기`}>
-          <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {places.map((p) => <TourCard key={p.id} spot={p} />)}
-          </div>
-        </RegionSection>
-      )}
+      <RegionContentFilter areaName={name} categories={filterCategories} />
     </>
   );
 }
 
-function RegionSection({
-  title,
-  desc,
-  moreHref,
-  moreLabel,
-  children,
-}: {
-  title: string;
-  desc: string;
-  moreHref: string;
-  moreLabel: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="border-t border-line bg-white">
-      <Container className="pb-12 pt-8">
-        <div className="flex items-end justify-between gap-3">
-          <div>
-            <h2 className="text-[18px] font-extrabold text-ink">{title}</h2>
-            <p className="mt-1 text-[13px] text-ink-faint">{desc}</p>
-          </div>
-          <Link href={moreHref} prefetch={false} className="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-[13px] font-bold text-ink-soft transition hover:bg-black/5 hover:text-ink">
-            {moreLabel} →
-          </Link>
-        </div>
-        <div className="mt-4">{children}</div>
-      </Container>
-    </div>
-  );
+function regionEventToItem(ev: { id: string; title: string; area: string; place?: string; imgUrl?: string; realmName?: string; startDate: string; endDate: string }): RegionFilterItem {
+  return {
+    id: `event-${ev.id}`,
+    href: `/event/${ev.id}`,
+    title: ev.title,
+    meta: [ev.place || ev.area, fmtRange(ev.startDate, ev.endDate)].filter(Boolean).join(" · "),
+    image: ev.imgUrl || "",
+    badge: ev.realmName || "문화행사",
+  };
+}
+
+function regionTourToItem(spot: { id: string; title: string; area: string; addr: string; image: string; isKid?: boolean }): RegionFilterItem {
+  return {
+    id: `place-${spot.id}`,
+    href: `/places/spot/${spot.id}`,
+    title: spot.title,
+    meta: spot.addr || spot.area,
+    image: spot.image,
+    badge: spot.isKid ? "아이와" : "나들이",
+  };
+}
+
+function regionCampToItem(camp: { id: string; name: string; area: string; sigungu?: string; image: string }): RegionFilterItem {
+  return {
+    id: `camp-${camp.id}`,
+    href: `/camping/${camp.id}`,
+    title: camp.name,
+    meta: [camp.area, camp.sigungu].filter(Boolean).join(" · "),
+    image: camp.image,
+    badge: "캠핑",
+  };
+}
+
+function regionCourseToItem(course: { id: string; title: string; area: string; image: string; duration: string }): RegionFilterItem {
+  return {
+    id: `course-${course.id}`,
+    href: `/course/c/${course.id}`,
+    title: course.title,
+    meta: [course.area, course.duration].filter(Boolean).join(" · "),
+    image: course.image,
+    badge: "여행코스",
+  };
 }
