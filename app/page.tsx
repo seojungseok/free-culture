@@ -1,26 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getAllEvents, getWeekend, getFree, getNow, getFeatured, slimForClient } from "@/lib/data";
-import { getPlacesSample, getPlaceCount, getAllPlaces } from "@/lib/tour";
-import { getCampCount, getAllCamps } from "@/lib/camping";
-import { getCourseKeywords, getAllCourses, getCourseCount, slimCourse } from "@/lib/courses";
-import CourseCard from "@/components/CourseCard";
-import PopularKeywords from "@/components/PopularKeywords";
+import { getAllEvents, getWeekend, getFree, getFeatured, slimForClient } from "@/lib/data";
+import { getPlacesSample, getAllPlaces, type TourSpot } from "@/lib/tour";
+import { getCampCount, getAllCamps, type Camp } from "@/lib/camping";
+import { getAllCourses, getCourseCount, slimCourse } from "@/lib/courses";
 import { todayYmd } from "@/lib/dates";
 import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
-import PosterCard from "@/components/PosterCard";
-import TourCard from "@/components/TourCard";
-import CampCard from "@/components/CampCard";
-import BigEventModal from "@/components/BigEventModal";
-import { Band } from "@/components/Band";
-import { SITE } from "@/lib/site";
 import { season } from "@/lib/finder";
-import HeroCarousel, { type HeroSlide } from "@/components/HeroCarousel";
-import ScrollRail from "@/components/ScrollRail";
-import restaurantsData from "@/data/restaurants.json";
+import { SITE } from "@/lib/site";
+import SearchBox from "@/components/SearchBox";
+import PriceBadge from "@/components/PriceBadge";
+import { fmtRange } from "@/lib/format";
 import type { CultureEvent } from "@/lib/types";
 
-// 홈은 하루 1회 재생성 → 새 행사·새 글·새 데이터가 하루 안에 노출(엣지 캐시라 대역폭 부담 없음)
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
@@ -31,10 +24,14 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const FREEISH = new Set(["free", "free_estimated", "partial_free"]);
-const RAIL_SPOT = "w-[64%] shrink-0 snap-start sm:w-[31%] md:w-[23.5%] lg:w-[19%]";
-const RAIL_POSTER = "w-[54%] shrink-0 snap-start sm:w-[27%] md:w-[21%] lg:w-[16%]";
-const restaurants = (restaurantsData as unknown as { restaurants: { id: string; title: string; area: string; image: string }[] }).restaurants || [];
+const heroImages: Record<string, { image: string; position: string }> = {
+  spring: { image: "https://tong.visitkorea.or.kr/cms/resource/44/3540444_image2_1.jpg", position: "center 46%" },
+  summer: { image: "https://tong.visitkorea.or.kr/cms/resource/89/3544389_image2_1.jpg", position: "center 45%" },
+  autumn: { image: "https://tong.visitkorea.or.kr/cms/resource/57/3364557_image2_1.JPG", position: "center 42%" },
+  winter: { image: "https://tong.visitkorea.or.kr/cms/resource/89/3562189_image2_1.jpg", position: "center 42%" },
+  default: { image: "https://tong.visitkorea.or.kr/cms/resource/56/3539656_image2_1.jpg", position: "center 46%" },
+};
+
 const SIDO_NAME: Record<string, string> = {
   경기: "경기도",
   강원: "강원도",
@@ -48,172 +45,420 @@ const SIDO_NAME: Record<string, string> = {
 };
 const displaySido = (sido: string) => SIDO_NAME[sido] || sido;
 
+const regionImages: Record<string, string> = {
+  서울: "https://tong.visitkorea.or.kr/cms/resource/56/3539656_image2_1.jpg",
+  경기: "https://tong.visitkorea.or.kr/cms/resource/68/3482668_image2_1.jpg",
+  인천: "https://tong.visitkorea.or.kr/cms/resource/78/3302878_image2_1.jpg",
+  부산: "https://tong.visitkorea.or.kr/cms/resource/42/3071042_image2_1.JPG",
+  제주: "https://tong.visitkorea.or.kr/cms/resource/95/3552095_image2_1.jpg",
+};
+
+type HomeCourse = ReturnType<typeof slimCourse>;
+
 export default function HomePage() {
-  const all = getAllEvents();
-  const placeCount = getPlaceCount();
-  const campCount = getCampCount();
-  const s = season();
   const today = todayYmd();
-
-  const sample = getPlacesSample(40).filter((p) => p.image);
-  const camps = getAllCamps().filter((c) => c.image);
-  const foods = restaurants.filter((r) => r.image);
-  const seasonSpots = getAllPlaces().filter((p) => p.image && s.terms.some((t) => `${p.title} ${p.addr}`.includes(t)));
-
-  // 오늘 무료 문화행사 수(띠)
-  const freeTodayCount = getNow().filter((e) => FREEISH.has(e.priceType)).length;
-
-  // ── 히어로 10개(다양) — 무료행사 / 나들이 / 맛집 / 캠핑 / 계절, 밝은 이미지 소스만 라운드로빈
-  const featured = getFeatured(8).filter((e) => e.imgUrl);
-  const pools: HeroSlide[][] = [
-    featured.map((e) => ({ image: e.imgUrl, badge: "무료 문화행사", title: e.title, sub: [e.area, e.place].filter(Boolean).join(" · "), href: `/event/${e.id}` })),
-    sample.map((p) => ({ image: p.image, badge: "인기 나들이 명소", title: p.title, sub: p.area, href: `/places/spot/${p.id}` })),
-    foods.map((r) => ({ image: r.image, badge: "맛집 탐방", title: r.title, sub: r.area, href: `/food/spot/${r.id}` })),
-    camps.map((c) => ({ image: c.image, badge: "캠핑", title: c.name, sub: [c.area, c.sigungu].filter(Boolean).join(" · "), href: `/camping/${c.id}` })),
-    seasonSpots.map((p) => ({ image: p.image, badge: `${s.label} 나들이`, title: p.title, sub: p.area, href: `/places/spot/${p.id}` })),
-  ];
-  const heroSlides: HeroSlide[] = [];
-  for (let i = 0; heroSlides.length < 10 && i < 20; i++) {
-    for (const pool of pools) if (pool[i] && heroSlides.length < 10) heroSlides.push(pool[i]);
-  }
-
-  // 인기 검색어 — 발행된 여행코스 키워드만(클릭하면 매칭 코스 페이지로). 무작위 검색어 X.
-  // 날짜 시드 셔플(하루 내 안정, 매일 변동) — mulberry32
-  const seed = Number(today.replace(/-/g, "")) || 1;
-  const shuffle = <T,>(arr: T[]): T[] => {
-    let a = seed >>> 0;
-    const rnd = () => { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
-    const c = [...arr];
-    for (let i = c.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [c[i], c[j]] = [c[j], c[i]]; }
-    return c;
-  };
-  const popular = shuffle(getCourseKeywords()).slice(0, 12);
-
-  // 카드 섹션 데이터
-  const eventCards = slimForClient(getFree(true).filter((e) => e.imgUrl && e.endDate >= today).slice(0, 12));
-  const placeCards = sample.slice(0, 12);
-  const campCards = camps.slice(0, 12);
-  const courseCards = shuffle(getAllCourses()).slice(0, 12).map(slimCourse); // 발행 코스 매일 셔플
+  const seasonal = season();
+  const hero = heroImages[seasonal.key] || heroImages.default;
+  const all = getAllEvents();
+  const campCount = getCampCount();
   const courseCount = getCourseCount();
 
-  const popupPicks = slimForClient(
-    [...getWeekend()].filter((e) => FREEISH.has(e.priceType) && e.imgUrl).sort((a, b) => b.featuredScore - a.featuredScore).slice(0, 5)
-  );
+  const featuredEvents = slimForClient(getFeatured(8).filter((e) => e.imgUrl));
+  const freeCards = slimForClient(getFree(true).filter((e) => e.imgUrl && e.endDate >= today).slice(0, 4));
+  const weekendCards = slimForClient(getWeekend().filter((e) => e.imgUrl).slice(0, 4));
+  const placeCards = getPlacesSample(40).filter((p) => p.image).slice(0, 8);
+  const courseCards = shuffleByDay(getAllCourses(), today).slice(0, 8).map(slimCourse);
+  const campCards = getAllCamps().filter((c) => c.image).slice(0, 8);
+  const allPlaces = getAllPlaces().filter((p) => p.image);
+  const kidsPick = allPlaces.find((p) => p.isKid) || placeCards[0];
+
+  const popularCards = [
+    eventToPopular(featuredEvents[0] || freeCards[0] || weekendCards[0]),
+    placeToPopular(placeCards[0]),
+    courseToPopular(courseCards[0]),
+    campToPopular(campCards[0]),
+  ].filter(Boolean) as PopularCard[];
+
+  const summary = [
+    {
+      title: "문화행사",
+      href: "/events",
+      image: featuredEvents[1]?.imgUrl || freeCards[0]?.imgUrl || "",
+      main: featuredEvents[1]?.title || "전국 문화행사",
+      sub: featuredEvents[1] ? [featuredEvents[1].area, featuredEvents[1].place].filter(Boolean).join(" ") : `전체 ${all.length.toLocaleString()}건`,
+      aside: featuredEvents[1] ? fmtRange(featuredEvents[1].startDate, featuredEvents[1].endDate) : "더보기",
+    },
+    {
+      title: "아이와 가볼만한 곳",
+      href: "/kids",
+      image: kidsPick?.image || "",
+      main: kidsPick?.title || "아이와 함께",
+      sub: kidsPick?.area || "전국",
+      aside: "더보기",
+    },
+    {
+      title: "추천 여행코스",
+      href: "/course",
+      image: courseCards[1]?.image || courseCards[0]?.image || "",
+      main: courseCards[1]?.title || courseCards[0]?.title || "전국 여행코스",
+      sub: courseCards[1]?.area || courseCards[0]?.area || `전체 ${courseCount.toLocaleString()}개`,
+      aside: "더보기",
+    },
+    {
+      title: "캠핑 떠날까요?",
+      href: "/camping",
+      image: campCards[1]?.image || campCards[0]?.image || "",
+      main: campCards[1]?.name || campCards[0]?.name || "전국 캠핑장",
+      sub: campCards[1] ? [campCards[1].area, campCards[1].sigungu].filter(Boolean).join(" ") : `전체 ${campCount.toLocaleString()}곳`,
+      aside: "더보기",
+    },
+  ];
 
   return (
     <>
-      <BigEventModal events={popupPicks} />
+      <Hero image={hero.image} position={hero.position} />
 
-      {/* 히어로 */}
-      <div className="mx-auto w-full max-w-[1280px] pt-3 sm:pt-5">
-        <div className="mb-2.5 px-4 sm:mb-3 sm:px-6 lg:px-8">
-          <h1 className="text-[19px] font-black tracking-[-0.02em] text-ink sm:text-[24px]">
-            이번 주말 <span className="text-free">뭐하지?</span>
-          </h1>
-          <p className="mt-0.5 text-[13px] text-ink-faint sm:text-[14px]">전국 무료 행사·나들이·캠핑을 매일 새로 골라드려요</p>
-        </div>
-        <HeroCarousel slides={heroSlides} />
-      </div>
+      <main className="bg-white pb-10">
+        <GamePromoBanner />
 
-      {/* 인기 검색어 — 네이버 실시간형 한 줄 롤링(더보기로 전체). 상단 최적 위치. */}
-      <PopularKeywords items={popular} />
-
-      <Band tone="white" border={false} innerClassName="pt-4 sm:pt-5">
-        <div className="flex items-end justify-between gap-3">
-          <div>
-            <h2 className="text-[18px] font-extrabold tracking-tight text-ink sm:text-[20px]">지역별로 찾아보기</h2>
-            <p className="mt-0.5 text-[13px] text-ink-faint sm:text-[14px]">서울·경기·부산·제주까지 지역별 무료 행사와 나들이를 바로 확인하세요</p>
+        <HomeSection title="지금 가장 인기 있는 콘텐츠" href="/events">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+            {popularCards.map((card) => (
+              <PopularContentCard key={card.href} card={card} />
+            ))}
           </div>
-          <Link href="/events" className="hidden shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-[13px] font-bold text-ink-soft transition hover:bg-black/5 hover:text-ink sm:inline-flex">
-            전국 행사 보기 →
+        </HomeSection>
+
+        <HomeSection title="오늘 무료로 즐기세요!" href="/free" compactMobile>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+            {freeCards.map((ev, i) => (
+              <div key={ev.id} className={i > 1 ? "hidden md:block" : ""}>
+                <FreeEventCard ev={ev} />
+              </div>
+            ))}
+          </div>
+        </HomeSection>
+
+        <HomeSection title="어디로 갈까요?" compactMobile>
+          <div className="grid grid-cols-5 gap-3">
+            {["서울", "경기", "인천", "부산", "제주"].map((area) => (
+              <RegionPhotoCard key={area} area={area} />
+            ))}
+          </div>
+          <Link
+            href="/events"
+            className="mt-4 flex h-14 items-center justify-center gap-2 rounded-2xl border border-[#dfe4ee] bg-white text-[15px] font-extrabold text-[#102344] shadow-sm transition hover:border-brandblue/40 hover:text-brandblue"
+          >
+            <PinIcon className="h-5 w-5 text-brandblue" />
+            전체 지역 보기
           </Link>
-        </div>
-        <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9">
-          {SIDO_LIST.map((sido) => (
-            <Link
-              key={sido}
-              href={`/region/${(SIDO_SLUG as Record<string, string>)[sido]}`}
-              prefetch={false}
-              className="rounded-xl border border-line bg-panel px-3 py-2.5 text-center text-[13px] font-extrabold text-ink-soft transition hover:border-free/40 hover:bg-freelight hover:text-freedark sm:text-[13.5px]"
-            >
-              {displaySido(sido)}
-            </Link>
-          ))}
-        </div>
-      </Band>
+        </HomeSection>
 
-      {/* 오늘 무료 띠 */}
-      <Band tone="white" border={false} innerClassName="pt-4 sm:pt-5">
-        <Link href="/free" className="flex items-center justify-between gap-3 rounded-2xl bg-freelight px-4 py-3.5 transition hover:bg-[#dcf5e7] sm:px-5">
-          <span className="text-[13.5px] font-bold text-freedark sm:text-[15px]">
-            🆓 오늘 무료로 즐기는 문화행사 <span className="tabular-nums">{freeTodayCount.toLocaleString()}</span>건
-          </span>
-          <span className="shrink-0 text-[13px] font-bold text-free">바로 확인 →</span>
-        </Link>
-      </Band>
-
-      {/* 문화행사 */}
-      {eventCards.length > 0 && (
-        <CardSection tone="panel" title="문화행사" desc="무료·저렴한 전시·공연" href="/events" moreLabel={`전체 ${all.length.toLocaleString()}건`}>
-          <ScrollRail ariaLabel="문화행사">
-            {eventCards.map((ev: CultureEvent) => (
-              <div key={ev.id} className={RAIL_POSTER}><PosterCard ev={ev} /></div>
+        <section className="mx-auto w-full max-w-[1180px] px-5 pt-4 sm:px-6 sm:pt-5 lg:px-8">
+          <div className="grid gap-3 md:grid-cols-2 md:gap-5">
+            {summary.map((item) => (
+              <SummaryCard key={item.title} item={item} />
             ))}
-          </ScrollRail>
-        </CardSection>
-      )}
+          </div>
+        </section>
 
-      {/* 나들이 */}
-      {placeCards.length > 0 && (
-        <CardSection tone="white" title="나들이" desc="아이와 가기 좋은 전국 가볼만한 곳" href="/places" moreLabel={`전체 ${placeCount.toLocaleString()}곳`}>
-          <ScrollRail ariaLabel="나들이">
-            {placeCards.map((p) => (
-              <div key={p.id} className={RAIL_SPOT}><TourCard spot={p} /></div>
-            ))}
-          </ScrollRail>
-        </CardSection>
-      )}
+        <section className="mx-auto mt-8 hidden w-full max-w-[1180px] px-5 sm:block sm:px-6 lg:px-8">
+          <div className="grid grid-cols-4 gap-4 rounded-2xl border border-[#e6eaf1] bg-white px-7 py-5 shadow-sm">
+            <FeatureNote icon="gift" title="다양한 정보" desc="전국 문화행사와 나들이를 한곳에서" />
+            <FeatureNote icon="refresh" title="실시간 업데이트" desc="매일 새로운 정보로 최신화" />
+            <FeatureNote icon="pin" title="지역별 추천" desc="내 주변, 원하는 지역별 탐색" />
+            <FeatureNote icon="heart" title="찜한 곳 관리" desc="마음에 드는 곳을 다시 확인" />
+          </div>
+        </section>
 
-      {/* 여행코스 */}
-      {courseCards.length > 0 && (
-        <CardSection tone="panel" title="여행코스" desc="여기 들렀다 밥 먹고 다음 코스로 — 하루·1박2일 여행 일정" href="/course" moreLabel={`전체 ${courseCount.toLocaleString()}개`}>
-          <ScrollRail ariaLabel="여행코스">
-            {courseCards.map((c) => (
-              <div key={c.id} className={RAIL_SPOT}><CourseCard course={c} /></div>
+        <section className="mx-auto hidden w-full max-w-[1180px] px-5 pt-5 sm:block sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 text-[12px] text-ink-faint">
+            {SIDO_LIST.map((sido) => (
+              <Link
+                key={sido}
+                href={`/region/${(SIDO_SLUG as Record<string, string>)[sido]}`}
+                prefetch={false}
+                className="rounded-full px-2 py-1 hover:bg-tint hover:text-free"
+              >
+                {displaySido(sido)}
+              </Link>
             ))}
-          </ScrollRail>
-        </CardSection>
-      )}
-
-      {/* 캠핑 */}
-      {campCards.length > 0 && (
-        <CardSection tone="white" title="캠핑" desc="숲·계곡·바다, 반려동물 동반까지" href="/camping" moreLabel={`전체 ${campCount.toLocaleString()}곳`}>
-          <ScrollRail ariaLabel="캠핑">
-            {campCards.map((c) => (
-              <div key={c.id} className={RAIL_SPOT}><CampCard camp={c} /></div>
-            ))}
-          </ScrollRail>
-        </CardSection>
-      )}
+          </div>
+        </section>
+      </main>
     </>
   );
 }
 
-function CardSection({ tone, title, desc, href, moreLabel, children }: { tone: "white" | "panel"; title: string; desc?: string; href?: string; moreLabel?: string; children: React.ReactNode }) {
+function Hero({ image, position }: { image: string; position: string }) {
   return (
-    <Band tone={tone} innerClassName="py-6 sm:py-8">
-      <div className="flex items-end justify-between gap-3">
-        <div>
-          <h2 className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[22px]">{title}</h2>
-          {desc && <p className="mt-0.5 text-[13px] text-ink-faint sm:text-[14px]">{desc}</p>}
+    <section
+      className="relative overflow-hidden bg-[#dcebf8]"
+      style={{
+        backgroundImage:
+          `linear-gradient(90deg, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.22) 45%, rgba(255,255,255,0.44) 100%), linear-gradient(180deg, rgba(216,235,253,0.1) 0%, rgba(255,255,255,0.52) 100%), url('${image}')`,
+        backgroundPosition: position,
+        backgroundSize: "cover",
+      }}
+    >
+      <div className="mx-auto flex min-h-[288px] w-full max-w-[1180px] flex-col items-center justify-center px-5 py-7 text-center sm:min-h-[350px] sm:px-6 lg:min-h-[382px] lg:px-8">
+        <h1 className="text-[28px] font-black leading-[1.12] tracking-tight text-[#102344] sm:text-[44px] lg:text-[48px]">
+          이번 주말, 어디로 떠날까요?
+        </h1>
+        <p className="mt-2 text-[14px] font-semibold text-[#13243d] sm:mt-3 sm:text-[18px]">
+          전국 문화행사, 나들이, 여행코스, 캠핑까지 한 번에!
+        </p>
+        <div className="mt-5 w-full max-w-[700px] sm:mt-7">
+          <SearchBox size="lg" placeholder="지역이나 키워드를 검색해보세요" submitButton />
         </div>
+        <div className="mt-4 flex w-full max-w-[620px] flex-wrap justify-center gap-2 sm:mt-5 sm:gap-3">
+          {["오늘", "이번 주말", "무료", "아이와", "데이트"].map((q) => (
+            <Link
+              key={q}
+              href={`/search?q=${encodeURIComponent(q)}`}
+              className="min-w-[78px] rounded-full bg-white/95 px-3.5 py-2 text-[13px] font-extrabold text-[#102344] shadow-sm ring-1 ring-black/5 backdrop-blur transition hover:bg-white hover:text-brandblue sm:min-w-[96px] sm:px-4 sm:py-2.5 sm:text-[15px]"
+            >
+              {q}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HomeSection({ title, href, compactMobile = false, children }: { title: string; href?: string; compactMobile?: boolean; children: React.ReactNode }) {
+  return (
+    <section className={["mx-auto w-full max-w-[1180px] px-5 sm:px-6 sm:pt-9 lg:px-8", compactMobile ? "pt-5" : "pt-6"].join(" ")}>
+      <div className="mb-3 flex items-center justify-between gap-3 sm:mb-4">
+        <h2 className="text-[20px] font-black tracking-tight text-ink sm:text-[24px]">{title}</h2>
         {href && (
-          <Link href={href} className="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-[13px] font-bold text-ink-soft transition hover:bg-black/5 hover:text-ink">
-            {moreLabel || "전체보기"} →
+          <Link href={href} className="shrink-0 text-[13px] font-bold text-ink-soft transition hover:text-brandblue sm:text-[14px]">
+            더보기 ›
           </Link>
         )}
       </div>
-      <div className="mt-4">{children}</div>
-    </Band>
+      {children}
+    </section>
+  );
+}
+
+interface PopularCard {
+  href: string;
+  title: string;
+  sub: string;
+  badge: string;
+  image: string;
+  tone: string;
+}
+
+function eventToPopular(ev?: CultureEvent): PopularCard | null {
+  if (!ev) return null;
+  return {
+    href: `/event/${ev.id}`,
+    title: ev.title,
+    sub: fmtRange(ev.startDate, ev.endDate),
+    badge: ev.realmName || "문화행사",
+    image: ev.imgUrl || "",
+    tone: "bg-brandblue",
+  };
+}
+
+function placeToPopular(spot?: TourSpot): PopularCard | null {
+  if (!spot) return null;
+  return {
+    href: `/places/spot/${spot.id}`,
+    title: spot.title,
+    sub: spot.area,
+    badge: "나들이",
+    image: spot.image,
+    tone: "bg-free",
+  };
+}
+
+function courseToPopular(course?: HomeCourse): PopularCard | null {
+  if (!course) return null;
+  return {
+    href: `/course/c/${course.id}`,
+    title: course.title,
+    sub: course.area,
+    badge: "여행코스",
+    image: course.image,
+    tone: "bg-paid",
+  };
+}
+
+function campToPopular(camp?: Camp): PopularCard | null {
+  if (!camp) return null;
+  return {
+    href: `/camping/${camp.id}`,
+    title: camp.name,
+    sub: [camp.area, camp.sigungu].filter(Boolean).join(" "),
+    badge: "캠핑",
+    image: camp.image,
+    tone: "bg-[#7048e8]",
+  };
+}
+
+function PopularContentCard({ card }: { card: PopularCard }) {
+  return (
+    <Link href={card.href} prefetch={false} className="group relative block aspect-[1/1.04] overflow-hidden rounded-2xl bg-neutral-200 shadow-sm ring-1 ring-black/[0.04] transition hover:-translate-y-0.5 hover:shadow-cardhover md:aspect-[1/1.08]">
+      <CardImage src={card.image} alt={card.title} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/24 to-transparent" />
+      <div className="absolute left-3 top-3">
+        <span className={`rounded-md ${card.tone} px-2 py-1 text-[11px] font-black text-white shadow-sm`}>{card.badge}</span>
+      </div>
+      <HeartIcon className="absolute right-3 top-3 h-7 w-7 text-white drop-shadow" />
+      <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+        <h3 className="line-clamp-2 text-[16px] font-black leading-tight tracking-tight md:text-[20px]">{card.title}</h3>
+        <p className="mt-1.5 line-clamp-1 text-[12px] font-semibold text-white/88 md:text-[13px]">{card.sub}</p>
+      </div>
+    </Link>
+  );
+}
+
+function FreeEventCard({ ev }: { ev: CultureEvent }) {
+  return (
+    <Link href={`/event/${ev.id}`} className="group overflow-hidden rounded-2xl border border-[#e3e7ee] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover">
+      <div className="relative aspect-[1.58/1] overflow-hidden bg-neutral-100">
+        <CardImage src={ev.imgUrl || ""} alt={ev.title} />
+        <div className="absolute left-3 top-3">
+          <PriceBadge type={ev.priceType} label={ev.priceLabel || "무료"} size="sm" />
+        </div>
+      </div>
+      <div className="p-4">
+        <h3 className="line-clamp-2 min-h-[44px] text-[16px] font-extrabold leading-snug text-ink">{ev.title}</h3>
+        <p className="mt-2 line-clamp-1 text-[13px] font-medium text-ink-soft">{[ev.area, ev.place].filter(Boolean).join(" ")}</p>
+        <p className="mt-1 text-[13px] font-medium tabular-nums text-ink-faint">{fmtRange(ev.startDate, ev.endDate)}</p>
+      </div>
+    </Link>
+  );
+}
+
+function RegionPhotoCard({ area }: { area: string }) {
+  return (
+    <Link href={`/region/${(SIDO_SLUG as Record<string, string>)[area]}`} prefetch={false} className="group relative block aspect-[1.28/1] overflow-hidden rounded-2xl bg-neutral-200 shadow-sm ring-1 ring-black/[0.04]">
+      <CardImage src={regionImages[area]} alt={`${area} 지역`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+      <span className="absolute inset-x-0 bottom-3 text-center text-[18px] font-black text-white drop-shadow sm:text-[22px]">{area}</span>
+    </Link>
+  );
+}
+
+function GamePromoBanner() {
+  return (
+    <section className="mx-auto w-full max-w-[1180px] px-5 pt-4 sm:px-6 sm:pt-5 lg:px-8">
+      <Link
+        href="/game"
+        aria-label="나만 아니면 돼 독박게임 하러 가기"
+        className="group relative flex min-h-[62px] items-center justify-between gap-3 overflow-hidden rounded-2xl border border-[#dfe8f7] bg-gradient-to-r from-[#eef6ff] via-white to-[#edf8f3] px-4 py-2.5 text-[#102344] shadow-sm transition hover:border-brandblue/30 hover:shadow-card sm:min-h-[70px] sm:px-6"
+      >
+        <span className="absolute inset-y-0 left-0 w-1/2 bg-[radial-gradient(circle_at_15%_50%,rgba(45,127,249,0.16),transparent_42%)]" />
+        <span className="relative z-10 flex min-w-0 items-center gap-3">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brandblue/10 text-[20px] ring-1 ring-brandblue/15">🎮</span>
+          <span className="min-w-0">
+            <span className="block truncate text-[12px] font-bold text-ink-faint sm:text-[13px]">심심할 때 한 판</span>
+            <span className="block truncate text-[16px] font-black tracking-tight text-[#102344] sm:text-[19px]">나만 아니면 돼 · 독박게임</span>
+          </span>
+        </span>
+        <span className="relative z-10 inline-flex shrink-0 items-center gap-1 rounded-full bg-brandblue px-3 py-1.5 text-[12px] font-black text-white transition group-hover:translate-x-0.5 sm:px-4 sm:text-[13px]">
+          게임하러 가기
+          <span aria-hidden>›</span>
+        </span>
+      </Link>
+    </section>
+  );
+}
+
+function SummaryCard({ item }: { item: { title: string; href: string; image: string; main: string; sub: string; aside: string } }) {
+  return (
+    <Link href={item.href} className="group flex items-center gap-4 rounded-2xl border border-[#e3e7ee] bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover">
+      <div className="relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl bg-neutral-100">
+        <CardImage src={item.image} alt={item.main} />
+      </div>
+      <div className="min-w-0 flex-1">
+        <div className="mb-1 flex items-center justify-between gap-2">
+          <h3 className="text-[17px] font-black text-ink">{item.title}</h3>
+          <span className="shrink-0 text-[13px] font-bold text-ink-faint group-hover:text-brandblue">{item.aside} ›</span>
+        </div>
+        <p className="line-clamp-1 text-[15px] font-bold text-ink-soft">{item.main}</p>
+        <p className="mt-0.5 line-clamp-1 text-[13px] text-ink-faint">{item.sub}</p>
+      </div>
+    </Link>
+  );
+}
+
+function FeatureNote({ icon, title, desc }: { icon: "gift" | "refresh" | "pin" | "heart"; title: string; desc: string }) {
+  const Icon = icon === "gift" ? GiftIcon : icon === "refresh" ? RefreshIcon : icon === "pin" ? PinIcon : HeartIcon;
+  return (
+    <div className="flex items-center gap-3">
+      <Icon className="h-9 w-9 shrink-0 text-brandblue/70" />
+      <div>
+        <p className="text-[15px] font-black text-ink">{title}</p>
+        <p className="mt-0.5 text-[13px] leading-snug text-ink-soft">{desc}</p>
+      </div>
+    </div>
+  );
+}
+
+function CardImage({ src, alt }: { src: string; alt: string }) {
+  if (!src) return <div className="h-full w-full bg-gradient-to-br from-[#eef4fb] to-[#dfe9f5]" />;
+  return <Image src={src} alt={alt} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition duration-500 group-hover:scale-105" unoptimized />;
+}
+
+function shuffleByDay<T>(arr: T[], today: string): T[] {
+  let a = (Number(today.replace(/-/g, "")) || 1) >>> 0;
+  const rnd = () => {
+    a |= 0;
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(rnd() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function PinIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+      <path d="M12 21s7-6.2 7-12A7 7 0 0 0 5 9c0 5.8 7 12 7 12Z" />
+      <circle cx="12" cy="9" r="2.4" />
+    </svg>
+  );
+}
+
+function HeartIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+      <path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 1 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z" />
+    </svg>
+  );
+}
+
+function GiftIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className={className}>
+      <path d="M20 12v8H4v-8" />
+      <path d="M2.5 7h19v5h-19z" />
+      <path d="M12 7v13" />
+      <path d="M12 7H8.5a2.5 2.5 0 1 1 2.5-2.5V7Z" />
+      <path d="M12 7h3.5A2.5 2.5 0 1 0 13 4.5V7Z" />
+    </svg>
+  );
+}
+
+function RefreshIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className={className}>
+      <path d="M20 7v5h-5" />
+      <path d="M4 17v-5h5" />
+      <path d="M18.2 10A7 7 0 0 0 6.4 6.6L4 9" />
+      <path d="M5.8 14A7 7 0 0 0 17.6 17.4L20 15" />
+    </svg>
   );
 }

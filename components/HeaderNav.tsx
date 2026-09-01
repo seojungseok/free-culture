@@ -24,25 +24,25 @@ export default function HeaderNav({ seasonLabel }: { seasonLabel: string }) {
     path === "/" ? pathname === "/" : pathname === path || pathname.startsWith(`${path}/`);
 
   return (
-    <nav className="mx-auto grid w-full max-w-[1280px] grid-cols-4 gap-y-0.5 px-2 py-1 sm:flex sm:gap-1 sm:px-6 sm:py-0 lg:px-8">
+    <nav className="flex w-full items-center justify-center gap-1">
       {tabs.map((t) => {
         const active = isActive(t.path);
         return (
           <Link
             key={t.label}
             href={t.href}
-            className="flex items-center justify-center px-1 py-2 sm:justify-start sm:px-3 sm:py-3"
+            className="flex items-center justify-center px-2 py-3 lg:px-3"
           >
             <span
               className={[
-                "relative whitespace-nowrap text-[13px] font-bold transition sm:text-[15px]",
+                "relative whitespace-nowrap text-[14px] font-bold transition lg:text-[15px]",
                 active ? "text-free" : "text-ink-soft hover:text-ink",
               ].join(" ")}
             >
               {t.label}
               <span
                 className={[
-                  "absolute inset-x-0 -bottom-1.5 h-[2.5px] rounded-full transition sm:-bottom-[11px]",
+                  "absolute inset-x-0 -bottom-[23px] h-[2.5px] rounded-full transition",
                   active ? "bg-free" : "bg-transparent",
                 ].join(" ")}
               />

@@ -13,10 +13,12 @@ export default function SearchBox({
   size = "md",
   placeholder = "행사·장소·지역 검색",
   defaultValue = "",
+  submitButton = false,
 }: {
   size?: "sm" | "md" | "lg";
   placeholder?: string;
   defaultValue?: string;
+  submitButton?: boolean;
 }) {
   const router = useRouter();
   const [q, setQ] = useState(defaultValue);
@@ -61,8 +63,9 @@ export default function SearchBox({
         aria-label="검색"
         autoComplete="off"
         className={[
-          "w-full rounded-full border border-black/10 bg-white pl-11 pr-4 text-[16px] font-medium text-ink shadow-sm outline-none transition",
+          "w-full rounded-full border border-black/10 bg-white pl-11 text-[16px] font-medium text-ink shadow-sm outline-none transition",
           "placeholder:text-ink-faint focus:border-free/50 focus:ring-2 focus:ring-free/20",
+          submitButton ? "pr-[82px] sm:pr-[104px]" : "pr-4",
           pad,
         ].join(" ")}
       />
@@ -70,6 +73,18 @@ export default function SearchBox({
         <circle cx="11" cy="11" r="7" />
         <path d="m21 21-4.3-4.3" />
       </svg>
+      {submitButton && (
+        <button
+          type="submit"
+          aria-label="검색"
+          className="absolute right-0 top-0 flex h-14 w-[74px] items-center justify-center rounded-r-full bg-brandblue text-white transition hover:bg-[#1d6fe8] sm:w-24"
+        >
+          <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </button>
+      )}
 
       {open && suggestions.length > 0 && (
         <ul
