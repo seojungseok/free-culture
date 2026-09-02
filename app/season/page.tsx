@@ -2,8 +2,7 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Band } from "@/components/Band";
 import SeasonBrowser from "@/components/SeasonBrowser";
-import { season } from "@/lib/finder";
-import { filterSeasonPlaces, seasonAreas, seasonKeywords } from "@/lib/season";
+import { filterSeasonPlaces, SEASON_KEYWORDS } from "@/lib/season";
 import { slimTours } from "@/lib/tour";
 import { nearbyRestaurants } from "@/lib/nearby";
 import { autumnHeroText, autumnReason, buildAutumnStories } from "@/lib/autumnContent";
@@ -18,26 +17,25 @@ export const metadata: Metadata = {
 };
 
 export default function SeasonPage() {
-  const s = season();
-  const keywords = seasonKeywords();
-  const fullSpots = filterSeasonPlaces({});
-  const spots = slimTours(fullSpots).map((spot) => ({ ...spot, overview: s.key === "autumn" ? autumnReason(spot) : spot.overview }));
+  const s = { key: "autumn", label: "가을", emoji: "🍁" };
+  const keywords = SEASON_KEYWORDS.autumn;
+  const fullSpots = keywords.flatMap((kw) => filterSeasonPlaces({ kw }));
+  const uniqueFullSpots = [...new Map(fullSpots.map((spot) => [spot.id, spot])).values()];
+  const spots = slimTours(uniqueFullSpots).map((spot) => ({ ...spot, overview: autumnReason(spot) }));
   const nearbyFoodByPlace =
-    s.key === "autumn"
-      ? Object.fromEntries(fullSpots.filter((p) => p.id === "2715684").map((p) => [p.id, nearbyRestaurants(p, 4)]))
-      : {};
-  const autumnStories = s.key === "autumn" ? buildAutumnStories(fullSpots, nearbyFoodByPlace) : [];
+    Object.fromEntries(uniqueFullSpots.filter((p) => p.id === "2715684").map((p) => [p.id, nearbyRestaurants(p, 4)]));
+  const autumnStories = buildAutumnStories(uniqueFullSpots, nearbyFoodByPlace);
 
   return (
     <>
       <Band tone="tint" innerClassName="py-5">
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">{s.emoji} <span className="text-free">{s.label} 나들이</span></h1>
         <p className="mt-1 max-w-[820px] text-[14px] leading-[1.75] text-ink-soft">
-          {s.key === "autumn" ? autumnHeroText(fullSpots.length) : `${s.label}에 가기 좋은 전국 나들이 — 지역·테마로 골라보세요 · 계절은 자동으로 바뀌어요`}
+          {autumnHeroText(uniqueFullSpots.length)}
         </p>
       </Band>
       <Suspense fallback={null}>
-        <SeasonBrowser spots={spots} keywords={keywords} areas={seasonAreas()} seasonLabel={s.label} autumnStories={autumnStories} />
+        <SeasonBrowser spots={spots} keywords={keywords} areas={[...new Set(uniqueFullSpots.map((spot) => spot.area))]} seasonLabel={s.label} autumnStories={autumnStories} />
       </Suspense>
     </>
   );
