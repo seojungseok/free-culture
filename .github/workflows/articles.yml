@@ -45,8 +45,9 @@ jobs:
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
           FORCE_COUNT: ${{ github.event.inputs.test_count }}
           TEST_IDS: ${{ github.event.inputs.test_ids }}
-          ARTICLE_DAILY: "20" # daily.yml과 같은 값 유지
-          ARTICLE_RESEARCH_MAX: "8" # 1회 실행당 신규 웹검색 상한
+          AUTUMN_ARTICLES: "on" # 가을나들이 후보를 대표 명소부터 우선 발행
+          ARTICLE_DAILY: "10" # daily.yml과 같은 가을 시즌 값 유지
+          ARTICLE_RESEARCH_MAX: "10" # 10개 모두 조사+AI 글작성 모드
         run: node scripts/generateArticles.mjs
 
       - name: 변경분 커밋 (발행)

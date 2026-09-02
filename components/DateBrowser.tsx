@@ -189,7 +189,7 @@ export default function DateBrowser({
 
   const shown = previewHref ? filtered.slice(0, 14) : filtered.slice(0, visible);
   const moreUrl = previewHref
-    ? `${previewHref}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`
+    ? `${previewHref}${searchParams.toString() ? `${previewHref.includes("?") ? "&" : "?"}${searchParams.toString()}` : ""}`
     : "";
 
   const syncUrl = useCallback(

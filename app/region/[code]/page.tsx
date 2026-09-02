@@ -200,11 +200,11 @@ export default async function RegionPage({
           </details>
         )}
       </Band>
-      <Suspense fallback={null}>
-        <DateBrowser events={events} initial={{ region: sido }} />
-      </Suspense>
-
       <RegionContentFilter areaName={name} categories={filterCategories} />
+
+      <Suspense fallback={null}>
+        <DateBrowser events={events} initial={{ region: sido }} previewHref={`/events?region=${code}`} />
+      </Suspense>
     </>
   );
 }

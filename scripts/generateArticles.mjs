@@ -53,6 +53,20 @@ const RESEARCH_MODEL = process.env.OPENAI_RESEARCH_MODEL || OPENAI_MODEL;
 //  ② 예산: 1회 실행당 신규 검색 상한 → 하루 비용이 예측 가능해진다.
 const RESEARCH_MAX = Number(process.env.ARTICLE_RESEARCH_MAX || 8);
 const RESEARCH_TTL_DAYS = Number(process.env.ARTICLE_RESEARCH_TTL || 180);
+const AUTUMN_ARTICLES = (process.env.AUTUMN_ARTICLES || "off").toLowerCase() === "on";
+const AUTUMN_KWS = ["단풍", "억새", "수목원", "국화", "코스모스", "자연휴양림"];
+const AUTUMN_PRIORITY = [
+  "내장산 단풍생태공원",
+  "독립기념관단풍나무숲길",
+  "명성산억새밭",
+  "푸른수목원",
+  "장태산 자연휴양림",
+  "신선대와 억새평전",
+  "화명수목원",
+  "만인산 자연휴양림",
+  "국립 신불산폭포자연휴양림",
+  "군위 장곡자연휴양림",
+];
 const RESEARCH_STORE = path.join(ROOT, "data", "place-research.json");
 const RESEARCH_CACHE = fs.existsSync(RESEARCH_STORE)
   ? JSON.parse(fs.readFileSync(RESEARCH_STORE, "utf8"))
@@ -76,6 +90,23 @@ const GEMINI = envKey("GEMINI_API_KEY"); // 보조 팩트체크(환각 교차검
 const TOURKEY = envKey("TOUR_API_KEY", "DATA_GO_KR_KEY");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+function isAutumnPlace(place) {
+  const text = `${place.title || ""} ${place.addr || ""}`;
+  return AUTUMN_KWS.some((kw) => text.includes(kw));
+}
+
+function autumnRank(place) {
+  const text = `${place.title || ""} ${place.addr || ""}`;
+  const idx = AUTUMN_PRIORITY.findIndex((name) => text.includes(name));
+  if (idx >= 0) return idx;
+  if (text.includes("단풍")) return 20;
+  if (text.includes("억새")) return 30;
+  if (text.includes("수목원")) return 40;
+  if (text.includes("자연휴양림")) return 50;
+  if (text.includes("국화")) return 60;
+  return 100;
+}
 
 // data.go.kr 키는 인코딩/디코딩 2종 → 키를 그대로/encode 두 방식으로 시도(어느 걸 넣어도 되게)
 function keyVariants(k) {
@@ -251,12 +282,20 @@ async function main() {
     const byId = new Map(places.map((p) => [p.id, p]));
     // 재작성은 심각도(rewriteScore) 높은 순 우선 → 램프업 안에서 최악부터 고침
     const rwIds = Object.keys(store.articles)
-      .filter((id) => store.articles[id]?.needsRewrite && byId.has(id))
+      .filter((id) => store.articles[id]?.needsRewrite && byId.has(id) && (!AUTUMN_ARTICLES || isAutumnPlace(byId.get(id))))
       .sort((a, b) => (store.articles[b].rewriteScore || 0) - (store.articles[a].rewriteScore || 0));
     for (const id of rwIds) items.push({ place: byId.get(id), mode: "rewrite" });
     const rw = items.length;
-    for (const p of pickQueue(places, doneIds, target * 4)) items.push({ place: p, mode: "new" });
-    console.log(`\n🖋️  목표 ${target}건 (재작성 ${rw} 우선) · 후보 ${items.length} · 기존 ${doneIds.size} · 주 ${MODEL} · 보조 ${GEMINI ? "Gemini 팩트체크" : "없음"}`);
+    if (AUTUMN_ARTICLES) {
+      const autumnNew = places
+        .filter((p) => !doneIds.has(p.id) && isAutumnPlace(p))
+        .sort((a, b) => autumnRank(a) - autumnRank(b) || a.title.length - b.title.length)
+        .slice(0, target * 8);
+      for (const p of autumnNew) items.push({ place: p, mode: "new" });
+    } else {
+      for (const p of pickQueue(places, doneIds, target * 4)) items.push({ place: p, mode: "new" });
+    }
+    console.log(`\n🖋️  목표 ${target}건 (재작성 ${rw} 우선) · 후보 ${items.length} · 기존 ${doneIds.size} · 주 ${MODEL} · 보조 ${GEMINI ? "Gemini 팩트체크" : "없음"}${AUTUMN_ARTICLES ? " · 가을 대표명소 우선" : ""}`);
   }
   let made = 0, newPub = 0, rewritten = 0, removed = 0, skipped = 0;
   let searched = 0; // 이번 실행의 신규 web_search 호출 수(캐시 재사용분은 제외 — 이게 곧 검색 요금)
@@ -268,12 +307,13 @@ async function main() {
     // 주변 맥락(맛집·근처 명소·코스·진행중 행사) — 전부 로컬 JSON, API 호출 0회·추가비용 0원.
     const lc = buildLocalContext(place);
     const extras = { intro: INTRO_CACHE[place.id], info: INFO_CACHE[place.id], local: lc.text };
-    const hasFacts =
+    let hasFacts =
       (extras.intro && Object.keys(extras.intro).some((k) => k !== "type" && extras.intro[k])) ||
       (extras.info && extras.info.length > 0);
 
-    // 원본 빈약 + 2단계 데이터도 없음 → 신규는 스킵, 재작성은 삭제(정보 카드형 전환)
-    if (overview.length < MIN_OVERVIEW && !hasFacts) {
+    // 원본 빈약 + 2단계 데이터도 없음 → 일반 모드는 스킵.
+    // 가을 전용 모드는 검색 근거를 먼저 확보해 대표 가을글이 빈손으로 빠지지 않게 한다.
+    if (!AUTUMN_ARTICLES && overview.length < MIN_OVERVIEW && !hasFacts) {
       if (mode === "rewrite") {
         delete store.articles[place.id];
         removed++; made++;
@@ -332,6 +372,21 @@ async function main() {
           console.log(`  🔎 검색 ${searched}/${RESEARCH_MAX} ${researchNote}: ${place.title}`);
         }
       }
+    }
+    hasFacts = hasFacts || Boolean(extras.research);
+
+    if (AUTUMN_ARTICLES && overview.length < MIN_OVERVIEW && !hasFacts) {
+      if (mode === "rewrite") {
+        delete store.articles[place.id];
+        removed++; made++;
+        report.push({ id: place.id, title: place.title, outcome: "removed→infocard", reason: `가을모드: 원본 ${overview.length}자·검색/새데이터 없음` });
+        console.log(`  🗑  가을모드 정보카드 전환(삭제): ${place.title}`);
+      } else {
+        skipped++;
+        report.push({ id: place.id, title: place.title, outcome: "skip", reason: `가을모드: 원본 ${overview.length}자·검색/새데이터 없음${err ? " · " + err : ""}` });
+        console.log(`  ⏭  가을모드 원본/검색근거 빈약(${overview.length}자, ${err}) 스킵: ${place.title}`);
+      }
+      continue;
     }
 
     const { art, reasons } = await produceArticle(place, overview, exTexts, extras);

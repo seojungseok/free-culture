@@ -48,8 +48,8 @@ export function rampUpCount(startDate, today = new Date()) {
   if (day < 1) return 0;
   if (day <= 14) return 5;
   // 하루 발행량 — daily.yml의 ARTICLE_DAILY로 조절(코드 수정 없이).
-  //  비용: 검색 붙는 글 약 $0.019/건, 검색 없는 글 약 $0.0055/건.
-  //  20건 + 검색 8회 ≈ $0.26/일. 올리려면 워크플로의 ARTICLE_DAILY만 바꾼다.
+  //  비용: 검색 붙는 글 약 $0.019~0.022/건, 검색 없는 글 약 $0.0055~0.0064/건.
+  //  가을 시즌은 daily.yml에서 ARTICLE_DAILY=10, ARTICLE_RESEARCH_MAX=10으로 대표명소부터 발행한다.
   return Number(process.env.ARTICLE_DAILY) || 20;
 }
 
