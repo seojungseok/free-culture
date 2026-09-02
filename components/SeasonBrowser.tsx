@@ -10,15 +10,6 @@ import type { TourSpot } from "@/lib/tour";
 type SP = { area?: string; kw?: string };
 const CAP = 120;
 
-function autumnKeywordGuide(keyword: string): string {
-  if (keyword === "단풍") return "붉게 물든 나무와 산책길을 중심으로 가을 분위기가 뚜렷한 장소예요.";
-  if (keyword === "억새") return "탁 트인 들판이나 능선 풍경이 좋아 가을 사진 나들이로 보기 좋은 테마예요.";
-  if (keyword === "수목원") return "나무와 정원을 천천히 둘러보며 계절 변화를 관찰하기 좋은 산책형 나들이예요.";
-  if (keyword === "국화") return "가을 꽃과 주변 산책 동선을 함께 보기 좋은 장소를 모았어요.";
-  if (keyword === "자연휴양림") return "선선한 날씨에 숲길, 휴식, 가벼운 당일치기를 함께 잡기 좋은 곳이에요.";
-  return "가을에 걷고 머물기 좋은 계절 나들이 테마예요.";
-}
-
 function qs(patch: SP, base: SP): string {
   const m: Record<string, string> = {};
   for (const [k, v] of Object.entries({ ...base, ...patch })) if (v) m[k] = v as string;
@@ -61,19 +52,6 @@ export default function SeasonBrowser({
   return (
     <div className="bg-panel">
       <Container className="space-y-2.5 py-4">
-        {seasonLabel === "가을" && (
-          <div className="rounded-2xl border border-[#ead8c0] bg-white px-4 py-3 shadow-sm">
-            <div className="text-[13px] font-black text-[#8a4a1f]">가을 테마별로 이렇게 골라보세요</div>
-            <div className="mt-2 grid gap-2 text-[12.5px] leading-[1.6] text-ink-soft sm:grid-cols-2 lg:grid-cols-5">
-              {keywords.map((k) => (
-                <div key={k} className="rounded-xl bg-[#fff8ef] px-3 py-2">
-                  <span className="font-extrabold text-ink">{k}</span>
-                  <span className="mt-0.5 block">{autumnKeywordGuide(k)}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
         <FilterRow label="테마">
           <Chip onClick={() => go(qs({ kw: undefined }, sp))} active={!sp.kw} label="전체" count={filterSeasonPlaces(spots, keywords, { area: sp.area }).length} />
           {keywords.map((k) => (

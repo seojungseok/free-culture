@@ -149,14 +149,14 @@ export default function HomePage() {
 
 function Hero({ image, position, seasonalLabel }: { image: string; position: string; seasonalLabel: string }) {
   const cats = [
-    ["문화행사", "#section-events"],
-    ["나들이", "#section-places"],
-    ["여행코스", "#section-course"],
-    ["캠핑", "#section-camping"],
+    ["문화행사", "/events"],
+    ["나들이", "/places"],
+    ["여행코스", "/course"],
+    ["캠핑", "/camping"],
     ["맛집탐방", "/food"],
-    ["아이와함께", "#section-kids"],
+    ["아이와함께", "/kids"],
     ["데이트", "/date"],
-    [`${seasonalLabel}나들이`, "#section-season"],
+    [`${seasonalLabel}나들이`, "/season"],
   ];
 
   return (
