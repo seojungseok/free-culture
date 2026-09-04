@@ -93,6 +93,7 @@ jobs:
       - name: 반려동물 동반여행 기본정보 수집
         continue-on-error: true
         env:
+          PET_TOUR_API_KEY: ${{ secrets.PET_TOUR_API_KEY }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           PET_DAILY: "800"
         run: node scripts/collectPetTravel.mjs

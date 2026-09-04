@@ -1,28 +1,33 @@
 // 전국 관광지 중 반려동물 동반 상세정보가 확인되는 장소를 일일 한도 안에서 누적 수집.
-import { readCache, writeCache, createBudget, QuotaError, detailPetTourRaw, sleep, hasKey, cleanText } from "./lib/tourClient.mjs";
+import { readCache, writeCache, createBudget, QuotaError, petAreaBasedPage, sleep, hasKey, cleanText, AREA_CODES } from "./lib/tourClient.mjs";
 
 if (!hasKey()) { console.error("TourAPI 키가 없습니다."); process.exit(1); }
 const DAILY = Number(process.env.PET_DAILY || 800);
-const places = readCache("places.json", { spots: [] }).spots || [];
 const store = readCache("pet-travel.json", { generatedAt: null, places: {} });
 store.places ||= {};
-const todo = places.filter((p) => !(p.id in store.places)).slice(0, DAILY);
 const budget = createBudget(DAILY);
-let ok = 0, empty = 0, fail = 0;
-for (const p of todo) {
+let ok = 0, fail = 0;
+for (const areaCode of AREA_CODES) {
   try {
-    const raw = await detailPetTourRaw(p.id, budget);
-    const values = Object.fromEntries(Object.entries(raw || {}).map(([k, v]) => [k, cleanText(v)]).filter(([, v]) => v));
-    const petText = Object.entries(values).filter(([k]) => /pet|animal|dog|cat|반려|동물|acmpy|rela/i.test(k)).map(([k, v]) => `${k}=${v}`).join(" · ");
-    if (!petText) { empty++; continue; }
-    store.places[p.id] = { ...p, petInfo: petText, petRaw: values, updatedAt: new Date().toISOString() };
-    ok++;
+    const first = await petAreaBasedPage({ areaCode, pageNo: 1, rows: 1000 }, budget);
+    const pages = Math.max(1, Math.ceil(first.total / 1000));
+    for (let pageNo = 1; pageNo <= pages; pageNo++) {
+      const page = pageNo === 1 ? first : await petAreaBasedPage({ areaCode, pageNo, rows: 1000 }, budget);
+      for (const [i, item] of page.items.entries()) {
+        const id = String(item.contentid || "");
+        const title = cleanText(item.title);
+        if (!id || !title) continue;
+        const old = store.places[id] || {};
+        store.places[id] = { ...old, id, title, address: cleanText(item.addr1 || item.addr2), area: AREA_TO_SIDO[areaCode] || cleanText(item.areaname), image: cleanText(item.firstimage || item.firstimage2), mapx: cleanText(item.mapx), mapy: cleanText(item.mapy), type: cleanText(item.contenttypeid), tel: cleanText(item.tel), homepage: cleanText(item.homepage), summary: cleanText(item.addr2), index: i, updatedAt: new Date().toISOString() };
+        ok++;
+      }
+    }
   } catch (e) {
-    if (e instanceof QuotaError) break;
+    if (e instanceof QuotaError) { console.log(`한도 도달: ${e.message}`); break; }
     fail++;
   }
   await sleep(220);
 }
 store.generatedAt = new Date().toISOString();
 writeCache("pet-travel.json", store);
-console.log(`반려동물 전국 수집: 신규 ${ok} · 해당없음 ${empty} · 실패 ${fail} · API콜 ${budget.used} · 누적 ${Object.keys(store.places).length}`);
+console.log(`반려동물 전국 기본 수집: 처리 ${ok} · 실패 ${fail} · API콜 ${budget.used} · 누적 ${Object.keys(store.places).length}`);

@@ -15,15 +15,17 @@ import { fileURLToPath } from "node:url";
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 export const DATA_DIR = path.join(ROOT, "data");
 export const BASE = "https://apis.data.go.kr/B551011/KorService2";
+export const PET_BASE = "https://apis.data.go.kr/B551011/KorPetTourService2";
 
 // ── 키 ──────────────────────────────────────────────────────────
 export function loadKey() {
+  if (process.env.PET_TOUR_API_KEY) return process.env.PET_TOUR_API_KEY.trim();
   if (process.env.TOUR_API_KEY) return process.env.TOUR_API_KEY.trim();
   if (process.env.DATA_GO_KR_KEY) return process.env.DATA_GO_KR_KEY.trim();
   const p = path.join(ROOT, ".env.local");
   if (fs.existsSync(p)) {
     const lines = fs.readFileSync(p, "utf8").split(/\r?\n/);
-    for (const n of ["TOUR_API_KEY", "DATA_GO_KR_KEY"]) {
+    for (const n of ["PET_TOUR_API_KEY", "TOUR_API_KEY", "DATA_GO_KR_KEY"]) {
       const l = lines.find((x) => x.startsWith(n + "="));
       if (l && l.slice(n.length + 1).trim()) return l.slice(n.length + 1).trim();
     }
@@ -87,13 +89,13 @@ export function createBudget(max) {
 }
 
 // ── 코어 요청: 재시도 + 한도 감지 → QuotaError ───────────────────
-async function fetchJson(endpoint, params, budget) {
+async function fetchJson(endpoint, params, budget, base = BASE) {
   if (budget) {
     if (budget.stopped) throw new QuotaError("budget stopped");
     if (budget.used >= budget.max) { budget.stopped = true; throw new QuotaError("budget reached"); }
   }
   const qs = Object.entries(params).map(([k, v]) => `${k}=${v}`).join("&");
-  const url = `${BASE}/${endpoint}?serviceKey=${KEY_PARAM}&MobileOS=ETC&MobileApp=mwohaji&_type=json&${qs}`;
+  const url = `${base}/${endpoint}?serviceKey=${KEY_PARAM}&MobileOS=ETC&MobileApp=mwohaji&_type=json&${qs}`;
   for (let i = 0; i < 3; i++) {
     let res;
     try {
@@ -160,9 +162,18 @@ export async function detailInfoRaw(contentId, contentTypeId, budget) {
 
 /** 반려동물 동반여행 서비스 상세정보 */
 export async function detailPetTourRaw(contentId, budget) {
-  const j = await fetchJson("detailPetTour2", { contentId }, budget);
+  const j = await fetchJson("detailPetTour2", { contentId }, budget, PET_BASE);
   const it = j?.response?.body?.items?.item;
   return Array.isArray(it) ? it[0] : it;
+}
+
+export async function petAreaBasedPage({ areaCode, sigunguCode, pageNo = 1, rows = 1000 }, budget) {
+  const params = { numOfRows: rows, pageNo };
+  if (areaCode) params.areaCode = areaCode;
+  if (sigunguCode) params.sigunguCode = sigunguCode;
+  const j = await fetchJson("areaBasedList2", params, budget, PET_BASE);
+  const body = j?.response?.body;
+  return { total: Number(body?.totalCount || 0), items: arr(body?.items?.item) };
 }
 
 // ── detailIntro2 유형별 필드 → 공통 스키마 정규화 ────────────────
