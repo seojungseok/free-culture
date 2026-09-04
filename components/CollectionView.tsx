@@ -31,7 +31,7 @@ export default function CollectionView({
       <div className="bg-panel">
         <Container className="pb-10 pt-6">
           <Suspense fallback={null}>
-            <FilterableGrid events={events} showControls={!hidePriceFilter} />
+            <FilterableGrid events={events} showControls hidePriceFilter={hidePriceFilter} />
           </Suspense>
         </Container>
       </div>

@@ -23,9 +23,11 @@ const TABS: { key: PriceFilter; label: string; match?: PriceType }[] = [
 export default function FilterableGrid({
   events,
   showControls = true,
+  hidePriceFilter = false,
 }: {
   events: CultureEvent[];
   showControls?: boolean;
+  hidePriceFilter?: boolean;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -36,6 +38,8 @@ export default function FilterableGrid({
     FILTERS.includes(urlPrice) ? urlPrice : "all"
   );
   const [visible, setVisible] = useState(PAGE);
+  const [region, setRegion] = useState(searchParams.get("region") || "all");
+  const regions = useMemo(() => ["all", ...Array.from(new Set(events.map((e) => e.area).filter(Boolean))).sort()], [events]);
 
   // URL(뒤로가기 등)과 동기화
   useEffect(() => {
@@ -62,18 +66,19 @@ export default function FilterableGrid({
   }, [events]);
 
   const filtered = useMemo(() => {
-    if (price === "all") return events;
+    const base = region === "all" ? events : events.filter((e) => e.area === region);
+    if (price === "all") return base;
     if (price === "free") {
       // 확정무료 먼저, 무료추정 뒤
       const rank = (t: string) => (t === "free" ? 0 : 1);
-      return events
+      return base
         .filter((e) => e.priceType === "free" || e.priceType === "free_estimated")
         .sort((a, b) => rank(a.priceType) - rank(b.priceType));
     }
     const tab = TABS.find((t) => t.key === price);
     if (!tab || !tab.match) return events;
-    return events.filter((e) => e.priceType === tab.match);
-  }, [events, price]);
+    return base.filter((e) => e.priceType === tab.match);
+  }, [events, price, region]);
 
 
   const shown = filtered.slice(0, visible);
@@ -96,7 +101,7 @@ export default function FilterableGrid({
       {showControls && (
         <div className="sticky top-[132px] z-30 -mx-4 mb-5 border-b border-black/5 bg-[var(--bg)]/90 px-4 py-3 backdrop-blur md:top-[92px]">
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
-            <div className="inline-flex rounded-full bg-black/[0.05] p-1">
+            {!hidePriceFilter && <div className="inline-flex rounded-full bg-black/[0.05] p-1">
               {TABS.map((t) => {
                 const active = price === t.key;
                 const n = counts[t.key];
@@ -131,6 +136,9 @@ export default function FilterableGrid({
                   </button>
                 );
               })}
+            </div>}
+            <div className="flex items-center gap-1 overflow-x-auto">
+              {regions.map((r) => <button key={r} onClick={() => { setRegion(r); setVisible(PAGE); const p = new URLSearchParams(searchParams.toString()); r === "all" ? p.delete("region") : p.set("region", r); router.replace(`${pathname}${p.toString() ? `?${p}` : ""}`, { scroll: false }); }} className={["whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-bold", region === r ? "bg-ink text-white" : "text-ink-soft hover:text-ink"].join(" ")}>{r === "all" ? "전국" : r}</button>)}
             </div>
           </div>
         </div>
