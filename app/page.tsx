@@ -87,11 +87,11 @@ export default function HomePage() {
     ])
   ) as Record<string, string>;
 
-  const petCards = getPetTravelPlaces().filter((p) => p.image);
+  const petCards = getPetTravelPlaces();
   const popularCards = [
     eventToPopular(dailyPick(freeCards, today, 1) || dailyPick(featuredEvents, today, 1) || dailyPick(weekendCards, today, 1)),
     courseToPopular(dailyPick(courseCards, today, 2)),
-    placeToPopular(dailyPick(seasonPlaces, today, 3)),
+    placeToPopular(dailyPick(seasonPlaces, today, 3), "가을나들이"),
     petToPopular(dailyPick(petCards, today, 4)),
   ].filter(Boolean) as PopularCard[];
 
@@ -251,13 +251,13 @@ function eventToPopular(ev?: CultureEvent): PopularCard | null {
   };
 }
 
-function placeToPopular(spot?: TourSpot): PopularCard | null {
+function placeToPopular(spot?: TourSpot, badge = "나들이"): PopularCard | null {
   if (!spot) return null;
   return {
     href: `/places/spot/${spot.id}`,
     title: spot.title,
     sub: spot.area,
-    badge: "나들이",
+    badge,
     image: spot.image,
     tone: "bg-free",
   };
@@ -288,8 +288,8 @@ function campToPopular(camp?: Camp): PopularCard | null {
 }
 
 function petToPopular(place?: PetTravelPlace): PopularCard | null {
-  if (!place?.image) return null;
-  return { href: `/pet-travel/${place.id}`, title: place.title, sub: place.area || place.address || "", badge: "반려동물 여행", image: place.image, tone: "bg-[#e17b45]" };
+  if (!place) return null;
+  return { href: `/pet-travel/${place.id}`, title: place.title, sub: place.area || place.address || "", badge: "반려동물 여행", image: place.image || "https://tong.visitkorea.or.kr/cms/resource/95/3552095_image2_1.jpg", tone: "bg-[#e17b45]" };
 }
 
 function RailSection({ title, href, items, desc, limit = 10 }: { title: string; href: string; items: HomeExploreItem[]; desc?: string; limit?: number }) {
