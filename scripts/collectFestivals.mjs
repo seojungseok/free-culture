@@ -15,6 +15,9 @@ import {
 if (!hasKey()) { console.error("❌ TOUR_API_KEY / DATA_GO_KR_KEY 없음"); process.exit(1); }
 
 const OUT = "festivals.json";
+const CHUSEOK_OUT = "chuseok.json";
+const CHUSEOK_START = "20260901";
+const CHUSEOK_END = "20260930";
 const DAILY = Number(process.env.FEST_DAILY || 300);
 const ymd = (d) => `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}`;
 // 오늘 진행 중인 축제도 포함하려면 넉넉히 과거(약 2개월 전)부터 조회 후 종료일로 필터
@@ -83,6 +86,47 @@ async function main() {
   const withImg = festivals.filter((f) => f.image).length;
   console.log(`\n💾 저장: data/${OUT} (${festivals.length}건, ${mb}MB, API콜 ${budget.used})`);
   console.log(`   이번 신규 ${added} · 사진有 ${withImg} · 중복제외 ${dupSkip} · 종료제외 ${endedSkip}`);
+
+  // 공식 축제 수집 결과 중 추석 관련 행사만 특별관에 동기화한다. AI 생성이나
+  // 제목 조합은 사용하지 않고, 공식 데이터의 날짜와 행사명만 기준으로 삼는다.
+  const previousChuseok = readCache(CHUSEOK_OUT, { events: [] });
+  const manualEvents = (Array.isArray(previousChuseok) ? previousChuseok : previousChuseok.events || [])
+    .filter((event) => String(event.id || "").startsWith("chuseok-"));
+  const chuseokTitle = /추석|한가위|명절|달빛마당/i;
+  const officialEvents = festivals
+    .filter((festival) => festival.startDate <= CHUSEOK_END && festival.endDate >= CHUSEOK_START)
+    .filter((festival) => chuseokTitle.test(festival.title))
+    .map((festival) => {
+      const address = festival.addr || "";
+      const addressParts = address.split(/\s+/).filter(Boolean);
+      return {
+        id: `festival-${festival.id}`,
+        title: festival.title,
+        area: festival.area,
+        sigungu: addressParts[1] || "",
+        place: addressParts.slice(2).join(" ") || festival.title,
+        address,
+        startDate: festival.startDate,
+        endDate: festival.endDate,
+        description: "공식 축제 데이터로 확인된 행사입니다.",
+        image: festival.image || "",
+        officialUrl: "",
+        isFree: false,
+        isNight: /야간|달빛|밤/.test(festival.title),
+        isKids: /아이|어린이|가족|체험/.test(festival.title),
+        isTraditional: /추석|한가위|전통|민속/.test(festival.title),
+        lat: festival.mapy || "",
+        lng: festival.mapx || "",
+      };
+    });
+  const chuseokByTitle = new Map();
+  for (const event of manualEvents) chuseokByTitle.set(norm(event.title), event);
+  for (const event of officialEvents) chuseokByTitle.set(norm(event.title), event);
+  writeCache(CHUSEOK_OUT, {
+    generatedAt: new Date().toISOString(),
+    events: [...chuseokByTitle.values()].sort((a, b) => a.startDate.localeCompare(b.startDate)),
+  });
+  console.log(`   추석 특별관 동기화: ${chuseokByTitle.size}건 (공식 ${officialEvents.length}건 · 검증 보존 ${manualEvents.length}건)`);
 }
 
 main().catch((e) => { console.error("❌ 실패:", e.message); process.exit(1); });

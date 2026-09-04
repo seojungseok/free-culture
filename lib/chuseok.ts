@@ -28,7 +28,14 @@ export function isChuseokMainSeason(today: string): boolean {
 }
 
 export function getChuseokEvents(): ChuseokEvent[] {
-  return (data.events || []) as ChuseokEvent[];
+  const today = new Intl.DateTimeFormat("sv-SE", {
+    timeZone: "Asia/Seoul",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date()).replaceAll("-", "");
+  return ((data.events || []) as ChuseokEvent[])
+    .filter((event) => event.endDate >= today && event.startDate <= CHUSEOK_END);
 }
 
 export function formatChuseokDate(start: string, end: string): string {
