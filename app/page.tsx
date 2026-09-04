@@ -5,6 +5,7 @@ import { getWeekend, getFree, getFeatured, getEndingSoon, slimForClient } from "
 import { getPlacesSample, getAllPlaces, type TourSpot } from "@/lib/tour";
 import { getAllCamps, type Camp } from "@/lib/camping";
 import { getAllCourses, slimCourse } from "@/lib/courses";
+import { getPetTravelPlaces, type PetTravelPlace } from "@/lib/petTravel";
 import { todayYmd } from "@/lib/dates";
 import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { season } from "@/lib/finder";
@@ -86,12 +87,13 @@ export default function HomePage() {
     ])
   ) as Record<string, string>;
 
-  const popularCards = shuffleByDay([
-    eventToPopular(featuredEvents[0] || freeCards[0] || weekendCards[0]),
-    placeToPopular(placeCards[0]),
-    courseToPopular(courseCards[0]),
-    campToPopular(campCards[0]),
-  ].filter(Boolean) as PopularCard[], today);
+  const petCards = getPetTravelPlaces().filter((p) => p.image);
+  const popularCards = [
+    eventToPopular(dailyPick(freeCards, today, 1) || dailyPick(featuredEvents, today, 1) || dailyPick(weekendCards, today, 1)),
+    courseToPopular(dailyPick(courseCards, today, 2)),
+    placeToPopular(dailyPick(seasonPlaces, today, 3)),
+    petToPopular(dailyPick(petCards, today, 4)),
+  ].filter(Boolean) as PopularCard[];
 
   const endingCards = slimForClient(getEndingSoon(14).filter((e) => e.imgUrl).slice(0, 10));
   const kidsCards = allPlaces.filter((p) => p.isKid).slice(0, 10);
@@ -285,6 +287,11 @@ function campToPopular(camp?: Camp): PopularCard | null {
   };
 }
 
+function petToPopular(place?: PetTravelPlace): PopularCard | null {
+  if (!place?.image) return null;
+  return { href: `/pet-travel/${place.id}`, title: place.title, sub: place.area || place.address || "", badge: "반려동물 여행", image: place.image, tone: "bg-[#e17b45]" };
+}
+
 function RailSection({ title, href, items, desc, limit = 10 }: { title: string; href: string; items: HomeExploreItem[]; desc?: string; limit?: number }) {
   if (!items.length) return null;
   const id =
@@ -451,8 +458,8 @@ function seasonSeoText(label: string): string {
   return `${label} 분위기에 맞는 나들이 장소를 사진과 지역 기준으로 골랐어요. 이번 주말 여행지와 당일치기 코스를 빠르게 비교해보세요.`;
 }
 
-function shuffleByDay<T>(arr: T[], today: string): T[] {
-  let a = (Number(today.replace(/-/g, "")) || 1) >>> 0;
+function shuffleByDay<T>(arr: T[], today: string, salt = 0): T[] {
+  let a = ((Number(today.replace(/-/g, "")) || 1) + salt * 2654435761) >>> 0;
   const rnd = () => {
     a |= 0;
     a = (a + 0x6d2b79f5) | 0;
@@ -466,6 +473,10 @@ function shuffleByDay<T>(arr: T[], today: string): T[] {
     [copy[i], copy[j]] = [copy[j], copy[i]];
   }
   return copy;
+}
+
+function dailyPick<T>(arr: T[], today: string, salt: number): T | undefined {
+  return shuffleByDay(arr, today, salt)[0];
 }
 
 function HeartIcon({ className = "" }: { className?: string }) {
