@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTourById, tourTypeLabel } from "@/lib/tour";
-import { fetchPetTravelDetail, getPetTravelPlace } from "@/lib/petTravel";
+import { fetchPetTravelDetail, getPetTravelPlace, normalizePetIntro } from "@/lib/petTravel";
 
 export const revalidate = 86400;
 
@@ -33,7 +33,7 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
   const address = "address" in spot ? spot.address : spot.addr;
   const petInfo = "petInfo" in spot ? spot.petInfo : "";
   const summary = "summary" in spot ? spot.summary : "";
-  const intro = "intro" in spot ? spot.intro || {} : {};
+  const intro = "intro" in spot ? normalizePetIntro(spot.intro || {}) : {};
   const info = "info" in spot ? spot.info || [] : [];
   const gallery = "images" in spot ? spot.images?.slice(1) || [] : [];
   const description = `${spot.area || "전국"} ${spot.title} 반려동물 동반 여행 정보`;
@@ -47,6 +47,7 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
     telephone: spot.tel || undefined,
     address: address ? { "@type": "PostalAddress", streetAddress: address, addressCountry: "KR" } : undefined,
   };
+  const photo = (src: string, index: number) => <figure key={`${src}-${index}`} className="my-6"><img src={src} alt={`${spot.title} 반려동물 여행 사진 ${index + 1}`} loading="lazy" className="aspect-[16/9] w-full rounded-xl object-cover" /><figcaption className="mt-2 text-center text-[11px] text-ink-faint">{spot.title} 여행 사진</figcaption></figure>;
 
   return (
     <main className="mx-auto max-w-[960px] px-5 py-8 sm:px-6 lg:px-8">
@@ -63,12 +64,15 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
             <strong className="text-ink">{spot.title} 반려동물 동반 여행</strong><br />
             {summary || "반려동물과 함께 방문을 계획하기 좋은 여행지입니다."} 가을에는 한결 선선한 날씨 속에서 산책과 풍경 감상을 함께 즐기기 좋아, 방문 시간과 동반 조건을 미리 확인하고 여유 있게 둘러보는 일정이 잘 어울립니다.
           </p>
+          {gallery[0] && photo(gallery[0], 0)}
 
           {petInfo && <section className="mt-5 rounded-xl bg-tint p-4"><h2 className="text-[15px] font-extrabold text-ink">반려동물 이용 안내</h2><p className="mt-2 text-[13px] leading-6 text-ink-soft">{petInfo}</p></section>}
-          {Object.keys(intro).length > 0 && <section className="mt-5"><h2 className="text-[18px] font-extrabold text-ink">운영·편의시설 안내</h2><dl className="mt-3 grid gap-2 sm:grid-cols-2">{Object.entries(intro).slice(0, 12).map(([name, value]) => <div key={name} className="rounded-lg bg-panel px-3 py-2"><dt className="text-[11px] font-bold text-ink-faint">{name}</dt><dd className="mt-1 text-[13px] leading-5 text-ink-soft">{value}</dd></div>)}</dl></section>}
+          {Object.keys(intro).length > 0 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">운영·편의시설 안내</h2><dl className="mt-3 grid gap-2 sm:grid-cols-2">{Object.entries(intro).slice(0, 12).map(([name, value]) => <div key={name} className="rounded-lg bg-panel px-3 py-3"><dt className="text-[11px] font-bold text-ink-faint">{name}</dt><dd className="mt-1 break-words text-[13px] leading-6 text-ink-soft">{String(value)}</dd></div>)}</dl></section>}
+          {gallery[1] && photo(gallery[1], 1)}
           {info.length > 0 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">시설·이용 안내</h2><div className="mt-2 space-y-3">{info.slice(0, 10).map((item, index) => <div key={`${item.name}-${index}`}><h3 className="text-[14px] font-bold text-ink">{item.name || "이용 안내"}</h3><p className="mt-1 text-[13px] leading-6 text-ink-soft">{item.text}</p></div>)}</div></section>}
+          {gallery[2] && photo(gallery[2], 2)}
           <section className="mt-6 rounded-xl border border-line bg-panel p-4"><h2 className="text-[18px] font-extrabold text-ink">방문 전 체크하면 좋은 것</h2><p className="mt-2 text-[13px] leading-6 text-ink-soft">목줄 또는 이동장, 배변봉투와 물을 준비하고, 실내 출입 가능 여부와 추가 요금·예약 여부는 출발 전 공식 안내에서 확인하세요. 계절 행사나 운영시간은 달라질 수 있어 전화 확인을 곁들이면 더욱 편합니다.</p></section>
-          {gallery.length > 0 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">여행 사진</h2><div className="mt-3 grid grid-cols-2 gap-2">{gallery.slice(0, 8).map((src, index) => <img key={src} src={src} alt={`${spot.title} 반려동물 여행 사진 ${index + 2}`} loading="lazy" className="aspect-[4/3] w-full rounded-lg object-cover" />)}</div></section>}
+          {gallery.length > 3 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">여행 사진 더 보기</h2><div className="mt-3 grid grid-cols-2 gap-2">{gallery.slice(3, 8).map((src, index) => <img key={src} src={src} alt={`${spot.title} 반려동물 여행 사진 ${index + 4}`} loading="lazy" className="aspect-[4/3] w-full rounded-lg object-cover" />)}</div></section>}
           {address && <p className="mt-5 text-[14px] leading-6 text-ink-soft"><strong className="text-ink">주소</strong><br />{address}</p>}
           {spot.tel && <p className="mt-2 text-[14px] leading-6 text-ink-soft"><strong className="text-ink">전화</strong><br /><a href={`tel:${spot.tel}`} className="text-free">{spot.tel}</a></p>}
           <nav className="mt-7 flex flex-wrap gap-4 border-t border-line pt-5 text-[13px] font-bold text-free" aria-label="관련 여행 정보"><Link href="/pet-travel">지역별 반려동물 여행지</Link><Link href="/season">반려동물과 가을나들이</Link><Link href="/camping">반려동물 동반 캠핑</Link><Link href="/food">여행지 주변 맛집 찾아보기</Link><Link href="/course">가족 여행코스</Link></nav>
