@@ -5,6 +5,8 @@ export const revalidate = 43200;
 const BASE = "https://apis.data.go.kr/B551011/KorService2";
 const clean = (v: unknown) => String(v ?? "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 const arr = (v: any) => v == null ? [] : Array.isArray(v) ? v : [v];
+const SIDO = ["서울", "경기", "인천", "부산", "대구", "대전", "광주", "울산", "세종", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"];
+function areaFrom(address: string) { return SIDO.find((x) => address.startsWith(`${x} `) || address.startsWith(`${x}특별`) || address.startsWith(`${x}광역`) || address.startsWith(`${x}특별자치`)) || ""; }
 
 function key() { return (process.env.TOUR_API_KEY || process.env.DATA_GO_KR_KEY || "").trim(); }
 function encKey(k: string) { return /%[0-9A-F]{2}/i.test(k) ? k : encodeURIComponent(k); }
@@ -25,7 +27,7 @@ function normalize(item: any, index: number) {
   const address = clean(item.addr1 || item.addr2);
   const petText = clean(Object.entries(item || {}).filter(([k]) => /pet|animal|dog|cat|반려|동물/i.test(k)).map(([, v]) => v).filter(Boolean).join(" · "));
   return {
-    id: String(item.contentid), title, address, area: clean(item.areaname || item.sigunguname),
+    id: String(item.contentid), title, address, area: clean(item.areaname || item.sigunguname) || areaFrom(address),
     image: clean(item.firstimage || item.firstimage2), mapx: clean(item.mapx), mapy: clean(item.mapy),
     type: clean(item.contenttypeid), homepage: clean(item.homepage), tel: clean(item.tel), petInfo: petText,
     summary: clean(item.overview || item.addr2 || "반려동물과 함께 여행할 수 있는 장소"), index,

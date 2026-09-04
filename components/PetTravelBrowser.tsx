@@ -5,7 +5,7 @@ import Link from "next/link";
 
 type PetPlace = { id: string; title: string; address: string; area: string; image: string; type: string; petInfo: string; summary: string };
 const regions = ["전체", "서울", "경기", "인천", "부산", "대구", "대전", "광주", "울산", "세종", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"];
-const types = [{ k: "", t: "전체" }, { k: "12", t: "관광지" }, { k: "14", t: "문화시설" }, { k: "28", t: "체험·레포츠" }, { k: "39", t: "음식점" }];
+const types = [{ k: "", t: "전체" }, { k: "12", t: "관광지" }, { k: "14", t: "문화시설" }, { k: "28", t: "체험·레포츠" }, { k: "39", t: "음식점" }, { k: "15", t: "축제" }];
 
 export default function PetTravelBrowser() {
   const [items, setItems] = useState<PetPlace[]>([]); const [region, setRegion] = useState("전체"); const [type, setType] = useState(""); const [query, setQuery] = useState(""); const [loading, setLoading] = useState(true);
