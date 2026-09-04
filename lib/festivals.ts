@@ -5,7 +5,7 @@ import festivalsData from "@/data/festivals.json";
 export interface Festival {
   id: string; title: string; addr: string; area: string;
   image: string; mapx: string; mapy: string; startDate: string; endDate: string;
-  source?: string;
+  source?: string; description?: string; place?: string; homepage?: string; tel?: string;
 }
 
 const ALL = (festivalsData as unknown as { festivals?: Festival[] }).festivals || [];

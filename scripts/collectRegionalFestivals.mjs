@@ -37,11 +37,11 @@ async function getXml(url, params) {
   if (!res.ok) throw new Error("HTTP " + res.status + " " + url);
   return parser.parse(await res.text());
 }
-function event({ id, title, addr, area, image, mapx = "", mapy = "", tel = "", startDate, endDate, source }) {
+function event({ id, title, addr, area, image, mapx = "", mapy = "", tel = "", startDate, endDate, source, description = "", place = "", homepage = "" }) {
   const start = ymd(startDate);
   const end = ymd(endDate) || start;
   if (!title || !start || !end || end < TODAY) return null;
-  return { id: String(id), title, addr, area, image: https(image), mapx: String(mapx || ""), mapy: String(mapy || ""), tel, startDate: start, endDate: end, source };
+  return { id: String(id), title, addr, area, image: https(image), mapx: String(mapx || ""), mapy: String(mapy || ""), tel, startDate: start, endDate: end, source, description: clean(description), place: clean(place), homepage: https(homepage) };
 }
 
 async function busan() {
@@ -53,7 +53,7 @@ async function busan() {
     return event({ id: "busan-" + value(it, "UC_SEQ"), title: clean(value(it, "MAIN_TITLE", "TITLE")),
       addr: clean(value(it, "ADDR1", "GUGUN_NM", "PLACE")), area: "부산",
       image: value(it, "MAIN_IMG_NORMAL", "MAIN_IMG_THUMB"), mapx: value(it, "LNG"), mapy: value(it, "LAT"),
-      tel: clean(value(it, "CNTCT_TEL")), startDate: range.start, endDate: range.end, source: "부산광역시 부산축제정보" });
+      tel: clean(value(it, "CNTCT_TEL")), startDate: range.start, endDate: range.end, description: value(it, "ITEMCNTNTS", "DESCRIPTION", "CONTENTS"), place: value(it, "PLACE", "GUGUN_NM"), homepage: value(it, "HOMEPAGE_URL", "HOMEPAGE"), source: "부산광역시 부산축제정보" });
   }).filter(Boolean);
 }
 async function gyeongju() {
@@ -63,7 +63,7 @@ async function gyeongju() {
   return (Array.isArray(rows) ? rows : [rows]).map((it) => event({
     id: "gyeongju-" + value(it, "FSTVL_NM") + "-" + value(it, "BGNG_YMD"), title: clean(value(it, "FSTVL_NM")),
     addr: clean(value(it, "ADRES")), area: "경북", image: "", tel: clean(value(it, "TELNO")),
-    startDate: fromEpoch(value(it, "BGNG_YMD")), endDate: fromEpoch(value(it, "END_YMD")), source: "경주시 축제 현황",
+    startDate: fromEpoch(value(it, "BGNG_YMD")), endDate: fromEpoch(value(it, "END_YMD")), place: value(it, "FSTVL_PLACE", "PLACE"), source: "경주시 축제 현황",
   })).filter(Boolean);
 }
 async function ulsan() {
@@ -72,8 +72,8 @@ async function ulsan() {
   const rows = body?.data?.list || body?.data?.item || body?.item;
   return (Array.isArray(rows) ? rows : [rows]).map((it) => event({
     id: "ulsan-" + value(it, "unqId"), title: clean(value(it, "title")), addr: clean(value(it, "roadNmAddr")),
-    area: "울산", image: "", mapx: value(it, "lot"), mapy: value(it, "lat"), tel: clean(value(it, "rprsTelno")),
-    startDate: value(it, "fstvlBgngYmd"), endDate: value(it, "fstvlEndYmd"), source: "울산광역시 문화축제",
+    area: "울산", image: value(it, "mainImg", "imgUrl"), mapx: value(it, "lot"), mapy: value(it, "lat"), tel: clean(value(it, "rprsTelno")),
+    startDate: value(it, "fstvlBgngYmd"), endDate: value(it, "fstvlEndYmd"), description: value(it, "fstvlCn", "contents", "description"), place: value(it, "fstvlPlace", "place"), source: "울산광역시 문화축제",
   })).filter(Boolean);
 }
 async function jeonnam() {
@@ -83,7 +83,7 @@ async function jeonnam() {
   return (Array.isArray(rows) ? rows : [rows]).map((it) => event({
     id: "jeonnam-" + value(it, "fastivalId", "festivalId"), title: clean(value(it, "festivalNm")),
     addr: clean(value(it, "festivalPlace")), area: "전남", image: value(it, "festivalMainImgUrl"),
-    tel: clean(value(it, "festivalTel")), startDate: value(it, "festivalStartDay"), endDate: value(it, "festivalEndDay"),
+    tel: clean(value(it, "festivalTel")), startDate: value(it, "festivalStartDay"), endDate: value(it, "festivalEndDay"), description: value(it, "festivalContent", "festivalContents"), place: value(it, "festivalPlace"), homepage: value(it, "festivalHomepage"),
     source: "남도여행길잡이 축제정보",
   })).filter(Boolean);
 }
