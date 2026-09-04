@@ -6,7 +6,8 @@ const BASE = "https://apis.data.go.kr/B551011/KorService2";
 const clean = (v: unknown) => String(v ?? "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 const arr = (v: any) => v == null ? [] : Array.isArray(v) ? v : [v];
 const SIDO = ["서울", "경기", "인천", "부산", "대구", "대전", "광주", "울산", "세종", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"];
-function areaFrom(address: string) { return SIDO.find((x) => address.startsWith(`${x} `) || address.startsWith(`${x}특별`) || address.startsWith(`${x}광역`) || address.startsWith(`${x}특별자치`)) || ""; }
+const SIDO_PREFIXES: Record<string, string[]> = { 경기: ["경기", "경기도"], 강원: ["강원", "강원도", "강원특별자치도"], 충북: ["충북", "충청북도"], 충남: ["충남", "충청남도"], 전북: ["전북", "전라북도", "전북특별자치도"], 전남: ["전남", "전라남도"], 경북: ["경북", "경상북도"], 경남: ["경남", "경상남도"], 제주: ["제주", "제주특별자치도"] };
+function areaFrom(address: string) { return SIDO.find((x) => (SIDO_PREFIXES[x] || [x]).some((prefix) => address.startsWith(prefix))) || ""; }
 
 function key() { return (process.env.TOUR_API_KEY || process.env.DATA_GO_KR_KEY || "").trim(); }
 function encKey(k: string) { return /%[0-9A-F]{2}/i.test(k) ? k : encodeURIComponent(k); }
