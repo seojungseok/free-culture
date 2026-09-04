@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { getWeekend, getFree, getFeatured, getEndingSoon, slimForClient } from "@/lib/data";
 import { getPlacesSample, getAllPlaces, type TourSpot } from "@/lib/tour";
 import { getAllCamps, type Camp } from "@/lib/camping";
@@ -12,9 +11,8 @@ import { season } from "@/lib/finder";
 import { SITE } from "@/lib/site";
 import { fmtRange } from "@/lib/format";
 import type { CultureEvent } from "@/lib/types";
-import ChuseokSpecial from "@/components/ChuseokSpecial";
 import FestivalRail from "@/components/FestivalRail";
-import { getChuseokEvents, isChuseokMainSeason } from "@/lib/chuseok";
+import { isChuseokMainSeason } from "@/lib/chuseok";
 import { upcomingFestivals } from "@/lib/festivals";
 
 export const revalidate = 3600;
@@ -105,7 +103,7 @@ export default function HomePage() {
       <Hero image={hero.image} position={hero.position} seasonalLabel={seasonal.label} />
 
       <main className="bg-white pb-10">
-        {isChuseokMainSeason(today) && <Suspense fallback={null}><ChuseokSpecial events={getChuseokEvents()} compact /></Suspense>}
+        {isChuseokMainSeason(today) && <ChuseokQuickLink />}
         <GamePromoBanner />
         <FestivalRail festivals={upcomingFestivals()} />
 
@@ -424,6 +422,17 @@ function GamePromoBanner() {
           게임하러 가기
           <span aria-hidden>›</span>
         </span>
+      </Link>
+    </section>
+  );
+}
+
+function ChuseokQuickLink() {
+  return (
+    <section className="mx-auto w-full max-w-[1180px] px-5 pt-4 sm:px-6 sm:pt-5 lg:px-8">
+      <Link href="/chuseok" className="flex min-h-12 items-center justify-between gap-3 rounded-xl border border-[#e6cfaa] bg-[#fffaf1] px-4 text-[#6f4b22] transition hover:border-[#bd8540] hover:bg-[#fff6e8] sm:px-5">
+        <span className="text-[14px] font-black sm:text-[15px]">추석에 뭐하지?</span>
+        <span className="text-[12px] font-bold text-[#9a6a33]">가까운 행사 빠르게 찾기 →</span>
       </Link>
     </section>
   );
