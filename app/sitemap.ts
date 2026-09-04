@@ -22,11 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   // 주요 목록/홈은 높은 우선순위·잦은 갱신. 정보성 정적 페이지는 낮게.
-  const MAJOR = new Set(["/events", "/places", "/course", "/camping", "/food"]);
+  const MAJOR = new Set(["/events", "/festivals", "/places", "/course", "/camping", "/food"]);
   const LOW = new Set(["/about", "/privacy", "/terms", "/contact"]);
   const staticRoutes = [
     "",
     "/events",
+    "/festivals",
     "/places",
     "/course",
     "/camping",

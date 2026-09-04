@@ -177,6 +177,7 @@ function MonthlyHub() {
 function Hero({ image, position, seasonalLabel }: { image: string; position: string; seasonalLabel: string }) {
   const cats = [
     ["문화행사", "/events"],
+    ["축제", "/festivals"],
     ["나들이", "/places"],
     ["여행코스", "/course"],
     ["캠핑", "/camping"],
