@@ -14,6 +14,7 @@
     "collect:info": "node scripts/collectInfo.mjs",
     "collect:restaurants": "node scripts/collectRestaurants.mjs",
     "collect:festivals": "node scripts/collectFestivals.mjs",
+    "collect:regional-festivals": "node scripts/collectRegionalFestivals.mjs",
     "collect:photo-gallery": "node scripts/collectPhotoGallery.mjs",
     "collect:camping": "node scripts/collectCamping.mjs",
   "collect:camping-images": "node scripts/collectCampingImages.mjs",

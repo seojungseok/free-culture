@@ -72,12 +72,18 @@ jobs:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
         run: node scripts/collectPhotoGallery.mjs
 
+      - name: 지역 축제 API 동기화 (부산·경주·울산·전남)
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: node scripts/collectRegionalFestivals.mjs
+
       - name: 변경분 커밋 (정적 데이터)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/restaurants.json data/restaurant-intro.json data/place-intro.json \
-                  data/place-info.json data/camping-images.json data/photo-gallery.json
+                  data/place-info.json data/camping-images.json data/photo-gallery.json data/festivals.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
           else
