@@ -26,6 +26,7 @@ export function galleryForStops(stops: CourseStop[], limit = 8): GalleryPhoto[] 
   for (const stop of stops) {
     const names = candidates(stop);
     const photo = PHOTOS.find((item) => {
+      if (seen.has(item.id)) return false;
       const haystack = clean(`${item.title} ${item.location} ${item.keywords}`);
       return names.some((name) => haystack.includes(name) || name.includes(clean(item.title)) && clean(item.title).length >= 3);
     });

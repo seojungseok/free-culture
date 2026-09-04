@@ -99,7 +99,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # 코스 "구성" 교차검증(중복·비현실 동선 차단)
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }} # 발행 코스 스팟 소개 보강용(한도 내)
           COURSE_IDS: ${{ github.event.inputs.course_ids }}
-          COURSE_REBUILD_MAX: "4" # 옛 코스글 재생성 상한(기본 8 → 4). 하루 비용 상한 유지용.
+          COURSE_REBUILD_MAX: "4" # 옛 코스글 재생성 상한. 신규 생성은 하루 18개.
         run: node scripts/generateCourses.mjs
 
       # ── 계절별 캠핑용품 수집 (쿠팡 오픈 API) — 오늘 날짜로 봄/여름/가을/겨울 자동 판단 ──

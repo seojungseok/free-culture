@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       count:
-        description: "생성 개수 (비우면 10개)"
+        description: "생성 개수 (비우면 18개)"
         required: false
-        default: ""
+        default: "18"
       course_ids:
         description: "특정 코스만 (콤마구분, 있으면 개수 무시)"
         required: false

@@ -43,6 +43,7 @@ const OPENAI = envKey("OPENAI_API_KEY");
 const GEMINI = envKey("GEMINI_API_KEY"); // 코스 "구성" 교차검증용(본문 생성은 OpenAI)
 const TOURKEY = envKey("DATA_GO_KR_KEY") || envKey("TOUR_API_KEY");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const ymd = (date) => `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, "0")}${String(date.getDate()).padStart(2, "0")}`;
 
 // ── 경유지명 → 좌표 해석기(places.json 정규화 매칭). 지리 실현성 검사(courseGeoFeasible)에 사용. ──
 const _norm = (s) => String(s || "").replace(/\s|\(.*?\)/g, "");
