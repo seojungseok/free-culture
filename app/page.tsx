@@ -179,6 +179,7 @@ function Hero({ image, position, seasonalLabel }: { image: string; position: str
     ["캠핑", "/camping"],
     ["맛집탐방", "/food"],
     ["전통시장", "/traditional-market"],
+    ["🐾 반려동물 여행", "/pet-travel"],
     ["아이와함께", "/kids"],
     ["데이트", "/date"],
     [`${seasonalLabel}나들이`, "/season"],
