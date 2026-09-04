@@ -49,6 +49,21 @@ jobs:
           FEST_DAILY: "300"
         run: node scripts/collectFestivals.mjs
 
+      - name: 지역 축제 수집 — 부산·경주·울산·전남 공식 API 병합
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+        run: node scripts/collectRegionalFestivals.mjs
+
+      - name: 축제 상세정보·사진 보강 (하루 20곳)
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+          FESTIVAL_ENRICH_DAILY: "20"
+        run: node scripts/enrichFestivals.mjs
+
       - name: 문화행사 수집 (KorService2) — 신규·종료 반영 위해 매일 최신화
         continue-on-error: true
         env:

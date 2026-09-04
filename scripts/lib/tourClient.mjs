@@ -160,6 +160,13 @@ export async function detailInfoRaw(contentId, contentTypeId, budget) {
   return arr(j?.response?.body?.items?.item);
 }
 
+/** TourAPI 관광지·축제 상세 사진 목록. 원본과 썸네일 URL을 함께 제공한다. */
+export async function detailImageListRaw(contentId, contentTypeId, budget) {
+  // KorService2의 축제 사진 endpoint는 contentTypeId를 받으면 INVALID_REQUEST_PARAMETER를 반환한다.
+  const j = await fetchJson("detailImage2", { contentId, numOfRows: 30, pageNo: 1 }, budget);
+  return arr(j?.response?.body?.items?.item);
+}
+
 /** 반려동물 동반여행 서비스 상세정보 */
 export async function detailPetTourRaw(contentId, budget) {
   const j = await fetchJson("detailPetTour2", { contentId }, budget, PET_BASE);
@@ -214,8 +221,9 @@ const INTRO_MAP = {
   "39": { usetime: "opentimefood", restdate: "restdatefood", parking: "parkingfood", infocenter: "infocenterfood",
           creditcard: "chkcreditcardfood", firstmenu: "firstmenu", treatmenu: "treatmenu", packing: "packing",
           kidsfacility: "kidsfacility", reservation: "reservationfood", seat: "seat", smoking: "smoking" },
-  "15": { usetime: "usetimefestival", fee: "usetimefestival", eventplace: "eventplace", eventstart: "eventstartdate",
-          eventend: "eventenddate", playtime: "playtime", sponsor: "sponsor1", agelimit: "agelimit", program: "program" },
+  "15": { usetime: "usetimefestival", eventplace: "eventplace", eventstart: "eventstartdate",
+          eventend: "eventenddate", playtime: "playtime", sponsor: "sponsor1", sponsorTel: "sponsor1tel",
+          agelimit: "agelimit", program: "program" },
 };
 
 /** 원시 detailIntro2 item → 공통 스키마(값 없는 필드는 생략) */

@@ -63,27 +63,28 @@ export default function FestivalBrowser({ festivals, initialRegion = "전국", i
         <p className="text-[12px] text-ink-faint">공식 데이터 기준 · 일정은 방문 전 확인</p>
       </div>
       {filtered.length ? (
-        <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-3 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
           {filtered.map((f) => <article key={f.id} className="overflow-hidden rounded-xl border border-line bg-white shadow-sm">
-            <a href={`/festivals/${f.id}`} className="block"><div className="h-44 bg-tint">{f.image ? <img src={f.image} alt={`${f.title} 축제 현장 사진`} loading="lazy" className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center text-4xl" aria-hidden="true">🎉</div>}</div></a>
-            <div className="p-4">
+            <a href={`/festivals/${f.id}`} className="block"><div className="aspect-[4/3] bg-tint">{f.image ? <img src={f.image} alt={`${f.title} 축제 현장 사진`} loading="lazy" className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center text-4xl" aria-hidden="true">🎉</div>}</div></a>
+            <div className="p-3 sm:p-4">
               <div className="flex flex-wrap gap-1.5 text-[11px] font-bold"><span className="rounded bg-[#eaf7ef] px-2 py-1 text-free">{f.area}</span><span className="rounded bg-[#f2f4f7] px-2 py-1 text-ink-soft">{f.startDate <= today && f.endDate >= today ? "진행중" : "예정"}</span></div>
-              <h2 className="mt-2 line-clamp-2 text-[17px] font-black leading-6 text-ink"><a href={`/festivals/${f.id}`} className="hover:text-free">{f.title}</a></h2>
-              <p className="mt-2 text-[13px] font-bold text-ink-soft">{formatRange(f.startDate, f.endDate)}</p>
-              <p className="mt-1 line-clamp-2 text-[13px] leading-5 text-ink-faint">{f.place || f.addr}</p>
-              <section className="mt-3 border-t border-line pt-3">
+              <h2 className="mt-2 line-clamp-2 text-[14px] font-black leading-5 text-ink sm:text-[17px] sm:leading-6"><a href={`/festivals/${f.id}`} className="hover:text-free">{f.title}</a></h2>
+              <p className="mt-2 text-[12px] font-bold text-ink-soft sm:text-[13px]">{formatRange(f.startDate, f.endDate)}</p>
+              <p className="mt-1 line-clamp-1 text-[12px] leading-5 text-ink-faint sm:text-[13px]">{f.place || f.addr || "장소는 상세 페이지에서 확인"}</p>
+              <section className="mt-3 hidden border-t border-line pt-3 sm:block">
                 <h3 className="text-[12px] font-black text-ink">축제 소개</h3>
                 <p className="mt-1 text-[13px] leading-5 text-ink-soft">{introFor(f)}</p>
               </section>
-              <dl className="mt-3 grid grid-cols-[58px_1fr] gap-x-2 gap-y-1 text-[12px] leading-5">
+              <dl className="mt-3 hidden grid-cols-[58px_1fr] gap-x-2 gap-y-1 text-[12px] leading-5 sm:grid">
                 <dt className="font-bold text-ink-faint">개최 지역</dt><dd className="text-ink-soft">{f.area}</dd>
                 <dt className="font-bold text-ink-faint">개최 장소</dt><dd className="text-ink-soft">{f.place || "공식 안내 확인"}</dd>
                 <dt className="font-bold text-ink-faint">주소</dt><dd className="text-ink-soft">{f.addr || "주소는 공식 안내 확인"}</dd>
                 {f.tel && <><dt className="font-bold text-ink-faint">문의</dt><dd className="text-ink-soft">{f.tel}</dd></>}
               </dl>
-              {tagsFor(f).length > 0 && <p className="mt-3 flex flex-wrap gap-1.5">{tagsFor(f).map((tag) => <span key={tag} className="rounded-full bg-[#fff4df] px-2 py-1 text-[11px] font-bold text-[#99631c]">#{tag}</span>)}</p>}
-              <p className="mt-3 rounded-lg bg-[#f7fafc] px-3 py-2 text-[12px] leading-5 text-ink-faint">방문 전 행사 일정, 입장료, 주차와 우천 취소 여부를 공식 안내에서 확인하세요.</p>
-              <div className="mt-4 flex flex-wrap gap-3 text-[12px] font-bold">
+              {tagsFor(f).length > 0 && <p className="mt-3 hidden flex-wrap gap-1.5 sm:flex">{tagsFor(f).map((tag) => <span key={tag} className="rounded-full bg-[#fff4df] px-2 py-1 text-[11px] font-bold text-[#99631c]">#{tag}</span>)}</p>}
+              <p className="mt-3 hidden rounded-lg bg-[#f7fafc] px-3 py-2 text-[12px] leading-5 text-ink-faint sm:block">방문 전 행사 일정, 입장료, 주차와 우천 취소 여부를 공식 안내에서 확인하세요.</p>
+              <div className="mt-3 flex flex-wrap gap-3 text-[12px] font-bold sm:mt-4">
+                <a href={`/festivals/${f.id}`} className="text-free">축제 정보 보기 →</a>
                 <a href={`https://map.kakao.com/?q=${encodeURIComponent(f.addr || f.title)}`} target="_blank" rel="noreferrer" className="text-free">지도에서 보기 ↗</a>
                 {f.homepage && <a href={f.homepage} target="_blank" rel="noreferrer" className="text-brandblue">공식 홈페이지 ↗</a>}
               </div>

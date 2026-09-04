@@ -7,6 +7,8 @@ export interface Festival {
   id: string; title: string; addr: string; area: string;
   image: string; mapx: string; mapy: string; startDate: string; endDate: string;
   source?: string; description?: string; place?: string; homepage?: string; tel?: string;
+  type?: string; images?: string[]; intro?: Record<string, string>;
+  info?: { name: string; text: string }[]; enrichedAt?: string;
 }
 
 const COLLECTED = (festivalsData as unknown as { festivals?: Festival[] }).festivals || [];

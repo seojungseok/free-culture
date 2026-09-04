@@ -15,6 +15,7 @@
     "collect:restaurants": "node scripts/collectRestaurants.mjs",
     "collect:festivals": "node scripts/collectFestivals.mjs",
     "collect:regional-festivals": "node scripts/collectRegionalFestivals.mjs",
+    "enrich:festivals": "node scripts/enrichFestivals.mjs",
     "collect:photo-gallery": "node scripts/collectPhotoGallery.mjs",
     "collect:pet-travel": "node scripts/collectPetTravel.mjs",
     "enrich:pet-travel": "node scripts/enrichPetTravel.mjs",
