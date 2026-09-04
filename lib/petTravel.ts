@@ -17,6 +17,9 @@ export type PetTravelPlace = {
   overview?: string;
   intro?: Record<string, string>;
   images?: string[];
+  petRaw?: Record<string, string>;
+  info?: Array<{ name: string; text: string }>;
+  enrichedAt?: string;
 };
 
 const places = (petData as unknown as { places?: Record<string, PetTravelPlace> }).places || {};

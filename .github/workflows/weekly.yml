@@ -80,6 +80,14 @@ jobs:
           PET_DAILY: "800"
         run: node scripts/collectPetTravel.mjs
 
+      - name: 반려동물 상세정보·사진 보강 (하루 10곳)
+        continue-on-error: true
+        env:
+          PET_TOUR_API_KEY: ${{ secrets.PET_TOUR_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          PET_ENRICH_DAILY: "10"
+        run: node scripts/enrichPetTravel.mjs
+
       - name: 지역 축제 API 동기화 (부산·경주·울산·전남)
         continue-on-error: true
         env:

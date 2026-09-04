@@ -167,6 +167,29 @@ export async function detailPetTourRaw(contentId, budget) {
   return Array.isArray(it) ? it[0] : it;
 }
 
+export async function petDetailCommon(contentId, budget) {
+  const j = await fetchJson("detailCommon2", { contentId }, budget, PET_BASE);
+  const it = j?.response?.body?.items?.item;
+  const o = Array.isArray(it) ? it[0] : it;
+  return { overview: cleanText(o?.overview), homepage: extractUrl(o?.homepage), tel: cleanText(o?.tel) };
+}
+
+export async function petDetailIntroRaw(contentId, contentTypeId, budget) {
+  const j = await fetchJson("detailIntro2", { contentId, contentTypeId }, budget, PET_BASE);
+  const it = j?.response?.body?.items?.item;
+  return Array.isArray(it) ? it[0] : it;
+}
+
+export async function petDetailInfoRaw(contentId, contentTypeId, budget) {
+  const j = await fetchJson("detailInfo2", { contentId, contentTypeId }, budget, PET_BASE);
+  return arr(j?.response?.body?.items?.item);
+}
+
+export async function petImageListRaw(contentId, contentTypeId, budget) {
+  const j = await fetchJson("detailImage2", { contentId, contentTypeId, numOfRows: 30, pageNo: 1 }, budget, PET_BASE);
+  return arr(j?.response?.body?.items?.item);
+}
+
 export async function petAreaBasedPage({ areaCode, sigunguCode, pageNo = 1, rows = 1000 }, budget) {
   const params = { numOfRows: rows, pageNo };
   if (areaCode) params.areaCode = areaCode;
