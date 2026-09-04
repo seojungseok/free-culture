@@ -44,6 +44,21 @@ const GEMINI = envKey("GEMINI_API_KEY"); // 코스 "구성" 교차검증용(본�
 const TOURKEY = envKey("DATA_GO_KR_KEY") || envKey("TOUR_API_KEY");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const ymd = (date) => `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, "0")}${String(date.getDate()).padStart(2, "0")}`;
+const MARKET_API = process.env.MARKET_API_URL || "https://mwohaji.kr/api/traditional-markets";
+let marketCache = null;
+
+async function marketNoteFor(area) {
+  if (marketCache === null) {
+    try {
+      const r = await fetch(`${MARKET_API}?source=course-generator`, { signal: AbortSignal.timeout(12000) });
+      const j = await r.json();
+      marketCache = Array.isArray(j?.markets) ? j.markets : [];
+    } catch { marketCache = []; }
+  }
+  const rows = marketCache.filter((m) => m.region === area).slice(0, 5);
+  if (!rows.length) return "";
+  return rows.map((m) => [m.name, m.address, m.category, m.hasParking === true ? "주차 가능" : "", m.items ? `취급품목=${m.items}` : ""].filter(Boolean).join(" / ")).join("\n");
+}
 
 // ── 경유지명 → 좌표 해석기(places.json 정규화 매칭). 지리 실현성 검사(courseGeoFeasible)에 사용. ──
 const _norm = (s) => String(s || "").replace(/\s|\(.*?\)/g, "");
@@ -279,7 +294,7 @@ function autumnFestivalNote(course) {
 }
 
 // 생성 → 로컬검사 → 패턴검사(자가치유) → 발행. 제미나이 없음.
-async function produceCourse(course, existingTexts) {
+async function produceCourse(course, existingTexts, marketNote = "") {
   const festivalNote = autumnFestivalNote(course);
   const source = `${courseSourceFacts(course)}${festivalNote ? `\n${festivalNote}` : ""}`;
   const mth = new Date().getMonth() + 1;
@@ -290,7 +305,7 @@ async function produceCourse(course, existingTexts) {
 
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
-      const base = course.format === "list" ? buildListPrompt(course) : buildCoursePrompt(course, { summer, festivalNote });
+      const base = course.format === "list" ? buildListPrompt(course) : buildCoursePrompt(course, { summer, festivalNote, marketNote });
       const prompt = base + (retryHint ? `\n\n[❗ 직전 시도 반려 — 교정]\n${retryHint}` : "");
       const { text: raw } = await callOpenAI(prompt, { apiKey: OPENAI, model: MODEL });
       if (!raw) { log(`시도${attempt} 빈 응답`); await sleep(1500); continue; }
@@ -403,7 +418,8 @@ async function main() {
     // 재생성이면 "자기 자신"을 중복 비교 대상에서 뺀다(옛 글과 비슷하다고 스스로 반려되는 것 방지).
     const prevText = store.articles[course.id]?.content || "";
     const compareTexts = isRebuild ? existingTexts.filter((t) => t !== prevText) : existingTexts;
-    const { art, reasons } = await produceCourse(course, compareTexts);
+    const marketNote = isRebuild ? "" : await marketNoteFor(course.area);
+    const { art, reasons } = await produceCourse(course, compareTexts, marketNote);
     if (!art) {
       skipped++;
       report.push({ id: course.id, title: course.title, outcome: "skip", reason: reasons.slice(-2).join(" | ") });

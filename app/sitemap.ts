@@ -11,6 +11,7 @@ import {
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { getDateCourses, dateAreaCounts, dateCityParams } from "@/lib/dateCourses";
+import { MARKET_REGIONS } from "@/lib/traditionalMarkets";
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
@@ -76,6 +77,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const regionRoutes = Object.values(SIDO_SLUG).map((code) => ({
     url: `${base}/region/${code}`,
+    lastModified: now,
+    changeFrequency: "daily" as const,
+    priority: 0.7,
+  }));
+
+  const traditionalMarketRoutes = MARKET_REGIONS.map((region) => ({
+    url: `${base}/traditional-market/${encodeURIComponent(region)}`,
     lastModified: now,
     changeFrequency: "daily" as const,
     priority: 0.7,
@@ -268,6 +276,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...monthlyRoutes,
     ...regionRoutes,
+    ...traditionalMarketRoutes,
     ...comboRoutes,
     ...genreRoutes,
     ...placeAreaRoutes,

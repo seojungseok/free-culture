@@ -961,7 +961,7 @@ ${items}
 // 글에 소제목으로 쓸 관광지 = lib/courses.ts의 courseAttractions와 **같은 모듈**(lib/courseSelect.js).
 export const courseAttractionStops = selectCourseStops;
 
-export function buildCoursePrompt(course, { summer = false, festivalNote = "" } = {}) {
+export function buildCoursePrompt(course, { summer = false, festivalNote = "", marketNote = "" } = {}) {
   const themeLabels = (course.themes || []).map((t) => COURSE_THEME_LABEL[t] || t).join("·");
   const mainTheme = COURSE_THEME_LABEL[(course.themes || [])[0]] || "여행"; // 제목에 넣을 대표 테마
   const isFood = isCourseFoodStop;
@@ -1020,6 +1020,9 @@ ${course.overview ? `[코스 소개 자료] ${course.overview}\n` : ""}
 ${festivalNote ? `[가을 축제 연계 참고 — 공식 축제 캐시]
 ${festivalNote}
 행사 일정은 위 공식 자료에 있는 경우에만 안내하고, 코스 경유지에 축제를 억지로 추가하지 마세요.\n` : ""}
+${marketNote ? `[전통시장 연계 참고 — 홈페이지 API 캐시]
+${marketNote}
+위 시장 정보는 코스 지역의 주변 전통시장 후보입니다. 실제 이동 순서와 거리가 확인되지 않은 시장은 코스 경유지로 추가하지 말고, 글의 "주변 전통시장" 또는 여행 팁에서 선택지로만 안내하세요. 시장명·주소·주차·취급품목은 위 자료에 있는 내용만 사용하세요.\n` : ""}
 ${audienceNote}
 [관광 경유지 — 이 순서대로. 소제목(##/###)은 이 관광지들로만 만드세요. 총 ${nStops}곳이 전부입니다]
 ${stopsBlock}

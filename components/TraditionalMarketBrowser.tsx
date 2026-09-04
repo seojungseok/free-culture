@@ -12,9 +12,9 @@ const distance = (a: number, b: number, c: number, d: number) => {
 };
 const yes = (v: boolean | null) => v === true ? "가능" : v === false ? "없음" : "";
 
-export default function TraditionalMarketBrowser({ initial }: { initial: TraditionalMarket[] }) {
+export default function TraditionalMarketBrowser({ initial, initialRegion = "전체" }: { initial: TraditionalMarket[]; initialRegion?: string }) {
   const [markets, setMarkets] = useState(initial);
-  const [region, setRegion] = useState("전체");
+  const [region, setRegion] = useState(initialRegion);
   const [query, setQuery] = useState("");
   const [parking, setParking] = useState(false);
   const [giftcard, setGiftcard] = useState(false);

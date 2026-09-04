@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Band } from "@/components/Band";
 import TraditionalMarketBrowser from "@/components/TraditionalMarketBrowser";
+import Link from "next/link";
+import { MARKET_REGIONS } from "@/lib/traditionalMarkets";
 
 export const revalidate = 86400;
 export const metadata: Metadata = {
@@ -11,5 +13,5 @@ export const metadata: Metadata = {
 };
 
 export default function TraditionalMarketPage() {
-  return <><Band tone="tint" innerClassName="py-5"><h1 className="text-[24px] font-black text-ink sm:text-[30px]"><span className="text-free">전국 전통시장</span> 가볼만한곳</h1><p className="mt-1 text-[14px] leading-6 text-ink-soft">시장 위치와 주소, 주차 여부, 취급품목을 지역별로 찾아보고 가까운 전통시장 나들이를 계획해보세요.</p></Band><TraditionalMarketBrowser initial={[]} /></>;
+  return <><Band tone="tint" innerClassName="py-5"><h1 className="text-[24px] font-black text-ink sm:text-[30px]"><span className="text-free">전국 전통시장</span> 가볼만한곳</h1><p className="mt-1 text-[14px] leading-6 text-ink-soft">시장 위치와 주소, 주차 여부, 취급품목을 지역별로 찾아보고 가까운 전통시장 나들이를 계획해보세요.</p><nav aria-label="지역별 전통시장" className="mt-4 flex flex-wrap gap-x-3 gap-y-2 text-[13px] font-bold text-free">{MARKET_REGIONS.map((region) => <Link key={region} href={`/traditional-market/${encodeURIComponent(region)}`}>{region} 전통시장</Link>)}</nav></Band><TraditionalMarketBrowser initial={[]} /></>;
 }
