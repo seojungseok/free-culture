@@ -56,11 +56,35 @@ export const normalizePetIntro = (raw: Record<string, unknown>) => Object.fromEn
   Object.entries(raw || {}).map(([key, value]) => [introLabels[key] || "", readable(value)])
     .filter(([label, value]) => Boolean(label && value)),
 );
+const petLabels: Record<string, string> = {
+  acmpyneedmtr: "동반 시 준비사항",
+  relaacdntriskmtr: "안전 유의사항",
+  relaacdntRiskMtr: "안전 유의사항",
+  relaposesfclty: "동반 가능 시설",
+  relaPosesFclty: "동반 가능 시설",
+  relafrnshprdlst: "제공 물품",
+  relaFrnshPrdlst: "제공 물품",
+  relarntlprdlst: "대여 물품",
+  relaRntlPrdlst: "대여 물품",
+  relapurcprdlst: "구매 가능 물품",
+  relaPurcPrdlst: "구매 가능 물품",
+};
 const normalizePetInfo = (raw: Record<string, unknown>) => Object.entries(raw || {})
-  .filter(([key]) => !noisyKey.test(key))
-  .map(([key, value]) => `${key}: ${readable(value)}`)
-  .filter((text) => !text.endsWith(": "))
-  .join(" · ");
+  .map(([key, value]) => [petLabels[key] || petLabels[key.toLowerCase()] || "", readable(value)] as const)
+  .filter(([label, value]) => Boolean(label && value))
+  .map(([label, value]) => `${label}: ${value}`)
+  .join("\n\n");
+
+export const sanitizePetInfoText = (value: unknown) => String(value || "")
+  .split(/\s*(?:·|\n)\s*/)
+  .map((part) => {
+    const match = part.match(/^([^:]+):\s*(.*)$/);
+    if (!match) return /[가-힣]/.test(part) ? readable(part) : "";
+    const label = petLabels[match[1]] || petLabels[match[1].toLowerCase()];
+    return label && readable(match[2]) ? `${label}: ${readable(match[2])}` : "";
+  })
+  .filter(Boolean)
+  .join("\n\n");
 
 /** 캐시가 아직 갱신되지 않은 장소도 상세 URL에서 API 상세정보를 제공한다. */
 export async function fetchPetTravelDetail(id: string): Promise<PetTravelPlace | null> {

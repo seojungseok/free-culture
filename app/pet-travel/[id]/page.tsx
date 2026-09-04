@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTourById, tourTypeLabel } from "@/lib/tour";
-import { fetchPetTravelDetail, getPetTravelPlace, normalizePetIntro } from "@/lib/petTravel";
+import { fetchPetTravelDetail, getPetTravelPlace, normalizePetIntro, sanitizePetInfoText } from "@/lib/petTravel";
 
 export const revalidate = 86400;
 
@@ -31,12 +31,20 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
 
   const type = "type" in spot ? spot.type || "" : "";
   const address = "address" in spot ? spot.address : spot.addr;
-  const petInfo = "petInfo" in spot ? spot.petInfo : "";
+  const petInfo = "petInfo" in spot ? sanitizePetInfoText(spot.petInfo) : "";
   const summary = "summary" in spot ? spot.summary : "";
   const intro = "intro" in spot ? normalizePetIntro(spot.intro || {}) : {};
   const info = "info" in spot ? spot.info || [] : [];
   const gallery = "images" in spot ? spot.images?.slice(1) || [] : [];
   const description = `${spot.area || "전국"} ${spot.title} 반려동물 동반 여행 정보`;
+  const summaryParagraphs = (summary || "반려동물과 함께 방문을 계획하기 좋은 여행지입니다.")
+    .split(/(?<=[.!?])\s+/)
+    .reduce<string[]>((parts, sentence, index) => {
+      const bucket = Math.floor(index / 2);
+      parts[bucket] = `${parts[bucket] ? `${parts[bucket]} ` : ""}${sentence}`;
+      return parts;
+    }, []);
+  const petInfoParagraphs = petInfo.split(/\n{2,}/).filter(Boolean);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "TouristAttraction",
@@ -60,13 +68,14 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
         <div className="p-5 sm:p-8">
           <p className="text-[13px] font-bold text-free">{spot.area || "전국"} · {tourTypeLabel(type)}</p>
           <h1 className="mt-2 text-[26px] font-black text-ink sm:text-[34px]">{spot.title}</h1>
-          <p className="mt-5 text-[14px] leading-6 text-ink-soft">
-            <strong className="text-ink">{spot.title} 반려동물 동반 여행</strong><br />
-            {summary || "반려동물과 함께 방문을 계획하기 좋은 여행지입니다."} 가을에는 한결 선선한 날씨 속에서 산책과 풍경 감상을 함께 즐기기 좋아, 방문 시간과 동반 조건을 미리 확인하고 여유 있게 둘러보는 일정이 잘 어울립니다.
-          </p>
+          <section className="mt-5 space-y-4 text-[14px] leading-7 text-ink-soft">
+            <p><strong className="text-ink">{spot.title} 반려동물 동반 여행</strong></p>
+            {summaryParagraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+            <p>가을에는 한결 선선한 날씨 속에서 산책과 풍경 감상을 함께 즐기기 좋아, 방문 시간과 동반 조건을 미리 확인하고 여유 있게 둘러보는 일정이 잘 어울립니다.</p>
+          </section>
           {gallery[0] && photo(gallery[0], 0)}
 
-          {petInfo && <section className="mt-5 rounded-xl bg-tint p-4"><h2 className="text-[15px] font-extrabold text-ink">반려동물 이용 안내</h2><p className="mt-2 text-[13px] leading-6 text-ink-soft">{petInfo}</p></section>}
+          {petInfoParagraphs.length > 0 && <section className="mt-5 rounded-xl bg-tint p-4"><h2 className="text-[15px] font-extrabold text-ink">반려동물 이용 안내</h2><div className="mt-3 space-y-3 text-[13px] leading-6 text-ink-soft">{petInfoParagraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div></section>}
           {Object.keys(intro).length > 0 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">운영·편의시설 안내</h2><dl className="mt-3 grid gap-2 sm:grid-cols-2">{Object.entries(intro).slice(0, 12).map(([name, value]) => <div key={name} className="rounded-lg bg-panel px-3 py-3"><dt className="text-[11px] font-bold text-ink-faint">{name}</dt><dd className="mt-1 break-words text-[13px] leading-6 text-ink-soft">{String(value)}</dd></div>)}</dl></section>}
           {gallery[1] && photo(gallery[1], 1)}
           {info.length > 0 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">시설·이용 안내</h2><div className="mt-2 space-y-3">{info.slice(0, 10).map((item, index) => <div key={`${item.name}-${index}`}><h3 className="text-[14px] font-bold text-ink">{item.name || "이용 안내"}</h3><p className="mt-1 text-[13px] leading-6 text-ink-soft">{item.text}</p></div>)}</div></section>}
