@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { Band } from "@/components/Band";
+import TraditionalMarketCallout from "@/components/TraditionalMarketCallout";
 import DateBrowser from "@/components/DateBrowser";
 import PosterCard from "@/components/PosterCard";
 import { getAllEvents, slimForClient } from "@/lib/data";
@@ -51,6 +52,7 @@ export default async function MonthlyPage({ params }: { params: Promise<{ month:
       <p className="mt-2 max-w-3xl text-[14px] leading-6 text-ink-soft">{n}월 {MONTH_THEMES[n - 1]}를 기준으로 전국 문화행사와 축제를 모았습니다. 날짜·지역·분야·가격 필터로 이번 달에 실제로 갈 곳을 골라보세요.</p>
     </Band>
     <main className="mx-auto w-full max-w-[1180px] px-5 pb-12 sm:px-6 lg:px-8">
+      <TraditionalMarketCallout enabled={n === 9} />
       <section className={`mt-6 rounded-2xl border p-5 sm:p-6 ${themeClass}`}>
         <div className="flex flex-wrap items-center justify-between gap-3"><div><p className="text-[12px] font-black text-free">MONTHLY PICK · {n}월</p><h2 className="mt-1 text-[20px] font-black text-ink">{MONTH_THEMES[n - 1]}</h2></div><Link href="/events?period=month" className="rounded-full bg-ink px-4 py-2 text-[12px] font-bold text-white">이번 달 행사 전체보기</Link></div>
         <div className="mt-4 grid grid-cols-4 gap-2 sm:grid-cols-6 lg:grid-cols-12">{MONTH_NAMES.map((label, i) => <Link key={label} href={`/month/${i + 1}`} className={["flex min-h-9 items-center justify-center rounded-lg bg-white/80 px-1 text-[12px] font-bold text-ink-soft hover:bg-white hover:text-ink", i + 1 === n ? "ring-2 ring-[#b86f32]" : ""].join(" ")}>{label}</Link>)}</div>

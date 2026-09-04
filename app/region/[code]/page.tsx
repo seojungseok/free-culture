@@ -106,6 +106,7 @@ export default async function RegionPage({
     .slice(0, 12);
   const campAreaSlug = (SIDO_SLUG as Record<string, string>)[sido];
   const internalLinks = [
+    { href: "/traditional-market", label: name + " 전통시장 찾아보기" },
     { href: `/places/${code}`, label: `${name} 나들이 더보기` },
     { href: `/region/${code}`, label: `${name} 무료 행사 더보기` },
     { href: `/camping/region/${campAreaSlug}`, label: `${name} 캠핑장 더보기` },

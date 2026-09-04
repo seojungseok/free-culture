@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/course",
     "/camping",
     "/food",
+    "/traditional-market",
     "/free",
     "/cheap",
     "/weekend",

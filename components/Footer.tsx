@@ -13,6 +13,7 @@ const BROWSE = [
   { href: "/weekend", label: "이번 주말" },
   { href: "/ending-soon", label: "곧 종료" },
   { href: "/kids", label: "아이와" },
+  { href: "/traditional-market", label: "전통시장" },
 ];
 const INFO = [
   { href: "/about", label: "소개" },

@@ -103,6 +103,7 @@ export default function HomePage() {
       <Hero image={hero.image} position={hero.position} seasonalLabel={seasonal.label} />
 
       <main className="bg-white pb-10">
+        {isChuseokMainSeason(today) && <Suspense fallback={null}><ChuseokBrowser events={getChuseokEvents()} compact /></Suspense>}
         <GamePromoBanner />
 
         <HomeSection title="지금 가장 인기 있는 콘텐츠" href="/events">
@@ -120,8 +121,6 @@ export default function HomePage() {
         <RailSection title="추천 여행코스" href="/course" items={courseCards.map(courseToExplore)} />
         <RailSection title="캠핑" href="/camping" items={campCards.map(campToExplore)} />
         <RailSection title={`${seasonal.label}나들이`} href="/season" items={seasonCards.map((spot) => placeToExplore(spot, `${seasonal.label} 여행`))} desc={seasonSeoText(seasonal.label)} limit={5} />
-        {isChuseokMainSeason(today) && <Suspense fallback={null}><ChuseokBrowser events={getChuseokEvents()} compact /></Suspense>}
-        <MonthlyHub />
 
         <HomeSection title="어디로 갈까요?" compactMobile>
           <div className="-mx-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:px-0">
@@ -179,6 +178,7 @@ function Hero({ image, position, seasonalLabel }: { image: string; position: str
     ["여행코스", "/course"],
     ["캠핑", "/camping"],
     ["맛집탐방", "/food"],
+    ["전통시장", "/traditional-market"],
     ["아이와함께", "/kids"],
     ["데이트", "/date"],
     [`${seasonalLabel}나들이`, "/season"],
