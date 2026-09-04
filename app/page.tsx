@@ -11,9 +11,7 @@ import { season } from "@/lib/finder";
 import { SITE } from "@/lib/site";
 import { fmtRange } from "@/lib/format";
 import type { CultureEvent } from "@/lib/types";
-import FestivalRail from "@/components/FestivalRail";
 import { isChuseokMainSeason } from "@/lib/chuseok";
-import { upcomingFestivals } from "@/lib/festivals";
 
 export const revalidate = 3600;
 
@@ -87,12 +85,12 @@ export default function HomePage() {
     ])
   ) as Record<string, string>;
 
-  const popularCards = [
+  const popularCards = shuffleByDay([
     eventToPopular(featuredEvents[0] || freeCards[0] || weekendCards[0]),
     placeToPopular(placeCards[0]),
     courseToPopular(courseCards[0]),
     campToPopular(campCards[0]),
-  ].filter(Boolean) as PopularCard[];
+  ].filter(Boolean) as PopularCard[], today);
 
   const endingCards = slimForClient(getEndingSoon(14).filter((e) => e.imgUrl).slice(0, 10));
   const kidsCards = allPlaces.filter((p) => p.isKid).slice(0, 10);
@@ -105,8 +103,6 @@ export default function HomePage() {
       <main className="bg-white pb-10">
         {isChuseokMainSeason(today) && <ChuseokQuickLink />}
         <GamePromoBanner />
-        <FestivalRail festivals={upcomingFestivals()} />
-
         <HomeSection title="지금 가장 인기 있는 콘텐츠" href="/events">
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
             {popularCards.map((card) => (
@@ -175,7 +171,6 @@ function MonthlyHub() {
 function Hero({ image, position, seasonalLabel }: { image: string; position: string; seasonalLabel: string }) {
   const cats = [
     ["문화행사", "/events"],
-    ["축제", "/festivals"],
     ["나들이", "/places"],
     ["여행코스", "/course"],
     ["캠핑", "/camping"],
