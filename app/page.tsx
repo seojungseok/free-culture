@@ -115,7 +115,7 @@ export default function HomePage() {
         </HomeSection>
 
         <RailSection title="오늘의 무료 문화행사" href="/free" items={freeCards.map(eventToExplore)} />
-        <RailSection title="인기 문화행사" href="/ending-soon" items={endingCards.map(eventToExplore)} />
+        <RailSection title="마감 임박 문화행사" href="/ending-soon" items={endingCards.map(eventToExplore)} />
         <RailSection title="나들이" href="/places" items={placeCards.map((spot) => placeToExplore(spot))} />
         <RailSection title="아이와 가볼만한곳" href="/kids" items={kidsCards.map((spot) => placeToExplore(spot))} />
         <RailSection title="추천 여행코스" href="/course" items={courseCards.map(courseToExplore)} />
