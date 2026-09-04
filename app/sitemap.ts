@@ -35,6 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/weekend",
     "/ending-soon",
     "/kids",
+    "/chuseok",
     "/game",
     "/game/roulette",
     "/game/ladder",
@@ -63,6 +64,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: LOW.has(p) ? ("monthly" as const) : ("daily" as const),
     priority: p === "" ? 1 : MAJOR.has(p) ? 0.9 : LOW.has(p) ? 0.3 : 0.6,
+  }));
+
+  const monthlyRoutes = Array.from({ length: 12 }, (_, i) => ({
+    url: `${base}/month/${i + 1}`,
+    lastModified: now,
+    changeFrequency: "daily" as const,
+    priority: i + 1 === now.getMonth() + 1 ? 0.8 : 0.6,
   }));
 
   const regionRoutes = Object.values(SIDO_SLUG).map((code) => ({
@@ -257,6 +265,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // 1) 홈·주요 목록·허브 (높은 우선순위 — 크롤 예산 집중)
     ...staticRoutes,
+    ...monthlyRoutes,
     ...regionRoutes,
     ...comboRoutes,
     ...genreRoutes,

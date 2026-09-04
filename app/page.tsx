@@ -121,6 +121,7 @@ export default function HomePage() {
         <RailSection title="캠핑" href="/camping" items={campCards.map(campToExplore)} />
         <RailSection title={`${seasonal.label}나들이`} href="/season" items={seasonCards.map((spot) => placeToExplore(spot, `${seasonal.label} 여행`))} desc={seasonSeoText(seasonal.label)} limit={5} />
         {isChuseokMainSeason(today) && <Suspense fallback={null}><ChuseokBrowser events={getChuseokEvents()} compact /></Suspense>}
+        <MonthlyHub />
 
         <HomeSection title="어디로 갈까요?" compactMobile>
           <div className="-mx-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:px-0">
@@ -148,6 +149,26 @@ export default function HomePage() {
         </section>
       </main>
     </>
+  );
+}
+
+const MONTH_LABELS = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"];
+const MONTH_THEMES = ["겨울 실내 나들이", "설날·겨울 행사", "봄꽃·문화행사", "벚꽃·축제", "가정의 달 행사", "초여름 나들이", "여름방학·축제", "휴가철 문화행사", "추석·가을 축제", "단풍·가을 행사", "늦가을 전시·공연", "겨울 축제·연말 행사"];
+
+function MonthlyHub() {
+  const month = new Date().getMonth() + 1;
+  return (
+    <HomeSection title="이번 달 뭐하지?">
+      <div className="overflow-hidden rounded-2xl border border-[#ead8b8] bg-[#fff8e9] p-4 sm:p-5">
+        <Link href={`/month/${month}`} prefetch={false} className="flex min-h-[78px] items-center justify-between gap-4 rounded-xl bg-[#9c5b24] px-5 py-4 text-white shadow-sm transition hover:bg-[#804619]">
+          <span><strong className="block text-[19px] font-black sm:text-[23px]">{MONTH_LABELS[month - 1]}에 뭐하지?</strong><span className="mt-1 block text-[12px] font-semibold text-[#ffe8c4]">{MONTH_THEMES[month - 1]}를 행사·축제·지역 필터로 찾아보세요.</span></span>
+          <span aria-hidden="true" className="text-2xl">→</span>
+        </Link>
+        <div className="mt-3 grid grid-cols-4 gap-2 sm:grid-cols-6 lg:grid-cols-12">
+          {MONTH_LABELS.map((label, i) => <Link key={label} href={`/month/${i + 1}`} prefetch={false} className={["flex min-h-9 items-center justify-center rounded-lg px-1 text-[12px] font-bold transition", i + 1 === month ? "bg-[#f2d09d] text-[#744317]" : "bg-white/80 text-ink-soft hover:bg-white hover:text-ink"].join(" ")}>{label}</Link>)}
+        </div>
+      </div>
+    </HomeSection>
   );
 }
 
