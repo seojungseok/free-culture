@@ -1,11 +1,13 @@
 import Link from "next/link";
 
-const stops = [
+import type { Festival } from "@/lib/festivals";
+
+const stops = (festival: Festival) => [
   {
     step: "01",
-    title: "인제가을꽃축제",
-    text: "가을꽃과 지역 행사를 먼저 확인하고 여행 날짜를 정해보세요.",
-    href: "/search?q=%EC%9D%B8%EC%A0%9C%EA%B0%80%EC%9D%84%EA%BD%83%EC%B6%95%EC%A0%9C",
+    title: festival.title,
+    text: "공식 축제 일정과 운영 내용을 먼저 확인하고 여행 날짜를 정해보세요.",
+    href: "/events?genre=festival&period=month",
     label: "행사 확인",
   },
   {
@@ -24,20 +26,20 @@ const stops = [
   },
 ];
 
-export default function InjeAutumnCourse() {
+export default function InjeAutumnCourse({ festival }: { festival: Festival }) {
   return (
     <section className="mx-auto w-full max-w-[1180px] px-5 pt-6 sm:px-6 sm:pt-8 lg:px-8" aria-labelledby="inje-autumn-course">
       <div className="overflow-hidden rounded-2xl border border-[#dbe6f2] bg-[#f7fbff]">
         <div className="flex flex-col gap-2 border-b border-[#dbe6f2] px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-6">
           <div>
-            <p className="text-[12px] font-extrabold tracking-[0.08em] text-free">AUTUMN PICK · INJE</p>
+            <p className="text-[12px] font-extrabold tracking-[0.08em] text-free">AUTUMN FESTIVAL PICK · INJE</p>
             <h2 id="inje-autumn-course" className="mt-1 text-[20px] font-black tracking-tight text-ink sm:text-[24px]">인제 가을여행 + 축제 코스</h2>
-            <p className="mt-1 text-[13px] text-ink-soft">행사 확인부터 숲길 산책까지, 가을 주말에 이어가기 좋은 추천 동선입니다.</p>
+            <p className="mt-1 text-[13px] text-ink-soft">공식 축제가 확인된 경우에만 행사 일정과 자작나무숲·내설악 동선을 함께 안내합니다.</p>
           </div>
           <Link href="/season?area=%EA%B0%95%EC%9B%90" className="text-[13px] font-bold text-free hover:text-freedark">가을나들이 전체 보기 →</Link>
         </div>
         <div className="grid divide-y divide-[#dbe6f2] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-          {stops.map((stop) => (
+          {stops(festival).map((stop) => (
             <Link key={stop.step} href={stop.href} className="group flex gap-3 px-5 py-4 transition hover:bg-white sm:block sm:px-6 sm:py-5">
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#dcecff] text-[11px] font-black text-free sm:h-9 sm:w-9">{stop.step}</span>
               <div className="min-w-0 sm:mt-4">

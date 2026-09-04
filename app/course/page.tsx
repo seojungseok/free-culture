@@ -4,19 +4,22 @@ import { Band } from "@/components/Band";
 import CourseBrowser from "@/components/CourseBrowser";
 import InjeAutumnCourse from "@/components/InjeAutumnCourse";
 import { filterCourses, getCourseAreaCounts, getCourseCount, slimCourse } from "@/lib/courses";
+import { areaFestivals } from "@/lib/festivals";
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "전국 여행코스 — 당일치기·1박2일·2박3일 국내 여행 코스",
-  description: "전국 여행코스를 지역·기간·테마로 골라보세요. 인제 가을여행과 축제·행사를 함께 찾는 당일치기·1박2일 국내 여행 코스도 준비했습니다.",
-  keywords: ["국내여행 코스", "당일치기", "1박2일", "여행코스 추천", "인제 가을여행", "인제 축제"],
+  description: "전국 여행코스를 지역·기간·테마로 골라보세요. 공식 축제 일정이 확인된 지역은 가을여행과 축제를 함께 찾을 수 있는 코스로 안내합니다.",
+  keywords: ["국내여행 코스", "당일치기", "1박2일", "여행코스 추천", "가을여행", "가을축제"],
   alternates: { canonical: "/course" },
 };
 
 export default function CoursePage() {
   const total = getCourseCount();
   const courses = filterCourses().map(slimCourse);
+  const injeFestival = areaFestivals("강원", { withinDays: 120, limit: 20 })
+    .find((festival) => /인제/.test(`${festival.title} ${festival.addr}`));
 
   return (
     <>
@@ -28,7 +31,7 @@ export default function CoursePage() {
           전국 여행코스 <span className="whitespace-nowrap">{total.toLocaleString()}개</span> — 기간·테마·지역으로 골라보세요
         </p>
       </Band>
-      <InjeAutumnCourse />
+      {injeFestival && <InjeAutumnCourse festival={injeFestival} />}
       <Suspense fallback={null}>
         <CourseBrowser courses={courses} areas={getCourseAreaCounts()} total={total} />
       </Suspense>
