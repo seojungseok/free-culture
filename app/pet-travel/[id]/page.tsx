@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTourById, tourTypeLabel } from "@/lib/tour";
-import { getPetTravelPlace } from "@/lib/petTravel";
+import { fetchPetTravelDetail, getPetTravelPlace } from "@/lib/petTravel";
 
 export const revalidate = 86400;
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const id = (await params).id;
-  const spot = getPetTravelPlace(id) || getTourById(id);
+  const spot = getPetTravelPlace(id) || await fetchPetTravelDetail(id) || getTourById(id);
   return spot ? { title: `${spot.title} 반려동물 동반 여행 | 오늘은 뭐하지`, description: `${spot.area} ${spot.title}의 주소와 사진, 반려동물 동반 여행 정보를 확인해보세요.` } : {};
 }
 
 export default async function PetTravelDetail({ params }: { params: Promise<{ id: string }> }) {
   const id = (await params).id;
-  const spot = getPetTravelPlace(id) || getTourById(id);
+  const spot = getPetTravelPlace(id) || await fetchPetTravelDetail(id) || getTourById(id);
   if (!spot) notFound();
   const type = "type" in spot ? spot.type || "" : "";
   const address = "address" in spot ? spot.address : spot.addr;
