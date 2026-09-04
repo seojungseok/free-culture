@@ -27,7 +27,7 @@ function normalize(item: any, index: number) {
   const address = clean(item.addr1 || item.addr2);
   const petText = clean(Object.entries(item || {}).filter(([k]) => /pet|animal|dog|cat|반려|동물/i.test(k)).map(([, v]) => v).filter(Boolean).join(" · "));
   return {
-    id: String(item.contentid), title, address, area: clean(item.areaname || item.sigunguname) || areaFrom(address),
+    id: String(item.contentid), title, address, area: areaFrom(address) || clean(item.areaname),
     image: clean(item.firstimage || item.firstimage2), mapx: clean(item.mapx), mapy: clean(item.mapy),
     type: clean(item.contenttypeid), homepage: clean(item.homepage), tel: clean(item.tel), petInfo: petText,
     summary: clean(item.overview || item.addr2 || "반려동물과 함께 여행할 수 있는 장소"), index,
