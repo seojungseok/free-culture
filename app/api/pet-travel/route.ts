@@ -53,7 +53,7 @@ export async function GET() {
         if (row) found.set(row.id, { ...found.get(row.id), ...row, area: row.area || AREA_TO_SIDO[areaCode] || "" });
       }
     }
-    const items = [...found.values()].slice(0, 240);
+    const items = [...found.values()].slice(0, 1200);
     return NextResponse.json({ items, total: items.length, generatedAt: new Date().toISOString() });
   } catch (error) {
     console.error("[pet-travel]", error);
