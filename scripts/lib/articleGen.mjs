@@ -961,7 +961,7 @@ ${items}
 // 글에 소제목으로 쓸 관광지 = lib/courses.ts의 courseAttractions와 **같은 모듈**(lib/courseSelect.js).
 export const courseAttractionStops = selectCourseStops;
 
-export function buildCoursePrompt(course, { summer = false } = {}) {
+export function buildCoursePrompt(course, { summer = false, festivalNote = "" } = {}) {
   const themeLabels = (course.themes || []).map((t) => COURSE_THEME_LABEL[t] || t).join("·");
   const mainTheme = COURSE_THEME_LABEL[(course.themes || [])[0]] || "여행"; // 제목에 넣을 대표 테마
   const isFood = isCourseFoodStop;
@@ -1017,6 +1017,9 @@ export function buildCoursePrompt(course, { summer = false } = {}) {
 [기간] ${course.duration}
 [테마] ${themeLabels}
 ${course.overview ? `[코스 소개 자료] ${course.overview}\n` : ""}
+${festivalNote ? `[가을 축제 연계 참고 — 공식 축제 캐시]
+${festivalNote}
+행사 일정은 위 공식 자료에 있는 경우에만 안내하고, 코스 경유지에 축제를 억지로 추가하지 마세요.\n` : ""}
 ${audienceNote}
 [관광 경유지 — 이 순서대로. 소제목(##/###)은 이 관광지들로만 만드세요. 총 ${nStops}곳이 전부입니다]
 ${stopsBlock}

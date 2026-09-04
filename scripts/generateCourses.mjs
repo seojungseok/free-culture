@@ -21,6 +21,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const COURSES = path.join(ROOT, "data", "courses.json");         // 공식(정부) 코스
 const COURSES_AUTO = path.join(ROOT, "data", "courses-auto.json"); // 자동 조합 코스
 const PLACES = path.join(ROOT, "data", "places.json");           // 경유지→좌표 매칭(지리 실현성 검사)
+const FESTIVALS = path.join(ROOT, "data", "festivals.json");     // 공식 축제 캐시(가을 코스 글 연결용)
 const OVERVIEWS = path.join(ROOT, "data", "place-overviews.json"); // 스팟 소개 캐시(글 파이프라인과 공유)
 const STORE = path.join(ROOT, "data", "course-articles.json");
 const ENRICH_MAX = Number(process.env.ENRICH_MAX || 80); // 발행분 스팟 소개 보강 최대 호출(한도 방어)
@@ -71,6 +72,8 @@ const resolvePlace = buildResolver();
 // ── 스팟 소개 캐시 로드/저장 (글 파이프라인과 공유) ──
 const ovStore = fs.existsSync(OVERVIEWS) ? JSON.parse(fs.readFileSync(OVERVIEWS, "utf8")) : {};
 const OV = ovStore.overviews || ovStore;
+const festivalStore = fs.existsSync(FESTIVALS) ? JSON.parse(fs.readFileSync(FESTIVALS, "utf8")) : {};
+const FESTIVAL_LIST = Array.isArray(festivalStore) ? festivalStore : festivalStore.festivals || [];
 let ovDirty = false;
 let enrichCalls = 0;
 
@@ -147,28 +150,24 @@ const REGION_PRIORITY = {
   인천: 4, 경기: 3, 세종: 3, 서울: 2,
 };
 
-// 실제 검색 의도가 강한 느린 가족 동선과 자연힐링 코스를 우선 발행한다.
+// 실제 검색 의도가 강한 느린 가족 동선과 사찰·시장 코스를 우선 발행한다.
 const courseNames = (c) => (c.stops || []).map((s) => String(s.name || "")).join(" ");
 const isSeniorPlan = (c) => {
   const text = courseNames(c);
   return /(사찰|절(?=\s|$)|암자|향교|서원|고택|성당|성지)/.test(text) && /(시장|오일장|5일장|장터)/.test(text);
-};
-const isNatureHealingPlan = (c) => {
-  const text = courseNames(c);
-  return (c.themes || []).includes("자연힐링") && /(숲|산|봉|휴양림|수목원|식물원|호수|둘레길|생태|전망대|계곡)/.test(text);
 };
 const isImpossibleRoute = (c) => {
   const names = (c.stops || []).map((s) => String(s.name || ""));
   const ferryIsland = /(굴업|덕적|백령|대청|연평|울릉|거문|욕지|한산|사량|청산|보길|노화|소안|흑산|추자)/;
   return names.some((name) => ferryIsland.test(name)) && names.some((name) => !ferryIsland.test(name));
 };
-// 계절 자동 — 현재 달에 맞는 테마 우선(여름=바다, 가을=단풍(자연), 겨울=실내(가족), 봄=자연)
+// 계절 자동 — 현재 달에 맞는 테마 우선(여름=바다, 가을=문화유적·축제, 겨울=실내)
 function seasonTheme() {
   const m = new Date().getMonth() + 1;
   if (m >= 6 && m <= 8) return "바다피서";
-  if (m >= 9 && m <= 11) return "자연힐링";
+  if (m >= 9 && m <= 11) return "문화유적";
   if (m === 12 || m <= 2) return "가족체험";
-  return "자연힐링"; // 봄
+  return "가족체험"; // 봄
 }
 
 // 현재 계절(월 기준) — 코스의 계절 태그(seasons)와 매칭해 제철 코스 우선 발행.
@@ -211,9 +210,8 @@ function pickQueue(courses, doneIds, n) {
       out.push(c); taken.add(c.id); count--;
     }
   };
-  // 하루 10개 기준: 어르신 동선 3개 + 자연힐링 2개를 먼저 확보한다.
+  // 하루 10개 기준: 사찰·전통시장 동선 3개를 먼저 확보한다.
   reserve(isSeniorPlan, Math.min(3, n));
-  reserve(isNatureHealingPlan, Math.min(2, n - out.length));
   // 1) 비율만큼 우선 채움
   for (const k of ["당일", "1박2일", "2박3일"]) {
     const b = buckets[k];
@@ -266,9 +264,23 @@ function planRebuilds(store, courses) {
   return { queue, stamped, orphan };
 }
 
+function autumnFestivalNote(course) {
+  const month = new Date().getMonth() + 1;
+  if (month < 9 || month > 11) return "";
+  const today = ymd(new Date());
+  const limit = ymd(new Date(Date.now() + 90 * 86400000));
+  const matches = FESTIVAL_LIST
+    .filter((festival) => festival.area === course.area)
+    .filter((festival) => String(festival.endDate || "") >= today && String(festival.startDate || "") <= limit)
+    .slice(0, 2);
+  if (!matches.length) return "";
+  return `공식 축제 참고(코스 지역·가을 일정 연결용): ${matches.map((festival) => `${festival.title} (${festival.startDate}~${festival.endDate})`).join(" / ")}`;
+}
+
 // 생성 → 로컬검사 → 패턴검사(자가치유) → 발행. 제미나이 없음.
 async function produceCourse(course, existingTexts) {
-  const source = courseSourceFacts(course);
+  const festivalNote = autumnFestivalNote(course);
+  const source = `${courseSourceFacts(course)}${festivalNote ? `\n${festivalNote}` : ""}`;
   const mth = new Date().getMonth() + 1;
   const summer = mth >= 6 && mth <= 8 && (course.themes || []).includes("바다피서");
   const reasons = [];
@@ -277,7 +289,7 @@ async function produceCourse(course, existingTexts) {
 
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
-      const base = course.format === "list" ? buildListPrompt(course) : buildCoursePrompt(course, { summer });
+      const base = course.format === "list" ? buildListPrompt(course) : buildCoursePrompt(course, { summer, festivalNote });
       const prompt = base + (retryHint ? `\n\n[❗ 직전 시도 반려 — 교정]\n${retryHint}` : "");
       const { text: raw } = await callOpenAI(prompt, { apiKey: OPENAI, model: MODEL });
       if (!raw) { log(`시도${attempt} 빈 응답`); await sleep(1500); continue; }
