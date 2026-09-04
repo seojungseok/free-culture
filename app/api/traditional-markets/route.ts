@@ -5,10 +5,10 @@ export const revalidate = 86400;
 export const dynamic = "force-dynamic";
 let previous: TraditionalMarket[] = [];
 
-async function fetchAll(): Promise<TraditionalMarket[]> {
+async function fetchAll(origin: string): Promise<TraditionalMarket[]> {
   const key = process.env.VWORLD_API_KEY;
-  const domain = process.env.VWORLD_API_DOMAIN;
-  if (!key || !domain) throw new Error("VWorld environment variables are missing");
+  const domain = (process.env.VWORLD_API_DOMAIN || origin || "https://mwohaji.kr").trim();
+  if (!key) throw new Error("VWorld API key is missing");
   const all: TraditionalMarket[] = [];
   let page = 1;
   let totalPages = 1;
@@ -41,9 +41,9 @@ async function fetchAll(): Promise<TraditionalMarket[]> {
   return deduped;
 }
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
-    const markets = await fetchAll();
+    const markets = await fetchAll(new URL(req.url).origin);
     return NextResponse.json({ markets, total: markets.length, cachedFor: 86400 });
   } catch (error) {
     console.error("[traditional-markets]", error);
