@@ -13,7 +13,7 @@ for (const p of todo) {
   try {
     const raw = await detailPetTourRaw(p.id, budget);
     const values = Object.fromEntries(Object.entries(raw || {}).map(([k, v]) => [k, cleanText(v)]).filter(([, v]) => v));
-    const petText = Object.entries(values).filter(([k]) => /pet|animal|dog|cat|반려|동물/i.test(k)).map(([k, v]) => `${k}=${v}`).join(" · ");
+    const petText = Object.entries(values).filter(([k]) => /pet|animal|dog|cat|반려|동물|acmpy|rela/i.test(k)).map(([k, v]) => `${k}=${v}`).join(" · ");
     if (!petText) { empty++; continue; }
     store.places[p.id] = { ...p, petInfo: petText, petRaw: values, updatedAt: new Date().toISOString() };
     ok++;

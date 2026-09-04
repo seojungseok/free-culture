@@ -28,7 +28,7 @@ function normalize(item: any, index: number) {
   const title = clean(item?.title || item?.name);
   if (!title || !item?.contentid) return null;
   const address = clean(item.addr1 || item.addr2);
-  const petText = clean(Object.entries(item || {}).filter(([k]) => /pet|animal|dog|cat|반려|동물/i.test(k)).map(([, v]) => v).filter(Boolean).join(" · "));
+  const petText = clean(Object.entries(item || {}).filter(([k]) => /pet|animal|dog|cat|반려|동물|acmpy|rela/i.test(k)).map(([, v]) => v).filter(Boolean).join(" · "));
   return {
     id: String(item.contentid), title, address, area: areaFrom(address) || clean(item.areaname),
     image: clean(item.firstimage || item.firstimage2), mapx: clean(item.mapx), mapy: clean(item.mapy),
