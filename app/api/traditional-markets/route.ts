@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { normalizeMarket, type TraditionalMarket } from "@/lib/traditionalMarkets";
 
 export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 let previous: TraditionalMarket[] = [];
 
 async function fetchAll(): Promise<TraditionalMarket[]> {
