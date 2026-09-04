@@ -17,8 +17,13 @@ async function fetchAll(origin: string): Promise<TraditionalMarket[]> {
       service: "data", version: "2.0", request: "GetFeature", data: "LT_P_TRADSIJANG",
       format: "json", crs: "EPSG:4326", size: "1000", page: String(page), key, domain,
     });
-    const response = await fetch("https://api.vworld.kr/req/data?" + params, { next: { revalidate: 86400 } });
-    const json = await response.json();
+    const response = await fetch("https://api.vworld.kr/req/data?" + params, {
+      next: { revalidate: 86400 },
+      headers: { Accept: "application/json,text/plain,*/*", "User-Agent": "Mozilla/5.0 (compatible; mwohaji.kr/1.0)" },
+    });
+    const raw = await response.text();
+    let json: any;
+    try { json = JSON.parse(raw); } catch { throw new Error(`VWorld non-JSON ${response.status} ${raw.slice(0, 120).replace(/\s+/g, " ")}`); }
     const code = json?.response?.status;
     if (!response.ok || code !== "OK") throw new Error("VWorld response " + String(code || response.status));
     const recordTotal = Number(json?.response?.record?.total || 0);
