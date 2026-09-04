@@ -288,7 +288,7 @@ function campToPopular(camp?: Camp): PopularCard | null {
 }
 
 function petToPopular(place?: PetTravelPlace): PopularCard | null {
-  if (!place) return null;
+  if (!place) return { href: "/pet-travel", title: "반려동물과 함께 가볼 곳", sub: "반려동물 여행지 모아보기", badge: "반려동물 여행", image: "https://tong.visitkorea.or.kr/cms/resource/95/3552095_image2_1.jpg", tone: "bg-[#e17b45]" };
   return { href: `/pet-travel/${place.id}`, title: place.title, sub: place.area || place.address || "", badge: "반려동물 여행", image: place.image || "https://tong.visitkorea.or.kr/cms/resource/95/3552095_image2_1.jpg", tone: "bg-[#e17b45]" };
 }
 
