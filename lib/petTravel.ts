@@ -47,10 +47,15 @@ export async function fetchPetTravelDetail(id: string): Promise<PetTravelPlace |
     return response.json();
   };
   try {
-    const [common, intro, pet, info, images] = await Promise.all([
-      request("detailCommon2"), request("detailIntro2", { contentTypeId: "12" }), request("detailPetTour2"), request("detailInfo2", { contentTypeId: "12" }), request("detailImage2", { numOfRows: "30", pageNo: "1" }),
-    ]);
+    const common = await request("detailCommon2");
     const c = arr(common?.response?.body?.items?.item)[0] || {};
+    const contentTypeId = clean(c.contenttypeid) || places[id]?.type || "12";
+    const [intro, pet, info, images] = await Promise.all([
+      request("detailIntro2", { contentTypeId }),
+      request("detailPetTour2"),
+      request("detailInfo2", { contentTypeId }),
+      request("detailImage2", { numOfRows: "30", pageNo: "1" }),
+    ]);
     const i = arr(intro?.response?.body?.items?.item)[0] || {};
     const p = arr(pet?.response?.body?.items?.item)[0] || {};
     const infoRows = arr(info?.response?.body?.items?.item).map((row: any) => ({ name: clean(row?.infoname || row?.name || row?.title), text: clean(row?.infotext || row?.text || Object.values(row || {}).join(" ")) })).filter((row: { name: string; text: string }) => row.name || row.text);
