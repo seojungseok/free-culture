@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getFree } from "@/lib/data";
 import CollectionView from "@/components/CollectionView";
+import { todayYmd } from "@/lib/dates";
 
 export const metadata: Metadata = {
   title: "전국 무료 전시·공연 모음",
@@ -11,15 +12,16 @@ export const metadata: Metadata = {
 
 export default function FreePage() {
   // 완전 무료 + 조건부 무료 포함
-  const events = getFree(true);
+  const today = todayYmd();
+  const events = getFree(true).filter((event) => event.startDate <= today && event.endDate >= today);
   return (
     <CollectionView
       title={
         <>
-          <span className="text-free">무료</span>로 즐기는 문화행사
+        <span className="text-free">오늘 진행 중인 무료</span> 문화행사
         </>
       }
-      subtitle={`입장료 없이 갈 수 있는 전국 행사 ${events.length.toLocaleString()}건 (조건부 무료 포함)`}
+      subtitle={`오늘 실제로 진행 중인 무료 행사 ${events.length.toLocaleString()}건을 모았습니다 (조건부 무료 포함)`}
       events={events}
       hidePriceFilter
     />
