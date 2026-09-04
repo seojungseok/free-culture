@@ -114,13 +114,13 @@ export default function HomePage() {
           </div>
         </HomeSection>
 
+        <RailSection title={`${seasonal.label}나들이`} href="/season" items={seasonCards.map((spot) => placeToExplore(spot, `${seasonal.label} 여행`))} limit={5} />
         <RailSection title="오늘의 무료 문화행사" href="/free" items={freeCards.map(eventToExplore)} />
         <RailSection title="마감 임박 문화행사" href="/ending-soon" items={endingCards.map(eventToExplore)} />
         <RailSection title="나들이" href="/places" items={placeCards.map((spot) => placeToExplore(spot))} />
         <RailSection title="아이와 가볼만한곳" href="/kids" items={kidsCards.map((spot) => placeToExplore(spot))} />
         <RailSection title="추천 여행코스" href="/course" items={courseCards.map(courseToExplore)} />
         <RailSection title="캠핑" href="/camping" items={campCards.map(campToExplore)} />
-        <RailSection title={`${seasonal.label}나들이`} href="/season" items={seasonCards.map((spot) => placeToExplore(spot, `${seasonal.label} 여행`))} desc={seasonSeoText(seasonal.label)} limit={5} />
 
         <HomeSection title="어디로 갈까요?" compactMobile>
           <div className="-mx-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:px-0">
