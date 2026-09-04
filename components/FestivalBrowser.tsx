@@ -39,6 +39,7 @@ export default function FestivalBrowser({ festivals, initialRegion = "전국", i
       .filter((f) => !q || [f.title, f.addr, f.area, f.place, f.description].filter(Boolean).join(" ").toLowerCase().includes(q))
       .sort((a, b) => a.startDate.localeCompare(b.startDate));
   }, [festivals, region, period, query, today]);
+  const regionCounts = useMemo(() => festivals.reduce<Record<string, number>>((counts, festival) => { counts[festival.area] = (counts[festival.area] || 0) + 1; return counts; }, {}), [festivals]);
 
   return (
     <div>
@@ -53,7 +54,7 @@ export default function FestivalBrowser({ festivals, initialRegion = "전국", i
           </div>
         </div>
         <div className="mt-4 flex gap-2 overflow-x-auto pb-1" aria-label="축제 지역 필터">
-          {REGIONS.map((item) => <button key={item} type="button" onClick={() => setRegion(item)} className={`shrink-0 rounded-full border px-3 py-2 text-[13px] font-bold ${region === item ? "border-free bg-free text-white" : "border-line bg-white text-ink-soft"}`}>{item}</button>)}
+          {REGIONS.map((item) => <button key={item} type="button" onClick={() => setRegion(item)} className={`shrink-0 rounded-full border px-3 py-2 text-[13px] font-bold ${region === item ? "border-free bg-free text-white" : "border-line bg-white text-ink-soft"}`}>{item} <span className="ml-0.5 text-[11px] opacity-75">{item === "전국" ? festivals.length : regionCounts[item] || 0}</span></button>)}
         </div>
       </div>
 
@@ -64,10 +65,10 @@ export default function FestivalBrowser({ festivals, initialRegion = "전국", i
       {filtered.length ? (
         <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((f) => <article key={f.id} className="overflow-hidden rounded-xl border border-line bg-white shadow-sm">
-            <div className="h-44 bg-tint">{f.image ? <img src={f.image} alt={`${f.title} 축제 현장 사진`} loading="lazy" className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center text-4xl" aria-hidden="true">🎉</div>}</div>
+            <a href={`/festivals/${f.id}`} className="block"><div className="h-44 bg-tint">{f.image ? <img src={f.image} alt={`${f.title} 축제 현장 사진`} loading="lazy" className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center text-4xl" aria-hidden="true">🎉</div>}</div></a>
             <div className="p-4">
               <div className="flex flex-wrap gap-1.5 text-[11px] font-bold"><span className="rounded bg-[#eaf7ef] px-2 py-1 text-free">{f.area}</span><span className="rounded bg-[#f2f4f7] px-2 py-1 text-ink-soft">{f.startDate <= today && f.endDate >= today ? "진행중" : "예정"}</span></div>
-              <h2 className="mt-2 line-clamp-2 text-[17px] font-black leading-6 text-ink">{f.title}</h2>
+              <h2 className="mt-2 line-clamp-2 text-[17px] font-black leading-6 text-ink"><a href={`/festivals/${f.id}`} className="hover:text-free">{f.title}</a></h2>
               <p className="mt-2 text-[13px] font-bold text-ink-soft">{formatRange(f.startDate, f.endDate)}</p>
               <p className="mt-1 line-clamp-2 text-[13px] leading-5 text-ink-faint">{f.place || f.addr}</p>
               <section className="mt-3 border-t border-line pt-3">

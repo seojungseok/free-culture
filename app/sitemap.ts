@@ -12,6 +12,7 @@ import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { getDateCourses, dateAreaCounts, dateCityParams } from "@/lib/dateCourses";
 import { MARKET_REGIONS } from "@/lib/traditionalMarkets";
+import { getAllFestivals } from "@/lib/festivals";
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
@@ -239,6 +240,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.4,
   }));
 
+  const festivalRoutes = getAllFestivals().map((festival) => ({
+    url: `${base}/festivals/${festival.id}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
+
   // ── 여행코스 ──
   // 지역 허브 (/course/[area])
   const courseAreaRoutes = getCourseAreaCounts().map(({ area }) => ({
@@ -299,5 +307,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...restaurantRoutes,
     ...campRoutes,
     ...eventRoutes,
+    ...festivalRoutes,
   ];
 }

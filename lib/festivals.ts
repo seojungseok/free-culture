@@ -1,6 +1,7 @@
 // 지역 축제·행사 — data/festivals.json(매일 수집)에서 지역·현재 날짜로 필터.
 // 코스 페이지에 "지금 이 지역에서 열리는/곧 열리는 축제"를 날짜 연동으로 노출.
 import festivalsData from "@/data/festivals.json";
+import { getAllEvents } from "@/lib/data";
 
 export interface Festival {
   id: string; title: string; addr: string; area: string;
@@ -8,7 +9,18 @@ export interface Festival {
   source?: string; description?: string; place?: string; homepage?: string; tel?: string;
 }
 
-const ALL = (festivalsData as unknown as { festivals?: Festival[] }).festivals || [];
+const COLLECTED = (festivalsData as unknown as { festivals?: Festival[] }).festivals || [];
+const ALL = [
+  ...COLLECTED,
+  ...getAllEvents()
+    .filter((event) => event.genreKey === "festival")
+    .map((event) => ({
+      id: `event-${event.id}`, title: event.title, addr: event.address || event.place || "", area: event.area,
+      image: event.imgUrl || "", mapx: event.gpsX || "", mapy: event.gpsY || "", startDate: event.startDate, endDate: event.endDate,
+      description: event.contents || `${event.area}에서 열리는 축제·행사입니다.`, place: event.place, homepage: event.officialUrl, tel: event.phone,
+      source: "공공 문화행사 데이터",
+    } as Festival)),
+].filter((festival, index, all) => all.findIndex((item) => item.title === festival.title && item.startDate === festival.startDate) === index);
 const ymd = (d: Date) => `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}`;
 
 /** 해당 지역에서 지금 열리는/곧(기본 60일 내) 열리는 축제. 시작일 순. */
@@ -26,6 +38,14 @@ export function areaFestivals(area: string, { withinDays = 60, limit = 4 } = {})
 export function upcomingFestivals(limit = 12): Festival[] {
   const today = ymd(new Date());
   return ALL.filter((f) => f.endDate >= today).sort((a, b) => a.startDate.localeCompare(b.startDate)).slice(0, limit);
+}
+
+export function getAllFestivals(): Festival[] {
+  return ALL.filter((festival) => festival.endDate >= ymd(new Date())).sort((a, b) => a.startDate.localeCompare(b.startDate));
+}
+
+export function getFestivalById(id: string): Festival | undefined {
+  return ALL.find((festival) => festival.id === id);
 }
 
 /** YYYYMMDD → "10.22" */
