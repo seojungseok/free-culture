@@ -12,8 +12,10 @@ import { season } from "@/lib/finder";
 import { SITE } from "@/lib/site";
 import { fmtRange } from "@/lib/format";
 import type { CultureEvent } from "@/lib/types";
-import ChuseokBrowser from "@/components/ChuseokBrowser";
+import ChuseokSpecial from "@/components/ChuseokSpecial";
+import FestivalRail from "@/components/FestivalRail";
 import { getChuseokEvents, isChuseokMainSeason } from "@/lib/chuseok";
+import { upcomingFestivals } from "@/lib/festivals";
 
 export const revalidate = 3600;
 
@@ -103,8 +105,9 @@ export default function HomePage() {
       <Hero image={hero.image} position={hero.position} seasonalLabel={seasonal.label} />
 
       <main className="bg-white pb-10">
-        {isChuseokMainSeason(today) && <Suspense fallback={null}><ChuseokBrowser events={getChuseokEvents()} compact /></Suspense>}
+        {isChuseokMainSeason(today) && <Suspense fallback={null}><ChuseokSpecial events={getChuseokEvents()} compact /></Suspense>}
         <GamePromoBanner />
+        <FestivalRail festivals={upcomingFestivals()} />
 
         <HomeSection title="지금 가장 인기 있는 콘텐츠" href="/events">
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
@@ -203,14 +206,10 @@ function Hero({ image, position, seasonalLabel }: { image: string; position: str
           전국 문화행사, 나들이, 여행코스, 캠핑까지 한 번에!
         </p>
         <div className="mt-5 grid w-full max-w-[680px] grid-cols-4 gap-2 sm:mt-7 sm:gap-3">
-          {cats.map(([label, href]) => (
-            <Link
-              key={label}
-              href={href}
-              className="flex min-h-[46px] items-center justify-center rounded-2xl bg-white/95 px-2 text-center text-[13px] font-extrabold text-[#102344] shadow-sm ring-1 ring-black/5 backdrop-blur transition hover:bg-white hover:text-brandblue sm:min-h-[52px] sm:text-[15px]"
-            >
-              {label}
-            </Link>
+          {cats.map(([label, href]) => label === "전통시장" ? (
+            <span key={label} aria-disabled="true" className="flex min-h-[46px] cursor-not-allowed items-center justify-center rounded-2xl bg-white/35 px-2 text-center text-[13px] font-extrabold text-[#102344]/45 shadow-sm ring-1 ring-black/5 backdrop-blur sm:min-h-[52px] sm:text-[15px]">{label}</span>
+          ) : (
+            <Link key={label} href={href} className="flex min-h-[46px] items-center justify-center rounded-2xl bg-white/95 px-2 text-center text-[13px] font-extrabold text-[#102344] shadow-sm ring-1 ring-black/5 backdrop-blur transition hover:bg-white hover:text-brandblue sm:min-h-[52px] sm:text-[15px]">{label}</Link>
           ))}
         </div>
       </div>

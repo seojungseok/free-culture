@@ -23,6 +23,11 @@ export function areaFestivals(area: string, { withinDays = 60, limit = 4 } = {})
     .map((f) => ({ ...f, ongoing: f.startDate <= today && f.endDate >= today }));
 }
 
+export function upcomingFestivals(limit = 12): Festival[] {
+  const today = ymd(new Date());
+  return ALL.filter((f) => f.endDate >= today).sort((a, b) => a.startDate.localeCompare(b.startDate)).slice(0, limit);
+}
+
 /** YYYYMMDD → "10.22" */
 export function fmtMd(ymdStr: string): string {
   const s = String(ymdStr || "");
