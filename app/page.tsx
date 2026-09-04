@@ -14,6 +14,7 @@ import type { CultureEvent } from "@/lib/types";
 import { isChuseokMainSeason } from "@/lib/chuseok";
 
 export const revalidate = 3600;
+// Homepage content rotates by date while the page remains ISR cached for an hour.
 
 export const metadata: Metadata = {
   title: {
