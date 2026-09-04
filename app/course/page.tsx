@@ -2,14 +2,15 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Band } from "@/components/Band";
 import CourseBrowser from "@/components/CourseBrowser";
+import InjeAutumnCourse from "@/components/InjeAutumnCourse";
 import { filterCourses, getCourseAreaCounts, getCourseCount, slimCourse } from "@/lib/courses";
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "전국 여행코스 — 당일치기·1박2일·2박3일 국내 여행 코스",
-  description: "전국 여행코스를 지역·기간·테마로 골라보세요. 가볼만한 곳을 이어 만든 하루 동선부터 1박2일·2박3일까지, 해수욕장 베스트까지.",
-  keywords: ["국내여행 코스", "당일치기", "1박2일", "여행코스 추천"],
+  description: "전국 여행코스를 지역·기간·테마로 골라보세요. 인제 가을여행과 축제·행사를 함께 찾는 당일치기·1박2일 국내 여행 코스도 준비했습니다.",
+  keywords: ["국내여행 코스", "당일치기", "1박2일", "여행코스 추천", "인제 가을여행", "인제 축제"],
   alternates: { canonical: "/course" },
 };
 
@@ -27,6 +28,7 @@ export default function CoursePage() {
           전국 여행코스 <span className="whitespace-nowrap">{total.toLocaleString()}개</span> — 기간·테마·지역으로 골라보세요
         </p>
       </Band>
+      <InjeAutumnCourse />
       <Suspense fallback={null}>
         <CourseBrowser courses={courses} areas={getCourseAreaCounts()} total={total} />
       </Suspense>

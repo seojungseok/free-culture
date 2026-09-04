@@ -16,7 +16,7 @@ export default function Header() {
           </svg>
           <span className="flex flex-col leading-none">
             <span className="font-logo text-[22px] font-bold tracking-tight sm:text-[21px]">
-              <span className="text-[#102344]">오늘은 뭐하지?</span>
+              <span className="text-[#102344]">주말에 뭐하지?</span>
             </span>
             <span className="mt-1 hidden text-[9px] font-bold uppercase tracking-[0.16em] text-ink-faint sm:block sm:text-[10px]">
               {SITE.nameEn}

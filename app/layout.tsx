@@ -27,13 +27,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE.name,
-    title: "주말에 뭐하지? · 전국 무료·저렴 문화행사",
+    title: "주말에 뭐하지? · 이번 주말 나들이와 문화행사",
     description:
-      "이번 주말 갈 만한 전국 전시·공연과 아이와 가볼만한 곳을 매일 새로 모았어요",
+      "이번 주말 갈 만한 전국 문화행사·나들이·여행코스를 지역과 테마로 빠르게 찾아보세요.",
     url: SITE.url,
+    images: [{ url: "/opengraph-image" }],
     locale: "ko_KR",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", title: "주말에 뭐하지? · 이번 주말 나들이와 문화행사", description: "전국 문화행사·나들이·여행코스를 한곳에서 찾아보세요.", images: ["/opengraph-image"] },
   robots: { index: true, follow: true },
 };
 

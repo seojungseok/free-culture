@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "주말에뭐하지",
+  name: "주말에 뭐하지?",
   nameEn: "WEEKEND PICK",
   tagline: "무료로, 저렴하게 즐기는 전국 문화생활",
   description:
