@@ -1002,6 +1002,12 @@ export function buildCoursePrompt(course, { summer = false } = {}) {
   const foodsNote = foods.length
     ? `\n[식사 장소 — 별도 소제목 만들지 말 것. 점심/저녁 흐름에서 이름만 짧게 언급하고 "자세한 정보는 아래 '근처 맛집' 참고"로]\n${foods.map((s) => `- ${s.name}`).join("\n")}`
     : "";
+  const courseText = attractions.map((s) => s.name || "").join(" ");
+  const audienceNote = /(사찰|절(?=\s|$)|암자|향교|서원|고택|성당|성지)/.test(courseText) && /(시장|오일장|5일장|장터)/.test(courseText)
+    ? "\n[독자] 어르신·부모님과 함께하는 가족 여행으로 안내하세요. 걷는 거리를 무리하게 늘리지 말고, 사찰 관람 뒤 가까운 시장·오일장을 천천히 둘러보는 순서와 쉬어갈 지점을 중심으로 설명하세요.\n"
+    : /(숲|산|봉|휴양림|수목원|식물원|호수|둘레길|생태|전망대|계곡)/.test(courseText)
+      ? "\n[독자] 빠르게 많이 보는 여행보다 가족이 쉬어 가는 자연힐링 여행으로 안내하세요. 산책 강도와 전망·휴식 포인트를 구분하고 억지로 먼 장소를 추가하지 마세요.\n"
+      : "\n[독자] 가장이 가족 일정을 계획한다고 생각하고 이동 부담, 식사 시점, 휴식 시간을 고려해 안내하세요.\n";
 
   return `당신은 국내 여행지를 자세히 소개하는 여행 전문 에디터입니다.
 아래 "코스 자료"만을 근거로, 독자가 실제로 이 코스를 따라 여행할 수 있게 **정보를 자세히 안내하는** 글을 씁니다.
@@ -1011,6 +1017,7 @@ export function buildCoursePrompt(course, { summer = false } = {}) {
 [기간] ${course.duration}
 [테마] ${themeLabels}
 ${course.overview ? `[코스 소개 자료] ${course.overview}\n` : ""}
+${audienceNote}
 [관광 경유지 — 이 순서대로. 소제목(##/###)은 이 관광지들로만 만드세요. 총 ${nStops}곳이 전부입니다]
 ${stopsBlock}
 ${days > 1 ? `\n[일차 배분 — 이대로 배치. 하루 최대 ${COURSE_MAX_PER_DAY}곳]\n${dayPlanText}\n` : ""}${foodsNote}

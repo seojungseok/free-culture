@@ -50,10 +50,19 @@ export interface Course extends CourseRaw {
   themeLabels: string[];
 }
 
+// 배편이 필요한 원거리 섬과 육지 명소를 한 코스로 묶은 자료는 실제 일정으로 성립하지 않음.
+// 이미 발행된 오래된 원본도 목록·검색·사이트맵에서 함께 제외한다.
+const isImpossibleRoute = (course: CourseRaw) => {
+  const names = (course.stops || []).map((s) => String(s.name || ""));
+  const ferryIsland = /(굴업|덕적|백령|대청|연평|울릉|거문|욕지|한산|사량|청산|보길|노화|소안|흑산|추자)/;
+  if (!names.some((name) => ferryIsland.test(name))) return false;
+  return names.some((name) => !ferryIsland.test(name));
+};
+
 const RAW: CourseRaw[] = [
   ...((coursesData as unknown as { courses: CourseRaw[] }).courses || []),   // 공식(정부) 코스
   ...((coursesAuto as unknown as { courses: CourseRaw[] }).courses || []),   // 자동 조합 코스
-];
+].filter((course) => !isImpossibleRoute(course));
 const ARTS = (courseArticles as unknown as { articles?: Record<string, CourseArticle> }).articles || {};
 
 // ── 기간·테마 라벨/슬러그 (URL·SEO용) ──

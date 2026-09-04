@@ -146,6 +146,22 @@ const REGION_PRIORITY = {
   충남: 7, 충북: 7, 부산: 6, 대구: 6, 광주: 6, 대전: 6, 울산: 6,
   인천: 4, 경기: 3, 세종: 3, 서울: 2,
 };
+
+// 실제 검색 의도가 강한 느린 가족 동선과 자연힐링 코스를 우선 발행한다.
+const courseNames = (c) => (c.stops || []).map((s) => String(s.name || "")).join(" ");
+const isSeniorPlan = (c) => {
+  const text = courseNames(c);
+  return /(사찰|절(?=\s|$)|암자|향교|서원|고택|성당|성지)/.test(text) && /(시장|오일장|5일장|장터)/.test(text);
+};
+const isNatureHealingPlan = (c) => {
+  const text = courseNames(c);
+  return (c.themes || []).includes("자연힐링") && /(숲|산|봉|휴양림|수목원|식물원|호수|둘레길|생태|전망대|계곡)/.test(text);
+};
+const isImpossibleRoute = (c) => {
+  const names = (c.stops || []).map((s) => String(s.name || ""));
+  const ferryIsland = /(굴업|덕적|백령|대청|연평|울릉|거문|욕지|한산|사량|청산|보길|노화|소안|흑산|추자)/;
+  return names.some((name) => ferryIsland.test(name)) && names.some((name) => !ferryIsland.test(name));
+};
 // 계절 자동 — 현재 달에 맞는 테마 우선(여름=바다, 가을=단풍(자연), 겨울=실내(가족), 봄=자연)
 function seasonTheme() {
   const m = new Date().getMonth() + 1;
@@ -167,7 +183,7 @@ function currentSeason() {
 function pickQueue(courses, doneIds, n) {
   const seasonKey = seasonTheme();
   const curSeason = currentSeason();
-  const cand = courses.filter((c) => !doneIds.has(c.id) && (c.stops?.length || 0) >= 2);
+  const cand = courses.filter((c) => !doneIds.has(c.id) && !isImpossibleRoute(c) && (c.stops?.length || 0) >= 2);
   const prio = (a, b) => {
     // ① 제철 스팟(온천·꽃·단풍·물가 등)을 가진 코스를 최우선 — 계절별 다양화
     const na = a.seasons?.includes(curSeason) ? 1 : 0, nb = b.seasons?.includes(curSeason) ? 1 : 0;
@@ -188,10 +204,25 @@ function pickQueue(courses, doneIds, n) {
   const quota = { "당일": Math.round(n * 0.5), "1박2일": Math.round(n * 0.3), "2박3일": n - Math.round(n * 0.5) - Math.round(n * 0.3) };
   const idx = { "당일": 0, "1박2일": 0, "2박3일": 0, "베스트": 0 };
   const out = [];
+  const taken = new Set();
+  const reserve = (predicate, count) => {
+    for (const c of cand.filter(predicate).sort(prio)) {
+      if (out.length >= n || taken.has(c.id) || count <= 0) continue;
+      out.push(c); taken.add(c.id); count--;
+    }
+  };
+  // 하루 10개 기준: 어르신 동선 3개 + 자연힐링 2개를 먼저 확보한다.
+  reserve(isSeniorPlan, Math.min(3, n));
+  reserve(isNatureHealingPlan, Math.min(2, n - out.length));
   // 1) 비율만큼 우선 채움
   for (const k of ["당일", "1박2일", "2박3일"]) {
     const b = buckets[k];
-    for (let i = 0; i < (quota[k] || 0) && idx[k] < b.length; i++) out.push(b[idx[k]++]);
+    let added = 0;
+    while (added < (quota[k] || 0) && idx[k] < b.length) {
+      const c = b[idx[k]++];
+      if (taken.has(c.id)) continue;
+      out.push(c); taken.add(c.id); added++;
+    }
   }
   // 2) 부족분은 남은 코스(당일→1박2일→2박3일→베스트)에서 채워 목표 n 맞춤
   let progressed = true;
@@ -199,7 +230,10 @@ function pickQueue(courses, doneIds, n) {
     progressed = false;
     for (const k of ["당일", "1박2일", "2박3일", "베스트"]) {
       const b = buckets[k];
-      if (b && idx[k] < b.length) { out.push(b[idx[k]++]); progressed = true; if (out.length >= n) break; }
+      if (b) {
+        while (idx[k] < b.length && taken.has(b[idx[k]].id)) idx[k]++;
+        if (idx[k] < b.length) { out.push(b[idx[k]]); taken.add(b[idx[k]].id); idx[k]++; progressed = true; if (out.length >= n) break; }
+      }
     }
   }
   return out;
@@ -296,7 +330,7 @@ async function main() {
   // 공식 + 자동 코스 병합 (둘 중 하나만 있어도 동작)
   const official = fs.existsSync(COURSES) ? (JSON.parse(fs.readFileSync(COURSES, "utf8")).courses || []) : [];
   const auto = fs.existsSync(COURSES_AUTO) ? (JSON.parse(fs.readFileSync(COURSES_AUTO, "utf8")).courses || []) : [];
-  const courses = [...official, ...auto];
+  const courses = [...official, ...auto].filter((course) => !isImpossibleRoute(course));
   if (!courses.length) { console.error("❌ 코스 재료 없음 — collectCourses.mjs / buildCourses.mjs 먼저 실행."); process.exit(1); }
   const store = fs.existsSync(STORE)
     ? JSON.parse(fs.readFileSync(STORE, "utf8"))
