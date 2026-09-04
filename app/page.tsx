@@ -430,9 +430,8 @@ function GamePromoBanner() {
 function ChuseokQuickLink() {
   return (
     <section className="mx-auto w-full max-w-[1180px] px-5 pt-4 sm:px-6 sm:pt-5 lg:px-8">
-      <Link href="/chuseok" className="flex min-h-12 items-center justify-between gap-3 rounded-xl border border-[#e6cfaa] bg-[#fffaf1] px-4 text-[#6f4b22] transition hover:border-[#bd8540] hover:bg-[#fff6e8] sm:px-5">
+      <Link href="/chuseok" className="flex min-h-12 items-center justify-center rounded-xl border border-[#e6cfaa] bg-[#fffaf1] px-4 text-[#6f4b22] transition hover:border-[#bd8540] hover:bg-[#fff6e8] sm:px-5">
         <span className="text-[14px] font-black sm:text-[15px]">추석에 뭐하지?</span>
-        <span className="text-[12px] font-bold text-[#9a6a33]">가까운 행사 빠르게 찾기 →</span>
       </Link>
     </section>
   );
