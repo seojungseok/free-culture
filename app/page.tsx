@@ -71,7 +71,7 @@ export default function HomePage() {
   const hero = heroImages[seasonal.key] || heroImages.default;
 
   const featuredEvents = slimForClient(getFeatured(8).filter((e) => e.imgUrl));
-  const freeCards = slimForClient(getFree(true).filter((e) => e.imgUrl && e.endDate >= today).slice(0, 10));
+  const freeCards = slimForClient(getFree(true).filter((e) => e.imgUrl && e.startDate <= today && e.endDate >= today).slice(0, 10));
   const weekendCards = slimForClient(getWeekend().filter((e) => e.imgUrl).slice(0, 4));
   const placeCards = getPlacesSample(40).filter((p) => p.image).slice(0, 8);
   const courseCards = shuffleByDay(getAllCourses(), today).slice(0, 8).map(slimCourse);
