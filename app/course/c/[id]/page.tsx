@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/Band";
 import AffiliateNotice from "@/components/AffiliateNotice";
 import CourseArticleBody from "@/components/CourseArticleBody";
+import CoursePhotoGallery from "@/components/CoursePhotoGallery";
 import CourseCard from "@/components/CourseCard";
 import CourseShare from "@/components/CourseShare";
 import SeoulStayBanner from "@/components/SeoulStayBanner";
@@ -15,6 +16,7 @@ import {
 import { coursesNearbyFood, distanceLabel, foodTypeLabel, distanceKm } from "@/lib/nearby";
 import { areaFestivals, fmtMd } from "@/lib/festivals";
 import { SITE } from "@/lib/site";
+import { galleryForStops } from "@/lib/photoGallery";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -47,6 +49,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   const slug = areaSlug(c.area);
   const related = relatedCourses(c, 4).map(slimCourse);
   const mapStops = courseAttractions(c).filter((s) => s.name); // 글·동선에 실제 노출되는 관광지만(식당 제외·상한 적용)
+  const galleryPhotos = galleryForStops(mapStops);
   // 근처 맛집(내부링크) — 좌표 있으면 거리순, 없으면 코스 도시(주소) 기준. 음식점 데이터 있는 지역만.
   const centroid = courseCentroid(c);
   const city = courseCity(c);
@@ -147,6 +150,8 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
 
       {/* 블로그 글 — 각 스팟 소제목 뒤에 사진 삽입 */}
       <CourseArticleBody content={c.content} stops={mapStops} />
+
+      <CoursePhotoGallery photos={galleryPhotos} />
 
       {/* 코스 한눈에 보기 — 일차별로 묶어 장소명 표기 (하루 최대 3곳) */}
       {mapStops.length > 0 && (
