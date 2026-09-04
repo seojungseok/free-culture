@@ -83,7 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const traditionalMarketRoutes = MARKET_REGIONS.map((region) => ({
-    url: `${base}/traditional-market/${encodeURIComponent(region)}`,
+    url: `${base}/traditional-market/${(SIDO_SLUG as Record<string, string>)[region] || region}`,
     lastModified: now,
     changeFrequency: "daily" as const,
     priority: 0.7,
