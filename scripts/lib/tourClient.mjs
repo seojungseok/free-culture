@@ -158,6 +158,13 @@ export async function detailInfoRaw(contentId, contentTypeId, budget) {
   return arr(j?.response?.body?.items?.item);
 }
 
+/** 반려동물 동반여행 서비스 상세정보 */
+export async function detailPetTourRaw(contentId, budget) {
+  const j = await fetchJson("detailPetTour2", { contentId }, budget);
+  const it = j?.response?.body?.items?.item;
+  return Array.isArray(it) ? it[0] : it;
+}
+
 // ── detailIntro2 유형별 필드 → 공통 스키마 정규화 ────────────────
 // KorService2 detailIntro2 는 유형마다 필드명이 다름(usefee vs usefeeleports 등).
 // 화면에서 쓰는 공통 키로 통일.

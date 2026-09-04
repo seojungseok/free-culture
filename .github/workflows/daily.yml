@@ -89,6 +89,14 @@ jobs:
         continue-on-error: true
         run: node scripts/buildCourses.mjs
 
+      # ── 반려동물 전국 기본정보 누적 수집(개발계정 한도 내) ──
+      - name: 반려동물 동반여행 기본정보 수집
+        continue-on-error: true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          PET_DAILY: "800"
+        run: node scripts/collectPetTravel.mjs
+
       # ── 여행코스 블로그 생성 (하루 10개, 계절·지방 우선). OpenAI 전용 ★제미나이 미사용★ ──
       # 재료: data/courses.json(공식, 수동 수집) + data/courses-auto.json(자동). 스팟 소개는 발행분만 보강.
       - name: 여행코스 글 생성·발행 (OpenAI만)
@@ -144,7 +152,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/events.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
                   data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json \
-                  data/coupang.json data/coupangEssentials.json data/eventCoupang.json data/kidCoupang.json
+                  data/coupang.json data/coupangEssentials.json data/eventCoupang.json data/kidCoupang.json data/pet-travel.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
             echo "changed=false" >> "$GITHUB_OUTPUT"

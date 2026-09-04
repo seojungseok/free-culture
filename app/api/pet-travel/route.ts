@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 
 export const revalidate = 43200;
 
@@ -37,6 +39,11 @@ function normalize(item: any, index: number) {
 
 export async function GET() {
   try {
+    try {
+      const cached = JSON.parse(await readFile(path.join(process.cwd(), "data", "pet-travel.json"), "utf8"));
+      const items = Object.values(cached?.places || {}).slice(0, 1200);
+      if (items.length) return NextResponse.json({ items, total: items.length, generatedAt: cached.generatedAt, source: "pet-cache" });
+    } catch { /* 수집 전에는 실시간 검색 fallback */ }
     const found = new Map<string, any>();
     for (const keyword of ["반려동물", "애견동반", "강아지 동반"]) {
       const body = await call("searchKeyword2", { keyword, numOfRows: "100", pageNo: "1", arrange: "A" });
