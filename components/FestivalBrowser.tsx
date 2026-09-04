@@ -15,6 +15,16 @@ function formatRange(start: string, end: string) {
   return `${fmtMd(start)} ~ ${fmtMd(end)}`;
 }
 
+function introFor(festival: Festival) {
+  if (festival.description) return festival.description;
+  return `${festival.area}에서 열리는 ${festival.title}입니다. ${festival.place || festival.addr || "행사 장소"}에서 진행되며, 정확한 프로그램과 운영 내용은 공식 안내에서 확인할 수 있습니다.`;
+}
+
+function tagsFor(festival: Festival) {
+  const text = `${festival.title} ${festival.description || ""}`;
+  return ["야간", "전통", "음악", "미술", "공연", "가족", "역사", "먹거리"].filter((tag) => text.includes(tag)).slice(0, 3);
+}
+
 export default function FestivalBrowser({ festivals, initialRegion = "전국", initialQuery = "" }: { festivals: Festival[]; initialRegion?: string; initialQuery?: string }) {
   const [region, setRegion] = useState(REGIONS.includes(initialRegion) ? initialRegion : "전국");
   const [period, setPeriod] = useState("all");
@@ -60,7 +70,18 @@ export default function FestivalBrowser({ festivals, initialRegion = "전국", i
               <h2 className="mt-2 line-clamp-2 text-[17px] font-black leading-6 text-ink">{f.title}</h2>
               <p className="mt-2 text-[13px] font-bold text-ink-soft">{formatRange(f.startDate, f.endDate)}</p>
               <p className="mt-1 line-clamp-2 text-[13px] leading-5 text-ink-faint">{f.place || f.addr}</p>
-              {f.description && <p className="mt-2 line-clamp-3 text-[13px] leading-5 text-ink-soft">{f.description}</p>}
+              <section className="mt-3 border-t border-line pt-3">
+                <h3 className="text-[12px] font-black text-ink">축제 소개</h3>
+                <p className="mt-1 text-[13px] leading-5 text-ink-soft">{introFor(f)}</p>
+              </section>
+              <dl className="mt-3 grid grid-cols-[58px_1fr] gap-x-2 gap-y-1 text-[12px] leading-5">
+                <dt className="font-bold text-ink-faint">개최 지역</dt><dd className="text-ink-soft">{f.area}</dd>
+                <dt className="font-bold text-ink-faint">개최 장소</dt><dd className="text-ink-soft">{f.place || "공식 안내 확인"}</dd>
+                <dt className="font-bold text-ink-faint">주소</dt><dd className="text-ink-soft">{f.addr || "주소는 공식 안내 확인"}</dd>
+                {f.tel && <><dt className="font-bold text-ink-faint">문의</dt><dd className="text-ink-soft">{f.tel}</dd></>}
+              </dl>
+              {tagsFor(f).length > 0 && <p className="mt-3 flex flex-wrap gap-1.5">{tagsFor(f).map((tag) => <span key={tag} className="rounded-full bg-[#fff4df] px-2 py-1 text-[11px] font-bold text-[#99631c]">#{tag}</span>)}</p>}
+              <p className="mt-3 rounded-lg bg-[#f7fafc] px-3 py-2 text-[12px] leading-5 text-ink-faint">방문 전 행사 일정, 입장료, 주차와 우천 취소 여부를 공식 안내에서 확인하세요.</p>
               <div className="mt-4 flex flex-wrap gap-3 text-[12px] font-bold">
                 <a href={`https://map.kakao.com/?q=${encodeURIComponent(f.addr || f.title)}`} target="_blank" rel="noreferrer" className="text-free">지도에서 보기 ↗</a>
                 {f.homepage && <a href={f.homepage} target="_blank" rel="noreferrer" className="text-brandblue">공식 홈페이지 ↗</a>}
