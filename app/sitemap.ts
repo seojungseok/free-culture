@@ -13,7 +13,6 @@ import { SITE } from "@/lib/site";
 import { getDateCourses, dateAreaCounts, dateCityParams } from "@/lib/dateCourses";
 import { MARKET_REGIONS } from "@/lib/traditionalMarkets";
 import { getAllFestivals } from "@/lib/festivals";
-import { chuseokSeoSlugs } from "@/lib/chuseokSeo";
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
@@ -41,7 +40,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/weekend",
     "/ending-soon",
     "/kids",
-    "/chuseok",
     "/game",
     "/game/roulette",
     "/game/ladder",
@@ -85,7 +83,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "daily" as const,
     priority: 0.7,
   }));
-  const chuseokRoutes = chuseokSeoSlugs.map((slug) => ({ url: `${base}/chuseok/${slug}`, lastModified: now, changeFrequency: "daily" as const, priority: 0.7 }));
 
   const traditionalMarketRoutes = MARKET_REGIONS.map((region) => ({
     url: `${base}/traditional-market/${(SIDO_SLUG as Record<string, string>)[region] || region}`,
@@ -288,7 +285,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...monthlyRoutes,
     ...regionRoutes,
-    ...chuseokRoutes,
     ...traditionalMarketRoutes,
     ...comboRoutes,
     ...genreRoutes,

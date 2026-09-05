@@ -12,7 +12,6 @@ import { season } from "@/lib/finder";
 import { SITE } from "@/lib/site";
 import { fmtRange } from "@/lib/format";
 import type { CultureEvent } from "@/lib/types";
-import { isChuseokMainSeason } from "@/lib/chuseok";
 
 export const revalidate = 3600;
 // Homepage content rotates by date while the page remains ISR cached for an hour.
@@ -105,7 +104,6 @@ export default function HomePage() {
       <Hero image={hero.image} position={hero.position} seasonalLabel={seasonal.label} />
 
       <main className="bg-white pb-10">
-        {isChuseokMainSeason(today) && <ChuseokQuickLink />}
         <GamePromoBanner />
         <HomeSection title="지금 가장 인기 있는 콘텐츠" href="/events">
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
@@ -438,16 +436,6 @@ function GamePromoBanner() {
           게임하러 가기
           <span aria-hidden>›</span>
         </span>
-      </Link>
-    </section>
-  );
-}
-
-function ChuseokQuickLink() {
-  return (
-    <section className="mx-auto w-full max-w-[1180px] px-5 pt-4 sm:px-6 sm:pt-5 lg:px-8">
-      <Link href="/chuseok" className="flex min-h-12 items-center justify-center rounded-xl border border-[#e6cfaa] bg-[#fffaf1] px-4 text-[#6f4b22] transition hover:border-[#bd8540] hover:bg-[#fff6e8] sm:px-5">
-        <span className="text-[14px] font-black sm:text-[15px]">추석에 뭐하지?</span>
       </Link>
     </section>
   );
