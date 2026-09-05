@@ -1,88 +1,24 @@
 "use client";
-
 import { useMemo, useState } from "react";
 import Link from "next/link";
 
-export type ChuseokPlannerEvent = {
-  id: string;
-  title: string;
-  area: string;
-  sigungu: string;
-  place: string;
-  startDate: string;
-  endDate: string;
-  image: string;
-  href: string;
-  priceLabel: string;
-  isFree: boolean;
-  isKids: boolean;
-  isTraditional: boolean;
-  lat: string;
-  lng: string;
-};
+export type ChuseokPlannerEvent = { id:string; title:string; area:string; sigungu:string; place:string; startDate:string; endDate:string; image:string; href:string; priceLabel:string; isFree:boolean; isKids:boolean; isTraditional:boolean; isFestival:boolean; isExperience:boolean; isIndoor:boolean; isOutdoor:boolean; isFamily:boolean; isParents:boolean; isCouple:boolean; lat:string; lng:string };
+type With="kids"|"family"|"parents"|"couple"; type Kind="free"|"festival"|"traditional"|"experience"|"indoor"|"outdoor"; type DateKind="today"|"chuseok"|"holiday"; type Sort="recommended"|"nearby"|"free"|"today";
+const areas=["전국","서울","경기","인천","부산","대구","대전","광주","울산","세종","강원","충북","충남","전북","전남","경북","경남","제주"];
+const withs:[With,string][]=[["kids","아이와"],["family","가족과"],["parents","부모님과"],["couple","연인과"]];
+const kinds:[Kind,string][]=[["free","무료"],["festival","축제"],["traditional","전통문화"],["experience","체험"],["indoor","실내"],["outdoor","야외"]];
+const dates:[DateKind,string][]=[["today","오늘"],["chuseok","추석 당일"],["holiday","연휴 전체"]];
+const ymd=()=>new Intl.DateTimeFormat("sv-SE",{timeZone:"Asia/Seoul",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date()).replaceAll("-","");
+function km(a:number,b:number,e:ChuseokPlannerEvent){const y=Number(e.lat),x=Number(e.lng);if(!Number.isFinite(x)||!Number.isFinite(y))return null;const r=Math.PI/180,q=Math.sin((y-a)*r/2)**2+Math.cos(a*r)*Math.cos(y*r)*Math.sin((x-b)*r/2)**2;return 6371*2*Math.atan2(Math.sqrt(q),Math.sqrt(1-q));}
+function fmt(s:string,e:string){return `${s.slice(4,6)}.${s.slice(6)}${s===e?"":`–${e.slice(4,6)}.${e.slice(6)}`}`;}
 
-type Choice = "nearby" | "family" | "free" | "traditional";
-const choices: { key: Choice; title: string; detail: string }[] = [
-  { key: "nearby", title: "내 주변 문화행사", detail: "현재 위치에서 가까운 순" },
-  { key: "family", title: "가족과 함께", detail: "아이·가족 관람 추천" },
-  { key: "free", title: "무료 행사", detail: "부담 없이 들르기 좋은 곳" },
-  { key: "traditional", title: "전통문화", detail: "명절 분위기를 느끼는 시간" },
-];
-
-function distanceKm(lat: number, lng: number, event: ChuseokPlannerEvent) {
-  const y = Number(event.lat);
-  const x = Number(event.lng);
-  if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
-  const rad = Math.PI / 180;
-  const a = Math.sin((y - lat) * rad / 2) ** 2 + Math.cos(lat * rad) * Math.cos(y * rad) * Math.sin((x - lng) * rad / 2) ** 2;
-  return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+export default function ChuseokPlanner({events}:{events:ChuseokPlannerEvent[]}){
+ const [area,setArea]=useState("전국"),[sigungu,setSigungu]=useState("전체"),[withsSel,setWiths]=useState<With[]>([]),[kindSel,setKinds]=useState<Kind[]>([]),[date,setDate]=useState<DateKind>("holiday"),[custom,setCustom]=useState(""),[sort,setSort]=useState<Sort>("recommended"),[loc,setLoc]=useState<{lat:number;lng:number}|null>(null),[radius,setRadius]=useState(30),[recommended,setRecommended]=useState(false),[locMsg,setLocMsg]=useState("");
+ const sigungus=useMemo(()=>["전체",...Array.from(new Set(events.filter(e=>area==="전국"||e.area===area).map(e=>e.sigungu).filter(Boolean))).sort()],[area,events]);
+ const active=[area!=="전국"?area:"",sigungu!=="전체"?sigungu:"",...withsSel.map(x=>withs.find(v=>v[0]===x)?.[1]||""),...kindSel.map(x=>kinds.find(v=>v[0]===x)?.[1]||""),date==="chuseok"?"추석 당일":date==="today"?"오늘":"",custom].filter(Boolean);
+ const list=useMemo(()=>{const target=custom.replaceAll("-","")||(date==="chuseok"?"20260925":date==="today"?ymd():"");let out=events.filter(e=>(area==="전국"||e.area===area)&&(sigungu==="전체"||e.sigungu===sigungu)&&(!target||(e.startDate<=target&&e.endDate>=target))&&withsSel.every(w=>w==="kids"?e.isKids:w==="family"?e.isFamily:w==="parents"?e.isParents:e.isCouple)&&kindSel.every(k=>k==="free"?e.isFree:k==="festival"?e.isFestival:k==="traditional"?e.isTraditional:k==="experience"?e.isExperience:k==="indoor"?e.isIndoor:e.isOutdoor));const score=(e:ChuseokPlannerEvent)=>(e.isFree?3:0)+(e.isKids?2:0)+(e.isTraditional?2:0)+(e.isFestival?1:0);out=[...out].sort((a,b)=>sort==="nearby"&&loc?(km(loc.lat,loc.lng,a)??1e9)-(km(loc.lat,loc.lng,b)??1e9):sort==="free"?Number(b.isFree)-Number(a.isFree):sort==="today"?a.startDate.localeCompare(b.startDate):score(b)-score(a));if(loc)out=out.filter(e=>{const d=km(loc.lat,loc.lng,e);return d===null||d<=radius});return out;},[events,area,sigungu,withsSel,kindSel,date,custom,sort,loc,radius]);
+ const shown=recommended?list.slice(0,5):list.slice(0,30); const toggle=<T,>(v:T,a:T[],f:(x:T[])=>void)=>f(a.includes(v)?a.filter(x=>x!==v):[...a,v]); const reset=()=>{setArea("전국");setSigungu("전체");setWiths([]);setKinds([]);setDate("holiday");setCustom("");setSort("recommended");setRecommended(false)};
+ const nearby=()=>{if(!navigator.geolocation){setLocMsg("이 기기에서는 위치를 사용할 수 없어 지역 필터를 이용해 주세요.");return;}navigator.geolocation.getCurrentPosition(p=>{setLoc({lat:p.coords.latitude,lng:p.coords.longitude});setSort("nearby");setLocMsg("현재 위치 기준으로 정렬했습니다.")},()=>setLocMsg("위치 권한을 허용하지 않아 지역 필터를 이용해 주세요."),{timeout:8000,maximumAge:300000});};
+ return <main className="mx-auto w-full max-w-[1180px] px-5 py-6 sm:px-6 sm:py-10"><section className="rounded-2xl border border-[#ead8b8] bg-[#fffaf1] p-5 sm:p-7"><p className="text-[12px] font-black text-[#8a622e]">2026 추석 연휴 특집</p><h1 className="mt-1 text-[28px] font-black text-ink">추석에 뭐하지?</h1><p className="mt-2 text-sm leading-6 text-ink-soft">지역, 동행자, 일정에 맞는 실제 행사만 골라보세요.</p><div className="mt-5 space-y-4"><Filter label="지역">{areas.map(x=><Chip key={x} onClick={()=>{setArea(x);setSigungu("전체")}} active={area===x}>{x}</Chip>)}</Filter>{sigungus.length>1&&<Filter label="시·군·구">{sigungus.map(x=><Chip key={x} onClick={()=>setSigungu(x)} active={sigungu===x}>{x}</Chip>)}</Filter>}<Filter label="누구와">{withs.map(([k,l])=><Chip key={k} onClick={()=>toggle(k,withsSel,setWiths)} active={withsSel.includes(k)}>{l}</Chip>)}</Filter><Filter label="원하는 유형">{kinds.map(([k,l])=><Chip key={k} onClick={()=>toggle(k,kindSel,setKinds)} active={kindSel.includes(k)}>{l}</Chip>)}</Filter><Filter label="날짜">{dates.map(([k,l])=><Chip key={k} onClick={()=>{setDate(k);setCustom("")}} active={date===k&&!custom}>{l}</Chip>)}<input type="date" value={custom} onChange={e=>setCustom(e.target.value)} className="min-h-10 rounded-full border border-[#e7d8c1] bg-white px-3 text-sm" /></Filter></div><div className="mt-5 flex flex-wrap gap-2"><button onClick={nearby} className="min-h-11 rounded-xl bg-ink px-4 text-sm font-bold text-white">내 주변 추석 행사 찾기</button>{loc&&[5,10,30].map(n=><Chip key={n} onClick={()=>setRadius(n)} active={radius===n}>{n}km</Chip>)}<button onClick={()=>setRecommended(!recommended)} className="min-h-11 rounded-xl bg-[#9b6423] px-4 text-sm font-bold text-white">내 조건으로 추천받기</button><button onClick={()=>{setDate("chuseok");setCustom("")}} className="min-h-11 rounded-xl border border-[#e6cfaa] bg-white px-4 text-sm font-bold text-[#805a2d]">🌕 추석 당일 갈 곳</button></div>{locMsg&&<p className="mt-2 text-xs text-ink-soft">{locMsg}</p>}</section><section className="mt-6"><div className="flex flex-wrap items-center justify-between gap-3"><div><p className="text-sm font-bold text-ink">조건에 맞는 추석 행사 {list.length.toLocaleString()}곳</p>{active.length>0&&<div className="mt-2 flex flex-wrap gap-1">{active.map(x=><span key={x} className="rounded-full bg-tint px-2 py-1 text-xs font-bold text-ink-soft">{x} ×</span>)}<button onClick={reset} className="px-2 text-xs font-bold text-free">전체 초기화</button></div>}</div><select value={sort} onChange={e=>setSort(e.target.value as Sort)} className="rounded-lg border border-line bg-white px-3 py-2 text-sm"><option value="recommended">추천순</option><option value="nearby">가까운순</option><option value="free">무료 우선</option><option value="today">오늘 운영 우선</option></select></div>{recommended&&<h2 className="mt-5 text-lg font-black text-ink">내 조건 추천</h2>}{shown.length?<div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">{shown.map(e=>{const d=loc?km(loc.lat,loc.lng,e):null;return <Link key={e.id} href={e.href} className="overflow-hidden rounded-xl border border-line bg-white"><div className="aspect-[4/3] bg-tint">{e.image&&<img src={e.image} alt="" className="h-full w-full object-cover"/>}</div><div className="p-3"><div className="flex flex-wrap gap-1">{e.isFree&&<Badge>무료</Badge>}{e.isKids&&<Badge>아이와 추천</Badge>}{e.isTraditional&&<Badge>전통문화</Badge>}{e.isIndoor&&<Badge>실내</Badge>}{e.isOutdoor&&<Badge>야외</Badge>}</div><h2 className="mt-2 line-clamp-2 text-sm font-black text-ink">{e.title}</h2><p className="mt-1 text-xs text-ink-soft">{e.area} {e.sigungu} · {fmt(e.startDate,e.endDate)}</p><p className="mt-1 line-clamp-1 text-xs text-ink-faint">{e.place||"장소 확인"}{d!==null?` · ${d.toFixed(1)}km`:""}</p><p className="mt-1 text-xs font-bold text-free">추석 연휴 진행 확인</p></div></Link>})}</div>:<div className="mt-5 rounded-2xl bg-tint p-8 text-center text-sm text-ink-soft">선택한 조건의 행사가 없습니다.<div className="mt-3 flex justify-center gap-2"><button onClick={reset} className="font-bold text-free">조건 완화</button><button onClick={()=>{setArea("전국");setSigungu("전체")}} className="font-bold text-free">주변 지역 보기</button><button onClick={()=>{setDate("holiday");setCustom("")}} className="font-bold text-free">연휴 전체 보기</button></div></div>}</section></main>;
 }
-
-function formatDate(start: string, end: string) {
-  const short = (value: string) => `${value.slice(4, 6)}.${value.slice(6, 8)}`;
-  return start === end ? short(start) : `${short(start)} - ${short(end)}`;
-}
-
-export default function ChuseokPlanner({ events }: { events: ChuseokPlannerEvent[] }) {
-  const [choice, setChoice] = useState<Choice | null>(null);
-  const [region, setRegion] = useState("전국");
-  const [location, setLocation] = useState<{ lat: number; lng: number } | null>(null);
-  const [locationState, setLocationState] = useState<"idle" | "loading" | "denied">("idle");
-  const regions = useMemo(() => ["전국", ...Array.from(new Set(events.map((event) => event.area).filter(Boolean)))], [events]);
-  const visible = useMemo(() => {
-    let list = events.filter((event) => region === "전국" || event.area === region);
-    if (choice === "family") list = list.filter((event) => event.isKids);
-    if (choice === "free") list = list.filter((event) => event.isFree);
-    if (choice === "traditional") list = list.filter((event) => event.isTraditional);
-    if (choice === "nearby" && location) {
-      list = [...list].sort((a, b) => (distanceKm(location.lat, location.lng, a) ?? Infinity) - (distanceKm(location.lat, location.lng, b) ?? Infinity));
-    }
-    return list.slice(0, 24);
-  }, [choice, events, location, region]);
-
-  function choose(next: Choice) {
-    setChoice(next);
-    if (next !== "nearby" || location || !navigator.geolocation) return;
-    setLocationState("loading");
-    navigator.geolocation.getCurrentPosition(
-      (position) => { setLocation({ lat: position.coords.latitude, lng: position.coords.longitude }); setLocationState("idle"); },
-      () => setLocationState("denied"),
-      { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 },
-    );
-  }
-
-  return <div className="mx-auto w-full max-w-[1180px] px-5 py-7 sm:px-6 sm:py-10 lg:px-8">
-    <section className="overflow-hidden rounded-2xl border border-[#ead8b8] bg-[#fffaf1]">
-      <div className="px-5 py-6 sm:px-7 sm:py-8"><p className="text-[12px] font-black text-[#8a622e]">2026 추석 연휴 빠른 찾기</p><h1 className="mt-2 text-[27px] font-black text-ink sm:text-[36px]">추석에 뭐하지?</h1><p className="mt-2 max-w-2xl text-[14px] leading-6 text-ink-soft">연휴 계획을 길게 고민하지 말고, 지금 하고 싶은 일을 먼저 골라보세요.</p>
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">{choices.map((item) => <button key={item.key} type="button" onClick={() => choose(item.key)} className={`min-h-[92px] rounded-xl border px-3 py-3 text-left transition ${choice === item.key ? "border-[#9b6423] bg-[#9b6423] text-white shadow-sm" : "border-[#e7d8c1] bg-white text-ink hover:border-[#c59350]"}`}><strong className="block text-[15px] font-black">{item.title}</strong><span className={`mt-2 block text-[11px] leading-4 ${choice === item.key ? "text-[#ffecd0]" : "text-ink-faint"}`}>{item.detail}</span></button>)}</div>
-      </div>
-      {choice && <div className="border-t border-[#ead8b8] px-5 py-5 sm:px-7">
-        <div className="flex gap-2 overflow-x-auto pb-1" aria-label="지역 필터">{regions.map((item) => <button key={item} type="button" onClick={() => setRegion(item)} className={`shrink-0 rounded-full px-3 py-2 text-[12px] font-bold ${region === item ? "bg-ink text-white" : "bg-white text-ink-soft ring-1 ring-[#e7d8c1]"}`}>{item}</button>)}</div>
-        {locationState === "loading" && <p className="mt-3 text-[12px] text-ink-soft">현재 위치를 확인하고 있어요.</p>}
-        {locationState === "denied" && <p className="mt-3 text-[12px] text-ink-soft">위치 권한을 허용하지 않아 지역별 결과를 보여드려요.</p>}
-        <div className="mt-5 flex items-center justify-between"><h2 className="text-[18px] font-black text-ink">{choices.find((item) => item.key === choice)?.title}</h2><span className="text-[12px] text-ink-faint">{visible.length}개</span></div>
-        {visible.length ? <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">{visible.map((event) => { const km = location ? distanceKm(location.lat, location.lng, event) : null; return <Link key={event.id} href={event.href} className="overflow-hidden rounded-xl border border-[#eadfcf] bg-white transition hover:border-[#bd8540] hover:shadow-sm"><div className="aspect-[4/3] bg-[#f5ede1]">{event.image ? <img src={event.image} alt={`${event.title} 행사 사진`} loading="lazy" className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center text-3xl" aria-hidden="true">🌕</div>}</div><div className="p-3"><span className="rounded bg-[#f4ead7] px-1.5 py-1 text-[10px] font-bold text-[#875f2c]">{event.area}</span><h3 className="mt-2 line-clamp-2 text-[14px] font-black leading-5 text-ink">{event.title}</h3><p className="mt-2 text-[12px] font-bold text-ink-soft">{formatDate(event.startDate, event.endDate)}{km !== null ? ` · ${km.toFixed(1)}km` : ""}</p><p className="mt-1 line-clamp-1 text-[12px] text-ink-faint">{event.place || "장소 확인"}</p>{event.priceLabel && <p className="mt-2 text-[11px] font-bold text-free">{event.priceLabel}</p>}</div></Link>; })}</div> : <p className="mt-4 rounded-xl bg-white px-4 py-8 text-center text-sm text-ink-soft">조건에 맞는 정보가 없습니다. 다른 선택이나 지역을 골라보세요.</p>}
-      </div>}
-    </section>
-  </div>;
-}
+function Filter({label,children}:{label:string;children:React.ReactNode}){return <div><p className="mb-2 text-xs font-black text-ink-soft">{label}</p><div className="flex flex-wrap gap-1.5">{children}</div></div>}; function Chip({active,onClick,children}:{active:boolean;onClick:()=>void;children:React.ReactNode}){return <button type="button" onClick={onClick} className={`min-h-10 rounded-full px-3 text-sm font-bold ${active?"bg-ink text-white":"bg-white text-ink-soft ring-1 ring-[#e7d8c1]"}`}>{children}</button>}; function Badge({children}:{children:React.ReactNode}){return <span className="rounded bg-[#f4ead7] px-1.5 py-0.5 text-[10px] font-bold text-[#805a2d]">{children}</span>}
