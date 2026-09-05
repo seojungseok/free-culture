@@ -363,10 +363,10 @@ function placeToExplore(spot: TourSpot, badge = "나들이"): HomeExploreItem {
 
 function autumnPlaceCopy(spot: TourSpot): string {
   const text = `${spot.title} ${spot.overview || ""}`;
-  if (/단풍|은행|가을/.test(text)) return "단풍빛 산책길이 아름다운 가을 나들이 장소예요.";
-  if (/수목원|정원|숲/.test(text)) return "나무와 정원을 천천히 걸으며 가을 풍경을 즐기기 좋아요.";
-  if (/호수|강|하천/.test(text)) return "잔잔한 물길과 가을빛이 어우러져 걷기 좋은 곳이에요.";
-  return "선선한 계절에 걷고 머물기 좋은 가을 나들이 장소예요.";
+  if (/단풍|은행|가을/.test(text)) return "단풍길이 아름다운 산책 명소";
+  if (/수목원|정원|숲/.test(text)) return "가을 숲과 정원을 걷기 좋은 곳";
+  if (/호수|강|하천/.test(text)) return "물길과 가을빛이 어우러진 산책길";
+  return "선선한 가을에 걷기 좋은 나들이";
 }
 
 function courseToExplore(course: HomeCourse): HomeExploreItem {
