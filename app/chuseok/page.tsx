@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import ChuseokPlanner, { type ChuseokPlannerEvent } from "@/components/ChuseokPlanner";
+import ChuseokGuide, { type GuideItem } from "@/components/ChuseokGuide";
 import { getAllEvents } from "@/lib/data";
+import { getAllPlaces } from "@/lib/tour";
+import { getAllCourses } from "@/lib/courses";
+import { getAllRestaurants } from "@/lib/food";
 import { getChuseokEvents, CHUSEOK_START, CHUSEOK_END } from "@/lib/chuseok";
 
 export const revalidate = 3600;
@@ -11,5 +15,10 @@ export default function ChuseokPage() {
   const current: ChuseokPlannerEvent[] = getAllEvents().filter((e) => e.endDate >= CHUSEOK_START && e.startDate <= CHUSEOK_END).map((e) => ({ id: `event-${e.id}`, title: e.title, area: e.area, sigungu: e.sigungu, place: e.place, startDate: e.startDate, endDate: e.endDate, image: e.imgUrl, href: `/event/${e.id}`, priceLabel: e.priceLabel, isFree: e.priceType === "free" || e.priceType === "free_estimated", isTraditional: /전통|한옥|민속|궁궐|역사/.test(`${e.title} ${e.realmName} ${e.contents}`), lat: e.gpsY, lng: e.gpsX, ...flags(`${e.title} ${e.realmName} ${e.contents}`, e.audiences?.includes("kids")) }));
   const official: ChuseokPlannerEvent[] = getChuseokEvents().map((e) => ({ id: e.id, title: e.title, area: e.area, sigungu: e.sigungu, place: e.place, startDate: e.startDate, endDate: e.endDate, image: e.image, href: e.officialUrl || "/events", priceLabel: e.isFree ? "무료" : "공식 안내 확인", isFree: e.isFree, isTraditional: e.isTraditional, lat: e.lat, lng: e.lng, ...flags(`${e.title} ${e.description} ${e.place}`, e.isKids) }));
   const events = [...official, ...current.filter((e) => !official.some((o) => o.title === e.title))];
-  return <main><ChuseokPlanner events={events} /></main>;
+  const guideItems: GuideItem[] = [
+    ...getAllPlaces().filter((p) => ["서울", "경기", "인천"].includes(p.area) && p.image).slice(0, 36).map((p) => ({ id: `place-${p.id}`, title: p.title, area: p.area, kind: "나들이", image: p.image, href: `/places/spot/${p.id}`, tags: ["가족", ...(p.isKid ? ["아이와"] : []), ...( /공원|산책|야외|정원/.test(`${p.title} ${p.addr}`) ? ["데이트"] : [])] })),
+    ...getAllCourses().filter((c) => ["서울", "경기", "인천"].includes(c.area) && c.image).slice(0, 12).map((c) => ({ id: `course-${c.id}`, title: c.title, area: c.area, kind: "여행코스", image: c.image, href: `/course/c/${c.id}`, tags: ["가족", "데이트"] })),
+    ...getAllRestaurants().filter((r) => ["서울", "경기", "인천"].includes(r.area) && r.image).slice(0, 12).map((r) => ({ id: `food-${r.id}`, title: r.title, area: r.area, kind: "맛집탐방", image: r.image, href: `/food/spot/${r.id}`, tags: ["가족", "데이트"] })),
+  ];
+  return <main><ChuseokGuide items={guideItems} /><ChuseokPlanner events={events} /></main>;
 }
