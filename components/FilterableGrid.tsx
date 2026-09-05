@@ -100,7 +100,7 @@ export default function FilterableGrid({
     <section>
       {showControls && (
         <div className="sticky top-[132px] z-30 -mx-4 mb-5 border-b border-black/5 bg-[var(--bg)]/90 px-4 py-3 backdrop-blur md:top-[92px]">
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+          <div className="flex flex-wrap items-center gap-2">
             {!hidePriceFilter && <div className="inline-flex rounded-full bg-black/[0.05] p-1">
               {TABS.map((t) => {
                 const active = price === t.key;
@@ -137,7 +137,7 @@ export default function FilterableGrid({
                 );
               })}
             </div>}
-            <div className="flex items-center gap-1 overflow-x-auto">
+            <div className="flex flex-wrap items-center gap-1">
               {regions.map((r) => <button key={r} onClick={() => { setRegion(r); setVisible(PAGE); const p = new URLSearchParams(searchParams.toString()); r === "all" ? p.delete("region") : p.set("region", r); router.replace(`${pathname}${p.toString() ? `?${p}` : ""}`, { scroll: false }); }} className={["whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-bold", region === r ? "bg-ink text-white" : "text-ink-soft hover:text-ink"].join(" ")}>{r === "all" ? "전국" : r}</button>)}
             </div>
           </div>
