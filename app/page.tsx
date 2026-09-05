@@ -63,6 +63,7 @@ interface HomeExploreItem {
   meta: string;
   image: string;
   badge: string;
+  desc?: string;
 }
 
 export default function HomePage() {
@@ -323,6 +324,7 @@ function RailSection({ title, href, items, desc, limit = 10 }: { title: string; 
               <div className="p-3">
                 <h3 className="line-clamp-2 min-h-[38px] text-[14px] font-black leading-snug text-ink">{item.title}</h3>
                 <p className="mt-1 line-clamp-1 text-[12px] text-ink-faint">{item.meta}</p>
+                {item.desc && <p className="mt-1 line-clamp-2 text-[12px] leading-5 text-ink-soft">{item.desc}</p>}
               </div>
             </Link>
           ))}
@@ -346,6 +348,8 @@ function eventToExplore(ev: CultureEvent): HomeExploreItem {
 }
 
 function placeToExplore(spot: TourSpot, badge = "나들이"): HomeExploreItem {
+  const autumn = badge.includes("가을");
+  const desc = autumn ? autumnPlaceCopy(spot) : undefined;
   return {
     id: `place-${spot.id}`,
     href: `/places/spot/${spot.id}`,
@@ -353,7 +357,16 @@ function placeToExplore(spot: TourSpot, badge = "나들이"): HomeExploreItem {
     meta: spot.area,
     image: spot.image,
     badge: spot.isKid ? "아이와" : badge,
+    desc,
   };
+}
+
+function autumnPlaceCopy(spot: TourSpot): string {
+  const text = `${spot.title} ${spot.overview || ""}`;
+  if (/단풍|은행|가을/.test(text)) return "단풍빛 산책길이 아름다운 가을 나들이 장소예요.";
+  if (/수목원|정원|숲/.test(text)) return "나무와 정원을 천천히 걸으며 가을 풍경을 즐기기 좋아요.";
+  if (/호수|강|하천/.test(text)) return "잔잔한 물길과 가을빛이 어우러져 걷기 좋은 곳이에요.";
+  return "선선한 계절에 걷고 머물기 좋은 가을 나들이 장소예요.";
 }
 
 function courseToExplore(course: HomeCourse): HomeExploreItem {
