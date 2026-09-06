@@ -42,3 +42,14 @@ export function galleryForStops(stops: CourseStop[], limit = 8): GalleryPhoto[] 
 export function galleryCount(): number {
   return PHOTOS.length;
 }
+
+/** 관광지명·주소로 미리 수집한 한국관광공사 관광사진을 빠르게 찾는다. */
+export function galleryForSpot(title: string, address = "", limit = 6): GalleryPhoto[] {
+  const name = clean(title);
+  const addr = clean(address);
+  if (name.length < 2) return [];
+  return PHOTOS.filter((photo) => {
+    const haystack = clean(`${photo.title} ${photo.location} ${photo.keywords}`);
+    return haystack.includes(name) || (addr.length >= 4 && haystack.includes(addr.slice(0, 6)));
+  }).slice(0, limit);
+}

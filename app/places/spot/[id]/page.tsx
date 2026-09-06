@@ -19,6 +19,7 @@ import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
 import ArticleBody from "@/components/ArticleBody";
 import SeoulStayBanner from "@/components/SeoulStayBanner";
 import { stayLinkFor } from "@/lib/stayLinks";
+import { galleryForSpot } from "@/lib/photoGallery";
 
 // 상세는 방문 시점에 detailCommon2로 overview를 받아 ISR 캐시 (빌드 시 전량 프리렌더 X)
 export const dynamicParams = true;
@@ -146,6 +147,12 @@ export default async function SpotDetailPage({
     if (seen.has(img.full)) continue;
     seen.add(img.full);
     gallery.push(img);
+  }
+  // 상세사진 API가 비어도, 미리 수집한 공식 관광사진 갤러리로 보강한다(추가 API 호출 없음).
+  for (const photo of galleryForSpot(spot.title, spot.addr)) {
+    if (seen.has(photo.image)) continue;
+    seen.add(photo.image);
+    gallery.push({ full: photo.image, thumb: photo.image });
   }
 
   const hasMap = Boolean(spot.mapx && spot.mapy);
