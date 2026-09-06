@@ -1,6 +1,7 @@
 // 자동 생성 글(초안/발행) 접근 — data/place-articles.json (GitHub Action이 커밋)
 import articlesData from "@/data/place-articles.json";
 import { AUTUMN_ARTICLE_OVERRIDES } from "@/data/autumnArticleOverrides";
+import { getTourById } from "@/lib/tour";
 
 export interface PlaceArticle {
   status: "draft" | "published";
@@ -40,11 +41,20 @@ export function stripVisitTips(content: string): string {
   return kept.join("\n").replace(/\n{3,}/g, "\n\n").trim();
 }
 
+function addAutumnReason(id: string, content: string): string {
+  const spot = getTourById(id);
+  if (!spot || !/단풍|억새|수목원|국화|코스모스|자연휴양림|관악산/.test(`${spot.title} ${spot.addr}`)) return content;
+  if (/##\s*(가을에 왜 좋은가요|가을나들이로 좋은 이유|언제 가면 좋을까요)/.test(content)) return content;
+  const text = `${spot.title} ${spot.addr}`;
+  const reason = text.includes("단풍") ? "단풍 산책과 계절 사진을 즐기기 좋은 장소" : text.includes("억새") ? "억새 풍경과 탁 트인 가을 조망을 보기 좋은 장소" : text.includes("국화") || text.includes("코스모스") ? "가을꽃과 야외 산책을 함께 즐기기 좋은 장소" : text.includes("수목원") ? "나무와 정원을 천천히 걸으며 가을 식생을 살펴보기 좋은 장소" : "선선한 날씨에 숲길을 걷고 쉬기 좋은 장소";
+  return `${content.trim()}\n\n## 가을에 왜 좋은가요\n\n${spot.title}은(는) ${reason}예요. ${spot.area}에서 가을나들이를 계획한다면 대표사진과 주소를 먼저 확인하고, 현장에서는 무리하지 않는 범위에서 숲길·정원·전망 구간을 나누어 둘러보세요.`;
+}
+
 /** 사이트 노출용 — 발행(published)된 글만. 방문 팁 섹션은 서빙 시 제거 */
 export function getArticle(id: string): PlaceArticle | undefined {
   const a = { ...data.articles[id], ...AUTUMN_ARTICLE_OVERRIDES[id] } as PlaceArticle;
   if (!a || a.status !== "published") return undefined;
-  return { ...a, content: stripVisitTips(a.content) };
+  return { ...a, content: addAutumnReason(id, stripVisitTips(a.content)) };
 }
 
 /** 관리/검토용 — 상태 무관 */
