@@ -19,7 +19,6 @@ export default function TourCard({ spot }: { spot: TourSpot }) {
             sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 220px"
             className="object-cover transition group-hover:scale-105"
             loading="lazy"
-            unoptimized
           />
         ) : (
           <div className="flex h-full items-center justify-center text-ink-faint">🏞️</div>
