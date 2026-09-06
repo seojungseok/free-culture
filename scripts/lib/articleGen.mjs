@@ -659,6 +659,7 @@ ${EXAMPLES}
 
 export function buildPrompt(place, overview = "", extras = {}) {
   const type = tourTypeLabel(place.type);
+  const autumn = /단풍|억새|수목원|국화|코스모스|자연휴양림/.test(`${place.title || ""} ${place.addr || ""}`);
   const facts = buildFactsBlock(extras);
   // 직전 시도 반려 사유를 되먹여 같은 실수를 반복하지 않게 한다(재시도가 시도1의 복제가 되던 문제 해소).
   const retry = extras.retryHint
@@ -695,6 +696,13 @@ ${extras.local}
 
 ${ref}
 ${research}${facts ? `\n${facts}\n` : ""}${local}${retry}
+${autumn ? `
+[🍂 가을나들이 편집 목표 — 이 장소를 가을에 왜 가야 하는지가 글의 중심입니다]
+- 첫 문장과 도입부에서 이 장소의 가을 매력(단풍·억새·숲길·정원·산책·조망·계절 식생 등)을 근거가 있는 범위에서 구체적으로 설명하세요.
+- "가을에 좋은 곳"이라고만 쓰지 말고, 무엇을 보거나 어떤 동선으로 즐기는지까지 연결하세요.
+- 계절 근거가 있으면 반드시 "## 언제 가면 좋을까요"를 만들고, 근거가 없으면 단풍 시기나 절정 시기를 추측하지 마세요.
+- 주변 장소·맛집이 있으면 가을 산책 전후 동선으로 설명해 독자가 실제 방문 이유를 이해하도록 하세요.
+` : ""}${writingGuide(place, type)}
 ${writingGuide(place, type)}
 
 이제 "${place.title}" 소개 글을 마크다운으로만 출력하세요(설명 없이 글만). 사실 근거에 없는 내용은 쓰지 마세요.`;

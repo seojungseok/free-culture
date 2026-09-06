@@ -1,5 +1,6 @@
 // 자동 생성 글(초안/발행) 접근 — data/place-articles.json (GitHub Action이 커밋)
 import articlesData from "@/data/place-articles.json";
+import { AUTUMN_ARTICLE_OVERRIDES } from "@/data/autumnArticleOverrides";
 
 export interface PlaceArticle {
   status: "draft" | "published";
@@ -41,14 +42,14 @@ export function stripVisitTips(content: string): string {
 
 /** 사이트 노출용 — 발행(published)된 글만. 방문 팁 섹션은 서빙 시 제거 */
 export function getArticle(id: string): PlaceArticle | undefined {
-  const a = data.articles[id];
+  const a = { ...data.articles[id], ...AUTUMN_ARTICLE_OVERRIDES[id] } as PlaceArticle;
   if (!a || a.status !== "published") return undefined;
   return { ...a, content: stripVisitTips(a.content) };
 }
 
 /** 관리/검토용 — 상태 무관 */
 export function getArticleAny(id: string): PlaceArticle | undefined {
-  return data.articles[id];
+  return data.articles[id] || (AUTUMN_ARTICLE_OVERRIDES[id] as PlaceArticle | undefined);
 }
 
 export function getAllArticles(): (PlaceArticle & { id: string })[] {

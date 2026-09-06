@@ -54,6 +54,8 @@ const RESEARCH_MODEL = process.env.OPENAI_RESEARCH_MODEL || OPENAI_MODEL;
 const RESEARCH_MAX = Number(process.env.ARTICLE_RESEARCH_MAX || 8);
 const RESEARCH_TTL_DAYS = Number(process.env.ARTICLE_RESEARCH_TTL || 180);
 const AUTUMN_ARTICLES = (process.env.AUTUMN_ARTICLES || "off").toLowerCase() === "on";
+// 가을나들이 갱신 모드에서는 짧은 기존 글도 공식 자료를 보강해 다시 작성한다.
+const AUTUMN_REFRESH_MIN = Number(process.env.AUTUMN_REFRESH_MIN || 1100);
 const AUTUMN_KWS = ["단풍", "억새", "수목원", "국화", "코스모스", "자연휴양림"];
 const AUTUMN_PRIORITY = [
   "내장산 단풍생태공원",
@@ -273,7 +275,19 @@ async function main() {
     console.log(`\n🧪 지정(${items.length}곳): ${items.map((i) => `${i.place.title}[${i.mode}]`).join(", ")}`);
   } else {
     const forced = Number(process.env.FORCE_COUNT) || 0;
-    target = forced > 0 ? forced : rampUpCount(store.startDate);
+    const autumnDeficitCount = AUTUMN_ARTICLES
+      ? places.filter((p) => {
+          if (!isAutumnPlace(p)) return false;
+          const article = store.articles[p.id];
+          if (!article) return true;
+          const text = String(article.content || "");
+          const core = ["어떤 곳인가요", "볼거리·즐길거리", "방문 팁"].every((h) => text.includes(h));
+          return Number(article.length || 0) < AUTUMN_REFRESH_MIN || !core || article.needsRewrite;
+        }).length
+      : 0;
+    // 가을 전용 실행은 일일 램프업으로 일부만 처리하지 않고, 부족한 가을 글 전체를 큐에 넣는다.
+    // 실제 실행 횟수는 FORCE_COUNT로 나눌 수 있으며, 다른 카테고리는 기존 램프업을 유지한다.
+    target = forced > 0 ? forced : (AUTUMN_ARTICLES ? autumnDeficitCount : rampUpCount(store.startDate));
     if (target <= 0) {
       console.log(`시작일(${store.startDate}) 이전 — 생성 안 함. (test_count 또는 test_ids 입력)`);
       return;
@@ -282,7 +296,17 @@ async function main() {
     const byId = new Map(places.map((p) => [p.id, p]));
     // 재작성은 심각도(rewriteScore) 높은 순 우선 → 램프업 안에서 최악부터 고침
     const rwIds = Object.keys(store.articles)
-      .filter((id) => store.articles[id]?.needsRewrite && byId.has(id) && (!AUTUMN_ARTICLES || isAutumnPlace(byId.get(id))))
+      .filter((id) => {
+        const article = store.articles[id];
+        if (!byId.has(id)) return false;
+        if (AUTUMN_ARTICLES && isAutumnPlace(byId.get(id))) {
+          const text = String(article?.content || "");
+          const hasCoreSections = ["어떤 곳인가요", "볼거리·즐길거리", "방문 팁"]
+            .every((heading) => text.includes(heading));
+          return article?.needsRewrite || Number(article?.length || 0) < AUTUMN_REFRESH_MIN || !hasCoreSections;
+        }
+        return Boolean(article?.needsRewrite);
+      })
       .sort((a, b) => (store.articles[b].rewriteScore || 0) - (store.articles[a].rewriteScore || 0));
     for (const id of rwIds) items.push({ place: byId.get(id), mode: "rewrite" });
     const rw = items.length;
@@ -377,10 +401,11 @@ async function main() {
 
     if (AUTUMN_ARTICLES && overview.length < MIN_OVERVIEW && !hasFacts) {
       if (mode === "rewrite") {
-        delete store.articles[place.id];
-        removed++; made++;
-        report.push({ id: place.id, title: place.title, outcome: "removed→infocard", reason: `가을모드: 원본 ${overview.length}자·검색/새데이터 없음` });
-        console.log(`  🗑  가을모드 정보카드 전환(삭제): ${place.title}`);
+        // 재작성 실패로 이미 발행된 글을 삭제하지 않는다. 일시적인 API·검색 장애가
+        // 사용자 화면을 정보 카드로 후퇴시키지 않도록 기존 글을 유지한다.
+        skipped++;
+        report.push({ id: place.id, title: place.title, outcome: "keep-existing", reason: `가을모드: 원본 ${overview.length}자·검색/새데이터 없음` });
+        console.log(`  ↩ 기존 글 유지(자료 부족): ${place.title}`);
       } else {
         skipped++;
         report.push({ id: place.id, title: place.title, outcome: "skip", reason: `가을모드: 원본 ${overview.length}자·검색/새데이터 없음${err ? " · " + err : ""}` });
@@ -392,10 +417,11 @@ async function main() {
     const { art, reasons } = await produceArticle(place, overview, exTexts, extras);
     if (!art) {
       if (mode === "rewrite") {
-        delete store.articles[place.id]; // 재생성 실패 → 정보 카드형
-        removed++; made++;
-        report.push({ id: place.id, title: place.title, outcome: "removed→infocard", reason: reasons.slice(-3).join(" | ") });
-        console.log(`  🗑  재생성 실패→정보카드(삭제): ${place.title}`);
+        // 재작성 실패 시 기존 발행본을 보존한다. 생성 API 장애는 콘텐츠 품질과
+        // 무관한 일시적 실패이므로 기존 글을 삭제하지 않는다.
+        skipped++;
+        report.push({ id: place.id, title: place.title, outcome: "keep-existing", reason: reasons.slice(-3).join(" | ") });
+        console.log(`  ↩ 재생성 실패→기존 글 유지: ${place.title}`);
       } else {
         skipped++;
         report.push({ id: place.id, title: place.title, outcome: "skip", overviewLen: overview.length, research: researchNote, reason: reasons.slice(-3).join(" | ") });

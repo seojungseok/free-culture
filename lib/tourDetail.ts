@@ -80,7 +80,7 @@ export async function fetchPlaceImages(contentId: string): Promise<PlaceImage[]>
   if (!KEY || !contentId) return [];
   const url = `https://apis.data.go.kr/B551011/KorService2/detailImage2?serviceKey=${encodeURIComponent(
     KEY
-  )}&MobileOS=ETC&MobileApp=mwohaji&_type=json&imageYN=Y&numOfRows=15&contentId=${contentId}`;
+  )}&MobileOS=ETC&MobileApp=mwohaji&_type=json&imageYN=Y&numOfRows=30&contentId=${contentId}`;
   try {
     const res = await fetch(url, { next: { revalidate: 604800 } }); // 1주 캐시
     if (!res.ok) return [];
