@@ -34,6 +34,9 @@ export interface PlaceOverview {
 
 const https = (u: string) => String(u || "").replace(/^http:\/\//i, "https://");
 
+// 상세 본문을 외부 API 응답 때문에 오래 붙잡지 않도록 제한한다.
+const apiSignal = () => AbortSignal.timeout(4500);
+
 export type Admission = "free" | "paid" | "unknown";
 
 /** 요금 텍스트 → 무료/유료/정보없음 (모든 유형 공통 규칙) */
@@ -56,7 +59,7 @@ export async function fetchAdmission(contentId: string, type: string): Promise<A
     KEY
   )}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${contentId}&contentTypeId=${type}`;
   try {
-    const res = await fetch(url, { next: { revalidate: 604800 } });
+    const res = await fetch(url, { next: { revalidate: 604800 }, signal: apiSignal() });
     if (!res.ok) return "unknown";
     const j = await res.json();
     if (j?.response?.header?.resultCode !== "0000") return "unknown";
@@ -82,7 +85,7 @@ export async function fetchPlaceImages(contentId: string): Promise<PlaceImage[]>
     KEY
   )}&MobileOS=ETC&MobileApp=mwohaji&_type=json&imageYN=Y&numOfRows=30&contentId=${contentId}`;
   try {
-    const res = await fetch(url, { next: { revalidate: 604800 } }); // 1주 캐시
+    const res = await fetch(url, { next: { revalidate: 604800 }, signal: apiSignal() }); // 1주 캐시
     if (!res.ok) return [];
     const j = await res.json();
     if (j?.response?.header?.resultCode !== "0000") return [];
@@ -109,7 +112,7 @@ export async function fetchPlaceOverview(contentId: string): Promise<PlaceOvervi
     KEY
   )}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${contentId}`;
   try {
-    const res = await fetch(url, { next: { revalidate: 604800 } }); // 1주 캐시
+    const res = await fetch(url, { next: { revalidate: 604800 }, signal: apiSignal() }); // 1주 캐시
     if (!res.ok) return empty;
     const j = await res.json();
     if (j?.response?.header?.resultCode !== "0000") return empty;

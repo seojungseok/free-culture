@@ -124,7 +124,8 @@ export default async function SpotDetailPage({
   const cachedAdmission = getIntro(id)?.admission ?? getAdmission(id);
 
   const [detail, extraImages, admission] = await Promise.all([
-    fetchPlaceOverview(id),
+    // 자체 본문이 있으면 외부 overview를 기다릴 필요가 없다. 메타데이터와 보조정보용이다.
+    article ? Promise.resolve({ overview: "", homepage: "", tel: "" }) : fetchPlaceOverview(id),
     fetchPlaceImages(id),
     cachedAdmission ? Promise.resolve(cachedAdmission) : fetchAdmission(id, spot.type),
   ]);
