@@ -193,11 +193,23 @@ export default function ArticleBody({
       para.push(lines[i]);
       i++;
     }
-    blocks.push(
-      <p key={key++} className="mt-3 text-[15px] leading-[1.85] text-ink-soft">
-        {renderInline(para.join(" "), picker, `p${key}`)}
-      </p>
-    );
+    // 모바일에서 긴 벽 문단이 되지 않도록 2~3문장 단위로 시각적 호흡을 만든다.
+    const text = para.join(" ");
+    const chunks = text
+      .split(/(?<=[.!?。！？])\s+/)
+      .reduce<string[]>((out, sentence, index) => {
+        const group = Math.floor(index / 3);
+        out[group] = `${out[group] || ""}${out[group] ? " " : ""}${sentence}`;
+        return out;
+      }, [])
+      .filter(Boolean);
+    chunks.forEach((chunk) => {
+      blocks.push(
+        <p key={key++} className="mt-3 text-[15px] leading-[1.85] text-ink-soft">
+          {renderInline(chunk, picker, `p${key}`)}
+        </p>
+      );
+    });
   }
 
   return <div className="mt-5">{blocks}</div>;
