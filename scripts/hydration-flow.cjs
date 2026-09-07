@@ -20,6 +20,7 @@ const base = process.argv[2] || 'http://localhost:3027';
    await page.getByRole('navigation',{name:'주말 계획'}).getByRole('link',{name:'맞춤 추천',exact:true}).click();
    if(process.env.TEST_RESIZE_FROM) await page.setViewportSize({width,height:900});
    await page.getByRole('button',{name:'내 조건으로 추천 보기',exact:true}).click();
+   try{await page.locator('article').first().waitFor({timeout:10000});}catch(e){console.log(JSON.stringify({step:'recommendation ready',url:page.url(),body:await page.locator('main').innerText(),errors}));throw e;}
    assert(await page.locator('article').count()>0);await check('recommendation');
    await page.locator('article').first().getByRole('link').first().click();
    await page.getByRole('link',{name:'보관함 보기 →',exact:true}).waitFor();

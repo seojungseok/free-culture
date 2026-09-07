@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { makePlans, type TripOption, type SavedTrip } from "@/lib/planner";
 import TripCard from "./TripCard";
@@ -9,7 +9,10 @@ export default function Planner({options,initialDate,minDate,maxDate}: {options:
   const [date,setDate]=useState(initialDate),[hours,setHours]=useState(4),[kids,setKids]=useState(false),[free,setFree]=useState(false);
   const [results,setResults]=useState<SavedTrip[]|null>(null);
   const [error,setError]=useState("");
-  return <><form onSubmit={e=>{e.preventDefault();if(date<minDate||date>maxDate){setError("오늘부터 60일 이내의 날짜를 선택해 주세요.");return;}setError("");setResults(makePlans(options,{area,date,hours,kids,free}));}} className="rounded-2xl border border-slate-200 bg-white p-5">
+  const [ready,setReady]=useState(false);
+  useEffect(()=>{setReady(true);},[]);
+  // Do not allow native form submission before React attaches the submit handler.
+  return <><form inert={!ready} aria-busy={!ready} onSubmit={e=>{e.preventDefault();if(date<minDate||date>maxDate){setError("오늘부터 60일 이내의 날짜를 선택해 주세요.");return;}setError("");setResults(makePlans(options,{area,date,hours,kids,free}));}} className="rounded-2xl border border-slate-200 bg-white p-5">
     <div className="grid gap-4 sm:grid-cols-3">
       <label className="text-sm font-bold">지역<select className="mt-2 block min-h-11 w-full rounded-lg border p-2" value={area} onChange={e=>{setArea(e.target.value);setResults(null);}}>{areas.map(a=><option key={a}>{a}</option>)}</select></label>
       <label className="text-sm font-bold">방문 날짜<input required type="date" value={date} min={minDate} max={maxDate} onChange={e=>{setDate(e.target.value);setResults(null);}} className="mt-2 block min-h-11 w-full min-w-0 rounded-lg border p-2"/></label>
@@ -20,7 +23,7 @@ export default function Planner({options,initialDate,minDate,maxDate}: {options:
       <label className="flex min-h-11 items-center gap-2 text-sm"><input type="checkbox" checked={free} onChange={e=>{setFree(e.target.checked);setResults(null);}}/>무료 입장 확인된 곳만</label>
     </div>
     <p className="mb-4 text-xs leading-6 text-ink-soft">시간은 장소 수를 정하는 기준이며 이동·대기·관람시간을 보장하지 않습니다. 무료 입장에도 체험·주차·식사비는 별도일 수 있습니다. 운영시간과 예약 조건은 상세페이지에서 확인해 주세요.</p>
-    <button className="min-h-12 w-full rounded-xl bg-brandblue px-6 py-3 font-bold text-white sm:w-auto">내 조건으로 추천 보기</button>
+    <button type="submit" disabled={!ready} className="min-h-12 w-full rounded-xl bg-brandblue px-6 py-3 font-bold text-white disabled:cursor-wait disabled:opacity-60 sm:w-auto">내 조건으로 추천 보기</button>
     <p role="alert" className="mt-2 text-sm text-red-700">{error}</p>
     <p className="mt-3 text-xs leading-6 text-ink-soft">반려동물과 이동 편의 조건은 검증된 상세 정보가 필요합니다. <Link href="/pet-travel" className="underline">반려동물 동반 조건 확인</Link></p>
   </form>
