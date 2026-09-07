@@ -24,21 +24,21 @@ const errorInfo = (error: unknown) => {
 };
 
 async function publicIPv4() {
-  const response = await fetch("https://dns.google/resolve?name=api.kcisa.kr&type=A", {
+  const response = await fetch("https://cloudflare-dns.com/dns-query?name=api.kcisa.kr&type=A", {
     headers: { accept: "application/dns-json" },
     cache: "no-store",
     signal: AbortSignal.timeout(7000),
   });
   const data = await response.json() as { Status?: unknown; Answer?: Array<{ type?: unknown; data?: unknown }> };
   const addresses = (data.Answer ?? []).filter(a => a.type === 1 && typeof a.data === "string" && /^\d{1,3}(\.\d{1,3}){3}$/.test(a.data)).map(a => a.data!);
-  return { status: data.Status, addresses };
+  return { resolver: "cloudflare-dns.com", status: data.Status, addresses };
 }
 
 async function callKCISAWithPublicDNS(key: string) {
   const query = new URLSearchParams({ serviceKey: key, numOfRows: "1", pageNo: "1", areaNm: "서울", clNm: "한식" });
   const dns = await publicIPv4();
   const address = String(dns.addresses[0] ?? "");
-  if (!address) return { ok: false, phase: "public_dns", publicDnsStatus: dns.status, publicARecords: dns.addresses.length };
+  if (!address) return { ok: false, phase: "public_dns", publicDnsResolver: dns.resolver, publicDnsStatus: dns.status, publicARecords: dns.addresses.length };
 
   const result = await new Promise<{ status: number; raw: string }>((resolve, reject) => {
     const request = https.request({
@@ -81,7 +81,7 @@ async function callKCISAWithPublicDNS(key: string) {
   const safeField = (name: string) => /^[A-Za-z_][A-Za-z0-9_]{0,80}$/.test(name);
   const code = String(header?.resultCode ?? header?.code ?? "");
   return {
-    ok: true, httpStatus: result.status, format, parseable: true, publicARecords: dns.addresses.length,
+    ok: true, httpStatus: result.status, format, parseable: true, publicDnsResolver: dns.resolver, publicARecords: dns.addresses.length,
     apiCode: /^[A-Za-z0-9_-]{1,30}$/.test(code) ? code : null,
     hasData: items.length > 0, returnedCount: items.length,
     rootFields: Object.keys(root ?? {}).filter(safeField),
