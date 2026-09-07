@@ -1,7 +1,7 @@
 /** Client-safe planner rules. No API, geolocation, or paid service calls. */
 export type TripStop = {
   id: string; title: string; href: string; area: string; kind: "place" | "event" | "food" | "camp" | "course" | "pet";
-  address?: string; x?: number; y?: number; free?: boolean; kids?: boolean; start?: string; end?: string;
+  address?: string; image?: string; x?: number; y?: number; free?: boolean; kids?: boolean; start?: string; end?: string;
 };
 export type TripOption = { anchor: TripStop; nearby: TripStop[] };
 export type SavedTrip = { id: string; title: string; date?: string; stops: TripStop[] };

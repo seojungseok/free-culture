@@ -8,19 +8,19 @@ import { straightKm, validCoordinates, type TripStop, type TripOption } from "@/
 export function placeStops(): TripStop[] {
   // Undated place records sometimes contain old fairs/festivals. Only dated event records may recommend those.
   return getAllPlaces().filter(p=>!/(?:20\d{2}|축제|페어|박람회|비엔날레|페스티벌|전시회)/.test(p.title)).map(p=>({id:"place:"+p.id,title:p.title,href:"/places/spot/"+p.id,area:p.area,
-    kind:"place" as const,address:p.addr,x:Number(p.mapx),y:Number(p.mapy),free:getAdmission(p.id)==="free",kids:!!p.isKid}))
+    kind:"place" as const,image:p.image,address:p.addr,x:Number(p.mapx),y:Number(p.mapy),free:getAdmission(p.id)==="free",kids:!!p.isKid}))
     .filter(p=>validCoordinates(p.x!,p.y!));
 }
 function eventStops(): TripStop[] {
   return getAllEvents().filter(e=>e.endDate>=todayYmd() && e.startDate<=addDaysYmd(todayYmd(),60))
     .map(e=>({id:"event:"+e.id,title:e.title,href:"/event/"+e.id,area:e.area,kind:"event" as const,
-      address:e.address || e.place,x:Number(e.gpsX),y:Number(e.gpsY),free:e.priceType==="free",
+      image:e.imgUrl,address:e.address || e.place,x:Number(e.gpsX),y:Number(e.gpsY),free:e.priceType==="free",
       kids:e.audiences?.includes("kids") || false,start:e.startDate,end:e.endDate}))
     .filter(e=>validCoordinates(e.x!,e.y!));
 }
 function foodStops(): TripStop[] {
   return getAllRestaurants().map(r=>({id:"food:"+r.id,title:r.title,href:"/food/spot/"+r.id,area:r.area,
-    kind:"food" as const,address:r.addr,x:Number(r.mapx),y:Number(r.mapy)})).filter(r=>validCoordinates(r.x!,r.y!));
+    kind:"food" as const,image:r.image,address:r.addr,x:Number(r.mapx),y:Number(r.mapy)})).filter(r=>validCoordinates(r.x!,r.y!));
 }
 export function nearbyStops(anchor: TripStop, places = placeStops(), food = foodStops()): TripStop[] {
   const tourIds = new Set(getAllPlaces().filter(p=>p.type==="12").map(p=>"place:"+p.id));
