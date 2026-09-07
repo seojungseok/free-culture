@@ -1,3 +1,5 @@
+import NextStop from "@/components/NextStop";
+import { todayYmd } from "@/lib/dates";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -15,7 +17,7 @@ import ShareButtons from "@/components/ShareButtons";
 
 // ISR: 3일 재검증. 행사는 날짜 민감(종료 반영)하나 상세 자체는 자주 안 바뀜.
 // 전체를 빌드 때 만들지 않고 주목도 높은 일부만 사전 생성, 나머지는 첫 요청 때 생성 후 캐시.
-export const revalidate = 259200; // 3일
+export const revalidate = 3600; // 3일
 
 export function generateStaticParams() {
   return getAllEvents()
@@ -74,7 +76,7 @@ export default async function EventPage({
     priceLabel: ev.priceLabel, priceType: ev.priceType, audiences: ev.audiences,
   });
   const related = getAllEvents()
-    .filter((e) => e.id !== ev.id && e.genreKey === ev.genreKey && e.imgUrl)
+    .filter((e) => e.id !== ev.id && e.genreKey === ev.genreKey && e.imgUrl && e.endDate >= todayYmd())
     .slice(0, 5);
 
   const jsonLd = {
@@ -96,7 +98,7 @@ export default async function EventPage({
       "@type": "Offer",
       price: ev.priceType === "free" ? "0" : ev.priceMax ? String(ev.priceMax) : undefined,
       priceCurrency: "KRW",
-      availability: "https://schema.org/InStock",
+      availability: ev.endDate >= todayYmd() ? "https://schema.org/InStock" : undefined,
       url: ev.officialUrl || SITE.url,
     },
   };
@@ -229,6 +231,7 @@ export default async function EventPage({
             </div>
           </section>
 
+          {ev.endDate >= todayYmd() ? <NextStop anchor={{id:"event:"+ev.id,title:ev.title,href:"/event/"+ev.id,area:ev.area,kind:"event",address:ev.address || ev.place,x:Number(ev.gpsX),y:Number(ev.gpsY),free:ev.priceType==="free",kids:ev.audiences?.includes("kids"),start:ev.startDate,end:ev.endDate}}/> : <p className="mt-5 rounded-xl bg-amber-50 p-4 text-sm">등록된 일정 기준으로 종료된 행사입니다. <Link href="/weekend" className="font-bold underline">이번 주말 행사 보기</Link></p>}
           <ShareButtons title={ev.title} officialUrl={ev.officialUrl} />
 
           <p className="mt-4 text-[13px] text-ink-faint">

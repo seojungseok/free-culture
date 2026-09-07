@@ -1,3 +1,4 @@
+import TripSave from "@/components/TripSave";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -68,6 +69,7 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
         <div className="p-5 sm:p-8">
           <p className="text-[13px] font-bold text-free">{spot.area || "전국"} · {tourTypeLabel(type)}</p>
           <h1 className="mt-2 text-[26px] font-black text-ink sm:text-[34px]">{spot.title}</h1>
+      <TripSave trip={{id:"pet:"+spot.id,title:spot.title,stops:[{id:"pet:"+spot.id,title:spot.title,href:"/pet-travel/"+spot.id,area:spot.area || "",kind:"pet",address:address || ""}]}}/>
           <section className="mt-5 space-y-4 text-[14px] leading-7 text-ink-soft">
             <p><strong className="text-ink">{spot.title} 반려동물 동반 여행</strong></p>
             {summaryParagraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
@@ -75,6 +77,7 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
           </section>
           {gallery[0] && photo(gallery[0], 0)}
 
+          {!petInfo && <p className="mt-4 rounded-xl bg-amber-50 p-4 text-sm">이 장소의 구체적인 동반 조건을 아직 확인하지 못했습니다. 안내견 허용과 일반 반려동물 허용은 다릅니다. 일반 반려동물 동반 가능 장소로 단정하거나 코스에 자동 포함하지 않습니다.</p>}
           {petInfoParagraphs.length > 0 && <section className="mt-5 rounded-xl bg-tint p-4"><h2 className="text-[15px] font-extrabold text-ink">반려동물 이용 안내</h2><div className="mt-3 space-y-3 text-[13px] leading-6 text-ink-soft">{petInfoParagraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div></section>}
           {Object.keys(intro).length > 0 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">운영·편의시설 안내</h2><dl className="mt-3 grid gap-2 sm:grid-cols-2">{Object.entries(intro).slice(0, 12).map(([name, value]) => <div key={name} className="rounded-lg bg-panel px-3 py-3"><dt className="text-[11px] font-bold text-ink-faint">{name}</dt><dd className="mt-1 break-words text-[13px] leading-6 text-ink-soft">{String(value)}</dd></div>)}</dl></section>}
           {gallery[1] && photo(gallery[1], 1)}
@@ -84,7 +87,7 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
           {gallery.length > 3 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">여행 사진 더 보기</h2><div className="mt-3 grid grid-cols-2 gap-2">{gallery.slice(3, 8).map((src, index) => <img key={src} src={src} alt={`${spot.title} 반려동물 여행 사진 ${index + 4}`} loading="lazy" className="aspect-[4/3] w-full rounded-lg object-cover" />)}</div></section>}
           {address && <p className="mt-5 text-[14px] leading-6 text-ink-soft"><strong className="text-ink">주소</strong><br />{address}</p>}
           {spot.tel && <p className="mt-2 text-[14px] leading-6 text-ink-soft"><strong className="text-ink">전화</strong><br /><a href={`tel:${spot.tel}`} className="text-free">{spot.tel}</a></p>}
-          <nav className="mt-7 flex flex-wrap gap-4 border-t border-line pt-5 text-[13px] font-bold text-free" aria-label="관련 여행 정보"><Link href="/pet-travel">지역별 반려동물 여행지</Link><Link href="/season">반려동물과 가을나들이</Link><Link href="/camping">반려동물 동반 캠핑</Link><Link href="/food">여행지 주변 맛집 찾아보기</Link><Link href="/course">가족 여행코스</Link></nav>
+          <nav className="mt-7 flex flex-wrap gap-4 border-t border-line pt-5 text-[13px] font-bold text-free" aria-label="관련 여행 정보"><Link href="/pet-travel">지역별 반려동물 여행지</Link><Link href="/season">계절 나들이</Link><Link href="/camping">캠핑장 동반 조건 확인</Link><Link href="/food">여행지 주변 맛집 찾아보기</Link><Link href="/course">가족 여행코스</Link></nav>
         </div>
       </article>
     </main>

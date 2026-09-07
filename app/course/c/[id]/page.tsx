@@ -1,3 +1,4 @@
+import TripSave from "@/components/TripSave";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -136,6 +137,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
 
       <div className="mt-1 flex items-start justify-between gap-3">
         <h1 className="text-[24px] font-black leading-tight tracking-[-0.02em] text-ink sm:text-[30px]">{c.title}</h1>
+      <TripSave trip={{id:"course:"+c.id,title:c.title,stops:[{id:"course:"+c.id,title:c.title,href:"/course/c/"+c.id,area:c.area,kind:"course"}]}}/>
         <div className="mt-1 flex-none">
           <CourseShare title={c.title} compact />
         </div>
