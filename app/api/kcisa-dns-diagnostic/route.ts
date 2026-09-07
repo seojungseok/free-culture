@@ -37,7 +37,7 @@ async function publicIPv4() {
 async function callKCISAWithPublicDNS(key: string) {
   const query = new URLSearchParams({ serviceKey: key, numOfRows: "1", pageNo: "1", areaNm: "서울", clNm: "한식" });
   const dns = await publicIPv4();
-  const address = dns.addresses[0];
+  const address = String(dns.addresses[0] ?? "");
   if (!address) return { ok: false, phase: "public_dns", publicDnsStatus: dns.status, publicARecords: dns.addresses.length };
 
   const result = await new Promise<{ status: number; raw: string }>((resolve, reject) => {
