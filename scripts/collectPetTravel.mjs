@@ -1,5 +1,5 @@
 // 전국 관광지 중 반려동물 동반 상세정보가 확인되는 장소를 일일 한도 안에서 누적 수집.
-import { readCache, writeCache, createBudget, QuotaError, petAreaBasedPage, sleep, hasKey, cleanText, AREA_CODES, AREA_TO_SIDO } from "./lib/tourClient.mjs";
+import { readCache, writeCache, createBudget, QuotaError, petAreaBasedPage, sleep, hasKey, cleanText, AREA_CODES } from "./lib/tourClient.mjs";
 
 if (!hasKey()) { console.error("TourAPI 키가 없습니다."); process.exit(1); }
 const DAILY = Number(process.env.PET_DAILY || 800);

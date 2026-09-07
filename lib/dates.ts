@@ -60,7 +60,6 @@ export function dowLabel(ymd: string): string {
 /** 이번 주말 (이번 주 토·일). 이미 일요일이면 오늘~오늘 취급 */
 export function weekendRangeYmd(base = todayYmd()): { start: string; end: string } {
   const dow = dowOf(base);
-  if (dow === 0) return { start: base, end: base };
   const toSat = (6 - dow + 7) % 7;
   const sat = addDaysYmd(base, toSat);
   const sun = addDaysYmd(sat, 1);

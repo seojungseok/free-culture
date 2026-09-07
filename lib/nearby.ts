@@ -26,7 +26,6 @@ export function distanceKm(
   const lon1 = parseFloat(a.mapx || ""), lat1 = parseFloat(a.mapy || "");
   const lon2 = parseFloat(b.mapx || ""), lat2 = parseFloat(b.mapy || "");
   if (![lon1, lat1, lon2, lat2].every(Number.isFinite)) return Infinity;
-  if ([lon1, lon2].some(v => v < 124 || v > 132) || [lat1, lat2].some(v => v < 33 || v > 39.5)) return Infinity;
   const R = 6371;
   const dLat = rad(lat2 - lat1), dLon = rad(lon2 - lon1);
   const s = Math.sin(dLat / 2) ** 2 + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLon / 2) ** 2;

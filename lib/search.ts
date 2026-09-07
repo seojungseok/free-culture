@@ -73,7 +73,7 @@ function build(): SearchDoc[] {
   for (const f of fests) {
     docs.push({
       kind: "festival", id: f.id, title: f.title, area: f.area, sub: guOf(f.addr || ""),
-      url: `/festivals/${f.id}`, image: f.image || "", price: "unknown", hasImg: Boolean(f.image),
+      url: `/festivals?query=${encodeURIComponent(f.title)}`, image: f.image || "", price: "unknown", hasImg: Boolean(f.image),
       titleN: norm(f.title), hay: norm(`${f.title} ${f.addr} ${f.area} 축제`),
     });
   }
