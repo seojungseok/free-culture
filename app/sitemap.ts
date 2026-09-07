@@ -65,28 +65,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
   ].map((p) => ({
     url: `${base}${p}`,
-    lastModified: now,
+
     changeFrequency: LOW.has(p) ? ("monthly" as const) : ("daily" as const),
     priority: p === "" ? 1 : MAJOR.has(p) ? 0.9 : LOW.has(p) ? 0.3 : 0.6,
   }));
 
   const monthlyRoutes = Array.from({ length: 12 }, (_, i) => ({
     url: `${base}/month/${i + 1}`,
-    lastModified: now,
+
     changeFrequency: "daily" as const,
     priority: i + 1 === now.getMonth() + 1 ? 0.8 : 0.6,
   }));
 
   const regionRoutes = Object.values(SIDO_SLUG).map((code) => ({
     url: `${base}/region/${code}`,
-    lastModified: now,
+
     changeFrequency: "daily" as const,
     priority: 0.7,
   }));
 
   const traditionalMarketRoutes = MARKET_REGIONS.map((region) => ({
     url: `${base}/traditional-market/${(SIDO_SLUG as Record<string, string>)[region] || region}`,
-    lastModified: now,
+
     changeFrequency: "daily" as const,
     priority: 0.7,
   }));
@@ -94,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 가볼만한 곳 지역별 (관광지 데이터 있는 지역만)
   const placeAreaRoutes = getTourAreaCounts().map(({ area }) => ({
     url: `${base}/places/${(SIDO_SLUG as Record<string, string>)[area]}`,
-    lastModified: now,
+
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
@@ -102,11 +102,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 발행글 있는 상세 → 최신 lastmod + 높은 우선순위로 별도 그룹(구글이 새 글 먼저 크롤)
   const articleAt = new Map<string, string>();
   for (const a of getAllArticles()) {
-    if (a.status === "published") articleAt.set(a.id, a.publishedAt || a.generatedAt || now.toISOString());
+    if (a.status === "published") articleAt.set(a.id, a.publishedAt || a.generatedAt || "");
   }
   const articleSpotRoutes = [...articleAt].map(([id, at]) => ({
     url: `${base}/places/spot/${id}`,
-    lastModified: new Date(at),
+    lastModified: at && Number.isFinite(Date.parse(at)) ? new Date(at) : undefined,
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
@@ -116,30 +116,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((s) => !articleAt.has(s.id))
     .map((s) => ({
       url: `${base}/places/spot/${s.id}`,
-      lastModified: now,
+
       changeFrequency: "monthly" as const,
       priority: 0.4,
     }));
 
   // 카페데이트 — 허브 + 지역 + 코스 상세(롱테일: "OO 카페데이트")
   const dateRoutes = [
-    { url: `${base}/date`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 },
+    { url: `${base}/date`,  changeFrequency: "weekly" as const, priority: 0.7 },
     ...dateAreaCounts().map((a) => ({
       url: `${base}/date/${a.slug}`,
-      lastModified: now,
+
       changeFrequency: "weekly" as const,
       priority: 0.6,
     })),
     // 시군구 — "종로구 카페데이트" 같은 롱테일
     ...dateCityParams().map((p) => ({
       url: `${base}/date/${p.area}/${encodeURIComponent(p.city)}`,
-      lastModified: now,
+
       changeFrequency: "weekly" as const,
       priority: 0.6,
     })),
     ...getDateCourses().map((c) => ({
       url: `${base}/date/c/${c.id}`,
-      lastModified: now,
+
       changeFrequency: "monthly" as const,
       priority: 0.5,
     })),
@@ -148,7 +148,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 음식점 상세 (전량 — 롱테일 색인, /food/spot/[id]로 렌더)
   const restaurantRoutes = getAllRestaurants().map((r) => ({
     url: `${base}/food/spot/${r.id}`,
-    lastModified: now,
+
     changeFrequency: "monthly" as const,
     priority: 0.4,
   }));
@@ -156,7 +156,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 맛집 지역 허브 (/food/[area]) — 데이터 있는 지역만
   const foodAreaRoutes = foodAreas().map((sido) => ({
     url: `${base}/food/${(SIDO_SLUG as Record<string, string>)[sido]}`,
-    lastModified: now,
+
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
@@ -164,7 +164,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 맛집 전국 업종 (/food/category/[cat]) — "전국 한식 맛집" 등
   const foodCatRoutes = FOOD_CATS.filter((c) => filterRestaurants({ cat3: c.code }).length).map((c) => ({
     url: `${base}/food/category/${c.slug}`,
-    lastModified: now,
+
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
@@ -177,7 +177,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       if (filterRestaurants({ area: sido, cat3: c.code }).length) {
         foodComboRoutes.push({
           url: `${base}/food/${areaSlug}/${c.slug}`,
-          lastModified: now,
+
           changeFrequency: "weekly" as const,
           priority: 0.7,
         });
@@ -188,13 +188,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 캠핑 지역 허브 (/camping/region/[area]) + 전국 유형 (/camping/type/[type])
   const campRegionRoutes = campAreaCounts().map(({ area }) => ({
     url: `${base}/camping/region/${(SIDO_SLUG as Record<string, string>)[area]}`,
-    lastModified: now,
+
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
   const campTypeRoutes = CAMP_TYPE_SLUG.filter((t) => filterCamps({ type: t.label }).length).map((t) => ({
     url: `${base}/camping/type/${t.slug}`,
-    lastModified: now,
+
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
@@ -202,14 +202,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 캠핑 상세 (전량 — 롱테일 색인)
   const campRoutes = getAllCamps().map((c) => ({
     url: `${base}/camping/${c.id}`,
-    lastModified: now,
+
     changeFrequency: "monthly" as const,
     priority: 0.4,
   }));
 
   const genreRoutes = GENRES.map((g) => ({
     url: `${base}/genre/${g.key}`,
-    lastModified: now,
+
     changeFrequency: "daily" as const,
     priority: 0.7,
   }));
@@ -224,7 +224,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       if (has) {
         comboRoutes.push({
           url: `${base}/region/${(SIDO_SLUG as Record<string, string>)[sido]}/${g.key}`,
-          lastModified: now,
+
           changeFrequency: "daily" as const,
           priority: 0.8,
         });
@@ -234,14 +234,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const eventRoutes = all.map((e) => ({
     url: `${base}/event/${e.id}`,
-    lastModified: now,
+
     changeFrequency: "weekly" as const,
     priority: 0.4,
   }));
 
   const festivalRoutes = getAllFestivals().map((festival) => ({
     url: `${base}/festivals/${festival.id}`,
-    lastModified: now,
+
     changeFrequency: "weekly" as const,
     priority: 0.6,
   }));
@@ -250,7 +250,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 지역 허브 (/course/[area])
   const courseAreaRoutes = getCourseAreaCounts().map(({ area }) => ({
     url: `${base}/course/${(SIDO_SLUG as Record<string, string>)[area]}`,
-    lastModified: now,
+
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
@@ -262,7 +262,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       if ((dc[d.key] || 0) >= COURSE_INDEX_MIN) {
         courseDurRoutes.push({
           url: `${base}/course/${(SIDO_SLUG as Record<string, string>)[area]}/${d.slug}`,
-          lastModified: now, changeFrequency: "weekly" as const, priority: 0.7,
+           changeFrequency: "weekly" as const, priority: 0.7,
         });
       }
     }
@@ -271,12 +271,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const themeCounts = getThemeCounts();
   const courseThemeRoutes = THEMES.filter((t) => (themeCounts[t.key] || 0) >= COURSE_INDEX_MIN).map((t) => ({
     url: `${base}/course/theme/${t.slug}`,
-    lastModified: now, changeFrequency: "weekly" as const, priority: 0.7,
+     changeFrequency: "weekly" as const, priority: 0.7,
   }));
   // 개별 코스 상세 (/course/c/[id])
   const courseDetailRoutes = getAllCourses().map((c) => ({
     url: `${base}/course/c/${c.id}`,
-    lastModified: c.publishedAt ? new Date(c.publishedAt) : now,
+    lastModified: c.publishedAt && Number.isFinite(Date.parse(c.publishedAt)) ? new Date(c.publishedAt) : undefined,
     changeFrequency: "monthly" as const, priority: 0.6,
   }));
 
