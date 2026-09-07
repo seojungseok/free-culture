@@ -44,11 +44,12 @@ const base = process.argv[2] || 'http://localhost:3027';
    for(let n=0;n<2;n++){await page.getByRole('button',{name:'삭제',exact:true}).first().click();await page.getByRole('button',{name:'삭제 확인',exact:true}).click();}
    await page.reload();await page.getByText('아직 저장한 장소나 일정이 없습니다.').waitFor();
    await page.goto(base+'/weekend');await check('weekend');
-   await page.getByRole('group',{name:'요금 필터'}).waitFor();
-   for(const index of [1,2,3,4,0]){
-    await page.getByRole('group',{name:'요금 필터'}).getByRole('button').nth(index).click();
-    await check('price filter '+index);
-   }
+   await page.getByLabel('지역',{exact:true}).selectOption('서울');
+   await page.getByLabel('무료 입장 확인된 곳만',{exact:true}).check();
+   await check('weekend free filter');
+   await page.getByLabel('무료 입장 확인된 곳만',{exact:true}).uncheck();
+   await page.getByLabel('어떤 나들이',{exact:true}).selectOption('nature');
+   await check('weekend nature filter');
    console.log(JSON.stringify({width,flow:'recommend-detail-save-refresh-back-delete',errors}));
    if(errors.length) process.exitCode=1;
    await context.close();

@@ -1,0 +1,38 @@
+const assert=require('node:assert/strict');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const base=process.argv[2]||'http://localhost:3027';
+(async()=>{const browser=await chromium.launch({channel:'msedge',headless:true});try{for(const width of [320,360,375,390,430,1440]){
+ const context=await browser.newContext({viewport:{width,height:900},timezoneId:width===360?'America/Los_Angeles':'Asia/Seoul'});
+ // Simulate a browser on a different day without changing the server snapshot.
+ if(width===390)await context.clock.setFixedTime(new Date('2026-09-13T15:01:00Z'));
+ await context.route(/abacus\.jasoncameron\.dev/,r=>r.fulfill({contentType:'application/json',body:'{"value":1}'}));
+ await context.route(/google-analytics\.com|googletagmanager\.com/,r=>r.abort());
+ const page=await context.newPage(),errors=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ page.on('console',m=>{if(/hydration|#418|cannot be a descendant/i.test(m.text()))errors.push(m.text());});
+ const check=async()=>{await page.waitForTimeout(200);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));};
+ assert.equal((await page.goto(base+'/weekend')).status(),200);await check();
+ assert.equal(await page.locator('article').count(),0);
+ assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),'https://mwohaji.kr/weekend');
+ await page.getByLabel('지역',{exact:true}).selectOption('서울');await check();
+ assert(await page.locator('article').count()>0);
+ assert((await page.locator('article > p').allTextContents()).every(t=>t.startsWith('서울')));
+ assert(await page.locator('article a[href^="/places/spot/"]').count()>0);
+ assert(await page.locator('article a[href^="/event/"]').count()>0);
+ await page.getByLabel('어떤 나들이',{exact:true}).selectOption('nature');await check();
+ assert.equal(await page.locator('article a[href^="/event/"]').count(),0);
+ await page.getByLabel('무료 입장 확인된 곳만',{exact:true}).check();await check();
+ assert(!(await page.locator('article').allTextContents()).some(t=>t.includes('이용요금 확인 필요')));
+ await page.getByLabel('무료 입장 확인된 곳만',{exact:true}).uncheck();
+ await page.getByLabel('어떤 나들이',{exact:true}).selectOption('all');
+ await page.getByLabel('지역',{exact:true}).selectOption('부산');
+ assert((await page.locator('article > p').allTextContents()).every(t=>t.startsWith('부산')));
+ await page.getByRole('searchbox').fill('zzzz없는장소');assert.equal(await page.locator('article').count(),0);
+ await page.getByRole('searchbox').fill('');
+ await page.getByRole('button',{name:'보관함에 담기',exact:true}).first().click();
+ await page.locator('article a').first().click();await page.goBack();await check();
+ await page.reload();await check();assert.equal(await page.locator('article').count(),0);
+ await page.goto(base+'/saved');await page.getByRole('button',{name:'삭제',exact:true}).waitFor();assert.equal(await page.locator('article').count(),1);
+ await page.getByRole('button',{name:'삭제',exact:true}).click();await page.getByRole('button',{name:'삭제 확인',exact:true}).click();
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({width,pass:true,errors}));await context.close();
+}}finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

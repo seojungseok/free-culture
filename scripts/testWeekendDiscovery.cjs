@@ -1,0 +1,14 @@
+const ts=require('typescript'),fs=require('fs'),assert=require('node:assert/strict');
+const m={exports:{}};new Function('exports','module',ts.transpileModule(fs.readFileSync('lib/weekendDiscovery.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText)(m.exports,m);
+const filter=m.exports.weekendCandidates;
+const s=(id,extra={})=>({id,title:id,href:'/places/spot/'+id,area:'서울',kind:'place',nature:true,seasonal:true,...extra});
+const rows=[s('p'),s('other',{area:'강원'}),s('event',{kind:'event',start:'20260912',end:'20260912',nature:false,seasonal:false,free:true}),s('expired',{kind:'event',start:'20260901',end:'20260911'}),s('child',{kids:true})];
+const f={area:'서울',date:'20260912',purpose:'all',free:false,kids:false,query:''};
+assert.equal(filter(rows,{...f,area:''}).length,0);
+assert.deepEqual(filter(rows,f).map(s=>s.id),['event','child','p']);
+assert.deepEqual(filter(rows,{...f,free:true}).map(s=>s.id),['event']);
+assert.deepEqual(filter(rows,{...f,kids:true}).map(s=>s.id),['child']);
+assert.equal(filter(rows,{...f,date:'20260913'}).some(s=>s.kind==='event'),false);
+assert(filter(rows,{...f,purpose:'nature'}).every(s=>s.kind==='place'));
+assert.equal(filter(rows,{...f,query:'없는장소'}).length,0);
+console.log('PASS: region isolation, no initial bias, dates, purpose, free/kids, empty state, stable ordering');
