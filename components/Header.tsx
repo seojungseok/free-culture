@@ -56,6 +56,7 @@ export default function Header() {
               { href: "/events", label: "문화행사" },
               { href: "/places", label: "나들이" },
               { href: "/course", label: "여행코스" },
+              { href: "/city-tour", label: "시티투어" },
               { href: "/camping", label: "캠핑" },
               { href: "/food", label: "맛집 탐방" },
               { href: "/kids", label: "아이와 함께" },

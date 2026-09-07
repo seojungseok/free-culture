@@ -175,6 +175,7 @@ function Hero({ image, position, seasonalLabel }: { image: string; position: str
     ["문화행사", "/events"],
     ["나들이", "/places"],
     ["여행코스", "/course"],
+    ["시티투어", "/city-tour"],
     ["캠핑", "/camping"],
     ["맛집탐방", "/food"],
     ["전통시장", "/traditional-market"],

@@ -13,6 +13,7 @@ import { SITE } from "@/lib/site";
 import { getDateCourses, dateAreaCounts, dateCityParams } from "@/lib/dateCourses";
 import { MARKET_REGIONS } from "@/lib/traditionalMarkets";
 import { getAllFestivals } from "@/lib/festivals";
+import { getCityTours } from "@/lib/cityTours";
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
@@ -31,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/festivals",
     "/places",
     "/course",
+    "/city-tour",
     "/camping",
     "/food",
     "/traditional-market",
@@ -301,6 +303,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // 2) 발행글 있는 상세 (최신 lastmod — 새 글 우선 크롤)
     ...articleSpotRoutes,
     ...courseDetailRoutes,
+    ...getCityTours().map(t => ({url: `${base}/city-tour/${t.id}`, lastModified: new Date(t.publishedAt), changeFrequency: "monthly" as const, priority: 0.7})),
     // 3) 대량 롱테일 상세 (낮은 우선순위·가끔)
     ...placeSpotRoutes,
     ...restaurantRoutes,

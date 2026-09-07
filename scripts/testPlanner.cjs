@@ -29,6 +29,7 @@ assert.equal(p.makePlans(options,{...preferences,area:"부산"}).length,0);
 assert.equal(p.makePlans(options,{...preferences,date:"invalid"}).length,0);
 assert.equal(p.parseSaved("{broken").length,0);
 assert.equal(p.parseSaved(JSON.stringify(plans)).length,1);
+assert.equal(p.parseSaved(JSON.stringify([{...plans[0],stops:[stop('city',{kind:'course',href:'/city-tour/123456abcdef01'})]}])).length,1);
 assert.equal(p.parseSaved(JSON.stringify([{...plans[0],stops:[stop("x",{href:"//evil.example"})]}])).length,0);
 assert.equal(p.parseSaved(JSON.stringify([{...plans[0],stops:[stop("x",{href:"javascript:alert(1)"})]}])).length,0);
 assert.equal(p.parseSaved(JSON.stringify([{...plans[0],stops:[]}])).length,0);
