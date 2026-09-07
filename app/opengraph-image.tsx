@@ -19,11 +19,11 @@ export default async function OpenGraphImage() {
           </div>
           <div style={{display:"flex",fontSize:20,color:"#71809a"}}>mwohaji.kr</div>
         </div>
-        <div style={{display:"flex",flexDirection:"column"}}>
+        <div style={{display:"flex",flexDirection:"column",alignItems:"center",textAlign:"center"}}>
           <div style={{display:"flex",fontSize:90,fontWeight:700,letterSpacing:-4,lineHeight:1.25}}>주말에 뭐하지?</div>
           <div style={{display:"flex",fontSize:32,color:"#516079",marginTop:22}}>이번 주말, 가고 싶은 곳을 찾아보세요.</div>
         </div>
-        <div style={{display:"flex",gap:12}}>
+        <div style={{display:"flex",gap:12,justifyContent:"center"}}>
           {["문화행사","나들이","여행코스","캠핑"].map((label,i)=><div key={label} style={{display:"flex",alignItems:"center",justifyContent:"center",background:i===0?"#4279ee":"#eff4fc",color:i===0?"white":"#284265",borderRadius:14,padding:"17px 25px",fontSize:23}}>{label}</div>)}
         </div>
       </div>
