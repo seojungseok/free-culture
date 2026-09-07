@@ -135,11 +135,13 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
         <span className="text-[12px] text-ink-faint">· 📍 {courseStopCount(c)}곳</span>
       </div>
 
-      <div className="mt-1 flex items-start justify-between gap-3">
-        <h1 className="text-[24px] font-black leading-tight tracking-[-0.02em] text-ink sm:text-[30px]">{c.title}</h1>
-      <TripSave trip={{id:"course:"+c.id,title:c.title,stops:[{id:"course:"+c.id,title:c.title,href:"/course/c/"+c.id,area:c.area,kind:"course"}]}}/>
-        <div className="mt-1 flex-none">
+      <div className="mt-1">
+        <h1 className="break-keep text-[24px] font-black leading-tight tracking-[-0.02em] text-ink [overflow-wrap:anywhere] sm:text-[30px]">{c.title}</h1>
+        <div className="mt-4 flex flex-wrap items-start gap-3" role="group" aria-label="코스 저장 및 공유">
+          <TripSave className="" trip={{id:"course:"+c.id,title:c.title,stops:[{id:"course:"+c.id,title:c.title,href:"/course/c/"+c.id,area:c.area,kind:"course"}]}}/>
+          <div className="flex-none">
           <CourseShare title={c.title} compact />
+          </div>
         </div>
       </div>
       {stay && <AffiliateNotice className="mt-1.5" />}

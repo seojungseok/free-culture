@@ -26,7 +26,7 @@ const base = process.argv[2] || 'http://localhost:3027';
    await page.getByRole('link',{name:'보관함 보기 →',exact:true}).waitFor();
    await page.goBack();
    await page.getByRole('button',{name:'내 조건으로 추천 보기',exact:true}).click();
-   await page.getByRole('button',{name:'＋ 보관함에 담기',exact:true}).first().click();
+   await page.getByRole('button',{name:'보관함에 담기',exact:true}).first().click();
    console.log(JSON.stringify({width,step:'save click',status:await page.getByRole('status').allTextContents(),errors}));
    await page.getByRole('link',{name:'보관함에서 일정 확인 →'}).click();
    await page.waitForURL(base+'/saved');
@@ -34,7 +34,7 @@ const base = process.argv[2] || 'http://localhost:3027';
    try {await page.getByRole('button',{name:'삭제',exact:true}).waitFor({timeout:5000});} catch(e){console.log(JSON.stringify({width,url:page.url(),body:await page.locator('main').innerText(),errors}));throw e;}
    assert.equal(await page.locator('article').count(),1);await check('saved');
    await page.locator('article').first().getByRole('link').first().click();
-   await page.getByRole('button',{name:'＋ 보관함에 담기',exact:true}).first().click();
+   await page.getByRole('button',{name:'보관함에 담기',exact:true}).first().click();
    await page.getByRole('link',{name:'보관함 보기 →',exact:true}).click();
    await page.getByRole('button',{name:'삭제',exact:true}).first().waitFor();
    assert.equal(await page.locator('article').count(),2);

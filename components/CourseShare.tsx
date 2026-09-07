@@ -37,7 +37,7 @@ export default function CourseShare({ title, compact = false }: { title: string;
         aria-label="이 코스 공유하기"
         className={
           compact
-            ? "inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-white px-3.5 py-2 text-[13px] font-bold text-freedark ring-1 ring-line transition hover:bg-tint"
+            ? "inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-line bg-white px-4 py-2.5 text-sm font-bold text-freedark transition hover:bg-tint"
             : "inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-2xl bg-free px-5 py-3.5 text-[15px] font-extrabold text-white shadow-sm transition hover:bg-freedark sm:w-auto"
         }
       >
