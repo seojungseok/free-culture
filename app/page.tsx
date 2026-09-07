@@ -180,7 +180,7 @@ function Hero({ image, position, seasonalLabel }: { image: string; position: str
     ["캠핑", "/camping"],
     ["맛집탐방", "/food"],
     ["전통시장", "/traditional-market"],
-    ["🐾 반려동물 여행", "/pet-travel"],
+    ["반려동물 여행", "/pet-travel"],
     ["아이와함께", "/kids"],
     ["데이트", "/date"],
     [`${seasonalLabel}나들이`, "/season"],
@@ -207,15 +207,12 @@ function Hero({ image, position, seasonalLabel }: { image: string; position: str
           {[["이번 주말","/weekend"],["맞춤 추천","/plan"],["보관함","/saved"]].map(([label,href],i)=><Link key={href} href={href} prefetch={false} className={`flex min-h-12 items-center justify-center rounded-xl px-2 py-3 text-sm font-black shadow-sm ${i===1 ? "bg-brandblue text-white" : "bg-white text-[#102344]"}`}>{label}</Link>)}
         </nav>
         <p className="mt-4 text-xs font-bold text-[#102344]">카테고리로 둘러보기</p>
-        <div className="mt-5 grid w-full max-w-[680px] grid-cols-4 gap-2 sm:mt-7 sm:gap-3">
-          {cats.slice(0,4).map(([label, href]) => label === "전통시장" ? (
-            <span key={label} aria-disabled="true" className="flex min-h-[46px] cursor-not-allowed items-center justify-center rounded-2xl bg-white/35 px-2 text-center text-[13px] font-extrabold text-[#102344]/45 shadow-sm ring-1 ring-black/5 backdrop-blur sm:min-h-[52px] sm:text-[15px]">{label}</span>
+        <nav aria-label="카테고리로 둘러보기" className="mt-3 grid w-full max-w-[680px] grid-cols-3 gap-2 sm:grid-cols-5 sm:gap-3">
+          {cats.map(([label, href]) => label === "전통시장" ? (
+            <span key={label} aria-disabled="true" className="flex min-h-[52px] flex-col items-center justify-center rounded-xl border border-white/60 bg-white/65 px-1 text-[12px] font-bold text-slate-500 sm:text-[13px]">{label}<span className="mt-0.5 text-[10px] font-medium">준비 중</span></span>
           ) : (
-            <Link key={label} href={href} className="flex min-h-[46px] items-center justify-center rounded-2xl bg-white/95 px-2 text-center text-[13px] font-extrabold text-[#102344] shadow-sm ring-1 ring-black/5 backdrop-blur transition hover:bg-white hover:text-brandblue sm:min-h-[52px] sm:text-[15px]">{label}</Link>
+            <Link key={label} href={href} prefetch={false} className="flex min-h-[52px] items-center justify-center rounded-xl border border-slate-200/70 bg-white/95 px-1 text-center text-[12px] font-bold text-[#102344] shadow-sm transition hover:border-brandblue/40 hover:bg-blue-50 hover:text-brandblue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brandblue sm:text-[13px]">{label}</Link>
           ))}
-        </div>
-        <nav aria-label="동행과 목적" className="mt-3 flex max-w-[680px] flex-wrap justify-center gap-x-4 gap-y-1">
-          {cats.slice(4).map(([label,href])=>label==="전통시장" ? <span key={href} className="inline-flex min-h-11 items-center text-xs text-slate-600">전통시장 · 준비 중</span> : <Link key={href} href={href} prefetch={false} className="inline-flex min-h-11 items-center text-sm font-bold text-[#102344] underline underline-offset-4">{label}</Link>)}
         </nav>
       </div>
     </section>
