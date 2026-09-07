@@ -1,4 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "functions": {
+    "app/api/kcisa-dns-diagnostic/route.ts": {
+      "regions": ["icn1"],
+      "maxDuration": 30
+    }
+  }
 }
