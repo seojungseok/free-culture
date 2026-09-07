@@ -1,4 +1,3 @@
-import NextStop from "@/components/NextStop";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
@@ -345,7 +344,6 @@ export default async function SpotDetailPage({
         </section>
       )}
 
-      <NextStop anchor={{id:"place:"+spot.id,title:spot.title,href:"/places/spot/"+spot.id,area:spot.area,kind:"place",address:spot.addr,x:Number(spot.mapx),y:Number(spot.mapy),free:admission==="free",kids:!!spot.isKid}}/>
       {/* 이 장소가 포함된 여행코스 — 하루 동선을 통째로 제안해 다음 페이지로 이어준다 */}
       {placeCourses.length > 0 && (
         <section className="mt-6">

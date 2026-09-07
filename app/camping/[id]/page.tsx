@@ -1,4 +1,3 @@
-import NextStop from "@/components/NextStop";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -150,7 +149,6 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
         <Link href={`/camping?area=${encodeURIComponent(c.area)}`} className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free">{c.area} 다른 캠핑장 →</Link>
       </div>
 
-      <NextStop camping anchor={{id:"camp:"+c.id,title:c.name,href:"/camping/"+c.id,area:c.area,kind:"camp",address:c.addr,x:Number(c.mapx),y:Number(c.mapy)}}/>
       {nearFood.length > 0 && (
         <section className="mt-8">
           <h2 className="mb-2 text-[16px] font-extrabold text-ink">🍽️ 주변에서 식사하기</h2>
