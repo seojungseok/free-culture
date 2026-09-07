@@ -1,5 +1,4 @@
 import Image from "next/image";
-import WeekendPicks from "@/components/WeekendPicks";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getWeekend, getFree, getFeatured, getEndingSoon, slimForClient } from "@/lib/data";
@@ -105,7 +104,6 @@ export default function HomePage() {
       <Hero image={hero.image} position={hero.position} seasonalLabel={seasonal.label} />
 
       <main className="bg-white pb-10">
-        <HomeSection title="이번 주말, 이렇게 묶어보세요" href="/plan"><WeekendPicks /></HomeSection>
         <GamePromoBanner />
         <HomeSection title="오늘 골라본 나들이" href="/events">
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
