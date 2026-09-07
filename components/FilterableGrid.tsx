@@ -101,7 +101,7 @@ export default function FilterableGrid({
       {showControls && (
         <div className="sticky top-[132px] z-30 -mx-4 mb-5 border-b border-black/5 bg-[var(--bg)]/90 px-4 py-3 backdrop-blur md:top-[92px]">
           <div className="flex flex-wrap items-center gap-2">
-            {!hidePriceFilter && <div className="inline-flex rounded-full bg-black/[0.05] p-1">
+            {!hidePriceFilter && <div role="group" aria-label="요금 필터" className="inline-flex max-w-full flex-wrap rounded-2xl bg-black/[0.05] p-1 sm:rounded-full">
               {TABS.map((t) => {
                 const active = price === t.key;
                 const n = counts[t.key];
@@ -120,7 +120,7 @@ export default function FilterableGrid({
                     key={t.key}
                     onClick={() => changePrice(t.key)}
                     className={[
-                      "relative whitespace-nowrap rounded-full px-3.5 py-1.5 text-sm font-bold transition",
+                      "relative min-h-11 whitespace-nowrap rounded-full px-3.5 py-1.5 text-sm font-bold transition sm:min-h-0",
                       active ? activeColor : "text-ink-soft hover:text-ink",
                     ].join(" ")}
                   >
