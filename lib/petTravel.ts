@@ -57,6 +57,9 @@ export const normalizePetIntro = (raw: Record<string, unknown>) => Object.fromEn
     .filter(([label, value]) => Boolean(label && value)),
 );
 const petLabels: Record<string, string> = {
+  acmpytypecd: "동반 가능 구역",
+  acmpypsblcpam: "동반 가능한 동물",
+  etcacmpyinfo: "기타 동반 안내",
   acmpyneedmtr: "동반 시 준비사항",
   relaacdntriskmtr: "안전 유의사항",
   relaacdntRiskMtr: "안전 유의사항",
@@ -69,7 +72,7 @@ const petLabels: Record<string, string> = {
   relapurcprdlst: "구매 가능 물품",
   relaPurcPrdlst: "구매 가능 물품",
 };
-const normalizePetInfo = (raw: Record<string, unknown>) => Object.entries(raw || {})
+export const normalizePetInfo = (raw: Record<string, unknown>) => Object.entries(raw || {})
   .map(([key, value]) => [petLabels[key] || petLabels[key.toLowerCase()] || "", readable(value)] as const)
   .filter(([label, value]) => Boolean(label && value))
   .map(([label, value]) => `${label}: ${value}`)
@@ -80,7 +83,7 @@ export const sanitizePetInfoText = (value: unknown) => String(value || "")
   .map((part) => {
     const match = part.match(/^([^:]+):\s*(.*)$/);
     if (!match) return /[가-힣]/.test(part) ? readable(part) : "";
-    const label = petLabels[match[1]] || petLabels[match[1].toLowerCase()];
+    const label = petLabels[match[1]] || petLabels[match[1].toLowerCase()] || (Object.values(petLabels).includes(match[1]) ? match[1] : "");
     return label && readable(match[2]) ? `${label}: ${readable(match[2])}` : "";
   })
   .filter(Boolean)

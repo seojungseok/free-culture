@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import FloatingShare from "@/components/FloatingShare";
 import ChromeGate from "@/components/ChromeGate";
+import { RenderDateProvider } from "@/components/RenderDate";
+import { todayYmd } from "@/lib/dates";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -76,9 +78,11 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
         {/* 게임 상세는 집중 화면(헤더·푸터 숨김), 그 외는 사이트 크롬 유지 */}
+        <RenderDateProvider day={todayYmd()}>
         <ChromeGate header={<Header />} footer={<Footer />} floating={<FloatingShare />}>
           {children}
         </ChromeGate>
+        </RenderDateProvider>
         <Analytics />
       </body>
     </html>

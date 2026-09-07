@@ -1,4 +1,5 @@
 // 정적 import: 빌드 산출물/서버리스 함수에 함께 번들되어 ISR·동적 렌더에서도 안전
+import { weekendRangeYmd } from "@/lib/dates";
 import eventsData from "@/data/events.json";
 import type { CultureEvent, EventsData, PriceType } from "./types";
 
@@ -82,7 +83,7 @@ export function getByAudience(key: string): CultureEvent[] {
 
 /** 이번 주말(토·일) 열리는 행사 */
 export function getWeekend(): CultureEvent[] {
-  const { sat, sun } = weekendRange();
+  const { start: sat, end: sun } = weekendRangeYmd();
   return load().events.filter((e) => e.startDate <= sun && e.endDate >= sat);
 }
 

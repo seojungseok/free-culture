@@ -1,4 +1,5 @@
 import Image from "next/image";
+import WeekendPicks from "@/components/WeekendPicks";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getWeekend, getFree, getFeatured, getEndingSoon, slimForClient } from "@/lib/data";
@@ -104,8 +105,9 @@ export default function HomePage() {
       <Hero image={hero.image} position={hero.position} seasonalLabel={seasonal.label} />
 
       <main className="bg-white pb-10">
+        <HomeSection title="이번 주말, 이렇게 묶어보세요" href="/plan"><WeekendPicks /></HomeSection>
         <GamePromoBanner />
-        <HomeSection title="지금 가장 인기 있는 콘텐츠" href="/events">
+        <HomeSection title="오늘 골라본 나들이" href="/events">
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
             {popularCards.map((card) => (
               <PopularContentCard key={card.href} card={card} />
@@ -201,13 +203,20 @@ function Hero({ image, position, seasonalLabel }: { image: string; position: str
         <p className="mt-2 text-[14px] font-semibold text-[#13243d] sm:mt-3 sm:text-[18px]">
           전국 문화행사, 나들이, 여행코스, 캠핑까지 한 번에!
         </p>
+        <nav aria-label="주말 계획" className="mt-5 grid w-full max-w-[680px] grid-cols-3 gap-2">
+          {[["이번 주말","/weekend"],["맞춤 추천","/plan"],["보관함","/saved"]].map(([label,href],i)=><Link key={href} href={href} prefetch={false} className={`flex min-h-12 items-center justify-center rounded-xl px-2 py-3 text-sm font-black shadow-sm ${i===1 ? "bg-brandblue text-white" : "bg-white text-[#102344]"}`}>{label}</Link>)}
+        </nav>
+        <p className="mt-4 text-xs font-bold text-[#102344]">카테고리로 둘러보기</p>
         <div className="mt-5 grid w-full max-w-[680px] grid-cols-4 gap-2 sm:mt-7 sm:gap-3">
-          {cats.map(([label, href]) => label === "전통시장" ? (
+          {cats.slice(0,4).map(([label, href]) => label === "전통시장" ? (
             <span key={label} aria-disabled="true" className="flex min-h-[46px] cursor-not-allowed items-center justify-center rounded-2xl bg-white/35 px-2 text-center text-[13px] font-extrabold text-[#102344]/45 shadow-sm ring-1 ring-black/5 backdrop-blur sm:min-h-[52px] sm:text-[15px]">{label}</span>
           ) : (
             <Link key={label} href={href} className="flex min-h-[46px] items-center justify-center rounded-2xl bg-white/95 px-2 text-center text-[13px] font-extrabold text-[#102344] shadow-sm ring-1 ring-black/5 backdrop-blur transition hover:bg-white hover:text-brandblue sm:min-h-[52px] sm:text-[15px]">{label}</Link>
           ))}
         </div>
+        <nav aria-label="동행과 목적" className="mt-3 flex max-w-[680px] flex-wrap justify-center gap-x-4 gap-y-1">
+          {cats.slice(4).map(([label,href])=>label==="전통시장" ? <span key={href} className="inline-flex min-h-11 items-center text-xs text-slate-600">전통시장 · 준비 중</span> : <Link key={href} href={href} prefetch={false} className="inline-flex min-h-11 items-center text-sm font-bold text-[#102344] underline underline-offset-4">{label}</Link>)}
+        </nav>
       </div>
     </section>
   );

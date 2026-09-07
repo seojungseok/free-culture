@@ -9,11 +9,13 @@ export default function CollectionView({
   subtitle,
   events,
   hidePriceFilter = false,
+  children,
 }: {
   title: React.ReactNode;
   subtitle?: string;
   events: CultureEvent[];
   hidePriceFilter?: boolean;
+  children?: React.ReactNode;
 }) {
   return (
     <>
@@ -30,6 +32,7 @@ export default function CollectionView({
       </Band>
       <div className="bg-panel">
         <Container className="pb-10 pt-6">
+          {children}
           <Suspense fallback={null}>
             <FilterableGrid events={events} showControls hidePriceFilter={hidePriceFilter} />
           </Suspense>
