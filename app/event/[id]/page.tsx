@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllEvents, getEventById } from "@/lib/data";
 import { eventStory } from "@/lib/eventStory";
+import { eventContentsText, eventContentsParagraphs } from "@/lib/eventContents";
 import { fmtRange, placeText, dday } from "@/lib/format";
 import { SITE } from "@/lib/site";
 import PriceBadge from "@/components/PriceBadge";
@@ -35,8 +36,9 @@ export async function generateMetadata({
   const ev = getEventById(id);
   if (!ev) return { title: "행사를 찾을 수 없습니다" };
   const where = placeText(ev.area, ev.sigungu, ev.place);
+  const contents = eventContentsText(ev.contents).replace(/\s+/g, " ");
   const desc = `${ev.priceLabel} · ${fmtRange(ev.startDate, ev.endDate)} · ${where}. ${
-    ev.contents ? ev.contents.slice(0, 80) : `${ev.realmName} 행사 정보를 확인하세요.`
+    contents ? contents.slice(0, 80) : `${ev.realmName} 행사 정보를 확인하세요.`
   }`;
   const isFree = /free/.test(ev.priceType);
   const keywords = [
@@ -70,6 +72,7 @@ export default async function EventPage({
   if (!ev) notFound();
 
   const d = dday(ev.startDate, ev.endDate);
+  const contents = eventContentsParagraphs(ev.contents);
   const story = eventStory({
     title: ev.title, realmName: ev.realmName, area: ev.area, sigungu: ev.sigungu,
     place: ev.place, startDate: ev.startDate, endDate: ev.endDate,
@@ -88,7 +91,7 @@ export default async function EventPage({
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     image: ev.imgUrl ? [ev.imgUrl] : undefined,
-    description: ev.contents || `${ev.realmName} · ${ev.priceLabel}`,
+    description: contents.join("\n\n") || `${ev.realmName} · ${ev.priceLabel}`,
     location: {
       "@type": "Place",
       name: ev.place || ev.area,
@@ -107,7 +110,7 @@ export default async function EventPage({
     <article className="mx-auto w-full max-w-[1280px] px-5 pb-14 pt-6 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
 
       <nav className="mb-5 text-sm text-ink-faint">
@@ -212,10 +215,15 @@ export default async function EventPage({
             </div>
           )}
 
-          {ev.contents && (
-            <div className="mt-6 whitespace-pre-line rounded-2xl bg-white p-5 text-[15px] leading-relaxed text-ink-soft ring-1 ring-black/5">
-              {ev.contents}
-            </div>
+          {contents.length > 0 && (
+            <section aria-labelledby="event-details-heading" className="mt-6 rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6">
+              <h2 id="event-details-heading" className="mb-5 text-[17px] font-extrabold text-ink">행사 상세 안내</h2>
+              <div className="space-y-5 text-[15px] leading-[1.9] text-ink-soft sm:text-base">
+                {contents.map((paragraph, index) => (
+                  <p key={index} className="whitespace-pre-line break-words [overflow-wrap:anywhere]">{paragraph}</p>
+                ))}
+              </div>
+            </section>
           )}
 
           {/* 소개글 — 구조화 데이터로 조합(공식 소개 없는 행사도 읽을거리 확보).
