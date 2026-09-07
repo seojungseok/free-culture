@@ -7,6 +7,7 @@ import type { CultureEvent } from "@/lib/types";
 import { fmtRange, dday } from "@/lib/format";
 import PriceBadge from "./PriceBadge";
 import { SITE } from "@/lib/site";
+import { useRenderDay } from "./RenderDate";
 
 export default function PosterCard({
   ev,
@@ -18,7 +19,8 @@ export default function PosterCard({
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
   const [copied, setCopied] = useState(false);
-  const d = dday(ev.startDate, ev.endDate);
+  const day = useRenderDay();
+  const d = dday(ev.startDate, ev.endDate, day);
   const hasImg = ev.imgUrl && !errored;
 
   async function copyLink(e: React.MouseEvent) {

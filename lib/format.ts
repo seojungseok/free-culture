@@ -22,13 +22,13 @@ function kstYmd(): string {
 /** 종료까지 남은 날. 진행중이면 D-n, 아직 시작 전이면 곧 시작 */
 export function dday(
   start: string,
-  end: string
+  end: string,
+  today: string = kstYmd()
 ): { label: string; critical: boolean } | null {
-  const today = kstYmd();
   if (!end || end.length !== 8) return null;
   if (end < today) return null;
   const toDate = (y: string) =>
-    new Date(Number(y.slice(0, 4)), Number(y.slice(4, 6)) - 1, Number(y.slice(6, 8)));
+    new Date(Date.UTC(Number(y.slice(0, 4)), Number(y.slice(4, 6)) - 1, Number(y.slice(6, 8))));
   const now = toDate(today);
   if (start && start > today) {
     const days = Math.round((toDate(start).getTime() - now.getTime()) / 86400000);
