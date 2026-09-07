@@ -34,3 +34,16 @@ assert.equal(p.parseSaved(JSON.stringify([{...plans[0],stops:[stop("x",{href:"//
 assert.equal(p.parseSaved(JSON.stringify([{...plans[0],stops:[stop("x",{href:"javascript:alert(1)"})]}])).length,0);
 assert.equal(p.parseSaved(JSON.stringify([{...plans[0],stops:[]}])).length,0);
 console.log("PASS: weekend dates, coordinates, active events, strict filters, distance, deduplication, saved-data safety");
+const park=stop('park',{walk:true,parkingAvailable:true,accessText:'휠체어 대여',wheelchairEntry:false});
+const lunch=stop('lunch',{kind:'food',href:'/food/spot/lunch',free:false,parkingAvailable:true});
+const custom=[{anchor:park,nearby:[lunch,stop('unknown',{walk:true})]},{anchor:stop('museum',{culture:true}),nearby:[]}];
+const pref={...preferences,kids:false,area:'서울',purpose:'walk',hours:8};
+assert.equal(p.makePlans(custom,{...pref,meal:true,parking:'required'})[0].stops.length,2);
+assert.equal(p.makePlans(custom,{...pref,access:'wheelchair'}).length,0);
+assert.equal(p.makePlans(custom,{...pref,access:'info'})[0].stops.length,1);
+assert.equal(p.makePlans(custom,{...pref,purpose:'culture',free:false})[0].stops[0].id,'museum');
+assert.equal(p.makePlans(custom,{...pref,purpose:'event'}).length,0);
+assert.equal(p.makePlans(custom,{...pref,query:'없는장소'}).length,0);
+assert.equal(p.makePlans([{anchor:park,nearby:[]}],{...pref,meal:true}).length,0);
+assert.equal(p.makePlans(custom,{...pref,parking:'required'})[0].stops.some(s=>!s.parkingAvailable),false);
+console.log('PASS: purpose, meals, parking all-stop constraint, wheelchair rental is not entry, unknown exclusion, query');

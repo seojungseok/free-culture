@@ -3,7 +3,9 @@ import TripSave from "./TripSave";
 import TripCard from "./TripCard";
 import { nearbyStops } from "@/lib/plannerData";
 import type { TripStop } from "@/lib/planner";
-export default function NextStop({anchor,camping=false}: {anchor:TripStop;camping?:boolean}) {
+import {stopFacts} from '@/lib/plannerFacts';
+export default function NextStop({anchor:input,camping=false}: {anchor:TripStop;camping?:boolean}) {
+  const anchor=stopFacts(input);
   const candidates=nearbyStops(anchor).filter(s=>s.kind==="place").slice(0,2);
   return <section className="my-7 rounded-2xl bg-slate-50 p-4 sm:p-6" aria-label="일정 만들기">
     <div className="flex flex-wrap items-start justify-between gap-3"><div><h2 className="text-xl font-bold">{camping ? "캠핑 전후, 가까운 한 곳" : "여기까지 왔는데 한 곳 더"}</h2><p className="mt-2 text-sm leading-6 text-ink-soft">{camping ? "체크인 전이나 체크아웃 후 방문 후보입니다. 캠핑장 입퇴실 시간과 장소 운영시간을 먼저 확인하세요." : "직선 3km 안의 방문 후보입니다. 도로·물길·운영시간에 따라 실제 이동은 달라집니다."}</p></div><TripSave trip={{id:anchor.id,title:anchor.title,stops:[anchor]}}/></div>
