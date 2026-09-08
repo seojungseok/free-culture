@@ -24,22 +24,22 @@ export default function Header() {
           </span>
         </Link>
 
-        <div className="hidden min-w-0 flex-1 justify-center md:flex">
+        <div className="hidden min-w-0 flex-1 justify-center lg:flex">
           <HeaderNav seasonLabel={s.label} />
         </div>
 
         <Link
           href="/search"
           aria-label="검색"
-          className="ml-auto flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-[#07152f] transition hover:bg-tint hover:text-brandblue md:ml-0"
+          className="ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[#07152f] transition hover:bg-tint hover:text-brandblue lg:ml-0"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1" className="h-8 w-8 md:h-6 md:w-6">
             <circle cx="11" cy="11" r="7" />
             <path d="m21 21-4.3-4.3" />
           </svg>
         </Link>
-        <details className="group relative md:hidden">
-          <summary className="flex h-12 w-12 cursor-pointer list-none items-center justify-center rounded-full text-[#07152f] transition hover:bg-tint [&::-webkit-details-marker]:hidden">
+        <details className="group relative lg:hidden">
+          <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full text-[#07152f] transition hover:bg-tint [&::-webkit-details-marker]:hidden">
             <span className="sr-only">메뉴</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-9 w-9">
               <path d="M4 7h16" />

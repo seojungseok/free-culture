@@ -58,7 +58,7 @@ export function validStop(v: unknown): v is TripStop {
   const s = v as TripStop;
   return typeof s.id === "string" && s.id.length <= 200 && typeof s.title === "string" && s.title.length <= 300 &&
     typeof s.area === "string" && s.area.length <= 40 &&
-    typeof s.href === "string" && /^\/(?:places\/spot|event|food\/spot|camping|course\/c|pet-travel|city-tour)\/[a-zA-Z0-9_-]+$/.test(s.href) &&
+    typeof s.href === "string" && /^\/(?:places\/spot|event|food\/spot|camping|course\/c|date\/c|pet-travel|city-tour)\/[a-zA-Z0-9_-]+$/.test(s.href) &&
     ["place","event","food","camp","course","pet"].includes(s.kind);
 }
 export function parseSaved(raw: string | null): SavedTrip[] {
