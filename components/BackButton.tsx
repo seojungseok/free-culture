@@ -1,12 +1,17 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 // 사이트 자체 뒤로가기 — 홈에선 숨김, 하위 화면에만. history.back(무이력 시 홈).
 export default function BackButton() {
   const pathname = usePathname();
   const router = useRouter();
-  if (pathname === "/") return null;
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+  // Vercel's prerendered root can report a different pathname from the browser.
+  // Keep the server and first client render identical before deciding visibility.
+  if (!mounted || !pathname || pathname === "/") return null;
 
   return (
     <button
