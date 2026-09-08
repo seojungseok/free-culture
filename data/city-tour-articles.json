@@ -3522,6 +3522,1790 @@
           }
         }
       }
+    },
+    {
+      "id": "f40712d5f4a625",
+      "area": "부산",
+      "city": "없음",
+      "title": "부산 시티투어 그린라인 코스: 영도·태종대·오륙도·송도 순환 여행",
+      "raw": {
+        "시도명": "부산광역시",
+        "시군구명": "없음",
+        "시티투어코스명": "그린라인",
+        "시티투어문의처": "부산시티투어051-464-9898",
+        "시티투어운영시간": "09:00~18:00",
+        "시티투어운행방식": "순환형",
+        "시티투어탑승장소명": "부산역",
+        "시티투어코스정보": "부산역(출발) → 영도대교(유라리광장) → 흰여울 문화마을 → 하늘전망대 → 영도해녀촌(노을전망대) → 태종대 → 국립해양막물관 → 오륙도스카이워크 → 용호만유람선터미널 → 평화공원 → 송도구름산책로 → 자갈치BIFF광장(용두산공원) → 부산역(도착)",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "선착순 정원제 탑승",
+        "운행정보": "매주 월+화 정기휴무(운전원에게 카드결제 후 선착순 탑승)",
+        "운행시작시각": "09:30",
+        "운행종료시각": "18:30",
+        "배차시간": "50",
+        "이용요금": "성인 20000원 소인 10000원 (48개월 미만 무료)",
+        "이용요금부가정보": "관광지 입장료+ 체험비+ 중식비 등 개별부담",
+        "홈페이지주소": "https://www.citytourbusan.com/",
+        "관리기관명": "부산관광공사",
+        "관리기관전화번호": "051-464-9898",
+        "데이터기준일자": "2026-01-12"
+      },
+      "related": [
+        {
+          "id": "128055",
+          "title": "평화공원",
+          "href": "/places/spot/128055",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/63/3370163_image2_1.jpg",
+          "address": "부산광역시 남구 신선로447번길 10"
+        },
+        {
+          "id": "2557807",
+          "title": "송도 구름산책로",
+          "href": "/places/spot/2557807",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/65/2687365_image2_1.jpg",
+          "address": "부산광역시 서구 암남동 129-4"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "2867215",
+          "title": "거창맷돌순두부",
+          "href": "/food/spot/2867215",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/07/2867207_image2_1.JPG",
+          "address": "부산광역시 남구 유엔로 221 (대연동)"
+        },
+        {
+          "id": "2870277",
+          "title": "공원칼국수",
+          "href": "/food/spot/2870277",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/73/2870273_image2_1.JPG",
+          "address": "부산광역시 남구 유엔평화로 110 (대연동)"
+        },
+        {
+          "id": "3444416",
+          "title": "나막집",
+          "href": "/food/spot/3444416",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/23/3444423_image2_1.JPG",
+          "address": "부산광역시 남구 분포로 145 (용호동, 더블유)"
+        }
+      ],
+      "officialUrl": "https://www.citytourbusan.com/",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/63/3370163_image2_1.jpg",
+      "imageTitle": "평화공원",
+      "priority": 123,
+      "description": "부산역에서 출발해 영도, 태종대, 오륙도, 송도 등을 거쳐 부산역으로 돌아오는 그린라인의 경유 순서와 요금, 탑승 방법, 방문 전 확인사항을 안내합니다.",
+      "intro": "부산광역시 그린라인은 부산역을 출발해 여러 경유지를 거쳐 부산역으로 돌아오는 순환형 시티투어 코스입니다. 선착순 정원제로 운영되며, 이용요금과 운행정보, 경유 순서는 제공된 원본 자료를 기준으로 확인할 수 있습니다.",
+      "sections": [
+        {
+          "heading": "그린라인 기본 정보",
+          "paragraphs": [
+            "그린라인은 부산역에서 출발해 부산역으로 돌아오는 순환형 노선입니다. 원본 자료에는 배차시간이 50분으로 안내되어 있으며, 선착순 정원제로 탑승합니다.",
+            "코스에는 영도대교, 흰여울 문화마을, 하늘전망대, 태종대, 오륙도스카이워크, 평화공원, 송도구름산책로, 자갈치BIFF광장 등이 포함되어 있습니다. 각 경유지의 체류시간과 정류장별 상세 이용 방법은 제공된 자료에 기재되어 있지 않습니다."
+          ]
+        },
+        {
+          "heading": "원본에 안내된 경유 순서",
+          "paragraphs": [
+            "경유 순서는 부산역에서 출발해 영도대교(유라리광장), 흰여울 문화마을, 하늘전망대, 영도해녀촌(노을전망대), 태종대, 국립해양막물관, 오륙도스카이워크, 용호만유람선터미널, 평화공원, 송도구름산책로, 자갈치BIFF광장(용두산공원)을 거쳐 부산역으로 돌아오는 방식입니다.",
+            "자료에는 ‘국립해양막물관’으로 표기되어 있습니다. 경유지 주변 관광정보는 별도로 제공되지 않았으므로, 각 장소의 상세 정보와 방문 가능 여부는 출발 전 공식 안내에서 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "탑승 방법과 이용요금",
+          "paragraphs": [
+            "탑승 장소는 부산역입니다. 운행정보에는 운전원에게 카드결제 후 선착순으로 탑승한다고 안내되어 있으며, 코스 부가정보에는 선착순 정원제 탑승으로 기재되어 있습니다.",
+            "이용요금은 성인 20,000원, 소인 10,000원이며 48개월 미만은 무료입니다. 관광지 입장료, 체험비, 중식비 등은 이용요금에 포함되지 않고 개별 부담입니다.",
+            "운영시간 항목에는 09:00~18:00, 운행 시작·종료 시각 항목에는 09:30~18:30으로 기재되어 있습니다. 매주 월요일과 화요일은 정기휴무로 안내되어 있습니다."
+          ]
+        },
+        {
+          "heading": "제공된 주변 장소와 음식점 후보",
+          "paragraphs": [
+            "별도 관광정보로 제공된 장소는 평화공원과 송도 구름산책로입니다. 평화공원 주소는 부산광역시 남구 신선로447번길 10이며, 송도 구름산책로 주소는 부산광역시 서구 암남동 129-4입니다.",
+            "음식점 후보로는 부산 남구 유엔로 221의 거창맷돌순두부, 부산 남구 유엔평화로 110의 공원칼국수, 부산 남구 분포로 145의 나막집이 있습니다. 이 목록은 경유지와 같은 지역의 후보 정보이며, 도로 이동거리, 영업 여부, 시티투어 제휴 여부는 검증되지 않았습니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인사항",
+          "paragraphs": [
+            "이 안내는 데이터 기준일자 2026년 1월 12일 자료를 기준으로 작성되었습니다. 운행 여부, 운행일, 운행시간, 요금, 탑승 가능 여부는 방문 전 부산시티투어 공식 안내나 문의처 051-464-9898을 통해 확인하는 것이 좋습니다.",
+            "특히 운영시간 항목과 운행 시작·종료 시각이 서로 다르게 기재되어 있으므로 출발 전 확인이 필요합니다. 공식 홈페이지와 문의처를 통해 최신 운행정보를 확인할 수 있습니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-08T19:31:29.847Z",
+      "publishedDay": "2026-09-09",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 1222,
+          "completion_tokens": 1527,
+          "total_tokens": 2749,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1219,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 156,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2511,
+          "completion_tokens": 1061,
+          "total_tokens": 3572,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2508,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 49,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 2247,
+          "completion_tokens": 639,
+          "total_tokens": 2886,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2244,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 365,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1975,
+          "completion_tokens": 200,
+          "total_tokens": 2175,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1972,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 180,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "7365f83fbd485b",
+      "area": "제주",
+      "city": "제주시",
+      "title": "제주시 시티투어 순환형코스: 제주항·공항·해안 명소를 잇는 1일권 여행",
+      "raw": {
+        "시도명": "제주특별자치도",
+        "시군구명": "제주시",
+        "시티투어코스명": "순환형코스",
+        "시티투어문의처": "064-741-8784",
+        "시티투어운영시간": "1일 9회 운영",
+        "시티투어운행방식": "순환형",
+        "시티투어탑승장소명": "제주항국제여객터미널",
+        "시티투어코스정보": "01 제주항국제여객터미널 02 제주항연안여객터미널 03 김만덕기념관 04 동문시장 05 관덕정(제주목관아) 06 용연구름다리(용두암) 07 제주국제공항 08 용담레포츠공원 09 어영공원(어영마을) 10 도두봉(무지개해안도로) 11 이호목마등대(이호테우해수욕장) 12 제주시민속오일시장 13 연동한일시티파크(롯데시티호텔) 14 월랑마을(베스트웨스턴호텔) 15 한라수목원 16 노형오거리(드림타워) 17 메종글래드호텔(신라면세점) 18 삼무공원(에어시티호텔) 19 제주시버스터미널 20 제주민속자연사박물관 21 사라봉(이화아파트)",
+        "경유지주변관광정보": "김만덕기념관+동문시장+관덕정(제주목관아)+용연구름다리(용두암)+도두봉(무지개해안도로)+이호목마등대(이호테우해수욕장)+제주시민속오일시장+한라수목원+제주민속자연사박물관",
+        "시티투어코스부가정보": "1일권 구입 시 자유로운 승하차(재탑승) 가능",
+        "운행정보": "2시간 소요",
+        "운행시작시각": "09:00",
+        "운행종료시각": "19:30",
+        "배차시간": "60",
+        "이용요금": "1일 이용권 성인 12000원+소인 및 청소년 8000원+장애인 및 국가유공자 6000원 / 1회 이용권 5000원",
+        "이용요금부가정보": "미취학 무료",
+        "홈페이지주소": "http://www.jejucitybus.com/",
+        "관리기관명": "제주특별자치도관광협회",
+        "관리기관전화번호": "064-741-8784",
+        "데이터기준일자": "2025-12-22"
+      },
+      "related": [
+        {
+          "id": "2738665",
+          "title": "도두봉",
+          "href": "/places/spot/2738665",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/14/3523614_image2_1.jpg",
+          "address": "제주특별자치도 제주시 도두항길 4-17 (도두일동)"
+        },
+        {
+          "id": "1069144",
+          "title": "사라봉",
+          "href": "/places/spot/1069144",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/99/3053499_image2_1.jpg",
+          "address": "제주특별자치도 제주시 사라봉동길 61"
+        },
+        {
+          "id": "1925362",
+          "title": "어영공원",
+          "href": "/places/spot/1925362",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/14/3053314_image2_1.jpg",
+          "address": "제주특별자치도 제주시 서해안로 451 (용담삼동)"
+        },
+        {
+          "id": "228853",
+          "title": "용두암",
+          "href": "/places/spot/228853",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/68/3011868_image2_1.jpg",
+          "address": "제주특별자치도 제주시 용두암길 15 (용담이동)"
+        },
+        {
+          "id": "2738692",
+          "title": "용연구름다리",
+          "href": "/places/spot/2738692",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/81/3527081_image2_1.jpg",
+          "address": "제주특별자치도 제주시 용담이동"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "2857289",
+          "title": "골목식당",
+          "href": "/food/spot/2857289",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/79/2857279_image2_1.JPG",
+          "address": "제주특별자치도 제주시 중앙로 63-9 (이도일동)"
+        },
+        {
+          "id": "2870537",
+          "title": "귤품은흑돼지 제주공항점",
+          "href": "/food/spot/2870537",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/33/2870533_image2_1.jpg",
+          "address": "제주특별자치도 제주시 도두항서길 42"
+        },
+        {
+          "id": "2847812",
+          "title": "그라나다",
+          "href": "/food/spot/2847812",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/11/2847811_image2_1.JPG",
+          "address": "제주특별자치도 제주시 도공로 86-1"
+        }
+      ],
+      "officialUrl": "http://www.jejucitybus.com/",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/14/3523614_image2_1.jpg",
+      "imageTitle": "도두봉",
+      "priority": 117,
+      "description": "제주항국제여객터미널에서 출발해 동문시장, 용연구름다리와 용두암, 도두봉, 이호목마등대, 한라수목원 등을 연결하는 제주시 순환형 시티투어 안내입니다.",
+      "intro": "제주시 순환형 시티투어는 제주항국제여객터미널을 탑승장소로 하며 원도심, 해안, 공항 주변, 도두·이호 일대와 주요 교통·숙박 거점을 연결합니다. 1일 이용권을 구입하면 자유로운 승하차와 재탑승이 가능하므로, 노선에 포함된 여러 경유지를 일정에 맞춰 나누어 둘러볼 수 있습니다. 운행과 요금 정보는 2025년 12월 22일 기준 자료에 따릅니다.",
+      "sections": [
+        {
+          "heading": "코스 특징과 전체 경유 순서",
+          "paragraphs": [
+            "이 노선은 순환형으로 운영되며 운행 정보에는 한 바퀴 소요 시간이 2시간으로 안내되어 있습니다. 원본 자료의 경유 순서는 제주항국제여객터미널, 제주항연안여객터미널, 김만덕기념관, 동문시장, 관덕정(제주목관아), 용연구름다리(용두암), 제주국제공항, 용담레포츠공원, 어영공원(어영마을), 도두봉(무지개해안도로), 이호목마등대(이호테우해수욕장)입니다.",
+            "이후 제주시민속오일시장, 연동한일시티파크(롯데시티호텔), 월랑마을(베스트웨스턴호텔), 한라수목원, 노형오거리(드림타워), 메종글래드호텔(신라면세점), 삼무공원(에어시티호텔), 제주시버스터미널, 제주민속자연사박물관, 사라봉(이화아파트)을 거쳐 다시 순환합니다. 시장과 역사 공간, 해안 경관, 수목원과 박물관 등이 한 노선에 포함된 구성입니다."
+          ]
+        },
+        {
+          "heading": "경유지와 주변 관광정보",
+          "paragraphs": [
+            "경유지 주변 관광정보로는 김만덕기념관, 동문시장, 관덕정(제주목관아), 용연구름다리(용두암), 도두봉(무지개해안도로), 이호목마등대(이호테우해수욕장), 제주시민속오일시장, 한라수목원, 제주민속자연사박물관이 제시되어 있습니다. 별도 장소 자료에는 도두봉, 사라봉, 어영공원, 용두암, 용연구름다리도 포함되어 있습니다.",
+            "다만 제공 자료에는 경유지 사이의 거리, 제주항과 각 장소의 근접성, 특정 장소에서 여행 일정을 시작할 수 있는 별도 운영 조건이 제시되어 있지 않습니다. 따라서 어느 구간이 더 가깝거나 특정 장소에서 일정 시작이 가능하다고 단정하기는 어렵습니다. 1일권의 자유로운 승하차와 재탑승이 가능하다는 이용 조건을 기준으로 일정 구성을 검토하는 것이 적절합니다.",
+            "제주시민속오일시장은 방문 날짜에 따라 운영 여부를 확인할 필요가 있습니다. 김만덕기념관, 관덕정(제주목관아), 한라수목원, 제주민속자연사박물관 등의 운영시간, 휴관일, 관람 범위와 소요 시간은 이번 자료에 없으므로 방문 전 별도 확인이 필요합니다."
+          ]
+        },
+        {
+          "heading": "운행시간과 이용요금",
+          "paragraphs": [
+            "자료에는 운행 시작 시각 09:00, 종료 시각 19:30, 배차시간 60분, 1일 9회 운영, 한 바퀴 2시간 소요가 각각 안내되어 있습니다. 이 수치들은 서로 산술적으로 일치하지 않을 수 있으므로, 자료만으로 정류장별 도착 시각이나 실제 운행 간격을 확정하기는 어렵습니다. 이용 전 최신 공식 시간표를 확인해야 합니다.",
+            "1일 이용권은 성인 12,000원, 소인 및 청소년 8,000원, 장애인 및 국가유공자 6,000원입니다. 미취학 아동은 무료이며, 1회 이용권은 5,000원으로 안내되어 있습니다. 1일권을 구입하면 자유로운 승하차와 재탑승이 가능합니다.",
+            "자료에 제시된 운행시간은 노선 한 바퀴 기준 2시간이며, 관광지에서 머무는 시간은 포함 여부가 따로 설명되어 있지 않습니다. 좌석, 결제 방법, 정류장별 도착 시각과 티켓 판매 방식도 제공 자료에 없으므로 최신 안내를 통해 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "함께 확인할 음식점 정보",
+          "paragraphs": [
+            "제공된 음식점 후보는 골목식당, 귤품은흑돼지 제주공항점, 그라나다입니다. 자료에 따르면 이 목록은 기존 한국관광공사 음식점 캐시에서 같은 지역의 경유지와 좌표를 기준으로 약 2킬로미터 이내 후보를 선정한 것입니다.",
+            "해당 음식점 정보에는 도로 이동거리, 영업 여부, 공식 시티투어 제휴 여부가 검증되지 않았다고 명시되어 있습니다. 따라서 노선에서 바로 이용할 수 있는 제휴 음식점이나 실제 도보 이동시간을 의미하지 않으며, 방문 전 영업 여부와 이동 방법을 별도로 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인할 사항",
+          "paragraphs": [
+            "운영기관은 제주특별자치도관광협회이며 문의처는 064-741-8784입니다. 탑승장소는 제주항국제여객터미널로 안내되어 있습니다. 홈페이지 주소도 자료에 제공되어 있으나, 데이터 기준일자가 2025년 12월 22일이므로 2026년 현재 운행 여부, 요금, 운행 횟수와 시간표가 동일하다고 확정할 수 없습니다.",
+            "출발 전 공식 안내를 통해 운행일, 첫차와 막차, 배차 간격, 실제 탑승 위치, 티켓 구매 방법, 할인 및 무료 대상, 시설 운영 여부를 확인하세요. 특히 09:00부터 19:30까지 운행, 60분 배차, 1일 9회 운영이라는 수치의 관계가 원자료에서 명확히 설명되지 않으므로 최신 시간표를 우선 확인하는 것이 필요합니다.",
+            "날씨, 행사와 교통 상황에 따른 변경 여부 및 제주시민속오일시장 운영일도 함께 점검하면 일정 계획에 도움이 됩니다. 코스와 요금은 원본 자료에 따른 안내이며, 방문 당일 적용 정보는 운영기관의 최신 공지를 기준으로 확인해야 합니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-08T19:32:12.522Z",
+      "publishedDay": "2026-09-09",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 1663,
+          "completion_tokens": 1742,
+          "total_tokens": 3405,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1660,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 83,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 3287,
+          "completion_tokens": 1643,
+          "total_tokens": 4930,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 3284,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 46,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 2972,
+          "completion_tokens": 724,
+          "total_tokens": 3696,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2969,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 399,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 3001,
+          "completion_tokens": 14,
+          "total_tokens": 3015,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2998,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "13e5e9cbd2f52e",
+      "area": "전남",
+      "city": "여수시",
+      "title": "여수 시티투어 2층야간코스 운행 정보와 이용 안내",
+      "raw": {
+        "시도명": "전라남도",
+        "시군구명": "여수시",
+        "시티투어코스명": "2층야간코스",
+        "시티투어문의처": "동서관광(061-692-0900/686-6660)",
+        "시티투어운영시간": "1일1회",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "여수엑스포역",
+        "시티투어코스정보": "여수엑스포역→돌산공원→소호동동다리→히든베이호텔→이순신광장→종포해양공원→여수엑스포역",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "휴무(매주 금, 토+첫째, 셋째 주 월)",
+        "운행시작시각": "19:30",
+        "운행종료시각": "22:00",
+        "배차시간": "0",
+        "이용요금": "성인10000원+5000원(여수시민+초중고+경로+군인+국가유공자+장애인)+무료(미취학)",
+        "이용요금부가정보": "",
+        "홈페이지주소": "http://ok.yeosu.go.kr",
+        "관리기관명": "전라남도 여수시청",
+        "관리기관전화번호": "061-659-3871",
+        "데이터기준일자": "2026-06-08"
+      },
+      "related": [
+        {
+          "id": "128755",
+          "title": "돌산공원",
+          "href": "/places/spot/128755",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/54/3534454_image2_1.jpg",
+          "address": "전남광주통합특별시 여수시 돌산읍 우두리 산 1"
+        },
+        {
+          "id": "2647864",
+          "title": "소호동동다리",
+          "href": "/places/spot/2647864",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/61/2647861_image2_1.bmp",
+          "address": "전남광주통합특별시 여수시 소호로 392"
+        },
+        {
+          "id": "2612869",
+          "title": "이순신광장",
+          "href": "/places/spot/2612869",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/07/3351107_image2_1.jpg",
+          "address": "전남광주통합특별시 여수시 중앙로 74"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "2912078",
+          "title": "골목집",
+          "href": "/food/spot/2912078",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/72/2912072_image2_1.jpg",
+          "address": "전남광주통합특별시 여수시 어항로 23-1"
+        },
+        {
+          "id": "2783335",
+          "title": "깨비게장",
+          "href": "/food/spot/2783335",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/30/2783530_image2_1.jpg",
+          "address": "전남광주통합특별시 여수시 봉산남3길 23-8 (봉산동)"
+        },
+        {
+          "id": "2858408",
+          "title": "꽃돌게장1번가",
+          "href": "/food/spot/2858408",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/95/2858395_image2_1.jpg",
+          "address": "전남광주통합특별시 여수시 봉산2로 36"
+        }
+      ],
+      "officialUrl": "http://ok.yeosu.go.kr/",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/54/3534454_image2_1.jpg",
+      "imageTitle": "돌산공원",
+      "priority": 114,
+      "description": "여수엑스포역에서 출발해 돌산공원, 소호동동다리, 히든베이호텔, 이순신광장, 종포해양공원을 거쳐 여수엑스포역으로 돌아오는 2층야간코스 안내입니다.",
+      "intro": "전라남도 여수시 2층야간코스는 여수엑스포역에서 출발하는 고정형 순환 시티투어입니다. 19시 30분에 운행을 시작해 22시까지 진행되며, 정해진 경유 순서에 따라 이동한 뒤 여수엑스포역으로 돌아옵니다. 운행은 1일 1회이며, 휴무일과 요금, 문의처는 출발 전에 확인하는 것이 좋습니다.",
+      "sections": [
+        {
+          "heading": "코스와 운행 방식",
+          "paragraphs": [
+            "코스는 여수엑스포역에서 시작해 돌산공원, 소호동동다리, 히든베이호텔, 이순신광장, 종포해양공원을 거쳐 다시 여수엑스포역으로 돌아오는 순환 형태입니다. 제공된 자료에는 각 경유지별 체류 시간과 승하차 방식이 별도로 안내되어 있지 않습니다.",
+            "시티투어 운행 방식은 고정형이며 1일 1회 운행합니다. 배차시간은 별도로 제공되지 않았으므로, 이용자는 운행 시작 시각인 19시 30분에 맞춰 여수엑스포역에 도착하는 것이 좋습니다. 코스명에 ‘2층’이 포함되어 있으나, 제공된 자료에는 차량 형태가 별도로 명시되어 있지 않습니다."
+          ]
+        },
+        {
+          "heading": "탑승 장소와 이용 시간",
+          "paragraphs": [
+            "탑승 장소는 여수엑스포역입니다. 운행 시작 시각은 19시 30분, 운행 종료 시각은 22시이며, 코스는 여수엑스포역으로 돌아오는 일정입니다. 정확한 탑승 위치와 승하차 가능 지점은 운행처에 문의해 확인할 수 있습니다.",
+            "운행정보에는 매주 금요일과 토요일, 첫째 주 월요일, 셋째 주 월요일이 휴무로 안내되어 있습니다. 행사나 운영 사정에 따른 변경 여부는 제공된 자료에서 확인되지 않으므로, 이용일의 운행 여부는 출발 전 문의하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "이용요금과 문의처",
+          "paragraphs": [
+            "이용요금은 성인 1만 원입니다. 여수시민, 초·중·고등학생, 경로 대상자, 군인, 국가유공자, 장애인은 5천 원으로 안내되어 있으며, 미취학 아동은 무료입니다.",
+            "예약 필요 여부, 좌석 지정 여부, 할인 대상 확인에 필요한 증빙 서류는 제공된 자료에 없습니다. 관련 사항은 시티투어 문의처인 동서관광으로 확인할 수 있으며, 전화번호는 061-692-0900과 061-686-6660입니다. 관리기관은 여수시청이며, 관리기관 전화번호는 061-659-3871입니다."
+          ]
+        },
+        {
+          "heading": "등록된 경유지와 주변 후보",
+          "paragraphs": [
+            "제공된 관광정보에는 코스 경유지 중 돌산공원, 소호동동다리, 이순신광장이 등록되어 있습니다. 자료에는 이 장소들의 상세 소개나 관람 시설 정보가 없으므로, 특정 경유지의 볼거리나 하차 후 이용 가능한 시설을 전제로 일정을 구성하기는 어렵습니다.",
+            "식사 후보로는 골목집, 깨비게장, 꽃돌게장1번가가 제시되어 있습니다. 골목집의 주소는 여수시 어항로 23-1, 깨비게장은 여수시 봉산남3길 23-8, 꽃돌게장1번가는 여수시 봉산2로 36입니다. 이 음식점들은 주변 후보로 선정된 곳이며, 공식 시티투어 경유지나 제휴 업소라는 의미는 아닙니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인 사항",
+          "paragraphs": [
+            "음식점 후보는 기존 관광정보를 바탕으로 경유지와 좌표 기준 약 2km 이내에서 선정된 자료입니다. 도로 이동거리, 영업 여부, 공식 투어 제휴 여부는 검증되지 않았으므로 방문 전 개별 확인이 필요합니다.",
+            "운행 및 요금 정보의 데이터 기준일은 2026년 6월 8일입니다. 이후 변경 가능성을 고려해 운행일, 요금, 예약 여부, 할인 적용 기준, 정확한 탑승 위치를 출발 전에 문의하는 것이 좋습니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-08T19:32:49.836Z",
+      "publishedDay": "2026-09-09",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 1237,
+          "completion_tokens": 1401,
+          "total_tokens": 2638,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1234,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 153,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2406,
+          "completion_tokens": 1232,
+          "total_tokens": 3638,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2403,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 73,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 2141,
+          "completion_tokens": 739,
+          "total_tokens": 2880,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2138,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 464,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2054,
+          "completion_tokens": 230,
+          "total_tokens": 2284,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2051,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 210,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "d2e64fb362197f",
+      "area": "인천",
+      "city": "연수구+중구+동구",
+      "title": "인천 시티투어 인천레트로노선 코스와 탑승·요금 안내",
+      "raw": {
+        "시도명": "인천광역시",
+        "시군구명": "연수구+중구+동구",
+        "시티투어코스명": "인천레트로노선",
+        "시티투어문의처": "인천시티투어 1899-0960",
+        "시티투어운영시간": "매주 수+목+금+토+일",
+        "시티투어운행방식": "순환형",
+        "시티투어탑승장소명": "인천종합관광안내소(송도센트럴파크역)",
+        "시티투어코스정보": "인천종합관광안내소(송도센트럴파크)+신포국제시장(답동성당)+화평동 냉면거리(자유공원)+인천역(차이나타운)+상상플랫폼+아트플랫폼(하버파크호텔)+송도컨벤시아+현대프리미엄아울렛 송도점+인천종합관광안내소(센트럴파크역)",
+        "경유지주변관광정보": "센트럴파크(수상택시, 카누, 카약 등)+인천항국제여객터미널+신포국제시장(답동성당)+수도국산달동네박물관(배다리책방거리)+화평동냉면거리(자유공원)+인천역(차이나타운, 동화마을)+아트플랫폼+송도컨벤시아",
+        "시티투어코스부가정보": "",
+        "운행정보": "휴무(연중 매주 월+화+추석 당일+설날 당일)",
+        "운행시작시각": "10:30",
+        "운행종료시각": "16:30",
+        "배차시간": "60",
+        "이용요금": "성인 9000원+소인 7000원+경로 7000원+단체 7000원+인천시민 5000원+장애인 3000원+국가유공자 3000원",
+        "이용요금부가정보": "감면대상(소인+경로, 인천시민, 장애인, 국가유공자, 10인 이상 단체)",
+        "홈페이지주소": "https://mirihae.com/itoct",
+        "관리기관명": "인천관광공사",
+        "관리기관전화번호": "1899-0960",
+        "데이터기준일자": "2026-03-13"
+      },
+      "related": [
+        {
+          "id": "2465107",
+          "title": "송도 센트럴파크",
+          "href": "/places/spot/2465107",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/19/3512919_image2_1.jpg",
+          "address": "인천광역시 연수구 컨벤시아대로 160"
+        },
+        {
+          "id": "742171",
+          "title": "송도컨벤시아",
+          "href": "/places/spot/742171",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/77/3037277_image2_1.jpg",
+          "address": "인천광역시 연수구 센트럴로 123"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "2900016",
+          "title": "가온칼국수 송도본점",
+          "href": "/food/spot/2900016",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/06/2900006_image2_1.jpg",
+          "address": "인천광역시 연수구 송도과학로28번길 8 (송도동)"
+        },
+        {
+          "id": "2853680",
+          "title": "가회동샤브칼국수 송도컨벤시아점",
+          "href": "/food/spot/2853680",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/74/2853674_image2_1.jpg",
+          "address": "인천광역시 연수구 센트럴로 123 (송도동)"
+        },
+        {
+          "id": "2350373",
+          "title": "그리다디저트",
+          "href": "/food/spot/2350373",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/95/2050695_image2_1.jpg",
+          "address": "인천광역시 연수구 인천타워대로132번길 30"
+        }
+      ],
+      "officialUrl": "https://mirihae.com/itoct",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/19/3512919_image2_1.jpg",
+      "imageTitle": "송도 센트럴파크",
+      "priority": 108,
+      "description": "인천레트로노선의 경유 순서와 탑승 장소, 운행일, 이용요금, 주변 관광정보와 출발 전 확인사항을 정리했습니다.",
+      "intro": "인천레트로노선은 인천종합관광안내소(송도센트럴파크역)에서 출발해 신포국제시장, 화평동 냉면거리, 인천역, 상상플랫폼, 아트플랫폼, 송도컨벤시아, 현대프리미엄아울렛 송도점을 거쳐 출발지로 돌아오는 순환형 시티투어입니다. 원본 자료 기준 매주 수요일부터 일요일까지 운행하며, 운행시간은 10시 30분부터 16시 30분까지입니다.",
+      "sections": [
+        {
+          "heading": "인천레트로노선 운행 정보",
+          "paragraphs": [
+            "이 노선은 인천종합관광안내소(송도센트럴파크역)에서 탑승하는 순환형 시티투어입니다. 운행일은 매주 수요일, 목요일, 금요일, 토요일, 일요일이며 배차시간은 60분입니다.",
+            "휴무일은 매주 월요일과 화요일, 추석 당일, 설날 당일입니다. 운행시간과 휴무일은 2026년 3월 13일 기준 원본 자료에 따른 내용이므로, 실제 이용 전 최신 운행 여부를 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "경유 순서와 코스 표기",
+          "paragraphs": [
+            "경유 순서는 인천종합관광안내소(송도센트럴파크역), 신포국제시장(답동성당), 화평동 냉면거리(자유공원), 인천역(차이나타운), 상상플랫폼, 아트플랫폼(하버파크호텔), 송도컨벤시아, 현대프리미엄아울렛 송도점을 거쳐 인천종합관광안내소로 돌아오는 구성입니다.",
+            "코스 정보에는 신포국제시장과 답동성당, 화평동 냉면거리와 자유공원, 인천역과 차이나타운이 함께 표시되어 있습니다. 상상플랫폼과 아트플랫폼, 하버파크호텔도 경유지 표기에 포함되어 있으며, 각 시설의 내부 운영과 관람 가능 범위는 별도로 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "탑승 장소와 이용요금",
+          "paragraphs": [
+            "탑승 장소는 인천종합관광안내소(송도센트럴파크역)입니다. 예약 가능 여부와 예약 절차, 좌석 및 탑승 방법은 제공된 안내 채널이나 인천시티투어 문의처를 통해 확인할 수 있습니다. 예약이 가능한지 여부 자체도 출발 전에 문의하는 것이 좋습니다.",
+            "이용요금은 성인 9,000원, 소인 7,000원, 경로 7,000원, 10인 이상 단체 7,000원, 인천시민 5,000원, 장애인 3,000원, 국가유공자 3,000원입니다. 소인, 경로, 인천시민, 장애인, 국가유공자, 10인 이상 단체는 감면 대상으로 안내되어 있으므로 적용 조건과 필요한 증빙은 공식 안내를 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "주변 관광정보와 시설",
+          "paragraphs": [
+            "경유지 주변 관광정보로는 센트럴파크의 수상택시, 카누, 카약 등이 제시되어 있습니다. 이 밖에 인천항국제여객터미널, 수도국산달동네박물관, 배다리책방거리, 차이나타운, 동화마을, 아트플랫폼도 주변 관광정보에 포함되어 있습니다.",
+            "제공된 관광지 정보에서 송도 센트럴파크 주소는 인천광역시 연수구 컨벤시아대로 160이며, 송도컨벤시아 주소는 인천광역시 연수구 센트럴로 123입니다. 주변 관광정보는 공식 코스 경유지와 구분되므로, 하차 후 실제 방문 가능 여부와 관람시간은 각 시설에 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "후보 음식점과 출발 전 확인사항",
+          "paragraphs": [
+            "제공된 음식점 후보는 가온칼국수 송도본점, 가회동샤브칼국수 송도컨벤시아점, 그리다디저트입니다. 이 목록은 같은 지역에서 좌표 기준 약 2km 이내 후보로 선정된 자료이며, 도로 이동거리와 실제 접근성, 영업 여부, 공식 시티투어 제휴는 검증되지 않았습니다. 따라서 방문 전 확인이 필요한 후보 음식점으로 참고하는 것이 정확합니다.",
+            "운행일, 운행시간, 배차, 요금, 예약 가능 여부는 자료 기준일 이후 변경될 수 있습니다. 출발 전 인천시티투어 1899-0960 또는 관리기관인 인천관광공사의 공식 안내를 통해 최신 정보를 확인하세요."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-08T19:33:27.059Z",
+      "publishedDay": "2026-09-09",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 1390,
+          "completion_tokens": 1426,
+          "total_tokens": 2816,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1387,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 113,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2640,
+          "completion_tokens": 1208,
+          "total_tokens": 3848,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2637,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 50,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 2361,
+          "completion_tokens": 761,
+          "total_tokens": 3122,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2358,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 472,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2289,
+          "completion_tokens": 153,
+          "total_tokens": 2442,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2286,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 133,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "93f013ef81cf12",
+      "area": "대구",
+      "city": "달성군",
+      "title": "달성군 시티투어 현풍코스, 현풍휴게소부터 도동서원까지",
+      "raw": {
+        "시도명": "대구광역시",
+        "시군구명": "달성군",
+        "시티투어코스명": "현풍코스",
+        "시티투어문의처": "대구광역시관광협회 053-716-6403",
+        "시티투어운영시간": "4월 토요일 + 5월 토요일 운영",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "동대구역+대구역+설화명곡역",
+        "시티투어코스정보": "현풍휴게소 - 석빙고 - 현풍향교 - 현풍도깨비시장 - 솔례마을 - 한훤당고택 - 도동서원",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "4~5월 토요일 운영",
+        "운행시작시각": "09:00",
+        "운행종료시각": "18:00",
+        "배차시간": "1440",
+        "이용요금": "성인5000원+경로4000원+국가유공자4000원+중고등학생4000원+아동3000원+장애인3000원",
+        "이용요금부가정보": "",
+        "홈페이지주소": "https://www.chamflowertour.com/",
+        "관리기관명": "대구광역시관광협회",
+        "관리기관전화번호": "053-716-6403",
+        "데이터기준일자": "2026-06-24"
+      },
+      "related": [
+        {
+          "id": "1611782",
+          "title": "현풍향교",
+          "href": "/places/spot/1611782",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/23/3576123_image2_1.jpg",
+          "address": "대구광역시 달성군 현풍면 현풍동로20길 27-8"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "2841769",
+          "title": "대가웍 본점",
+          "href": "/food/spot/2841769",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/60/2841760_image2_1.jpg",
+          "address": "대구광역시 달성군 현풍읍 현풍동로29길 5"
+        },
+        {
+          "id": "2846078",
+          "title": "커피로드333",
+          "href": "/food/spot/2846078",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/73/2846073_image2_1.jpg",
+          "address": "대구광역시 달성군 유가읍 현풍로 268"
+        }
+      ],
+      "officialUrl": "https://www.chamflowertour.com/",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/23/3576123_image2_1.jpg",
+      "imageTitle": "현풍향교",
+      "priority": 93,
+      "description": "대구 달성군 현풍코스의 운행 기간, 경유 순서, 탑승 장소와 요금 정보를 자료 기준으로 정리했습니다.",
+      "intro": "대구광역시 달성군 현풍코스는 현풍휴게소, 석빙고, 현풍향교, 현풍도깨비시장, 솔례마을, 한훤당고택, 도동서원을 경유하는 고정형 시티투어입니다. 자료에 안내된 탑승 장소는 동대구역, 대구역, 설화명곡역이며, 운행 정보와 이용요금은 방문 전 다시 확인하는 것이 좋습니다.",
+      "sections": [
+        {
+          "heading": "현풍코스 경유 순서",
+          "paragraphs": [
+            "자료에 따른 경유 순서는 현풍휴게소, 석빙고, 현풍향교, 현풍도깨비시장, 솔례마을, 한훤당고택, 도동서원입니다. 현풍휴게소가 경유지로 포함되어 있지만, 자료에는 이곳이 투어의 출발지라고 기재되어 있지 않습니다.",
+            "탑승 장소는 동대구역, 대구역, 설화명곡역으로 안내되어 있습니다. 각 탑승 장소에서 실제로 몇 시에 출발하는지, 탑승 위치가 어디인지에 관한 세부 내용은 제공 자료에 없으므로 출발 전 확인이 필요합니다."
+          ]
+        },
+        {
+          "heading": "운행 기간과 시간",
+          "paragraphs": [
+            "현풍코스는 4월 토요일과 5월 토요일에 운영되는 고정형 시티투어입니다. 운행 정보에도 4~5월 토요일 운영으로 기재되어 있으며, 운행 시작 시각은 09:00, 종료 시각은 18:00입니다.",
+            "배차시간은 자료에 1440으로 기록되어 있습니다. 이 수치만으로 일반적인 순환 간격이나 정류장별 도착 시간을 단정하기는 어려우므로, 원하는 날짜의 운행 여부와 탑승 시간은 문의처를 통해 확인하는 것이 좋습니다. 자료 기준일자는 2026년 6월 24일입니다."
+          ]
+        },
+        {
+          "heading": "이용요금과 탑승 정보",
+          "paragraphs": [
+            "이용요금은 성인 5,000원, 경로 4,000원, 국가유공자 4,000원, 중·고등학생 4,000원, 아동 3,000원, 장애인 3,000원입니다. 요금 구분은 제공된 자료에 따른 것이며, 실제 적용에 필요한 증빙이나 세부 기준은 별도로 안내되어 있지 않습니다.",
+            "예약 가능 여부와 예약 방법, 좌석 운영 방식도 자료에 구체적으로 기재되어 있지 않습니다. 방문을 계획한다면 출발 전 탑승 장소, 예약 필요 여부, 요금 적용 기준을 확인해 일정에 반영하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "경유지와 주변 정보",
+          "paragraphs": [
+            "시티투어 코스에는 석빙고, 현풍향교, 현풍도깨비시장, 솔례마을, 한훤당고택, 도동서원이 포함되어 있습니다. 제공 자료에는 각 장소의 상세 소개나 관람 방식, 내부 개방 여부, 해설 운영 정보가 별도로 제시되어 있지 않습니다.",
+            "현풍향교는 별도 장소 정보로도 제공되며, 주소는 대구광역시 달성군 현풍면 현풍동로20길 27-8입니다. 실제 방문 시 개방 범위와 관람 가능 여부는 현장에서 확인하거나 출발 전에 문의하는 것이 좋습니다.",
+            "경유지 주변 관광정보는 제공되지 않았습니다. 따라서 코스에 포함된 장소 외에 주변 관광지를 함께 방문하려면 이동 거리와 운영 여부를 별도로 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "음식점 후보와 출발 전 확인",
+          "paragraphs": [
+            "주변 음식점 후보로 대가웍 본점과 커피로드333이 제시되어 있습니다. 대가웍 본점은 대구광역시 달성군 현풍읍 현풍동로29길 5, 커피로드333은 대구광역시 달성군 유가읍 현풍로 268에 있습니다.",
+            "두 곳은 같은 지역의 경유지와 좌표를 기준으로 선정된 후보이며, 도로 이동거리와 영업 여부, 투어 제휴 여부는 검증되지 않았습니다. 식사나 휴식을 위해 이용하려면 방문 전 영업 여부와 이동 방법을 따로 확인해야 합니다.",
+            "문의처는 대구광역시관광협회 053-716-6403입니다. 홈페이지 주소도 자료에 안내되어 있으므로, 출발 전 운행 날짜, 탑승 장소별 시각, 예약 여부, 휴일 또는 기상에 따른 변경 사항을 확인하는 것이 좋습니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-08T19:34:45.074Z",
+      "publishedDay": "2026-09-09",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 1011,
+          "completion_tokens": 1312,
+          "total_tokens": 2323,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 66,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2215,
+          "completion_tokens": 1262,
+          "total_tokens": 3477,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2212,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 78,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1915,
+          "completion_tokens": 661,
+          "total_tokens": 2576,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1912,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 351,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1849,
+          "completion_tokens": 124,
+          "total_tokens": 1973,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1846,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 104,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "496ed26ed3783c",
+      "area": "충북",
+      "city": "청주시",
+      "title": "청주 시티투어 초정힐링 투어 안내: 2026년 5월 26일 기준",
+      "raw": {
+        "시도명": "충청북도",
+        "시군구명": "청주시",
+        "시티투어코스명": "청주시티투어_정기투어_초정힐링 투어(토)",
+        "시티투어문의처": "043-234-8895",
+        "시티투어운영시간": "토(1일1회)",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "청주가경시외버스터미널+청주체육관",
+        "시티투어코스정보": "청주체육관 - 가경터미널 - 운보의 집 - 초정리(중식) - 초정행궁 - 성안길 - 청주체육관 - 가경터미널",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "예약인원 5인 미만 미운영",
+        "운행시작시각": "09:00",
+        "운행종료시각": "17:00",
+        "배차시간": "0",
+        "이용요금": "3000원",
+        "이용요금부가정보": "식비_체험료_기타보험 등 본인부담",
+        "홈페이지주소": "https://www.cheongju.go.kr/ktour/contents.do?key=20339",
+        "관리기관명": "충청북도 청주시 관광과",
+        "관리기관전화번호": "043-201-1792",
+        "데이터기준일자": "2026-05-26"
+      },
+      "related": [
+        {
+          "id": "130080",
+          "title": "운보의 집",
+          "href": "/places/spot/130080",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/71/3504571_image2_1.jpg",
+          "address": "충청북도 청주시 청원구 내수읍 형동2길 92-41"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "2860348",
+          "title": "가든포레스트",
+          "href": "/food/spot/2860348",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/35/2860335_image2_1.jpg",
+          "address": "충청북도 청주시 청원구 도원세교로 222-6"
+        }
+      ],
+      "officialUrl": "https://www.cheongju.go.kr/ktour/contents.do?key=20339",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/71/3504571_image2_1.jpg",
+      "imageTitle": "운보의 집",
+      "priority": 75,
+      "description": "청주체육관과 청주가경시외버스터미널에서 탑승하는 토요일 정기투어의 코스, 시간, 요금과 확인 사항을 자료 기준으로 정리했습니다. 2026년 9월 9일 현재 운행 및 요금은 별도 확인이 필요합니다.",
+      "intro": "청주시티투어 정기투어 초정힐링 투어는 토요일에 하루 1회 운행하는 고정형 투어입니다. 자료 기준 운행시간은 09:00부터 17:00까지이며, 청주체육관과 청주가경시외버스터미널에서 탑승할 수 있습니다. 코스에는 운보의 집, 초정리, 초정행궁, 성안길이 포함되어 있습니다. 아래 내용은 데이터 기준일인 2026년 5월 26일 자료를 바탕으로 한 것으로, 2026년 9월 9일 현재의 운행 여부와 요금이 확정된 정보는 아닙니다.",
+      "sections": [
+        {
+          "heading": "코스와 운행 일정",
+          "paragraphs": [
+            "자료에 제시된 코스 순서는 청주체육관, 가경터미널, 운보의 집, 초정리, 초정행궁, 성안길, 청주체육관, 가경터미널입니다. 초정리 구간에는 중식이 표시되어 있으나, 식당명이나 식사 방식에 관한 내용은 제공되지 않았습니다.",
+            "운행 방식은 고정형이며 토요일 1일 1회 운행으로 안내되어 있습니다. 자료 기준 운행 시작 시각은 09:00, 종료 시각은 17:00입니다. 예약 인원이 5인 미만이면 운행하지 않는 조건도 함께 제시되어 있으므로, 참여 전 최신 운행 여부를 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "코스에 포함된 장소",
+          "paragraphs": [
+            "운보의 집은 코스에 포함된 장소로, 주소는 충청북도 청주시 청원구 내수읍 형동2길 92-41입니다. 제공된 자료에는 내부 전시, 관람 공간, 운영시간 등 구체적인 관광정보가 없습니다.",
+            "초정행궁과 성안길도 코스 정보에 포함되어 있지만, 자료에는 입장료, 개방 시간, 해설이나 체험 운영 여부가 제시되지 않았습니다. 따라서 각 장소에서 이용할 수 있는 세부 내용은 방문 전 관련 안내를 별도로 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "탑승 장소와 이용요금",
+          "paragraphs": [
+            "탑승 장소명은 청주가경시외버스터미널과 청주체육관으로 안내되어 있습니다. 두 장소의 세부 탑승 위치, 탑승 순서, 집결 시각은 제공된 자료에 없습니다. 예약이나 이용 전 어느 장소에서 탑승할지와 현장 안내를 확인하는 것이 좋습니다.",
+            "이용요금은 자료 기준 3,000원입니다. 식비, 체험료, 기타 보험 등은 본인이 부담하는 항목으로 안내되어 있습니다. 예약 방법과 좌석 현황은 자료에 구체적으로 제시되지 않았으므로 시티투어 문의처나 청주시 관광과에 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "식사 관련 후보 정보",
+          "paragraphs": [
+            "자료에는 가든포레스트가 음식점 후보로 제공되어 있습니다. 주소는 충청북도 청주시 청원구 도원세교로 222-6입니다. 이 후보는 기존 음식점 자료에서 같은 지역의 경유지와 좌표 기준 약 2km 이내라는 기준으로 선정된 정보입니다.",
+            "실제 도로 이동거리, 영업 여부, 투어 중 방문 가능 여부와 공식 투어 제휴 여부는 검증되지 않았습니다. 따라서 투어에서 이용할 식당으로 확정된 정보가 아니며, 방문하려면 영업 여부와 이용 가능 여부를 별도로 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인 사항과 문의처",
+          "paragraphs": [
+            "이 안내의 원본 데이터 기준일은 2026년 5월 26일입니다. 2026년 9월 9일 현재 운행일, 운행시간, 요금, 예약 가능 여부가 달라졌을 수 있으므로 출발 전 청주시의 최신 시티투어 안내를 확인하는 것이 좋습니다.",
+            "예약 인원 5인 미만 시 미운영 조건, 중식·체험료·보험 등 별도 부담 항목, 탑승 장소와 각 경유지의 이용 가능 여부를 함께 확인할 수 있습니다. 시티투어 문의처는 043-234-8895이며, 관리기관인 청주시 관광과 전화번호는 043-201-1792입니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-08T19:35:21.622Z",
+      "publishedDay": "2026-09-09",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 934,
+          "completion_tokens": 1260,
+          "total_tokens": 2194,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 160,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2047,
+          "completion_tokens": 1252,
+          "total_tokens": 3299,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2044,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 94,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1692,
+          "completion_tokens": 608,
+          "total_tokens": 2300,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1689,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 243,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1750,
+          "completion_tokens": 190,
+          "total_tokens": 1940,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1747,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 170,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "2a59110f5e8872",
+      "area": "경기",
+      "city": "여주시",
+      "title": "여주 시티투어 순환형 코스와 이용 방법",
+      "raw": {
+        "시도명": "경기도",
+        "시군구명": "여주시",
+        "시티투어코스명": "시티투어",
+        "시티투어문의처": "031-887-2140(관광안내소)",
+        "시티투어운영시간": "연중 매주 화~일요일",
+        "시티투어운행방식": "순환형",
+        "시티투어탑승장소명": "여주역 승강장",
+        "시티투어코스정보": "여주역-신륵사관광지(출렁다리 북단)-세종대왕릉-세종시장, 대로사-한글시장-출렁다리 남단-금은모래캠핑장-황학산수목원-명성황후생가-여주역",
+        "경유지주변관광정보": "신륵사, 출렁다리+세종대왕릉+여주5일장, 대로사+금은모래캠핑장, 폰박물관+황학산수목원+명성황후생가",
+        "시티투어코스부가정보": "당일 왕복티켓 한 장으로 자유롭게 이용",
+        "운행정보": "월요일, 신정, 설날, 추석 당일 휴무",
+        "운행시작시각": "10:10",
+        "운행종료시각": "18:15",
+        "배차시간": "90",
+        "이용요금": "성인 5000원+만 3세 이하 유아 무료",
+        "이용요금부가정보": "여주역 앞 관광안내소 및 버스에서 요금 지불 가능(중간 정류지 탑승 가능)",
+        "홈페이지주소": "https://www.yeoju.go.kr/tour/contents.do?key=2624",
+        "관리기관명": "경기도 여주시청",
+        "관리기관전화번호": "031-887-3573",
+        "데이터기준일자": "2026-06-08"
+      },
+      "related": [
+        {
+          "id": "126557",
+          "title": "신륵사관광지",
+          "href": "/places/spot/126557",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/35/3078435_image2_1.jpg",
+          "address": "경기도 여주시 신륵사길 73 (천송동)"
+        },
+        {
+          "id": "2665727",
+          "title": "황학산수목원",
+          "href": "/places/spot/2665727",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/21/2665621_image2_1.jpg",
+          "address": "경기도 여주시 황학산수목원길 73 (매룡동)"
+        },
+        {
+          "id": "2734822",
+          "title": "금은모래캠핑장",
+          "href": "/places/spot/2734822",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/19/2736019_image2_1.jpg",
+          "address": "경기도 여주시 강변유원지길 105 (연양동)"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "2781669",
+          "title": "감성식탁",
+          "href": "/food/spot/2781669",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/38/2781838_image2_1.jpeg",
+          "address": "경기도 여주시 칠산길 39 (상동)"
+        },
+        {
+          "id": "2863301",
+          "title": "부부농장가든",
+          "href": "/food/spot/2863301",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/93/2863293_image2_1.jpg",
+          "address": "경기도 여주시 명성로 415 (매룡동)"
+        },
+        {
+          "id": "2863200",
+          "title": "여주마을해장국",
+          "href": "/food/spot/2863200",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/93/2863193_image2_1.jpg",
+          "address": "경기도 여주시 여양로 54"
+        }
+      ],
+      "officialUrl": "https://www.yeoju.go.kr/tour/contents.do?key=2624",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/35/3078435_image2_1.jpg",
+      "imageTitle": "신륵사관광지",
+      "priority": 72,
+      "description": "여주역에서 출발해 신륵사관광지, 세종대왕릉, 시장, 황학산수목원, 명성황후생가 등을 잇는 여주 시티투어의 코스와 운행 정보를 안내합니다.",
+      "intro": "경기도 여주 시티투어는 여주역 승강장에서 출발해 여러 경유지를 거쳐 다시 여주역으로 돌아오는 순환형 투어입니다. 당일 왕복티켓 한 장으로 이용할 수 있으며, 중간 정류지에서도 탑승할 수 있도록 안내되어 있습니다. 운행일과 시간, 요금은 원본 자료 기준으로 확인하고 방문 전 최신 정보를 다시 확인하는 것이 좋습니다.",
+      "sections": [
+        {
+          "heading": "순환형 코스와 경유 순서",
+          "paragraphs": [
+            "원본 자료에 안내된 경유 순서는 여주역 승강장, 신륵사관광지와 출렁다리 북단, 세종대왕릉, 세종시장과 대로사, 한글시장, 출렁다리 남단, 금은모래캠핑장, 황학산수목원, 명성황후생가, 여주역입니다.",
+            "여주역에서 출발해 같은 장소로 돌아오는 순환형이며, 당일 왕복티켓 한 장으로 자유롭게 이용할 수 있습니다. 경유지 주변 관광정보로는 신륵사, 출렁다리와 세종대왕릉, 대로사와 금은모래캠핑장, 폰박물관과 황학산수목원, 명성황후생가가 제시되어 있습니다. 코스 경유지와 주변 관광정보에 포함된 장소가 다를 수 있으므로 방문할 곳을 구분해 계획하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "운행일과 탑승 방법",
+          "paragraphs": [
+            "시티투어는 연중 매주 화요일부터 일요일까지 운행하며, 월요일과 신정, 설날, 추석 당일에는 운행하지 않습니다. 운행 시작 시각은 10시 10분, 운행 종료 시각은 18시 15분이며 배차시간은 90분으로 안내되어 있습니다.",
+            "주요 탑승 장소는 여주역 승강장입니다. 여주역 앞 관광안내소뿐 아니라 버스에서도 요금을 지불할 수 있고, 중간 정류지에서도 탑승할 수 있습니다. 실제 이용 전에는 방문일의 운행 여부와 탑승 가능한 정류장을 관광안내소 또는 공식 안내를 통해 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "이용요금과 결제",
+          "paragraphs": [
+            "이용요금은 성인 5,000원이며 만 3세 이하 유아는 무료입니다. 당일 왕복티켓 한 장으로 이용하는 방식이며, 요금은 여주역 앞 관광안내소 또는 버스에서 지불할 수 있습니다.",
+            "자료에는 사전예약 방법이나 예약 필요 여부가 별도로 안내되어 있지 않습니다. 따라서 예약이 필요한지, 결제 가능한 수단은 무엇인지 출발 전에 확인하는 것이 좋습니다. 원본 데이터의 기준일은 2026년 6월 8일이므로, 방문 시점의 요금과 운행 조건이 같은지도 함께 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "경유지와 주변 정보",
+          "paragraphs": [
+            "신륵사관광지의 주소는 경기도 여주시 신륵사길 73이며, 황학산수목원은 경기도 여주시 황학산수목원길 73, 금은모래캠핑장은 경기도 여주시 강변유원지길 105에 있습니다. 제공된 자료에는 이 장소들의 관람 시간이나 시설별 세부 프로그램 정보는 포함되어 있지 않습니다.",
+            "음식점 후보로는 감성식탁, 부부농장가든, 여주마을해장국이 제공되었습니다. 감성식탁은 경기도 여주시 칠산길 39, 부부농장가든은 경기도 여주시 명성로 415, 여주마을해장국은 경기도 여주시 여양로 54에 있습니다. 이 음식점들은 같은 지역의 경유지와 좌표를 기준으로 선정된 후보이며, 도로 이동거리와 영업 여부, 공식 투어 제휴는 검증되지 않았습니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인할 사항",
+          "paragraphs": [
+            "시티투어 문의처는 여주 관광안내소 031-887-2140이며, 관리기관은 경기도 여주시청이고 관리기관 전화번호는 031-887-3573입니다. 출발 전 운행 여부, 운행 시간, 요금, 중간 정류지 탑승 가능 여부와 예약 필요 여부를 문의할 수 있습니다.",
+            "운행 정보와 요금은 자료 기준일 이후 변경될 수 있으므로 방문일에 공식 안내를 다시 확인하는 것이 좋습니다. 특히 월요일과 신정, 설날, 추석 당일은 휴무로 안내되어 있으므로 여행 날짜가 운행일에 해당하는지 먼저 살펴봐야 합니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-08T19:36:04.840Z",
+      "publishedDay": "2026-09-09",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 1316,
+          "completion_tokens": 1361,
+          "total_tokens": 2677,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1313,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 140,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2563,
+          "completion_tokens": 1295,
+          "total_tokens": 3858,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2560,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 69,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 2195,
+          "completion_tokens": 839,
+          "total_tokens": 3034,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2192,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 461,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2200,
+          "completion_tokens": 120,
+          "total_tokens": 2320,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2197,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 100,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "478f7612a03d02",
+      "area": "경북",
+      "city": "포항시",
+      "title": "포항 시티투어 퐝랜드마크A코스 운영 정보와 이용 안내",
+      "raw": {
+        "시도명": "경상북도",
+        "시군구명": "포항시",
+        "시티투어코스명": "퐝랜드마크A코스",
+        "시티투어문의처": "가람관광 054-262-3803",
+        "시티투어운영시간": "09:30~17:30",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "포항역+시외버스터미널",
+        "시티투어코스정보": "포항역_시외버스터미널_구룡포일본인가옥거리_호미곶광장_선바위둘레길_죽도시장_스페이스워크_시외버스터미널_포항역",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "입장료+식비+여행자보험+크루즈이용료 개별부담",
+        "운행정보": "15인 이상 예약시운행",
+        "운행시작시각": "09:30",
+        "운행종료시각": "17:30",
+        "배차시간": "0",
+        "이용요금": "6000원",
+        "이용요금부가정보": "아동·청소년·수급자·장애인·유공자·경로 4000원",
+        "홈페이지주소": "https://www.garamtour.kr/",
+        "관리기관명": "경상북도 포항시청",
+        "관리기관전화번호": "054-270-2247",
+        "데이터기준일자": "2026-02-19"
+      },
+      "related": [],
+      "foodLinks": [],
+      "officialUrl": "https://www.garamtour.kr/",
+      "image": "",
+      "imageTitle": "",
+      "priority": 69,
+      "description": "포항역과 시외버스터미널에서 출발해 구룡포일본인가옥거리, 호미곶광장, 선바위둘레길, 죽도시장, 스페이스워크를 경유하는 고정형 시티투어 안내입니다.",
+      "intro": "경상북도 포항시의 퐝랜드마크A코스는 포항역과 시외버스터미널을 출발지와 도착지로 포함하는 시티투어입니다. 자료에 제시된 경유지는 구룡포일본인가옥거리, 호미곶광장, 선바위둘레길, 죽도시장, 스페이스워크이며, 운행 여부는 15인 이상 예약 성립을 전제로 합니다. 운영 시간과 실제 관광 시간은 구분해 확인해야 합니다.",
+      "sections": [
+        {
+          "heading": "코스 순서와 운행 방식",
+          "paragraphs": [
+            "자료에 제시된 전체 순서는 포항역, 시외버스터미널, 구룡포일본인가옥거리, 호미곶광장, 선바위둘레길, 죽도시장, 스페이스워크, 시외버스터미널, 포항역입니다. 포항역과 시외버스터미널이 출발과 도착 과정에 모두 포함되어 있으므로 예약할 때 탑승 장소와 하차 장소를 확인할 수 있습니다.",
+            "운행 방식은 고정형이며, 운행 시간은 09:30부터 17:30까지로 안내되어 있습니다. 이 시간은 운영 시간에 관한 정보이며, 실제 관광지 체류 시간이나 전체 이동 시간과 같다고 단정할 수 없습니다. 장소별 체류 시간과 관람 범위는 제공 자료에 제시되지 않았습니다.",
+            "15인 이상 예약 시 운행하는 조건이 있으므로, 여행 인원이 기준에 미치지 않는 경우에도 출발이 확정되는지 별도로 확인해야 합니다. 예약 전 운행 성립 여부와 탑승자에게 안내되는 집결 시간을 문의하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "경유지 확인",
+          "paragraphs": [
+            "공식 코스 정보에 포함된 경유지는 구룡포일본인가옥거리, 호미곶광장, 선바위둘레길, 죽도시장, 스페이스워크입니다. 자료에는 각 경유지에서 어떤 시설을 이용하는지, 내부 관람이 포함되는지, 장소별로 얼마 동안 머무는지에 관한 세부 내용이 없습니다.",
+            "따라서 특정 경유지에서 전시나 체험, 전망 관람, 산책 등이 진행된다고 미리 단정하기는 어렵습니다. 경유지 명칭과 실제 이용 가능한 공간이 다를 수 있으므로, 원하는 장소를 중심으로 여행하려면 운영자에게 관람 가능 범위와 정차 시간을 확인해야 합니다.",
+            "처음과 마지막 경유지에는 포항역과 시외버스터미널이 포함됩니다. 어느 장소에서 먼저 탑승하는지, 두 탑승 장소의 집결 위치가 어디인지, 출발 시각이 09:30과 어떻게 연결되는지는 예약 시 확인할 사항입니다."
+          ]
+        },
+        {
+          "heading": "요금과 별도 부담 항목",
+          "paragraphs": [
+            "이용 요금은 일반 6,000원이며, 아동·청소년·수급자·장애인·유공자·경로 대상은 4,000원입니다. 대상별 적용 기준과 증빙 서류가 필요한지는 예약 과정에서 확인하는 것이 좋습니다.",
+            "입장료, 식비, 여행자보험, 크루즈 이용료는 개별 부담입니다. 자료에는 크루즈가 어느 경유지에서 어떤 방식으로 이용되는지와 별도 금액이 제시되어 있지 않습니다. 따라서 크루즈 이용이 투어에 자동으로 포함된다고 볼 수 없으며, 이용 가능 여부와 비용을 별도로 문의해야 합니다.",
+            "식사 장소와 식사 시간도 공식 코스 정보에 포함되어 있지 않습니다. 죽도시장 등에서 개별적으로 식사할 계획이 있다면 정차 시간과 재집결 장소를 확인하고, 투어 일정과 충돌하지 않도록 계획해야 합니다."
+          ]
+        },
+        {
+          "heading": "예약 및 문의 방법",
+          "paragraphs": [
+            "시티투어 문의처는 가람관광이며 전화번호는 054-262-3803입니다. 관리기관은 경상북도 포항시청이며 문의 전화는 054-270-2247입니다. 예약 시 운행일, 15인 이상 예약 성립 여부, 잔여 좌석, 탑승 장소, 집결 시각을 함께 확인할 수 있습니다.",
+            "운영 시간은 09:30~17:30으로 안내되어 있지만, 자료에는 날짜별 운행 일정이나 현장 사정에 따른 변경 여부가 없습니다. 방문 전 최신 운행 여부와 예약 가능 여부를 확인해야 하며, 포항역과 시외버스터미널 중 어느 곳에서 먼저 탑승하는지도 문의하는 것이 안전합니다.",
+            "자료 기준일자는 2026년 2월 19일입니다. 이후 요금, 운행 조건, 탑승 장소가 변경되었을 가능성을 배제할 수 없으므로, 실제 이용 전에는 가람관광 또는 포항시청의 최신 안내를 기준으로 결정해야 합니다."
+          ]
+        },
+        {
+          "heading": "이용 전 확인할 내용",
+          "paragraphs": [
+            "이 코스의 자료에는 전체 관광 소요시간, 장소별 정차 시간, 각 경유지의 입장 방식과 내부 관람 범위가 없습니다. 09:30~17:30이라는 운영 시간만으로 하루 일정이나 실제 관광 시간을 판단하지 말고, 원하는 경유지의 이용 가능 여부를 사전에 확인해야 합니다.",
+            "입장료와 식비, 여행자보험, 크루즈 이용료는 시티투어 요금과 별도입니다. 추가 비용이 필요한 장소를 방문할 계획이라면 요금과 이용 조건을 미리 문의하고, 식사나 개별 관람을 포함할 경우 차량 재탑승 시간과 장소를 확인해야 합니다.",
+            "공식 자료에 없는 주변 관광지와 음식점은 이 코스의 포함 시설로 안내할 수 없습니다. 코스 밖의 장소를 추가하려면 투어 운영자에게 일정상 가능한지 확인하고, 임의로 일정을 변경하지 않는 것이 좋습니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-08T19:36:50.251Z",
+      "publishedDay": "2026-09-09",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 800,
+          "completion_tokens": 1597,
+          "total_tokens": 2397,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 75,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2211,
+          "completion_tokens": 1528,
+          "total_tokens": 3739,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2208,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 132,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1972,
+          "completion_tokens": 551,
+          "total_tokens": 2523,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1969,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 302,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1937,
+          "completion_tokens": 280,
+          "total_tokens": 2217,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1934,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 260,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "65192ebdb3b031",
+      "area": "경북",
+      "city": "안동시",
+      "title": "안동 시티투어 주간도심테마 코스 안내",
+      "raw": {
+        "시도명": "경상북도",
+        "시군구명": "안동시",
+        "시티투어코스명": "주간도심테마",
+        "시티투어문의처": "안동시티투어  054-855-7179",
+        "시티투어운영시간": "매주 금~일",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "안동역",
+        "시티투어코스정보": "[11:25]KTX 안동역 - 구 안동역 - 월영교 - 안동민속박물관&안동댐 정상 - 한자마을(구름애)&해상촬영장 -  웅부공원, 임청각, 찜닭골목 - [17:40] KTX 안동역",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "매주 금~일",
+        "운행시작시각": "11:30",
+        "운행종료시각": "17:35",
+        "배차시간": "1440",
+        "이용요금": "10000원",
+        "이용요금부가정보": "무료(미취학 아동,장애인3급이내,국가유공자)",
+        "홈페이지주소": "http://www.gbtour.kr/",
+        "관리기관명": "경상북도 안동시청",
+        "관리기관전화번호": "054-840-6392",
+        "데이터기준일자": "2026-06-30"
+      },
+      "related": [
+        {
+          "id": "126126",
+          "title": "안동댐",
+          "href": "/places/spot/126126",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/97/3047997_image2_1.JPG",
+          "address": "경상북도 안동시 호반로 31"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "134770",
+          "title": "맛50년 헛제사밥",
+          "href": "/food/spot/134770",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/94/3573394_image2_1.jpg",
+          "address": "경상북도 안동시 석주로 201 (상아동)"
+        },
+        {
+          "id": "2705818",
+          "title": "콩깍지",
+          "href": "/food/spot/2705818",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/17/2705817_image2_1.jpg",
+          "address": "경상북도 안동시 석주로 171-4"
+        }
+      ],
+      "officialUrl": "http://www.gbtour.kr/",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/97/3047997_image2_1.JPG",
+      "imageTitle": "안동댐",
+      "priority": 69,
+      "description": "안동역을 중심으로 구 안동역, 월영교, 안동민속박물관, 안동댐 정상, 한자마을(구름애), 해상촬영장, 웅부공원, 임청각, 찜닭골목을 잇는 고정형 시티투어입니다.",
+      "intro": "경상북도 안동시의 주간도심테마 시티투어는 안동역에서 출발해 안동 시내와 주변 경유지를 정해진 코스로 운행합니다. 자료에는 매주 금요일부터 일요일까지 운행하는 것으로 안내되어 있으며, 운행 방식은 고정형입니다. 다만 코스 정보와 운행 정보에 출발·종료 시각이 다르게 기재되어 있으므로, 방문 전 최신 운행 내용을 확인해야 합니다.",
+      "sections": [
+        {
+          "heading": "코스에 안내된 경유지",
+          "paragraphs": [
+            "코스 정보에는 [11:25] KTX 안동역, 구 안동역, 월영교, 안동민속박물관과 안동댐 정상, 한자마을(구름애)과 해상촬영장, 웅부공원·임청각·찜닭골목, [17:40] KTX 안동역 순서가 제시되어 있습니다.",
+            "이 순서는 시티투어 코스에 등록된 경유 순서입니다. 자료에는 각 지점의 정차 여부, 체류시간, 내부 관람 범위 또는 자유 관람 가능 여부가 별도로 안내되어 있지 않으므로, 모든 장소를 충분히 관람할 수 있다고 단정하기는 어렵습니다. 현장에서는 투어 운영 안내에 따라 이동해야 합니다."
+          ]
+        },
+        {
+          "heading": "운행일과 시간 확인",
+          "paragraphs": [
+            "운행 정보에는 매주 금요일부터 일요일까지 운행하며, 운행 시작 시각은 11:30, 종료 시각은 17:35로 기재되어 있습니다. 반면 코스 정보에는 KTX 안동역 출발 시각이 11:25, KTX 안동역 도착 시각이 17:40으로 표시되어 있습니다.",
+            "두 자료의 시간이 서로 다르므로 어느 시각을 실제 탑승 및 도착 기준으로 삼아야 하는지 방문 전에 확인해야 합니다. 특히 안동역에서 열차를 이용하거나 다른 일정을 이어 갈 경우에는 시티투어 문의처에 최신 출발 시각과 도착 예정 시각을 문의하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "탑승 장소와 이용요금",
+          "paragraphs": [
+            "탑승 장소명은 안동역으로 안내되어 있습니다. 이용요금은 10,000원이며, 미취학 아동·장애인 3급 이내·국가유공자는 무료 대상입니다.",
+            "자료에는 예약 방법이나 좌석 이용 방식에 관한 내용이 없습니다. 예약이 필요한지, 탑승 장소의 구체적인 위치와 당일 접수 가능 여부는 안동시티투어에 확인해야 합니다. 시티투어 문의처는 054-855-7179이며, 관리기관인 안동시청 전화번호는 054-840-6392입니다."
+          ]
+        },
+        {
+          "heading": "안동댐 및 음식점 후보 정보",
+          "paragraphs": [
+            "제공된 장소 정보에는 안동댐이 등록되어 있으며 주소는 경상북도 안동시 호반로 31입니다. 안동댐은 코스 정보에도 안동민속박물관과 함께 ‘안동댐 정상’ 구간으로 표시되어 있습니다. 다만 제공 자료에는 안동댐의 관람 내용이나 이용 방법이 따로 제시되지 않았습니다.",
+            "음식점 후보로는 맛50년 헛제사밥과 콩깍지가 있습니다. 맛50년 헛제사밥은 경상북도 안동시 석주로 201(상아동), 콩깍지는 경상북도 안동시 석주로 171-4에 있습니다. 이 음식점들은 경유지와 좌표를 기준으로 선정된 인근 후보일 뿐, 공식 투어 제휴 식당이라는 뜻은 아닙니다. 실제 도로 이동거리, 영업 여부와 이용 가능 시간도 확인되지 않았으므로 식사 장소로 정하기 전 직접 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "방문 전 확인할 사항",
+          "paragraphs": [
+            "이 코스는 데이터 기준일자 2026년 6월 30일 자료를 바탕으로 한 안내입니다. 2026년 9월 방문 시에도 동일하게 운행한다고 확정할 수 없으므로, 운행일과 운행 여부, 출발·도착 시각, 요금, 무료 대상, 예약 필요 여부를 출발 전에 확인해야 합니다.",
+            "문의는 안동시티투어 054-855-7179 또는 안동시청 관리기관 054-840-6392로 할 수 있습니다. 홈페이지 주소도 제공되어 있지만, 최신 운영 공지와 현장 안내를 우선 확인하는 것이 좋습니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-08T19:37:27.765Z",
+      "publishedDay": "2026-09-09",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 996,
+          "completion_tokens": 1492,
+          "total_tokens": 2488,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 79,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2379,
+          "completion_tokens": 1192,
+          "total_tokens": 3571,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2376,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 68,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 2065,
+          "completion_tokens": 678,
+          "total_tokens": 2743,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2062,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 354,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1861,
+          "completion_tokens": 189,
+          "total_tokens": 2050,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1858,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 169,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "c34731c4a16a7a",
+      "area": "전남",
+      "city": "목포시",
+      "title": "목포 별빛물결시티투어 코스와 운행 정보",
+      "raw": {
+        "시도명": "전라남도",
+        "시군구명": "목포시",
+        "시티투어코스명": "별빛물결시티투어",
+        "시티투어문의처": "나나고속관광여행사 061-245-1814",
+        "시티투어운영시간": "4월+5월+6월+9월+10월+11월(금+토) / 7월+8월(화+수+목+금+토) / 6월+7월+8월(19:30~22:30)",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "목포역 앞 시티투어 승강장",
+        "시티투어코스정보": "목포역(승차)-유달산노적봉-유달유원지-평화광장-갓바위 해상보행교-목포항구포차-목포역(하차)",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "월요일 휴무",
+        "운행시작시각": "19:00",
+        "운행종료시각": "22:00",
+        "배차시간": "0",
+        "이용요금": "성인(대학생) 6000원+국가유공자·목포시민 3000원+단체(20인이상) 3000원+장애인·군인·경로 3000원+학생(초·중·고생) 2500원",
+        "이용요금부가정보": "",
+        "홈페이지주소": "http://www.mokpo.go.kr/tour",
+        "관리기관명": "전라남도 목포시청",
+        "관리기관전화번호": "061-270-3512",
+        "데이터기준일자": "2025-06-25"
+      },
+      "related": [
+        {
+          "id": "2795367",
+          "title": "목포항",
+          "href": "/places/spot/2795367",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/42/3535142_image2_1.jpg",
+          "address": "전남광주통합특별시 목포시 해안로 182"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "2843996",
+          "title": "돌집",
+          "href": "/food/spot/2843996",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/87/2843987_image2_1.jpg",
+          "address": "전남광주통합특별시 목포시 번화로 67"
+        },
+        {
+          "id": "2858655",
+          "title": "선경준치회집",
+          "href": "/food/spot/2858655",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/48/2858648_image2_1.jpg",
+          "address": "전남광주통합특별시 목포시 해안로57번길 2"
+        },
+        {
+          "id": "2891411",
+          "title": "성식당",
+          "href": "/food/spot/2891411",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/03/2891403_image2_1.JPG",
+          "address": "전남광주통합특별시 목포시 수강로4번길 6 (영해동1가)"
+        }
+      ],
+      "officialUrl": "http://www.mokpo.go.kr/tour",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/42/3535142_image2_1.jpg",
+      "imageTitle": "목포항",
+      "priority": 69,
+      "description": "목포역에서 출발해 유달산노적봉, 유달유원지, 평화광장, 갓바위 해상보행교, 목포항구포차를 거쳐 돌아오는 별빛물결시티투어의 코스와 운행일, 요금, 확인 사항을 안내합니다.",
+      "intro": "별빛물결시티투어는 목포역 앞 시티투어 승강장에서 출발해 정해진 경유지를 둘러본 뒤 목포역으로 돌아오는 고정형 시티투어입니다. 운행 요일과 시간이 시기에 따라 다르게 안내되어 있으므로, 방문 전 공식 안내와 운영사 문의를 통해 실제 운행 여부를 확인하는 것이 좋습니다.",
+      "sections": [
+        {
+          "heading": "코스와 운행 방식",
+          "paragraphs": [
+            "자료에 기재된 경유 순서는 목포역 승차, 유달산노적봉, 유달유원지, 평화광장, 갓바위 해상보행교, 목포항구포차, 목포역 하차입니다. 출발지와 도착지는 모두 목포역이며, 코스는 고정형으로 운영됩니다.",
+            "각 경유지에서의 관람 내용이나 체류 시간은 제공 자료에 구체적으로 안내되어 있지 않습니다. 목포항구포차 역시 코스의 경유지로 기재되어 있지만, 식사나 이용 가능 여부는 별도로 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "운행 기간과 탑승 장소",
+          "paragraphs": [
+            "4월·5월·6월·9월·10월·11월에는 금요일과 토요일에 운행하고, 7월·8월에는 화요일부터 토요일까지 운행하는 것으로 안내되어 있습니다. 월요일은 휴무입니다.",
+            "기본 운행 시각은 19시부터 22시까지이며, 6월·7월·8월에는 19시 30분부터 22시 30분까지로 별도 기재되어 있습니다. 자료에 두 시간대가 함께 제시되어 있으므로 방문 시기의 적용 시간을 확인해야 합니다.",
+            "탑승 장소는 목포역 앞 시티투어 승강장입니다. 예약 가능 여부와 구체적인 탑승 절차는 제공 자료에 없으며, 운행 여부와 탑승 관련 사항은 나나고속관광여행사에 문의할 수 있습니다."
+          ]
+        },
+        {
+          "heading": "이용 요금",
+          "paragraphs": [
+            "성인과 대학생 요금은 6,000원입니다. 국가유공자·목포시민, 20인 이상 단체, 장애인·군인·경로 대상은 각각 3,000원이며, 학생 초·중·고생은 2,500원으로 안내되어 있습니다.",
+            "할인 대상별 증빙서류, 단체 예약 방법, 좌석 배정과 결제 방식은 자료에 기재되어 있지 않습니다. 요금은 데이터 기준일인 2025년 6월 25일 이후 변경될 수 있으므로 결제 전 확인이 필요합니다."
+          ]
+        },
+        {
+          "heading": "주변 장소와 음식점 후보",
+          "paragraphs": [
+            "제공된 관광정보에는 목포항이 별도 장소로 제시되어 있습니다. 주소는 전남광주통합특별시 목포시 해안로 182이며, 상세 소개 내용은 제공되지 않았습니다. 목포항이 투어의 공식 경유지로 별도 운영되는지와 관람 가능 여부도 자료만으로는 확인되지 않습니다.",
+            "음식점 후보로는 돌집, 선경준치회집, 성식당이 제시되었습니다. 주소는 각각 전남광주통합특별시 목포시 번화로 67, 해안로57번길 2, 수강로4번길 6입니다. 이 목록은 경유지와 좌표 기준 약 2km 이내 후보를 선정한 자료이며, 도로 이동거리·영업 여부·공식 투어 제휴는 검증되지 않았습니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인 사항",
+          "paragraphs": [
+            "출발 전 운행일, 적용 운행 시각, 잔여 좌석, 예약 필요 여부를 운영사 또는 목포시청에 확인하는 것이 좋습니다. 특히 6월부터 8월까지의 별도 시간 안내가 방문일에 적용되는지 확인해야 합니다.",
+            "목포역 앞 승강장의 정확한 위치와 집결 시각, 할인 증빙, 우천이나 시설 사정에 따른 코스 변경 여부는 제공 자료에 없습니다. 경유지의 이용 가능 여부와 음식점 영업 여부도 투어 운행과 별개일 수 있으므로 방문 전에 직접 확인하세요. 문의처는 나나고속관광여행사 061-245-1814, 목포시청 061-270-3512입니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-08T19:38:05.689Z",
+      "publishedDay": "2026-09-09",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 1158,
+          "completion_tokens": 1468,
+          "total_tokens": 2626,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1155,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 159,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2330,
+          "completion_tokens": 1291,
+          "total_tokens": 3621,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2327,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 130,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 2121,
+          "completion_tokens": 521,
+          "total_tokens": 2642,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2118,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 302,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1975,
+          "completion_tokens": 252,
+          "total_tokens": 2227,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1972,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 232,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
     }
   ],
   "rejected": [
@@ -3625,10 +5409,20 @@
       ],
       "date": "2026-09-08",
       "version": 2
+    },
+    {
+      "id": "6489efa594d064",
+      "title": "월요일",
+      "reason": "Fact review",
+      "issues": [
+        "‘제공된 주변 관광정보에는 구봉산, 소양강댐, 춘천 삼악산 호수케이블카가 제시되어 있습니다’라는 문장은 부정확합니다. 원자료의 ‘경유지주변관광정보’ 항목은 비어 있으며, 해당 장소들은 별도의 장소 목록과 코스 정보에 제시되어 있습니다."
+      ],
+      "date": "2026-09-09",
+      "version": 2
     }
   ],
   "sourceUrl": "https://www.data.go.kr/data/15025456/standard.do",
   "rawCount": 298,
   "uniqueCount": 296,
-  "updatedAt": "2026-09-07T16:35:48.472Z"
+  "updatedAt": "2026-09-08T19:38:05.689Z"
 }
