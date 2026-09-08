@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { SITE } from "@/lib/site";
 import Header from "@/components/Header";
@@ -68,8 +69,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-        <script
-          async
+        <Script
+          id="adsense-loader"
+          strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8120273282543163"
           crossOrigin="anonymous"
         />

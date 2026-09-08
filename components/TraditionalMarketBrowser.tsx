@@ -22,7 +22,9 @@ export default function TraditionalMarketBrowser({ initial, initialRegion = "전
   const [nearby, setNearby] = useState<number | null>(null);
   const [position, setPosition] = useState<{ lat: number; lng: number } | null>(null);
   const [locating, setLocating] = useState(false);
-  useEffect(() => { if (!initial.length) fetch("/api/traditional-markets").then((r) => r.json()).then((j) => setMarkets(j.markets || [])).catch(() => {}); }, [initial.length]);
+  const [loading, setLoading] = useState(!initial.length);
+  const [unavailable, setUnavailable] = useState(false);
+  useEffect(() => { if (!initial.length) fetch("/api/traditional-markets").then((r) => { if (!r.ok) throw new Error("시장 정보 요청 실패"); return r.json(); }).then((j) => { setMarkets(j.markets || []); setUnavailable(Boolean(j.unavailable)); }).catch(() => setUnavailable(true)).finally(() => setLoading(false)); }, [initial.length]);
   const list = useMemo(() => markets.filter((m) => {
     if (region !== "전체" && m.region !== region) return false;
     if (query && !m.name.includes(query)) return false;
@@ -44,7 +46,7 @@ export default function TraditionalMarketBrowser({ initial, initialRegion = "전
     <div className="mt-3 flex flex-wrap gap-2"><Toggle active={parking} onClick={() => setParking(!parking)} label="주차 가능" /><Toggle active={giftcard} onClick={() => setGiftcard(!giftcard)} label="상품권 사용" /><Toggle active={permanent} onClick={() => setPermanent(!permanent)} label="상설시장" />{position && [5, 10, 30].map((n) => <Toggle key={n} active={nearby === n} onClick={() => setNearby(nearby === n ? null : n)} label={n + "km 이내"} />)}</div>
     <p className="mt-5 text-[13px] text-ink-soft">{position ? "현재 위치에서 가까운 순서로 보여드려요." : "전국 전통시장 " + list.length.toLocaleString() + "곳"}</p>
     <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{list.slice(0, 120).map((m: TraditionalMarket & { distance: number }) => <article key={m.id} className="rounded-xl border border-line bg-white p-4"><div className="flex items-start justify-between gap-3"><h2 className="text-[16px] font-extrabold text-ink">{m.name}</h2><span className="shrink-0 text-[12px] font-bold text-free">{m.region || "전국"}</span></div>{m.category && <p className="mt-1 text-[12px] text-ink-soft">{m.category}</p>}{m.address && <p className="mt-3 text-[13px] leading-5 text-ink-soft">{m.address}</p>}<div className="mt-3 flex flex-wrap gap-1.5">{m.hasParking === true && <Badge text="주차 가능" />}{m.giftcard === true && <Badge text="상품권 사용" />}{m.openingType && <Badge text={m.openingType} />}{position && <Badge text={(m.distance < 1 ? Math.round(m.distance * 1000) + "m" : m.distance.toFixed(1) + "km")} />}</div>{m.items && <p className="mt-3 line-clamp-2 text-[12px] text-ink-faint">취급품목 · {m.items}</p>}{m.phone && <a href={"tel:" + m.phone} className="mt-3 inline-block text-[12px] font-bold text-free">전화 걸기 →</a>}</article>)}</div>
-    {!list.length && <div className="border-t border-line py-14 text-center text-[14px] text-ink-soft">조건에 맞는 전통시장이 없어요. 지역이나 필터를 바꿔보세요.</div>}
+    {!list.length && <div role="status" className="border-t border-line py-14 text-center text-[14px] leading-6 text-ink-soft">{loading ? "전통시장 정보를 불러오는 중입니다." : unavailable ? "공공데이터 제공기관의 응답이 지연되어 시장 정보를 불러오지 못했습니다. 잠시 후 다시 방문해 주세요. 아래에서 주변 먹거리와 나들이를 찾아볼 수 있어요." : "조건에 맞는 전통시장이 없어요. 지역이나 필터를 바꿔보세요."}</div>}
     {list.length > 120 && <p className="mt-6 text-center text-[12px] text-ink-faint">상위 120곳 표시 · 검색과 필터로 범위를 좁혀보세요.</p>}
     <nav className="mt-9 border-t border-line pt-5"><p className="text-[13px] font-black text-ink">함께 찾아보기</p><div className="mt-2 flex flex-wrap gap-3 text-[13px] font-bold text-free"><Link href="/season">가을나들이</Link><Link href="/month/9">9월에 뭐하지</Link><Link href="/food">전통시장 먹거리와 맛집탐방</Link></div></nav>
   </div></div>;
