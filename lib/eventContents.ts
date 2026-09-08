@@ -4,6 +4,7 @@ export function eventContentsText(raw: string = ""): string {
     amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ",
     ndash: "–", mdash: "—", hellip: "…", middot: "·", bull: "•",
     lsquo: "‘", rsquo: "’", ldquo: "“", rdquo: "”", copy: "©", reg: "®",
+    eacute: "é", agrave: "à", egrave: "è", ouml: "ö", uuml: "ü",
   };
   let text = raw;
   // Some feeds escape already escaped HTML. Bound the passes for predictable cost.

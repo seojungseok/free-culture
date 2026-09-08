@@ -9,6 +9,7 @@ import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { fmtRange } from "@/lib/format";
 import { todayYmd } from "@/lib/dates";
+import { eventContentsText } from "@/lib/eventContents";
 
 export const revalidate = 3600;
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ const regionGroups: Record<string, string[]> = {
 };
 
 function eventItem(event: ReturnType<typeof getWeekend>[number]): HomeItem {
-  return { id: `event-${event.id}`, href: `/event/${event.id}`, title: event.title, meta: [event.area, fmtRange(event.startDate, event.endDate)].filter(Boolean).join(" · "), image: event.imgUrl || "", badge: event.realmName || "문화행사", area: event.area };
+  return { id: `event-${event.id}`, href: `/event/${event.id}`, title: eventContentsText(event.title), meta: [event.area, fmtRange(event.startDate, event.endDate)].filter(Boolean).join(" · "), image: event.imgUrl || "", badge: event.realmName || "문화행사", area: event.area, start: event.startDate, end: event.endDate };
 }
 
 function mixForRegion(groups: HomeItem[][], limit = 8): HomeItem[] {
