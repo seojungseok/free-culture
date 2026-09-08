@@ -19,6 +19,7 @@ import { areaFestivals, fmtMd } from "@/lib/festivals";
 import { SITE } from "@/lib/site";
 import { galleryForStops } from "@/lib/photoGallery";
 
+import NearbyParking from "@/components/NearbyParking";
 export const revalidate = 86400;
 export const dynamicParams = true;
 
@@ -191,6 +192,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
         </section>
       )}
 
+      {c.format !== "list" && mapStops[0] && <NearbyParking lon={Number(mapStops[0].mapx)} lat={Number(mapStops[0].mapy)} area={c.area} address={mapStops[0].addr} title={`첫 방문지 ${mapStops[0].name} 근처 주차`} />}
       {/* 숙소 제휴 배너 — 제휴 링크가 등록된 지역에서만 (광고, 위아래 여백 확보) */}
       {stay && (
         <div className="my-10">

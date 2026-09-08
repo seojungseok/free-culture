@@ -1,4 +1,5 @@
 import NextStop from "@/components/NextStop";
+import NearbyParking from "@/components/NearbyParking";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
@@ -306,6 +307,7 @@ export default async function SpotDetailPage({
         </section>
       )}
 
+      <NearbyParking lon={Number(spot.mapx)} lat={Number(spot.mapy)} area={spot.area} address={spot.addr} />
       {/* 볼거리·시설 (detailInfo2 캐시) — 부대시설·세부 안내 */}
       {facilities.length > 0 && (
         <section className="mt-6">

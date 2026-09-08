@@ -1,4 +1,5 @@
 import NextStop from "@/components/NextStop";
+import NearbyParking from "@/components/NearbyParking";
 import { todayYmd } from "@/lib/dates";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -240,6 +241,7 @@ export default async function EventPage({
           </section>
 
           {ev.endDate >= todayYmd() ? <NextStop anchor={{id:"event:"+ev.id,title:ev.title,href:"/event/"+ev.id,area:ev.area,kind:"event",image:ev.imgUrl,address:ev.address || ev.place,x:Number(ev.gpsX),y:Number(ev.gpsY),free:ev.priceType==="free",kids:ev.audiences?.includes("kids"),start:ev.startDate,end:ev.endDate}}/> : <p className="mt-5 rounded-xl bg-amber-50 p-4 text-sm">등록된 일정 기준으로 종료된 행사입니다. <Link href="/weekend" className="font-bold underline">이번 주말 행사 보기</Link></p>}
+          {ev.endDate >= todayYmd() && <NearbyParking lon={Number(ev.gpsX)} lat={Number(ev.gpsY)} area={ev.area} address={ev.address} title="행사장 근처 주차 확인" />}
           <ShareButtons title={ev.title} officialUrl={ev.officialUrl} />
 
           <p className="mt-4 text-[13px] text-ink-faint">

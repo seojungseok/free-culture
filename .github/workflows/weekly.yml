@@ -25,6 +25,14 @@ jobs:
       - name: 의존성 설치
         run: npm ci
 
+      - name: 검증 가능한 근처 주차 후보 갱신 (제한 표본, 실패 시 기존 파일 유지)
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          PARKING_API_KEY: ${{ secrets.PARKING_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: node scripts/collectParking.mjs
+
       # 예산 자동 배분(RIN 완주 시 방문팁·볼거리로 이관)
       - name: TourAPI 예산 계획
         id: plan
@@ -99,7 +107,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/restaurants.json data/restaurant-intro.json data/place-intro.json \
-                  data/place-info.json data/camping-images.json data/photo-gallery.json data/festivals.json data/pet-travel.json
+                  data/place-info.json data/camping-images.json data/photo-gallery.json data/festivals.json data/pet-travel.json data/parking.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
           else

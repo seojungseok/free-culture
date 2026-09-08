@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SAVED_KEY, parseSaved, type TripStop } from "@/lib/planner";
+import HomeRegionPicker from './HomeRegionPicker';
 
 export type HomeItem = { id: string; href: string; title: string; meta: string; image: string; badge: string; area?: string; start?: string; end?: string };
 type Props = { regional: Record<string, HomeItem[]>; todayItems: HomeItem[]; freeItems: HomeItem[]; kidItems: HomeItem[]; dateItems: HomeItem[]; courseItems: HomeItem[]; regions: { name: string; href: string }[]; siteName: string };
@@ -24,7 +25,7 @@ export default function HomeExplorer({ regional, todayItems, freeItems, kidItems
     <Section title="아이와 어디 가지?" href="/kids"><Rail items={kidItems} saved={saved} toggleSave={toggleSave} /></Section>
     <Section title="데이트·드라이브" href="/date" description="카페, 산책, 식사를 가까운 동선으로 묶은 반나절 코스예요."><Rail items={dateItems} saved={saved} toggleSave={toggleSave} /></Section>
     <Section title="하루 코스로 다녀오기" href="/course"><Rail items={courseItems} saved={saved} toggleSave={toggleSave} /></Section>
-    <section className="mx-auto w-full max-w-[1120px] px-5 pt-10 sm:px-6 sm:pt-14 lg:px-8"><h2 className="text-[20px] font-black tracking-tight text-ink sm:text-[24px]">지역별로 찾아보기</h2><p className="mt-1 text-[13px] text-ink-soft">가고 싶은 지역의 행사·나들이·여행코스를 한 번에 볼 수 있어요.</p><div className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-6">{regions.map(({ name, href }) => <Link key={name} href={href} prefetch={false} className="rounded-xl bg-[#f5f7fa] px-3 py-3 text-center text-[13px] font-bold text-ink-soft transition hover:bg-[#eaf2ff] hover:text-brandblue">{name}</Link>)}</div></section>
+    <HomeRegionPicker regions={regions}/>
   </div>;
 }
 function QuickLink({ icon, title, text, href }: { icon: string; title: string; text: string; href: string }) { return <Link href={href} className="min-w-0 rounded-2xl bg-[#f5f7fa] p-3.5 transition hover:bg-[#eaf2ff] sm:p-5"><span className="text-[21px]">{icon}</span><strong className="mt-2 block truncate text-[14px] text-ink sm:text-[16px]">{title}</strong><span className="mt-0.5 block truncate text-[10px] text-ink-faint sm:text-[12px]">{text}</span></Link>; }
