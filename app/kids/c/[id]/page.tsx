@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const th = THEME_LABEL[c.theme]?.label || "아이와 함께";
   const headline = kidHeadline(c.theme, c.spot.title);
   const title = `${headline} — ${c.area} ${c.city} 아이와 함께 코스`;
-  const description = `${c.area} ${c.city} 아이와 함께 ${th} 코스. ${c.spot.title}에서 놀고${c.park ? `, 근처 ${c.park.title}을 걷다가` : ""} ${c.food ? `${c.food.title}에서 아이가 좋아하는 음식으로 마무리` : ""}. 차로 가까운 동선으로 반나절이면 충분해요.`;
+  const description = `${c.area} ${c.city} 아이와 함께 ${th} 코스. ${[c.spot.title,c.park?.title,c.food?.title].filter(Boolean).join(' → ')} 순서의 방문 후보와 위치를 확인하세요. 좌표로 구성한 코스이며 실제 이동 경로와 운영시간은 방문 전 확인이 필요합니다.`;
   return {
     title, description,
     keywords: [`${c.city} 아이와 갈만한 곳`, `${c.area} 아이와 함께`, `${c.city} ${th}`, c.spot.title, headline, `${c.city} 아이 나들이`, `${c.city} 키즈`],
@@ -75,7 +75,7 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
     "@context": "https://schema.org", "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "아이와 함께", item: `${SITE.url}/kids` },
-      { "@type": "ListItem", position: 2, name: `${c.area} 아이와 함께`, item: `${SITE.url}/kids` },
+      { "@type": "ListItem", position: 2, name: c.area, item: `${SITE.url}/region/${(SIDO_SLUG as Record<string,string>)[c.area]}` },
       { "@type": "ListItem", position: 3, name: `${c.spot.title} 코스`, item: canonical },
     ],
   };
@@ -96,14 +96,14 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
       <nav className="mb-3 flex flex-wrap items-center gap-1 text-[12.5px] text-ink-faint">
         <Link href="/kids" className="hover:text-free">아이와 함께</Link>
         <span>›</span>
-        <span>{c.area}</span>
+        <Link href={`/region/${(SIDO_SLUG as Record<string,string>)[c.area]}`} className="hover:text-free">{c.area}</Link>
       </nav>
 
       <div className="mb-2 flex flex-wrap items-center gap-1.5">
         <span className="rounded-full bg-free px-2.5 py-0.5 text-[11px] font-black text-white">{th.emoji} {th.label}</span>
         <span className="rounded-full bg-tint px-2 py-0.5 text-[11px] font-bold text-freedark">{c.area} {c.city}</span>
         {c.indoor && <span className="rounded-full bg-[#3b82f6] px-2 py-0.5 text-[11px] font-bold text-white">🌧️ 비 오는 날 실내</span>}
-        <span className="text-[12px] text-ink-faint">· {c.totalKm < 1 ? "걸어서 이동 가능" : `차로 약 ${c.driveMin}분`}</span>
+        <span className="text-[12px] text-ink-faint">· 구간별 직선거리 합계 {kmLabel(c.totalKm)}</span>
       </div>
 
       <h1 className="text-[24px] font-black leading-tight tracking-[-0.02em] text-ink sm:text-[30px]">
@@ -116,7 +116,7 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
         <b className="font-bold text-ink"> {c.spot.title}</b>에서 신나게 놀고
         {c.park && <> , 가까운 <b className="font-bold text-ink">{c.park.title}</b>에서 잠깐 걷다가</>}
         {c.food && <> <b className="font-bold text-ink">{c.food.title}</b>에서 아이가 좋아하는 음식으로 마무리</>}해요.
-        {" "}세 곳이 차로 가까이 모여 있어 이동에 힘 빼지 않아도 돼요.
+        {" "}좌표로 연결한 방문 후보이며, 실제 도로 이동시간과 운영시간·예약 가능 여부는 확인이 필요합니다.
       </p>
 
       {/* 코스 한눈에 */}
@@ -130,7 +130,7 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
       </div>
 
       <Stop stop={c.spot} label={`1. ${th.label}`} emoji={th.emoji} intro={`${c.spot.addr}에 있어요. 이 코스의 출발점으로, 아이와 여기서 충분히 논 뒤 근처로 이동하면 동선이 자연스러워요.`} />
-      {c.park && <Stop stop={c.park} label="2. 공원 산책" emoji="🌳" fromTitle={c.spot.title} intro={`명소에서 ${kmLabel(c.park.distKm)}, 차로 금방이에요. 실컷 논 뒤 아이와 천천히 걷고 뛰어놀기 좋은 곳이에요.`} />}
+      {c.park && <Stop stop={c.park} label="2. 공원 산책" emoji="🌳" fromTitle={c.spot.title} intro={`명소에서 직선거리 ${kmLabel(c.park.distKm)}에 있는 산책 후보입니다. 실제 이동 경로와 공원 이용 안내를 확인하세요.`} />}
       {c.food && <Stop stop={c.food} label={c.park ? "3. 아이 맛집" : "2. 아이 맛집"} emoji="🍽" fromTitle={c.park ? c.park.title : c.spot.title} intro={`${kmLabel(c.food.distKm)} 거리예요. 아이가 좋아할 만한 메뉴로 하루를 마무리하기 좋아요. 방문 전 영업시간은 확인해 주세요.`} />}
 
       {related.length > 0 && (

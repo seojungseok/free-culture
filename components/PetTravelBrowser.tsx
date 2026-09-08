@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
-type PetPlace = {
+export type PetPlace = {
   id: string;
   title: string;
   address: string;
@@ -23,8 +23,8 @@ const types = [
   { k: "15", t: "축제" },
 ];
 
-export default function PetTravelBrowser() {
-  const [items, setItems] = useState<PetPlace[]>([]);
+export default function PetTravelBrowser({initial=[]}: {initial?: PetPlace[]}) {
+  const [items, setItems] = useState<PetPlace[]>(initial);
   const [region, setRegion] = useState("전체");
   const [type, setType] = useState("");
   const [query, setQuery] = useState("");
@@ -33,7 +33,7 @@ export default function PetTravelBrowser() {
   useEffect(() => {
     fetch("/api/pet-travel")
       .then((response) => response.json())
-      .then((json) => setItems(json.items || []))
+      .then((json) => { if(Array.isArray(json.items) && json.items.length) setItems(json.items); })
       .catch(() => {})
       .finally(() => setLoading(false));
   }, []);

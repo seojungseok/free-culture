@@ -16,10 +16,12 @@ import DetailGuidance from "@/components/DetailGuidance";
 import AdSlot from "@/components/AdSlot";
 import PosterCard from "@/components/PosterCard";
 import ShareButtons from "@/components/ShareButtons";
+import { eventOffer } from "@/lib/eventSeo";
+import { SIDO_SLUG } from "@/lib/classify";
 
-// ISR: 3일 재검증. 행사는 날짜 민감(종료 반영)하나 상세 자체는 자주 안 바뀜.
+// ISR: 1시간 재검증. 종료 상태를 반영하면서 기존 상세 URL은 유지한다.
 // 전체를 빌드 때 만들지 않고 주목도 높은 일부만 사전 생성, 나머지는 첫 요청 때 생성 후 캐시.
-export const revalidate = 3600; // 3일
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return getAllEvents()
@@ -73,6 +75,8 @@ export default async function EventPage({
   if (!ev) notFound();
 
   const d = dday(ev.startDate, ev.endDate);
+  const ended = ev.endDate < todayYmd();
+  const regionSlug = (SIDO_SLUG as Record<string,string>)[ev.area];
   const contents = eventContentsParagraphs(ev.contents);
   const story = eventStory({
     title: ev.title, realmName: ev.realmName, area: ev.area, sigungu: ev.sigungu,
@@ -81,12 +85,14 @@ export default async function EventPage({
   });
   const related = getAllEvents()
     .filter((e) => e.id !== ev.id && e.genreKey === ev.genreKey && e.imgUrl && e.endDate >= todayYmd())
+    .sort((a,b)=>Number(b.area===ev.area)-Number(a.area===ev.area))
     .slice(0, 5);
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Event",
     name: ev.title,
+    url: `${SITE.url}/event/${ev.id}`,
     startDate: iso(ev.startDate),
     endDate: iso(ev.endDate),
     eventStatus: "https://schema.org/EventScheduled",
@@ -98,20 +104,20 @@ export default async function EventPage({
       name: ev.place || ev.area,
       address: ev.address || `${ev.area} ${ev.sigungu}`.trim(),
     },
-    offers: {
-      "@type": "Offer",
-      price: ev.priceType === "free" ? "0" : ev.priceMax ? String(ev.priceMax) : undefined,
-      priceCurrency: "KRW",
-      availability: ev.endDate >= todayYmd() ? "https://schema.org/InStock" : undefined,
-      url: ev.officialUrl || SITE.url,
-    },
+    offers: eventOffer(ev),
   };
 
   return (
     <article className="mx-auto w-full max-w-[1280px] px-5 pb-14 pt-6 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, {
+          '@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+            {'@type':'ListItem',position:1,name:'홈',item:SITE.url},
+            {'@type':'ListItem',position:2,name:ev.realmName || '문화행사',item:`${SITE.url}/genre/${ev.genreKey}`},
+            {'@type':'ListItem',position:3,name:ev.title,item:`${SITE.url}/event/${ev.id}`},
+          ],
+        }]).replace(/</g, "\\u003c") }}
       />
 
       <nav className="mb-5 text-sm text-ink-faint">
@@ -169,6 +175,8 @@ export default async function EventPage({
             {ev.title}
           </h1>
 
+          {ended && <p className="mt-4 rounded-xl bg-amber-50 p-4 text-sm leading-6">등록된 일정 기준으로 종료된 행사입니다. 지난 행사 정보는 참고용으로 보존합니다. {regionSlug&&<Link href={'/region/'+regionSlug} className="font-bold underline">현재 {ev.area} 행사·나들이 찾기</Link>}</p>}
+
           <dl className="mt-6 divide-y divide-black/5 rounded-2xl border border-black/5 bg-white">
             <Row label="요금">
               <span className="font-semibold">{ev.priceRaw || ev.priceLabel}</span>
@@ -183,7 +191,7 @@ export default async function EventPage({
                 </span>
               )}
             </Row>
-            <Row label="기간">{fmtRange(ev.startDate, ev.endDate)}</Row>
+            <Row label="기간"><time dateTime={iso(ev.startDate)}>{fmtRange(ev.startDate, ev.startDate)}</time>{ev.startDate!==ev.endDate&&<> ~ <time dateTime={iso(ev.endDate)}>{fmtRange(ev.endDate,ev.endDate)}</time></>}</Row>
             <Row label="장소">{ev.place || "-"}</Row>
             <Row label="주소">{ev.address || `${ev.area} ${ev.sigungu}`.trim() || "-"}</Row>
             {ev.phone && <Row label="문의">{ev.phone}</Row>}

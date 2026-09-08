@@ -14,6 +14,9 @@ import { getDateCourses, dateAreaCounts, dateCityParams } from "@/lib/dateCourse
 import { MARKET_REGIONS } from "@/lib/traditionalMarkets";
 import { getAllFestivals } from "@/lib/festivals";
 import { getCityTours } from "@/lib/cityTours";
+import { getPetTravelPlaces } from "@/lib/petTravel";
+import { getKidCourses } from "@/lib/kidCourses";
+import { getAllBundles } from "@/lib/campingCollections";
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
@@ -42,6 +45,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/weekend",
     "/ending-soon",
     "/kids",
+    "/season",
+    "/camping/collections",
     "/game",
     "/game/roulette",
     "/game/ladder",
@@ -103,8 +108,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 발행글 있는 상세 → 최신 lastmod + 높은 우선순위로 별도 그룹(구글이 새 글 먼저 크롤)
   const articleAt = new Map<string, string>();
+  const livePlaceIds = new Set(getAllPlaces().map(p => p.id));
   for (const a of getAllArticles()) {
-    if (a.status === "published") articleAt.set(a.id, a.publishedAt || a.generatedAt || "");
+    if (a.status === "published" && livePlaceIds.has(a.id)) articleAt.set(a.id, a.publishedAt || a.generatedAt || "");
   }
   const articleSpotRoutes = [...articleAt].map(([id, at]) => ({
     url: `${base}/places/spot/${id}`,
@@ -300,6 +306,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...dateRoutes,
     ...courseDurRoutes,
     ...courseThemeRoutes,
+    ...getAllBundles().map(b => ({url: `${base}/camping/collections/${b.slug}`, changeFrequency: "weekly" as const})),
+    ...getKidCourses().map(c => ({url: `${base}/kids/c/${c.id}`, changeFrequency: "weekly" as const})),
+    ...getPetTravelPlaces().filter(p => p.title && (p.address || p.addr) && (p.petInfo || p.overview || p.summary)).map(p => ({url: `${base}/pet-travel/${p.id}`, changeFrequency: "weekly" as const})),
     // 2) 발행글 있는 상세 (최신 lastmod — 새 글 우선 크롤)
     ...articleSpotRoutes,
     ...courseDetailRoutes,

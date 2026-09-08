@@ -6,6 +6,7 @@ import {regionHub} from '@/lib/regionHub';
 import RegionHubCards from '@/components/RegionHubCards';
 import {getByRegion} from '@/lib/data';
 import RegionHubFilter from '@/components/RegionHubFilter';
+import {formatKoreanDate} from '@/lib/dates';
 export const revalidate=3600;
 export function generateStaticParams(){return Object.values(SIDO_SLUG).map(code=>({code}));}
 export async function generateMetadata({params}:{params:Promise<{code:string}>}):Promise<Metadata>{
@@ -22,7 +23,7 @@ export default async function RegionPage({params}:{params:Promise<{code:string}>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(json).replace(/</g,'\\u003c')}}/>
  <nav aria-label="현재 위치" className="mb-4 text-xs text-ink-soft"><Link href="/">홈</Link> / {area}</nav>
  <h1 className="text-2xl font-black tracking-tight sm:text-3xl">{area}에서 이번 주말 뭐하지?</h1>
- <p className="mt-3 text-sm leading-6 text-ink-soft">행사부터 나들이와 여행코스까지, {area}에서 보낼 하루를 골라보세요.</p>
+ <p className="mt-3 text-sm leading-6 text-ink-soft">행사부터 나들이와 여행코스까지, {area}에서 보낼 하루를 골라보세요. 행사 추천 기준: {formatKoreanDate(weekend.start)} ~ {formatKoreanDate(weekend.end)}. 장소·코스의 실제 운영일은 상세에서 확인하세요.</p>
  <RegionHubFilter key={code} panels={[
  {key:'weekend',label:'이번 주말',content:<section id="weekend" className="py-3"><h2 className="text-xl font-extrabold">이번 주말 {area} 추천</h2><p className="mb-5 mt-2 text-xs leading-5 text-ink-soft">여러 종류에서 고르게 골랐습니다. 운영일·예약은 상세에서 확인하세요. 다른 종류를 선택하면 목록이 바뀝니다.</p><RegionHubCards items={recommended}/></section>},
  ...sections.map(s=>({key:s.key,label:s.label,content:<section id={s.key} className="py-3"><div className="mb-2 flex items-center justify-between gap-3"><h2 className="text-xl font-extrabold">{s.label}</h2>{s.href&&<Link href={s.href} prefetch={false} className="shrink-0 text-sm font-bold text-brandblue">전체보기 →</Link>}</div><p className="mb-5 text-xs leading-5 text-ink-soft">{s.note}</p>

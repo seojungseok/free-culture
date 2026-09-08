@@ -27,8 +27,9 @@ export async function generateMetadata({
   const list = dateCoursesByCity(sido, city);
   if (!list.length) return {};
   const names = list.slice(0, 5).map((c) => c.cafe.title);
+  const ambiguous = dateCityParams().some(p => p.area !== slug && decodeURIComponent(p.city) === city);
   return {
-    title: `${city} 카페데이트 — 카페 ${list.length}곳과 산책·맛집 코스`,
+    title: `${ambiguous ? sido + ' ' : ''}${city} 카페데이트 — 카페 ${list.length}곳과 산책·맛집 코스`,
     description: `${sido} ${city} 카페데이트 코스 ${list.length}곳. ${names.join(", ")} 등 카페에서 시작해 가까운 공원을 걷고 맛집에서 마무리하는 반나절 동선을 모았어요.`,
     keywords: [
       `${city} 카페데이트`,

@@ -55,7 +55,9 @@ export function eventStory(ev: EventStoryInput): string[] {
   if (flavor) paras.push(flavor.line);
 
   // 3) 요금
-  if (/free/.test(ev.priceType)) {
+  if (ev.priceType === "free_estimated") {
+    paras.push("무료로 추정되는 행사이지만, 확정된 관람료와 예약 조건은 공식 안내에서 확인하세요.");
+  } else if (/free/.test(ev.priceType)) {
     paras.push(
       ev.priceType === "partial_free"
         ? "일부 대상은 무료로 관람할 수 있으니, 해당되는지 미리 확인해 보세요."

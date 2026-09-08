@@ -7,13 +7,14 @@ const monthLabel = (month: string) => {
   return value.length >= 6 && monthNumber>=1 && monthNumber<=12 ? `${monthNumber}월 촬영` : "촬영 월 미제공";
 };
 
-export default function CoursePhotoGallery({ photos, id = 'course-photo-gallery', title = '📷 관광사진으로 미리 보는 코스' }: { photos: GalleryPhoto[]; id?: string; title?: string }) {
+export default function CoursePhotoGallery({ photos, id = 'course-photo-gallery', title = '📷 관광사진으로 미리 보는 코스', headingLevel = 2 }: { photos: GalleryPhoto[]; id?: string; title?: string; headingLevel?: 2 | 3 }) {
   if (!photos.length) return null;
+  const Heading = headingLevel === 3 ? 'h3' : 'h2';
   return (
     <section className="mt-9" aria-labelledby={id}>
       <div className="mb-3 flex items-end justify-between gap-3">
         <div>
-          <h2 id={id} className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[20px]">{title}</h2>
+          <Heading id={id} className="text-[19px] font-extrabold tracking-tight text-ink sm:text-[20px]">{title}</Heading>
           <p className="mt-1 text-[13px] text-ink-faint">한국관광공사 사진으로 여행지 분위기와 계절 풍경을 먼저 확인해 보세요.</p>
         </div>
         <span className="shrink-0 text-[12px] font-bold text-ink-faint">{photos.length}장</span>

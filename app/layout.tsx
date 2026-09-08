@@ -30,14 +30,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE.name,
-    title: "주말에 뭐하지? · 이번 주말 나들이와 문화행사",
-    description:
-      "이번 주말 갈 만한 전국 문화행사·나들이·여행코스를 지역과 테마로 빠르게 찾아보세요.",
-    url: SITE.url,
+    // Let Next inherit each page's own title/description instead of the home copy.
     images: [{ url: "/opengraph-image?v=20260908" }],
     locale: "ko_KR",
   },
-  twitter: { card: "summary_large_image", title: "주말에 뭐하지? · 이번 주말 나들이와 문화행사", description: "전국 문화행사·나들이·여행코스를 한곳에서 찾아보세요.", images: ["/opengraph-image?v=20260908"] },
+  twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
 };
 
