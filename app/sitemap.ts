@@ -11,7 +11,6 @@ import {
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { getDateCourses, dateAreaCounts, dateCityParams } from "@/lib/dateCourses";
-import { MARKET_REGIONS } from "@/lib/traditionalMarkets";
 import { getAllFestivals } from "@/lib/festivals";
 import { getCityTours } from "@/lib/cityTours";
 import { getPetTravelPlaces } from "@/lib/petTravel";
@@ -38,7 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/city-tour",
     "/camping",
     "/food",
-    "/traditional-market",
     "/pet-travel",
     "/free",
     "/cheap",
@@ -91,12 +89,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const traditionalMarketRoutes = MARKET_REGIONS.map((region) => ({
-    url: `${base}/traditional-market/${(SIDO_SLUG as Record<string, string>)[region] || region}`,
-
-    changeFrequency: "daily" as const,
-    priority: 0.7,
-  }));
 
   // 가볼만한 곳 지역별 (관광지 데이터 있는 지역만)
   const placeAreaRoutes = getTourAreaCounts().map(({ area }) => ({
@@ -293,7 +285,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...monthlyRoutes,
     ...regionRoutes,
-    ...traditionalMarketRoutes,
     ...comboRoutes,
     ...genreRoutes,
     ...placeAreaRoutes,

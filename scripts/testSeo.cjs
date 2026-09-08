@@ -9,6 +9,7 @@ assert.equal(eventOffer({priceType:'paid',priceMin:10000,priceMax:20000}),undefi
 assert(!('availability' in eventOffer({priceType:'free',priceMin:0,priceMax:0})));
 const sitemap=load('app/sitemap').default(),urls=sitemap.map(s=>s.url),set=new Set(urls);
 assert.equal(urls.length,set.size,'Unique sitemap URLs');
+assert(!urls.some(u=>u.includes('/traditional-market')), 'Hidden markets stay out of sitemap');
 assert(urls.length<50000,'Single sitemap URL limit');
 assert(urls.every(u=>u.startsWith('https://mwohaji.kr')&&!u.includes('?')&&!u.includes('undefined')));
 assert(!urls.some(u=>/\/(search|saved|plan|admin)(\/|$)/.test(u)));
