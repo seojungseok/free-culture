@@ -41,6 +41,18 @@ function mixForRegion(groups: HomeItem[][], limit = 8): HomeItem[] {
   return Array.from(new Map(mixed.map((item) => [item.id, item])).values()).slice(0, limit);
 }
 
+function rotateItems(items: HomeItem[], key: string): HomeItem[] {
+  if (items.length < 2) return items;
+  const offset = Array.from(key).reduce((sum, char) => sum + char.charCodeAt(0), 0) % items.length;
+  return [...items.slice(offset), ...items.slice(0, offset)];
+}
+
+function withoutDisplayedItems(items: HomeItem[], displayed: HomeItem[]): HomeItem[] {
+  const usedIds = new Set(displayed.map((item) => item.id));
+  const usedImages = new Set(displayed.map((item) => item.image).filter(Boolean));
+  return items.filter((item) => !usedIds.has(item.id) && (!item.image || !usedImages.has(item.image)));
+}
+
 export default function HomePage() {
   const weekendEvents = getWeekend().filter((item) => item.imgUrl);
   const today = todayYmd();
@@ -56,10 +68,12 @@ export default function HomePage() {
   const weekendItems = weekendEvents.map(eventItem);
   const regional = Object.fromEntries(Object.entries(regionGroups).map(([region, areas]) => {
     const within = <T extends { area?: string }>(items: T[]) => areas.length ? items.filter((item) => item.area && areas.includes(item.area)) : items;
-    return [region, mixForRegion([within(weekendItems), within(placeItems), within(courseItems), within(campItems), within(dateItems)])];
+    const items = mixForRegion([within(weekendItems), within(placeItems), within(courseItems), within(campItems), within(dateItems)]);
+    return [region, rotateItems(items, `${today}:${region}`)];
   }));
   const freeItems = getFree(true).filter((item) => item.imgUrl && item.endDate >= today).slice(0, 8).map((item) => ({ ...eventItem(item), badge: item.priceLabel || "무료 여부 확인" }));
   const kidItems = placeItems.filter((_, index) => places[index]?.isKid).slice(0, 6);
-  const todayItems = mixForRegion([featured.map(eventItem), placeItems, courseItems, campItems, dateItems], 6);
+  const todayPool = mixForRegion([featured.map(eventItem), placeItems, courseItems, campItems, dateItems], 12);
+  const todayItems = withoutDisplayedItems(todayPool, regional.서울 || []).slice(0, 6);
   return <HomeExplorer regional={regional} todayItems={todayItems} freeItems={freeItems} kidItems={kidItems} dateItems={dateItems.slice(0, 6)} courseItems={courseItems.filter((_, index) => courses[index].duration === "당일").slice(0, 6)} regions={SIDO_LIST.map((name) => ({ name, href: `/region/${(SIDO_SLUG as Record<string, string>)[name]}` }))} siteName={SITE.name} />;
 }
