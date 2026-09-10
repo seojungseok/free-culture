@@ -45,14 +45,26 @@
 
 ## 서버 연결과 검증 범위
 
-- `.github/workflows/waug-editorial.yml`: 매일 KST 05:00 조사·작성, 08:00 이어서 처리. 최초 예정 2026-09-11 05:00. GitHub 예약은 정확한 분 단위 실행을 보장하지 않는다.
+**최종 상태: 신규 서버 작성 활성화는 사용자 권한 승인 대기.** 모델 조회와 설치·규칙 사전 검증은 성공했지만, 실제 서버 편집기 점검에서 네트워크 인자와 공식 보호 규칙의 충돌을 발견했다. 공식 권한 프로필로 수정했으나 자동 승인 검토가 지속적인 CI 네트워크 권한 변경에 명시적 사용자 승인이 필요하다며 적용을 거부했다. 전체 도메인 허용을 제거한 제한 목록도 같은 이유로 거부됐다. 따라서 신규 `waug-editorial.yml`은 `disabled_manually`로 중지했고 기존 `waug.yml` 예약 발행은 `active`로 유지했다. 아래 05:00/08:00은 구성된 시간이며, 승인 후 활성화해야 실제 신규 작성이 시작된다.
+
+- `.github/workflows/waug-editorial.yml`: 매일 KST 05:00 조사·작성, 08:00 이어서 처리. 최초 배정 2026-09-11 05:00이었으나 현재 승인 대기라 실행되지 않는다. GitHub 예약은 정확한 분 단위 실행을 보장하지 않는다.
 - 기존 공개 처리 워크플로는 KST 06:00/07:00 유지. 편집 실행은 45분 제한, 중단 시 원격 단계 저장. 모든 글 작업은 공통 동시 실행 그룹을 사용한다.
 - GitHub OPENAI_API_KEY 서버 비밀값으로 gpt-image-2 및 gpt-5.6-luna 모델 조회 HTTP 200. 비밀값을 새로 노출하거나 로컬 키 파일을 서버에 복사하지 않았다.
 - 사전 검증 실행: https://github.com/seojungseok/free-culture/actions/runs/34497528025 — 성공, generationCalls=0. Chromium·한글폰트·Sharp 설치 및 규칙 테스트 성공.
 - 예약 전체 생성→실제 이미지 품질 검수→발행 경로의 첫 실전 실행은 아직 하지 않았다. 이 보고서는 이를 성공 완료로 주장하지 않는다.
 - 단계별 상태와 이미지 과금 요청을 GitHub에 먼저 저장한다. 결과 불명확 요청은 자동 재생성하지 않고 복구 대기로 남긴다. 장소 작업 시도는 3회 상한.
-- 로컬 Codex 예약 20번은 중복 실행 방지를 위해 PAUSED. 별도 사용자 필수 설정은 현재 확인된 범위에서 없다. GitHub Actions/API 결제 잔액·권한·Vercel 연결은 유지되어야 한다.
+- 로컬 Codex 예약 20번은 중복 실행 방지를 위해 PAUSED. 필수 조치: 준비된 제한 네트워크 CI 권한 프로필의 적용을 사용자 승인해야 한다. GitHub Actions/API 결제 잔액·권한·Vercel 연결은 유지되어야 한다.
 - 4f16ab4의 Vercel 배포 성공 확인. 이번 작업의 공개 글 데이터는 변경 없음.
+
+## 승인할 정확한 변경 범위
+
+로컬에 준비된 .github/waug-codex-config.toml과 .github/workflows/waug-editorial.yml의 미커밋 변경만 승인 대상이다. 전체 도메인 허용과 로컬 바인딩 허용 옵션은 제거했다.
+
+- 접속 허용: www.waug.com, waug.com, d2mgzmtdeipcjp.cloudfront.net, mwohaji.kr, www.mwohaji.kr, apis.data.go.kr, tong.visitkorea.or.kr, www.kogl.or.kr, 127.0.0.1, localhost.
+- 로컬 주소는 서버 내부 이미지·체크포인트 서비스와 상세 화면 검증에 쓴다.
+- 기본 workspace 보호를 유지하며 scripts/.github/docs/app/components/lib와 발행 정책 파일은 읽기 전용이다.
+- 코드 변경·정책 완화·임의 외부 도메인 접근을 허용하지 않는다. 임의 시설 공식 사이트는 웹 검색 도구로 확인하고, 허용되지 않은 외부 사진은 직접 가져오지 않는다.
+- 승인 후 이 설정을 GitHub에 적용하고 생성 없는 연결 점검을 통과한 뒤 서버 예약만 다시 활성화한다.
 
 ## 이미지·비용
 
