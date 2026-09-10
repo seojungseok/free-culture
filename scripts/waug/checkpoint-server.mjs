@@ -9,6 +9,7 @@ http.createServer(async(req,res)=>{
    checkpoint=checkpoint.catch(()=>{}).then(()=>exec(process.execPath,['scripts/waug/checkpoint-direct.mjs'],{timeout:100000,maxBuffer:1024*1024}));await checkpoint;res.end('Durable checkpoint saved');return;
   }
   if(req.method==='POST'&&req.url==='/image'){
+   if(process.env.WAUG_PREFLIGHT_ONLY==='1')throw Error('사전 검증에서 이미지 생성 금지');
    if(imageBusy){res.writeHead(409);res.end('Image request already running');return;}
    let body='';for await(const part of req){body+=part;if(body.length>4096)throw Error('요청 크기 초과');}
    const {placeId,recipeFile}=JSON.parse(body);if(!/^[a-z0-9-]+$/.test(placeId||''))throw Error('장소 ID 오류');

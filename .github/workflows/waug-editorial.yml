@@ -42,16 +42,15 @@ jobs:
           node --test scripts/waug/core.test.mjs scripts/waug/queue.test.mjs
           node scripts/waug/preflight.mjs
       - name: 제한된 콘텐츠 저장·이미지 서버 시작
-        if: github.event_name == 'schedule' || inputs.mode == 'scheduled'
         env:
           WAUG_SERVER_EXECUTION: '1'
           WAUG_IMAGE_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          WAUG_PREFLIGHT_ONLY: ${{ inputs.mode == 'preflight' && '1' || '0' }}
         run: |
           node scripts/waug/checkpoint-server.mjs > /tmp/waug-broker.log 2>&1 &
           for i in 1 2 3 4 5; do curl -fsS http://127.0.0.1:47831/health && break || sleep 1; done
-      - name: 예약 편집 실행
+      - name: 서버 편집기 실행 또는 연결 점검
         timeout-minutes: 45
-        if: github.event_name == 'schedule' || inputs.mode == 'scheduled'
         uses: openai/codex-action@v1
         env:
           WAUG_SERVER_EXECUTION: '1'
@@ -64,7 +63,7 @@ jobs:
           safety-strategy: drop-sudo
           sandbox: workspace-write
           codex-args: '["-c", "sandbox_workspace_write.network_access=true", "-c", "web_search=\"live\""]'
-          prompt-file: docs/waug-server-worker.md
+          prompt-file: ${{ inputs.mode == 'preflight' && 'docs/waug-server-preflight.md' || 'docs/waug-server-worker.md' }}
           output-file: .cache/waug/server-result.md
       - name: 중단되어도 단계 저장
         if: always() && (github.event_name == 'schedule' || inputs.mode == 'scheduled')
