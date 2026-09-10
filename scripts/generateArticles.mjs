@@ -276,19 +276,8 @@ async function main() {
     console.log(`\n🧪 지정(${items.length}곳): ${items.map((i) => `${i.place.title}[${i.mode}]`).join(", ")}`);
   } else {
     const forced = Number(process.env.FORCE_COUNT) || 0;
-    const autumnDeficitCount = AUTUMN_ARTICLES
-      ? places.filter((p) => {
-          if (!isAutumnPlace(p)) return false;
-          const article = store.articles[p.id];
-          if (!article) return true;
-          const text = String(article.content || "");
-          const core = ["어떤 곳인가요", "볼거리·즐길거리", "방문 팁"].every((h) => text.includes(h));
-          return Number(article.length || 0) < AUTUMN_REFRESH_MIN || !core || article.needsRewrite;
-        }).length
-      : 0;
-    // 가을 전용 실행은 일일 램프업으로 일부만 처리하지 않고, 부족한 가을 글 전체를 큐에 넣는다.
-    // 실제 실행 횟수는 FORCE_COUNT로 나눌 수 있으며, 다른 카테고리는 기존 램프업을 유지한다.
-    target = forced > 0 ? forced : (AUTUMN_ARTICLES ? autumnDeficitCount : rampUpCount(store.startDate));
+    // General group: ten new place/autumn articles, plus separately bounded maintenance.
+    target = forced > 0 ? forced : (Number(process.env.ARTICLE_DAILY) || 10);
     if (target <= 0) {
       console.log(`시작일(${store.startDate}) 이전 — 생성 안 함. (test_count 또는 test_ids 입력)`);
       return;
@@ -309,7 +298,7 @@ async function main() {
         return Boolean(article?.needsRewrite);
       })
       .sort((a, b) => (store.articles[b].rewriteScore || 0) - (store.articles[a].rewriteScore || 0));
-    for (const id of rwIds) items.push({ place: byId.get(id), mode: "rewrite" });
+    for (const id of rwIds.slice(0,4)) items.push({ place: byId.get(id), mode: "rewrite" });
     const rw = items.length;
     if (AUTUMN_ARTICLES) {
       const autumnNew = places
@@ -317,6 +306,8 @@ async function main() {
         .sort((a, b) => autumnRank(a) - autumnRank(b) || a.title.length - b.title.length)
         .slice(0, target * 8);
       for (const p of autumnNew) items.push({ place: p, mode: "new" });
+      const queuedIds = new Set([...doneIds,...autumnNew.map(p=>p.id)]);
+      for (const p of pickQueue(places, queuedIds, target * 4)) items.push({place:p,mode:"new"});
     } else {
       for (const p of pickQueue(places, doneIds, target * 4)) items.push({ place: p, mode: "new" });
     }
@@ -329,7 +320,7 @@ async function main() {
   let siteNewRemaining = newArticleAllowance(ROOT,'place-articles');
   for (const { place, mode } of items) {
     if (mode === "new") { if (siteNewRemaining <= 0) continue; siteNewRemaining--; }
-    if (made >= target) break;
+    if (mode === "new" && newPub >= target) continue;
     const { overview, err } = await fetchOverview(place.id);
     // 주변 맥락(맛집·근처 명소·코스·진행중 행사) — 전부 로컬 JSON, API 호출 0회·추가비용 0원.
     const lc = buildLocalContext(place);
