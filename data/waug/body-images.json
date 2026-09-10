@@ -73,5 +73,120 @@
     "prompt": "Generate an original photorealistic editorial image for a Korean travel article, landscape aspect approximately 1200x630. Close-up of colorful paintbrushes and a used paint palette on a wooden table, natural daylight. Art activity concept, no specific artwork, building or actual facility. This illustrates the article topic, NOT a photo of the actual place. No words or text or logos. No people. Full frame photographic composition.",
     "uploadedAt": "2026-09-10T13:32:14.039Z",
     "verifiedAt": "2026-09-10T13:32:14.039Z"
+  },
+  {
+    "slug": "zoolung-hanam",
+    "kind": "ai-generated",
+    "url": "https://mwohaji.kr/ticket-images/zoolung-hanam-body-2-a3de6c965b47.jpg",
+    "alt": "카피바라의 털과 얼굴을 표현한 AI 생성 이미지",
+    "credit": "AI 생성 이미지 · 동물 관찰을 설명하는 소재 이미지이며 실제 개체·관람 환경의 촬영본이 아닙니다.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 201470,
+    "sha256": "a3de6c965b47884589d61c724d2c2b9246a7f48be13426f1c0f81a4a2155e070",
+    "necessityNote": "제공 사진의 식별 가능한 얼굴 또는 동일 원본 중복 때문에 추가 컷으로 사용할 수 없어 승인된 AI 보완 방식을 적용. 장소 일치와 사용권을 확인할 수 있는 대체 공공사진 미확보.",
+    "generation": {
+      "provider": "OpenAI imagegen",
+      "originalGeneration": true,
+      "prompt": "Photorealistic editorial animal study, one capybara resting in soft natural light beside green leaves, close framing on fur and face, warm brown tones, horizontal landscape 1.9:1 composition. No people, no hands, no visible zoo enclosure or identifiable building, no signage, no text. This is a generic AI animal illustration for a travel article about animal observation, NOT a depiction of a real facility. Anatomically accurate and restrained documentary style.",
+      "promptHash": "be49d8594d9c08a7fcd576fcdd71150f9902e1aa3f32bfce80d9f54530e81a07",
+      "generatedAt": "2026-09-10T15:03:00.394Z",
+      "visualCheckedAt": "2026-09-10T15:05:39.468Z"
+    },
+    "localPath": "public/ticket-images/zoolung-hanam-body-2-a3de6c965b47.jpg",
+    "verifiedAt": "2026-09-10T15:06:44.217Z",
+    "uploadedAt": "2026-09-10T15:06:44.217Z"
+  },
+  {
+    "slug": "zoolung-dongtan",
+    "kind": "ai-generated",
+    "url": "https://mwohaji.kr/ticket-images/zoolung-dongtan-body-2-c21a92aa2389.jpg",
+    "alt": "기니피그를 가까이 관찰하는 모습을 표현한 AI 생성 이미지",
+    "credit": "AI 생성 이미지 · 동물 관찰을 설명하는 소재 이미지이며 실제 개체·관람 환경의 촬영본이 아닙니다.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 168125,
+    "sha256": "c21a92aa2389c7c0d10914b9495c3dd0f099654ff142ef956112ef014afeb694",
+    "necessityNote": "제공 사진의 식별 가능한 얼굴 또는 동일 원본 중복 때문에 추가 컷으로 사용할 수 없어 승인된 AI 보완 방식을 적용. 장소 일치와 사용권을 확인할 수 있는 대체 공공사진 미확보.",
+    "generation": {
+      "provider": "OpenAI imagegen",
+      "originalGeneration": true,
+      "prompt": "Photorealistic editorial animal study, two guinea pigs with brown and white coats beside clean hay on a neutral earthy surface, gentle daylight, detail of whiskers and fur, horizontal landscape 1.9:1. No people or hands, no recognizable facility, no text or signage. Generic animal observation illustration for a travel article; do not invent zoo structures. Natural unposed composition.",
+      "promptHash": "ac8d489331a89624b78de63f57d2fc551c3bc3d0e4f3c5f7b71a3c3f57719210",
+      "generatedAt": "2026-09-10T15:03:00.499Z",
+      "visualCheckedAt": "2026-09-10T15:05:39.468Z"
+    },
+    "localPath": "public/ticket-images/zoolung-dongtan-body-2-c21a92aa2389.jpg",
+    "verifiedAt": "2026-09-10T15:06:44.435Z",
+    "uploadedAt": "2026-09-10T15:06:44.435Z"
+  },
+  {
+    "slug": "aquafield-hanam",
+    "kind": "ai-generated",
+    "url": "https://mwohaji.kr/ticket-images/aquafield-hanam-body-2-930cd28e28d1.jpg",
+    "alt": "수건과 물병 등 개인 준비물 예시를 표현한 AI 생성 이미지",
+    "credit": "AI 생성 이미지 · 개인 준비물의 일반적인 예시이며 현장에서 제공되는 물품이나 시설의 촬영본이 아닙니다.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 148945,
+    "sha256": "930cd28e28d1e07f538b07b3a5649006c2445ae174cd43a6964802c4fd2ba4aa",
+    "necessityNote": "제공 사진의 식별 가능한 얼굴 또는 동일 원본 중복 때문에 추가 컷으로 사용할 수 없어 승인된 AI 보완 방식을 적용. 장소 일치와 사용권을 확인할 수 있는 대체 공공사진 미확보.",
+    "generation": {
+      "provider": "OpenAI imagegen",
+      "originalGeneration": true,
+      "prompt": "Photorealistic editorial still life for a Korean jjimjil spa visit preparation article: two neatly folded beige cotton towels, a small unbranded refillable water bottle and a plain toiletry pouch on a wooden table in soft warm daylight. Close composition, realistic cotton texture, horizontal 1.9:1 landscape. No people, no hands, no logos, no text, no sauna room, no pool, no recognizable venue. Generic practical packing illustration only, not actual facility amenities or supplied items.",
+      "promptHash": "1449aacbc1559e2bd7795cbf20d0a7bf05fb5c802610590215a5f8ba2d6e67d3",
+      "generatedAt": "2026-09-10T15:03:00.767Z",
+      "visualCheckedAt": "2026-09-10T15:05:39.468Z"
+    },
+    "localPath": "public/ticket-images/aquafield-hanam-body-2-930cd28e28d1.jpg",
+    "verifiedAt": "2026-09-10T15:06:44.443Z",
+    "uploadedAt": "2026-09-10T15:06:44.443Z"
+  },
+  {
+    "slug": "gana-art-park",
+    "kind": "ai-generated",
+    "url": "https://mwohaji.kr/ticket-images/gana-art-park-body-2-b8eb6d3f2d16.jpg",
+    "alt": "스케치북과 색연필을 표현한 미술관 나들이 AI 생성 이미지",
+    "credit": "AI 생성 이미지 · 미술관 나들이의 일반적인 소재 이미지이며 현장 전시·체험 또는 제공 물품의 촬영본이 아닙니다.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 114895,
+    "sha256": "b8eb6d3f2d1609300a9f0cc7dd7a1c39cbb5fe4b4deb38e664e554fce796af79",
+    "necessityNote": "제공 사진의 식별 가능한 얼굴 또는 동일 원본 중복 때문에 추가 컷으로 사용할 수 없어 승인된 AI 보완 방식을 적용. 장소 일치와 사용권을 확인할 수 있는 대체 공공사진 미확보.",
+    "generation": {
+      "provider": "OpenAI imagegen",
+      "originalGeneration": true,
+      "prompt": "Photorealistic editorial still life illustrating preparation for a family art museum visit: small blank sketchbook open on a light wood table, several colored pencils and a soft graphite pencil, a simple pencil drawing of a leaf on the page, natural side window light. Horizontal 1.9:1. No people, no hands, no logos, no readable text, no famous artworks, no museum building. Generic illustrative material only, not an actual venue or specific workshop.",
+      "promptHash": "66406d01f414887760d3082547833c72ff880268e12f7fb47bfc657a7570fa30",
+      "generatedAt": "2026-09-10T15:03:00.586Z",
+      "visualCheckedAt": "2026-09-10T15:05:39.468Z"
+    },
+    "localPath": "public/ticket-images/gana-art-park-body-2-b8eb6d3f2d16.jpg",
+    "verifiedAt": "2026-09-10T15:06:44.423Z",
+    "uploadedAt": "2026-09-10T15:06:44.423Z"
+  },
+  {
+    "slug": "wonder-village-goyang",
+    "kind": "ai-generated",
+    "url": "https://mwohaji.kr/ticket-images/wonder-village-goyang-body-2-8aaad59480d1.jpg",
+    "alt": "가방과 운동화를 준비하는 나들이 AI 생성 이미지",
+    "credit": "AI 생성 이미지 · 실내 나들이 준비의 일반적인 예시이며 실제 시설이나 현장 제공 물품이 아닙니다.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 115812,
+    "sha256": "8aaad59480d14661bd29ea8a4f6dc5989b9ef6127bc4f2bd351c9cc7b72a5f37",
+    "necessityNote": "제공 사진의 식별 가능한 얼굴 또는 동일 원본 중복 때문에 추가 컷으로 사용할 수 없어 승인된 AI 보완 방식을 적용. 장소 일치와 사용권을 확인할 수 있는 대체 공공사진 미확보.",
+    "generation": {
+      "provider": "OpenAI imagegen",
+      "originalGeneration": true,
+      "prompt": "Photorealistic editorial travel preparation still life for a short indoor family outing: a small plain beige backpack, reusable water bottle and comfortable clean sneakers arranged naturally on a wooden bench, soft daylight, horizontal 1.9:1 landscape. No people, no hands, no logos, no text, no tickets, no invented venue or theme park elements. Quiet practical travel editorial photo, generic packing example, not an actual facility.",
+      "promptHash": "6281554b781ad53325c7f4aad2f0d6c8d9a0173021cfa24455cb14dd3515448f",
+      "generatedAt": "2026-09-10T15:03:00.671Z",
+      "visualCheckedAt": "2026-09-10T15:05:39.468Z"
+    },
+    "localPath": "public/ticket-images/wonder-village-goyang-body-2-8aaad59480d1.jpg",
+    "verifiedAt": "2026-09-10T15:06:44.608Z",
+    "uploadedAt": "2026-09-10T15:06:44.608Z"
   }
 ]

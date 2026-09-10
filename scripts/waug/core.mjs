@@ -28,6 +28,11 @@ export function readiness(article, products, now = new Date()) {
     ? !p.url?.startsWith('https://mwohaji.kr/ticket-images/') || !p.alt || !p.credit?.includes('AI 생성') || !p.generation?.promptHash || !p.generation?.originalGeneration || !p.generation?.visualCheckedAt || !p.verifiedAt || !p.necessityNote
     : !p.url || !p.alt || !p.credit || !p.placeMatched || !p.rightsUrl || !p.commercialAllowed || !p.checkedAt)) errors.push('본문 사진 권리·장소 일치 확인');
   if(article.photos?.some(p=>p.url?.includes('cloudfront.net/files/good/') && p.faceReview?.status!=='no-identifiable-faces')) errors.push('본문 사진 얼굴 검수 필요');
+  // Different query-string sizes of one source are still the same cut.
+  const imageKey = url => { try { const u=new URL(url); return u.origin+u.pathname; } catch { return url; } };
+  const bodyImages=(article.photos||[]).map(p=>imageKey(p.url));
+  const rendered=new Set((article.sections||[]).filter(s=>Number.isInteger(s.photoIndex)&&article.photos?.[s.photoIndex]).map(s=>bodyImages[s.photoIndex]));
+  if(bodyImages.length<2 || new Set(bodyImages).size!==bodyImages.length || bodyImages.includes(imageKey(im?.url)) || rendered.size<2) errors.push('서로 다른 본문 이미지 2장 이상 실제 배치 필요');
   return errors;
 }
 

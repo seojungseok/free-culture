@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import {discoveryCardShell} from "./DiscoveryCard";
 
 export interface CourseCardData {
   id: string;
@@ -32,7 +33,7 @@ export default function CourseCard({ course }: { course: CourseCardData }) {
     <Link
       href={`/course/c/${course.id}`}
       prefetch={false}
-      className="group block overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.05] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cardhover"
+      className={discoveryCardShell}
       aria-label={`${course.title} 코스 보기`}
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">

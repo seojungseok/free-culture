@@ -1,0 +1,875 @@
+{
+  "checkedAt": "2026-09-10T15:10:06.331Z",
+  "articles": [
+    {
+      "slug": "seoulland",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/seoulland-02624c146e22.jpg",
+      "bodyImages": [
+        {
+          "slug": "seoulland",
+          "index": 0,
+          "url": "https://www.kogl.or.kr/upload_recommend/thumb_V/%ED%82%A4%EC%9B%8C%EB%93%9C%20%EC%A0%80%EC%9E%91%EB%AC%BC/%EA%B2%BD%EA%B8%B0%EA%B4%80%EA%B4%91/%ED%8F%AC%ED%86%A0%EA%B0%A4%EB%9F%AC%EB%A6%AC/%EA%B2%BD%EA%B8%B0%EA%B4%80%EA%B4%91%ED%8F%AC%ED%84%B8_0582_[%EA%B3%BC%EC%B2%9C]%20%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C.JPG",
+          "status": 200,
+          "width": 760,
+          "height": 507,
+          "sha256": "76265acafd2c1bbcb5cbfb321d9c0341981fe4e40fadd04d0c3017980c23c1c7"
+        },
+        {
+          "slug": "seoulland",
+          "index": 1,
+          "url": "https://www.kogl.or.kr/upload_recommend/thumb_V/%ED%82%A4%EC%9B%8C%EB%93%9C%20%EC%A0%80%EC%9E%91%EB%AC%BC/%EA%B2%BD%EA%B8%B0%EA%B4%80%EA%B4%91/%ED%8F%AC%ED%86%A0%EA%B0%A4%EB%9F%AC%EB%A6%AC/%EA%B2%BD%EA%B8%B0%EA%B4%80%EA%B4%91%ED%8F%AC%ED%84%B8_0585_[%EA%B3%BC%EC%B2%9C]%20%EC%84%9C%EC%9A%B8%EB%9E%9C%EB%93%9C.JPG",
+          "status": 200,
+          "width": 760,
+          "height": 551,
+          "sha256": "50760bfefe1cd9130d888dd3c98f1b56ccaa341ef0ec860a7706a017cfdf7ba9"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        0,
+        1
+      ]
+    },
+    {
+      "slug": "everland",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/everland-2f495e708c5d.jpg",
+      "bodyImages": [
+        {
+          "slug": "everland",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/11/17784674670743.jpg",
+          "status": 200,
+          "width": 1280,
+          "height": 852,
+          "sha256": "e9a6130ddd69dd1e7c447d7f3d3e10c27afd217576b4c37f9a8451cbfca287c7"
+        },
+        {
+          "slug": "everland",
+          "index": 0,
+          "url": "https://www.kogl.or.kr/upload_recommend/thumb_V/%ED%82%A4%EC%9B%8C%EB%93%9C%20%EC%A0%80%EC%9E%91%EB%AC%BC/%EA%B2%BD%EA%B8%B0%EA%B4%80%EA%B4%91/%ED%8F%AC%ED%86%A0%EA%B0%A4%EB%9F%AC%EB%A6%AC/%EA%B2%BD%EA%B8%B0%EA%B4%80%EA%B4%91%ED%8F%AC%ED%84%B8_2621_[%EC%9A%A9%EC%9D%B8]%20%EC%97%90%EB%B2%84%EB%9E%9C%EB%93%9C.jpg",
+          "status": 200,
+          "width": 760,
+          "height": 509,
+          "sha256": "328f88aef4928f8c3d876bfeb0c4a6b4e655da492bc80e83d4ccb6ade4ee14c5"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "nami-island",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/nami-island-76cc9dc061bd.jpg",
+      "bodyImages": [
+        {
+          "slug": "nami-island",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/03/18/16475860420370.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 420,
+          "sha256": "c63d85a11039414b03338a2d57217229598ffde8e5fee3d51d08fe249d885c72"
+        },
+        {
+          "slug": "nami-island",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/06/02/17488352077669.png",
+          "status": 200,
+          "width": 900,
+          "height": 600,
+          "sha256": "1c9c6eeaed0d8f856edba12be63855960d809b6f1c9753a80f4842be82ff836b"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "korean-folk-village",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/korean-folk-village-c4f70636fd9d.jpg",
+      "bodyImages": [
+        {
+          "slug": "korean-folk-village",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/26/17720699461349.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 426,
+          "sha256": "cd64cbd3b05c2da23c24ddf6ae11268b69703eb9bd91fcb5d233d0932b3c5bb4"
+        },
+        {
+          "slug": "korean-folk-village",
+          "index": 0,
+          "url": "https://www.kogl.or.kr/upload_recommend/thumb_V/%ED%82%A4%EC%9B%8C%EB%93%9C%20%EC%A0%80%EC%9E%91%EB%AC%BC/%EA%B2%BD%EA%B8%B0%EA%B4%80%EA%B4%91/%ED%8F%AC%ED%86%A0%EA%B0%A4%EB%9F%AC%EB%A6%AC/%EA%B2%BD%EA%B8%B0%EA%B4%80%EA%B4%91%ED%8F%AC%ED%84%B8_2784_[%EC%9A%A9%EC%9D%B8]%20%ED%95%9C%EA%B5%AD%EB%AF%BC%EC%86%8D%EC%B4%8C.jpg",
+          "status": 200,
+          "width": 760,
+          "height": 510,
+          "sha256": "3bd2531d95fcf021dd4fd4bd07baa209d3b6440947321ed247711a5b27e4ac9b"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "aquaplanet-ilsan",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/aquaplanet-ilsan-d58eb6db1ee5.jpg",
+      "bodyImages": [
+        {
+          "slug": "aquaplanet-ilsan",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/07/31/17539454682956.jpg",
+          "status": 200,
+          "width": 600,
+          "height": 600,
+          "sha256": "6c2c709eff7ba43fff786db1cc493099fc8b0bf48fbe9e189458559b46b72fd5"
+        },
+        {
+          "slug": "aquaplanet-ilsan",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/08/14/15867001661934.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 420,
+          "sha256": "f27737d9e247e959819907f75dce7182ba0c4584a1d3fd036e4e91b9884d03f4"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "aquaplanet-gwanggyo",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/aquaplanet-gwanggyo-db0559cd445e.jpg",
+      "bodyImages": [
+        {
+          "slug": "aquaplanet-gwanggyo",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/01/15/16106762544411.png",
+          "status": 200,
+          "width": 640,
+          "height": 420,
+          "sha256": "f35db1710e75670ebe1264fe559abb60e235107d4e5c6f704e30210117929fe0"
+        },
+        {
+          "slug": "aquaplanet-gwanggyo",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/01/15/15736947756550.png",
+          "status": 200,
+          "width": 640,
+          "height": 420,
+          "sha256": "38d088a2423e770c309be0c6cb62c09b3a598851b3e826580bc9a134bc76f8f6"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "seohaerang",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/seohaerang-841c7beb0d63.jpg",
+      "bodyImages": [
+        {
+          "slug": "seohaerang",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/04/10/17442502979215.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 420,
+          "sha256": "b205f67dcfa1a5414ed22bfee5a9cbbd86a51b56d80274475637940d9c9bd980"
+        },
+        {
+          "slug": "seohaerang",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/09/17809669013118.jpg",
+          "status": 200,
+          "width": 600,
+          "height": 600,
+          "sha256": "47e5a9b919c7baee162a1c4c3b32227a643ac65253c6fccf301d06fc4f19cd0b"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "herb-island",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/herb-island-6b87a5714e79.jpg",
+      "bodyImages": [
+        {
+          "slug": "herb-island",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/11/17784872137521.jpg",
+          "status": 200,
+          "width": 900,
+          "height": 600,
+          "sha256": "b931c0d858b5122ff4cdc51d3c78a3f9c20dab08f6de7582614c293e22b7dcce"
+        },
+        {
+          "slug": "herb-island",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/12/29/16407849000427.jpg",
+          "status": 200,
+          "width": 750,
+          "height": 469,
+          "sha256": "8a8186c5ebe76b2fc768efffbd9ace50f73e59f6baefe3aafc51f6be8614b383"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "paju-gondola",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/paju-gondola-662ce7a801b8.jpg",
+      "bodyImages": [
+        {
+          "slug": "paju-gondola",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/05/26/17482258068794.jpg",
+          "status": 200,
+          "width": 650,
+          "height": 450,
+          "sha256": "edf6d6fa37000c1e2e6a2cadc7d0358efaba400cb3b1e4e4918ffdb06f0284be"
+        },
+        {
+          "slug": "paju-gondola",
+          "index": 0,
+          "url": "https://www.kogl.or.kr/upload_recommend/thumb_V/%ED%82%A4%EC%9B%8C%EB%93%9C%20%EC%A0%80%EC%9E%91%EB%AC%BC/%ED%95%9C%EA%B5%AD%EA%B4%80%EA%B4%91%EA%B3%B5%EC%82%AC/%EC%82%AC%EC%A7%84%EC%A0%84%EB%AC%B8%EA%B0%80/%EC%82%AC%EC%A7%84%EA%B0%A4%EB%9F%AC%EB%A6%AC_3151_%EC%9E%84%EC%A7%84%EA%B0%81%20%ED%8F%89%ED%99%94%20%EA%B3%A4%EB%8F%8C%EB%9D%BC.jpg",
+          "status": 200,
+          "width": 760,
+          "height": 507,
+          "sha256": "0c8b57917ce3c72bea76a6bc961767b7faa4450ed9b49315d890d73a8dba0cd5"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "ganghwa-luge",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/ganghwa-luge-ae0b7dcc49d2.jpg",
+      "bodyImages": [
+        {
+          "slug": "ganghwa-luge",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/04/14/17761380613026.jpg",
+          "status": 200,
+          "width": 1152,
+          "height": 768,
+          "sha256": "bfe586590389ce7b163baf80bd4215a06649a76c02be128aa2361b4a2b4c5074"
+        },
+        {
+          "slug": "ganghwa-luge",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/04/14/17761387114390.png",
+          "status": 200,
+          "width": 900,
+          "height": 600,
+          "sha256": "d6155447a621852fb9fefd27c8b84164cd67d5d849fdb859d64804d846593a2f"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "ludensia",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/ludensia-16baeb5880a8.jpg",
+      "bodyImages": [
+        {
+          "slug": "ludensia",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/03/14/17103831372758.jpg",
+          "status": 200,
+          "width": 900,
+          "height": 600,
+          "sha256": "a1e1339ac1e6afbde62ffc927fdcaa7e5eef17f075e846f01556f61d74dec3d7"
+        },
+        {
+          "slug": "ludensia",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/11/14/16999405926033.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 400,
+          "sha256": "d270c8f72e95a97cd6c32df1d0aafda8e41cb7ba93c09974789ab62925bfbd49"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "anseong-farmland",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/anseong-farmland-cbc076a5e964.jpg",
+      "bodyImages": [
+        {
+          "slug": "anseong-farmland",
+          "index": 0,
+          "url": "https://www.kogl.or.kr/upload_recommend/thumb_V/%ED%82%A4%EC%9B%8C%EB%93%9C%20%EC%A0%80%EC%9E%91%EB%AC%BC/%ED%95%9C%EA%B5%AD%EA%B4%80%EA%B4%91%EA%B3%B5%EC%82%AC/%EC%82%AC%EC%A7%84%EC%A0%84%EB%AC%B8%EA%B0%80/%EC%82%AC%EC%A7%84%EA%B0%A4%EB%9F%AC%EB%A6%AC_3291_%EC%95%88%EC%84%B1%ED%8C%9C%EB%9E%9C%EB%93%9C.jpg",
+          "status": 200,
+          "width": 760,
+          "height": 507,
+          "sha256": "c9941061772c8b02ad33afeee77298849e9d7cbe29423d70bf8d3a7e350fc3fb"
+        },
+        {
+          "slug": "anseong-farmland",
+          "index": 1,
+          "url": "https://www.kogl.or.kr/upload_recommend/thumb_V/%ED%82%A4%EC%9B%8C%EB%93%9C%20%EC%A0%80%EC%9E%91%EB%AC%BC/%ED%95%9C%EA%B5%AD%EA%B4%80%EA%B4%91%EA%B3%B5%EC%82%AC/%EC%82%AC%EC%A7%84%EC%A0%84%EB%AC%B8%EA%B0%80/%EC%82%AC%EC%A7%84%EA%B0%A4%EB%9F%AC%EB%A6%AC_3298_%EC%95%88%EC%84%B1%ED%8C%9C%EB%9E%9C%EB%93%9C.jpg",
+          "status": 200,
+          "width": 760,
+          "height": 507,
+          "sha256": "3d887dad8a19f1fd989a4c78321d07c7fbc65bb71735823e3ef7f9a140a4c336"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "petite-france-italian-village",
+      "status": "scheduled",
+      "thumbnail": "https://mwohaji.kr/ticket-images/petite-france-italian-village-e1c15fc6de59.jpg",
+      "bodyImages": [
+        {
+          "slug": "petite-france-italian-village",
+          "index": 0,
+          "url": "https://www.kogl.or.kr/upload_recommend/thumb_V/%ED%82%A4%EC%9B%8C%EB%93%9C%20%EC%A0%80%EC%9E%91%EB%AC%BC/%EA%B2%BD%EA%B8%B0%EA%B4%80%EA%B4%91/%ED%8F%AC%ED%86%A0%EA%B0%A4%EB%9F%AC%EB%A6%AC/%EA%B2%BD%EA%B8%B0%EA%B4%80%EA%B4%91%ED%8F%AC%ED%84%B8_0026_[%EA%B0%80%ED%8F%89]%20%EC%81%98%EB%9D%A0%ED%94%84%EB%9E%91%EC%8A%A4.jpg",
+          "status": 200,
+          "width": 760,
+          "height": 507,
+          "sha256": "a86a010130fb8a420a3ad054abcfc15d46f51caa98e1ef901074753a213ec8f0"
+        },
+        {
+          "slug": "petite-france-italian-village",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/07/05/16341104394096.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 420,
+          "sha256": "451431d90edb8cf551bb51ce48fadda8f4c9c14c7be3caa4c8085c77ea0d3671"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "begonia-bird-garden",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/begonia-bird-garden-65ae05172617.jpg",
+      "bodyImages": [
+        {
+          "slug": "begonia-bird-garden",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/04/11/17128031870661.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 380,
+          "sha256": "d835b8441734a59794c421a3b9343ea2b5541015a957450b928a767c43df01f5"
+        },
+        {
+          "slug": "begonia-bird-garden",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/05/18/17475632018062.jpg",
+          "status": 200,
+          "width": 1080,
+          "height": 1350,
+          "sha256": "cfb3c98db50203182fc5ed447973f8b9a555632567bcd1d1a1f50e1eed0d5998"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "zoolung-hanam",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/zoolung-hanam-bc8932c3ef37.jpg",
+      "bodyImages": [
+        {
+          "slug": "zoolung-hanam",
+          "index": 1,
+          "url": "https://mwohaji.kr/ticket-images/zoolung-hanam-body-2-a3de6c965b47.jpg",
+          "status": 200,
+          "width": 1200,
+          "height": 630,
+          "sha256": "a3de6c965b47884589d61c724d2c2b9246a7f48be13426f1c0f81a4a2155e070"
+        },
+        {
+          "slug": "zoolung-hanam",
+          "index": 0,
+          "url": "https://mwohaji.kr/ticket-images/zoolung-hanam-body-60efc73f26a8.jpg",
+          "status": 200,
+          "width": 1200,
+          "height": 630,
+          "sha256": "60efc73f26a80bfc55d9dc86880f7067ce13622ca6d7c5ce351a7db133603fc0"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "zoolung-dongtan",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/zoolung-dongtan-5a8af613de80.jpg",
+      "bodyImages": [
+        {
+          "slug": "zoolung-dongtan",
+          "index": 0,
+          "url": "https://mwohaji.kr/ticket-images/zoolung-dongtan-body-67188d333f37.jpg",
+          "status": 200,
+          "width": 1200,
+          "height": 630,
+          "sha256": "67188d333f37081c419c98721226a7d47a7b32a432d1c55c0a76e84b90f826c5"
+        },
+        {
+          "slug": "zoolung-dongtan",
+          "index": 1,
+          "url": "https://mwohaji.kr/ticket-images/zoolung-dongtan-body-2-c21a92aa2389.jpg",
+          "status": 200,
+          "width": 1200,
+          "height": 630,
+          "sha256": "c21a92aa2389c7c0d10914b9495c3dd0f099654ff142ef956112ef014afeb694"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "aquafield-goyang",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/aquafield-goyang-c0fddad70ce3.jpg",
+      "bodyImages": [
+        {
+          "slug": "aquafield-goyang",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/07/20/16267510900635.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 420,
+          "sha256": "7bf95e91b3329a5c6ebb5e32fde33ac5639a5924275d80000418f5b2f35d2eb1"
+        },
+        {
+          "slug": "aquafield-goyang",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/12/29/16407536594369.jpg",
+          "status": 200,
+          "width": 1024,
+          "height": 587,
+          "sha256": "a81064efd7e6450c28d7a7ec7e6fe56e3fed17a35f48741301e2d07585c004af"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "aquafield-hanam",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/aquafield-hanam-1f5bd7f4c28e.jpg",
+      "bodyImages": [
+        {
+          "slug": "aquafield-hanam",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/12/29/16407537532808.jpg",
+          "status": 200,
+          "width": 1024,
+          "height": 587,
+          "sha256": "9a2624e6b3e1ca7c0b5b8c820f99f65c0a005f31edc55c2e6d4d87c9992f84e7"
+        },
+        {
+          "slug": "aquafield-hanam",
+          "index": 1,
+          "url": "https://mwohaji.kr/ticket-images/aquafield-hanam-body-2-930cd28e28d1.jpg",
+          "status": 200,
+          "width": 1200,
+          "height": 630,
+          "sha256": "930cd28e28d1e07f538b07b3a5649006c2445ae174cd43a6964802c4fd2ba4aa"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        0,
+        1
+      ]
+    },
+    {
+      "slug": "aquafield-anseong",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/aquafield-anseong-f3212792cbbd.jpg",
+      "bodyImages": [
+        {
+          "slug": "aquafield-anseong",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/29/17827238658423.jpg",
+          "status": 200,
+          "width": 900,
+          "height": 600,
+          "sha256": "19823b75a835cd490ce53ecf16b0cbe2a92cc956c14bf00481223a2c9e56504f"
+        },
+        {
+          "slug": "aquafield-anseong",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/07/19/16266813278713.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 420,
+          "sha256": "4d7584920413216d18534154ef82f0847813ab4bbd2bfe3f94e3ff06571b1d41"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "gana-art-park",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/gana-art-park-e143be47790d.jpg",
+      "bodyImages": [
+        {
+          "slug": "gana-art-park",
+          "index": 0,
+          "url": "https://mwohaji.kr/ticket-images/gana-art-park-body-fba8c1281b38.jpg",
+          "status": 200,
+          "width": 1200,
+          "height": 630,
+          "sha256": "fba8c1281b3836e25f2eb8b0121a211e6fa5071e8769d8835351ae73005056e3"
+        },
+        {
+          "slug": "gana-art-park",
+          "index": 1,
+          "url": "https://mwohaji.kr/ticket-images/gana-art-park-body-2-b8eb6d3f2d16.jpg",
+          "status": 200,
+          "width": 1200,
+          "height": 630,
+          "sha256": "b8eb6d3f2d1609300a9f0cc7dd7a1c39cbb5fe4b4deb38e664e554fce796af79"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "nature-scape-dongtan",
+      "status": "scheduled",
+      "thumbnail": "https://mwohaji.kr/ticket-images/nature-scape-dongtan-5087c2165539.jpg",
+      "bodyImages": [
+        {
+          "slug": "nature-scape-dongtan",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/25/17823708031553.jpg",
+          "status": 200,
+          "width": 900,
+          "height": 600,
+          "sha256": "94391927fe94e07fe14fd621964b7809cd14336b6f41b230c4d4cd48d8db118a"
+        },
+        {
+          "slug": "nature-scape-dongtan",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/04/26/17141098887586.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 381,
+          "sha256": "b5d8e43ea7a568eb2d28e4ba2bc34876155e1bd1dc175adf4b092db312d3cef3"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "gimpo-monsterium",
+      "status": "scheduled",
+      "thumbnail": "https://mwohaji.kr/ticket-images/gimpo-monsterium-748bb1912e98.jpg",
+      "bodyImages": [
+        {
+          "slug": "gimpo-monsterium",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/20/17792558658954.jpg",
+          "status": 200,
+          "width": 900,
+          "height": 600,
+          "sha256": "ba8bf37cdf39da9a6689a44c8a5e34619e378ceb46f5cdfd5361a47943e84835"
+        },
+        {
+          "slug": "gimpo-monsterium",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/12/15/17026049819820.jpg",
+          "status": 200,
+          "width": 1080,
+          "height": 720,
+          "sha256": "0787ab5953d7489021db00edf9c9ea08952b6d0736f2ab760bd7cbb40f7fc8f4"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "pororo-dasan",
+      "status": "scheduled",
+      "thumbnail": "https://mwohaji.kr/ticket-images/pororo-dasan-e4a9e16bf824.jpg",
+      "bodyImages": [
+        {
+          "slug": "pororo-dasan",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/02/13/16762763588282_0.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 420,
+          "sha256": "2134ff70b82017e99e371b24836adfd767981fee7a3adaa9cf8be5ffb7c953a3"
+        },
+        {
+          "slug": "pororo-dasan",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/02/13/16762763581463.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 420,
+          "sha256": "f4f64f72d3a8f236f42f2487aed72ef5838d11daeca1df11ec5341bf1f1952fc"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "seoul-grand-park-lift",
+      "status": "scheduled",
+      "thumbnail": "https://mwohaji.kr/ticket-images/seoul-grand-park-lift-a01af776cc5c.jpg",
+      "bodyImages": [
+        {
+          "slug": "seoul-grand-park-lift",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/01/20/17373391180423.jpg",
+          "status": 200,
+          "width": 900,
+          "height": 600,
+          "sha256": "86aaba2207ce0104ef951c7f608f3301bbff0b803f014c7694840048ad99e323"
+        },
+        {
+          "slug": "seoul-grand-park-lift",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/01/30/15803481158826.png",
+          "status": 200,
+          "width": 640,
+          "height": 420,
+          "sha256": "e2b0a6dfc44ac07d22c7765f678457b31069f670b5ad227975ca0e653c0598ad"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "yangpyeong-sheep-ranch",
+      "status": "scheduled",
+      "thumbnail": "https://mwohaji.kr/ticket-images/yangpyeong-sheep-ranch-1f7b6492a727.jpg",
+      "bodyImages": [
+        {
+          "slug": "yangpyeong-sheep-ranch",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/08/18/16923239909242.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 420,
+          "sha256": "2276c923c5ed4c4d6ef5fdb9e1ede930e5109b257cb4a196409c0cbe9de217eb"
+        },
+        {
+          "slug": "yangpyeong-sheep-ranch",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/03/11/17416748217346.png",
+          "status": 200,
+          "width": 900,
+          "height": 599,
+          "sha256": "0d801e824bfbb4dea2bb1906455f94352098e798b61e2010c45ed8dd0c0e8177"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "zoozoo-land",
+      "status": "scheduled",
+      "thumbnail": "https://mwohaji.kr/ticket-images/zoozoo-land-412ae43430d0.jpg",
+      "bodyImages": [
+        {
+          "slug": "zoozoo-land",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/08/03/16910328168044.png",
+          "status": 200,
+          "width": 900,
+          "height": 600,
+          "sha256": "71f81c0891854d7798a410b77353b45367e7abb8cf339d43f7d04dfc74064199"
+        },
+        {
+          "slug": "zoozoo-land",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/08/03/16910228186707.png",
+          "status": 200,
+          "width": 640,
+          "height": 400,
+          "sha256": "c7b1a071533e128e942492c31e90c3d75806979fb812e7e1bb8e4b375b964722"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "ulsan-sheep-ranch",
+      "status": "published",
+      "thumbnail": "https://mwohaji.kr/ticket-images/ulsan-sheep-ranch-452adeb82f6a.jpg",
+      "bodyImages": [
+        {
+          "slug": "ulsan-sheep-ranch",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/02/17700019015497.jpg",
+          "status": 200,
+          "width": 900,
+          "height": 600,
+          "sha256": "080ec53334f3bbca21a5ac8ba81077896f264ef8d620a73c800c94dcaf0d5375"
+        },
+        {
+          "slug": "ulsan-sheep-ranch",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/02/17700010641963.jpg",
+          "status": 200,
+          "width": 1280,
+          "height": 851,
+          "sha256": "cb00a0df2fbeef4883e4480808d034833097dd3d8ac110f9ed3aa8a7671d9c80"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "wonder-village-goyang",
+      "status": "scheduled",
+      "thumbnail": "https://mwohaji.kr/ticket-images/wonder-village-goyang-7912d55cd1c9.jpg",
+      "bodyImages": [
+        {
+          "slug": "wonder-village-goyang",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/26/17824606157947.jpg",
+          "status": 200,
+          "width": 900,
+          "height": 600,
+          "sha256": "35c47fe381fa0e25365e4ee80e1adc8a240877bf97718e929d84fa8665a13aae"
+        },
+        {
+          "slug": "wonder-village-goyang",
+          "index": 1,
+          "url": "https://mwohaji.kr/ticket-images/wonder-village-goyang-body-2-8aaad59480d1.jpg",
+          "status": 200,
+          "width": 1200,
+          "height": 630,
+          "sha256": "8aaad59480d14661bd29ea8a4f6dc5989b9ef6127bc4f2bd351c9cc7b72a5f37"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        0,
+        1
+      ]
+    },
+    {
+      "slug": "wonderpark-gwacheon",
+      "status": "scheduled",
+      "thumbnail": "https://mwohaji.kr/ticket-images/wonderpark-gwacheon-b4e349f0f5b0.jpg",
+      "bodyImages": [
+        {
+          "slug": "wonderpark-gwacheon",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/04/22/17453081991299.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 427,
+          "sha256": "d9d89bd2270e2ce001b4ad819cb3422a4aa6ee31bcd0645042b3030e50ea5fd5"
+        },
+        {
+          "slug": "wonderpark-gwacheon",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/04/22/17453082738071.png",
+          "status": 200,
+          "width": 900,
+          "height": 600,
+          "sha256": "6840a48b2615c5c3a0e6f24915aa486cc96b0313d077a9a82a89b753199c7849"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    },
+    {
+      "slug": "artis-dongtan",
+      "status": "scheduled",
+      "thumbnail": "https://mwohaji.kr/ticket-images/artis-dongtan-2996a30ed8a0.jpg",
+      "bodyImages": [
+        {
+          "slug": "artis-dongtan",
+          "index": 0,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/08/04/16595793209565.jpg",
+          "status": 200,
+          "width": 750,
+          "height": 500,
+          "sha256": "2f8332c5c67eaf8b4e881a50a46a269c7917f17c26f24e4f2bf88000dc16f3b1"
+        },
+        {
+          "slug": "artis-dongtan",
+          "index": 1,
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/04/24/17139236819684.jpg",
+          "status": 200,
+          "width": 640,
+          "height": 380,
+          "sha256": "eff65e1e4d83541050d86a18c728bac43233300c39f75e3d4c441a4e53cdabf6"
+        }
+      ],
+      "renderedPhotoIndexes": [
+        1,
+        0
+      ]
+    }
+  ]
+}

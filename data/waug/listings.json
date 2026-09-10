@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "entries": {
+    "seoulland": {
+      "listTitle": "서울랜드 아이와 나들이",
+      "location": {
+        "lat": 37.4341563,
+        "lng": 127.0201267,
+        "address": "경기도 과천시 광명로 181",
+        "sourceUrl": "https://www.waug.com/ko/activities/114542",
+        "checkedAt": "2026-09-10T12:56:27.100Z",
+        "status": "verified"
+      }
+    },
+    "everland": {
+      "listTitle": "에버랜드 방문 전 알아둘 것",
+      "location": {
+        "lat": 37.2939104,
+        "lng": 127.2025664,
+        "address": "경기도 용인시 처인구 포곡읍 에버랜드로 199 에버랜드 리조트",
+        "sourceUrl": "https://www.waug.com/ko/activities/115669",
+        "checkedAt": "2026-09-10T12:56:26.285Z",
+        "status": "verified"
+      }
+    },
+    "nami-island": {
+      "listTitle": "남이섬 배 타고 숲 산책",
+      "location": {
+        "lat": 37.8039798,
+        "lng": 127.5253004,
+        "address": "경기도 가평군 가평읍 북한강변로 1024",
+        "sourceUrl": "https://www.waug.com/ko/activities/116857",
+        "checkedAt": "2026-09-10T12:56:26.700Z",
+        "status": "verified",
+        "label": "남이섬 선착장",
+        "area": "경기"
+      }
+    },
+    "korean-folk-village": {
+      "listTitle": "한국민속촌 하루 즐기기",
+      "location": {
+        "lat": 37.258939,
+        "lng": 127.1181126,
+        "address": "경기도 용인시 기흥구 민속촌로 90",
+        "sourceUrl": "https://www.waug.com/ko/activities/116667",
+        "checkedAt": "2026-09-10T12:56:26.717Z",
+        "status": "verified"
+      }
+    },
+    "aquaplanet-ilsan": {
+      "listTitle": "아쿠아플라넷 일산 관람 준비",
+      "location": {
+        "lat": 37.6635195,
+        "lng": 126.7554555,
+        "address": "경기도 고양시 일산서구 한류월드로 282",
+        "sourceUrl": "https://www.waug.com/ko/activities/116323",
+        "checkedAt": "2026-09-10T12:56:25.433Z",
+        "status": "verified"
+      }
+    },
+    "aquaplanet-gwanggyo": {
+      "listTitle": "아쿠아플라넷 광교 이용 팁",
+      "location": {
+        "lat": 37.2842178,
+        "lng": 127.0579127,
+        "address": "경기도 수원시 영통구 광교호수공원로 300 갤러리아 광교 파사쥬 지하 1층",
+        "sourceUrl": "https://www.waug.com/ko/activities/117038",
+        "checkedAt": "2026-09-10T12:56:25.866Z",
+        "status": "verified"
+      }
+    },
+    "seohaerang": {
+      "listTitle": "서해랑 바다 위 케이블카",
+      "location": {
+        "lat": 37.1839482,
+        "lng": 126.650166,
+        "address": "경기도 화성시 서신면 전곡항로 1-10",
+        "sourceUrl": "https://www.waug.com/ko/activities/140504",
+        "checkedAt": "2026-09-10T12:56:24.004Z",
+        "status": "verified"
+      }
+    },
+    "herb-island": {
+      "listTitle": "허브아일랜드 정원 나들이",
+      "location": {
+        "lat": 37.9653853,
+        "lng": 127.1316676,
+        "address": "경기도 포천시 신북면 청신로 947번길 35",
+        "sourceUrl": "https://www.waug.com/ko/activities/112090",
+        "checkedAt": "2026-09-10T12:56:23.138Z",
+        "status": "verified"
+      }
+    },
+    "paju-gondola": {
+      "listTitle": "임진각 곤돌라와 전시",
+      "location": {
+        "lat": 37.8914309,
+        "lng": 126.7403605,
+        "address": "경기 파주시 문산읍 임진각로 148-73",
+        "sourceUrl": "https://www.waug.com/ko/activities/147289",
+        "checkedAt": "2026-09-10T12:56:22.732Z",
+        "status": "verified"
+      }
+    },
+    "ganghwa-luge": {
+      "listTitle": "강화 루지 타기 전 준비",
+      "location": {
+        "lat": 37.6180014,
+        "lng": 126.4992046,
+        "address": "인천 강화군 길상면 장흥로 217",
+        "sourceUrl": "https://www.waug.com/ko/activities/110286",
+        "checkedAt": "2026-09-10T12:56:27.418Z",
+        "status": "verified"
+      }
+    },
+    "ludensia": {
+      "listTitle": "루덴시아 걷고 사진 찍기",
+      "location": {
+        "lat": 37.4020598,
+        "lng": 127.4610864,
+        "address": "경기도 여주시 산북면 후리 51",
+        "sourceUrl": "https://www.waug.com/ko/activities/134830",
+        "checkedAt": "2026-09-10T12:56:24.596Z",
+        "status": "verified"
+      }
+    },
+    "anseong-farmland": {
+      "listTitle": "안성팜랜드 가족 나들이",
+      "location": {
+        "lat": 36.9920809,
+        "lng": 127.1931869,
+        "address": "경기도 안성시 공도읍 대신두길 28",
+        "sourceUrl": "https://www.waug.com/ko/activities/126290",
+        "checkedAt": "2026-09-10T12:56:24.152Z",
+        "status": "verified"
+      }
+    },
+    "petite-france-italian-village": {
+      "listTitle": "쁘띠프랑스·이탈리아마을 산책",
+      "location": {
+        "lat": 37.7148921,
+        "lng": 127.4903236,
+        "address": "경기 가평군 청평면 호반로 1063",
+        "sourceUrl": "https://www.waug.com/ko/activities/121130",
+        "checkedAt": "2026-09-10T12:56:23.382Z",
+        "status": "verified"
+      }
+    },
+    "begonia-bird-garden": {
+      "listTitle": "베고니아새정원 관람 안내",
+      "location": {
+        "lat": 37.6841857,
+        "lng": 127.5254496,
+        "address": "경기도 가평군 설악면 미사리로 270번길 28 가평베고니아새정원",
+        "sourceUrl": "https://www.waug.com/ko/activities/137528",
+        "checkedAt": "2026-09-10T12:56:23.738Z",
+        "status": "verified"
+      }
+    },
+    "zoolung-hanam": {
+      "listTitle": "주렁주렁 하남 동물 만나기",
+      "location": {
+        "lat": 37.5434321,
+        "lng": 127.2235227,
+        "address": "경기도 하남시 하남유니온로 120",
+        "sourceUrl": "https://www.waug.com/ko/activities/110908",
+        "checkedAt": "2026-09-10T12:56:25.405Z",
+        "status": "verified"
+      }
+    },
+    "zoolung-dongtan": {
+      "listTitle": "주렁주렁 동탄 실내 나들이",
+      "location": {
+        "lat": 37.1669132,
+        "lng": 127.1051388,
+        "address": "경기도 화성시 동탄대로5길 21 B동 3층 매표소, 4층 입구 라크몽",
+        "sourceUrl": "https://www.waug.com/ko/activities/110807",
+        "checkedAt": "2026-09-10T12:56:26.357Z",
+        "status": "verified"
+      }
+    },
+    "aquafield-goyang": {
+      "listTitle": "아쿠아필드 고양 찜질스파",
+      "location": {
+        "lat": 37.6479608,
+        "lng": 126.8967612,
+        "address": "경기 고양시 덕양구 고양대로 1955(스타필드 고양 4층)",
+        "sourceUrl": "https://www.waug.com/ko/activities/117728",
+        "checkedAt": "2026-09-10T12:56:25.836Z",
+        "status": "verified"
+      }
+    },
+    "aquafield-hanam": {
+      "listTitle": "아쿠아필드 하남 쉬어가기",
+      "location": {
+        "lat": 37.5443365,
+        "lng": 127.2254879,
+        "address": "경기도 하남시 미사대로 750(신장동,스타필드 하남)",
+        "sourceUrl": "https://www.waug.com/ko/activities/117726",
+        "checkedAt": "2026-09-10T12:56:25.978Z",
+        "status": "verified"
+      }
+    },
+    "aquafield-anseong": {
+      "listTitle": "아쿠아필드 안성 이용 안내",
+      "location": {
+        "lat": 36.9954564,
+        "lng": 127.1475871,
+        "address": "경기도 안성시 공도읍 진사리 355-6 (스타필드 안성 3층)",
+        "sourceUrl": "https://www.waug.com/ko/activities/117715",
+        "checkedAt": "2026-09-10T12:56:25.441Z",
+        "status": "verified"
+      }
+    },
+    "gana-art-park": {
+      "listTitle": "가나아트파크 미술 나들이",
+      "location": {
+        "lat": 37.7256537,
+        "lng": 126.9497178,
+        "address": "경기도 양주시 장흥면 일영리 8",
+        "sourceUrl": "https://www.waug.com/ko/activities/144259",
+        "checkedAt": "2026-09-10T12:56:23.385Z",
+        "status": "verified"
+      }
+    },
+    "nature-scape-dongtan": {
+      "listTitle": "네이처스케이프 동탄 모험",
+      "location": {
+        "lat": 37.1671701,
+        "lng": 127.1053429,
+        "address": "경기도 화성시 동탄대로5길 21 라크몽 A동 4층",
+        "sourceUrl": "https://www.waug.com/ko/activities/140094",
+        "checkedAt": "2026-09-10T12:56:22.474Z",
+        "status": "verified"
+      }
+    },
+    "gimpo-monsterium": {
+      "listTitle": "김포 몬스터리움 관람 준비",
+      "location": {
+        "lat": 37.6427821,
+        "lng": 126.5455883,
+        "address": "경기 김포시 대곶면 대명항1로 52 가동",
+        "sourceUrl": "https://www.waug.com/ko/activities/150990",
+        "checkedAt": "2026-09-10T12:56:22.729Z",
+        "status": "verified"
+      }
+    },
+    "pororo-dasan": {
+      "listTitle": "뽀로로 다산 시간권 비교",
+      "location": {
+        "lat": 37.5956008,
+        "lng": 127.1722058,
+        "address": "경기 남양주시 다산지금로 202 현대테라타워DIMC 지하 1층",
+        "sourceUrl": "https://www.waug.com/ko/activities/129744",
+        "checkedAt": "2026-09-10T12:56:24.355Z",
+        "status": "verified"
+      }
+    },
+    "seoul-grand-park-lift": {
+      "listTitle": "서울대공원 리프트 이용법",
+      "location": {
+        "lat": 37.4316875,
+        "lng": 127.0094375,
+        "address": "경기도 과천시 막계동 산 121-2 서울대공원(內) 스카이리프트",
+        "sourceUrl": "https://www.waug.com/ko/activities/113546",
+        "checkedAt": "2026-09-10T12:56:26.767Z",
+        "status": "verified"
+      }
+    },
+    "yangpyeong-sheep-ranch": {
+      "listTitle": "양평 양떼목장 먹이 체험",
+      "location": {
+        "lat": 37.5155102,
+        "lng": 127.6288544,
+        "address": "경기도 양평군 용문면 은고갯길 112",
+        "sourceUrl": "https://www.waug.com/ko/activities/109404",
+        "checkedAt": "2026-09-10T12:56:23.506Z",
+        "status": "verified"
+      }
+    },
+    "zoozoo-land": {
+      "listTitle": "쥬쥬랜드 가족 나들이",
+      "location": {
+        "lat": 37.6894541,
+        "lng": 126.8549178,
+        "address": "경기 고양시 덕양구 원당로458번길 7-42",
+        "sourceUrl": "https://www.waug.com/ko/activities/132659",
+        "checkedAt": "2026-09-10T12:56:25.409Z",
+        "status": "verified"
+      }
+    },
+    "ulsan-sheep-ranch": {
+      "listTitle": "울산 양떼목장 방문 준비",
+      "location": {
+        "lat": 35.5682825,
+        "lng": 129.4147663,
+        "address": "울산 북구 아랫율동2길 262-113",
+        "sourceUrl": "https://www.waug.com/ko/activities/127049",
+        "checkedAt": "2026-09-10T12:56:22.967Z",
+        "status": "verified"
+      }
+    },
+    "wonder-village-goyang": {
+      "listTitle": "원더빌리지 고양 실내 체험",
+      "location": {
+        "lat": 37.6472966,
+        "lng": 126.8960613,
+        "address": "경기 고양시 덕양구 고양대로 1955 3층 매직플로우",
+        "sourceUrl": "https://www.waug.com/ko/activities/120468",
+        "checkedAt": "2026-09-10T12:56:24.591Z",
+        "status": "verified"
+      }
+    },
+    "wonderpark-gwacheon": {
+      "listTitle": "원더파크 과천 관람 안내",
+      "location": {
+        "lat": 37.4337571,
+        "lng": 127.0111833,
+        "address": "경기도 과천시 대공원광장로 80",
+        "sourceUrl": "https://www.waug.com/ko/activities/137156",
+        "checkedAt": "2026-09-10T12:56:22.724Z",
+        "status": "verified"
+      }
+    },
+    "artis-dongtan": {
+      "listTitle": "아르티스 동탄 동물 관찰",
+      "location": {
+        "lat": 37.1971719,
+        "lng": 127.0978016,
+        "address": "경기도 화성시 신도시, 동탄, 동탄대로 19길 2 10, 신유메디프라자 9층",
+        "sourceUrl": "https://www.waug.com/ko/activities/122258",
+        "checkedAt": "2026-09-10T12:56:24.082Z",
+        "status": "verified"
+      }
+    }
+  }
+}

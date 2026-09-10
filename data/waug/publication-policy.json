@@ -14,5 +14,9 @@
   "aiStyle": "place-specific photographic concept or illustration; no invented real facilities",
   "allowNecessaryAiBodyImages": true,
   "preferProvidedPhotos": true,
-  "requireWaugFaceReview": true
+  "requireWaugFaceReview": true,
+  "minimumImagesPerArticle": 3,
+  "representativeImagesPerPlace": 1,
+  "minimumDistinctBodyImages": 2,
+  "requireRenderedBodyImages": true
 }

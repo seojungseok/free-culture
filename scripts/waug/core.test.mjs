@@ -9,7 +9,7 @@ function fixture(count=25){
   for(let i=0;i<count;i++){
     const id=`code${i}`,slug=`place-${i}`,checkedAt=now.toISOString();
     products.push({id,placeId:slug,affiliateUrl:`https://www.waug.com/r/${id}`,eligibility:'eligible',saleStatus:'available',lastCheckedAt:checkedAt,validUntil:'2026-12-31',verification:{status:'approved',source:'official'}});
-    articles.push({slug,placeId:slug,area:i%2?'경기':'강원',theme:i%3?'체험':'공원',address:'검증된 주소',createdAt:checkedAt,title:'장소',description:'방문 안내',intro:'소개',sections:[{heading:'안내',paragraphs:['설명']}],sources:[{kind:'official'}],photos:[{url:'photo',alt:'사진',credit:'출처',placeMatched:true,rightsUrl:'rights',commercialAllowed:true,checkedAt}],internalLinks:[{href:'/places',verifiedAt:checkedAt}],review:{status:'approved',checkedAt},productIds:[id],thumbnail:{status:'approved',url:`https://mwohaji.kr/ticket-images/${slug}.jpg`,alt:'사진',width:1200,height:630,bytes:200000,mimeType:'image/jpeg',sha256:'sha',inputHash:'input',uploadedAt:checkedAt,verifiedAt:checkedAt,mobileCheckedAt:checkedAt,desktopCheckedAt:checkedAt,ogCheckedAt:checkedAt,sources:[{commercialAllowed:true,editAllowed:true,placeMatched:true,rightsUrl:'rights',checkedAt,credit:'credit'}]}});
+    articles.push({slug,placeId:slug,area:i%2?'경기':'강원',theme:i%3?'체험':'공원',address:'검증된 주소',createdAt:checkedAt,title:'장소',description:'방문 안내',intro:'소개',sections:[{heading:'안내',paragraphs:['설명'],photoIndex:0},{heading:'준비',paragraphs:['준비 설명'],photoIndex:1}],sources:[{kind:'official'}],photos:[0,1].map(i=>({url:'https://example.com/photo'+i,alt:'사진',credit:'출처',placeMatched:true,rightsUrl:'rights',commercialAllowed:true,checkedAt})),internalLinks:[{href:'/places',verifiedAt:checkedAt}],review:{status:'approved',checkedAt},productIds:[id],thumbnail:{status:'approved',url:`https://mwohaji.kr/ticket-images/${slug}.jpg`,alt:'사진',width:1200,height:630,bytes:200000,mimeType:'image/jpeg',sha256:'sha',inputHash:'input',uploadedAt:checkedAt,verifiedAt:checkedAt,mobileCheckedAt:checkedAt,desktopCheckedAt:checkedAt,ogCheckedAt:checkedAt,sources:[{commercialAllowed:true,editAllowed:true,placeMatched:true,rightsUrl:'rights',checkedAt,credit:'credit'}]}});
   }
   return {products,state:{paused:false,articles,history:[]}};
 }
@@ -72,4 +72,9 @@ test('WAUG body photo without a face review blocks publication',()=>{
   const {products,state}=fixture(1),p=state.articles[0].photos[0];p.url='https://d2mgzmtdeipcjp.cloudfront.net/files/good/example.jpg';
   assert.ok(readiness(state.articles[0],products,now).includes('본문 사진 얼굴 검수 필요'));
   p.faceReview={status:'no-identifiable-faces'};assert.deepEqual(readiness(state.articles[0],products,now),[]);
+});
+
+test('two distinct body cuts must render, independent of thumbnail and URL sizes',()=>{
+ const {products,state}=fixture(1),a=state.articles[0];
+ for(const mutate of [c=>c.photos.pop(),c=>c.photos[1].url=c.photos[0].url+'?size=small',c=>c.photos[1].url=c.thumbnail.url,c=>delete c.sections[1].photoIndex]){const copy=structuredClone(a);mutate(copy);assert.ok(readiness(copy,products,now).includes('서로 다른 본문 이미지 2장 이상 실제 배치 필요'));}
 });

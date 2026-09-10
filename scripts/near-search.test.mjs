@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import ts from 'typescript';
+const js=ts.transpileModule(fs.readFileSync('lib/nearSearch.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2020}}).outputText;
+const {queryNearby,straightDistance}=await import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));
+const base={id:'1',title:'공원',area:'서울',image:'',url:'/place/1',kind:'place',lat:37.5,lng:127};
+const pool=[base,{...base,id:'2',url:'/ticket/2',kind:'ticket',lng:127.02},{...base,id:'3',url:'/event/3',kind:'event',endDate:'20260909'},{...base,id:'4',url:'/event/4',kind:'event',endDate:'20260910'},{...base,id:'5',url:'/ticket/5',kind:'ticket',published:false},{...base,id:'6',url:'/place/6',lat:0,lng:0},{...base,id:'7',url:'/food/7',kind:'food',lng:127.2}];
+const q={point:{lat:37.5,lng:127},kind:'all',radius:10,offset:0,limit:12};
+test('distance is geodesic, unknown venue coordinates cannot create a distance',()=>{assert.equal(straightDistance(q.point,base),0);assert.ok(straightDistance(q.point,{lat:37.5,lng:127.1})>8);assert.equal(straightDistance(q.point,{lat:0,lng:0}),Infinity);});
+test('radius and kind intersect, expired and unpublished records stay out',()=>{const r=queryNearby(pool,q,'20260910');assert.deepEqual(r.items.map(p=>p.id),['1','4','2']);assert.equal(queryNearby(pool,{...q,kind:'ticket'},'20260910').total,1);assert.equal(queryNearby(pool,{...q,kind:'food'},'20260910').total,0);assert.equal(queryNearby(pool,{...q,kind:'food',radius:20},'20260910').total,1);});
+test('region fallback never claims distance, pagination reports the true total',()=>{const r=queryNearby(pool,{...q,point:undefined,area:'서울',limit:2},'20260910');assert.equal(r.total,5);assert.equal(r.items.length,2);assert.ok(r.hasMore);assert.ok(r.items.every(p=>p.distanceKm===undefined));assert.equal(queryNearby(pool,{...q,point:undefined,area:'제주'},'20260910').total,0);});
