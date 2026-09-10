@@ -246,7 +246,8 @@
         "대표 이미지·모바일·PC·OG 검수 필요",
         "본문 사진 얼굴 검수 필요"
       ],
-      "editorialPriority": 3
+      "editorialPriority": 3,
+      "placeName": "서울랜드"
     },
     {
       "slug": "everland",
@@ -396,7 +397,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 1
+      "editorialPriority": 1,
+      "placeName": "에버랜드"
     },
     {
       "slug": "nami-island",
@@ -552,7 +554,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 2
+      "editorialPriority": 2,
+      "placeName": "남이섬"
     },
     {
       "slug": "korean-folk-village",
@@ -718,7 +721,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 4
+      "editorialPriority": 4,
+      "placeName": "한국민속촌"
     },
     {
       "slug": "aquaplanet-ilsan",
@@ -884,7 +888,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 5
+      "editorialPriority": 5,
+      "placeName": "아쿠아플라넷 일산"
     },
     {
       "slug": "aquaplanet-gwanggyo",
@@ -1033,7 +1038,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 6
+      "editorialPriority": 6,
+      "placeName": "아쿠아플라넷 광교"
     },
     {
       "slug": "seohaerang",
@@ -1204,7 +1210,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 8
+      "editorialPriority": 8,
+      "placeName": "서해랑 제부도 해상케이블카"
     },
     {
       "slug": "herb-island",
@@ -1361,7 +1368,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 7
+      "editorialPriority": 7,
+      "placeName": "허브아일랜드"
     },
     {
       "slug": "paju-gondola",
@@ -1535,7 +1543,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 9
+      "editorialPriority": 9,
+      "placeName": "파주 임진각 평화곤돌라"
     },
     {
       "slug": "ganghwa-luge",
@@ -1690,7 +1699,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 10
+      "editorialPriority": 10,
+      "placeName": "강화 루지"
     },
     {
       "slug": "ludensia",
@@ -1863,7 +1873,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 11
+      "editorialPriority": 11,
+      "placeName": "루덴시아"
     },
     {
       "slug": "anseong-farmland",
@@ -2031,7 +2042,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 12
+      "editorialPriority": 12,
+      "placeName": "안성팜랜드"
     },
     {
       "slug": "petite-france-italian-village",
@@ -2192,7 +2204,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 13
+      "editorialPriority": 13,
+      "placeName": "쁘띠프랑스·이탈리아마을"
     },
     {
       "slug": "begonia-bird-garden",
@@ -2365,7 +2378,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 14
+      "editorialPriority": 14,
+      "placeName": "베고니아새정원"
     },
     {
       "slug": "zoolung-hanam",
@@ -2525,7 +2539,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 15
+      "editorialPriority": 15,
+      "placeName": "주렁주렁 하남점"
     },
     {
       "slug": "zoolung-dongtan",
@@ -2695,7 +2710,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 16
+      "editorialPriority": 16,
+      "placeName": "주렁주렁 동탄점"
     },
     {
       "slug": "aquafield-goyang",
@@ -2857,7 +2873,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 17
+      "editorialPriority": 17,
+      "placeName": "아쿠아필드 고양"
     },
     {
       "slug": "aquafield-hanam",
@@ -3022,7 +3039,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 18
+      "editorialPriority": 18,
+      "placeName": "아쿠아필드 하남"
     },
     {
       "slug": "aquafield-anseong",
@@ -3197,7 +3215,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 19
+      "editorialPriority": 19,
+      "placeName": "아쿠아필드 안성"
     },
     {
       "slug": "gana-art-park",
@@ -3382,7 +3401,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 20
+      "editorialPriority": 20,
+      "placeName": "가나아트파크"
     },
     {
       "slug": "nature-scape-dongtan",
@@ -3546,7 +3566,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 21
+      "editorialPriority": 21,
+      "placeName": "네이처스케이프 동탄"
     },
     {
       "slug": "gimpo-monsterium",
@@ -3706,7 +3727,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 22
+      "editorialPriority": 22,
+      "placeName": "김포 몬스터리움"
     },
     {
       "slug": "pororo-dasan",
@@ -3862,7 +3884,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 23
+      "editorialPriority": 23,
+      "placeName": "뽀로로테마파크 다산"
     },
     {
       "slug": "seoul-grand-park-lift",
@@ -4012,7 +4035,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 24
+      "editorialPriority": 24,
+      "placeName": "서울대공원 스카이리프트"
     },
     {
       "slug": "yangpyeong-sheep-ranch",
@@ -4181,7 +4205,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 25
+      "editorialPriority": 25,
+      "placeName": "양평 양떼목장"
     },
     {
       "slug": "zoozoo-land",
@@ -4349,7 +4374,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 27
+      "editorialPriority": 27,
+      "placeName": "쥬쥬랜드"
     },
     {
       "slug": "ulsan-sheep-ranch",
@@ -4517,7 +4543,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 26
+      "editorialPriority": 26,
+      "placeName": "울산 양떼목장"
     },
     {
       "slug": "wonder-village-goyang",
@@ -4679,7 +4706,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 29
+      "editorialPriority": 29,
+      "placeName": "원더빌리지 고양"
     },
     {
       "slug": "wonderpark-gwacheon",
@@ -4829,7 +4857,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 28
+      "editorialPriority": 28,
+      "placeName": "원더파크 과천"
     },
     {
       "slug": "artis-dongtan",
@@ -4991,7 +5020,8 @@
       "holdReasons": [
         "대표 이미지·모바일·PC·OG 검수 필요"
       ],
-      "editorialPriority": 30
+      "editorialPriority": 30,
+      "placeName": "아르티스 동탄"
     }
   ],
   "history": [

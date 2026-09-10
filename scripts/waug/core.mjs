@@ -95,9 +95,9 @@ export function launchNow(state,products,placeIds,now=new Date()) {
 
 export function publicArticles(state, products) {
   return state.articles.filter(a=>a.status==='published' && a.publishedAt && state.history.some(h=>h.slug===a.slug)).map(a=>({
-    slug:a.slug,placeId:a.placeId,title:a.title,description:a.description,intro:a.intro,area:a.area,address:a.address,theme:a.theme,
+    slug:a.slug,placeId:a.placeId,placeName:a.placeName||a.thumbnail.copy?.placeName||'이 장소',title:a.title,description:a.description,intro:a.intro,area:a.area,address:a.address,theme:a.theme,
     thumbnail:{url:a.thumbnail.url,alt:a.thumbnail.alt,width:a.thumbnail.width,height:a.thumbnail.height,credit:a.thumbnail.disclosure || a.thumbnail.sources.map(s=>s.credit).join(' · ')},
     photos:a.photos,sections:a.sections,internalLinks:a.internalLinks,sources:a.sources,publishedAt:a.publishedAt,checkedAt:a.review.checkedAt,
-    tickets:a.productIds.map(id=>products.find(p=>p.id===id)).filter(p=>p && p.eligibility==='eligible' && p.saleStatus==='available' && !p.duplicateOf).map(p=>({label:p.optionLabel||p.actualName,href:p.affiliateUrl,validUntil:p.validUntil||null}))
+    tickets:a.productIds.map(id=>products.find(p=>p.id===id)).filter(p=>p && p.eligibility==='eligible' && p.saleStatus==='available' && !p.duplicateOf).map(p=>({label:p.optionLabel||'이용권',href:p.affiliateUrl,validUntil:p.validUntil||null}))
   }));
 }

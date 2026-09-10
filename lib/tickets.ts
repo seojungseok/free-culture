@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 export type TicketArticle = {
-  slug:string;placeId:string;title:string;description:string;intro:string;area:string;address:string;theme:string;
+  slug:string;placeId:string;placeName:string;title:string;description:string;intro:string;area:string;address:string;theme:string;
   thumbnail:{url:string;alt:string;credit:string;width:number;height:number};
   photos:{url:string;alt:string;credit:string}[];
   sections:{heading:string;paragraphs:string[];photoIndex?:number;tickets?:boolean}[];
