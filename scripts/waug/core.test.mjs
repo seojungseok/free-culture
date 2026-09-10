@@ -79,7 +79,7 @@ test('two distinct body cuts must render, independent of thumbnail and URL sizes
  for(const mutate of [c=>c.photos.pop(),c=>c.photos[1].url=c.photos[0].url+'?size=small',c=>c.photos[1].url=c.thumbnail.url,c=>delete c.sections[1].photoIndex]){const copy=structuredClone(a);mutate(copy);assert.ok(readiness(copy,products,now).includes('서로 다른 본문 이미지 2장 이상 실제 배치 필요'));}
 });
 
-test('existing reservations survive scheduler reruns and other publishers reduce daily capacity',()=>{
+test('existing reservations survive scheduler reruns and general publishers use an independent capacity',()=>{
  const {products,state}=fixture(3);state.articles[0].scheduledAt='2026-09-12T06:00:00+09:00';state.articles[0].status='scheduled';schedule(state,products,now);assert.equal(state.articles[0].scheduledAt,'2026-09-12T06:00:00+09:00');
- const day=new Date('2026-09-11T00:00:00Z');state.externalPublications={'2026-09-11':19};assert.equal(publish(state,products,day).length,1);assert.equal(publish(state,products,day).length,0);
+ const day=new Date('2026-09-11T00:00:00Z');state.externalPublications={'2026-09-11':30};assert.equal(publish(state,products,day).length,2);assert.equal(publish(state,products,day).length,0);
 });

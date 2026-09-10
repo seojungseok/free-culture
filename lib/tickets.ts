@@ -13,7 +13,7 @@ export type TicketArticle = {
   internalLinks:{href:string;label:string}[];
   sources:{url:string;label:string;checkedAt:string}[];
   publishedAt:string;checkedAt:string;
-  tickets:{label:string;href:string;validUntil:string|null}[];
+  tickets:{verifiedBenefit?:{sourceUrl:string;conditions:string;checkedAt:string;startsAt:string;endsAt:string}|null;label:string;href:string;validUntil:string|null}[];
 };
 // Private research, future schedules and affiliate candidates never enter a browser bundle.
 export function getTickets():TicketArticle[] {

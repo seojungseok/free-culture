@@ -354,7 +354,7 @@ async function main() {
   const existingTexts = Object.values(store.articles).map((a) => a.content);
 
   const forcedIds = (process.env.COURSE_IDS || "").split(",").map((s) => s.trim()).filter(Boolean);
-  const target = Number(process.env.FORCE_COUNT) || rampCourses();
+  const target = Number(process.env.FORCE_COUNT) || Number(process.env.COURSE_DAILY) || 10;
 
   let items;
   const rebuildIds = new Set();
@@ -374,7 +374,7 @@ async function main() {
 
   let made = 0, skipped = 0, errored = 0, rebuilt = 0;
   const report = [];
-  let siteNewRemaining = newArticleAllowance(ROOT);
+  let siteNewRemaining = newArticleAllowance(ROOT,'course-articles');
   for (const course of items) {
     if (!rebuildIds.has(course.id)) { if (siteNewRemaining <= 0) continue; siteNewRemaining--; }
    try { // 코스 하나가 에러나도 전체 중단 없이 다음으로 (부분 발행 + 커밋 보장)

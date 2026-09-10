@@ -67,8 +67,8 @@
         }
       ],
       "officialUrl": "https://mirihae.com/itoct",
-      "image": "https://tong.visitkorea.or.kr/cms/resource/19/3512919_image2_1.jpg",
-      "imageTitle": "송도 센트럴파크",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/18/3545818_image2_1.jpg",
+      "imageTitle": "파라다이스시티",
       "priority": 108,
       "description": "송도센트럴파크에서 출발해 인천공항과 을왕리해수욕장, 무의도 입구를 순환하는 인천 시티투어 바다노선의 경유지와 이용 정보를 안내합니다.",
       "intro": "인천광역시 연수구와 중구를 잇는 바다노선은 송도 도심에서 공항권과 해안 관광지를 둘러보는 순환형 인천 시티투어입니다. 송도센트럴파크를 출발해 인천공항 주변, 을왕리해수욕장, 무의도 입구 등을 거친 뒤 다시 송도로 돌아오는 구성이 특징입니다.",
@@ -145,7 +145,18 @@
           "accepted_prediction_tokens": 0,
           "rejected_prediction_tokens": 0
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/18/3545818_image2_1.jpg",
+        "title": "파라다이스시티",
+        "location": "인천광역시 영종구 영종해안남로321번길 186 (운서동)",
+        "placeId": "2932001",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2932001",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "b2c85d7e3f7c38",
@@ -214,8 +225,8 @@
         }
       ],
       "officialUrl": "https://www.citytourbusan.com/",
-      "image": "https://tong.visitkorea.or.kr/cms/resource/89/3575989_image2_1.jpg",
-      "imageTitle": "마린시티",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/63/3370163_image2_1.jpg",
+      "imageTitle": "평화공원",
       "priority": 123,
       "description": "부산역에서 출발해 부산 주요 경유지를 순환하는 레드라인의 노선, 운행 정보, 요금과 이용 전 확인 사항을 안내합니다.",
       "intro": "부산 시티투어 레드라인은 부산역을 출발지이자 도착지로 하는 순환형 코스입니다. UN기념공원, 부산박물관, 광안리해수욕장, 해운대해수욕장, 센텀시티, 광복로 등을 경유하며, 자료 기준 운행 방식은 선착순 정원제입니다. 이용 전 운행일과 시간, 탑승 방식, 요금을 확인하는 것이 좋습니다.",
@@ -328,7 +339,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/63/3370163_image2_1.jpg",
+        "title": "평화공원",
+        "location": "부산광역시 남구 신선로447번길 10",
+        "placeId": "128055",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/128055",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "b3d9e2b721f7c4",
@@ -525,7 +547,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/65/3373465_image2_1.JPG",
+        "title": "거북선대교",
+        "location": "전남광주통합특별시 여수시 종화동",
+        "placeId": "2508988",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2508988",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "353a8ebee826e5",
@@ -694,7 +727,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/40/3570040_image2_1.jpg",
+        "title": "마비정 벽화마을",
+        "location": "대구광역시 달성군 화원읍 마비정길 262-5",
+        "placeId": "1970811",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/1970811",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "7f6c303b60bae3",
@@ -885,7 +929,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/30/3573030_image2_1.jpg",
+        "title": "보경사",
+        "location": "경상북도 포항시 북구 송라면 보경로 523",
+        "placeId": "126179",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/126179",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "109cc60e4c33b1",
@@ -1006,7 +1061,18 @@
           "accepted_prediction_tokens": 0,
           "rejected_prediction_tokens": 0
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/70/3461470_image2_1.jpg",
+        "title": "옥화자연휴양림",
+        "location": "충청북도 청주시 상당구 미원면 운암옥화길 140",
+        "placeId": "127080",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/127080",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.992Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "2cbbe64c21c51c",
@@ -1207,7 +1273,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/61/3540461_image2_1.jpg",
+        "title": "당남리섬",
+        "location": "경기도 여주시 대신면 천서리",
+        "placeId": "2743841",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2743841",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "9576fb18d8b604",
@@ -1397,7 +1474,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/20/3554020_image2_1.jpg",
+        "title": "목포 해상케이블카",
+        "location": "전남광주통합특별시 목포시 해양대학로 240",
+        "placeId": "2606207",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2606207",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "0012cac98051f9",
@@ -1561,7 +1649,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/71/3585971_image2_1.jpg",
+        "title": "이육사문학관",
+        "location": "경상북도 안동시 도산면 백운로 525",
+        "placeId": "2721929",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2721929",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "b1cb541f757459",
@@ -1717,7 +1816,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/51/3557751_image2_1.jpg",
+        "title": "순천왜성",
+        "location": "전남광주통합특별시 순천시 해룡면 신성리",
+        "placeId": "126749",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/126749",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.992Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "97ccb13524da05",
@@ -1921,7 +2031,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/37/3022337_image2_1.JPG",
+        "title": "웃다리문화촌",
+        "location": "경기도 평택시 서탄면 용소금각로 438-14",
+        "placeId": "2018386",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2018386",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "6abe32c468478f",
@@ -2113,7 +2234,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/04/3432804_image2_1.JPG",
+        "title": "경화역공원",
+        "location": "경상남도 창원시 진해구 진해대로 649 (경화동)",
+        "placeId": "3429965",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/3429965",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "161aec6640b215",
@@ -2296,7 +2428,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/03/3040903_image2_1.JPG",
+        "title": "물왕호수",
+        "location": "경기도 시흥시 물왕동",
+        "placeId": "2662927",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2662927",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "65712d26482437",
@@ -2365,8 +2508,8 @@
         }
       ],
       "officialUrl": "http://tour.gimhae.go.kr+http//www.mrtouring.co.kr",
-      "image": "https://tong.visitkorea.or.kr/cms/resource/12/3539312_image2_1.jpg",
-      "imageTitle": "김해목재문화박물관",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/43/3535043_image2_1.jpg",
+      "imageTitle": "클레이아크 김해미술관",
       "priority": 33,
       "description": "김해 문화에반해 시티투어의 경유 순서와 선택 코스, 예약·요금, 주변 관광 및 식사 후보와 출발 전 확인사항을 안내합니다.",
       "intro": "경상남도 김해시의 문화에반해는 김해분청도자박물관, 클레이아크김해미술관, 김해탄소중립체험관 또는 김해목재문화박물관 중 한 곳, 율하유적전시관을 잇는 고정형 시티투어입니다. 김해종합관광안내소 또는 김해관광유통단지에서 탑승할 수 있으며, 원본 자료 기준 연중 운영 코스로 안내되어 있습니다.",
@@ -2480,7 +2623,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/43/3535043_image2_1.jpg",
+        "title": "클레이아크 김해미술관",
+        "location": "경상남도 김해시 진례면 분청로 25",
+        "placeId": "130841",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/130841",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "e23ef7d0fcd8db",
@@ -2656,7 +2810,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/34/3585434_image2_1.jpg",
+        "title": "대흥슬로시티",
+        "location": "충청남도 예산군 대흥면 중리길 49",
+        "placeId": "1856774",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/1856774",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "153005e6691951",
@@ -2835,7 +3000,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/21/3342921_image2_1.jpg",
+        "title": "방아머리선착장",
+        "location": "경기도 안산시 단원구 대부황금로 1567-3",
+        "placeId": "2761519",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2761519",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.991Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "34edeb55dd5a91",
@@ -3012,7 +3188,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/76/3353976_image2_1.jpg",
+        "title": "세종호수공원",
+        "location": "세종특별자치시 다솜로 216 (세종동)",
+        "placeId": "1946955",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/1946955",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "3c42216c767564",
@@ -3189,7 +3376,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/15/3423715_image2_1.jpg",
+        "title": "쁘띠프랑스",
+        "location": "경기도 가평군 청평면 호반로 1063",
+        "placeId": "604009",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/604009",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "4353aca7bc99cc",
@@ -3343,7 +3541,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/98/3540798_image2_1.jpg",
+        "title": "산머루농원",
+        "location": "경기도 파주시 적성면 윗배우니길 441-25",
+        "placeId": "2708312",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2708312",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.992Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "5874b027f25302",
@@ -3521,7 +3730,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/33/3345033_image2_1.JPG",
+        "title": "광양향교",
+        "location": "전남광주통합특별시 광양시 광양읍 향교길 67",
+        "placeId": "1624171",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/1624171",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.992Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "f40712d5f4a625",
@@ -3590,7 +3810,7 @@
         }
       ],
       "officialUrl": "https://www.citytourbusan.com/",
-      "image": "https://tong.visitkorea.or.kr/cms/resource/63/3370163_image2_1.jpg",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/05/2928705.jpg",
       "imageTitle": "평화공원",
       "priority": 123,
       "description": "부산역에서 출발해 영도, 태종대, 오륙도, 송도 등을 거쳐 부산역으로 돌아오는 그린라인의 경유 순서와 요금, 탑승 방법, 방문 전 확인사항을 안내합니다.",
@@ -3705,7 +3925,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/05/2928705.jpg",
+        "title": "평화공원",
+        "location": "부산광역시 남구 신선로447번길 10",
+        "credit": "한국관광공사 · 부산관광공사",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "2928705",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "7365f83fbd485b",
@@ -3795,8 +4026,8 @@
         }
       ],
       "officialUrl": "http://www.jejucitybus.com/",
-      "image": "https://tong.visitkorea.or.kr/cms/resource/14/3523614_image2_1.jpg",
-      "imageTitle": "도두봉",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/68/3011868_image2_1.jpg",
+      "imageTitle": "용두암",
       "priority": 117,
       "description": "제주항국제여객터미널에서 출발해 동문시장, 용연구름다리와 용두암, 도두봉, 이호목마등대, 한라수목원 등을 연결하는 제주시 순환형 시티투어 안내입니다.",
       "intro": "제주시 순환형 시티투어는 제주항국제여객터미널을 탑승장소로 하며 원도심, 해안, 공항 주변, 도두·이호 일대와 주요 교통·숙박 거점을 연결합니다. 1일 이용권을 구입하면 자유로운 승하차와 재탑승이 가능하므로, 노선에 포함된 여러 경유지를 일정에 맞춰 나누어 둘러볼 수 있습니다. 운행과 요금 정보는 2025년 12월 22일 기준 자료에 따릅니다.",
@@ -3912,7 +4143,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/68/3011868_image2_1.jpg",
+        "title": "용두암",
+        "location": "제주특별자치도 제주시 용두암길 15 (용담이동)",
+        "placeId": "228853",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/228853",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "13e5e9cbd2f52e",
@@ -4102,7 +4344,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/54/3534454_image2_1.jpg",
+        "title": "돌산공원",
+        "location": "전남광주통합특별시 여수시 돌산읍 우두리 산 1",
+        "placeId": "128755",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/128755",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "d2e64fb362197f",
@@ -4171,8 +4424,8 @@
         }
       ],
       "officialUrl": "https://mirihae.com/itoct",
-      "image": "https://tong.visitkorea.or.kr/cms/resource/19/3512919_image2_1.jpg",
-      "imageTitle": "송도 센트럴파크",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/77/3037277_image2_1.jpg",
+      "imageTitle": "송도컨벤시아",
       "priority": 108,
       "description": "인천레트로노선의 경유 순서와 탑승 장소, 운행일, 이용요금, 주변 관광정보와 출발 전 확인사항을 정리했습니다.",
       "intro": "인천레트로노선은 인천종합관광안내소(송도센트럴파크역)에서 출발해 신포국제시장, 화평동 냉면거리, 인천역, 상상플랫폼, 아트플랫폼, 송도컨벤시아, 현대프리미엄아울렛 송도점을 거쳐 출발지로 돌아오는 순환형 시티투어입니다. 원본 자료 기준 매주 수요일부터 일요일까지 운행하며, 운행시간은 10시 30분부터 16시 30분까지입니다.",
@@ -4285,7 +4538,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/77/3037277_image2_1.jpg",
+        "title": "송도컨벤시아",
+        "location": "인천광역시 연수구 센트럴로 123",
+        "placeId": "742171",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/742171",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "93f013ef81cf12",
@@ -4456,7 +4720,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/23/3576123_image2_1.jpg",
+        "title": "현풍향교",
+        "location": "대구광역시 달성군 현풍면 현풍동로20길 27-8",
+        "placeId": "1611782",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/1611782",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.992Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "496ed26ed3783c",
@@ -4618,7 +4893,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/71/3504571_image2_1.jpg",
+        "title": "운보의 집",
+        "location": "충청북도 청주시 청원구 내수읍 형동2길 92-41",
+        "placeId": "130080",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/130080",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "2a59110f5e8872",
@@ -4694,8 +4980,8 @@
         }
       ],
       "officialUrl": "https://www.yeoju.go.kr/tour/contents.do?key=2624",
-      "image": "https://tong.visitkorea.or.kr/cms/resource/35/3078435_image2_1.jpg",
-      "imageTitle": "신륵사관광지",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/21/2665621_image2_1.jpg",
+      "imageTitle": "황학산수목원",
       "priority": 72,
       "description": "여주역에서 출발해 신륵사관광지, 세종대왕릉, 시장, 황학산수목원, 명성황후생가 등을 잇는 여주 시티투어의 코스와 운행 정보를 안내합니다.",
       "intro": "경기도 여주 시티투어는 여주역 승강장에서 출발해 여러 경유지를 거쳐 다시 여주역으로 돌아오는 순환형 투어입니다. 당일 왕복티켓 한 장으로 이용할 수 있으며, 중간 정류지에서도 탑승할 수 있도록 안내되어 있습니다. 운행일과 시간, 요금은 원본 자료 기준으로 확인하고 방문 전 최신 정보를 다시 확인하는 것이 좋습니다.",
@@ -4808,7 +5094,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/21/2665621_image2_1.jpg",
+        "title": "황학산수목원",
+        "location": "경기도 여주시 황학산수목원길 73 (매룡동)",
+        "placeId": "2665727",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2665727",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "478f7612a03d02",
@@ -4840,8 +5137,8 @@
       "related": [],
       "foodLinks": [],
       "officialUrl": "https://www.garamtour.kr/",
-      "image": "",
-      "imageTitle": "",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/21/2939521.jpg",
+      "imageTitle": "스페이스워크",
       "priority": 69,
       "description": "포항역과 시외버스터미널에서 출발해 구룡포일본인가옥거리, 호미곶광장, 선바위둘레길, 죽도시장, 스페이스워크를 경유하는 고정형 시티투어 안내입니다.",
       "intro": "경상북도 포항시의 퐝랜드마크A코스는 포항역과 시외버스터미널을 출발지와 도착지로 포함하는 시티투어입니다. 자료에 제시된 경유지는 구룡포일본인가옥거리, 호미곶광장, 선바위둘레길, 죽도시장, 스페이스워크이며, 운행 여부는 15인 이상 예약 성립을 전제로 합니다. 운영 시간과 실제 관광 시간은 구분해 확인해야 합니다.",
@@ -4959,7 +5256,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/21/2939521.jpg",
+        "title": "스페이스워크",
+        "location": "경상북도 포항시 북구",
+        "credit": "한국관광공사 · 한국관광공사 김지호",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "2939521",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.992Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "65192ebdb3b031",
@@ -5128,7 +5436,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/97/3047997_image2_1.JPG",
+        "title": "안동댐",
+        "location": "경상북도 안동시 호반로 31",
+        "placeId": "126126",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/126126",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "c34731c4a16a7a",
@@ -5305,7 +5624,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/42/3535142_image2_1.jpg",
+        "title": "목포항",
+        "location": "전남광주통합특별시 목포시 해안로 182",
+        "placeId": "2795367",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2795367",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.992Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "1c96f937240000",
@@ -5367,8 +5697,8 @@
         }
       ],
       "officialUrl": "https://www.citytourbusan.com/",
-      "image": "https://tong.visitkorea.or.kr/cms/resource/51/2787651_image2_1.jpg",
-      "imageTitle": "낙동강 생태탐방선",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/96/3514296.jpg",
+      "imageTitle": "부산현대미술관",
       "priority": 120,
       "description": "부산역에서 출발해 감천문화마을, 국회부산도서관, 낙동강에코센터, 부산현대미술관 등을 경유하는 서부산생태투어의 코스와 예약·요금 정보를 안내합니다.",
       "intro": "서부산생태투어는 부산역에서 출발해 감천문화마을, 국회부산도서관, 행복마을, 낙동강에코센터, 낙동강생태탐방선, 부산현대미술관을 거쳐 부산역으로 돌아오는 순환형 시티투어입니다. 11월부터 3월까지는 낙동강생태탐방선 구간이 근현대역사관으로 대체됩니다.",
@@ -5481,7 +5811,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/96/3514296.jpg",
+        "title": "부산현대미술관",
+        "location": "부산광역시 사하구 하단동",
+        "credit": "한국관광공사 · 장정수",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "3514296",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "1ae6fcc8b7f7cd",
@@ -5557,8 +5898,8 @@
         }
       ],
       "officialUrl": "http://ok.yeosu.go.kr/",
-      "image": "https://tong.visitkorea.or.kr/cms/resource/54/3534454_image2_1.jpg",
-      "imageTitle": "돌산공원",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/07/3351107_image2_1.jpg",
+      "imageTitle": "이순신광장",
       "priority": 114,
       "description": "여수엑스포역에서 출발해 아쿠아플라넷, 오동도, 하멜전시관, 이순신광장과 돌산공원 입구 등을 거치는 2층주간코스의 운행 순서와 이용 정보를 안내합니다.",
       "intro": "전라남도 여수시 2층주간코스는 여수엑스포역을 출발지이자 도착지로 하는 순환형 시티투어입니다. 아쿠아플라넷, 케이블카주차타워, 오동도, 소노캄 여수, 하멜전시관, 이순신광장, 여객선터미널과 돌산공원 입구를 차례로 경유합니다. 자료에 제시된 운행시간과 요금, 문의처를 중심으로 이용 전에 확인할 사항을 정리했습니다.",
@@ -5671,7 +6012,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/07/3351107_image2_1.jpg",
+        "title": "이순신광장",
+        "location": "전남광주통합특별시 여수시 중앙로 74",
+        "placeId": "2612869",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2612869",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "378560799d78b9",
@@ -5847,7 +6199,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/19/3512919_image2_1.jpg",
+        "title": "송도 센트럴파크",
+        "location": "인천광역시 연수구 컨벤시아대로 160",
+        "placeId": "2465107",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2465107",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "c361e191c78cc0",
@@ -6037,7 +6400,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/19/2742919_image2_1.jpg",
+        "title": "소양강댐",
+        "location": "강원특별자치도 춘천시 신북읍 신샘밭로 1128",
+        "placeId": "127476",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/127476",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "7b87900732cd6e",
@@ -6155,7 +6529,18 @@
           "accepted_prediction_tokens": 0,
           "rejected_prediction_tokens": 0
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/06/3461406_image2_1.jpg",
+        "title": "미동산수목원",
+        "location": "충청북도 청주시 상당구 미원면 수목원길 51",
+        "placeId": "127817",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/127817",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.992Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "48899548d2ba66",
@@ -6187,8 +6572,8 @@
       "related": [],
       "foodLinks": [],
       "officialUrl": "https://www.garamtour.kr/",
-      "image": "",
-      "imageTitle": "",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/17/3586317.jpg",
+      "imageTitle": "영일대 해수욕장",
       "priority": 69,
       "description": "포항역과 시외버스터미널에서 출발해 구룡포일본인가옥거리, 과메기문화관, 호미곶광장, 호미반도둘레길 선바위, 죽도시장, 영일대해수욕장을 경유하는 고정형 시티투어입니다.",
       "intro": "경상북도 포항시의 씨(SEA)하게 보는 포항코스는 포항역과 시외버스터미널에서 탑승하는 고정형 투어입니다. 원본 자료에 따르면 운행 시간은 09:30부터 17:40까지이며, 15인 이상 예약 시 운행합니다. 코스에는 구룡포일본인가옥거리, 과메기문화관, 호미곶광장, 호미반도둘레길 선바위, 죽도시장, 영일대해수욕장이 포함되어 있습니다.",
@@ -6301,7 +6686,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/17/3586317.jpg",
+        "title": "영일대 해수욕장",
+        "location": "경상북도 포항시 북구",
+        "credit": "한국관광공사 · 이환우",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "3586317",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.992Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "9cc38deb9fbce3",
@@ -6477,7 +6873,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/83/3585283_image2_1.jpg",
+        "title": "영호루",
+        "location": "경상북도 안동시 강남로 187-5 (정하동)",
+        "placeId": "128764",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/128764",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "bef64c1c5e09ec",
@@ -6539,8 +6946,8 @@
         }
       ],
       "officialUrl": "http://www.nbtour.co.kr/",
-      "image": "https://tong.visitkorea.or.kr/cms/resource/41/3372641_image2_1.jpg",
-      "imageTitle": "옥정호",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/80/3080980_image2_1.jpg",
+      "imageTitle": "임실치즈테마파크",
       "priority": 33,
       "description": "전주에서 출발해 옥정호 붕어섬, 임실 전통시장, 임실치즈테마파크를 경유하는 명소탐방 임실 시티투어의 코스와 이용 정보를 안내합니다.",
       "intro": "명소탐방 임실 시티투어는 전주시청에서 출발해 옥정호 붕어섬, 임실 전통시장, 임실치즈테마파크를 거쳐 다시 전주시청으로 돌아오는 순환형 시티투어입니다. 자료에 기재된 운행정보는 8월 중 토요일과 일요일이며, 운행시간은 09:00부터 18:00까지입니다. 이용요금은 10,000원으로 안내되어 있습니다.",
@@ -6653,7 +7060,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/80/3080980_image2_1.jpg",
+        "title": "임실치즈테마파크",
+        "location": "전북특별자치도 임실군 성수면 도인2길 50",
+        "placeId": "2718832",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2718832",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "ce92d9af22556b",
@@ -6722,8 +7140,8 @@
         }
       ],
       "officialUrl": "https://www.siheung.go.kr/citytour",
-      "image": "https://tong.visitkorea.or.kr/cms/resource/03/3040903_image2_1.JPG",
-      "imageTitle": "물왕호수",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/95/3558695_image2_1.jpg",
+      "imageTitle": "연꽃테마파크",
       "priority": 33,
       "description": "시흥시 테마형 수시코스는 연꽃테마파크, 관곡지, 물왕호수, 오이도, 거북섬, 배곧, 갯골생태공원 등을 단체 일정에 맞춰 구성하는 고정형 시티투어입니다.",
       "intro": "경기도 시흥시 테마형 수시코스는 여러 경유 후보 가운데 단체가 희망하는 장소를 바탕으로 일정을 상담해 구성하는 맞춤형 투어입니다. 일반적인 정류장 순환 방식이 아니라 단체지정장소에서 출발하며, 실제 포함 장소와 방문 순서는 일정 상담 결과에 따라 달라질 수 있습니다. 코스와 연계 체험도 계절과 시기에 따라 변동될 수 있습니다.",
@@ -6836,7 +7254,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/95/3558695_image2_1.jpg",
+        "title": "연꽃테마파크",
+        "location": "경기도 시흥시 관곡지로 139 (하중동)",
+        "placeId": "710258",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/710258",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     },
     {
       "id": "e9e7af9d0d730b",
@@ -6994,7 +7423,18 @@
             "rejected_prediction_tokens": 0
           }
         }
-      }
+      },
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/53/3580653_image2_1.jpg",
+        "title": "봉하마을",
+        "location": "경상남도 김해시 진영읍 봉하로 115",
+        "placeId": "2514460",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2514460",
+        "status": "matched",
+        "checkedAt": "2026-09-10T16:09:47.993Z"
+      },
+      "heroPhotoStatus": "matched"
     }
   ],
   "rejected": [

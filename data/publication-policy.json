@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "timezone": "Asia/Seoul",
+  "general": {
+    "daily": 30,
+    "categories": {
+      "place-articles": 10,
+      "course-articles": 10,
+      "city-tour-articles": 10
+    }
+  },
+  "tickets": {
+    "daily": 20
+  },
+  "totalDaily": 50,
+  "notes": "기존 예약 및 당일 실제 공개 수를 해당 그룹에서만 차감. 미검수 글로 수량 채우지 않음."
+}

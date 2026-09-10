@@ -14,6 +14,7 @@ export function cityTourStops(article:CityArticle):CourseStop[]{
 }
 export function cityTourPhotos(article:CityArticle):GalleryPhoto[]{
  const stops=cityTourStops(article),photos=galleryForStops(stops,5,article.area);
+ if(article.heroPhoto?.status==='matched'){const h=article.heroPhoto;const i=photos.findIndex(p=>p.image===h.image);if(i>=0)photos.splice(i,1);photos.unshift({id:'hero-'+article.id,image:h.image,title:h.title,location:h.location,month:'',keywords:h.title,photographer:h.credit});}
  const seen=new Set(photos.map(p=>p.image.replace(/^http:/,'https:')));
  for(const stop of stops){const image=stop.image.replace(/^http:/,'https:');if(photos.length>=5)break;if(!image||seen.has(image))continue;seen.add(image);photos.push({id:'place-'+stop.placeId,title:stop.name,image,location:stop.addr || '',month:'',keywords:stop.name,photographer:''});}
  return photos;

@@ -1,3 +1,4 @@
+import {chooseCityPhoto,photoKey} from './lib/city-tour-photos.mjs';
 import { newArticleAllowance } from './lib/publication-budget.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -12,7 +13,7 @@ const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric
 const requested=Number(process.env.CITY_LIMIT||10);
 const firstDay=db.articles[0]?.publishedDay||today;
 const cap=process.env.CITY_INITIAL==='1'&&firstDay===today?20:10;
-const target=Math.max(0,Math.min(requested,cap,newArticleAllowance(ROOT))-db.articles.filter(a=>a.publishedDay===today).length);
+const target=Math.max(0,Math.min(Math.max(0,Math.min(requested,cap)-db.articles.filter(a=>a.publishedDay===today).length),newArticleAllowance(ROOT,'city-tour-articles')));
 const norm=s=>String(s||'').replace(/[\s_()·,]/g,'');
 const cityPriority=['부산','제주','서귀포','경주','여수','인천','전주','강릉','춘천','대구','수원','대전','공주','목포','순천','청주','포항','안동','여주','속초'];
 const places=read('places.json').spots,foods=read('restaurants.json').restaurants;
@@ -73,7 +74,9 @@ for(const item of queue){
     if(checked.value.pass!==true){db.rejected.push({id:item.id,title:item.title,reason:'Fact review',issues:checked.value.issues,date:today,version:2});save();console.log('REVIEW '+item.title);continue;}
     generated.value=fixed.value;generated.usage={first:generated.usage,revision:fixed.usage};review.usage={first:review.usage,revision:checked.usage};
   }
-  db.articles.push({...item,...generated.value,model,generatedModel:generated.model,publishedAt:new Date().toISOString(),publishedDay:today,reviewed:true,usage:generated.usage,reviewUsage:review.usage});
+  const selectedPhoto=chooseCityPhoto(item,places,read('photo-gallery.json').photos||[],new Set(db.articles.map(a=>photoKey(a.image))));
+  if(!selectedPhoto){console.log('HELD: unique route photo unavailable '+item.id);continue;}
+  db.articles.push({...item,image:selectedPhoto.image,imageTitle:selectedPhoto.title,heroPhoto:{...selectedPhoto,status:'matched',checkedAt:new Date().toISOString()},...generated.value,model,generatedModel:generated.model,publishedAt:new Date().toISOString(),publishedDay:today,reviewed:true,usage:generated.usage,reviewUsage:review.usage});
   save();written++;console.log('PUBLISHED '+written+'/'+target+' '+generated.value.title);
  }catch(e){console.error('HELD '+item.id+' '+e.message);if(/quality gate/.test(e.message)){db.rejected.push({id:item.id,title:item.title,reason:e.message,date:today,version:2});save();}if(/HTTP 40[1349]|HTTP 429/.test(e.message))break;}
 }

@@ -326,7 +326,7 @@ async function main() {
   let searched = 0; // 이번 실행의 신규 web_search 호출 수(캐시 재사용분은 제외 — 이게 곧 검색 요금)
   const report = []; // 진단: 각 후보 결과를 저장소에 남겨 로그 없이도 원인 파악
 
-  let siteNewRemaining = newArticleAllowance(ROOT);
+  let siteNewRemaining = newArticleAllowance(ROOT,'place-articles');
   for (const { place, mode } of items) {
     if (mode === "new") { if (siteNewRemaining <= 0) continue; siteNewRemaining--; }
     if (made >= target) break;

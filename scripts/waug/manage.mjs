@@ -7,7 +7,7 @@ const read=name=>JSON.parse(fs.readFileSync(root+name+'.json','utf8'));
 const write=(name,data)=>{const f=root+name+'.json';fs.writeFileSync(f+'.tmp',JSON.stringify(data,null,2)+'\n');fs.renameSync(f+'.tmp',f);};
 const state=read('editorial'), db=read('catalog');
 if(fs.existsSync(root+'publication-policy.json'))state.publicationPolicy=read('publication-policy');
-const budget=publicationBudget();state.externalPublications={[budget.day]:budget.otherPublished};
+const budget=publicationBudget();state.externalPublications={};
 const command=process.argv[2]||'status';
 if(command==='status') {
   console.log(JSON.stringify({products:db.products.length,excluded:db.products.filter(p=>p.eligibility==='excluded').length,articles:state.articles.map(a=>({slug:a.slug,status:a.status,scheduledAt:a.scheduledAt,reasons:readiness(a,db.products)})),paused:state.paused,published:state.history.length},null,2));

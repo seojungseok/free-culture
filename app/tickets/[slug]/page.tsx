@@ -1,3 +1,4 @@
+import TicketLinks from '@/components/TicketLinks';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
@@ -10,18 +11,6 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
   const a=getTicket((await params).slug);if(!a)return {title:'장소 안내를 찾을 수 없습니다',robots:{index:false,follow:false}};
   const image={url:a.thumbnail.url,width:a.thumbnail.width,height:a.thumbnail.height,alt:a.thumbnail.alt};
   return {title:a.title,description:a.description,alternates:{canonical:`/tickets/${a.slug}`},openGraph:{title:a.title,description:a.description,type:'article',url:`${SITE.url}/tickets/${a.slug}`,images:[image]},twitter:{card:'summary_large_image',title:a.title,description:a.description,images:[a.thumbnail.url]}};
-}
-function TicketLinks({article}:{article:TicketArticle}){
-  const day=new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Seoul'});
-  const tickets=article.tickets.filter(t=>!t.validUntil||t.validUntil>=day);
-  return <aside aria-label="이용권 안내" className="my-8 rounded-2xl border border-[#cbdccb] bg-[#f4f8f2] p-4 sm:p-5">
-    <h2 className="break-keep text-xl font-bold">{article.placeName} 이용권 알아보기</h2>
-    <p className="mt-2 break-keep text-sm leading-6 text-ink-soft">방문 날짜에 맞는 이용권과 가격을 와그에서 확인해 보세요.</p>
-    {tickets.length ? <>
-      <div className="mt-3 flex flex-col gap-2">{tickets.map(t=><a key={t.href} href={t.href} rel="sponsored noopener noreferrer" target="_blank" className="min-h-11 rounded-xl bg-free px-3 py-2.5 text-center text-sm font-bold leading-6 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-free"><span className="break-keep">{t.label}</span>{' '}<span className="whitespace-nowrap">보기 ↗</span></a>)}</div>
-      <p className="mt-3 break-keep text-xs leading-5 text-ink-soft">이용 가능 시간과 포함 내역, 취소·환불 조건은 상품마다 달라요.</p>
-    </> : <p className="mt-3 break-keep text-sm leading-6">확인된 이용권의 판매 기간이 지났습니다. 새 이용권을 확인하고 있습니다.</p>}
-  </aside>;
 }
 export default async function TicketPage({params}:{params:Promise<{slug:string}>}){
   const a=getTicket((await params).slug);if(!a)notFound();

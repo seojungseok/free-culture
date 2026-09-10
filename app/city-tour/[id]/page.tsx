@@ -22,7 +22,7 @@ export default async function Page({params}:{params:Promise<{id:string}>}){const
  <p className="text-sm font-bold text-brandblue">{a.area} {a.city==='없음'?'':a.city}</p><h1 className="mt-2 break-keep text-2xl font-black leading-snug sm:text-3xl">{a.title}</h1>
  <div className="my-5 flex flex-wrap items-start gap-3"><TripSave className="" trip={{id:'city:'+a.id,title:a.title,stops:[{id:'city:'+a.id,title:a.title,href:'/city-tour/'+a.id,area:a.area,kind:'course',image:hero?.image}]}}/><CourseShare title={a.title} compact/></div>
  <aside className="mb-6 rounded-xl bg-amber-50 p-4 text-sm leading-7">원본 기준일: {a.raw['데이터기준일자']}. 아래 운행·요금은 해당 자료의 내용이며 현재 예약 가능 여부를 보장하지 않습니다. 한시적 일정·최소 인원·휴무 조건을 공식 운영처에 확인하세요.</aside>
- {hero&&<figure className="mb-7"><div className="relative aspect-[16/9] overflow-hidden rounded-2xl"><Image src={hero.image} alt={hero.title} fill sizes="(max-width:768px) 100vw, 768px" priority unoptimized className="object-cover"/></div><figcaption className="mt-2 text-xs text-ink-faint">경유지 {hero.title} · 한국관광공사 제공 사진 (실제 투어 차량 사진이 아닙니다)</figcaption></figure>}
+ {hero&&<figure className="mb-7"><div className="relative aspect-[16/9] overflow-hidden rounded-2xl"><Image src={hero.image} alt={hero.title} fill sizes="(max-width:768px) 100vw, 768px" priority unoptimized className="object-cover"/></div><figcaption className="mt-2 text-xs text-ink-faint">경유지 {hero.title} · {a.heroPhoto?.credit||'한국관광공사 제공 사진'} (실제 투어 차량 사진이 아닙니다)</figcaption></figure>}
  <p className="mb-8 text-base leading-8">{a.intro}</p>
  <section className="mb-8 rounded-xl bg-slate-50 p-5" aria-label="탑승 전 핵심 확인">
  <h2 className="text-lg font-bold">탑승 전 핵심 확인</h2><dl className="mt-3 space-y-3 text-sm leading-7">

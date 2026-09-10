@@ -59,7 +59,7 @@ export function schedule(state, products, now = new Date()) {
   const future=candidates.filter(a=>!a.scheduledAt);
   let day=nextDay(kstDay(now)); const scheduled=[];
   while (future.length) {
-    const existing=(state.externalPublications?.[day]||0)+state.history.filter(h=>h.day===day).length + candidates.filter(a=>a.scheduledAt?.slice(0,10)===day && !future.includes(a)).length;
+    const existing=state.history.filter(h=>h.day===day).length + candidates.filter(a=>a.scheduledAt?.slice(0,10)===day && !future.includes(a)).length;
     const batch=ordered([...future],day).slice(0,Math.max(0,20-existing));
     for(const a of batch){ a.scheduledAt=`${day}T06:00:00+09:00`; a.status='scheduled'; scheduled.push(a.slug); future.splice(future.indexOf(a),1); }
     day=nextDay(day);
@@ -73,7 +73,7 @@ export function publish(state, products, now = new Date()) {
   const day=kstDay(now);
   const already=new Set(state.history.map(h=>h.slug));
   const limit=20;
-  const remaining=Math.max(0,limit-state.history.filter(h=>h.day===day).length-(state.externalPublications?.[day]||0));
+  const remaining=Math.max(0,limit-state.history.filter(h=>h.day===day).length);
   const due=state.articles.filter(a=>a.status==='scheduled' && !a.publishedAt && !already.has(a.slug) && validDate(a.scheduledAt) && Date.parse(a.scheduledAt)<=+now);
   const eligible=[];
   for(const a of due){ const reasons=readiness(a,products,now); if(reasons.length){a.status='held';a.holdReasons=reasons;a.scheduledAt=null;}else eligible.push(a); }
@@ -104,6 +104,6 @@ export function publicArticles(state, products) {
     slug:a.slug,placeId:a.placeId,placeName:a.placeName||a.thumbnail.copy?.placeName||'이 장소',title:a.title,description:a.description,intro:a.intro,area:a.area,address:a.address,theme:a.theme,
     thumbnail:{url:a.thumbnail.url,alt:a.thumbnail.alt,width:a.thumbnail.width,height:a.thumbnail.height,credit:a.thumbnail.disclosure || a.thumbnail.sources.map(s=>s.credit).join(' · ')},
     photos:a.photos,sections:a.sections,internalLinks:a.internalLinks,sources:a.sources,publishedAt:a.publishedAt,checkedAt:a.review.checkedAt,
-    tickets:a.productIds.map(id=>products.find(p=>p.id===id)).filter(p=>p && p.eligibility==='eligible' && p.saleStatus==='available' && !p.duplicateOf).map(p=>({label:p.optionLabel||'이용권',href:p.affiliateUrl,validUntil:p.validUntil||null}))
+    tickets:a.productIds.map(id=>products.find(p=>p.id===id)).filter(p=>p && p.eligibility==='eligible' && p.saleStatus==='available' && !p.duplicateOf).map(p=>({verifiedBenefit:p.verifiedBenefit||null,label:p.optionLabel||'이용권',href:p.affiliateUrl,validUntil:p.validUntil||null}))
   }));
 }

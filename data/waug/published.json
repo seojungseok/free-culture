@@ -163,21 +163,25 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "자유이용권",
           "href": "https://www.waug.com/r/MYBgKK7a",
           "validUntil": "2026-09-30"
         },
         {
+          "verifiedBenefit": null,
           "label": "오후권",
           "href": "https://www.waug.com/r/Q2smxc67",
           "validUntil": "2026-09-30"
         },
         {
+          "verifiedBenefit": null,
           "label": "야간권",
           "href": "https://www.waug.com/r/ItVb8utR",
           "validUntil": "2026-09-30"
         },
         {
+          "verifiedBenefit": null,
           "label": "어린이 이용권",
           "href": "https://www.waug.com/r/zL05y2Xy",
           "validUntil": "2026-09-30"
@@ -301,6 +305,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "자유이용권",
           "href": "https://www.waug.com/r/ZdkVAM9x",
           "validUntil": "2026-09-30"
@@ -431,6 +436,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "입장권·선박 포함",
           "href": "https://www.waug.com/r/vF4Z6VsG",
           "validUntil": "2026-09-30"
@@ -571,6 +577,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "자유이용권",
           "href": "https://www.waug.com/r/poSKc1qk",
           "validUntil": "2026-09-30"
@@ -712,6 +719,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "입장권",
           "href": "https://www.waug.com/r/y9ppQMxK",
           "validUntil": "2026-09-30"
@@ -836,6 +844,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "입장권",
           "href": "https://www.waug.com/r/DmaD1hOQ",
           "validUntil": "2026-09-30"
@@ -981,11 +990,13 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "케이블카·야외방탈출 패키지",
           "href": "https://www.waug.com/r/qqMMc271",
           "validUntil": "2026-10-31"
         },
         {
+          "verifiedBenefit": null,
           "label": "케이블카 이용권",
           "href": "https://www.waug.com/r/zY8A9h0l",
           "validUntil": "2026-10-31"
@@ -1117,11 +1128,13 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "입장권",
           "href": "https://www.waug.com/r/99PBHMQK",
           "validUntil": "2026-12-31"
         },
         {
+          "verifiedBenefit": null,
           "label": "놀이동산 입장권",
           "href": "https://www.waug.com/r/guSwDhHr",
           "validUntil": "2026-12-31"
@@ -1269,11 +1282,13 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "곤돌라·갤러리 통합권",
           "href": "https://www.waug.com/r/1pX5q6lb",
           "validUntil": "2026-10-31"
         },
         {
+          "verifiedBenefit": null,
           "label": "곤돌라 왕복권",
           "href": "https://www.waug.com/r/ZXzqLZwA",
           "validUntil": "2026-10-31"
@@ -1404,6 +1419,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "루지·케이블카 이용권",
           "href": "https://www.waug.com/r/muLavTBe",
           "validUntil": null
@@ -1553,6 +1569,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "입장권",
           "href": "https://www.waug.com/r/YxlBFStb",
           "validUntil": "2026-09-30"
@@ -1688,6 +1705,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "입장권",
           "href": "https://www.waug.com/r/U5ZNqfXS",
           "validUntil": "2026-09-13"
@@ -1835,6 +1853,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "입장권",
           "href": "https://www.waug.com/r/Hah4plsp",
           "validUntil": "2026-12-31"
@@ -1959,6 +1978,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "입장권",
           "href": "https://www.waug.com/r/ixptI5E2",
           "validUntil": "2026-09-30"
@@ -2095,6 +2115,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "입장권",
           "href": "https://www.waug.com/r/T3i1gzzj",
           "validUntil": "2026-09-30"
@@ -2231,6 +2252,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "찜질스파 입장권",
           "href": "https://www.waug.com/r/ehfD2Ulu",
           "validUntil": "2026-09-30"
@@ -2368,6 +2390,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "찜질스파 입장권",
           "href": "https://www.waug.com/r/TnJ7oVIL",
           "validUntil": "2026-09-30"
@@ -2519,6 +2542,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "찜질스파 입장권",
           "href": "https://www.waug.com/r/i3RL4kYw",
           "validUntil": "2026-09-30"
@@ -2668,6 +2692,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "입장권",
           "href": "https://www.waug.com/r/VH1Cjga1",
           "validUntil": "2026-12-31"
@@ -2812,6 +2837,7 @@
       "checkedAt": "2026-09-10T13:30:00.426Z",
       "tickets": [
         {
+          "verifiedBenefit": null,
           "label": "입장권",
           "href": "https://www.waug.com/r/DfOIjArT",
           "validUntil": "2026-12-31"
