@@ -1,0 +1,643 @@
+{
+  "version": 1,
+  "receivedAt": "2026-09-10T15:25:13.316Z",
+  "sourceSha256": "77b25db610a723b12586ce3d997e56bd9f664679f3222f065e13bf1a40c5255c",
+  "records": [
+    {
+      "number": 200,
+      "suppliedName": "경남 마산 로봇랜드 종일권 + 로봇스쿨 레이싱카 패키지",
+      "affiliateUrl": "https://www.waug.com/r/rHuA7c9p",
+      "affiliateCode": "rHuA7c9p"
+    },
+    {
+      "number": 199,
+      "suppliedName": "경주 랜드마크 패키지",
+      "affiliateUrl": "https://www.waug.com/r/8XFuDrFK",
+      "affiliateCode": "8XFuDrFK"
+    },
+    {
+      "number": 198,
+      "suppliedName": "부산 영화체험박물관 & 씨네뮤지엄 입장권",
+      "affiliateUrl": "https://www.waug.com/r/zrHyPXgl",
+      "affiliateCode": "zrHyPXgl"
+    },
+    {
+      "number": 197,
+      "suppliedName": "대구 랜드마크 패키지",
+      "affiliateUrl": "https://www.waug.com/r/eqCzQqN6",
+      "affiliateCode": "eqCzQqN6"
+    },
+    {
+      "number": 196,
+      "suppliedName": "경남 통영 더카트인 카트 1회 + 케이블카 왕복 패키지",
+      "affiliateUrl": "https://www.waug.com/r/LazkVUgr",
+      "affiliateCode": "LazkVUgr"
+    },
+    {
+      "number": 195,
+      "suppliedName": "경주 헬로마이디노 & VR 테마파크 입장권",
+      "affiliateUrl": "https://www.waug.com/r/CVtBkM9v",
+      "affiliateCode": "CVtBkM9v"
+    },
+    {
+      "number": 194,
+      "suppliedName": "경북 청도 랜드마크 패키지",
+      "affiliateUrl": "https://www.waug.com/r/E5rnYR9V",
+      "affiliateCode": "E5rnYR9V"
+    },
+    {
+      "number": 193,
+      "suppliedName": "2026 경남 고성 공룡 세계 엑스포 입장권",
+      "affiliateUrl": "https://www.waug.com/r/unZksy0D",
+      "affiliateCode": "unZksy0D"
+    },
+    {
+      "number": 192,
+      "suppliedName": "대구 히어로플레이파크 상인점 소인 입장권",
+      "affiliateUrl": "https://www.waug.com/r/9Z9hQ9QJ",
+      "affiliateCode": "9Z9hQ9QJ"
+    },
+    {
+      "number": 191,
+      "suppliedName": "경주 쉼 족욕카페 황리단점 입장권 + 음료 패키지",
+      "affiliateUrl": "https://www.waug.com/r/2pThdfbM",
+      "affiliateCode": "2pThdfbM"
+    },
+    {
+      "number": 190,
+      "suppliedName": "부산 기장 하이리페움 수영장 입장권",
+      "affiliateUrl": "https://www.waug.com/r/LC7TFFb6",
+      "affiliateCode": "LC7TFFb6"
+    },
+    {
+      "number": 189,
+      "suppliedName": "경남 소노캄 거제 오션어드벤처 종일권",
+      "affiliateUrl": "https://www.waug.com/r/OlYD8ith",
+      "affiliateCode": "OlYD8ith"
+    },
+    {
+      "number": 188,
+      "suppliedName": "경주 코오롱호텔 야외 방탈출 ‘사라진 시계’",
+      "affiliateUrl": "https://www.waug.com/r/y5PRRYvB",
+      "affiliateCode": "y5PRRYvB"
+    },
+    {
+      "number": 187,
+      "suppliedName": "경북투어패스 서부권",
+      "affiliateUrl": "https://www.waug.com/r/fMXlR7SQ",
+      "affiliateCode": "fMXlR7SQ"
+    },
+    {
+      "number": 186,
+      "suppliedName": "경북투어패스 남부권",
+      "affiliateUrl": "https://www.waug.com/r/0kKuK9af",
+      "affiliateCode": "0kKuK9af"
+    },
+    {
+      "number": 185,
+      "suppliedName": "포항 야외 방탈출 ‘별의 기억1’",
+      "affiliateUrl": "https://www.waug.com/r/Lm2lrnjW",
+      "affiliateCode": "Lm2lrnjW"
+    },
+    {
+      "number": 184,
+      "suppliedName": "울산 야외 방탈출 ‘울산 골목의 신비한 시간 여행’ 잔상일지",
+      "affiliateUrl": "https://www.waug.com/r/6oXOEhNd",
+      "affiliateCode": "6oXOEhNd"
+    },
+    {
+      "number": 183,
+      "suppliedName": "포항 야외 방탈출 ‘시간여행자 포항 장기유배촌의 비밀’ 잔상일지",
+      "affiliateUrl": "https://www.waug.com/r/i2Y6afYw",
+      "affiliateCode": "i2Y6afYw"
+    },
+    {
+      "number": 182,
+      "suppliedName": "경주 야외 방탈출 ‘시간이 쌓인 경주에서의 단상’ 잔상일지",
+      "affiliateUrl": "https://www.waug.com/r/0KBJtcMu",
+      "affiliateCode": "0KBJtcMu"
+    },
+    {
+      "number": 181,
+      "suppliedName": "포항 호미곶 광장 야외 방탈출 ‘꺼지지 않는 불빛 호미곶 그곳’",
+      "affiliateUrl": "https://www.waug.com/r/fJThFTkj",
+      "affiliateCode": "fJThFTkj"
+    },
+    {
+      "number": 180,
+      "suppliedName": "경남 하동 케이블카 탑승권",
+      "affiliateUrl": "https://www.waug.com/r/mEFt2pOH",
+      "affiliateCode": "mEFt2pOH"
+    },
+    {
+      "number": 179,
+      "suppliedName": "경북 상주 국립 낙동강 생물자원관 입장권",
+      "affiliateUrl": "https://www.waug.com/r/j1piBH0a",
+      "affiliateCode": "j1piBH0a"
+    },
+    {
+      "number": 178,
+      "suppliedName": "경북 경산 백자산온천 사우나 & 노천탕 이용권",
+      "affiliateUrl": "https://www.waug.com/r/c2TCJlr1",
+      "affiliateCode": "c2TCJlr1"
+    },
+    {
+      "number": 177,
+      "suppliedName": "경남 거제 벨버디어 사우나 입장권",
+      "affiliateUrl": "https://www.waug.com/r/7G0Au5an",
+      "affiliateCode": "7G0Au5an"
+    },
+    {
+      "number": 176,
+      "suppliedName": "경주 바니베어 뮤지엄 입장권",
+      "affiliateUrl": "https://www.waug.com/r/uwTNHezC",
+      "affiliateCode": "uwTNHezC"
+    },
+    {
+      "number": 175,
+      "suppliedName": "경북 영주 소백산풍기온천리조트 온천 입장권",
+      "affiliateUrl": "https://www.waug.com/r/xfdZSQsr",
+      "affiliateCode": "xfdZSQsr"
+    },
+    {
+      "number": 174,
+      "suppliedName": "청도 프로방스 입장권 + 썰매 패키지",
+      "affiliateUrl": "https://www.waug.com/r/JIAa0zKJ",
+      "affiliateCode": "JIAa0zKJ"
+    },
+    {
+      "number": 173,
+      "suppliedName": "경북투어패스 프리미엄권 24시간",
+      "affiliateUrl": "https://www.waug.com/r/uyGT91LI",
+      "affiliateCode": "uyGT91LI"
+    },
+    {
+      "number": 172,
+      "suppliedName": "경남 진주 타이거펀치 키즈랜드 입장권",
+      "affiliateUrl": "https://www.waug.com/r/LbnaAh36",
+      "affiliateCode": "LbnaAh36"
+    },
+    {
+      "number": 171,
+      "suppliedName": "부산 해운대 씨라이프 아쿠아리움 & 브릭맨 시티즈 원더월드 입장권",
+      "affiliateUrl": "https://www.waug.com/r/OWdjufF1",
+      "affiliateCode": "OWdjufF1"
+    },
+    {
+      "number": 170,
+      "suppliedName": "경남 통영 케이블카 왕복 + 디피랑·어드벤처타워 패키지",
+      "affiliateUrl": "https://www.waug.com/r/P6Xz6CDX",
+      "affiliateCode": "P6Xz6CDX"
+    },
+    {
+      "number": 169,
+      "suppliedName": "경남 마산 로봇랜드 커플 & 패밀리 입장권 — 2·3·4·6인권",
+      "affiliateUrl": "https://www.waug.com/r/ENtQOkUN",
+      "affiliateCode": "ENtQOkUN"
+    },
+    {
+      "number": 168,
+      "suppliedName": "경북 칠곡 러키더키 패밀리랜드 — 아쿠아리움 & 수목원",
+      "affiliateUrl": "https://www.waug.com/r/Vfe8knWE",
+      "affiliateCode": "Vfe8knWE"
+    },
+    {
+      "number": 167,
+      "suppliedName": "부산 기장 하이리페움 아이스포츠파크 입장권",
+      "affiliateUrl": "https://www.waug.com/r/jz3Ys499",
+      "affiliateCode": "jz3Ys499"
+    },
+    {
+      "number": 166,
+      "suppliedName": "경북투어패스 북부권",
+      "affiliateUrl": "https://www.waug.com/r/AHKnKfj5",
+      "affiliateCode": "AHKnKfj5"
+    },
+    {
+      "number": 165,
+      "suppliedName": "경북투어패스 통합권",
+      "affiliateUrl": "https://www.waug.com/r/LibPUzsW",
+      "affiliateCode": "LibPUzsW"
+    },
+    {
+      "number": 164,
+      "suppliedName": "안동투어패스 48시간권",
+      "affiliateUrl": "https://www.waug.com/r/FMUxpCNX",
+      "affiliateCode": "FMUxpCNX"
+    },
+    {
+      "number": 163,
+      "suppliedName": "경남 합천 풀헤븐워터파크 수상레저 이용권",
+      "affiliateUrl": "https://www.waug.com/r/wRE81lXN",
+      "affiliateCode": "wRE81lXN"
+    },
+    {
+      "number": 162,
+      "suppliedName": "대구 이월드 체험패키지 — 83전망대·주주팜·교복·판다전시",
+      "affiliateUrl": "https://www.waug.com/r/gFafik0z",
+      "affiliateCode": "gFafik0z"
+    },
+    {
+      "number": 161,
+      "suppliedName": "대구 이월드 연간회원권",
+      "affiliateUrl": "https://www.waug.com/r/uI7z2VfT",
+      "affiliateCode": "uI7z2VfT"
+    },
+    {
+      "number": 160,
+      "suppliedName": "경주 한국대중음악 박물관 입장권",
+      "affiliateUrl": "https://www.waug.com/r/ZCBHDP90",
+      "affiliateCode": "ZCBHDP90"
+    },
+    {
+      "number": 159,
+      "suppliedName": "경주 키덜트뮤지엄 입장권",
+      "affiliateUrl": "https://www.waug.com/r/xLxIizik",
+      "affiliateCode": "xLxIizik"
+    },
+    {
+      "number": 158,
+      "suppliedName": "청도 프로방스 입장권",
+      "affiliateUrl": "https://www.waug.com/r/CpAzdIrl",
+      "affiliateCode": "CpAzdIrl"
+    },
+    {
+      "number": 157,
+      "suppliedName": "경남 통영 히어로 스튜디오 통통 입장권",
+      "affiliateUrl": "https://www.waug.com/r/UJgob0o9",
+      "affiliateCode": "UJgob0o9"
+    },
+    {
+      "number": 156,
+      "suppliedName": "경북 청도 용암온천 가족탕 이용권",
+      "affiliateUrl": "https://www.waug.com/r/O3wxYmiQ",
+      "affiliateCode": "O3wxYmiQ"
+    },
+    {
+      "number": 155,
+      "suppliedName": "잭슨나인스 대구점 입장권",
+      "affiliateUrl": "https://www.waug.com/r/IF0gTfK4",
+      "affiliateCode": "IF0gTfK4"
+    },
+    {
+      "number": 154,
+      "suppliedName": "경주 동궁원 입장권",
+      "affiliateUrl": "https://www.waug.com/r/1HwoOPsa",
+      "affiliateCode": "1HwoOPsa"
+    },
+    {
+      "number": 153,
+      "suppliedName": "부산 송도해상케이블카 + 카페 오션뷰 패키지",
+      "affiliateUrl": "https://www.waug.com/r/1FBc8mXE",
+      "affiliateCode": "1FBc8mXE"
+    },
+    {
+      "number": 152,
+      "suppliedName": "대구 이월드 83타워 전망대 + 판다100 전시 패키지",
+      "affiliateUrl": "https://www.waug.com/r/N8QPazFX",
+      "affiliateCode": "N8QPazFX"
+    },
+    {
+      "number": 151,
+      "suppliedName": "경북 영천 야외 방탈출 ‘별의기억1.5 : 시간이탈자’ — 키트 택배발송",
+      "affiliateUrl": "https://www.waug.com/r/tsljZnRp",
+      "affiliateCode": "tsljZnRp"
+    },
+    {
+      "number": 150,
+      "suppliedName": "부산 송도해상케이블카 + EL16.52 패키지",
+      "affiliateUrl": "https://www.waug.com/r/CGE6MGnE",
+      "affiliateCode": "CGE6MGnE"
+    },
+    {
+      "number": 149,
+      "suppliedName": "경남 창원 잭슨나인스 입장권",
+      "affiliateUrl": "https://www.waug.com/r/HY4vuPj1",
+      "affiliateCode": "HY4vuPj1"
+    },
+    {
+      "number": 148,
+      "suppliedName": "경주 라원 미디어아트 복합문화정원 입장권",
+      "affiliateUrl": "https://www.waug.com/r/BIPlpb9s",
+      "affiliateCode": "BIPlpb9s"
+    },
+    {
+      "number": 147,
+      "suppliedName": "경남 거제 벨버디어 뽀로로 키즈카페 이용권",
+      "affiliateUrl": "https://www.waug.com/r/Ej3qRywm",
+      "affiliateCode": "Ej3qRywm"
+    },
+    {
+      "number": 146,
+      "suppliedName": "경주 야외 방탈출 ‘물오름달 열닷새’",
+      "affiliateUrl": "https://www.waug.com/r/izeQEeCl",
+      "affiliateCode": "izeQEeCl"
+    },
+    {
+      "number": 145,
+      "suppliedName": "부산 송도 해상케이블카 & 부산타워 패키지",
+      "affiliateUrl": "https://www.waug.com/r/vftupAg8",
+      "affiliateCode": "vftupAg8"
+    },
+    {
+      "number": 144,
+      "suppliedName": "경남 거제파노라마 케이블카 티켓",
+      "affiliateUrl": "https://www.waug.com/r/VOJkrlK3",
+      "affiliateCode": "VOJkrlK3"
+    },
+    {
+      "number": 143,
+      "suppliedName": "대구 이월드 83타워 전망대 패키지",
+      "affiliateUrl": "https://www.waug.com/r/kXcP6533",
+      "affiliateCode": "kXcP6533"
+    },
+    {
+      "number": 142,
+      "suppliedName": "창원투어패스 24시간권",
+      "affiliateUrl": "https://www.waug.com/r/PsNlPcDV",
+      "affiliateCode": "PsNlPcDV"
+    },
+    {
+      "number": 141,
+      "suppliedName": "경남 마산 로봇랜드 종일권 + 공룡월드 패키지",
+      "affiliateUrl": "https://www.waug.com/r/Pfi2PUXD",
+      "affiliateCode": "Pfi2PUXD"
+    },
+    {
+      "number": 140,
+      "suppliedName": "경주 원더스페이스 보문점 입장권",
+      "affiliateUrl": "https://www.waug.com/r/Te8Gn700",
+      "affiliateCode": "Te8Gn700"
+    },
+    {
+      "number": 139,
+      "suppliedName": "캐니언파크 울산점 입장권",
+      "affiliateUrl": "https://www.waug.com/r/xEF6tr6X",
+      "affiliateCode": "xEF6tr6X"
+    },
+    {
+      "number": 138,
+      "suppliedName": "경주 히어로플레이파크 경주점 소인 입장권",
+      "affiliateUrl": "https://www.waug.com/r/djAugGUY",
+      "affiliateCode": "djAugGUY"
+    },
+    {
+      "number": 137,
+      "suppliedName": "부산 해운대 스파마린 입장권",
+      "affiliateUrl": "https://www.waug.com/r/FExWanil",
+      "affiliateCode": "FExWanil"
+    },
+    {
+      "number": 136,
+      "suppliedName": "부산 기장 하이리페움 온천 사우나 입장권",
+      "affiliateUrl": "https://www.waug.com/r/eV38aOrw",
+      "affiliateCode": "eV38aOrw"
+    },
+    {
+      "number": 135,
+      "suppliedName": "경남 김해 가야랜드 입장권",
+      "affiliateUrl": "https://www.waug.com/r/8sTUimvP",
+      "affiliateCode": "8sTUimvP"
+    },
+    {
+      "number": 134,
+      "suppliedName": "히어로플레이파크 대구침산점 입장권",
+      "affiliateUrl": "https://www.waug.com/r/ctIsOast",
+      "affiliateCode": "ctIsOast"
+    },
+    {
+      "number": 133,
+      "suppliedName": "히어로 플레이파크 입장권 — 전국 6개 지점 이용 가능",
+      "affiliateUrl": "https://www.waug.com/r/Ge7h2skQ",
+      "affiliateCode": "Ge7h2skQ"
+    },
+    {
+      "number": 132,
+      "suppliedName": "대구 엑스코 상상체험 키즈월드 입장권",
+      "affiliateUrl": "https://www.waug.com/r/BDkEsnfa",
+      "affiliateCode": "BDkEsnfa"
+    },
+    {
+      "number": 131,
+      "suppliedName": "부산타워 전망대 입장권",
+      "affiliateUrl": "https://www.waug.com/r/aXoOkaDi",
+      "affiliateCode": "aXoOkaDi"
+    },
+    {
+      "number": 130,
+      "suppliedName": "대구 네이처파크 이용권",
+      "affiliateUrl": "https://www.waug.com/r/5vXZxkD7",
+      "affiliateCode": "5vXZxkD7"
+    },
+    {
+      "number": 129,
+      "suppliedName": "경주 정글 미디어 파크 & 포토 테마파크 통합 입장권",
+      "affiliateUrl": "https://www.waug.com/r/Oj6qZc7T",
+      "affiliateCode": "Oj6qZc7T"
+    },
+    {
+      "number": 128,
+      "suppliedName": "경주 또봇정크아트 뮤지엄 입장권 — 엑스포대공원 포함",
+      "affiliateUrl": "https://www.waug.com/r/Hs4TqPSb",
+      "affiliateCode": "Hs4TqPSb"
+    },
+    {
+      "number": 127,
+      "suppliedName": "부산 센텀 해운대 뮤지엄 원 ‘다시, 낭만의 시대’ 전시 티켓",
+      "affiliateUrl": "https://www.waug.com/r/iKyl0WUZ",
+      "affiliateCode": "iKyl0WUZ"
+    },
+    {
+      "number": 126,
+      "suppliedName": "부산 키자니아 입장권",
+      "affiliateUrl": "https://www.waug.com/r/0albnuBE",
+      "affiliateCode": "0albnuBE"
+    },
+    {
+      "number": 125,
+      "suppliedName": "창원 마산 로봇랜드 종일·오후 입장권",
+      "affiliateUrl": "https://www.waug.com/r/lumJv16l",
+      "affiliateCode": "lumJv16l"
+    },
+    {
+      "number": 124,
+      "suppliedName": "부산 기장 키위키즈랜드 입장권",
+      "affiliateUrl": "https://www.waug.com/r/zWOkcJrg",
+      "affiliateCode": "zWOkcJrg"
+    },
+    {
+      "number": 123,
+      "suppliedName": "대구 이월드 83타워 아이스링크장 입장권",
+      "affiliateUrl": "https://www.waug.com/r/onins2gc",
+      "affiliateCode": "onins2gc"
+    },
+    {
+      "number": 122,
+      "suppliedName": "경남 김해 장유스파랜드 이용권 — 스파·사우나 + 워터파크",
+      "affiliateUrl": "https://www.waug.com/r/jbgtpTms",
+      "affiliateCode": "jbgtpTms"
+    },
+    {
+      "number": 121,
+      "suppliedName": "경북 청도 군파크 루지 & 스카이 리프트 패키지",
+      "affiliateUrl": "https://www.waug.com/r/98LCdMZ7",
+      "affiliateCode": "98LCdMZ7"
+    },
+    {
+      "number": 120,
+      "suppliedName": "대구 신세계 아쿠아리움 AFTER5 입장권",
+      "affiliateUrl": "https://www.waug.com/r/NLSJid0b",
+      "affiliateCode": "NLSJid0b"
+    },
+    {
+      "number": 119,
+      "suppliedName": "포항 앨리스파파 키즈파크 입장권",
+      "affiliateUrl": "https://www.waug.com/r/RkjGdfIW",
+      "affiliateCode": "RkjGdfIW"
+    },
+    {
+      "number": 118,
+      "suppliedName": "경주 더케이호텔 스파월드 입장권",
+      "affiliateUrl": "https://www.waug.com/r/HnRD4oPk",
+      "affiliateCode": "HnRD4oPk"
+    },
+    {
+      "number": 117,
+      "suppliedName": "울릉아일랜드 투어패스",
+      "affiliateUrl": "https://www.waug.com/r/22RRSLjT",
+      "affiliateCode": "22RRSLjT"
+    },
+    {
+      "number": 116,
+      "suppliedName": "주렁주렁 실내 동물원 경주점 입장권",
+      "affiliateUrl": "https://www.waug.com/r/CDyoWrhK",
+      "affiliateCode": "CDyoWrhK"
+    },
+    {
+      "number": 115,
+      "suppliedName": "경북 청도 용암온천 스파 입장권",
+      "affiliateUrl": "https://www.waug.com/r/F9Nuf2g4",
+      "affiliateCode": "F9Nuf2g4"
+    },
+    {
+      "number": 114,
+      "suppliedName": "부산 아르떼뮤지엄 + 씨라이프부산아쿠아리움 패키지",
+      "affiliateUrl": "https://www.waug.com/r/sFvgr7bD",
+      "affiliateCode": "sFvgr7bD"
+    },
+    {
+      "number": 113,
+      "suppliedName": "부산 아르떼뮤지엄 입장권",
+      "affiliateUrl": "https://www.waug.com/r/FtUM2T63",
+      "affiliateCode": "FtUM2T63"
+    },
+    {
+      "number": 112,
+      "suppliedName": "부산 랜드마크 패키지",
+      "affiliateUrl": "https://www.waug.com/r/PLzDXH4f",
+      "affiliateCode": "PLzDXH4f"
+    },
+    {
+      "number": 111,
+      "suppliedName": "경주 한화리조트 뽀로로아쿠아빌리지 입장권",
+      "affiliateUrl": "https://www.waug.com/r/Sd8mjHtJ",
+      "affiliateCode": "Sd8mjHtJ"
+    },
+    {
+      "number": 110,
+      "suppliedName": "부산 기장 스카이라인 루지 이용권",
+      "affiliateUrl": "https://www.waug.com/r/1YSKjEDy",
+      "affiliateCode": "1YSKjEDy"
+    },
+    {
+      "number": 109,
+      "suppliedName": "부산 서면 런닝맨 & 다이나믹메이즈 입장권 패키지",
+      "affiliateUrl": "https://www.waug.com/r/a9yDUfKa",
+      "affiliateCode": "a9yDUfKa"
+    },
+    {
+      "number": 108,
+      "suppliedName": "부산 엑스더스카이 엘시티 전망대 입장권",
+      "affiliateUrl": "https://www.waug.com/r/wxbzaiuw",
+      "affiliateCode": "wxbzaiuw"
+    },
+    {
+      "number": 107,
+      "suppliedName": "부산 해운대 엘시티 클럽디 오아시스 통합권·스파·워터파크 이용권",
+      "affiliateUrl": "https://www.waug.com/r/uQPn77nn",
+      "affiliateCode": "uQPn77nn"
+    },
+    {
+      "number": 106,
+      "suppliedName": "대구 신세계 아쿠아리움 입장권",
+      "affiliateUrl": "https://www.waug.com/r/XBsrt131",
+      "affiliateCode": "XBsrt131"
+    },
+    {
+      "number": 105,
+      "suppliedName": "경북 문경투어패스 48시간권",
+      "affiliateUrl": "https://www.waug.com/r/r7coJoJz",
+      "affiliateCode": "r7coJoJz"
+    },
+    {
+      "number": 104,
+      "suppliedName": "부산투어패스 프리패스 자유이용권",
+      "affiliateUrl": "https://www.waug.com/r/5hzr9xck",
+      "affiliateCode": "5hzr9xck"
+    },
+    {
+      "number": 103,
+      "suppliedName": "경남 거제 씨월드 입장권",
+      "affiliateUrl": "https://www.waug.com/r/mGWSjRk4",
+      "affiliateCode": "mGWSjRk4"
+    },
+    {
+      "number": 102,
+      "suppliedName": "울산 자수정 동굴나라 입장권 — 보트 탐험 포함",
+      "affiliateUrl": "https://www.waug.com/r/Iez1tnrF",
+      "affiliateCode": "Iez1tnrF"
+    },
+    {
+      "number": 101,
+      "suppliedName": "부산 해운대 벡스코 상상체험 키즈월드 입장권",
+      "affiliateUrl": "https://www.waug.com/r/nE2r944x",
+      "affiliateCode": "nE2r944x"
+    },
+    {
+      "number": 100,
+      "suppliedName": "부산 해운대 센텀 스파랜드 입장권",
+      "affiliateUrl": "https://www.waug.com/r/w4Eh4SqA",
+      "affiliateCode": "w4Eh4SqA"
+    },
+    {
+      "number": 99,
+      "suppliedName": "경주 신라투어패스",
+      "affiliateUrl": "https://www.waug.com/r/VEmRs5my",
+      "affiliateCode": "VEmRs5my"
+    },
+    {
+      "number": 98,
+      "suppliedName": "뮤직컴플렉스서울 부산점 — WAUG Exclusive",
+      "affiliateUrl": "https://www.waug.com/r/WRTv1vxE",
+      "affiliateCode": "WRTv1vxE"
+    },
+    {
+      "number": 97,
+      "suppliedName": "경주 엑스포대공원 입장권",
+      "affiliateUrl": "https://www.waug.com/r/Jlmt4oJC",
+      "affiliateCode": "Jlmt4oJC"
+    },
+    {
+      "number": 96,
+      "suppliedName": "경주월드 9월 자유이용권 — 종일권·오후권·야간권",
+      "affiliateUrl": "https://www.waug.com/r/0W8QChE8",
+      "affiliateCode": "0W8QChE8"
+    },
+    {
+      "number": 95,
+      "suppliedName": "대구 신세계 아쿠아리움 입장권",
+      "affiliateUrl": "https://www.waug.com/r/2wDe1CLW",
+      "affiliateCode": "2wDe1CLW"
+    }
+  ]
+}

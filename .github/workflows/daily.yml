@@ -27,7 +27,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: daily-data
+  group: site-content-publication
   cancel-in-progress: false
 
 jobs:

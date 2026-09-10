@@ -1,3 +1,4 @@
+import { newArticleAllowance } from './lib/publication-budget.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -11,7 +12,7 @@ const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric
 const requested=Number(process.env.CITY_LIMIT||10);
 const firstDay=db.articles[0]?.publishedDay||today;
 const cap=process.env.CITY_INITIAL==='1'&&firstDay===today?20:10;
-const target=Math.max(0,Math.min(requested,cap)-db.articles.filter(a=>a.publishedDay===today).length);
+const target=Math.max(0,Math.min(requested,cap,newArticleAllowance(ROOT))-db.articles.filter(a=>a.publishedDay===today).length);
 const norm=s=>String(s||'').replace(/[\s_()·,]/g,'');
 const cityPriority=['부산','제주','서귀포','경주','여수','인천','전주','강릉','춘천','대구','수원','대전','공주','목포','순천','청주','포항','안동','여주','속초'];
 const places=read('places.json').spots,foods=read('restaurants.json').restaurants;

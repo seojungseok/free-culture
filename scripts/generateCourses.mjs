@@ -1,3 +1,4 @@
+import { newArticleAllowance } from './lib/publication-budget.mjs';
 // 여행코스 블로그 자동 생성·발행 (GitHub Action이 매일 실행)
 // 재료 = data/courses.json (정부 공식 코스, scripts/collectCourses.mjs로 미리 수집)
 // 생성 = OpenAI(gpt-5.6-luna)만. ★제미나이 미사용★ (정부 검증 사실 리라이팅이라 환각 위험 낮음)
@@ -373,7 +374,9 @@ async function main() {
 
   let made = 0, skipped = 0, errored = 0, rebuilt = 0;
   const report = [];
+  let siteNewRemaining = newArticleAllowance(ROOT);
   for (const course of items) {
+    if (!rebuildIds.has(course.id)) { if (siteNewRemaining <= 0) continue; siteNewRemaining--; }
    try { // 코스 하나가 에러나도 전체 중단 없이 다음으로 (부분 발행 + 커밋 보장)
     // 스팟 상한은 buildCoursePrompt·lib(courseAttractions) 모두 lib/courseSelect.js 하나를 쓰므로 여기선 자르지 않음(요약↔글 일치).
     const isRebuild = rebuildIds.has(course.id);

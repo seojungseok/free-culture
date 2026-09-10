@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: articles-generate
+  group: site-content-publication
   cancel-in-progress: false
 
 jobs:

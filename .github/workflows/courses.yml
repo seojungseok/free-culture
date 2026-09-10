@@ -19,7 +19,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: courses-generate
+  group: site-content-publication
   cancel-in-progress: false
 
 jobs:

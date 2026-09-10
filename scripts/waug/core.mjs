@@ -13,6 +13,7 @@ export function readiness(article, products, now = new Date()) {
   for (const id of article.productIds || []) {
     const p = products.find(p=>p.id===id);
     if (!p || p.eligibility !== 'eligible' || p.saleStatus !== 'available' || p.duplicateOf || p.placeId !== article.placeId || !recent(p.lastCheckedAt, now) || p.verification?.status !== 'approved' || !p.verification?.source || p.waterReviewRequired || !/^https:\/\/www\.waug\.com\/r\/[A-Za-z0-9]+$/.test(p.affiliateUrl)) errors.push(`상품 검수 필요: ${id}`);
+    if (p?.validFrom && p.validFrom > kstDay(now)) errors.push(`이용 시작 전: ${id}`);
     if (p?.validUntil && p.validUntil < kstDay(now)) errors.push(`이용기간 종료: ${id}`);
   }
   const im = article.thumbnail;
@@ -21,7 +22,7 @@ export function readiness(article, products, now = new Date()) {
   const assetValid=original?im.unedited===true&&/^https:\/\/d2mgzmtdeipcjp\.cloudfront\.net\/files\/good\//.test(im.url||'')&&im.width>0&&im.height>0&&/^image\/(jpeg|png|webp)$/.test(im.mimeType||''):im?.width===1200&&im?.height===630&&im?.url?.startsWith('https://mwohaji.kr/ticket-images/')&&im?.mimeType==='image/jpeg'&&(im.bytes<=250*1024||im.qualityNote);
   if (!im || im.status !== 'approved' || !assetValid || !im.alt || !im.sha256 || !im.inputHash || !im.uploadedAt || !im.verifiedAt || !im.mobileCheckedAt || !im.desktopCheckedAt || !im.ogCheckedAt || !im.bytes) errors.push('대표 이미지·모바일·PC·OG 검수 필요');
   if (generated) {
-    if(im.sources?.length || im.generation?.provider!=='OpenAI imagegen' || !im.generation?.promptHash || !im.generation?.generatedAt || !im.generation?.originalGeneration || !im.generation?.visualCheckedAt || !im.disclosure?.includes('AI 생성')) errors.push('AI 이미지 제작 근거·표시 확인');
+    if(im.sources?.length || !['OpenAI imagegen','OpenAI Images API'].includes(im.generation?.provider) || !im.generation?.promptHash || !im.generation?.generatedAt || !im.generation?.originalGeneration || !im.generation?.visualCheckedAt || !im.disclosure?.includes('AI 생성')) errors.push('AI 이미지 제작 근거·표시 확인');
   } else if (!im?.sources?.length || im.sources.some(s=>!s.commercialAllowed || (!original&&!s.editAllowed) || !s.placeMatched || !s.rightsUrl || !s.checkedAt || !s.credit)) errors.push('대표 사진 권리·장소 일치 확인');
   if(original && im.sources?.some(s=>s.faceReview?.status!=='no-identifiable-faces')) errors.push('대표 사진 얼굴 검수 필요');
   if (!article.photos?.length || article.photos.some(p=>p.kind==='ai-generated'
@@ -55,10 +56,10 @@ export function schedule(state, products, now = new Date()) {
   if(new Set(ids).size!==ids.length)throw new Error('같은 장소에 여러 글이 등록되었습니다. 이용권을 기존 글에 통합하세요.');
   const candidates=state.articles.filter(a=>!a.publishedAt && a.status!=='excluded' && !readiness(a,products,now).length);
   // Only future reservations are rearranged. Already-due reservations remain queued.
-  const future=candidates.filter(a=>!a.scheduledAt || Date.parse(a.scheduledAt)>+now);
+  const future=candidates.filter(a=>!a.scheduledAt);
   let day=nextDay(kstDay(now)); const scheduled=[];
   while (future.length) {
-    const existing=state.history.filter(h=>h.day===day).length + candidates.filter(a=>a.scheduledAt?.slice(0,10)===day && !future.includes(a)).length;
+    const existing=(state.externalPublications?.[day]||0)+state.history.filter(h=>h.day===day).length + candidates.filter(a=>a.scheduledAt?.slice(0,10)===day && !future.includes(a)).length;
     const batch=ordered([...future],day).slice(0,Math.max(0,20-existing));
     for(const a of batch){ a.scheduledAt=`${day}T06:00:00+09:00`; a.status='scheduled'; scheduled.push(a.slug); future.splice(future.indexOf(a),1); }
     day=nextDay(day);
@@ -72,7 +73,7 @@ export function publish(state, products, now = new Date()) {
   const day=kstDay(now);
   const already=new Set(state.history.map(h=>h.slug));
   const limit=20;
-  const remaining=Math.max(0,limit-state.history.filter(h=>h.day===day).length);
+  const remaining=Math.max(0,limit-state.history.filter(h=>h.day===day).length-(state.externalPublications?.[day]||0));
   const due=state.articles.filter(a=>a.status==='scheduled' && !a.publishedAt && !already.has(a.slug) && validDate(a.scheduledAt) && Date.parse(a.scheduledAt)<=+now);
   const eligible=[];
   for(const a of due){ const reasons=readiness(a,products,now); if(reasons.length){a.status='held';a.holdReasons=reasons;a.scheduledAt=null;}else eligible.push(a); }

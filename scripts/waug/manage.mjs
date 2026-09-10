@@ -1,3 +1,4 @@
+import { publicationBudget } from '../lib/publication-budget.mjs';
 import fs from 'node:fs';
 import { importLinks } from './import.mjs';
 import { publish, schedule, publicArticles, readiness, launchNow } from './core.mjs';
@@ -6,6 +7,7 @@ const read=name=>JSON.parse(fs.readFileSync(root+name+'.json','utf8'));
 const write=(name,data)=>{const f=root+name+'.json';fs.writeFileSync(f+'.tmp',JSON.stringify(data,null,2)+'\n');fs.renameSync(f+'.tmp',f);};
 const state=read('editorial'), db=read('catalog');
 if(fs.existsSync(root+'publication-policy.json'))state.publicationPolicy=read('publication-policy');
+const budget=publicationBudget();state.externalPublications={[budget.day]:budget.otherPublished};
 const command=process.argv[2]||'status';
 if(command==='status') {
   console.log(JSON.stringify({products:db.products.length,excluded:db.products.filter(p=>p.eligibility==='excluded').length,articles:state.articles.map(a=>({slug:a.slug,status:a.status,scheduledAt:a.scheduledAt,reasons:readiness(a,db.products)})),paused:state.paused,published:state.history.length},null,2));
@@ -22,6 +24,7 @@ if(command==='status') {
     const planned=command==='run'?schedule(state,db.products):[];
     const published=command==='launch-now'?launchNow(state,db.products,read('launch-selection').entries.map(e=>e.placeId)):publish(state,db.products);
     for(const a of state.articles)for(const id of a.productIds||[]){const p=db.products.find(p=>p.id===id);if(p){p.articleSlug=a.slug;p.scheduledAt=a.scheduledAt||null;}}
+    if(fs.existsSync(root+'queue.json')){const q=read('queue');for(const j of q.jobs){const a=state.articles.find(a=>a.placeId===j.placeId);if(a){j.articleSlug=a.slug;j.writingStatus='complete';j.status=a.status;j.imageStatus=a.thumbnail?.status||'pending';j.publishedAt=a.publishedAt||null;}}write('queue',q);}
     write('editorial',state);write('catalog',db);write('published',{version:1,articles:publicArticles(state,db.products)});
     if(fs.existsSync(root+'places.json')){
       const places=read('places');for(const a of state.articles){const p=places.places.find(p=>p.id===a.placeId);if(p)Object.assign(p,{articleSlug:a.slug,address:a.address,status:a.status,scheduledAt:a.scheduledAt||null,publishedAt:a.publishedAt||null,thumbnail:a.thumbnail});}write('places',places);

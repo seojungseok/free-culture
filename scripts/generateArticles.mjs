@@ -1,3 +1,4 @@
+import { newArticleAllowance } from './lib/publication-budget.mjs';
 // 글 자동 생성·발행 (GitHub Action이 매일 실행)
 // 주=OpenAI(gpt-5.6-luna)가 생성·개선, 보조=Gemini가 독립 팩트체크(환각 교차검증).
 // 파이프라인: [주]Luna 생성 → 로컬 품질검사 → 로컬 패턴검사 → [주]Luna 검증·개선
@@ -325,7 +326,9 @@ async function main() {
   let searched = 0; // 이번 실행의 신규 web_search 호출 수(캐시 재사용분은 제외 — 이게 곧 검색 요금)
   const report = []; // 진단: 각 후보 결과를 저장소에 남겨 로그 없이도 원인 파악
 
+  let siteNewRemaining = newArticleAllowance(ROOT);
   for (const { place, mode } of items) {
+    if (mode === "new") { if (siteNewRemaining <= 0) continue; siteNewRemaining--; }
     if (made >= target) break;
     const { overview, err } = await fetchOverview(place.id);
     // 주변 맥락(맛집·근처 명소·코스·진행중 행사) — 전부 로컬 JSON, API 호출 0회·추가비용 0원.

@@ -3341,6 +3341,1273 @@
           "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
         }
       ]
+    },
+    {
+      "id": "tongyeong-cablecar",
+      "name": "통영 케이블카와 체험 패키지",
+      "area": "경남",
+      "address": "경남 통영시 도산면 도산일주로 147",
+      "productIds": [
+        "LazkVUgr",
+        "P6Xz6CDX"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "masan-robotland",
+      "name": "창원 마산 로봇랜드",
+      "area": "경남",
+      "address": "경남 창원시 마산합포구 구산면 로봇랜드로 250",
+      "productIds": [
+        "rHuA7c9p",
+        "ENtQOkUN",
+        "Pfi2PUXD",
+        "lumJv16l"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-148437",
+      "name": "부산 영화체험박물관 & 씨네뮤지엄 입장권",
+      "area": "부산",
+      "address": "부산 중구 대청로 126번길 12",
+      "productIds": [
+        "zrHyPXgl"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-148612",
+      "name": "경주 랜드마크 패키지",
+      "area": "경북",
+      "address": null,
+      "productIds": [
+        "8XFuDrFK"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-148416",
+      "name": "대구 랜드마크 패키지",
+      "area": "대구",
+      "address": null,
+      "productIds": [
+        "eqCzQqN6"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-143543",
+      "name": "경북 청도 랜드마크 패키지",
+      "area": "경북",
+      "address": null,
+      "productIds": [
+        "E5rnYR9V"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-144233",
+      "name": "경주 헬로마이디노 & VR 테마파크 입장권",
+      "area": "경북",
+      "address": "경북 경주시 보불로 391, 1층 (천군동, 룩스타워)",
+      "productIds": [
+        "CVtBkM9v"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-138379",
+      "name": "대구 히어로플레이파크 상인점 소인 입장권",
+      "area": "대구",
+      "address": "대구 상인점 대구 달서구 월배로 183 상인대성 스카이렉스 홈플러스 상인점 지하1층",
+      "productIds": [
+        "9Z9hQ9QJ"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-141862",
+      "name": "2026 경남 고성 공룡 세계 엑스포 입장권",
+      "area": "경남",
+      "address": "경남 고성 당항포관광지 경남 고성군 회화면 당항만로 1116 당항포관광지",
+      "productIds": [
+        "unZksy0D"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-137362",
+      "name": "경주 쉼 족욕카페 황리단점 입장권 + 음료 패키지",
+      "area": "경북",
+      "address": "경상북도 경주시 포석로1050번길 51 2층",
+      "productIds": [
+        "2pThdfbM"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "gijang-highlifeum",
+      "name": "기장 하이리페움",
+      "area": "부산",
+      "address": "부산광역시 기장군 일광면 해빛4로 35",
+      "productIds": [
+        "LC7TFFb6",
+        "jz3Ys499",
+        "eV38aOrw"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-133292",
+      "name": "경주 코오롱호텔 야외 방탈출 '사라진 시계'",
+      "area": "경북",
+      "address": "경북 경주시 불국로 289-17",
+      "productIds": [
+        "y5PRRYvB"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "gyeongbuk-tourpass",
+      "name": "경북투어패스",
+      "area": "경북",
+      "address": null,
+      "productIds": [
+        "fMXlR7SQ",
+        "0kKuK9af",
+        "uyGT91LI",
+        "AHKnKfj5",
+        "LibPUzsW"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-136701",
+      "name": "경남 소노캄 거제 오션어드벤처 종일권",
+      "area": "경남",
+      "address": "경상남도 거제시 일운면 소동리 115",
+      "productIds": [
+        "OlYD8ith"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-131524",
+      "name": "포항 야외 방탈출 '별의 기억1'",
+      "area": "경북",
+      "address": "경북 포항시 남구 동해면 호미로 3012",
+      "productIds": [
+        "Lm2lrnjW"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-131522",
+      "name": "울산 야외 방탈출 '울산 골목의 신비한 시간 여행' 잔상일지",
+      "area": "울산",
+      "address": "울산광역시 중구 문화의거리 28",
+      "productIds": [
+        "6oXOEhNd"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-131505",
+      "name": "포항 야외 방탈출 '시간여행자 포항 장기유배촌의 비밀' 잔상일지",
+      "area": "경북",
+      "address": "경북 포항시 남구 장기면 장기로413번길 16",
+      "productIds": [
+        "i2Y6afYw"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-131502",
+      "name": "경주 야외 방탈출 '시간이 쌓인 경주에서의 단상' 잔상일지",
+      "area": "경북",
+      "address": "경상북도 경주시 동문로 38",
+      "productIds": [
+        "0KBJtcMu"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-131499",
+      "name": "포항 호미곶 광장 야외 방탈출 '꺼지지 않는 불빛 호미곶 그곳'",
+      "area": "경북",
+      "address": "경상북도 포항시 남구 호미곶면 대보리 231",
+      "productIds": [
+        "fJThFTkj"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-130855",
+      "name": "경남 하동 케이블카 탑승권",
+      "area": "경남",
+      "address": "경남 하동군 금남면 경충로 461-7",
+      "productIds": [
+        "mEFt2pOH"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-119861",
+      "name": "경북 경산 백자산온천 사우나&노천탕 이용권",
+      "area": "경북",
+      "address": "경북 경산시 경청로216길 30",
+      "productIds": [
+        "c2TCJlr1"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-123046",
+      "name": "경북 상주 국립 낙동강 생물자원관 입장권",
+      "area": "경북",
+      "address": "경상북도 상주시 도남동 도남2길 137",
+      "productIds": [
+        "j1piBH0a"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-119801",
+      "name": "경남 거제 벨버디어 사우나 입장권",
+      "area": "경남",
+      "address": "경상남도 거제시 장목면 거제북로 2501-40 Center 2F",
+      "productIds": [
+        "7G0Au5an"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-118075",
+      "name": "경주 바니베어 뮤지엄 입장권",
+      "area": "경북",
+      "address": "경북 경주시 보문로 280-34(구 테디베어뮤지엄)",
+      "productIds": [
+        "uwTNHezC"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-117886",
+      "name": "경북 영주 소백산풍기온천리조트 온천 입장권",
+      "area": "경북",
+      "address": "경상북도 영주시 풍기읍 죽령로 1400",
+      "productIds": [
+        "xfdZSQsr"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "cheongdo-provence",
+      "name": "청도 프로방스",
+      "area": "경북",
+      "address": "경상북도 청도군 화양읍 이슬미로 272-23",
+      "productIds": [
+        "JIAa0zKJ",
+        "CpAzdIrl"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-103711",
+      "name": "부산 해운대 씨라이프 아쿠아리움 & 브릭맨 시티즈 원더월드 입장권",
+      "area": "부산",
+      "address": "부산 해운대구 해운대해변로 266 부산아쿠아리움 지하 1층 브릭맨 원더월드(기념품샵 옆)",
+      "productIds": [
+        "OWdjufF1"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-106170",
+      "name": "경남 진주 타이거펀치 키즈랜드 입장권",
+      "area": "경남",
+      "address": "경남 진주시 명석면 진주대로 1982",
+      "productIds": [
+        "LbnaAh36"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-142556",
+      "name": "경북 칠곡 러키더키 패밀리랜드 (아쿠아리움 & 수목원)",
+      "area": "경북",
+      "address": "경북 칠곡군 석적읍 석적로 140",
+      "productIds": [
+        "Vfe8knWE"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-120838",
+      "name": "안동투어패스 48시간권",
+      "area": "경북",
+      "address": null,
+      "productIds": [
+        "FMUxpCNX"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-120595",
+      "name": "경남 합천 풀헤븐워터파크 수상레저 이용권",
+      "area": "경남",
+      "address": "경상남도 합천군 대병면 회양관광단지길 36-8",
+      "productIds": [
+        "wRE81lXN"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "daegu-eworld",
+      "name": "대구 이월드·83타워",
+      "area": "대구",
+      "address": "대구 달서구 두류공원로 200",
+      "productIds": [
+        "gFafik0z",
+        "uI7z2VfT",
+        "N8QPazFX",
+        "kXcP6533",
+        "onins2gc"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-116324",
+      "name": "경주 한국대중음악 박물관 입장권",
+      "area": "경북",
+      "address": "경북 경주시 엑스포로 9 한국대중음악박물관",
+      "productIds": [
+        "ZCBHDP90"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-110100",
+      "name": "경주 키덜트뮤지엄 입장권",
+      "area": "경북",
+      "address": "경상북도 경주시 보문로 132-16",
+      "productIds": [
+        "xLxIizik"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "cheongdo-yongam-spa",
+      "name": "청도 용암온천",
+      "area": "경북",
+      "address": "경상북도 청도군 화양읍 온천길 23",
+      "productIds": [
+        "O3wxYmiQ",
+        "F9Nuf2g4"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-104077",
+      "name": "경남 통영 히어로 스튜디오 통통 입장권",
+      "area": "경남",
+      "address": "경남 통영시 산양읍 담안길 240 동원로얄골프리조트 내 2층",
+      "productIds": [
+        "UJgob0o9"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-117366",
+      "name": "잭슨나인스 대구점 입장권",
+      "area": "대구",
+      "address": "대구 달성군 유가읍 테크노상업로 120 2층 311호",
+      "productIds": [
+        "IF0gTfK4"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "busan-songdo-cablecar",
+      "name": "부산 송도해상케이블카",
+      "area": "부산",
+      "address": "부산시 서구 송도해변로 171 (암남동 124-1)",
+      "productIds": [
+        "1FBc8mXE",
+        "CGE6MGnE",
+        "vftupAg8"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-122172",
+      "name": "경주 동궁원 입장권",
+      "area": "경북",
+      "address": "경북 경주시 보문로 74-14",
+      "productIds": [
+        "1HwoOPsa"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-135086",
+      "name": "경북 영천 야외 방탈출 별의기억1.5 : 시간이탈자 (키트 택배발송)",
+      "area": "경북",
+      "address": "경북 영천시 금호읍 거여로 426-5 화랑설화마을",
+      "productIds": [
+        "tsljZnRp"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-121133",
+      "name": "경남 창원 잭슨나인스 입장권",
+      "area": "경남",
+      "address": "경상남도 창원시 의창구 북면 신촌본포로 5-16 거풍프라자 3, 4F",
+      "productIds": [
+        "HY4vuPj1"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-120090",
+      "name": "경주 라원 미디어아트 복합문화정원 입장권",
+      "area": "경북",
+      "address": "경북 경주시 경감로 233",
+      "productIds": [
+        "BIPlpb9s"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-117783",
+      "name": "경남 거제 벨버디어 뽀로로 키즈카페 이용권",
+      "area": "경남",
+      "address": "경상남도 거제시 장목면 거제북로 2501-40",
+      "productIds": [
+        "Ej3qRywm"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-120959",
+      "name": "경주 야외 방탈출 '물오름달 열닷새'",
+      "area": "경북",
+      "address": "경상북도 경주시 동문로 38",
+      "productIds": [
+        "izeQEeCl"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-146311",
+      "name": "창원투어패스 24시간권",
+      "area": "경남",
+      "address": null,
+      "productIds": [
+        "PsNlPcDV"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-119559",
+      "name": "경남 거제파노라마 케이블카 티켓",
+      "area": "경남",
+      "address": "경남 거제시 동부면 거제중앙로 288 거제케이블카",
+      "productIds": [
+        "VOJkrlK3"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-138344",
+      "name": "경주 원더스페이스 보문점 입장권",
+      "area": "경북",
+      "address": "경상북도 경주시 보문로 391",
+      "productIds": [
+        "Te8Gn700"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-130516",
+      "name": "캐니언파크 울산점 입장권",
+      "area": "울산",
+      "address": "울산광역시 중구 만남의거리 15",
+      "productIds": [
+        "xEF6tr6X"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-129420",
+      "name": "경주 히어로플레이파크 경주점 소인 입장권",
+      "area": "경북",
+      "address": "경상북도 경주시 광중길 97-1",
+      "productIds": [
+        "djAugGUY"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-117002",
+      "name": "경남 김해 가야랜드 입장권",
+      "area": "경남",
+      "address": "경상남도 김해시 인제로 368, 가야랜드(삼방동)",
+      "productIds": [
+        "8sTUimvP"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-119853",
+      "name": "부산 해운대 스파마린 입장권",
+      "area": "부산",
+      "address": "부산 해운대구 마린시티 2로 33(우동 1407) 해운대 두산 제니스퀘어 B1F",
+      "productIds": [
+        "FExWanil"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-132697",
+      "name": "히어로플레이파크 대구침산점 입장권",
+      "area": "대구",
+      "address": "대구 침산점 대구광역시 북구 침산로 240 4층",
+      "productIds": [
+        "ctIsOast"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-117699",
+      "name": "대구 엑스코 상상체험 키즈월드 입장권",
+      "area": "대구",
+      "address": "대구 엑스코 상상체험 키즈월드 대구광역시 북구 엑스코로 10 (서관 1층 3홀)",
+      "productIds": [
+        "BDkEsnfa"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-120930",
+      "name": "부산타워 전망대 입장권",
+      "area": "부산",
+      "address": "부산 중구 용두산길 37-55",
+      "productIds": [
+        "aXoOkaDi"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-117267",
+      "name": "대구 네이처파크 이용권",
+      "area": "대구",
+      "address": "대구 네이처파크 대구광역시 달성군 가창면 가창로 891",
+      "productIds": [
+        "5vXZxkD7"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-118660",
+      "name": "경주 정글 미디어 파크 & 포토 테마파크 통합 입장권",
+      "area": "경북",
+      "address": "경상북도 경주시 보문로 465-67 지하 1층 (씨네큐건물)",
+      "productIds": [
+        "Oj6qZc7T"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "gyeongju-expo-park",
+      "name": "경주 엑스포대공원·또봇정크아트",
+      "area": "경북",
+      "address": "경상북도 경주시 경감로 614",
+      "productIds": [
+        "Hs4TqPSb",
+        "Jlmt4oJC"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-147318",
+      "name": "부산 키자니아 입장권",
+      "area": "부산",
+      "address": "부산 부산광역시 해운대구 센텀4로 15 신세계 센텀시티몰 4층",
+      "productIds": [
+        "0albnuBE"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-119561",
+      "name": "부산 센텀 해운대 뮤지엄 원 '다시, 낭만의 시대' 전시 티켓",
+      "area": "부산",
+      "address": "부산광역시 해운대구 센텀서로 20",
+      "productIds": [
+        "iKyl0WUZ"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-141327",
+      "name": "부산 기장 키위키즈랜드 입장권",
+      "area": "부산",
+      "address": "부산광역시 기장군 장안읍 좌천리 497-9",
+      "productIds": [
+        "zWOkcJrg"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-118551",
+      "name": "경남 김해 장유스파랜드 이용권 (스파/사우나 + 워터파크)",
+      "area": "경남",
+      "address": "경상남도 김해시 대청로104번길 84",
+      "productIds": [
+        "jbgtpTms"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-118033",
+      "name": "경북 청도 군파크 루지 & 스카이 리프트 탑승권 패키지",
+      "area": "경북",
+      "address": "경상북도 청도군 화양읍 남성현로 350-30",
+      "productIds": [
+        "98LCdMZ7"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "daegu-shinsegae-aquarium",
+      "name": "대구 신세계 아쿠아리움",
+      "area": "대구",
+      "address": "대구광역시 동구 동부로 149 9F",
+      "productIds": [
+        "NLSJid0b",
+        "XBsrt131",
+        "2wDe1CLW"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-120397",
+      "name": "포항 앨리스파파 키즈파크 입장권",
+      "area": "경북",
+      "address": "경북 포항시 북구 장량로 171 2층",
+      "productIds": [
+        "RkjGdfIW"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-119740",
+      "name": "경주 더케이호텔 스파월드 입장권",
+      "area": "경북",
+      "address": "경상북도 경주시 엑스포로 45",
+      "productIds": [
+        "HnRD4oPk"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-120110",
+      "name": "울릉아일랜드 투어패스",
+      "area": "경북",
+      "address": null,
+      "productIds": [
+        "22RRSLjT"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-103712",
+      "name": "경북 '주렁주렁' 실내 동물원 경주점 입장권",
+      "area": "경북",
+      "address": "경상북도 경주시 엑스포로 80",
+      "productIds": [
+        "CDyoWrhK"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "busan-arte-museum",
+      "name": "아르떼뮤지엄 부산",
+      "area": "부산",
+      "address": "부산 부산광역시 영도구 해양로247번길 29",
+      "productIds": [
+        "sFvgr7bD",
+        "FtUM2T63"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-145594",
+      "name": "부산 랜드마크 패키지",
+      "area": "부산",
+      "address": null,
+      "productIds": [
+        "PLzDXH4f"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-123151",
+      "name": "경주 한화리조트 뽀로로아쿠아빌리지 입장권",
+      "area": "경북",
+      "address": "경상북도 경주시 보문로 182-27",
+      "productIds": [
+        "Sd8mjHtJ"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-120453",
+      "name": "부산 기장 스카이라인 루지 이용권",
+      "area": "부산",
+      "address": "부산 부산광역시 기장군 기장읍 기장해안로 205",
+      "productIds": [
+        "1YSKjEDy"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-119433",
+      "name": "부산 서면 런닝맨 & 다이나믹메이즈 입장권 패키지",
+      "area": "부산",
+      "address": "부산 부산광역시 부산진구 중앙대로 672 삼정타워 10F",
+      "productIds": [
+        "a9yDUfKa"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-116786",
+      "name": "부산 엑스더스카이 엘시티 전망대 입장권",
+      "area": "부산",
+      "address": "부산 엑스 더 스카이 부산광역시 해운대구 중동 1829 부산엑스더스카이",
+      "productIds": [
+        "wxbzaiuw"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-119521",
+      "name": "부산투어패스 프리패스 자유이용권",
+      "area": "부산",
+      "address": null,
+      "productIds": [
+        "5hzr9xck"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-124023",
+      "name": "경북 문경투어패스 48시간권",
+      "area": "경북",
+      "address": null,
+      "productIds": [
+        "r7coJoJz"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-105855",
+      "name": "경남 거제 씨월드 입장권",
+      "area": "경남",
+      "address": "경상남도 거제시 일운면 지세포해안로 15",
+      "productIds": [
+        "mGWSjRk4"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-132016",
+      "name": "부산 해운대 엘시티 클럽디 오아시스 통합권 & 스파 & 워터파크 이용권",
+      "area": "부산",
+      "address": "부산광역시 해운대구 달맞이길 30",
+      "productIds": [
+        "uQPn77nn"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-121492",
+      "name": "울산 자수정 동굴나라 입장권 (보트 탐험 포함)",
+      "area": "울산",
+      "address": "울산 자수정 동굴나라 울산광역시 울주군 상북면 자수정로 212",
+      "productIds": [
+        "Iez1tnrF"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-117258",
+      "name": "부산 해운대 벡스코 상상체험 키즈월드 입장권",
+      "area": "부산",
+      "address": "부산 해운대구 APEC로 30 벡스코  제2전시장 3층 5B,C,D,E홀",
+      "productIds": [
+        "nE2r944x"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-117293",
+      "name": "경주 신라투어패스",
+      "area": "경북",
+      "address": null,
+      "productIds": [
+        "VEmRs5my"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-110561",
+      "name": "경주월드 9월 자유이용권 종일권 /오후권 / 야간권",
+      "area": "경북",
+      "address": "경상북도 경주시 보문로544(천군동)",
+      "productIds": [
+        "0W8QChE8"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-140381",
+      "name": "뮤직컴플렉스서울 부산점 (WAUG Exclusive)",
+      "area": "부산",
+      "address": "부산 기장군 기장읍 동부산관광로 34 미식일상 1F",
+      "productIds": [
+        "WRTv1vxE"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
+    },
+    {
+      "id": "place-118762",
+      "name": "부산 해운대 센텀 스파랜드 입장권",
+      "area": "부산",
+      "address": "부산광역시 해운대구 센텀남대로 35 신세계백화점 센텀시티점 1층",
+      "productIds": [
+        "w4Eh4SqA"
+      ],
+      "articleSlug": null,
+      "status": "research_pending",
+      "thumbnail": {
+        "status": "not_started",
+        "url": null
+      }
     }
   ]
 }
