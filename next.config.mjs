@@ -7,6 +7,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const nextConfig = {
   reactStrictMode: true,
   outputFileTracingRoot: __dirname,
+  async headers() {
+    return [{ source: '/ticket-images/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] }];
+  },
   images: {
     // 문화포털 포스터 이미지는 http(www.culture.go.kr)로 제공됨
     remotePatterns: [
