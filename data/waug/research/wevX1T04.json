@@ -1,0 +1,19 @@
+{
+  "id": "wevX1T04",
+  "detailUrl": "https://www.waug.com/ko/activities/137871",
+  "checkedAt": "2026-09-10T11:49:14.989Z",
+  "actualName": "동탄 라크몽 네이처스케이프 플러스 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "36a9e0a224c8c25c24d7fdd96c5cf4f35c21f8ff6e9b2fb31027191870650e05",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/25/17823708031553.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/wevX1T04.json"
+}

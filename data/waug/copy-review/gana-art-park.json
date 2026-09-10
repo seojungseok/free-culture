@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-09-10T12:46:06.876Z",
+  "corrections": [
+    "초안에 있던 토탈미술관·가나아트센터 관련 연혁은 제공된 공식 관광정보에 근거해 정리했으며, 근거가 없는 세부 운영 설명은 삭제했습니다.",
+    "레드스페이스·옐로우스페이스를 현재 이용 가능한 독립 시설처럼 단정하지 않고, 공식 자료에서 확인되는 전체 공간 안내 중심으로 수정했습니다.",
+    "운영시간은 양주시·관광정보와 상품 페이지의 안내가 서로 달라 고정 수치를 삭제하고 방문일 확인으로 바꿨습니다.",
+    "공식 근거에 없는 티켓 가격, 전체 주차면 수, 주차요금, 특정 체험의 상시 운영 여부는 삭제했습니다.",
+    "상품 페이지는 가나아트파크 이용권 안내로 정리했으며, 어린이 체험관을 별도 장소나 항상 운영되는 프로그램처럼 다루지 않았습니다.",
+    "mustHold 사유: 운영시간과 연락처 안내가 자료별로 다르고, 현재 티켓 가격 및 일반 주차 조건을 확인할 근거가 부족하므로 게시 전 방문일 최신 안내를 재확인해야 합니다."
+  ],
+  "provenance": [
+    {
+      "heading": "가나아트파크의 주요 공간",
+      "urls": [
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=ef049d90-719c-4b6e-b315-d025fcf26351",
+        "https://www.yangju.go.kr/tour/contents.do?key=835"
+      ]
+    },
+    {
+      "heading": "가족 방문을 위한 동선 제안",
+      "urls": [
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=ef049d90-719c-4b6e-b315-d025fcf26351",
+        "https://www.yangju.go.kr/tour/contents.do?key=835"
+      ]
+    },
+    {
+      "heading": "운영시간과 휴관일 확인",
+      "urls": [
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=ef049d90-719c-4b6e-b315-d025fcf26351",
+        "https://www.waug.com/ko/activities/144259"
+      ]
+    },
+    {
+      "heading": "티켓 구매와 이용 방법",
+      "urls": [
+        "https://www.waug.com/ko/activities/144259"
+      ]
+    },
+    {
+      "heading": "주소와 주차 관련 준비",
+      "urls": [
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=ef049d90-719c-4b6e-b315-d025fcf26351",
+        "https://www.yangju.go.kr/tour/contents.do?key=835"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": [
+    "https://access.visitkorea.or.kr/ms/detail.do?cotId=ef049d90-719c-4b6e-b315-d025fcf26351",
+    "https://www.yangju.go.kr/tour/contents.do?key=835"
+  ]
+}

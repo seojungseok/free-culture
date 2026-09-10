@@ -1,0 +1,19 @@
+{
+  "id": "1pX5q6lb",
+  "detailUrl": "https://www.waug.com/ko/activities/147289",
+  "checkedAt": "2026-09-10T11:49:14.670Z",
+  "actualName": "경기 파주케이블카 + 갤러리 그리브스 통합 입장권",
+  "validUntil": "2026-10-31",
+  "pageSha256": "9d9d6e1e5b7229c175e14cef9383ffb9f4565df0c99f7c87d89f29a141f110de",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/07/21/17846227993033.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/1pX5q6lb.json"
+}

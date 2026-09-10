@@ -1,0 +1,19 @@
+{
+  "id": "FC4rhz6c",
+  "detailUrl": "https://www.waug.com/ko/activities/137485",
+  "checkedAt": "2026-09-10T11:49:14.844Z",
+  "actualName": "일산 원마운트 로라비트 롤러스케이트장 입장권",
+  "validUntil": null,
+  "pageSha256": "e652105ca37b2d7ebecb4e1b3f77fc39f7f01e0b2086e1001e02dbf9b2f2db41",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/02/17146322636635.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/FC4rhz6c.json"
+}

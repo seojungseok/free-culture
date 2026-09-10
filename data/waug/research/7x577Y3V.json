@@ -1,0 +1,19 @@
+{
+  "id": "7x577Y3V",
+  "detailUrl": "https://www.waug.com/ko/activities/139590",
+  "checkedAt": "2026-09-10T11:49:14.970Z",
+  "actualName": "경기 과천 그라운드플래닛 입장권",
+  "validUntil": "2026-11-30",
+  "pageSha256": "1414949eed0092cc90fa4d523976037701764f3ed16926a80e9842d64f1e646a",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/06/10/17495436930123.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/7x577Y3V.json"
+}

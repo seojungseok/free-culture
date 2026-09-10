@@ -1,0 +1,19 @@
+{
+  "id": "Le5jgijZ",
+  "detailUrl": "https://www.waug.com/ko/activities/105139",
+  "checkedAt": "2026-09-10T11:49:14.725Z",
+  "actualName": "경기 화성 윤커뮤니케이션 파티룸",
+  "validUntil": null,
+  "pageSha256": "ed6a2d8329969216a37ce2b4decb990f815880376387a2d1548dfe6e5d4bcc2f",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/01/23/17691562787559.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/Le5jgijZ.json"
+}

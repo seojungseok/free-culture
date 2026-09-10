@@ -1,0 +1,71 @@
+[
+  {
+    "place": {
+      "id": "129194",
+      "title": "가나아트파크",
+      "addr": "경기도 양주시 장흥면 권율로 117",
+      "area": "경기",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/83/3559483_image2_1.jpg",
+      "mapx": "126.9491636401",
+      "mapy": "37.7250130611",
+      "tel": "",
+      "type": "12",
+      "cat1": "A02",
+      "cat2": "A0202",
+      "cat3": "A02020600",
+      "isKid": false
+    },
+    "detail": null,
+    "checkedAt": "2026-09-10T12:21:50.150Z",
+    "error": "응답에 detailCommon2 항목 없음",
+    "responseKeys": [
+      "OpenAPI_ServiceResponse"
+    ]
+  },
+  {
+    "place": {
+      "id": "2994829",
+      "title": "루덴시아",
+      "addr": "경기도 여주시 산북면 금품1로 177",
+      "area": "경기",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/86/3038386_image2_1.jpg",
+      "mapx": "127.4614818310",
+      "mapy": "37.4014793559",
+      "tel": "",
+      "type": "12",
+      "cat1": "A02",
+      "cat2": "A0202",
+      "cat3": "A02020600",
+      "isKid": false
+    },
+    "detail": null,
+    "checkedAt": "2026-09-10T12:21:50.204Z",
+    "error": "응답에 detailCommon2 항목 없음",
+    "responseKeys": [
+      "OpenAPI_ServiceResponse"
+    ]
+  },
+  {
+    "place": {
+      "id": "126719",
+      "title": "서울랜드",
+      "addr": "경기도 과천시 광명로 181 (막계동)",
+      "area": "경기",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/43/3345743_image2_1.jpg",
+      "mapx": "127.0238372600",
+      "mapy": "37.4355619354",
+      "tel": "",
+      "type": "12",
+      "cat1": "A02",
+      "cat2": "A0202",
+      "cat3": "A02020600",
+      "isKid": false
+    },
+    "detail": null,
+    "checkedAt": "2026-09-10T12:21:50.215Z",
+    "error": "응답에 detailCommon2 항목 없음",
+    "responseKeys": [
+      "OpenAPI_ServiceResponse"
+    ]
+  }
+]

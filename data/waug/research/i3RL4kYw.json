@@ -1,0 +1,19 @@
+{
+  "id": "i3RL4kYw",
+  "detailUrl": "https://www.waug.com/ko/activities/117715",
+  "checkedAt": "2026-09-10T11:49:14.971Z",
+  "actualName": "안성 아쿠아필드 찜질스파 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "4b17178b68e64b822f160fe75d6ee0fbac365563150c759d308af6942d31cfcb",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/29/17827238658423.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/i3RL4kYw.json"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "pXPZWaaq",
+  "detailUrl": "https://www.waug.com/ko/activities/137954",
+  "checkedAt": "2026-09-10T11:49:14.766Z",
+  "actualName": "경기 일산 원마운트 프렌디노 공룡 어린이키즈파크 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "2589a795fce7696956d625fa9a6875ee51f3551e38f12b35d48b9be4d50f7e38",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/02/07/17389144616829.png",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/pXPZWaaq.json"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "zL05y2Xy",
+  "detailUrl": "https://www.waug.com/ko/activities/116927",
+  "checkedAt": "2026-09-10T11:49:14.865Z",
+  "actualName": "과천 서울랜드 어린이 자유이용권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "d558aece8f1f1be9285a3ab2bd72e39477733de3635aabc5be1defebcb153ad8",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/08/27/17878116181121.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/zL05y2Xy.json"
+}

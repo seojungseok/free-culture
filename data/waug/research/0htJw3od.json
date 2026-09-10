@@ -1,0 +1,19 @@
+{
+  "id": "0htJw3od",
+  "detailUrl": "https://www.waug.com/ko/activities/140094",
+  "checkedAt": "2026-09-10T11:49:14.703Z",
+  "actualName": "동탄 라크몽 네이처스케이프 플러스 AFTER 4 모험권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "5ba042c842bee1ffe65fc8d398933c64f3e18c6a116e67f9343539ce594ef8cd",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/29/17800406409948.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/0htJw3od.json"
+}

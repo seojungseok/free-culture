@@ -1,0 +1,19 @@
+{
+  "id": "99PBHMQK",
+  "detailUrl": "https://www.waug.com/ko/activities/112090",
+  "checkedAt": "2026-09-10T11:49:14.822Z",
+  "actualName": "경기 포천 허브아일랜드 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "4e9fa1f48e290c2e80c820a2e29ffea8a1f6c4d8d3cfd1b8abbb9752683ef323",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/11/17784872137521.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/99PBHMQK.json"
+}

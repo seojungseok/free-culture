@@ -1,0 +1,299 @@
+[
+  {
+    "slug": "everland",
+    "url": "https://mwohaji.kr/ticket-images/everland-2f495e708c5d.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "2f495e708c5df9f258188c164bf44e48533d7a457feaf79e2f141e3e5c541816",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:12.047Z"
+  },
+  {
+    "slug": "nami-island",
+    "url": "https://mwohaji.kr/ticket-images/nami-island-76cc9dc061bd.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "76cc9dc061bdedf66c401afadba73d2751ee21a9c9f1ec4e07994f2dae520c71",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:12.053Z"
+  },
+  {
+    "slug": "korean-folk-village",
+    "url": "https://mwohaji.kr/ticket-images/korean-folk-village-c4f70636fd9d.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "c4f70636fd9dd7abe81143d74f4f2654c2ac63e9f0ca590a4edd726ff25ca189",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:12.082Z"
+  },
+  {
+    "slug": "aquaplanet-gwanggyo",
+    "url": "https://mwohaji.kr/ticket-images/aquaplanet-gwanggyo-db0559cd445e.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "db0559cd445e0a094f18d9c589c2685b950d55ff1e46058880b4a72a3f2c8729",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:12.316Z"
+  },
+  {
+    "slug": "seoulland",
+    "url": "https://mwohaji.kr/ticket-images/seoulland-02624c146e22.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "02624c146e2202b8cbcaa5ece5a57cada4d5fb0a13a1b2e3971ea27044e6883a",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:12.415Z"
+  },
+  {
+    "slug": "aquaplanet-ilsan",
+    "url": "https://mwohaji.kr/ticket-images/aquaplanet-ilsan-d58eb6db1ee5.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "d58eb6db1ee5cb3951d368f0b690be4cc3d163febaceaa38a27077eef3d54ab9",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:12.484Z"
+  },
+  {
+    "slug": "seohaerang",
+    "url": "https://mwohaji.kr/ticket-images/seohaerang-841c7beb0d63.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "841c7beb0d63126e2dfdb7ba0fa1b1f486248e81636f99b232110c886582488f",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:12.507Z"
+  },
+  {
+    "slug": "paju-gondola",
+    "url": "https://mwohaji.kr/ticket-images/paju-gondola-662ce7a801b8.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "662ce7a801b83927bb0e6b82b15deee3b53b5859041e4d026d9c39f8b6e7efe2",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:12.683Z"
+  },
+  {
+    "slug": "herb-island",
+    "url": "https://mwohaji.kr/ticket-images/herb-island-6b87a5714e79.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "6b87a5714e79ea82eba08a853a20995b2a88245663f01014e473e66c0d96f644",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:12.706Z"
+  },
+  {
+    "slug": "ganghwa-luge",
+    "url": "https://mwohaji.kr/ticket-images/ganghwa-luge-ae0b7dcc49d2.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "ae0b7dcc49d2c85af4c4d7a8b0c908ed1a74c30ae35c9b1ffaec1561e07e3a2a",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:12.736Z"
+  },
+  {
+    "slug": "ludensia",
+    "url": "https://mwohaji.kr/ticket-images/ludensia-16baeb5880a8.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "16baeb5880a8bdd43d405cbf1053e0895266cca504bab8895cb165d23041757e",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:12.854Z"
+  },
+  {
+    "slug": "anseong-farmland",
+    "url": "https://mwohaji.kr/ticket-images/anseong-farmland-cbc076a5e964.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "cbc076a5e9643eaf912b74c575e14582b6942a41f73b067a189cd080f377a79f",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:12.984Z"
+  },
+  {
+    "slug": "begonia-bird-garden",
+    "url": "https://mwohaji.kr/ticket-images/begonia-bird-garden-65ae05172617.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "65ae05172617c9875fe04064b00dd30cc25e7a60d614d1173654b6a27cb0fc9b",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:13.105Z"
+  },
+  {
+    "slug": "zoolung-hanam-body",
+    "url": "https://mwohaji.kr/ticket-images/zoolung-hanam-body-60efc73f26a8.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "60efc73f26a80bfc55d9dc86880f7067ce13622ca6d7c5ce351a7db133603fc0",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:13.279Z"
+  },
+  {
+    "slug": "zoolung-hanam",
+    "url": "https://mwohaji.kr/ticket-images/zoolung-hanam-bc8932c3ef37.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "bc8932c3ef37dc3434f8b6cf54c1c48e2afff7e96d2fb847b3e01066536fc41f",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:13.291Z"
+  },
+  {
+    "slug": "zoolung-dongtan",
+    "url": "https://mwohaji.kr/ticket-images/zoolung-dongtan-5a8af613de80.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "5a8af613de801bd06542a59e3dc23659ba86cedbd2254433c617b724acd516cc",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:13.486Z"
+  },
+  {
+    "slug": "zoolung-dongtan-body",
+    "url": "https://mwohaji.kr/ticket-images/zoolung-dongtan-body-67188d333f37.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "67188d333f37081c419c98721226a7d47a7b32a432d1c55c0a76e84b90f826c5",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:13.565Z"
+  },
+  {
+    "slug": "aquafield-goyang",
+    "url": "https://mwohaji.kr/ticket-images/aquafield-goyang-c0fddad70ce3.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "c0fddad70ce3ebe4fa7ffd9ff554e7bc6a4c4014b3811aca5c6a373cf6ad19e5",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:13.751Z"
+  },
+  {
+    "slug": "petite-france-italian-village",
+    "url": "https://mwohaji.kr/ticket-images/petite-france-italian-village-e1c15fc6de59.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "e1c15fc6de59146b68a92f4730d12a32d66f37f97a7549bccd563d53fceff402",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:13.762Z"
+  },
+  {
+    "slug": "aquafield-hanam",
+    "url": "https://mwohaji.kr/ticket-images/aquafield-hanam-1f5bd7f4c28e.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "1f5bd7f4c28e6bcf364d018fb87998daba902f5519be3bd4a05ff81a944b6fd2",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:13.804Z"
+  },
+  {
+    "slug": "gana-art-park-body",
+    "url": "https://mwohaji.kr/ticket-images/gana-art-park-body-fba8c1281b38.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "fba8c1281b3836e25f2eb8b0121a211e6fa5071e8769d8835351ae73005056e3",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.039Z"
+  },
+  {
+    "slug": "aquafield-anseong",
+    "url": "https://mwohaji.kr/ticket-images/aquafield-anseong-f3212792cbbd.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "f3212792cbbd011f549710faf1054ea51c58a966d6257ae536f4e9ac4a3b2470",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.132Z"
+  },
+  {
+    "slug": "gana-art-park",
+    "url": "https://mwohaji.kr/ticket-images/gana-art-park-e143be47790d.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "e143be47790dfd7923c4b3b5a6ca72dc0f5c48ebacfaf4eb112aec6861503e67",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.133Z"
+  },
+  {
+    "slug": "nature-scape-dongtan",
+    "url": "https://mwohaji.kr/ticket-images/nature-scape-dongtan-5087c2165539.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "5087c2165539fcdfa57010078effd2c5c38e4be9d974bd18691476e495027e3b",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.174Z"
+  },
+  {
+    "slug": "gimpo-monsterium",
+    "url": "https://mwohaji.kr/ticket-images/gimpo-monsterium-748bb1912e98.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "748bb1912e98cbffb831ab76fcc6b80983e179e630be0b612b0b8f1b0596da2b",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.344Z"
+  },
+  {
+    "slug": "pororo-dasan",
+    "url": "https://mwohaji.kr/ticket-images/pororo-dasan-e4a9e16bf824.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "e4a9e16bf8249ca3bc034702a2e8d17772b4c8571c06efb682933669214c8c90",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.413Z"
+  },
+  {
+    "slug": "seoul-grand-park-lift",
+    "url": "https://mwohaji.kr/ticket-images/seoul-grand-park-lift-a01af776cc5c.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "a01af776cc5cdfb36770d8343bfab67637b9bd601fd1044ed27d57076ed3f809",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.495Z"
+  },
+  {
+    "slug": "yangpyeong-sheep-ranch",
+    "url": "https://mwohaji.kr/ticket-images/yangpyeong-sheep-ranch-1f7b6492a727.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "1f7b6492a72711a5ceab0728b26a5cf6df77ddd13e2e12d16e06b435db93e010",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.685Z"
+  },
+  {
+    "slug": "zoozoo-land",
+    "url": "https://mwohaji.kr/ticket-images/zoozoo-land-412ae43430d0.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "412ae43430d0732dcc958603b8db77d4e80c7c1b214389f7d6c22a3f90a92fc0",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.719Z"
+  },
+  {
+    "slug": "ulsan-sheep-ranch",
+    "url": "https://mwohaji.kr/ticket-images/ulsan-sheep-ranch-452adeb82f6a.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "452adeb82f6a2508fa465ad14ccc1d29f056773bab5039f6b04ffbfa002211f1",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.768Z"
+  },
+  {
+    "slug": "wonder-village-goyang",
+    "url": "https://mwohaji.kr/ticket-images/wonder-village-goyang-7912d55cd1c9.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "7912d55cd1c9e334faf59f5c16c8cd2d4bfd84b1571137fcd4acc7811a5f54d7",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.770Z"
+  },
+  {
+    "slug": "wonderpark-gwacheon",
+    "url": "https://mwohaji.kr/ticket-images/wonderpark-gwacheon-b4e349f0f5b0.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "b4e349f0f5b04cf329102d76e60eb7c5973f274f670a073a1424a66f41f8270a",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.967Z"
+  },
+  {
+    "slug": "artis-dongtan",
+    "url": "https://mwohaji.kr/ticket-images/artis-dongtan-2996a30ed8a0.jpg",
+    "status": 200,
+    "ok": true,
+    "sha256": "2996a30ed8a0b230f738ba09f5c8a1f53b8722384dfa65b9ffeb903df0872ab8",
+    "cacheControl": "public, max-age=31536000, immutable",
+    "checkedAt": "2026-09-10T13:32:14.981Z"
+  }
+]

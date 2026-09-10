@@ -1,0 +1,19 @@
+{
+  "id": "qRNjJOB2",
+  "detailUrl": "https://www.waug.com/ko/activities/132153",
+  "checkedAt": "2026-09-10T11:49:14.946Z",
+  "actualName": "파주 홍삼스파 참숯가마 사우나 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "f9823a0d243a311fdeab2f13294184f1c2f64e959a54e2ff15dac639c942690f",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/07/03/16883730309584.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/qRNjJOB2.json"
+}

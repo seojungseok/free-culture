@@ -1,0 +1,60 @@
+name: 와그 입장권 관리·예약 발행
+on:
+  schedule:
+    - cron: '0 21,22 * * *' # KST 06:00 + 07:00 retry; total remains <=20/day
+  workflow_dispatch:
+    inputs:
+      action:
+        type: choice
+        options: [run, import-env, pause, resume]
+        default: run
+        description: 발행 확인 / 링크 등록 / 중지 / 재개
+      links:
+        type: string
+        required: false
+        description: '링크 등록 시 | 장소명 | https://www.waug.com/r/코드 | 형식의 표'
+permissions:
+  contents: write
+concurrency:
+  group: waug-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 발행 규칙 테스트
+        run: node --test scripts/waug/core.test.mjs
+      - name: 관리 작업과 발행 상태 저장
+        env:
+          WAUG_ACTION: ${{ inputs.action || 'run' }}
+          WAUG_LINKS: ${{ inputs.links }}
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            node scripts/waug/manage.mjs "$WAUG_ACTION"
+            git add data/waug/catalog.json data/waug/editorial.json data/waug/published.json data/waug/places.json
+            if git diff --staged --quiet; then
+              echo '변경 없음' >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            git commit -m 'chore: 와그 입장권 발행 상태 갱신'
+            if git push origin HEAD:main; then
+              node scripts/waug/manage.mjs status >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            # Replay against latest durable history, never merge two publication batches.
+            git fetch origin main
+            git reset --hard origin/main
+          done
+          echo '저장 실패: 발행 상태를 원격에 반영하지 못했습니다.' >&2
+          exit 1

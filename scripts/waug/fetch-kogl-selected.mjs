@@ -1,0 +1,6 @@
+import fs from 'node:fs';
+import {decodeHtml} from './parse.mjs';
+const chosen=[['everland',37144],['korean-folk-village',37157],['petite-france-italian-village',36966],['paju-gondola',38074],['anseong-farmland',38078]];
+const out=[];
+for(const [slug,id] of chosen){const url=`https://www.kogl.or.kr/recommend/recommendDivView.do?recommendIdx=${id}&division=img`;const html=await(await fetch(url,{signal:AbortSignal.timeout(20000)})).text();fs.writeFileSync(`.cache/waug/${slug}-kogl.html`,html);const text=decodeHtml(html.replace(/<[^>]+>/g,' ').replace(/\s+/g,' '));const images=[...html.matchAll(/id="thumFile\d+"[^>]*background-image:\s*url\('([^']+)'\)/g)].map(m=>new URL(m[1],'https://www.kogl.or.kr').href);const year=text.match(/촬영연도\s*:\s*(\d{4})/)?.[1]||null;const holder=text.match(/촬영기관\s*:\s*(.*?)\s*소장기관/)?.[1]||null;const rights=text.match(/.{0,30}보유한 본 저작물.{0,180}/)?.[0];out.push({slug,url,year,holder,rights,images,checkedAt:new Date().toISOString()});for(let i=0;i<Math.min(2,images.length);i++){const r=await fetch(images[i]);if(r.ok)fs.writeFileSync(`.cache/waug/${slug}-source-${i}.jpg`,Buffer.from(await r.arrayBuffer()));}console.log({slug,year,holder,rights,count:images.length});}
+fs.writeFileSync('data/waug/kogl-selected.json',JSON.stringify(out,null,2)+'\n');

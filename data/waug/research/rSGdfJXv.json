@@ -1,0 +1,19 @@
+{
+  "id": "rSGdfJXv",
+  "detailUrl": "https://www.waug.com/ko/activities/117646",
+  "checkedAt": "2026-09-10T11:49:15.073Z",
+  "actualName": "경기 시흥 웨이브파크 미오코스타 입장권",
+  "validUntil": "2026-09-27",
+  "pageSha256": "b71e6a640fe7a80dcb5160381794cac59f103252551a6d0703f51c66f977d9c7",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/08/04/17858321768811.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/rSGdfJXv.json"
+}

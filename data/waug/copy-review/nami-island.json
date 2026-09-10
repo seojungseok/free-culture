@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-09-10T12:44:02.299Z",
+  "corrections": [
+    "남이섬과 선착장을 별도 목적지로 구분해 설명했습니다.",
+    "초안에 있던 선착장 주차료 12시간 4,000원은 근거가 없어 삭제했습니다.",
+    "36개월 미만 부모 동반 유아 무료 문구는 제공된 근거에서 확인되지 않아 삭제했습니다.",
+    "2023년 자료의 요금과 세부 운항 간격은 현재 정보로 단정하지 않고 방문일 확인 사항으로 바꿨습니다.",
+    "행사나 별도 프로그램을 독립 장소처럼 다루지 않았습니다.",
+    "온라인 상품의 유효기간과 사용·환불 조건은 상품 본문에 있는 범위에서만 반영했습니다.",
+    "현재 기준의 요금·주차료·시설별 운영 여부를 확인할 수 있는 최신 공식 근거가 충분하지 않아 mustHold를 true로 설정했습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "남이섬에서 계획할 수 있는 활동",
+      "urls": [
+        "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=68baebfc-7a7c-442c-b15c-3bd2ab6b441f"
+      ]
+    },
+    {
+      "heading": "선착장 위치와 선박 이용",
+      "urls": [
+        "https://www.waug.com/ko/activities/116857",
+        "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=68baebfc-7a7c-442c-b15c-3bd2ab6b441f"
+      ]
+    },
+    {
+      "heading": "입장권과 상품 이용 시 확인할 사항",
+      "urls": [
+        "https://www.waug.com/ko/activities/116857",
+        "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=68baebfc-7a7c-442c-b15c-3bd2ab6b441f"
+      ]
+    },
+    {
+      "heading": "방문 순서와 주차 확인",
+      "urls": [
+        "https://www.waug.com/ko/activities/116857",
+        "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=68baebfc-7a7c-442c-b15c-3bd2ab6b441f"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": [
+    "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=68baebfc-7a7c-442c-b15c-3bd2ab6b441f"
+  ]
+}

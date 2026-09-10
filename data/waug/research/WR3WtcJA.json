@@ -1,0 +1,19 @@
+{
+  "id": "WR3WtcJA",
+  "detailUrl": "https://www.waug.com/ko/activities/121130",
+  "checkedAt": "2026-09-10T11:49:14.805Z",
+  "actualName": "경기 가평 쁘띠프랑스 & 이탈리아마을 + 유럽마을 입장권",
+  "validUntil": "2026-10-31",
+  "pageSha256": "2602e05dcbf03b7bb74a51d0fad2fa3667c9abd7ee5542d9afb2e1a9441442d8",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/25/17823736285101.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/WR3WtcJA.json"
+}

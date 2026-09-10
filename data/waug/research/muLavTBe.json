@@ -1,0 +1,19 @@
+{
+  "id": "muLavTBe",
+  "detailUrl": "https://www.waug.com/ko/activities/110286",
+  "checkedAt": "2026-09-10T11:49:15.054Z",
+  "actualName": "강화 루지 & 케이블카 티켓 (WAUG Exclusive)",
+  "validUntil": null,
+  "pageSha256": "14bbb8f31604a29f98179a25fd87e75b559f2f6cf37b8e1efbdc15b8ad552ec7",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/04/14/17761387114390.png",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/muLavTBe.json"
+}

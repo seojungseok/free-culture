@@ -1,0 +1,19 @@
+{
+  "id": "j9KSLC1i",
+  "detailUrl": "https://www.waug.com/ko/activities/117681",
+  "checkedAt": "2026-09-10T11:49:14.663Z",
+  "actualName": "도심형 실내 키즈 테마파크 챔피언1250/블랙벨트 입장권 - 전국 38개점",
+  "validUntil": "2026-09-30",
+  "pageSha256": "e4e25bfe1c9e4376748eee0f56c3e130d6b08480e21429d03750029c7ad76080",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/02/04/17386534756362.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/j9KSLC1i.json"
+}

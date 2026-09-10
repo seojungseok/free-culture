@@ -1,0 +1,19 @@
+{
+  "id": "8JwciC3z",
+  "detailUrl": "https://www.waug.com/ko/activities/148970",
+  "checkedAt": "2026-09-10T11:49:14.668Z",
+  "actualName": "안산 자이언트 제트 초대형 키즈카페 입장권",
+  "validUntil": "2026-10-30",
+  "pageSha256": "8dee08309c4981ab008162ab68a9a4ed31d487f9e36abc4d12ce392da4860eb2",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/07/22/17846834088102.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/8JwciC3z.json"
+}

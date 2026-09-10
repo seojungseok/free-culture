@@ -1,0 +1,19 @@
+{
+  "id": "T4bCaTIz",
+  "detailUrl": "https://www.waug.com/ko/activities/111998",
+  "checkedAt": "2026-09-10T11:49:15.095Z",
+  "actualName": "경기 고양 일산 원마운트 워터파크 이용권",
+  "validUntil": "2026-11-01",
+  "pageSha256": "4c8b970edccf0e1cccf098f175b37620bdad32d6c0c0093adbd7ae3a3434bdf2",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/13/17786357156231.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/T4bCaTIz.json"
+}

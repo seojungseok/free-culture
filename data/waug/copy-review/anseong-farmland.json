@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-09-10T12:45:09.475Z",
+  "corrections": [
+    "운영시간과 매표 마감은 공식 관광정보와 확인된 상품에 있는 범위에서만 기재했습니다.",
+    "가격은 확인된 자료에 없어 삭제하고 방문일별 상품 안내를 확인하도록 수정했습니다.",
+    "승마, 놀이시설, 체험 프로그램은 상시 운영으로 단정하지 않고 방문일 현장 확인 사항으로 바꾸었습니다.",
+    "일반 주차 가능 여부와 규모는 근거가 없어 삭제하고, 공식 관광정보에 확인된 장애인 주차장만 남겼습니다.",
+    "2026년 9월 1~13일 이용권은 안성팜랜드 전체의 고정 운영기간이 아니라 확인된 온라인 상품의 유효기간으로 구분했습니다.",
+    "초안의 시설과 프로그램을 별도 관광지처럼 확장하지 않고 안성팜랜드 내부 공간과 이용 콘텐츠로 정리했습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "가축 체험과 주요 공간",
+      "urls": [
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=b812f196-a14b-4db3-afe3-bb3dac92538b",
+        "https://www.waug.com/ko/activities/126290",
+        "https://www.nhasfarmland.com/new/nhfarm/farmlandIntro01_1.php"
+      ]
+    },
+    {
+      "heading": "방문 일정은 이렇게 구성하세요",
+      "urls": [
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=b812f196-a14b-4db3-afe3-bb3dac92538b",
+        "https://www.waug.com/ko/activities/126290"
+      ]
+    },
+    {
+      "heading": "주소와 운영 정보",
+      "urls": [
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=b812f196-a14b-4db3-afe3-bb3dac92538b",
+        "https://www.waug.com/ko/activities/126290"
+      ]
+    },
+    {
+      "heading": "2026년 9월 상품 이용 방법",
+      "urls": [
+        "https://www.waug.com/ko/activities/126290"
+      ]
+    }
+  ],
+  "mustHold": false,
+  "officialUrls": [
+    "https://access.visitkorea.or.kr/ms/detail.do?cotId=b812f196-a14b-4db3-afe3-bb3dac92538b",
+    "https://www.nhasfarmland.com/new/nhfarm/farmlandIntro01_1.php"
+  ]
+}

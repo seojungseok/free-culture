@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-09-10T12:45:18.222Z",
+  "corrections": [
+    "초안의 ‘유럽마을’을 독립 장소처럼 다룬 표현을 삭제하고, 근거에 명시된 이탈리아마을 ‘피노키오와 다빈치’로 정리했습니다.",
+    "쁘띠프랑스와 이탈리아마을의 주소를 각각 구분해 표기했습니다.",
+    "공식 페이지에서 확인되지 않은 운영시간·입장 마감시간을 고정 정보로 단정하지 않고 방문일 확인 안내로 바꿨습니다.",
+    "근거가 없는 무료 주차, 시설명, 반려동물·금연·금주 규정, 전화번호 일부와 구체적인 관람 코스는 삭제했습니다.",
+    "입장권 가격은 근거가 없어 기재하지 않았습니다.",
+    "mustHold 사유: 직접 확인한 공식 페이지 자료가 없고, 주차·시설·방문일 운영 정보의 최신성을 검증할 수 없어 게시 전 공식 안내 확인이 필요합니다."
+  ],
+  "provenance": [
+    {
+      "heading": "두 장소의 테마와 방문 범위",
+      "urls": [
+        "https://www.waug.com/ko/activities/121130"
+      ]
+    },
+    {
+      "heading": "주소와 도착 후 입장 절차",
+      "urls": [
+        "https://www.waug.com/ko/activities/121130"
+      ]
+    },
+    {
+      "heading": "운영 정보는 방문일 기준으로 확인",
+      "urls": [
+        "https://www.waug.com/ko/activities/121130"
+      ]
+    },
+    {
+      "heading": "통합 입장권 이용 조건",
+      "urls": [
+        "https://www.waug.com/ko/activities/121130"
+      ]
+    },
+    {
+      "heading": "방문 전 확인할 항목",
+      "urls": [
+        "https://www.waug.com/ko/activities/121130"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": []
+}

@@ -1,0 +1,19 @@
+{
+  "id": "MKdK404S",
+  "detailUrl": "https://www.waug.com/ko/activities/118035",
+  "checkedAt": "2026-09-10T11:49:14.723Z",
+  "actualName": "경기 용인 곤충 테마파크 & 공룡월드 이용권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "b75ef5e38783a9071e1b873c7b903d5f35e998baa1955642e93b3291fbb9db6b",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/06/17780459968909.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/MKdK404S.json"
+}

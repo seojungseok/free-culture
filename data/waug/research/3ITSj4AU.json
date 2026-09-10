@@ -1,0 +1,19 @@
+{
+  "id": "3ITSj4AU",
+  "detailUrl": "https://www.waug.com/ko/activities/139177",
+  "checkedAt": "2026-09-10T11:49:15.057Z",
+  "actualName": "경기 평택 고기 굽는 수영장, 황금수영장 이용권 (취사가능/평상무료)",
+  "validUntil": "2026-09-30",
+  "pageSha256": "0b975009b6e792de2def3855cfbfae656bb0c2502772dbe2035bbf4f8f7c44c4",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/19/17791731056109.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/3ITSj4AU.json"
+}

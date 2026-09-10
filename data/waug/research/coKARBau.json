@@ -1,0 +1,19 @@
+{
+  "id": "coKARBau",
+  "detailUrl": "https://www.waug.com/ko/activities/120691",
+  "checkedAt": "2026-09-10T11:49:14.968Z",
+  "actualName": "경기 포천 신북온천 실내 바데풀 & 온천스파 이용권",
+  "validUntil": "2026-11-02",
+  "pageSha256": "34df2f01acbe8d79f740dfa2b3637f48a3e1c87697d62fc6d204dadf07b71809",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/07/13/17839207482418.png",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/coKARBau.json"
+}

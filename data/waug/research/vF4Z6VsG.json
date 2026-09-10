@@ -1,0 +1,19 @@
+{
+  "id": "vF4Z6VsG",
+  "detailUrl": "https://www.waug.com/ko/activities/116857",
+  "checkedAt": "2026-09-10T11:49:15.032Z",
+  "actualName": "경기 가평 남이섬 입장권 (선박 포함)",
+  "validUntil": "2026-09-30",
+  "pageSha256": "0e38b58f23a7d4d6edb59900f08b48b61fc50c6865a4c2434bf9c38e94a14b4d",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/06/02/17488352077669.png",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/vF4Z6VsG.json"
+}

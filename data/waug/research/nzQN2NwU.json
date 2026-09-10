@@ -1,0 +1,19 @@
+{
+  "id": "nzQN2NwU",
+  "detailUrl": "https://www.waug.com/ko/activities/140194",
+  "checkedAt": "2026-09-10T11:49:14.764Z",
+  "actualName": "경기 플레이월드 다산점 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "a6595a2d51cf51d2e0e4ce6f7a932616b50554197c460c46358294a43447f13b",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/07/25/17218765994567.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/nzQN2NwU.json"
+}

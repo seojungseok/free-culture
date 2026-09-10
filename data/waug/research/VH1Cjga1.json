@@ -1,0 +1,19 @@
+{
+  "id": "VH1Cjga1",
+  "detailUrl": "https://www.waug.com/ko/activities/144259",
+  "checkedAt": "2026-09-10T11:49:14.741Z",
+  "actualName": "경기 양주 가나아트파크 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "88a1bc3713e316ae070a820fa09dd9e8eab354084e536483b7472f11380425dd",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/03/07/17413248529110.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/VH1Cjga1.json"
+}

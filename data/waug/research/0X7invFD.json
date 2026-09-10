@@ -1,0 +1,19 @@
+{
+  "id": "0X7invFD",
+  "detailUrl": "https://www.waug.com/ko/activities/109404",
+  "checkedAt": "2026-09-10T11:49:14.860Z",
+  "actualName": "경기 양평 양떼목장 먹이주기 체험 & 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "311034f457c3cdf29941faedffd5c037566c8537cd3868cb0a7fe5311cb3ce2b",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/03/11/17416748217346.png",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/0X7invFD.json"
+}

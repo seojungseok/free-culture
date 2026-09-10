@@ -1,0 +1,19 @@
+{
+  "id": "Q2smxc67",
+  "detailUrl": "https://www.waug.com/ko/activities/116926",
+  "checkedAt": "2026-09-10T11:49:15.008Z",
+  "actualName": "과천 서울랜드 AFTER4 오후권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "356df73d27044c45b2bcdb931d2da87f7a8d949aeb85762b662efe6faf5a995a",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/08/27/17878122636415.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/Q2smxc67.json"
+}

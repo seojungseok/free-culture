@@ -1,0 +1,19 @@
+{
+  "id": "QlTVQvXT",
+  "detailUrl": "https://www.waug.com/ko/activities/119403",
+  "checkedAt": "2026-09-10T11:49:14.863Z",
+  "actualName": "김포 몬스터리움 입장권 (동물원 & 아쿠아리움)",
+  "validUntil": "2026-12-31",
+  "pageSha256": "b246b00ca9a3ebfa9b9ab6e8686a9421d8273de3622e3ab3697dd5958a5dd086",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/20/17792558658954.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/QlTVQvXT.json"
+}

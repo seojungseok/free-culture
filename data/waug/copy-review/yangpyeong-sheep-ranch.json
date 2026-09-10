@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-09-10T12:46:44.506Z",
+  "corrections": [
+    "공식 관광 페이지에서 확인되지 않은 고정 운영시간과 정기휴무 세부 조건은 방문일 확인 안내로 수정했습니다.",
+    "상품 가격은 근거에 제시되지 않아 삭제했습니다.",
+    "계절별 봄꽃·수국·핑크뮬리·얼음썰매 홍보 문구는 확정된 개최·운영 기간을 확인할 수 없어 삭제했습니다.",
+    "놀이터는 제공된 공식 자료에서 확인되지 않아 삭제했습니다.",
+    "동물 체험과 만들기·승마 프로그램은 독립된 장소가 아니라 목장에서 안내된 활동으로 정리했습니다.",
+    "연령별 이용 가능 여부, 체험별 소요 시간과 요금은 근거가 없어 단정하지 않았습니다.",
+    "주차와 편의시설은 공식 관광 페이지의 부대시설 표시만 반영하고 세부 이용 조건은 확인 안내로 수정했습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "장소에서 할 수 있는 활동",
+      "urls": [
+        "https://tour.yp21.go.kr/www/selectTourCntntsWebView.do?key=69&pageIndex=2&pageUnit=6&searchCnd=all&sortTy=HIT&tourNo=180"
+      ]
+    },
+    {
+      "heading": "방문 일정은 현장 운영에 맞춰 계획하기",
+      "urls": [
+        "https://tour.yp21.go.kr/www/selectTourCntntsWebView.do?key=69&pageIndex=2&pageUnit=6&searchCnd=all&sortTy=HIT&tourNo=180"
+      ]
+    },
+    {
+      "heading": "운영시간과 휴무는 방문일에 확인",
+      "urls": [
+        "https://www.waug.com/ko/activities/109404",
+        "https://tour.yp21.go.kr/www/selectTourCntntsWebView.do?key=69&pageIndex=2&pageUnit=6&searchCnd=all&sortTy=HIT&tourNo=180"
+      ]
+    },
+    {
+      "heading": "입장권 상품 이용 정보",
+      "urls": [
+        "https://www.waug.com/ko/activities/109404"
+      ]
+    },
+    {
+      "heading": "주소와 부대시설 확인",
+      "urls": [
+        "https://tour.yp21.go.kr/www/selectTourCntntsWebView.do?key=69&pageIndex=2&pageUnit=6&searchCnd=all&sortTy=HIT&tourNo=180"
+      ]
+    }
+  ],
+  "mustHold": false,
+  "officialUrls": [
+    "https://tour.yp21.go.kr/www/selectTourCntntsWebView.do?key=69&pageIndex=2&pageUnit=6&searchCnd=all&sortTy=HIT&tourNo=180"
+  ]
+}

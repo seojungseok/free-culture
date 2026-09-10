@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-09-10T12:44:50.632Z",
+  "corrections": [
+    "근거에 없는 왕복 거리 1.7km와 운행 구간 850m 수치는 삭제했습니다.",
+    "상부 정류장 제1·제2전망대와 장단반도·평화정의 조망을 확정적인 시설 정보처럼 쓰지 않고 확인된 조망 대상과 DMZ 스테이션 중심으로 수정했습니다.",
+    "갤러리 그리브스를 곤돌라와 별개의 독립 관광지로 다루지 않고 도착 지점에서 연계 관람하는 전시 공간으로 바로잡았습니다.",
+    "근거가 서로 다른 운영 시간과 오래된 자료의 휴관일·편의시설 정보를 단정하지 않고 방문일 확인 사항으로 바꿨습니다.",
+    "초안의 주차면 수, 장애인 화장실 위치, 독개다리까지의 거리 등 이번 핵심 안내에 직접 필요한 범위를 벗어나거나 최신성을 확인하기 어려운 수치는 삭제했습니다.",
+    "행사 홍보 내용은 근거가 없어 포함하지 않았습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "기본 위치·곤돌라 동선·전망·갤러리 그리브스",
+      "urls": [
+        "https://www.waug.com/ko/activities/147289",
+        "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=fcfba1f0-2a6b-4bdc-a99a-7a438dcc6f20"
+      ]
+    },
+    {
+      "heading": "운영 변동·휴관·요금·민통선 방문 안내",
+      "urls": [
+        "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=fcfba1f0-2a6b-4bdc-a99a-7a438dcc6f20",
+        "https://www.waug.com/ko/activities/124089"
+      ]
+    },
+    {
+      "heading": "온라인 티켓 사용·유효기간·환불 조건",
+      "urls": [
+        "https://www.waug.com/ko/activities/147289",
+        "https://www.waug.com/ko/activities/124089"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": [
+    "https://access.visitkorea.or.kr/cos/detail.do?cotId=8d755e6f-f543-41cd-b6fe-39217c6db3c9",
+    "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=fcfba1f0-2a6b-4bdc-a99a-7a438dcc6f20"
+  ]
+}

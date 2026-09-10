@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-09-10T12:45:47.340Z",
+  "corrections": [
+    "공식 자료에서 운영시간이 09:00와 10:00로 서로 다르게 표시되어 하나의 고정 시간으로 단정하지 않았습니다.",
+    "찜질스파와 워터파크를 함께 운영하는 하나의 아쿠아필드 시설로 바로잡고, 샌드풀을 찜질스파의 독립 공간처럼 설명하지 않았습니다.",
+    "온라인 판매 상품의 유효기간과 구매·발권 조건은 해당 상품의 안내로 한정했습니다.",
+    "근거가 확인되지 않은 주차, 대중교통, 도보 시간 정보는 삭제했습니다.",
+    "공식 자료에 없는 별도 행사나 확정되지 않은 운영·가격 정보는 추가하지 않았습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "장소와 공간 구성",
+      "urls": [
+        "https://www.starfield.co.kr/hanam/entertainment/aquafield.do",
+        "https://www.waug.com/ko/activities/117726"
+      ]
+    },
+    {
+      "heading": "방문 일정은 이렇게 계획하세요",
+      "urls": [
+        "https://www.starfield.co.kr/hanam/entertainment/aquafield.do"
+      ]
+    },
+    {
+      "heading": "이용 대상과 요금 확인",
+      "urls": [
+        "https://www.starfield.co.kr/hanam/entertainment/aquafield.do"
+      ]
+    },
+    {
+      "heading": "운영시간과 티켓 사용 방법",
+      "urls": [
+        "https://www.starfield.co.kr/hanam/entertainment/aquafield.do",
+        "https://www.waug.com/ko/activities/117726"
+      ]
+    },
+    {
+      "heading": "방문 전 확인할 사항",
+      "urls": [
+        "https://www.waug.com/ko/activities/117726",
+        "https://www.starfield.co.kr/hanam/entertainment/aquafield.do"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": [
+    "https://www.starfield.co.kr/hanam/entertainment/aquafield.do"
+  ]
+}

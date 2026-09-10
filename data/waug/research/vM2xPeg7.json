@@ -1,0 +1,19 @@
+{
+  "id": "vM2xPeg7",
+  "detailUrl": "https://www.waug.com/ko/activities/117721",
+  "checkedAt": "2026-09-10T11:49:15.113Z",
+  "actualName": "하남 아쿠아필드 워터파크 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "e599be39c64adc2a2b05ea3943258a786f177500439f83bc45dfd46c4ea7a07f",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/09/19/17266738209987.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/vM2xPeg7.json"
+}

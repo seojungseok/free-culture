@@ -1,0 +1,19 @@
+{
+  "id": "QLHlnsJF",
+  "detailUrl": "https://www.waug.com/ko/activities/132659",
+  "checkedAt": "2026-09-10T11:49:14.947Z",
+  "actualName": "경기 고양 쥬쥬랜드 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "30125efdc1eb12d3deb394cb72c4876d39530ae0ca43daca877a44409dcb3649",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/08/03/16910328168044.png",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/QLHlnsJF.json"
+}

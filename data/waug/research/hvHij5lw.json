@@ -1,0 +1,19 @@
+{
+  "id": "hvHij5lw",
+  "detailUrl": "https://www.waug.com/ko/activities/121092",
+  "checkedAt": "2026-09-10T11:49:14.782Z",
+  "actualName": "경기 화성 하피랜드 온천 & 찜질방 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "82e68b625430be829c486b2f004c8bac6e14af6d3f05b5018d6cef9bbbd69ce9",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/07/01/16566584041896.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/hvHij5lw.json"
+}

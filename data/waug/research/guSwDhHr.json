@@ -1,0 +1,19 @@
+{
+  "id": "guSwDhHr",
+  "detailUrl": "https://www.waug.com/ko/activities/153283",
+  "checkedAt": "2026-09-10T11:49:14.824Z",
+  "actualName": "포천 허브아일랜드 놀이동산 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "4f2115f6231f8ad2e49c437e60cfa5732639edd8d3fa491fe56d9c17947ed849",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/11/17784870797431.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/guSwDhHr.json"
+}

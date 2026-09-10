@@ -1,0 +1,19 @@
+{
+  "id": "bOmk7qbP",
+  "detailUrl": "https://www.waug.com/ko/activities/133259",
+  "checkedAt": "2026-09-10T11:49:14.784Z",
+  "actualName": "경기 용인 공룡월드 입장권 (공룡쇼+마술+풍선쇼)",
+  "validUntil": "2026-09-30",
+  "pageSha256": "bf39002c5e7e8113d526ebbd160d5b0371e6a2588469eb58cb29ca35920b03ac",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/09/05/16938974589939.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/bOmk7qbP.json"
+}

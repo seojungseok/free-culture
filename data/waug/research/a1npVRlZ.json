@@ -1,0 +1,19 @@
+{
+  "id": "a1npVRlZ",
+  "detailUrl": "https://www.waug.com/ko/activities/140404",
+  "checkedAt": "2026-09-10T11:49:15.056Z",
+  "actualName": "[특가]경기 남양주 실내서핑 & 빠지놀이기구 & 제트보트 물놀이 무제한 이용권",
+  "validUntil": null,
+  "pageSha256": "f50ce4f5d66b1f6baf56a84d771e779bc6c4674b3546340ee754ebfa81e90604",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/11/17811450818031.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/a1npVRlZ.json"
+}

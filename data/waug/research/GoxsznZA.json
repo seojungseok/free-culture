@@ -1,0 +1,19 @@
+{
+  "id": "GoxsznZA",
+  "detailUrl": "https://www.waug.com/ko/activities/145354",
+  "checkedAt": "2026-09-10T11:49:14.700Z",
+  "actualName": "경기 시흥 공룡월드 & 키즈카페 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "1b7c239e7ef40a3bfac2e820ed9d6509503c35f7fe0b412b6e646d5505abae0a",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/01/23/17376120047326.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/GoxsznZA.json"
+}

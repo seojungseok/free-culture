@@ -1,0 +1,307 @@
+{
+  "selectedAt": "2026-09-10T12:25:02.801Z",
+  "requestedCount": 30,
+  "selectionBasis": "검색량 원자료 미연결. 대표 여행지·브랜드 인지도와 실제 와그 상품 반응을 참고한 편집 우선순위이며 검색량 순위가 아님.",
+  "entries": [
+    {
+      "placeId": "place-115669",
+      "primaryProductId": "ZdkVAM9x",
+      "name": "용인 에버랜드 자유이용권 (방문날짜 미지정)",
+      "editorialPriority": 1,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 286,
+      "source": "https://www.waug.com/ko/activities/115669"
+    },
+    {
+      "placeId": "place-116857",
+      "primaryProductId": "vF4Z6VsG",
+      "name": "경기 가평 남이섬 입장권 (선박 포함)",
+      "editorialPriority": 2,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 28,
+      "source": "https://www.waug.com/ko/activities/116857"
+    },
+    {
+      "placeId": "seoulland",
+      "primaryProductId": "MYBgKK7a",
+      "name": "과천 서울랜드 자유이용권",
+      "editorialPriority": 3,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 60,
+      "source": "https://www.waug.com/ko/activities/114542"
+    },
+    {
+      "placeId": "place-116667",
+      "primaryProductId": "poSKc1qk",
+      "name": "용인 한국민속촌 자유이용권",
+      "editorialPriority": 4,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 26,
+      "source": "https://www.waug.com/ko/activities/116667"
+    },
+    {
+      "placeId": "place-116323",
+      "primaryProductId": "y9ppQMxK",
+      "name": "경기 고양 일산 아쿠아플라넷 입장권",
+      "editorialPriority": 5,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 54,
+      "source": "https://www.waug.com/ko/activities/116323"
+    },
+    {
+      "placeId": "place-117038",
+      "primaryProductId": "DmaD1hOQ",
+      "name": "수원 갤러리아 광교 아쿠아플라넷 입장권",
+      "editorialPriority": 6,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 39,
+      "source": "https://www.waug.com/ko/activities/117038"
+    },
+    {
+      "placeId": "herb-island",
+      "primaryProductId": "99PBHMQK",
+      "name": "경기 포천 허브아일랜드 입장권",
+      "editorialPriority": 7,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 15,
+      "source": "https://www.waug.com/ko/activities/112090"
+    },
+    {
+      "placeId": "seohaerang",
+      "primaryProductId": "zY8A9h0l",
+      "name": "경기 화성 서해랑 제부도 해상케이블카 티켓",
+      "editorialPriority": 8,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 7,
+      "source": "https://www.waug.com/ko/activities/123500"
+    },
+    {
+      "placeId": "paju-gondola",
+      "primaryProductId": "ZXzqLZwA",
+      "name": "경기 파주 임진각 평화곤돌라 왕복 티켓",
+      "editorialPriority": 9,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 1,
+      "source": "https://www.waug.com/ko/activities/124089"
+    },
+    {
+      "placeId": "place-110286",
+      "primaryProductId": "muLavTBe",
+      "name": "강화 루지 & 케이블카 티켓 (WAUG Exclusive)",
+      "editorialPriority": 10,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 596,
+      "source": "https://www.waug.com/ko/activities/110286"
+    },
+    {
+      "placeId": "place-134830",
+      "primaryProductId": "YxlBFStb",
+      "name": "여주 루덴시아 테마파크 입장권",
+      "editorialPriority": 11,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 5,
+      "source": "https://www.waug.com/ko/activities/134830"
+    },
+    {
+      "placeId": "place-126290",
+      "primaryProductId": "U5ZNqfXS",
+      "name": "경기 안성팜랜드 입장권",
+      "editorialPriority": 12,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 1,
+      "source": "https://www.waug.com/ko/activities/126290"
+    },
+    {
+      "placeId": "place-121130",
+      "primaryProductId": "WR3WtcJA",
+      "name": "경기 가평 쁘띠프랑스 & 이탈리아마을 + 유럽마을 입장권",
+      "editorialPriority": 13,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 7,
+      "source": "https://www.waug.com/ko/activities/121130"
+    },
+    {
+      "placeId": "place-137528",
+      "primaryProductId": "Hah4plsp",
+      "name": "경기 가평 베고니아새정원 입장권",
+      "editorialPriority": 14,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 6,
+      "source": "https://www.waug.com/ko/activities/137528"
+    },
+    {
+      "placeId": "place-110908",
+      "primaryProductId": "ixptI5E2",
+      "name": "경기 '주렁주렁' 실내 동물원 하남점 입장권",
+      "editorialPriority": 15,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 1,
+      "source": "https://www.waug.com/ko/activities/110908"
+    },
+    {
+      "placeId": "place-110807",
+      "primaryProductId": "T3i1gzzj",
+      "name": "경기 '주렁주렁' 실내 동물원 동탄점 입장권",
+      "editorialPriority": 16,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 15,
+      "source": "https://www.waug.com/ko/activities/110807"
+    },
+    {
+      "placeId": "place-117728",
+      "primaryProductId": "ehfD2Ulu",
+      "name": "고양 아쿠아필드 찜질스파 입장권",
+      "editorialPriority": 17,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 47,
+      "source": "https://www.waug.com/ko/activities/117728"
+    },
+    {
+      "placeId": "place-117726",
+      "primaryProductId": "TnJ7oVIL",
+      "name": "하남 아쿠아필드 찜질스파 입장권",
+      "editorialPriority": 18,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 26,
+      "source": "https://www.waug.com/ko/activities/117726"
+    },
+    {
+      "placeId": "place-117715",
+      "primaryProductId": "i3RL4kYw",
+      "name": "안성 아쿠아필드 찜질스파 입장권",
+      "editorialPriority": 19,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 40,
+      "source": "https://www.waug.com/ko/activities/117715"
+    },
+    {
+      "placeId": "place-144259",
+      "primaryProductId": "VH1Cjga1",
+      "name": "경기 양주 가나아트파크 입장권",
+      "editorialPriority": 20,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 1,
+      "source": "https://www.waug.com/ko/activities/144259"
+    },
+    {
+      "placeId": "nature-scape-dongtan",
+      "primaryProductId": "wevX1T04",
+      "name": "동탄 라크몽 네이처스케이프 플러스 입장권",
+      "editorialPriority": 21,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 3,
+      "source": "https://www.waug.com/ko/activities/137871"
+    },
+    {
+      "placeId": "gimpo-monsterium",
+      "primaryProductId": "QlTVQvXT",
+      "name": "김포 몬스터리움 입장권 (동물원 & 아쿠아리움)",
+      "editorialPriority": 22,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 7,
+      "source": "https://www.waug.com/ko/activities/119403"
+    },
+    {
+      "placeId": "pororo-dasan",
+      "primaryProductId": "h4gdvnhg",
+      "name": "남양주 프리미어 뽀로로테마파크 다산 위드 트래블 종일권",
+      "editorialPriority": 23,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 6,
+      "source": "https://www.waug.com/ko/activities/129757"
+    },
+    {
+      "placeId": "place-113546",
+      "primaryProductId": "tiNrXkcN",
+      "name": "과천 서울대공원 리프트 PKG (테마가든/과천과학관/동물원 등)",
+      "editorialPriority": 24,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 28,
+      "source": "https://www.waug.com/ko/activities/113546"
+    },
+    {
+      "placeId": "place-109404",
+      "primaryProductId": "0X7invFD",
+      "name": "경기 양평 양떼목장 먹이주기 체험 & 입장권",
+      "editorialPriority": 25,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 5,
+      "source": "https://www.waug.com/ko/activities/109404"
+    },
+    {
+      "placeId": "place-127049",
+      "primaryProductId": "DfOIjArT",
+      "name": "울산 양떼목장 입장권",
+      "editorialPriority": 26,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 0,
+      "source": "https://www.waug.com/ko/activities/127049"
+    },
+    {
+      "placeId": "place-132659",
+      "primaryProductId": "QLHlnsJF",
+      "name": "경기 고양 쥬쥬랜드 입장권",
+      "editorialPriority": 27,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 4,
+      "source": "https://www.waug.com/ko/activities/132659"
+    },
+    {
+      "placeId": "place-137156",
+      "primaryProductId": "swLHvma3",
+      "name": "경기 과천 매직플로우 원더파크 입장권 - 로보카폴리 & 원더파크 콜라보",
+      "editorialPriority": 28,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 0,
+      "source": "https://www.waug.com/ko/activities/137156"
+    },
+    {
+      "placeId": "place-120468",
+      "primaryProductId": "HHk6csWc",
+      "name": "고양 스타필드 매직플로우 원더빌리지 입장권",
+      "editorialPriority": 29,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 32,
+      "source": "https://www.waug.com/ko/activities/120468"
+    },
+    {
+      "placeId": "place-122258",
+      "primaryProductId": "jgtrtDnj",
+      "name": "경기 동탄 아르티스 테마파크 입장권",
+      "editorialPriority": 30,
+      "searchVolume": null,
+      "searchRank": null,
+      "reviewCount": 0,
+      "source": "https://www.waug.com/ko/activities/122258"
+    }
+  ]
+}

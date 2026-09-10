@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-09-10T12:46:17.762Z",
+  "corrections": [
+    "제공된 자료에는 공식 페이지가 없고 판매처 상품 본문만 있어, 운영·주소·이용 조건은 상품 안내 기준으로만 정리했습니다.",
+    "근거가 없는 입장권 가격, 주차 및 무료 주차, 먹이 가격, 쇼 일정, 개별 생물 목록, 외부 시설과 주변 카페 정보를 삭제했습니다.",
+    "오키드 키즈카페와 쥬라기파크를 독립적인 별도 여행지로 확장하지 않고, 몬스터리움과 함께 판매되는 패키지의 구성 시설로 바로잡았습니다.",
+    "운영시간은 현장 변동 가능성이 안내돼 있어 고정 수치로 단정하지 않고 방문일 확인 안내로 수정했습니다.",
+    "출처가 판매처 상품 페이지에 한정되어 공식성 및 최신 현장 운영 여부를 추가 검증할 수 없으므로 보류가 필요합니다."
+  ],
+  "provenance": [
+    {
+      "heading": "장소 구성과 관람 범위",
+      "urls": [
+        "https://www.waug.com/ko/activities/119403",
+        "https://www.waug.com/ko/activities/150990"
+      ]
+    },
+    {
+      "heading": "방문일 운영 정보 확인",
+      "urls": [
+        "https://www.waug.com/ko/activities/150990",
+        "https://www.waug.com/ko/activities/119403"
+      ]
+    },
+    {
+      "heading": "티켓과 패키지 이용 방법",
+      "urls": [
+        "https://www.waug.com/ko/activities/150990",
+        "https://www.waug.com/ko/activities/119403"
+      ]
+    },
+    {
+      "heading": "주소와 방문 전 체크리스트",
+      "urls": [
+        "https://www.waug.com/ko/activities/150990",
+        "https://www.waug.com/ko/activities/119403"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": []
+}

@@ -1,0 +1,19 @@
+{
+  "id": "tL8qi56O",
+  "detailUrl": "https://www.waug.com/ko/activities/117720",
+  "checkedAt": "2026-09-10T11:49:15.092Z",
+  "actualName": "안성 아쿠아필드 워터파크 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "88c56f5cc9daadb3e31b1584dc1071c74d275b07b96a556a227044e2a5cb7bc7",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/03/17147058300721.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/tL8qi56O.json"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "MYBgKK7a",
+  "detailUrl": "https://www.waug.com/ko/activities/114542",
+  "checkedAt": "2026-09-10T11:49:15.052Z",
+  "actualName": "과천 서울랜드 자유이용권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "7ffa264d9487052c65bfe6ea0f5b35514b589212ec3b494043ea3a9409c8c389",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/08/27/17878113578096.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/MYBgKK7a.json"
+}

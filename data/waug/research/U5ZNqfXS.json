@@ -1,0 +1,19 @@
+{
+  "id": "U5ZNqfXS",
+  "detailUrl": "https://www.waug.com/ko/activities/126290",
+  "checkedAt": "2026-09-10T11:49:14.903Z",
+  "actualName": "경기 안성팜랜드 입장권",
+  "validUntil": "2026-09-13",
+  "pageSha256": "c9d1f60b15b94c58776e5caa5b049495ede589239eaecb715cf38ace9af7e54f",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/29/17800445040883.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/U5ZNqfXS.json"
+}

@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-09-10T12:44:42.880Z",
+  "corrections": [
+    "케이블카를 전곡정류장과 제부정류장 외에 별도 전망 시설이나 전시 공간이 있는 것처럼 단정한 내용을 삭제했습니다.",
+    "공식 근거가 확인되지 않은 주차장 위치·무료 주차, 고렴산수변공원, 제부정류장 미술 전시, 유아차·휠체어·반려동물 이용 조건을 삭제했습니다.",
+    "근거가 없는 가족·연인·친구별 적합성이나 특정 연령 조건을 삭제하고 일반적인 일정 제안으로 수정했습니다.",
+    "고정 요금은 방문일별 상품 화면에서 확인하도록 바꾸고, 제공된 상품의 유효기간과 환불 조건만 근거에 맞게 정리했습니다.",
+    "‘더 트릭 아일랜드’를 독립 관광지나 케이블카 시설이 아니라 일부 결합 상품에 포함된 별도 미션 프로그램으로 바로잡았습니다.",
+    "확실한 개최기간이 확인되지 않은 행사 홍보 내용은 포함하지 않았습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "위치와 탑승 장소",
+      "urls": [
+        "https://www.waug.com/ko/activities/140504",
+        "https://www.waug.com/ko/activities/123500"
+      ]
+    },
+    {
+      "heading": "운영시간과 당일 확인 사항",
+      "urls": [
+        "https://www.waug.com/ko/activities/140504",
+        "https://www.waug.com/ko/activities/123500"
+      ]
+    },
+    {
+      "heading": "현장 발권과 티켓 이용 방법",
+      "urls": [
+        "https://seohaerang.com/event/eventNewsLS",
+        "https://www.waug.com/ko/activities/140504",
+        "https://www.waug.com/ko/activities/123500"
+      ]
+    },
+    {
+      "heading": "더 트릭 아일랜드 상품은 별도 프로그램입니다",
+      "urls": [
+        "https://www.waug.com/ko/activities/140504"
+      ]
+    },
+    {
+      "heading": "방문 일정 제안",
+      "urls": [
+        "https://seohaerang.com/event/eventNewsLS",
+        "https://www.waug.com/ko/activities/140504",
+        "https://www.waug.com/ko/activities/123500"
+      ]
+    }
+  ],
+  "mustHold": false,
+  "officialUrls": [
+    "https://seohaerang.com/event/eventNewsLS"
+  ]
+}

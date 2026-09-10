@@ -1,0 +1,19 @@
+{
+  "id": "DmaD1hOQ",
+  "detailUrl": "https://www.waug.com/ko/activities/117038",
+  "checkedAt": "2026-09-10T11:49:14.991Z",
+  "actualName": "수원 갤러리아 광교 아쿠아플라넷 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "9b56bcf4beb1aeeee0127b89dad66c2d7d440219cf258e95f8f3cd215b0f2987",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/03/17147065757647.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/DmaD1hOQ.json"
+}

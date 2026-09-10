@@ -1,0 +1,19 @@
+{
+  "id": "ZdkVAM9x",
+  "detailUrl": "https://www.waug.com/ko/activities/115669",
+  "checkedAt": "2026-09-10T11:49:15.010Z",
+  "actualName": "용인 에버랜드 자유이용권 (방문날짜 미지정)",
+  "validUntil": "2026-09-30",
+  "pageSha256": "ddd8a7a3bdefe9209b3d7eb987407b1c38ee5f80bfa2994d681075ca0ed8dfd9",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/11/17784674670743.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/ZdkVAM9x.json"
+}

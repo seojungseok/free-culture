@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-09-10T12:44:18.113Z",
+  "corrections": [
+    "초안에 있던 대중교통 노선과 도보 시간, 주차 무료 시간·추가요금·대형버스 요금은 제공된 근거에서 확인되지 않아 삭제했습니다.",
+    "35,000원 요금과 36개월 미만 무료, 티켓 구매 후 1시간 대기·환불 조건 중 근거가 확인된 티켓 절차와 환불 조건만 남겼고, 가격·연령 조건은 삭제했습니다.",
+    "2026년 9월 상품 이용기간은 상품 본문에 근거해 해당 상품 옵션의 기간으로 한정했습니다.",
+    "딥 블루오션·오션 아레나·나무 쉼터는 독립 장소가 아니라 아쿠아플라넷 일산의 전시·프로그램 공간으로 설명했습니다.",
+    "스카이팜은 상품 안내에서 별도 운영 공간으로 확인되는 범위만 언급하고, 고정 운영시간이나 체험 마감시간은 단정하지 않았습니다.",
+    "행사 개최기간이 확인되지 않은 홍보성 내용은 삭제했습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "해양생물과 육지생물을 함께 보는 공간",
+      "urls": [
+        "https://www.aquaplanet.co.kr/ilsan/aquaplanet/planet.do"
+      ]
+    },
+    {
+      "heading": "추천 관람 순서와 일정 짜기",
+      "urls": [
+        "https://www.aquaplanet.co.kr/ilsan/aquaplanet/planet.do",
+        "https://www.waug.com/ko/activities/116323"
+      ]
+    },
+    {
+      "heading": "주소와 방문 전 확인 사항",
+      "urls": [
+        "https://www.aquaplanet.co.kr/ilsan/aquaplanet/planet.do"
+      ]
+    },
+    {
+      "heading": "상품 티켓 이용 방법",
+      "urls": [
+        "https://www.waug.com/ko/activities/116323"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": [
+    "https://www.aquaplanet.co.kr/ilsan/aquaplanet/planet.do"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "SSR10IOt",
+  "detailUrl": "https://www.waug.com/ko/activities/117365",
+  "checkedAt": "2026-09-10T11:49:14.763Z",
+  "actualName": "경기 고양 잭슨나인스 일산점 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "f6c4232dfd4d5720105e46c2ae5bf737b7873e5d0b82d78358b565bab56035e5",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/08/31/17881616810924.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/SSR10IOt.json"
+}

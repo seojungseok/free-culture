@@ -1,0 +1,19 @@
+{
+  "id": "ZXzqLZwA",
+  "detailUrl": "https://www.waug.com/ko/activities/124089",
+  "checkedAt": "2026-09-10T11:49:14.904Z",
+  "actualName": "경기 파주 임진각 평화곤돌라 왕복 티켓",
+  "validUntil": "2026-10-31",
+  "pageSha256": "7feacf57bb8c9da26c3a355c4dffa494871289e9b3c0af53f9f64e335c9f78fc",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/01/16/17370168584957.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/ZXzqLZwA.json"
+}

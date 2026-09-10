@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-09-10T13:40:37.982Z",
+  "thumbnails": 30,
+  "aiBodyImages": 3,
+  "thumbnailTextReview": "30개 완성 이미지 전수 확인, 잘못된 시설 재현 후보 교체, 한글 문구와 실제 공공사진 출처 우측 하단 확인",
+  "mobile": {
+    "widths": [
+      390,
+      320
+    ],
+    "overflow": false,
+    "all30CardRatio": 1.9047619047619047,
+    "representativeArticle": "aquaplanet-ilsan"
+  },
+  "desktop": {
+    "width": 1440,
+    "overflow": false,
+    "all30CardRatio": 1.9047619047619047,
+    "representativeArticle": "zoolung-hanam"
+  },
+  "faceReview": "와그 원본 전수 후보 대조 후 얼굴 식별 없는 사진만 선택. 관련 상품 사진 제외. 무인 사진 없는 3곳은 별도 AI 본문 이미지",
+  "regionalFilterVerified": true
+}

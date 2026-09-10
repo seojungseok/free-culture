@@ -1,0 +1,272 @@
+[
+  {
+    "slug": "everland",
+    "url": "http://127.0.0.1:3010/tickets/everland",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/everland-2f495e708c5d.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:01.410Z"
+  },
+  {
+    "slug": "nami-island",
+    "url": "http://127.0.0.1:3010/tickets/nami-island",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/nami-island-76cc9dc061bd.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:01.414Z"
+  },
+  {
+    "slug": "seoulland",
+    "url": "http://127.0.0.1:3010/tickets/seoulland",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/seoulland-02624c146e22.jpg",
+    "affiliateCount": 4,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:01.415Z"
+  },
+  {
+    "slug": "aquaplanet-gwanggyo",
+    "url": "http://127.0.0.1:3010/tickets/aquaplanet-gwanggyo",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/aquaplanet-gwanggyo-db0559cd445e.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:01.724Z"
+  },
+  {
+    "slug": "korean-folk-village",
+    "url": "http://127.0.0.1:3010/tickets/korean-folk-village",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/korean-folk-village-c4f70636fd9d.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:01.727Z"
+  },
+  {
+    "slug": "aquaplanet-ilsan",
+    "url": "http://127.0.0.1:3010/tickets/aquaplanet-ilsan",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/aquaplanet-ilsan-d58eb6db1ee5.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:01.728Z"
+  },
+  {
+    "slug": "herb-island",
+    "url": "http://127.0.0.1:3010/tickets/herb-island",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/herb-island-6b87a5714e79.jpg",
+    "affiliateCount": 2,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:02.011Z"
+  },
+  {
+    "slug": "paju-gondola",
+    "url": "http://127.0.0.1:3010/tickets/paju-gondola",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/paju-gondola-662ce7a801b8.jpg",
+    "affiliateCount": 2,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:02.013Z"
+  },
+  {
+    "slug": "seohaerang",
+    "url": "http://127.0.0.1:3010/tickets/seohaerang",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/seohaerang-841c7beb0d63.jpg",
+    "affiliateCount": 2,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:02.014Z"
+  },
+  {
+    "slug": "ganghwa-luge",
+    "url": "http://127.0.0.1:3010/tickets/ganghwa-luge",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/ganghwa-luge-ae0b7dcc49d2.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:02.287Z"
+  },
+  {
+    "slug": "anseong-farmland",
+    "url": "http://127.0.0.1:3010/tickets/anseong-farmland",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/anseong-farmland-cbc076a5e964.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:02.288Z"
+  },
+  {
+    "slug": "ludensia",
+    "url": "http://127.0.0.1:3010/tickets/ludensia",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/ludensia-16baeb5880a8.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:02.289Z"
+  },
+  {
+    "slug": "zoolung-hanam",
+    "url": "http://127.0.0.1:3010/tickets/zoolung-hanam",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/zoolung-hanam-bc8932c3ef37.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:02.549Z"
+  },
+  {
+    "slug": "petite-france-italian-village",
+    "url": "http://127.0.0.1:3010/tickets/petite-france-italian-village",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/petite-france-italian-village-e1c15fc6de59.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:02.551Z"
+  },
+  {
+    "slug": "begonia-bird-garden",
+    "url": "http://127.0.0.1:3010/tickets/begonia-bird-garden",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/begonia-bird-garden-65ae05172617.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:02.555Z"
+  },
+  {
+    "slug": "aquafield-goyang",
+    "url": "http://127.0.0.1:3010/tickets/aquafield-goyang",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/aquafield-goyang-c0fddad70ce3.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:02.831Z"
+  },
+  {
+    "slug": "zoolung-dongtan",
+    "url": "http://127.0.0.1:3010/tickets/zoolung-dongtan",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/zoolung-dongtan-5a8af613de80.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:02.832Z"
+  },
+  {
+    "slug": "aquafield-hanam",
+    "url": "http://127.0.0.1:3010/tickets/aquafield-hanam",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/aquafield-hanam-1f5bd7f4c28e.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:02.846Z"
+  },
+  {
+    "slug": "gana-art-park",
+    "url": "http://127.0.0.1:3010/tickets/gana-art-park",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/gana-art-park-e143be47790d.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:03.148Z"
+  },
+  {
+    "slug": "aquafield-anseong",
+    "url": "http://127.0.0.1:3010/tickets/aquafield-anseong",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/aquafield-anseong-f3212792cbbd.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:03.149Z"
+  },
+  {
+    "slug": "nature-scape-dongtan",
+    "url": "http://127.0.0.1:3010/tickets/nature-scape-dongtan",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/nature-scape-dongtan-5087c2165539.jpg",
+    "affiliateCount": 2,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:03.213Z"
+  },
+  {
+    "slug": "gimpo-monsterium",
+    "url": "http://127.0.0.1:3010/tickets/gimpo-monsterium",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/gimpo-monsterium-748bb1912e98.jpg",
+    "affiliateCount": 2,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:03.491Z"
+  },
+  {
+    "slug": "pororo-dasan",
+    "url": "http://127.0.0.1:3010/tickets/pororo-dasan",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/pororo-dasan-e4a9e16bf824.jpg",
+    "affiliateCount": 2,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:03.493Z"
+  },
+  {
+    "slug": "seoul-grand-park-lift",
+    "url": "http://127.0.0.1:3010/tickets/seoul-grand-park-lift",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/seoul-grand-park-lift-a01af776cc5c.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:03.506Z"
+  },
+  {
+    "slug": "yangpyeong-sheep-ranch",
+    "url": "http://127.0.0.1:3010/tickets/yangpyeong-sheep-ranch",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/yangpyeong-sheep-ranch-1f7b6492a727.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:03.789Z"
+  },
+  {
+    "slug": "zoozoo-land",
+    "url": "http://127.0.0.1:3010/tickets/zoozoo-land",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/zoozoo-land-412ae43430d0.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:03.790Z"
+  },
+  {
+    "slug": "ulsan-sheep-ranch",
+    "url": "http://127.0.0.1:3010/tickets/ulsan-sheep-ranch",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/ulsan-sheep-ranch-452adeb82f6a.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:03.799Z"
+  },
+  {
+    "slug": "wonderpark-gwacheon",
+    "url": "http://127.0.0.1:3010/tickets/wonderpark-gwacheon",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/wonderpark-gwacheon-b4e349f0f5b0.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:04.082Z"
+  },
+  {
+    "slug": "wonder-village-goyang",
+    "url": "http://127.0.0.1:3010/tickets/wonder-village-goyang",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/wonder-village-goyang-7912d55cd1c9.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:04.083Z"
+  },
+  {
+    "slug": "artis-dongtan",
+    "url": "http://127.0.0.1:3010/tickets/artis-dongtan",
+    "status": 200,
+    "image": "http://127.0.0.1:3010/ticket-images/artis-dongtan-2996a30ed8a0.jpg",
+    "affiliateCount": 1,
+    "errors": [],
+    "checkedAt": "2026-09-10T13:39:04.085Z"
+  }
+]

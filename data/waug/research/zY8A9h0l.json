@@ -1,0 +1,19 @@
+{
+  "id": "zY8A9h0l",
+  "detailUrl": "https://www.waug.com/ko/activities/123500",
+  "checkedAt": "2026-09-10T11:49:14.922Z",
+  "actualName": "경기 화성 서해랑 제부도 해상케이블카 티켓",
+  "validUntil": "2026-10-31",
+  "pageSha256": "1321e78df5936a086f9a1477892eddab63f1baa4da2cba2f6deef66ac8e50f39",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/09/17809669013118.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/zY8A9h0l.json"
+}

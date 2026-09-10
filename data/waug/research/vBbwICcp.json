@@ -1,0 +1,19 @@
+{
+  "id": "vBbwICcp",
+  "detailUrl": "https://www.waug.com/ko/activities/109007",
+  "checkedAt": "2026-09-10T11:49:14.806Z",
+  "actualName": "경기 쥬라리움 하남점 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "456efecfa093651d911a28e74dc4aacf4101c9acd7824c24dd926d4fd5873844",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/05/17702811409210.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/vBbwICcp.json"
+}

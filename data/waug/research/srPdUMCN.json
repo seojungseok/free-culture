@@ -1,0 +1,19 @@
+{
+  "id": "srPdUMCN",
+  "detailUrl": "https://www.waug.com/ko/activities/141999",
+  "checkedAt": "2026-09-10T11:49:15.115Z",
+  "actualName": "수원 라이프스포츠 워터파크 입장권",
+  "validUntil": "2027-06-30",
+  "pageSha256": "0f501d7a54d014c0c2fac09a72325abf858a7177a6d6b70c81c7353bfc993f72",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/09/27/17274024166194.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/srPdUMCN.json"
+}

@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-09-10T12:45:58.872Z",
+  "corrections": [
+    "상품 페이지의 주소 표기와 스타필드·관광정보의 주소가 달라 공식 스타필드 안내의 서동대로 3930-39를 기준으로 정리했습니다.",
+    "공식 자료에 없는 일반 주차요금과 주차면수는 삭제하고, 확인되는 장애인 주차장 정보만 제한적으로 반영했습니다.",
+    "찜질스파와 워터파크를 하나의 이용 범위처럼 다루지 않도록 시설과 티켓을 구분했습니다.",
+    "공식 안내의 시설 목록을 기준으로 정리했으며, 상품 페이지와 공식 페이지의 테마 공간 개수 표현이 달라 특정 개수는 단정하지 않았습니다.",
+    "관광정보에 없는 휴무일 관련 초안의 단정은 공식 관광정보의 연중무휴 표기로만 반영했습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "위치와 운영시간 확인",
+      "urls": [
+        "https://www.starfield.co.kr/anseong/entertainment/aquafield.do",
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=a01ed51a-a198-4195-a2c5-80e0ff9c4462",
+        "https://www.waug.com/ko/activities/117715"
+      ]
+    },
+    {
+      "heading": "찜질스파에서 이용할 수 있는 공간",
+      "urls": [
+        "https://www.starfield.co.kr/anseong/entertainment/aquafield.do",
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=a01ed51a-a198-4195-a2c5-80e0ff9c4462"
+      ]
+    },
+    {
+      "heading": "추천 일정과 이용 범위",
+      "urls": [
+        "https://www.starfield.co.kr/anseong/entertainment/aquafield.do",
+        "https://www.waug.com/ko/activities/117715"
+      ]
+    },
+    {
+      "heading": "공식 요금과 티켓 사용 방법",
+      "urls": [
+        "https://www.starfield.co.kr/anseong/entertainment/aquafield.do",
+        "https://www.waug.com/ko/activities/117715"
+      ]
+    },
+    {
+      "heading": "방문 전 확인할 사항",
+      "urls": [
+        "https://www.starfield.co.kr/anseong/entertainment/aquafield.do",
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=a01ed51a-a198-4195-a2c5-80e0ff9c4462"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": [
+    "https://www.starfield.co.kr/anseong/entertainment/aquafield.do",
+    "https://access.visitkorea.or.kr/ms/detail.do?cotId=a01ed51a-a198-4195-a2c5-80e0ff9c4462"
+  ]
+}

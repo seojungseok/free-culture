@@ -1,0 +1,19 @@
+{
+  "id": "poSKc1qk",
+  "detailUrl": "https://www.waug.com/ko/activities/116667",
+  "checkedAt": "2026-09-10T11:49:15.033Z",
+  "actualName": "용인 한국민속촌 자유이용권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "d7fe122d87684d3eb753e1299e2e422abb3a0e5b4e31a0c692d11c0f0e57d0f2",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/09/09/17889230111389.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/poSKc1qk.json"
+}

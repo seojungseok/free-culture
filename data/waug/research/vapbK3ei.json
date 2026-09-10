@@ -1,0 +1,19 @@
+{
+  "id": "vapbK3ei",
+  "detailUrl": "https://www.waug.com/ko/activities/133319",
+  "checkedAt": "2026-09-10T11:49:14.888Z",
+  "actualName": "화성 아센 사우나 & 찜질방 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "26680cfd96163152257fd3de84c0e4a300f4ba6ff2bba1c8e57252ee7687469a",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/12/17708664598663.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/vapbK3ei.json"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "ehfD2Ulu",
+  "detailUrl": "https://www.waug.com/ko/activities/117728",
+  "checkedAt": "2026-09-10T11:49:14.990Z",
+  "actualName": "고양 아쿠아필드 찜질스파 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "71c2e1375eef4403bf590805a4ea0cd0d510b01d803cad37f99f907ad4cd08f4",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/12/29/16407536594369.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/ehfD2Ulu.json"
+}

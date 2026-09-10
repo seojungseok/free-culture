@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-09-10T12:44:37.890Z",
+  "corrections": [
+    "공식 자료에서 확인되지 않은 1998년 개장 시점, 13만 평 부지, 허브식물박물관 규모와 허브 종류 수, 허브힐링센터·만들기체험장·플라워정원 등의 구체 정보는 삭제했습니다.",
+    "근거에 없는 계절별 운영시간과 연중무휴 여부를 삭제하고, 방문일별 최신 안내 확인으로 수정했습니다.",
+    "주차장 규모와 대중교통 노선·도보 거리처럼 제공된 상품 본문에 없는 교통 정보를 삭제했습니다.",
+    "상품 본문에 없는 가족·연인별 추천, 특정 동선의 적합성, 행사 개최 내용은 단정하지 않도록 일반적인 일정 제안으로 바꿨습니다.",
+    "놀이동산을 독립 장소처럼 설명하지 않고 허브아일랜드에서 선택할 수 있는 별도 이용권·콘텐츠로 정리했습니다.",
+    "공식 페이지 자료가 제공되지 않았고 운영시간·주차·시설별 이용 조건을 검증할 근거가 부족해 추가 확인이 필요합니다."
+  ],
+  "provenance": [
+    {
+      "heading": "장소에서 확인되는 테마와 콘텐츠",
+      "urls": [
+        "https://www.waug.com/ko/activities/112090",
+        "https://www.waug.com/ko/activities/153283"
+      ]
+    },
+    {
+      "heading": "운영시간과 방문 일정",
+      "urls": [
+        "https://www.waug.com/ko/activities/112090",
+        "https://www.waug.com/ko/activities/153283"
+      ]
+    },
+    {
+      "heading": "주소와 방문 준비",
+      "urls": [
+        "https://www.waug.com/ko/activities/112090",
+        "https://www.waug.com/ko/activities/153283"
+      ]
+    },
+    {
+      "heading": "이용권 구매와 발권 방법",
+      "urls": [
+        "https://www.waug.com/ko/activities/112090",
+        "https://www.waug.com/ko/activities/153283"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": []
+}

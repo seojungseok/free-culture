@@ -1,0 +1,19 @@
+{
+  "id": "zkLHNEae",
+  "detailUrl": "https://www.waug.com/ko/activities/115556",
+  "checkedAt": "2026-09-10T11:49:15.077Z",
+  "actualName": "경기 여주 썬밸리워터파크 이용권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "340169a4f9e01afdf577c331adcae661b31c4c330d41252e62cd451123f91aa3",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/06/04/16543445429578.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/zkLHNEae.json"
+}

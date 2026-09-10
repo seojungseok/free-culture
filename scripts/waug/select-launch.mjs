@@ -1,0 +1,6 @@
+import fs from 'node:fs';
+const db=JSON.parse(fs.readFileSync('data/waug/catalog.json','utf8'));
+const codes=['ZdkVAM9x','vF4Z6VsG','MYBgKK7a','poSKc1qk','y9ppQMxK','DmaD1hOQ','99PBHMQK','zY8A9h0l','ZXzqLZwA','muLavTBe','YxlBFStb','U5ZNqfXS','WR3WtcJA','Hah4plsp','ixptI5E2','T3i1gzzj','ehfD2Ulu','TnJ7oVIL','i3RL4kYw','VH1Cjga1','wevX1T04','QlTVQvXT','h4gdvnhg','tiNrXkcN','0X7invFD','DfOIjArT','QLHlnsJF','swLHvma3','HHk6csWc','jgtrtDnj'];
+const entries=codes.map((id,index)=>{const p=db.products.find(p=>p.id===id);if(!p||p.eligibility==='excluded'||p.waterReviewRequired)throw new Error(`제외 또는 검수 대기 상품: ${id}`);const r=JSON.parse(fs.readFileSync(`.cache/waug/research/${id}.json`,'utf8'));return {placeId:p.placeId,primaryProductId:id,name:p.actualName,editorialPriority:index+1,searchVolume:null,searchRank:null,reviewCount:Number(r.text.match(/리뷰\s*([\d,]+)개/)?.[1]?.replaceAll(',',''))||0,source:p.detailUrl};});
+fs.writeFileSync('data/waug/launch-selection.json',JSON.stringify({selectedAt:new Date().toISOString(),requestedCount:30,selectionBasis:'검색량 원자료 미연결. 대표 여행지·브랜드 인지도와 실제 와그 상품 반응을 참고한 편집 우선순위이며 검색량 순위가 아님.',entries},null,2)+'\n');
+console.log({selected:entries.length,uniquePlaces:new Set(entries.map(e=>e.placeId)).size});

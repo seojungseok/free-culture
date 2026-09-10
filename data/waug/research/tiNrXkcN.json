@@ -1,0 +1,19 @@
+{
+  "id": "tiNrXkcN",
+  "detailUrl": "https://www.waug.com/ko/activities/113546",
+  "checkedAt": "2026-09-10T11:49:15.036Z",
+  "actualName": "과천 서울대공원 리프트 PKG (테마가든/과천과학관/동물원 등)",
+  "validUntil": "2026-11-30",
+  "pageSha256": "86f0ad6b30e90cc3b80fe59f41d2c6156301d43a09a343ee662a3578d1a5a218",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/01/20/17373391180423.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/tiNrXkcN.json"
+}

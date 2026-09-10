@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-09-10T12:46:08.575Z",
+  "corrections": [
+    "공식 페이지 자료가 제공되지 않아 판매 상품 본문만 근거로 사용했으며, 공식 운영시간·가격·주차·무료 입장·연령 조건은 확정하지 않았습니다.",
+    "1,200평 규모, 유아부터 초등학생 대상, 36개월 미만 무료 입장, 주차 할인 등 근거가 제공되지 않은 주장은 삭제했습니다.",
+    "AFTER 4 모험권을 독립된 시설이나 프로그램 장소가 아닌 네이처스케이프 플러스의 별도 입장 상품으로 바로잡았습니다.",
+    "일반권의 운영시간과 평일·주말 이용시간은 공식 자료가 없어 고정 수치로 제시하지 않고 방문일별 확인 안내로 수정했습니다.",
+    "행사 개최로 볼 수 있는 표현은 사용하지 않고, 2026년 9월 1일부터 9월 30일까지 유효한 판매 상품 정보로만 정리했습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "어떤 공간인가요?",
+      "urls": [
+        "https://www.waug.com/ko/activities/137871"
+      ]
+    },
+    {
+      "heading": "방문 일정은 어떻게 잡을까요?",
+      "urls": [
+        "https://www.waug.com/ko/activities/137871",
+        "https://www.waug.com/ko/activities/140094"
+      ]
+    },
+    {
+      "heading": "티켓 구매와 입장 방법",
+      "urls": [
+        "https://www.waug.com/ko/activities/137871",
+        "https://www.waug.com/ko/activities/140094"
+      ]
+    },
+    {
+      "heading": "방문 전 확인할 사항",
+      "urls": [
+        "https://www.waug.com/ko/activities/137871",
+        "https://www.waug.com/ko/activities/140094"
+      ]
+    },
+    {
+      "heading": "간단한 방문 순서",
+      "urls": [
+        "https://www.waug.com/ko/activities/140094",
+        "https://www.waug.com/ko/activities/137871"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": []
+}

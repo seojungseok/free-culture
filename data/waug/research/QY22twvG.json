@@ -1,0 +1,19 @@
+{
+  "id": "QY22twvG",
+  "detailUrl": "https://www.waug.com/ko/activities/120395",
+  "checkedAt": "2026-09-10T11:49:14.745Z",
+  "actualName": "용인투어패스 12 / 24 / 48시간권",
+  "validUntil": "2026-10-31",
+  "pageSha256": "a8a72d49851394b552effe8b248a84e8811a599fb06da1e8a60000b22758ce3c",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/01/02/17673299906901.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/QY22twvG.json"
+}

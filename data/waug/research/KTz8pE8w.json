@@ -1,0 +1,19 @@
+{
+  "id": "KTz8pE8w",
+  "detailUrl": "https://www.waug.com/ko/activities/122728",
+  "checkedAt": "2026-09-10T11:49:14.907Z",
+  "actualName": "히어로 플레이파크 입장권 (전국 6개 지점 이용 가능)",
+  "validUntil": "2026-09-30",
+  "pageSha256": "762ba07338e498ceb24c7b67d6f51e27a8b8f492433119a579b79adc2aa9e685",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/01/23/17691307049511.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/KTz8pE8w.json"
+}

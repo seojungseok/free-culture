@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-09-10T12:45:25.355Z",
+  "corrections": [
+    "행정안전부 공공데이터 분류 내용은 제공된 실제 근거에 없어 삭제했습니다.",
+    "상품 본문에 없는 하남스타필드 맞은편 위치 정보와 주차 관련 내용은 삭제했습니다.",
+    "공식 페이지를 직접 확인한 자료가 없으므로 평일·주말 운영시간과 휴무일을 고정 수치로 안내하지 않고 방문일별 확인 사항으로 수정했습니다.",
+    "정글챌린지는 독립 장소가 아니라 주렁주렁 하남점 내부 콘텐츠로 바로잡았습니다.",
+    "가격은 근거가 없어 기재하지 않았습니다.",
+    "현재 날짜가 상품 사용 기한에 가까우므로 구매 및 사용 가능 여부를 결제 전에 다시 확인하도록 수정했습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "장소와 주요 콘텐츠",
+      "urls": [
+        "https://www.waug.com/ko/activities/110908"
+      ]
+    },
+    {
+      "heading": "위치와 방문 준비",
+      "urls": [
+        "https://www.waug.com/ko/activities/110908"
+      ]
+    },
+    {
+      "heading": "운영시간과 휴무 확인",
+      "urls": [
+        "https://www.waug.com/ko/activities/110908"
+      ]
+    },
+    {
+      "heading": "온라인 상품 이용 방법",
+      "urls": [
+        "https://www.waug.com/ko/activities/110908"
+      ]
+    },
+    {
+      "heading": "취소와 환불 조건",
+      "urls": [
+        "https://www.waug.com/ko/activities/110908"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": []
+}

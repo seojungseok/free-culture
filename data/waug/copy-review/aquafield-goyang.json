@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-09-10T12:45:42.863Z",
+  "corrections": [
+    "공식 근거에서 확인되지 않은 찜질스파 요금 26,000원·21,000원과 36개월 미만 무료 내용을 삭제했습니다.",
+    "일반 주차시설과 주차요금 무료라는 단정을 삭제하고, 공식 무장애 정보에 확인되는 장애인 주차장만 안내했습니다.",
+    "찜질스파 이용 가능 시간 최대 6시간과 초과요금 내용을 삭제했습니다.",
+    "공식 자료에 없는 ‘오전 10시 입장 후 반나절 일정’ 같은 고정 일정 표현을 일반적인 일정 제안으로 바꿨습니다.",
+    "온라인 판매 상품의 유효기간은 제공된 상품 조건으로만 안내하고, 공식 시설의 상시 티켓 가격으로 확대하지 않았습니다.",
+    "아쿠아필드의 워터파크와 찜질스파를 별도 시설로 구분했습니다.",
+    "가격, 일반 주차요금, 최신 이용권 권종 및 일부 이용 조건을 확인할 공식 근거가 부족해 mustHold를 true로 설정했습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "찜질스파에서 볼 수 있는 시설",
+      "urls": [
+        "https://www.aquafield-ssg.co.kr/goyang/index.af",
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=fdcf9f57-1c9d-4100-9002-43f34d32bd46",
+        "https://www.waug.com/ko/activities/117728"
+      ]
+    },
+    {
+      "heading": "위치와 운영시간",
+      "urls": [
+        "https://www.aquafield-ssg.co.kr/goyang/index.af",
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=fdcf9f57-1c9d-4100-9002-43f34d32bd46",
+        "https://www.waug.com/ko/activities/117728"
+      ]
+    },
+    {
+      "heading": "온라인 이용권을 사용할 때",
+      "urls": [
+        "https://www.waug.com/ko/activities/117728"
+      ]
+    },
+    {
+      "heading": "편의시설과 일정 구성",
+      "urls": [
+        "https://access.visitkorea.or.kr/ms/detail.do?cotId=fdcf9f57-1c9d-4100-9002-43f34d32bd46",
+        "https://www.aquafield-ssg.co.kr/goyang/index.af"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": [
+    "https://access.visitkorea.or.kr/ms/detail.do?cotId=fdcf9f57-1c9d-4100-9002-43f34d32bd46",
+    "https://www.aquafield-ssg.co.kr/goyang/index.af"
+  ]
+}

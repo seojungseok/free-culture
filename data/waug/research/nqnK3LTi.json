@@ -1,0 +1,19 @@
+{
+  "id": "nqnK3LTi",
+  "detailUrl": "https://www.waug.com/ko/activities/119942",
+  "checkedAt": "2026-09-10T11:49:14.845Z",
+  "actualName": "경기 이천 슈퍼키즈랜드 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "64feefae094701d4be49dd442f173c45eb616792e6666c21e20b284da2ee52bc",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/05/07/17781187326021.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/nqnK3LTi.json"
+}

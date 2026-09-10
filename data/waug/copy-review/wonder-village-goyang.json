@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-09-10T12:47:06.440Z",
+  "corrections": [
+    "원더빌리지를 스타필드 고양과 별개의 독립 장소처럼 표현하지 않고 스타필드 고양 내 엔터테인먼트 콘텐츠로 바로잡았습니다.",
+    "근거에 없는 입장료 금액, 24개월 미만 무료 기준, 중학생 미만 보호자 동반 조건, 주차 무료 여부를 삭제했습니다.",
+    "브레드 이발소, 특정 체험 대상, 음료 패키지 외의 시설 구성은 제공된 근거에서 확인되지 않아 삭제하거나 단정하지 않았습니다.",
+    "상품 페이지의 유효기간은 2026년 7월 1일~9월 30일로 반영했으며, 가격과 개별 운영시간은 방문일 확인 사항으로 바꾸었습니다.",
+    "출처에 없는 별도 행사 홍보 내용은 포함하지 않았습니다.",
+    "출처가 입장료·연령 기준·주차 조건·원더빌리지 개별 운영을 모두 확인해 주지 않으므로 mustHold를 true로 설정했습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "원더빌리지에서 할 수 있는 체험",
+      "urls": [
+        "https://www.waug.com/ko/activities/120468",
+        "https://www.starfield.co.kr/goyang/main.do"
+      ]
+    },
+    {
+      "heading": "위치와 방문 동선",
+      "urls": [
+        "https://www.waug.com/ko/activities/120468",
+        "https://www.starfield.co.kr/goyang/main.do"
+      ]
+    },
+    {
+      "heading": "운영 및 문의 확인",
+      "urls": [
+        "https://www.waug.com/ko/activities/120468",
+        "https://www.starfield.co.kr/goyang/main.do"
+      ]
+    },
+    {
+      "heading": "티켓 사용 방법과 유효기간",
+      "urls": [
+        "https://www.waug.com/ko/activities/120468"
+      ]
+    },
+    {
+      "heading": "방문 전 확인할 내용",
+      "urls": [
+        "https://www.waug.com/ko/activities/120468",
+        "https://www.starfield.co.kr/goyang/main.do"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": [
+    "https://www.starfield.co.kr/goyang/main.do"
+  ]
+}

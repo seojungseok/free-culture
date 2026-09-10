@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-09-10T12:44:58.588Z",
+  "corrections": [
+    "초안의 고정 운영시간과 요금은 공식 리조트 페이지에서 확인되지 않아 삭제하고 방문일별 확인 안내로 수정했습니다.",
+    "주차 가능 여부, 주차요금·면수, 유모차 대여 여부는 근거가 부족해 단정하지 않았습니다.",
+    "루지와 케이블카를 별도 장소처럼 설명하지 않고 강화씨사이드리조트 안의 즐길거리와 연계 동선으로 정리했습니다.",
+    "루지의 규모는 상품 본문보다 공식 페이지의 표현에 맞춰 ‘동양 최대 규모’로 수정했습니다.",
+    "연령·신장 제한은 확인된 자료가 없어 구체적인 이용 가능 기준을 제시하지 않았습니다.",
+    "mustHold=true 사유: 공식 자료에 현장 요금, 세부 운영시간, 주차 및 연령·신장 기준이 없어 방문 전 추가 확인이 필요합니다."
+  ],
+  "provenance": [
+    {
+      "heading": "루지 시설과 코스",
+      "urls": [
+        "https://www.ganghwa-resort.co.kr/sub/com/com01.jsp"
+      ]
+    },
+    {
+      "heading": "케이블카·전망대·산책로 및 이용 장소",
+      "urls": [
+        "https://www.ganghwa-resort.co.kr/sub/com/com01.jsp",
+        "https://www.waug.com/ko/activities/110286"
+      ]
+    },
+    {
+      "heading": "티켓 사용·환불 안내",
+      "urls": [
+        "https://www.waug.com/ko/activities/110286"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": [
+    "https://www.ganghwa-resort.co.kr/sub/com/com01.jsp"
+  ]
+}

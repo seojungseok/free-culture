@@ -1,0 +1,19 @@
+{
+  "id": "9eBGFj06",
+  "detailUrl": "https://www.waug.com/ko/activities/148445",
+  "checkedAt": "2026-09-10T11:49:15.074Z",
+  "actualName": "경기 일산 원마운트 펀웨이브 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "bb0f4786981dec7bb48fb3dfa77f39216483949fc7b2ee9f99f5cc42034a96de",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/06/20/17504016414626.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/9eBGFj06.json"
+}

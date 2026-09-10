@@ -1,0 +1,19 @@
+{
+  "id": "KU94vTd6",
+  "detailUrl": "https://www.waug.com/ko/activities/109744",
+  "checkedAt": "2026-09-10T11:49:14.887Z",
+  "actualName": "[오픈특가] 경기 시흥 거북섬 더베이54 관상어 테마파크 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "0a91b9722ce620aae6a0cd34c21f1425c622e7b6243d6e9c9b2d572a459093d2",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/07/31/17854690137616.png",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/KU94vTd6.json"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "jgtrtDnj",
+  "detailUrl": "https://www.waug.com/ko/activities/122258",
+  "checkedAt": "2026-09-10T11:49:14.886Z",
+  "actualName": "경기 동탄 아르티스 테마파크 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "72f8e06c63192812fd82e25108ddf90c3860fdb84182204cedf020372a8555a7",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/03/17147118579833.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/jgtrtDnj.json"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "y9ppQMxK",
+  "detailUrl": "https://www.waug.com/ko/activities/116323",
+  "checkedAt": "2026-09-10T11:49:14.943Z",
+  "actualName": "경기 고양 일산 아쿠아플라넷 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "d425276606ebeeb4570db736e3d46243f8616038f735ac5c8add74a038f42023",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/07/31/17539454682956.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/y9ppQMxK.json"
+}

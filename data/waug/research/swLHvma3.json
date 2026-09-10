@@ -1,0 +1,19 @@
+{
+  "id": "swLHvma3",
+  "detailUrl": "https://www.waug.com/ko/activities/137156",
+  "checkedAt": "2026-09-10T11:49:14.705Z",
+  "actualName": "경기 과천 매직플로우 원더파크 입장권 - 로보카폴리 & 원더파크 콜라보",
+  "validUntil": "2026-09-30",
+  "pageSha256": "b07219a9ba2b63151e7e6be4a448d2afe2b95bc8864af270a9dcf27fde3b94be",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/04/22/17453082738071.png",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/swLHvma3.json"
+}

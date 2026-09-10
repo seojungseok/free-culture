@@ -1,0 +1,25 @@
+# 입장권·체험 운영
+
+`data/waug/catalog.json`에 사용자가 제공한 제휴링크와 상품 근거를 저장하고, `places.json`은 같은 장소의 시간권·패키지를 묶는다. `editorial.json`은 검수·이미지·예약·발행 이력의 원본이다. 사이트는 발행 이력과 일치하는 `published.json`만 읽으며 미래 글은 공개하지 않는다.
+
+## 매일 작업
+
+- Codex 예약 작업 20: 한국시간 05시, 기존 작업과 별도로 새 장소 최대 20개 작성·조사·이미지 제작·검수·push. 현재 프로젝트의 최신 요구사항을 따른다. 생성 작업에는 연결된 Codex 실행 환경이 필요하다.
+- GitHub Actions `waug.yml`: 한국시간 06시와 07시 재시도. 검수·이미지 업로드가 완료된 예약분만 하루 합계 20개까지 발행하고 Git push한다. 생성 기능을 서버 방문 요청에서 호출하지 않는다.
+- 기존 `daily.yml` 및 시티투어 작업은 유지한다. 와그 하루 20개에는 당일 먼저 발행한 와그 글도 포함한다. 다음 날 예약분은 06시 기준이며 Actions 시작은 서비스 상황에 따라 늦어질 수 있다.
+
+## 관리 경로
+
+[와그 관리·예약 발행 Actions](https://github.com/seojungseok/free-culture/actions/workflows/waug.yml)의 Run workflow에서 `run`, `pause`, `resume`, `import-env`를 선택한다. `import-env`의 links에는 `| 장소명 | https://www.waug.com/r/코드 |` 표를 넣는다. 등록만으로 발행되지 않으며 실제 조사·본문·이미지 검수를 통과해야 한다. 대화에 첨부한 파일을 홈페이지가 자동 수신하지 않는다.
+
+로컬 상태 확인은 `node scripts/waug/manage.mjs status`, 예약 확인·발행은 `node scripts/waug/manage.mjs run`이다. 동일 일자 이력과 잠금으로 중복 발행을 막는다. `launch-now`는 지정된 최초 발행일과 선택한 장소에만 적용되며 하루 20개 한도는 동일하다.
+
+## 이미지와 검수
+
+장소당 1200×630 대표 JPEG 하나를 대표·목록·OG에 재사용한다. 원본 사진 제공권과 편집권을 구분하고, 와그 사진은 식별 가능한 얼굴 여부를 기록한다. 편집 권한이 없으면 임의로 자르지 않는다. 썸네일 AI 생성과 필요시 본문 AI 생성은 내장 imagegen을 이용하고 프롬프트·해시·제작 시각을 저장한다. AI에는 실제 공공사진 출처를 붙이지 않고 실제 촬영과 구분한다. 생성 실패를 제작 완료로 처리하지 않는다.
+
+`thumbnail-prompts.json`, `generated-thumbnails.json`, `body-images.json`은 재사용 근거다. 이미지 업로드 HTTP·해시는 `image-upload-check.json`, 본문 링크·사진 응답은 `link-image-check.json`, 페이지 canonical·OG·제휴 고지는 `live-page-check.json`에 기록한다. 브라우저에서 모바일·PC 비율과 한글을 직접 확인한다.
+
+`research`의 메타데이터와 `copy-review`의 수정 근거는 보존한다. `editorial-research`는 초안 작성 당시의 검색 요약이며 **검증 완료 사실이 아니다**. 현재 공식 자료와 대조 후 작성한다. 전체 외부 원문과 고객 후기는 공개 저장소에 저장하지 않고 `.cache/waug`에만 임시 보관한다.
+
+실제 검색량 순위 원자료는 연결되지 않았다. 최초 30곳은 인지도와 와그 상품 반응을 참고한 편집 우선순위이며 검색량 상위라는 주장을 하지 않는다. 기존 글 주소·쿠팡 광고·정상 제휴링크를 보존한다.

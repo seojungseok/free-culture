@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-09-10T12:45:27.465Z",
+  "corrections": [
+    "초안의 ‘대규모 관광지’ 표현은 근거가 확인되는 약 3만 평 규모로 조정했습니다.",
+    "실내정원과 야외정원, 버드존은 독립 프로그램이 아니라 베고니아새정원 안의 관람 공간으로 정리했습니다.",
+    "야외정원 구성은 자료 간 표현이 달라 ‘8개’로 단정하지 않고 한국관광공사 안내의 세 가지 테마와 확인 가능한 정원명만 반영했습니다.",
+    "운영시간은 판매 상품과 한국관광공사 안내가 달라 하나의 고정 시간으로 단정하지 않았습니다.",
+    "초안에 있던 잠실역 5번 출구·7001번 버스 정보는 제공된 근거에서 확인되지 않아 삭제했습니다.",
+    "제공된 근거에서 확인되지 않은 체험 세부 내용, 사진 촬영 효과, 관람 소요 시간은 구체적으로 단정하지 않았습니다.",
+    "운영시간 자료가 서로 다르고 장소 자체의 최신 공식 운영 공지 원문이 제공되지 않아 방문 전 재확인이 필요합니다."
+  ],
+  "provenance": [
+    {
+      "heading": "주요 공간과 볼거리",
+      "urls": [
+        "https://www.waug.com/ko/activities/137528",
+        "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=248246"
+      ]
+    },
+    {
+      "heading": "추천 관람 순서",
+      "urls": [
+        "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=248246",
+        "https://www.waug.com/ko/activities/137528"
+      ]
+    },
+    {
+      "heading": "운영시간·휴무·이용 조건",
+      "urls": [
+        "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=248246",
+        "https://www.waug.com/ko/activities/137528"
+      ]
+    },
+    {
+      "heading": "입장권과 구매 전 확인 사항",
+      "urls": [
+        "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=248246",
+        "https://www.waug.com/ko/activities/137528"
+      ]
+    },
+    {
+      "heading": "방문 전 체크리스트",
+      "urls": [
+        "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=248246",
+        "https://www.waug.com/ko/activities/137528"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": [
+    "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=248246"
+  ]
+}

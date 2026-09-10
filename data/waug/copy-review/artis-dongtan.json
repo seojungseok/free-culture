@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-09-10T12:47:04.821Z",
+  "corrections": [
+    "공식 홈페이지 본문에서 구체적인 운영시간을 확인할 수 없어 주중·주말 운영시간과 입장 마감 시각을 고정 정보로 단정하지 않았습니다.",
+    "공식 홈페이지 본문에서 입장료와 상품 가격을 확인할 수 없어 금액을 삭제하고 방문일 상품 화면 확인으로 수정했습니다.",
+    "상품 본문에 주소가 ‘동탄대로19길 2 10’처럼 혼재되어 있어 공식 홈페이지의 주소인 ‘동탄대로 19길 10, 신유메디프라자 9층’을 사용했습니다.",
+    "아쿠아리움·동물원 외의 프로그램은 상품 본문에 소개된 콘텐츠 범위에서만 언급하고, 프로그램별 실제 운영 여부는 방문일 확인 사항으로 정리했습니다.",
+    "공식 운영시간과 요금의 직접 근거가 부족하고, 상품 정보와 공식 안내 사이에 확인 범위 차이가 있어 추가 확인이 필요합니다."
+  ],
+  "provenance": [
+    {
+      "heading": "공간 구성과 주요 콘텐츠",
+      "urls": [
+        "https://www.waug.com/ko/activities/122258"
+      ]
+    },
+    {
+      "heading": "운영 정보는 방문일에 확인",
+      "urls": [
+        "https://www.waug.com/ko/activities/122258",
+        "https://www.artisthemepark.co.kr/index.php/location/"
+      ]
+    },
+    {
+      "heading": "위치와 교통·주차",
+      "urls": [
+        "https://www.artisthemepark.co.kr/index.php/location/"
+      ]
+    },
+    {
+      "heading": "티켓 구매와 이용 방법",
+      "urls": [
+        "https://www.waug.com/ko/activities/122258"
+      ]
+    },
+    {
+      "heading": "방문 전 확인할 사항",
+      "urls": [
+        "https://www.artisthemepark.co.kr/index.php/location/",
+        "https://www.waug.com/ko/activities/122258"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": [
+    "https://www.artisthemepark.co.kr/index.php/location/"
+  ]
+}

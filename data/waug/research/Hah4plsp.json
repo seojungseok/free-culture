@@ -1,0 +1,19 @@
+{
+  "id": "Hah4plsp",
+  "detailUrl": "https://www.waug.com/ko/activities/137528",
+  "checkedAt": "2026-09-10T11:49:14.861Z",
+  "actualName": "경기 가평 베고니아새정원 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "4d7c0b823e5d7cf3272f62c62565e55b5b6753e44a2932d797e3fabae659f31f",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/01/29/17696531476060.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/Hah4plsp.json"
+}

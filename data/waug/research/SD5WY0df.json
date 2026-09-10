@@ -1,0 +1,19 @@
+{
+  "id": "SD5WY0df",
+  "detailUrl": "https://www.waug.com/ko/activities/119924",
+  "checkedAt": "2026-09-10T11:49:14.762Z",
+  "actualName": "파주 헤이리 사파리체험테마파크 이용권",
+  "validUntil": "2026-10-31",
+  "pageSha256": "b4e71fb33e88e353f7ea9746360b86f9eee31fbedf26f3509099b5d9b7d0c9e1",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/08/02/17225800341483.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/SD5WY0df.json"
+}

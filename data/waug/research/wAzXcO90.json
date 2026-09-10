@@ -1,0 +1,19 @@
+{
+  "id": "wAzXcO90",
+  "detailUrl": "https://www.waug.com/ko/activities/129758",
+  "checkedAt": "2026-09-10T11:49:14.925Z",
+  "actualName": "경기 뽀로로파크 오산중앙점 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "45585748f393205c6e7463df693a3694f5b945444381d760578c630b65cba16f",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/10/30/17617882065296.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/wAzXcO90.json"
+}

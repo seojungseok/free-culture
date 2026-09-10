@@ -1,0 +1,19 @@
+{
+  "id": "M9H7pJzT",
+  "detailUrl": "https://www.waug.com/ko/activities/121250",
+  "checkedAt": "2026-09-10T11:49:14.744Z",
+  "actualName": "화성투어패스 12 / 24시간권",
+  "validUntil": "2026-11-30",
+  "pageSha256": "19fbf695326faf2d511dd9f0d709863faf07eecdd64fa57fada24013e39fffba",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/09/24/17271655015016.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/M9H7pJzT.json"
+}

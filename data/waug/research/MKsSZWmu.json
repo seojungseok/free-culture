@@ -1,0 +1,19 @@
+{
+  "id": "MKsSZWmu",
+  "detailUrl": "https://www.waug.com/ko/activities/115594",
+  "checkedAt": "2026-09-10T11:49:14.802Z",
+  "actualName": "경기 쥬라리움 동탄점 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "49e12d0752b1058e345e369a9308a2b979effb638623f577ebda29e5faa0f37e",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/06/17703423512479.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/MKsSZWmu.json"
+}

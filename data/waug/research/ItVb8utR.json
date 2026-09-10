@@ -1,0 +1,19 @@
+{
+  "id": "ItVb8utR",
+  "detailUrl": "https://www.waug.com/ko/activities/120023",
+  "checkedAt": "2026-09-10T11:49:15.014Z",
+  "actualName": "과천 서울랜드 AFTER 6 야간권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "ce709ec16ea43ec725a8138f0435ab58e013608ad06ab84c77194dbd0e606c9d",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/08/27/17878125058690.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/ItVb8utR.json"
+}

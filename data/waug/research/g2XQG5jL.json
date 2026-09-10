@@ -1,0 +1,19 @@
+{
+  "id": "g2XQG5jL",
+  "detailUrl": "https://www.waug.com/ko/activities/135326",
+  "checkedAt": "2026-09-10T11:49:14.743Z",
+  "actualName": "경기 평택 황토참숯가마 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "ef53dcce8142c3f8b235bd195a9536d0e1d70729cb44264bd3c479b768bd0827",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/11/13/17314644707380.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/g2XQG5jL.json"
+}

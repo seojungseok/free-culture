@@ -1,0 +1,77 @@
+[
+  {
+    "slug": "zoolung-hanam",
+    "kind": "ai-generated",
+    "url": "https://mwohaji.kr/ticket-images/zoolung-hanam-body-60efc73f26a8.jpg",
+    "localPath": "public/ticket-images/zoolung-hanam-body-60efc73f26a8.jpg",
+    "alt": "알락꼬리여우원숭이를 표현한 AI 생성 이미지",
+    "credit": "AI 생성 이미지 · 주제 이해를 위한 이미지이며 실제 시설 촬영 사진이 아닙니다.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 135429,
+    "sha256": "60efc73f26a80bfc55d9dc86880f7067ce13622ca6d7c5ce351a7db133603fc0",
+    "inputHash": "47e5c3ff4a36d5da31694a680120d8ced98c717f04733d092f1cb687362a1bad",
+    "generation": {
+      "provider": "OpenAI imagegen",
+      "originalGeneration": true,
+      "promptHash": "65ca5ae29edb59aa8eaebe98b78b917fc65db88415f835fabf215695c6f7f74b",
+      "generatedAt": "2026-09-10T13:28:12.918Z",
+      "visualCheckedAt": "2026-09-10T13:30:00.426Z"
+    },
+    "necessityNote": "제공된 사진에 식별 가능한 얼굴이 있거나 무인 시설 사진이 없어 동물 관찰·미술 활동 주제 설명을 위한 최소 한 장만 제작",
+    "checkedAt": "2026-09-10T13:28:12.918Z",
+    "prompt": "Generate an original photorealistic editorial image for a Korean travel article, landscape aspect approximately 1200x630. A ring-tailed lemur close-up with natural green leaves, expressive detail, soft blurred background. Do not depict any real exhibit or facility. This illustrates the article topic, NOT a photo of the actual place. No words or text or logos. No people. Full frame photographic composition.",
+    "uploadedAt": "2026-09-10T13:32:13.279Z",
+    "verifiedAt": "2026-09-10T13:32:13.279Z"
+  },
+  {
+    "slug": "zoolung-dongtan",
+    "kind": "ai-generated",
+    "url": "https://mwohaji.kr/ticket-images/zoolung-dongtan-body-67188d333f37.jpg",
+    "localPath": "public/ticket-images/zoolung-dongtan-body-67188d333f37.jpg",
+    "alt": "앵무새를 표현한 AI 생성 이미지",
+    "credit": "AI 생성 이미지 · 주제 이해를 위한 이미지이며 실제 시설 촬영 사진이 아닙니다.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 112259,
+    "sha256": "67188d333f37081c419c98721226a7d47a7b32a432d1c55c0a76e84b90f826c5",
+    "inputHash": "1af22b1c3f66a99cfbef16305d6e1de4f51cd65985ddfefb500346621acf8f65",
+    "generation": {
+      "provider": "OpenAI imagegen",
+      "originalGeneration": true,
+      "promptHash": "256105740966192850b74d6bd64babbd84e17d2f98b2b0d8d8a5d0024aac52b5",
+      "generatedAt": "2026-09-10T13:28:12.918Z",
+      "visualCheckedAt": "2026-09-10T13:30:00.426Z"
+    },
+    "necessityNote": "제공된 사진에 식별 가능한 얼굴이 있거나 무인 시설 사진이 없어 동물 관찰·미술 활동 주제 설명을 위한 최소 한 장만 제작",
+    "checkedAt": "2026-09-10T13:28:12.918Z",
+    "prompt": "Generate an original photorealistic editorial image for a Korean travel article, landscape aspect approximately 1200x630. Close-up of a colorful parrot perched on a plain branch against blurred green leaves, detailed feathers. No humans, no animal enclosure or recognizable venue. This illustrates the article topic, NOT a photo of the actual place. No words or text or logos. No people. Full frame photographic composition.",
+    "uploadedAt": "2026-09-10T13:32:13.565Z",
+    "verifiedAt": "2026-09-10T13:32:13.565Z"
+  },
+  {
+    "slug": "gana-art-park",
+    "kind": "ai-generated",
+    "url": "https://mwohaji.kr/ticket-images/gana-art-park-body-fba8c1281b38.jpg",
+    "localPath": "public/ticket-images/gana-art-park-body-fba8c1281b38.jpg",
+    "alt": "미술 활동 도구를 표현한 AI 생성 이미지",
+    "credit": "AI 생성 이미지 · 주제 이해를 위한 이미지이며 실제 시설 촬영 사진이 아닙니다.",
+    "width": 1200,
+    "height": 630,
+    "bytes": 213492,
+    "sha256": "fba8c1281b3836e25f2eb8b0121a211e6fa5071e8769d8835351ae73005056e3",
+    "inputHash": "d8e15f549efc32b4926289e67ae5baa612c65bd10465a01d97186aa7ccc31a51",
+    "generation": {
+      "provider": "OpenAI imagegen",
+      "originalGeneration": true,
+      "promptHash": "e7da4c3eff048f13ba9b2a7bfc684a77caa7428646474e61eb0858cfe5936896",
+      "generatedAt": "2026-09-10T13:28:12.918Z",
+      "visualCheckedAt": "2026-09-10T13:30:00.426Z"
+    },
+    "necessityNote": "제공된 사진에 식별 가능한 얼굴이 있거나 무인 시설 사진이 없어 동물 관찰·미술 활동 주제 설명을 위한 최소 한 장만 제작",
+    "checkedAt": "2026-09-10T13:28:12.918Z",
+    "prompt": "Generate an original photorealistic editorial image for a Korean travel article, landscape aspect approximately 1200x630. Close-up of colorful paintbrushes and a used paint palette on a wooden table, natural daylight. Art activity concept, no specific artwork, building or actual facility. This illustrates the article topic, NOT a photo of the actual place. No words or text or logos. No people. Full frame photographic composition.",
+    "uploadedAt": "2026-09-10T13:32:14.039Z",
+    "verifiedAt": "2026-09-10T13:32:14.039Z"
+  }
+]

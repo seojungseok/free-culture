@@ -1,0 +1,19 @@
+{
+  "id": "T3i1gzzj",
+  "detailUrl": "https://www.waug.com/ko/activities/110807",
+  "checkedAt": "2026-09-10T11:49:15.012Z",
+  "actualName": "경기 '주렁주렁' 실내 동물원 동탄점 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "65acbb2ab06e12c1e6299b0ca981541671b34f3ba9e4dd3d3f843c0a4a850aa7",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/17/17159157605573.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/T3i1gzzj.json"
+}

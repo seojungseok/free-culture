@@ -1,0 +1,19 @@
+{
+  "id": "zgYso1gx",
+  "detailUrl": "https://www.waug.com/ko/activities/109700",
+  "checkedAt": "2026-09-10T11:49:14.803Z",
+  "actualName": "경기 쥬라리움 파주점 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "4f70a6416d5f41f06f25c2c1cec53d0168c53af3e1654479e1b0aa6c986d0396",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/06/17703453102475.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/zgYso1gx.json"
+}

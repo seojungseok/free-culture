@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "timezone": "Asia/Seoul",
+  "launchDay": "2026-09-10",
+  "launchLimit": 20,
+  "dailyAdditionalLimit": 20,
+  "dailyStartsOn": "2026-09-11",
+  "independentOfExistingArticles": true,
+  "allowUneditedWaugOfficialImages": true,
+  "requireRepresentativeImageVerified": true,
+  "requireVerifiedSources": true,
+  "notes": "한국시간 입장권 하루 총 20개, 당일 기존 발행 포함. 사용 허용 제공 사진 우선. 사용 가능 사진이나 편집 권한이 없으면 AI 썸네일을 만들며 본문도 꼭 필요한 경우 AI 이미지 허용. 와그 얼굴 사진은 편집 허락이 확인되어 얼굴을 제외한 경우 외 사용하지 않는다. 실제 사진과 AI를 구분하며 URL과 제휴링크 보존.",
+  "allowAiThumbnails": true,
+  "aiStyle": "place-specific photographic concept or illustration; no invented real facilities",
+  "allowNecessaryAiBodyImages": true,
+  "preferProvidedPhotos": true,
+  "requireWaugFaceReview": true
+}

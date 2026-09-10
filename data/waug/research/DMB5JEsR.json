@@ -1,0 +1,19 @@
+{
+  "id": "DMB5JEsR",
+  "detailUrl": "https://www.waug.com/ko/activities/113010",
+  "checkedAt": "2026-09-10T11:49:15.116Z",
+  "actualName": "경기 의정부 아일랜드캐슬 워터파크 로우시즌 이용권",
+  "validUntil": "2026-12-24",
+  "pageSha256": "84f5b00a9da95f16a30caf5cce0e38338fde61549722924cc38cff4c7d9228fd",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/07/21/17530659841617.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/DMB5JEsR.json"
+}

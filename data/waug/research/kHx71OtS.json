@@ -1,0 +1,19 @@
+{
+  "id": "kHx71OtS",
+  "detailUrl": "https://www.waug.com/ko/activities/145153",
+  "checkedAt": "2026-09-10T11:49:14.826Z",
+  "actualName": "경기 플레이월드 미사점 키즈카페 이용권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "a35783427ba495c8daf4e8eeb7b347fb44fdd59eb11624b6d21f46f614811b9d",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/01/15/17369061803289.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/kHx71OtS.json"
+}

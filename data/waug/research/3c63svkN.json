@@ -1,0 +1,19 @@
+{
+  "id": "3c63svkN",
+  "detailUrl": "https://www.waug.com/ko/activities/109787",
+  "checkedAt": "2026-09-10T11:49:14.724Z",
+  "actualName": "경기 시흥 심리카페멘토 배곧점",
+  "validUntil": null,
+  "pageSha256": "a737ac4c5c3c4d666ba2a83b8fced74b4184df1adf62d2baf08433b4260aa2e3",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2019/08/23/15665496170839.png",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/3c63svkN.json"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "5S3Va60e",
+  "detailUrl": "https://www.waug.com/ko/activities/135573",
+  "checkedAt": "2026-09-10T11:49:15.076Z",
+  "actualName": "고양 일산 원마운트 워터파크 + 찜질방 패키지",
+  "validUntil": "2026-11-01",
+  "pageSha256": "823a51d3c679f2424f3b20fa95f2276f60bb4f22743180bbc2fe0b1ec7d745ab",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/09/09/17889352090242.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/5S3Va60e.json"
+}

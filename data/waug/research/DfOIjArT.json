@@ -1,0 +1,19 @@
+{
+  "id": "DfOIjArT",
+  "detailUrl": "https://www.waug.com/ko/activities/127049",
+  "checkedAt": "2026-09-10T11:49:14.721Z",
+  "actualName": "울산 양떼목장 입장권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "6705e8d2f72b059da42ca7797d816c9fd5ef62fd8cfb4bfcb5019f358236a241",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/02/17700019015497.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/DfOIjArT.json"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "MTumZ6ys",
+  "detailUrl": "https://www.waug.com/ko/activities/148685",
+  "checkedAt": "2026-09-10T11:49:15.093Z",
+  "actualName": "경기 화성 하피랜드 워터파크 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "af83d71b22f3abe7d99a3772273f898c2fc03183604591f186a955d729124f7d",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/07/07/17518597252583.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/MTumZ6ys.json"
+}

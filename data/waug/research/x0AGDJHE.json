@@ -1,0 +1,19 @@
+{
+  "id": "x0AGDJHE",
+  "detailUrl": "https://www.waug.com/ko/activities/129361",
+  "checkedAt": "2026-09-10T11:49:14.786Z",
+  "actualName": "경기 고양 스타필드 스몹 이용권",
+  "validUntil": "2026-10-31",
+  "pageSha256": "1049b22c3e2ac293124f9bb4ec9436f6d0bf5480aadc60fde5f1618c9c323133",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/11/22/17006413959222.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/x0AGDJHE.json"
+}

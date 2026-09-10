@@ -1,0 +1,19 @@
+{
+  "id": "VUORffX9",
+  "detailUrl": "https://www.waug.com/ko/activities/141524",
+  "checkedAt": "2026-09-10T11:49:14.846Z",
+  "actualName": "김포 덕포진교육박물관 입장권",
+  "validUntil": null,
+  "pageSha256": "64a7ae54561d384d5c70bb252034f9c57cf51273f9d512eaf670f60237dd6910",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/03/21/17425362278213.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/VUORffX9.json"
+}

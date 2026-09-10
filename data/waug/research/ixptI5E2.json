@@ -1,0 +1,19 @@
+{
+  "id": "ixptI5E2",
+  "detailUrl": "https://www.waug.com/ko/activities/110908",
+  "checkedAt": "2026-09-10T11:49:14.945Z",
+  "actualName": "경기 '주렁주렁' 실내 동물원 하남점 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "218bce5a4539ecc1b878c331376de4c5aa0261a6fdae116305fa5fab52efda9a",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/17/17159157744715.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/ixptI5E2.json"
+}

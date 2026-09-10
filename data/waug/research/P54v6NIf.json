@@ -1,0 +1,19 @@
+{
+  "id": "P54v6NIf",
+  "detailUrl": "https://www.waug.com/ko/activities/150263",
+  "checkedAt": "2026-09-10T11:49:14.825Z",
+  "actualName": "[오픈특가] 경기 동탄 공룡월드 & 키즈카페 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "a6afcd32a63fcb0892b2878f464aac242986799d01b38841cc043a11f7b2b49f",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/20/17636178654683.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/P54v6NIf.json"
+}

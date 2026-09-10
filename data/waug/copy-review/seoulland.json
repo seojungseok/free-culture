@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-09-10T12:43:57.037Z",
+  "corrections": [
+    "근거에 없는 AFTER4 상품과 오후 4시 이후 입장 상품이라는 표현은 삭제하고, 공식 요금 안내의 야간요금 적용 시점과 별도 상품으로 확인되는 AFTER6만 구분했습니다.",
+    "초안에 있던 동문 주차장 무료 정산, 대중교통 출구, 외부 주차장 비용 관련 내용은 제공된 근거에서 확인되지 않아 삭제했습니다.",
+    "봄꽃·벚꽃·불꽃·카니발·퍼레이드 등 개최 기간이 확인되지 않은 행사 홍보는 삭제했습니다.",
+    "공공사진 촬영 연도와 현재 시설 배치에 관한 내용은 직접 근거가 없어 삭제했습니다.",
+    "공식 홈페이지에 없는 고정 운영시간을 일반화하지 않고, 방문 날짜별 운영시간과 시설·공연 일정을 확인하도록 수정했습니다.",
+    "티켓 가격은 제공된 서울랜드 공식 요금 안내에 있는 일반 요금만 사용했으며, 판매처별 할인가는 기재하지 않았습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "종일권과 야간권은 입장 시점으로 구분하세요",
+      "urls": [
+        "https://seoulland.co.kr/?p=38",
+        "https://www.waug.com/ko/activities/120023"
+      ]
+    },
+    {
+      "heading": "연령별 요금과 무료 이용 기준",
+      "urls": [
+        "https://seoulland.co.kr/?p=38"
+      ]
+    },
+    {
+      "heading": "파크이용권에 포함되지 않는 시설",
+      "urls": [
+        "https://seoulland.co.kr/?p=38"
+      ]
+    },
+    {
+      "heading": "방문 당일 확인할 운영 정보",
+      "urls": [
+        "https://seoulland.co.kr/?p=10",
+        "https://www.waug.com/ko/activities/114542"
+      ]
+    }
+  ],
+  "mustHold": true,
+  "officialUrls": [
+    "https://seoulland.co.kr/?p=38",
+    "https://seoulland.co.kr/?p=10"
+  ]
+}

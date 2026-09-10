@@ -1,0 +1,19 @@
+{
+  "id": "MpwrqK7X",
+  "detailUrl": "https://www.waug.com/ko/activities/117371",
+  "checkedAt": "2026-09-10T11:49:14.966Z",
+  "actualName": "경기 신북온천 스파 이용권",
+  "validUntil": "2026-11-30",
+  "pageSha256": "0d59c81c70b46543eb995d6a0c89366a2b099af75a0deb5cdb7a9a27634c9624",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/03/13/17733685563023.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/MpwrqK7X.json"
+}

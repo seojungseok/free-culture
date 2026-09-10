@@ -1,0 +1,19 @@
+{
+  "id": "h4gdvnhg",
+  "detailUrl": "https://www.waug.com/ko/activities/129757",
+  "checkedAt": "2026-09-10T11:49:15.034Z",
+  "actualName": "남양주 프리미어 뽀로로테마파크 다산 위드 트래블 종일권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "722064d33839f558df2b6c71194ead1c1d6f75f1e6e8744e06fea114465bc56f",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/20/17636363825140.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/h4gdvnhg.json"
+}

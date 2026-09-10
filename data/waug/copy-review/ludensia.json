@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-09-10T12:45:08.376Z",
+  "corrections": [
+    "초안의 ‘평일 수~금 10시~18시, 주말·공휴일 10시~21시’는 현재 공식 공지의 2026년 9월 운영 변경 안내와 날짜별 야간개장 공지를 우선하도록 고정 운영시간 표현을 삭제했습니다.",
+    "주소는 상품 본문의 ‘산북면 후리 51’ 대신 공식 오시는 길 페이지의 ‘산북면 금품1로 177’을 사용했습니다.",
+    "공식 근거가 확인되지 않은 무료 공연, 주차 조건, 입장권 가격은 단정하지 않았습니다.",
+    "초안의 2026년 9월 특정 공연 출연자 정보는 공식 게시물에 있으나 현장 변경 가능성을 함께 표시하고, 종료된 여름 프로그램과 기간이 지난 행사는 제외했습니다.",
+    "체험 프로그램을 독립 장소처럼 나열하지 않고 루덴시아 내부의 전시·체험 콘텐츠로 정리했습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "전시와 공간·주소",
+      "urls": [
+        "https://www.ludensia.com/home",
+        "https://ludensia.com/directions"
+      ]
+    },
+    {
+      "heading": "어린이 체험과 키즈클럽",
+      "urls": [
+        "https://www.ludensia.com/home"
+      ]
+    },
+    {
+      "heading": "2026년 9월 휴장·야간개장·공연",
+      "urls": [
+        "https://www.ludensia.com/home"
+      ]
+    },
+    {
+      "heading": "입장권 유효기간·교환·환불",
+      "urls": [
+        "https://www.waug.com/ko/activities/134830"
+      ]
+    },
+    {
+      "heading": "추천 동선과 방문 준비",
+      "urls": [
+        "https://www.ludensia.com/home",
+        "https://ludensia.com/directions",
+        "https://www.waug.com/ko/activities/134830"
+      ]
+    }
+  ],
+  "mustHold": false,
+  "officialUrls": [
+    "https://www.ludensia.com/home",
+    "https://ludensia.com/directions"
+  ]
+}

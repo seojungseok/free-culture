@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-09-10T12:46:45.440Z",
+  "corrections": [
+    "고양로봇박물관을 쥬쥬랜드와 별도의 독립 장소처럼 설명하지 않고 쥬쥬랜드의 구성 요소로 바로잡았습니다.",
+    "공식 자료에 확인되는 동물 먹이 체험과 로봇 프로그램만 남기고, 확인되지 않은 시설·활동 설명은 삭제했습니다.",
+    "운영시간·휴무일·주차장·단체 문의·무장애 정보를 각각 확인 가능한 공식 자료에 근거해 정리했습니다.",
+    "동물 도감의 54종 표시는 예시 이미지이므로 상시 관람 동물 수로 단정하지 않았습니다.",
+    "온라인 상품의 구매·사용·환불 조건과 유효기간은 상품 본문에 표시된 범위에서만 반영했습니다.",
+    "확정된 개최기간이 없는 별도 행사 홍보는 포함하지 않았습니다."
+  ],
+  "provenance": [
+    {
+      "heading": "1. 위치와 장소 구성",
+      "urls": [
+        "https://goyang.go.kr/visitgoyang/www/tourRsrcView.do?categ=1669872887926&key=205&tourRsrcNo=532",
+        "https://www.zoozoo.kr/"
+      ]
+    },
+    {
+      "heading": "2. 방문 목적에 따른 일정 구성",
+      "urls": [
+        "https://www.zoozoo.kr/",
+        "https://goyang.go.kr/visitgoyang/www/tourRsrcView.do?categ=1669872887926&key=205&tourRsrcNo=532"
+      ]
+    },
+    {
+      "heading": "3. 운영일과 방문 시점 확인",
+      "urls": [
+        "https://www.zoozoo.kr/",
+        "https://goyang.go.kr/visitgoyang/www/tourRsrcView.do?categ=1669872887926&key=205&tourRsrcNo=532"
+      ]
+    },
+    {
+      "heading": "4. 이용권과 방문 전 준비",
+      "urls": [
+        "https://www.waug.com/ko/activities/132659",
+        "https://www.zoozoo.kr/",
+        "https://goyang.go.kr/visitgoyang/www/tourRsrcView.do?categ=1669872887926&key=205&tourRsrcNo=532"
+      ]
+    }
+  ],
+  "mustHold": false,
+  "officialUrls": [
+    "https://goyang.go.kr/visitgoyang/www/tourRsrcView.do?categ=1669872887926&key=205&tourRsrcNo=532",
+    "https://www.zoozoo.kr/"
+  ]
+}

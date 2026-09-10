@@ -1,0 +1,19 @@
+{
+  "id": "8YvEYsQG",
+  "detailUrl": "https://www.waug.com/ko/activities/150990",
+  "checkedAt": "2026-09-10T11:49:14.666Z",
+  "actualName": "김포 테마파크 패키지 이용권",
+  "validUntil": "2026-12-31",
+  "pageSha256": "a2cf710e5067f1bab07c51cc94ebb35927b034c70caa3a3b356b69061ba54860",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/01/08/17678502370719.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/8YvEYsQG.json"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "HHk6csWc",
+  "detailUrl": "https://www.waug.com/ko/activities/120468",
+  "checkedAt": "2026-09-10T11:49:14.923Z",
+  "actualName": "고양 스타필드 매직플로우 원더빌리지 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "f2ce38ac920f9cfb683013b2ea33eadddd10608cb0c314d4a9fabacf3a4cbff2",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/26/17824606157947.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/HHk6csWc.json"
+}

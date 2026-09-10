@@ -1,0 +1,19 @@
+{
+  "id": "TnJ7oVIL",
+  "detailUrl": "https://www.waug.com/ko/activities/117726",
+  "checkedAt": "2026-09-10T11:49:14.993Z",
+  "actualName": "하남 아쿠아필드 찜질스파 입장권",
+  "validUntil": "2026-09-30",
+  "pageSha256": "da1dd17797fa8e96f10c5c92da41145986715bb43f755c253f5881c187c3c016",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/12/29/16407537532808.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/TnJ7oVIL.json"
+}

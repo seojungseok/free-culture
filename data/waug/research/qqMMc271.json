@@ -1,0 +1,19 @@
+{
+  "id": "qqMMc271",
+  "detailUrl": "https://www.waug.com/ko/activities/140504",
+  "checkedAt": "2026-09-10T11:49:14.884Z",
+  "actualName": "경기 화성 서해랑 제부도해상케이블카 + 야외방탈출 '더 트릭 아일랜드' 패키지",
+  "validUntil": "2026-10-31",
+  "pageSha256": "d8fe94a382bc2c5e0eeed0aa185855ed7f13fe089a2a55aceff74e924d801810",
+  "httpStatus": 200,
+  "imageCandidates": [
+    {
+      "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/08/02/17225849948813.jpg",
+      "provider": "waug",
+      "rightsStatus": "pending",
+      "matchStatus": "pending"
+    }
+  ],
+  "verificationStatus": "needs_editor_review",
+  "privateTextCache": ".cache/waug/research/qqMMc271.json"
+}
