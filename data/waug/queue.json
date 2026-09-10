@@ -20,7 +20,7 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": "gimpo-monsterium",
-      "status": "scheduled",
+      "status": "published",
       "writingStatus": "complete",
       "imageStatus": "approved",
       "publicationDay": "2026-09-11",
@@ -29,7 +29,8 @@
       "attempts": 0,
       "stages": {},
       "notBefore": null,
-      "validUntil": "2026-12-31"
+      "validUntil": "2026-12-31",
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "place-148970",
@@ -124,7 +125,7 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": "nature-scape-dongtan",
-      "status": "scheduled",
+      "status": "published",
       "writingStatus": "complete",
       "imageStatus": "approved",
       "publicationDay": "2026-09-11",
@@ -133,7 +134,8 @@
       "attempts": 0,
       "stages": {},
       "notBefore": "2026-09-01",
-      "validUntil": "2026-09-30"
+      "validUntil": "2026-09-30",
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "place-137156",
@@ -149,7 +151,7 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": "wonderpark-gwacheon",
-      "status": "scheduled",
+      "status": "published",
       "writingStatus": "complete",
       "imageStatus": "approved",
       "publicationDay": "2026-09-11",
@@ -158,7 +160,8 @@
       "attempts": 0,
       "stages": {},
       "notBefore": null,
-      "validUntil": "2026-09-30"
+      "validUntil": "2026-09-30",
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "place-118035",
@@ -626,7 +629,7 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": "petite-france-italian-village",
-      "status": "scheduled",
+      "status": "published",
       "writingStatus": "complete",
       "imageStatus": "approved",
       "publicationDay": "2026-09-11",
@@ -635,7 +638,8 @@
       "attempts": 0,
       "stages": {},
       "notBefore": null,
-      "validUntil": "2026-10-31"
+      "validUntil": "2026-10-31",
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "place-109007",
@@ -807,7 +811,7 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": "yangpyeong-sheep-ranch",
-      "status": "scheduled",
+      "status": "published",
       "writingStatus": "complete",
       "imageStatus": "approved",
       "publicationDay": "2026-09-11",
@@ -816,7 +820,8 @@
       "attempts": 0,
       "stages": {},
       "notBefore": null,
-      "validUntil": "2026-12-31"
+      "validUntil": "2026-12-31",
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "place-122258",
@@ -832,7 +837,7 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": "artis-dongtan",
-      "status": "scheduled",
+      "status": "published",
       "writingStatus": "complete",
       "imageStatus": "approved",
       "publicationDay": "2026-09-11",
@@ -841,7 +846,8 @@
       "attempts": 0,
       "stages": {},
       "notBefore": null,
-      "validUntil": "2026-12-31"
+      "validUntil": "2026-12-31",
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "place-109744",
@@ -910,7 +916,7 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": "pororo-dasan",
-      "status": "scheduled",
+      "status": "published",
       "writingStatus": "complete",
       "imageStatus": "approved",
       "publicationDay": "2026-09-11",
@@ -919,7 +925,8 @@
       "attempts": 0,
       "stages": {},
       "notBefore": null,
-      "validUntil": "2026-09-30"
+      "validUntil": "2026-09-30",
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "place-122728",
@@ -967,7 +974,7 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": "wonder-village-goyang",
-      "status": "scheduled",
+      "status": "published",
       "writingStatus": "complete",
       "imageStatus": "approved",
       "publicationDay": "2026-09-11",
@@ -976,7 +983,8 @@
       "attempts": 0,
       "stages": {},
       "notBefore": "2026-07-01",
-      "validUntil": "2026-09-30"
+      "validUntil": "2026-09-30",
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "place-129758",
@@ -1044,7 +1052,7 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": "zoozoo-land",
-      "status": "scheduled",
+      "status": "published",
       "writingStatus": "complete",
       "imageStatus": "approved",
       "publicationDay": "2026-09-11",
@@ -1053,7 +1061,8 @@
       "attempts": 0,
       "stages": {},
       "notBefore": null,
-      "validUntil": "2026-09-30"
+      "validUntil": "2026-09-30",
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "shinbuk-spa",
@@ -1122,7 +1131,7 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": "seoul-grand-park-lift",
-      "status": "scheduled",
+      "status": "published",
       "writingStatus": "complete",
       "imageStatus": "approved",
       "publicationDay": "2026-09-11",
@@ -1131,7 +1140,8 @@
       "attempts": 0,
       "stages": {},
       "notBefore": "2026-03-17",
-      "validUntil": "2026-11-30"
+      "validUntil": "2026-11-30",
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "place-148445",

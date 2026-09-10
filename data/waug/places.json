@@ -41,7 +41,7 @@
         "QlTVQvXT"
       ],
       "articleSlug": "gimpo-monsterium",
-      "status": "scheduled",
+      "status": "published",
       "thumbnail": {
         "slug": "gimpo-monsterium",
         "localPath": "public/ticket-images/gimpo-monsterium-748bb1912e98.jpg",
@@ -99,7 +99,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": null
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "id": "place-148970",
@@ -272,7 +272,7 @@
         "wevX1T04"
       ],
       "articleSlug": "nature-scape-dongtan",
-      "status": "scheduled",
+      "status": "published",
       "thumbnail": {
         "slug": "nature-scape-dongtan",
         "localPath": "public/ticket-images/nature-scape-dongtan-5087c2165539.jpg",
@@ -330,7 +330,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": null
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "id": "place-137156",
@@ -341,7 +341,7 @@
         "swLHvma3"
       ],
       "articleSlug": "wonderpark-gwacheon",
-      "status": "scheduled",
+      "status": "published",
       "thumbnail": {
         "slug": "wonderpark-gwacheon",
         "localPath": "public/ticket-images/wonderpark-gwacheon-b4e349f0f5b0.jpg",
@@ -389,7 +389,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": null
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "id": "place-127049",
@@ -1009,7 +1009,7 @@
         "WR3WtcJA"
       ],
       "articleSlug": "petite-france-italian-village",
-      "status": "scheduled",
+      "status": "published",
       "thumbnail": {
         "slug": "petite-france-italian-village",
         "localPath": "public/ticket-images/petite-france-italian-village-e1c15fc6de59.jpg",
@@ -1058,7 +1058,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": null
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "id": "place-109007",
@@ -1319,7 +1319,7 @@
         "0X7invFD"
       ],
       "articleSlug": "yangpyeong-sheep-ranch",
-      "status": "scheduled",
+      "status": "published",
       "thumbnail": {
         "slug": "yangpyeong-sheep-ranch",
         "localPath": "public/ticket-images/yangpyeong-sheep-ranch-1f7b6492a727.jpg",
@@ -1367,7 +1367,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": null
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "id": "place-137528",
@@ -1634,7 +1634,7 @@
         "jgtrtDnj"
       ],
       "articleSlug": "artis-dongtan",
-      "status": "scheduled",
+      "status": "published",
       "thumbnail": {
         "slug": "artis-dongtan",
         "localPath": "public/ticket-images/artis-dongtan-2996a30ed8a0.jpg",
@@ -1682,7 +1682,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": null
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "id": "place-109744",
@@ -1814,7 +1814,7 @@
         "h4gdvnhg"
       ],
       "articleSlug": "pororo-dasan",
-      "status": "scheduled",
+      "status": "published",
       "thumbnail": {
         "slug": "pororo-dasan",
         "localPath": "public/ticket-images/pororo-dasan-e4a9e16bf824.jpg",
@@ -1872,7 +1872,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": null
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "id": "place-122728",
@@ -1913,7 +1913,7 @@
         "HHk6csWc"
       ],
       "articleSlug": "wonder-village-goyang",
-      "status": "scheduled",
+      "status": "published",
       "thumbnail": {
         "slug": "wonder-village-goyang",
         "localPath": "public/ticket-images/wonder-village-goyang-7912d55cd1c9.jpg",
@@ -1961,7 +1961,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": null
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "id": "place-129758",
@@ -2209,7 +2209,7 @@
         "QLHlnsJF"
       ],
       "articleSlug": "zoozoo-land",
-      "status": "scheduled",
+      "status": "published",
       "thumbnail": {
         "slug": "zoozoo-land",
         "localPath": "public/ticket-images/zoozoo-land-412ae43430d0.jpg",
@@ -2257,7 +2257,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": null
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "id": "shinbuk-spa",
@@ -2813,7 +2813,7 @@
         "tiNrXkcN"
       ],
       "articleSlug": "seoul-grand-park-lift",
-      "status": "scheduled",
+      "status": "published",
       "thumbnail": {
         "slug": "seoul-grand-park-lift",
         "localPath": "public/ticket-images/seoul-grand-park-lift-a01af776cc5c.jpg",
@@ -2861,7 +2861,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": null
+      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "id": "place-110286",
