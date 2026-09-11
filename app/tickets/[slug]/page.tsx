@@ -1,4 +1,6 @@
 import TicketLinks from '@/components/TicketLinks';
+import TicketEditorial from '@/components/TicketEditorial';
+import {TICKET_POLICY} from '@/lib/ticket-guarantee.mjs';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
@@ -9,11 +11,13 @@ export const dynamicParams=true;
 export function generateStaticParams(){return getTickets().map(a=>({slug:a.slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{
   const a=getTicket((await params).slug);if(!a)return {title:'장소 안내를 찾을 수 없습니다',robots:{index:false,follow:false}};
+  if(a.previewScenario)return {title:a.title,description:a.description,robots:{index:false,follow:false},alternates:{canonical:`/tickets/${a.slug}`},openGraph:{images:[{url:a.thumbnail.url,alt:a.thumbnail.alt}]}};
   const image={url:a.thumbnail.url,width:a.thumbnail.width,height:a.thumbnail.height,alt:a.thumbnail.alt};
   return {title:a.title,description:a.description,alternates:{canonical:`/tickets/${a.slug}`},openGraph:{title:a.title,description:a.description,type:'article',url:`${SITE.url}/tickets/${a.slug}`,images:[image]},twitter:{card:'summary_large_image',title:a.title,description:a.description,images:[a.thumbnail.url]}};
 }
 export default async function TicketPage({params}:{params:Promise<{slug:string}>}){
   const a=getTicket((await params).slug);if(!a)notFound();
+  if(a.contentPolicyVersion===TICKET_POLICY)return <TicketEditorial article={a}/>;
   const jsonLd={'@context':'https://schema.org','@type':'Article',headline:a.title,description:a.description,image:[a.thumbnail.url],datePublished:a.publishedAt,dateModified:a.checkedAt,mainEntityOfPage:`${SITE.url}/tickets/${a.slug}`,author:{'@type':'Organization',name:SITE.name}};
   return <main className="mx-auto max-w-3xl px-5 py-8 sm:px-8">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd).replace(/</g,'\\u003c')}}/>

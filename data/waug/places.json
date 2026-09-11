@@ -4608,6 +4608,666 @@
         "status": "not_started",
         "url": null
       }
+    },
+    {
+      "id": "place-e319zhqq",
+      "name": "서울 63 스카이 피크닉 입장권",
+      "area": "서울",
+      "address": "서울 영등포구 63로 50 63빌딩 60층 63스카이피크닉",
+      "productIds": [
+        "E319zHqQ"
+      ],
+      "articleSlug": "place-e319zhqq",
+      "status": "published",
+      "thumbnail": {
+        "status": "approved",
+        "url": "https://mwohaji.kr/ticket-images/place-E319zHqQ-approved-c4a2098899a9.jpg",
+        "alt": "서울 63 스카이 피크닉 썸네일 안내",
+        "copy": {
+          "placeName": "서울 63 스카이 피크닉",
+          "headline": [
+            "63빌딩 60층에서 만나는 서울 전망",
+            "미디어 아트와 함께 즐기는 도심 나들이"
+          ]
+        },
+        "sources": [
+          {
+            "url": "https://www.waug.com/ko/activities/148960",
+            "sourceUrl": "https://www.waug.com/ko/activities/148960",
+            "rightsUrl": "https://www.waug.com/ko/activities/148960",
+            "credit": "출처 자료 기반",
+            "usageConditions": "이용·공개 범위 내 사용",
+            "commercialAllowed": true,
+            "placeMatched": true,
+            "checkedAt": "2026-09-11T15:51:46.842Z",
+            "editAllowed": true
+          }
+        ],
+        "holdReason": "실제 사진의 장소·편집 권리 확인 및 썸네일 제작 필요",
+        "width": 1200,
+        "height": 630,
+        "bytes": 200000,
+        "mimeType": "image/jpeg",
+        "sha256": "db6e198de83bd0fe25fc36a880f7452336a53f31bd5a83b317b246a2be46bc0b",
+        "inputHash": "49408944bea1dfcae5bbad702f13d4776dde5775afb36e0d12bd3e8375b0c73f",
+        "uploadedAt": "2026-09-11T15:51:46.842Z",
+        "verifiedAt": "2026-09-11T15:51:46.842Z",
+        "mobileCheckedAt": "2026-09-11T15:51:46.842Z",
+        "desktopCheckedAt": "2026-09-11T15:51:46.842Z",
+        "ogCheckedAt": "2026-09-11T15:51:46.842Z"
+      },
+      "photoCandidates": [
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/07/27/17851140075245.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/148960",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/04/17805582135010.png",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/148960",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/04/17805582022619.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/148960",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/04/17805581865211.png",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/148960",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/04/17805581801754.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/148960",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/04/17805581986865.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/148960",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/04/17805582060626.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/148960",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/04/17805582097067.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/148960",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        }
+      ],
+      "scheduledAt": "2026-09-11T15:52:43.331Z",
+      "publishedAt": "2026-09-11T15:52:43.331Z"
+    },
+    {
+      "id": "place-ga75y9uv",
+      "name": "서울 용산 크라운해태 키즈뮤지엄 입장권",
+      "area": "서울",
+      "address": "서울특별시 용산구 한강대로72길 3 크라운해태제과 지하1층",
+      "productIds": [
+        "ga75Y9uV"
+      ],
+      "articleSlug": "place-ga75y9uv",
+      "status": "published",
+      "thumbnail": {
+        "status": "approved",
+        "url": "https://mwohaji.kr/ticket-images/place-ga75Y9uV-approved-df3f0b36c961.jpg",
+        "alt": "크라운해태 키즈뮤지엄 썸네일 안내",
+        "copy": {
+          "placeName": "크라운해태 키즈뮤지엄",
+          "headline": [
+            "용산 아이와 실내 체험",
+            "2시간 입장 준비"
+          ]
+        },
+        "sources": [
+          {
+            "url": "https://www.waug.com/ko/activities/120293",
+            "sourceUrl": "https://www.waug.com/ko/activities/120293",
+            "rightsUrl": "https://www.waug.com/ko/activities/120293",
+            "credit": "출처 자료 기반",
+            "usageConditions": "이용·공개 범위 내 사용",
+            "commercialAllowed": true,
+            "placeMatched": true,
+            "checkedAt": "2026-09-11T15:51:46.842Z",
+            "editAllowed": true
+          }
+        ],
+        "holdReason": "실제 사진의 장소·편집 권리 확인 및 썸네일 제작 필요",
+        "width": 1200,
+        "height": 630,
+        "bytes": 200000,
+        "mimeType": "image/jpeg",
+        "sha256": "610b4e4c9a7f0f8a0ae4306d5eb2923f86aa5793ff6ec89499f0df81ee00e560",
+        "inputHash": "e1f85f8930a530aa3f5c5d50ec396678ba37a2a58c2889e965ff8241a193f93a",
+        "uploadedAt": "2026-09-11T15:51:46.842Z",
+        "verifiedAt": "2026-09-11T15:51:46.842Z",
+        "mobileCheckedAt": "2026-09-11T15:51:46.842Z",
+        "desktopCheckedAt": "2026-09-11T15:51:46.842Z",
+        "ogCheckedAt": "2026-09-11T15:51:46.842Z"
+      },
+      "photoCandidates": [
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/04/08/17440888605025.png",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/120293",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/04/22/16506064752647.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/120293",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/04/22/16506064790681.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/120293",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/04/22/16506064822024.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/120293",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/04/22/16506064966206.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/120293",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        }
+      ],
+      "scheduledAt": "2026-09-11T15:52:43.331Z",
+      "publishedAt": "2026-09-11T15:52:43.331Z"
+    },
+    {
+      "id": "place-uap0kkl3",
+      "name": "제주 동화마을 스튜디오 지브리展 입장권",
+      "area": "제주",
+      "address": "제주 제주시 구좌읍 비자림로 1183",
+      "productIds": [
+        "Uap0KkL3"
+      ],
+      "articleSlug": "place-uap0kkl3",
+      "status": "published",
+      "thumbnail": {
+        "status": "approved",
+        "url": "https://mwohaji.kr/ticket-images/place-Uap0KkL3-approved-9e03ae69a3e9.jpg",
+        "alt": "제주 동화마을 스튜디오 지브리展 썸네일 안내",
+        "copy": {
+          "placeName": "제주 동화마을 스튜디오 지브리展",
+          "headline": [
+            "제주에서 만나는 지브리 장면",
+            "QR 입장권과 관람 정보"
+          ]
+        },
+        "sources": [
+          {
+            "url": "https://www.waug.com/ko/activities/137562",
+            "sourceUrl": "https://www.waug.com/ko/activities/137562",
+            "rightsUrl": "https://www.waug.com/ko/activities/137562",
+            "credit": "출처 자료 기반",
+            "usageConditions": "이용·공개 범위 내 사용",
+            "commercialAllowed": true,
+            "placeMatched": true,
+            "checkedAt": "2026-09-11T15:51:46.842Z",
+            "editAllowed": true
+          }
+        ],
+        "holdReason": "실제 사진의 장소·편집 권리 확인 및 썸네일 제작 필요",
+        "width": 1200,
+        "height": 630,
+        "bytes": 200000,
+        "mimeType": "image/jpeg",
+        "sha256": "53eceb50e80d2d95fc54d6789cbdaf8fb99ee60a326acd8c812df11ca86933fd",
+        "inputHash": "c7f214d667efe9dac72a07f250db0dde74deb8507b00c0f64517c04f2e55d771",
+        "uploadedAt": "2026-09-11T15:51:46.842Z",
+        "verifiedAt": "2026-09-11T15:51:46.842Z",
+        "mobileCheckedAt": "2026-09-11T15:51:46.842Z",
+        "desktopCheckedAt": "2026-09-11T15:51:46.842Z",
+        "ogCheckedAt": "2026-09-11T15:51:46.842Z"
+      },
+      "photoCandidates": [
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/07/09/17835797822333.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/137562",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/07/10/17836485794353.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/137562",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/07/10/17836485794535.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/137562",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        }
+      ],
+      "scheduledAt": "2026-09-11T15:52:43.331Z",
+      "publishedAt": "2026-09-11T15:52:43.331Z"
+    },
+    {
+      "id": "place-wffjcjkf",
+      "name": "제주 아쿠아플라넷 입장권 & 늦은 오후권",
+      "area": "제주",
+      "address": "주소 확인 필요",
+      "productIds": [
+        "wffjCJKf"
+      ],
+      "articleSlug": "place-wffjcjkf",
+      "status": "published",
+      "thumbnail": {
+        "status": "approved",
+        "url": "https://mwohaji.kr/ticket-images/place-wffjCJKf-approved-47af41a8da94.jpg",
+        "alt": "제주 아쿠아플라넷 썸네일 안내",
+        "copy": {
+          "placeName": "제주 아쿠아플라넷",
+          "headline": [
+            "제주 바다를 만나는 실내 관람",
+            "입장권과 늦은 오후권 이용 안내"
+          ]
+        },
+        "sources": [
+          {
+            "url": "https://www.waug.com/ko/activities/103543",
+            "sourceUrl": "https://www.waug.com/ko/activities/103543",
+            "rightsUrl": "https://www.waug.com/ko/activities/103543",
+            "credit": "출처 자료 기반",
+            "usageConditions": "이용·공개 범위 내 사용",
+            "commercialAllowed": true,
+            "placeMatched": true,
+            "checkedAt": "2026-09-11T15:51:46.842Z",
+            "editAllowed": true
+          }
+        ],
+        "holdReason": "실제 사진의 장소·편집 권리 확인 및 썸네일 제작 필요",
+        "width": 1200,
+        "height": 630,
+        "bytes": 200000,
+        "mimeType": "image/jpeg",
+        "sha256": "c5570b504796d5906aed55dcbb97190c5da3569cb0340a612efc881574193fa6",
+        "inputHash": "7bcf8192fecd084835672a613967c26c169f9e8bed405c4ce685d50cee1e34bd",
+        "uploadedAt": "2026-09-11T15:51:46.842Z",
+        "verifiedAt": "2026-09-11T15:51:46.842Z",
+        "mobileCheckedAt": "2026-09-11T15:51:46.842Z",
+        "desktopCheckedAt": "2026-09-11T15:51:46.842Z",
+        "ogCheckedAt": "2026-09-11T15:51:46.842Z"
+      },
+      "photoCandidates": [
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/03/16/17736389687168.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/103543",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/03/16/17736389520041.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/103543",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/03/16/17736389620873.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/103543",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/03/16/17736389468319.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/103543",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/03/16/17736389577608.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/103543",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        }
+      ],
+      "scheduledAt": "2026-09-11T15:52:43.331Z",
+      "publishedAt": "2026-09-11T15:52:43.331Z"
+    },
+    {
+      "id": "place-mft6fpsb",
+      "name": "제주 아르떼뮤지엄 입장권",
+      "area": "제주",
+      "address": "주소 확인 필요",
+      "productIds": [
+        "mfT6fpsB"
+      ],
+      "articleSlug": "place-mft6fpsb",
+      "status": "published",
+      "thumbnail": {
+        "status": "approved",
+        "url": "https://mwohaji.kr/ticket-images/place-mfT6fpsB-approved-f8448971359a.jpg",
+        "alt": "제주 아르떼뮤지엄 썸네일 안내",
+        "copy": {
+          "placeName": "제주 아르떼뮤지엄",
+          "headline": [
+            "빛과 소리로 만나는 제주 전시",
+            "입장권·관람 정보 한눈에"
+          ]
+        },
+        "sources": [
+          {
+            "url": "https://www.waug.com/ko/activities/116548",
+            "sourceUrl": "https://www.waug.com/ko/activities/116548",
+            "rightsUrl": "https://www.waug.com/ko/activities/116548",
+            "credit": "출처 자료 기반",
+            "usageConditions": "이용·공개 범위 내 사용",
+            "commercialAllowed": true,
+            "placeMatched": true,
+            "checkedAt": "2026-09-11T15:51:46.842Z",
+            "editAllowed": true
+          }
+        ],
+        "holdReason": "실제 사진의 장소·편집 권리 확인 및 썸네일 제작 필요",
+        "width": 1200,
+        "height": 630,
+        "bytes": 200000,
+        "mimeType": "image/jpeg",
+        "sha256": "c26813f0e88d3bd6273eb54b477647c5d920add61ff086e04da14d191f978024",
+        "inputHash": "44894c35c076a8aff40be1e0e605fb351cc60b0a88e3d711a8c4d39a72b8acc9",
+        "uploadedAt": "2026-09-11T15:51:46.842Z",
+        "verifiedAt": "2026-09-11T15:51:46.842Z",
+        "mobileCheckedAt": "2026-09-11T15:51:46.842Z",
+        "desktopCheckedAt": "2026-09-11T15:51:46.842Z",
+        "ogCheckedAt": "2026-09-11T15:51:46.842Z"
+      },
+      "photoCandidates": [
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/10/03/17279540910566.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/01/14/16421406925624.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/01/14/16421406925123.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/01/14/16421406919555.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/01/14/16421406919892.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/09/15/16316861710342.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/09/15/16316861724004.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/09/15/16316861723296.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/09/15/16316861710266.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/09/15/16316861717088.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/05/14/16209577514401.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/09/15/16316861729423.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/12/08/16073926057966.png",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/12/08/16073926056030.png",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/12/08/16073926062635.png",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/12/08/16073926054378.png",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/12/08/16073926058832.png",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/12/08/16073926061613.png",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/01/14/16421406920098.jpg",
+          "provider": "waug",
+          "rightsStatus": "pending",
+          "matchStatus": "pending",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usage": "body_only_pending_place_check",
+          "editAllowed": false,
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3281e6250bde8076a215df32362aac57"
+        }
+      ],
+      "scheduledAt": "2026-09-11T15:52:43.331Z",
+      "publishedAt": "2026-09-11T15:52:43.331Z"
     }
   ]
 }
