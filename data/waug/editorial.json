@@ -6059,177 +6059,121 @@
       "placeId": "place-e319zhqq",
       "placeName": "서울 63 스카이 피크닉",
       "area": "서울",
-      "address": "서울 영등포구 63로 50 63빌딩 60층 63스카이피크닉",
+      "address": "서울 영등포구 63로 50, 63빌딩 60층",
       "createdAt": "2026-09-11T15:42:17.314Z",
       "status": "published",
       "scheduledAt": "2026-09-11T15:52:43.331Z",
       "publishedAt": "2026-09-11T15:52:43.331Z",
-      "title": "서울 63 스카이 피크닉 입장권과 전망대 관람·QR 이용 방법",
-      "description": "63빌딩 60층에서 서울 전경과 미디어 아트를 함께 감상하는 63 스카이 피크닉의 볼거리, 운영시간, 연령별 입장료, QR 티켓 이용법과 주차 정보를 안내합니다.",
-      "intro": "이 글에는 제휴링크가 포함되어 있으며, 예약 시 수수료를 받을 수 있습니다.\n서울 63 스카이 피크닉은 63빌딩 60층에서 도심 풍경과 전시·체험 요소를 함께 살펴볼 수 있는 입장형 명소입니다. 서울 전경을 바라보는 일정에 미디어 아트와 거울 포토존을 더하고 싶은 여행자, 실내 중심의 도심 나들이를 계획하는 일행에게 유용합니다. 방문 전에는 운영시간과 티켓 유효기간, QR 수신 및 현장 발권 절차를 순서대로 확인하면 됩니다.",
+      "title": "서울 63 스카이 피크닉 입장권, 한강 전망과 이용 준비",
+      "description": "한강과 도심 풍경을 높은 곳에서 바라보고 싶다면 63 스카이 피크닉을 살펴보세요. 전망과 미디어 전시를 함께 즐기는 실내 나들이로, 사진 촬영이 목적인 커플이나 여의도에서 하루를 보내는 일행에게 어울립니다. 낮의 강 풍경과 저녁의 도시 불빛 중 어떤 장면을 보",
+      "intro": "한강과 도심 풍경을 높은 곳에서 바라보고 싶다면 63 스카이 피크닉을 살펴보세요. 전망과 미디어 전시를 함께 즐기는 실내 나들이로, 사진 촬영이 목적인 커플이나 여의도에서 하루를 보내는 일행에게 어울립니다. 낮의 강 풍경과 저녁의 도시 불빛 중 어떤 장면을 보고 싶은지 먼저 정하면 방문 계획이 한결 쉬워집니다.",
       "theme": "전시·정원",
       "sections": [
         {
-          "heading": "먼저 살펴볼 매력과 추천 방문 대상",
+          "heading": "전망을 즐길지, 사진을 남길지",
           "paragraphs": [
-            "주요 공간인 메인 전망대에서는 서울 전경과 미디어 아트를 함께 감상할 수 있습니다. 수백 개의 거울을 활용한 포토존은 서울 풍경과 관람객의 모습을 반사하도록 구성되어 있어 전망 감상과 사진 촬영을 한곳에서 계획하기 좋습니다.",
-            "전망대 외에도 전시와 체험 요소가 함께 구성되어 있으므로, 단순히 높은 곳에서 풍경만 보는 코스보다 실내 볼거리를 함께 찾는 방문객에게 어울립니다. 서울 도심 일정 중 전망 공간과 전시 콘텐츠를 묶고 싶은 경우 방문 순서에 넣기 좋습니다."
+            "창밖 풍경만 빠르게 보고 나가기보다 빛이 들어오는 방향과 반사되는 모습을 천천히 살펴보는 일정이 잘 맞습니다. 일행과 함께 촬영한다면 서로의 관람 시간을 남겨두고, 포토존에 머무는 동안 통로를 막지 않도록 배려해 주세요."
+          ],
+          "photoIndex": 0,
+          "tickets": false
+        },
+        {
+          "heading": "날씨와 이동 시간을 함께 생각하세요",
+          "paragraphs": [
+            "조망이 중요한 날에는 출발 전 날씨와 시야를 살펴보세요. 비가 오는 날의 실내 일정과 맑은 날의 전망 감상은 기대하는 경험이 다릅니다. 사진 속 풍경이나 홍보 연출이 방문 당일 그대로 보인다고 가정하지 않는 편이 좋습니다."
+          ],
+          "photoIndex": 1,
+          "tickets": false
+        },
+        {
+          "heading": "QR을 받았어도 현장 발권이 필요해요",
+          "paragraphs": [
+            "당일 구매·사용이 가능하며, 구매 뒤 1시간 이내 알림톡 또는 MMS로 QR을 받습니다. 현장에서는 QR 제시 후 실물 티켓을 발권합니다. 입구에 도착한 시각과 실제 관람 시작 사이에 발권 여유를 남겨두세요."
+          ],
+          "photoIndex": 2,
+          "tickets": false
+        },
+        {
+          "heading": "이용권을 선택할 때",
+          "paragraphs": [
+            "이 상품의 포함 범위는 선택한 옵션에 따라 정해집니다. 식음료·다른 전시·별도 체험까지 포함된 패키지인지 상품명을 보고 구분하세요. 2026년 9월 30일까지의 이용권으로 안내되어 있으며, 현재 가격은 예약 화면에서 확인할 수 있습니다."
           ],
           "tickets": false
         },
         {
-          "heading": "방문 순서로 정리한 위치·운영 정보",
-          "paragraphs": [
-            "주소는 서울 영등포구 63로 50, 63빌딩 60층 63스카이피크닉입니다. 시설 문의전화는 02-780-6366으로 안내되어 있습니다. 운영시간은 매일 10:00~22:00로 확인되지만, 자료에는 세부 콘텐츠별 운영시간이 별도로 제시되지 않았습니다.",
-            "주차요금은 최초 30분 3,000원, 이후 10분당 1,000원으로 안내된 자료가 있습니다. 대중교통을 이용할 때의 노선과 출구 정보는 제공 자료에서 확인되지 않았으므로, 출발 전 주소를 기준으로 이동 경로를 정하는 편이 좋습니다. 관람에 필요한 정확한 소요시간도 확인된 자료가 없어 일정에는 여유를 두고 배치해야 합니다."
-          ],
-          "tickets": false,
-          "kind": "visit"
+          "heading": "위치·교통·운영 정보",
+          "kind": "visit",
+          "paragraphs": [],
+          "tickets": false
         },
         {
-          "heading": "연령별 입장권과 구매 전 확인할 내용",
+          "heading": "와그 최저가보장 조건과 예약 확인",
           "paragraphs": [
-            "입장권은 대인과 소인으로 구분됩니다. 확인된 연령 기준은 만 13세 이상 대인, 36개월 이상 만 12세 이하 소인입니다. 안내된 가격은 대인 24,300원, 소인 20,700원이며, 자료에서 확인된 상품 기준의 입장권 정보입니다.",
-            "이용권에는 63 스카이 피크닉 입장이 포함된 것으로 안내되어 있으나, 별도 식음료나 다른 시설 이용이 포함되는지는 제공 자료에서 확인되지 않았습니다. 다른 지점이나 패키지 상품 정보와 혼동하지 않도록 상품명을 확인하고 구매하는 것이 좋습니다."
+            "연령·방문일·포함 시설이 맞는 옵션을 선택한 뒤 최종 결제 금액과 취소 규정을 읽어보세요."
           ],
           "tickets": true
-        },
-        {
-          "heading": "QR 티켓 사용법과 환불 조건",
-          "paragraphs": [
-            "와그 상품은 구매 후 1시간 내 카카오 알림톡 또는 MMS로 QR코드를 받는 방식입니다. 현장에서는 QR코드를 제시한 뒤 실물 티켓을 발권하여 입장합니다. 당일 구매와 당일 사용이 가능하며, 검색 결과에 표시된 유효기간은 2026년 9월 30일까지입니다.",
-            "유효기간 내 미사용 티켓은 100% 환불 가능하지만 사용한 티켓은 환불할 수 없고, 중복 할인은 적용되지 않는 것으로 안내되어 있습니다. 구매 뒤 QR 메시지가 도착하지 않거나 현장 발권에 문제가 있을 때는 시설 문의전화 02-780-6366 또는 구매처 안내를 이용하면 됩니다."
-          ],
-          "tickets": false
-        },
-        {
-          "heading": "방문 전 체크할 핵심 질문",
-          "paragraphs": [
-            "어떤 일정에 넣으면 좋을까요? 서울 전경, 미디어 아트, 전시와 포토존을 함께 보고 싶은 실내 도심 나들이 일정에 적합합니다. 운영시간이 긴 편으로 안내되어 있어 하루 일정의 앞이나 뒤에 배치할 수 있지만, 콘텐츠별 운영시간은 별도로 확인되지 않았습니다.",
-            "현장에서 바로 살 수 있나요? 확인된 상품은 당일 구매 및 당일 사용이 가능하고, 구매 후 QR코드를 받아 현장에서 실물 티켓으로 바꾸는 방식입니다. 다만 실제 판매 상태나 가격 변동 여부는 구매 화면에서 확인해야 합니다.",
-            "주차를 이용할 수 있나요? 주차요금 안내는 확인되지만 주차 공간의 위치나 무료 주차 적용 기준은 제공 자료에 없습니다. 차량 방문 예정이라면 요금과 현장 이용 조건을 구매 또는 출발 전에 별도로 확인하는 것이 안전합니다."
-          ],
-          "tickets": false
         }
       ],
       "visitInfo": [
         {
-          "topic": "추천 대상",
-          "status": "unknown",
-          "value": "서울 전경과 미디어 아트, 전시·체험 요소를 함께 즐기려는 실내 도심 나들이 방문객에게 적합합니다.",
-          "sourceUrls": [
-            "https://kr.trip.com/blog/63skypicnic"
-          ],
-          "checkedAt": "2026-09-11T15:52:26.220Z"
-        },
-        {
-          "topic": "즐길 거리",
-          "status": "unknown",
-          "value": "메인 전망대, 서울 전경과 미디어 아트, 수백 개의 거울을 활용한 포토존, 전시·체험 요소가 안내되어 있습니다.",
-          "sourceUrls": [
-            "https://kr.trip.com/blog/63skypicnic"
-          ],
-          "checkedAt": "2026-09-11T15:52:26.220Z"
-        },
-        {
-          "topic": "예상 소요시간",
-          "status": "unknown",
-          "value": "확인된 소요시간 정보가 없습니다. 일정에는 여유를 두고 배치하세요.",
-          "sourceUrls": [],
-          "checkedAt": "2026-09-11T15:52:26.220Z"
-        },
-        {
           "topic": "위치",
+          "value": "서울 영등포구 63로 50, 63빌딩 60층",
           "status": "confirmed",
-          "value": "서울 영등포구 63로 50, 63빌딩 60층 63스카이피크닉입니다.",
           "sourceUrls": [
-            "https://www.waug.com/ko/activities/148960",
-            "https://leisure-web.yanolja.com/leisure/10338913"
+            "https://www.waug.com/ko/activities/148960"
           ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "교통",
-          "status": "unknown",
-          "value": "대중교통 노선과 출구 정보는 제공 자료에서 확인되지 않았습니다. 주소를 기준으로 출발 경로를 확인하세요.",
-          "sourceUrls": [],
-          "checkedAt": "2026-09-11T15:52:26.220Z"
-        },
-        {
-          "topic": "주차",
-          "status": "unknown",
-          "value": "최초 30분 3,000원, 이후 10분당 1,000원으로 안내된 자료가 있습니다. 주차 적용 조건은 별도 확인이 필요합니다.",
-          "sourceUrls": [
-            "https://kr.trip.com/blog/63skypicnic"
-          ],
-          "checkedAt": "2026-09-11T15:52:26.220Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
           "topic": "운영시간",
+          "value": "방문일의 운영·입장마감 시간을 상품 상세 또는 운영처에 확인하세요.",
           "status": "unknown",
-          "value": "매일 10:00~22:00로 안내되어 있습니다. 세부 콘텐츠별 운영시간은 확인되지 않았습니다.",
-          "sourceUrls": [
-            "https://kr.trip.com/blog/63skypicnic"
-          ],
-          "checkedAt": "2026-09-11T15:52:26.220Z"
-        },
-        {
-          "topic": "이용권 종류",
-          "status": "unknown",
-          "value": "대인과 소인 입장권이 안내되어 있습니다. 만 13세 이상은 대인, 36개월 이상 만 12세 이하는 소인 기준입니다.",
-          "sourceUrls": [
-            "https://leisure-web.yanolja.com/leisure/10338913"
-          ],
-          "checkedAt": "2026-09-11T15:52:26.220Z"
-        },
-        {
-          "topic": "포함 사항",
-          "status": "confirmed",
-          "value": "63 스카이 피크닉 입장권 상품으로 안내되어 있습니다. 별도 식음료나 다른 시설 포함 여부는 확인되지 않았습니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/148960"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "불포함 사항",
-          "status": "unknown",
-          "value": "별도 식음료 및 다른 시설 이용 포함 여부는 제공 자료에서 확인되지 않았습니다.",
           "sourceUrls": [],
-          "checkedAt": "2026-09-11T15:52:26.220Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
-          "topic": "예약·이용 방법",
+          "topic": "문의",
+          "value": "02-780-6366",
           "status": "confirmed",
-          "value": "구매 후 1시간 내 카카오 알림톡 또는 MMS로 QR코드를 받고, 현장에서 QR코드를 제시해 실물 티켓을 발권한 뒤 입장합니다. 당일 구매 및 당일 사용이 가능합니다.",
           "sourceUrls": [
             "https://www.waug.com/ko/activities/148960"
           ],
-          "checkedAt": "2026-09-11"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
-          "topic": "주의사항",
-          "status": "confirmed",
-          "value": "검색 결과에 표시된 유효기간은 2026년 9월 30일까지입니다. 유효기간 내 미사용 티켓은 100% 환불 가능하며, 사용한 티켓은 환불되지 않고 중복 할인은 적용되지 않습니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/148960",
-            "https://www.klook.com/ko/activity/220114-63-sky-picnic-ticket-dm/"
-          ],
-          "checkedAt": "2026-09-11"
+          "topic": "교통",
+          "value": "위 주소로 출발지 기준 경로를 확인하세요. 특정 버스·출구·도보시간은 확인되지 않았습니다.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
+        },
+        {
+          "topic": "주차",
+          "value": "주차 위치·요금·할인 조건은 운영처에 확인하세요. 무료주차를 확약하지 않습니다.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
+        },
+        {
+          "topic": "예상 소요시간",
+          "value": "공식 권장 소요시간은 확인되지 않았습니다. 관람·발권·이동에 여유를 두세요.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "faq": [
         {
-          "question": "63 스카이 피크닉은 어디에 있나요?",
-          "answer": "서울 영등포구 63로 50, 63빌딩 60층에 있습니다."
+          "question": "QR만 보여주면 바로 입장하나요?",
+          "answer": "QR을 제시해 현장에서 실물 티켓을 발권하는 절차가 안내되어 있습니다."
         },
         {
-          "question": "입장권은 어떻게 사용하나요?",
-          "answer": "구매 후 받은 카카오 알림톡 또는 MMS의 QR코드를 현장에서 제시하고 실물 티켓을 발권해 입장합니다."
+          "question": "관람시간이 정해져 있나요?",
+          "answer": "권장 관람 소요시간은 확인되지 않았습니다. 사진 촬영과 현장 대기를 고려해 다음 일정과 간격을 두세요."
         },
         {
-          "question": "미사용 티켓은 환불할 수 있나요?",
-          "answer": "안내된 상품 기준으로 유효기간 내 미사용 티켓은 100% 환불 가능하지만, 사용한 티켓은 환불할 수 없습니다."
+          "question": "미사용 이용권을 취소할 수 있나요?",
+          "answer": "유효기간 안의 미사용권은 환불 가능하며, 사용한 티켓은 환불되지 않습니다."
         }
       ],
       "contentPolicyVersion": "tickets-2026-09-11",
@@ -6249,56 +6193,139 @@
         "noUnsupportedClaims": true
       },
       "imageResearch": {
-        "unavailableReason": "제공 자료에 이미지 파일과 상업적 이용 권리 정보가 없어 이미지를 포함하지 않았습니다."
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "realPhotoSearchNote": "와그 파트너 가이드와 공식 상품 이미지 검수. 아쿠아플라넷은 공공누리 제1유형 사진 추가.",
+        "bodyAiNeeded": false
       },
       "productIds": [
         "E319zHqQ"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/04/17805582135010.png",
+          "alt": "한강 풍경과 반사되는 공간을 함께 보여주는 와그 공식 상품 사진입니다.",
+          "caption": "한강 풍경과 반사되는 공간을 함께 보여주는 와그 공식 상품 사진입니다.",
+          "width": 714,
+          "height": 1280,
+          "kind": "waug-original",
+          "provider": "waug",
+          "permissionBasis": "explicit-permission",
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+          "sourceUrl": "https://www.waug.com/ko/activities/148960",
+          "usageConditions": "와그 공식 파트너 콘텐츠 가이드에 따른 해당 상품 소개 목적의 공식 이미지 원본 활용. 편집·재판매·고객 후기사진 사용 제외.",
+          "credit": "사진: 와그 공식 상품 자료 · 파트너 콘텐츠 가이드에 따라 활용",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "unedited": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z",
+          "faceReview": {
+            "status": "no-identifiable-faces",
+            "checkedAt": "2026-09-11T16:46:51.947Z",
+            "method": "원본 및 검수용 이미지 직접 확인"
+          }
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/04/17805581986865.jpg",
+          "alt": "유리창 너머 도심 전망을 담은 공식 자료사진입니다. 날씨에 따라 실제 조망은 달라집니다.",
+          "caption": "유리창 너머 도심 전망을 담은 공식 자료사진입니다. 날씨에 따라 실제 조망은 달라집니다.",
+          "width": 1280,
+          "height": 960,
+          "kind": "waug-original",
+          "provider": "waug",
+          "permissionBasis": "explicit-permission",
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+          "sourceUrl": "https://www.waug.com/ko/activities/148960",
+          "usageConditions": "와그 공식 파트너 콘텐츠 가이드에 따른 해당 상품 소개 목적의 공식 이미지 원본 활용. 편집·재판매·고객 후기사진 사용 제외.",
+          "credit": "사진: 와그 공식 상품 자료 · 파트너 콘텐츠 가이드에 따라 활용",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "unedited": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z",
+          "faceReview": {
+            "status": "no-identifiable-faces",
+            "checkedAt": "2026-09-11T16:46:51.947Z",
+            "method": "원본 및 검수용 이미지 직접 확인"
+          }
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/06/04/17805582097067.jpg",
+          "alt": "와그가 제공한 63 스카이 피크닉 홍보 이미지입니다. 옥상 출입 가능 여부를 뜻하지 않습니다.",
+          "caption": "와그가 제공한 63 스카이 피크닉 홍보 이미지입니다. 옥상 출입 가능 여부를 뜻하지 않습니다.",
+          "width": 1280,
+          "height": 960,
+          "kind": "waug-original",
+          "provider": "waug",
+          "permissionBasis": "explicit-permission",
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+          "sourceUrl": "https://www.waug.com/ko/activities/148960",
+          "usageConditions": "와그 공식 파트너 콘텐츠 가이드에 따른 해당 상품 소개 목적의 공식 이미지 원본 활용. 편집·재판매·고객 후기사진 사용 제외.",
+          "credit": "사진: 와그 공식 상품 자료 · 파트너 콘텐츠 가이드에 따라 활용",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "unedited": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z",
+          "faceReview": {
+            "status": "no-identifiable-faces",
+            "checkedAt": "2026-09-11T16:46:51.947Z",
+            "method": "원본 및 검수용 이미지 직접 확인"
+          }
+        }
+      ],
       "thumbnail": {
-        "url": "https://mwohaji.kr/ticket-images/place-e319zhqq-guide.svg",
-        "alt": "서울 63 스카이 피크닉 장소명 안내 이미지, 실제 시설 사진 아님",
+        "url": "https://mwohaji.kr/ticket-images/place-e319zhqq-ai-20260912.jpg",
+        "alt": "서울 63 스카이 피크닉 방문 안내를 위한 AI 콘셉트 일러스트",
         "width": 1200,
-        "height": 630,
-        "credit": "주말에 뭐하지 제작 · 장소명 안내 그래픽"
+        "height": 800,
+        "kind": "ai-generated",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 시설·전시를 촬영한 사진이 아닌 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자가 요청한 장소별 AI 대표 이미지. 실제 현장 사진은 본문에서 별도 제공.",
+        "sources": [],
+        "status": "approved",
+        "mimeType": "image/jpeg",
+        "bytes": 212909,
+        "sha256": "47406f5709ad4d69e2732ad95fc6253781407a5d8afaa153c505a7cfe1462e6f",
+        "inputHash": "52ca938b349870063d74e8f51bd98b3e4c72c2b2601fbd023fc478a36c552a00",
+        "uploadedAt": "2026-09-11T16:46:51.947Z",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "generatedAt": "2026-09-11T16:46:51.947Z",
+          "originalGeneration": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a0907c-b59b-7462-a09b-42a89681bdf4\\exec-10caa2b8-013d-43d3-a03e-aa6a0b0526ee.png",
+          "promptHash": "52ca938b349870063d74e8f51bd98b3e4c72c2b2601fbd023fc478a36c552a00",
+          "promptSummary": "place-e319zhqq: 장소별 한국어 제목의 비기록적 콘셉트 일러스트, 실제 시설 사진과 구분, 얼굴 없음, AI 표시",
+          "visualCheckedAt": "2026-09-11T16:46:51.947Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그 공식 상품 이미지 및 공공기관 사진 조사 후 본문 실제사진과 구분하여 구성",
+          "mobileCheckedAt": "2026-09-11T16:54:35.504Z",
+          "desktopCheckedAt": "2026-09-11T16:54:35.504Z",
+          "ogCheckedAt": "2026-09-11T16:54:35.504Z"
+        },
+        "verifiedAt": "2026-09-11T16:46:51.947Z"
       },
       "internalLinks": [
         {
-          "href": "/places/gyeonggi",
+          "href": "/places/seoul",
           "label": "서울 나들이 장소",
-          "verifiedAt": "2026-09-11T15:51:46.842Z"
+          "verifiedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "sources": [
         {
           "url": "https://www.waug.com/ko/activities/148960",
-          "label": "서울 63 스카이 피크닉 입장권",
+          "label": "와그 상품·이용 안내 및 최저가보장 조건",
           "kind": "waug",
-          "checkedAt": "2026-09-11T15:42:03.556Z"
-        },
-        {
-          "url": "https://www.klook.com/ko/activity/220114-63-sky-picnic-ticket-dm/",
-          "label": "공식·관광 자료",
-          "kind": "research",
-          "checkedAt": "2026-09-11T15:42:17.314Z"
-        },
-        {
-          "url": "https://leisure-web.yanolja.com/leisure/10338913",
-          "label": "공식·관광 자료",
-          "kind": "research",
-          "checkedAt": "2026-09-11T15:42:17.314Z"
-        },
-        {
-          "url": "https://kr.trip.com/blog/63skypicnic",
-          "label": "공식·관광 자료",
-          "kind": "research",
-          "checkedAt": "2026-09-11T15:42:17.314Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "review": {
         "status": "approved",
-        "checkedAt": "2026-09-11T15:52:26.220Z",
-        "notes": "검수 완료·배포 전 확인",
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "notes": "2026-09-12 사용자 요청 전면 수정. 공식 상품·파트너 사용 안내·보장 팝업·이미지 직접 검수.",
         "textReviewStatus": "reviewed",
         "textReviewedAt": "2026-09-11T15:51:46.842Z",
         "mustHold": false,
@@ -6312,23 +6339,7 @@
         }
       },
       "contentGeneratedAt": "2026-09-11T15:42:17.314Z",
-      "holdReasons": [
-        "방문 정보 근거 확인: 추천 대상",
-        "방문 정보 근거 확인: 즐길 거리",
-        "방문 정보 근거 확인: 주차",
-        "방문 정보 근거 확인: 운영시간",
-        "방문 정보 근거 확인: 이용권 종류",
-        "신규 작성 기준·출처·검색 의도·이미지 권리 검수 필요",
-        "이미지 크기 저장 필요",
-        "개별 사진 출처·이용 조건·상업적 사용 근거 필요",
-        "글 주소 확인",
-        "글 검수 또는 재검수 필요",
-        "본문·공식 출처 필요",
-        "관련 내부링크 확인",
-        "상품 검수 필요: E319zHqQ",
-        "대표 이미지·모바일·PC·OG 검수 필요",
-        "대표 사진 권리·장소 일치 확인"
-      ],
+      "holdReasons": [],
       "priceGuaranteeChecks": {
         "E319zHqQ": {
           "status": "unconfirmed",
@@ -6339,190 +6350,142 @@
         }
       },
       "publishedGuarantees": {
-        "E319zHqQ": null
-      }
+        "E319zHqQ": {
+          "status": "confirmed",
+          "affiliateUrl": "https://www.waug.com/r/E319zHqQ",
+          "sourceUrl": "https://www.waug.com/ko/activities/148960",
+          "conditions": "최저가보장 표시 상품의 예약자가 결제 후 24시간 안에 와그 상담 채팅으로 신청해야 합니다. 동일 통화·이용일·투어사 상품의 비교 화면과 URL을 제출합니다. 결제 당시 적용 가능한 최대 쿠폰 할인 가격을 기준으로 비교하며 카드사 할인은 제외합니다. 승인 및 이용 완료 후 차액을 현금이 아닌 포인트로 지급합니다.",
+          "evidenceText": "해당 상품 가격 영역: 최저가 보장. 클릭한 안내: 예약자 한정, 차액 포인트 보상!",
+          "pageSha256": "332e1c2568c6b0d47953f2f5bf27efd694b826e4d3953a7f5c41d06000e2d5bd",
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "reviewedAt": "2026-09-11T16:46:51.947Z",
+          "expiresAt": "2026-09-12T16:46:51.947Z"
+        }
+      },
+      "checkedAt": "2026-09-11T16:46:51.947Z"
     },
     {
       "slug": "place-ga75y9uv",
       "placeId": "place-ga75y9uv",
       "placeName": "크라운해태 키즈뮤지엄",
       "area": "서울",
-      "address": "서울특별시 용산구 한강대로72길 3 크라운해태제과 지하1층",
+      "address": "서울 용산구 한강대로72길 3, 크라운해태제과 지하 1층",
       "createdAt": "2026-09-11T15:42:17.333Z",
       "status": "published",
       "scheduledAt": "2026-09-11T15:52:43.331Z",
       "publishedAt": "2026-09-11T15:52:43.331Z",
-      "title": "서울 용산 크라운해태 키즈뮤지엄 입장권과 2시간 방문 준비",
-      "description": "서울 용산 크라운해태 키즈뮤지엄의 추천 대상, 운영시간, 이용시간, 온라인 입장권 사용법과 보호자 동반 규정을 한눈에 안내합니다.",
-      "intro": "이 글에는 제휴링크가 포함되어 있으며, 예약 시 수수료를 받을 수 있습니다. 서울 용산 크라운해태 키즈뮤지엄은 부모와 아이가 함께 놀이하며 창의력·사고력·협력·소통을 경험하도록 기획된 어린이 체험공간입니다. 4~8세 아이와 실내 나들이를 계획하는 가족에게 알맞고, 입장 후 이용시간이 2시간으로 제한되어 짧고 분명한 일정으로 방문하기 좋습니다.",
+      "title": "용산 크라운해태 키즈뮤지엄 입장권, 아이와 실내 놀이 준비",
+      "description": "아이와 무엇을 할지 고민되는 날, 크라운해태 키즈뮤지엄은 놀이를 함께 관찰하고 대화하는 실내 나들이 후보입니다. 블록과 놀이 장치가 있는 공간에서 아이의 관심을 따라 움직이는 시간을 계획해 보세요. 많은 체험을 서둘러 끝내기보다 좋아하는 활동을 충분히 해보는 ",
+      "intro": "아이와 무엇을 할지 고민되는 날, 크라운해태 키즈뮤지엄은 놀이를 함께 관찰하고 대화하는 실내 나들이 후보입니다. 블록과 놀이 장치가 있는 공간에서 아이의 관심을 따라 움직이는 시간을 계획해 보세요. 많은 체험을 서둘러 끝내기보다 좋아하는 활동을 충분히 해보는 쪽으로 일정을 잡으면 좋습니다.",
       "theme": "테마파크",
       "sections": [
         {
-          "heading": "누구에게 적합한 장소인가요?",
+          "heading": "아이의 관심을 따라 움직이는 나들이",
           "paragraphs": [
-            "크라운해태 키즈뮤지엄은 4~8세 어린이를 중심으로 기획된 공간입니다. 아이만 따로 보내는 시설이 아니라 모든 공간에 보호자가 함께 입장해야 하므로, 보호자와 아이가 놀이를 매개로 소통하는 시간을 원하는 가족에게 유용합니다.",
-            "창의력과 사고력뿐 아니라 협력과 소통 능력을 기르는 방향의 체험을 안내하고 있어, 장시간 관광보다 아이 중심의 실내 활동을 일정에 넣고 싶은 경우 선택지로 살펴볼 수 있습니다. 이용시간은 2시간으로 제한되므로 방문 전후에 다른 일정을 연결할 때도 시간을 계산하기 쉽습니다."
+            "완성된 결과물을 만드는 것만 목표로 삼기보다, 어떤 모양을 고르고 어떻게 움직이는지 함께 살펴보세요. 사진에 보이는 시설은 공식 상품 자료이며, 현재 운영하는 체험과 연령별 이용 범위는 방문 시 안내를 따릅니다."
+          ],
+          "photoIndex": 0,
+          "tickets": false
+        },
+        {
+          "heading": "준비물은 가볍게, 일정은 여유 있게",
+          "paragraphs": [
+            "실내에서 편하게 움직일 수 있는 복장으로 준비하고 아이가 쉬고 싶어 하는 순간을 일정에 남겨두세요. 과자 만들기 등 특정 프로그램을 원한다면 일반 입장권에 포함되는지 먼저 확인해야 합니다. 체험마다 별도 예약이나 요금이 있는지 구분하는 것이 중요합니다."
+          ],
+          "photoIndex": 1,
+          "tickets": false
+        },
+        {
+          "heading": "구매 직후에는 사용할 수 없어요",
+          "paragraphs": [
+            "온라인 이용권은 구매 30분 이후부터 사용 가능하며 모바일 티켓 발송은 1시간 이내로 안내됩니다. 매표소에서는 구매자 이름과 연락처를 확인합니다. 도착 직전 구매로 생길 수 있는 대기 시간을 고려하세요."
+          ],
+          "photoIndex": 2,
+          "tickets": false
+        },
+        {
+          "heading": "동행 인원과 옵션을 먼저 정하세요",
+          "paragraphs": [
+            "어린이와 보호자의 입장 옵션, 이용 제한시간, 추가 체험 여부를 예약 화면에서 확인하세요. 이용시간 제한과 초과요금은 선택한 옵션에서 확인하세요. 9월 30일까지 유효한 미사용권은 환불 가능하지만 부분취소·부분환불은 불가한 상품입니다."
           ],
           "tickets": false
         },
         {
-          "heading": "방문 전 확인할 운영·위치 정보",
+          "heading": "위치·교통·운영 정보",
           "kind": "visit",
-          "paragraphs": [
-            "주소는 서울특별시 용산구 한강대로72길 3, 크라운해태제과 지하 1층입니다. 운영시간은 오전 10시부터 오후 5시까지이며, 매주 월요일과 화요일은 휴무입니다. 다만 월요일이나 화요일이 공휴일이면 정상 운영한다는 안내가 있습니다.",
-            "현장 이용은 입장 뒤 2시간을 기준으로 계획하세요. 2시간을 넘기면 10분당 1,000원의 추가요금이 발생합니다. 주차장 위치·요금과 대중교통 노선은 제공된 자료에서 확인되지 않았으므로, 차량이나 대중교통으로 이동할 예정이라면 출발 전에 시설 문의전화 02-709-7403으로 확인하는 편이 안전합니다."
-          ],
+          "paragraphs": [],
           "tickets": false
         },
         {
-          "heading": "아이와 함께 짜는 기본 방문 순서",
+          "heading": "입장권 가격과 예약 가능일 확인",
           "paragraphs": [
-            "먼저 운영일과 도착 시간을 정한 뒤, 입장 후 2시간 안에 아이가 놀이와 체험을 충분히 즐길 수 있도록 일정을 잡습니다. 보호자 동반입장이 필수이므로 아이와 함께 움직일 보호자의 동행 여부도 미리 맞춰야 합니다.",
-            "15개월 미만 어린이는 단독 입장이 불가합니다. 보호자와 형제자매가 함께 입장하는 경우 무료입장이 가능하다는 안내가 있으나, 무료 적용을 받으려면 연령을 증명할 서류가 필요합니다. 해당 연령대 아이와 방문한다면 증빙서류를 준비하세요."
-          ],
-          "tickets": false
-        },
-        {
-          "heading": "온라인 입장권 구매와 현장 이용 방법",
-          "paragraphs": [
-            "온라인 입장권의 가격과 세부 상품 구성은 제공된 자료에서 확인되지 않았습니다. 따라서 가격이나 포함 시설을 임의로 단정하지 않고, 예약 화면에서 방문 가능한 날짜와 상품 조건을 확인하는 방식으로 선택해야 합니다.",
-            "상품을 구매하면 30분이 지난 뒤부터 사용할 수 있으며, 모바일 티켓은 구매 후 1시간 이내 발송됩니다. 현장 크라운해태 키즈뮤지엄 매표소에서는 구매자 성함과 연락처를 확인한 뒤 입장합니다. 방문 직전에 구매하기보다 티켓 발송과 사용 가능 시간을 고려해 여유를 두는 편이 좋습니다.",
-            "제공된 입장권의 사용 가능 기간은 2026년 9월 30일까지이며, 유효기간 안에 사용하지 않은 티켓만 환불할 수 있습니다. 부분취소와 부분환불은 불가하므로 여러 장을 구매할 때 실제 동행 인원을 먼저 정하세요."
+            "연령·방문일·포함 시설이 맞는 옵션을 선택한 뒤 최종 결제 금액과 취소 규정을 읽어보세요."
           ],
           "tickets": true
-        },
-        {
-          "heading": "방문 예약 전 체크할 사항",
-          "paragraphs": [
-            "이용권을 고른 뒤에는 운영일, 사용 가능 기간, 모바일 티켓 수신 여부, 보호자 동반 조건을 순서대로 확인하면 됩니다. 특히 매주 월요일과 화요일 휴무 규정과 2시간 이용 제한은 일정에 직접 영향을 주는 내용입니다.",
-            "가격, 주차, 교통, 시설별 세부 구성은 현재 제공된 자료만으로 확인되지 않습니다. 입장권 구매 및 이용 관련 문의는 02-709-7403으로 할 수 있습니다. 온라인 티켓을 사용할 때는 현장에서 구매자 성함과 연락처 확인이 이뤄진다는 점도 함께 기억하세요."
-          ],
-          "tickets": false
         }
       ],
       "visitInfo": [
         {
-          "topic": "추천 대상",
-          "status": "unknown",
-          "value": "4~8세 어린이를 위주로 기획된 어린이 체험공간이며 보호자 동반입장이 필요합니다.",
-          "sourceUrls": [
-            "https://travel.interpark.com/tna/products/67f313f2-ebfb-403c-8dd8-f9ad973376a9?endDate=2027-06-17&startDate=2026-06-18"
-          ],
-          "checkedAt": "2026-09-11T15:42:04.049Z"
-        },
-        {
-          "topic": "즐길 거리",
-          "status": "unknown",
-          "value": "부모와 함께 놀이하며 창의력·사고력·협력·소통 능력을 기르는 어린이 체험공간입니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/120293"
-          ],
-          "checkedAt": "2026-09-11T15:42:04.049Z"
-        },
-        {
-          "topic": "예상 소요시간",
-          "status": "confirmed",
-          "value": "입장 후 이용시간은 2시간으로 제한됩니다.",
-          "sourceUrls": [
-            "https://travel.interpark.com/tna/products/67f313f2-ebfb-403c-8dd8-f9ad973376a9?endDate=2027-06-17&startDate=2026-06-18"
-          ],
-          "checkedAt": "2026-09-11T15:42:04.049Z"
-        },
-        {
           "topic": "위치",
+          "value": "서울 용산구 한강대로72길 3, 크라운해태제과 지하 1층",
           "status": "confirmed",
-          "value": "서울특별시 용산구 한강대로72길 3 크라운해태제과 지하1층입니다.",
           "sourceUrls": [
             "https://www.waug.com/ko/activities/120293"
           ],
-          "checkedAt": "2026-09-11T15:42:04.049Z"
-        },
-        {
-          "topic": "교통",
-          "status": "unknown",
-          "value": "지하철역·출구·버스 노선과 도보시간은 제공 자료에서 미확인입니다. 이동 전 시설 문의전화로 확인하세요.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/120293"
-          ],
-          "checkedAt": "2026-09-11T15:42:04.049Z"
-        },
-        {
-          "topic": "주차",
-          "status": "unknown",
-          "value": "주차장 위치·면수·요금은 제공 자료에서 미확인입니다. 방문 전 시설 문의전화로 확인하세요.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/120293"
-          ],
-          "checkedAt": "2026-09-11T15:42:04.049Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
           "topic": "운영시간",
-          "status": "unknown",
-          "value": "오전 10:00~오후 17:00, 매주 월요일·화요일 휴무이며 해당 요일이 공휴일이면 정상 운영합니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/120293"
-          ],
-          "checkedAt": "2026-09-11T15:42:04.049Z"
-        },
-        {
-          "topic": "이용권 종류",
-          "status": "unknown",
-          "value": "온라인 모바일 입장권 상품이 확인됩니다. 가격과 세부 상품 구성은 제공 자료에서 확인되지 않았습니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/120293"
-          ],
-          "checkedAt": "2026-09-11T15:42:04.049Z"
-        },
-        {
-          "topic": "포함 사항",
-          "status": "unknown",
-          "value": "상품별 포함 시설과 세부 구성은 구매 화면에서 확인해야 합니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/120293"
-          ],
-          "checkedAt": "2026-09-11T15:42:04.049Z"
-        },
-        {
-          "topic": "불포함 사항",
-          "status": "unknown",
-          "value": "상품별 불포함 사항은 제공 자료에서 미확인입니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/120293"
-          ],
-          "checkedAt": "2026-09-11T15:42:04.049Z"
-        },
-        {
-          "topic": "예약·이용 방법",
+          "value": "10:00~17:00. 월·화 휴무, 공휴일이면 정상 운영 안내.",
           "status": "confirmed",
-          "value": "구매 30분 이후 사용 가능하며 모바일 티켓은 구매 후 1시간 이내 발송됩니다. 현장에서 구매자 성함과 연락처 확인 후 입장합니다.",
           "sourceUrls": [
             "https://www.waug.com/ko/activities/120293"
           ],
-          "checkedAt": "2026-09-11T15:42:04.049Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
-          "topic": "주의사항",
+          "topic": "문의",
+          "value": "02-709-7403",
           "status": "confirmed",
-          "value": "보호자 동반입장이 필수이며, 2시간 초과 시 10분당 1,000원의 추가요금이 발생합니다. 15개월 미만 무료입장에는 증빙서류가 필요합니다.",
           "sourceUrls": [
-            "https://travel.interpark.com/tna/products/67f313f2-ebfb-403c-8dd8-f9ad973376a9?endDate=2027-06-17&startDate=2026-06-18",
             "https://www.waug.com/ko/activities/120293"
           ],
-          "checkedAt": "2026-09-11T15:42:04.049Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
+        },
+        {
+          "topic": "교통",
+          "value": "위 주소로 출발지 기준 경로를 확인하세요. 특정 버스·출구·도보시간은 확인되지 않았습니다.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
+        },
+        {
+          "topic": "주차",
+          "value": "주차 위치·요금·할인 조건은 운영처에 확인하세요. 무료주차를 확약하지 않습니다.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
+        },
+        {
+          "topic": "예상 소요시간",
+          "value": "공식 권장 소요시간은 확인되지 않았습니다. 관람·발권·이동에 여유를 두세요.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "faq": [
         {
-          "question": "크라운해태 키즈뮤지엄은 몇 살 아이에게 적합한가요?",
-          "answer": "4~8세 어린이를 위주로 기획된 공간입니다. 15개월 미만 어린이는 단독 입장이 불가하며, 보호자와 형제자매가 함께 입장할 때 무료입장이 가능하고 증빙서류가 필요합니다."
+          "question": "월요일이나 화요일에도 갈 수 있나요?",
+          "answer": "월·화 휴무이며 공휴일에는 정상 운영하는 것으로 안내됩니다."
         },
         {
-          "question": "아이만 입장할 수 있나요?",
-          "answer": "아니요. 모든 공간은 보호자 동반입장이 필수이며 아이만 단독으로 입장할 수 없습니다."
+          "question": "구매하자마자 사용할 수 있나요?",
+          "answer": "구매 후 30분이 지나야 사용 가능하고 티켓 수신까지 1시간이 걸릴 수 있습니다."
         },
         {
-          "question": "온라인 티켓은 구매 후 바로 사용할 수 있나요?",
-          "answer": "구매 후 30분이 지나야 사용할 수 있습니다. 모바일 티켓은 구매 후 1시간 이내 발송되며, 현장에서는 구매자 성함과 연락처를 확인합니다."
+          "question": "과자 만들기도 포함되나요?",
+          "answer": "선택 옵션의 포함 범위를 확인해야 합니다. 일반 입장권에 모든 체험이 포함된다고 안내하지 않습니다."
         }
       ],
       "comparedSlugs": [
@@ -6550,45 +6513,132 @@
       "productIds": [
         "ga75Y9uV"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/04/22/16506064752647.jpg",
+          "alt": "다양한 형태의 블록이 놓인 놀이공간의 와그 공식 자료사진입니다.",
+          "caption": "다양한 형태의 블록이 놓인 놀이공간의 와그 공식 자료사진입니다.",
+          "width": 773,
+          "height": 478,
+          "kind": "waug-original",
+          "provider": "waug",
+          "permissionBasis": "explicit-permission",
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+          "sourceUrl": "https://www.waug.com/ko/activities/120293",
+          "usageConditions": "와그 공식 파트너 콘텐츠 가이드에 따른 해당 상품 소개 목적의 공식 이미지 원본 활용. 편집·재판매·고객 후기사진 사용 제외.",
+          "credit": "사진: 와그 공식 상품 자료 · 파트너 콘텐츠 가이드에 따라 활용",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "unedited": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z",
+          "faceReview": {
+            "status": "no-identifiable-faces",
+            "checkedAt": "2026-09-11T16:46:51.947Z",
+            "method": "원본 및 검수용 이미지 직접 확인"
+          }
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/04/22/16506064790681.jpg",
+          "alt": "몸을 움직이며 살펴볼 수 있는 공간의 공식 자료사진입니다. 이용 제한은 현장 안내를 따르세요.",
+          "caption": "몸을 움직이며 살펴볼 수 있는 공간의 공식 자료사진입니다. 이용 제한은 현장 안내를 따르세요.",
+          "width": 773,
+          "height": 411,
+          "kind": "waug-original",
+          "provider": "waug",
+          "permissionBasis": "explicit-permission",
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+          "sourceUrl": "https://www.waug.com/ko/activities/120293",
+          "usageConditions": "와그 공식 파트너 콘텐츠 가이드에 따른 해당 상품 소개 목적의 공식 이미지 원본 활용. 편집·재판매·고객 후기사진 사용 제외.",
+          "credit": "사진: 와그 공식 상품 자료 · 파트너 콘텐츠 가이드에 따라 활용",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "unedited": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z",
+          "faceReview": {
+            "status": "no-identifiable-faces",
+            "checkedAt": "2026-09-11T16:46:51.947Z",
+            "method": "원본 및 검수용 이미지 직접 확인"
+          }
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/04/22/16506064966206.jpg",
+          "alt": "놀이 장치의 세부 모습을 담은 공식 자료사진입니다.",
+          "caption": "놀이 장치의 세부 모습을 담은 공식 자료사진입니다.",
+          "width": 773,
+          "height": 515,
+          "kind": "waug-original",
+          "provider": "waug",
+          "permissionBasis": "explicit-permission",
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+          "sourceUrl": "https://www.waug.com/ko/activities/120293",
+          "usageConditions": "와그 공식 파트너 콘텐츠 가이드에 따른 해당 상품 소개 목적의 공식 이미지 원본 활용. 편집·재판매·고객 후기사진 사용 제외.",
+          "credit": "사진: 와그 공식 상품 자료 · 파트너 콘텐츠 가이드에 따라 활용",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "unedited": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z",
+          "faceReview": {
+            "status": "no-identifiable-faces",
+            "checkedAt": "2026-09-11T16:46:51.947Z",
+            "method": "원본 및 검수용 이미지 직접 확인"
+          }
+        }
+      ],
       "thumbnail": {
-        "url": "https://mwohaji.kr/ticket-images/place-ga75y9uv-guide.svg",
-        "alt": "크라운해태 키즈뮤지엄 장소명 안내 이미지, 실제 시설 사진 아님",
+        "url": "https://mwohaji.kr/ticket-images/place-ga75y9uv-ai-20260912.jpg",
+        "alt": "크라운해태 키즈뮤지엄 방문 안내를 위한 AI 콘셉트 일러스트",
         "width": 1200,
-        "height": 630,
-        "credit": "주말에 뭐하지 제작 · 장소명 안내 그래픽"
+        "height": 800,
+        "kind": "ai-generated",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 시설·전시를 촬영한 사진이 아닌 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자가 요청한 장소별 AI 대표 이미지. 실제 현장 사진은 본문에서 별도 제공.",
+        "sources": [],
+        "status": "approved",
+        "mimeType": "image/jpeg",
+        "bytes": 163286,
+        "sha256": "b15621b803f8c0678d68ba26fdd08c2d7f0dd30b81d0ecca459722f8ae49a3c1",
+        "inputHash": "c37ccf8895e19ba69ef30d50cc1ff3d1cf4608296b877f9ef6c4a8d0953526e5",
+        "uploadedAt": "2026-09-11T16:46:51.947Z",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "generatedAt": "2026-09-11T16:46:51.947Z",
+          "originalGeneration": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a0907c-b59b-7462-a09b-42a89681bdf4\\exec-1c97ddb8-d409-4c39-827d-7ccde16c208b.png",
+          "promptHash": "c37ccf8895e19ba69ef30d50cc1ff3d1cf4608296b877f9ef6c4a8d0953526e5",
+          "promptSummary": "place-ga75y9uv: 장소별 한국어 제목의 비기록적 콘셉트 일러스트, 실제 시설 사진과 구분, 얼굴 없음, AI 표시",
+          "visualCheckedAt": "2026-09-11T16:46:51.947Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그 공식 상품 이미지 및 공공기관 사진 조사 후 본문 실제사진과 구분하여 구성",
+          "mobileCheckedAt": "2026-09-11T16:54:35.504Z",
+          "desktopCheckedAt": "2026-09-11T16:54:35.504Z",
+          "ogCheckedAt": "2026-09-11T16:54:35.504Z"
+        },
+        "verifiedAt": "2026-09-11T16:46:51.947Z"
       },
       "internalLinks": [
         {
-          "href": "/places/gyeonggi",
+          "href": "/places/seoul",
           "label": "서울 나들이 장소",
-          "verifiedAt": "2026-09-11T15:51:46.842Z"
+          "verifiedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "sources": [
         {
           "url": "https://www.waug.com/ko/activities/120293",
-          "label": "서울 용산 크라운해태 키즈뮤지엄 입장권",
+          "label": "와그 상품·이용 안내 및 최저가보장 조건",
           "kind": "waug",
-          "checkedAt": "2026-09-11T15:42:04.049Z"
-        },
-        {
-          "url": "https://www.waug.com/ko/activities/120293",
-          "label": "공식·관광 자료",
-          "kind": "waug",
-          "checkedAt": "2026-09-11T15:42:17.333Z"
-        },
-        {
-          "url": "https://travel.interpark.com/tna/products/67f313f2-ebfb-403c-8dd8-f9ad973376a9?endDate=2027-06-17&startDate=2026-06-18",
-          "label": "공식·관광 자료",
-          "kind": "research",
-          "checkedAt": "2026-09-11T15:42:17.333Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "review": {
         "status": "approved",
-        "checkedAt": "2026-09-11T15:52:26.220Z",
-        "notes": "검수 완료·배포 전 확인",
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "notes": "2026-09-12 사용자 요청 전면 수정. 공식 상품·파트너 사용 안내·보장 팝업·이미지 직접 검수.",
         "textReviewStatus": "reviewed",
         "textReviewedAt": "2026-09-11T15:51:46.842Z",
         "mustHold": false,
@@ -6602,21 +6652,11 @@
         }
       },
       "contentGeneratedAt": "2026-09-11T15:42:17.333Z",
-      "holdReasons": [
-        "신규 작성 기준·출처·검색 의도·이미지 권리 검수 필요",
-        "이미지 크기 저장 필요",
-        "개별 사진 출처·이용 조건·상업적 사용 근거 필요",
-        "본문 사진 부족 사유 기록 필요",
-        "글 주소 확인",
-        "글 검수 또는 재검수 필요",
-        "본문·공식 출처 필요",
-        "관련 내부링크 확인",
-        "상품 검수 필요: ga75Y9uV",
-        "대표 이미지·모바일·PC·OG 검수 필요",
-        "대표 사진 권리·장소 일치 확인"
-      ],
+      "holdReasons": [],
       "imageResearch": {
-        "unavailableReason": "확인된 본문 사진이 부족해 본문 사진 미첨부"
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "realPhotoSearchNote": "와그 파트너 가이드와 공식 상품 이미지 검수. 아쿠아플라넷은 공공누리 제1유형 사진 추가.",
+        "bodyAiNeeded": false
       },
       "priceGuaranteeChecks": {
         "ga75Y9uV": {
@@ -6629,188 +6669,130 @@
       },
       "publishedGuarantees": {
         "ga75Y9uV": null
-      }
+      },
+      "checkedAt": "2026-09-11T16:46:51.947Z"
     },
     {
       "slug": "place-uap0kkl3",
       "placeId": "place-uap0kkl3",
       "placeName": "제주 동화마을 스튜디오 지브리展",
       "area": "제주",
-      "address": "제주 제주시 구좌읍 비자림로 1183",
+      "address": "제주 제주시 구좌읍 비자림로 1183, 제주동화마을 동화아트센터",
       "createdAt": "2026-09-11T15:43:00.396Z",
       "status": "published",
       "scheduledAt": "2026-09-11T15:52:43.331Z",
       "publishedAt": "2026-09-11T15:52:43.331Z",
-      "title": "제주 동화마을 스튜디오 지브리展 입장권과 관람 동선·QR 이용 안내",
-      "description": "제주 동화마을 동화아트센터에서 만나는 스튜디오 지브리展의 전시 특징, 운영시간, QR 입장 방법, 유효기간과 방문 전 확인할 사항을 정리했습니다.",
-      "intro": "제주 동화마을 스튜디오 지브리展은 애니메이션 속 장면과 캐릭터를 입체적인 공간으로 구현한 전시입니다. 제주의 자연환경 속에서 작품의 풍경과 이야기를 따라 걷는 방식으로 관람할 수 있어, 지브리 작품을 좋아하는 가족·친구·성인 여행객의 제주 일정에 넣기 좋습니다. 이 글에는 제휴링크가 포함되어 있으며, 예약 시 수수료를 받을 수 있습니다.",
+      "title": "제주 동화마을 스튜디오 지브리展 입장권과 관람 준비",
+      "description": "좋아하는 애니메이션의 장면을 떠올리며 제주 여행에 전시 한 곳을 더하고 싶다면, 구좌읍 동화아트센터의 스튜디오 지브리展을 살펴보세요. 작품을 아는 팬과 처음 접하는 일행이 함께 가더라도 각자 기억에 남는 장면을 이야기하며 돌아볼 수 있는 일정입니다.",
+      "intro": "좋아하는 애니메이션의 장면을 떠올리며 제주 여행에 전시 한 곳을 더하고 싶다면, 구좌읍 동화아트센터의 스튜디오 지브리展을 살펴보세요. 작품을 아는 팬과 처음 접하는 일행이 함께 가더라도 각자 기억에 남는 장면을 이야기하며 돌아볼 수 있는 일정입니다.",
       "theme": "전시·정원",
       "sections": [
         {
-          "heading": "제주에서 만나는 공간형 스튜디오 지브리展",
+          "heading": "전시를 보기 전, 좋아하는 장면 떠올리기",
           "paragraphs": [
-            "이 전시는 제주동화마을 동화아트센터에서 열리며, 스튜디오 지브리 애니메이션의 장면과 캐릭터를 입체적으로 재현한 공간이 주요 볼거리입니다. 작품 속 풍경과 이야기를 따라 이동하면서 지브리 특유의 감성과 상상력을 경험하는 구성으로 소개됩니다.",
-            "어린이부터 성인까지 함께 관람하기 좋은 전시로 안내되어 있어 가족 나들이나 제주 동부권 실내 일정을 계획할 때 활용할 수 있습니다. 전시 기간은 2026년 7월 11일부터 2033년 10월 31일까지로 안내되어 있습니다."
+            "전시장에 들어가기 전 일행과 좋아하는 작품이나 장면을 하나씩 이야기해 보세요. 모든 작품을 미리 공부할 필요는 없습니다. 익숙한 장면을 찾아보거나 처음 보는 표현에 집중하는 등 자기 속도로 둘러보는 편이 즐겁습니다."
+          ],
+          "photoIndex": 0,
+          "tickets": false
+        },
+        {
+          "heading": "구좌 이동 동선에 관람을 넣으세요",
+          "paragraphs": [
+            "목적지를 동화아트센터로 확인하고 이동하세요. 제주 여행은 장소 사이의 이동도 일정의 일부입니다. 전시를 마친 뒤 다음 목적지까지 걸리는 시간을 먼저 살펴두면 마지막 관람을 서두르지 않아도 됩니다."
+          ],
+          "photoIndex": 1,
+          "tickets": false
+        },
+        {
+          "heading": "입장마감과 이용권 유효기간은 달라요",
+          "paragraphs": [
+            "와그 안내상 운영은 09:00~19:00이며 입장은 18:00에 마감됩니다. 티켓은 2026년 7월 11일부터 2027년 7월 11일까지 이용 가능한 것으로 안내됩니다. 마감 직전 도착해도 충분히 관람할 수 있다는 뜻은 아니므로 여유 있게 도착하세요."
           ],
           "tickets": false
         },
         {
-          "heading": "방문 전 정리하는 위치와 관람 정보",
+          "heading": "받은 QR과 구매자 정보를 준비하세요",
+          "paragraphs": [
+            "구매 후 10분 이내 알림톡으로 티켓을 받고 현장에서 구매자 정보와 QR을 확인합니다. 선택한 옵션의 입장권이 포함되며, 굿즈나 다른 시설까지 포함되는지는 별도로 확인하세요. 유효기간 내 미사용권은 환불 가능하고 기간 이후 또는 사용 후에는 환불되지 않습니다."
+          ],
+          "tickets": false
+        },
+        {
+          "heading": "위치·교통·운영 정보",
           "kind": "visit",
-          "paragraphs": [
-            "장소 주소는 제주특별자치도 제주시 구좌읍 비자림로 1183이며, 전시 장소는 제주동화마을 동화아트센터입니다. 운영시간은 오전 9시부터 오후 7시까지이고 입장 마감은 오후 6시입니다. 관람 동선은 입체 전시 공간을 걸으며 장면과 캐릭터를 살펴보는 방식으로 이해하면 됩니다.",
-            "하루 일정에서는 운영시간과 입장 마감 시각을 먼저 확인한 뒤 제주 동부권의 다른 계획과 연결하는 편이 좋습니다. 다만 전시 관람에 필요한 예상 소요시간, 주차 가능 여부, 대중교통 경로, 주차장 명칭과 시설별 이용 조건은 제공 자료에서 확인되지 않았습니다."
-          ],
+          "paragraphs": [],
           "tickets": false
         },
         {
-          "heading": "입장권 유효기간과 구매 방법",
+          "heading": "와그 최저가보장 조건과 예약 확인",
           "paragraphs": [
-            "제공된 입장권 상품은 2026년 7월 11일부터 2027년 7월 11일까지 이용할 수 있는 앱 전용 e티켓입니다. 가격, 연령별 요금, 입장권에 포함되거나 제외되는 세부 시설은 자료에 확인된 내용이 없어 기재하지 않습니다.",
-            "구매 후 10분 이내 카카오 알림톡으로 안내를 받는 방식이며, 이용 당일 현장에서 구매자 정보와 QR을 확인한 뒤 입장합니다. 전시 자체의 운영 기간과 입장권 상품의 유효기간은 서로 다를 수 있으므로, 예약할 때 선택한 상품의 유효기간을 기준으로 일정을 잡는 것이 필요합니다."
+            "연령·방문일·포함 시설이 맞는 옵션을 선택한 뒤 최종 결제 금액과 취소 규정을 읽어보세요."
           ],
           "tickets": true
-        },
-        {
-          "heading": "예약·입장 순서와 취소 기준",
-          "paragraphs": [
-            "방문 날짜를 정한 뒤 입장권의 유효기간을 확인하고 구매합니다. 카카오 알림톡 수신 여부를 확인한 다음 현장 방문 시 구매자 정보와 QR을 제시하면 됩니다. 문의 전화는 070-4240-0163입니다.",
-            "제공된 상품 안내에 따르면 유효기간 안에 사용하지 않은 티켓은 100% 환불할 수 있지만, 유효기간이 지난 미사용 티켓과 이미 사용한 티켓은 환불할 수 없습니다. 가격이나 현장 판매 여부, 동반자의 연령 기준은 확인된 자료가 없으므로 이 글에서 단정하지 않습니다."
-          ],
-          "tickets": false
-        },
-        {
-          "heading": "이런 여행자에게 유용한 제주 일정",
-          "paragraphs": [
-            "애니메이션의 장면을 단순히 보는 것보다 공간을 이동하며 감상하고 싶은 여행자에게 어울립니다. 어린이와 성인이 함께 즐길 수 있는 전시로 소개되어 가족 여행의 실내 코스, 날씨 영향을 줄이고 싶은 제주 동부 일정, 지브리 작품을 주제로 한 문화 관람 계획에 활용할 수 있습니다.",
-            "방문 전에는 주소를 기준으로 이동 계획을 세우고, 오후에 도착한다면 입장 마감인 오후 6시 전 입장이 가능한지 먼저 계산해야 합니다. 주차와 교통, 관람 소요시간은 확인된 자료가 없으므로 일정에 임의의 시간을 넣기보다 이동 전 문의 전화로 확인하는 편이 안전합니다."
-          ],
-          "tickets": false
         }
       ],
       "visitInfo": [
         {
-          "topic": "추천 대상",
-          "status": "unknown",
-          "value": "어린이부터 성인까지 함께 관람하기 좋은 전시로 소개되며, 지브리 작품과 공간형 전시에 관심 있는 여행자에게 유용합니다.",
-          "sourceUrls": [
-            "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_300000000014688"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "즐길 거리",
-          "status": "unknown",
-          "value": "애니메이션 속 장면과 캐릭터를 입체적으로 재현한 전시 공간을 걷고, 작품 속 풍경과 이야기를 따라 감상할 수 있습니다.",
-          "sourceUrls": [
-            "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_300000000014688"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "예상 소요시간",
-          "status": "unknown",
-          "value": "제공 자료에서 관람 소요시간은 확인되지 않았습니다. 일정에 넣기 전 문의 전화로 확인하세요.",
-          "sourceUrls": [
-            "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_300000000014688"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
           "topic": "위치",
+          "value": "제주 제주시 구좌읍 비자림로 1183, 제주동화마을 동화아트센터",
           "status": "confirmed",
-          "value": "제주동화마을 동화아트센터, 제주특별자치도 제주시 구좌읍 비자림로 1183입니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/137562",
-            "https://visitjeju.net/kr/festival/view?contentsid=CNTS_300000000014688"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "교통",
-          "status": "unknown",
-          "value": "대중교통 경로와 이동 시간은 제공 자료에서 확인되지 않았습니다. 주소를 기준으로 방문 경로를 별도 확인하세요.",
           "sourceUrls": [
             "https://www.waug.com/ko/activities/137562"
           ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "주차",
-          "status": "unknown",
-          "value": "주차 가능 여부와 주차장 정보는 제공 자료에서 확인되지 않았습니다. 방문 전 문의 전화로 확인하세요.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/137562"
-          ],
-          "checkedAt": "2026-09-11"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
           "topic": "운영시간",
-          "status": "unknown",
-          "value": "오전 9시부터 오후 7시까지 운영하며 입장 마감은 오후 6시입니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/137562"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "이용권 종류",
-          "status": "unknown",
-          "value": "2026년 7월 11일부터 2027년 7월 11일까지 이용 가능한 앱 전용 e티켓 상품이 제공 자료에 안내되어 있습니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/137562"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "포함 사항",
-          "status": "unknown",
-          "value": "입장권의 세부 포함 범위는 제공 자료에서 확인되지 않았습니다. 구매 화면의 상품 설명을 확인하세요.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/137562"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "불포함 사항",
-          "status": "unknown",
-          "value": "불포함 시설과 별도 비용은 제공 자료에서 확인되지 않았습니다. 구매 화면의 상품 설명을 확인하세요.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/137562"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "예약·이용 방법",
+          "value": "09:00~19:00, 입장 마감 18:00",
           "status": "confirmed",
-          "value": "구매 후 10분 이내 카카오 알림톡을 받고, 이용 당일 현장에서 구매자 정보와 QR을 확인한 뒤 입장합니다.",
           "sourceUrls": [
             "https://www.waug.com/ko/activities/137562"
           ],
-          "checkedAt": "2026-09-11"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
-          "topic": "주의사항",
+          "topic": "문의",
+          "value": "070-4240-0163",
           "status": "confirmed",
-          "value": "유효기간 내 미사용 티켓은 100% 환불 가능하며, 유효기간 후 미사용 티켓과 사용한 티켓은 환불할 수 없습니다. 입장 마감은 오후 6시입니다.",
           "sourceUrls": [
             "https://www.waug.com/ko/activities/137562"
           ],
-          "checkedAt": "2026-09-11"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
+        },
+        {
+          "topic": "교통",
+          "value": "위 주소로 출발지 기준 경로를 확인하세요. 특정 버스·출구·도보시간은 확인되지 않았습니다.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
+        },
+        {
+          "topic": "주차",
+          "value": "주차 위치·요금·할인 조건은 운영처에 확인하세요. 무료주차를 확약하지 않습니다.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
+        },
+        {
+          "topic": "예상 소요시간",
+          "value": "공식 권장 소요시간은 확인되지 않았습니다. 관람·발권·이동에 여유를 두세요.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "faq": [
         {
-          "question": "스튜디오 지브리展은 어디에서 열리나요?",
-          "answer": "제주동화마을 동화아트센터에서 열립니다. 주소는 제주특별자치도 제주시 구좌읍 비자림로 1183입니다."
+          "question": "제주동화마을의 어디로 가면 되나요?",
+          "answer": "구좌읍 비자림로 1183의 동화아트센터를 목적지로 확인하세요."
         },
         {
-          "question": "입장권은 어떻게 사용하나요?",
-          "answer": "구매 후 10분 이내 카카오 알림톡으로 안내를 받고, 방문 당일 현장에서 구매자 정보와 QR을 확인한 뒤 입장합니다."
+          "question": "저녁 7시에 도착해도 입장할 수 있나요?",
+          "answer": "운영 종료는 19시지만 입장은 18시에 마감됩니다."
         },
         {
-          "question": "입장권 환불이 가능한가요?",
-          "answer": "제공된 상품 안내 기준으로 유효기간 내 미사용 티켓은 100% 환불할 수 있습니다. 유효기간이 지난 미사용 티켓과 사용한 티켓은 환불할 수 없습니다."
+          "question": "특전이 반드시 포함되나요?",
+          "answer": "옵션과 방문 시점별 제공 조건을 확인하세요. 모든 이용권에 같은 특전이 있다고 보장하지 않습니다."
         }
       ],
       "contentPolicyVersion": "tickets-2026-09-11",
@@ -6829,51 +6811,108 @@
       "productIds": [
         "Uap0KkL3"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/07/10/17836485794353.jpg",
+          "alt": "와그가 제공한 스튜디오 지브리展 전시 자료사진입니다.",
+          "caption": "와그가 제공한 스튜디오 지브리展 전시 자료사진입니다.",
+          "width": 853,
+          "height": 1280,
+          "kind": "waug-original",
+          "provider": "waug",
+          "permissionBasis": "explicit-permission",
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+          "sourceUrl": "https://www.waug.com/ko/activities/137562",
+          "usageConditions": "와그 공식 파트너 콘텐츠 가이드에 따른 해당 상품 소개 목적의 공식 이미지 원본 활용. 편집·재판매·고객 후기사진 사용 제외.",
+          "credit": "사진: 와그 공식 상품 자료 · 파트너 콘텐츠 가이드에 따라 활용",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "unedited": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z",
+          "faceReview": {
+            "status": "no-identifiable-faces",
+            "checkedAt": "2026-09-11T16:46:51.947Z",
+            "method": "원본 및 검수용 이미지 직접 확인"
+          }
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/07/10/17836485794535.jpg",
+          "alt": "제주동화마을 진입 공간의 공식 자료사진입니다.",
+          "caption": "제주동화마을 진입 공간의 공식 자료사진입니다.",
+          "width": 1280,
+          "height": 853,
+          "kind": "waug-original",
+          "provider": "waug",
+          "permissionBasis": "explicit-permission",
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+          "sourceUrl": "https://www.waug.com/ko/activities/137562",
+          "usageConditions": "와그 공식 파트너 콘텐츠 가이드에 따른 해당 상품 소개 목적의 공식 이미지 원본 활용. 편집·재판매·고객 후기사진 사용 제외.",
+          "credit": "사진: 와그 공식 상품 자료 · 파트너 콘텐츠 가이드에 따라 활용",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "unedited": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z",
+          "faceReview": {
+            "status": "no-identifiable-faces",
+            "checkedAt": "2026-09-11T16:46:51.947Z",
+            "method": "원본 및 검수용 이미지 직접 확인"
+          }
+        }
+      ],
       "thumbnail": {
-        "url": "https://mwohaji.kr/ticket-images/place-uap0kkl3-guide.svg",
-        "alt": "제주 동화마을 스튜디오 지브리展 장소명 안내 이미지, 실제 시설 사진 아님",
+        "url": "https://mwohaji.kr/ticket-images/place-uap0kkl3-ai-20260912.jpg",
+        "alt": "제주 동화마을 스튜디오 지브리展 방문 안내를 위한 AI 콘셉트 일러스트",
         "width": 1200,
-        "height": 630,
-        "credit": "주말에 뭐하지 제작 · 장소명 안내 그래픽"
+        "height": 800,
+        "kind": "ai-generated",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 시설·전시를 촬영한 사진이 아닌 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자가 요청한 장소별 AI 대표 이미지. 실제 현장 사진은 본문에서 별도 제공.",
+        "sources": [],
+        "status": "approved",
+        "mimeType": "image/jpeg",
+        "bytes": 235029,
+        "sha256": "9045d71ed92e1250a0fbc992239510f85805c7b247be1412e21b244b94f3f529",
+        "inputHash": "24dfd858930951837b9fcc54516a6e679fd8f2f76d9f8eb6c7fffcaac6a0352e",
+        "uploadedAt": "2026-09-11T16:46:51.947Z",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "generatedAt": "2026-09-11T16:46:51.947Z",
+          "originalGeneration": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a0907c-b59b-7462-a09b-42a89681bdf4\\exec-9d0452ee-cf04-4806-97f5-63fedb1272ad.png",
+          "promptHash": "24dfd858930951837b9fcc54516a6e679fd8f2f76d9f8eb6c7fffcaac6a0352e",
+          "promptSummary": "place-uap0kkl3: 장소별 한국어 제목의 비기록적 콘셉트 일러스트, 실제 시설 사진과 구분, 얼굴 없음, AI 표시",
+          "visualCheckedAt": "2026-09-11T16:46:51.947Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그 공식 상품 이미지 및 공공기관 사진 조사 후 본문 실제사진과 구분하여 구성",
+          "mobileCheckedAt": "2026-09-11T16:54:35.504Z",
+          "desktopCheckedAt": "2026-09-11T16:54:35.504Z",
+          "ogCheckedAt": "2026-09-11T16:54:35.504Z"
+        },
+        "verifiedAt": "2026-09-11T16:46:51.947Z"
       },
       "internalLinks": [
         {
-          "href": "/places/gyeonggi",
+          "href": "/places/jeju",
           "label": "제주 나들이 장소",
-          "verifiedAt": "2026-09-11T15:51:46.842Z"
+          "verifiedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "sources": [
         {
           "url": "https://www.waug.com/ko/activities/137562",
-          "label": "제주 동화마을 스튜디오 지브리展 입장권",
+          "label": "와그 상품·이용 안내 및 최저가보장 조건",
           "kind": "waug",
-          "checkedAt": "2026-09-11T15:42:04.484Z"
-        },
-        {
-          "url": "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_300000000014688",
-          "label": "공식·관광 자료",
-          "kind": "research",
-          "checkedAt": "2026-09-11T15:43:00.396Z"
-        },
-        {
-          "url": "https://visitjeju.net/kr/festival/view?contentsid=CNTS_300000000014688",
-          "label": "공식·관광 자료",
-          "kind": "research",
-          "checkedAt": "2026-09-11T15:43:00.396Z"
-        },
-        {
-          "url": "https://m.visitjeju.net/kr/festival/view?contentsid=CNTS_300000000014688",
-          "label": "공식·관광 자료",
-          "kind": "research",
-          "checkedAt": "2026-09-11T15:43:00.396Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "review": {
         "status": "approved",
-        "checkedAt": "2026-09-11T15:52:26.220Z",
-        "notes": "검수 완료·배포 전 확인",
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "notes": "2026-09-12 사용자 요청 전면 수정. 공식 상품·파트너 사용 안내·보장 팝업·이미지 직접 검수.",
         "textReviewStatus": "reviewed",
         "textReviewedAt": "2026-09-11T15:51:46.842Z",
         "mustHold": false,
@@ -6887,21 +6926,11 @@
         }
       },
       "contentGeneratedAt": "2026-09-11T15:43:00.396Z",
-      "holdReasons": [
-        "신규 작성 기준·출처·검색 의도·이미지 권리 검수 필요",
-        "이미지 크기 저장 필요",
-        "개별 사진 출처·이용 조건·상업적 사용 근거 필요",
-        "본문 사진 부족 사유 기록 필요",
-        "글 주소 확인",
-        "글 검수 또는 재검수 필요",
-        "본문·공식 출처 필요",
-        "관련 내부링크 확인",
-        "상품 검수 필요: Uap0KkL3",
-        "대표 이미지·모바일·PC·OG 검수 필요",
-        "대표 사진 권리·장소 일치 확인"
-      ],
+      "holdReasons": [],
       "imageResearch": {
-        "unavailableReason": "확인된 본문 사진이 부족해 본문 사진 미첨부"
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "realPhotoSearchNote": "와그 파트너 가이드와 공식 상품 이미지 검수. 아쿠아플라넷은 공공누리 제1유형 사진 추가.",
+        "bodyAiNeeded": false
       },
       "priceGuaranteeChecks": {
         "Uap0KkL3": {
@@ -6913,191 +6942,142 @@
         }
       },
       "publishedGuarantees": {
-        "Uap0KkL3": null
-      }
+        "Uap0KkL3": {
+          "status": "confirmed",
+          "affiliateUrl": "https://www.waug.com/r/Uap0KkL3",
+          "sourceUrl": "https://www.waug.com/ko/activities/137562",
+          "conditions": "최저가보장 표시 상품의 예약자가 결제 후 24시간 안에 와그 상담 채팅으로 신청해야 합니다. 동일 통화·이용일·투어사 상품의 비교 화면과 URL을 제출합니다. 결제 당시 적용 가능한 최대 쿠폰 할인 가격을 기준으로 비교하며 카드사 할인은 제외합니다. 승인 및 이용 완료 후 차액을 현금이 아닌 포인트로 지급합니다.",
+          "evidenceText": "해당 상품 가격 영역: 최저가 보장. 클릭한 안내: 예약자 한정, 차액 포인트 보상!",
+          "pageSha256": "6b469d04d8f4bbbe313b92021ff123d855c000bcff5dc35636d9a511ebcdcc29",
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "reviewedAt": "2026-09-11T16:46:51.947Z",
+          "expiresAt": "2026-09-12T16:46:51.947Z"
+        }
+      },
+      "checkedAt": "2026-09-11T16:46:51.947Z"
     },
     {
       "slug": "place-wffjcjkf",
       "placeId": "place-wffjcjkf",
       "placeName": "제주 아쿠아플라넷",
       "area": "제주",
-      "address": "주소 확인 필요",
+      "address": "제주 서귀포시 성산읍 섭지코지로 95",
       "createdAt": "2026-09-11T15:43:02.825Z",
       "status": "published",
       "scheduledAt": "2026-09-11T15:52:43.331Z",
       "publishedAt": "2026-09-11T15:52:43.331Z",
-      "title": "제주 아쿠아플라넷 입장권·늦은 오후권과 관람 순서 안내",
-      "description": "제주 아쿠아플라넷의 전시 구성과 운영시간, 입장권 이용 방법, 늦은 오후권 확인 사항을 한눈에 정리한 제주 실내 나들이 안내입니다.",
-      "intro": "이 글에는 제휴링크가 포함되어 있으며, 예약 시 수수료를 받을 수 있습니다. 제주 아쿠아플라넷은 제주 바다와 해양 생태계를 주제로 아쿠아리움, 오션아레나, 해양 관련 전시를 함께 살펴볼 수 있는 실내형 여행지입니다. 날씨 영향을 적게 받는 일정을 찾는 가족 단위 여행객, 성산·섭지코지 일대와 묶어 반나절 코스를 계획하는 방문객에게 유용합니다. 입장권을 고를 때는 일반권인지 늦은 오후권인지, 상품에 포함된 관람 범위와 사용 가능 기간을 먼저 비교하는 것이 좋습니다.",
+      "title": "아쿠아플라넷 제주 입장권·늦은 오후권, 관람 일정 잡기",
+      "description": "제주 동쪽 여행에서 바다 생물을 가까이 관찰하는 실내 일정을 찾는다면 아쿠아플라넷 제주가 한 가지 선택입니다. 대형 수조 앞에 천천히 머무르고 싶은지, 다른 일정을 마친 뒤 짧게 들를지에 따라 이용권 선택이 달라집니다. 금액만 비교하기보다 실제 남는 관람시간부",
+      "intro": "제주 동쪽 여행에서 바다 생물을 가까이 관찰하는 실내 일정을 찾는다면 아쿠아플라넷 제주가 한 가지 선택입니다. 대형 수조 앞에 천천히 머무르고 싶은지, 다른 일정을 마친 뒤 짧게 들를지에 따라 이용권 선택이 달라집니다. 금액만 비교하기보다 실제 남는 관람시간부터 계산해 보세요.",
       "theme": "동물원·아쿠아리움",
       "sections": [
         {
-          "heading": "제주 바다를 실내에서 살펴보는 관람 장소",
+          "heading": "수조 앞에 머무는 시간도 일정입니다",
           "paragraphs": [
-            "아쿠아플라넷 제주는 해양문화의 가치와 생태계 보존을 알리는 해양 테마 시설로 운영됩니다. 공식 안내는 교육·문화·엔터테인먼트를 함께 즐기는 어뮤즈먼트 테마파크로 소개하며, 아쿠아리움·오션아레나·마린사이언스 3개관을 주요 구성으로 제시합니다.",
-            "공식 자료에는 연면적 2만 5600㎡, 시설 규모 1만 800톤, 500여 종과 2만 8000마리의 전시생물이 안내되어 있습니다. 생태설명회와 공연, 별도 체험 프로그램도 운영될 수 있으므로 방문 당일 프로그램 시간과 진행 여부를 확인하면 관람 순서를 세우기 쉽습니다."
+            "같은 수조라도 가까운 생물만 볼 때와 전체 움직임을 바라볼 때 느낌이 다릅니다. 아이와 함께라면 크기나 색깔이 다른 생물을 찾아보는 식으로 관찰해 보세요. 촬영을 하더라도 다른 방문객의 시야와 이동 공간을 남겨두는 배려가 필요합니다."
+          ],
+          "photoIndex": 0,
+          "tickets": false
+        },
+        {
+          "heading": "섭지코지로 향하는 길, 입구부터 확인",
+          "paragraphs": [
+            "주소를 기준으로 도착 경로와 주차장 안내를 확인하세요. 아래 사진은 한국관광공사가 제공한 실제 외관 자료사진입니다. 해안 관광과 관람을 같은 날에 넣는다면 이동과 식사 시간을 먼저 남겨두는 편이 좋습니다."
+          ],
+          "photoIndex": 1,
+          "tickets": false
+        },
+        {
+          "heading": "일반 입장권과 늦은 오후권 고르기",
+          "paragraphs": [
+            "늦은 오후권은 입장 시작시각과 포함 시설을 확인한 뒤 선택하세요. 이 상품은 09:30~18:00 운영, 매표 17:00·입장 17:30 마감으로 안내됩니다. 오후권의 정확한 입장 시작시각을 확인하기 전에는 도착 시간을 고정하지 마세요."
+          ],
+          "photoIndex": 2,
+          "tickets": false
+        },
+        {
+          "heading": "모바일 티켓과 현장 이용",
+          "paragraphs": [
+            "당일 구매·사용이 가능하며 10분 이내 문자 또는 알림톡으로 받은 티켓을 매표소에 제시합니다. 현재 안내된 이용 기간은 2026년 9월 1~30일입니다. 공연·체험·다른 전시의 포함 여부는 선택 옵션에 따라 확인하세요."
           ],
           "tickets": false
         },
         {
-          "heading": "방문 전 확인할 위치와 운영시간",
-          "paragraphs": [
-            "주소는 제주특별자치도 서귀포시 성산읍 섭지코지로 95입니다. 운영시간은 연중무휴 09:30~18:00이며, 매표 마감은 17:00, 입장 마감은 17:30으로 안내됩니다. 늦은 시간에 도착할 예정이라면 매표와 입장 마감 시각을 나누어 확인해야 합니다.",
-            "공식 자료에서 대중교통 이동 경로와 주차 이용 조건, 전 구역을 둘러보는 데 필요한 예상 소요시간은 확인되지 않았습니다. 따라서 교통편과 주차 운영은 공식 홈페이지 또는 시설 문의 전화 1833-7001로 출발 전에 확인하는 편이 안전합니다."
-          ],
-          "tickets": false,
-          "kind": "visit"
+          "heading": "위치·교통·운영 정보",
+          "kind": "visit",
+          "paragraphs": [],
+          "tickets": false
         },
         {
-          "heading": "일반 입장권과 늦은 오후권을 비교하는 방법",
+          "heading": "와그 최저가보장 조건과 예약 확인",
           "paragraphs": [
-            "공식 홈페이지의 입장권 기준 요금은 성인 45,500원, 청소년·경로 43,600원, 어린이 41,400원입니다. 다만 온라인 판매 상품의 실제 판매가와 늦은 오후권의 적용 조건은 별도 상품 페이지에서 확인해야 하며, 이 글에서는 확인되지 않은 가격을 단정하지 않습니다.",
-            "검색된 ‘제주 아쿠아플라넷 입장권 & 늦은 오후권’ 상품은 아쿠아리움, 오션아레나, ‘물 그리고 숨 : 제주 해녀의 바당’ 전시 이용 상품으로 안내됩니다. 상품 사용 기간은 2026년 9월 1일부터 9월 30일까지이며, 당일 구매와 당일 사용이 가능하다고 안내되어 있습니다. 늦은 오후권의 정확한 입장 기준과 이용 범위는 구매 화면에서 확인해야 합니다."
+            "연령·방문일·포함 시설이 맞는 옵션을 선택한 뒤 최종 결제 금액과 취소 규정을 읽어보세요."
           ],
           "tickets": true
-        },
-        {
-          "heading": "구매 후 입장 절차와 주의사항",
-          "paragraphs": [
-            "온라인 구매 뒤 10분 이내 문자 LMS 또는 카카오 알림톡으로 안내된 모바일 티켓을 받고, 현장 매표소에서 티켓을 제시하는 방식입니다. 상품 안내에는 앱 전용 e티켓 이용 방법도 함께 제시되어 있으므로 구매처에서 발송된 티켓의 사용 지침을 우선 적용해야 합니다.",
-            "사용한 티켓은 환불할 수 없으며, 취소·환불 접수는 구매 사이트를 통해 진행합니다. 패키지 상품은 구성 항목 중 하나라도 사용하면 부분 환불과 전체 환불이 불가하다고 안내됩니다. 휴관이나 이용 불가 시설이 발생할 수 있으므로 출발 전 공식 홈페이지에서 당일 운영 정보를 확인하는 것이 필요합니다."
-          ],
-          "tickets": false
-        },
-        {
-          "heading": "반나절 일정으로 계획할 때의 순서",
-          "paragraphs": [
-            "먼저 성산읍 섭지코지로 95까지의 이동과 도착 시각을 정한 뒤, 매표 마감 전 입장 가능한지 계산합니다. 이후 아쿠아리움 관람을 중심에 두고 오션아레나와 상품에 포함된 전시를 이어 보는 방식으로 일정을 구성하면 시설별 관람 범위를 놓치지 않기 좋습니다.",
-            "공연이나 생태설명회, 체험 프로그램은 운영 여부와 시간이 달라질 수 있으므로 고정 일정으로 단정하지 않는 편이 좋습니다. 공식 홈페이지와 구매처 상품 페이지에서 티켓의 유효기간, 포함 시설, 입장 조건을 마지막으로 대조한 뒤 예약하세요."
-          ],
-          "tickets": false
         }
       ],
       "visitInfo": [
         {
-          "topic": "추천 대상",
-          "status": "unknown",
-          "value": "해양 생태와 전시를 함께 살펴보려는 가족 단위 여행객, 날씨 영향을 적게 받는 실내 일정을 찾는 방문객에게 적합합니다.",
-          "sourceUrls": [
-            "https://www.aquaplanet.co.kr/jeju/index.do"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "즐길 거리",
-          "status": "unknown",
-          "value": "아쿠아리움, 오션아레나, 마린사이언스와 생태설명회·공연·체험 프로그램이 안내되어 있습니다. 판매 상품에는 ‘물 그리고 숨 : 제주 해녀의 바당’ 전시가 포함된 것으로 안내됩니다.",
-          "sourceUrls": [
-            "https://www.aquaplanet.co.kr/jeju/index.do",
-            "https://nol.yanolja.com/ticket/products/Y6001342"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "예상 소요시간",
-          "status": "unknown",
-          "value": "전체 관람 예상시간은 확인되지 않았습니다. 당일 프로그램과 이동 일정을 공식 홈페이지에서 확인하세요.",
-          "sourceUrls": [
-            "https://www.aquaplanet.co.kr/jeju/index.do"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
           "topic": "위치",
+          "value": "제주 서귀포시 성산읍 섭지코지로 95",
           "status": "confirmed",
-          "value": "제주특별자치도 서귀포시 성산읍 섭지코지로 95",
           "sourceUrls": [
-            "https://www.aquaplanet.co.kr/jeju/index.do"
+            "https://www.waug.com/ko/activities/103543"
           ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "교통",
-          "status": "unknown",
-          "value": "대중교통 이동 경로는 제공 자료에서 확인되지 않았습니다. 출발 전 공식 홈페이지 또는 시설에 문의하세요.",
-          "sourceUrls": [
-            "https://www.aquaplanet.co.kr/jeju/index.do"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "주차",
-          "status": "unknown",
-          "value": "주차 조건과 요금은 제공 자료에서 확인되지 않았습니다. 공식 홈페이지 또는 시설에 문의하세요.",
-          "sourceUrls": [
-            "https://www.aquaplanet.co.kr/jeju/index.do"
-          ],
-          "checkedAt": "2026-09-11"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
           "topic": "운영시간",
-          "status": "unknown",
-          "value": "연중무휴 09:30~18:00, 매표 마감 17:00, 입장 마감 17:30로 안내됩니다.",
-          "sourceUrls": [
-            "https://www.aquaplanet.co.kr/jeju/index.do",
-            "https://www.waug.com/ko/activities/103543"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "이용권 종류",
-          "status": "unknown",
-          "value": "공식 입장권 기준 요금과 온라인 판매 상품인 입장권·늦은 오후권이 확인됩니다. 늦은 오후권의 세부 조건은 상품 페이지에서 확인해야 합니다.",
-          "sourceUrls": [
-            "https://www.aquaplanet.co.kr/jeju/index.do",
-            "https://www.waug.com/ko/activities/103543"
-          ],
-          "checkedAt": "2026-09-11"
-        },
-        {
-          "topic": "포함 사항",
+          "value": "09:30~18:00, 매표 마감 17:00, 입장 마감 17:30",
           "status": "confirmed",
-          "value": "판매 상품 안내상 아쿠아리움, 오션아레나, ‘물 그리고 숨 : 제주 해녀의 바당’ 전시 이용이 포함됩니다.",
           "sourceUrls": [
-            "https://nol.yanolja.com/ticket/products/Y6001342"
+            "https://www.waug.com/ko/activities/103543"
           ],
-          "checkedAt": "2026-09-11"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
-          "topic": "불포함 사항",
+          "topic": "문의",
+          "value": "1833-7001",
+          "status": "confirmed",
+          "sourceUrls": [
+            "https://www.waug.com/ko/activities/103543"
+          ],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
+        },
+        {
+          "topic": "교통",
+          "value": "위 주소로 출발지 기준 경로를 확인하세요. 특정 버스·출구·도보시간은 확인되지 않았습니다.",
           "status": "unknown",
-          "value": "상품별 불포함 항목은 제공 자료만으로 확인되지 않았습니다. 구매 화면의 상품 구성과 별도 체험 조건을 확인하세요.",
-          "sourceUrls": [
-            "https://nol.yanolja.com/ticket/products/Y6001342"
-          ],
-          "checkedAt": "2026-09-11"
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
-          "topic": "예약·이용 방법",
-          "status": "confirmed",
-          "value": "당일 구매·당일 사용이 가능하며, 구매 후 10분 이내 문자 LMS 또는 카카오 알림톡으로 받은 티켓을 매표소에서 제시합니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/103543"
-          ],
-          "checkedAt": "2026-09-11"
+          "topic": "주차",
+          "value": "주차 위치·요금·할인 조건은 운영처에 확인하세요. 무료주차를 확약하지 않습니다.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
-          "topic": "주의사항",
-          "status": "confirmed",
-          "value": "사용한 티켓은 환불할 수 없고, 패키지 일부 사용 시 부분 환불이 불가합니다. 휴관 또는 이용 불가 시설이 발생할 수 있어 방문 전 운영 정보를 확인해야 합니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/103543"
-          ],
-          "checkedAt": "2026-09-11"
+          "topic": "예상 소요시간",
+          "value": "공식 권장 소요시간은 확인되지 않았습니다. 관람·발권·이동에 여유를 두세요.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "faq": [
         {
-          "question": "제주 아쿠아플라넷은 언제 입장할 수 있나요?",
-          "answer": "운영시간은 09:30~18:00이며, 매표는 17:00, 입장은 17:30에 마감됩니다."
+          "question": "늦은 오후권은 몇 시부터 쓸 수 있나요?",
+          "answer": "선택한 옵션의 입장 시작시각을 확인해야 합니다. 일반 운영시간만으로 오후권 시작시각을 판단하지 마세요."
         },
         {
-          "question": "늦은 오후권의 정확한 가격과 입장 기준은 무엇인가요?",
-          "answer": "제공 자료에는 늦은 오후권의 정확한 가격과 세부 입장 기준이 확인되지 않았습니다. 구매 시점의 상품 페이지에서 가격, 사용 기간, 입장 조건을 확인해야 합니다."
+          "question": "공연까지 모두 포함되나요?",
+          "answer": "상품 안내는 선택 옵션 기준입니다. 원하는 공연과 체험이 포함됐는지 옵션 상세를 확인하세요."
         },
         {
-          "question": "온라인 티켓은 어떻게 사용하나요?",
-          "answer": "구매 후 문자 LMS 또는 카카오 알림톡으로 받은 모바일 티켓을 매표소에 제시해 이용하는 방식으로 안내됩니다."
+          "question": "관람에는 몇 시간이 필요한가요?",
+          "answer": "관람 속도와 체험 선택에 따라 달라집니다. 정해진 권장 시간을 확인하지 못했으므로 다음 일정에 여유를 두세요."
         }
       ],
       "comparedSlugs": [
@@ -7122,45 +7102,120 @@
       "productIds": [
         "wffjCJKf"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/03/16/17736389520041.jpg",
+          "alt": "아쿠아플라넷 제주 대형 수조의 와그 공식 자료사진입니다. 관람객은 얼굴을 식별할 수 없는 실루엣으로 나타납니다.",
+          "caption": "아쿠아플라넷 제주 대형 수조의 와그 공식 자료사진입니다. 관람객은 얼굴을 식별할 수 없는 실루엣으로 나타납니다.",
+          "width": 1280,
+          "height": 1024,
+          "kind": "waug-original",
+          "provider": "waug",
+          "permissionBasis": "explicit-permission",
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+          "sourceUrl": "https://www.waug.com/ko/activities/103543",
+          "usageConditions": "와그 공식 파트너 콘텐츠 가이드에 따른 해당 상품 소개 목적의 공식 이미지 원본 활용. 편집·재판매·고객 후기사진 사용 제외.",
+          "credit": "사진: 와그 공식 상품 자료 · 파트너 콘텐츠 가이드에 따라 활용",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "unedited": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z",
+          "faceReview": {
+            "status": "no-identifiable-faces",
+            "checkedAt": "2026-09-11T16:46:51.947Z",
+            "method": "원본 및 검수용 이미지 직접 확인"
+          }
+        },
+        {
+          "url": "https://mwohaji.kr/ticket-images/place-wffjcjkf-kto-1.jpg",
+          "alt": "아쿠아플라넷 제주 건물 입구",
+          "caption": "한국관광공사 제공 자료사진. 촬영 당시 모습으로 현재 운영 구성과 다를 수 있습니다.",
+          "width": 940,
+          "height": 527,
+          "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/80/2986980_image2_1.jpg",
+          "rightsUrl": "https://www.nculture.org/cul/localCultureDetail.do?contentType=G&targetId=2048059",
+          "usageConditions": "공공누리 제1유형: 출처표시, 상업적 이용 가능",
+          "credit": "한국관광공사 · 공공누리 제1유형 · 지역N문화 제공",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z"
+        },
+        {
+          "url": "https://mwohaji.kr/ticket-images/place-wffjcjkf-kto-2.jpg",
+          "alt": "아쿠아플라넷 제주 실내 관람 통로",
+          "caption": "한국관광공사 제공 자료사진. 촬영 당시 모습으로 현재 운영 구성과 다를 수 있습니다.",
+          "width": 940,
+          "height": 627,
+          "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/71/2986971_image2_1.jpg",
+          "rightsUrl": "https://www.nculture.org/cul/localCultureDetail.do?contentType=G&targetId=2048059",
+          "usageConditions": "공공누리 제1유형: 출처표시, 상업적 이용 가능",
+          "credit": "한국관광공사 · 공공누리 제1유형 · 지역N문화 제공",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z"
+        }
+      ],
       "thumbnail": {
-        "url": "https://mwohaji.kr/ticket-images/place-wffjcjkf-guide.svg",
-        "alt": "제주 아쿠아플라넷 장소명 안내 이미지, 실제 시설 사진 아님",
+        "url": "https://mwohaji.kr/ticket-images/place-wffjcjkf-ai-20260912.jpg",
+        "alt": "제주 아쿠아플라넷 방문 안내를 위한 AI 콘셉트 일러스트",
         "width": 1200,
-        "height": 630,
-        "credit": "주말에 뭐하지 제작 · 장소명 안내 그래픽"
+        "height": 800,
+        "kind": "ai-generated",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 시설·전시를 촬영한 사진이 아닌 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자가 요청한 장소별 AI 대표 이미지. 실제 현장 사진은 본문에서 별도 제공.",
+        "sources": [],
+        "status": "approved",
+        "mimeType": "image/jpeg",
+        "bytes": 203118,
+        "sha256": "6a45deb3f3201a75e8aa3993e495b26f9df26195625ce2a63a4ae2f256ad32cc",
+        "inputHash": "e70126a6fc9b4ecd398512b629fbbdebb7c882342afaf818edf393561c6211d6",
+        "uploadedAt": "2026-09-11T16:46:51.947Z",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "generatedAt": "2026-09-11T16:46:51.947Z",
+          "originalGeneration": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a0907c-b59b-7462-a09b-42a89681bdf4\\exec-4e15f836-4a85-46f0-90ac-c62ee81f5c81.png",
+          "promptHash": "e70126a6fc9b4ecd398512b629fbbdebb7c882342afaf818edf393561c6211d6",
+          "promptSummary": "place-wffjcjkf: 장소별 한국어 제목의 비기록적 콘셉트 일러스트, 실제 시설 사진과 구분, 얼굴 없음, AI 표시",
+          "visualCheckedAt": "2026-09-11T16:46:51.947Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그 공식 상품 이미지 및 공공기관 사진 조사 후 본문 실제사진과 구분하여 구성",
+          "mobileCheckedAt": "2026-09-11T16:54:35.504Z",
+          "desktopCheckedAt": "2026-09-11T16:54:35.504Z",
+          "ogCheckedAt": "2026-09-11T16:54:35.504Z"
+        },
+        "verifiedAt": "2026-09-11T16:46:51.947Z"
       },
       "internalLinks": [
         {
-          "href": "/places/gyeonggi",
+          "href": "/places/jeju",
           "label": "제주 나들이 장소",
-          "verifiedAt": "2026-09-11T15:51:46.842Z"
+          "verifiedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "sources": [
         {
           "url": "https://www.waug.com/ko/activities/103543",
-          "label": "제주 아쿠아플라넷 입장권 & 늦은 오후권",
+          "label": "와그 상품·이용 안내 및 최저가보장 조건",
           "kind": "waug",
-          "checkedAt": "2026-09-11T15:42:04.964Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
-          "url": "https://www.aquaplanet.co.kr/jeju/index.do",
-          "label": "공식·관광 자료",
-          "kind": "research",
-          "checkedAt": "2026-09-11T15:43:02.825Z"
-        },
-        {
-          "url": "https://nol.yanolja.com/ticket/products/Y6001342",
-          "label": "공식·관광 자료",
-          "kind": "research",
-          "checkedAt": "2026-09-11T15:43:02.825Z"
+          "url": "https://www.nculture.org/cul/localCultureDetail.do?contentType=G&targetId=2048059",
+          "label": "한국관광공사 관광정보·공공누리 사진",
+          "kind": "official",
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "review": {
         "status": "approved",
-        "checkedAt": "2026-09-11T15:52:26.220Z",
-        "notes": "검수 완료·배포 전 확인",
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "notes": "2026-09-12 사용자 요청 전면 수정. 공식 상품·파트너 사용 안내·보장 팝업·이미지 직접 검수.",
         "textReviewStatus": "reviewed",
         "textReviewedAt": "2026-09-11T15:51:46.842Z",
         "mustHold": false,
@@ -7174,21 +7229,11 @@
         }
       },
       "contentGeneratedAt": "2026-09-11T15:43:02.825Z",
-      "holdReasons": [
-        "신규 작성 기준·출처·검색 의도·이미지 권리 검수 필요",
-        "이미지 크기 저장 필요",
-        "개별 사진 출처·이용 조건·상업적 사용 근거 필요",
-        "본문 사진 부족 사유 기록 필요",
-        "글 주소 확인",
-        "글 검수 또는 재검수 필요",
-        "본문·공식 출처 필요",
-        "관련 내부링크 확인",
-        "상품 검수 필요: wffjCJKf",
-        "대표 이미지·모바일·PC·OG 검수 필요",
-        "대표 사진 권리·장소 일치 확인"
-      ],
+      "holdReasons": [],
       "imageResearch": {
-        "unavailableReason": "확인된 본문 사진이 부족해 본문 사진 미첨부"
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "realPhotoSearchNote": "와그 파트너 가이드와 공식 상품 이미지 검수. 아쿠아플라넷은 공공누리 제1유형 사진 추가.",
+        "bodyAiNeeded": false
       },
       "priceGuaranteeChecks": {
         "wffjCJKf": {
@@ -7200,185 +7245,143 @@
         }
       },
       "publishedGuarantees": {
-        "wffjCJKf": null
-      }
+        "wffjCJKf": {
+          "status": "confirmed",
+          "affiliateUrl": "https://www.waug.com/r/wffjCJKf",
+          "sourceUrl": "https://www.waug.com/ko/activities/103543",
+          "conditions": "최저가보장 표시 상품의 예약자가 결제 후 24시간 안에 와그 상담 채팅으로 신청해야 합니다. 동일 통화·이용일·투어사 상품의 비교 화면과 URL을 제출합니다. 결제 당시 적용 가능한 최대 쿠폰 할인 가격을 기준으로 비교하며 카드사 할인은 제외합니다. 승인 및 이용 완료 후 차액을 현금이 아닌 포인트로 지급합니다.",
+          "evidenceText": "해당 상품 가격 영역: 최저가 보장. 클릭한 안내: 예약자 한정, 차액 포인트 보상!",
+          "pageSha256": "4c269e51ab5d96d1b6cf48d69cd5e2991a227be04a2f7e6fb9a3483185702e76",
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "reviewedAt": "2026-09-11T16:46:51.947Z",
+          "expiresAt": "2026-09-12T16:46:51.947Z"
+        }
+      },
+      "checkedAt": "2026-09-11T16:46:51.947Z"
     },
     {
       "slug": "place-mft6fpsb",
       "placeId": "place-mft6fpsb",
       "placeName": "제주 아르떼뮤지엄",
       "area": "제주",
-      "address": "주소 확인 필요",
+      "address": "제주 제주시 애월읍 어림비로 478",
       "createdAt": "2026-09-11T15:43:36.103Z",
       "status": "published",
       "scheduledAt": "2026-09-11T15:52:43.331Z",
       "publishedAt": "2026-09-11T15:52:43.331Z",
       "contentPolicyVersion": "tickets-2026-09-11",
-      "title": "제주 아르떼뮤지엄 입장권과 관람 동선·이용 방법 안내",
-      "description": "제주 아르떼뮤지엄의 전시 특징과 추천 대상, 운영시간, 위치, 입장권 사용 방법을 확인하고 방문 일정을 계획해 보세요.",
-      "intro": "제주 애월의 옛 공장을 활용한 아르떼뮤지엄은 빛·소리·향기를 함께 사용하는 몰입형 미디어아트 전시관입니다. 해변과 파도, 폭포, 꽃, 달, 숲처럼 제주 자연을 연상시키는 주제를 감각적으로 만날 수 있어 날씨와 관계없이 전시 중심의 제주 일정을 구성하려는 여행자에게 유용합니다. 이 글에는 제휴링크가 포함되어 있으며, 예약 시 수수료를 받을 수 있습니다.",
+      "title": "아르떼뮤지엄 제주 입장권, 미디어아트 관람과 바코드 이용",
+      "description": "빛과 소리에 둘러싸이는 전시를 좋아한다면 애월의 아르떼뮤지엄 제주를 살펴보세요. 자연을 소재로 한 몰입형 미디어아트를 공간 전체로 경험하는 장소입니다. 사진 한 장을 남기는 일정보다 영상이 움직이고 분위기가 바뀌는 순간을 천천히 보는 관람에 잘 어울립니다.",
+      "intro": "빛과 소리에 둘러싸이는 전시를 좋아한다면 애월의 아르떼뮤지엄 제주를 살펴보세요. 자연을 소재로 한 몰입형 미디어아트를 공간 전체로 경험하는 장소입니다. 사진 한 장을 남기는 일정보다 영상이 움직이고 분위기가 바뀌는 순간을 천천히 보는 관람에 잘 어울립니다.",
       "theme": "전시·정원",
       "sections": [
         {
-          "heading": "제주 여행에서 아르떼뮤지엄을 선택할 이유",
+          "heading": "사진보다 먼저 빛과 소리를 느껴보세요",
           "paragraphs": [
-            "아르떼뮤지엄 제주는 세계적 디지털 디자인 기업 d'strict가 선보인 몰입형 미디어아트 전시관입니다. 코엑스 ‘WAVE’ 작품으로 알려진 d'strict의 전시를 제주 애월에서 접할 수 있으며, 기존 스피커 제조 공장을 업사이클링한 공간이라는 점도 장소의 특징입니다.",
-            "전시 공간은 4,628㎡ 규모이고 최대 층고는 10m로 안내되어 있습니다. 넓은 공간과 높은 천장을 활용한 영상, 음향, 향기 연출이 중심이므로 단순한 작품 감상보다 공간 전체의 분위기와 감각적 연출을 경험하고 싶은 여행자에게 잘 맞습니다. 제주 관광 중 실내 전시를 일정에 넣고 싶은 가족, 연인, 친구 단위 방문객이 우선 고려할 만합니다."
+            "한 공간에 들어가자마자 촬영을 시작하기보다 잠시 눈과 귀로 분위기를 느껴보세요. 움직이는 영상은 같은 자리에서도 다른 인상을 줍니다. 작품을 빠르게 모두 보는 것보다 마음에 드는 공간에 머무르는 방식으로 관람해도 좋습니다."
+          ],
+          "photoIndex": 0,
+          "tickets": false
+        },
+        {
+          "heading": "어두운 전시장에서 편하게 움직이기",
+          "paragraphs": [
+            "빛의 변화와 어둠에 민감한 일행이 있다면 관람 전 전시 특성을 이야기해 주세요. 이동 중 휴대전화 화면만 보지 말고 주변 동선을 확인하고, 촬영할 때는 현장의 촬영 규정을 따르세요. 사진 속 작품이 항상 동일하게 운영되는 것은 아닙니다."
+          ],
+          "photoIndex": 1,
+          "tickets": false
+        },
+        {
+          "heading": "애월 일정의 시작 또는 마무리로",
+          "paragraphs": [
+            "10:00~20:00 운영하며 입장 마감은 19:00로 안내됩니다. 관람 후 식사나 다른 관광지를 이어갈 계획이라면 이동 시간을 따로 남겨두세요. 본문 사진은 실제 상품 자료이며 대표 이미지는 분위기를 설명하는 AI 일러스트입니다."
+          ],
+          "photoIndex": 2,
+          "tickets": false
+        },
+        {
+          "heading": "바코드를 받은 다음 방문하세요",
+          "paragraphs": [
+            "구매 후 1시간 이내 알림톡으로 바코드를 받고, 수령한 바코드를 현장에서 제시합니다. 구매일로부터 30일 이내 이용 가능한 상품입니다. 선택 옵션의 입장 범위와 별도 음료·체험 포함 여부를 확인하세요. 기간 내 미사용권만 환불 가능하며 부분취소·부분환불은 불가합니다."
           ],
           "tickets": false
         },
         {
-          "heading": "무엇을 보며 어떻게 둘러볼까",
-          "paragraphs": [
-            "대표적인 자연 테마는 해변·파도·폭포·꽃·달·숲 등입니다. 작품을 빠르게 사진으로만 보는 일정으로 잡기보다, 각 공간의 빛과 소리를 차례로 감상하는 방식이 전시 특성에 어울립니다. 향기를 활용한 연출도 안내되어 있어 시각 중심 전시와 다른 감각 경험을 기대할 수 있습니다.",
-            "전시 작품 수는 자료에 따라 10개 또는 16점으로 다르게 기재되어 있으므로 하나의 숫자로 단정하지 않습니다. 대신 자연을 소재로 한 여러 미디어아트 공간을 관람한다는 점을 기준으로 일정을 세우는 편이 정확합니다. 예상 관람 소요시간은 제공 자료에서 확인되지 않았으므로, 이후 제주 일정과 이동 시간을 정할 때 임의로 고정하지 않는 것이 좋습니다."
-          ],
-          "tickets": false
-        },
-        {
-          "heading": "방문 전 확인할 위치와 운영 정보",
+          "heading": "위치·교통·운영 정보",
           "kind": "visit",
-          "paragraphs": [
-            "주소는 제주특별자치도 제주시 애월읍 어림비로 478입니다. 제주 애월 일정에 포함하기 좋은 위치이며, 주소를 내비게이션에 입력해 이동 계획을 세울 수 있습니다. 대중교통 이용 방법과 주차 가능 여부·주차 규모는 제공 자료에서 확인되지 않았으므로 방문 전 공식 안내 또는 현장 운영처에 문의해 확인해야 합니다.",
-            "운영시간은 10:00부터 20:00까지이며 입장 마감은 19:00입니다. 휴무일은 별도 없이 연중무휴로 안내되어 있습니다. 늦은 시간에 도착하면 입장 마감에 걸릴 수 있으므로, 관람을 일정의 마지막 순서로 배치할 때는 이동 여유를 두는 편이 안전합니다.",
-            "연락처는 1899-5008입니다. 운영시간이나 이용 조건이 바뀌었는지 확인할 필요가 있을 때 문의 창구로 활용할 수 있습니다."
-          ],
+          "paragraphs": [],
           "tickets": false
         },
         {
-          "heading": "아르떼뮤지엄 입장권 구매와 현장 이용 방법",
+          "heading": "와그 최저가보장 조건과 예약 확인",
           "paragraphs": [
-            "한국관광공사 자료에 안내된 입장요금은 성인 18,000원, 청소년 14,000원, 어린이 11,000원이며 영아는 무료 입장 가능으로 기재되어 있습니다. 다만 판매처의 실제 상품 가격과 적용 조건은 별도일 수 있으므로, 구매 화면에서 현재 가격과 대상 조건을 확인해야 합니다.",
-            "와그의 제주 아르떼뮤지엄 입장권 상품은 구매일로부터 30일 이내 사용 가능하며, 구매 후 1시간 이내 카카오 알림톡으로 바코드를 받는 방식으로 안내되어 있습니다. 현장에서는 발송된 바코드를 제시해 이용합니다. 바코드는 유효기간 안에 사용할 수 있고, 미사용 티켓은 유효기간 내 환불 가능하지만 부분 취소와 부분 환불은 불가합니다.",
-            "예약 전에는 방문 예정일이 상품 유효기간 안에 포함되는지, 바코드 수신 방법과 입장 대상 조건을 확인하세요. 이 글에서는 별도의 최저가나 할인 여부를 선언하지 않으며, 판매처에서 표시하는 현재 상품 조건을 기준으로 구매를 결정하는 것이 좋습니다."
+            "연령·방문일·포함 시설이 맞는 옵션을 선택한 뒤 최종 결제 금액과 취소 규정을 읽어보세요."
           ],
           "tickets": true
-        },
-        {
-          "heading": "제주 일정에 넣는 방법과 방문 전 체크 포인트",
-          "paragraphs": [
-            "아르떼뮤지엄은 전시 자체에 집중하는 일정과 애월 주변 관광을 결합하는 일정 모두에 활용할 수 있습니다. 오전 10시 개장에 맞춰 첫 방문지로 정하거나, 애월 일정을 마무리하기 전 방문지로 배치할 수 있습니다. 다만 입장 마감이 19시이므로 저녁 시간대 방문은 이동 시간을 먼저 계산해야 합니다.",
-            "관람 전에는 주소와 운영시간, 입장 마감, 티켓 유효기간을 함께 확인하세요. 전시 수와 예상 소요시간은 자료상 확정하기 어려우므로 특정 작품 수나 관람 시간을 기준으로 촘촘한 계획을 세우기보다, 다음 일정까지 충분한 간격을 두는 방식이 적절합니다."
-          ],
-          "tickets": false
         }
       ],
       "visitInfo": [
         {
-          "topic": "추천 대상",
-          "status": "unknown",
-          "value": "빛·소리·향기를 활용한 몰입형 미디어아트를 감상하고 싶은 가족, 연인, 친구 단위 여행자에게 적합합니다.",
-          "sourceUrls": [
-            "https://access.visitkorea.or.kr/ms/detail.do?cotId=2a6fdee1-8143-407c-922c-5cc43855f811"
-          ],
-          "checkedAt": "2026-09-11T15:42:05.681Z"
-        },
-        {
-          "topic": "즐길 거리",
-          "status": "unknown",
-          "value": "해변·파도·폭포·꽃·달·숲 등을 주제로 한 몰입형 미디어아트를 관람합니다.",
-          "sourceUrls": [
-            "https://visitjeju.net/kr/detail/view?contentsid=CNTS_200000000010958"
-          ],
-          "checkedAt": "2026-09-11T15:42:05.681Z"
-        },
-        {
-          "topic": "예상 소요시간",
-          "status": "unknown",
-          "value": "제공 자료에서 확인되지 않았습니다. 다음 일정과 이동 시간을 정할 때 여유를 두고 계획하세요.",
-          "sourceUrls": [],
-          "checkedAt": "2026-09-11T15:42:05.681Z"
-        },
-        {
           "topic": "위치",
+          "value": "제주 제주시 애월읍 어림비로 478",
           "status": "confirmed",
-          "value": "제주특별자치도 제주시 애월읍 어림비로 478",
           "sourceUrls": [
-            "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=113116",
             "https://www.waug.com/ko/activities/116548"
           ],
-          "checkedAt": "2026-09-11T15:42:05.681Z"
-        },
-        {
-          "topic": "교통",
-          "status": "unknown",
-          "value": "대중교통 이용 방법은 제공 자료에서 확인되지 않았습니다. 주소를 기준으로 이동 경로를 별도 확인하세요.",
-          "sourceUrls": [],
-          "checkedAt": "2026-09-11T15:42:05.681Z"
-        },
-        {
-          "topic": "주차",
-          "status": "unknown",
-          "value": "주차 가능 여부와 규모는 제공 자료에서 확인되지 않았습니다. 방문 전 운영처에 문의하세요.",
-          "sourceUrls": [],
-          "checkedAt": "2026-09-11T15:42:05.681Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
           "topic": "운영시간",
-          "status": "unknown",
-          "value": "10:00~20:00, 입장 마감 19:00. 연중무휴로 안내되어 있습니다.",
-          "sourceUrls": [
-            "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=113116",
-            "https://www.waug.com/ko/activities/116548"
-          ],
-          "checkedAt": "2026-09-11T15:42:05.681Z"
-        },
-        {
-          "topic": "이용권 종류",
-          "status": "unknown",
-          "value": "와그에서 제주 아르떼뮤지엄 입장권 상품이 안내되어 있습니다. 판매처의 현재 가격과 조건은 구매 화면에서 확인해야 합니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/116548"
-          ],
-          "checkedAt": "2026-09-11T15:42:05.681Z"
-        },
-        {
-          "topic": "포함 사항",
+          "value": "10:00~20:00, 입장 마감 19:00",
           "status": "confirmed",
-          "value": "제주 아르떼뮤지엄 입장을 위한 바코드 이용권입니다.",
           "sourceUrls": [
             "https://www.waug.com/ko/activities/116548"
           ],
-          "checkedAt": "2026-09-11T15:42:05.681Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
-          "topic": "불포함 사항",
+          "topic": "문의",
+          "value": "1899-5008",
+          "status": "confirmed",
+          "sourceUrls": [
+            "https://www.waug.com/ko/activities/116548"
+          ],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
+        },
+        {
+          "topic": "교통",
+          "value": "위 주소로 출발지 기준 경로를 확인하세요. 특정 버스·출구·도보시간은 확인되지 않았습니다.",
           "status": "unknown",
-          "value": "부대시설 또는 별도 상품의 포함 여부는 제공 자료에서 확인되지 않았습니다. 구매 화면의 상품 구성을 확인하세요.",
           "sourceUrls": [],
-          "checkedAt": "2026-09-11T15:42:05.681Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
-          "topic": "예약·이용 방법",
-          "status": "confirmed",
-          "value": "구매 후 1시간 이내 카카오 알림톡으로 바코드를 받고, 현장에서 발송된 바코드를 제시해 이용합니다. 구매일로부터 30일 이내 사용 가능합니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/116548"
-          ],
-          "checkedAt": "2026-09-11T15:42:05.681Z"
+          "topic": "주차",
+          "value": "주차 위치·요금·할인 조건은 운영처에 확인하세요. 무료주차를 확약하지 않습니다.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         },
         {
-          "topic": "주의사항",
-          "status": "confirmed",
-          "value": "바코드는 유효기간 안에 사용해야 하며, 미사용 티켓만 유효기간 내 환불할 수 있습니다. 부분 취소와 부분 환불은 불가합니다.",
-          "sourceUrls": [
-            "https://www.waug.com/ko/activities/116548"
-          ],
-          "checkedAt": "2026-09-11T15:42:05.681Z"
+          "topic": "예상 소요시간",
+          "value": "공식 권장 소요시간은 확인되지 않았습니다. 관람·발권·이동에 여유를 두세요.",
+          "status": "unknown",
+          "sourceUrls": [],
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "faq": [
         {
-          "question": "제주 아르떼뮤지엄은 어디에 있나요?",
-          "answer": "제주특별자치도 제주시 애월읍 어림비로 478에 있습니다."
+          "question": "구매 직후 입장할 수 있나요?",
+          "answer": "바코드를 수령한 뒤 이용 가능합니다. 발송에 최대 1시간이 걸릴 수 있어 도착 전에 준비하세요."
         },
         {
-          "question": "입장권은 어떻게 사용하나요?",
-          "answer": "와그 상품 기준으로 구매 후 1시간 이내 카카오 알림톡으로 바코드를 받고, 현장에서 바코드를 제시해 입장합니다. 구매일로부터 30일 이내 사용해야 합니다."
+          "question": "티바도 포함된 이용권인가요?",
+          "answer": "선택한 옵션의 포함 범위가 기준입니다. 일반 입장권에 음료가 포함된다고 가정하지 마세요."
         },
         {
-          "question": "운영시간과 입장 마감은 언제인가요?",
-          "answer": "운영시간은 10:00~20:00이며 입장 마감은 19:00입니다. 휴무일은 별도 없이 연중무휴로 안내되어 있습니다."
+          "question": "어린이와 함께 가도 괜찮을까요?",
+          "answer": "일행의 빛·소리·어둠에 대한 반응을 고려해 선택하세요. 연령별 입장 조건은 예약 옵션에서 확인해야 합니다."
         }
       ],
       "comparedSlugs": [
@@ -7402,51 +7405,132 @@
       "productIds": [
         "mfT6fpsB"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/12/08/16073926057966.png",
+          "alt": "아르떼뮤지엄 제주 공식 상품에 실린 미디어아트 자료사진입니다. 작품 구성은 바뀔 수 있습니다.",
+          "caption": "아르떼뮤지엄 제주 공식 상품에 실린 미디어아트 자료사진입니다. 작품 구성은 바뀔 수 있습니다.",
+          "width": 640,
+          "height": 420,
+          "kind": "waug-original",
+          "provider": "waug",
+          "permissionBasis": "explicit-permission",
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usageConditions": "와그 공식 파트너 콘텐츠 가이드에 따른 해당 상품 소개 목적의 공식 이미지 원본 활용. 편집·재판매·고객 후기사진 사용 제외.",
+          "credit": "사진: 와그 공식 상품 자료 · 파트너 콘텐츠 가이드에 따라 활용",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "unedited": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z",
+          "faceReview": {
+            "status": "no-identifiable-faces",
+            "checkedAt": "2026-09-11T16:46:51.947Z",
+            "method": "원본 및 검수용 이미지 직접 확인"
+          }
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/12/08/16073926062635.png",
+          "alt": "빛과 반사를 활용한 전시 공간의 와그 공식 자료사진입니다.",
+          "caption": "빛과 반사를 활용한 전시 공간의 와그 공식 자료사진입니다.",
+          "width": 640,
+          "height": 420,
+          "kind": "waug-original",
+          "provider": "waug",
+          "permissionBasis": "explicit-permission",
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usageConditions": "와그 공식 파트너 콘텐츠 가이드에 따른 해당 상품 소개 목적의 공식 이미지 원본 활용. 편집·재판매·고객 후기사진 사용 제외.",
+          "credit": "사진: 와그 공식 상품 자료 · 파트너 콘텐츠 가이드에 따라 활용",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "unedited": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z",
+          "faceReview": {
+            "status": "no-identifiable-faces",
+            "checkedAt": "2026-09-11T16:46:51.947Z",
+            "method": "원본 및 검수용 이미지 직접 확인"
+          }
+        },
+        {
+          "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/01/14/16421406920098.jpg",
+          "alt": "공간 전체를 활용한 미디어아트의 공식 자료사진입니다.",
+          "caption": "공간 전체를 활용한 미디어아트의 공식 자료사진입니다.",
+          "width": 640,
+          "height": 420,
+          "kind": "waug-original",
+          "provider": "waug",
+          "permissionBasis": "explicit-permission",
+          "rightsUrl": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "usageConditions": "와그 공식 파트너 콘텐츠 가이드에 따른 해당 상품 소개 목적의 공식 이미지 원본 활용. 편집·재판매·고객 후기사진 사용 제외.",
+          "credit": "사진: 와그 공식 상품 자료 · 파트너 콘텐츠 가이드에 따라 활용",
+          "commercialAllowed": true,
+          "placeMatched": true,
+          "unedited": true,
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "verifiedAt": "2026-09-11T16:46:51.947Z",
+          "faceReview": {
+            "status": "no-identifiable-faces",
+            "checkedAt": "2026-09-11T16:46:51.947Z",
+            "method": "원본 및 검수용 이미지 직접 확인"
+          }
+        }
+      ],
       "thumbnail": {
-        "url": "https://mwohaji.kr/ticket-images/place-mft6fpsb-guide.svg",
-        "alt": "제주 아르떼뮤지엄 장소명 안내 이미지, 실제 시설 사진 아님",
+        "url": "https://mwohaji.kr/ticket-images/place-mft6fpsb-ai-20260912.jpg",
+        "alt": "제주 아르떼뮤지엄 방문 안내를 위한 AI 콘셉트 일러스트",
         "width": 1200,
-        "height": 630,
-        "credit": "주말에 뭐하지 제작 · 장소명 안내 그래픽"
+        "height": 800,
+        "kind": "ai-generated",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 시설·전시를 촬영한 사진이 아닌 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자가 요청한 장소별 AI 대표 이미지. 실제 현장 사진은 본문에서 별도 제공.",
+        "sources": [],
+        "status": "approved",
+        "mimeType": "image/jpeg",
+        "bytes": 212072,
+        "sha256": "c9fb2f130483d88af59b7624700693452dc4201c489cb935b27b0572e5c88e62",
+        "inputHash": "868348eec0c91d4c48babc27952e7f0b1faeb0e91586832aaca7313fc428db06",
+        "uploadedAt": "2026-09-11T16:46:51.947Z",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "generatedAt": "2026-09-11T16:46:51.947Z",
+          "originalGeneration": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a0907c-b59b-7462-a09b-42a89681bdf4\\exec-8022732b-a9a7-4dc8-8405-8e5c8505692c.png",
+          "promptHash": "868348eec0c91d4c48babc27952e7f0b1faeb0e91586832aaca7313fc428db06",
+          "promptSummary": "place-mft6fpsb: 장소별 한국어 제목의 비기록적 콘셉트 일러스트, 실제 시설 사진과 구분, 얼굴 없음, AI 표시",
+          "visualCheckedAt": "2026-09-11T16:46:51.947Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그 공식 상품 이미지 및 공공기관 사진 조사 후 본문 실제사진과 구분하여 구성",
+          "mobileCheckedAt": "2026-09-11T16:54:35.504Z",
+          "desktopCheckedAt": "2026-09-11T16:54:35.504Z",
+          "ogCheckedAt": "2026-09-11T16:54:35.504Z"
+        },
+        "verifiedAt": "2026-09-11T16:46:51.947Z"
       },
       "internalLinks": [
         {
-          "href": "/places/gyeonggi",
+          "href": "/places/jeju",
           "label": "제주 나들이 장소",
-          "verifiedAt": "2026-09-11T15:51:46.842Z"
+          "verifiedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "sources": [
         {
           "url": "https://www.waug.com/ko/activities/116548",
-          "label": "제주 아르떼뮤지엄 입장권",
+          "label": "와그 상품·이용 안내 및 최저가보장 조건",
           "kind": "waug",
-          "checkedAt": "2026-09-11T15:42:05.681Z"
-        },
-        {
-          "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=113116",
-          "label": "공식·관광 자료",
-          "kind": "research",
-          "checkedAt": "2026-09-11T15:43:36.103Z"
-        },
-        {
-          "url": "https://access.visitkorea.or.kr/ms/detail.do?cotId=2a6fdee1-8143-407c-922c-5cc43855f811",
-          "label": "공식·관광 자료",
-          "kind": "research",
-          "checkedAt": "2026-09-11T15:43:36.103Z"
-        },
-        {
-          "url": "https://visitjeju.net/kr/detail/view?contentsid=CNTS_200000000010958",
-          "label": "공식·관광 자료",
-          "kind": "research",
-          "checkedAt": "2026-09-11T15:43:36.103Z"
+          "checkedAt": "2026-09-11T16:46:51.947Z"
         }
       ],
       "review": {
         "status": "approved",
-        "checkedAt": "2026-09-11T15:52:26.220Z",
-        "notes": "검수 완료·배포 전 확인",
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "notes": "2026-09-12 사용자 요청 전면 수정. 공식 상품·파트너 사용 안내·보장 팝업·이미지 직접 검수.",
         "textReviewStatus": "reviewed",
         "textReviewedAt": "2026-09-11T15:51:46.842Z",
         "mustHold": false,
@@ -7460,21 +7544,11 @@
         }
       },
       "contentGeneratedAt": "2026-09-11T15:43:36.103Z",
-      "holdReasons": [
-        "신규 작성 기준·출처·검색 의도·이미지 권리 검수 필요",
-        "이미지 크기 저장 필요",
-        "개별 사진 출처·이용 조건·상업적 사용 근거 필요",
-        "본문 사진 부족 사유 기록 필요",
-        "글 주소 확인",
-        "글 검수 또는 재검수 필요",
-        "본문·공식 출처 필요",
-        "관련 내부링크 확인",
-        "상품 검수 필요: mfT6fpsB",
-        "대표 이미지·모바일·PC·OG 검수 필요",
-        "대표 사진 권리·장소 일치 확인"
-      ],
+      "holdReasons": [],
       "imageResearch": {
-        "unavailableReason": "확인된 본문 사진이 부족해 본문 사진 미첨부"
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "realPhotoSearchNote": "와그 파트너 가이드와 공식 상품 이미지 검수. 아쿠아플라넷은 공공누리 제1유형 사진 추가.",
+        "bodyAiNeeded": false
       },
       "priceGuaranteeChecks": {
         "mfT6fpsB": {
@@ -7486,8 +7560,19 @@
         }
       },
       "publishedGuarantees": {
-        "mfT6fpsB": null
-      }
+        "mfT6fpsB": {
+          "status": "confirmed",
+          "affiliateUrl": "https://www.waug.com/r/mfT6fpsB",
+          "sourceUrl": "https://www.waug.com/ko/activities/116548",
+          "conditions": "최저가보장 표시 상품의 예약자가 결제 후 24시간 안에 와그 상담 채팅으로 신청해야 합니다. 동일 통화·이용일·투어사 상품의 비교 화면과 URL을 제출합니다. 결제 당시 적용 가능한 최대 쿠폰 할인 가격을 기준으로 비교하며 카드사 할인은 제외합니다. 승인 및 이용 완료 후 차액을 현금이 아닌 포인트로 지급합니다.",
+          "evidenceText": "해당 상품 가격 영역: 최저가 보장. 클릭한 안내: 예약자 한정, 차액 포인트 보상!",
+          "pageSha256": "951e5a6bcc5b375614afa3ef23292551d611b96463e74a7bc428c132e3abbcef",
+          "checkedAt": "2026-09-11T16:46:51.947Z",
+          "reviewedAt": "2026-09-11T16:46:51.947Z",
+          "expiresAt": "2026-09-12T16:46:51.947Z"
+        }
+      },
+      "checkedAt": "2026-09-11T16:46:51.947Z"
     }
   ],
   "history": [

@@ -20,7 +20,7 @@ export default function TicketBooking({article,mobile=false}:{article:TicketArti
   </aside></div>;
   return <aside id="ticket-booking" className={styles.booking} aria-label="이용권 및 예약 안내"><h3>방문일에 맞는 이용권 확인</h3><p>옵션별 포함 사항과 이용 조건을 읽고 방문 날짜를 선택하세요.</p>
     {tickets.map(t=><div className={styles.option} key={t.href}><h4>{t.label}</h4>
-      {now!==null&&guaranteeActive(t.priceGuarantee,t.href,now)&&<><span className={styles.badge}>와그 최저가보장 상품</span><p className={styles.note}>와그가 해당 상품에 안내한 보장으로, 아래 조건이 적용됩니다.</p><p>{t.priceGuarantee!.conditions}</p><p className={styles.note}><a href={t.priceGuarantee!.sourceUrl} rel="sponsored noopener noreferrer" target="_blank">확인한 와그 상품 안내</a> · 확인일 {t.priceGuarantee!.checkedAt.slice(0,10)}</p></>}
+      {now!==null&&guaranteeActive(t.priceGuarantee,t.href,now)&&<><span className={styles.badge}>와그 최저가보장 상품</span><p className={styles.note}>와그가 해당 상품에 안내한 보장으로, 아래 조건이 적용됩니다.</p><p>{t.priceGuarantee!.conditions}</p><p className={styles.note}><a href={t.priceGuarantee!.sourceUrl} rel="sponsored noopener noreferrer" target="_blank">확인한 와그 상품 안내</a> · 확인일 {new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul'}).format(new Date(t.priceGuarantee!.checkedAt))}</p></>}
       {link(t)}
     </div>)}{!tickets.length&&<p>현재 확인 가능한 이용권이 없습니다.</p>}
   </aside>;

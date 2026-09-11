@@ -5,8 +5,9 @@ import {AI_DISCLOSURE,AFFILIATE_DISCLOSURE} from '@/lib/ticket-guarantee.mjs';
 import TicketBooking from './TicketBooking';
 import styles from './TicketEditorial.module.css';
 function Photo({photo,hero=false}:{photo:TicketArticle['thumbnail']|TicketArticle['photos'][number];hero?:boolean}) {
-  return <figure>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={photo.url} alt={photo.alt} width={photo.width} height={photo.height} loading={hero?'eager':'lazy'} fetchPriority={hero?'high':'auto'} decoding="async"/>
-    <figcaption>{photo.kind==='ai-generated'&&<span>{AI_DISCLOSURE} · 실제 시설 촬영 사진이 아닙니다.<br/></span>}{'caption' in photo&&photo.caption&&<span>{photo.caption}<br/></span>}{photo.rightsUrl?<a href={photo.rightsUrl} rel="noopener noreferrer" target="_blank">{photo.credit}</a>:photo.credit}</figcaption>
+  const src=photo.url.startsWith(`${SITE.url}/ticket-images/`)?photo.url.slice(SITE.url.length):photo.url;
+  return <figure>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={src} alt={photo.alt} width={photo.width} height={photo.height} loading={hero?'eager':'lazy'} fetchPriority={hero?'high':'auto'} decoding="async"/>
+    <figcaption>{photo.kind==='ai-generated'?<span>{AI_DISCLOSURE} · 실제 시설·전시 또는 체험 결과물을 촬영한 사진이 아닙니다.</span>:<>{'caption' in photo&&photo.caption&&<span>{photo.caption}<br/></span>}{photo.rightsUrl?<a href={photo.rightsUrl} rel="noopener noreferrer" target="_blank">{photo.credit}</a>:photo.credit}</>}</figcaption>
   </figure>;
 }
 export default function TicketEditorial({article:a}:{article:TicketArticle}) {
@@ -15,7 +16,7 @@ export default function TicketEditorial({article:a}:{article:TicketArticle}) {
     {a.previewScenario&&<p role="status" className={styles.disclosure}>{a.previewScenario}</p>}
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd).replace(/</g,'\\u003c')}}/>
     <Link href="/tickets">입장권·체험</Link><p className={styles.disclosure}>{AFFILIATE_DISCLOSURE}</p>
-    <p>{a.area} · {a.theme}</p><h1>{a.title}</h1><p className={styles.note}>정보 확인 {a.checkedAt.slice(0,10)} · {a.address}</p>
+    <p>{a.area} · {a.theme}</p><h1>{a.title}</h1><p className={styles.note}>정보 확인 {new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul'}).format(new Date(a.checkedAt))} · {a.address}</p>
     <Photo photo={a.thumbnail} hero/><p>{a.intro}</p>
     {a.sections.map((s,i)=><section key={i}><h2>{s.heading}</h2>{s.paragraphs.map((p,j)=><p key={j}>{p}</p>)}
       {s.kind==='visit'&&<dl className={styles.facts}>{a.visitInfo?.map(f=><div key={f.topic}><dt>{f.topic}</dt><dd>{f.status==='unknown'&&<span className={styles.note}>미확인 · </span>}{f.value}</dd></div>)}</dl>}

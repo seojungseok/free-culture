@@ -7744,7 +7744,7 @@
       "placeId": "place-e319zhqq",
       "branch": null,
       "area": "서울",
-      "address": "서울 영등포구 63로 50 63빌딩 60층 63스카이피크닉",
+      "address": "서울 영등포구 63로 50, 63빌딩 60층",
       "saleStatus": "available",
       "eligibility": "eligible",
       "exclusionReason": null,
@@ -7752,14 +7752,25 @@
       "duplicateOf": null,
       "articleSlug": "place-e319zhqq",
       "scheduledAt": "2026-09-11T15:52:43.331Z",
-      "lastCheckedAt": "2026-09-11T15:51:46.842Z",
+      "lastCheckedAt": "2026-09-11T16:46:51.947Z",
       "createdAt": "2026-09-11T13:26:16.108Z",
       "verification": {
         "status": "approved",
         "source": "data/waug/research/E319zHqQ.json",
         "error": null
       },
-      "saleEvidence": " 즉시 확정 오늘부터 사용가능 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 ₩1,000 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩304 적립 무이자 할부 혜택 최대 12개월 상품 정보 불포함 문자 MMS 유효기간내 사용 취소가능 MMS 즉시 제공 한국어"
+      "saleEvidence": " 즉시 확정 오늘부터 사용가능 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 ₩1,000 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩304 적립 무이자 할부 혜택 최대 12개월 상품 정보 불포함 문자 MMS 유효기간내 사용 취소가능 MMS 즉시 제공 한국어",
+      "priceGuaranteeReview": {
+        "status": "approved",
+        "productId": "148960",
+        "affiliateUrl": "https://www.waug.com/r/E319zHqQ",
+        "sourceUrl": "https://www.waug.com/ko/activities/148960",
+        "productBadgeConfirmed": true,
+        "evidenceText": "해당 상품 가격 영역: 최저가 보장. 클릭한 안내: 예약자 한정, 차액 포인트 보상!",
+        "conditions": "최저가보장 표시 상품의 예약자가 결제 후 24시간 안에 와그 상담 채팅으로 신청해야 합니다. 동일 통화·이용일·투어사 상품의 비교 화면과 URL을 제출합니다. 결제 당시 적용 가능한 최대 쿠폰 할인 가격을 기준으로 비교하며 카드사 할인은 제외합니다. 승인 및 이용 완료 후 차액을 현금이 아닌 포인트로 지급합니다.",
+        "checkedAt": "2026-09-11T16:46:51.947Z"
+      },
+      "validUntil": "2026-09-30"
     },
     {
       "id": "Uap0KkL3",
@@ -7771,7 +7782,7 @@
       "placeId": "place-uap0kkl3",
       "branch": null,
       "area": "제주",
-      "address": "제주 제주시 구좌읍 비자림로 1183",
+      "address": "제주 제주시 구좌읍 비자림로 1183, 제주동화마을 동화아트센터",
       "saleStatus": "available",
       "eligibility": "eligible",
       "exclusionReason": null,
@@ -7779,14 +7790,25 @@
       "duplicateOf": null,
       "articleSlug": "place-uap0kkl3",
       "scheduledAt": "2026-09-11T15:52:43.331Z",
-      "lastCheckedAt": "2026-09-11T15:51:46.842Z",
+      "lastCheckedAt": "2026-09-11T16:46:51.947Z",
       "createdAt": "2026-09-11T13:45:50.629Z",
       "verification": {
         "status": "approved",
         "source": "data/waug/research/Uap0KkL3.json",
         "error": null
       },
-      "saleEvidence": " 즉시 확정 오늘부터 사용가능 5.0 리뷰 2개 제주도 입장권/티켓 구매 1위 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 ₩1,000 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩221 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 M"
+      "saleEvidence": " 즉시 확정 오늘부터 사용가능 5.0 리뷰 2개 제주도 입장권/티켓 구매 1위 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 ₩1,000 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩221 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 M",
+      "priceGuaranteeReview": {
+        "status": "approved",
+        "productId": "137562",
+        "affiliateUrl": "https://www.waug.com/r/Uap0KkL3",
+        "sourceUrl": "https://www.waug.com/ko/activities/137562",
+        "productBadgeConfirmed": true,
+        "evidenceText": "해당 상품 가격 영역: 최저가 보장. 클릭한 안내: 예약자 한정, 차액 포인트 보상!",
+        "conditions": "최저가보장 표시 상품의 예약자가 결제 후 24시간 안에 와그 상담 채팅으로 신청해야 합니다. 동일 통화·이용일·투어사 상품의 비교 화면과 URL을 제출합니다. 결제 당시 적용 가능한 최대 쿠폰 할인 가격을 기준으로 비교하며 카드사 할인은 제외합니다. 승인 및 이용 완료 후 차액을 현금이 아닌 포인트로 지급합니다.",
+        "checkedAt": "2026-09-11T16:46:51.947Z"
+      },
+      "validUntil": "2027-07-11"
     },
     {
       "id": "wffjCJKf",
@@ -7798,7 +7820,7 @@
       "placeId": "place-wffjcjkf",
       "branch": null,
       "area": "제주",
-      "address": "주소 확인 필요",
+      "address": "제주 서귀포시 성산읍 섭지코지로 95",
       "saleStatus": "available",
       "eligibility": "eligible",
       "exclusionReason": null,
@@ -7806,14 +7828,25 @@
       "duplicateOf": null,
       "articleSlug": "place-wffjcjkf",
       "scheduledAt": "2026-09-11T15:52:43.331Z",
-      "lastCheckedAt": "2026-09-11T15:51:46.842Z",
+      "lastCheckedAt": "2026-09-11T16:46:51.947Z",
       "createdAt": "2026-09-11T13:45:50.630Z",
       "verification": {
         "status": "approved",
         "source": "data/waug/research/wffjCJKf.json",
         "error": null
       },
-      "saleEvidence": " 즉시 확정 오늘부터 사용가능 4.8 리뷰 53개 제주도 입장권/티켓 구매 6위 제주도 키즈 구매 2위 ₩ 1,000 가을 슈퍼세일 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 ₩1,000 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩408 적립 무이자 할부 혜택 최대 12개월 상품"
+      "saleEvidence": " 즉시 확정 오늘부터 사용가능 4.8 리뷰 53개 제주도 입장권/티켓 구매 6위 제주도 키즈 구매 2위 ₩ 1,000 가을 슈퍼세일 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 ₩1,000 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩408 적립 무이자 할부 혜택 최대 12개월 상품",
+      "priceGuaranteeReview": {
+        "status": "approved",
+        "productId": "103543",
+        "affiliateUrl": "https://www.waug.com/r/wffjCJKf",
+        "sourceUrl": "https://www.waug.com/ko/activities/103543",
+        "productBadgeConfirmed": true,
+        "evidenceText": "해당 상품 가격 영역: 최저가 보장. 클릭한 안내: 예약자 한정, 차액 포인트 보상!",
+        "conditions": "최저가보장 표시 상품의 예약자가 결제 후 24시간 안에 와그 상담 채팅으로 신청해야 합니다. 동일 통화·이용일·투어사 상품의 비교 화면과 URL을 제출합니다. 결제 당시 적용 가능한 최대 쿠폰 할인 가격을 기준으로 비교하며 카드사 할인은 제외합니다. 승인 및 이용 완료 후 차액을 현금이 아닌 포인트로 지급합니다.",
+        "checkedAt": "2026-09-11T16:46:51.947Z"
+      },
+      "validUntil": "2026-09-30"
     },
     {
       "id": "mfT6fpsB",
@@ -7825,7 +7858,7 @@
       "placeId": "place-mft6fpsb",
       "branch": null,
       "area": "제주",
-      "address": "주소 확인 필요",
+      "address": "제주 제주시 애월읍 어림비로 478",
       "saleStatus": "available",
       "eligibility": "eligible",
       "exclusionReason": null,
@@ -7833,14 +7866,25 @@
       "duplicateOf": null,
       "articleSlug": "place-mft6fpsb",
       "scheduledAt": "2026-09-11T15:52:43.331Z",
-      "lastCheckedAt": "2026-09-11T15:51:46.842Z",
+      "lastCheckedAt": "2026-09-11T16:46:51.947Z",
       "createdAt": "2026-09-11T13:45:50.630Z",
       "verification": {
         "status": "approved",
         "source": "data/waug/research/mfT6fpsB.json",
         "error": null
       },
-      "saleEvidence": " 즉시 확정 오늘부터 사용가능 4.7 리뷰 74개 2개의 쿠폰 사용 가능 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 ₩1,000 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩150 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 MMS 유효기간내 사용 취소가능 MMS 즉시 제공 한국어"
+      "saleEvidence": " 즉시 확정 오늘부터 사용가능 4.7 리뷰 74개 2개의 쿠폰 사용 가능 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 ₩1,000 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩150 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 MMS 유효기간내 사용 취소가능 MMS 즉시 제공 한국어",
+      "priceGuaranteeReview": {
+        "status": "approved",
+        "productId": "116548",
+        "affiliateUrl": "https://www.waug.com/r/mfT6fpsB",
+        "sourceUrl": "https://www.waug.com/ko/activities/116548",
+        "productBadgeConfirmed": true,
+        "evidenceText": "해당 상품 가격 영역: 최저가 보장. 클릭한 안내: 예약자 한정, 차액 포인트 보상!",
+        "conditions": "최저가보장 표시 상품의 예약자가 결제 후 24시간 안에 와그 상담 채팅으로 신청해야 합니다. 동일 통화·이용일·투어사 상품의 비교 화면과 URL을 제출합니다. 결제 당시 적용 가능한 최대 쿠폰 할인 가격을 기준으로 비교하며 카드사 할인은 제외합니다. 승인 및 이용 완료 후 차액을 현금이 아닌 포인트로 지급합니다.",
+        "checkedAt": "2026-09-11T16:46:51.947Z"
+      },
+      "validUntil": null
     },
     {
       "id": "ga75Y9uV",
@@ -7852,7 +7896,7 @@
       "placeId": "place-ga75y9uv",
       "branch": null,
       "area": "서울",
-      "address": "서울특별시 용산구 한강대로72길 3 크라운해태제과 지하1층",
+      "address": "서울 용산구 한강대로72길 3, 크라운해태제과 지하 1층",
       "saleStatus": "available",
       "eligibility": "eligible",
       "exclusionReason": null,
@@ -7860,14 +7904,20 @@
       "duplicateOf": null,
       "articleSlug": "place-ga75y9uv",
       "scheduledAt": "2026-09-11T15:52:43.331Z",
-      "lastCheckedAt": "2026-09-11T15:51:46.842Z",
+      "lastCheckedAt": "2026-09-11T16:46:51.947Z",
       "createdAt": "2026-09-11T13:45:50.630Z",
       "verification": {
         "status": "approved",
         "source": "data/waug/research/ga75Y9uV.json",
         "error": null
       },
-      "saleEvidence": " 즉시 확정 오늘부터 사용가능 4.8 리뷰 4개 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 ₩1,000 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩59 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 모바일 바우처 사용 유효기간내 사용 취소"
+      "saleEvidence": " 즉시 확정 오늘부터 사용가능 4.8 리뷰 4개 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 ₩1,000 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩59 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 모바일 바우처 사용 유효기간내 사용 취소",
+      "priceGuaranteeReview": {
+        "status": "unconfirmed",
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "reason": "해당 상품 가격 영역에 최저가보장 표시 없음"
+      },
+      "validUntil": "2026-09-30"
     }
   ]
 }

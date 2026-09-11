@@ -1,0 +1,107 @@
+{
+  "checkedAt": "2026-09-11T16:46:51.947Z",
+  "permissionSource": "https://waug-marketing-partners.notion.site/3271e6250bde80d499f2e513e95b1952",
+  "permissionEvidence": "이미지·영상 적극 활용: 와그에서 제공하는 공식 이미지나 직접 촬영한 고화질 사진 활용 안내",
+  "publicRights": "https://www.nculture.org/cul/localCultureDetail.do?contentType=G&targetId=2048059",
+  "articles": [
+    {
+      "slug": "place-e319zhqq",
+      "aiThumbnail": "ticket-images/place-e319zhqq-ai-20260912.jpg",
+      "aiCount": 1,
+      "photos": 3,
+      "guarantee": {
+        "status": "confirmed",
+        "affiliateUrl": "https://www.waug.com/r/E319zHqQ",
+        "sourceUrl": "https://www.waug.com/ko/activities/148960",
+        "conditions": "최저가보장 표시 상품의 예약자가 결제 후 24시간 안에 와그 상담 채팅으로 신청해야 합니다. 동일 통화·이용일·투어사 상품의 비교 화면과 URL을 제출합니다. 결제 당시 적용 가능한 최대 쿠폰 할인 가격을 기준으로 비교하며 카드사 할인은 제외합니다. 승인 및 이용 완료 후 차액을 현금이 아닌 포인트로 지급합니다.",
+        "evidenceText": "해당 상품 가격 영역: 최저가 보장. 클릭한 안내: 예약자 한정, 차액 포인트 보상!",
+        "pageSha256": "332e1c2568c6b0d47953f2f5bf27efd694b826e4d3953a7f5c41d06000e2d5bd",
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "reviewedAt": "2026-09-11T16:46:51.947Z",
+        "expiresAt": "2026-09-12T16:46:51.947Z"
+      },
+      "sourceCheckedAt": "2026-09-11T16:46:51.947Z"
+    },
+    {
+      "slug": "place-ga75y9uv",
+      "aiThumbnail": "ticket-images/place-ga75y9uv-ai-20260912.jpg",
+      "aiCount": 1,
+      "photos": 3,
+      "guarantee": null,
+      "sourceCheckedAt": "2026-09-11T16:46:51.947Z"
+    },
+    {
+      "slug": "place-uap0kkl3",
+      "aiThumbnail": "ticket-images/place-uap0kkl3-ai-20260912.jpg",
+      "aiCount": 1,
+      "photos": 2,
+      "guarantee": {
+        "status": "confirmed",
+        "affiliateUrl": "https://www.waug.com/r/Uap0KkL3",
+        "sourceUrl": "https://www.waug.com/ko/activities/137562",
+        "conditions": "최저가보장 표시 상품의 예약자가 결제 후 24시간 안에 와그 상담 채팅으로 신청해야 합니다. 동일 통화·이용일·투어사 상품의 비교 화면과 URL을 제출합니다. 결제 당시 적용 가능한 최대 쿠폰 할인 가격을 기준으로 비교하며 카드사 할인은 제외합니다. 승인 및 이용 완료 후 차액을 현금이 아닌 포인트로 지급합니다.",
+        "evidenceText": "해당 상품 가격 영역: 최저가 보장. 클릭한 안내: 예약자 한정, 차액 포인트 보상!",
+        "pageSha256": "6b469d04d8f4bbbe313b92021ff123d855c000bcff5dc35636d9a511ebcdcc29",
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "reviewedAt": "2026-09-11T16:46:51.947Z",
+        "expiresAt": "2026-09-12T16:46:51.947Z"
+      },
+      "sourceCheckedAt": "2026-09-11T16:46:51.947Z"
+    },
+    {
+      "slug": "place-wffjcjkf",
+      "aiThumbnail": "ticket-images/place-wffjcjkf-ai-20260912.jpg",
+      "aiCount": 1,
+      "photos": 3,
+      "guarantee": {
+        "status": "confirmed",
+        "affiliateUrl": "https://www.waug.com/r/wffjCJKf",
+        "sourceUrl": "https://www.waug.com/ko/activities/103543",
+        "conditions": "최저가보장 표시 상품의 예약자가 결제 후 24시간 안에 와그 상담 채팅으로 신청해야 합니다. 동일 통화·이용일·투어사 상품의 비교 화면과 URL을 제출합니다. 결제 당시 적용 가능한 최대 쿠폰 할인 가격을 기준으로 비교하며 카드사 할인은 제외합니다. 승인 및 이용 완료 후 차액을 현금이 아닌 포인트로 지급합니다.",
+        "evidenceText": "해당 상품 가격 영역: 최저가 보장. 클릭한 안내: 예약자 한정, 차액 포인트 보상!",
+        "pageSha256": "4c269e51ab5d96d1b6cf48d69cd5e2991a227be04a2f7e6fb9a3483185702e76",
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "reviewedAt": "2026-09-11T16:46:51.947Z",
+        "expiresAt": "2026-09-12T16:46:51.947Z"
+      },
+      "sourceCheckedAt": "2026-09-11T16:46:51.947Z"
+    },
+    {
+      "slug": "place-mft6fpsb",
+      "aiThumbnail": "ticket-images/place-mft6fpsb-ai-20260912.jpg",
+      "aiCount": 1,
+      "photos": 3,
+      "guarantee": {
+        "status": "confirmed",
+        "affiliateUrl": "https://www.waug.com/r/mfT6fpsB",
+        "sourceUrl": "https://www.waug.com/ko/activities/116548",
+        "conditions": "최저가보장 표시 상품의 예약자가 결제 후 24시간 안에 와그 상담 채팅으로 신청해야 합니다. 동일 통화·이용일·투어사 상품의 비교 화면과 URL을 제출합니다. 결제 당시 적용 가능한 최대 쿠폰 할인 가격을 기준으로 비교하며 카드사 할인은 제외합니다. 승인 및 이용 완료 후 차액을 현금이 아닌 포인트로 지급합니다.",
+        "evidenceText": "해당 상품 가격 영역: 최저가 보장. 클릭한 안내: 예약자 한정, 차액 포인트 보상!",
+        "pageSha256": "951e5a6bcc5b375614afa3ef23292551d611b96463e74a7bc428c132e3abbcef",
+        "checkedAt": "2026-09-11T16:46:51.947Z",
+        "reviewedAt": "2026-09-11T16:46:51.947Z",
+        "expiresAt": "2026-09-12T16:46:51.947Z"
+      },
+      "sourceCheckedAt": "2026-09-11T16:46:51.947Z"
+    }
+  ],
+  "validation": {
+    "checkedAt": "2026-09-11T16:54:35.504Z",
+    "unchangedLegacyArticles": 30,
+    "totalArticles": 35,
+    "aiThumbnails": 5,
+    "actualPhotos": 14,
+    "verifiedGuarantees": 4,
+    "unconfirmedGuarantees": 1,
+    "mobileWidths": [
+      320,
+      390
+    ],
+    "desktopWidth": 1280,
+    "horizontalOverflow": false,
+    "affiliateSponsored": true,
+    "canonicalAndOg": true,
+    "reducedMotionRuleVerified": true,
+    "testsPassed": 12
+  }
+}
