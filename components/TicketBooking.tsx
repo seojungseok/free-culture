@@ -21,8 +21,8 @@ export default function TicketBooking({article,mobile=false}:{article:TicketArti
   </aside></div>;
   return <aside id="ticket-booking" className={reservation.panel} aria-label="이용권 및 예약 안내">
     {tickets.map(t=>{const guaranteed=now!==null&&guaranteeActive(t.priceGuarantee,t.href,now);return <div className={reservation.option} key={t.href}>
-      <div className={reservation.row}><div><h3 className={reservation.title}>{t.label==='이용권'?article.placeName:t.label}</h3>
-        {guaranteed&&<span className={reservation.badge}>와그 최저가보장 상품</span>}
+      <div className={reservation.row}><div><h3 className={reservation.title}>{t.label==='이용권'?article.placeName+' 이용권 알아보기':t.label}</h3>
+        {guaranteed&&<span className={reservation.badge}>최저가보장</span>}
         <p className={reservation.context}>{guaranteed?'와그 제공 · 조건 적용 · 승인 시 차액 포인트 보상':'방문일과 옵션별 이용 조건을 확인하세요.'}</p>
       </div>{link(t)}</div>
       {guaranteed&&<details className={reservation.conditions}><summary>보장 적용 조건·확인 출처 보기</summary><p>{t.priceGuarantee!.conditions}</p><p className={reservation.source}><a href={t.priceGuarantee!.sourceUrl} rel="sponsored noopener noreferrer" target="_blank">와그 상품 안내</a> · 확인일 {new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul'}).format(new Date(t.priceGuarantee!.checkedAt))} · 우리 사이트가 직접 보장하는 가격이 아닙니다.</p></details>}

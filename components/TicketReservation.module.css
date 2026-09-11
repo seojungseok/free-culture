@@ -1,18 +1,18 @@
-.panel { margin: 24px 0 0; border-top: 2px solid #244a3b; border-bottom: 1px solid #dce3dd; color: #24372e; }
-.option { padding: 24px 0; }
-.option + .option { border-top: 1px solid #dce3dd; }
-.row { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 24px; }
-.panel .title { margin: 0 0 8px; font-size: 20px; line-height: 1.5; font-weight: 700; word-break: keep-all; }
-.badge { position: relative; display: inline-flex; overflow: hidden; align-items: center; padding: 5px 10px; border-radius: 5px; background: #fff4cb; color: #765718; font-size: 13px; line-height: 1.5; font-weight: 700; }
+.panel { margin: 24px 0; padding: 26px; border: 1px solid #cbdcc9; border-radius: 24px; background: #f5f8f2; color: #202720; }
+.option + .option { margin-top: 24px; padding-top: 24px; border-top: 1px solid #dce5d8; }
+.row { display: grid; grid-template-columns: minmax(0,1fr); gap: 20px; }
+.row > div { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.panel .title { margin: 0; font-size: 23px; line-height: 1.5; font-weight: 750; word-break: keep-all; }
+.badge { position: relative; display: inline-flex; overflow: hidden; padding: 4px 9px; border-radius: 6px; background: #fff1ba; color: #74571c; font-size: 12px; line-height: 1.5; font-weight: 700; }
 .badge::after { content: ''; position: absolute; inset: 0; transform: translateX(-140%); background: linear-gradient(110deg, transparent 20%, #ffffffa8 50%, transparent 80%); animation: lightPass 7s ease-in-out infinite; pointer-events: none; }
-.panel .context { margin: 8px 0 0; color: #657269; font-size: 13px; line-height: 1.65; }
-.panel .cta { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 13px 20px; border-radius: 9px; background: #205940; color: white; text-decoration: none; font-size: 14px; font-weight: 700; line-height: 1.5; text-align: center; white-space: nowrap; }
-.panel .cta:hover { background: #174530; }
-.panel .cta:focus-visible, .conditions summary:focus-visible { outline: 3px solid #c59535; outline-offset: 4px; }
-.panel .conditions { margin: 20px 0 0; padding: 0; border: 0; font-size: 13px; line-height: 1.8; }
-.conditions summary { width: fit-content; cursor: pointer; color: #526057; text-decoration: underline; text-underline-offset: 4px; }
+.panel .context { flex-basis: 100%; margin: 4px 0 0; color: #596057; font-size: 15px; line-height: 1.8; }
+.panel .cta { display: flex; width: 100%; align-items: center; justify-content: center; min-height: 56px; padding: 15px 20px; border-radius: 17px; background: #55c45f; color: #fff; text-decoration: none; font-size: 18px; font-weight: 750; line-height: 1.5; text-align: center; }
+.panel .cta:hover { background: #43ad4e; }
+.panel .cta:focus-visible, .conditions summary:focus-visible { outline: 3px solid #286b35; outline-offset: 4px; }
+.panel .conditions { margin: 18px 0 0; padding: 0; border: 0; font-size: 13px; line-height: 1.8; }
+.conditions summary { width: fit-content; cursor: pointer; color: #586354; text-decoration: underline; text-underline-offset: 4px; }
 .panel .conditions p { margin: 12px 0; font-size: 14px; line-height: 1.9; color: #536057; }
 .panel .source { font-size: 12px; }
 @keyframes lightPass { 0%,65% { transform: translateX(-140%); } 85%,100% { transform: translateX(140%); } }
-@media (max-width: 640px) { .row { grid-template-columns: minmax(0,1fr); gap: 16px; } .panel .title { font-size: 18px; } .panel .cta { width: 100%; white-space: normal; } .option { padding: 20px 0; } }
+@media (max-width: 640px) { .panel { padding: 20px; border-radius: 22px; } .panel .title { font-size: 20px; } .panel .cta { font-size: 16px; } }
 @media (prefers-reduced-motion: reduce) { .badge::after { animation: none; display: none; } }
