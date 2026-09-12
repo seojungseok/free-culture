@@ -10,8 +10,8 @@
     }
   },
   "tickets": {
-    "daily": 20
+    "daily": 30
   },
-  "totalDaily": 50,
+  "totalDaily": 60,
   "notes": "기존 예약 및 당일 실제 공개 수를 해당 그룹에서만 차감. 미검수 글로 수량 채우지 않음."
 }

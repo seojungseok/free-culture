@@ -1,7 +1,7 @@
 name: 와그 서버 조사·작성·이미지·예약
 on:
   schedule:
-    - cron: '0 20,23,2,5,8,11 * * *' # KST 05/08/11/14/17/20, daily total capped at 30
+    - cron: '17 20,23,2,5,8,11 * * *' # KST 05:17/08:17/11:17/14:17/17:17/20:17, daily total capped at 30
   workflow_dispatch:
     inputs:
       mode:
