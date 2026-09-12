@@ -1,0 +1,17 @@
+.bannerWrap { max-width: 1120px; margin: 14px auto 8px; padding: 0 16px; }
+.banner { display: block; overflow: hidden; border-radius: 14px; background: #080c10; }
+.bannerImage { display: block; width: 100%; height: auto; max-height: 220px; object-fit: contain; }
+.disclosure { margin: 6px 2px 0; color: #626974; font-size: 11px; line-height: 1.5; word-break: keep-all; }
+.dialog { padding: 0; border: 0; border-radius: 20px; width: min(400px, calc(100vw - 32px), calc(80dvh - 104px)); max-height: 90dvh; margin: auto; background: #fff; overflow: auto; box-shadow: 0 24px 100px #0006; }
+.dialog::backdrop { background: #09101bc2; backdrop-filter: blur(3px); }
+.popup { position: relative; }
+.close { position: absolute; top: 8px; right: 8px; z-index: 2; border: 1px solid #ffffff60; background: #10151bd9; color: #fff; border-radius: 50%; width: 36px; height: 36px; font-size: 25px; line-height: 1; cursor: pointer; }
+.poster { display: block; background: #080c10; }
+.poster img { display: block; width: 100%; height: auto; }
+.popupDisclosure { margin: 0; padding: 12px 18px; font-size: 11px; line-height: 1.55; color: #5b626c; word-break: keep-all; }
+.controls { display: grid; grid-template-columns: 1fr 66px; border-top: 1px solid #e6e9ee; }
+.controls button { padding: 13px 8px; min-height: 46px; background: white; font-size: 12px; font-weight: 600; color: #343b46; cursor: pointer; border: 0; }
+.controls button + button { border-left: 1px solid #e6e9ee; }
+.banner:focus-visible, .poster:focus-visible, .close:focus-visible, .controls button:focus-visible { outline: 3px solid #4ba8ff; outline-offset: -3px; }
+@media (max-width: 480px) { .bannerWrap { margin-top: 10px; padding: 0 12px; } }
+@media (max-height: 450px) { .dialog { width: min(300px, calc(100vw - 32px)); } }
