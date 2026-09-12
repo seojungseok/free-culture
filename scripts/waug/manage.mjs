@@ -2,6 +2,7 @@ import { publicationBudget } from '../lib/publication-budget.mjs';
 import fs from 'node:fs';
 import { importLinks } from './import.mjs';
 import { publish, schedule, publicArticles, readiness, launchNow } from './core.mjs';
+import {recheckBeforePublish} from './content-policy.mjs';
 const root='data/waug/';
 const read=name=>JSON.parse(fs.readFileSync(root+name+'.json','utf8'));
 const write=(name,data)=>{const f=root+name+'.json';fs.writeFileSync(f+'.tmp',JSON.stringify(data,null,2)+'\n');fs.renameSync(f+'.tmp',f);};
@@ -22,6 +23,11 @@ if(command==='status') {
   const fd=fs.openSync(lock,'wx');
   try {
     const planned=command==='run'?schedule(state,db.products):[];
+    if(command==='launch-now') {
+      const ids=new Set(read('launch-selection').entries.map(e=>e.placeId));
+      for(const a of state.articles)if(ids.has(a.placeId)&&!a.publishedAt&&!readiness(a,db.products).length){a.status='scheduled';a.scheduledAt=new Date().toISOString();}
+    }
+    await recheckBeforePublish(state,db.products);
     const published=command==='launch-now'?launchNow(state,db.products,read('launch-selection').entries.map(e=>e.placeId)):publish(state,db.products);
     for(const a of state.articles)for(const id of a.productIds||[]){const p=db.products.find(p=>p.id===id);if(p){p.articleSlug=a.slug;p.scheduledAt=a.scheduledAt||null;}}
     if(fs.existsSync(root+'queue.json')){const q=read('queue');for(const j of q.jobs){const a=state.articles.find(a=>a.placeId===j.placeId);if(a){j.articleSlug=a.slug;j.writingStatus='complete';j.status=a.status;j.imageStatus=a.thumbnail?.status||'pending';j.publishedAt=a.publishedAt||null;}}write('queue',q);}

@@ -22,11 +22,11 @@ test('import preserves case, deduplicates exact links and retains tombstones',()
   const db={products:[]};const table='| 장소 | https://www.waug.com/r/aBc123 |';importLinks(db,table);importLinks(db,table);
   assert.equal(db.products.filter(p=>p.id==='aBc123').length,1);assert.equal(db.products[0].affiliateUrl,'https://www.waug.com/r/aBc123');assert.equal(db.products.find(p=>p.id==='OuI5fLEv').eligibility,'excluded');
 });
-test('20 total nationwide; final day remainder; duplicate run is a no-op',()=>{
-  const {products,state}=fixture();schedule(state,products,now);
-  assert.equal(state.articles.filter(a=>a.scheduledAt.startsWith('2026-09-11')).length,20);
+test('30 total nationwide; final day remainder; duplicate run is a no-op',()=>{
+  const {products,state}=fixture(35);schedule(state,products,now);
+  assert.equal(state.articles.filter(a=>a.scheduledAt.startsWith('2026-09-11')).length,30);
   assert.equal(publicArticles(state,products).length,0);
-  const day1=new Date('2026-09-10T21:00:00Z');assert.equal(publish(state,products,day1).length,20);assert.equal(publish(state,products,day1).length,0);
+  const day1=new Date('2026-09-10T21:00:00Z');assert.equal(publish(state,products,day1).length,30);assert.equal(publish(state,products,day1).length,0);
   assert.equal(publish(state,products,new Date('2026-09-11T21:00:00Z')).length,5);
 });
 test('pause, exclusions, unknown sale, missing image rights and expiration block publication',()=>{
@@ -40,16 +40,16 @@ test('due articles whose checks expired are held; no future slug leaks',()=>{
 });
 test('existing same-day history caps backlog after retries',()=>{
   const {products,state}=fixture(25);schedule(state,products,now);
-  state.history=Array.from({length:19},(_,i)=>({slug:`old-${i}`,day:'2026-09-11'}));
+  state.history=Array.from({length:29},(_,i)=>({slug:`old-${i}`,day:'2026-09-11'}));
   assert.equal(publish(state,products,new Date('2026-09-10T21:00:00Z')).length,1);
 });
-test('launch of 30 prepared articles publishes only 20 including earlier same-day history',()=>{
+test('launch of 30 prepared articles publishes only 30 including earlier same-day history',()=>{
   const {products,state}=fixture(55);state.publicationPolicy={launchDay:'2026-09-10'};
   const ids=state.articles.slice(0,30).map(a=>a.placeId);
-  assert.equal(launchNow(state,products,ids,now).length,20);
+  assert.equal(launchNow(state,products,ids,now).length,30);
   assert.equal(launchNow(state,products,ids,now).length,0);
   schedule(state,products,now);
-  assert.equal(publish(state,products,new Date('2026-09-10T21:00:00Z')).length,20);
+  assert.equal(publish(state,products,new Date('2026-09-10T21:00:00Z')).length,25);
   assert.throws(()=>launchNow(state,products,ids,new Date('2026-09-10T21:00:00Z')));
 });
 test('original official WAUG photo may be used without edit permission; other unknown photos remain blocked',()=>{

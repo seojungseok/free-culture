@@ -20,13 +20,8 @@
 .badge { position: relative; overflow: hidden; display: inline-flex; align-items: center; border: 1px solid #b99c46; border-radius: 2rem; background: linear-gradient(115deg,#fff3c5,#f8e5a5,#fff8dd); color: #57420d; padding: .45rem .85rem; margin-top: .5rem; font-size: .95rem; font-weight: 800; box-shadow: 0 2px 8px #8b72101a; animation: ticketBadgeFloat 5s ease-in-out infinite; }
 .badge::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(110deg,transparent 25%,#ffffffb0 50%,transparent 75%); transform: translateX(-120%); animation: ticketShine 6s ease-in-out infinite; }
 @keyframes ticketBadgeFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
-.mobileSpace { display: none; }
-.mobileBar { position: fixed; z-index: 40; inset: auto 0 0; border-top: 1px solid #d5dfd2; background: #fffffff5; padding: .65rem 1rem calc(.65rem + env(safe-area-inset-bottom)); }
 .selectLabel { display: flex; align-items: center; gap: .6rem; font-size: .8rem; margin-bottom: .5rem; }
 .selectLabel select { flex: 1; min-width: 0; max-width: 100%; padding: .5rem; border: 1px solid #bdcabc; border-radius: .4rem; background: white; }
 @keyframes ticketShine { 0%,75% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
-@media(max-width:639px) {
-  .mobileSpace { display: block; }
-  :global(body):has(.article) :global(button[aria-label="이 페이지 링크 복사"]) { bottom: calc(var(--ticket-booking-height,150px) + 1rem); }
-}
+
 @media(prefers-reduced-motion:reduce) { .badge { animation: none; } .button::after,.badge::after { animation: none; display: none; } }

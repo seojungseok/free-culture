@@ -1,17 +1,17 @@
 {
   "version": 2,
   "timezone": "Asia/Seoul",
-  "launchDay": "2026-09-10",
-  "launchLimit": 20,
-  "dailyAdditionalLimit": 20,
+  "launchDay": "2026-09-12",
+  "launchLimit": 30,
+  "dailyAdditionalLimit": 30,
   "dailyStartsOn": "2026-09-11",
   "independentOfExistingArticles": true,
   "allowUneditedWaugOfficialImages": true,
   "requireRepresentativeImageVerified": true,
   "requireVerifiedSources": true,
-  "notes": "2026-09-11 최신 지시: 관광지·가을나들이/여행코스/시티투어 합계 하루 30개(기본 각10), 입장권·체험 별도20개. 사이트 총50개 상한. 검수 실패로 수량을 채우지 않는다. 기존 예약·URL·제휴링크 유지.",
+  "notes": "2026-09-12 사용자 요청: 서울2+제주3 기준으로 수동 발행/작성 실행(하루 30개).",
   "allowAiThumbnails": true,
-  "aiStyle": "place-specific photographic concept or illustration; no invented real facilities",
+  "aiStyle": "natural photographic travel mood; no illustration, cartoon or 3D; no invented real facilities; AI disclosure required",
   "allowNecessaryAiBodyImages": true,
   "preferProvidedPhotos": true,
   "requireWaugFaceReview": true,
@@ -19,14 +19,20 @@
   "representativeImagesPerPlace": 1,
   "minimumDistinctBodyImages": 2,
   "requireRenderedBodyImages": true,
-  "siteWideDailyPublicationLimit": 50,
-  "dailyNewWritingLimit": 20,
+  "siteWideDailyPublicationLimit": 60,
+  "dailyNewWritingLimit": 30,
   "serverWorkflow": ".github/workflows/waug-editorial.yml",
   "newThumbnailProvider": "OpenAI Images API",
   "newThumbnailModel": "gpt-image-2",
   "newThumbnailQuality": "medium",
   "newThumbnailOutputEstimatedUSD": 0.041,
   "maxStageAttempts": 3,
-  "generalDailyPublicationLimit": 30,
-  "ticketDailyPublicationLimit": 20
+  "generalDailyPublicationLimit": 50,
+  "ticketDailyPublicationLimit": 30,
+  "historicalPublicationAllowances": {
+    "2026-09-12": {
+      "limit": 45,
+      "reason": "Previously published 15 plus user-requested one-time expansion of 30; does not grant future capacity."
+    }
+  }
 }

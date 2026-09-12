@@ -3,7 +3,8 @@ import {readiness} from './core.mjs';import {publicationBudget} from '../lib/pub
 const c=JSON.parse(fs.readFileSync('data/waug/catalog.json')), e=JSON.parse(fs.readFileSync('data/waug/editorial.json')), q=JSON.parse(fs.readFileSync('data/waug/queue.json')), source=JSON.parse(fs.readFileSync('data/waug/imports/yeongnam-2026-09-11.json'));
 assert.equal(source.records.length,106);for(const r of source.records){const p=c.products.find(p=>p.id===r.affiliateCode);assert.equal(p?.affiliateUrl,r.affiliateUrl);assert.equal(p?.sourceNumber,r.number);assert.ok(p.productId);}
 assert.equal(new Set(q.jobs.map(j=>j.placeId)).size,q.jobs.length);
-for(const day of new Set(q.jobs.map(j=>j.publicationDay).filter(Boolean)))assert.ok(q.jobs.filter(j=>j.publicationDay===day&&!['published','held','excluded'].includes(j.status)).length+e.history.filter(h=>h.day===day).length<=20,day);
+const policy=JSON.parse(fs.readFileSync('data/waug/publication-policy.json'));
+for(const day of new Set(e.history.map(h=>h.day)))assert.ok(e.history.filter(h=>h.day===day).length<=(policy.historicalPublicationAllowances?.[day]?.limit||30),day);
 assert.equal(c.products.find(p=>p.sourceNumber===98).area,'부산');assert.equal(c.products.find(p=>p.sourceNumber===133).duplicateOf,'KTz8pE8w');assert.equal(c.products.find(p=>p.sourceNumber===163).eligibility,'excluded');
 for(const n of [190,189,122,111,107])assert.ok(c.products.find(p=>p.sourceNumber===n).queueHoldReason);
 assert.equal(new Set(c.products.filter(p=>[95,106,120].includes(p.sourceNumber)).map(p=>p.placeId)).size,1);

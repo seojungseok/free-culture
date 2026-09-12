@@ -4,21 +4,60 @@
   "intro": "구체적인 장소와 경험부터 소개하는 자연스러운 존댓말",
   "theme": "테마파크",
   "sections": [
-    {"heading": "장소에서 즐길 수 있는 경험", "paragraphs": ["자료로 확인한 구체적인 설명입니다."], "tickets": false},
-    {"heading": "방문 준비", "kind": "visit", "paragraphs": ["이 장소에 필요한 확인 정보만 안내합니다."], "tickets": false},
-    {"heading": "이용권 선택과 예약", "paragraphs": ["확인된 옵션의 차이를 설명하고 가격과 혜택을 중립적으로 안내합니다."], "tickets": true}
+    {
+      "heading": "장소에서 즐길 수 있는 경험",
+      "paragraphs": [
+        "자료로 확인한 구체적인 설명입니다."
+      ],
+      "tickets": false
+    },
+    {
+      "heading": "방문 준비",
+      "kind": "visit",
+      "paragraphs": [
+        "이 장소에 필요한 확인 정보만 안내합니다."
+      ],
+      "tickets": false
+    },
+    {
+      "heading": "이용권 선택과 예약",
+      "paragraphs": [
+        "확인된 옵션의 차이를 설명하고 가격과 혜택을 중립적으로 안내합니다."
+      ],
+      "tickets": true
+    }
   ],
   "visitInfo": [],
   "ticketComparison": [
-    {"label": "", "entryTime": "", "duration": "", "includes": "", "conditions": "", "sourceUrls": [], "checkedAt": ""}
+    {
+      "label": "",
+      "entryTime": "",
+      "duration": "",
+      "includes": "",
+      "conditions": "",
+      "sourceUrls": [],
+      "checkedAt": ""
+    }
   ],
-  "faq": [{"question": "이 장소의 실제 방문 질문", "answer": "확인된 자료로 답하는 구체적인 존댓말 답변"}],
-  "thumbnailCopy": {"placeName": "실제 장소명", "headline": ["본문에 맞는 짧은 안내"]},
+  "faq": [
+    {
+      "question": "이 장소의 실제 방문 질문",
+      "answer": "확인된 자료로 답하는 구체적인 존댓말 답변"
+    }
+  ],
+  "thumbnailCopy": {
+    "placeName": "실제 장소명",
+    "headline": [
+      "본문에 맞는 짧은 안내"
+    ]
+  },
   "_optionalFields": {
     "sections[].validUntil": "YYYY-MM-DD: 월별 일정·판매기간 문단에만 실제 확인된 유효일을 저장합니다. 상시 문단에서는 생략합니다. 만료 시 텍스트만 숨기고 photoIndex와 이미지는 유지합니다.",
     "faq[].validUntil": "YYYY-MM-DD: 기간 한정 질문·답변에만 실제 확인된 유효일을 저장합니다. 상시 FAQ에서는 생략합니다.",
     "ticketComparison[].validUntil": "YYYY-MM-DD: 확인된 해당 옵션 유효일이 있을 때만 저장합니다.",
     "ticketComparison[].entryTime,duration,conditions": "문자열 필드입니다. 미확인은 빈 문자열로 두며 미확인 안내 문구를 반복하지 않습니다. duration이 모든 행에서 비어 있으면 UI에서 열을 생략합니다.",
-    "writing": "월별 판매기간·일정은 제목·intro에 넣지 않고 validUntil이 있는 section 또는 비교표에 모읍니다. 기간 한정 FAQ에도 validUntil을 기록합니다. 이 _optionalFields는 작성 참고용이며 결과 필드로 출력하지 않습니다."
+    "writing": "월별 판매기간·일정은 제목·intro에 넣지 않고 validUntil이 있는 section 또는 비교표에 모읍니다. 기간 한정 FAQ에도 validUntil을 기록합니다. 이 _optionalFields는 작성 참고용이며 결과 필드로 출력하지 않습니다.",
+    "thumbnailStyle": "자연스러운 사진형 여행 감성. 일러스트/만화/3D 금지. AI 생성 표시 유지. 실제 시설을 근거 없이 창작하지 않음.",
+    "booking": "친근한 가격 정보 소개. 공통 본문 버튼만 사용. 상품별 확인된 와그 최저가보장 배지만 표시하고 보상/환불 절차는 와그로 연결."
   }
 }

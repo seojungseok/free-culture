@@ -112,11 +112,55 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "rights_pending",
-        "url": null,
-        "alt": null,
-        "inputHash": null,
-        "error": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-148970-photo.jpg",
+        "alt": "안산 자이언트 제트 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 165866,
+        "sha256": "fa1f0707b15942b80ccc02693f077ad761a2c7de7b02308e00041ae4917ebc80",
+        "inputHash": "a149e0661938908a326fc51fed68cf7e15385b14f733f5b980efc96967830972",
+        "kind": "ai-generated",
+        "status": "approved",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 시설의 모습이나 배치를 재현한 사진이 아닌 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자 요청에 따른 장소별 대표 콘셉트 이미지. 현장 기록사진과 구분하며 본문에는 검수한 실제 원본을 배치.",
+        "sources": [],
+        "verifiedAt": "2026-09-12T03:44:37.102Z",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "a149e0661938908a326fc51fed68cf7e15385b14f733f5b980efc96967830972",
+          "generatedAt": "2026-09-12T03:29:22.092Z",
+          "visualCheckedAt": "2026-09-12T03:42:46.770Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "해당 와그 갤러리 및 공식·공공 장소 정보 조사. 실제 사진과 구분되는 일러스트로 제공.",
+          "style": "photographic-concept",
+          "originalSha256": "a412aee9f28fc36e1303966a1d2039a63c7e42ab156ef30571d6b0869d872542"
+        },
+        "reviewNotes": "압축 JPEG 자체를 직접 열어 주제·얼굴 없음·비기록적 표현 검수 완료. 페이지 모바일·PC·OG 화면 QA만 부모 담당.",
+        "uploadedAt": null,
+        "uploadMethod": "local-repository-served-asset",
+        "mobileCheckedAt": "2026-09-12T03:44:31.305Z",
+        "desktopCheckedAt": "2026-09-12T03:44:37.102Z",
+        "ogCheckedAt": "2026-09-12T03:44:37.102Z",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/place-148970-ai.jpg",
+          "sha256": "b30ead03e271a6288ed9259da05b2e20288fa193b7d15346bf1859b244ba3e0c",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:15.166Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       },
       "photoCandidates": [
         {
@@ -213,11 +257,55 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "rights_pending",
-        "url": null,
-        "alt": null,
-        "inputHash": null,
-        "error": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-145354-photo.jpg",
+        "alt": "시흥 공룡월드 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 159988,
+        "sha256": "17292e11e25804ebfcf4c55a7a6a98717a8b6eeba269f20f83396a1f9cff656c",
+        "inputHash": "7d5f215d8d1d32d4d1b0ca96034b35838a1a7e5a53f3732b046a44583dfc47f1",
+        "kind": "ai-generated",
+        "status": "approved",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 시설의 모습이나 배치를 재현한 사진이 아닌 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자 요청에 따른 장소별 대표 콘셉트 이미지. 현장 기록사진과 구분하며 본문에는 검수한 실제 원본을 배치.",
+        "sources": [],
+        "verifiedAt": "2026-09-12T03:44:37.264Z",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "7d5f215d8d1d32d4d1b0ca96034b35838a1a7e5a53f3732b046a44583dfc47f1",
+          "generatedAt": "2026-09-12T03:29:44.702Z",
+          "visualCheckedAt": "2026-09-12T03:42:46.881Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "해당 와그 갤러리 및 공식·공공 장소 정보 조사. 실제 사진과 구분되는 일러스트로 제공.",
+          "style": "photographic-concept",
+          "originalSha256": "cde26576b516bf502491e3034dd57e3d64963daadb7a4afafbb4fec7cc7410ce"
+        },
+        "reviewNotes": "압축 JPEG 자체를 직접 열어 주제·얼굴 없음·비기록적 표현 검수 완료. 페이지 모바일·PC·OG 화면 QA만 부모 담당.",
+        "uploadedAt": null,
+        "uploadMethod": "local-repository-served-asset",
+        "mobileCheckedAt": "2026-09-12T03:44:31.483Z",
+        "desktopCheckedAt": "2026-09-12T03:44:37.264Z",
+        "ogCheckedAt": "2026-09-12T03:44:37.264Z",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/place-145354-ai.jpg",
+          "sha256": "845d4a90e26f0f65d4c0c5f4bb174e68116b8a950593e5ae0c140095a7a02237",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:15.161Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       },
       "photoCandidates": [
         {
@@ -461,11 +549,55 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "rights_pending",
-        "url": null,
-        "alt": null,
-        "inputHash": null,
-        "error": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-118035-photo.jpg",
+        "alt": "용인 곤충테마파크·공룡월드 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 151885,
+        "sha256": "ec00f6436d3222928890edcae1283340dc38e1baea65b0efa3c606ad4b3ffcf0",
+        "inputHash": "d09e95bd211bd83807b3efb277f06f42b0d03bb253bf2353b7d27f72dfb111aa",
+        "kind": "ai-generated",
+        "status": "approved",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 시설의 모습이나 배치를 재현한 사진이 아닌 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자 요청에 따른 장소별 대표 콘셉트 이미지. 현장 기록사진과 구분하며 본문에는 검수한 실제 원본을 배치.",
+        "sources": [],
+        "verifiedAt": "2026-09-12T03:44:37.427Z",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "d09e95bd211bd83807b3efb277f06f42b0d03bb253bf2353b7d27f72dfb111aa",
+          "generatedAt": "2026-09-12T03:30:07.566Z",
+          "visualCheckedAt": "2026-09-12T03:42:46.988Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "해당 와그 갤러리 및 공식·공공 장소 정보 조사. 실제 사진과 구분되는 일러스트로 제공.",
+          "style": "photographic-concept",
+          "originalSha256": "f5a197cbb1e6afcd8096791fdbcb440dc96ff36626a77fe87eaf40fc8098d61e"
+        },
+        "reviewNotes": "압축 JPEG 자체를 직접 열어 주제·얼굴 없음·비기록적 표현 검수 완료. 페이지 모바일·PC·OG 화면 QA만 부모 담당.",
+        "uploadedAt": null,
+        "uploadMethod": "local-repository-served-asset",
+        "mobileCheckedAt": "2026-09-12T03:44:31.679Z",
+        "desktopCheckedAt": "2026-09-12T03:44:37.427Z",
+        "ogCheckedAt": "2026-09-12T03:44:37.427Z",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/place-118035-ai.jpg",
+          "sha256": "65cf486b6b12079cba97d416cac80b745a5f2e8fa275b5286464877f59d9e6fe",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:15.168Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       },
       "photoCandidates": [
         {
@@ -921,11 +1053,55 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "rights_pending",
-        "url": null,
-        "alt": null,
-        "inputHash": null,
-        "error": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-129361-photo.jpg",
+        "alt": "고양 스몹 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 157437,
+        "sha256": "f7c219d23a22567b26d2bac18325c83137df8f09a745a66f5913867755de0ad7",
+        "inputHash": "2db2ae52ee9b5fcbb7e27d594d906b473c129d3baefbd9841176e0b141d6e683",
+        "kind": "ai-generated",
+        "status": "approved",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 시설의 모습이나 배치를 재현한 사진이 아닌 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자 요청에 따른 장소별 대표 콘셉트 이미지. 현장 기록사진과 구분하며 본문에는 검수한 실제 원본을 배치.",
+        "sources": [],
+        "verifiedAt": "2026-09-12T03:44:37.606Z",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "2db2ae52ee9b5fcbb7e27d594d906b473c129d3baefbd9841176e0b141d6e683",
+          "generatedAt": "2026-09-12T03:30:30.970Z",
+          "visualCheckedAt": "2026-09-12T03:42:47.094Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "해당 와그 갤러리 및 공식·공공 장소 정보 조사. 실제 사진과 구분되는 일러스트로 제공.",
+          "style": "photographic-concept",
+          "originalSha256": "0503305c5f90028e5a884f3d86cc3898f7704616822e4f8c338be4e58b376b5a"
+        },
+        "reviewNotes": "압축 JPEG 자체를 직접 열어 주제·얼굴 없음·비기록적 표현 검수 완료. 페이지 모바일·PC·OG 화면 QA만 부모 담당.",
+        "uploadedAt": null,
+        "uploadMethod": "local-repository-served-asset",
+        "mobileCheckedAt": "2026-09-12T03:44:31.870Z",
+        "desktopCheckedAt": "2026-09-12T03:44:37.606Z",
+        "ogCheckedAt": "2026-09-12T03:44:37.606Z",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/place-129361-ai.jpg",
+          "sha256": "5ca98c7252258b54dde4af17d0c590bdbd461af933ca20060a4d8cf48f900615",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:15.873Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       },
       "photoCandidates": [
         {
@@ -1291,11 +1467,55 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "rights_pending",
-        "url": null,
-        "alt": null,
-        "inputHash": null,
-        "error": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-141524-photo.jpg",
+        "alt": "김포 덕포진교육박물관 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 128804,
+        "sha256": "91f8d19e72bcb89f92b432b146123ddff8fbe0e9da573b488b85b66690fda3ed",
+        "inputHash": "77c97d8fb7481ba9ab77e2ac83aad2c8f1db2f7e023adf4daf8a1f655542facc",
+        "kind": "ai-generated",
+        "status": "approved",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 시설의 모습이나 배치를 재현한 사진이 아닌 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자 요청에 따른 장소별 대표 콘셉트 이미지. 현장 기록사진과 구분하며 본문에는 검수한 실제 원본을 배치.",
+        "sources": [],
+        "verifiedAt": "2026-09-12T03:44:37.780Z",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "77c97d8fb7481ba9ab77e2ac83aad2c8f1db2f7e023adf4daf8a1f655542facc",
+          "generatedAt": "2026-09-12T03:31:10.138Z",
+          "visualCheckedAt": "2026-09-12T03:42:47.189Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "해당 와그 갤러리 및 공식·공공 장소 정보 조사. 실제 사진과 구분되는 일러스트로 제공.",
+          "style": "photographic-concept",
+          "originalSha256": "1bf0338249cb93d7a8bf9251276eedd19bdf10052b1cc51d604b09a393b65c95"
+        },
+        "reviewNotes": "압축 JPEG 자체를 직접 열어 주제·얼굴 없음·비기록적 표현 검수 완료. 페이지 모바일·PC·OG 화면 QA만 부모 담당.",
+        "uploadedAt": null,
+        "uploadMethod": "local-repository-served-asset",
+        "mobileCheckedAt": "2026-09-12T03:44:32.038Z",
+        "desktopCheckedAt": "2026-09-12T03:44:37.780Z",
+        "ogCheckedAt": "2026-09-12T03:44:37.780Z",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/place-141524-ai.jpg",
+          "sha256": "1d96cb638bd1501c819d7cbf9a41928a26455f759339c8d0f27d6a0c9699266e",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:15.877Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       },
       "photoCandidates": [
         {
@@ -2311,11 +2531,55 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "rights_pending",
-        "url": null,
-        "alt": null,
-        "inputHash": null,
-        "error": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-139590-photo.jpg",
+        "alt": "과천 그라운드플래닛 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 126919,
+        "sha256": "b5788991cc46fa918d2fe3a2c2ef8b7086f6f0036aac4e6510a1204fdf615776",
+        "inputHash": "f1b68ccc6d70fb26f50b406244c53e74c5b872ab0f5a9b5f207125eb8e694d17",
+        "kind": "ai-generated",
+        "status": "approved",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 시설이나 배치를 재현한 사진이 아닌 실내 놀이 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자 요청에 따른 대표 콘셉트 이미지. 얼굴이 식별되는 공식 원본은 제외하고 실제 시설 사진과 구분되는 일러스트 사용.",
+        "sources": [],
+        "verifiedAt": "2026-09-12T03:44:37.950Z",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "f1b68ccc6d70fb26f50b406244c53e74c5b872ab0f5a9b5f207125eb8e694d17",
+          "generatedAt": "2026-09-12T03:31:34.604Z",
+          "visualCheckedAt": "2026-09-12T03:42:47.278Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그 원본 갤러리 및 서울대공원 공식 실내 시설 안내 대조. 얼굴 있는 갤러리 사진은 제외.",
+          "style": "photographic-concept",
+          "originalSha256": "1f11d0a45a66e55e6a0119853729d4080f6dffd42fc652bdfc1af53fc231cac2"
+        },
+        "uploadedAt": null,
+        "uploadMethod": "local-repository-served-asset",
+        "reviewNotes": "압축 JPEG 자체를 직접 열어 주제·얼굴 없음·비기록적 표현 검수 완료. 페이지 모바일·PC·OG 화면 QA만 부모 담당.",
+        "mobileCheckedAt": "2026-09-12T03:44:32.229Z",
+        "desktopCheckedAt": "2026-09-12T03:44:37.950Z",
+        "ogCheckedAt": "2026-09-12T03:44:37.950Z",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/place-139590-ai.jpg",
+          "sha256": "b123932b1d42ceee24e91d970858cd852c2b5cf47e84e452800a207ecde8cca0",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:15.879Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       },
       "photoCandidates": [
         {
@@ -3354,8 +3618,55 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/tongyeong-cablecar-photo.jpg",
+        "alt": "통영케이블카 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "caption": "실제 시설·풍경을 촬영한 사진이 아닌 AI 콘셉트 일러스트예요.",
+        "credit": "AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "kind": "ai-generated",
+        "role": "illustration",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "status": "approved",
+        "verifiedAt": "2026-09-12T03:44:38.166Z",
+        "necessityNote": "사용자가 요청한 장소별 비기록적 여행 콘셉트 대표 이미지. 실제 원본 사진과 구분하며 시설 구조·배치·조망의 증거로 사용하지 않음.",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "0115da2d678cbfb7fc3a17db75a553f283aee54ce163393faa2d3b9a17f741c3",
+          "generatedAt": "2026-09-12T03:31:56.206Z",
+          "visualCheckedAt": "2026-09-12T03:42:47.380Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그 원본 카트 사진은 식별 가능한 얼굴로 제외했고, 케이블카 승강장 홍보 원본을 직접 검수해 본문에 채택했다. AI 대표는 실제 시설의 기록사진이 아닌 사용자가 요청한 여행 콘셉트이다.",
+          "style": "photographic-concept",
+          "originalSha256": "2d171859a94ade5049d307f21f9a7551723ecfea2a6609d15b155fa844c14930"
+        },
+        "bytes": 140736,
+        "sha256": "07b8572522ee333a22d181ad85b1869338215f59619991ed1a4a4d3daf8a5713",
+        "inputHash": "0115da2d678cbfb7fc3a17db75a553f283aee54ce163393faa2d3b9a17f741c3",
+        "inputHashBasis": "SHA256 of original image digest, exact tool prompt digest and resize/JPEG settings",
+        "sources": [],
+        "uploadedAt": null,
+        "mobileCheckedAt": "2026-09-12T03:44:32.404Z",
+        "desktopCheckedAt": "2026-09-12T03:44:38.166Z",
+        "ogCheckedAt": "2026-09-12T03:44:38.166Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group2-tongyeong-cablecar-ai.jpg",
+          "sha256": "acc6dfcf78adeec62c477a25963ae9c800bee4eb43f595b3e2caedaee1564558",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:16.878Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -3372,8 +3683,54 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "kind": "ai-generated",
+        "role": "illustration",
+        "status": "approved",
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/masan-robotland-photo.jpg",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 142918,
+        "sha256": "408ae29527b837e8ecbc294c6dc4cac9fba64e1d5ee125a27b0db6cc98c3b755",
+        "alt": "창원 마산 로봇랜드 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "necessityNote": "실제 현장 사진과 구분되는 목록용 콘셉트 표지. 본문은 별도로 검수한 실제 상품 원본 사진을 사용.",
+        "sources": [],
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "5742337ba55aa513ed453f4f28e3ad036ac3a418501d463cd815e4addcf5d9da",
+          "generatedAt": "2026-09-12T03:36:58.958Z",
+          "visualCheckedAt": "2026-09-12T03:42:48.642Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "해당 live WAUG 상품의 원본 갤러리에서 2장의 실제 사진을 확인해 본문에 사용. 썸네일은 장소 구조·현장 상태를 재현하지 않는 개념 일러스트로 별도 생성.",
+          "style": "photographic-concept",
+          "originalSha256": "6bfa27e35b44d05cd60290b5e7052882d0eba1bc46b4bab31aa6ebea890a2125"
+        },
+        "inputHash": "5742337ba55aa513ed453f4f28e3ad036ac3a418501d463cd815e4addcf5d9da",
+        "qaStatus": "pending-parent-browser-preview",
+        "qaNotes": "원본 AI 결과의 비기록적 표현을 직접 확인. 최종 JPEG의 모바일·PC·OG 및 업로드 URL 검수는 아직 하지 않아 관련 시각 필드를 생성하지 않음.",
+        "uploadedAt": null,
+        "verifiedAt": "2026-09-12T03:44:40.561Z",
+        "mobileCheckedAt": "2026-09-12T03:44:34.752Z",
+        "desktopCheckedAt": "2026-09-12T03:44:40.561Z",
+        "ogCheckedAt": "2026-09-12T03:44:40.561Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group4-masan-robotland.jpg",
+          "sha256": "0f7657603dac154d235fc5a971d47933348caa7314f53c0d9c74b6efc364a849",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:19.926Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -3387,8 +3744,62 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-148437-photo.jpg",
+        "localPath": "public/ticket-images/new-20260912/group3-148437-ai.jpg",
+        "alt": "부산영화체험박물관 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "caption": "실제 시설·전시·동물을 촬영한 사진이 아닌 상상한 콘셉트 일러스트입니다.",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "kind": "ai-generated",
+        "role": "illustration",
+        "necessityNote": "사용자가 요청한 장소별 비기록적 대표 이미지. 실제 상품 원본 사진과 구분해 제공.",
+        "sources": [],
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 128018,
+        "sha256": "decec30db314ae16216b853018c0db5b03378b319a6a809904c58b89f3205ad1",
+        "inputHash": "ea36715db80adc0767b1d885e335f6d6721fbdab28b63151c7f2dbc7a5755f68",
+        "status": "approved",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "ea36715db80adc0767b1d885e335f6d6721fbdab28b63151c7f2dbc7a5755f68",
+          "generatedAt": "2026-09-12T03:34:13.699Z",
+          "visualCheckedAt": "2026-09-12T03:42:48.004Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "갤러리 원본 5장 모두 식별 가능한 인물이 있어 본문에서 제외. 부산시 보도자료 사진은 공공누리 제4유형으로 상업 이용 불가해 미사용. VR·4D의 별도 요금과 주차 수치는 미확인하여 생략.",
+          "style": "photographic-concept",
+          "originalSha256": "cb9a3a599b48920d54aadfa95eb974ad75333dfd102254e530bb682efff2609e"
+        },
+        "reviewPending": [
+          "압축본 미리보기",
+          "mobile",
+          "desktop",
+          "og",
+          "배포 업로드 확인"
+        ],
+        "uploadedAt": null,
+        "verifiedAt": "2026-09-12T03:44:39.506Z",
+        "mobileCheckedAt": "2026-09-12T03:44:33.672Z",
+        "desktopCheckedAt": "2026-09-12T03:44:39.506Z",
+        "ogCheckedAt": "2026-09-12T03:44:39.506Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group3-148437-ai.jpg",
+          "sha256": "460f670c49ee396270ce990bda25df9b4903fd98a7f7a4b280daf30410dd6b08",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:18.294Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -3648,8 +4059,55 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-130855-photo.jpg",
+        "alt": "하동케이블카 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "caption": "실제 시설·풍경을 촬영한 사진이 아닌 AI 콘셉트 일러스트예요.",
+        "credit": "AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "kind": "ai-generated",
+        "role": "illustration",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "status": "approved",
+        "verifiedAt": "2026-09-12T03:44:38.343Z",
+        "necessityNote": "사용자가 요청한 장소별 비기록적 여행 콘셉트 대표 이미지. 실제 원본 사진과 구분하며 시설 구조·배치·조망의 증거로 사용하지 않음.",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "79edb3b330f1f22d769a09071b1a582986474ebe9e5b639419cafef1e5f3c1be",
+          "generatedAt": "2026-09-12T03:32:17.907Z",
+          "visualCheckedAt": "2026-09-12T03:42:47.484Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그 첫 후보는 짚라인 시설이라 제외했다. 대체 상부 스테이션 원본은 조감도임을 직접 확인하고 그 성격을 명시해 채택했다. AI 대표도 실제 조망·시설 배치를 재현하는 자료가 아니다.",
+          "style": "photographic-concept",
+          "originalSha256": "b82980d43fea21371813fdb202a8a1a4538b7ac325cd55b0d7f8bb49b04a1754"
+        },
+        "bytes": 149264,
+        "sha256": "5abdab9185f1bc8852553262f463ad82da38d1b588134f3c0b836a1bafa64398",
+        "inputHash": "79edb3b330f1f22d769a09071b1a582986474ebe9e5b639419cafef1e5f3c1be",
+        "inputHashBasis": "SHA256 of original image digest, exact tool prompt digest and resize/JPEG settings",
+        "sources": [],
+        "uploadedAt": null,
+        "mobileCheckedAt": "2026-09-12T03:44:32.574Z",
+        "desktopCheckedAt": "2026-09-12T03:44:38.343Z",
+        "ogCheckedAt": "2026-09-12T03:44:38.343Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group2-place-130855-ai.jpg",
+          "sha256": "1dd2a6ed86ae1a8cbe8cc7c853d69a026faa25907a81e9ffbb2c68a00a50abae",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:16.883Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -3678,8 +4136,54 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-123046-photo.jpg",
+        "alt": "국립낙동강생물자원관 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 137693,
+        "sha256": "5989b756884fe63425fe2db688fe415b7b78ff78847efbe35d4508acc205f645",
+        "inputHash": "e52075526569f8d59275af567fc4aac16c03881054eb8fcb6d06bb4f516bba5e",
+        "kind": "ai-generated",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 건물·전시·시설을 재현하거나 촬영한 사진이 아닌 AI 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자 요청에 따른 장소 주제별 AI 대표 이미지. 실제 시설 설명은 별도로 검수한 와그 원본사진과 본문으로 제공.",
+        "sources": [],
+        "status": "approved",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "e52075526569f8d59275af567fc4aac16c03881054eb8fcb6d06bb4f516bba5e",
+          "generatedAt": "2026-09-12T03:39:27.391Z",
+          "visualCheckedAt": "2026-09-12T03:42:49.342Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "실제 와그 상품 원본 갤러리를 열어 본문사진을 별도로 선정. 공공사진은 라이선스 검수 미완료로 사용하지 않음.",
+          "style": "photographic-concept",
+          "originalSha256": "4216e8533ee4422ab400d9d1f2795d952d12fd22ee86f46132d9a3ccafd87c06"
+        },
+        "verifiedAt": "2026-09-12T03:44:41.628Z",
+        "uploadedAt": null,
+        "mobileCheckedAt": "2026-09-12T03:44:35.907Z",
+        "desktopCheckedAt": "2026-09-12T03:44:41.628Z",
+        "ogCheckedAt": "2026-09-12T03:44:41.628Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/place-123046-concept.jpg",
+          "sha256": "ebf67aa5172aa93511169aca1a8e5173a876112b8c92194744873d63d4c027e8",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:21.266Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -3708,8 +4212,54 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-118075-photo.jpg",
+        "alt": "바니베어뮤지엄 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 160014,
+        "sha256": "786de76670a5b540c22d260832f70a103082c2c06564e314c333f774ddf0509a",
+        "inputHash": "1edb8c0dcb6110c2490818a325939c68018bba7344b20e0735bde5878ebd40b2",
+        "kind": "ai-generated",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 건물·전시·시설을 재현하거나 촬영한 사진이 아닌 AI 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자 요청에 따른 장소 주제별 AI 대표 이미지. 실제 시설 설명은 별도로 검수한 와그 원본사진과 본문으로 제공.",
+        "sources": [],
+        "status": "approved",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "1edb8c0dcb6110c2490818a325939c68018bba7344b20e0735bde5878ebd40b2",
+          "generatedAt": "2026-09-12T03:39:49.001Z",
+          "visualCheckedAt": "2026-09-12T03:42:49.451Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "실제 와그 상품 원본 갤러리를 열어 본문사진을 별도로 선정. 공공사진은 라이선스 검수 미완료로 사용하지 않음.",
+          "style": "photographic-concept",
+          "originalSha256": "68b4b3b864b7132bed5474e79ebc2aef3d873ba0ac5bde7b74973a9cd1e6a969"
+        },
+        "verifiedAt": "2026-09-12T03:44:41.807Z",
+        "uploadedAt": null,
+        "mobileCheckedAt": "2026-09-12T03:44:36.099Z",
+        "desktopCheckedAt": "2026-09-12T03:44:41.807Z",
+        "ogCheckedAt": "2026-09-12T03:44:41.807Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/place-118075-concept.jpg",
+          "sha256": "e46fafa75165eb86d28e3af6bb24071463745a7ce987be94f3f77e644c561acd",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:21.267Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -3754,8 +4304,62 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-103711-photo.jpg",
+        "localPath": "public/ticket-images/new-20260912/group3-103711-ai.jpg",
+        "alt": "씨라이프 부산과 브릭맨 시티즈 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "caption": "실제 시설·전시·동물을 촬영한 사진이 아닌 상상한 콘셉트 일러스트입니다.",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "kind": "ai-generated",
+        "role": "illustration",
+        "necessityNote": "사용자가 요청한 장소별 비기록적 대표 이미지. 실제 상품 원본 사진과 구분해 제공.",
+        "sources": [],
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 161173,
+        "sha256": "512b8ceb6e2ae40e662faa0a4bd10dd18da7427cc64a5a8ce21125a2ef50afe0",
+        "inputHash": "dd007d676145220cc78ec52c858d9442da6469f74ce00f1e1425c10e48f97a61",
+        "status": "approved",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "dd007d676145220cc78ec52c858d9442da6469f74ce00f1e1425c10e48f97a61",
+          "generatedAt": "2026-09-12T03:35:59.803Z",
+          "visualCheckedAt": "2026-09-12T03:42:48.445Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "공식 홈 배너에 2026.12.06 OPEN 표기가 있으나 전용 페이지는 운영 중 안내이고 와그는 9/13 예약 옵션을 제공. 개막일은 본문에서 생략. 블록 사진은 얼굴 노출로 제외하고 실제 같은 상품 갤러리의 상어·펭귄 사진만 채택해 아쿠아리움 포함권 장면으로 명확히 구분.",
+          "style": "photographic-concept",
+          "originalSha256": "ead9faa290708cc3b9b795ab0e589af160a473d4f2791b6da66020df3dc8f6c5"
+        },
+        "reviewPending": [
+          "압축본 미리보기",
+          "mobile",
+          "desktop",
+          "og",
+          "배포 업로드 확인"
+        ],
+        "uploadedAt": null,
+        "verifiedAt": "2026-09-12T03:44:40.206Z",
+        "mobileCheckedAt": "2026-09-12T03:44:34.373Z",
+        "desktopCheckedAt": "2026-09-12T03:44:40.206Z",
+        "ogCheckedAt": "2026-09-12T03:44:40.206Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group3-103711-ai.jpg",
+          "sha256": "3511087e1055ba3e1b5b807709f2b53b32f9840dd4bfc20a846a3c00cd6f8a09",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:19.097Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -3833,8 +4437,54 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "kind": "ai-generated",
+        "role": "illustration",
+        "status": "approved",
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/daegu-eworld-photo.jpg",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 151329,
+        "sha256": "2a8db095049420c42692022e424e1c0ba488d9f8e537a99c1c73eba93c71a926",
+        "alt": "대구 이월드·83타워 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "necessityNote": "실제 현장 사진과 구분되는 목록용 콘셉트 표지. 본문은 별도로 검수한 실제 상품 원본 사진을 사용.",
+        "sources": [],
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "9708e71b14062235cb3570670f96206c6ab5868c6815cd1f14cb5242654b95d9",
+          "generatedAt": "2026-09-12T03:37:19.750Z",
+          "visualCheckedAt": "2026-09-12T03:42:48.748Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "해당 live WAUG 상품의 원본 갤러리에서 2장의 실제 사진을 확인해 본문에 사용. 썸네일은 장소 구조·현장 상태를 재현하지 않는 개념 일러스트로 별도 생성.",
+          "style": "photographic-concept",
+          "originalSha256": "ccdfaa87781da50bb76dfb190bdc33a199d12391ea4fa448f532838fe0918abb"
+        },
+        "inputHash": "9708e71b14062235cb3570670f96206c6ab5868c6815cd1f14cb5242654b95d9",
+        "qaStatus": "pending-parent-browser-preview",
+        "qaNotes": "원본 AI 결과의 비기록적 표현을 직접 확인. 최종 JPEG의 모바일·PC·OG 및 업로드 URL 검수는 아직 하지 않아 관련 시각 필드를 생성하지 않음.",
+        "uploadedAt": null,
+        "verifiedAt": "2026-09-12T03:44:40.745Z",
+        "mobileCheckedAt": "2026-09-12T03:44:34.939Z",
+        "desktopCheckedAt": "2026-09-12T03:44:40.745Z",
+        "ogCheckedAt": "2026-09-12T03:44:40.745Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group4-daegu-eworld.jpg",
+          "sha256": "ea1cd50f7b93b6eace74ab6b951eb1c25da6c102af65157a4423957caaf79c5a",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:19.927Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -3848,8 +4498,54 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-116324-photo.jpg",
+        "alt": "한국대중음악박물관 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 103626,
+        "sha256": "54e48136aedbe6e3910cea40a1d77304bed70e772c8b12166078b3e3bff9e8d2",
+        "inputHash": "92b5fbb4232e5283713c36bad16e38302b74245556da1161d30d8748626965b7",
+        "kind": "ai-generated",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 건물·전시·시설을 재현하거나 촬영한 사진이 아닌 AI 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자 요청에 따른 장소 주제별 AI 대표 이미지. 실제 시설 설명은 별도로 검수한 와그 원본사진과 본문으로 제공.",
+        "sources": [],
+        "status": "approved",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "92b5fbb4232e5283713c36bad16e38302b74245556da1161d30d8748626965b7",
+          "generatedAt": "2026-09-12T03:40:13.532Z",
+          "visualCheckedAt": "2026-09-12T03:42:49.532Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "실제 와그 상품 원본 갤러리를 열어 본문사진을 별도로 선정. 공공사진은 라이선스 검수 미완료로 사용하지 않음.",
+          "style": "photographic-concept",
+          "originalSha256": "5475856f84135b89e6fa91441d9072bacd4bf6e1ad5c131a1436191b4eea9760"
+        },
+        "verifiedAt": "2026-09-12T03:44:41.994Z",
+        "uploadedAt": null,
+        "mobileCheckedAt": "2026-09-12T03:44:36.298Z",
+        "desktopCheckedAt": "2026-09-12T03:44:41.994Z",
+        "ogCheckedAt": "2026-09-12T03:44:41.994Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/place-116324-concept.jpg",
+          "sha256": "37106ed337545b377967bf42a5899550de1df189bf653238c66a8062f16345f2",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:21.272Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -3926,8 +4622,55 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/busan-songdo-cablecar-photo.jpg",
+        "alt": "부산 송도해상케이블카 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "caption": "실제 시설·풍경을 촬영한 사진이 아닌 AI 콘셉트 일러스트예요.",
+        "credit": "AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "kind": "ai-generated",
+        "role": "illustration",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "status": "approved",
+        "verifiedAt": "2026-09-12T03:44:38.559Z",
+        "necessityNote": "사용자가 요청한 장소별 비기록적 여행 콘셉트 대표 이미지. 실제 원본 사진과 구분하며 시설 구조·배치·조망의 증거로 사용하지 않음.",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "a04b9ad45f39bd6c8d7b075d3de0fefc8f3bc27b2683be10a026e9ed4439c54e",
+          "generatedAt": "2026-09-12T03:32:39.101Z",
+          "visualCheckedAt": "2026-09-12T03:42:47.606Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그 해당 상품의 바다 위 캐빈 원본을 직접 열어 장소와 얼굴 비식별 상태를 확인해 본문에 사용했다. AI 대표의 해안·도심 배치는 창작 콘셉트이며 실제 시설 사진이 아니다.",
+          "style": "photographic-concept",
+          "originalSha256": "07a2e843e9025cb4c008b4a4ada9874a2e998ca77cb23f52c71249deed54e320"
+        },
+        "bytes": 177950,
+        "sha256": "4f460fd900ecb5e0fafb208202fc96547fdea595cdba9b99185bb3aa1dff9aa2",
+        "inputHash": "a04b9ad45f39bd6c8d7b075d3de0fefc8f3bc27b2683be10a026e9ed4439c54e",
+        "inputHashBasis": "SHA256 of original image digest, exact tool prompt digest and resize/JPEG settings",
+        "sources": [],
+        "uploadedAt": null,
+        "mobileCheckedAt": "2026-09-12T03:44:32.762Z",
+        "desktopCheckedAt": "2026-09-12T03:44:38.559Z",
+        "ogCheckedAt": "2026-09-12T03:44:38.559Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group2-busan-songdo-cablecar-ai.jpg",
+          "sha256": "00534cb98d127bb18c2751cbb569daba3bdd1087d06750b501f2faa709053ac4",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:16.884Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -3941,8 +4684,54 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-122172-photo.jpg",
+        "alt": "동궁원 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 223607,
+        "sha256": "70d8228b9ce1e272df4359050f4aee423e9dcc19ca01f543b91b66e01206afab",
+        "inputHash": "7b018fabc3427b325998ff8ff5bf7c0fa5e99c12ebd56b664ec84a5ce0c65803",
+        "kind": "ai-generated",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 건물·전시·시설을 재현하거나 촬영한 사진이 아닌 AI 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자 요청에 따른 장소 주제별 AI 대표 이미지. 실제 시설 설명은 별도로 검수한 와그 원본사진과 본문으로 제공.",
+        "sources": [],
+        "status": "approved",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "7b018fabc3427b325998ff8ff5bf7c0fa5e99c12ebd56b664ec84a5ce0c65803",
+          "generatedAt": "2026-09-12T03:40:38.528Z",
+          "visualCheckedAt": "2026-09-12T03:42:49.676Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "실제 와그 상품 원본 갤러리를 열어 본문사진을 별도로 선정. 공공사진은 라이선스 검수 미완료로 사용하지 않음.",
+          "style": "photographic-concept",
+          "originalSha256": "719334cbec1086c07d60c9a64c206ca9b14c94e1c43b301f693f718b7f295313"
+        },
+        "verifiedAt": "2026-09-12T03:44:42.170Z",
+        "uploadedAt": null,
+        "mobileCheckedAt": "2026-09-12T03:44:36.512Z",
+        "desktopCheckedAt": "2026-09-12T03:44:42.170Z",
+        "ogCheckedAt": "2026-09-12T03:44:42.170Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/place-122172-concept.jpg",
+          "sha256": "9a5250a7edfddea5e9420ac59cabee27564b5cd367185c208e0d568620526a25",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:22.442Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4046,8 +4835,55 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-119559-photo.jpg",
+        "alt": "거제파노라마케이블카 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "caption": "실제 시설·풍경을 촬영한 사진이 아닌 AI 콘셉트 일러스트예요.",
+        "credit": "AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "kind": "ai-generated",
+        "role": "illustration",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "status": "approved",
+        "verifiedAt": "2026-09-12T03:44:38.957Z",
+        "necessityNote": "사용자가 요청한 장소별 비기록적 여행 콘셉트 대표 이미지. 실제 원본 사진과 구분하며 시설 구조·배치·조망의 증거로 사용하지 않음.",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "d584afc2dc90bde9fd7b361e10f0508b0a0e688953404a62eecb7787ad0a5aad",
+          "generatedAt": "2026-09-12T03:32:58.396Z",
+          "visualCheckedAt": "2026-09-12T03:42:47.705Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그 상품 갤러리의 노자산 방향 캐빈 원본을 직접 열어 장소와 얼굴 비식별 상태를 확인해 채택했다. AI 대표는 산·섬 풍경을 표현한 비기록적 일러스트이다.",
+          "style": "photographic-concept",
+          "originalSha256": "cd50aeb772f219b481b9c2f7262f2094a449d9baa10b01aeaa7b0e7225c2eaa4"
+        },
+        "bytes": 142335,
+        "sha256": "3dd39a483235cc0320d0b1275284cf595b2feb404b61b1434908039e10c5fbbe",
+        "inputHash": "d584afc2dc90bde9fd7b361e10f0508b0a0e688953404a62eecb7787ad0a5aad",
+        "inputHashBasis": "SHA256 of original image digest, exact tool prompt digest and resize/JPEG settings",
+        "sources": [],
+        "uploadedAt": null,
+        "mobileCheckedAt": "2026-09-12T03:44:32.940Z",
+        "desktopCheckedAt": "2026-09-12T03:44:38.957Z",
+        "ogCheckedAt": "2026-09-12T03:44:38.957Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group2-place-119559-ai.jpg",
+          "sha256": "9ff81573e3574ea501190db14ef4d5fa5431096e51dc8a07b76d259b557b924e",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:17.606Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4166,8 +5002,62 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-120930-photo.jpg",
+        "localPath": "public/ticket-images/new-20260912/group3-120930-ai.jpg",
+        "alt": "부산타워 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "caption": "실제 시설·전시·동물을 촬영한 사진이 아닌 상상한 콘셉트 일러스트입니다.",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "kind": "ai-generated",
+        "role": "illustration",
+        "necessityNote": "사용자가 요청한 장소별 비기록적 대표 이미지. 실제 상품 원본 사진과 구분해 제공.",
+        "sources": [],
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 149044,
+        "sha256": "ad20726668c9cf162b8a8c869d92ff8eca04f6d38d334746e088f3e7dd89cd74",
+        "inputHash": "72d3646cf5233d1b228354168010c745949e341a90662a5bb5ca34458f6aa16f",
+        "status": "approved",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "72d3646cf5233d1b228354168010c745949e341a90662a5bb5ca34458f6aa16f",
+          "generatedAt": "2026-09-12T03:34:37.551Z",
+          "visualCheckedAt": "2026-09-12T03:42:48.110Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "갤러리 5장을 직접 확인해 인물 없는 불꽃맵핑쇼 1장만 채택. 다른 4장은 얼굴 식별 가능하여 제외. 맵핑쇼 회차와 주차 지원 조건은 미확인으로 생략.",
+          "style": "photographic-concept",
+          "originalSha256": "d295a15b7098719b6fe0f33e21d47494797a2153e0b180b3bd065e3f32d78231"
+        },
+        "reviewPending": [
+          "압축본 미리보기",
+          "mobile",
+          "desktop",
+          "og",
+          "배포 업로드 확인"
+        ],
+        "uploadedAt": null,
+        "verifiedAt": "2026-09-12T03:44:39.674Z",
+        "mobileCheckedAt": "2026-09-12T03:44:33.852Z",
+        "desktopCheckedAt": "2026-09-12T03:44:39.674Z",
+        "ogCheckedAt": "2026-09-12T03:44:39.674Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group3-120930-ai.jpg",
+          "sha256": "b271101e8fbbb7f267f1758eb9155eed6f059e4f40df757b52af595fff777d8c",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:18.295Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4181,8 +5071,54 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "kind": "ai-generated",
+        "role": "illustration",
+        "status": "approved",
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-117267-photo.jpg",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 185363,
+        "sha256": "e9d3ca0b137d4d9740def6aa61e8fdf89d5598ac4a8f47527012b33c411284de",
+        "alt": "대구 네이처파크 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "necessityNote": "실제 현장 사진과 구분되는 목록용 콘셉트 표지. 본문은 별도로 검수한 실제 상품 원본 사진을 사용.",
+        "sources": [],
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "fb97ee01bd1fabadacecae2f4f7295842ff74f116dd61c121f5d64e45883c8d6",
+          "generatedAt": "2026-09-12T03:37:50.281Z",
+          "visualCheckedAt": "2026-09-12T03:42:48.867Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "해당 live WAUG 상품의 원본 갤러리에서 2장의 실제 사진을 확인해 본문에 사용. 썸네일은 장소 구조·현장 상태를 재현하지 않는 개념 일러스트로 별도 생성.",
+          "style": "photographic-concept",
+          "originalSha256": "06fca9ef5c00a48a6084ec0f69232bdbf826fd33a622d7bef9a3be2c9089518e"
+        },
+        "inputHash": "fb97ee01bd1fabadacecae2f4f7295842ff74f116dd61c121f5d64e45883c8d6",
+        "qaStatus": "pending-parent-browser-preview",
+        "qaNotes": "원본 AI 결과의 비기록적 표현을 직접 확인. 최종 JPEG의 모바일·PC·OG 및 업로드 URL 검수는 아직 하지 않아 관련 시각 필드를 생성하지 않음.",
+        "uploadedAt": null,
+        "verifiedAt": "2026-09-12T03:44:40.922Z",
+        "mobileCheckedAt": "2026-09-12T03:44:35.148Z",
+        "desktopCheckedAt": "2026-09-12T03:44:40.922Z",
+        "ogCheckedAt": "2026-09-12T03:44:40.922Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group4-place-117267.jpg",
+          "sha256": "69c9b9aae1409d1027421293cd362a5e139322a2efba47faddb0a94075bc86ca",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:19.928Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4212,8 +5148,54 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "kind": "ai-generated",
+        "role": "illustration",
+        "status": "approved",
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/gyeongju-expo-park-photo.jpg",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 177830,
+        "sha256": "3bed7e59ed0d3e4aa675ab9f3b688c393857b660f15f1d0f3742004dc9ef3d55",
+        "alt": "경주 엑스포대공원·또봇정크아트 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "necessityNote": "실제 현장 사진과 구분되는 목록용 콘셉트 표지. 본문은 별도로 검수한 실제 상품 원본 사진을 사용.",
+        "sources": [],
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "6165503dce0cbf90c7ffe5283324ebb726efdf293522a046f72be457b25cedd1",
+          "generatedAt": "2026-09-12T03:39:05.864Z",
+          "visualCheckedAt": "2026-09-12T03:42:49.235Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "해당 live WAUG 상품의 원본 갤러리에서 2장의 실제 사진을 확인해 본문에 사용. 썸네일은 장소 구조·현장 상태를 재현하지 않는 개념 일러스트로 별도 생성.",
+          "style": "photographic-concept",
+          "originalSha256": "11923923c61ebd6b882721d13e28df20a0458f4d281ce13ec270b5ce308c2d19"
+        },
+        "inputHash": "6165503dce0cbf90c7ffe5283324ebb726efdf293522a046f72be457b25cedd1",
+        "qaStatus": "pending-parent-browser-preview",
+        "qaNotes": "원본 AI 결과의 비기록적 표현을 직접 확인. 최종 JPEG의 모바일·PC·OG 및 업로드 URL 검수는 아직 하지 않아 관련 시각 필드를 생성하지 않음.",
+        "uploadedAt": null,
+        "verifiedAt": "2026-09-12T03:44:41.457Z",
+        "mobileCheckedAt": "2026-09-12T03:44:35.727Z",
+        "desktopCheckedAt": "2026-09-12T03:44:41.457Z",
+        "ogCheckedAt": "2026-09-12T03:44:41.457Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group4-gyeongju-expo-park.jpg",
+          "sha256": "d4db7ecee787befd01d478e42d344fb9542fbad66b91c65affcdea9bc188fda7",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:20.579Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4227,8 +5209,62 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-147318-photo.jpg",
+        "localPath": "public/ticket-images/new-20260912/group3-147318-ai.jpg",
+        "alt": "키자니아 부산 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "caption": "실제 시설·전시·동물을 촬영한 사진이 아닌 상상한 콘셉트 일러스트입니다.",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "kind": "ai-generated",
+        "role": "illustration",
+        "necessityNote": "사용자가 요청한 장소별 비기록적 대표 이미지. 실제 상품 원본 사진과 구분해 제공.",
+        "sources": [],
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 121679,
+        "sha256": "296914952e57a1e78e964a97797a15df9915c67936067efedc887044f6e8c574",
+        "inputHash": "40b179709253acbc0fbaf76ea49da820bbf35061320517327577695922577eb4",
+        "status": "approved",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "40b179709253acbc0fbaf76ea49da820bbf35061320517327577695922577eb4",
+          "generatedAt": "2026-09-12T03:36:38.100Z",
+          "visualCheckedAt": "2026-09-12T03:42:48.536Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그의 5시간권 10:00~18:00 표기를 체류 8시간으로 오해하지 않도록 공식 시간표로 구분. 공식 푸터 사업장 6층과 입장층 4층은 구분해 실제 입구 4층 사용. 전체 160여 직업 수치는 부산점 현행 목록 미확인으로 제외. 5장 중 얼굴이 드러나는 3장은 제외하고 모자로 얼굴이 가려진 조리 장면·뒷모습 장면 2장 채택.",
+          "style": "photographic-concept",
+          "originalSha256": "d509a8396d4988057fed409016a6cb768260ad002bcc34065791f91b5c6541ea"
+        },
+        "reviewPending": [
+          "압축본 미리보기",
+          "mobile",
+          "desktop",
+          "og",
+          "배포 업로드 확인"
+        ],
+        "uploadedAt": null,
+        "verifiedAt": "2026-09-12T03:44:40.378Z",
+        "mobileCheckedAt": "2026-09-12T03:44:34.564Z",
+        "desktopCheckedAt": "2026-09-12T03:44:40.378Z",
+        "ogCheckedAt": "2026-09-12T03:44:40.378Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group3-147318-ai.jpg",
+          "sha256": "8d47a5174fa05372de4f68d9ff54557b9b5d8e9f176c55bc13693406c5daf559",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:19.101Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4287,8 +5323,55 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-118033-photo.jpg",
+        "alt": "청도 군파크 루지 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "caption": "실제 시설·풍경을 촬영한 사진이 아닌 AI 콘셉트 일러스트예요.",
+        "credit": "AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "kind": "ai-generated",
+        "role": "illustration",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "status": "approved",
+        "verifiedAt": "2026-09-12T03:44:39.321Z",
+        "necessityNote": "사용자가 요청한 장소별 비기록적 여행 콘셉트 대표 이미지. 실제 원본 사진과 구분하며 시설 구조·배치·조망의 증거로 사용하지 않음.",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "c7cc0d715e72ad2d7352ce6ac95f4883c1162485c7686f3b5a40b528b51a3eed",
+          "generatedAt": "2026-09-12T03:33:50.941Z",
+          "visualCheckedAt": "2026-09-12T03:42:47.904Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그 갤러리 원본과 본문 대체 홍보물 모두 직접 열어 확인했으나 식별 가능한 모델 얼굴이 있어 채택하지 않았다. 검수된 공공사진도 없어 사용자 지시에 따라 AI 대표만 제공한다. 그림 속 산·수면·트랙 배치는 실제 현장 기록이 아니다.",
+          "style": "photographic-concept",
+          "originalSha256": "3e2bf0435db9466a644df77d8d6127cc3058c0b712404b4849d6dad1a3b94969"
+        },
+        "bytes": 126306,
+        "sha256": "ea585abab659ba151dfae9b5712aa90064ae23880850f94997e3901d6f28770c",
+        "inputHash": "c7cc0d715e72ad2d7352ce6ac95f4883c1162485c7686f3b5a40b528b51a3eed",
+        "inputHashBasis": "SHA256 of original image digest, exact tool prompt digest and resize/JPEG settings",
+        "sources": [],
+        "uploadedAt": null,
+        "mobileCheckedAt": "2026-09-12T03:44:33.369Z",
+        "desktopCheckedAt": "2026-09-12T03:44:39.321Z",
+        "ogCheckedAt": "2026-09-12T03:44:39.321Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group2-place-118033-ai.jpg",
+          "sha256": "de1d0c233db5ce2b2a3e5f04771967ae09b7c40b573994e3ffc51fc6eeeb2b66",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:17.613Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4304,8 +5387,54 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "kind": "ai-generated",
+        "role": "illustration",
+        "status": "approved",
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/daegu-shinsegae-aquarium-photo.jpg",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 202893,
+        "sha256": "6108f3ff8ec64649886a1a11b254e2b6881bb6c0b3eadb6c0ce6c1ec84ac669e",
+        "alt": "대구 신세계 아쿠아리움 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "necessityNote": "실제 현장 사진과 구분되는 목록용 콘셉트 표지. 본문은 별도로 검수한 실제 상품 원본 사진을 사용.",
+        "sources": [],
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "3b46819d76b7b1dea4f21dd1cd31a0b0a95e3640410a2a214fd58bd02a7a9b16",
+          "generatedAt": "2026-09-12T03:38:13.575Z",
+          "visualCheckedAt": "2026-09-12T03:42:48.999Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "해당 live WAUG 상품의 원본 갤러리에서 2장의 실제 사진을 확인해 본문에 사용. 썸네일은 장소 구조·현장 상태를 재현하지 않는 개념 일러스트로 별도 생성.",
+          "style": "photographic-concept",
+          "originalSha256": "ac60f8d23609f56a4181b5dca2fd90c6f4d76af6ba02152ef6e56fb9acdd3ddb"
+        },
+        "inputHash": "3b46819d76b7b1dea4f21dd1cd31a0b0a95e3640410a2a214fd58bd02a7a9b16",
+        "qaStatus": "pending-parent-browser-preview",
+        "qaNotes": "원본 AI 결과의 비기록적 표현을 직접 확인. 최종 JPEG의 모바일·PC·OG 및 업로드 URL 검수는 아직 하지 않아 관련 시각 필드를 생성하지 않음.",
+        "uploadedAt": null,
+        "verifiedAt": "2026-09-12T03:44:41.091Z",
+        "mobileCheckedAt": "2026-09-12T03:44:35.338Z",
+        "desktopCheckedAt": "2026-09-12T03:44:41.091Z",
+        "ogCheckedAt": "2026-09-12T03:44:41.091Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group4-daegu-shinsegae-aquarium.jpg",
+          "sha256": "5b33e05caecfe9af390034517002e6153d5f4dcaf2c9b4adb68781c910e6aba0",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:20.577Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4380,8 +5509,62 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/busan-arte-museum-photo.jpg",
+        "localPath": "public/ticket-images/new-20260912/group3-arte-ai.jpg",
+        "alt": "아르떼뮤지엄 부산 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "caption": "실제 시설·전시·동물을 촬영한 사진이 아닌 상상한 콘셉트 일러스트입니다.",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "kind": "ai-generated",
+        "role": "illustration",
+        "necessityNote": "사용자가 요청한 장소별 비기록적 대표 이미지. 실제 상품 원본 사진과 구분해 제공.",
+        "sources": [],
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 175930,
+        "sha256": "34ad1213dea63c69ea9e9b128befa0baa4df44443d9002d876fb5eb8439e3f2f",
+        "inputHash": "04d3dfbe47305ba94f7b7371b2e2908e96770ff2ca7a0b21812fb6ffca8d0dd5",
+        "status": "approved",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "04d3dfbe47305ba94f7b7371b2e2908e96770ff2ca7a0b21812fb6ffca8d0dd5",
+          "generatedAt": "2026-09-12T03:35:37.688Z",
+          "visualCheckedAt": "2026-09-12T03:42:48.332Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "단독권 와그 출생연도(성인 1962~2006 등)와 공식 현장 기준(성인 1963~2007 등)이 한 해 차이. 경계 출생연도를 확정 안내하지 않고 연령 숫자 생략. 패키지 두 시설의 동일일 의무·순서·카페 포함 여부는 확정하지 않음. 달토끼 섹션은 공식 9월 종료에 맞춰 만료 처리.",
+          "style": "photographic-concept",
+          "originalSha256": "696787247f110ab0daa89901d1f027a06932d78fd93a849a3a639c1f33dc7131"
+        },
+        "reviewPending": [
+          "압축본 미리보기",
+          "mobile",
+          "desktop",
+          "og",
+          "배포 업로드 확인"
+        ],
+        "uploadedAt": null,
+        "verifiedAt": "2026-09-12T03:44:40.024Z",
+        "mobileCheckedAt": "2026-09-12T03:44:34.194Z",
+        "desktopCheckedAt": "2026-09-12T03:44:40.024Z",
+        "ogCheckedAt": "2026-09-12T03:44:40.024Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group3-arte-ai.jpg",
+          "sha256": "4b494f4672040cff4a2bfd8bf9d4c24034ba378a6132f0f6064fbde052ef0d46",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:19.093Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4425,8 +5608,55 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-120453-photo.jpg",
+        "alt": "스카이라인 루지 부산 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "caption": "실제 시설·풍경을 촬영한 사진이 아닌 AI 콘셉트 일러스트예요.",
+        "credit": "AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "kind": "ai-generated",
+        "role": "illustration",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "status": "approved",
+        "verifiedAt": "2026-09-12T03:44:39.124Z",
+        "necessityNote": "사용자가 요청한 장소별 비기록적 여행 콘셉트 대표 이미지. 실제 원본 사진과 구분하며 시설 구조·배치·조망의 증거로 사용하지 않음.",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "0c784c95ed534763933259224deecea9dafc4636f063aac138cd04c7918076d5",
+          "generatedAt": "2026-09-12T03:33:20.105Z",
+          "visualCheckedAt": "2026-09-12T03:42:47.804Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "와그 공식 갤러리 후보 2장을 직접 열었으나 인물 얼굴이 식별되거나 일부 보였고 별도 초상권 근거를 확인하지 못해 모두 제외했다. 검수된 공공사진도 없어 사용자 지시에 따라 AI 대표만 제공한다. 그림 속 트랙·다리·도시 배치는 실제 시설 조망을 뜻하지 않는다.",
+          "style": "photographic-concept",
+          "originalSha256": "be7514b2ff3bedd82515e6aae559bde6b3a0c53b481d5ec5a64b1c5c67ae0f0a"
+        },
+        "bytes": 135302,
+        "sha256": "a5397d225335adccc38f08e88192fe523e4fc6121326833a7bfe54f690e04961",
+        "inputHash": "0c784c95ed534763933259224deecea9dafc4636f063aac138cd04c7918076d5",
+        "inputHashBasis": "SHA256 of original image digest, exact tool prompt digest and resize/JPEG settings",
+        "sources": [],
+        "uploadedAt": null,
+        "mobileCheckedAt": "2026-09-12T03:44:33.105Z",
+        "desktopCheckedAt": "2026-09-12T03:44:39.124Z",
+        "ogCheckedAt": "2026-09-12T03:44:39.124Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group2-place-120453-ai.jpg",
+          "sha256": "fbdfb6a558a6777d844a4425e8f3db903945d22b52e4835f7554636449472d73",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:17.610Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4455,8 +5685,62 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-116786-photo.jpg",
+        "localPath": "public/ticket-images/new-20260912/group3-116786-ai.jpg",
+        "alt": "부산 엑스더스카이 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "caption": "실제 시설·전시·동물을 촬영한 사진이 아닌 상상한 콘셉트 일러스트입니다.",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "kind": "ai-generated",
+        "role": "illustration",
+        "necessityNote": "사용자가 요청한 장소별 비기록적 대표 이미지. 실제 상품 원본 사진과 구분해 제공.",
+        "sources": [],
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 138408,
+        "sha256": "2a618aa2c435726c3628b6438d651b4360223d5ee5ff2fd84d85572caa1f3f61",
+        "inputHash": "190eeb62e7483babab3d317369777d239ad65312d40e17aaa36a926eec970697",
+        "status": "approved",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "190eeb62e7483babab3d317369777d239ad65312d40e17aaa36a926eec970697",
+          "generatedAt": "2026-09-12T03:35:14.491Z",
+          "visualCheckedAt": "2026-09-12T03:42:48.213Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "단일 입장권의 연령 옵션만 있어 비교표 생략. 공식 운영시간·입장마감은 이미지 중심 안내로 직접 판독하지 못해 본문에 시각을 넣지 않음. 주차 무료 시간과 기상 환불 조건도 미확인하여 생략.",
+          "style": "photographic-concept",
+          "originalSha256": "86a3ad0c0d91f1b8b4f7e40063364e0b4adf8403e7923aaca815097f7f61b28a"
+        },
+        "reviewPending": [
+          "압축본 미리보기",
+          "mobile",
+          "desktop",
+          "og",
+          "배포 업로드 확인"
+        ],
+        "uploadedAt": null,
+        "verifiedAt": "2026-09-12T03:44:39.839Z",
+        "mobileCheckedAt": "2026-09-12T03:44:34.023Z",
+        "desktopCheckedAt": "2026-09-12T03:44:39.839Z",
+        "ogCheckedAt": "2026-09-12T03:44:39.839Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group3-116786-ai.jpg",
+          "sha256": "22bd2aa080428d8c4b223ff54eb124047914c0ba47a24e34312cf8686f0d1868",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:18.303Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4530,8 +5814,54 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-121492-photo.jpg",
+        "alt": "자수정동굴나라 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 164613,
+        "sha256": "af3a88b801579f9b381a697c77ae0b87ef818e9489964e6495bf903a874b7255",
+        "inputHash": "551546d9bf4d67870600d5d9192b9e921e4be79b731dea1ba44b793b9e6a6050",
+        "kind": "ai-generated",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 건물·전시·시설을 재현하거나 촬영한 사진이 아닌 AI 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자 요청에 따른 장소 주제별 AI 대표 이미지. 실제 시설 설명은 별도로 검수한 와그 원본사진과 본문으로 제공.",
+        "sources": [],
+        "status": "approved",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "551546d9bf4d67870600d5d9192b9e921e4be79b731dea1ba44b793b9e6a6050",
+          "generatedAt": "2026-09-12T03:40:59.866Z",
+          "visualCheckedAt": "2026-09-12T03:42:49.792Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "실제 와그 상품 원본 갤러리를 열어 본문사진을 별도로 선정. 공공사진은 라이선스 검수 미완료로 사용하지 않음.",
+          "style": "photographic-concept",
+          "originalSha256": "b5d638be49a7d29913e24b6efa0e4034244780b3a64ecace7e410ed67f53a7f4"
+        },
+        "verifiedAt": "2026-09-12T03:44:42.351Z",
+        "uploadedAt": null,
+        "mobileCheckedAt": "2026-09-12T03:44:36.697Z",
+        "desktopCheckedAt": "2026-09-12T03:44:42.351Z",
+        "ogCheckedAt": "2026-09-12T03:44:42.351Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/place-121492-concept.jpg",
+          "sha256": "d00b26a8a92735b940673a7e59aa47d57b1ddec98e3534e24262592de3903299",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:22.443Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4575,8 +5905,54 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "kind": "ai-generated",
+        "role": "illustration",
+        "status": "approved",
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-110561-photo.jpg",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 160674,
+        "sha256": "33acf04a4e70156e241c719ebc57aabf65b0a87dced57d8c750c303ccfb68ccf",
+        "alt": "경주월드 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "necessityNote": "실제 현장 사진과 구분되는 목록용 콘셉트 표지. 본문은 별도로 검수한 실제 상품 원본 사진을 사용.",
+        "sources": [],
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "700243e9cc0e693d6a24df6707ef52172046907e26b5466fe78841f6128f44da",
+          "generatedAt": "2026-09-12T03:38:42.248Z",
+          "visualCheckedAt": "2026-09-12T03:42:49.113Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "해당 live WAUG 상품의 원본 갤러리에서 2장의 실제 사진을 확인해 본문에 사용. 썸네일은 장소 구조·현장 상태를 재현하지 않는 개념 일러스트로 별도 생성.",
+          "style": "photographic-concept",
+          "originalSha256": "83a212951acfdc5b0cd46cdd39090becdf1bacb7d33c0698a86c5bd3cec43e20"
+        },
+        "inputHash": "700243e9cc0e693d6a24df6707ef52172046907e26b5466fe78841f6128f44da",
+        "qaStatus": "pending-parent-browser-preview",
+        "qaNotes": "원본 AI 결과의 비기록적 표현을 직접 확인. 최종 JPEG의 모바일·PC·OG 및 업로드 URL 검수는 아직 하지 않아 관련 시각 필드를 생성하지 않음.",
+        "uploadedAt": null,
+        "verifiedAt": "2026-09-12T03:44:41.267Z",
+        "mobileCheckedAt": "2026-09-12T03:44:35.529Z",
+        "desktopCheckedAt": "2026-09-12T03:44:41.267Z",
+        "ogCheckedAt": "2026-09-12T03:44:41.267Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/group4-place-110561.jpg",
+          "sha256": "512c33265140abb8dc66c12cf1ad775f95533f91a323dfc29873afb4bb4912ef",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:20.578Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {
@@ -4605,8 +5981,54 @@
       "articleSlug": null,
       "status": "research_pending",
       "thumbnail": {
-        "status": "not_started",
-        "url": null
+        "url": "https://mwohaji.kr/ticket-images/new-20260912/place-118762-photo.jpg",
+        "alt": "스파랜드 센텀시티 나들이를 표현한 사진형 AI 이미지 · 실제 시설 촬영 사진이 아닙니다.",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "bytes": 128443,
+        "sha256": "c351e5f7dd50029c3699e953240f088c96a5044c620fd724aab6a1407a3a6b5e",
+        "inputHash": "738e4b670e212c151d23c41e802fd9afdb9533ec3b564c9eea017e5ae00c1aa4",
+        "kind": "ai-generated",
+        "credit": "이해를 돕기 위한 AI 생성 이미지",
+        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
+        "caption": "실제 건물·전시·시설을 재현하거나 촬영한 사진이 아닌 AI 콘셉트 일러스트입니다.",
+        "role": "illustration",
+        "necessityNote": "사용자 요청에 따른 장소 주제별 AI 대표 이미지. 실제 시설 설명은 별도로 검수한 와그 원본사진과 본문으로 제공.",
+        "sources": [],
+        "status": "approved",
+        "generation": {
+          "provider": "OpenAI imagegen",
+          "originalGeneration": true,
+          "promptHash": "738e4b670e212c151d23c41e802fd9afdb9533ec3b564c9eea017e5ae00c1aa4",
+          "generatedAt": "2026-09-12T03:41:21.274Z",
+          "visualCheckedAt": "2026-09-12T03:42:49.890Z",
+          "nonDocumentaryReviewed": true,
+          "realPhotoSearchNote": "실제 와그 상품 원본 갤러리를 열어 본문사진을 별도로 선정. 공공사진은 라이선스 검수 미완료로 사용하지 않음.",
+          "style": "photographic-concept",
+          "originalSha256": "d2b86927894ced385601a6dcf746fa4eb255dd0c3876cea489a6ac06db2674e0"
+        },
+        "verifiedAt": "2026-09-12T03:44:42.518Z",
+        "uploadedAt": null,
+        "mobileCheckedAt": "2026-09-12T03:44:36.886Z",
+        "desktopCheckedAt": "2026-09-12T03:44:42.518Z",
+        "ogCheckedAt": "2026-09-12T03:44:42.518Z",
+        "uploadMethod": "local-repository-served-asset",
+        "uploadVerification": {
+          "status": 200,
+          "scope": "local-repository-http",
+          "productionVerified": false,
+          "url": "http://localhost:3013/ticket-images/new-20260912/place-118762-concept.jpg",
+          "sha256": "9c4431bf8f610e126901a5b8fb973993927ed29ae87e7724ba75461185d58e5a",
+          "width": 1200,
+          "height": 630,
+          "checkedAt": "2026-09-12T01:46:22.444Z"
+        },
+        "qaEvidenceFiles": [
+          "data/waug/new-20260912/browser-qa.json",
+          "data/waug/new-20260912/http-qa.json"
+        ],
+        "style": "photographic-concept"
       }
     },
     {

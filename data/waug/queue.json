@@ -1,89 +1,10 @@
 {
   "version": 1,
   "timezone": "Asia/Seoul",
-  "dailyPublicationLimit": 20,
-  "dailyNewWritingLimit": 20,
-  "updatedAt": "2026-09-10T15:35:04.554Z",
+  "dailyPublicationLimit": 30,
+  "dailyNewWritingLimit": 30,
+  "updatedAt": "2026-09-12T03:37:20.844Z",
   "jobs": [
-    {
-      "placeId": "gimpo-monsterium",
-      "name": "김포 몬스터리움과 테마파크 패키지",
-      "area": "경기",
-      "theme": "테마파크",
-      "productIds": [
-        "8YvEYsQG",
-        "QlTVQvXT"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": "gimpo-monsterium",
-      "status": "published",
-      "writingStatus": "complete",
-      "imageStatus": "approved",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-12-31",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
-    },
-    {
-      "placeId": "place-148970",
-      "name": "안산 자이언트 제트 키즈카페",
-      "area": "경기",
-      "theme": "아이와",
-      "productIds": [
-        "8JwciC3z"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-14",
-      "scheduledAt": "2026-09-14T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-10-30",
-      "writingAt": "2026-09-14T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-145354",
-      "name": "시흥 공룡월드·키즈카페",
-      "area": "경기",
-      "theme": "아이와",
-      "productIds": [
-        "GoxsznZA"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-14",
-      "scheduledAt": "2026-09-14T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-14T05:00:00+09:00"
-    },
     {
       "placeId": "place-143680",
       "name": "용인 테일45 반려견 운동장",
@@ -101,93 +22,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-15T05:00:00+09:00"
-    },
-    {
-      "placeId": "nature-scape-dongtan",
-      "name": "네이처스케이프 플러스 동탄",
-      "area": "경기",
-      "theme": "테마파크",
-      "productIds": [
-        "0htJw3od",
-        "wevX1T04"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": "nature-scape-dongtan",
-      "status": "published",
-      "writingStatus": "complete",
-      "imageStatus": "approved",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": "2026-09-01",
-      "validUntil": "2026-09-30",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
-    },
-    {
-      "placeId": "place-137156",
-      "name": "과천 매직플로우 원더파크",
-      "area": "경기",
-      "theme": "전시·정원",
-      "productIds": [
-        "swLHvma3"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": "wonderpark-gwacheon",
-      "status": "published",
-      "writingStatus": "complete",
-      "imageStatus": "approved",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-30",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
-    },
-    {
-      "placeId": "place-118035",
-      "name": "용인 곤충 테마파크·공룡월드",
-      "area": "경기",
-      "theme": "체험",
-      "productIds": [
-        "MKdK404S"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-15T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-109787",
@@ -270,14 +112,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
+      "publicationDay": "2026-09-15",
+      "scheduledAt": "2026-09-15T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-16T05:00:00+09:00"
+      "writingAt": "2026-09-15T05:00:00+09:00"
     },
     {
       "placeId": "hwaseong-tourpass",
@@ -366,14 +208,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
+      "publicationDay": "2026-09-15",
+      "scheduledAt": "2026-09-15T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-10-31",
-      "writingAt": "2026-09-16T05:00:00+09:00"
+      "writingAt": "2026-09-15T05:00:00+09:00"
     },
     {
       "placeId": "place-117365",
@@ -418,14 +260,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-13",
-      "scheduledAt": "2026-09-13T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-13T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-137954",
@@ -444,14 +286,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-13",
-      "scheduledAt": "2026-09-13T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-13T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-122601",
@@ -502,14 +344,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-133259",
@@ -528,40 +370,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-15T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-129361",
-      "name": "고양 스타필드 스몹",
-      "area": "경기",
-      "theme": "체험",
-      "productIds": [
-        "x0AGDJHE"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": "2026-09-01",
-      "validUntil": "2026-10-31",
-      "writingAt": "2026-09-16T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-115594",
@@ -614,32 +430,6 @@
       "notBefore": null,
       "validUntil": "2026-12-31",
       "writingAt": "2026-09-15T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-121130",
-      "name": "가평 쁘띠프랑스·이탈리아마을·유럽마을",
-      "area": "경기",
-      "theme": "테마파크",
-      "productIds": [
-        "WR3WtcJA"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": "petite-france-italian-village",
-      "status": "published",
-      "writingStatus": "complete",
-      "imageStatus": "approved",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-10-31",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "place-109007",
@@ -710,14 +500,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-13",
-      "scheduledAt": "2026-09-13T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-13T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-137485",
@@ -736,14 +526,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
+      "publicationDay": "2026-09-15",
+      "scheduledAt": "2026-09-15T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-16T05:00:00+09:00"
+      "writingAt": "2026-09-15T05:00:00+09:00"
     },
     {
       "placeId": "place-119942",
@@ -772,84 +562,6 @@
       "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
-      "placeId": "place-141524",
-      "name": "김포 덕포진교육박물관",
-      "area": "경기",
-      "theme": "전시",
-      "productIds": [
-        "VUORffX9"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-13",
-      "scheduledAt": "2026-09-13T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": null,
-      "writingAt": "2026-09-13T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-109404",
-      "name": "양평 양떼목장 입장·먹이주기",
-      "area": "경기",
-      "theme": "테마파크",
-      "productIds": [
-        "0X7invFD"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": "yangpyeong-sheep-ranch",
-      "status": "published",
-      "writingStatus": "complete",
-      "imageStatus": "approved",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-12-31",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
-    },
-    {
-      "placeId": "place-122258",
-      "name": "동탄 아르티스 테마파크",
-      "area": "경기",
-      "theme": "동물원·아쿠아리움",
-      "productIds": [
-        "jgtrtDnj"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": "artis-dongtan",
-      "status": "published",
-      "writingStatus": "complete",
-      "imageStatus": "approved",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-12-31",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
-    },
-    {
       "placeId": "place-109744",
       "name": "시흥 거북섬 더베이54 관상어 테마파크",
       "area": "경기",
@@ -866,14 +578,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-133319",
@@ -900,33 +612,6 @@
       "notBefore": null,
       "validUntil": "2026-12-31",
       "writingAt": "2026-09-14T05:00:00+09:00"
-    },
-    {
-      "placeId": "pororo-dasan",
-      "name": "뽀로로테마파크 다산",
-      "area": "경기",
-      "theme": "테마파크",
-      "productIds": [
-        "QPwUnmmM",
-        "h4gdvnhg"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": "pororo-dasan",
-      "status": "published",
-      "writingStatus": "complete",
-      "imageStatus": "approved",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-30",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "place-122728",
@@ -961,32 +646,6 @@
       "validUntil": null
     },
     {
-      "placeId": "place-120468",
-      "name": "고양 스타필드 매직플로우 원더빌리지",
-      "area": "경기",
-      "theme": "테마파크",
-      "productIds": [
-        "HHk6csWc"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": "wonder-village-goyang",
-      "status": "published",
-      "writingStatus": "complete",
-      "imageStatus": "approved",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": "2026-07-01",
-      "validUntil": "2026-09-30",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
-    },
-    {
       "placeId": "place-129758",
       "name": "뽀로로파크 오산중앙점",
       "area": "경기",
@@ -1003,14 +662,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-132153",
@@ -1037,32 +696,6 @@
       "notBefore": null,
       "validUntil": "2026-12-31",
       "writingAt": "2026-09-13T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-132659",
-      "name": "고양 쥬쥬랜드",
-      "area": "경기",
-      "theme": "테마파크",
-      "productIds": [
-        "QLHlnsJF"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": "zoozoo-land",
-      "status": "published",
-      "writingStatus": "complete",
-      "imageStatus": "approved",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-30",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
     },
     {
       "placeId": "shinbuk-spa",
@@ -1092,58 +725,6 @@
       "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
-      "placeId": "place-139590",
-      "name": "과천 그라운드플래닛",
-      "area": "경기",
-      "theme": "체험",
-      "productIds": [
-        "7x577Y3V"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-11-30",
-      "writingAt": "2026-09-16T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-113546",
-      "name": "과천 서울대공원 리프트 패키지",
-      "area": "경기",
-      "theme": "케이블카·레포츠",
-      "productIds": [
-        "tiNrXkcN"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "initial"
-      ],
-      "createdAt": "2026-09-10T11:43:01.771Z",
-      "articleSlug": "seoul-grand-park-lift",
-      "status": "published",
-      "writingStatus": "complete",
-      "imageStatus": "approved",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": "2026-03-17",
-      "validUntil": "2026-11-30",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
-    },
-    {
       "placeId": "place-148445",
       "name": "일산 원마운트 펀웨이브",
       "area": "경기",
@@ -1160,14 +741,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-15T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-135573",
@@ -1238,14 +819,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": "2026-09-01",
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-15T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-111998",
@@ -1290,14 +871,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": "2026-09-01",
       "validUntil": "2026-11-30",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-141999",
@@ -1316,96 +897,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
+      "publicationDay": "2026-09-15",
+      "scheduledAt": "2026-09-15T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2027-06-30",
-      "writingAt": "2026-09-16T05:00:00+09:00"
-    },
-    {
-      "placeId": "tongyeong-cablecar",
-      "name": "통영 케이블카와 체험 패키지",
-      "area": "경남",
-      "theme": "체험",
-      "productIds": [
-        "LazkVUgr",
-        "P6Xz6CDX"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-13",
-      "scheduledAt": "2026-09-13T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-13T05:00:00+09:00"
-    },
-    {
-      "placeId": "masan-robotland",
-      "name": "창원 마산 로봇랜드",
-      "area": "경남",
-      "theme": "체험",
-      "productIds": [
-        "rHuA7c9p",
-        "ENtQOkUN",
-        "Pfi2PUXD",
-        "lumJv16l"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": "2026-09-01",
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-11T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-148437",
-      "name": "부산 영화체험박물관 & 씨네뮤지엄 입장권",
-      "area": "부산",
-      "theme": "전시",
-      "productIds": [
-        "zrHyPXgl"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-15T05:00:00+09:00"
     },
     {
       "placeId": "place-148612",
@@ -1520,14 +1019,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
+      "publicationDay": "2026-09-15",
+      "scheduledAt": "2026-09-15T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-10-31",
-      "writingAt": "2026-09-16T05:00:00+09:00"
+      "writingAt": "2026-09-15T05:00:00+09:00"
     },
     {
       "placeId": "place-138379",
@@ -1546,14 +1045,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-141862",
@@ -1659,14 +1158,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
+      "publicationDay": "2026-09-15",
+      "scheduledAt": "2026-09-15T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-16T05:00:00+09:00"
+      "writingAt": "2026-09-15T05:00:00+09:00"
     },
     {
       "placeId": "gyeongbuk-tourpass",
@@ -1747,14 +1246,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
+      "publicationDay": "2026-09-15",
+      "scheduledAt": "2026-09-15T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-16T05:00:00+09:00"
+      "writingAt": "2026-09-15T05:00:00+09:00"
     },
     {
       "placeId": "place-131522",
@@ -1773,14 +1272,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-131505",
@@ -1799,14 +1298,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
+      "publicationDay": "2026-09-15",
+      "scheduledAt": "2026-09-15T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-16T05:00:00+09:00"
+      "writingAt": "2026-09-15T05:00:00+09:00"
     },
     {
       "placeId": "place-131502",
@@ -1825,14 +1324,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
+      "publicationDay": "2026-09-15",
+      "scheduledAt": "2026-09-15T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-16T05:00:00+09:00"
+      "writingAt": "2026-09-15T05:00:00+09:00"
     },
     {
       "placeId": "place-131499",
@@ -1851,39 +1350,13 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": null,
-      "writingAt": "2026-09-16T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-130855",
-      "name": "경남 하동 케이블카 탑승권",
-      "area": "경남",
-      "theme": "체험",
-      "productIds": [
-        "mEFt2pOH"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
       "publicationDay": "2026-09-14",
       "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
-      "validUntil": "2026-12-31",
+      "validUntil": null,
       "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
@@ -1913,32 +1386,6 @@
       "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
-      "placeId": "place-123046",
-      "name": "경북 상주 국립 낙동강 생물자원관 입장권",
-      "area": "경북",
-      "theme": "체험",
-      "productIds": [
-        "j1piBH0a"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2027-02-28",
-      "writingAt": "2026-09-15T05:00:00+09:00"
-    },
-    {
       "placeId": "place-119801",
       "name": "경남 거제 벨버디어 사우나 입장권",
       "area": "경남",
@@ -1955,40 +1402,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": "2026-08-31",
       "validUntil": "2026-11-01",
-      "writingAt": "2026-09-11T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-118075",
-      "name": "경주 바니베어 뮤지엄 입장권",
-      "area": "경북",
-      "theme": "전시",
-      "productIds": [
-        "uwTNHezC"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-10-31",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-117886",
@@ -2044,32 +1465,6 @@
       "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
-      "placeId": "place-103711",
-      "name": "부산 해운대 씨라이프 아쿠아리움 & 브릭맨 시티즈 원더월드 입장권",
-      "area": "부산",
-      "theme": "체험",
-      "productIds": [
-        "OWdjufF1"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-14",
-      "scheduledAt": "2026-09-14T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": null,
-      "writingAt": "2026-09-14T05:00:00+09:00"
-    },
-    {
       "placeId": "place-106170",
       "name": "경남 진주 타이거펀치 키즈랜드 입장권",
       "area": "경남",
@@ -2086,14 +1481,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-10-31",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-142556",
@@ -2112,14 +1507,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
+      "publicationDay": "2026-09-15",
+      "scheduledAt": "2026-09-15T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-16T05:00:00+09:00"
+      "writingAt": "2026-09-15T05:00:00+09:00"
     },
     {
       "placeId": "place-120838",
@@ -2138,70 +1533,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2027-03-31",
-      "writingAt": "2026-09-15T05:00:00+09:00"
-    },
-    {
-      "placeId": "daegu-eworld",
-      "name": "대구 이월드·83타워",
-      "area": "대구",
-      "theme": "체험",
-      "productIds": [
-        "gFafik0z",
-        "uI7z2VfT",
-        "N8QPazFX",
-        "kXcP6533",
-        "onins2gc"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": "2026-09-01",
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-12T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-116324",
-      "name": "경주 한국대중음악 박물관 입장권",
-      "area": "경북",
-      "theme": "전시",
-      "productIds": [
-        "ZCBHDP90"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": "2026-03-20",
-      "validUntil": "2026-12-31",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-110100",
@@ -2220,14 +1559,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "cheongdo-yongam-spa",
@@ -2247,14 +1586,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-10-31",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-104077",
@@ -2309,60 +1648,6 @@
       "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
-      "placeId": "busan-songdo-cablecar",
-      "name": "부산 송도해상케이블카",
-      "area": "부산",
-      "theme": "체험",
-      "productIds": [
-        "1FBc8mXE",
-        "CGE6MGnE",
-        "vftupAg8"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-14",
-      "scheduledAt": "2026-09-14T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-12-31",
-      "writingAt": "2026-09-14T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-122172",
-      "name": "경주 동궁원 입장권",
-      "area": "경북",
-      "theme": "체험",
-      "productIds": [
-        "1HwoOPsa"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-10-31",
-      "writingAt": "2026-09-15T05:00:00+09:00"
-    },
-    {
       "placeId": "place-135086",
       "name": "경북 영천 야외 방탈출 별의기억1.5 : 시간이탈자 (키트 택배발송)",
       "area": "경북",
@@ -2379,14 +1664,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
+      "publicationDay": "2026-09-15",
+      "scheduledAt": "2026-09-15T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-16T05:00:00+09:00"
+      "writingAt": "2026-09-15T05:00:00+09:00"
     },
     {
       "placeId": "place-121133",
@@ -2431,14 +1716,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-10-31",
-      "writingAt": "2026-09-15T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-117783",
@@ -2457,14 +1742,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": "2026-08-31",
       "validUntil": "2026-11-01",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-120959",
@@ -2483,14 +1768,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-15T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-146311",
@@ -2499,6 +1784,58 @@
       "theme": "체험",
       "productIds": [
         "PsNlPcDV"
+      ],
+      "heldProductIds": [],
+      "sourceBatches": [
+        "yeongnam-2026-09-11"
+      ],
+      "createdAt": "2026-09-10T15:30:09.118Z",
+      "articleSlug": null,
+      "status": "queued",
+      "writingStatus": "not_started",
+      "imageStatus": "not_started",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
+      "holdReasons": [],
+      "attempts": 0,
+      "stages": {},
+      "notBefore": null,
+      "validUntil": "2026-09-30",
+      "writingAt": "2026-09-14T05:00:00+09:00"
+    },
+    {
+      "placeId": "place-138344",
+      "name": "경주 원더스페이스 보문점 입장권",
+      "area": "경북",
+      "theme": "체험",
+      "productIds": [
+        "Te8Gn700"
+      ],
+      "heldProductIds": [],
+      "sourceBatches": [
+        "yeongnam-2026-09-11"
+      ],
+      "createdAt": "2026-09-10T15:30:09.118Z",
+      "articleSlug": null,
+      "status": "queued",
+      "writingStatus": "not_started",
+      "imageStatus": "not_started",
+      "publicationDay": "2026-09-15",
+      "scheduledAt": "2026-09-15T06:00:00+09:00",
+      "holdReasons": [],
+      "attempts": 0,
+      "stages": {},
+      "notBefore": null,
+      "validUntil": "2026-10-31",
+      "writingAt": "2026-09-15T05:00:00+09:00"
+    },
+    {
+      "placeId": "place-130516",
+      "name": "캐니언파크 울산점 입장권",
+      "area": "울산",
+      "theme": "체험",
+      "productIds": [
+        "xEF6tr6X"
       ],
       "heldProductIds": [],
       "sourceBatches": [
@@ -2519,84 +1856,6 @@
       "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
-      "placeId": "place-119559",
-      "name": "경남 거제파노라마 케이블카 티켓",
-      "area": "경남",
-      "theme": "체험",
-      "productIds": [
-        "VOJkrlK3"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-14",
-      "scheduledAt": "2026-09-14T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-12-31",
-      "writingAt": "2026-09-14T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-138344",
-      "name": "경주 원더스페이스 보문점 입장권",
-      "area": "경북",
-      "theme": "체험",
-      "productIds": [
-        "Te8Gn700"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-16",
-      "scheduledAt": "2026-09-16T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-10-31",
-      "writingAt": "2026-09-16T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-130516",
-      "name": "캐니언파크 울산점 입장권",
-      "area": "울산",
-      "theme": "체험",
-      "productIds": [
-        "xEF6tr6X"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-11T05:00:00+09:00"
-    },
-    {
       "placeId": "place-129420",
       "name": "경주 히어로플레이파크 경주점 소인 입장권",
       "area": "경북",
@@ -2613,14 +1872,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-11T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-117002",
@@ -2665,14 +1924,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-132697",
@@ -2691,14 +1950,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-11T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-117699",
@@ -2717,65 +1976,13 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-27",
-      "writingAt": "2026-09-11T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-120930",
-      "name": "부산타워 전망대 입장권",
-      "area": "부산",
-      "theme": "체험",
-      "productIds": [
-        "aXoOkaDi"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-14",
-      "scheduledAt": "2026-09-14T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-14T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-117267",
-      "name": "대구 네이처파크 이용권",
-      "area": "대구",
-      "theme": "체험",
-      "productIds": [
-        "5vXZxkD7"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
       "publicationDay": "2026-09-13",
       "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
-      "notBefore": "2026-09-01",
-      "validUntil": "2026-09-30",
+      "notBefore": null,
+      "validUntil": "2026-09-27",
       "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
@@ -2805,59 +2012,6 @@
       "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
-      "placeId": "gyeongju-expo-park",
-      "name": "경주 엑스포대공원·또봇정크아트",
-      "area": "경북",
-      "theme": "체험",
-      "productIds": [
-        "Hs4TqPSb",
-        "Jlmt4oJC"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-11T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-147318",
-      "name": "부산 키자니아 입장권",
-      "area": "부산",
-      "theme": "체험",
-      "productIds": [
-        "0albnuBE"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-14",
-      "scheduledAt": "2026-09-14T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": "2026-09-01",
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-14T05:00:00+09:00"
-    },
-    {
       "placeId": "place-119561",
       "name": "부산 센텀 해운대 뮤지엄 원 '다시, 낭만의 시대' 전시 티켓",
       "area": "부산",
@@ -2874,14 +2028,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-26",
-      "writingAt": "2026-09-11T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-141327",
@@ -2942,60 +2096,6 @@
       "validUntil": null
     },
     {
-      "placeId": "place-118033",
-      "name": "경북 청도 군파크 루지 & 스카이 리프트 탑승권 패키지",
-      "area": "경북",
-      "theme": "체험",
-      "productIds": [
-        "98LCdMZ7"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-10-31",
-      "writingAt": "2026-09-15T05:00:00+09:00"
-    },
-    {
-      "placeId": "daegu-shinsegae-aquarium",
-      "name": "대구 신세계 아쿠아리움",
-      "area": "대구",
-      "theme": "체험",
-      "productIds": [
-        "NLSJid0b",
-        "XBsrt131",
-        "2wDe1CLW"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-12T05:00:00+09:00"
-    },
-    {
       "placeId": "place-120397",
       "name": "포항 앨리스파파 키즈파크 입장권",
       "area": "경북",
@@ -3012,14 +2112,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-13",
-      "scheduledAt": "2026-09-13T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-13T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-119740",
@@ -3064,14 +2164,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2027-03-31",
-      "writingAt": "2026-09-15T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-103712",
@@ -3098,33 +2198,6 @@
       "notBefore": null,
       "validUntil": "2026-09-30",
       "writingAt": "2026-09-14T05:00:00+09:00"
-    },
-    {
-      "placeId": "busan-arte-museum",
-      "name": "아르떼뮤지엄 부산",
-      "area": "부산",
-      "theme": "전시",
-      "productIds": [
-        "sFvgr7bD",
-        "FtUM2T63"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": "2026-07-04",
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-11T05:00:00+09:00"
     },
     {
       "placeId": "place-145594",
@@ -3191,32 +2264,6 @@
       "validUntil": null
     },
     {
-      "placeId": "place-120453",
-      "name": "부산 기장 스카이라인 루지 이용권",
-      "area": "부산",
-      "theme": "체험",
-      "productIds": [
-        "1YSKjEDy"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-13",
-      "scheduledAt": "2026-09-13T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-13T05:00:00+09:00"
-    },
-    {
       "placeId": "place-119433",
       "name": "부산 서면 런닝맨 & 다이나믹메이즈 입장권 패키지",
       "area": "부산",
@@ -3233,39 +2280,13 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": null,
-      "writingAt": "2026-09-15T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-116786",
-      "name": "부산 엑스더스카이 엘시티 전망대 입장권",
-      "area": "부산",
-      "theme": "체험",
-      "productIds": [
-        "wxbzaiuw"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
       "publicationDay": "2026-09-13",
       "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
-      "validUntil": "2026-09-30",
+      "validUntil": null,
       "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
@@ -3285,14 +2306,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-15T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-124023",
@@ -3311,14 +2332,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2027-03-31",
-      "writingAt": "2026-09-15T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-105855",
@@ -3337,14 +2358,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-132016",
@@ -3379,32 +2400,6 @@
       "validUntil": null
     },
     {
-      "placeId": "place-121492",
-      "name": "울산 자수정 동굴나라 입장권 (보트 탐험 포함)",
-      "area": "울산",
-      "theme": "체험",
-      "productIds": [
-        "Iez1tnrF"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": "2026-10-31",
-      "writingAt": "2026-09-12T05:00:00+09:00"
-    },
-    {
       "placeId": "place-117258",
       "name": "부산 해운대 벡스코 상상체험 키즈월드 입장권",
       "area": "부산",
@@ -3421,14 +2416,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
+      "publicationDay": "2026-09-13",
+      "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-10-18",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "placeId": "place-117293",
@@ -3447,46 +2442,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-15",
-      "scheduledAt": "2026-09-15T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2027-03-31",
-      "writingAt": "2026-09-15T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-110561",
-      "name": "경주월드 9월 자유이용권 종일권 /오후권 / 야간권",
-      "area": "경북",
-      "theme": "체험",
-      "productIds": [
-        "0W8QChE8"
-      ],
-      "heldProductIds": [
-        "0W8QChE8"
-      ],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "held",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": null,
-      "scheduledAt": null,
-      "holdReasons": [
-        {
-          "id": "0W8QChE8",
-          "reason": "9월 날짜별 옵션의 실제 이용기간 확인 대기"
-        }
-      ],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": null,
-      "validUntil": null
+      "writingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "placeId": "place-140381",
@@ -3505,40 +2468,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-11",
-      "scheduledAt": "2026-09-11T06:00:00+09:00",
+      "publicationDay": "2026-09-14",
+      "scheduledAt": "2026-09-14T06:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-11T05:00:00+09:00"
-    },
-    {
-      "placeId": "place-118762",
-      "name": "부산 해운대 센텀 스파랜드 입장권",
-      "area": "부산",
-      "theme": "휴식",
-      "productIds": [
-        "w4Eh4SqA"
-      ],
-      "heldProductIds": [],
-      "sourceBatches": [
-        "yeongnam-2026-09-11"
-      ],
-      "createdAt": "2026-09-10T15:30:09.118Z",
-      "articleSlug": null,
-      "status": "queued",
-      "writingStatus": "not_started",
-      "imageStatus": "not_started",
-      "publicationDay": "2026-09-12",
-      "scheduledAt": "2026-09-12T06:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
-      "notBefore": "2026-09-01",
-      "validUntil": "2026-09-30",
-      "writingAt": "2026-09-12T05:00:00+09:00"
+      "writingAt": "2026-09-14T05:00:00+09:00"
     }
   ]
 }

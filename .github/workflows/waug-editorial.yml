@@ -1,7 +1,7 @@
 name: 와그 서버 조사·작성·이미지·예약
 on:
   schedule:
-    - cron: '0 20,23 * * *' # KST 05:00 primary / 08:00 bounded continuation
+    - cron: '0 20,23,2,5,8,11 * * *' # KST 05/08/11/14/17/20, daily total capped at 30
   workflow_dispatch:
     inputs:
       mode:
@@ -33,6 +33,8 @@ jobs:
           npx playwright install --with-deps chromium
           sudo apt-get update -qq
           sudo apt-get install -y fonts-noto-cjk
+          mkdir -p "$RUNNER_TEMP/waug-codex"
+          cp .github/waug-codex-config.toml "$RUNNER_TEMP/waug-codex/config.toml"
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
       - name: 유료 생성 없는 연결 검증
@@ -41,6 +43,7 @@ jobs:
         run: |
           node --test scripts/waug/core.test.mjs scripts/waug/queue.test.mjs
           node scripts/waug/preflight.mjs
+          node scripts/waug/queue.mjs plan
       - name: 제한된 콘텐츠 저장·이미지 서버 시작
         env:
           WAUG_SERVER_EXECUTION: '1'
@@ -61,8 +64,8 @@ jobs:
           model: gpt-5.6-luna
           effort: high
           safety-strategy: drop-sudo
-          sandbox: workspace-write
-          codex-args: '["-c", "sandbox_workspace_write.network_access=true", "-c", "web_search=\"live\""]'
+          permission-profile: waug-editor
+          codex-home: ${{ runner.temp }}/waug-codex
           prompt-file: ${{ inputs.mode == 'preflight' && 'docs/waug-server-preflight.md' || 'docs/waug-server-worker.md' }}
           output-file: .cache/waug/server-result.md
       - name: 중단되어도 단계 저장

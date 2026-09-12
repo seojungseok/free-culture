@@ -1,7 +1,7 @@
 name: 와그 입장권 관리·예약 발행
 on:
   schedule:
-    - cron: '0 21,22 * * *' # KST 06:00 + 07:00 retry; total remains <=20/day
+    - cron: '0 21,22 * * *' # KST 06:00 + 07:00 retry; total remains <=30/day
   workflow_dispatch:
     inputs:
       action:
@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: 20
       - name: 발행 규칙 테스트
-        run: node --test scripts/waug/core.test.mjs
+        run: node --test scripts/waug/core.test.mjs scripts/waug/content-policy.test.mjs
       - name: 관리 작업과 발행 상태 저장
         env:
           WAUG_ACTION: ${{ inputs.action || 'run' }}
@@ -42,7 +42,8 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           for attempt in 1 2 3; do
             node scripts/waug/manage.mjs "$WAUG_ACTION"
-            git add data/waug/catalog.json data/waug/editorial.json data/waug/published.json data/waug/places.json data/waug/queue.json
+            node scripts/waug/refresh-booking-guarantees.mjs
+            git add data/waug/booking-guarantees.json data/waug/catalog.json data/waug/editorial.json data/waug/published.json data/waug/places.json data/waug/queue.json
             if git diff --staged --quiet; then
               echo '변경 없음' >> "$GITHUB_STEP_SUMMARY"
               exit 0

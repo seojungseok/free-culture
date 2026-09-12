@@ -1,5 +1,6 @@
 import data from '@/data/waug/published.json';
 import listingData from '@/data/waug/listings.json';
+import bookingGuarantees from '@/data/waug/booking-guarantees.json';
 import fs from 'node:fs';
 import path from 'node:path';
 import type {PriceGuarantee} from './ticket-guarantee.mjs';
@@ -26,7 +27,8 @@ export type TicketArticle = {
 // Private research, future schedules and affiliate candidates never enter a browser bundle.
 export function getTickets():TicketArticle[] {
   const listings=listingData.entries as Record<string,Pick<TicketArticle,'listTitle'|'location'>>;
-  const enrich=(articles:TicketArticle[])=>articles.map(a=>({...a,...listings[a.slug],renderedAt:new Date().toISOString()}));
+  const guarantees=bookingGuarantees.entries as Record<string,PriceGuarantee>;
+  const enrich=(articles:TicketArticle[])=>articles.map(a=>({...a,...listings[a.slug],tickets:a.tickets.map(t=>({...t,priceGuarantee:guarantees[t.href]||t.priceGuarantee})),renderedAt:new Date().toISOString()}));
   if(process.env.NODE_ENV==='development'&&process.env.WAUG_POLICY_PREVIEW==='1') {
     const file=path.join(process.cwd(),'.cache','waug','policy-preview.json');
     if(fs.existsSync(file))return enrich([...(data.articles as TicketArticle[]),...JSON.parse(fs.readFileSync(file,'utf8')).articles]);
