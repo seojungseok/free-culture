@@ -28,7 +28,7 @@ export default function TicketNearby({article}:{article:TicketArticle}) {
   return <section className="mt-10 min-w-0 overflow-hidden rounded-2xl border border-[#dce7d9] bg-[#f4f8f2] p-5" aria-label="주변 나들이와 맛집 정보">
     <p className="text-sm font-bold text-free">나들이 정보 더 찾기</p>
     <h2 className="mt-1 text-xl font-black">일정에 참고할 주변 나들이와 맛집</h2>
-    <p className="mt-2 text-sm leading-6 text-ink-soft">입장권과 별도로, 방문 일정에 참고할 수 있는 장소와 맛집 정보예요.</p>
+    <p className="mt-2 text-sm leading-6 text-ink-soft">방문 일정을 정할 때 참고할 수 있는 장소와 맛집 정보예요.</p>
     {places.length>0&&<div className="mt-4"><h3 className="text-sm font-bold">주변 가볼 만한 곳</h3><div className="mt-2 grid gap-2 sm:grid-cols-3">{cards(places)}</div></div>}
     {foods.length>0&&<div className="mt-4"><h3 className="text-sm font-bold">주변 맛집</h3><div className="mt-2 grid gap-2 sm:grid-cols-3">{cards(foods)}</div></div>}
   </section>;
