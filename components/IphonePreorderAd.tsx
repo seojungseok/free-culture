@@ -58,14 +58,10 @@ export default function IphonePreorderAd() {
   return <>
     <aside ref={banner} className={styles.bannerWrap} aria-label="아이폰 18 사전예약 광고">
       <a className={styles.banner} href={OFFER_URL} target="_blank" rel="sponsored noopener noreferrer">
-        <span className={styles.bannerCopy}>
-          <span className={styles.bannerDelivery}>로켓배송</span>
-          <span className={styles.bannerTitle}>아이폰 18 <strong>사전예약</strong></span>
+        <span className={styles.bannerArtwork}>
+          <img className={styles.bannerImage} src="/ads/iphone18-rocket-banner-v2.webp" alt="아이폰 18 사전예약 · 로켓배송 · 사전예약 혜택 보기" width="1440" height="480" />
+          <span aria-hidden="true" className={`${styles.shine} ${styles.bannerShine}`} />
         </span>
-        <span className={styles.bannerArtwork} aria-hidden="true">
-          <img className={styles.bannerImage} src="/ads/iphone18-clean-product.webp" alt="" width="1080" height="360" />
-        </span>
-        <span className={styles.bannerCta}>사전예약 혜택 보기 <span aria-hidden="true">›</span><span aria-hidden="true" className={`${styles.shine} ${styles.bannerShine}`} /></span>
       </a>
       <p className={styles.disclosure}>{DISCLOSURE}</p>
     </aside>
