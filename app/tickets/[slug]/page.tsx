@@ -3,6 +3,7 @@ import TicketEditorial from '@/components/TicketEditorial';
 import TicketSectionCopy from '@/components/TicketSectionCopy';
 import TicketFaq from '@/components/TicketFaq';
 import TicketAddress from '@/components/TicketAddress';
+import TicketNearby from '@/components/TicketNearby';
 import {TICKET_POLICY} from '@/lib/ticket-guarantee.mjs';
 import type {Metadata} from 'next';
 import Link from 'next/link';
@@ -33,6 +34,7 @@ export default async function TicketPage({params}:{params:Promise<{slug:string}>
     {a.sections.map((section,i)=><section key={i} className="mt-10"><TicketSectionCopy article={a} section={section} legacy/>{section.photoIndex!==undefined&&a.photos[section.photoIndex]&&<figure className="my-6">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={a.photos[section.photoIndex].url} alt={a.photos[section.photoIndex].alt} width={a.photos[section.photoIndex].width} height={a.photos[section.photoIndex].height} className="h-auto w-full rounded-xl object-contain" loading="lazy"/><figcaption className="mt-2 text-xs leading-5 text-ink-soft">{a.photos[section.photoIndex].caption&&<span className="mb-1 block">{a.photos[section.photoIndex].caption}</span>}{a.photos[section.photoIndex].rightsUrl?<a href={a.photos[section.photoIndex].rightsUrl} target="_blank" rel="noopener noreferrer" className="underline">{a.photos[section.photoIndex].credit}</a>:a.photos[section.photoIndex].credit}</figcaption></figure>}{section.tickets&&<TicketLinks article={a}/>}</section>)}
     {!a.sections.some(s=>s.tickets)&&<TicketLinks article={a}/>}
     <TicketFaq article={a} legacy/>
+    <TicketNearby article={a}/>
     <nav className="mt-10 rounded-2xl bg-gray-50 p-5" aria-label="관련 여행 정보"><h2 className="font-bold">함께 계획해보세요</h2><div className="mt-3 flex flex-wrap gap-4">{a.internalLinks.map(l=><Link key={l.href} href={l.href} className="text-sm font-bold text-free">{l.label} →</Link>)}</div></nav>
     <details className="my-8 border-t border-line pt-5 text-sm text-ink-soft"><summary className="cursor-pointer font-bold">확인한 자료와 출처</summary><ul className="mt-3 space-y-3">{a.sources.map(s=><li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer" className="underline">{s.label}</a> · {s.checkedAt.slice(0,10)}</li>)}</ul></details>
   </main>;
