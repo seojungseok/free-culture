@@ -19612,9 +19612,9 @@
     "allowUneditedWaugOfficialImages": true,
     "requireRepresentativeImageVerified": true,
     "requireVerifiedSources": true,
-    "notes": "2026-09-12 사용자 요청: 서울2+제주3 기준으로 수동 발행/작성 실행(하루 30개).",
+    "notes": "2026-09-12 사용자 요청: 입장권·체험은 한국시간 하루 최대 30개를 자동 작성·발행하며, 다른 카테고리의 하루 30개 한도와 독립적으로 집계한다.",
     "allowAiThumbnails": true,
-    "aiStyle": "place-specific photographic concept or illustration; no invented real facilities",
+    "aiStyle": "natural photographic travel mood; no illustration, cartoon or 3D; no invented real facilities; AI disclosure required",
     "allowNecessaryAiBodyImages": true,
     "preferProvidedPhotos": true,
     "requireWaugFaceReview": true,
@@ -19622,7 +19622,7 @@
     "representativeImagesPerPlace": 1,
     "minimumDistinctBodyImages": 2,
     "requireRenderedBodyImages": true,
-    "siteWideDailyPublicationLimit": 50,
+    "siteWideDailyPublicationLimit": 60,
     "dailyNewWritingLimit": 30,
     "serverWorkflow": ".github/workflows/waug-editorial.yml",
     "newThumbnailProvider": "OpenAI Images API",
@@ -19630,8 +19630,14 @@
     "newThumbnailQuality": "medium",
     "newThumbnailOutputEstimatedUSD": 0.041,
     "maxStageAttempts": 3,
-    "generalDailyPublicationLimit": 50,
-    "ticketDailyPublicationLimit": 30
+    "generalDailyPublicationLimit": 30,
+    "ticketDailyPublicationLimit": 30,
+    "historicalPublicationAllowances": {
+      "2026-09-12": {
+        "limit": 45,
+        "reason": "Previously published 15 plus user-requested one-time expansion of 30; does not grant future capacity."
+      }
+    }
   },
   "externalPublications": {}
 }
