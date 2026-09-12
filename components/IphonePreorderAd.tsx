@@ -46,7 +46,7 @@ export default function IphonePreorderAd() {
   return <>
     <aside className={styles.bannerWrap} aria-label="아이폰 18 사전예약 광고">
       <a className={styles.banner} href={OFFER_URL} target="_blank" rel="sponsored noopener noreferrer">
-        <img className={styles.bannerImage} src="/ads/iphone18-banner.webp" alt="아이폰 18 사전예약 · 사전예약 혜택 보기" width="1440" height="480" />
+        <img className={styles.bannerImage} src="/ads/iphone18-rocket-banner.webp" alt="아이폰 18 사전예약 · 로켓배송 · 사전예약 혜택 보기" width="1440" height="480" />
       </a>
       <p className={styles.disclosure}>{DISCLOSURE}</p>
     </aside>
@@ -54,7 +54,7 @@ export default function IphonePreorderAd() {
       <div className={styles.popup}>
         <button type="button" className={styles.close} onClick={() => dismiss()} aria-label="광고 닫기" autoFocus>×</button>
         <a href={OFFER_URL} target="_blank" rel="sponsored noopener noreferrer" className={styles.poster} onClick={() => dismiss()}>
-          <img src="/ads/iphone18-popup.webp" alt="아이폰 18 사전예약 · 사전예약 혜택 보기" width="800" height="1000" />
+          <img src="/ads/iphone18-rocket-popup.webp" alt="아이폰 18 사전예약 · 사전예약은 로켓배송으로 · 사전예약 혜택 보기" width="800" height="1000" />
         </a>
         <p id="iphone18-ad-disclosure" className={styles.popupDisclosure}>{DISCLOSURE}</p>
         <div className={styles.controls}>

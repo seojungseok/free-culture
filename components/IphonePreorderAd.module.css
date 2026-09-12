@@ -1,12 +1,12 @@
 .bannerWrap { max-width: 1120px; margin: 14px auto 8px; padding: 0 16px; }
-.banner { display: block; overflow: hidden; border-radius: 14px; background: #080c10; }
+.banner { display: block; overflow: hidden; border-radius: 14px; background: #f5f5f7; border: 1px solid #e8eaf0; }
 .bannerImage { display: block; width: 100%; height: auto; max-height: 220px; object-fit: contain; }
 .disclosure { margin: 6px 2px 0; color: #626974; font-size: 11px; line-height: 1.5; word-break: keep-all; }
 .dialog { padding: 0; border: 0; border-radius: 20px; width: min(400px, calc(100vw - 32px), calc(80dvh - 104px)); max-height: 90dvh; margin: auto; background: #fff; overflow: auto; box-shadow: 0 24px 100px #0006; }
 .dialog::backdrop { background: #09101bc2; backdrop-filter: blur(3px); }
 .popup { position: relative; }
-.close { position: absolute; top: 8px; right: 8px; z-index: 2; border: 1px solid #ffffff60; background: #10151bd9; color: #fff; border-radius: 50%; width: 36px; height: 36px; font-size: 25px; line-height: 1; cursor: pointer; }
-.poster { display: block; background: #080c10; }
+.close { position: absolute; top: 8px; right: 8px; z-index: 2; border: 1px solid #dde1e8; background: #fffffff0; color: #303540; border-radius: 50%; width: 36px; height: 36px; font-size: 25px; line-height: 1; cursor: pointer; }
+.poster { display: block; background: #f5f5f7; }
 .poster img { display: block; width: 100%; height: auto; }
 .popupDisclosure { margin: 0; padding: 12px 18px; font-size: 11px; line-height: 1.55; color: #5b626c; word-break: keep-all; }
 .controls { display: grid; grid-template-columns: 1fr 66px; border-top: 1px solid #e6e9ee; }
