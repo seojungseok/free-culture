@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import styles from "./IphonePreorderAd.module.css";
 
 const OFFER_URL = "https://link.coupang.com/a/gZcgiEXfTU";
@@ -9,6 +10,7 @@ const SESSION_KEY = "mwohaji:iphone18:popup-dismissed";
 const DISCLOSURE = "이 광고는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.";
 
 export default function IphonePreorderAd() {
+  const pathname = usePathname();
   const dialog = useRef<HTMLDialogElement>(null);
   const banner = useRef<HTMLElement>(null);
   const [showPopup, setShowPopup] = useState(false);
@@ -16,13 +18,15 @@ export default function IphonePreorderAd() {
   useEffect(() => {
     const element = banner.current;
     const header = element?.previousElementSibling;
-    if (!element || !(header instanceof HTMLElement) || header.tagName !== "HEADER") return;
+    if (!element) return;
+    element.style.setProperty("--ad-header-height", "0px");
+    if (!(header instanceof HTMLElement) || header.tagName !== "HEADER") return;
     const updateOffset = () => element.style.setProperty("--ad-header-height", `${header.getBoundingClientRect().height}px`);
     updateOffset();
     const observer = new ResizeObserver(updateOffset);
     observer.observe(header);
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     try {
@@ -59,7 +63,7 @@ export default function IphonePreorderAd() {
     <aside ref={banner} className={styles.bannerWrap} aria-label="아이폰 18 사전예약 광고">
       <a className={styles.banner} href={OFFER_URL} target="_blank" rel="sponsored noopener noreferrer">
         <span className={styles.bannerArtwork}>
-          <img className={styles.bannerImage} src="/ads/iphone18-rocket-banner-v2.webp" alt="아이폰 18 사전예약 · 로켓배송 · 사전예약 혜택 보기" width="1440" height="480" />
+          <img className={styles.bannerImage} src="/ads/iphone18-shopping-banner.webp" alt="아이폰 18 Pro 사전예약 · 로켓배송 · 사전예약 혜택 보기" width="1600" height="510" />
           <span aria-hidden="true" className={`${styles.shine} ${styles.bannerShine}`} />
         </span>
       </a>
@@ -69,7 +73,7 @@ export default function IphonePreorderAd() {
       <div className={styles.popup}>
         <button type="button" className={styles.close} onClick={() => dismiss()} aria-label="광고 닫기" autoFocus>×</button>
         <a href={OFFER_URL} target="_blank" rel="sponsored noopener noreferrer" className={styles.poster} onClick={() => dismiss()}>
-          <img src="/ads/iphone18-rocket-popup.webp" alt="아이폰 18 사전예약 · 사전예약은 로켓배송으로 · 사전예약 혜택 보기" width="800" height="1000" />
+          <img src="/ads/iphone18-shopping-popup.webp" alt="아이폰 18 Pro 사전예약 · 로켓배송 · 사전예약 혜택 보기" width="800" height="1000" />
           <span aria-hidden="true" className={`${styles.shine} ${styles.popupShine}`} />
         </a>
         <p id="iphone18-ad-disclosure" className={styles.popupDisclosure}>{DISCLOSURE}</p>
