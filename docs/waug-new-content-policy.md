@@ -47,7 +47,7 @@
 
 이번 내용 개선에서는 기존 이미지 URL·순서·배치·크기·출처·썸네일 및 대표/목록/OG 연결을 그대로 유지합니다. AI 생성이라는 이유로 교체하지 않습니다. 앞으로도 같은 장소의 기존 검수 이미지를 먼저 재사용합니다. 사진 수 채우기나 무조건 썸네일 생성 지시는 폐기합니다. 신규로 필요한 이미지만 실제 장소·사용 허가·편집 권리·상업적 이용·얼굴 여부를 확인합니다. 권리 문제가 있으면 보류합니다.
 
-실제 사진에는 sourceUrl, rightsUrl, usageConditions, credit, checkedAt, commercialAllowed, placeMatched를 보존합니다. 편집 시 edited와 editAllowed, 와그 사진은 permissionBasis와 faceReview 검수가 필요합니다. 신규 AI 보조 이미지는 필요한 경우에만 글당 최대 4장, role=illustration, necessityNote, generation.realPhotoSearchNote, generation.nonDocumentaryReviewed 및 실제 생성 이력을 기록합니다. '이해를 돕기 위한 AI 생성 이미지'로 표시하고 사용하지 않은 공공사진 출처를 붙이지 않습니다. 실제 시설을 창작해 사실처럼 묘사하지 않습니다. 이미지가 없으면 imageResearch.unavailableReason에 이유를 기록하며 검수를 우회하지 않습니다.
+실제 사진에는 sourceUrl, rightsUrl, usageConditions, credit, checkedAt, commercialAllowed, placeMatched를 보존합니다. 편집 시 edited와 editAllowed, 와그 사진은 permissionBasis와 faceReview 검수가 필요합니다. 화면에 와그 공식 상품 사진의 출처를 표시할 때는 내부 권리 근거를 그대로 노출하지 않고 `사진: 와그 공식 자료 활용`으로 짧게 씁니다. 신규 AI 보조 이미지는 필요한 경우에만 글당 최대 4장, role=illustration, necessityNote, generation.realPhotoSearchNote, generation.nonDocumentaryReviewed 및 실제 생성 이력을 기록합니다. '이해를 돕기 위한 AI 생성 이미지'로 표시하고 사용하지 않은 공공사진 출처를 붙이지 않습니다. 실제 시설을 창작해 사실처럼 묘사하지 않습니다. 이미지가 없으면 imageResearch.unavailableReason에 이유를 기록하며 검수를 우회하지 않습니다.
 
 제휴 고지는 '이 글에는 제휴링크가 포함되어 있으며, 예약 시 수수료를 받을 수 있습니다.'입니다. 기존 제휴 URL의 대소문자와 rel=sponsored를 유지합니다. CTA는 '이용권 가격·혜택 확인' 등 중립적인 안내로 씁니다. 혜택의 존재를 단정하지 않습니다.
 

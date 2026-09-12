@@ -8,10 +8,13 @@ import TicketFaq from './TicketFaq';
 import TicketAddress from './TicketAddress';
 import TicketNearby from './TicketNearby';
 import styles from './TicketEditorial.module.css';
+function photoCredit(photo:TicketArticle['thumbnail']|TicketArticle['photos'][number]) {
+  return photo.kind==='waug-original'||photo.rightsUrl?.includes('waug-marketing-partners')?'사진: 와그 공식 자료 활용':photo.credit;
+}
 function Photo({photo,hero=false}:{photo:TicketArticle['thumbnail']|TicketArticle['photos'][number];hero?:boolean}) {
   const src=photo.url.startsWith(`${SITE.url}/ticket-images/`)?photo.url.slice(SITE.url.length):photo.url;
   return <figure>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={src} alt={photo.alt} width={photo.width} height={photo.height} loading={hero?'eager':'lazy'} fetchPriority={hero?'high':'auto'} decoding="async"/>
-    <figcaption>{photo.kind==='ai-generated'?<span>{AI_DISCLOSURE} · 실제 시설·전시 또는 체험 결과물을 촬영한 사진이 아닙니다.</span>:<>{'caption' in photo&&photo.caption&&<span>{photo.caption}<br/></span>}{photo.rightsUrl?<a href={photo.rightsUrl} rel="noopener noreferrer" target="_blank">{photo.credit}</a>:photo.credit}</>}</figcaption>
+    <figcaption>{photo.kind==='ai-generated'?<span>{AI_DISCLOSURE} · 실제 시설·전시 또는 체험 결과물을 촬영한 사진이 아닙니다.</span>:<>{'caption' in photo&&photo.caption&&<span>{photo.caption}<br/></span>}{photo.kind==='waug-original'||photo.rightsUrl?.includes('waug-marketing-partners')?photoCredit(photo):photo.rightsUrl?<a href={photo.rightsUrl} rel="noopener noreferrer" target="_blank">{photoCredit(photo)}</a>:photoCredit(photo)}</>}</figcaption>
   </figure>;
 }
 export default function TicketEditorial({article:a}:{article:TicketArticle}) {
