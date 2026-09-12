@@ -1,0 +1,32 @@
+.article { --ticket-accent: #215a43; max-width: 48rem; margin: auto; padding: 2rem 1.25rem; overflow-wrap: anywhere; color: #25382e; }
+.article h1 { font-size: clamp(1.8rem,5vw,2.5rem); font-weight: 850; line-height: 1.35; margin: 1rem 0; word-break: keep-all; }
+.article h2 { font-size: 1.5rem; font-weight: 750; margin: 2.5rem 0 1rem; }
+.article h3,.article h4 { font-weight: 750; }
+.article p { line-height: 1.9; margin: .8rem 0; }
+.article figure { margin: 1.75rem 0; }
+.article img { width: 100%; height: auto; object-fit: contain; border-radius: 1rem; }
+.article figcaption,.note { font-size: .8rem; line-height: 1.7; color: #536157; }
+.article figcaption a,.article nav a,.note a { text-decoration: underline; text-underline-offset: 3px; }
+.disclosure { background: #f1f4ef; border-radius: .8rem; padding: .8rem 1rem; font-size: .875rem; }
+.facts { display: grid; gap: .8rem; }
+.facts div { border-bottom: 1px solid #e1e7df; padding-bottom: .8rem; }
+.facts dt { font-weight: 700; }
+.facts dd { margin: .35rem 0 0; line-height: 1.85; }
+.booking { padding: 1.25rem; border: 1px solid #cbdccb; border-radius: 1rem; background: linear-gradient(135deg,#f3f8f0,#f8faf7); margin: 1.5rem 0; }
+.option { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #d9e3d6; }
+.button { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; min-height: 48px; padding: .75rem .65rem; border-radius: .75rem; background: var(--ticket-accent,#215a43); color: #fff; text-align: center; font-size: .9rem; font-weight: 750; line-height: 1.6; }
+.button::after { content: ''; pointer-events: none; position: absolute; inset: 0; background: linear-gradient(110deg,transparent 35%,#ffffff20 50%,transparent 65%); transform: translateX(-120%); animation: ticketShine 9s ease-in-out infinite; }
+.button:focus-visible,.selectLabel select:focus-visible { outline: 3px solid #a66d14; outline-offset: 3px; }
+.badge { position: relative; overflow: hidden; display: inline-flex; align-items: center; border: 1px solid #b99c46; border-radius: 2rem; background: linear-gradient(115deg,#fff3c5,#f8e5a5,#fff8dd); color: #57420d; padding: .45rem .85rem; margin-top: .5rem; font-size: .95rem; font-weight: 800; box-shadow: 0 2px 8px #8b72101a; animation: ticketBadgeFloat 5s ease-in-out infinite; }
+.badge::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(110deg,transparent 25%,#ffffffb0 50%,transparent 75%); transform: translateX(-120%); animation: ticketShine 6s ease-in-out infinite; }
+@keyframes ticketBadgeFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+.mobileSpace { display: none; }
+.mobileBar { position: fixed; z-index: 40; inset: auto 0 0; border-top: 1px solid #d5dfd2; background: #fffffff5; padding: .65rem 1rem calc(.65rem + env(safe-area-inset-bottom)); }
+.selectLabel { display: flex; align-items: center; gap: .6rem; font-size: .8rem; margin-bottom: .5rem; }
+.selectLabel select { flex: 1; min-width: 0; max-width: 100%; padding: .5rem; border: 1px solid #bdcabc; border-radius: .4rem; background: white; }
+@keyframes ticketShine { 0%,75% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+@media(max-width:639px) {
+  .mobileSpace { display: block; }
+  :global(body):has(.article) :global(button[aria-label="이 페이지 링크 복사"]) { bottom: calc(var(--ticket-booking-height,150px) + 1rem); }
+}
+@media(prefers-reduced-motion:reduce) { .badge { animation: none; } .button::after,.badge::after { animation: none; display: none; } }
