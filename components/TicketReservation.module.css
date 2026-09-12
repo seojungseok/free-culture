@@ -6,8 +6,8 @@
 .badge { position: relative; display: inline-flex; overflow: hidden; padding: 4px 9px; border-radius: 6px; background: #fff1ba; color: #74571c; font-size: 12px; line-height: 1.5; font-weight: 700; }
 .badge::after { content: ''; position: absolute; inset: 0; transform: translateX(-140%); background: linear-gradient(110deg, transparent 20%, #ffffffa8 50%, transparent 80%); animation: lightPass 7s ease-in-out infinite; pointer-events: none; }
 .panel .context { flex-basis: 100%; margin: 4px 0 0; color: #596057; font-size: 15px; line-height: 1.8; }
-.panel .cta { display: flex; width: 100%; align-items: center; justify-content: center; min-height: 56px; padding: 15px 20px; border-radius: 17px; background: #55c45f; color: #fff; text-decoration: none; font-size: 18px; font-weight: 750; line-height: 1.5; text-align: center; }
-.panel .cta:hover { background: #43ad4e; }
+.panel .cta { display: flex; width: 100%; align-items: center; justify-content: center; min-height: 56px; padding: 15px 20px; border-radius: 17px; background: #216b3b; color: #fff; text-decoration: none; font-size: 18px; font-weight: 750; line-height: 1.5; text-align: center; }
+.panel .cta:hover { background: #19562f; }
 .panel .cta:focus-visible, .conditions summary:focus-visible { outline: 3px solid #286b35; outline-offset: 4px; }
 .panel .conditions { margin: 18px 0 0; padding: 0; border: 0; font-size: 13px; line-height: 1.8; }
 .conditions summary { width: fit-content; cursor: pointer; color: #586354; text-decoration: underline; text-underline-offset: 4px; }

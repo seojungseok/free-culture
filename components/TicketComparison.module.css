@@ -1,0 +1,11 @@
+.comparison { min-width: 0; margin: 1.5rem 0; }
+.scroll { max-width: 100%; overflow-x: auto; border: 1px solid #cbdccb; border-radius: .75rem; overscroll-behavior-x: contain; }
+.scroll:focus-visible { outline: 3px solid #215a43; outline-offset: 3px; }
+.scroll table { width: 100%; min-width: 640px; border-collapse: collapse; text-align: left; font-size: .875rem; line-height: 1.8; color: #25382e; }
+.scroll caption { text-align: left; padding: .8rem 1rem; font-size: 1rem; font-weight: 750; background: #f4f8f2; }
+.scroll th,.scroll td { padding: .8rem; border-top: 1px solid #dce5d8; vertical-align: top; overflow-wrap: anywhere; }
+.scroll thead th { background: #eaf1e6; white-space: nowrap; }
+.scroll tbody th { min-width: 110px; font-weight: 700; }
+.scroll td { min-width: 115px; }
+.scroll tbody tr:nth-child(even) { background: #f8faf7; }
+.comparison .hint { margin: .6rem 0; font-size: .8rem; line-height: 1.7; color: #536157; }

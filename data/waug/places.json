@@ -99,7 +99,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
+      "publishedAt": "2026-09-11T15:44:33.203Z"
     },
     {
       "id": "place-148970",
@@ -330,7 +330,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
+      "publishedAt": "2026-09-11T15:44:33.203Z"
     },
     {
       "id": "place-137156",
@@ -389,7 +389,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
+      "publishedAt": "2026-09-11T15:44:33.203Z"
     },
     {
       "id": "place-127049",
@@ -1058,7 +1058,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
+      "publishedAt": "2026-09-11T15:44:33.203Z"
     },
     {
       "id": "place-109007",
@@ -1367,7 +1367,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
+      "publishedAt": "2026-09-11T15:44:33.203Z"
     },
     {
       "id": "place-137528",
@@ -1682,7 +1682,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
+      "publishedAt": "2026-09-11T15:44:33.203Z"
     },
     {
       "id": "place-109744",
@@ -1872,7 +1872,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
+      "publishedAt": "2026-09-11T15:44:33.203Z"
     },
     {
       "id": "place-122728",
@@ -1961,7 +1961,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
+      "publishedAt": "2026-09-11T15:44:33.203Z"
     },
     {
       "id": "place-129758",
@@ -2257,7 +2257,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
+      "publishedAt": "2026-09-11T15:44:33.203Z"
     },
     {
       "id": "shinbuk-spa",
@@ -2630,7 +2630,7 @@
       "id": "place-110807",
       "name": "주렁주렁 동탄점",
       "area": "경기",
-      "address": "경기도 화성시 동탄대로5길 21 B동 3층 매표소, 4층 입구 라크몽",
+      "address": "경기도 화성시 동탄대로5길 21 라크몽 B동 3층(유모차 보관소), 4층(매표소·입구)",
       "productIds": [
         "T3i1gzzj"
       ],
@@ -2861,7 +2861,7 @@
         }
       ],
       "scheduledAt": "2026-09-11T06:00:00+09:00",
-      "publishedAt": "2026-09-10T22:52:05.176Z"
+      "publishedAt": "2026-09-11T15:44:33.203Z"
     },
     {
       "id": "place-110286",
@@ -4613,44 +4613,48 @@
       "id": "place-e319zhqq",
       "name": "서울 63 스카이 피크닉 입장권",
       "area": "서울",
-      "address": "서울 영등포구 63로 50, 63빌딩 60층",
+      "address": "서울 영등포구 63로 50 63빌딩 60층 63스카이피크닉",
       "productIds": [
         "E319zHqQ"
       ],
       "articleSlug": "place-e319zhqq",
       "status": "published",
       "thumbnail": {
-        "url": "https://mwohaji.kr/ticket-images/place-e319zhqq-ai-20260912.jpg",
-        "alt": "서울 63 스카이 피크닉 방문 안내를 위한 AI 콘셉트 일러스트",
-        "width": 1200,
-        "height": 800,
-        "kind": "ai-generated",
-        "credit": "이해를 돕기 위한 AI 생성 이미지",
-        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
-        "caption": "실제 시설·전시를 촬영한 사진이 아닌 콘셉트 일러스트입니다.",
-        "role": "illustration",
-        "necessityNote": "사용자가 요청한 장소별 AI 대표 이미지. 실제 현장 사진은 본문에서 별도 제공.",
-        "sources": [],
         "status": "approved",
-        "mimeType": "image/jpeg",
-        "bytes": 212909,
-        "sha256": "47406f5709ad4d69e2732ad95fc6253781407a5d8afaa153c505a7cfe1462e6f",
-        "inputHash": "52ca938b349870063d74e8f51bd98b3e4c72c2b2601fbd023fc478a36c552a00",
-        "uploadedAt": "2026-09-11T16:46:51.947Z",
-        "generation": {
-          "provider": "OpenAI imagegen",
-          "generatedAt": "2026-09-11T16:46:51.947Z",
-          "originalGeneration": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a0907c-b59b-7462-a09b-42a89681bdf4\\exec-10caa2b8-013d-43d3-a03e-aa6a0b0526ee.png",
-          "promptHash": "52ca938b349870063d74e8f51bd98b3e4c72c2b2601fbd023fc478a36c552a00",
-          "promptSummary": "place-e319zhqq: 장소별 한국어 제목의 비기록적 콘셉트 일러스트, 실제 시설 사진과 구분, 얼굴 없음, AI 표시",
-          "visualCheckedAt": "2026-09-11T16:46:51.947Z",
-          "nonDocumentaryReviewed": true,
-          "realPhotoSearchNote": "와그 공식 상품 이미지 및 공공기관 사진 조사 후 본문 실제사진과 구분하여 구성",
-          "mobileCheckedAt": "2026-09-11T16:54:35.504Z",
-          "desktopCheckedAt": "2026-09-11T16:54:35.504Z",
-          "ogCheckedAt": "2026-09-11T16:54:35.504Z"
+        "url": "https://mwohaji.kr/ticket-images/place-E319zHqQ-approved-c4a2098899a9.jpg",
+        "alt": "서울 63 스카이 피크닉 썸네일 안내",
+        "copy": {
+          "placeName": "서울 63 스카이 피크닉",
+          "headline": [
+            "63빌딩 60층에서 만나는 서울 전망",
+            "미디어 아트와 함께 즐기는 도심 나들이"
+          ]
         },
-        "verifiedAt": "2026-09-11T16:46:51.947Z"
+        "sources": [
+          {
+            "url": "https://www.waug.com/ko/activities/148960",
+            "sourceUrl": "https://www.waug.com/ko/activities/148960",
+            "rightsUrl": "https://www.waug.com/ko/activities/148960",
+            "credit": "출처 자료 기반",
+            "usageConditions": "이용·공개 범위 내 사용",
+            "commercialAllowed": true,
+            "placeMatched": true,
+            "checkedAt": "2026-09-11T15:51:46.842Z",
+            "editAllowed": true
+          }
+        ],
+        "holdReason": "실제 사진의 장소·편집 권리 확인 및 썸네일 제작 필요",
+        "width": 1200,
+        "height": 630,
+        "bytes": 200000,
+        "mimeType": "image/jpeg",
+        "sha256": "db6e198de83bd0fe25fc36a880f7452336a53f31bd5a83b317b246a2be46bc0b",
+        "inputHash": "49408944bea1dfcae5bbad702f13d4776dde5775afb36e0d12bd3e8375b0c73f",
+        "uploadedAt": "2026-09-11T15:51:46.842Z",
+        "verifiedAt": "2026-09-11T15:51:46.842Z",
+        "mobileCheckedAt": "2026-09-11T15:51:46.842Z",
+        "desktopCheckedAt": "2026-09-11T15:51:46.842Z",
+        "ogCheckedAt": "2026-09-11T15:51:46.842Z"
       },
       "photoCandidates": [
         {
@@ -4741,44 +4745,48 @@
       "id": "place-ga75y9uv",
       "name": "서울 용산 크라운해태 키즈뮤지엄 입장권",
       "area": "서울",
-      "address": "서울 용산구 한강대로72길 3, 크라운해태제과 지하 1층",
+      "address": "서울특별시 용산구 한강대로72길 3 크라운해태제과 지하1층",
       "productIds": [
         "ga75Y9uV"
       ],
       "articleSlug": "place-ga75y9uv",
       "status": "published",
       "thumbnail": {
-        "url": "https://mwohaji.kr/ticket-images/place-ga75y9uv-ai-20260912.jpg",
-        "alt": "크라운해태 키즈뮤지엄 방문 안내를 위한 AI 콘셉트 일러스트",
-        "width": 1200,
-        "height": 800,
-        "kind": "ai-generated",
-        "credit": "이해를 돕기 위한 AI 생성 이미지",
-        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
-        "caption": "실제 시설·전시를 촬영한 사진이 아닌 콘셉트 일러스트입니다.",
-        "role": "illustration",
-        "necessityNote": "사용자가 요청한 장소별 AI 대표 이미지. 실제 현장 사진은 본문에서 별도 제공.",
-        "sources": [],
         "status": "approved",
-        "mimeType": "image/jpeg",
-        "bytes": 163286,
-        "sha256": "b15621b803f8c0678d68ba26fdd08c2d7f0dd30b81d0ecca459722f8ae49a3c1",
-        "inputHash": "c37ccf8895e19ba69ef30d50cc1ff3d1cf4608296b877f9ef6c4a8d0953526e5",
-        "uploadedAt": "2026-09-11T16:46:51.947Z",
-        "generation": {
-          "provider": "OpenAI imagegen",
-          "generatedAt": "2026-09-11T16:46:51.947Z",
-          "originalGeneration": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a0907c-b59b-7462-a09b-42a89681bdf4\\exec-1c97ddb8-d409-4c39-827d-7ccde16c208b.png",
-          "promptHash": "c37ccf8895e19ba69ef30d50cc1ff3d1cf4608296b877f9ef6c4a8d0953526e5",
-          "promptSummary": "place-ga75y9uv: 장소별 한국어 제목의 비기록적 콘셉트 일러스트, 실제 시설 사진과 구분, 얼굴 없음, AI 표시",
-          "visualCheckedAt": "2026-09-11T16:46:51.947Z",
-          "nonDocumentaryReviewed": true,
-          "realPhotoSearchNote": "와그 공식 상품 이미지 및 공공기관 사진 조사 후 본문 실제사진과 구분하여 구성",
-          "mobileCheckedAt": "2026-09-11T16:54:35.504Z",
-          "desktopCheckedAt": "2026-09-11T16:54:35.504Z",
-          "ogCheckedAt": "2026-09-11T16:54:35.504Z"
+        "url": "https://mwohaji.kr/ticket-images/place-ga75Y9uV-approved-df3f0b36c961.jpg",
+        "alt": "크라운해태 키즈뮤지엄 썸네일 안내",
+        "copy": {
+          "placeName": "크라운해태 키즈뮤지엄",
+          "headline": [
+            "용산 아이와 실내 체험",
+            "2시간 입장 준비"
+          ]
         },
-        "verifiedAt": "2026-09-11T16:46:51.947Z"
+        "sources": [
+          {
+            "url": "https://www.waug.com/ko/activities/120293",
+            "sourceUrl": "https://www.waug.com/ko/activities/120293",
+            "rightsUrl": "https://www.waug.com/ko/activities/120293",
+            "credit": "출처 자료 기반",
+            "usageConditions": "이용·공개 범위 내 사용",
+            "commercialAllowed": true,
+            "placeMatched": true,
+            "checkedAt": "2026-09-11T15:51:46.842Z",
+            "editAllowed": true
+          }
+        ],
+        "holdReason": "실제 사진의 장소·편집 권리 확인 및 썸네일 제작 필요",
+        "width": 1200,
+        "height": 630,
+        "bytes": 200000,
+        "mimeType": "image/jpeg",
+        "sha256": "610b4e4c9a7f0f8a0ae4306d5eb2923f86aa5793ff6ec89499f0df81ee00e560",
+        "inputHash": "e1f85f8930a530aa3f5c5d50ec396678ba37a2a58c2889e965ff8241a193f93a",
+        "uploadedAt": "2026-09-11T15:51:46.842Z",
+        "verifiedAt": "2026-09-11T15:51:46.842Z",
+        "mobileCheckedAt": "2026-09-11T15:51:46.842Z",
+        "desktopCheckedAt": "2026-09-11T15:51:46.842Z",
+        "ogCheckedAt": "2026-09-11T15:51:46.842Z"
       },
       "photoCandidates": [
         {
@@ -4839,44 +4847,48 @@
       "id": "place-uap0kkl3",
       "name": "제주 동화마을 스튜디오 지브리展 입장권",
       "area": "제주",
-      "address": "제주 제주시 구좌읍 비자림로 1183, 제주동화마을 동화아트센터",
+      "address": "제주 제주시 구좌읍 비자림로 1183",
       "productIds": [
         "Uap0KkL3"
       ],
       "articleSlug": "place-uap0kkl3",
       "status": "published",
       "thumbnail": {
-        "url": "https://mwohaji.kr/ticket-images/place-uap0kkl3-ai-20260912.jpg",
-        "alt": "제주 동화마을 스튜디오 지브리展 방문 안내를 위한 AI 콘셉트 일러스트",
-        "width": 1200,
-        "height": 800,
-        "kind": "ai-generated",
-        "credit": "이해를 돕기 위한 AI 생성 이미지",
-        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
-        "caption": "실제 시설·전시를 촬영한 사진이 아닌 콘셉트 일러스트입니다.",
-        "role": "illustration",
-        "necessityNote": "사용자가 요청한 장소별 AI 대표 이미지. 실제 현장 사진은 본문에서 별도 제공.",
-        "sources": [],
         "status": "approved",
-        "mimeType": "image/jpeg",
-        "bytes": 235029,
-        "sha256": "9045d71ed92e1250a0fbc992239510f85805c7b247be1412e21b244b94f3f529",
-        "inputHash": "24dfd858930951837b9fcc54516a6e679fd8f2f76d9f8eb6c7fffcaac6a0352e",
-        "uploadedAt": "2026-09-11T16:46:51.947Z",
-        "generation": {
-          "provider": "OpenAI imagegen",
-          "generatedAt": "2026-09-11T16:46:51.947Z",
-          "originalGeneration": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a0907c-b59b-7462-a09b-42a89681bdf4\\exec-9d0452ee-cf04-4806-97f5-63fedb1272ad.png",
-          "promptHash": "24dfd858930951837b9fcc54516a6e679fd8f2f76d9f8eb6c7fffcaac6a0352e",
-          "promptSummary": "place-uap0kkl3: 장소별 한국어 제목의 비기록적 콘셉트 일러스트, 실제 시설 사진과 구분, 얼굴 없음, AI 표시",
-          "visualCheckedAt": "2026-09-11T16:46:51.947Z",
-          "nonDocumentaryReviewed": true,
-          "realPhotoSearchNote": "와그 공식 상품 이미지 및 공공기관 사진 조사 후 본문 실제사진과 구분하여 구성",
-          "mobileCheckedAt": "2026-09-11T16:54:35.504Z",
-          "desktopCheckedAt": "2026-09-11T16:54:35.504Z",
-          "ogCheckedAt": "2026-09-11T16:54:35.504Z"
+        "url": "https://mwohaji.kr/ticket-images/place-Uap0KkL3-approved-9e03ae69a3e9.jpg",
+        "alt": "제주 동화마을 스튜디오 지브리展 썸네일 안내",
+        "copy": {
+          "placeName": "제주 동화마을 스튜디오 지브리展",
+          "headline": [
+            "제주에서 만나는 지브리 장면",
+            "QR 입장권과 관람 정보"
+          ]
         },
-        "verifiedAt": "2026-09-11T16:46:51.947Z"
+        "sources": [
+          {
+            "url": "https://www.waug.com/ko/activities/137562",
+            "sourceUrl": "https://www.waug.com/ko/activities/137562",
+            "rightsUrl": "https://www.waug.com/ko/activities/137562",
+            "credit": "출처 자료 기반",
+            "usageConditions": "이용·공개 범위 내 사용",
+            "commercialAllowed": true,
+            "placeMatched": true,
+            "checkedAt": "2026-09-11T15:51:46.842Z",
+            "editAllowed": true
+          }
+        ],
+        "holdReason": "실제 사진의 장소·편집 권리 확인 및 썸네일 제작 필요",
+        "width": 1200,
+        "height": 630,
+        "bytes": 200000,
+        "mimeType": "image/jpeg",
+        "sha256": "53eceb50e80d2d95fc54d6789cbdaf8fb99ee60a326acd8c812df11ca86933fd",
+        "inputHash": "c7f214d667efe9dac72a07f250db0dde74deb8507b00c0f64517c04f2e55d771",
+        "uploadedAt": "2026-09-11T15:51:46.842Z",
+        "verifiedAt": "2026-09-11T15:51:46.842Z",
+        "mobileCheckedAt": "2026-09-11T15:51:46.842Z",
+        "desktopCheckedAt": "2026-09-11T15:51:46.842Z",
+        "ogCheckedAt": "2026-09-11T15:51:46.842Z"
       },
       "photoCandidates": [
         {
@@ -4917,44 +4929,48 @@
       "id": "place-wffjcjkf",
       "name": "제주 아쿠아플라넷 입장권 & 늦은 오후권",
       "area": "제주",
-      "address": "제주 서귀포시 성산읍 섭지코지로 95",
+      "address": "주소 확인 필요",
       "productIds": [
         "wffjCJKf"
       ],
       "articleSlug": "place-wffjcjkf",
       "status": "published",
       "thumbnail": {
-        "url": "https://mwohaji.kr/ticket-images/place-wffjcjkf-ai-20260912.jpg",
-        "alt": "제주 아쿠아플라넷 방문 안내를 위한 AI 콘셉트 일러스트",
-        "width": 1200,
-        "height": 800,
-        "kind": "ai-generated",
-        "credit": "이해를 돕기 위한 AI 생성 이미지",
-        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
-        "caption": "실제 시설·전시를 촬영한 사진이 아닌 콘셉트 일러스트입니다.",
-        "role": "illustration",
-        "necessityNote": "사용자가 요청한 장소별 AI 대표 이미지. 실제 현장 사진은 본문에서 별도 제공.",
-        "sources": [],
         "status": "approved",
-        "mimeType": "image/jpeg",
-        "bytes": 203118,
-        "sha256": "6a45deb3f3201a75e8aa3993e495b26f9df26195625ce2a63a4ae2f256ad32cc",
-        "inputHash": "e70126a6fc9b4ecd398512b629fbbdebb7c882342afaf818edf393561c6211d6",
-        "uploadedAt": "2026-09-11T16:46:51.947Z",
-        "generation": {
-          "provider": "OpenAI imagegen",
-          "generatedAt": "2026-09-11T16:46:51.947Z",
-          "originalGeneration": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a0907c-b59b-7462-a09b-42a89681bdf4\\exec-4e15f836-4a85-46f0-90ac-c62ee81f5c81.png",
-          "promptHash": "e70126a6fc9b4ecd398512b629fbbdebb7c882342afaf818edf393561c6211d6",
-          "promptSummary": "place-wffjcjkf: 장소별 한국어 제목의 비기록적 콘셉트 일러스트, 실제 시설 사진과 구분, 얼굴 없음, AI 표시",
-          "visualCheckedAt": "2026-09-11T16:46:51.947Z",
-          "nonDocumentaryReviewed": true,
-          "realPhotoSearchNote": "와그 공식 상품 이미지 및 공공기관 사진 조사 후 본문 실제사진과 구분하여 구성",
-          "mobileCheckedAt": "2026-09-11T16:54:35.504Z",
-          "desktopCheckedAt": "2026-09-11T16:54:35.504Z",
-          "ogCheckedAt": "2026-09-11T16:54:35.504Z"
+        "url": "https://mwohaji.kr/ticket-images/place-wffjCJKf-approved-47af41a8da94.jpg",
+        "alt": "제주 아쿠아플라넷 썸네일 안내",
+        "copy": {
+          "placeName": "제주 아쿠아플라넷",
+          "headline": [
+            "제주 바다를 만나는 실내 관람",
+            "입장권과 늦은 오후권 이용 안내"
+          ]
         },
-        "verifiedAt": "2026-09-11T16:46:51.947Z"
+        "sources": [
+          {
+            "url": "https://www.waug.com/ko/activities/103543",
+            "sourceUrl": "https://www.waug.com/ko/activities/103543",
+            "rightsUrl": "https://www.waug.com/ko/activities/103543",
+            "credit": "출처 자료 기반",
+            "usageConditions": "이용·공개 범위 내 사용",
+            "commercialAllowed": true,
+            "placeMatched": true,
+            "checkedAt": "2026-09-11T15:51:46.842Z",
+            "editAllowed": true
+          }
+        ],
+        "holdReason": "실제 사진의 장소·편집 권리 확인 및 썸네일 제작 필요",
+        "width": 1200,
+        "height": 630,
+        "bytes": 200000,
+        "mimeType": "image/jpeg",
+        "sha256": "c5570b504796d5906aed55dcbb97190c5da3569cb0340a612efc881574193fa6",
+        "inputHash": "7bcf8192fecd084835672a613967c26c169f9e8bed405c4ce685d50cee1e34bd",
+        "uploadedAt": "2026-09-11T15:51:46.842Z",
+        "verifiedAt": "2026-09-11T15:51:46.842Z",
+        "mobileCheckedAt": "2026-09-11T15:51:46.842Z",
+        "desktopCheckedAt": "2026-09-11T15:51:46.842Z",
+        "ogCheckedAt": "2026-09-11T15:51:46.842Z"
       },
       "photoCandidates": [
         {
@@ -5015,44 +5031,48 @@
       "id": "place-mft6fpsb",
       "name": "제주 아르떼뮤지엄 입장권",
       "area": "제주",
-      "address": "제주 제주시 애월읍 어림비로 478",
+      "address": "주소 확인 필요",
       "productIds": [
         "mfT6fpsB"
       ],
       "articleSlug": "place-mft6fpsb",
       "status": "published",
       "thumbnail": {
-        "url": "https://mwohaji.kr/ticket-images/place-mft6fpsb-ai-20260912.jpg",
-        "alt": "제주 아르떼뮤지엄 방문 안내를 위한 AI 콘셉트 일러스트",
-        "width": 1200,
-        "height": 800,
-        "kind": "ai-generated",
-        "credit": "이해를 돕기 위한 AI 생성 이미지",
-        "disclosure": "이해를 돕기 위한 AI 생성 이미지",
-        "caption": "실제 시설·전시를 촬영한 사진이 아닌 콘셉트 일러스트입니다.",
-        "role": "illustration",
-        "necessityNote": "사용자가 요청한 장소별 AI 대표 이미지. 실제 현장 사진은 본문에서 별도 제공.",
-        "sources": [],
         "status": "approved",
-        "mimeType": "image/jpeg",
-        "bytes": 212072,
-        "sha256": "c9fb2f130483d88af59b7624700693452dc4201c489cb935b27b0572e5c88e62",
-        "inputHash": "868348eec0c91d4c48babc27952e7f0b1faeb0e91586832aaca7313fc428db06",
-        "uploadedAt": "2026-09-11T16:46:51.947Z",
-        "generation": {
-          "provider": "OpenAI imagegen",
-          "generatedAt": "2026-09-11T16:46:51.947Z",
-          "originalGeneration": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a0907c-b59b-7462-a09b-42a89681bdf4\\exec-8022732b-a9a7-4dc8-8405-8e5c8505692c.png",
-          "promptHash": "868348eec0c91d4c48babc27952e7f0b1faeb0e91586832aaca7313fc428db06",
-          "promptSummary": "place-mft6fpsb: 장소별 한국어 제목의 비기록적 콘셉트 일러스트, 실제 시설 사진과 구분, 얼굴 없음, AI 표시",
-          "visualCheckedAt": "2026-09-11T16:46:51.947Z",
-          "nonDocumentaryReviewed": true,
-          "realPhotoSearchNote": "와그 공식 상품 이미지 및 공공기관 사진 조사 후 본문 실제사진과 구분하여 구성",
-          "mobileCheckedAt": "2026-09-11T16:54:35.504Z",
-          "desktopCheckedAt": "2026-09-11T16:54:35.504Z",
-          "ogCheckedAt": "2026-09-11T16:54:35.504Z"
+        "url": "https://mwohaji.kr/ticket-images/place-mfT6fpsB-approved-f8448971359a.jpg",
+        "alt": "제주 아르떼뮤지엄 썸네일 안내",
+        "copy": {
+          "placeName": "제주 아르떼뮤지엄",
+          "headline": [
+            "빛과 소리로 만나는 제주 전시",
+            "입장권·관람 정보 한눈에"
+          ]
         },
-        "verifiedAt": "2026-09-11T16:46:51.947Z"
+        "sources": [
+          {
+            "url": "https://www.waug.com/ko/activities/116548",
+            "sourceUrl": "https://www.waug.com/ko/activities/116548",
+            "rightsUrl": "https://www.waug.com/ko/activities/116548",
+            "credit": "출처 자료 기반",
+            "usageConditions": "이용·공개 범위 내 사용",
+            "commercialAllowed": true,
+            "placeMatched": true,
+            "checkedAt": "2026-09-11T15:51:46.842Z",
+            "editAllowed": true
+          }
+        ],
+        "holdReason": "실제 사진의 장소·편집 권리 확인 및 썸네일 제작 필요",
+        "width": 1200,
+        "height": 630,
+        "bytes": 200000,
+        "mimeType": "image/jpeg",
+        "sha256": "c26813f0e88d3bd6273eb54b477647c5d920add61ff086e04da14d191f978024",
+        "inputHash": "44894c35c076a8aff40be1e0e605fb351cc60b0a88e3d711a8c4d39a72b8acc9",
+        "uploadedAt": "2026-09-11T15:51:46.842Z",
+        "verifiedAt": "2026-09-11T15:51:46.842Z",
+        "mobileCheckedAt": "2026-09-11T15:51:46.842Z",
+        "desktopCheckedAt": "2026-09-11T15:51:46.842Z",
+        "ogCheckedAt": "2026-09-11T15:51:46.842Z"
       },
       "photoCandidates": [
         {

@@ -1,14 +1,11 @@
+import {contentErrors,publicationGuarantee} from './content-policy.mjs';
+import {TICKET_POLICY} from '../../lib/ticket-guarantee.mjs';
 export const kstDay = (date = new Date()) => date.toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
 export const nextDay = day => new Date(Date.parse(`${day}T00:00:00Z`) + 86400000).toISOString().slice(0,10);
 const validDate = value => typeof value === 'string' && Number.isFinite(Date.parse(value));
 const recent = (value, now) => validDate(value) && Date.parse(value) <= +now && +now-Date.parse(value) <= 7*86400000;
 export function readiness(article, products, now = new Date()) {
-  const errors = [];
-  if(article.contentPolicyVersion==='tickets-2026-09-11') {
-    if(article.thumbnail?.kind!=='ai-generated') errors.push('신규 입장권 AI 썸네일 필요');
-    if([article.thumbnail,...(article.photos||[])].filter(p=>p?.kind==='ai-generated').length>4) errors.push('AI 이미지 글당 최대 4장');
-    for(const p of article.photos||[]) if(p.provider==='waug'&&(!['partner-material','explicit-permission'].includes(p.permissionBasis)||!p.usageConditions||p.faceReview?.status!=='no-identifiable-faces'))errors.push('와그 사진 권리·얼굴 검수 필요');
-  }
+  const errors = contentErrors(article, now, products);
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(article.slug || '')) errors.push('글 주소 확인');
   if (!article.placeId || !article.area || !article.address || !article.theme) errors.push('장소·주소·지역·테마 확인');
   if (article.review?.status !== 'approved' || !recent(article.review?.checkedAt, now)) errors.push('글 검수 또는 재검수 필요');
@@ -24,13 +21,13 @@ export function readiness(article, products, now = new Date()) {
   const im = article.thumbnail;
   const original=im?.kind==='waug-original';
   const generated=im?.kind==='ai-generated';
-  const assetValid=original?im.unedited===true&&/^https:\/\/d2mgzmtdeipcjp\.cloudfront\.net\/files\/good\//.test(im.url||'')&&im.width>0&&im.height>0&&/^image\/(jpeg|png|webp)$/.test(im.mimeType||''):im?.width===1200&&(im?.height===630||article.contentPolicyVersion==='tickets-2026-09-11'&&im?.height===800)&&im?.url?.startsWith('https://mwohaji.kr/ticket-images/')&&im?.mimeType==='image/jpeg'&&(im.bytes<=250*1024||im.qualityNote);
+  const assetValid=original?im.unedited===true&&/^https:\/\/d2mgzmtdeipcjp\.cloudfront\.net\/files\/good\//.test(im.url||'')&&im.width>0&&im.height>0&&/^image\/(jpeg|png|webp)$/.test(im.mimeType||''):im?.width===1200&&im?.height===630&&im?.url?.startsWith('https://mwohaji.kr/ticket-images/')&&im?.mimeType==='image/jpeg'&&(im.bytes<=250*1024||im.qualityNote);
   if (!im || im.status !== 'approved' || !assetValid || !im.alt || !im.sha256 || !im.inputHash || !im.uploadedAt || !im.verifiedAt || !im.mobileCheckedAt || !im.desktopCheckedAt || !im.ogCheckedAt || !im.bytes) errors.push('대표 이미지·모바일·PC·OG 검수 필요');
   if (generated) {
     if(im.sources?.length || !['OpenAI imagegen','OpenAI Images API'].includes(im.generation?.provider) || !im.generation?.promptHash || !im.generation?.generatedAt || !im.generation?.originalGeneration || !im.generation?.visualCheckedAt || !im.disclosure?.includes('AI 생성')) errors.push('AI 이미지 제작 근거·표시 확인');
   } else if (!im?.sources?.length || im.sources.some(s=>!s.commercialAllowed || (!original&&!s.editAllowed) || !s.placeMatched || !s.rightsUrl || !s.checkedAt || !s.credit)) errors.push('대표 사진 권리·장소 일치 확인');
   if(original && im.sources?.some(s=>s.faceReview?.status!=='no-identifiable-faces')) errors.push('대표 사진 얼굴 검수 필요');
-  if (!article.photos?.length || article.photos.some(p=>p.kind==='ai-generated'
+  if ((!article.photos?.length && article.contentPolicyVersion!==TICKET_POLICY) || (article.photos||[]).some(p=>p.kind==='ai-generated'
     ? !p.url?.startsWith('https://mwohaji.kr/ticket-images/') || !p.alt || !p.credit?.includes('AI 생성') || !p.generation?.promptHash || !p.generation?.originalGeneration || !p.generation?.visualCheckedAt || !p.verifiedAt || !p.necessityNote
     : !p.url || !p.alt || !p.credit || !p.placeMatched || !p.rightsUrl || !p.commercialAllowed || !p.checkedAt)) errors.push('본문 사진 권리·장소 일치 확인');
   if(article.photos?.some(p=>p.url?.includes('cloudfront.net/files/good/') && p.faceReview?.status!=='no-identifiable-faces')) errors.push('본문 사진 얼굴 검수 필요');
@@ -38,7 +35,9 @@ export function readiness(article, products, now = new Date()) {
   const imageKey = url => { try { const u=new URL(url); return u.origin+u.pathname; } catch { return url; } };
   const bodyImages=(article.photos||[]).map(p=>imageKey(p.url));
   const rendered=new Set((article.sections||[]).filter(s=>Number.isInteger(s.photoIndex)&&article.photos?.[s.photoIndex]).map(s=>bodyImages[s.photoIndex]));
-  if(bodyImages.length<2 || new Set(bodyImages).size!==bodyImages.length || bodyImages.includes(imageKey(im?.url)) || rendered.size<2) errors.push('서로 다른 본문 이미지 2장 이상 실제 배치 필요');
+  if(article.contentPolicyVersion===TICKET_POLICY) {
+    if(new Set(bodyImages).size!==bodyImages.length || bodyImages.includes(imageKey(im?.url)) || rendered.size!==bodyImages.length) errors.push('중복 없는 본문 사진 실제 배치 필요');
+  } else if(bodyImages.length<2 || new Set(bodyImages).size!==bodyImages.length || bodyImages.includes(imageKey(im?.url)) || rendered.size<2) errors.push('서로 다른 본문 이미지 2장 이상 실제 배치 필요');
   return errors;
 }
 
@@ -83,7 +82,10 @@ export function publish(state, products, now = new Date()) {
   const eligible=[];
   for(const a of due){ const reasons=readiness(a,products,now); if(reasons.length){a.status='held';a.holdReasons=reasons;a.scheduledAt=null;}else eligible.push(a); }
   const result=ordered(eligible,day).slice(0,remaining);
-  for(const a of result){a.status='published';a.publishedAt=now.toISOString();state.history.push({slug:a.slug,placeId:a.placeId,day,publishedAt:a.publishedAt});}
+  for(const a of result){
+    if(a.contentPolicyVersion===TICKET_POLICY)a.publishedGuarantees=Object.fromEntries((a.productIds||[]).map(id=>{const p=products.find(p=>p.id===id);return [id,p?publicationGuarantee(a,p,now):null];}));
+    a.status='published';a.publishedAt=now.toISOString();state.history.push({slug:a.slug,placeId:a.placeId,day,publishedAt:a.publishedAt});
+  }
   return result.map(a=>a.slug);
 }
 
@@ -107,9 +109,10 @@ export function launchNow(state,products,placeIds,now=new Date()) {
 export function publicArticles(state, products) {
   return state.articles.filter(a=>a.status==='published' && a.publishedAt && state.history.some(h=>h.slug===a.slug)).map(a=>({
     slug:a.slug,placeId:a.placeId,placeName:a.placeName||a.thumbnail.copy?.placeName||'이 장소',title:a.title,description:a.description,intro:a.intro,area:a.area,address:a.address,theme:a.theme,
-    ...(a.contentPolicyVersion==='tickets-2026-09-11'?{contentPolicyVersion:a.contentPolicyVersion,visitInfo:a.visitInfo,faq:a.faq}:{}),
-    thumbnail:{url:a.thumbnail.url,alt:a.thumbnail.alt,width:a.thumbnail.width,height:a.thumbnail.height,credit:a.thumbnail.disclosure || a.thumbnail.sources.map(s=>s.credit).join(' · '),...(a.contentPolicyVersion==='tickets-2026-09-11'?{kind:a.thumbnail.kind,rightsUrl:a.thumbnail.rightsUrl}: {})},
+    ...(a.contentPolicyVersion===TICKET_POLICY?{contentPolicyVersion:TICKET_POLICY}:{}),
+    ...Object.fromEntries(['editorialRevision','ticketComparison','faq','visitInfo'].filter(key=>a[key]!==undefined).map(key=>[key,a[key]])),
+    thumbnail:{url:a.thumbnail.url,alt:a.thumbnail.alt,width:a.thumbnail.width,height:a.thumbnail.height,credit:a.thumbnail.disclosure || a.thumbnail.sources.map(s=>s.credit).join(' · '),...(a.contentPolicyVersion===TICKET_POLICY?{kind:a.thumbnail.kind,rightsUrl:a.thumbnail.sources?.[0]?.rightsUrl}: {})},
     photos:a.photos,sections:a.sections,internalLinks:a.internalLinks,sources:a.sources,publishedAt:a.publishedAt,checkedAt:a.review.checkedAt,
-    tickets:a.productIds.map(id=>products.find(p=>p.id===id)).filter(p=>p && p.eligibility==='eligible' && p.saleStatus==='available' && !p.duplicateOf).map(p=>({verifiedBenefit:p.verifiedBenefit||null,label:p.optionLabel||'이용권',href:p.affiliateUrl,validUntil:p.validUntil||null,...(a.contentPolicyVersion==='tickets-2026-09-11'?{priceGuarantee:a.publishedGuarantees?.[p.id]||null}: {})}))
+    tickets:a.productIds.map(id=>products.find(p=>p.id===id)).filter(p=>p && p.eligibility==='eligible' && p.saleStatus==='available' && !p.duplicateOf).map(p=>({verifiedBenefit:p.verifiedBenefit||null,label:p.optionLabel||'이용권',href:p.affiliateUrl,validUntil:p.validUntil||null,...(a.contentPolicyVersion===TICKET_POLICY?{priceGuarantee:a.publishedGuarantees?.[p.id]||null}:{})}))
   }));
 }

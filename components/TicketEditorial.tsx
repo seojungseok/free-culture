@@ -3,6 +3,9 @@ import type {TicketArticle} from '@/lib/tickets';
 import {SITE} from '@/lib/site';
 import {AI_DISCLOSURE,AFFILIATE_DISCLOSURE} from '@/lib/ticket-guarantee.mjs';
 import TicketBooking from './TicketBooking';
+import TicketSectionCopy from './TicketSectionCopy';
+import TicketFaq from './TicketFaq';
+import TicketAddress from './TicketAddress';
 import styles from './TicketEditorial.module.css';
 function Photo({photo,hero=false}:{photo:TicketArticle['thumbnail']|TicketArticle['photos'][number];hero?:boolean}) {
   const src=photo.url.startsWith(`${SITE.url}/ticket-images/`)?photo.url.slice(SITE.url.length):photo.url;
@@ -16,13 +19,13 @@ export default function TicketEditorial({article:a}:{article:TicketArticle}) {
     {a.previewScenario&&<p role="status" className={styles.disclosure}>{a.previewScenario}</p>}
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd).replace(/</g,'\\u003c')}}/>
     <Link href="/tickets">입장권·체험</Link><p className={styles.disclosure}>{AFFILIATE_DISCLOSURE}</p>
-    <p>{a.area} · {a.theme}</p><h1>{a.title}</h1><p className={styles.note}>정보 확인 {new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul'}).format(new Date(a.checkedAt))} · {a.address}</p>
-    <Photo photo={a.thumbnail} hero/><p>{a.intro}</p>
-    {a.sections.map((s,i)=><section key={i}><h2>{s.heading}</h2>{s.paragraphs.map((p,j)=><p key={j}>{p}</p>)}
-      {s.kind==='visit'&&<dl className={styles.facts}>{a.visitInfo?.map(f=><div key={f.topic}><dt>{f.topic}</dt><dd>{f.status==='unknown'&&<span className={styles.note}>미확인 · </span>}{f.value}</dd></div>)}</dl>}
+    <p>{a.area} · {a.theme}</p><h1>{a.title}</h1><p className={styles.note}>정보 확인 {new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul'}).format(new Date(a.checkedAt))}</p>
+    <Photo photo={a.thumbnail} hero/><p>{a.intro}</p><TicketAddress article={a}/>
+    {a.sections.map((s,i)=><section key={i}><TicketSectionCopy article={a} section={s}/>
+      {s.kind==='visit'&&<dl className={styles.facts}>{a.visitInfo?.filter(f=>f.status==='confirmed').map(f=><div key={f.topic}><dt>{f.topic}</dt><dd>{f.value}</dd></div>)}</dl>}
       {s.photoIndex!==undefined&&a.photos[s.photoIndex]&&<Photo photo={a.photos[s.photoIndex]}/>}{s.tickets&&<TicketBooking article={a}/>}
     </section>)}
-    <section aria-label="자주 묻는 질문"><h2>자주 묻는 질문</h2>{a.faq?.map(f=><div key={f.question}><h3>{f.question}</h3><p>{f.answer}</p></div>)}</section>
+    <TicketFaq article={a}/>
     <nav aria-label="관련 여행 정보"><h2>함께 살펴볼 방문 정보</h2>{a.internalLinks.map(l=><p key={l.href}><Link href={l.href}>{l.label}</Link></p>)}</nav>
     <details><summary>확인한 자료와 출처</summary>{a.sources.map(s=><p key={s.url} className={styles.note}><a href={s.url} target="_blank" rel={s.url.includes('waug.com')?'sponsored noopener noreferrer':'noopener noreferrer'}>{s.label}</a> · {s.checkedAt.slice(0,10)}</p>)}</details>
     <TicketBooking article={a} mobile/>
