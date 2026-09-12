@@ -28,7 +28,7 @@ export default function TicketEditorial({article:a}:{article:TicketArticle}) {
     </section>)}
     <TicketFaq article={a}/>
     <TicketNearby article={a}/>
-    <nav aria-label="관련 여행 정보"><h2>함께 살펴볼 방문 정보</h2>{a.internalLinks.map(l=><p key={l.href}><Link href={l.href}>{l.label}</Link></p>)}</nav>
+    <nav aria-label="관련 입장권 체험 정보"><h2>관련 입장권·체험 더 보기</h2>{a.internalLinks.map(l=><p key={l.href}><Link href={l.href}>{l.label}</Link></p>)}</nav>
     <details><summary>확인한 자료와 출처</summary>{a.sources.map(s=><p key={s.url} className={styles.note}><a href={s.url} target="_blank" rel={s.url.includes('waug.com')?'sponsored noopener noreferrer':'noopener noreferrer'}>{s.label}</a> · {s.checkedAt.slice(0,10)}</p>)}</details>
 
   </main>;

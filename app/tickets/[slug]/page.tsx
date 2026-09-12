@@ -35,7 +35,7 @@ export default async function TicketPage({params}:{params:Promise<{slug:string}>
     {!a.sections.some(s=>s.tickets)&&<TicketLinks article={a}/>}
     <TicketFaq article={a} legacy/>
     <TicketNearby article={a}/>
-    <nav className="mt-10 rounded-2xl bg-gray-50 p-5" aria-label="관련 여행 정보"><h2 className="font-bold">함께 계획해보세요</h2><div className="mt-3 flex flex-wrap gap-4">{a.internalLinks.map(l=><Link key={l.href} href={l.href} className="text-sm font-bold text-free">{l.label} →</Link>)}</div></nav>
+    <nav className="mt-10 rounded-2xl bg-gray-50 p-5" aria-label="관련 입장권 체험 정보"><h2 className="font-bold">관련 입장권·체험 더 보기</h2><div className="mt-3 flex flex-wrap gap-4">{a.internalLinks.map(l=><Link key={l.href} href={l.href} className="text-sm font-bold text-free">{l.label} →</Link>)}</div></nav>
     <details className="my-8 border-t border-line pt-5 text-sm text-ink-soft"><summary className="cursor-pointer font-bold">확인한 자료와 출처</summary><ul className="mt-3 space-y-3">{a.sources.map(s=><li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer" className="underline">{s.label}</a> · {s.checkedAt.slice(0,10)}</li>)}</ul></details>
   </main>;
 }
