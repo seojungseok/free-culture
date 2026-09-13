@@ -1,0 +1,15 @@
+{
+  "slug": "family-park-ring-ball-play",
+  "publishedAt": "2026-09-13T15:05:24.573Z",
+  "userApprovedExistingImagery": true,
+  "ageRestrictionRetained": true,
+  "images": 3,
+  "hotspots": 9,
+  "apiCalls": 0,
+  "linkVerification": {
+    "ring": "previous browser review",
+    "ball": "browser verified",
+    "cones": "same-ID redirect observed; detail access blocked 403; only API-backed facts used"
+  },
+  "publicationErrors": []
+}
