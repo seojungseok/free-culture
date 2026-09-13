@@ -1,5 +1,5 @@
 {
-  "version": 19,
+  "version": 20,
   "products": [
     {
       "id": "7689270513",
@@ -108,6 +108,258 @@
       "specification": "트라이탄. 식판 31.4 × 22.2 × 3 cm, 볼 14.5 × 4.5 cm. 뚜껑 미포함, 유아/아동용 표기",
       "options": "투명, 식판 1개 + 볼 1개",
       "evidence": "2026-09-13 원본 API 제휴 URL을 Edge에서 열어 상품번호·itemId와 표기된 규격·옵션·구성을 확인하고 원본 상품 사진 및 합성 이미지를 대조했습니다. 사용 후기가 아니며 판매자 홍보 문구를 성능으로 보증하지 않습니다."
+    },
+    {
+      "id": "6168487275",
+      "name": "신선약초 잔치국수 분말, 150g, 1개",
+      "image": "https://ads-partners.coupang.com/image1/Ig5HsnrPMGUKcJLTIq3H4Te9WlP1SS6rFRLPMn3DB3p-DE8phVpaNjg3NaXzoess4h2fYtWmF5h_YfXts-WU5Z4PFsSY5_liocIP18zrCv6pF9B3loUOXzVjVvn6xgaMftX16o9YdJYKB9NwOSQNfzx9dZRWYrvxVjONoLkujmW3SKOEjEZCQaoOmpVFKAZsZZLUFU_OPZLbLvA7G1uvScjINvTcVFWuG6HoFh_u0ffVu3ytmbVMGL3zAOG4xmuRYO5DZe7Ex33J-Je6I4MonABaRrKoogjPTSXDW1VAP4XHU6otRm1UqaAmtmf59BchtGRpBws25c8zRzp3JImMvm3MYgXzEQsw8VUjbU4_UpHiKQFW6tZBt3dGthZ1TTc0nV2nAhibskLxZeevbNm1gEZ9Z5ULa6-Qst3P2omUPywUkHhS50c3ltUnlMLGXXatcDYM1AvUHOgCblHXYfQvnSTJd3MebhveWMR98aBbmy-Wnnak_vUxRWpZR9dmdQtMsQrqE_LGYDz7tQ==",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6168487275&itemId=12024090238&vendorItemId=79427526032&traceid=V0-153-a4ab5e49b18174a8&clickBeacon=2a1b22b0-af72-11f1-b954-eaf93bcd34e7%7E3&requestid=20260913215349212074250801&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/6168487275",
+      "checkedAt": "2026-09-13T14:52:04.063Z",
+      "verified": true,
+      "specification": "가루 형태 조미료, 플라스틱병. 면·그릇은 별도",
+      "options": "150g, 1개",
+      "evidence": "2026-09-13 원본 API 제휴 URL의 실제 도착 상품번호·itemId와 선택 옵션 확인. 저장된 원본 사진과 합성 장면의 외형·태그 좌표를 직접 대조. 상충하거나 확인되지 않은 상세 수치는 본문에서 제외하고 확인 필요 내용을 명시. 사용 후기·성능 보증 아님."
+    },
+    {
+      "id": "5375328805",
+      "name": "스테인리스 면 건지개, 1개",
+      "image": "https://ads-partners.coupang.com/image1/kMBm5mskRR6im43jkDcHYxSSOVDbJwmvR4PqrjJSLCX0c2CstJI2iWoORdyFFJoueFJGfPSZjb63uJswiDp59lxGVn0aMtRq4NRFcUZ5Bm1xd5T3vyB2Z0MHXVFxsmQzK40GwR3vUdLQcAuXY6D_JCOFmbAGIvyTrKyYudfv8DrG0l6AyzNGQ75AeGS9FEg9JjqvjEKs7wPbvOo9YOICuGEQJXEGRduxdwBlSkrBSR4n3fd8q86s-nQpfp9d_W1QudYdA633Y5KD0oEd9a0J-Mwdd0JRAfgv7ZiZUaSDdC-4x-wKXc0wj6E-ti9BwBbq-HEThiybm44ZxcwArzgThvtEm2cwmmDrHL8J1ZU6dbejpWBrEqv0AMWTIG4hmJsz1So_3ychpwlism7zLWFralN3IoHZV6oMQuKx1RqkVUo3VhQgaVCcxQGdrAwtBmJ2H7MqQlDctM341ybveo4m3GucykQCbbMXkWlHkzB9oAGMdRxxWpmVvGAZbteEcV3J",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=5375328805&itemId=7987118003&vendorItemId=75276027061&traceid=V0-153-a2fe3da3d0ea6187&clickBeacon=306a6e50-af72-11f1-bd46-c880c64dcd56%7E3&requestid=20260913215359758015320796&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/5375328805",
+      "checkedAt": "2026-09-13T14:52:04.063Z",
+      "verified": true,
+      "specification": "스테인리스. 건지는 부분 19.5cm, 전체 길이 45.5cm. 2026-09-13 일시품절 표시",
+      "options": "19.5 × 45.5 cm, 1개",
+      "evidence": "2026-09-13 원본 API 제휴 URL의 실제 도착 상품번호·itemId와 선택 옵션 확인. 저장된 원본 사진과 합성 장면의 외형·태그 좌표를 직접 대조. 상충하거나 확인되지 않은 상세 수치는 본문에서 제외하고 확인 필요 내용을 명시. 사용 후기·성능 보증 아님."
+    },
+    {
+      "id": "1570991286",
+      "name": "리빙메이트 국산 업소용 육각 젓가락 24cm, 블랙, 10개, 1개",
+      "image": "https://ads-partners.coupang.com/image1/4N5R6TTodYVbzruo4MLp-VBVSkNCKw9Nbc4eq1o0q7UzaOAYKKBo2-qvP9iErHfyGEiTtQD21_8BvNjTFz07pSgUgUx-5jZ2nEtMVNoUlk5CqFRgFLVCeJQ6LWiuEmScSqkI3EpoWROP1Nr1rEZOcGAJEFIYXd9bzlVXXmtoQj-CWpA20UbX3RlvbCLWD_A_UTeoO9KlR5dSM1p7nU3FfmKAhL4tVo0mVk4Wqj855BU1QphwWYTwqUbac8HkndnJFTod3b2nrOtsGElnGAOP6_pLd8vz4E25vz4_2FAv9f__sluuiJZmM7d_EKB3SF0Gp9hRQxtGXulgdljXA4eiAx3hfaTD5McgA_9xkfIK6v6fFGG2Drh_NPOAh5mzq87OCfVUhHWSHOklcyo9ysdrZ0pc6xMS1ZJGIiXMlXAVuQa9dKpTTMn2T8Jh_pkTfhgdJf2Xez_muhzLV71BjiDXqQCPOvXvovkIlZmXMn_3vOY0mn9cyJJYKXCvOBc9hZ1tdMkZsgUX2g==",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=1570991286&itemId=2686359629&vendorItemId=70676838901&traceid=V0-153-4a7354da72f94a19&clickBeacon=36b37860-af72-11f1-861d-de9fda21df29%7E3&requestid=20260913215410316258352170&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/1570991286",
+      "checkedAt": "2026-09-13T14:52:04.063Z",
+      "verified": true,
+      "specification": "240mm, 일반형 성인용, 케이스 미포함",
+      "options": "블랙, 젓가락 10쌍",
+      "evidence": "2026-09-13 원본 API 제휴 URL의 실제 도착 상품번호·itemId와 선택 옵션 확인. 저장된 원본 사진과 합성 장면의 외형·태그 좌표를 직접 대조. 상충하거나 확인되지 않은 상세 수치는 본문에서 제외하고 확인 필요 내용을 명시. 사용 후기·성능 보증 아님."
+    },
+    {
+      "id": "7935223581",
+      "name": "못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개",
+      "image": "https://ads-partners.coupang.com/image1/LYNpFLs9V5WX3MxWLScCA4b8c0cSXXzGeeA-kqyLObMWeb2mIZYZO4In8tdWb59xLsxgqDrlG1q2MKHIiu_gI7M_FghJG2Y1UfUYu8g_c1pEZlUi2KsmjylA1ECmKaVs707lc4usSjhqHKGw0l4sGQengOBk1x5qO-2DUlS0fdAhh2dz7ABChR2YNBV0tUYTZcNiOO_57pmu3DIQ9k6h7FkhF807Q3U7omF4ILrJn_imEcxY9gr7FL1fDgdhcEJGNZZgxCe36XfBxl4gTwMqkSLcAFynvO1TKcShPhvlOs7ZpZcRR9SI5UHK_4K6PYRtbaPd-L_GlBH9ysFzriv94Zvh26rlJoc4CYWH_FQzwqW7_Hp9tqXujSGq28BcBRAbwuDfVwH9GeM9pM2eicHF_CHw2XHgTy6jKczviVhKoxuvMTKP6Sf_Tm-_Q9YHYaZhuShSPvHw0zNl5eF0BdHI9rHipCm0Ta-d1cSBYOnD3BkU7LpgI6DOjk2zzdby06dv263127zxMhlVH43vriLhVYSPGU1ZBGVTaV6kPC2o2jlgILK9D8u1-v4cPZ8LaJCWfLC9F-CtAA-dfQ==",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7935223581&itemId=21841256512&vendorItemId=88889579450&traceid=V0-153-9ffa8a7b2e95386a&clickBeacon=5a86eb00-af72-11f1-8e75-b1f91745e732%7E3&requestid=20260913215510457278595649&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/7935223581",
+      "checkedAt": "2026-09-13T14:52:04.063Z",
+      "verified": true,
+      "specification": "파프리카, 크기·색상 무작위 혼합. 개수 확정 없음",
+      "options": "1kg, 1개",
+      "evidence": "2026-09-13 원본 API 제휴 URL의 실제 도착 상품번호·itemId와 선택 옵션 확인. 저장된 원본 사진과 합성 장면의 외형·태그 좌표를 직접 대조. 상충하거나 확인되지 않은 상세 수치는 본문에서 제외하고 확인 필요 내용을 명시. 사용 후기·성능 보증 아님."
+    },
+    {
+      "id": "9665809659",
+      "name": "1+1 과일, 야채 세척 바구니 믹싱볼(APPLE)",
+      "image": "https://ads-partners.coupang.com/image1/2-4olZvl8Td40g-s2_dmLIjFy-swF1G3V2Xc8-1XRmrw1d9IfWQSmekznWH448m84OUsfwzkvr0b5PWflx0x3Re428G5-t7Ua5ZJ9Mnm70JbwOVgB_7HCi9squCTgid-tf_CE_50sG775oVUuAWEeMswxWKhvYsc58g1acdiccp2tqYnux_iDFgF1FlfldA1Z_JRzQVuDMN5Sj_7C2ksCTrl6g1faDRrSl4N5CMjU3VYVkOrrKfqssnqrpZe6lPccTihYm3rbkTdspFw01sV1rXmrGe62z_4O-ffoyhq98qSeYRbqiJdqhKObQ-YC82vzyMpjd4B6baa7aN6ehlRFORJlakGnC7wDbTPABz_eYzoOXPj9SRQ16PXv985RgXQBD6HaDYLNdh5zXMQzNrURBgABQPlUOi0Mvf7XizEn6uxdrBuIHF3i5WHGL6Dq-d8TOVRXv6nLBvAsVe_fe5SFn1DKOumxC0OShgVWd2O6QIHZvjzyfJAt6EqgGTFShCpnQRKOyuQHIx4i_qcg_u4i7JiRN7yd3eaIbO24Ruo46Gikw==",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9665809659&itemId=28897918666&vendorItemId=95830264019&traceid=V0-153-c513804ae540ec30&requestid=20260913215531929187648498&token=31850C%7CCMG&pt=0&slot=1",
+      "source": "https://www.coupang.com/vp/products/9665809659",
+      "checkedAt": "2026-09-13T14:52:04.063Z",
+      "verified": true,
+      "specification": "사과 모양 세척 바구니. 상세 재질·치수 수치 미확정으로 본문에 단정하지 않음",
+      "options": "레드+그린, 사과 1+1, 1개",
+      "evidence": "2026-09-13 원본 API 제휴 URL의 실제 도착 상품번호·itemId와 선택 옵션 확인. 저장된 원본 사진과 합성 장면의 외형·태그 좌표를 직접 대조. 상충하거나 확인되지 않은 상세 수치는 본문에서 제외하고 확인 필요 내용을 명시. 사용 후기·성능 보증 아님."
+    },
+    {
+      "id": "9507672335",
+      "name": "삼호유리 미니 소스볼 12P LG-220502, 1개, 유리",
+      "image": "https://ads-partners.coupang.com/image1/HV0Lon-KvD5VziFiHYCcMAczTDyshA0D1MoqL1tC9Sf73U0d1XwrcHih58ghjIUDe4N3Fx0r5FZ1NQk6_G4avtxkyrcCoDxKT6sjnLDjWlMRZjWGWlrTUPhXHU2cOAK-omcn-iTftaQ2hpzEMVFqhhCkiWW3IIihQb5MphH0fhNoM0XzmGTArATQOJlMSetW-28pJhipK9KlWP36L0dR0OQbk1I2lecqVi6srL4zNxTsngPyf95hNEUgdyOOGmpHqK9Ma5jPXhz38Ve-9TQsw8pl-jo9vUPo3RgaPwapW_eBFXlgZFnJoat6mcopVOMyl7Td2YFAaL1o7-oaof2ZUUPlPfOtJzbHdiBV7RtR5XJSW-ySaFagnsPBF0-odfo62YR858P6VvDcsXsv1HFNcewiaNdLLc8p7dL2Q3WZgacX-dQ6fGtpWNjrST2Xz6wfRckTvHW46fyKBaf-_FoQiuZBNv-JVWRUs2dTaah046t9x2NxvuYWfvlRfJ5q0RXUgOw-2AfAUY2qZIJyx1X7ALta2Wh-iTRu",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9507672335&itemId=28330523220&vendorItemId=95282913898&traceid=V0-153-153c0327ac95ac53&clickBeacon=6d6d7ae0-af72-11f1-ab9a-83f854f9f57a%7E3&requestid=20260913215542168122506902&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9507672335",
+      "checkedAt": "2026-09-13T14:52:04.063Z",
+      "verified": true,
+      "specification": "유리 소스볼. 판매처 표시상 오븐·전자레인지·식기세척기 사용 불가. 제목 12P와 구성품 항목 6개 상충하여 발송 수량 미확정",
+      "options": "유리, 1개 옵션. 세트 안의 실제 발송 개수는 판매자 확인 필요",
+      "evidence": "2026-09-13 원본 API 제휴 URL의 실제 도착 상품번호·itemId와 선택 옵션 확인. 저장된 원본 사진과 합성 장면의 외형·태그 좌표를 직접 대조. 상충하거나 확인되지 않은 상세 수치는 본문에서 제외하고 확인 필요 내용을 명시. 사용 후기·성능 보증 아님."
+    },
+    {
+      "id": "9474432502",
+      "name": "스탠다 화이트 플라스틱 트레이 쟁반 서빙 받침대, 5개, 화이트",
+      "image": "https://ads-partners.coupang.com/image1/2-xotle8yXum1QNu29Myt1PtEMwD7UGRpLOCRsylQszxS9-Q2TkOjt_zncXHrxbBqaVAFSFARrhGN2iSe8NWfINs1GVhzNCMx9uUPmO-LG55AP6pJCHLBakOq6Wv7-ZkTzzcVJY7exLs5Ou7UXvphk_JKEfpOKdCml4p5HBSANMjHQF3YZrsFyUiInMakd_H2-CDW8-EPJTd4P-Aepbd99oZxO3DPVROMgz9AXKIRKRz2ie4UFD0BAs2jqGF-kWHX82QG1PpbFB36utNaq0XdeKdwE1LDYdCoXGIf4jUx596AspwY622X7nZej66PmjcbxseEYCLNgkC99Xkazvt_eXOy9qqgNJuwTdc3Y3eU-or3LaGdFwWcwTdEAdBr72FCT7dkByxqxpaQ_3N-qqAHy4XjNWEh7ZHrHc75ONMXInP7Q5pOdbF2v1GrLkzVIIj_981WXHOiVwbr4ZbyPETCdHhW_apQvSUtgw8meCMI8E5DRMzmzLQ2a5L2Cx6oQrJalGPDPBJF370PJcdCqyN7zuz5ZaIqbM=",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9474432502&itemId=28202837741&vendorItemId=95157088916&traceid=V0-153-83f460433852bde6&clickBeacon=73928230-af72-11f1-98e8-2eddfb4b7248%7E3&requestid=20260913215552478097392744&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9474432502",
+      "checkedAt": "2026-09-13T12:55:44.729Z",
+      "verified": false,
+      "specification": "상세 대조 필요",
+      "options": "선택 옵션 대조 필요",
+      "evidence": "실제 API 조회 및 원본 사진 확보. 공개 전 검토 필요"
+    },
+    {
+      "id": "8604787900",
+      "name": "골든레이 핸들플레이트 BPA FREE 손잡이 앞접시 5종 1세트, 5개, 혼합색상 원형",
+      "image": "https://ads-partners.coupang.com/image1/08gCFhDpUDoUZM6O04nYgknzZHgdf7fGhkzJ-63bGPMpXWmUi1SaPQJcQLwbKOcLsoN06puT8MmewzxDF9_g8tcrndZK5mFBLAR8HOlfsU8LlbXKDsYT8ZV48o0VtVH8fn9FA4QIEUlp1FnfiE5s1OH1-eBbG232-XPYO3LlOVIHd7UG0AjCg4DAlgTU2lK2YhyD8TvngQNSraLRbwp5fSzCU0JpZCtH__AEkHvj8fib311FCLD2UJDjoE7qxY1IM8HE2CjqYkO-bXyBnm5H-Qtv8ZeGXYCfoXSaogb8ORKESThlMpYRUHk1zNrwg8lQPcsYavhw_2nv7QBezb4n2sT2DJwi9hwfK6WheHYmhtmGIrjOxd_l5j0WPCdgaAGUiS5MMZ5BCe-yQGTzv7BkzKRjNcJq6MIvtUaCG9PTDSx6j3XE74sc64BJo8l8H8t7Wlso-fH3w8FABWyen_ayKz-XlhDMB3viiv8747pRsKhj6SccrVzgCNfbShtucTsZoDS7WJQruRxYLsx30ERTgNDM4nGHxvd6lQ==",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8604787900&itemId=24953046051&vendorItemId=91976185518&traceid=V0-153-479c7975632c68d7&clickBeacon=7fa21fe0-af72-11f1-a9ee-4c5b6c326279%7E3&requestid=20260913215612693136679450&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/8604787900",
+      "checkedAt": "2026-09-13T12:56:04.949Z",
+      "verified": false,
+      "specification": "상세 대조 필요",
+      "options": "선택 옵션 대조 필요",
+      "evidence": "실제 API 조회 및 원본 사진 확보. 공개 전 검토 필요"
+    },
+    {
+      "id": "2069545633",
+      "name": "메탈 명함꽂이 가격표 메모 네임홀더, 1개",
+      "image": "https://ads-partners.coupang.com/image1/zAJwFFmaoi4fE4DbzNgAg1MHa1nq-3ujWctq6Im_OdntJxpIlEmQr1SOQmvblIUPMWCyIUMVssFSFLngo8Dv017VGztHXkI4QnOoiClZfNl1CfWyJ584LAX4UMkVOPf8g-Jwj8X_cKd45autyPdXlTsb17dwZxX4VAg4fRKSvIrc7rFJEoM22yiknB6TzS846pGdxrpEreNrq1gOo49JirBGwugpRWnGieOad2Gzo1Uj7MJ6VC46NrOsRJX1myDn1wROnrxiAedEJ75qm5jUydiecLOYsDzMfW-wYtEAA0WiUFZjuq0lu3roM2k5dM2YVXCEM66GqAA0JAhgT3NjGQHqgpGzWcqJMkGt-b5iJVtr4Fi7a0qVueVml3M1_Dqh1kjKWrCg0kQMivF2eYYURiwprkXpsgoGnJms0jjGTtjaBdzafBgC-o9821_YyUsfHcIthW1omKL1hp7ECbW7WEGhUzsdkYgY1qGwaE75J-cgaHg-KbK8TGK0jTjZnxQbdbuDZAeIiEgXtbJXuDgarBa6z_nDoPQ=",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=2069545633&itemId=3516406907&vendorItemId=71502529221&traceid=V0-153-44ff1ddd80b19234&clickBeacon=8643d140-af72-11f1-b7b3-034b3c3fa416%7E3&requestid=20260913215623785192613244&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/2069545633",
+      "checkedAt": "2026-09-13T12:56:15.947Z",
+      "verified": false,
+      "specification": "상세 대조 필요",
+      "options": "선택 옵션 대조 필요",
+      "evidence": "실제 API 조회 및 원본 사진 확보. 공개 전 검토 필요"
+    },
+    {
+      "id": "6082424769",
+      "name": "[로켓프레시] 하이포크 한돈 삼겹살 구이용 (냉장), 500g, 1개",
+      "image": "https://ads-partners.coupang.com/image1/pcGd3wKvclZwm6jOpXs2aflUzSSBsdIV3zBptECUWBhoj9xB4NkzBWj7yFE5BaagJxy-F4g31sOt5DzPfLAXZpChOODkvKN0qUONdRifKOn3Tji0292ZWA0vYhXhPhRYrd4-iz12O6ejFdZKPits5iwe3ces9NCph1Lb7EZccniUhBFVFYb7Vs8-SkDzVx9M2YQHI80kSbH10OQRuCIwlPvy_aOW0I2vWV4RYKBALEkC3s214sgtDv6OF2XnLlfOyCVfu4ZLi0WKdc4Byx9hiEDeRkVduDTnqsklDQHI3hf2SZrShyNjPgUcXDD3luA5_-scxAxr-ITJDcS6N3D1ySWWSCmEq0dqrO2oUDH73ThcJu5mdruJlh7oeHgtIAdTn_pMfw6e6G6WyN1BWeL9Bz8D8qVKB5Ex6kSRyqhE7yrwjSm74rmWsCGu2ZF1DugSucFy6kWT44Tdu9ahijhxPP1EfHlboNIY4P9Y-qPpZvk2z--mucZc8kR4_okZgs2XeSyqlCYtIJY=",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6082424769&itemId=19565515998&vendorItemId=86673395822&traceid=V0-153-ae8ec7c5bee029cd&clickBeacon=429acd90-af72-11f1-a72d-f36051cd7037%7E3&requestid=20260913215430303078181707&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/6082424769",
+      "checkedAt": "2026-09-13T12:54:22.376Z",
+      "verified": false,
+      "specification": "상세 대조 필요",
+      "options": "선택 옵션 대조 필요",
+      "evidence": "실제 API 조회 및 원본 사진 확보. 공개 전 검토 필요"
+    },
+    {
+      "id": "9190981639",
+      "name": "[인덕션 OK] 디앤빌 가정용 고기 불판 국내생산 초대형 그리들 팬+보관가방 38CM, 1개, 38cm",
+      "image": "https://ads-partners.coupang.com/image1/7oFkbiFGo3NAxfSw7jF6c29x5oW8PSBk6k8TqaytsI-oOX7J-m_vnUUGBTMP4NYaBCHnlPwToaWi4zED03OJ-44IhvDe6xRZ9sAwQLOaRXqfI_ouPBejg07qDCpxzsSatDjQkc0EkvAe7IPWF2PAZm8nEvi232kjGmNMxyxcD6YKDXlrL4cRUoycM6PyThIjnGTJk07JapceSuvhA5TqmctgHbBLz4e0BtxVXQbryVo9PlJrnXHziSIYotI0aT95qAcSr3x9_b6nEGWxbPGcjjxM3n9I5vFXp5SW0RqSxXtWCUDvdXd61wrpGkaDFgBAb1GcWxmY0sZijIbwuieifO7Xl1qLwxKlfPWzI0nNmeI_gPetkA99kGykVZsGkyF71smMu-fYlLM2tDmrwi9HaqLULRmyXjUt0oaDpj1xdrCojU2ryPE3g8vRay3H5zvVihbq3RJFr4TlcAhzs3qVbweqPA0r2fJIr3L7HKzBSGxkiX9kEF90L8OePXd1J0SxNt7FB3b08gydbHuxSEyDOmQRWRR_3V_7",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9190981639&itemId=27121701132&vendorItemId=94089888107&traceid=V0-153-d8f87c818cb38cc2&clickBeacon=48aa7820-af72-11f1-9e78-819436f8212e%7E3&requestid=20260913215440489231803477&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9190981639",
+      "checkedAt": "2026-09-13T12:54:32.406Z",
+      "verified": false,
+      "specification": "상세 대조 필요",
+      "options": "선택 옵션 대조 필요",
+      "evidence": "실제 API 조회 및 원본 사진 확보. 공개 전 검토 필요"
+    },
+    {
+      "id": "9376289029",
+      "name": "씨엠와이케이 국내산 스텐 304 원형 멀티 업소용 나눔 소분 반찬용기 3칸 2호 600ml, 1개, 600ml",
+      "image": "https://ads-partners.coupang.com/image1/LZz2y9pR9atr6Eo1LcKis3H58iWF1UDPMY-q3M5bZX_Rta3yoHouC40qoPVDQy2vqLDlHuzre3ZqD6UPt4qBFRZwh0lohkpBdPDfSlVq8WMiMj-UDfJYiH-jKnnBfERydPVsQwfa9kPQal7wYxWUeVKRXPDQC9z7aKGDhb8MAacyEKjqlsDGy3QzAwRHnK32QFk6Tkq3ndgyY5z33-oJYPrr-mugxSD2jPv0ITU8XQO7ljNOhnD60KvPueRR7K_wqJlXNhI3QSzOqZbR7El6gsB6qW-0mzNmyuKzm45MJFmDqEbp5nBgxzlWKULE0CazKMqGSaA58NsnyhucramxkmmSp3CKPrDTKRyHP5eE_wfYkY6VxyunZQ1LRjNDoKB_7K1oArYKVSOlol7Lm0RcnIXPdCxT5YI5zV5dZb2Jlm0YP8Xl0d4Hh-aZs0qPKWaDttexOdAE6VJQuG6n_k0YlqRsaRX76URTn8r6MVo8FMwnSuVZu6-PTUG6Ph1WQLsh_ziXxsAPbZo=",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9376289029&itemId=27832777010&vendorItemId=94792326701&traceid=V0-153-8737c0622f69a25a&clickBeacon=545aded0-af72-11f1-bbec-8197eb0f5dcd%7E3&requestid=20260913215500099262293659&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9376289029",
+      "checkedAt": "2026-09-13T12:54:52.236Z",
+      "verified": false,
+      "specification": "상세 대조 필요",
+      "options": "선택 옵션 대조 필요",
+      "evidence": "실제 API 조회 및 원본 사진 확보. 공개 전 검토 필요"
+    },
+    {
+      "id": "8880587680",
+      "name": "어반콘크리트 토치카 에어텐트, 토치카 에어텐트 4인",
+      "image": "https://ads-partners.coupang.com/image1/C96mFyGydSWKDKs8C0klJI9OOUUUbQEEFmE6g2N7BMpu99EGfknnK7Gn2qNTiFd1KLB8pmNIu0FLuOAZqxLnCetbS2qZDn-WtIQfLb70PKd7hKb9hRRmznrazBQ24TA3bZuC_ObQmeZVUT9IoxFUIT_w_L4Fgx3jtvmP-wg_J9Y_Hs62fBCqNdWKgRgm37BLGLODDqfYmvcYCR9mAvo2j7Dn5GNN9kNCIHr6JNysaMC6SeeylJRApFsgJSIGhut8mn7LsJI6tqOO9K27GVHGeASNpoHzuv6_FmzUQsfOU4cnbkB9r_a36TO4DGFeuWuJzsotpFNsLu7d2KJjg2KxRgDkX3tL-f1uvZatrqHHt93sS6nad4Zthvl0eFtGBWFtBvdGReTs1Tn6S8d2GDp_XyW_yb9lckfFqOGaTe16VHTo-9pF-9oxcDr5p4E7Tw1krYNrZKwTCdVVVneEfHAoW2ZMgI8fXQObCtIDhQhxo6urb32NwVeC8x5PT1fhPmdgrofdPu1QZKBPONh3YY7SFC7opAahUTzK",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8880587680&itemId=25917510388&vendorItemId=92941182440&traceid=V0-153-a5b2f28bd7779993&clickBeacon=ab91b210-af76-11f1-9c48-6fd717044fa1%7E3&requestid=20260913222604385258753691&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/8880587680",
+      "checkedAt": "2026-09-13T14:52:04.063Z",
+      "verified": true,
+      "specification": "검은 에어 프레임 텐트. 상세 치수·내후 성능을 본문에서 추정하지 않음",
+      "options": "토치카 에어텐트 4인, 블랙계열",
+      "evidence": "2026-09-13 원본 API 제휴 URL의 실제 도착 상품번호·itemId와 선택 옵션 확인. 저장된 원본 사진과 합성 장면의 외형·태그 좌표를 직접 대조. 상충하거나 확인되지 않은 상세 수치는 본문에서 제외하고 확인 필요 내용을 명시. 사용 후기·성능 보증 아님."
+    },
+    {
+      "id": "8682120809",
+      "name": "캠프어스 시원하고 방수되는 그늘막 타프 3*3",
+      "image": "https://ads-partners.coupang.com/image1/OFxIzSxwsQ-xWYxxOMYgKztt7uZTLmOjxk4Y6t12o56FZ1axWiX55BLF13w2ouTvigF2f1ihHHfI4M3lkUXSMOYauYeLLfd7GaS4bQvxrCqii3ktLb6XL-qIL2sUqpInku0Eg-WAsZbiPngvCe2dgjtoLSH2Z2uoKDJ1R98k92cdwmvfy3akqRnjeb5TeB6fjgdKn4pmeCUMc2NnMuNLwCh5qQ2PD_4xCMQAyqfroT2yVOzAEXvOGEUOfBpHVqn-AY8qArkt2RXRYA1schgUW_EkO8-k85KlnWMC5TFlKq7ynJO0v6YOMQJ2DykmxOkozQevQ7LkBzR_TCX23yixHJ2yk7x5k7De-vrm3CmZ76YEROC00FGmRqMqRmBvVYBocdClIzvRP8yJCljNIUKoI4MK82sRejn-FgJaJKGpVrm10jTpMrUfpSgpDNroA_iMhVZjSvwiwvl697CNB7qywZ3PS-rH-N5wAQOERxJT8WKPHA48fhJGd-cubwCzg6G4uKwmzrtOeuBCKV5YGY7KH8IV5V7F30htwpvV_vVTszkNvB8TEvSbcUcMPSGcQvTJ-AWNwF3iAlU6",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8682120809&itemId=25203570201&vendorItemId=92337699735&traceid=V0-153-f1d01b1c45e94978&clickBeacon=ff2eaf00-af75-11f1-9649-70278c324a08%7E3&requestid=20260913222115168107602295&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/8682120809",
+      "checkedAt": "2026-09-13T14:52:04.063Z",
+      "verified": true,
+      "specification": "베이지 겉면·검은 안쪽 사각 타프. 상세 페이지의 길이·중량 상충으로 수치 인용 제외",
+      "options": "베이지계열, 사각·렉타. 폴 2개·로프 2개·팩 8개·버클 8개·파우치 안내",
+      "evidence": "2026-09-13 원본 API 제휴 URL의 실제 도착 상품번호·itemId와 선택 옵션 확인. 저장된 원본 사진과 합성 장면의 외형·태그 좌표를 직접 대조. 상충하거나 확인되지 않은 상세 수치는 본문에서 제외하고 확인 필요 내용을 명시. 사용 후기·성능 보증 아님."
+    },
+    {
+      "id": "9072324584",
+      "name": "COUCAMP 접이식 캠핑의자 편안한 등받이 조절 캠핑 의자 튼튼한 눕는 의자, 2개, 브라운색",
+      "image": "https://ads-partners.coupang.com/image1/qeKJuAlNSQQAKeK-qag0J4WsgmPCNkVOQ4f9fuQR2lWXvbpg058-cfKhuhBlpqWr0yP0_5tAsCgUJYdNnMGniRM8wroS-TXxj9B5FPfQhC3e0WrfCaj6xF4TabUChmWLlRs4DaaUPAqixaK0YuQ_8fnoGsPw-wQVxwipkdLTWP0n_d9SWSuqvGzztqOOQO8XHG9gIj-afyHAbFwEX9EvtwmLQJ4SQWkv_0zpe1aBZ9hKmr0nkAthB2KhlnEDolopByiLSPDpDM-pTEd5CbW8O1zUAyQVAurnNClxhFbLv5acSVCXatrp_CiTly5c141ztMUp_WrjxRSgop30C1sEoI_iGQ2TqFNxW8lRL38ejnXg5BEeeihUn3QFPfte0BnMOjNIqDUHEV2YKitjMl_r5cRei9mC0tDYID3F-_2hsRGG5NKphTtDyCP00DPW80CZGWigF0Y9BFp09zAIJMT3x8eik22iZiATSyYASEEy6Mx__zwYFMCy8akNXeVi7UhmedRjcgKuJxJwUchfmrZ_5FM=",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9072324584&itemId=26644766693&vendorItemId=93617394947&traceid=V0-153-6c02657ca809a073&clickBeacon=05c1ba60-af76-11f1-bf02-0a144ce69499%7E3&requestid=20260913222126212324766484&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9072324584",
+      "checkedAt": "2026-09-13T14:52:04.063Z",
+      "verified": true,
+      "specification": "발받침·머리받침·접이식 프레임. 사용 하중·치수는 제품 안내 확인",
+      "options": "브라운색, 2개",
+      "evidence": "2026-09-13 원본 API 제휴 URL의 실제 도착 상품번호·itemId와 선택 옵션 확인. 저장된 원본 사진과 합성 장면의 외형·태그 좌표를 직접 대조. 상충하거나 확인되지 않은 상세 수치는 본문에서 제외하고 확인 필요 내용을 명시. 사용 후기·성능 보증 아님."
+    },
+    {
+      "id": "9160949685",
+      "name": "쁘띠끄 감성 캠핑 담요 이불 블랭킷 8종",
+      "image": "https://ads-partners.coupang.com/image1/wlhUutxWQGxOvonYwhCtka3-tRNDHKfjXRGbdnoQTPOzjHnLtzLhv-X9glnqitCFB9z6xQf5zBWMWFAF8Drc7BR2TP3gAiFJCb9VfhUsT6DpNNvsJI63QOo9v2mR2bzVedr8V9WSinOvRhyom9QkAUtb4xb_KClTiiGOVubWpjFFLaLgznxgQhPC--N1HDzeEsoqbObKhdEs_s1P4mr_n9ek_ry0QAlwFJxDkOO4KZTuVCyFBQ3oR3FPtezuu19iXoM-w8B4YkfVyeQwPyTaVELe4DNQ-h0KRJIJEseuS5aHz9R5rY5JluY1ADTk1ulkYVOqkLrSZ2iNyxnG8YSvmREesnbAYhfYJi4oBI5l5u1crweQvf0FIxzpKwa-lokEjFIF0QLTaQbffmUuIXJrmZKrtfYvd-gORJgDb1rw8oSHeqWNd1k99iT5YXX2Y_7tNKaMRD0iE5rhGNPlnrZehRDSV1qycZoeqUyPG4qvTtW7P2denmPnbBESzAD9snTvtKmvyIImfv3hjCbLvpQ6_9Gr",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9160949685&itemId=26983773264&vendorItemId=94330545496&traceid=V0-153-4d5473bab5069dcb&clickBeacon=12a59800-af76-11f1-92b7-9a29ef698bb4%7E3&requestid=20260913222147837160773324&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9160949685",
+      "checkedAt": "2026-09-13T13:21:40.935Z",
+      "verified": false,
+      "specification": "상세 규격 대조 전",
+      "options": "선택 옵션 대조 전",
+      "evidence": "쿠팡 API 응답과 원본 사진 확인. 상세 선택 옵션 및 제휴링크 도착 페이지 대조는 미완료. 조회 시각 2026-09-13T13:21:40.935Z"
+    },
+    {
+      "id": "9585035962",
+      "name": "솔리드 후레쉬 랜턴 손전등 4000루멘 충전식 LED 라이트 작업등 S-WL75, 1개",
+      "image": "https://ads-partners.coupang.com/image1/cKbBKGOtYdpmNcuDcGrpLtetotv-YD6WG21DxB0H3X39lAafDPSxpnjywlGVycpfQ7XnCPuUjqvoFrGV1QCHLNeYloyadwwwQgU9c8BdxSfNPYYjjvxY-RL-b5hWKouZwQQRtsNPCNoQtHY5o4sA1MMie-SPmQg0bKt-o__tZKcmoA8FipaANQA-24I6VcNuwub4Xn1PteoDF1v-qEnbisgYA_FA3JnlxcR1413JlMWX5GZrUWwNY9JwxwYzoxZudnPFbk5vJsvDzsRaQ54l1taipdX3i5uSs-4QlmH4zSByXuT9W7fqWylElu_d-VurKhCbUHka_xx-2Acg2dg6o9wM-biScu_JY1zpfVCmf399SNWpGUvHNwywvPRA0NRxGUZd0emV05zBFhMT5MsfQ5bA5Ic9TchCa8PGw2mRBUcFXOLfVWPq7vmsx9ZPeo3sTbgMAt8uHFBrBunQi_DNXUf2JC-5CeF13tM3XeJGj6Dw7yGa0nrdVpivun8OviD8HQGfO2-Gzp3M4bkls0Y4rrm1aT9Hc7TK",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9585035962&itemId=28612168901&vendorItemId=95586645992&traceid=V0-153-6ea597301817c54a&clickBeacon=19a1c570-af76-11f1-b6f7-885a19da73aa%7E3&requestid=20260913222159545302169440&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9585035962",
+      "checkedAt": "2026-09-13T13:21:52.076Z",
+      "verified": false,
+      "specification": "상세 규격 대조 전",
+      "options": "선택 옵션 대조 전",
+      "evidence": "쿠팡 API 응답과 원본 사진 확인. 상세 선택 옵션 및 제휴링크 도착 페이지 대조는 미완료. 조회 시각 2026-09-13T13:21:52.076Z"
+    },
+    {
+      "id": "9520614727",
+      "name": "하토르 듀얼리드 텀블러 스테인리스 진공 보온보냉, 1개, 500ml, 웜 그레이",
+      "image": "https://ads-partners.coupang.com/image1/qb6WleqdUTKWU8RoqRmWj_LjTL4TkSaFyfbXlrdcVXw_5OzljvEGPWoVQk7UoNwo443K1lhbxcL5OJwPl8r5yR7F8KeJIA74z-mgm0_-EVKhGMfof6tu2IWa-NhqacIslaWlKxk8u3lrIGq20cpdrHzWrwVhRJS_K_RJb4HvCmAdgDMfnMKyvOnQO_BO5khoULAk0ezogIFJheXb4gprcPqSmflHYrkxjSaCJe-dYo-OSmQLGNsZboUzPCYW9Q7ItbEzEFn2tCL1rRz7qEeqe4dP5s4CMhu1P01Whgsjcm8grqoVGS7doa86iJmLWp9ccI9Y4oKov3nNyAc6onZdcM_KfeaxLNotjKYkn66KyhYHITufjlbNGFnIOonH1xBrKwvfotciaxbZLiso7Kiv0HisrWpjDxaVraxZeNp3ES41wECoQ1TTyQPtYyjCSZqlWoqm5urr43nwIFNKManV8HT5MTv6MWRAPZyK61hOUb4_DdIt7wtN7z5ef8bYfSbnh5WGNLOfgLMBxjsku09XY02f-hrTySA=",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9520614727&itemId=28380998870&vendorItemId=95332682570&traceid=V0-153-a9dc91e614754a8d&clickBeacon=1fb2cf90-af76-11f1-809a-9f254e5ef8f8%7E3&requestid=20260913222209729128908995&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9520614727",
+      "checkedAt": "2026-09-13T13:22:02.008Z",
+      "verified": false,
+      "specification": "상세 규격 대조 전",
+      "options": "선택 옵션 대조 전",
+      "evidence": "쿠팡 API 응답과 원본 사진 확인. 상세 선택 옵션 및 제휴링크 도착 페이지 대조는 미완료. 조회 시각 2026-09-13T13:22:02.008Z"
+    },
+    {
+      "id": "9305516249",
+      "name": "장대 고리던지기 고리 20개 세트, 1세트, 블루",
+      "image": "https://ads-partners.coupang.com/image1/W_JUlT8aiqxI9hc8Wzgu32pZc3P6uob0F1EwEIY66MUr-XCdKB5eu2fpqObl1s_A8ON7mVBGVMHDfoSG9UJDOgkGaz-tNaHcpW4u-5gYwSsdNu6yEgbWOP_DjthPU1WEiLNse1dk1qM8tTof9rzeriL1wyOkq72u4Ugg6awkbWsO2NsaJfhvQFYYtnYxCqvqmWm-UMxzKVBvRHRbPN6-whgq3jA1jp469hmLkYgDC7iPujDdtcYg0rxnPsa1ToHpfmz_TaB-IiNQTgxZX9yVRZPG7vE2FI7BljkqgJ5QC6aQnrEAtGAeM9y43xBjoZUnPvtLnw3WA_IXEjK7QkZ2UI-1RGNC_jLSHHJ-XBDP8dZKP54kpoWeF51j7Euu3CJt0m6FbgRqZx8LxXfqDVbxQWttCt1MbIkqQynnnbjZzr4nG4BJKzw0_h9sncHZeRKfR76evNZ1S266I581tfQOCYN25DCSIsMlmSQ7YDLVQdzQpNAdjBO-l0zijUKJXA_Udl2Qfanh6R9J2QqnTSUYi7ks2QOOxTEc",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9305516249&itemId=27569110845&vendorItemId=94533017260&traceid=V0-153-ede900e52ed34249&clickBeacon=26009490-af76-11f1-970e-a7a0ba2c148c%7E3&requestid=20260913222220291033690044&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9305516249",
+      "checkedAt": "2026-09-13T13:22:12.991Z",
+      "verified": false,
+      "specification": "상세 규격 대조 전",
+      "options": "선택 옵션 대조 전",
+      "evidence": "쿠팡 API 응답과 원본 사진 확인. 상세 선택 옵션 및 제휴링크 도착 페이지 대조는 미완료. 조회 시각 2026-09-13T13:22:12.991Z"
+    },
+    {
+      "id": "9643845674",
+      "name": "에이오빅 소프트야구공 캐치볼 연습공 스펀지 안전야구공, 6개, 화이트",
+      "image": "https://ads-partners.coupang.com/image1/G5kn44R54wnaJJSZG6jP0Lrp_8fV6hiqdmLKHz1v6rOY58F09629hNRJQtmHhHwlSddVa3CM0O2-7jgaHphal5O-R-FiTLw1cUZwhkdDpJTpaXC5pVuGl_xyJiR6dxNjhusqkQbUy5TzZuRzFaSw0rwFxlOuugpFYqEG-QVjmbgVIG8nC12tR1gwcttErvh_IzKW8odZrVY9GafnTuUZ4Xe_gtrZsDjQMek0hURLwrLwjRucwzG47MdGDKRxLPmVuFXi7e2fPdvd5IleAbcuUve002zKEYxfkJ7Esbrw7lfU6xDAHqv33jvNM0eq315nnNzoeD_sh3Bjh9LhU6Gpu4rkkO05Kef8gYRgGkJFOr3hQ1NymD_taAuowqnPTtBrHD-18YSHH0s7H8168jmM9rCTrpSZ17UmQHOYOdYg6gljwSSPjAAO0jBCygm2SR73KpWvMmUv_co-iCXaZS3rQpSXxszMRmMHokExtQguKp74yAN3tgzQAA7hLTYpFSUvTz0n5IYcfH0JkXvG7r5aJfC11YrtjgY=",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9643845674&itemId=28818316563&vendorItemId=95753144144&traceid=V0-153-241ff2db7cba8444&clickBeacon=2c19dc10-af76-11f1-a0a0-d6112d304362%7E3&requestid=20260913222230535187831315&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9643845674",
+      "checkedAt": "2026-09-13T13:22:22.464Z",
+      "verified": false,
+      "specification": "상세 규격 대조 전",
+      "options": "선택 옵션 대조 전",
+      "evidence": "쿠팡 API 응답과 원본 사진 확인. 상세 선택 옵션 및 제휴링크 도착 페이지 대조는 미완료. 조회 시각 2026-09-13T13:22:22.464Z"
+    },
+    {
+      "id": "8413271811",
+      "name": "씨에스소울 스포츠 운동 연습용 접시콘 50p + 거치대 + 가방 세트, 혼합색상, 1세트",
+      "image": "https://ads-partners.coupang.com/image1/28QZiB4eXgJmERXh24DnzTPJx1TbeZyM1S-JEnQuP5OObnTfwzTluHCm5xo34PHbjYBw5L8TNiF8n-_BGAn43wKspOUrIFUW6PoqR_idnniNstrIgqe-jZsf9WwyxHAIUDP8DwFOB_meE5phDrQa9Gbw7rQawDv5wRywtNMPXC-PQGMD0IauOBx5ncMdYD24SxuToylyRyz25Ir4dCrpDcpt4Zs7K9A0erObGxaVOHLwy6FmSANbXUQNn7RMP8X2IVUGOxrOZUju4iqLeEFWwIPnoodHeX2Y3d8RmGODBxOqoeYoF4ZowK7Ikn7AJ33azgTI9mG9KwlEftw6mPS_AaG_cRneGJxh-UsD6aq0JysoRMdO6wLgasAUf_trDFqiSFd46e3-hZPCxbm44TlrZtyL4LY38n3SsTGgbTS-zLWBki9FFVBydj8jZYnjPrrtfcq63TmplunevjveHqUn24v1uqBzSYF8OC5EtT_LnEgTdN8qU1FmZ36vSVqhLqjAOJD_nwXbOPA=",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8413271811&itemId=24327553844&vendorItemId=91343213008&traceid=V0-153-84f3bd49903e288b&clickBeacon=7db435c0-af76-11f1-ae33-ea12ef1737d8%7E3&requestid=20260913222447440157583357&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/8413271811",
+      "checkedAt": "2026-09-13T13:24:40.174Z",
+      "verified": false,
+      "specification": "상세 규격 대조 전",
+      "options": "선택 옵션 대조 전",
+      "evidence": "쿠팡 API 응답과 원본 사진 확인. 상세 선택 옵션 및 제휴링크 도착 페이지 대조는 미완료. 조회 시각 2026-09-13T13:24:40.174Z"
     }
   ],
   "articles": [
@@ -500,6 +752,1204 @@
           }
         }
       ]
+    },
+    {
+      "slug": "camp-noodle-lunch",
+      "title": "캠핑 국수 점심 준비법: 육수 분말·면 건지개·젓가락 챙기기",
+      "description": "국수와 육수 재료를 구분하고 현장의 취사·설거지 시설에 맞춰 점심을 준비하는 방법. 면 건지개 크기, 식기 수량, 소분과 정리 순서를 살펴보세요.",
+      "category": "캠핑 먹거리",
+      "productIds": [
+        "6168487275",
+        "5375328805",
+        "1570991286"
+      ],
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "취사 환경을 확인할 캠핑장 찾아보기"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "국수를 정했다면 끓일 곳과 물을 버릴 곳부터 확인하기",
+          "text": "캠핑 점심을 국수 한 그릇으로 정했다면 출발 전에 캠핑장의 취사 가능 구역과 개수대 위치를 확인해 보세요. 면을 삶는 냄비만 챙기는 것으로 준비가 끝나지는 않습니다. 면을 건질 도구, 먹을 그릇, 사용한 도구를 정리할 자리도 필요합니다. 물 사용이나 설거지가 어려운 일정이라면 현장에서 국수를 삶는 메뉴 대신 이미 준비한 다른 식사를 선택하는 편이 계획을 단순하게 만듭니다.\n사진 속 국수와 고명은 상차림 예시입니다. 아래 연결 상품은 육수용 분말, 면 건지개, 젓가락이며 면·그릇·냄비가 모두 포함된 밀키트가 아닙니다.",
+          "productIds": []
+        },
+        {
+          "heading": "육수용 분말과 면은 장보기 목록에서 따로 적기",
+          "text": "신선약초 잔치국수 분말, 150g, 1개는 가루 형태 조미료 150g 1개 옵션입니다. 국수라는 이름이 붙어 있지만 면이 들어 있는 완성 식사 세트로 생각하면 안 됩니다. 가져갈 면과 곁들임은 별도로 정하고, 필요한 재료를 한 번 더 목록과 대조하세요.\n분말을 사용할 때는 제품에 표시된 배합과 조리 안내를 기준으로 준비합니다. 임의의 숟가락 수나 물의 양을 이 글에서 정하지 않습니다. 소분한다면 제품 이름과 사용 안내를 함께 보관하고, 젖은 도구를 분말 용기에 넣지 않도록 사용할 자리를 나눠 둡니다. 이미 준비한 육수 재료가 있다면 새 분말을 추가하지 않고 그것을 활용할 수 있습니다.",
+          "productIds": [
+            "6168487275"
+          ],
+          "image": {
+            "url": "/prep-images/camp-noodle-lunch-preparation-v2.webp",
+            "alt": "캠핑 국수 점심 준비법: 육수 분말·면 건지개·젓가락 챙기기 — 출발 전 준비",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean lifestyle editorial, one scene not collage. Every supplied reference is an actual product to faithfully recreate, NOT loose inspiration. Image1: actual clear cylindrical seasoning jar, squat black flip cap, tan powder, tan-gold label reading '잔치국수 분말'; this is SOUP POWDER ONLY, not a noodle meal kit. Do not invent numbers, fine print, nutritional or taste claims. Image2: actual circular concentric-wire noodle skimmer with two wire shaft strands, tubular silver grip and hanging loop; preserve its proportions. Image3: ONE PAIR of simple straight long black hexagonal chopsticks; not folding, no joints; show a pair from the bulk bundle, not a full ten-pair requirement. Keep all three separately visible. No other branded or tagged products. Scene: Before departure on a kitchen tabletop: the actual seasoning jar upright, round wire skimmer laid flat diagonally, black chopsticks alongside. An unbranded noodle portion in a plain open bowl may appear as an untagged household ingredient, not included with the jar. All items must be fully visible for separate website hotspots. Respect material, handles, colors, proportions and included components. No fabricated functions. Natural warm light, realistic shadows and textures. No headline. Small clear 'AI 연출 이미지' disclosure. No baked + buttons, arrows, price tags, reviews or promotional badges. No extra branded items.",
+            "productMatchReviewed": true,
+            "referenceProducts": [
+              {
+                "productId": "6168487275",
+                "imageUrl": "https://ads-partners.coupang.com/image1/Ig5HsnrPMGUKcJLTIq3H4Te9WlP1SS6rFRLPMn3DB3p-DE8phVpaNjg3NaXzoess4h2fYtWmF5h_YfXts-WU5Z4PFsSY5_liocIP18zrCv6pF9B3loUOXzVjVvn6xgaMftX16o9YdJYKB9NwOSQNfzx9dZRWYrvxVjONoLkujmW3SKOEjEZCQaoOmpVFKAZsZZLUFU_OPZLbLvA7G1uvScjINvTcVFWuG6HoFh_u0ffVu3ytmbVMGL3zAOG4xmuRYO5DZe7Ex33J-Je6I4MonABaRrKoogjPTSXDW1VAP4XHU6otRm1UqaAmtmf59BchtGRpBws25c8zRzp3JImMvm3MYgXzEQsw8VUjbU4_UpHiKQFW6tZBt3dGthZ1TTc0nV2nAhibskLxZeevbNm1gEZ9Z5ULa6-Qst3P2omUPywUkHhS50c3ltUnlMLGXXatcDYM1AvUHOgCblHXYfQvnSTJd3MebhveWMR98aBbmy-Wnnak_vUxRWpZR9dmdQtMsQrqE_LGYDz7tQ=="
+              },
+              {
+                "productId": "5375328805",
+                "imageUrl": "https://ads-partners.coupang.com/image1/kMBm5mskRR6im43jkDcHYxSSOVDbJwmvR4PqrjJSLCX0c2CstJI2iWoORdyFFJoueFJGfPSZjb63uJswiDp59lxGVn0aMtRq4NRFcUZ5Bm1xd5T3vyB2Z0MHXVFxsmQzK40GwR3vUdLQcAuXY6D_JCOFmbAGIvyTrKyYudfv8DrG0l6AyzNGQ75AeGS9FEg9JjqvjEKs7wPbvOo9YOICuGEQJXEGRduxdwBlSkrBSR4n3fd8q86s-nQpfp9d_W1QudYdA633Y5KD0oEd9a0J-Mwdd0JRAfgv7ZiZUaSDdC-4x-wKXc0wj6E-ti9BwBbq-HEThiybm44ZxcwArzgThvtEm2cwmmDrHL8J1ZU6dbejpWBrEqv0AMWTIG4hmJsz1So_3ychpwlism7zLWFralN3IoHZV6oMQuKx1RqkVUo3VhQgaVCcxQGdrAwtBmJ2H7MqQlDctM341ybveo4m3GucykQCbbMXkWlHkzB9oAGMdRxxWpmVvGAZbteEcV3J"
+              },
+              {
+                "productId": "1570991286",
+                "imageUrl": "https://ads-partners.coupang.com/image1/4N5R6TTodYVbzruo4MLp-VBVSkNCKw9Nbc4eq1o0q7UzaOAYKKBo2-qvP9iErHfyGEiTtQD21_8BvNjTFz07pSgUgUx-5jZ2nEtMVNoUlk5CqFRgFLVCeJQ6LWiuEmScSqkI3EpoWROP1Nr1rEZOcGAJEFIYXd9bzlVXXmtoQj-CWpA20UbX3RlvbCLWD_A_UTeoO9KlR5dSM1p7nU3FfmKAhL4tVo0mVk4Wqj855BU1QphwWYTwqUbac8HkndnJFTod3b2nrOtsGElnGAOP6_pLd8vz4E25vz4_2FAv9f__sluuiJZmM7d_EKB3SF0Gp9hRQxtGXulgdljXA4eiAx3hfaTD5McgA_9xkfIK6v6fFGG2Drh_NPOAh5mzq87OCfVUhHWSHOklcyo9ysdrZ0pc6xMS1ZJGIiXMlXAVuQa9dKpTTMn2T8Jh_pkTfhgdJf2Xez_muhzLV71BjiDXqQCPOvXvovkIlZmXMn_3vOY0mn9cyJJYKXCvOBc9hZ1tdMkZsgUX2g=="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "6168487275",
+                "x": 25,
+                "y": 47
+              },
+              {
+                "productId": "5375328805",
+                "x": 55,
+                "y": 63
+              },
+              {
+                "productId": "1570991286",
+                "x": 74,
+                "y": 76
+              }
+            ]
+          }
+        },
+        {
+          "heading": "면 건지개는 냄비에 들어가는 크기인지 대조하기",
+          "text": "스테인리스 면 건지개, 1개의 연결 옵션은 스테인리스 소재, 건지는 부분 너비 19.5cm와 전체 길이 45.5cm로 안내된 1개입니다. 작은 캠핑 냄비에는 도구가 너무 클 수 있으므로 냄비 입구와 수납 가방 크기를 함께 확인하세요. 도구 이름이 같아도 선택한 크기에 따라 쓰기 편한 냄비가 달라집니다.\n2026년 9월 13일 확인 당시 이 옵션에는 일시품절 표시가 있었습니다. 구매 가능 여부는 연결된 페이지에서 다시 확인하고, 집에 있는 채반이나 면 건지는 도구가 냄비에 맞으면 그대로 활용하세요. 뜨거운 물을 옮기는 동선에는 식기와 다른 짐을 쌓아 두지 않습니다.",
+          "productIds": [
+            "5375328805"
+          ]
+        },
+        {
+          "heading": "식사는 한 사람분씩, 젓가락도 필요한 만큼만",
+          "text": "리빙메이트 국산 업소용 육각 젓가락 24cm, 블랙, 10개, 1개는 검은색 일반형 젓가락이며 판매처 필수 표기에는 10쌍, 길이 240mm, 성인용, 케이스 미포함으로 안내되어 있습니다. 접이식 캠핑 수저가 아니므로 긴 식기가 들어가는 파우치가 있는지 살펴보세요. 세트 전체를 매번 가져갈 필요 없이 먹을 인원에 맞춰 덜어 챙길 수 있습니다.\n면을 나눠 담을 그릇을 먼저 펼쳐 두고 고명은 먹는 사람이 고를 수 있도록 따로 두어도 좋습니다. 음식과 닿는 도구의 재질별 사용 조건을 따르고, 젓가락을 뜨거운 냄비 속에 계속 걸쳐 두는 조리 도구로 쓰지 않습니다.",
+          "productIds": [
+            "1570991286"
+          ],
+          "image": {
+            "url": "/prep-images/camp-noodle-lunch-serving-v2.webp",
+            "alt": "캠핑 국수 점심 준비법: 육수 분말·면 건지개·젓가락 챙기기 — 사용과 정리 예시",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean lifestyle editorial, one scene not collage. Every supplied reference is an actual product to faithfully recreate, NOT loose inspiration. Image1: actual clear cylindrical seasoning jar, squat black flip cap, tan powder, tan-gold label reading '잔치국수 분말'; this is SOUP POWDER ONLY, not a noodle meal kit. Do not invent numbers, fine print, nutritional or taste claims. Image2: actual circular concentric-wire noodle skimmer with two wire shaft strands, tubular silver grip and hanging loop; preserve its proportions. Image3: ONE PAIR of simple straight long black hexagonal chopsticks; not folding, no joints; show a pair from the bulk bundle, not a full ten-pair requirement. Keep all three separately visible. No other branded or tagged products. Scene: Outdoor serving close-up: wire skimmer held visibly over a plain bowl of noodles, the actual seasoning jar upright separately and black chopsticks on the table. Avoid hidden objects. No flame, burner or unverified cooking-time text. All items must be fully visible for separate website hotspots. Respect material, handles, colors, proportions and included components. No fabricated functions. Natural warm light, realistic shadows and textures. No headline. Small clear 'AI 연출 이미지' disclosure. No baked + buttons, arrows, price tags, reviews or promotional badges. No extra branded items.",
+            "productMatchReviewed": true,
+            "referenceProducts": [
+              {
+                "productId": "6168487275",
+                "imageUrl": "https://ads-partners.coupang.com/image1/Ig5HsnrPMGUKcJLTIq3H4Te9WlP1SS6rFRLPMn3DB3p-DE8phVpaNjg3NaXzoess4h2fYtWmF5h_YfXts-WU5Z4PFsSY5_liocIP18zrCv6pF9B3loUOXzVjVvn6xgaMftX16o9YdJYKB9NwOSQNfzx9dZRWYrvxVjONoLkujmW3SKOEjEZCQaoOmpVFKAZsZZLUFU_OPZLbLvA7G1uvScjINvTcVFWuG6HoFh_u0ffVu3ytmbVMGL3zAOG4xmuRYO5DZe7Ex33J-Je6I4MonABaRrKoogjPTSXDW1VAP4XHU6otRm1UqaAmtmf59BchtGRpBws25c8zRzp3JImMvm3MYgXzEQsw8VUjbU4_UpHiKQFW6tZBt3dGthZ1TTc0nV2nAhibskLxZeevbNm1gEZ9Z5ULa6-Qst3P2omUPywUkHhS50c3ltUnlMLGXXatcDYM1AvUHOgCblHXYfQvnSTJd3MebhveWMR98aBbmy-Wnnak_vUxRWpZR9dmdQtMsQrqE_LGYDz7tQ=="
+              },
+              {
+                "productId": "5375328805",
+                "imageUrl": "https://ads-partners.coupang.com/image1/kMBm5mskRR6im43jkDcHYxSSOVDbJwmvR4PqrjJSLCX0c2CstJI2iWoORdyFFJoueFJGfPSZjb63uJswiDp59lxGVn0aMtRq4NRFcUZ5Bm1xd5T3vyB2Z0MHXVFxsmQzK40GwR3vUdLQcAuXY6D_JCOFmbAGIvyTrKyYudfv8DrG0l6AyzNGQ75AeGS9FEg9JjqvjEKs7wPbvOo9YOICuGEQJXEGRduxdwBlSkrBSR4n3fd8q86s-nQpfp9d_W1QudYdA633Y5KD0oEd9a0J-Mwdd0JRAfgv7ZiZUaSDdC-4x-wKXc0wj6E-ti9BwBbq-HEThiybm44ZxcwArzgThvtEm2cwmmDrHL8J1ZU6dbejpWBrEqv0AMWTIG4hmJsz1So_3ychpwlism7zLWFralN3IoHZV6oMQuKx1RqkVUo3VhQgaVCcxQGdrAwtBmJ2H7MqQlDctM341ybveo4m3GucykQCbbMXkWlHkzB9oAGMdRxxWpmVvGAZbteEcV3J"
+              },
+              {
+                "productId": "1570991286",
+                "imageUrl": "https://ads-partners.coupang.com/image1/4N5R6TTodYVbzruo4MLp-VBVSkNCKw9Nbc4eq1o0q7UzaOAYKKBo2-qvP9iErHfyGEiTtQD21_8BvNjTFz07pSgUgUx-5jZ2nEtMVNoUlk5CqFRgFLVCeJQ6LWiuEmScSqkI3EpoWROP1Nr1rEZOcGAJEFIYXd9bzlVXXmtoQj-CWpA20UbX3RlvbCLWD_A_UTeoO9KlR5dSM1p7nU3FfmKAhL4tVo0mVk4Wqj855BU1QphwWYTwqUbac8HkndnJFTod3b2nrOtsGElnGAOP6_pLd8vz4E25vz4_2FAv9f__sluuiJZmM7d_EKB3SF0Gp9hRQxtGXulgdljXA4eiAx3hfaTD5McgA_9xkfIK6v6fFGG2Drh_NPOAh5mzq87OCfVUhHWSHOklcyo9ysdrZ0pc6xMS1ZJGIiXMlXAVuQa9dKpTTMn2T8Jh_pkTfhgdJf2Xez_muhzLV71BjiDXqQCPOvXvovkIlZmXMn_3vOY0mn9cyJJYKXCvOBc9hZ1tdMkZsgUX2g=="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "6168487275",
+                "x": 24,
+                "y": 56
+              },
+              {
+                "productId": "5375328805",
+                "x": 58,
+                "y": 19
+              },
+              {
+                "productId": "1570991286",
+                "x": 27,
+                "y": 84
+              }
+            ]
+          }
+        },
+        {
+          "heading": "먹고 난 뒤에는 거름망과 수저부터 따로 정리하기",
+          "text": "남은 음식과 국물은 캠핑장 안내에 맞춰 처리하고 주변 땅이나 빗물받이에 버리지 않습니다. 건지개 망 사이에 남은 면을 확인한 뒤 지정된 장소에서 세척하세요. 젓가락과 건지개를 충분히 말려 수납하고, 현장에서 말리지 못했다면 젖은 도구를 분리해 가져와 다시 건조합니다.\n세 장의 사진은 실제 상품 사진을 참고한 AI 연출입니다. 용기나 그릇 크기의 실제 비율, 음식 맛과 조리 결과를 보증하는 사진은 아닙니다. 사진의 +와 아래 준비물 목록은 같은 원본 제휴 상품페이지로 이어집니다.",
+          "productIds": []
+        }
+      ],
+      "contentStyle": "shoppable-scene-v2",
+      "status": "published",
+      "publishAt": "2026-09-13T14:52:04.063Z",
+      "updatedAt": "2026-09-13T14:52:04.063Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/camp-noodle-lunch-cover-v2.webp",
+        "alt": "캠핑 국수 점심 준비법: 육수 분말·면 건지개·젓가락 챙기기 — 준비물 배치",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean lifestyle editorial, one scene not collage. Every supplied reference is an actual product to faithfully recreate, NOT loose inspiration. Image1: actual clear cylindrical seasoning jar, squat black flip cap, tan powder, tan-gold label reading '잔치국수 분말'; this is SOUP POWDER ONLY, not a noodle meal kit. Do not invent numbers, fine print, nutritional or taste claims. Image2: actual circular concentric-wire noodle skimmer with two wire shaft strands, tubular silver grip and hanging loop; preserve its proportions. Image3: ONE PAIR of simple straight long black hexagonal chopsticks; not folding, no joints; show a pair from the bulk bundle, not a full ten-pair requirement. Keep all three separately visible. No other branded or tagged products. Scene: Outdoor camp picnic table with the actual powder jar left, wire skimmer center, black chopsticks right beside an ordinary unbranded bowl of noodles, clearly only a serving suggestion. Soft green background. All items must be fully visible for separate website hotspots. Respect material, handles, colors, proportions and included components. No fabricated functions. Natural warm light, realistic shadows and textures. Elegant large readable Korean headline exactly '가볍게 차리는 국수 점심', upper breathing space. Small clear 'AI 연출 이미지' disclosure. No baked + buttons, arrows, price tags, reviews or promotional badges. No extra branded items.",
+        "productMatchReviewed": true,
+        "referenceProducts": [
+          {
+            "productId": "6168487275",
+            "imageUrl": "https://ads-partners.coupang.com/image1/Ig5HsnrPMGUKcJLTIq3H4Te9WlP1SS6rFRLPMn3DB3p-DE8phVpaNjg3NaXzoess4h2fYtWmF5h_YfXts-WU5Z4PFsSY5_liocIP18zrCv6pF9B3loUOXzVjVvn6xgaMftX16o9YdJYKB9NwOSQNfzx9dZRWYrvxVjONoLkujmW3SKOEjEZCQaoOmpVFKAZsZZLUFU_OPZLbLvA7G1uvScjINvTcVFWuG6HoFh_u0ffVu3ytmbVMGL3zAOG4xmuRYO5DZe7Ex33J-Je6I4MonABaRrKoogjPTSXDW1VAP4XHU6otRm1UqaAmtmf59BchtGRpBws25c8zRzp3JImMvm3MYgXzEQsw8VUjbU4_UpHiKQFW6tZBt3dGthZ1TTc0nV2nAhibskLxZeevbNm1gEZ9Z5ULa6-Qst3P2omUPywUkHhS50c3ltUnlMLGXXatcDYM1AvUHOgCblHXYfQvnSTJd3MebhveWMR98aBbmy-Wnnak_vUxRWpZR9dmdQtMsQrqE_LGYDz7tQ=="
+          },
+          {
+            "productId": "5375328805",
+            "imageUrl": "https://ads-partners.coupang.com/image1/kMBm5mskRR6im43jkDcHYxSSOVDbJwmvR4PqrjJSLCX0c2CstJI2iWoORdyFFJoueFJGfPSZjb63uJswiDp59lxGVn0aMtRq4NRFcUZ5Bm1xd5T3vyB2Z0MHXVFxsmQzK40GwR3vUdLQcAuXY6D_JCOFmbAGIvyTrKyYudfv8DrG0l6AyzNGQ75AeGS9FEg9JjqvjEKs7wPbvOo9YOICuGEQJXEGRduxdwBlSkrBSR4n3fd8q86s-nQpfp9d_W1QudYdA633Y5KD0oEd9a0J-Mwdd0JRAfgv7ZiZUaSDdC-4x-wKXc0wj6E-ti9BwBbq-HEThiybm44ZxcwArzgThvtEm2cwmmDrHL8J1ZU6dbejpWBrEqv0AMWTIG4hmJsz1So_3ychpwlism7zLWFralN3IoHZV6oMQuKx1RqkVUo3VhQgaVCcxQGdrAwtBmJ2H7MqQlDctM341ybveo4m3GucykQCbbMXkWlHkzB9oAGMdRxxWpmVvGAZbteEcV3J"
+          },
+          {
+            "productId": "1570991286",
+            "imageUrl": "https://ads-partners.coupang.com/image1/4N5R6TTodYVbzruo4MLp-VBVSkNCKw9Nbc4eq1o0q7UzaOAYKKBo2-qvP9iErHfyGEiTtQD21_8BvNjTFz07pSgUgUx-5jZ2nEtMVNoUlk5CqFRgFLVCeJQ6LWiuEmScSqkI3EpoWROP1Nr1rEZOcGAJEFIYXd9bzlVXXmtoQj-CWpA20UbX3RlvbCLWD_A_UTeoO9KlR5dSM1p7nU3FfmKAhL4tVo0mVk4Wqj855BU1QphwWYTwqUbac8HkndnJFTod3b2nrOtsGElnGAOP6_pLd8vz4E25vz4_2FAv9f__sluuiJZmM7d_EKB3SF0Gp9hRQxtGXulgdljXA4eiAx3hfaTD5McgA_9xkfIK6v6fFGG2Drh_NPOAh5mzq87OCfVUhHWSHOklcyo9ysdrZ0pc6xMS1ZJGIiXMlXAVuQa9dKpTTMn2T8Jh_pkTfhgdJf2Xez_muhzLV71BjiDXqQCPOvXvovkIlZmXMn_3vOY0mn9cyJJYKXCvOBc9hZ1tdMkZsgUX2g=="
+          }
+        ],
+        "tags": [
+          {
+            "productId": "6168487275",
+            "x": 17,
+            "y": 61
+          },
+          {
+            "productId": "5375328805",
+            "x": 46,
+            "y": 66
+          },
+          {
+            "productId": "1570991286",
+            "x": 74,
+            "y": 86
+          }
+        ]
+      }
+    },
+    {
+      "slug": "grilled-vegetable-side-dishes",
+      "title": "바비큐 곁들임 채소 준비: 파프리카 손질과 소스 나누기",
+      "description": "바비큐에 곁들일 파프리카를 준비할 때 필요한 세척·손질 순서와 작은 소스 그릇 활용법. 혼합 채소 옵션과 식기 구성에서 확인할 점을 정리했습니다.",
+      "category": "바비큐",
+      "productIds": [
+        "7935223581",
+        "9665809659",
+        "9507672335"
+      ],
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "바비큐 가능한 캠핑장 시설 살펴보기"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "고기 옆에 둘 채소는 손질하는 방법부터 나누기",
+          "text": "바비큐 메뉴에 채소를 더한다면 한꺼번에 양념하기보다 어떻게 먹을지 먼저 정해 보세요. 굽는 채소와 별도로 내는 곁들임을 나누면 소스가 모든 재료에 섞이지 않아 각자 원하는 조합을 고르기 쉽습니다. 이번 글은 파프리카 손질, 물기 정리, 소스 그릇 배치를 중심으로 준비하는 방법입니다. 사진은 굽기 전 준비 장면이며 그릴이나 조리 도구가 판매 구성에 포함된다는 뜻은 아닙니다.",
+          "productIds": []
+        },
+        {
+          "heading": "혼합 파프리카는 사진 속 색과 개수를 기준으로 주문하지 않기",
+          "text": "못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개의 연결 옵션은 1kg 1개입니다. 판매처는 크기와 색이 무작위로 섞이고 총중량에 맞춰 구성된다고 안내합니다. 따라서 사진처럼 같은 색이 같은 개수로 오거나 모양이 모두 일정하다고 기대해서는 안 됩니다.\n인원수만으로 봉지 하나가 충분하다고 단정하지 말고 다른 메뉴와 함께 먹을 양을 정하세요. 이미 냉장고에 있는 채소가 있다면 먼저 확인하고 부족한 것만 보충합니다. 받았을 때 식품 상태와 보관 안내를 살펴보고, 사진에 나온 모양을 만들려고 멀쩡한 부분을 지나치게 잘라 버릴 필요는 없습니다.",
+          "productIds": [
+            "7935223581"
+          ]
+        },
+        {
+          "heading": "세척 자리와 손질한 채소를 놓는 자리를 구분하기",
+          "text": "1+1 과일, 야채 세척 바구니 믹싱볼(APPLE)의 현재 연결 옵션은 레드+그린, 사과 1+1 구성입니다. 연출 사진에는 그중 빨간 사과 형태의 바구니 하나를 사용했습니다. 두 색상 모두 사진에 보이지 않는다고 빨간색 한 개만 오는 옵션으로 오해하지 않도록 선택 내용을 확인하세요.\n세척한 채소를 물기 정리할 자리를 확보한 뒤 손질하면 젖은 채소와 도마 주변 물건이 뒤섞이는 일을 줄일 수 있습니다. 바구니를 쓸 때는 안정적으로 잡고 제품 안내에 맞게 물을 뺍니다. 집에 있는 채반과 볼로도 같은 순서를 만들 수 있으므로 사과 모양 제품이 필수인 것은 아닙니다.",
+          "productIds": [
+            "9665809659"
+          ],
+          "image": {
+            "url": "/prep-images/grilled-vegetable-side-dishes-preparation-v2.webp",
+            "alt": "바비큐 곁들임 채소 준비: 파프리카 손질과 소스 나누기 — 출발 전 준비",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean shoppable lifestyle editorial. Faithfully reproduce the exact actual objects in the reference images. Image1 actual irregular red/orange bell peppers with green stems. Image2 distinctive APPLE shaped washing bowl: glossy RED apple-shaped outer bowl with brown stem detail, CREAM perforated inner colander nested inside; do not replace with generic steel bowl. Image3 simple small transparent round glass sauce bowls with double-ring rim; show two bowls from the twelve-piece set, not plastic or silicone. Three actual product groups only; no skewers or grills implied as included. Scene: Kitchen sink preparation: actual apple washing bowl containing a few peppers, additional peppers clearly visible alongside, two clear sauce bowls on the clean counter. No raw meat nearby. Accurate shapes, colors, handle and lid details; no invented components or functionalities. Three identifiable product groups for separate website hotspots. No baked + buttons. No headline. Small readable 'AI 연출 이미지'. No prices, numeric nutrition/weight claims, reviews or badges. Do not reproduce advertising overlays from reference images. Natural realistic shadows and a calm welcoming weekend mood.",
+            "productMatchReviewed": true,
+            "referenceProducts": [
+              {
+                "productId": "7935223581",
+                "imageUrl": "https://ads-partners.coupang.com/image1/LYNpFLs9V5WX3MxWLScCA4b8c0cSXXzGeeA-kqyLObMWeb2mIZYZO4In8tdWb59xLsxgqDrlG1q2MKHIiu_gI7M_FghJG2Y1UfUYu8g_c1pEZlUi2KsmjylA1ECmKaVs707lc4usSjhqHKGw0l4sGQengOBk1x5qO-2DUlS0fdAhh2dz7ABChR2YNBV0tUYTZcNiOO_57pmu3DIQ9k6h7FkhF807Q3U7omF4ILrJn_imEcxY9gr7FL1fDgdhcEJGNZZgxCe36XfBxl4gTwMqkSLcAFynvO1TKcShPhvlOs7ZpZcRR9SI5UHK_4K6PYRtbaPd-L_GlBH9ysFzriv94Zvh26rlJoc4CYWH_FQzwqW7_Hp9tqXujSGq28BcBRAbwuDfVwH9GeM9pM2eicHF_CHw2XHgTy6jKczviVhKoxuvMTKP6Sf_Tm-_Q9YHYaZhuShSPvHw0zNl5eF0BdHI9rHipCm0Ta-d1cSBYOnD3BkU7LpgI6DOjk2zzdby06dv263127zxMhlVH43vriLhVYSPGU1ZBGVTaV6kPC2o2jlgILK9D8u1-v4cPZ8LaJCWfLC9F-CtAA-dfQ=="
+              },
+              {
+                "productId": "9665809659",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2-4olZvl8Td40g-s2_dmLIjFy-swF1G3V2Xc8-1XRmrw1d9IfWQSmekznWH448m84OUsfwzkvr0b5PWflx0x3Re428G5-t7Ua5ZJ9Mnm70JbwOVgB_7HCi9squCTgid-tf_CE_50sG775oVUuAWEeMswxWKhvYsc58g1acdiccp2tqYnux_iDFgF1FlfldA1Z_JRzQVuDMN5Sj_7C2ksCTrl6g1faDRrSl4N5CMjU3VYVkOrrKfqssnqrpZe6lPccTihYm3rbkTdspFw01sV1rXmrGe62z_4O-ffoyhq98qSeYRbqiJdqhKObQ-YC82vzyMpjd4B6baa7aN6ehlRFORJlakGnC7wDbTPABz_eYzoOXPj9SRQ16PXv985RgXQBD6HaDYLNdh5zXMQzNrURBgABQPlUOi0Mvf7XizEn6uxdrBuIHF3i5WHGL6Dq-d8TOVRXv6nLBvAsVe_fe5SFn1DKOumxC0OShgVWd2O6QIHZvjzyfJAt6EqgGTFShCpnQRKOyuQHIx4i_qcg_u4i7JiRN7yd3eaIbO24Ruo46Gikw=="
+              },
+              {
+                "productId": "9507672335",
+                "imageUrl": "https://ads-partners.coupang.com/image1/HV0Lon-KvD5VziFiHYCcMAczTDyshA0D1MoqL1tC9Sf73U0d1XwrcHih58ghjIUDe4N3Fx0r5FZ1NQk6_G4avtxkyrcCoDxKT6sjnLDjWlMRZjWGWlrTUPhXHU2cOAK-omcn-iTftaQ2hpzEMVFqhhCkiWW3IIihQb5MphH0fhNoM0XzmGTArATQOJlMSetW-28pJhipK9KlWP36L0dR0OQbk1I2lecqVi6srL4zNxTsngPyf95hNEUgdyOOGmpHqK9Ma5jPXhz38Ve-9TQsw8pl-jo9vUPo3RgaPwapW_eBFXlgZFnJoat6mcopVOMyl7Td2YFAaL1o7-oaof2ZUUPlPfOtJzbHdiBV7RtR5XJSW-ySaFagnsPBF0-odfo62YR858P6VvDcsXsv1HFNcewiaNdLLc8p7dL2Q3WZgacX-dQ6fGtpWNjrST2Xz6wfRckTvHW46fyKBaf-_FoQiuZBNv-JVWRUs2dTaah046t9x2NxvuYWfvlRfJ5q0RXUgOw-2AfAUY2qZIJyx1X7ALta2Wh-iTRu"
+              }
+            ],
+            "tags": [
+              {
+                "productId": "7935223581",
+                "x": 86,
+                "y": 46
+              },
+              {
+                "productId": "9665809659",
+                "x": 40,
+                "y": 40
+              },
+              {
+                "productId": "9507672335",
+                "x": 69,
+                "y": 77
+              }
+            ]
+          }
+        },
+        {
+          "heading": "소스는 작은 그릇에 나누고 내열 식기로 생각하지 않기",
+          "text": "삼호유리 미니 소스볼 12P LG-220502, 1개, 유리는 투명한 작은 유리 소스볼을 살펴볼 때 참고할 수 있는 상품입니다. 확인 화면의 제목에는 12P, 구성품 항목에는 6개로 서로 다르게 표시되어 있어 이 글에서는 실제 발송 수량을 확정하지 않습니다. 수량이 중요하다면 주문 전 판매자에게 선택 옵션의 구성을 확인하세요.\n판매처에는 오븐·전자레인지·식기세척기 사용 불가가 표시되어 있습니다. 조리용 그릇이나 열원 위에 올리는 용도로 소개하지 않습니다. 준비한 소스를 먹을 만큼만 나눠 담고 취향에 따라 곁들일 수 있게 두세요. 유리 그릇은 운반 중 서로 부딪치지 않도록 챙기고 현장에 적합한 기존 식기가 있다면 그것을 사용해도 됩니다.",
+          "productIds": [
+            "9507672335"
+          ]
+        },
+        {
+          "heading": "한 번에 모두 양념하지 않으면 메뉴를 바꾸기 쉽습니다",
+          "text": "파프리카를 손질한 뒤에는 바로 사용할 분량과 남겨 둘 분량을 구분해 제품 보관 안내에 맞게 정리합니다. 먹는 사람이 소스를 따로 고르게 하면 같은 재료를 다른 조합으로 즐길 수 있습니다. 굽는 경우에는 사용하는 조리 기구의 안내에 맞춰 크기와 배치를 정하고, 이 글의 사진만 보고 화력이나 조리 시간을 정하지 마세요.\n마무리할 때는 바구니 안쪽과 소스볼 가장자리에 남은 내용을 확인하고 세척·건조합니다. 사진은 실제 상품 사진을 참고한 AI 연출로 채소의 실제 색상 배합과 발송 개수, 그릇 구성 수량을 보증하지 않습니다.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/grilled-vegetable-side-dishes-serving-v2.webp",
+            "alt": "바비큐 곁들임 채소 준비: 파프리카 손질과 소스 나누기 — 사용과 정리 예시",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean shoppable lifestyle editorial. Faithfully reproduce the exact actual objects in the reference images. Image1 actual irregular red/orange bell peppers with green stems. Image2 distinctive APPLE shaped washing bowl: glossy RED apple-shaped outer bowl with brown stem detail, CREAM perforated inner colander nested inside; do not replace with generic steel bowl. Image3 simple small transparent round glass sauce bowls with double-ring rim; show two bowls from the twelve-piece set, not plastic or silicone. Three actual product groups only; no skewers or grills implied as included. Scene: Outdoor table after preparation: pepper wedges on an ordinary unbranded board, apple-shaped bowl empty behind, small clear glass sauce bowls to the side. No claims about sauce ingredients. Accurate shapes, colors, handle and lid details; no invented components or functionalities. Three identifiable product groups for separate website hotspots. No baked + buttons. No headline. Small readable 'AI 연출 이미지'. No prices, numeric nutrition/weight claims, reviews or badges. Do not reproduce advertising overlays from reference images. Natural realistic shadows and a calm welcoming weekend mood.",
+            "productMatchReviewed": true,
+            "referenceProducts": [
+              {
+                "productId": "7935223581",
+                "imageUrl": "https://ads-partners.coupang.com/image1/LYNpFLs9V5WX3MxWLScCA4b8c0cSXXzGeeA-kqyLObMWeb2mIZYZO4In8tdWb59xLsxgqDrlG1q2MKHIiu_gI7M_FghJG2Y1UfUYu8g_c1pEZlUi2KsmjylA1ECmKaVs707lc4usSjhqHKGw0l4sGQengOBk1x5qO-2DUlS0fdAhh2dz7ABChR2YNBV0tUYTZcNiOO_57pmu3DIQ9k6h7FkhF807Q3U7omF4ILrJn_imEcxY9gr7FL1fDgdhcEJGNZZgxCe36XfBxl4gTwMqkSLcAFynvO1TKcShPhvlOs7ZpZcRR9SI5UHK_4K6PYRtbaPd-L_GlBH9ysFzriv94Zvh26rlJoc4CYWH_FQzwqW7_Hp9tqXujSGq28BcBRAbwuDfVwH9GeM9pM2eicHF_CHw2XHgTy6jKczviVhKoxuvMTKP6Sf_Tm-_Q9YHYaZhuShSPvHw0zNl5eF0BdHI9rHipCm0Ta-d1cSBYOnD3BkU7LpgI6DOjk2zzdby06dv263127zxMhlVH43vriLhVYSPGU1ZBGVTaV6kPC2o2jlgILK9D8u1-v4cPZ8LaJCWfLC9F-CtAA-dfQ=="
+              },
+              {
+                "productId": "9665809659",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2-4olZvl8Td40g-s2_dmLIjFy-swF1G3V2Xc8-1XRmrw1d9IfWQSmekznWH448m84OUsfwzkvr0b5PWflx0x3Re428G5-t7Ua5ZJ9Mnm70JbwOVgB_7HCi9squCTgid-tf_CE_50sG775oVUuAWEeMswxWKhvYsc58g1acdiccp2tqYnux_iDFgF1FlfldA1Z_JRzQVuDMN5Sj_7C2ksCTrl6g1faDRrSl4N5CMjU3VYVkOrrKfqssnqrpZe6lPccTihYm3rbkTdspFw01sV1rXmrGe62z_4O-ffoyhq98qSeYRbqiJdqhKObQ-YC82vzyMpjd4B6baa7aN6ehlRFORJlakGnC7wDbTPABz_eYzoOXPj9SRQ16PXv985RgXQBD6HaDYLNdh5zXMQzNrURBgABQPlUOi0Mvf7XizEn6uxdrBuIHF3i5WHGL6Dq-d8TOVRXv6nLBvAsVe_fe5SFn1DKOumxC0OShgVWd2O6QIHZvjzyfJAt6EqgGTFShCpnQRKOyuQHIx4i_qcg_u4i7JiRN7yd3eaIbO24Ruo46Gikw=="
+              },
+              {
+                "productId": "9507672335",
+                "imageUrl": "https://ads-partners.coupang.com/image1/HV0Lon-KvD5VziFiHYCcMAczTDyshA0D1MoqL1tC9Sf73U0d1XwrcHih58ghjIUDe4N3Fx0r5FZ1NQk6_G4avtxkyrcCoDxKT6sjnLDjWlMRZjWGWlrTUPhXHU2cOAK-omcn-iTftaQ2hpzEMVFqhhCkiWW3IIihQb5MphH0fhNoM0XzmGTArATQOJlMSetW-28pJhipK9KlWP36L0dR0OQbk1I2lecqVi6srL4zNxTsngPyf95hNEUgdyOOGmpHqK9Ma5jPXhz38Ve-9TQsw8pl-jo9vUPo3RgaPwapW_eBFXlgZFnJoat6mcopVOMyl7Td2YFAaL1o7-oaof2ZUUPlPfOtJzbHdiBV7RtR5XJSW-ySaFagnsPBF0-odfo62YR858P6VvDcsXsv1HFNcewiaNdLLc8p7dL2Q3WZgacX-dQ6fGtpWNjrST2Xz6wfRckTvHW46fyKBaf-_FoQiuZBNv-JVWRUs2dTaah046t9x2NxvuYWfvlRfJ5q0RXUgOw-2AfAUY2qZIJyx1X7ALta2Wh-iTRu"
+              }
+            ],
+            "tags": [
+              {
+                "productId": "7935223581",
+                "x": 37,
+                "y": 69
+              },
+              {
+                "productId": "9665809659",
+                "x": 65,
+                "y": 29
+              },
+              {
+                "productId": "9507672335",
+                "x": 79,
+                "y": 73
+              }
+            ]
+          }
+        }
+      ],
+      "contentStyle": "shoppable-scene-v2",
+      "status": "published",
+      "publishAt": "2026-09-13T14:52:04.063Z",
+      "updatedAt": "2026-09-13T14:52:04.063Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/grilled-vegetable-side-dishes-cover-v2.webp",
+        "alt": "바비큐 곁들임 채소 준비: 파프리카 손질과 소스 나누기 — 준비물 배치",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean shoppable lifestyle editorial. Faithfully reproduce the exact actual objects in the reference images. Image1 actual irregular red/orange bell peppers with green stems. Image2 distinctive APPLE shaped washing bowl: glossy RED apple-shaped outer bowl with brown stem detail, CREAM perforated inner colander nested inside; do not replace with generic steel bowl. Image3 simple small transparent round glass sauce bowls with double-ring rim; show two bowls from the twelve-piece set, not plastic or silicone. Three actual product groups only; no skewers or grills implied as included. Scene: Beautiful outdoor vegetable preparation table: red peppers at left, unmistakable red apple-shaped washing bowl with cream colander center, two little glass sauce bowls right. Natural greenery, warm light. Accurate shapes, colors, handle and lid details; no invented components or functionalities. Three identifiable product groups for separate website hotspots. No baked + buttons. Elegant readable Korean headline exactly '곁들이는 채소의 시간' above the products. Small readable 'AI 연출 이미지'. No prices, numeric nutrition/weight claims, reviews or badges. Do not reproduce advertising overlays from reference images. Natural realistic shadows and a calm welcoming weekend mood.",
+        "productMatchReviewed": true,
+        "referenceProducts": [
+          {
+            "productId": "7935223581",
+            "imageUrl": "https://ads-partners.coupang.com/image1/LYNpFLs9V5WX3MxWLScCA4b8c0cSXXzGeeA-kqyLObMWeb2mIZYZO4In8tdWb59xLsxgqDrlG1q2MKHIiu_gI7M_FghJG2Y1UfUYu8g_c1pEZlUi2KsmjylA1ECmKaVs707lc4usSjhqHKGw0l4sGQengOBk1x5qO-2DUlS0fdAhh2dz7ABChR2YNBV0tUYTZcNiOO_57pmu3DIQ9k6h7FkhF807Q3U7omF4ILrJn_imEcxY9gr7FL1fDgdhcEJGNZZgxCe36XfBxl4gTwMqkSLcAFynvO1TKcShPhvlOs7ZpZcRR9SI5UHK_4K6PYRtbaPd-L_GlBH9ysFzriv94Zvh26rlJoc4CYWH_FQzwqW7_Hp9tqXujSGq28BcBRAbwuDfVwH9GeM9pM2eicHF_CHw2XHgTy6jKczviVhKoxuvMTKP6Sf_Tm-_Q9YHYaZhuShSPvHw0zNl5eF0BdHI9rHipCm0Ta-d1cSBYOnD3BkU7LpgI6DOjk2zzdby06dv263127zxMhlVH43vriLhVYSPGU1ZBGVTaV6kPC2o2jlgILK9D8u1-v4cPZ8LaJCWfLC9F-CtAA-dfQ=="
+          },
+          {
+            "productId": "9665809659",
+            "imageUrl": "https://ads-partners.coupang.com/image1/2-4olZvl8Td40g-s2_dmLIjFy-swF1G3V2Xc8-1XRmrw1d9IfWQSmekznWH448m84OUsfwzkvr0b5PWflx0x3Re428G5-t7Ua5ZJ9Mnm70JbwOVgB_7HCi9squCTgid-tf_CE_50sG775oVUuAWEeMswxWKhvYsc58g1acdiccp2tqYnux_iDFgF1FlfldA1Z_JRzQVuDMN5Sj_7C2ksCTrl6g1faDRrSl4N5CMjU3VYVkOrrKfqssnqrpZe6lPccTihYm3rbkTdspFw01sV1rXmrGe62z_4O-ffoyhq98qSeYRbqiJdqhKObQ-YC82vzyMpjd4B6baa7aN6ehlRFORJlakGnC7wDbTPABz_eYzoOXPj9SRQ16PXv985RgXQBD6HaDYLNdh5zXMQzNrURBgABQPlUOi0Mvf7XizEn6uxdrBuIHF3i5WHGL6Dq-d8TOVRXv6nLBvAsVe_fe5SFn1DKOumxC0OShgVWd2O6QIHZvjzyfJAt6EqgGTFShCpnQRKOyuQHIx4i_qcg_u4i7JiRN7yd3eaIbO24Ruo46Gikw=="
+          },
+          {
+            "productId": "9507672335",
+            "imageUrl": "https://ads-partners.coupang.com/image1/HV0Lon-KvD5VziFiHYCcMAczTDyshA0D1MoqL1tC9Sf73U0d1XwrcHih58ghjIUDe4N3Fx0r5FZ1NQk6_G4avtxkyrcCoDxKT6sjnLDjWlMRZjWGWlrTUPhXHU2cOAK-omcn-iTftaQ2hpzEMVFqhhCkiWW3IIihQb5MphH0fhNoM0XzmGTArATQOJlMSetW-28pJhipK9KlWP36L0dR0OQbk1I2lecqVi6srL4zNxTsngPyf95hNEUgdyOOGmpHqK9Ma5jPXhz38Ve-9TQsw8pl-jo9vUPo3RgaPwapW_eBFXlgZFnJoat6mcopVOMyl7Td2YFAaL1o7-oaof2ZUUPlPfOtJzbHdiBV7RtR5XJSW-ySaFagnsPBF0-odfo62YR858P6VvDcsXsv1HFNcewiaNdLLc8p7dL2Q3WZgacX-dQ6fGtpWNjrST2Xz6wfRckTvHW46fyKBaf-_FoQiuZBNv-JVWRUs2dTaah046t9x2NxvuYWfvlRfJ5q0RXUgOw-2AfAUY2qZIJyx1X7ALta2Wh-iTRu"
+          }
+        ],
+        "tags": [
+          {
+            "productId": "7935223581",
+            "x": 24,
+            "y": 60
+          },
+          {
+            "productId": "9665809659",
+            "x": 59,
+            "y": 42
+          },
+          {
+            "productId": "9507672335",
+            "x": 77,
+            "y": 81
+          }
+        ]
+      }
+    },
+    {
+      "slug": "barbecue-serving-station",
+      "title": "여럿이 먹는 바비큐 식탁: 공용 자리와 개인 접시 나누기",
+      "description": "조리하는 자리와 먹는 자리를 분리하고 쟁반·손잡이 접시·메모로 식탁을 정리하는 방법. 가져갈 수량과 정리 순서까지 살펴보세요.",
+      "category": "바비큐",
+      "productIds": [
+        "9474432502",
+        "8604787900",
+        "2069545633"
+      ],
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "캠핑장 이용 환경 살펴보기"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "음식을 더 놓기 전에 사람들이 움직일 길부터 정하기",
+          "text": "여럿이 함께 먹는 바비큐에서는 조리 도구와 개인 접시가 같은 자리에 섞이기 쉽습니다. 굽는 자리와 먹는 자리를 나누고, 공용 그릇을 가져가는 길이 뜨거운 기구 옆을 지나지 않도록 먼저 배치해 보세요. 사람 수에 맞춰 식기를 나눈 뒤 남는 물건은 수납해 두면 테이블을 넓게 쓸 수 있습니다. 테이블을 장식하는 것보다 어떤 물건을 누가 쓰는지 구분하는 것이 이 글의 준비 목표입니다.",
+          "productIds": []
+        },
+        {
+          "heading": "쟁반은 운반할 그릇이 안정적으로 놓이는지 확인하기",
+          "text": "스탠다 화이트 플라스틱 트레이 쟁반 서빙 받침대, 5개, 화이트는 화이트 플라스틱 트레이 5개로 조회된 상품입니다. 긴 변의 길이만 보지 말고 가장자리 안쪽에 사용할 접시가 들어가는지 확인하세요. 여러 개 묶음으로 판매되더라도 현장에 모두 가져갈 필요는 없습니다. 식탁으로 운반할 물건의 양을 나눠 무리하게 쌓지 않는 편이 좋습니다.\n플라스틱 쟁반을 오븐 팬이나 뜨거운 조리 도구 받침으로 사용하지 않습니다. 음식 직접 접촉 가능 여부는 제품 표시를 확인하고, 확인되지 않았다면 음식은 별도 식기에 담아 옮기는 방식으로 계획하세요.",
+          "productIds": [
+            "9474432502"
+          ],
+          "image": {
+            "url": "/prep-images/barbecue-serving-station-preparation-v2.webp",
+            "alt": "여럿이 먹는 바비큐 식탁: 공용 자리와 개인 접시 나누기 — 출발 전 준비",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": false,
+            "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean shoppable lifestyle editorial. Faithfully reproduce the exact actual objects in the reference images. Image1 actual cream-white rectangular low-sided serving tray with rounded corners, fine vertically ribbed exterior and thin brownish rim, show ONE from five-pack. Image2 actual shallow round pastel front plate with long flat handle and hanging hole, not a cooking pan; show mint and pink plates from the five-color set. Image3 small bent-metal L-shaped memo holder in gold, holding a blank or simple food-label card; do NOT copy prices from reference. All three product groups separate and clearly visible. Scene: Before departure kitchen table: clean cream tray, mint and pink handled plates and little gold L-shaped memo holder laid separately for checking the packing list. No food or cookware. Accurate shapes, colors, handle and lid details; no invented components or functionalities. Three identifiable product groups for separate website hotspots. No baked + buttons. No headline. Small readable 'AI 연출 이미지'. No prices, numeric nutrition/weight claims, reviews or badges. Do not reproduce advertising overlays from reference images. Natural realistic shadows and a calm welcoming weekend mood.",
+            "productMatchReviewed": false,
+            "referenceProducts": [
+              {
+                "productId": "9474432502",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2-xotle8yXum1QNu29Myt1PtEMwD7UGRpLOCRsylQszxS9-Q2TkOjt_zncXHrxbBqaVAFSFARrhGN2iSe8NWfINs1GVhzNCMx9uUPmO-LG55AP6pJCHLBakOq6Wv7-ZkTzzcVJY7exLs5Ou7UXvphk_JKEfpOKdCml4p5HBSANMjHQF3YZrsFyUiInMakd_H2-CDW8-EPJTd4P-Aepbd99oZxO3DPVROMgz9AXKIRKRz2ie4UFD0BAs2jqGF-kWHX82QG1PpbFB36utNaq0XdeKdwE1LDYdCoXGIf4jUx596AspwY622X7nZej66PmjcbxseEYCLNgkC99Xkazvt_eXOy9qqgNJuwTdc3Y3eU-or3LaGdFwWcwTdEAdBr72FCT7dkByxqxpaQ_3N-qqAHy4XjNWEh7ZHrHc75ONMXInP7Q5pOdbF2v1GrLkzVIIj_981WXHOiVwbr4ZbyPETCdHhW_apQvSUtgw8meCMI8E5DRMzmzLQ2a5L2Cx6oQrJalGPDPBJF370PJcdCqyN7zuz5ZaIqbM="
+              },
+              {
+                "productId": "8604787900",
+                "imageUrl": "https://ads-partners.coupang.com/image1/08gCFhDpUDoUZM6O04nYgknzZHgdf7fGhkzJ-63bGPMpXWmUi1SaPQJcQLwbKOcLsoN06puT8MmewzxDF9_g8tcrndZK5mFBLAR8HOlfsU8LlbXKDsYT8ZV48o0VtVH8fn9FA4QIEUlp1FnfiE5s1OH1-eBbG232-XPYO3LlOVIHd7UG0AjCg4DAlgTU2lK2YhyD8TvngQNSraLRbwp5fSzCU0JpZCtH__AEkHvj8fib311FCLD2UJDjoE7qxY1IM8HE2CjqYkO-bXyBnm5H-Qtv8ZeGXYCfoXSaogb8ORKESThlMpYRUHk1zNrwg8lQPcsYavhw_2nv7QBezb4n2sT2DJwi9hwfK6WheHYmhtmGIrjOxd_l5j0WPCdgaAGUiS5MMZ5BCe-yQGTzv7BkzKRjNcJq6MIvtUaCG9PTDSx6j3XE74sc64BJo8l8H8t7Wlso-fH3w8FABWyen_ayKz-XlhDMB3viiv8747pRsKhj6SccrVzgCNfbShtucTsZoDS7WJQruRxYLsx30ERTgNDM4nGHxvd6lQ=="
+              },
+              {
+                "productId": "2069545633",
+                "imageUrl": "https://ads-partners.coupang.com/image1/zAJwFFmaoi4fE4DbzNgAg1MHa1nq-3ujWctq6Im_OdntJxpIlEmQr1SOQmvblIUPMWCyIUMVssFSFLngo8Dv017VGztHXkI4QnOoiClZfNl1CfWyJ584LAX4UMkVOPf8g-Jwj8X_cKd45autyPdXlTsb17dwZxX4VAg4fRKSvIrc7rFJEoM22yiknB6TzS846pGdxrpEreNrq1gOo49JirBGwugpRWnGieOad2Gzo1Uj7MJ6VC46NrOsRJX1myDn1wROnrxiAedEJ75qm5jUydiecLOYsDzMfW-wYtEAA0WiUFZjuq0lu3roM2k5dM2YVXCEM66GqAA0JAhgT3NjGQHqgpGzWcqJMkGt-b5iJVtr4Fi7a0qVueVml3M1_Dqh1kjKWrCg0kQMivF2eYYURiwprkXpsgoGnJms0jjGTtjaBdzafBgC-o9821_YyUsfHcIthW1omKL1hp7ECbW7WEGhUzsdkYgY1qGwaE75J-cgaHg-KbK8TGK0jTjZnxQbdbuDZAeIiEgXtbJXuDgarBa6z_nDoPQ="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "9474432502",
+                "x": 36,
+                "y": 39
+              },
+              {
+                "productId": "8604787900",
+                "x": 67,
+                "y": 74
+              },
+              {
+                "productId": "2069545633",
+                "x": 79,
+                "y": 54
+              }
+            ]
+          }
+        },
+        {
+          "heading": "손잡이가 있어도 프라이팬이 아니라 앞접시입니다",
+          "text": "골든레이 핸들플레이트 BPA FREE 손잡이 앞접시 5종 1세트, 5개, 혼합색상 원형는 혼합색상 원형 5개 옵션으로 연결된 앞접시입니다. 참고 장면에서는 그중 분홍색과 하늘색을 사용했습니다. 손잡이가 달려 있다고 버너나 불 위에 올리는 조리 팬으로 생각하면 안 됩니다. 식사 자리에서 나눠 담는 식기로 살펴보세요.\n각자가 쓸 접시를 먼저 정하고 한 번에 먹을 양만 덜어 담으면 공용 자리와 개인 자리를 구분하기 쉽습니다. 이미 충분한 접시가 있다면 색깔 세트를 추가 구매하기보다 각자의 자리를 정하는 방법으로 대신할 수 있습니다.",
+          "productIds": [
+            "8604787900"
+          ]
+        },
+        {
+          "heading": "짧은 메모는 식탁에서 실제로 필요한 안내만",
+          "text": "메탈 명함꽂이 가격표 메모 네임홀더, 1개는 종이 메모를 세우는 금속 홀더입니다. 원본 제휴 URL의 선택 옵션은 스텐레스실버 1개로 확인되어 금색으로 만들어진 현재 장면은 색상 수정이 필요합니다. 실제 발행 전에 사진과 옵션을 일치시켜야 합니다.\n식탁에서는 개인 접시 위치나 도구를 되돌려 놓을 자리처럼 짧은 안내를 적는 용도로 생각할 수 있습니다. 음식 성분을 확인하지 않고 알레르기 안전 표시를 만들어 붙여서는 안 됩니다. 작은 메모가 필요 없는 인원이라면 홀더 없이 말로 자리를 정해도 충분합니다.",
+          "productIds": [
+            "2069545633"
+          ]
+        },
+        {
+          "heading": "식사가 끝나면 남은 음식과 식기를 분리하기",
+          "text": "정리는 사용하지 않은 식기를 먼저 수납하고, 사용한 접시와 도구는 따로 모으는 순서로 진행해 보세요. 쟁반에 식기를 과하게 겹쳐 담지 말고 안정적으로 운반합니다. 메모와 작은 홀더까지 빠뜨리지 않았는지 확인한 뒤 식탁 주변을 정리하세요.\n이 초안의 사진은 기존에 만든 AI 장면을 연결한 검토용입니다. 홀더 색상과 쟁반의 음식 접촉 조건이 확인되기 전에는 공개하지 않습니다. 검토가 끝나면 실제 사진 속 준비물과 원본 쿠팡 제휴 페이지가 서로 맞는 상태로 안내합니다.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/barbecue-serving-station-serving-v2.webp",
+            "alt": "여럿이 먹는 바비큐 식탁: 공용 자리와 개인 접시 나누기 — 사용과 정리 예시",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": false,
+            "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean shoppable lifestyle editorial. Faithfully reproduce the exact actual objects in the reference images. Image1 actual cream-white rectangular low-sided serving tray with rounded corners, fine vertically ribbed exterior and thin brownish rim, show ONE from five-pack. Image2 actual shallow round pastel front plate with long flat handle and hanging hole, not a cooking pan; show mint and pink plates from the five-color set. Image3 small bent-metal L-shaped memo holder in gold, holding a blank or simple food-label card; do NOT copy prices from reference. All three product groups separate and clearly visible. Scene: Outdoor serving arrangement: ordinary prepared side food placed on cream serving tray, empty pastel handled plates next to it, gold memo holder with '개인 접시' card. Make all actual product shapes clearly visible; handled plates are eating dishes, never on a flame. Accurate shapes, colors, handle and lid details; no invented components or functionalities. Three identifiable product groups for separate website hotspots. No baked + buttons. No headline. Small readable 'AI 연출 이미지'. No prices, numeric nutrition/weight claims, reviews or badges. Do not reproduce advertising overlays from reference images. Natural realistic shadows and a calm welcoming weekend mood.",
+            "productMatchReviewed": false,
+            "referenceProducts": [
+              {
+                "productId": "9474432502",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2-xotle8yXum1QNu29Myt1PtEMwD7UGRpLOCRsylQszxS9-Q2TkOjt_zncXHrxbBqaVAFSFARrhGN2iSe8NWfINs1GVhzNCMx9uUPmO-LG55AP6pJCHLBakOq6Wv7-ZkTzzcVJY7exLs5Ou7UXvphk_JKEfpOKdCml4p5HBSANMjHQF3YZrsFyUiInMakd_H2-CDW8-EPJTd4P-Aepbd99oZxO3DPVROMgz9AXKIRKRz2ie4UFD0BAs2jqGF-kWHX82QG1PpbFB36utNaq0XdeKdwE1LDYdCoXGIf4jUx596AspwY622X7nZej66PmjcbxseEYCLNgkC99Xkazvt_eXOy9qqgNJuwTdc3Y3eU-or3LaGdFwWcwTdEAdBr72FCT7dkByxqxpaQ_3N-qqAHy4XjNWEh7ZHrHc75ONMXInP7Q5pOdbF2v1GrLkzVIIj_981WXHOiVwbr4ZbyPETCdHhW_apQvSUtgw8meCMI8E5DRMzmzLQ2a5L2Cx6oQrJalGPDPBJF370PJcdCqyN7zuz5ZaIqbM="
+              },
+              {
+                "productId": "8604787900",
+                "imageUrl": "https://ads-partners.coupang.com/image1/08gCFhDpUDoUZM6O04nYgknzZHgdf7fGhkzJ-63bGPMpXWmUi1SaPQJcQLwbKOcLsoN06puT8MmewzxDF9_g8tcrndZK5mFBLAR8HOlfsU8LlbXKDsYT8ZV48o0VtVH8fn9FA4QIEUlp1FnfiE5s1OH1-eBbG232-XPYO3LlOVIHd7UG0AjCg4DAlgTU2lK2YhyD8TvngQNSraLRbwp5fSzCU0JpZCtH__AEkHvj8fib311FCLD2UJDjoE7qxY1IM8HE2CjqYkO-bXyBnm5H-Qtv8ZeGXYCfoXSaogb8ORKESThlMpYRUHk1zNrwg8lQPcsYavhw_2nv7QBezb4n2sT2DJwi9hwfK6WheHYmhtmGIrjOxd_l5j0WPCdgaAGUiS5MMZ5BCe-yQGTzv7BkzKRjNcJq6MIvtUaCG9PTDSx6j3XE74sc64BJo8l8H8t7Wlso-fH3w8FABWyen_ayKz-XlhDMB3viiv8747pRsKhj6SccrVzgCNfbShtucTsZoDS7WJQruRxYLsx30ERTgNDM4nGHxvd6lQ=="
+              },
+              {
+                "productId": "2069545633",
+                "imageUrl": "https://ads-partners.coupang.com/image1/zAJwFFmaoi4fE4DbzNgAg1MHa1nq-3ujWctq6Im_OdntJxpIlEmQr1SOQmvblIUPMWCyIUMVssFSFLngo8Dv017VGztHXkI4QnOoiClZfNl1CfWyJ584LAX4UMkVOPf8g-Jwj8X_cKd45autyPdXlTsb17dwZxX4VAg4fRKSvIrc7rFJEoM22yiknB6TzS846pGdxrpEreNrq1gOo49JirBGwugpRWnGieOad2Gzo1Uj7MJ6VC46NrOsRJX1myDn1wROnrxiAedEJ75qm5jUydiecLOYsDzMfW-wYtEAA0WiUFZjuq0lu3roM2k5dM2YVXCEM66GqAA0JAhgT3NjGQHqgpGzWcqJMkGt-b5iJVtr4Fi7a0qVueVml3M1_Dqh1kjKWrCg0kQMivF2eYYURiwprkXpsgoGnJms0jjGTtjaBdzafBgC-o9821_YyUsfHcIthW1omKL1hp7ECbW7WEGhUzsdkYgY1qGwaE75J-cgaHg-KbK8TGK0jTjZnxQbdbuDZAeIiEgXtbJXuDgarBa6z_nDoPQ="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "9474432502",
+                "x": 30,
+                "y": 51
+              },
+              {
+                "productId": "8604787900",
+                "x": 50,
+                "y": 80
+              },
+              {
+                "productId": "2069545633",
+                "x": 75,
+                "y": 47
+              }
+            ]
+          }
+        }
+      ],
+      "contentStyle": "shoppable-scene-v2",
+      "status": "draft",
+      "publishAt": "2026-09-13T14:52:04.063Z",
+      "updatedAt": "2026-09-13T14:52:04.063Z",
+      "reviewed": false,
+      "cover": {
+        "url": "/prep-images/barbecue-serving-station-cover-v2.webp",
+        "alt": "여럿이 먹는 바비큐 식탁: 공용 자리와 개인 접시 나누기 — 준비물 배치",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": false,
+        "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean shoppable lifestyle editorial. Faithfully reproduce the exact actual objects in the reference images. Image1 actual cream-white rectangular low-sided serving tray with rounded corners, fine vertically ribbed exterior and thin brownish rim, show ONE from five-pack. Image2 actual shallow round pastel front plate with long flat handle and hanging hole, not a cooking pan; show mint and pink plates from the five-color set. Image3 small bent-metal L-shaped memo holder in gold, holding a blank or simple food-label card; do NOT copy prices from reference. All three product groups separate and clearly visible. Scene: Warm outdoor barbecue side table, cream ribbed tray left, mint and pink handled eating plates center, tiny gold memo holder right holding card with '함께 먹어요'. No price, no fabricated discount. A shared-table organization scene. Accurate shapes, colors, handle and lid details; no invented components or functionalities. Three identifiable product groups for separate website hotspots. No baked + buttons. Elegant readable Korean headline exactly '함께 먹기 좋은 자리' above the products. Small readable 'AI 연출 이미지'. No prices, numeric nutrition/weight claims, reviews or badges. Do not reproduce advertising overlays from reference images. Natural realistic shadows and a calm welcoming weekend mood.",
+        "productMatchReviewed": false,
+        "referenceProducts": [
+          {
+            "productId": "9474432502",
+            "imageUrl": "https://ads-partners.coupang.com/image1/2-xotle8yXum1QNu29Myt1PtEMwD7UGRpLOCRsylQszxS9-Q2TkOjt_zncXHrxbBqaVAFSFARrhGN2iSe8NWfINs1GVhzNCMx9uUPmO-LG55AP6pJCHLBakOq6Wv7-ZkTzzcVJY7exLs5Ou7UXvphk_JKEfpOKdCml4p5HBSANMjHQF3YZrsFyUiInMakd_H2-CDW8-EPJTd4P-Aepbd99oZxO3DPVROMgz9AXKIRKRz2ie4UFD0BAs2jqGF-kWHX82QG1PpbFB36utNaq0XdeKdwE1LDYdCoXGIf4jUx596AspwY622X7nZej66PmjcbxseEYCLNgkC99Xkazvt_eXOy9qqgNJuwTdc3Y3eU-or3LaGdFwWcwTdEAdBr72FCT7dkByxqxpaQ_3N-qqAHy4XjNWEh7ZHrHc75ONMXInP7Q5pOdbF2v1GrLkzVIIj_981WXHOiVwbr4ZbyPETCdHhW_apQvSUtgw8meCMI8E5DRMzmzLQ2a5L2Cx6oQrJalGPDPBJF370PJcdCqyN7zuz5ZaIqbM="
+          },
+          {
+            "productId": "8604787900",
+            "imageUrl": "https://ads-partners.coupang.com/image1/08gCFhDpUDoUZM6O04nYgknzZHgdf7fGhkzJ-63bGPMpXWmUi1SaPQJcQLwbKOcLsoN06puT8MmewzxDF9_g8tcrndZK5mFBLAR8HOlfsU8LlbXKDsYT8ZV48o0VtVH8fn9FA4QIEUlp1FnfiE5s1OH1-eBbG232-XPYO3LlOVIHd7UG0AjCg4DAlgTU2lK2YhyD8TvngQNSraLRbwp5fSzCU0JpZCtH__AEkHvj8fib311FCLD2UJDjoE7qxY1IM8HE2CjqYkO-bXyBnm5H-Qtv8ZeGXYCfoXSaogb8ORKESThlMpYRUHk1zNrwg8lQPcsYavhw_2nv7QBezb4n2sT2DJwi9hwfK6WheHYmhtmGIrjOxd_l5j0WPCdgaAGUiS5MMZ5BCe-yQGTzv7BkzKRjNcJq6MIvtUaCG9PTDSx6j3XE74sc64BJo8l8H8t7Wlso-fH3w8FABWyen_ayKz-XlhDMB3viiv8747pRsKhj6SccrVzgCNfbShtucTsZoDS7WJQruRxYLsx30ERTgNDM4nGHxvd6lQ=="
+          },
+          {
+            "productId": "2069545633",
+            "imageUrl": "https://ads-partners.coupang.com/image1/zAJwFFmaoi4fE4DbzNgAg1MHa1nq-3ujWctq6Im_OdntJxpIlEmQr1SOQmvblIUPMWCyIUMVssFSFLngo8Dv017VGztHXkI4QnOoiClZfNl1CfWyJ584LAX4UMkVOPf8g-Jwj8X_cKd45autyPdXlTsb17dwZxX4VAg4fRKSvIrc7rFJEoM22yiknB6TzS846pGdxrpEreNrq1gOo49JirBGwugpRWnGieOad2Gzo1Uj7MJ6VC46NrOsRJX1myDn1wROnrxiAedEJ75qm5jUydiecLOYsDzMfW-wYtEAA0WiUFZjuq0lu3roM2k5dM2YVXCEM66GqAA0JAhgT3NjGQHqgpGzWcqJMkGt-b5iJVtr4Fi7a0qVueVml3M1_Dqh1kjKWrCg0kQMivF2eYYURiwprkXpsgoGnJms0jjGTtjaBdzafBgC-o9821_YyUsfHcIthW1omKL1hp7ECbW7WEGhUzsdkYgY1qGwaE75J-cgaHg-KbK8TGK0jTjZnxQbdbuDZAeIiEgXtbJXuDgarBa6z_nDoPQ="
+          }
+        ],
+        "tags": [
+          {
+            "productId": "9474432502",
+            "x": 28,
+            "y": 57
+          },
+          {
+            "productId": "8604787900",
+            "x": 52,
+            "y": 71
+          },
+          {
+            "productId": "2069545633",
+            "x": 87,
+            "y": 74
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pork-grill-vegetable-table",
+      "title": "캠핑 삼겹살 준비: 굽는 자리와 채소 담는 자리 구분하기",
+      "description": "삼겹살 바비큐를 준비할 때 고기·그리들·나눔 용기의 역할을 구분하고 현장 조리 공간과 철수 순서를 정리하는 방법입니다.",
+      "category": "바비큐",
+      "productIds": [
+        "6082424769",
+        "9190981639",
+        "9376289029"
+      ],
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "취사 가능한 캠핑장 확인하기"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "굽는 곳과 먹는 곳을 한 테이블에 몰아넣지 않기",
+          "text": "캠핑에서 삼겹살을 준비할 때는 양념 종류를 늘리기 전에 조리 자리를 정해 보세요. 해당 캠핑장의 취사 규칙과 사용하는 열원의 설치 조건을 확인하고, 뜨거운 기구를 놓는 자리와 식기를 펼치는 자리를 구분합니다. 사람들이 의자를 빼고 드나드는 방향도 함께 생각하면 식사 도중 물건을 다시 옮기는 일을 줄일 수 있습니다. 이 초안은 고기와 곁들임, 조리 도구를 나눠 챙기는 순서에 초점을 맞춥니다.",
+          "productIds": []
+        },
+        {
+          "heading": "고기는 다른 메뉴와 함께 먹을 분량으로 정하기",
+          "text": "[로켓프레시] 하이포크 한돈 삼겹살 구이용 (냉장), 500g, 1개는 이번 초안에 연결된 실제 조회 상품입니다. 구매 전 중량과 냉장·냉동 표시, 절단 형태와 보관 방법을 선택 옵션에서 확인해야 합니다. 사진 속 몇 점의 고기만 보고 한 팩 분량이나 인원수를 판단하지 않습니다.\n곁들일 채소와 다른 메뉴가 있다면 그것까지 장보기 목록에 적고 중복 재료를 줄이세요. 운반과 보관은 식품 표시를 따르고, 조리 전 재료를 다루는 도구와 완성 음식을 덜어 담는 도구를 구분해 준비합니다.",
+          "productIds": [
+            "6082424769"
+          ],
+          "image": {
+            "url": "/prep-images/pork-grill-vegetable-table-preparation-v2.webp",
+            "alt": "캠핑 삼겹살 준비: 굽는 자리와 채소 담는 자리 구분하기 — 출발 전 준비",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": false,
+            "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean shoppable lifestyle editorial. Faithfully reproduce the exact actual objects in the reference images. Image1 actual pink-and-white striped sliced pork belly: food only, no invented retail package; no implication of exact slice count or included props. Image2 actual shallow round black griddle with TWO integrated rectangular loop handles, flat cooking surface, not ridged. Image3 actual round stainless three-compartment container with transparent clip lid and red-orange gasket; preserve THREE equal sections, lid can sit alongside. No beef steaks, sausage, added grill ridges or generic pan substitute. Scene: Home prep layout with pork belly on its own separate plain plate, black griddle and its two handles fully visible, round steel compartment container with clear red-sealed lid beside it. Clean separated raw-food and utensil areas. Accurate shapes, colors, handle and lid details; no invented components or functionalities. Three identifiable product groups for separate website hotspots. No baked + buttons. No headline. Small readable 'AI 연출 이미지'. No prices, numeric nutrition/weight claims, reviews or badges. Do not reproduce advertising overlays from reference images. Natural realistic shadows and a calm welcoming weekend mood.",
+            "productMatchReviewed": false,
+            "referenceProducts": [
+              {
+                "productId": "6082424769",
+                "imageUrl": "https://ads-partners.coupang.com/image1/pcGd3wKvclZwm6jOpXs2aflUzSSBsdIV3zBptECUWBhoj9xB4NkzBWj7yFE5BaagJxy-F4g31sOt5DzPfLAXZpChOODkvKN0qUONdRifKOn3Tji0292ZWA0vYhXhPhRYrd4-iz12O6ejFdZKPits5iwe3ces9NCph1Lb7EZccniUhBFVFYb7Vs8-SkDzVx9M2YQHI80kSbH10OQRuCIwlPvy_aOW0I2vWV4RYKBALEkC3s214sgtDv6OF2XnLlfOyCVfu4ZLi0WKdc4Byx9hiEDeRkVduDTnqsklDQHI3hf2SZrShyNjPgUcXDD3luA5_-scxAxr-ITJDcS6N3D1ySWWSCmEq0dqrO2oUDH73ThcJu5mdruJlh7oeHgtIAdTn_pMfw6e6G6WyN1BWeL9Bz8D8qVKB5Ex6kSRyqhE7yrwjSm74rmWsCGu2ZF1DugSucFy6kWT44Tdu9ahijhxPP1EfHlboNIY4P9Y-qPpZvk2z--mucZc8kR4_okZgs2XeSyqlCYtIJY="
+              },
+              {
+                "productId": "9190981639",
+                "imageUrl": "https://ads-partners.coupang.com/image1/7oFkbiFGo3NAxfSw7jF6c29x5oW8PSBk6k8TqaytsI-oOX7J-m_vnUUGBTMP4NYaBCHnlPwToaWi4zED03OJ-44IhvDe6xRZ9sAwQLOaRXqfI_ouPBejg07qDCpxzsSatDjQkc0EkvAe7IPWF2PAZm8nEvi232kjGmNMxyxcD6YKDXlrL4cRUoycM6PyThIjnGTJk07JapceSuvhA5TqmctgHbBLz4e0BtxVXQbryVo9PlJrnXHziSIYotI0aT95qAcSr3x9_b6nEGWxbPGcjjxM3n9I5vFXp5SW0RqSxXtWCUDvdXd61wrpGkaDFgBAb1GcWxmY0sZijIbwuieifO7Xl1qLwxKlfPWzI0nNmeI_gPetkA99kGykVZsGkyF71smMu-fYlLM2tDmrwi9HaqLULRmyXjUt0oaDpj1xdrCojU2ryPE3g8vRay3H5zvVihbq3RJFr4TlcAhzs3qVbweqPA0r2fJIr3L7HKzBSGxkiX9kEF90L8OePXd1J0SxNt7FB3b08gydbHuxSEyDOmQRWRR_3V_7"
+              },
+              {
+                "productId": "9376289029",
+                "imageUrl": "https://ads-partners.coupang.com/image1/LZz2y9pR9atr6Eo1LcKis3H58iWF1UDPMY-q3M5bZX_Rta3yoHouC40qoPVDQy2vqLDlHuzre3ZqD6UPt4qBFRZwh0lohkpBdPDfSlVq8WMiMj-UDfJYiH-jKnnBfERydPVsQwfa9kPQal7wYxWUeVKRXPDQC9z7aKGDhb8MAacyEKjqlsDGy3QzAwRHnK32QFk6Tkq3ndgyY5z33-oJYPrr-mugxSD2jPv0ITU8XQO7ljNOhnD60KvPueRR7K_wqJlXNhI3QSzOqZbR7El6gsB6qW-0mzNmyuKzm45MJFmDqEbp5nBgxzlWKULE0CazKMqGSaA58NsnyhucramxkmmSp3CKPrDTKRyHP5eE_wfYkY6VxyunZQ1LRjNDoKB_7K1oArYKVSOlol7Lm0RcnIXPdCxT5YI5zV5dZb2Jlm0YP8Xl0d4Hh-aZs0qPKWaDttexOdAE6VJQuG6n_k0YlqRsaRX76URTn8r6MVo8FMwnSuVZu6-PTUG6Ph1WQLsh_ziXxsAPbZo="
+              }
+            ],
+            "tags": []
+          }
+        },
+        {
+          "heading": "그리들은 버너와 받침 조건까지 함께 확인하기",
+          "text": "[인덕션 OK] 디앤빌 가정용 고기 불판 국내생산 초대형 그리들 팬+보관가방 38CM, 1개, 38cm는 원형 그리들 후보입니다. 겉모양만 보고 가지고 있는 버너와 호환된다고 판단하지 마세요. 바닥 크기와 지지 구조, 기구가 허용하는 조합을 설명서에서 대조하는 것이 먼저입니다.\n현재 준비된 이미지 중 뜨거운 조리 도구가 천 위에 놓인 것처럼 보이는 장면은 수정 대상입니다. 실제 조리에서는 제조사가 안내하는 설치·사용 조건을 따르고, 식탁이나 천을 임의의 내열 받침으로 사용하지 않습니다. 가열한 기구는 충분히 식힌 뒤 안내된 방법으로 정리합니다.",
+          "productIds": [
+            "9190981639"
+          ]
+        },
+        {
+          "heading": "나눔 용기는 서로 다른 곁들임을 정리하는 용도로",
+          "text": "씨엠와이케이 국내산 스텐 304 원형 멀티 업소용 나눔 소분 반찬용기 3칸 2호 600ml, 1개, 600ml는 칸이 나뉜 원형 용기 후보입니다. 채소나 곁들임을 구분해 담는 방식으로 활용을 검토하고 있습니다. 칸이 있다는 사실만으로 밀폐 운반, 직화 조리, 국물 보관에 적합하다고 설명하지 않습니다. 뚜껑 포함 여부와 각 부품의 사용 조건은 판매 옵션에서 따로 확인해야 합니다.\n현장에서는 한꺼번에 모든 재료를 펼치기보다 사용할 분량부터 준비하고, 남은 것은 표시된 보관 조건에 맞춰 둡니다. 집에 있는 작은 용기 여러 개로 나눠 담는 방법도 가능합니다.",
+          "productIds": [
+            "9376289029"
+          ],
+          "image": {
+            "url": "/prep-images/pork-grill-vegetable-table-serving-v2.webp",
+            "alt": "캠핑 삼겹살 준비: 굽는 자리와 채소 담는 자리 구분하기 — 사용과 정리 예시",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": false,
+            "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean shoppable lifestyle editorial. Faithfully reproduce the exact actual objects in the reference images. Image1 actual pink-and-white striped sliced pork belly: food only, no invented retail package; no implication of exact slice count or included props. Image2 actual shallow round black griddle with TWO integrated rectangular loop handles, flat cooking surface, not ridged. Image3 actual round stainless three-compartment container with transparent clip lid and red-orange gasket; preserve THREE equal sections, lid can sit alongside. No beef steaks, sausage, added grill ridges or generic pan substitute. Scene: Outdoor serving suggestion: pork belly pieces presented on the black round griddle, three-compartment container next to it and no extra raw meat beside cooked food. Keep pork as a visually separate identifiable tagged region from the pan. No false doneness guarantee. Accurate shapes, colors, handle and lid details; no invented components or functionalities. Three identifiable product groups for separate website hotspots. No baked + buttons. No headline. Small readable 'AI 연출 이미지'. No prices, numeric nutrition/weight claims, reviews or badges. Do not reproduce advertising overlays from reference images. Natural realistic shadows and a calm welcoming weekend mood.",
+            "productMatchReviewed": false,
+            "referenceProducts": [
+              {
+                "productId": "6082424769",
+                "imageUrl": "https://ads-partners.coupang.com/image1/pcGd3wKvclZwm6jOpXs2aflUzSSBsdIV3zBptECUWBhoj9xB4NkzBWj7yFE5BaagJxy-F4g31sOt5DzPfLAXZpChOODkvKN0qUONdRifKOn3Tji0292ZWA0vYhXhPhRYrd4-iz12O6ejFdZKPits5iwe3ces9NCph1Lb7EZccniUhBFVFYb7Vs8-SkDzVx9M2YQHI80kSbH10OQRuCIwlPvy_aOW0I2vWV4RYKBALEkC3s214sgtDv6OF2XnLlfOyCVfu4ZLi0WKdc4Byx9hiEDeRkVduDTnqsklDQHI3hf2SZrShyNjPgUcXDD3luA5_-scxAxr-ITJDcS6N3D1ySWWSCmEq0dqrO2oUDH73ThcJu5mdruJlh7oeHgtIAdTn_pMfw6e6G6WyN1BWeL9Bz8D8qVKB5Ex6kSRyqhE7yrwjSm74rmWsCGu2ZF1DugSucFy6kWT44Tdu9ahijhxPP1EfHlboNIY4P9Y-qPpZvk2z--mucZc8kR4_okZgs2XeSyqlCYtIJY="
+              },
+              {
+                "productId": "9190981639",
+                "imageUrl": "https://ads-partners.coupang.com/image1/7oFkbiFGo3NAxfSw7jF6c29x5oW8PSBk6k8TqaytsI-oOX7J-m_vnUUGBTMP4NYaBCHnlPwToaWi4zED03OJ-44IhvDe6xRZ9sAwQLOaRXqfI_ouPBejg07qDCpxzsSatDjQkc0EkvAe7IPWF2PAZm8nEvi232kjGmNMxyxcD6YKDXlrL4cRUoycM6PyThIjnGTJk07JapceSuvhA5TqmctgHbBLz4e0BtxVXQbryVo9PlJrnXHziSIYotI0aT95qAcSr3x9_b6nEGWxbPGcjjxM3n9I5vFXp5SW0RqSxXtWCUDvdXd61wrpGkaDFgBAb1GcWxmY0sZijIbwuieifO7Xl1qLwxKlfPWzI0nNmeI_gPetkA99kGykVZsGkyF71smMu-fYlLM2tDmrwi9HaqLULRmyXjUt0oaDpj1xdrCojU2ryPE3g8vRay3H5zvVihbq3RJFr4TlcAhzs3qVbweqPA0r2fJIr3L7HKzBSGxkiX9kEF90L8OePXd1J0SxNt7FB3b08gydbHuxSEyDOmQRWRR_3V_7"
+              },
+              {
+                "productId": "9376289029",
+                "imageUrl": "https://ads-partners.coupang.com/image1/LZz2y9pR9atr6Eo1LcKis3H58iWF1UDPMY-q3M5bZX_Rta3yoHouC40qoPVDQy2vqLDlHuzre3ZqD6UPt4qBFRZwh0lohkpBdPDfSlVq8WMiMj-UDfJYiH-jKnnBfERydPVsQwfa9kPQal7wYxWUeVKRXPDQC9z7aKGDhb8MAacyEKjqlsDGy3QzAwRHnK32QFk6Tkq3ndgyY5z33-oJYPrr-mugxSD2jPv0ITU8XQO7ljNOhnD60KvPueRR7K_wqJlXNhI3QSzOqZbR7El6gsB6qW-0mzNmyuKzm45MJFmDqEbp5nBgxzlWKULE0CazKMqGSaA58NsnyhucramxkmmSp3CKPrDTKRyHP5eE_wfYkY6VxyunZQ1LRjNDoKB_7K1oArYKVSOlol7Lm0RcnIXPdCxT5YI5zV5dZb2Jlm0YP8Xl0d4Hh-aZs0qPKWaDttexOdAE6VJQuG6n_k0YlqRsaRX76URTn8r6MVo8FMwnSuVZu6-PTUG6Ph1WQLsh_ziXxsAPbZo="
+              }
+            ],
+            "tags": []
+          }
+        },
+        {
+          "heading": "철수 순서는 식기 정리와 조리 기구 식히기를 나누기",
+          "text": "식사가 끝났다고 바로 뜨거운 그리들을 가방에 넣지 않습니다. 열원과 조리 도구는 각 설명서에 맞춰 종료·정리하고, 그동안 식기와 주변 물건을 분리해 챙깁니다. 사용한 도구는 지정된 세척 장소에서 관리하고, 기름과 남은 음식의 처리는 현장 안내를 따릅니다.\n이 글은 상품 상세 대조와 안전한 이미지 수정이 남아 있는 비공개 초안입니다. 음식 맛이나 사용 경험을 꾸며 넣지 않았으며, 이미지의 잘못된 배치를 조리 방법으로 안내하지 않습니다.",
+          "productIds": []
+        }
+      ],
+      "contentStyle": "shoppable-scene-v2",
+      "status": "draft",
+      "publishAt": "2026-09-13T14:52:04.063Z",
+      "updatedAt": "2026-09-13T14:52:04.063Z",
+      "reviewed": false,
+      "cover": {
+        "url": "/prep-images/pork-grill-vegetable-table-cover-v2.webp",
+        "alt": "캠핑 삼겹살 준비: 굽는 자리와 채소 담는 자리 구분하기 — 준비물 배치",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": false,
+        "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean shoppable lifestyle editorial. Faithfully reproduce the exact actual objects in the reference images. Image1 actual pink-and-white striped sliced pork belly: food only, no invented retail package; no implication of exact slice count or included props. Image2 actual shallow round black griddle with TWO integrated rectangular loop handles, flat cooking surface, not ridged. Image3 actual round stainless three-compartment container with transparent clip lid and red-orange gasket; preserve THREE equal sections, lid can sit alongside. No beef steaks, sausage, added grill ridges or generic pan substitute. Scene: Outdoor barbecue preparation table, pork belly slices on an ordinary unbranded plate left, empty black griddle center, round three-compartment container right. Peaceful warm daylight, no heat/flames. Accurate shapes, colors, handle and lid details; no invented components or functionalities. Three identifiable product groups for separate website hotspots. No baked + buttons. Elegant readable Korean headline exactly '한 판으로 나누는 주말' above the products. Small readable 'AI 연출 이미지'. No prices, numeric nutrition/weight claims, reviews or badges. Do not reproduce advertising overlays from reference images. Natural realistic shadows and a calm welcoming weekend mood.",
+        "productMatchReviewed": false,
+        "referenceProducts": [
+          {
+            "productId": "6082424769",
+            "imageUrl": "https://ads-partners.coupang.com/image1/pcGd3wKvclZwm6jOpXs2aflUzSSBsdIV3zBptECUWBhoj9xB4NkzBWj7yFE5BaagJxy-F4g31sOt5DzPfLAXZpChOODkvKN0qUONdRifKOn3Tji0292ZWA0vYhXhPhRYrd4-iz12O6ejFdZKPits5iwe3ces9NCph1Lb7EZccniUhBFVFYb7Vs8-SkDzVx9M2YQHI80kSbH10OQRuCIwlPvy_aOW0I2vWV4RYKBALEkC3s214sgtDv6OF2XnLlfOyCVfu4ZLi0WKdc4Byx9hiEDeRkVduDTnqsklDQHI3hf2SZrShyNjPgUcXDD3luA5_-scxAxr-ITJDcS6N3D1ySWWSCmEq0dqrO2oUDH73ThcJu5mdruJlh7oeHgtIAdTn_pMfw6e6G6WyN1BWeL9Bz8D8qVKB5Ex6kSRyqhE7yrwjSm74rmWsCGu2ZF1DugSucFy6kWT44Tdu9ahijhxPP1EfHlboNIY4P9Y-qPpZvk2z--mucZc8kR4_okZgs2XeSyqlCYtIJY="
+          },
+          {
+            "productId": "9190981639",
+            "imageUrl": "https://ads-partners.coupang.com/image1/7oFkbiFGo3NAxfSw7jF6c29x5oW8PSBk6k8TqaytsI-oOX7J-m_vnUUGBTMP4NYaBCHnlPwToaWi4zED03OJ-44IhvDe6xRZ9sAwQLOaRXqfI_ouPBejg07qDCpxzsSatDjQkc0EkvAe7IPWF2PAZm8nEvi232kjGmNMxyxcD6YKDXlrL4cRUoycM6PyThIjnGTJk07JapceSuvhA5TqmctgHbBLz4e0BtxVXQbryVo9PlJrnXHziSIYotI0aT95qAcSr3x9_b6nEGWxbPGcjjxM3n9I5vFXp5SW0RqSxXtWCUDvdXd61wrpGkaDFgBAb1GcWxmY0sZijIbwuieifO7Xl1qLwxKlfPWzI0nNmeI_gPetkA99kGykVZsGkyF71smMu-fYlLM2tDmrwi9HaqLULRmyXjUt0oaDpj1xdrCojU2ryPE3g8vRay3H5zvVihbq3RJFr4TlcAhzs3qVbweqPA0r2fJIr3L7HKzBSGxkiX9kEF90L8OePXd1J0SxNt7FB3b08gydbHuxSEyDOmQRWRR_3V_7"
+          },
+          {
+            "productId": "9376289029",
+            "imageUrl": "https://ads-partners.coupang.com/image1/LZz2y9pR9atr6Eo1LcKis3H58iWF1UDPMY-q3M5bZX_Rta3yoHouC40qoPVDQy2vqLDlHuzre3ZqD6UPt4qBFRZwh0lohkpBdPDfSlVq8WMiMj-UDfJYiH-jKnnBfERydPVsQwfa9kPQal7wYxWUeVKRXPDQC9z7aKGDhb8MAacyEKjqlsDGy3QzAwRHnK32QFk6Tkq3ndgyY5z33-oJYPrr-mugxSD2jPv0ITU8XQO7ljNOhnD60KvPueRR7K_wqJlXNhI3QSzOqZbR7El6gsB6qW-0mzNmyuKzm45MJFmDqEbp5nBgxzlWKULE0CazKMqGSaA58NsnyhucramxkmmSp3CKPrDTKRyHP5eE_wfYkY6VxyunZQ1LRjNDoKB_7K1oArYKVSOlol7Lm0RcnIXPdCxT5YI5zV5dZb2Jlm0YP8Xl0d4Hh-aZs0qPKWaDttexOdAE6VJQuG6n_k0YlqRsaRX76URTn8r6MVo8FMwnSuVZu6-PTUG6Ph1WQLsh_ziXxsAPbZo="
+          }
+        ],
+        "tags": []
+      }
+    },
+    {
+      "slug": "autumn-camp-tarp-rest-corner",
+      "title": "가을 캠핑 휴식 자리, 텐트·타프·의자를 놓는 순서",
+      "description": "잠자는 텐트와 밖에서 쉬는 자리를 나눠 가을 캠핑 동선을 정리합니다. 타프를 펼칠 공간, 의자 발받침, 짐을 옮길 통로와 철수 순서를 살펴보세요.",
+      "category": "캠핑 초보 준비물",
+      "productIds": [
+        "8880587680",
+        "8682120809",
+        "9072324584"
+      ],
+      "sections": [
+        {
+          "heading": "장비를 펴기 전에 빈 통로부터 남겨 두기",
+          "text": "가을 캠핑에서는 잠자는 자리와 바깥에서 쉬는 자리를 나눠 생각해 보세요. 텐트 옆을 의자로 가득 채우면 짐을 옮기거나 출입할 때 돌아가야 합니다. 도착하면 먼저 배정된 사이트의 경계와 바닥 상태를 살펴보고, 텐트 출입구에서 공용 통로까지 이어지는 길을 비워 둡니다. 그다음 타프와 의자를 놓을 자리를 정하면 이미 설치한 장비를 다시 옮기는 일을 줄일 수 있습니다. 아래 세 상품은 하나로 묶인 세트가 아니며, 가지고 있는 장비로 같은 배치를 만들어도 됩니다.",
+          "productIds": []
+        },
+        {
+          "heading": "텐트의 바닥 크기뿐 아니라 출입구 앞도 확인하기",
+          "text": "어반콘크리트 토치카 에어텐트, 토치카 에어텐트 4인는 이번 장면에 연결한 텐트입니다. 검은색 본체와 각진 지붕, 굵은 외곽 프레임이 보이는 형태를 사진에 반영했습니다. 구매 전에는 펼친 치수와 수납 크기를 확인하고, 설치에 필요한 도구와 구성품이 선택 옵션에 포함되는지 대조하세요. 상품명에 적힌 인원수만으로 실제 침구와 짐까지 모두 들어간다고 판단하지 않는 편이 좋습니다. 출입구를 열고 드나들 공간, 고정에 필요한 공간까지 포함해 사이트에 들어가는지 살펴보세요. 설치 순서와 사용 조건은 해당 텐트 설명서를 따릅니다.",
+          "productIds": [
+            "8880587680"
+          ]
+        },
+        {
+          "heading": "타프는 텐트에 무리하게 덧붙이지 않기",
+          "text": "캠프어스 시원하고 방수되는 그늘막 타프 3*3는 밝은 베이지 겉면과 어두운 안쪽 면이 보이는 타프입니다. 이 글에서는 텐트와 별도의 휴식 공간을 만드는 용도로 연결했습니다. 실제로 펼칠 수 있는 면적은 천의 크기만으로 정해지지 않습니다. 폴과 고정줄이 놓일 자리까지 포함해 현장 규칙에 맞는지 확인하고, 줄이 다른 사람의 이동 경로를 가로지르지 않게 배치하세요. 사진에 보이는 폴이나 고정 부속품이 판매 옵션에 모두 포함된다고 가정하지 마세요. 기상 상황이 제품 사용 조건을 벗어나면 설치를 미루거나 철수하고, 타프를 악천후 대피 시설로 생각하지 않습니다. 판매 페이지 안의 길이와 무게 수치가 서로 달라 여기서는 수치를 확정하지 않습니다. 사이트에 들어가는 크기인지 판단하기 전 판매자에게 실제 규격을 확인하세요.",
+          "productIds": [
+            "8682120809"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-camp-tarp-rest-corner-preparation-v1.webp",
+            "alt": "타프 아래 의자와 텐트 출입구 사이를 비운 캠핑 동선",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: compositing. Asset type: Korean shoppable editorial photo, landscape 3:2. Reference inputs are actual product photos; preserve their exact colors, silhouettes, components and realistic proportions. Image 1: black Urban Concrete TOCHKA inflatable tent, rectangular compact cabin with chamfered roof corners, thick black inflatable perimeter beams, closed large rounded rectangular front panel and two closed side panels. Preserve exact black shape, no beige tent, no invented open interior. Image 2: beige rectangular tarp with black underside held by thin metal poles and taut guy lines, copy canopy only, not source chairs/table. Image 3: reclining chair beige fabric with brown head pillow/top trim, black tubular folding frame, fabric armrests with cup holder and extending fabric footrest. Show two matching chairs as actual two-chair product, no extra cushions. Arrange tarp next to tent, not touching, with visible unobstructed walkway. No fire or heater. No dimensions or protection claims. Scene: Different diagonal view from in front of the chairs toward closed tent; demonstrate open aisle between extended footrests and tent; entire canopy still visible. Photorealistic Korean lifestyle editorial, natural texture and lighting, gentle autumn atmosphere, not a catalog collage. Each of the THREE product types must be distinctly visible for website hotspot links. Do not draw plus icons or product cards. No headline. Small legible Korean disclosure exactly \"AI 연출 이미지\" at bottom right. No fake prices, reviews, ratings, certifications, specifications, promotional badges or unreadable fine print. Do not add unverified accessories. Product reference fidelity over decoration.",
+            "referenceProducts": [
+              {
+                "productId": "8880587680",
+                "imageUrl": "https://ads-partners.coupang.com/image1/C96mFyGydSWKDKs8C0klJI9OOUUUbQEEFmE6g2N7BMpu99EGfknnK7Gn2qNTiFd1KLB8pmNIu0FLuOAZqxLnCetbS2qZDn-WtIQfLb70PKd7hKb9hRRmznrazBQ24TA3bZuC_ObQmeZVUT9IoxFUIT_w_L4Fgx3jtvmP-wg_J9Y_Hs62fBCqNdWKgRgm37BLGLODDqfYmvcYCR9mAvo2j7Dn5GNN9kNCIHr6JNysaMC6SeeylJRApFsgJSIGhut8mn7LsJI6tqOO9K27GVHGeASNpoHzuv6_FmzUQsfOU4cnbkB9r_a36TO4DGFeuWuJzsotpFNsLu7d2KJjg2KxRgDkX3tL-f1uvZatrqHHt93sS6nad4Zthvl0eFtGBWFtBvdGReTs1Tn6S8d2GDp_XyW_yb9lckfFqOGaTe16VHTo-9pF-9oxcDr5p4E7Tw1krYNrZKwTCdVVVneEfHAoW2ZMgI8fXQObCtIDhQhxo6urb32NwVeC8x5PT1fhPmdgrofdPu1QZKBPONh3YY7SFC7opAahUTzK"
+              },
+              {
+                "productId": "8682120809",
+                "imageUrl": "https://ads-partners.coupang.com/image1/OFxIzSxwsQ-xWYxxOMYgKztt7uZTLmOjxk4Y6t12o56FZ1axWiX55BLF13w2ouTvigF2f1ihHHfI4M3lkUXSMOYauYeLLfd7GaS4bQvxrCqii3ktLb6XL-qIL2sUqpInku0Eg-WAsZbiPngvCe2dgjtoLSH2Z2uoKDJ1R98k92cdwmvfy3akqRnjeb5TeB6fjgdKn4pmeCUMc2NnMuNLwCh5qQ2PD_4xCMQAyqfroT2yVOzAEXvOGEUOfBpHVqn-AY8qArkt2RXRYA1schgUW_EkO8-k85KlnWMC5TFlKq7ynJO0v6YOMQJ2DykmxOkozQevQ7LkBzR_TCX23yixHJ2yk7x5k7De-vrm3CmZ76YEROC00FGmRqMqRmBvVYBocdClIzvRP8yJCljNIUKoI4MK82sRejn-FgJaJKGpVrm10jTpMrUfpSgpDNroA_iMhVZjSvwiwvl697CNB7qywZ3PS-rH-N5wAQOERxJT8WKPHA48fhJGd-cubwCzg6G4uKwmzrtOeuBCKV5YGY7KH8IV5V7F30htwpvV_vVTszkNvB8TEvSbcUcMPSGcQvTJ-AWNwF3iAlU6"
+              },
+              {
+                "productId": "9072324584",
+                "imageUrl": "https://ads-partners.coupang.com/image1/qeKJuAlNSQQAKeK-qag0J4WsgmPCNkVOQ4f9fuQR2lWXvbpg058-cfKhuhBlpqWr0yP0_5tAsCgUJYdNnMGniRM8wroS-TXxj9B5FPfQhC3e0WrfCaj6xF4TabUChmWLlRs4DaaUPAqixaK0YuQ_8fnoGsPw-wQVxwipkdLTWP0n_d9SWSuqvGzztqOOQO8XHG9gIj-afyHAbFwEX9EvtwmLQJ4SQWkv_0zpe1aBZ9hKmr0nkAthB2KhlnEDolopByiLSPDpDM-pTEd5CbW8O1zUAyQVAurnNClxhFbLv5acSVCXatrp_CiTly5c141ztMUp_WrjxRSgop30C1sEoI_iGQ2TqFNxW8lRL38ejnXg5BEeeihUn3QFPfte0BnMOjNIqDUHEV2YKitjMl_r5cRei9mC0tDYID3F-_2hsRGG5NKphTtDyCP00DPW80CZGWigF0Y9BFp09zAIJMT3x8eik22iZiATSyYASEEy6Mx__zwYFMCy8akNXeVi7UhmedRjcgKuJxJwUchfmrZ_5FM="
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "8880587680",
+                "x": 76,
+                "y": 51
+              },
+              {
+                "productId": "8682120809",
+                "x": 31,
+                "y": 22
+              },
+              {
+                "productId": "9072324584",
+                "x": 25,
+                "y": 66
+              }
+            ]
+          }
+        },
+        {
+          "heading": "의자 발받침까지 펼친 상태로 간격 재보기",
+          "text": "COUCAMP 접이식 캠핑의자 편안한 등받이 조절 캠핑 의자 튼튼한 눕는 의자, 2개, 브라운색는 브라운색 2개 옵션으로 연결한 의자입니다. 참고 사진에서는 밝은 좌석 천, 갈색 머리받침, 검은 프레임과 앞으로 이어지는 발받침을 확인할 수 있습니다. 앉는 부분만 보고 간격을 정하지 말고, 펼친 전체 길이와 제품이 요구하는 설치 조건을 확인하세요. 두 의자가 마주 보는 배치라면 가운데를 지나갈 수 있는지, 나란히 놓는다면 텐트 출입구를 막지 않는지 살펴봅니다. 사용 하중과 접고 펴는 방법은 판매처·제품 안내를 확인해야 하며, 이미지 속 자세가 모든 사용자에게 맞는다는 뜻은 아닙니다.",
+          "productIds": [
+            "9072324584"
+          ]
+        },
+        {
+          "heading": "철수할 때도 출입구 쪽 공간을 마지막까지 남기기",
+          "text": "짐을 옮길 때는 통로에 가방을 쌓기보다 한쪽 수납 구역으로 모아 두세요. 의자는 접기 전 주변 물건을 치우고 설명서의 방법에 따라 정리합니다. 천이 젖었는지 확인하고, 현장에서 충분히 말리지 못했다면 집에 돌아와 제품 관리 안내에 맞춰 펼쳐 말릴 계획을 세웁니다. 마지막으로 고정 부속품과 쓰레기가 남지 않았는지 사이트를 둘러보세요. 이 글의 사진은 실제 상품 사진을 참고한 AI 연출 이미지이며, 배치 예시입니다. 실제 치수·판매 구성과 내후 성능은 상품 상세 안내로 확인해야 합니다. 사진의 작은 테이블과 음료 용기는 배경 소품이며 세 상품의 판매 구성에 포함되지 않습니다.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/autumn-camp-tarp-rest-corner-serving-v1.webp",
+            "alt": "가을 오후의 텐트와 타프, 의자 휴식 자리",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: compositing. Asset type: Korean shoppable editorial photo, landscape 3:2. Reference inputs are actual product photos; preserve their exact colors, silhouettes, components and realistic proportions. Image 1: black Urban Concrete TOCHKA inflatable tent, rectangular compact cabin with chamfered roof corners, thick black inflatable perimeter beams, closed large rounded rectangular front panel and two closed side panels. Preserve exact black shape, no beige tent, no invented open interior. Image 2: beige rectangular tarp with black underside held by thin metal poles and taut guy lines, copy canopy only, not source chairs/table. Image 3: reclining chair beige fabric with brown head pillow/top trim, black tubular folding frame, fabric armrests with cup holder and extending fabric footrest. Show two matching chairs as actual two-chair product, no extra cushions. Arrange tarp next to tent, not touching, with visible unobstructed walkway. No fire or heater. No dimensions or protection claims. Scene: Departure preparation in bright late afternoon: one chair upright and one folded only if faithfully reconstructible, otherwise both upright with footrests extended; view from other side with entire closed tent and canopy visible, dry clear ground. Photorealistic Korean lifestyle editorial, natural texture and lighting, gentle autumn atmosphere, not a catalog collage. Each of the THREE product types must be distinctly visible for website hotspot links. Do not draw plus icons or product cards. No headline. Small legible Korean disclosure exactly \"AI 연출 이미지\" at bottom right. No fake prices, reviews, ratings, certifications, specifications, promotional badges or unreadable fine print. Do not add unverified accessories. Product reference fidelity over decoration.",
+            "referenceProducts": [
+              {
+                "productId": "8880587680",
+                "imageUrl": "https://ads-partners.coupang.com/image1/C96mFyGydSWKDKs8C0klJI9OOUUUbQEEFmE6g2N7BMpu99EGfknnK7Gn2qNTiFd1KLB8pmNIu0FLuOAZqxLnCetbS2qZDn-WtIQfLb70PKd7hKb9hRRmznrazBQ24TA3bZuC_ObQmeZVUT9IoxFUIT_w_L4Fgx3jtvmP-wg_J9Y_Hs62fBCqNdWKgRgm37BLGLODDqfYmvcYCR9mAvo2j7Dn5GNN9kNCIHr6JNysaMC6SeeylJRApFsgJSIGhut8mn7LsJI6tqOO9K27GVHGeASNpoHzuv6_FmzUQsfOU4cnbkB9r_a36TO4DGFeuWuJzsotpFNsLu7d2KJjg2KxRgDkX3tL-f1uvZatrqHHt93sS6nad4Zthvl0eFtGBWFtBvdGReTs1Tn6S8d2GDp_XyW_yb9lckfFqOGaTe16VHTo-9pF-9oxcDr5p4E7Tw1krYNrZKwTCdVVVneEfHAoW2ZMgI8fXQObCtIDhQhxo6urb32NwVeC8x5PT1fhPmdgrofdPu1QZKBPONh3YY7SFC7opAahUTzK"
+              },
+              {
+                "productId": "8682120809",
+                "imageUrl": "https://ads-partners.coupang.com/image1/OFxIzSxwsQ-xWYxxOMYgKztt7uZTLmOjxk4Y6t12o56FZ1axWiX55BLF13w2ouTvigF2f1ihHHfI4M3lkUXSMOYauYeLLfd7GaS4bQvxrCqii3ktLb6XL-qIL2sUqpInku0Eg-WAsZbiPngvCe2dgjtoLSH2Z2uoKDJ1R98k92cdwmvfy3akqRnjeb5TeB6fjgdKn4pmeCUMc2NnMuNLwCh5qQ2PD_4xCMQAyqfroT2yVOzAEXvOGEUOfBpHVqn-AY8qArkt2RXRYA1schgUW_EkO8-k85KlnWMC5TFlKq7ynJO0v6YOMQJ2DykmxOkozQevQ7LkBzR_TCX23yixHJ2yk7x5k7De-vrm3CmZ76YEROC00FGmRqMqRmBvVYBocdClIzvRP8yJCljNIUKoI4MK82sRejn-FgJaJKGpVrm10jTpMrUfpSgpDNroA_iMhVZjSvwiwvl697CNB7qywZ3PS-rH-N5wAQOERxJT8WKPHA48fhJGd-cubwCzg6G4uKwmzrtOeuBCKV5YGY7KH8IV5V7F30htwpvV_vVTszkNvB8TEvSbcUcMPSGcQvTJ-AWNwF3iAlU6"
+              },
+              {
+                "productId": "9072324584",
+                "imageUrl": "https://ads-partners.coupang.com/image1/qeKJuAlNSQQAKeK-qag0J4WsgmPCNkVOQ4f9fuQR2lWXvbpg058-cfKhuhBlpqWr0yP0_5tAsCgUJYdNnMGniRM8wroS-TXxj9B5FPfQhC3e0WrfCaj6xF4TabUChmWLlRs4DaaUPAqixaK0YuQ_8fnoGsPw-wQVxwipkdLTWP0n_d9SWSuqvGzztqOOQO8XHG9gIj-afyHAbFwEX9EvtwmLQJ4SQWkv_0zpe1aBZ9hKmr0nkAthB2KhlnEDolopByiLSPDpDM-pTEd5CbW8O1zUAyQVAurnNClxhFbLv5acSVCXatrp_CiTly5c141ztMUp_WrjxRSgop30C1sEoI_iGQ2TqFNxW8lRL38ejnXg5BEeeihUn3QFPfte0BnMOjNIqDUHEV2YKitjMl_r5cRei9mC0tDYID3F-_2hsRGG5NKphTtDyCP00DPW80CZGWigF0Y9BFp09zAIJMT3x8eik22iZiATSyYASEEy6Mx__zwYFMCy8akNXeVi7UhmedRjcgKuJxJwUchfmrZ_5FM="
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "8880587680",
+                "x": 78,
+                "y": 52
+              },
+              {
+                "productId": "8682120809",
+                "x": 30,
+                "y": 25
+              },
+              {
+                "productId": "9072324584",
+                "x": 37,
+                "y": 64
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "캠핑장 정보 살펴보기"
+        }
+      ],
+      "contentStyle": "shoppable-scene-v2",
+      "status": "published",
+      "publishAt": "2026-09-13T14:52:04.063Z",
+      "updatedAt": "2026-09-13T14:52:04.063Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/autumn-camp-tarp-rest-corner-cover-v1.webp",
+        "alt": "가을 캠핑장에 따로 배치한 검은 에어텐트와 베이지 타프, 발받침 의자",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "prompt": "Use case: compositing. Asset type: Korean shoppable editorial photo, landscape 3:2. Reference inputs are actual product photos; preserve their exact colors, silhouettes, components and realistic proportions. Image 1: black Urban Concrete TOCHKA inflatable tent, rectangular compact cabin with chamfered roof corners, thick black inflatable perimeter beams, closed large rounded rectangular front panel and two closed side panels. Preserve exact black shape, no beige tent, no invented open interior. Image 2: beige rectangular tarp with black underside held by thin metal poles and taut guy lines, copy canopy only, not source chairs/table. Image 3: reclining chair beige fabric with brown head pillow/top trim, black tubular folding frame, fabric armrests with cup holder and extending fabric footrest. Show two matching chairs as actual two-chair product, no extra cushions. Arrange tarp next to tent, not touching, with visible unobstructed walkway. No fire or heater. No dimensions or protection claims. Scene: Wide established campsite on flat dry grass, soft autumn foliage background; all tent, canopy, chairs fully visible. Photorealistic Korean lifestyle editorial, natural texture and lighting, gentle autumn atmosphere, not a catalog collage. Each of the THREE product types must be distinctly visible for website hotspot links. Do not draw plus icons or product cards. Elegant legible Korean headline exactly \"가을 바람 곁에 쉬는 자리\" in upper breathing space. Small legible Korean disclosure exactly \"AI 연출 이미지\" at bottom right. No fake prices, reviews, ratings, certifications, specifications, promotional badges or unreadable fine print. Do not add unverified accessories. Product reference fidelity over decoration.",
+        "referenceProducts": [
+          {
+            "productId": "8880587680",
+            "imageUrl": "https://ads-partners.coupang.com/image1/C96mFyGydSWKDKs8C0klJI9OOUUUbQEEFmE6g2N7BMpu99EGfknnK7Gn2qNTiFd1KLB8pmNIu0FLuOAZqxLnCetbS2qZDn-WtIQfLb70PKd7hKb9hRRmznrazBQ24TA3bZuC_ObQmeZVUT9IoxFUIT_w_L4Fgx3jtvmP-wg_J9Y_Hs62fBCqNdWKgRgm37BLGLODDqfYmvcYCR9mAvo2j7Dn5GNN9kNCIHr6JNysaMC6SeeylJRApFsgJSIGhut8mn7LsJI6tqOO9K27GVHGeASNpoHzuv6_FmzUQsfOU4cnbkB9r_a36TO4DGFeuWuJzsotpFNsLu7d2KJjg2KxRgDkX3tL-f1uvZatrqHHt93sS6nad4Zthvl0eFtGBWFtBvdGReTs1Tn6S8d2GDp_XyW_yb9lckfFqOGaTe16VHTo-9pF-9oxcDr5p4E7Tw1krYNrZKwTCdVVVneEfHAoW2ZMgI8fXQObCtIDhQhxo6urb32NwVeC8x5PT1fhPmdgrofdPu1QZKBPONh3YY7SFC7opAahUTzK"
+          },
+          {
+            "productId": "8682120809",
+            "imageUrl": "https://ads-partners.coupang.com/image1/OFxIzSxwsQ-xWYxxOMYgKztt7uZTLmOjxk4Y6t12o56FZ1axWiX55BLF13w2ouTvigF2f1ihHHfI4M3lkUXSMOYauYeLLfd7GaS4bQvxrCqii3ktLb6XL-qIL2sUqpInku0Eg-WAsZbiPngvCe2dgjtoLSH2Z2uoKDJ1R98k92cdwmvfy3akqRnjeb5TeB6fjgdKn4pmeCUMc2NnMuNLwCh5qQ2PD_4xCMQAyqfroT2yVOzAEXvOGEUOfBpHVqn-AY8qArkt2RXRYA1schgUW_EkO8-k85KlnWMC5TFlKq7ynJO0v6YOMQJ2DykmxOkozQevQ7LkBzR_TCX23yixHJ2yk7x5k7De-vrm3CmZ76YEROC00FGmRqMqRmBvVYBocdClIzvRP8yJCljNIUKoI4MK82sRejn-FgJaJKGpVrm10jTpMrUfpSgpDNroA_iMhVZjSvwiwvl697CNB7qywZ3PS-rH-N5wAQOERxJT8WKPHA48fhJGd-cubwCzg6G4uKwmzrtOeuBCKV5YGY7KH8IV5V7F30htwpvV_vVTszkNvB8TEvSbcUcMPSGcQvTJ-AWNwF3iAlU6"
+          },
+          {
+            "productId": "9072324584",
+            "imageUrl": "https://ads-partners.coupang.com/image1/qeKJuAlNSQQAKeK-qag0J4WsgmPCNkVOQ4f9fuQR2lWXvbpg058-cfKhuhBlpqWr0yP0_5tAsCgUJYdNnMGniRM8wroS-TXxj9B5FPfQhC3e0WrfCaj6xF4TabUChmWLlRs4DaaUPAqixaK0YuQ_8fnoGsPw-wQVxwipkdLTWP0n_d9SWSuqvGzztqOOQO8XHG9gIj-afyHAbFwEX9EvtwmLQJ4SQWkv_0zpe1aBZ9hKmr0nkAthB2KhlnEDolopByiLSPDpDM-pTEd5CbW8O1zUAyQVAurnNClxhFbLv5acSVCXatrp_CiTly5c141ztMUp_WrjxRSgop30C1sEoI_iGQ2TqFNxW8lRL38ejnXg5BEeeihUn3QFPfte0BnMOjNIqDUHEV2YKitjMl_r5cRei9mC0tDYID3F-_2hsRGG5NKphTtDyCP00DPW80CZGWigF0Y9BFp09zAIJMT3x8eik22iZiATSyYASEEy6Mx__zwYFMCy8akNXeVi7UhmedRjcgKuJxJwUchfmrZ_5FM="
+          }
+        ],
+        "productMatchReviewed": true,
+        "tags": [
+          {
+            "productId": "8880587680",
+            "x": 24,
+            "y": 56
+          },
+          {
+            "productId": "8682120809",
+            "x": 70,
+            "y": 37
+          },
+          {
+            "productId": "9072324584",
+            "x": 80,
+            "y": 70
+          }
+        ]
+      }
+    },
+    {
+      "slug": "autumn-sunset-picnic-layering",
+      "title": "가을 해 질 무렵 나들이, 담요와 조명을 따로 챙기기",
+      "description": "가을 오후의 짧은 휴식에 필요한 담요·전기 조명·음료 용기를 나눠 준비합니다. 출발 전 확인할 것과 자리 배치, 귀가 후 관리 순서를 정리했습니다.",
+      "category": "피크닉·나들이",
+      "productIds": [
+        "9160949685",
+        "9585035962",
+        "9520614727"
+      ],
+      "sections": [
+        {
+          "heading": "야외에 오래 남기보다 돌아올 시간을 먼저 정하기",
+          "text": "가을 오후에 잠깐 쉬러 나갈 때는 가져갈 물건보다 귀가 시간을 먼저 정해 보세요. 출발 전 지역 날씨와 공원 이용 시간을 확인하고, 돌아오는 길이 어두워지기 전에 움직일 수 있도록 여유를 둡니다. 담요나 조명은 휴식 자리를 보완하는 준비물이지, 악천후나 늦은 귀가 계획을 해결해 주는 장비는 아닙니다. 이 글에서는 몸에 덮을 것, 주변을 확인할 것, 마실 것을 따로 챙기는 방식으로 세 상품을 살펴봅니다.",
+          "productIds": []
+        },
+        {
+          "heading": "담요는 문양보다 크기와 관리 방법부터 고르기",
+          "text": "쁘띠끄 감성 캠핑 담요 이불 블랭킷 8종는 이번 휴식 장면에 연결한 블랭킷입니다. 참고 사진의 크림 바탕과 청록·갈색 계열 기하학 문양, 가장자리 술 장식을 반영했습니다. 상품명에 여러 종류가 표시돼 있으므로 사진 속 문양과 실제 선택 옵션이 같은지 먼저 확인하세요. 무릎에 덮을 목적이라면 접었을 때 가방에 들어가는지, 관리가 가능한 소재인지 살펴보는 편이 실용적입니다. 담요를 바닥에 깔아 사용하는 매트와 같은 것으로 보거나, 두께만으로 보온 성능을 단정하지 마세요. 이미 가진 담요와 겉옷으로 충분한 일정이라면 새로 추가할 필요가 없습니다.",
+          "productIds": [
+            "9160949685"
+          ]
+        },
+        {
+          "heading": "빛을 켤 자리와 주변 사람의 시선을 함께 생각하기",
+          "text": "솔리드 후레쉬 랜턴 손전등 4000루멘 충전식 LED 라이트 작업등 S-WL75, 1개는 손잡이와 접이식 받침이 있는 전기 작업등 형태의 조명입니다. 분위기용 불꽃 랜턴과 다른 제품이므로 사진에서도 실제 사각 형태를 유지했습니다. 야외로 가져가기 전에는 충전 상태와 작동 여부, 사용 가능한 환경을 제품 안내에서 확인하세요. 밝기 수치만으로 산책로나 넓은 공원을 비추기에 충분하다고 판단하지 않습니다. 쉬는 자리에 둔다면 안정적으로 놓을 수 있는지 살펴보고, 지나가는 사람을 향해 정면으로 비추지 않게 방향을 정합니다. 조명이 있다는 이유로 출입이 제한된 곳이나 어두운 비지정 길로 들어가지 않습니다.",
+          "productIds": [
+            "9585035962"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-sunset-picnic-layering-preparation-v1.webp",
+            "alt": "외출 전 접은 담요와 전기 조명, 닫힌 음료 용기",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": false,
+            "prompt": "Use case: compositing. Asset type: Korean shoppable editorial photo, landscape 3:2. Reference inputs are actual product photos; preserve their exact colors, silhouettes, components and realistic proportions. Image 1: actual woven blanket with cream base, terracotta/brown and teal blue geometric diamonds and striped border, fringed edge. Copy blanket only, NOT extra pillows/fur/carpet or kerosene lantern. Image 2: one actual SOLID folding rectangular LED worklight, charcoal grey shell with carrying handle and angular hinge folding support, white flat LED panel. NOT antique lantern, no flame. Image 3: actual warm-gray HATHOR BREEZE bottle with curving shallow ribs, wide neck textured diagonal collar, short screw drinking cap attached by loop, matching carry loop. Show bottle closed, no fake steaming drink or changed cap. Preserve shapes. No additional product features, lumen ratings, runtimes, temperatures or size claims. Scene: At home before departure, blanket loosely folded on table showing pattern and fringe, closed bottle and unlit standing LED worklight beside it, soft window light, packing preparation. Photorealistic Korean lifestyle editorial, natural texture and lighting, gentle autumn atmosphere, not a catalog collage. Each of the THREE product types must be distinctly visible for website hotspot links. Do not draw plus icons or product cards. No headline. Small legible Korean disclosure exactly \"AI 연출 이미지\" at bottom right. No fake prices, reviews, ratings, certifications, specifications, promotional badges or unreadable fine print. Do not add unverified accessories. Product reference fidelity over decoration.",
+            "referenceProducts": [
+              {
+                "productId": "9160949685",
+                "imageUrl": "https://ads-partners.coupang.com/image1/wlhUutxWQGxOvonYwhCtka3-tRNDHKfjXRGbdnoQTPOzjHnLtzLhv-X9glnqitCFB9z6xQf5zBWMWFAF8Drc7BR2TP3gAiFJCb9VfhUsT6DpNNvsJI63QOo9v2mR2bzVedr8V9WSinOvRhyom9QkAUtb4xb_KClTiiGOVubWpjFFLaLgznxgQhPC--N1HDzeEsoqbObKhdEs_s1P4mr_n9ek_ry0QAlwFJxDkOO4KZTuVCyFBQ3oR3FPtezuu19iXoM-w8B4YkfVyeQwPyTaVELe4DNQ-h0KRJIJEseuS5aHz9R5rY5JluY1ADTk1ulkYVOqkLrSZ2iNyxnG8YSvmREesnbAYhfYJi4oBI5l5u1crweQvf0FIxzpKwa-lokEjFIF0QLTaQbffmUuIXJrmZKrtfYvd-gORJgDb1rw8oSHeqWNd1k99iT5YXX2Y_7tNKaMRD0iE5rhGNPlnrZehRDSV1qycZoeqUyPG4qvTtW7P2denmPnbBESzAD9snTvtKmvyIImfv3hjCbLvpQ6_9Gr"
+              },
+              {
+                "productId": "9585035962",
+                "imageUrl": "https://ads-partners.coupang.com/image1/cKbBKGOtYdpmNcuDcGrpLtetotv-YD6WG21DxB0H3X39lAafDPSxpnjywlGVycpfQ7XnCPuUjqvoFrGV1QCHLNeYloyadwwwQgU9c8BdxSfNPYYjjvxY-RL-b5hWKouZwQQRtsNPCNoQtHY5o4sA1MMie-SPmQg0bKt-o__tZKcmoA8FipaANQA-24I6VcNuwub4Xn1PteoDF1v-qEnbisgYA_FA3JnlxcR1413JlMWX5GZrUWwNY9JwxwYzoxZudnPFbk5vJsvDzsRaQ54l1taipdX3i5uSs-4QlmH4zSByXuT9W7fqWylElu_d-VurKhCbUHka_xx-2Acg2dg6o9wM-biScu_JY1zpfVCmf399SNWpGUvHNwywvPRA0NRxGUZd0emV05zBFhMT5MsfQ5bA5Ic9TchCa8PGw2mRBUcFXOLfVWPq7vmsx9ZPeo3sTbgMAt8uHFBrBunQi_DNXUf2JC-5CeF13tM3XeJGj6Dw7yGa0nrdVpivun8OviD8HQGfO2-Gzp3M4bkls0Y4rrm1aT9Hc7TK"
+              },
+              {
+                "productId": "9520614727",
+                "imageUrl": "https://ads-partners.coupang.com/image1/qb6WleqdUTKWU8RoqRmWj_LjTL4TkSaFyfbXlrdcVXw_5OzljvEGPWoVQk7UoNwo443K1lhbxcL5OJwPl8r5yR7F8KeJIA74z-mgm0_-EVKhGMfof6tu2IWa-NhqacIslaWlKxk8u3lrIGq20cpdrHzWrwVhRJS_K_RJb4HvCmAdgDMfnMKyvOnQO_BO5khoULAk0ezogIFJheXb4gprcPqSmflHYrkxjSaCJe-dYo-OSmQLGNsZboUzPCYW9Q7ItbEzEFn2tCL1rRz7qEeqe4dP5s4CMhu1P01Whgsjcm8grqoVGS7doa86iJmLWp9ccI9Y4oKov3nNyAc6onZdcM_KfeaxLNotjKYkn66KyhYHITufjlbNGFnIOonH1xBrKwvfotciaxbZLiso7Kiv0HisrWpjDxaVraxZeNp3ES41wECoQ1TTyQPtYyjCSZqlWoqm5urr43nwIFNKManV8HT5MTv6MWRAPZyK61hOUb4_DdIt7wtN7z5ef8bYfSbnh5WGNLOfgLMBxjsku09XY02f-hrTySA="
+              }
+            ],
+            "productMatchReviewed": false,
+            "tags": [
+              {
+                "productId": "9160949685",
+                "x": 27,
+                "y": 61
+              },
+              {
+                "productId": "9585035962",
+                "x": 80,
+                "y": 58
+              },
+              {
+                "productId": "9520614727",
+                "x": 59,
+                "y": 50
+              }
+            ]
+          }
+        },
+        {
+          "heading": "음료 용기는 닫고 여는 방법을 집에서 확인하기",
+          "text": "하토르 듀얼리드 텀블러 스테인리스 진공 보온보냉, 1개, 500ml, 웜 그레이는 웜 그레이 색상의 500ml 옵션으로 연결한 용기입니다. 목 부분의 무늬와 손잡이 고리, 뚜껑 모양을 참고 사진에 맞춰 배치했습니다. 뚜껑이나 마시는 방식이 여러 종류로 안내되는 상품은 선택 구성과 사용법을 확인하고, 넣으려는 음료에 적합한지도 살펴보세요. 용량만으로 몇 사람에게 충분한지, 얼마나 오래 온도가 유지되는지는 단정하지 않습니다. 출발 전에는 뚜껑을 제대로 닫았는지 확인하고 전자기기와 같은 칸에 무심코 넣지 않는 편이 좋습니다. 뜨거운 음료를 넣는 경우에는 제품의 해당 사용 안내를 따르세요.",
+          "productIds": [
+            "9520614727"
+          ]
+        },
+        {
+          "heading": "돌아와서 세 가지를 따로 정리하기",
+          "text": "귀가 후에는 담요에 묻은 이물질과 습기를 확인하고 세탁·건조 표시를 따릅니다. 음료 용기는 남은 내용물을 비우고 뚜껑 부품까지 제품 안내에 맞게 관리하세요. 조명은 사용 환경과 보관 방법을 확인한 뒤 다음 외출에 사용할 수 있도록 정리합니다. 사진 속 세 물건은 각각 별도 상품이며, 연출 장면이 방수·보온·점등 시간이나 판매 구성을 증명하지는 않습니다. 사진을 참고하되 실제로 고를 때는 연결된 상세 페이지의 옵션과 설명을 기준으로 판단하세요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/autumn-sunset-picnic-layering-serving-v1.webp",
+            "alt": "해 질 무렵 귀가 준비를 위해 모아 둔 담요와 조명, 음료 용기",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": false,
+            "prompt": "Use case: compositing. Asset type: Korean shoppable editorial photo, landscape 3:2. Reference inputs are actual product photos; preserve their exact colors, silhouettes, components and realistic proportions. Image 1: actual woven blanket with cream base, terracotta/brown and teal blue geometric diamonds and striped border, fringed edge. Copy blanket only, NOT extra pillows/fur/carpet or kerosene lantern. Image 2: one actual SOLID folding rectangular LED worklight, charcoal grey shell with carrying handle and angular hinge folding support, white flat LED panel. NOT antique lantern, no flame. Image 3: actual warm-gray HATHOR BREEZE bottle with curving shallow ribs, wide neck textured diagonal collar, short screw drinking cap attached by loop, matching carry loop. Show bottle closed, no fake steaming drink or changed cap. Preserve shapes. No additional product features, lumen ratings, runtimes, temperatures or size claims. Scene: Close but complete view of picnic rest bench before dusk; blanket neatly folded beside closed bottle, worklight turned away from imaginary passers-by and softly lit, no exaggerated illumination; three products clearly separated. Photorealistic Korean lifestyle editorial, natural texture and lighting, gentle autumn atmosphere, not a catalog collage. Each of the THREE product types must be distinctly visible for website hotspot links. Do not draw plus icons or product cards. No headline. Small legible Korean disclosure exactly \"AI 연출 이미지\" at bottom right. No fake prices, reviews, ratings, certifications, specifications, promotional badges or unreadable fine print. Do not add unverified accessories. Product reference fidelity over decoration.",
+            "referenceProducts": [
+              {
+                "productId": "9160949685",
+                "imageUrl": "https://ads-partners.coupang.com/image1/wlhUutxWQGxOvonYwhCtka3-tRNDHKfjXRGbdnoQTPOzjHnLtzLhv-X9glnqitCFB9z6xQf5zBWMWFAF8Drc7BR2TP3gAiFJCb9VfhUsT6DpNNvsJI63QOo9v2mR2bzVedr8V9WSinOvRhyom9QkAUtb4xb_KClTiiGOVubWpjFFLaLgznxgQhPC--N1HDzeEsoqbObKhdEs_s1P4mr_n9ek_ry0QAlwFJxDkOO4KZTuVCyFBQ3oR3FPtezuu19iXoM-w8B4YkfVyeQwPyTaVELe4DNQ-h0KRJIJEseuS5aHz9R5rY5JluY1ADTk1ulkYVOqkLrSZ2iNyxnG8YSvmREesnbAYhfYJi4oBI5l5u1crweQvf0FIxzpKwa-lokEjFIF0QLTaQbffmUuIXJrmZKrtfYvd-gORJgDb1rw8oSHeqWNd1k99iT5YXX2Y_7tNKaMRD0iE5rhGNPlnrZehRDSV1qycZoeqUyPG4qvTtW7P2denmPnbBESzAD9snTvtKmvyIImfv3hjCbLvpQ6_9Gr"
+              },
+              {
+                "productId": "9585035962",
+                "imageUrl": "https://ads-partners.coupang.com/image1/cKbBKGOtYdpmNcuDcGrpLtetotv-YD6WG21DxB0H3X39lAafDPSxpnjywlGVycpfQ7XnCPuUjqvoFrGV1QCHLNeYloyadwwwQgU9c8BdxSfNPYYjjvxY-RL-b5hWKouZwQQRtsNPCNoQtHY5o4sA1MMie-SPmQg0bKt-o__tZKcmoA8FipaANQA-24I6VcNuwub4Xn1PteoDF1v-qEnbisgYA_FA3JnlxcR1413JlMWX5GZrUWwNY9JwxwYzoxZudnPFbk5vJsvDzsRaQ54l1taipdX3i5uSs-4QlmH4zSByXuT9W7fqWylElu_d-VurKhCbUHka_xx-2Acg2dg6o9wM-biScu_JY1zpfVCmf399SNWpGUvHNwywvPRA0NRxGUZd0emV05zBFhMT5MsfQ5bA5Ic9TchCa8PGw2mRBUcFXOLfVWPq7vmsx9ZPeo3sTbgMAt8uHFBrBunQi_DNXUf2JC-5CeF13tM3XeJGj6Dw7yGa0nrdVpivun8OviD8HQGfO2-Gzp3M4bkls0Y4rrm1aT9Hc7TK"
+              },
+              {
+                "productId": "9520614727",
+                "imageUrl": "https://ads-partners.coupang.com/image1/qb6WleqdUTKWU8RoqRmWj_LjTL4TkSaFyfbXlrdcVXw_5OzljvEGPWoVQk7UoNwo443K1lhbxcL5OJwPl8r5yR7F8KeJIA74z-mgm0_-EVKhGMfof6tu2IWa-NhqacIslaWlKxk8u3lrIGq20cpdrHzWrwVhRJS_K_RJb4HvCmAdgDMfnMKyvOnQO_BO5khoULAk0ezogIFJheXb4gprcPqSmflHYrkxjSaCJe-dYo-OSmQLGNsZboUzPCYW9Q7ItbEzEFn2tCL1rRz7qEeqe4dP5s4CMhu1P01Whgsjcm8grqoVGS7doa86iJmLWp9ccI9Y4oKov3nNyAc6onZdcM_KfeaxLNotjKYkn66KyhYHITufjlbNGFnIOonH1xBrKwvfotciaxbZLiso7Kiv0HisrWpjDxaVraxZeNp3ES41wECoQ1TTyQPtYyjCSZqlWoqm5urr43nwIFNKManV8HT5MTv6MWRAPZyK61hOUb4_DdIt7wtN7z5ef8bYfSbnh5WGNLOfgLMBxjsku09XY02f-hrTySA="
+              }
+            ],
+            "productMatchReviewed": false,
+            "tags": [
+              {
+                "productId": "9160949685",
+                "x": 29,
+                "y": 62
+              },
+              {
+                "productId": "9585035962",
+                "x": 82,
+                "y": 59
+              },
+              {
+                "productId": "9520614727",
+                "x": 60,
+                "y": 60
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        {
+          "href": "/season",
+          "label": "계절 나들이 정보 살펴보기"
+        }
+      ],
+      "contentStyle": "shoppable-scene-v2",
+      "status": "draft",
+      "publishAt": "2026-09-13T13:35:34.768Z",
+      "updatedAt": "2026-09-13T13:35:34.768Z",
+      "reviewed": false,
+      "cover": {
+        "url": "/prep-images/autumn-sunset-picnic-layering-cover-v1.webp",
+        "alt": "가을 공원 벤치에 놓인 기하학 무늬 담요와 사각 조명, 음료 용기",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": false,
+        "prompt": "Use case: compositing. Asset type: Korean shoppable editorial photo, landscape 3:2. Reference inputs are actual product photos; preserve their exact colors, silhouettes, components and realistic proportions. Image 1: actual woven blanket with cream base, terracotta/brown and teal blue geometric diamonds and striped border, fringed edge. Copy blanket only, NOT extra pillows/fur/carpet or kerosene lantern. Image 2: one actual SOLID folding rectangular LED worklight, charcoal grey shell with carrying handle and angular hinge folding support, white flat LED panel. NOT antique lantern, no flame. Image 3: actual warm-gray HATHOR BREEZE bottle with curving shallow ribs, wide neck textured diagonal collar, short screw drinking cap attached by loop, matching carry loop. Show bottle closed, no fake steaming drink or changed cap. Preserve shapes. No additional product features, lumen ratings, runtimes, temperatures or size claims. Scene: Early autumn golden-hour park bench with blanket draped across left seat, one LED worklight resting securely on right end and closed bottle near it, foliage behind. All products unobscured. Photorealistic Korean lifestyle editorial, natural texture and lighting, gentle autumn atmosphere, not a catalog collage. Each of the THREE product types must be distinctly visible for website hotspot links. Do not draw plus icons or product cards. Elegant legible Korean headline exactly \"해 지기 전, 가을 한 쉼\" in upper breathing space. Small legible Korean disclosure exactly \"AI 연출 이미지\" at bottom right. No fake prices, reviews, ratings, certifications, specifications, promotional badges or unreadable fine print. Do not add unverified accessories. Product reference fidelity over decoration.",
+        "referenceProducts": [
+          {
+            "productId": "9160949685",
+            "imageUrl": "https://ads-partners.coupang.com/image1/wlhUutxWQGxOvonYwhCtka3-tRNDHKfjXRGbdnoQTPOzjHnLtzLhv-X9glnqitCFB9z6xQf5zBWMWFAF8Drc7BR2TP3gAiFJCb9VfhUsT6DpNNvsJI63QOo9v2mR2bzVedr8V9WSinOvRhyom9QkAUtb4xb_KClTiiGOVubWpjFFLaLgznxgQhPC--N1HDzeEsoqbObKhdEs_s1P4mr_n9ek_ry0QAlwFJxDkOO4KZTuVCyFBQ3oR3FPtezuu19iXoM-w8B4YkfVyeQwPyTaVELe4DNQ-h0KRJIJEseuS5aHz9R5rY5JluY1ADTk1ulkYVOqkLrSZ2iNyxnG8YSvmREesnbAYhfYJi4oBI5l5u1crweQvf0FIxzpKwa-lokEjFIF0QLTaQbffmUuIXJrmZKrtfYvd-gORJgDb1rw8oSHeqWNd1k99iT5YXX2Y_7tNKaMRD0iE5rhGNPlnrZehRDSV1qycZoeqUyPG4qvTtW7P2denmPnbBESzAD9snTvtKmvyIImfv3hjCbLvpQ6_9Gr"
+          },
+          {
+            "productId": "9585035962",
+            "imageUrl": "https://ads-partners.coupang.com/image1/cKbBKGOtYdpmNcuDcGrpLtetotv-YD6WG21DxB0H3X39lAafDPSxpnjywlGVycpfQ7XnCPuUjqvoFrGV1QCHLNeYloyadwwwQgU9c8BdxSfNPYYjjvxY-RL-b5hWKouZwQQRtsNPCNoQtHY5o4sA1MMie-SPmQg0bKt-o__tZKcmoA8FipaANQA-24I6VcNuwub4Xn1PteoDF1v-qEnbisgYA_FA3JnlxcR1413JlMWX5GZrUWwNY9JwxwYzoxZudnPFbk5vJsvDzsRaQ54l1taipdX3i5uSs-4QlmH4zSByXuT9W7fqWylElu_d-VurKhCbUHka_xx-2Acg2dg6o9wM-biScu_JY1zpfVCmf399SNWpGUvHNwywvPRA0NRxGUZd0emV05zBFhMT5MsfQ5bA5Ic9TchCa8PGw2mRBUcFXOLfVWPq7vmsx9ZPeo3sTbgMAt8uHFBrBunQi_DNXUf2JC-5CeF13tM3XeJGj6Dw7yGa0nrdVpivun8OviD8HQGfO2-Gzp3M4bkls0Y4rrm1aT9Hc7TK"
+          },
+          {
+            "productId": "9520614727",
+            "imageUrl": "https://ads-partners.coupang.com/image1/qb6WleqdUTKWU8RoqRmWj_LjTL4TkSaFyfbXlrdcVXw_5OzljvEGPWoVQk7UoNwo443K1lhbxcL5OJwPl8r5yR7F8KeJIA74z-mgm0_-EVKhGMfof6tu2IWa-NhqacIslaWlKxk8u3lrIGq20cpdrHzWrwVhRJS_K_RJb4HvCmAdgDMfnMKyvOnQO_BO5khoULAk0ezogIFJheXb4gprcPqSmflHYrkxjSaCJe-dYo-OSmQLGNsZboUzPCYW9Q7ItbEzEFn2tCL1rRz7qEeqe4dP5s4CMhu1P01Whgsjcm8grqoVGS7doa86iJmLWp9ccI9Y4oKov3nNyAc6onZdcM_KfeaxLNotjKYkn66KyhYHITufjlbNGFnIOonH1xBrKwvfotciaxbZLiso7Kiv0HisrWpjDxaVraxZeNp3ES41wECoQ1TTyQPtYyjCSZqlWoqm5urr43nwIFNKManV8HT5MTv6MWRAPZyK61hOUb4_DdIt7wtN7z5ef8bYfSbnh5WGNLOfgLMBxjsku09XY02f-hrTySA="
+          }
+        ],
+        "productMatchReviewed": false,
+        "tags": [
+          {
+            "productId": "9160949685",
+            "x": 30,
+            "y": 61
+          },
+          {
+            "productId": "9585035962",
+            "x": 71,
+            "y": 66
+          },
+          {
+            "productId": "9520614727",
+            "x": 86,
+            "y": 64
+          }
+        ]
+      }
+    },
+    {
+      "slug": "family-park-ring-ball-play",
+      "title": "아이와 공원 놀이, 공 굴리기와 고리 던지기를 번갈아",
+      "description": "공원에서 보호자와 함께 공 굴리기·고리 던지기를 즐기는 준비 순서입니다. 놀이 구역 나누기, 규칙 바꾸기, 도구 선택과 마무리 방법을 소개합니다.",
+      "category": "아이와 놀이",
+      "productIds": [
+        "9305516249",
+        "9643845674",
+        "8413271811"
+      ],
+      "sections": [
+        {
+          "heading": "놀이 도구를 꺼내기 전에 공간을 함께 살펴보기",
+          "text": "공원에서는 많은 도구를 한꺼번에 펼치는 것보다 한 가지씩 번갈아 쓰면 놀이 구역을 정리하기 쉽습니다. 먼저 해당 장소에서 공놀이와 놀이 도구 설치가 허용되는지 확인하세요. 보호자가 바닥과 주변을 살펴보고 통행로, 다른 이용자의 휴식 자리와 떨어진 공간을 고릅니다. 각 제품에 표시된 대상 연령과 사용 방법이 아이에게 맞는지 확인한 뒤 시작해야 합니다. 이 글의 연출 사진 속 아이 모습만으로 제품의 적정 연령이나 안전성을 판단하지 마세요.",
+          "productIds": []
+        },
+        {
+          "heading": "고리는 기록 경쟁보다 번갈아 던지는 규칙으로",
+          "text": "장대 고리던지기 고리 20개 세트, 1세트, 블루는 파란 받침과 노란 장대, 여러 색의 얇은 고리가 보이는 세트입니다. 설치와 고정 방법은 제품 안내를 따르고, 던지는 방향 뒤에 사람이 없는지 확인하세요. 처음부터 먼 거리의 성공 횟수를 겨루기보다 보호자와 아이가 차례를 정해 가까운 위치에서 동작을 익히는 방식으로 시작할 수 있습니다. 던지는 거리는 정해진 숫자를 일률적으로 적용하지 말고 제품 안내와 현장 공간, 아이의 움직임을 함께 보고 조절합니다. 고리를 줍는 동안에는 다른 사람이 던지지 않는 규칙을 먼저 약속하세요.",
+          "productIds": [
+            "9305516249"
+          ]
+        },
+        {
+          "heading": "공은 여러 개를 흩어 놓지 않고 하나씩 굴리기",
+          "text": "에이오빅 소프트야구공 캐치볼 연습공 스펀지 안전야구공, 6개, 화이트는 흰 바탕에 빨간 야구공 무늬가 있는 연습공입니다. 이번 글에서는 공을 높이 던지거나 배트로 치는 장면 대신, 보호자와 아이가 마주 보고 하나씩 굴리는 놀이를 제안합니다. 상품명에 부드러움을 뜻하는 표현이 있어도 충돌 위험이 없다는 뜻은 아니므로 표시된 사용 조건을 확인하세요. 공이 옆으로 굴러가면 바로 뛰어 쫓기보다 보호자와 주변을 확인한 뒤 회수합니다. 나머지 공은 놀이 구역 밖에 모아 두고, 한 번에 사용하는 수를 늘리기보다 멈추고 건네는 규칙을 바꿔 보세요.",
+          "productIds": [
+            "9643845674"
+          ],
+          "image": {
+            "url": "/prep-images/family-park-ring-ball-play-preparation-v1.webp",
+            "alt": "보호자 곁에서 아이가 고리를 던지고 접시콘으로 구역을 나눈 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": false,
+            "prompt": "Use case: compositing. Asset type: Korean shoppable editorial photo, landscape 3:2. Reference inputs are actual product photos; preserve their exact colors, silhouettes, components and realistic proportions. Image 1: ring-toss set, blue rounded dome base with holes, straight tall yellow pole, thin colored circular rings red blue yellow pink green; black drawstring storage bag. Image 2: white soft practice baseballs with red curved stitch pattern, small hand-sized, not footballs. Image 3: low flat dome marker cones in blue red green yellow orange, centre holes, white metal stacking holder and black mesh bag. Use only a few pieces from each set, do not invent exact whole-set count. No bats or hard throwing. No children running near pole, no hanging rings on people. Scene: Guardian crouches next to school-age child taking a gentle underarm ring toss from a clear starting place toward yellow pole with blue base; no one behind target. White red-seam ball lies stationary at far side and low multicolor marker cones define place. All three products clearly visible and not tiny. Photorealistic Korean lifestyle editorial, natural texture and lighting, gentle autumn atmosphere, not a catalog collage. Each of the THREE product types must be distinctly visible for website hotspot links. Do not draw plus icons or product cards. No headline. Small legible Korean disclosure exactly \"AI 연출 이미지\" at bottom right. No fake prices, reviews, ratings, certifications, specifications, promotional badges or unreadable fine print. Do not add unverified accessories. Product reference fidelity over decoration.",
+            "referenceProducts": [
+              {
+                "productId": "9305516249",
+                "imageUrl": "https://ads-partners.coupang.com/image1/W_JUlT8aiqxI9hc8Wzgu32pZc3P6uob0F1EwEIY66MUr-XCdKB5eu2fpqObl1s_A8ON7mVBGVMHDfoSG9UJDOgkGaz-tNaHcpW4u-5gYwSsdNu6yEgbWOP_DjthPU1WEiLNse1dk1qM8tTof9rzeriL1wyOkq72u4Ugg6awkbWsO2NsaJfhvQFYYtnYxCqvqmWm-UMxzKVBvRHRbPN6-whgq3jA1jp469hmLkYgDC7iPujDdtcYg0rxnPsa1ToHpfmz_TaB-IiNQTgxZX9yVRZPG7vE2FI7BljkqgJ5QC6aQnrEAtGAeM9y43xBjoZUnPvtLnw3WA_IXEjK7QkZ2UI-1RGNC_jLSHHJ-XBDP8dZKP54kpoWeF51j7Euu3CJt0m6FbgRqZx8LxXfqDVbxQWttCt1MbIkqQynnnbjZzr4nG4BJKzw0_h9sncHZeRKfR76evNZ1S266I581tfQOCYN25DCSIsMlmSQ7YDLVQdzQpNAdjBO-l0zijUKJXA_Udl2Qfanh6R9J2QqnTSUYi7ks2QOOxTEc"
+              },
+              {
+                "productId": "9643845674",
+                "imageUrl": "https://ads-partners.coupang.com/image1/G5kn44R54wnaJJSZG6jP0Lrp_8fV6hiqdmLKHz1v6rOY58F09629hNRJQtmHhHwlSddVa3CM0O2-7jgaHphal5O-R-FiTLw1cUZwhkdDpJTpaXC5pVuGl_xyJiR6dxNjhusqkQbUy5TzZuRzFaSw0rwFxlOuugpFYqEG-QVjmbgVIG8nC12tR1gwcttErvh_IzKW8odZrVY9GafnTuUZ4Xe_gtrZsDjQMek0hURLwrLwjRucwzG47MdGDKRxLPmVuFXi7e2fPdvd5IleAbcuUve002zKEYxfkJ7Esbrw7lfU6xDAHqv33jvNM0eq315nnNzoeD_sh3Bjh9LhU6Gpu4rkkO05Kef8gYRgGkJFOr3hQ1NymD_taAuowqnPTtBrHD-18YSHH0s7H8168jmM9rCTrpSZ17UmQHOYOdYg6gljwSSPjAAO0jBCygm2SR73KpWvMmUv_co-iCXaZS3rQpSXxszMRmMHokExtQguKp74yAN3tgzQAA7hLTYpFSUvTz0n5IYcfH0JkXvG7r5aJfC11YrtjgY="
+              },
+              {
+                "productId": "8413271811",
+                "imageUrl": "https://ads-partners.coupang.com/image1/28QZiB4eXgJmERXh24DnzTPJx1TbeZyM1S-JEnQuP5OObnTfwzTluHCm5xo34PHbjYBw5L8TNiF8n-_BGAn43wKspOUrIFUW6PoqR_idnniNstrIgqe-jZsf9WwyxHAIUDP8DwFOB_meE5phDrQa9Gbw7rQawDv5wRywtNMPXC-PQGMD0IauOBx5ncMdYD24SxuToylyRyz25Ir4dCrpDcpt4Zs7K9A0erObGxaVOHLwy6FmSANbXUQNn7RMP8X2IVUGOxrOZUju4iqLeEFWwIPnoodHeX2Y3d8RmGODBxOqoeYoF4ZowK7Ikn7AJ33azgTI9mG9KwlEftw6mPS_AaG_cRneGJxh-UsD6aq0JysoRMdO6wLgasAUf_trDFqiSFd46e3-hZPCxbm44TlrZtyL4LY38n3SsTGgbTS-zLWBki9FFVBydj8jZYnjPrrtfcq63TmplunevjveHqUn24v1uqBzSYF8OC5EtT_LnEgTdN8qU1FmZ36vSVqhLqjAOJD_nwXbOPA="
+              }
+            ],
+            "productMatchReviewed": false,
+            "tags": [
+              {
+                "productId": "9305516249",
+                "x": 22,
+                "y": 86
+              },
+              {
+                "productId": "9643845674",
+                "x": 69,
+                "y": 78
+              },
+              {
+                "productId": "8413271811",
+                "x": 83,
+                "y": 83
+              }
+            ]
+          }
+        },
+        {
+          "heading": "접시콘은 낮은 표식이지 뛰어넘는 장애물이 아님",
+          "text": "씨에스소울 스포츠 운동 연습용 접시콘 50p + 거치대 + 가방 세트, 혼합색상, 1세트는 여러 색의 낮은 접시콘과 거치대·가방이 안내된 제품입니다. 공 굴리기를 시작할 위치와 도구를 모아 둘 위치를 구분하는 데 일부만 사용할 수 있습니다. 모든 구성품을 꺼낼 필요는 없습니다. 접시콘을 통행로나 뛰는 길 한가운데 놓지 말고, 바닥에 안정적으로 놓이는지 확인하세요. 아이가 어려워하면 색 하나를 골라 그 옆에서 시작하기처럼 규칙을 단순하게 바꿉니다. 고리 던지기 장대와 공 굴리는 방향은 서로 분리해 한 놀이가 다른 놀이를 방해하지 않도록 합니다.",
+          "productIds": [
+            "8413271811"
+          ]
+        },
+        {
+          "heading": "마지막 놀이는 색깔별로 도구 모으기",
+          "text": "마칠 때는 던지고 굴리는 동작을 모두 멈춘 뒤 도구를 회수합니다. 보호자와 아이가 함께 고리와 접시콘을 색깔별로 모으고, 가져온 공이 남아 있지 않은지 주변을 확인해 보세요. 거치대나 장대를 분리하는 일은 제품 안내에 맞게 보호자가 맡습니다. 젖거나 더러워진 도구는 사용 후 관리 방법에 따라 정리합니다. 사진은 실제 세 상품의 모습을 참고한 AI 연출 장면이고, 세트 전체 수량을 빠짐없이 보여주는 구성 사진은 아닙니다. 이미 가진 공이나 놀이 도구를 활용해 같은 순서로 즐기는 방법도 있습니다.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/family-park-ring-ball-play-serving-v1.webp",
+            "alt": "놀이가 끝난 뒤 고리와 공, 접시콘을 함께 모으는 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": false,
+            "prompt": "Use case: compositing. Asset type: Korean shoppable editorial photo, landscape 3:2. Reference inputs are actual product photos; preserve their exact colors, silhouettes, components and realistic proportions. Image 1: ring-toss set, blue rounded dome base with holes, straight tall yellow pole, thin colored circular rings red blue yellow pink green; black drawstring storage bag. Image 2: white soft practice baseballs with red curved stitch pattern, small hand-sized, not footballs. Image 3: low flat dome marker cones in blue red green yellow orange, centre holes, white metal stacking holder and black mesh bag. Use only a few pieces from each set, do not invent exact whole-set count. No bats or hard throwing. No children running near pole, no hanging rings on people. Scene: End of play: guardian and child sorting thin colored rings next to assembled blue base yellow pole; white red-seam balls grouped on clear grass beside stacked low marker cones and their white stand/black mesh bag. Natural autumn light, tidy public lawn. Photorealistic Korean lifestyle editorial, natural texture and lighting, gentle autumn atmosphere, not a catalog collage. Each of the THREE product types must be distinctly visible for website hotspot links. Do not draw plus icons or product cards. No headline. Small legible Korean disclosure exactly \"AI 연출 이미지\" at bottom right. No fake prices, reviews, ratings, certifications, specifications, promotional badges or unreadable fine print. Do not add unverified accessories. Product reference fidelity over decoration.",
+            "referenceProducts": [
+              {
+                "productId": "9305516249",
+                "imageUrl": "https://ads-partners.coupang.com/image1/W_JUlT8aiqxI9hc8Wzgu32pZc3P6uob0F1EwEIY66MUr-XCdKB5eu2fpqObl1s_A8ON7mVBGVMHDfoSG9UJDOgkGaz-tNaHcpW4u-5gYwSsdNu6yEgbWOP_DjthPU1WEiLNse1dk1qM8tTof9rzeriL1wyOkq72u4Ugg6awkbWsO2NsaJfhvQFYYtnYxCqvqmWm-UMxzKVBvRHRbPN6-whgq3jA1jp469hmLkYgDC7iPujDdtcYg0rxnPsa1ToHpfmz_TaB-IiNQTgxZX9yVRZPG7vE2FI7BljkqgJ5QC6aQnrEAtGAeM9y43xBjoZUnPvtLnw3WA_IXEjK7QkZ2UI-1RGNC_jLSHHJ-XBDP8dZKP54kpoWeF51j7Euu3CJt0m6FbgRqZx8LxXfqDVbxQWttCt1MbIkqQynnnbjZzr4nG4BJKzw0_h9sncHZeRKfR76evNZ1S266I581tfQOCYN25DCSIsMlmSQ7YDLVQdzQpNAdjBO-l0zijUKJXA_Udl2Qfanh6R9J2QqnTSUYi7ks2QOOxTEc"
+              },
+              {
+                "productId": "9643845674",
+                "imageUrl": "https://ads-partners.coupang.com/image1/G5kn44R54wnaJJSZG6jP0Lrp_8fV6hiqdmLKHz1v6rOY58F09629hNRJQtmHhHwlSddVa3CM0O2-7jgaHphal5O-R-FiTLw1cUZwhkdDpJTpaXC5pVuGl_xyJiR6dxNjhusqkQbUy5TzZuRzFaSw0rwFxlOuugpFYqEG-QVjmbgVIG8nC12tR1gwcttErvh_IzKW8odZrVY9GafnTuUZ4Xe_gtrZsDjQMek0hURLwrLwjRucwzG47MdGDKRxLPmVuFXi7e2fPdvd5IleAbcuUve002zKEYxfkJ7Esbrw7lfU6xDAHqv33jvNM0eq315nnNzoeD_sh3Bjh9LhU6Gpu4rkkO05Kef8gYRgGkJFOr3hQ1NymD_taAuowqnPTtBrHD-18YSHH0s7H8168jmM9rCTrpSZ17UmQHOYOdYg6gljwSSPjAAO0jBCygm2SR73KpWvMmUv_co-iCXaZS3rQpSXxszMRmMHokExtQguKp74yAN3tgzQAA7hLTYpFSUvTz0n5IYcfH0JkXvG7r5aJfC11YrtjgY="
+              },
+              {
+                "productId": "8413271811",
+                "imageUrl": "https://ads-partners.coupang.com/image1/28QZiB4eXgJmERXh24DnzTPJx1TbeZyM1S-JEnQuP5OObnTfwzTluHCm5xo34PHbjYBw5L8TNiF8n-_BGAn43wKspOUrIFUW6PoqR_idnniNstrIgqe-jZsf9WwyxHAIUDP8DwFOB_meE5phDrQa9Gbw7rQawDv5wRywtNMPXC-PQGMD0IauOBx5ncMdYD24SxuToylyRyz25Ir4dCrpDcpt4Zs7K9A0erObGxaVOHLwy6FmSANbXUQNn7RMP8X2IVUGOxrOZUju4iqLeEFWwIPnoodHeX2Y3d8RmGODBxOqoeYoF4ZowK7Ikn7AJ33azgTI9mG9KwlEftw6mPS_AaG_cRneGJxh-UsD6aq0JysoRMdO6wLgasAUf_trDFqiSFd46e3-hZPCxbm44TlrZtyL4LY38n3SsTGgbTS-zLWBki9FFVBydj8jZYnjPrrtfcq63TmplunevjveHqUn24v1uqBzSYF8OC5EtT_LnEgTdN8qU1FmZ36vSVqhLqjAOJD_nwXbOPA="
+              }
+            ],
+            "productMatchReviewed": false,
+            "tags": [
+              {
+                "productId": "9305516249",
+                "x": 49,
+                "y": 79
+              },
+              {
+                "productId": "9643845674",
+                "x": 67,
+                "y": 83
+              },
+              {
+                "productId": "8413271811",
+                "x": 80,
+                "y": 73
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        {
+          "href": "/kids",
+          "label": "아이와 함께 갈 곳 살펴보기"
+        }
+      ],
+      "contentStyle": "shoppable-scene-v2",
+      "status": "draft",
+      "publishAt": "2026-09-13T13:35:34.768Z",
+      "updatedAt": "2026-09-13T13:35:34.768Z",
+      "reviewed": false,
+      "cover": {
+        "url": "/prep-images/family-park-ring-ball-play-cover-v1.webp",
+        "alt": "보호자와 아이가 가을 공원에서 공 굴리기를 하는 연출 장면",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": false,
+        "prompt": "Use case: compositing. Asset type: Korean shoppable editorial photo, landscape 3:2. Reference inputs are actual product photos; preserve their exact colors, silhouettes, components and realistic proportions. Image 1: ring-toss set, blue rounded dome base with holes, straight tall yellow pole, thin colored circular rings red blue yellow pink green; black drawstring storage bag. Image 2: white soft practice baseballs with red curved stitch pattern, small hand-sized, not footballs. Image 3: low flat dome marker cones in blue red green yellow orange, centre holes, white metal stacking holder and black mesh bag. Use only a few pieces from each set, do not invent exact whole-set count. No bats or hard throwing. No children running near pole, no hanging rings on people. Scene: Wide autumn park lawn with an adult guardian and school-age child gently rolling a white red-seam ball to each other on clear flat ground. Ring toss pole stands separately at side far from rolling lane; colored marker cones mark short lane. All three product types foreground and plainly visible. Korean headline in empty sky/foliage area. Photorealistic Korean lifestyle editorial, natural texture and lighting, gentle autumn atmosphere, not a catalog collage. Each of the THREE product types must be distinctly visible for website hotspot links. Do not draw plus icons or product cards. Elegant legible Korean headline exactly \"가을 공원, 함께 놀아요\" in upper breathing space. Small legible Korean disclosure exactly \"AI 연출 이미지\" at bottom right. No fake prices, reviews, ratings, certifications, specifications, promotional badges or unreadable fine print. Do not add unverified accessories. Product reference fidelity over decoration.",
+        "referenceProducts": [
+          {
+            "productId": "9305516249",
+            "imageUrl": "https://ads-partners.coupang.com/image1/W_JUlT8aiqxI9hc8Wzgu32pZc3P6uob0F1EwEIY66MUr-XCdKB5eu2fpqObl1s_A8ON7mVBGVMHDfoSG9UJDOgkGaz-tNaHcpW4u-5gYwSsdNu6yEgbWOP_DjthPU1WEiLNse1dk1qM8tTof9rzeriL1wyOkq72u4Ugg6awkbWsO2NsaJfhvQFYYtnYxCqvqmWm-UMxzKVBvRHRbPN6-whgq3jA1jp469hmLkYgDC7iPujDdtcYg0rxnPsa1ToHpfmz_TaB-IiNQTgxZX9yVRZPG7vE2FI7BljkqgJ5QC6aQnrEAtGAeM9y43xBjoZUnPvtLnw3WA_IXEjK7QkZ2UI-1RGNC_jLSHHJ-XBDP8dZKP54kpoWeF51j7Euu3CJt0m6FbgRqZx8LxXfqDVbxQWttCt1MbIkqQynnnbjZzr4nG4BJKzw0_h9sncHZeRKfR76evNZ1S266I581tfQOCYN25DCSIsMlmSQ7YDLVQdzQpNAdjBO-l0zijUKJXA_Udl2Qfanh6R9J2QqnTSUYi7ks2QOOxTEc"
+          },
+          {
+            "productId": "9643845674",
+            "imageUrl": "https://ads-partners.coupang.com/image1/G5kn44R54wnaJJSZG6jP0Lrp_8fV6hiqdmLKHz1v6rOY58F09629hNRJQtmHhHwlSddVa3CM0O2-7jgaHphal5O-R-FiTLw1cUZwhkdDpJTpaXC5pVuGl_xyJiR6dxNjhusqkQbUy5TzZuRzFaSw0rwFxlOuugpFYqEG-QVjmbgVIG8nC12tR1gwcttErvh_IzKW8odZrVY9GafnTuUZ4Xe_gtrZsDjQMek0hURLwrLwjRucwzG47MdGDKRxLPmVuFXi7e2fPdvd5IleAbcuUve002zKEYxfkJ7Esbrw7lfU6xDAHqv33jvNM0eq315nnNzoeD_sh3Bjh9LhU6Gpu4rkkO05Kef8gYRgGkJFOr3hQ1NymD_taAuowqnPTtBrHD-18YSHH0s7H8168jmM9rCTrpSZ17UmQHOYOdYg6gljwSSPjAAO0jBCygm2SR73KpWvMmUv_co-iCXaZS3rQpSXxszMRmMHokExtQguKp74yAN3tgzQAA7hLTYpFSUvTz0n5IYcfH0JkXvG7r5aJfC11YrtjgY="
+          },
+          {
+            "productId": "8413271811",
+            "imageUrl": "https://ads-partners.coupang.com/image1/28QZiB4eXgJmERXh24DnzTPJx1TbeZyM1S-JEnQuP5OObnTfwzTluHCm5xo34PHbjYBw5L8TNiF8n-_BGAn43wKspOUrIFUW6PoqR_idnniNstrIgqe-jZsf9WwyxHAIUDP8DwFOB_meE5phDrQa9Gbw7rQawDv5wRywtNMPXC-PQGMD0IauOBx5ncMdYD24SxuToylyRyz25Ir4dCrpDcpt4Zs7K9A0erObGxaVOHLwy6FmSANbXUQNn7RMP8X2IVUGOxrOZUju4iqLeEFWwIPnoodHeX2Y3d8RmGODBxOqoeYoF4ZowK7Ikn7AJ33azgTI9mG9KwlEftw6mPS_AaG_cRneGJxh-UsD6aq0JysoRMdO6wLgasAUf_trDFqiSFd46e3-hZPCxbm44TlrZtyL4LY38n3SsTGgbTS-zLWBki9FFVBydj8jZYnjPrrtfcq63TmplunevjveHqUn24v1uqBzSYF8OC5EtT_LnEgTdN8qU1FmZ36vSVqhLqjAOJD_nwXbOPA="
+          }
+        ],
+        "productMatchReviewed": false,
+        "tags": [
+          {
+            "productId": "9305516249",
+            "x": 15,
+            "y": 84
+          },
+          {
+            "productId": "9643845674",
+            "x": 67,
+            "y": 88
+          },
+          {
+            "productId": "8413271811",
+            "x": 83,
+            "y": 81
+          }
+        ]
+      }
     }
   ]
 }

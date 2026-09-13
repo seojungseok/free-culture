@@ -1,0 +1,72 @@
+{
+  "checkedAt": "2026-09-13T14:52:04.063Z",
+  "source": "existing generated images and real API candidates; no new API or image calls",
+  "published": [
+    "camp-seafood-pot-table",
+    "camp-morning-sandwich",
+    "camp-noodle-lunch",
+    "grilled-vegetable-side-dishes",
+    "autumn-camp-tarp-rest-corner"
+  ],
+  "drafts": [
+    {
+      "slug": "barbecue-serving-station",
+      "issues": [
+        "본문 편집 검토 필요",
+        "합성 장면의 상품 외형·위치 대조 필요",
+        "상품 일치·출처·규격·옵션 검토 필요: 9474432502",
+        "상품 일치·출처·규격·옵션 검토 필요: 8604787900",
+        "상품 일치·출처·규격·옵션 검토 필요: 2069545633",
+        "이미지 파일·설명·생성기록·검토 미완료"
+      ]
+    },
+    {
+      "slug": "pork-grill-vegetable-table",
+      "issues": [
+        "본문 편집 검토 필요",
+        "상품 장면마다 서로 다른 상품 태그 3~4개 필요",
+        "합성 장면의 상품 외형·위치 대조 필요",
+        "상품 일치·출처·규격·옵션 검토 필요: 6082424769",
+        "상품 일치·출처·규격·옵션 검토 필요: 9190981639",
+        "상품 일치·출처·규격·옵션 검토 필요: 9376289029",
+        "이미지 파일·설명·생성기록·검토 미완료"
+      ]
+    },
+    {
+      "slug": "autumn-sunset-picnic-layering",
+      "issues": [
+        "본문 편집 검토 필요",
+        "합성 장면의 상품 외형·위치 대조 필요",
+        "상품 일치·출처·규격·옵션 검토 필요: 9160949685",
+        "상품 일치·출처·규격·옵션 검토 필요: 9585035962",
+        "상품 일치·출처·규격·옵션 검토 필요: 9520614727",
+        "이미지 파일·설명·생성기록·검토 미완료"
+      ]
+    },
+    {
+      "slug": "family-park-ring-ball-play",
+      "issues": [
+        "본문 편집 검토 필요",
+        "합성 장면의 상품 외형·위치 대조 필요",
+        "상품 일치·출처·규격·옵션 검토 필요: 9305516249",
+        "상품 일치·출처·규격·옵션 검토 필요: 9643845674",
+        "상품 일치·출처·규격·옵션 검토 필요: 8413271811",
+        "이미지 파일·설명·생성기록·검토 미완료"
+      ]
+    }
+  ],
+  "newlyPublished": [
+    "camp-noodle-lunch",
+    "grilled-vegetable-side-dishes",
+    "autumn-camp-tarp-rest-corner"
+  ],
+  "storedArticles": 9,
+  "images": 27,
+  "manualLinkVerification": true,
+  "remainingSpecificIssues": {
+    "barbecue-serving-station": "금색 홀더 이미지와 실버 선택 옵션 불일치, 쟁반 직접 음식 접촉 확인 필요",
+    "pork-grill-vegetable-table": "상품 옵션 검토 및 뜨거운 그리들/천 배치 수정 필요",
+    "family-park-ring-ball-play": "고리 상품 최소 연령 14세와 어린아이 이미지 불일치",
+    "autumn-sunset-picnic-layering": "담요 문양 옵션 미확정, 조명·용기 상세 대조 필요"
+  }
+}
