@@ -9,7 +9,7 @@ export function validateShape(store){
  if(store.products.length>2000||store.articles.length>1000)throw Error('저장 한도 초과');
  for(const p of store.products){if(!/^[a-zA-Z0-9_-]+$/.test(p.id)||!p.name||!affiliateUrl(p.affiliateUrl)||typeof p.verified!=='boolean')throw Error('상품명·ID·제휴링크 확인 필요');}
  for(const a of store.articles){if(!/^[a-z0-9-]{3,100}$/.test(a.slug)||!a.title||!a.description||!categories.includes(a.category)||!['draft','scheduled','published'].includes(a.status)||!Array.isArray(a.sections)||!Array.isArray(a.productIds)||!a.cover||!Array.isArray(a.internalLinks))throw Error('글 형식 확인 필요');
- if([a.cover,...a.sections.map(s=>s.image).filter(Boolean)].filter(im=>im.generated).length>4)throw Error('AI 이미지는 대표 썸네일 포함 글당 최대 4장입니다.');
+ if([a.cover,...a.sections.map(s=>s.image).filter(Boolean)].length>4)throw Error('이미지는 대표 썸네일 포함 글당 최대 4장입니다.');
  for(const s of a.sections)if(typeof s.text!=='string'||typeof s.heading!=='string'||!Array.isArray(s.productIds))throw Error('본문 형식 확인 필요');
  for(const l of a.internalLinks)if(!/^\/(camping|places|kids|course|season)(\/[^?#]*)?$/.test(l.href)||l.href.includes('..'))throw Error('내부 링크 경로 확인 필요');
  for(const im of [a.cover,...a.sections.map(s=>s.image).filter(Boolean)]){if(im.url&&!safeImage(im.url))throw Error('이미지는 public/prep-images의 검토된 파일을 사용하세요');if(!Array.isArray(im.tags)||im.tags.some(t=>!a.productIds.includes(t.productId)||!Number.isFinite(t.x)||!Number.isFinite(t.y)||t.x<0||t.x>100||t.y<0||t.y>100))throw Error('상품 태그 위치·연결 오류');}
@@ -21,6 +21,8 @@ function words(a){return new Set(a.sections.map(s=>s.text).join(' ').replace(/[^
 export function publicationErrors(a,store,{exists=p=>fs.existsSync(path.join(process.cwd(),'public',p))}={}){
  const errors=[];if(!a.reviewed)errors.push('본문 편집 검토 필요');
  const photos=[a.cover,...a.sections.map(s=>s.image).filter(Boolean)];if(photos.filter(im=>im.generated).length>4)errors.push('AI 이미지 최대 4장 초과');if(new Set(photos.map(im=>im.url)).size!==photos.length)errors.push('같은 이미지 반복 사용');
+ if(photos.filter(im=>im.url).length<3)errors.push('썸네일 포함 이미지 최소 3장 필요');
+ if(photos.length>4)errors.push('썸네일 포함 이미지 최대 4장 초과');
  if(!Number.isFinite(Date.parse(a.publishAt)))errors.push('발행 시각 필요');
  if(a.sections.length<2||a.sections.map(s=>s.text).join('').length<350)errors.push('미완성 본문');
  if(!a.productIds.length)errors.push('등록 상품 연결 필요');

@@ -5,6 +5,23 @@ import crypto from 'node:crypto';
 import sharp from 'sharp';
 const store=JSON.parse(fs.readFileSync('data/weekend-prep.json','utf8'));
 const manifest=JSON.parse(fs.readFileSync('data/weekend-prep-image-batch.json','utf8'));
+test('all 18 articles contain three distinct reviewed images, 54 total',async()=>{
+ const body=JSON.parse(fs.readFileSync('data/weekend-prep-body-images.json','utf8'));
+ assert.equal(body.images.length,35);
+ const hashes=new Set();let total=0;
+ for(const a of store.articles){
+  const photos=[a.cover,...a.sections.map(s=>s.image).filter(Boolean)];
+  assert.equal(photos.length,3,a.slug);
+  for(const im of photos){
+   assert(im.generated&&im.reviewed&&im.alt&&im.prompt);
+   const bytes=fs.readFileSync('public'+im.url),meta=await sharp(bytes).metadata();
+   assert.equal(meta.format,'webp');assert.equal(meta.width,im.width);assert.equal(meta.height,im.height);
+   assert(meta.width<=1200&&meta.height<=800);assert(bytes.length<400000);
+   hashes.add(crypto.createHash('sha256').update(bytes).digest('hex'));total++;
+  }
+ }
+ assert.equal(total,54);assert.equal(hashes.size,54);
+});
 test('18 drafts have unique reviewed AI covers; no article exceeds four images',async()=>{
  assert.equal(manifest.images.length,17);assert.equal(store.articles.length,18);
  const hashes=new Set();

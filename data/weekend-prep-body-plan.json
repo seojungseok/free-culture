@@ -1,0 +1,215 @@
+{
+  "tool": "built-in imagegen",
+  "tasks": [
+    {
+      "slug": "camping-soup-packing",
+      "section": 0,
+      "key": "camping-soup-packing-body-1",
+      "scene": "Separate washed vegetables in three small bowls beside a clean cutting board at a home kitchen, hands arranging ingredients before a camping trip."
+    },
+    {
+      "slug": "camping-soup-packing",
+      "section": 2,
+      "key": "camping-soup-packing-body-2",
+      "scene": "At a campsite clean pot and ladle stored separately from closed leftover containers inside an open return crate, after-meal packing, no flames."
+    },
+    {
+      "slug": "camping-breakfast-cleanup",
+      "section": 0,
+      "key": "camping-breakfast-cleanup-body-1",
+      "scene": "Evening campsite preparation: a small breakfast basket with plain cutlery wrap, empty plate and reusable cup, closed dry food container, warm lamp."
+    },
+    {
+      "slug": "camping-breakfast-cleanup",
+      "section": 2,
+      "key": "camping-breakfast-cleanup-body-2",
+      "scene": "Campground washing station with clean washed bowls on a draining rack and separate packed camping bag, morning light, no food in sink."
+    },
+    {
+      "slug": "camping-food-storage-zones",
+      "section": 0,
+      "key": "camping-food-storage-zones-body-1",
+      "scene": "Overhead kitchen table sorting closed food containers separately from dry oats and bread in baskets before packing for camp, no raw meat."
+    },
+    {
+      "slug": "camping-food-storage-zones",
+      "section": 2,
+      "key": "camping-food-storage-zones-body-2",
+      "scene": "Open picnic food bag with closed containers separated by a cloth divider and empty return container outside bag, explain eating order through arrangement without labels."
+    },
+    {
+      "slug": "barbecue-side-menu",
+      "section": 0,
+      "key": "barbecue-side-menu-body-1",
+      "scene": "Hands putting washed lettuce and tomato into separate serving bowls on an outdoor table, clean utensils, no meat or flames."
+    },
+    {
+      "slug": "barbecue-side-menu",
+      "section": 2,
+      "key": "barbecue-side-menu-body-2",
+      "scene": "Outdoor barbecue table with sauces in separate small bowls and clean individual serving spoons, plain plate in foreground, modest realistic side dishes."
+    },
+    {
+      "slug": "barbecue-table-zones",
+      "section": 0,
+      "key": "barbecue-table-zones-body-1",
+      "scene": "Overhead two physically separated clean trays with separate long tongs and plates on a camping preparation table, no food."
+    },
+    {
+      "slug": "barbecue-table-zones",
+      "section": 2,
+      "key": "barbecue-table-zones-body-2",
+      "scene": "Wide side view of separate preparation table and dining table with open clear walking space between, a closed unlit grill distant, no children or raw meat."
+    },
+    {
+      "slug": "barbecue-cleanup-plan",
+      "section": 0,
+      "key": "barbecue-cleanup-plan-body-1",
+      "scene": "After outdoor dinner, hands separating empty reusable containers, used cutlery on a tray, clean folded cloth and closed return bag."
+    },
+    {
+      "slug": "barbecue-cleanup-plan",
+      "section": 2,
+      "key": "barbecue-cleanup-plan-body-2",
+      "scene": "At home after barbecue trip, washed reusable containers and tongs drying individually on a kitchen rack, no brand labels or chemical cleaners."
+    },
+    {
+      "slug": "first-camping-borrow-or-buy",
+      "section": 0,
+      "key": "first-camping-borrow-or-buy-body-1",
+      "scene": "On living room floor, an adult comparing a modest small set of existing blanket cup and tote to a simple camping packing sketch with no readable letters."
+    },
+    {
+      "slug": "first-camping-borrow-or-buy",
+      "section": 2,
+      "key": "first-camping-borrow-or-buy-body-2",
+      "scene": "A borrowed plain sleeping bag and folding chair with all small accessories neatly alongside in a home entryway, realistic minimal setup, no claim about product included parts."
+    },
+    {
+      "slug": "camping-arrival-bag",
+      "section": 0,
+      "key": "camping-arrival-bag-body-1",
+      "scene": "Car trunk of parked car at campsite, a small arrival tote placed nearest the opening with larger packed bags further inside, no logos."
+    },
+    {
+      "slug": "camping-arrival-bag",
+      "section": 2,
+      "key": "camping-arrival-bag-body-2",
+      "scene": "Close view of a folded equipment instruction sheet with no readable text and small plain accessories kept together in a zip pouch on a campsite table, no dangerous tools."
+    },
+    {
+      "slug": "camping-wet-dry-packing",
+      "section": 0,
+      "key": "camping-wet-dry-packing-body-1",
+      "scene": "Hands sorting slightly damp gray towels into one open container and fully dry cream fabric into another outside tent, no pooled water."
+    },
+    {
+      "slug": "camping-wet-dry-packing",
+      "section": 2,
+      "key": "camping-wet-dry-packing-body-2",
+      "scene": "Home balcony after camping, damp unbranded fabric hung on a rack to air dry while empty transport container stands below, gentle daylight."
+    },
+    {
+      "slug": "park-bubble-play",
+      "section": 0,
+      "key": "park-bubble-play-body-1",
+      "scene": "Korean adult parent helping elementary school aged child inspect a large simple bubble wand at a park clearing, hands below faces, no food or small loose pieces."
+    },
+    {
+      "slug": "park-bubble-play",
+      "section": 2,
+      "key": "park-bubble-play-body-2",
+      "scene": "Korean adult and elementary school aged child tidying a simple closed bubble liquid bottle and large wand into a separate tote at park bench, supervised, no drinking."
+    },
+    {
+      "slug": "sand-play-cleanup",
+      "section": 0,
+      "key": "sand-play-cleanup-body-1",
+      "scene": "Plain large bucket and scoop laid on a clean mat outside a designated sandbox, parent and elementary school aged child preparing to play in background."
+    },
+    {
+      "slug": "sand-play-cleanup",
+      "section": 2,
+      "key": "sand-play-cleanup-body-2",
+      "scene": "Korean adult supervising elementary school aged child washing hands at accessible park tap after sandbox play, realistic water flow and hands, no food."
+    },
+    {
+      "slug": "rainy-day-indoor-play",
+      "section": 0,
+      "key": "rainy-day-indoor-play-body-1",
+      "scene": "Korean adult clearing a living room floor for drawing, a large blank paper and chunky crayons in a tray, rainy window in background, no loose strings or bags."
+    },
+    {
+      "slug": "rainy-day-indoor-play",
+      "section": 2,
+      "key": "rainy-day-indoor-play-body-2",
+      "scene": "Korean parent and elementary school aged child together putting chunky crayons in a tray and rolling up a large drawing after indoor play, natural anatomy."
+    },
+    {
+      "slug": "light-picnic-packing",
+      "section": 1,
+      "key": "light-picnic-packing-body-1",
+      "scene": "End of park picnic: hands collecting closed empty lunch containers and folded mat separately into a tote, no litter left, late afternoon."
+    },
+    {
+      "slug": "picnic-lunch-packing",
+      "section": 0,
+      "key": "picnic-lunch-packing-body-1",
+      "scene": "Close overhead a reusable lunch box, separate small closed sauce container and clean cutlery roll organized on a kitchen table, no raw ingredients touching cooked food."
+    },
+    {
+      "slug": "picnic-lunch-packing",
+      "section": 2,
+      "key": "picnic-lunch-packing-body-2",
+      "scene": "After picnic meal, closed empty lunch containers placed in separate washable return bag while clean personal pouch remains outside, park table."
+    },
+    {
+      "slug": "walking-break-kit",
+      "section": 0,
+      "key": "walking-break-kit-body-1",
+      "scene": "Overhead contents of a minimal walking bag: plain refillable bottle, small clean cloth, personal pouch, modest realistic arrangement with no logos."
+    },
+    {
+      "slug": "walking-break-kit",
+      "section": 2,
+      "key": "walking-break-kit-body-2",
+      "scene": "Close view of hands picking up a small bag and bottle from a clean park bench at end of a walking break, no litter, leafy path behind."
+    },
+    {
+      "slug": "overnight-travel-pouches",
+      "section": 0,
+      "key": "overnight-travel-pouches-body-1",
+      "scene": "Overhead small overnight bag with clothing pouch, separate toiletry pouch and phone cable neatly grouped by use, no brands or printed text."
+    },
+    {
+      "slug": "overnight-travel-pouches",
+      "section": 2,
+      "key": "overnight-travel-pouches-body-2",
+      "scene": "Hotel bedside table at checkout with plain charging cable and spectacles being gathered beside a closed pouch, no hotel name, soft daylight."
+    },
+    {
+      "slug": "family-travel-shared-items",
+      "section": 0,
+      "key": "family-travel-shared-items-body-1",
+      "scene": "Home table shared family travel supplies in one basket and two separate personal pouches apart, two adults' hands sorting, no text or brands."
+    },
+    {
+      "slug": "family-travel-shared-items",
+      "section": 2,
+      "key": "family-travel-shared-items-body-2",
+      "scene": "An adult returning shared plain cup and clean cloth into designated travel tote while another closes a personal pouch, calm home preparation scene."
+    },
+    {
+      "slug": "travel-return-laundry",
+      "section": 0,
+      "key": "travel-return-laundry-body-1",
+      "scene": "Overhead open suitcase showing separate clean folded clothing and a cloth laundry bag, plain packing cubes, no brand logos."
+    },
+    {
+      "slug": "travel-return-laundry",
+      "section": 2,
+      "key": "travel-return-laundry-body-2",
+      "scene": "Back home after travel, adult hanging used clothing on a laundry rack according to fabric care while empty suitcase stands open nearby, calm daylight, no detergent claims."
+    }
+  ]
+}

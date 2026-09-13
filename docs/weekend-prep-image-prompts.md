@@ -19,3 +19,6 @@ Edit the supplied picnic editorial photograph into a refined Korean weekend arti
 Use case photorealistic-natural. Landscape Korean weekend picnic preparation editorial photograph. Top down view on a warm wooden table at home: open neutral tote, folded picnic cloth, closed reusable lunch container, small plain water bottle, folded cleaning cloth, and two plain small bags separated for wet and dry used items. Hands arranging the packing, natural morning light. This is a practical packing demonstration, not an outdoor scene. No logos, no packaging claims, no product brands. Tiny subtle legible Korean caption at bottom: 'AI 연출 이미지'. No main headline. 3:2 landscape, restrained warm emotional magazine aesthetic.
 
 글에 사용한 AI 이미지는 대표1+본문1=2장. 원본 장면은 중복 삽입하지 않는다. 최대4장 제한 적용.
+# 본문 이미지 추가 배치
+
+`data/weekend-prep-body-images.json`은 built-in imagegen으로 생성한 35장 각각의 최종 프롬프트, 원본 PNG 경로, WebP 경로 및 한국어 alt를 기록한다. 준비 과정과 활동 후 정리 장면을 나누었으며 기존 19장과 합쳐 총 54장, 글마다 썸네일 포함 3장이다. 특정 판매 상품의 정확한 외형을 보증하지 않는 AI 연출 이미지다.

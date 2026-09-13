@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 12,
   "products": [
     {
       "id": "7689270513",
@@ -34,7 +34,7 @@
       "category": "피크닉·나들이",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T10:35:19.577Z",
+      "updatedAt": "2026-09-13T11:50:35.710Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/picnic-korean-cover.webp",
@@ -67,7 +67,17 @@
           "text": "먹을거리는 집에서 나눠 담을 수 있는 메뉴로 정하면 현장에서 꺼낼 물건을 줄이기 좋아요. 잘라야 하는 음식이라면 먹기 편한 크기로 준비하고, 뚜껑이 맞는 용기에 담아 가방 안에서 열리지 않는지 확인해요. 음식에 맞는 보관 방법은 제품 표시를 따르고, 오래 둘 음식은 보관할 수단부터 정하세요.\n마실 물은 집에 있는 물병을 활용해도 괜찮아요. 따로 준비할 생수 후보로는 탐사 샘물이 등록되어 있어요. 묶음 수량과 병 크기는 구매 전에 옵션에서 확인하고, 사진 속 물병과 같은 상품이라고 생각하지 않도록 해요.",
           "productIds": [
             "7689270513"
-          ]
+          ],
+          "image": {
+            "url": "/prep-images/light-picnic-packing-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "돗자리와 뚜껑을 닫은 용기를 가방에 넣는 장면 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. End of park picnic: hands collecting closed empty lunch containers and folded mat separately into a tote, no litter left, late afternoon. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "앉을 자리와 정리 도구는 필요한 만큼만",
@@ -89,6 +99,11 @@
             "tags": []
           },
           "text": "출발할 때 가방을 빈틈없이 채우면 돌아올 때 사용한 용기와 포장지를 담기 어려워요. 빈 봉투를 납작하게 접어 넣고, 젖은 물건과 마른 물건을 나눌 공간을 남겨 두세요. 정리할 때는 큰 물건을 먼저 접기보다 작은 뚜껑과 포장지를 먼저 모으면 잔디에 남기는 물건을 줄일 수 있어요.\n집에 돌아와서는 사용한 것과 꺼내지 않은 것을 나눠 보세요. 이번에 쓰지 않은 준비물은 다음번에 꼭 필요한지 다시 판단하면 됩니다. 짐을 한 번에 줄이기보다, 우리 가족이 실제로 하는 활동에 맞춰 하나씩 덜어 내 보세요.",
+          "productIds": []
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 머무는 시간과 음식 반입 안내 확인하기\n2. 집에 있는 용기와 가방부터 펼쳐 보기\n3. 먹은 뒤 되가져갈 물건의 공간 남기기",
           "productIds": []
         }
       ],
@@ -114,7 +129,7 @@
       "category": "캠핑 먹거리",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.846Z",
+      "updatedAt": "2026-09-13T11:50:33.105Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/camping-soup-packing-cover-v1.webp",
@@ -130,7 +145,17 @@
         {
           "heading": "먼저 냄비와 먹는 사람 수를 정해요",
           "text": "캠핑 국물요리를 준비할 때는 장보기 전에 가져갈 냄비와 식기부터 꺼내 보세요. 냄비에 담을 수 있는 양과 함께 먹을 사람을 생각해 메뉴를 좁히면 재료가 여러 봉지로 늘어나는 것을 줄일 수 있어요. 알레르기나 먹지 못하는 재료는 미리 묻고, 같은 국물에 넣어도 되는지 확인해요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/camping-soup-packing-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "채소를 씻고 국물 요리 재료를 나누는 준비 장면 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Separate washed vegetables in three small bowls beside a clean cutting board at a home kitchen, hands arranging ingredients before a camping trip. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "재료는 넣는 순서보다 보관 조건부터 나눠요",
@@ -139,7 +164,22 @@
         },
         {
           "heading": "물과 정리할 용기를 따로 챙겨요",
-          "text": "등록된 탐사 샘물은 준비 후보로만 확인된 상태예요. 실제 선택 옵션과 용량이 확인되기 전에는 필요한 개수나 냄비와의 적합성을 단정할 수 없어요. 집에서 가져오는 물을 사용할지, 현장의 음용수 안내를 확인할지도 함께 정하세요. 남은 재료의 보관이 어렵다면 다음 끼니까지 남기는 계획 대신 처음부터 적게 준비하는 편이 정리하기 수월해요.",
+          "text": "국물요리는 마실 물과 조리에 쓸 물을 나눠 생각하면 준비 목록을 정리하기 쉬워요. 목적지에서 음용수를 이용할 수 있는지 확인하고, 필요한 물은 원래 표시와 보관 안내를 따라 준비하세요. 냄비와 국자는 사용한 뒤 다른 소지품에 묻지 않도록 따로 담고, 남은 재료를 보관할 용기도 마련해요. 보관 조건을 유지하기 어려운 일정이라면 처음부터 준비할 양이나 메뉴를 줄이는 방법을 선택하세요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/camping-soup-packing-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "식후 냄비와 뚜껑을 닫은 용기를 나누어 정리한 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. At a campsite clean pot and ladle stored separately from closed leftover containers inside an open return crate, after-meal packing, no flames. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 냄비와 식기의 실제 크기 대조하기\n2. 재료별 보관 안내와 알레르기 확인하기\n3. 사용한 국자와 빈 용기를 나눠 가져오기",
           "productIds": []
         }
       ],
@@ -160,7 +200,7 @@
       "category": "캠핑 먹거리",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.849Z",
+      "updatedAt": "2026-09-13T11:50:33.331Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/camping-breakfast-cleanup-cover-v1.webp",
@@ -176,7 +216,17 @@
         {
           "heading": "아침 메뉴보다 철수 순서를 먼저 그려요",
           "text": "철수하는 날은 식사 뒤에 텐트와 식기를 모두 정리해야 해요. 전날 저녁에 아침에 쓸 도구만 따로 남겨 두고 나머지는 정리해 보세요. 새 요리를 여러 가지 만드는 대신 준비한 식품의 표시사항을 확인해 바로 먹을 수 있는 것과 조리가 필요한 것을 구분하면 아침 동선이 단순해져요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/camping-breakfast-cleanup-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "아침 식사용 컵과 식기를 바구니에 준비한 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Evening campsite preparation: a small breakfast basket with plain cutlery wrap, empty plate and reusable cup, closed dry food container, warm lamp. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "한 번에 꺼낼 식사 바구니를 만들어요",
@@ -185,7 +235,22 @@
         },
         {
           "heading": "마지막 물과 마지막 설거지를 남겨 둬요",
-          "text": "등록된 탐사 샘물은 실제 용량과 묶음 옵션 확인이 필요한 후보예요. 특정 수량을 정하기 전에 인원과 현장의 음용수 이용 안내를 확인하세요. 아침 식사가 끝나면 식기 안의 잔여물을 먼저 정리하고 캠핑장의 개수대 이용 규칙에 따라 씻어요. 물기가 남은 식기를 밀봉해 오래 두지 말고 돌아와 다시 말릴 물건을 구분해 두세요.",
+          "text": "철수하는 아침에는 식사 뒤에 쓸 물과 식기를 정리할 자리를 남겨 둬야 해요. 설거지가 필요한 도구를 먼저 모으고 현장 개수대 안내에 따라 세척하세요. 접시와 수저가 마르는 동안 다른 짐을 정리하면 젖은 식기를 서둘러 밀봉하는 일을 줄일 수 있어요. 집에서 다시 말려야 할 물건은 별도로 표시하고, 즉시 꺼낼 수 있는 가방에 넣어 두세요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/camping-breakfast-cleanup-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "사용한 캠핑 식기를 씻고 말리는 장면 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Campground washing station with clean washed bowls on a draining rack and separate packed camping bag, morning light, no food in sink. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 전날 저녁 아침용 식기만 남기기\n2. 섭취 전 표시사항을 확인할 수 있게 보관하기\n3. 설거지 후 말릴 자리와 귀가 후 꺼낼 가방 정하기",
           "productIds": []
         }
       ],
@@ -206,7 +271,7 @@
       "category": "캠핑 먹거리",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.850Z",
+      "updatedAt": "2026-09-13T11:50:33.563Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/camping-food-storage-zones-cover-v1.webp",
@@ -222,7 +287,17 @@
         {
           "heading": "식단표 대신 꺼낼 순서를 적어 봐요",
           "text": "캠핑 먹거리를 한 상자에 모두 넣으면 매 끼니마다 짐을 다시 펼치기 쉬워요. 첫날 간식, 저녁 준비, 다음 날 아침처럼 사용할 장면을 적어 보세요. 이것은 보관 온도를 대신하는 분류가 아니에요. 먼저 각 식품의 보관 표시를 지키고, 같은 조건 안에서 먹는 순서에 따라 묶는 방식이에요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/camping-food-storage-zones-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "음식 용기와 마른 식재료를 나누어 포장한 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Overhead kitchen table sorting closed food containers separately from dry oats and bread in baskets before packing for camp, no raw meat. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "보관 조건이 다른 식품은 섞지 않아요",
@@ -231,7 +306,22 @@
         },
         {
           "heading": "돌아오는 짐까지 라벨에 남겨요",
-          "text": "남은 식품을 가져갈 빈 공간과 사용한 용기를 담을 자리를 준비하세요. 탐사 샘물은 기존에 등록된 상품 후보이며 옵션 검증 전에는 보관 공간에 맞는 크기라고 안내할 수 없어요. 필요한 물도 다른 식품과 마찬가지로 실제 표시와 선택 옵션을 확인해요. 귀가 후에는 남은 식품의 상태와 보관 조건을 다시 확인하고 빈 용기를 먼저 세척해 말려요.",
+          "text": "귀가할 때는 남은 식품과 사용한 빈 용기의 보관 장소를 다시 구분해요. 처음 담았던 위치를 그대로 쓰기보다 현재의 보관 조건과 상태를 기준으로 정리하는 것이 좋아요. 음용수도 실제 포장과 표시사항을 살펴 준비하고, 다른 용기로 옮겼다면 내용물이 무엇인지 알 수 있게 해요. 집에 도착하면 남은 식품을 먼저 확인한 뒤 사용한 용기를 세척해 말리세요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/camping-food-storage-zones-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "가방 안에 뚜껑을 닫은 음식 용기를 나눈 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Open picnic food bag with closed containers separated by a cloth divider and empty return container outside bag, explain eating order through arrangement without labels. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 보관 조건별로 먼저 분류하기\n2. 같은 보관 조건 안에서 먹는 순서 표시하기\n3. 남은 식품과 빈 용기를 구분할 자리 마련하기",
           "productIds": []
         }
       ],
@@ -252,7 +342,7 @@
       "category": "바비큐",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.851Z",
+      "updatedAt": "2026-09-13T11:50:33.783Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/barbecue-side-menu-cover-v1.webp",
@@ -268,7 +358,17 @@
         {
           "heading": "굽는 음식 옆에 어떤 식감을 둘지 생각해요",
           "text": "바비큐 상을 준비할 때 모든 반찬을 새로 만들 필요는 없어요. 함께 먹을 사람이 원하는 채소나 익숙한 곁들임을 먼저 물어보세요. 씻거나 썰어야 하는 것, 현장에서 데워야 하는 것, 포장 그대로 보관해야 하는 것을 나누면 현장에서 동시에 해야 할 일이 줄어들어요. 특정 조합이 더 맛있다고 단정하기보다 취향에 맞게 선택해요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/barbecue-side-menu-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "바비큐에 곁들일 채소를 접시에 담는 장면 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Hands putting washed lettuce and tomato into separate serving bowls on an outdoor table, clean utensils, no meat or flames. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "양념은 섞지 않고 선택할 수 있게 두어요",
@@ -277,7 +377,22 @@
         },
         {
           "heading": "상차림보다 치울 자리를 먼저 남겨요",
-          "text": "음식을 놓을 공간을 모두 채우지 말고 빈 그릇을 모을 자리를 남겨 두세요. 탐사 클래식 물티슈 캡형은 상품 후보이며 식품 접촉면 세척이나 소독을 대신할 수 있다고 확인된 제품이 아니에요. 용도와 사용상 주의사항을 확인한 뒤 필요한 경우에만 선택하세요. 먹고 남은 곁들임은 보관 조건을 지킬 수 있는지 확인하고 처리해요.",
+          "text": "음식을 놓을 자리를 모두 채우지 말고 빈 접시를 모을 공간을 남겨 두세요. 공용 양념에는 덜어 먹을 도구를 따로 놓고, 개인 수저를 함께 쓰는 그릇에 반복해 넣지 않는 방식으로 준비해요. 천이나 세정용품은 실제 사용 대상과 주의사항을 확인해서 선택하고, 조리 도구를 씻는 일을 임의로 대신하게 하지 않아요. 남은 곁들임은 보관 조건을 유지할 수 있는지 확인한 뒤 정리하세요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/barbecue-side-menu-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "소스마다 별도 숟가락을 놓은 식탁 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Outdoor barbecue table with sauces in separate small bowls and clean individual serving spoons, plain plate in foreground, modest realistic side dishes. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 함께 먹는 사람의 제외 재료 물어보기\n2. 곁들임과 양념을 별도 그릇에 준비하기\n3. 덜어 먹을 도구와 빈 접시 자리 남기기",
           "productIds": []
         }
       ],
@@ -298,7 +413,7 @@
       "category": "바비큐",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.853Z",
+      "updatedAt": "2026-09-13T11:50:34.009Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/barbecue-table-zones-cover-v1.webp",
@@ -314,7 +429,17 @@
         {
           "heading": "불을 쓰는 장소의 안내가 먼저예요",
           "text": "바비큐 장소를 정했다면 해당 구역에서 어떤 조리 도구를 사용할 수 있는지 먼저 확인하세요. 바람과 주변 이용객, 이동하는 사람의 동선을 함께 살펴야 해요. 이 글은 특정 장소의 화기 사용을 허용한다는 안내가 아니에요. 현장 안내를 확인할 수 없으면 임의로 불을 피우지 말고 메뉴나 장소를 바꾸세요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/barbecue-table-zones-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "깨끗한 접시와 집게를 나누어 놓은 준비대 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Overhead two physically separated clean trays with separate long tongs and plates on a camping preparation table, no food. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "준비·조리·식사 자리를 구분해요",
@@ -323,7 +448,22 @@
         },
         {
           "heading": "빈 그릇을 돌려놓는 길도 만들어요",
-          "text": "먹는 자리에서 빈 그릇을 어디로 옮길지 정해 두면 뜨거운 도구 주변을 여러 번 오가는 일을 줄일 수 있어요. 등록된 물티슈 후보는 제품 표시 확인 전까지 조리 도구 관리용으로 연결하지 않아요. 오염된 식기와 깨끗한 준비물을 따로 담고 현장에서 정한 세척 장소를 이용하세요. 철수 전에 불과 기구의 처리 규칙도 반드시 확인해요.",
+          "text": "빈 그릇을 옮길 위치를 정하면 뜨거운 기구 근처로 여러 번 오가는 일을 줄일 수 있어요. 씻어야 하는 식기와 깨끗한 준비물을 다른 쟁반이나 상자에 놓아 섞이지 않게 해요. 정리 도구도 닦을 대상에 적합한지 제품 표시를 확인해 선택하세요. 철수 전에는 화기와 연료의 처리 규칙을 현장 및 제조사 안내에서 확인하고, 온도가 안전하다고 임의로 판단하지 않아요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/barbecue-table-zones-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "조리대와 식탁 사이의 이동 공간을 비운 배치 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Wide side view of separate preparation table and dining table with open clear walking space between, a closed unlit grill distant, no children or raw meat. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 현장의 화기 사용 안내 확인하기\n2. 준비 도구와 식사용 도구를 구분하기\n3. 뜨거운 기구 옆을 지나지 않는 정리 동선 만들기",
           "productIds": []
         }
       ],
@@ -344,7 +484,7 @@
       "category": "바비큐",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.854Z",
+      "updatedAt": "2026-09-13T11:50:34.241Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/barbecue-cleanup-plan-cover-v1.webp",
@@ -360,7 +500,17 @@
         {
           "heading": "정리 계획은 굽기 전에 세워요",
           "text": "바비큐가 끝나면 음식, 식기, 포장재, 조리 기구가 동시에 남아요. 사용한 것을 한 봉투에 몰아 담지 않도록 가져갈 용기를 미리 나눠 보세요. 시설에서 처리할 수 있는 폐기물과 직접 되가져와야 하는 물건은 장소마다 다르므로 안내문이나 관리자의 설명을 먼저 확인해요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/barbecue-cleanup-plan-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "사용한 식기와 보관 용기를 나누어 정리하는 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. After outdoor dinner, hands separating empty reusable containers, used cutlery on a tray, clean folded cloth and closed return bag. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "남은 음식과 사용한 도구를 분리해요",
@@ -369,7 +519,22 @@
         },
         {
           "heading": "귀가 후 펼칠 물건을 표시해요",
-          "text": "집에서 다시 세척하거나 말려야 할 물건을 한곳에 모아 표시해 두면 다음 사용 때 상태를 확인하기 쉬워요. 탐사 클래식 물티슈 캡형은 규격과 용도 검토 전인 후보로, 기름 제거 성능이나 소독 기능을 주장하지 않아요. 세척이 필요한 식기는 적절한 방법으로 씻고 건조하며, 음식물과 연료 잔여물을 현장에 남기지 않아요.",
+          "text": "귀가 뒤 다시 세척하거나 말릴 물건은 한곳에 모아 표시해요. 기름 묻은 도구, 식품 용기, 천을 모두 같은 방법으로 관리하기보다는 각각의 소재와 사용 안내를 확인하세요. 세정용품을 고를 때는 대상 소재와 용도가 맞는지 살피고, 확인되지 않은 소독이나 얼룩 제거 효과를 기대해 대체하지 않아요. 빈 용기를 먼저 꺼내 씻고 말린 다음, 부속품이 빠지지 않았는지 확인해 보관하세요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/barbecue-cleanup-plan-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "세척한 음식 용기를 건조대에 펼친 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. At home after barbecue trip, washed reusable containers and tongs drying individually on a kitchen rack, no brand labels or chemical cleaners. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 음식·식기·포장재의 귀가 공간 나누기\n2. 현장 폐기물 처리 규칙 확인하기\n3. 집에서 다시 세척할 물건을 가장 먼저 꺼내기",
           "productIds": []
         }
       ],
@@ -390,7 +555,7 @@
       "category": "캠핑 초보 준비물",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.856Z",
+      "updatedAt": "2026-09-13T11:50:34.471Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/first-camping-borrow-or-buy-cover-v1.webp",
@@ -406,7 +571,17 @@
         {
           "heading": "어떤 캠핑인지 먼저 적어요",
           "text": "첫 캠핑을 준비하면서 다른 사람의 긴 준비물 목록을 그대로 따라 살 필요는 없어요. 숙박 여부, 이동 방법, 제공되는 시설, 조리 계획부터 적어 보세요. 시설에 실제로 준비된 물건은 운영 안내로 확인해야 해요. 사진에 보인다는 이유만으로 대여품이나 기본 제공품이라고 생각하지 않는 것이 좋아요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/first-camping-borrow-or-buy-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "캠핑 준비 목록과 짐을 함께 점검하는 장면 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. On living room floor, an adult comparing a modest small set of existing blanket cup and tote to a simple camping packing sketch with no readable letters. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "대여 여부는 구성품까지 확인해요",
@@ -415,7 +590,22 @@
         },
         {
           "heading": "작은 물건도 용도와 규격을 확인해요",
-          "text": "등록된 물티슈와 생수는 준비물 후보이지 모든 캠핑에 꼭 사야 할 세트는 아니에요. 상품 옵션과 표시사항 대조가 끝나기 전에는 수량이나 구성의 적합성을 단정하지 않아요. 집에 있는 물건으로 대체 가능한지 살펴본 뒤 부족한 것만 선택하세요. 첫 캠핑 뒤 실제로 사용한 물건과 꺼내지 않은 물건을 구분해 다음 목록을 줄여 보세요.",
+          "text": "작은 준비물도 집에 있는 물건으로 대체할 수 있는지 먼저 확인하세요. 식기와 가방은 실제로 사용할 양과 부피를 담아 보며 점검하고, 새로 선택할 물건은 규격과 구성품을 비교해요. 여러 개 묶음이 무조건 필요한 것은 아니므로 남은 재고도 함께 살펴보세요. 첫 캠핑 뒤에는 사용한 것, 꺼내지 않은 것, 없어 불편했던 것을 나눠 기록하면 다음 구매의 기준이 생겨요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/first-camping-borrow-or-buy-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "침낭과 의자 등 캠핑 준비물을 펼친 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. A borrowed plain sleeping bag and folding chair with all small accessories neatly alongside in a home entryway, realistic minimal setup, no claim about product included parts. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 숙박·조리 여부와 제공 시설 확인하기\n2. 대여 구성과 반납 조건 대조하기\n3. 사용하지 않은 물건은 다음 준비 목록에서 재검토하기",
           "productIds": []
         }
       ],
@@ -436,7 +626,7 @@
       "category": "캠핑 초보 준비물",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.857Z",
+      "updatedAt": "2026-09-13T11:50:34.695Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/camping-arrival-bag-cover-v1.webp",
@@ -452,7 +642,17 @@
         {
           "heading": "차에서 가장 먼저 필요한 물건을 골라요",
           "text": "캠핑장에 도착하자마자 짐을 모두 꺼내면 작업 공간이 어수선해질 수 있어요. 체크인 안내, 자리 확인, 장비 배치처럼 실제 도착 순서를 적어 보세요. 그 과정에서 바로 필요한 물건만 작은 가방이나 상자에 묶고, 식사 준비처럼 나중에 할 일에 쓰는 짐은 별도로 둬요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/camping-arrival-bag-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "차량 트렁크에서 먼저 꺼낼 가방을 배치한 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Car trunk of parked car at campsite, a small arrival tote placed nearest the opening with larger packed bags further inside, no logos. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "사용 설명과 작은 부속품을 흩어 놓지 않아요",
@@ -461,7 +661,22 @@
         },
         {
           "heading": "잠깐 쉬는 자리와 마실 물을 구분해요",
-          "text": "짐을 펼치는 작업 공간 한가운데에 음료와 개인 물건을 두지 않도록 쉬는 자리를 따로 정하세요. 탐사 샘물은 등록된 후보지만 용량과 묶음 구성이 미확인이라 도착 가방에 맞는 옵션을 추천할 수는 없어요. 이미 준비한 음용수를 활용할 수도 있어요. 설치가 끝나면 먼저 꺼낸 작은 도구를 원래 자리에 돌려놓아 잃어버리지 않도록 해요.",
+          "text": "짐을 펼치는 작업 자리와 잠깐 쉬는 자리를 구분해 마실 물이나 개인 물건이 설치 도구와 섞이지 않게 해요. 물병과 작은 가방은 실제 크기를 대조하고, 이미 가지고 있는 물건을 활용할 수 있는지 확인하세요. 설치가 끝난 뒤에는 먼저 꺼낸 부속품과 설명서를 정해 둔 주머니로 돌려놓아요. 눈에 잘 보이는 곳에 두는 것과 모두 같은 자리에 넣는 것은 다르므로 용도별 위치를 유지해요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/camping-arrival-bag-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "캠핑 조명과 작은 도구를 그림 목록으로 점검하는 장면 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Close view of a folded equipment instruction sheet with no readable text and small plain accessories kept together in a zip pouch on a campsite table, no dangerous tools. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 도착 후 바로 할 일 순서 적기\n2. 설명서와 부속품을 장비별로 묶기\n3. 설치 후 작은 도구를 같은 주머니로 돌려놓기",
           "productIds": []
         }
       ],
@@ -482,7 +697,7 @@
       "category": "캠핑 초보 준비물",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.859Z",
+      "updatedAt": "2026-09-13T11:50:34.924Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/camping-wet-dry-packing-cover-v1.webp",
@@ -498,7 +713,17 @@
         {
           "heading": "접기 전에 물기와 오염을 구분해요",
           "text": "캠핑 철수 때는 마른 옷, 젖은 천, 사용한 식기를 한꺼번에 차에 싣기 쉬워요. 먼저 비나 이슬에 젖은 물건과 음식물 등으로 오염된 물건을 따로 분류하세요. 관리 방법이 다른 물건을 같은 봉투에 넣지 말고 제품별 세척과 건조 안내를 살펴야 해요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/camping-wet-dry-packing-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "젖은 수건과 마른 수건을 서로 다른 가방에 넣는 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Hands sorting slightly damp gray towels into one open container and fully dry cream fabric into another outside tent, no pooled water. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "분리는 운반을 위한 임시 단계예요",
@@ -507,7 +732,22 @@
         },
         {
           "heading": "집에 돌아온 뒤의 순서까지 정해요",
-          "text": "짐을 내린 뒤에는 젖은 물건을 먼저 확인하고 제조사의 관리 방법에 따라 처리하세요. 등록된 물티슈 후보는 텐트 원단이나 코팅면에 사용 가능한지 검토되지 않았으므로 특정 소재 관리용으로 추천하지 않아요. 세척 도구를 고를 때도 대상 소재에 맞는지 확인해야 해요. 완전히 정리한 뒤 빠진 부속품을 확인하면 다음 캠핑 준비가 수월해져요.",
+          "text": "집에 돌아오면 젖은 물건을 먼저 꺼내 소재별 안내에 따라 처리하세요. 원단이나 코팅면에 사용할 세정 도구는 해당 소재에 맞는지 확인해야 해요. 천으로 한번 닦았다고 완전히 건조됐다고 판단하지 말고, 다음 보관 전에 상태를 점검하세요. 운반에 쓴 상자와 봉투도 물기나 오염이 남았는지 확인해 정리하면 다음 짐을 담을 때 섞이는 일을 줄일 수 있어요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/camping-wet-dry-packing-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "캠핑 천과 수건을 펼쳐 말리는 장면 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Home balcony after camping, damp unbranded fabric hung on a rack to air dry while empty transport container stands below, gentle daylight. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 젖은 짐과 오염된 짐을 구분하기\n2. 깨끗한 소지품과 분리해 운반하기\n3. 귀가 후 건조·세척할 물건부터 꺼내기",
           "productIds": []
         }
       ],
@@ -528,7 +768,7 @@
       "category": "아이와 놀이",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.860Z",
+      "updatedAt": "2026-09-13T11:50:35.149Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/park-bubble-play-cover-v1.webp",
@@ -544,16 +784,41 @@
         {
           "heading": "놀이가 가능한 공터부터 확인해요",
           "text": "공원에서 비눗방울 놀이를 하려면 먼저 공원의 이용 안내와 주변 상황을 확인하세요. 사람이나 자전거가 오가는 길, 다른 이용객의 음식과 가까운 곳은 피하고 보호자가 아이를 살필 수 있는 자리를 찾아요. 바람 때문에 놀이가 주변에 방해가 된다면 장소를 바꾸거나 다른 활동을 선택해요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/park-bubble-play-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "보호자와 아이가 함께 비눗방울 도구를 잡은 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Korean adult parent helping elementary school aged child inspect a large simple bubble wand at a park clearing, hands below faces, no food or small loose pieces. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "도구 선택은 실제 표시사항을 따라요",
-          "text": "비눗방울 용액과 도구는 이 공간에 검증된 상품이 아직 등록되지 않았어요. 임의의 제품이나 권장 연령을 안내하지 않고, 사용 전 제품의 연령 표시와 주의사항을 보호자가 확인하도록 해요. 용액을 입에 넣거나 눈에 닿지 않도록 살피고, 보호자와 함께 날아가는 모양을 관찰하는 식으로 놀이를 이어 갈 수 있어요.",
+          "text": "비눗방울 용액과 도구는 사용 전 제품의 연령 표시와 주의사항을 보호자가 확인해요. 바람에 따라 움직이는 모양을 함께 관찰하고, 다른 사람을 향해 도구를 흔들지 않도록 놀이 방향을 정하세요. 용액을 입에 넣거나 눈에 닿지 않도록 살피고, 보호자와 함께 날아가는 모양을 관찰하는 식으로 놀이를 이어 갈 수 있어요.",
           "productIds": []
         },
         {
           "heading": "정리할 때는 손과 바닥을 살펴요",
-          "text": "놀이가 끝나면 도구와 용액의 뚜껑을 확인하고 흘린 곳은 공원 안내에 맞게 정리하세요. 등록된 탐사 클래식 물티슈 캡형은 후보일 뿐 피부 적합성이나 용액 제거 효과를 확인한 것은 아니에요. 제품 주의사항에 따른 세정 방법을 따르고, 필요한 세정 시설을 이용할 수 있는지도 출발 전에 확인해요. 놀이 도구와 먹을거리는 분리해 챙겨요.",
+          "text": "놀이를 마치면 용액 뚜껑과 도구를 확인하고 공원 규칙에 맞게 흘린 곳을 정리해요. 세정 시설을 이용할 수 있는지 미리 확인하고, 손에 묻은 용액은 제품 주의사항에 따른 방법으로 처리하세요. 물티슈가 모든 세정을 대신한다고 가정하지 않아요. 사용한 도구는 먹을거리와 분리해 담고, 아이와 함께 가져온 개수를 세어 빠뜨린 것이 없는지 살펴요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/park-bubble-play-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "보호자와 아이가 비눗방울 도구를 가방에 정리하는 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Korean adult and elementary school aged child tidying a simple closed bubble liquid bottle and large wand into a separate tote at park bench, supervised, no drinking. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 통행에 방해되지 않는 허용 구역 확인하기\n2. 보호자가 제품 표시와 주의사항 살피기\n3. 용액·도구를 먹을거리와 따로 가져오기",
           "productIds": []
         }
       ],
@@ -574,7 +839,7 @@
       "category": "아이와 놀이",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.861Z",
+      "updatedAt": "2026-09-13T11:50:35.375Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/sand-play-cleanup-cover-v1.webp",
@@ -590,16 +855,41 @@
         {
           "heading": "모래놀이 공간과 주변 시설을 확인해요",
           "text": "모래놀이를 계획했다면 놀이가 허용된 구역과 현장 이용 안내를 먼저 살펴보세요. 모래 상태나 시설 관리 상태를 이 글이 보증하는 것은 아니에요. 보호자가 현장을 확인하고 아이가 활동하는 동안 함께 살펴야 해요. 손을 씻을 수 있는 곳과 귀가 전 옷을 정리할 수 있는 자리도 알아두면 좋아요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/sand-play-cleanup-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "모래놀이 도구와 함께 노는 보호자와 아이 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Plain large bucket and scoop laid on a clean mat outside a designated sandbox, parent and elementary school aged child preparing to play in background. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "많은 도구보다 돌아올 때 담을 방법을 준비해요",
-          "text": "도구는 실제 제품의 권장 연령과 주의사항을 확인한 뒤 선택하세요. 작은 부품이 있는지, 손상된 곳은 없는지 살펴요. 현재 검증된 모래놀이 상품은 등록되지 않아 특정 세트를 추천하지 않아요. 가져간 도구를 펼쳐 놓고 개수를 기억해 두면 놀이가 끝난 뒤 빠뜨린 물건을 확인하기 쉬워요.",
+          "text": "도구는 실제 제품의 권장 연령과 주의사항을 확인한 뒤 선택하세요. 작은 부품이 있는지, 손상된 곳은 없는지 살펴요. 집에 있는 놀이 도구도 현재 상태와 표시사항을 다시 살펴 준비해요. 가져간 도구를 펼쳐 놓고 개수를 기억해 두면 놀이가 끝난 뒤 빠뜨린 물건을 확인하기 쉬워요.",
           "productIds": []
         },
         {
           "heading": "음식과 사용한 도구를 따로 담아요",
-          "text": "모래가 묻은 도구는 현장 규칙에 따라 정리하고 음식이나 깨끗한 옷과 분리해요. 등록된 물티슈 후보가 손 씻기를 대신하거나 모든 모래를 제거해 준다고 표현하지 않아요. 용도를 확인하고 필요한 세정을 한 뒤 간식을 먹도록 준비하세요. 집에 돌아와서는 도구의 관리 안내에 맞춰 세척하고 건조한 뒤 보관해요.",
+          "text": "모래가 묻은 도구는 현장 규칙에 따라 정리하고 음식이나 깨끗한 옷과 다른 공간에 담아요. 세정 시설에서 손을 씻고 간식을 먹도록 동선을 준비하면 도구 정리와 식사 준비가 섞이지 않아요. 갈아입을 옷은 사용한 도구와 함께 넣지 말고 구분해 두세요. 집에서는 도구의 관리 안내에 맞춰 세척하고 건조한 뒤 다음 놀이에 필요한 것만 모아 보관해요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/sand-play-cleanup-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "모래놀이 후 보호자와 아이가 손을 씻는 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Korean adult supervising elementary school aged child washing hands at accessible park tap after sandbox play, realistic water flow and hands, no food. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 현장 시설과 모래 상태 직접 살피기\n2. 사용 전후 큰 도구의 개수 확인하기\n3. 손 씻는 곳과 사용한 도구의 귀가 공간 마련하기",
           "productIds": []
         }
       ],
@@ -620,7 +910,7 @@
       "category": "아이와 놀이",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.863Z",
+      "updatedAt": "2026-09-13T11:50:35.598Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/rainy-day-indoor-play-cover-v1.webp",
@@ -636,16 +926,41 @@
         {
           "heading": "놀이 자리를 만들기 전에 주변을 비워요",
           "text": "비가 오는 날 집에서 놀 때는 새 장난감을 고르기 전에 활동할 공간부터 살펴보세요. 넘어질 수 있는 물건과 깨지기 쉬운 물건을 치우고 이동하는 길을 확보해요. 보호자가 함께 살피면서 집에 있는 큰 종이에 그림을 그리거나 색과 모양을 찾아보는 등 상황에 맞는 활동을 고를 수 있어요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/rainy-day-indoor-play-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "실내 놀이를 위해 큰 종이를 펼치는 보호자 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Korean adult clearing a living room floor for drawing, a large blank paper and chunky crayons in a tray, rainy window in background, no loose strings or bags. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "생활용품을 모두 놀이 도구로 쓰지는 않아요",
-          "text": "포장재나 생활용품이라고 해서 아이가 만져도 안전한 것은 아니에요. 작은 부품, 날카로운 면, 끈, 비닐 등을 임의로 놀이 재료로 제공하지 말고 실제 물건의 상태와 사용 목적을 확인하세요. 도구가 필요하다면 연령 표시와 주의사항을 살펴야 해요. 검증된 놀이 상품이 없는 상태에서 특정 제품의 적합성을 보증하지 않아요.",
+          "text": "포장재나 생활용품이라고 해서 아이가 만져도 안전한 것은 아니에요. 작은 부품, 날카로운 면, 끈, 비닐 등을 임의로 놀이 재료로 제공하지 말고 실제 물건의 상태와 사용 목적을 확인하세요. 도구가 필요하다면 연령 표시와 주의사항을 살펴야 해요. 재료가 손상됐거나 사용 조건을 확인하기 어렵다면 그 재료를 빼고 활동을 간단하게 바꿔요.",
           "productIds": []
         },
         {
           "heading": "정리도 한 번의 활동으로 묶어요",
-          "text": "놀이를 끝낼 때는 다시 사용할 것과 버릴 것을 보호자와 함께 구분해요. 물감이나 접착제 등을 사용했다면 그 제품의 세척 안내를 따르세요. 등록된 물티슈 후보는 모든 미술 재료를 지우거나 모든 표면에 사용할 수 있다고 확인되지 않았어요. 원래 자리에 도구를 돌려놓고 다음에 이어서 할 작품만 별도로 보관하면 생활 공간을 다시 쓰기 편해져요.",
+          "text": "놀이가 끝날 때는 다시 쓸 재료와 정리할 재료를 함께 나눠 봐요. 종이에 그린 그림은 말리거나 보관할 자리를 정하고, 크레용과 도구는 개수를 확인해 원래 용기에 넣어요. 물감이나 접착제를 사용했다면 해당 제품의 세척 방법을 따르세요. 생활용 세정용품이 모든 미술 재료나 표면에 적합하다고 생각하지 말고 대상 소재와 표시사항을 확인해요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/rainy-day-indoor-play-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "그림 놀이 후 종이와 그림 도구를 함께 정리하는 가족 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Korean parent and elementary school aged child together putting chunky crayons in a tray and rolling up a large drawing after indoor play, natural anatomy. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 생활 동선을 남기고 바닥 정리하기\n2. 연령 표시와 재료의 실제 상태 확인하기\n3. 완성한 그림과 도구의 보관 자리를 따로 정하기",
           "productIds": []
         }
       ],
@@ -666,7 +981,7 @@
       "category": "피크닉·나들이",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.864Z",
+      "updatedAt": "2026-09-13T11:50:35.941Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/picnic-lunch-packing-cover-v1.webp",
@@ -682,7 +997,17 @@
         {
           "heading": "먹을 장소에 맞춰 도시락 구성을 줄여요",
           "text": "피크닉 도시락은 멋진 사진보다 실제로 먹을 자리와 이동 방법을 먼저 생각해 준비해요. 테이블이 있는지, 돗자리에서 먹는지에 따라 꺼내기 편한 용기가 달라질 수 있어요. 목적지의 음식 반입 안내를 확인하고 알레르기와 먹지 못하는 재료도 미리 물어보세요. 새로운 메뉴를 여러 가지 넣기보다 익숙한 구성부터 정해요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/picnic-lunch-packing-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "도시락과 소스 용기 및 수저를 따로 준비한 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Close overhead a reusable lunch box, separate small closed sauce container and clean cutlery roll organized on a kitchen table, no raw ingredients touching cooked food. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "운반 조건을 지킬 수 있는 메뉴를 골라요",
@@ -691,7 +1016,22 @@
         },
         {
           "heading": "빈 용기를 다시 담을 공간을 남겨요",
-          "text": "음식을 먹고 나면 빈 용기와 남은 포장재가 다시 짐이 돼요. 깨끗한 소지품과 분리해 가져올 공간을 준비하세요. 탐사 샘물은 등록된 후보로, 용량과 선택 옵션을 확인한 뒤 기존에 준비한 음용수와 중복되는지 살펴야 해요. 돌아와서는 도시락 용기를 먼저 꺼내 관리 안내에 맞게 씻고 말려 다음 사용을 준비해요.",
+          "text": "도시락을 먹고 난 뒤에는 빈 용기와 포장재가 다시 짐이 돼요. 깨끗한 소지품과 사용한 용기를 분리할 공간을 남겨 두고, 밀폐 용기는 실제 뚜껑과 잠금 상태를 확인하세요. 마실 물은 가져온 음료와 중복되는지 살펴 준비해요. 귀가한 뒤 도시락 가방을 그대로 보관하지 말고 용기와 수저를 먼저 꺼내 세척·건조하면 다음 사용 때도 구성을 확인하기 쉬워요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/picnic-lunch-packing-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "식후 음식 용기를 닫아 가방에 담는 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. After picnic meal, closed empty lunch containers placed in separate washable return bag while clean personal pouch remains outside, park table. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 실제 먹는 장소에 맞는 용기 고르기\n2. 이동 중 보관 조건을 유지할 수 있는지 확인하기\n3. 빈 용기와 개인 소지품을 분리해 가져오기",
           "productIds": []
         }
       ],
@@ -712,7 +1052,7 @@
       "category": "피크닉·나들이",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.866Z",
+      "updatedAt": "2026-09-13T11:50:36.158Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/walking-break-kit-cover-v1.webp",
@@ -728,7 +1068,17 @@
         {
           "heading": "걷는 시간이 중심인지 머무는 시간이 중심인지 정해요",
           "text": "산책 도중 잠깐 쉬는 계획이라면 본격적인 피크닉 준비물을 모두 가져갈 필요는 없어요. 이동하는 길과 쉴 수 있는 장소를 살펴보고 현장에서 음식이나 돗자리를 이용할 수 있는지 확인하세요. 의자가 있을 것이라고 단정하지 말고, 앉을 자리가 없어도 이동할 수 있는 무게로 짐을 줄여요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/walking-break-kit-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "산책 가방 옆에 물병과 손수건을 펼친 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Overhead contents of a minimal walking bag: plain refillable bottle, small clean cloth, personal pouch, modest realistic arrangement with no logos. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "자주 꺼낼 물건만 가까이에 둬요",
@@ -737,7 +1087,22 @@
         },
         {
           "heading": "휴식 자리를 그대로 남겨요",
-          "text": "잠깐 쉬었다고 해도 포장재와 사용한 물건은 모두 확인해 가져와야 해요. 사람이 많거나 주변 이용에 방해가 되는 상황이라면 쉬는 위치를 바꾸세요. 무거운 상차림을 추가하기보다 필요한 물건만 꺼내고 바로 정리할 수 있게 챙기면 다음 이동이 수월해져요. 귀가 후에는 사용하지 않은 짐을 확인해 다음 산책 가방을 더 간단히 구성해요.",
+          "text": "짧게 쉬는 자리라도 사용한 포장재와 소지품을 모두 챙겨야 해요. 주변에 사람이 많거나 통행에 방해가 된다면 위치를 바꾸고, 쉬는 동안 꺼낼 물건을 최소한으로 유지하세요. 가방은 빈 상태의 크기보다 실제 물병과 개인 물건을 넣었을 때 편하게 들 수 있는지 확인해요. 집에 돌아온 뒤 사용하지 않은 물건을 살펴 다음 산책 목록에서 줄일 수 있는 것을 골라 보세요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/walking-break-kit-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "공원 벤치에서 물병과 가방을 챙기는 장면 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Close view of hands picking up a small bag and bottle from a clean park bench at end of a walking break, no litter, leafy path behind. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 걷는 길과 쉴 수 있는 자리 확인하기\n2. 가방에 실제 준비물을 넣고 무게 살피기\n3. 잠깐 꺼낸 물건도 모두 회수하기",
           "productIds": []
         }
       ],
@@ -758,7 +1123,7 @@
       "category": "여행 준비물",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.867Z",
+      "updatedAt": "2026-09-13T11:50:36.365Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/overnight-travel-pouches-cover-v1.webp",
@@ -774,16 +1139,41 @@
         {
           "heading": "이동 중과 숙소에서 쓸 짐을 나눠요",
           "text": "하룻밤 여행은 짧지만 이동 중에 큰 가방을 여러 번 열면 번거로워요. 교통편 확인 자료, 자주 쓰는 개인 물건, 숙소에 도착한 뒤 꺼낼 물건을 사용 순서대로 나눠 보세요. 숙소에서 제공하는 물건은 예약 안내로 확인하고, 사진에 보였다는 이유로 기본 제공이라고 가정하지 않아요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/overnight-travel-pouches-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "옷과 세면도구를 파우치별로 나누어 놓은 여행 짐 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Overhead small overnight bag with clothing pouch, separate toiletry pouch and phone cable neatly grouped by use, no brands or printed text. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "파우치는 크기보다 역할부터 정해요",
-          "text": "집에 있는 작은 가방이나 주머니를 활용해 위생용품, 전자기기 주변품, 갈아입을 옷을 구분할 수 있어요. 새 파우치를 산다면 실제 크기와 수납할 물건을 대조해야 해요. 현재 검증된 파우치 상품은 등록되지 않았으므로 방수나 수납 성능을 갖춘 특정 제품처럼 연결하지 않아요. 이동 수단의 반입 규정도 공식 안내에서 확인하세요.",
+          "text": "집에 있는 작은 가방이나 주머니를 활용해 위생용품, 전자기기 주변품, 갈아입을 옷을 구분할 수 있어요. 새 파우치를 산다면 실제 크기와 수납할 물건을 대조해야 해요. 파우치의 크기는 넣을 물건과 직접 대조하고, 확인되지 않은 방수나 수납 기능이 있다고 가정하지 않아요. 이동 수단의 반입 규정도 공식 안내에서 확인하세요.",
           "productIds": []
         },
         {
           "heading": "돌아오는 짐을 위한 빈 공간을 남겨요",
-          "text": "사용한 옷과 포장재를 담을 공간을 출발할 때부터 남겨 두세요. 등록된 물티슈 후보는 실제 포장 크기와 용도 확인 전이라 휴대하기 좋은 옵션이라고 추천할 수 없어요. 필요한 개인 위생용품을 먼저 챙기고 대체 가능한 물건은 줄여요. 체크아웃 전에 충전기와 작은 소지품처럼 흩어지기 쉬운 것을 순서대로 확인하면 도움이 돼요.",
+          "text": "돌아오는 짐을 넣을 공간도 출발 전에 남겨 두세요. 사용한 옷과 포장재를 깨끗한 소지품과 분리할 수 있게 하고, 필요한 개인 위생용품은 표시사항과 휴대 조건을 확인해요. 작은 포장이라도 내용물이나 규격이 필요한 용도와 맞는지 살펴야 해요. 체크아웃 전에는 콘센트 주변, 침대 옆, 욕실처럼 물건을 꺼냈던 위치 순서대로 확인하면 빠뜨린 짐을 찾기 쉬워요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/overnight-travel-pouches-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "숙소를 떠나기 전 충전선과 안경을 챙기는 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Hotel bedside table at checkout with plain charging cable and spectacles being gathered beside a closed pouch, no hotel name, soft daylight. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 이동 중 물건과 숙소용 짐 나누기\n2. 제공 물품과 반입 조건을 공식 안내로 확인하기\n3. 사용했던 위치별로 체크아웃 점검하기",
           "productIds": []
         }
       ],
@@ -804,7 +1194,7 @@
       "category": "여행 준비물",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.868Z",
+      "updatedAt": "2026-09-13T11:50:36.586Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/family-travel-shared-items-cover-v1.webp",
@@ -820,7 +1210,17 @@
         {
           "heading": "함께 쓸 물건의 담당자를 정해요",
           "text": "가족 여행에서 같은 준비물을 여러 사람이 챙기면 가방이 쉽게 늘어나요. 공용으로 쓸 수 있는 물건과 개인이 따로 챙겨야 하는 물건을 목록에서 구분해 보세요. 각자 필요한 개인 위생용품이나 건강 관련 물품은 임의로 공용 처리하지 않아요. 공용 목록은 누가 가져오는지까지 적어 두면 출발 전 확인하기 쉬워요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/family-travel-shared-items-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "가족 공용 준비물과 개인 파우치를 나누는 장면 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Home table shared family travel supplies in one basket and two separate personal pouches apart, two adults' hands sorting, no text or brands. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "공용이라고 해서 항상 하나면 되는 것은 아니에요",
@@ -829,7 +1229,22 @@
         },
         {
           "heading": "돌려놓을 위치를 함께 정해요",
-          "text": "함께 쓰는 물건은 사용한 뒤 어디에 둘지 정하면 찾는 시간을 줄일 수 있어요. 탐사 샘물과 물티슈는 기존 등록 후보로 옵션 대조 전에는 가족 여행에 적합한 묶음이라고 안내하지 않아요. 이미 준비한 물건과 중복되는지 먼저 살펴보세요. 귀가할 때는 담당자가 공용 물건을 확인하고, 각자의 소지품은 별도로 점검하는 방식으로 마무리해요.",
+          "text": "함께 쓰는 물건은 사용한 뒤 돌려놓을 위치까지 정해요. 이름이 같은 준비물이라도 개인에게 필요한 옵션이나 사용 조건이 다를 수 있으므로 실제 규격과 표시를 대조해야 해요. 누군가 이미 준비한 물건을 다시 구매하기 전에 공용 목록에서 확인하세요. 귀가할 때는 담당자가 공용 물건의 수량을 확인하고, 개인 소지품은 각자 점검하는 방식으로 나눠 마무리해요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/family-travel-shared-items-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "가족이 각자 맡은 가방과 준비물을 정리하는 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. An adult returning shared plain cup and clean cloth into designated travel tote while another closes a personal pouch, calm home preparation scene. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 공용과 개인용 목록 구분하기\n2. 담당자와 사용 후 보관 위치 정하기\n3. 귀가 때 공용 수량과 개인 짐을 각각 확인하기",
           "productIds": []
         }
       ],
@@ -851,7 +1266,7 @@
       "category": "여행 준비물",
       "status": "draft",
       "publishAt": "",
-      "updatedAt": "2026-09-13T11:22:36.869Z",
+      "updatedAt": "2026-09-13T11:50:36.817Z",
       "reviewed": false,
       "cover": {
         "url": "/prep-images/travel-return-laundry-cover-v1.webp",
@@ -867,7 +1282,17 @@
         {
           "heading": "마지막 날까지 깨끗한 옷과 사용한 옷을 구분해요",
           "text": "여행 마지막 날에는 새로 꺼낼 옷보다 돌아가서 정리할 짐을 생각해 보세요. 세탁할 옷과 아직 사용하지 않은 옷을 구분하고, 젖은 물건은 다른 짐으로 물기가 옮겨가지 않도록 따로 둬요. 의류마다 관리 방법이 다르므로 한꺼번에 같은 방식으로 세탁해도 된다고 가정하지 않아요.",
-          "productIds": []
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/travel-return-laundry-body-1-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "여행 가방 속 옷과 별도 주머니를 구분한 모습 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Overhead open suitcase showing separate clean folded clothing and a cloth laundry bag, plain packing cubes, no brand logos. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
         },
         {
           "heading": "포장은 귀가할 때까지의 임시 정리예요",
@@ -876,7 +1301,22 @@
         },
         {
           "heading": "가방을 비우는 순서로 여행을 마무리해요",
-          "text": "귀가한 뒤에는 젖은 짐, 세탁할 옷, 남은 식품처럼 바로 확인할 것을 먼저 꺼내요. 등록된 물티슈 후보를 의류 얼룩 제거용이나 가방 소재 세척용으로 추천할 근거는 아직 없어요. 소재별 관리 안내를 따르고, 작은 소지품과 충전기를 원래 자리로 돌려놓으세요. 빈 가방의 안쪽을 확인한 뒤 상태에 맞게 정리해 보관하면 다음 여행 준비가 편해져요.",
+          "text": "귀가한 뒤에는 젖은 짐, 세탁할 옷, 남은 식품처럼 먼저 확인할 물건을 꺼내요. 세정용품을 의류 얼룩이나 가방 내부에 쓰기 전에는 소재별 관리 안내를 확인해야 해요. 모든 물건을 한꺼번에 닦기보다 관리 방법에 따라 구분하세요. 충전기와 작은 소지품을 원래 자리로 돌려놓고, 빈 가방 안쪽을 확인한 뒤 상태에 맞게 정리해 보관하면 다음 여행 준비가 편해져요.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/travel-return-laundry-body-2-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "귀가 후 가방을 열고 옷을 펼쳐 말리는 장면 · AI 연출 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Back home after travel, adult hanging used clothing on a laundry rack according to fabric care while empty suitcase stands open nearby, calm daylight, no detergent claims. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
+            "tags": []
+          }
+        },
+        {
+          "heading": "출발 전에 짧게 확인해요",
+          "text": "1. 깨끗한 옷과 사용한 옷을 나누기\n2. 귀가 후 먼저 펼칠 물건 표시하기\n3. 소재별 관리 안내를 확인한 후 정리하기",
           "productIds": []
         }
       ],
