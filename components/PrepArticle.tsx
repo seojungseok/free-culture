@@ -15,7 +15,7 @@ export default function PrepArticle({article:a,products,preview=false}:{article:
    for(const id of s.productIds){const p=chosen.find(p=>p.id===id);if(!p||linked.has(id))continue;for(let k=0;k<parts.length;k++){const part=parts[k];if(typeof part!=='string'||!part.includes(p.name))continue;const pos=part.indexOf(p.name);parts.splice(k,1,part.slice(0,pos),<a key={id} href={p.affiliateUrl} target="_blank" rel="sponsored noopener">{p.name}</a>,part.slice(pos+p.name.length));linked.add(id);break;}}
    return <p key={j}>{parts}</p>;
   })}{s.image&&<PrepImage photo={s.image} products={chosen}/>}</section>)}
-  <section><h2>이 활동에 필요한 준비물</h2><p>집에 있는 물건부터 살펴보세요. 새로 준비한다면 규격과 옵션을 확인해 주세요.</p><div className="prep-products">{chosen.map(p=><div key={p.id}><strong><a href={p.affiliateUrl} target="_blank" rel="sponsored noopener">{p.name} ↗</a></strong><p>{p.specification||'규격·옵션은 판매처 확인 필요'}</p><p>{p.evidence}</p></div>)}</div></section>
+  <section className="prep-image-links"><h2>사진 속 준비물은 필요할 때만 확인하세요</h2><p>사진의 +를 누르면 그 장면에 쓰인 준비물 상품 페이지가 새 창으로 열립니다. 이 글의 주제와 직접 관계없는 보조 준비물은 본문에서 따로 설명하지 않았습니다.</p></section>
   {!!a.internalLinks.length&&<nav aria-label="함께 읽기"><h2>준비했다면, 어디로 갈까요?</h2>{a.internalLinks.map(l=><p key={l.href}><Link href={l.href}>{l.label} →</Link></p>)}</nav>}
  </article>;
 }
