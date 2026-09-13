@@ -20,8 +20,11 @@ let logs='';for(const s of [child.stdout,child.stderr])s.on('data',d=>{logs=(log
  await page.locator('.prep-card').first().waitFor();assert.equal(await page.locator('.prep-card').count(),9);
  assert.equal(await page.getByRole('link',{name:'캠핑 먹거리',exact:true}).count(),1);
  assert.equal(await page.getByRole('navigation',{name:'페이지',exact:true}).getByRole('link').count(),2);
+ for(const img of await page.locator('.prep-card img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>e.decode());assert(await img.evaluate(e=>e.naturalWidth>0));}
+ await page.evaluate(()=>scrollTo(0,0));
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  await page.screenshot({path:`.cache/prep-qa/list-${width}.png`,fullPage:true});
+ if(width===390){await page.goto(base+'/weekend-prep?page=2',{waitUntil:'domcontentloaded'});assert.equal(await page.locator('.prep-card').count(),9);for(const img of await page.locator('.prep-card img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>e.decode());assert(await img.evaluate(e=>e.naturalWidth>0));}await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'.cache/prep-qa/list-page2-390.png',fullPage:true});await page.goto(base+'/weekend-prep',{waitUntil:'domcontentloaded'});}
  await page.getByLabel('주말 준비물 글 검색').fill('없는검색어');await page.getByRole('button',{name:'검색',exact:true}).click();await page.getByText('검색 결과가 없어요. 다른 단어로 찾아보세요.').waitFor();
  assert((await page.locator('meta[name=robots]').getAttribute('content')).includes('noindex'));
  await page.goto(base+'/weekend-prep/light-picnic-packing');await page.locator('.prep-tag').first().waitFor();

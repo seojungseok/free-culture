@@ -1,0 +1,141 @@
+{
+  "tool": "built-in imagegen",
+  "images": [
+    {
+      "slug": "camping-soup-packing",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-18ec149b-dd63-4af7-8553-5e9dc29edc5d.png",
+      "alt": "캠핑 테이블 위 채소 국물 냄비와 나눠 담은 재료, 국물 한 냄비의 여유라는 한글 문구",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Outdoor camping table near a tent with a plain stainless pot of vegetable soup on a trivet, small preparation bowls of washed vegetables, no flame, natural forest bokeh, intimate three-quarter close view. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"국물 한 냄비의 여유\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/camping-soup-packing-cover-v1.webp"
+    },
+    {
+      "slug": "camping-breakfast-cleanup",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-de82838b-a8a7-4188-8366-b3f55690efba.png",
+      "alt": "아침 햇살이 드는 캠핑장의 토스트 도시락과 컵, 가볍게 떠나요라는 한글 문구",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Quiet dawn campsite breakfast on a compact table, simple toast in a reusable container, plain cup and packed canvas bag, folded camping gear in soft background, gentle dawn sunlight. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"느긋하게 먹고, 가볍게 떠나요\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/camping-breakfast-cleanup-cover-v1.webp"
+    },
+    {
+      "slug": "camping-food-storage-zones",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-9fabc5f4-e90f-41c7-bdd8-310be2359ff6.png",
+      "alt": "보냉 가방의 밀폐 용기와 별도로 나눈 건조 식품, 먹을 순서대로 차곡차곡이라는 문구",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Overhead food preparation packing scene at home: open insulated bag with closed plain food containers, separate dry ingredient basket, neatly folded tea towel, no visible raw meat, calm morning kitchen light. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"먹을 순서대로, 차곡차곡\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/camping-food-storage-zones-cover-v1.webp"
+    },
+    {
+      "slug": "barbecue-side-menu",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-7576b079-88ef-4565-878b-f07dcfb6f456.png",
+      "alt": "야외 테이블에 담은 잎채소와 토마토, 구운 채소 곁들임의 AI 연출",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Relaxed outdoor barbecue side dish table: modest plates of washed lettuce, tomato wedges and grilled vegetables, main grill far out of frame, open air wooden table, natural afternoon sunlight, editorial close-up. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"구이 옆에 놓는 작은 정성\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/barbecue-side-menu-cover-v1.webp"
+    },
+    {
+      "slug": "barbecue-table-zones",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-90a02135-d928-4cf3-9767-db437ab10050.png",
+      "alt": "깨끗한 준비 그릇과 집게를 놓은 작업대, 떨어진 식사 테이블의 AI 연출",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Wide spacious campsite barbecue dining arrangement with clearly separated preparation table and dining table, empty clean plates and long tongs on separate trays, grill far behind and no visible flames or people, forest backdrop, calm late afternoon. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"함께 굽고, 편하게 나눠요\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.\nEdit: Edit this Korean camping barbecue editorial thumbnail. Preserve the overall framing, scenery, lighting, empty plates, separate tables, grill, and all existing Korean text exactly. Change only the foreground wooden board: remove all raw meat and vegetables from the board and replace them with two separate clean empty ceramic preparation bowls. No raw food anywhere in foreground. This must illustrate separated clean preparation and dining stations, not raw meat touching vegetables. Preserve realistic photographic texture and small AI 연출 이미지 disclosure.",
+      "reviewed": true,
+      "output": "public/prep-images/barbecue-table-zones-cover-v1.webp"
+    },
+    {
+      "slug": "barbecue-cleanup-plan",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-54ba344f-63f3-49b9-aad6-575c90a1312c.png",
+      "alt": "야외 식사 후 사용한 식기와 닫은 용기를 나눠 정리하는 손",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: After-meal outdoor table cleanup scene in soft evening light: reusable containers with lids, used plates stacked neatly on a separate tray, folded cloth and an open return tote, no raw food or flames, realistic hands sorting only. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"맛있는 시간 뒤의 작은 정리\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/barbecue-cleanup-plan-cover-v1.webp"
+    },
+    {
+      "slug": "first-camping-borrow-or-buy",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-83be7d68-f083-49f5-8047-5d49f0bfbc17.png",
+      "alt": "집에서 준비한 작은 가방과 접은 담요, 컵과 말아 둔 침낭",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Simple first camping preparation at home: one compact canvas bag, folded blanket, plain reusable cup and neatly rolled sleeping bag beside a window, minimal realistic objects, no brand logos, cozy morning light. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"첫 캠핑은 가볍게 시작해요\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/first-camping-borrow-or-buy-cover-v1.webp"
+    },
+    {
+      "slug": "camping-arrival-bag",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-7425d2e3-602c-45a8-8805-9442dd730cee.png",
+      "alt": "캠핑장에서 먼저 꺼낼 천과 물병을 담은 작은 가방, 도착하면 이 가방부터라는 문구",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: At a quiet campsite entrance next to a pitched tent, open small neutral utility tote with folded cloth, plain water bottle and simple paper checklist without readable writing, another larger bag in background, gentle sunlight. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"도착하면, 이 가방부터\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/camping-arrival-bag-cover-v1.webp"
+    },
+    {
+      "slug": "camping-wet-dry-packing",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-1df1c193-a398-477e-8735-b134f4205450.png",
+      "alt": "젖은 옷과 마른 천을 서로 다른 상자에 나눠 담은 캠핑 철수 장면",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Daylight campsite packing scene with two clearly separated open containers, one holding dry folded fabric and the other slightly damp folded fabric, no water spilling, a tent softly blurred behind, natural realistic textures. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"돌아오는 길도 산뜻하게\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/camping-wet-dry-packing-cover-v1.webp"
+    },
+    {
+      "slug": "park-bubble-play",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-27c597e4-f618-430c-a9b9-75cdb8e5e105.png",
+      "alt": "공원에서 보호자와 아이가 함께 비눗방울 놀이를 하는 AI 연출 장면",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: A Korean parent and elementary school aged child together in a spacious park clearing, parent supervising child holding simple large bubble wand below face level, a few soap bubbles reflecting afternoon light, not on a walkway, candid warm family scene, realistic hands. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"바람 따라, 비눗방울 따라\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/park-bubble-play-cover-v1.webp"
+    },
+    {
+      "slug": "sand-play-cleanup",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-2f40311b-c8c2-46d6-8848-5a0e850402a3.png",
+      "alt": "모래놀이 후 보호자와 아이가 양동이와 삽을 가방에 정리하는 장면",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: A Korean parent and elementary school aged child kneeling together at a designated park sandbox, putting a simple large plain scoop and bucket into an open tote, warm gentle afternoon light, no food, no tiny toys, realistic anatomy. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"모래놀이 끝, 정리도 함께\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/sand-play-cleanup-cover-v1.webp"
+    },
+    {
+      "slug": "rainy-day-indoor-play",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-afdf64b1-c8d6-4c07-a454-1452719b0d34.png",
+      "alt": "비 오는 날 보호자와 아이가 집에서 큰 종이에 크레용 그림을 그리는 장면",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Cozy living room on rainy afternoon, Korean parent and elementary school aged child drawing with large crayons on a big sheet of paper on clear floor, window with rain in soft background, relaxed candid photo, uncluttered and no dangerous loose strings or plastic bags. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"비 오는 날, 우리 집 놀이터\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/rainy-day-indoor-play-cover-v1.webp"
+    },
+    {
+      "slug": "picnic-lunch-packing",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-46a46582-b9fd-49c6-8797-540d2f72750e.png",
+      "alt": "도시락과 별도 용기, 수저와 천을 나눠 챙기는 피크닉 준비 장면",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Top-down home picnic lunch packing scene with a plain reusable lunch box of simple rice and vegetables, separate closed small container, cutlery wrap, clean cloth and tote, soft morning window light, realistic modest portions. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"도시락 하나에 담은 오후\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/picnic-lunch-packing-cover-v1.webp"
+    },
+    {
+      "slug": "walking-break-kit",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-6806db5d-9637-46c1-ad56-c465c60086f8.png",
+      "alt": "공원 산책로 옆 벤치에 놓인 작은 가방과 물병, 작은 쉼이라는 문구",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Small neutral tote and plain reusable bottle on a quiet park bench beside a leafy walking path, late afternoon sunlight, no heavy picnic setup, contemplative clean editorial photography. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"걷다가 만나는 작은 쉼\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/walking-break-kit-cover-v1.webp"
+    },
+    {
+      "slug": "overnight-travel-pouches",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-ce8b6bae-a817-4401-be24-f9c02540530d.png",
+      "alt": "하룻밤 여행을 위해 작은 가방과 파우치, 접은 옷을 나눠 놓은 장면",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Warm guest-room bed with small open overnight bag and three plain fabric pouches, folded shirt and simple personal items neatly grouped, soft morning window light, calm travel editorial photo. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"하룻밤의 짐, 가볍게 차곡차곡\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/overnight-travel-pouches-cover-v1.webp"
+    },
+    {
+      "slug": "family-travel-shared-items",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-a7f411ad-67aa-429e-82a7-2bdbf3765e3e.png",
+      "alt": "가족이 함께 쓰는 물건을 한 가방에 정리하는 두 사람의 손",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Family preparing a shared travel bag on a warm wooden table at home, two adults' hands sorting folded clothes and plain reusable items into one tote with a few separate personal pouches, cozy natural light, no faces necessary. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"함께 쓰고, 가볍게 떠나요\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/family-travel-shared-items-cover-v1.webp"
+    },
+    {
+      "slug": "travel-return-laundry",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a09a09-be68-73d3-88f7-feadca736adb\\exec-883dddba-b30e-4d49-9296-08eaf717f524.png",
+      "alt": "여행 후 펼친 가방과 분리해 둔 세탁물 주머니, 여행의 끝도 포근하게라는 문구",
+      "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Sunlit home entryway after a trip, open small suitcase with folded clean clothes separated from a simple cloth laundry bag and a pair of shoes outside the suitcase, calm comforting mood, realistic textures. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"여행의 끝도 포근하게\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
+      "reviewed": true,
+      "output": "public/prep-images/travel-return-laundry-cover-v1.webp"
+    }
+  ]
+}

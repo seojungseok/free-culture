@@ -1,5 +1,9 @@
 # 초기 이미지 생성 기록
 
+## 18개 초안 썸네일 확장
+
+새 글 17개에는 내장 imagegen으로 주제별 서로 다른 한글 감성 썸네일을 생성했다. 입력 프롬프트, 바비큐 작업대 수정 프롬프트, 원본 파일 및 최종 프로젝트 경로는 `data/weekend-prep-image-batch.json`을 참고한다. 최종 경로는 `public/prep-images/<slug>-cover-v1.webp`. 모두 육안 검토했고 한글 문구와 AI 연출 표시가 있다. 실제 상품 재현으로 주장하지 않는다. 기존 피크닉 대표·본문 이미지는 유지한다.
+
 도구: 내장 imagegen. 생성 원본은 Codex 이미지 폴더에 보존하고 프로젝트용은 WebP 1200×800으로 압축했다.
 
 ## 원본 장면 — public/prep-images/picnic-scene.webp
