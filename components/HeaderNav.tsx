@@ -17,13 +17,15 @@ export default function HeaderNav({ seasonLabel }: { seasonLabel: string }) {
     { href: "/places", label: "나들이", path: "/places" },
     { href: "/course", label: "여행코스", path: "/course" },
     { href: "/camping", label: "캠핑", path: "/camping" },
+    { href: "/tickets", label: "입장권·체험", path: "/tickets" },
+    { href: "/weekend-prep", label: "주말 준비물", path: "/weekend-prep" },
   ];
 
   const isActive = (path: string) =>
     path === "/" ? pathname === "/" : pathname === path || pathname.startsWith(`${path}/`);
 
   return (
-    <nav className="flex w-full items-center justify-center gap-1">
+    <nav className="flex w-full items-center justify-start gap-1 overflow-x-auto">
       {tabs.map((t) => {
         const active = isActive(t.path);
         return (

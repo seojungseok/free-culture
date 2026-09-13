@@ -1,0 +1,85 @@
+# 주말 준비물 운영 지침
+
+## 초기 18개와 매일 5개 요청 (2026-09-13)
+
+`data/weekend-prep-schedule.json`에 초기 6분류×3개=18개 고유 주제를 일회성 batch ID로 분리했다. 이것은 **주제 계획이며 완성·발행된 글이 아니다**. 기존 피크닉 초안은 같은 slug를 재사용하여 중복 생성하지 않는다.
+
+후속 작성: `scripts/prep/initial-drafts.mjs`로 17개 원고를 추가하여 `data/weekend-prep.json`에 총 18개 본문 초안을 저장했다. 각 분류 3개, 기존 피크닉 원고 보존, 재실행 시 기존 글을 덮어쓰지 않는다. 준비 순서·대체 선택·정리 방법을 주제별로 작성했으며 상품 검증 대기 사실을 원고에 명시했다. 이는 발행용 완성본이 아니다. 새 17개는 이미지 미생성, 모든 상품은 규격·옵션 검증 대기여서 공개하지 않는다. 이 상태를 유지한 채 기능 및 비공개 원고를 배포하며 초안 URL은 404, sitemap에서 제외한다.
+
+매일 계획은 2026-09-14 한국시간 05:00부터 전체 합계 5개다. `scripts/prep/schedule.mjs`는 날짜별 고정 slot ID, 6일 동안 분류마다 5회인 순환, 당일 재실행·실패·진행 중 기록 제외를 제공한다. 누락 날짜의 글을 다음 날 몰아 발행하지 않는다. 첫 18개는 매일 5개의 quota와 별개다. 개별 글 실패는 해당 slot만 보류하고 다른 글은 계속한다.
+
+현재 `enabled:false`: 중앙 Redis 미연결, 상품 2개 미검증, 자동 생성→이미지→검토→발행 연결 및 영구 실행 기록 미구현으로 **운영 예약은 아직 활성화하지 않았다**. 계획 함수의 모의 검증을 실제 자동 발행 검증이라고 표현하면 안 된다. `enabled`만 true로 바꾸어도 자동 발행되지 않는다. 기존 일반/입장권 자동 생성 일정은 이 변경에서 수정하지 않았다.
+
+추가 검증: `node --test scripts/prep/schedule.test.mjs`. 실제 API 호출 없이 초기 개수, 다음 날 05시 경계, 6분류 균등 순환, 재시작 기록, 1개 실패 후 나머지 4개 진행을 확인한다. 운영 연결 전에는 비밀키를 출력하지 말고 검증된 상품 자료와 중앙 제한기 연결을 먼저 확보한다.
+
+## 구현 구조
+
+홈의 입장권·체험 바로 다음에 🧺 주말 준비물(`/weekend-prep`)을 표시한다. 6개 분류 중 공개 글이 있는 분류만 보이며 검색·분류·9개 단위 페이지 나누기는 서버에서 처리한다. 중요한 본문과 제휴 링크는 서버 HTML로 렌더링한다. 검색/필터/페이지 쿼리와 빈 목록은 noindex, follow 및 목록 canonical을 사용한다. 공개된 글만 sitemap에 추가한다. 기존 URL은 바꾸지 않는다.
+
+글/상품은 `data/weekend-prep.json` 안에서 별도 배열로 저장된다. 등록 상품 ID를 본문·하단 목록·이미지 태그에서 공유한다. 제휴 URL은 입력 문자열을 그대로 보관한다. 상단 제휴 고지와 `rel="sponsored noopener"`를 적용하며 가격·후기·평점 스키마는 사용하지 않는다.
+
+## 로컬 관리자
+
+이 저장소는 파일 기반 정적 배포 구조다. Vercel 임시 디스크에 관리 데이터를 저장하지 않는다. 관리자 화면은 `/weekend-prep/manage`, 쓰기 API는 **로컬 개발 서버 + 관리자 토큰**일 때만 동작한다. 원격 관리자 서비스는 현재 구성하지 않았다.
+
+1. `.env.local`에 `WEEKEND_PREP_ADMIN_TOKEN`을 24자 이상 무작위 비밀값으로 설정한다. 채팅/소스/로그에 노출하지 않는다.
+2. `npm run dev -- --hostname 127.0.0.1`로 실행하고 관리자 페이지에서 같은 토큰으로 작업을 불러온다. 토큰은 브라우저 저장소에 저장하지 않는다.
+3. 상품명과 제휴링크로 조회한다. 기존 캐시 또는 API는 **후보**만 돌려준다. 이름·사진·규격·선택 옵션을 대조해 출처·확인시각·근거를 기록한 뒤 확인 체크를 한다. 단축 링크만으로 동일성을 자동 승인하지 않는다. API가 실패하면 사진 URL과 정보를 수동으로 입력한다.
+4. 주제와 등록 상품을 고르고 초안을 작성한다. AI 초안은 저장된 상품 자료만 사용한다. 생성 후 사람의 편집 검토가 필요하다.
+5. 이미지 장면과 한글 문구를 입력해 생성하거나, `node scripts/prep/import-image.mjs 원본경로 파일이름`으로 확인된 이미지를 WebP로 가져온다. 이미지 경로를 편집기에 입력한다. 각 단락별 설명 이미지도 선택적으로 넣는다. 이미지의 상품 선택 후 위치 클릭 또는 X/Y 숫자 입력으로 태그를 편집한다.
+6. 미리보기에서 본문·상품·이미지·태그·제휴 고지를 확인한다. 공개/예약 저장은 중복 본문, 누락 이미지, 미확인 상품, 잘못된 태그, 제휴링크 HTTP 상태를 검사한다. 차단된 링크는 확인 실패로 보류한다.
+7. 저장은 로컬 파일에 반영되며 버전 충돌을 차단하고 `.cache/prep-backups`에 이전본을 보존한다. 사이트 반영에는 이 파일 및 새 이미지의 커밋·배포가 필요하다. 관리자 버튼이 자동으로 git push를 실행하지는 않는다.
+8. 예약 글은 배포된 `.github/workflows/weekend-prep.yml`에서 매시 23분(UTC/KST 모두 분은 동일)에 검사한다. 예약 시각 이후 첫 실행 및 배포 완료 후 공개된다. GitHub 지연 가능성이 있어 분 단위 정시 보장은 하지 않는다. 한 글 실패는 그 글만 보류한다. 준비물 글은 기존 일반30/입장권20 자동글과 별도 편집·승인 공간이며 무단으로 추가 50개를 생성하지 않는다.
+
+## 쿠팡 절대 상한
+
+**어느 시점에서든 직전 60초의 요청 횟수와 상품 조회량 모두 최대 10.** 10개는 허용하고 11번째는 대기한다. 이것은 자체 운영 상한이며 공식 쿠팡 허용량이 아니다. 계정 제한이 더 엄격하면 `COUPANG_WINDOW_CAP`, `COUPANG_WINDOW_MS`, `COUPANG_MIN_INTERVAL_MS`를 보수적으로 초기화한다. 코드의 최소 안전선은 60초/10개/6.1초이며 설정으로 완화할 수 없다.
+
+- 중앙 REST Redis의 단일 primary, 영구 보존, eviction 금지, 모든 클라이언트가 동일 계정 scope 사용이 필요하다.
+- 상품 1개 검색만 API로 조회한다. 개수를 확인하지 못한 goldbox/bestcategories 대량 조회는 호출하지 않는다. 기존 수집 파일은 실패 시 기존 캐시를 유지한다. 이 때문에 중앙 연결 이후에도 해당 대량 수집 스크립트는 보류될 수 있다. 상품 개수 제한이 확인된 API로 전환하기 전까지 무제한 호출을 재개하지 않는다.
+- Lua 원자 연산으로 중앙 상태·총 조회량·간격·동시 실행 lock을 확인한다. 로컬 메모리나 임시파일로 대체하지 않는다. 응답을 다 읽은 뒤 다음 시작 간격을 기록한다. 요청 지연 중 예산이 먼저 만료되지 않도록 조회 기록은 완료 시각으로 보수적으로 갱신한다.
+- 실패 응답도 차감, 429는 Retry-After 또는 최소60초를 중앙에 기록한다. 자동 반복 요청 없음. 네트워크 결과가 불명확하거나 프로세스가 종료되면 lock을 보존한다. 상태 누락/접속 불가/쓰기 실패 시 새 호출 금지.
+- 초기화: 모든 동일 계정 클라이언트가 중앙 경로를 쓰고 이전 프로세스가 종료된 것을 확인한 뒤 `COUPANG_CENTRAL_CLIENTS_READY=1`로 `node --env-file=.env.local scripts/prep/init-limiter.mjs`를 실행한다. 기존 상태를 재설정하지 않으며 Redis 시계 기준 최소 한 창을 기다린다.
+- 장애 복구: 기존 호출 주체가 완전히 종료된 증거를 확인한다. 예산 state를 삭제하지 말고 Redis 시계 기준 `nextAt`을 최소 한 창 이후로 설정하며 lock만 관리자가 해제한다. 살아 있는 느린 작업의 lock을 풀면 중복 호출 위험이 있으므로 자동 복구하지 않는다.
+- 이 저장소 밖에서 같은 계정 키로 직접 호출하는 프로그램까지 코드만으로 통제할 수 없다. 운영자가 모두 같은 중앙 경로로 전환해야 한다. 데이터베이스 교체/restore/flush/키 eviction은 예산 손실이므로 호출을 중단하고 복구한다.
+
+## 필요한 연결 [내가채움]
+
+이미 확인된 환경변수 이름: OPENAI_API_KEY, COUPANG_ACCESS_KEY, COUPANG_SECRET_KEY. 값은 확인·출력하지 않았다. 계정의 실제 API 권한/잔액까지 검사한 것은 아니다.
+
+- [내가채움] `COUPANG_REDIS_REST_URL`, `COUPANG_REDIS_REST_TOKEN`: 영구 중앙 Redis. GitHub daily/coupang 워크플로 secrets와 로컬에 동일 저장소 설정.
+- [내가채움] `COUPANG_ACCOUNT_SCOPE`: 같은 계정 모든 서버가 공유하는 고정 식별자. GitHub repository variable 및 로컬 설정.
+- [내가채움] `WEEKEND_PREP_ADMIN_TOKEN`: 로컬 관리자 토큰.
+- [내가채움] 쿠팡 계정에서 현재 API 권한·더 엄격한 제한·캐시 보관 조건 확인. 공개 파트너스 페이지는 JS 앱으로 상세 정책을 확인하지 못했다. 확인 후 초기화 및 cache TTL 설정. 기본 API 캐시는 1시간이며 더 짧은 계정 정책에 맞춰 줄일 수 있다.
+- [내가채움] 같은 쿠팡 계정의 외부 프로그램 중앙 경유 전환 확인. 중앙 연결 전에는 새 조회를 실행하지 않는다.
+
+## 이미지 기록
+
+AI 이미지는 **대표 썸네일 포함 글당 최대 4장**. 저장/발행 검사와 생성 요청 예약 양쪽에서 제한하며 pending 요청도 배치 슬롯을 차지한다. 필요 없는 반복 이미지를 사용하지 않는다. 현재 초안은 썸네일1+본문1=2장이다. 이미지 개수가 검색 순위를 보장하지 않는다. 생성 전 초안을 저장하고 각 이미지가 설명할 내용을 정한다.
+
+기존 이미지 모델 gpt-image-2와 OPENAI_API_KEY 환경을 관리자 생성 코드에서 재사용한다. 이번 초안 이미지는 내장 imagegen 도구로 생성했다. 대표 이미지는 `public/prep-images/picnic-korean-cover.webp`, 본문 이미지는 `public/prep-images/picnic-packing.webp`. 프롬프트는 글 데이터에 기록했다. 원본 연출 장면 `picnic-scene.webp`도 보존했다. 생성 이미지는 특정 판매 상품의 정확한 재현으로 보증하지 않는다.
+
+이미지 생성 API는 요청 의도를 `data/weekend-prep-jobs`에 먼저 기록한다. 같은 요청이 불명확하게 끝나면 자동 재생성하지 않고 결과 복구를 요구한다. 생성 결과는 별도 검토 전 발행되지 않는다.
+
+## 공식 지침 확인 (2026-09-13)
+
+- Google 유료 링크: https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links
+- Google Article: https://developers.google.com/search/docs/appearance/structured-data/article
+- 네이버 선호 URL/robots: https://searchadvisor.naver.com/guide/markup-structure
+- 네이버 사이트 제작: https://searchadvisor.naver.com/guide/seo-basic-create
+- Redis REST 원자 연산 접근: https://upstash.com/docs/redis/features/restapi
+- 기존 이미지 API 모델: https://developers.openai.com/api/docs/models/gpt-image-2
+
+## 검증 명령
+
+`node --test scripts/prep/limiter.test.mjs scripts/prep/content.test.mjs scripts/prep/coupang.test.mjs` (실제 상품 API 0회)
+
+`npx tsc --noEmit`
+
+`PLAYWRIGHT_MODULE`에 설치된 playwright 모듈 경로를 지정 후 `node scripts/prep/browser-test.cjs`. 로컬 검토 모드에서 비공개 초안을 표시하고 모바일·PC 검색/태그/접근성/관리 인증을 검사한다. 검토 모드는 production에서 무시한다.
+
+실제 중앙 Redis 연결·쿠팡 계정 조회·이미지 API 관리자 호출·예약 Actions의 운영 실행은 연결 및 배포 후 별도 확인이 필요하다. 모의 테스트를 실제 계정 통합 검증으로 표현하지 않는다.
+
+확인 결과: 모의 테스트17개 통과. 320/390/1024/1280px에서 홈 메뉴 인접 배치, 검색, 태그 클릭·Enter·Esc·닫기·포커스 복귀, 이미지 로딩, 가로 넘침 검사 통과. 관리자 캐시 후보 조회·초안 저장·버전 충돌 방지·불완전 발행 차단·위치 클릭 태그 추가 및 미리보기 통과. `npm run build` 정적페이지1018개 빌드 성공(기존 경고와 관리자 원본 상품 이미지 경고 존재). 초기 글은 검토용 초안으로 유지했다.
+
+원본 생성 프롬프트는 `docs/weekend-prep-image-prompts.md`. 썸네일128,880 bytes, 본문166,464 bytes.

@@ -1,0 +1,5 @@
+export const PREP_CATEGORIES = ['캠핑 먹거리','바비큐','캠핑 초보 준비물','아이와 놀이','피크닉·나들이','여행 준비물'] as const;
+export type PrepProduct = {id:string; name:string; affiliateUrl:string; image:string; source:string; checkedAt:string; specification:string; options:string; verified:boolean; evidence:string};
+export type PrepImage = {url:string; alt:string; width:number; height:number; generated:boolean; reviewed:boolean; prompt?:string; tags:{productId:string;x:number;y:number}[]};
+export type PrepArticle = {slug:string; title:string; description:string; category:typeof PREP_CATEGORIES[number]; status:'draft'|'scheduled'|'published'; publishAt:string; updatedAt:string; reviewed:boolean; cover:PrepImage; sections:{heading:string; text:string; productIds:string[]; image?:PrepImage}[]; productIds:string[]; internalLinks:{href:string;label:string}[]};
+export type PrepStore = {version:number; products:PrepProduct[]; articles:PrepArticle[]};

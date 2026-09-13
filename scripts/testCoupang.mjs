@@ -8,7 +8,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-import { gate } from "./coupangThrottle.mjs";
+import { coupangFetch as fetch, MIN_INTERVAL_MS } from "./coupangThrottle.mjs";
 
 // --- .env.local 직접 로드 (dotenv 없이) ---------------------------------
 function loadEnvLocal() {
@@ -59,7 +59,6 @@ async function main() {
 
   let res;
   try {
-    await gate(); // 다른 스크립트와 동일하게 레이트리밋 게이트 통과 (예외 없이 전부)
     res = await fetch(DOMAIN + urlPath, {
       method: "GET",
       headers: { Authorization: authorization },

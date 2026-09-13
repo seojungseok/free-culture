@@ -17,6 +17,7 @@ import { getPetTravelPlaces } from "@/lib/petTravel";
 import { getKidCourses } from "@/lib/kidCourses";
 import { getAllBundles } from "@/lib/campingCollections";
 import { getTickets } from "@/lib/tickets";
+import { getPrepArticles } from '@/lib/weekend-prep/data';
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
@@ -30,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const MAJOR = new Set(["/events", "/festivals", "/places", "/course", "/camping", "/food"]);
   const LOW = new Set(["/about", "/privacy", "/terms", "/contact"]);
   const staticRoutes = [
+    ...(getPrepArticles().length ? ['/weekend-prep'] : []),
     ...(getTickets().length ? ['/tickets'] : []),
     "",
     "/events",
@@ -313,5 +315,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...eventRoutes,
     ...festivalRoutes,
     ...getTickets().map(a=>({url:`${base}/tickets/${a.slug}`,lastModified:new Date(a.checkedAt),changeFrequency:'weekly' as const,priority:0.7})),
+    ...getPrepArticles().map(a=>({url:`${base}/weekend-prep/${a.slug}`,lastModified:new Date(a.updatedAt),changeFrequency:'monthly' as const,priority:0.6})),
   ];
 }

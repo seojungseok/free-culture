@@ -15,6 +15,10 @@ concurrency:
 jobs:
   coupang:
     runs-on: ubuntu-latest
+    env:
+      COUPANG_REDIS_REST_URL: ${{ secrets.COUPANG_REDIS_REST_URL }}
+      COUPANG_REDIS_REST_TOKEN: ${{ secrets.COUPANG_REDIS_REST_TOKEN }}
+      COUPANG_ACCOUNT_SCOPE: ${{ vars.COUPANG_ACCOUNT_SCOPE }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

@@ -1,0 +1,29 @@
+name: 주말 준비물 예약 발행
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: weekend-prep-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/prep/publish.mjs
+      - name: 통과한 예약 글만 반영
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/weekend-prep.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish reviewed weekend preparation articles'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
