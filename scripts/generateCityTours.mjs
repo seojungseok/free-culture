@@ -78,7 +78,7 @@ for(const item of queue){
   if(!selectedPhoto){console.log('HELD: unique route photo unavailable '+item.id);continue;}
   db.articles.push({...item,image:selectedPhoto.image,imageTitle:selectedPhoto.title,heroPhoto:{...selectedPhoto,status:'matched',checkedAt:new Date().toISOString()},...generated.value,model,generatedModel:generated.model,publishedAt:new Date().toISOString(),publishedDay:today,reviewed:true,usage:generated.usage,reviewUsage:review.usage});
   save();written++;console.log('PUBLISHED '+written+'/'+target+' '+generated.value.title);
- }catch(e){console.error('HELD '+item.id+' '+e.message);if(/quality gate/.test(e.message)){db.rejected.push({id:item.id,title:item.title,reason:e.message,date:today,version:2});save();}if(/HTTP 40[1349]|HTTP 429/.test(e.message))break;}
+ }catch(e){console.error('HELD '+item.id+' '+e.message);if(/quality gate/.test(e.message)){db.rejected.push({id:item.id,title:item.title,reason:e.message,date:today,version:2});save();}}
 }
 console.log(JSON.stringify({written,total:db.articles.length,target,attempted,model}));
 if(written<target)process.exitCode=2;

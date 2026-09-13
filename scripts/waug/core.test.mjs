@@ -39,6 +39,14 @@ test('pause, exclusions, unknown sale, missing image rights and expiration block
 test('due articles whose checks expired are held; no future slug leaks',()=>{
   const {products,state}=fixture(1);schedule(state,products,now);assert.equal(publish(state,products,new Date('2026-09-20T00:00:00Z')).length,0);assert.equal(state.articles[0].status,'held');assert.equal(publicArticles(state,products).length,0);
 });
+test('one failed ticket never blocks the other 19 due publications',()=>{
+ const {products,state}=fixture(20);schedule(state,products,now);
+ state.articles[0].thumbnail.sources[0].commercialAllowed=false;
+ const published=publish(state,products,new Date('2026-09-10T20:00:00Z'));
+ assert.equal(published.length,19);
+ assert.equal(state.articles[0].status,'held');
+ assert.equal(publicArticles(state,products).length,19);
+});
 test('existing same-day history caps backlog after retries',()=>{
   const {products,state}=fixture(25);schedule(state,products,now);
   state.history=Array.from({length:29},(_,i)=>({slug:`old-${i}`,day:'2026-09-11'}));
