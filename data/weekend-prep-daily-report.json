@@ -1,1 +1,14 @@
-{"date":null,"target":5,"published":[],"held":[],"missing":[],"alreadyProcessed":[],"note":"발행기 배포 시 초기 기록. 실제 예약 원고 또는 발행 완료 기록이 아님."}
+{
+  "date": "2026-09-14",
+  "target": 5,
+  "published": [],
+  "held": [],
+  "missing": [
+    "daily:2026-09-14:1",
+    "daily:2026-09-14:2",
+    "daily:2026-09-14:3",
+    "daily:2026-09-14:4",
+    "daily:2026-09-14:5"
+  ],
+  "alreadyProcessed": []
+}

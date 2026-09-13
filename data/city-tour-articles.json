@@ -12758,6 +12758,1493 @@
           }
         }
       }
+    },
+    {
+      "id": "34aa62b06da652",
+      "area": "인천",
+      "city": "중구+강화군",
+      "title": "인천 시티투어 교동도투어 코스와 탑승·요금 안내",
+      "raw": {
+        "시도명": "인천광역시",
+        "시군구명": "중구+강화군",
+        "시티투어코스명": "교동도투어",
+        "시티투어문의처": "인천시티투어 1899-0960",
+        "시티투어운영시간": "매주 토",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "인천역",
+        "시티투어코스정보": "인천역+화개정원+대룡시장+교동제비집+강화평화전망대+인천역",
+        "경유지주변관광정보": "화개정원+대룡시장+교동제비집+강화평화전망대",
+        "시티투어코스부가정보": "",
+        "운행정보": "운영(매주 1회 토)",
+        "운행시작시각": "09:30",
+        "운행종료시각": "17:30",
+        "배차시간": "0",
+        "이용요금": "성인 19000원+소인 16000원+경로 16000원+단체 16000원+인천시민 14000원+장애인 12000원+국가유공자 12000원",
+        "이용요금부가정보": "감면대상(소인+경로, 인천시민, 장애인, 국가유공자, 10인 이상 단체)",
+        "홈페이지주소": "https://mirihae.com/itoct",
+        "관리기관명": "인천관광공사",
+        "관리기관전화번호": "1899-0960",
+        "데이터기준일자": "2026-03-13"
+      },
+      "related": [],
+      "foodLinks": [],
+      "officialUrl": "https://mirihae.com/itoct",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/47/3392747.jpg",
+      "imageTitle": "화개정원",
+      "priority": 102,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/47/3392747.jpg",
+        "title": "화개정원",
+        "location": "인천광역시 강화군 교동면",
+        "credit": "한국관광공사 · 정규진",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "3392747",
+        "status": "matched",
+        "checkedAt": "2026-09-13T22:25:51.910Z"
+      },
+      "description": "인천역에서 출발해 화개정원, 대룡시장, 교동제비집, 강화평화전망대를 둘러보는 토요일 고정형 시티투어입니다.",
+      "intro": "인천광역시 중구와 강화군을 잇는 교동도투어는 인천역에서 출발해 화개정원, 대룡시장, 교동제비집, 강화평화전망대를 거쳐 인천역으로 돌아오는 고정형 코스입니다. 운행 정보에는 매주 1회 토요일 운행으로 안내되어 있으며, 운행시간은 09:30부터 17:30까지입니다.",
+      "sections": [
+        {
+          "heading": "교동도투어 코스와 운행 정보",
+          "paragraphs": [
+            "교동도투어의 시티투어 운행 방식은 고정형이며, 탑승 장소는 인천역입니다. 원본 코스 정보에는 인천역, 화개정원, 대룡시장, 교동제비집, 강화평화전망대, 인천역이 차례로 제시되어 있습니다.",
+            "운행 정보는 매주 1회 토요일로 안내되어 있습니다. 운행 시작 시각은 09:30, 종료 시각은 17:30이며, 배차시간은 별도로 제공되지 않았습니다. 출발과 도착이 인천역으로 안내된 만큼 탑승 당일에는 출발 시각과 정확한 탑승 위치를 미리 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "원본에 안내된 경유지",
+          "paragraphs": [
+            "자료에 제시된 경유지는 화개정원, 대룡시장, 교동제비집, 강화평화전망대입니다. 인천역에서 출발한 뒤 네 곳을 거쳐 다시 인천역으로 돌아오는 구성으로 안내되어 있습니다.",
+            "각 경유지의 세부 관람 동선, 체류 시간, 내부 시설, 입장료와 운영시간은 제공된 자료에 포함되어 있지 않습니다. 따라서 특정 장소의 관람 내용이나 현장 이용 방법을 일정에 확정해 반영하기보다는 방문 전에 각 장소의 공식 안내와 현장 운영 정보를 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "탑승 장소와 이용 요금",
+          "paragraphs": [
+            "탑승 장소는 인천역이며, 운행일은 자료상 매주 토요일입니다. 예약 방법과 집결 위치의 세부 절차는 별도로 제시되지 않았으므로 예약 가능 여부, 잔여 좌석, 탑승 장소의 구체적인 위치는 인천시티투어 문의처를 통해 확인하는 것이 안전합니다.",
+            "이용요금은 성인 19,000원, 소인 16,000원, 경로 16,000원, 10인 이상 단체 16,000원, 인천시민 14,000원, 장애인 12,000원, 국가유공자 12,000원입니다. 감면 대상은 소인·경로, 인천시민, 장애인, 국가유공자, 10인 이상 단체로 안내되어 있습니다.",
+            "감면 적용에 필요한 증빙과 세부 기준은 자료에 기재되어 있지 않으므로 예약 또는 탑승 전에 문의해야 합니다. 이용 대상에 해당하는 경우 관련 증빙을 준비해야 하는지도 함께 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "추가 방문과 주변 이용 안내",
+          "paragraphs": [
+            "제공된 자료에는 화개정원, 대룡시장, 교동제비집, 강화평화전망대 내부의 전시, 시설, 관람 프로그램에 관한 정보가 없습니다. 또한 코스 밖에서 추가로 방문할 장소나 음식점 목록도 제공되지 않았습니다.",
+            "투어 외에 별도 일정을 더할 경우 공식 경유지와 추가 방문 일정을 구분해 계획하고, 실제 영업 여부와 이동 가능 여부는 해당 시설에 직접 확인해야 합니다. 경유지별 체류시간과 이동시간이 안내되지 않았으므로 모든 장소의 이용 가능 여부를 사전에 확정하기는 어렵습니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인 사항",
+          "paragraphs": [
+            "운행·요금 정보의 데이터 기준일자는 2026년 3월 13일입니다. 방문 시점의 운행 조건을 확정하는 정보는 아니므로 매주 토요일 운행 여부, 09:30 출발과 17:30 종료 시각, 요금, 예약 가능 여부는 출발 전에 공식 안내로 다시 확인해야 합니다.",
+            "문의처는 인천시티투어 1899-0960이며 관리기관은 인천관광공사입니다. 운행 변경, 휴무, 기상이나 현장 사정에 따른 코스 변동 여부, 감면 대상 증빙, 인천역의 정확한 탑승 위치와 도착 권장 시각도 문의처를 통해 확인하면 됩니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-13T22:25:51.910Z",
+      "publishedDay": "2026-09-14",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 828,
+          "completion_tokens": 1258,
+          "total_tokens": 2086,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 124,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1739,
+          "completion_tokens": 1267,
+          "total_tokens": 3006,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1736,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 89,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1620,
+          "completion_tokens": 454,
+          "total_tokens": 2074,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1617,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 325,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1662,
+          "completion_tokens": 14,
+          "total_tokens": 1676,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1659,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "c371dafb555ad1",
+      "area": "강원",
+      "city": "춘천시",
+      "title": "춘천 시티투어 수요일 코스, 춘천역에서 세 곳을 잇는 일정",
+      "raw": {
+        "시도명": "강원특별자치도",
+        "시군구명": "춘천시",
+        "시티투어코스명": "수요일",
+        "시티투어문의처": "033-250-3654+033-242-1113",
+        "시티투어운영시간": "10:30 ~ 17:30",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "춘천역",
+        "시티투어코스정보": "국립춘천박물관-김유정문학촌/책과인쇄박물관 - 장절공 신숭겸묘",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "매주 수",
+        "운행시작시각": "10:30",
+        "운행종료시각": "17:30",
+        "배차시간": "0",
+        "이용요금": "대인 및 중·고 청소년 6000원+초등학생,만 65세 이상,장애인,국가유공자,군인,임산부,다자녀(2자녀 이상) 4000원",
+        "이용요금부가정보": "중식 및 관광지 입장료 별도",
+        "홈페이지주소": "https://citytour.ticketplay.zone/",
+        "관리기관명": "강원특별자치도 춘천시청",
+        "관리기관전화번호": "033-250-3654",
+        "데이터기준일자": "2026-03-09"
+      },
+      "related": [],
+      "foodLinks": [],
+      "officialUrl": "https://citytour.ticketplay.zone/",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/53/2437753.jpg",
+      "imageTitle": "국립춘천박물관",
+      "priority": 93,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/53/2437753.jpg",
+        "title": "국립춘천박물관",
+        "location": "강원도 춘천시 우석로",
+        "credit": "한국관광공사 · 한국관광공사 김지호",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "2437753",
+        "status": "matched",
+        "checkedAt": "2026-09-13T22:26:18.063Z"
+      },
+      "description": "춘천역에서 출발해 국립춘천박물관, 김유정문학촌·책과인쇄박물관, 장절공 신숭겸묘를 경유하는 수요일 고정형 시티투어 안내입니다.",
+      "intro": "강원특별자치도 춘천시의 ‘수요일’ 시티투어는 매주 수요일 운행하는 고정형 코스입니다. 탑승 장소는 춘천역이며, 운행 시간은 10시 30분부터 17시 30분까지로 안내되어 있습니다. 코스에는 국립춘천박물관, 김유정문학촌·책과인쇄박물관, 장절공 신숭겸묘가 포함됩니다. 아래 내용은 2026년 3월 9일 기준 자료를 바탕으로 정리했습니다.",
+      "sections": [
+        {
+          "heading": "코스 경유 순서",
+          "paragraphs": [
+            "자료에 제시된 경유 순서는 국립춘천박물관, 김유정문학촌·책과인쇄박물관, 장절공 신숭겸묘입니다. 김유정문학촌과 책과인쇄박물관은 코스 정보에 슬래시로 함께 표기되어 있어, 두 장소가 실제 운행에서 어떤 방식으로 포함되는지는 별도 확인이 필요합니다.",
+            "이 코스는 춘천역에서 탑승한 뒤 자료에 기재된 세 곳을 경유하는 일정으로 안내되어 있습니다. 각 경유지의 관람 범위, 체류 시간, 장소 간 이동 방식은 제공 자료에 제시되어 있지 않습니다."
+          ]
+        },
+        {
+          "heading": "운행일과 탑승 정보",
+          "paragraphs": [
+            "운행일은 매주 수요일이며, 운행 시간은 10시 30분부터 17시 30분까지입니다. 탑승 장소명은 춘천역으로 등록되어 있습니다. 배차시간은 자료에 0으로 기재되어 있어, 별도의 배차 간격이나 세부 운행 시각은 확인되지 않습니다.",
+            "운행 방식은 고정형으로 안내되어 있습니다. 다만 자료에는 정확한 탑승 위치, 탑승 절차, 출발 시각의 확정 여부가 구체적으로 적혀 있지 않으므로 이용 전 공식 안내를 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "이용요금",
+          "paragraphs": [
+            "이용요금은 대인 및 중·고등학생 6,000원입니다. 초등학생, 만 65세 이상, 장애인, 국가유공자, 군인, 임산부, 다자녀 대상자는 4,000원으로 안내되어 있습니다. 다자녀 대상은 2자녀 이상으로 기재되어 있습니다.",
+            "중식과 관광지 입장료는 이용요금에 포함되지 않고 별도입니다. 각 경유지의 입장료와 실제 관람 가능 여부는 자료에 제시되어 있지 않으므로, 관광지 방문을 계획한다면 출발 전에 관련 내용을 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "경유지 안내",
+          "paragraphs": [
+            "국립춘천박물관, 김유정문학촌, 책과인쇄박물관, 장절공 신숭겸묘가 코스 정보에 포함되어 있습니다. 제공 자료에는 각 장소의 전시 내용, 시설 구성, 관람 소요시간, 휴관일, 입장 조건에 관한 상세 설명은 없습니다.",
+            "따라서 이 안내에서는 장소명과 코스 포함 여부만 소개합니다. 실제로 어느 공간까지 방문하는지, 내부 관람이 가능한지, 현장에서 별도의 입장 절차가 필요한지는 운영기관과 각 경유지에 확인하는 것이 안전합니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인 사항",
+          "paragraphs": [
+            "운행·요금 자료의 기준일은 2026년 3월 9일이며, 현재 날짜는 2026년 9월 14일입니다. 기준일 이후 운행 일정이나 요금이 달라졌을 가능성이 있으므로, 방문 전 춘천시청 또는 시티투어 공식 안내 페이지에서 최신 정보를 확인해야 합니다.",
+            "확인할 내용은 해당 수요일의 운행 여부, 운행 시간, 춘천역의 정확한 탑승 위치, 요금, 관광지 입장 조건, 코스 변경 여부입니다. 문의처는 춘천시청 033-250-3654와 033-242-1113으로 안내되어 있습니다. 관리기관은 강원특별자치도 춘천시청입니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-13T22:26:18.063Z",
+      "publishedDay": "2026-09-14",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 784,
+          "completion_tokens": 1332,
+          "total_tokens": 2116,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 107,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2041,
+          "completion_tokens": 1194,
+          "total_tokens": 3235,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2038,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 82,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1667,
+          "completion_tokens": 558,
+          "total_tokens": 2225,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1664,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 174,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1554,
+          "completion_tokens": 14,
+          "total_tokens": 1568,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1551,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "3dc53ca3fb1f97",
+      "area": "대구",
+      "city": "없음",
+      "title": "대구 시티투어 테마-방방곡곡(낙동강) 코스 안내",
+      "raw": {
+        "시도명": "대구광역시",
+        "시군구명": "없음",
+        "시티투어코스명": "테마-방방곡곡(낙동강)",
+        "시티투어문의처": "053-627-8900",
+        "시티투어운영시간": "10:30~18:00(매주 월요일+명절 당일 운휴)",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "동대구역 승강장",
+        "시티투어코스정보": "동대구역⇒청라언덕역⇒화원동산/사문진나루⇒달성습지⇒디아크⇒청라언덕역⇒동대구역",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "매주 화~일",
+        "운행시작시각": "10:30",
+        "운행종료시각": "18:00",
+        "배차시간": "0",
+        "이용요금": "성인 10000원+중고등 8000원+어린이경로장애인 6000원",
+        "이용요금부가정보": "",
+        "홈페이지주소": "www.daegucitytour.com",
+        "관리기관명": "대구광역시관광협회",
+        "관리기관전화번호": "053-746-0120",
+        "데이터기준일자": "2025-07-30"
+      },
+      "related": [
+        {
+          "id": "2709514",
+          "title": "화원동산",
+          "href": "/places/spot/2709514",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/57/3570057_image2_1.jpg",
+          "address": "대구광역시 달성군 화원읍 사문진로1길 40-14"
+        }
+      ],
+      "foodLinks": [],
+      "officialUrl": "",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/57/3570057_image2_1.jpg",
+      "imageTitle": "화원동산",
+      "priority": 76,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/57/3570057_image2_1.jpg",
+        "title": "화원동산",
+        "location": "대구광역시 달성군 화원읍 사문진로1길 40-14",
+        "placeId": "2709514",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2709514",
+        "status": "matched",
+        "checkedAt": "2026-09-13T22:26:47.141Z"
+      },
+      "description": "동대구역에서 출발해 화원동산·사문진나루·달성습지·디아크를 거치는 대구 테마-방방곡곡(낙동강) 시티투어의 경유 순서와 이용 정보를 안내합니다.",
+      "intro": "대구광역시 테마-방방곡곡(낙동강)은 동대구역 승강장에서 출발해 청라언덕역, 화원동산·사문진나루, 달성습지, 디아크를 거친 뒤 다시 청라언덕역과 동대구역으로 돌아오는 고정형 시티투어 코스입니다. 원본 자료 기준 운행일은 매주 화요일부터 일요일까지이며, 매주 월요일과 명절 당일에는 운휴합니다.",
+      "sections": [
+        {
+          "heading": "코스 특징과 전체 경유 순서",
+          "paragraphs": [
+            "이 코스는 동대구역 승강장에서 출발해 청라언덕역을 거친 뒤 화원동산·사문진나루, 달성습지, 디아크를 차례로 방문합니다. 이후 청라언덕역을 다시 경유하고 동대구역으로 돌아오는 순서로 안내되어 있습니다.",
+            "시티투어 운행 방식은 고정형으로 기재되어 있으며, 배차시간은 자료에 0으로 표시되어 있습니다. 운행일과 출발 시각은 정해져 있으므로 이용 전 해당 날짜의 운행 여부와 탑승 방법을 공식 안내에서 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "경유지와 확인 가능한 장소 정보",
+          "paragraphs": [
+            "코스에는 화원동산·사문진나루, 달성습지, 디아크가 포함되어 있습니다. 제공된 자료에는 각 경유지의 세부 해설, 관람 프로그램, 내부 이용 정보가 별도로 기재되어 있지 않으므로 실제 방문 전 개방 범위와 관람 방법을 확인하는 편이 좋습니다.",
+            "제공된 관광정보에서 별도로 확인되는 장소는 화원동산입니다. 주소는 대구광역시 달성군 화원읍 사문진로1길 40-14로 안내되어 있습니다. 화원동산의 내부 시설이나 관람 내용은 자료에 설명되어 있지 않아 특정 전시나 체험이 운영된다고 단정할 수 없습니다."
+          ]
+        },
+        {
+          "heading": "탑승 장소와 운행 시간",
+          "paragraphs": [
+            "탑승 장소는 동대구역 승강장입니다. 운행일은 매주 화요일부터 일요일까지이며, 운행일의 시간은 10시 30분부터 18시까지로 안내되어 있습니다. 매주 월요일과 명절 당일에는 운행하지 않습니다.",
+            "코스 정보에는 동대구역, 청라언덕역, 화원동산·사문진나루, 달성습지, 디아크가 차례로 제시되어 있습니다. 개별 경유지에서 탑승할 수 있는지, 각 장소에 머무는 시간이 어떻게 정해지는지는 제공 자료에 없으므로 방문 전 공식 안내를 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "이용요금과 예약 확인",
+          "paragraphs": [
+            "이용요금은 성인 10,000원, 중·고등학생 8,000원, 어린이·경로·장애인 6,000원입니다. 자료에는 예약 방법, 좌석 이용 절차, 요금 적용 기준의 세부 내용이 별도로 기재되어 있지 않습니다.",
+            "예약이 필요한지, 출발 당일 탑승이 가능한지, 할인 또는 증빙 조건이 있는지는 대구시티투어 홈페이지나 문의처를 통해 확인하는 것이 좋습니다. 음식점과 별도 주변 관광 후보는 제공 자료에 포함되어 있지 않습니다."
+          ]
+        },
+        {
+          "heading": "출발 전 문의 사항",
+          "paragraphs": [
+            "운행 여부와 요금, 노선, 예약 가능 여부는 방문 시점에 달라질 수 있으므로 출발 전 확인이 필요합니다. 특히 원본 자료의 데이터 기준일은 2025년 7월 30일이므로 2026년 방문 시 최신 안내를 확인하는 것이 좋습니다.",
+            "대구시티투어 문의처는 053-627-8900이며, 관리기관인 대구광역시관광협회 전화번호는 053-746-0120입니다. 홈페이지 주소는 www.daegucitytour.com으로 안내되어 있습니다. 동대구역 승강장의 정확한 위치와 당일 운행 여부, 각 경유지의 관람 조건도 함께 확인할 수 있습니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-13T22:26:47.141Z",
+      "publishedDay": "2026-09-14",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 849,
+          "completion_tokens": 1319,
+          "total_tokens": 2168,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 134,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1880,
+          "completion_tokens": 1207,
+          "total_tokens": 3087,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1877,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 91,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1692,
+          "completion_tokens": 659,
+          "total_tokens": 2351,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1689,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 461,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1623,
+          "completion_tokens": 126,
+          "total_tokens": 1749,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1620,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 106,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "91ec03e978db1a",
+      "area": "충북",
+      "city": "청주시",
+      "title": "청주 시티투어 청남대 투어 코스와 탑승·예약 안내",
+      "raw": {
+        "시도명": "충청북도",
+        "시군구명": "청주시",
+        "시티투어코스명": "청주시티투어_정기투어_청남대 투어(수토일)",
+        "시티투어문의처": "043-234-8895",
+        "시티투어운영시간": "매주 수/토/일요일(1일1회)",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "(KTX오송역/토일요일)+청주가경시외버스터미널+청주체육관",
+        "시티투어코스정보": "청주체육관 - 가경터미널 - KTX오송역 - 문의문화재단지(중식) - 청남대 - 성안길 - 청주체육관 - 가경터미널 - KTX오송역",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "예약인원 5인 미만 미운영",
+        "운행시작시각": "09:00",
+        "운행종료시각": "17:00",
+        "배차시간": "0",
+        "이용요금": "3000원",
+        "이용요금부가정보": "식비_체험료_기타보험 등 본인부담",
+        "홈페이지주소": "https://www.cheongju.go.kr/ktour/contents.do?key=20339",
+        "관리기관명": "충청북도 청주시 관광과",
+        "관리기관전화번호": "043-201-1792",
+        "데이터기준일자": "2026-05-26"
+      },
+      "related": [],
+      "foodLinks": [],
+      "officialUrl": "https://www.cheongju.go.kr/ktour/contents.do?key=20339",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/19/3339419.jpg",
+      "imageTitle": "청남대",
+      "priority": 72,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/19/3339419.jpg",
+        "title": "청남대",
+        "location": "충청북도 청주시 상당구",
+        "credit": "한국관광공사 · 강윤구",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "3339419",
+        "status": "matched",
+        "checkedAt": "2026-09-13T22:27:01.828Z"
+      },
+      "description": "청주체육관과 가경터미널, KTX오송역에서 출발해 문의문화재단지와 청남대, 성안길을 둘러보는 청주시티투어 안내입니다.",
+      "intro": "충청북도 청주 청남대 투어는 문의문화재단지와 청남대, 성안길을 하루에 연결해 둘러보는 고정형 시티투어 코스입니다. 매주 수요일·토요일·일요일에 1일 1회 운행하며, KTX오송역은 토요일과 일요일 탑승장소에 포함됩니다.",
+      "sections": [
+        {
+          "heading": "코스 특징과 운행일",
+          "paragraphs": [
+            "이 투어는 청주의 주요 탑승 지점에서 출발해 문의문화재단지와 청남대를 방문한 뒤 성안길을 거쳐 돌아오는 일정입니다. 운행 방식은 고정형이며, 자료 기준 운행시간은 09:00부터 17:00까지입니다.",
+            "운행일은 매주 수요일·토요일·일요일이고 하루 한 차례 운행합니다. 예약인원이 5인 미만이면 운영하지 않는 조건이 있으므로, 예약 후에도 실제 운행 여부를 방문 전에 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "원본 경유 순서와 볼거리",
+          "paragraphs": [
+            "자료에 기재된 순서는 청주체육관에서 출발해 가경터미널, KTX오송역, 문의문화재단지(중식), 청남대, 성안길을 거친 뒤 청주체육관과 가경터미널, KTX오송역으로 돌아오는 방식입니다. KTX오송역은 토요일·일요일 탑승장소로 안내되어 있습니다.",
+            "문의문화재단지는 코스 중식 지점으로 표시되어 있으며, 청남대와 성안길도 공식 경유지에 포함됩니다. 다만 각 경유지에서 관람할 수 있는 세부 시설이나 체류시간은 제공 자료에 없으므로, 일정 계획은 공식 안내에서 추가로 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "탑승장소와 예약·요금",
+          "paragraphs": [
+            "탑승장소는 청주체육관과 청주가경시외버스터미널이며, KTX오송역은 토요일과 일요일에 이용할 수 있는 탑승장소입니다. 첫 운행 시각은 09:00으로 안내되어 있지만, 각 장소의 세부 집결시각과 좌석 관련 절차는 자료에 제시되어 있지 않습니다.",
+            "이용요금은 3,000원이며 식비·체험료·기타 보험 등은 본인 부담입니다. 예약 방법, 결제 방식, 잔여 좌석과 취소 기준은 제공 자료만으로 확정할 수 없으므로 청주시티투어 공식 안내 또는 문의처를 통해 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "함께 둘러볼 내부 장소와 주변 정보",
+          "paragraphs": [
+            "이번 자료에는 공식 코스 경유지 내부의 세부 관광시설 목록이 별도로 제공되지 않았습니다. 따라서 문의문화재단지와 청남대, 성안길 안에서 어떤 전시·시설을 우선 방문할지는 각 장소의 공식 안내를 확인해 계획하는 것이 안전합니다.",
+            "경유지 주변 관광정보와 음식점 후보도 제공되지 않았습니다. 특히 코스에 중식이 포함되어 있지만 식당명이나 이용 방식은 안내되어 있지 않으므로, 음식점이 투어에 포함된다고 단정하지 말고 식비와 식사 장소를 출발 전에 문의해야 합니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인할 사항",
+          "paragraphs": [
+            "제공 자료의 데이터 기준일은 2026년 5월 26일이며, 현재 운행 여부와 요금이 이후 변경되었을 가능성을 배제할 수 없습니다. 방문 전 청주시티투어 홈페이지와 청주시 관광과에 운행일, 탑승장소, 출발시각, 예약 가능 여부를 확인하세요.",
+            "예약인원 5인 미만 시 미운영 조건, KTX오송역의 토·일요일 탑승 조건, 식비·체험료·기타 보험의 별도 부담을 함께 확인하면 좋습니다. 문의처는 043-234-8895이며, 관리기관인 청주시 관광과 전화번호는 043-201-1792입니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-13T22:27:01.828Z",
+      "publishedDay": "2026-09-14",
+      "reviewed": true,
+      "usage": {
+        "prompt_tokens": 812,
+        "completion_tokens": 1230,
+        "total_tokens": 2042,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 152,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "reviewUsage": {
+        "prompt_tokens": 1548,
+        "completion_tokens": 344,
+        "total_tokens": 1892,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 1545,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 324,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "bf9c5b92a84330",
+      "area": "경기",
+      "city": "시흥시",
+      "title": "시흥시 순환형 2층버스 시티투어 코스와 오이도·거북섬 여행 안내",
+      "raw": {
+        "시도명": "경기도",
+        "시군구명": "시흥시",
+        "시티투어코스명": "순환형 2층버스",
+        "시티투어문의처": "시흥시청 관광과(031-310-2903)",
+        "시티투어운영시간": "1월~12월",
+        "시티투어운행방식": "순환형",
+        "시티투어탑승장소명": "거북섬/오이도",
+        "시티투어코스정보": "거북섬홍보관-해양생태과학관-배다리선착장-시흥오이도박물관-거북섬마리나",
+        "경유지주변관광정보": "해양생태과학관+오이도선사유적공원+오이도빨강등대+시흥오이도박물관+거북섬 등",
+        "시티투어코스부가정보": "",
+        "운행정보": "1월~12월 매주 수요일~일요일 매 정시 운행(월요일~화요일 휴무)",
+        "운행시작시각": "10:00",
+        "운행종료시각": "22:00",
+        "배차시간": "1",
+        "이용요금": "1회권3000+종일권5000",
+        "이용요금부가정보": "",
+        "홈페이지주소": "https://www.siheung.go.kr/citytour",
+        "관리기관명": "경기도 시흥시청",
+        "관리기관전화번호": "031-310-2903",
+        "데이터기준일자": "2026-04-07"
+      },
+      "related": [
+        {
+          "id": "2648242",
+          "title": "시흥오이도박물관",
+          "href": "/places/spot/2648242",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/08/2947308_image2_1.jpg",
+          "address": "경기도 시흥시 오이도로 332 (정왕동)"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "2876256",
+          "title": "사라굴밥전문점본관",
+          "href": "/food/spot/2876256",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/38/2876238_image2_1.jpg",
+          "address": "경기도 시흥시 오이도9길 18 (정왕동)"
+        },
+        {
+          "id": "2875218",
+          "title": "엠티브이교동짬뽕",
+          "href": "/food/spot/2875218",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/11/2875211_image2_1.JPG",
+          "address": "경기도 시흥시 엠티브이26로19번길 1 (정왕동)"
+        },
+        {
+          "id": "2781817",
+          "title": "오이도 정동진",
+          "href": "/food/spot/2781817",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/08/2782108_image2_1.jpeg",
+          "address": "경기도 시흥시 오이도로 151-1 (정왕동)"
+        }
+      ],
+      "officialUrl": "https://www.siheung.go.kr/citytour",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/08/2947308_image2_1.jpg",
+      "imageTitle": "시흥오이도박물관",
+      "priority": 30,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/08/2947308_image2_1.jpg",
+        "title": "시흥오이도박물관",
+        "location": "경기도 시흥시 오이도로 332 (정왕동)",
+        "placeId": "2648242",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2648242",
+        "status": "matched",
+        "checkedAt": "2026-09-13T22:28:48.369Z"
+      },
+      "description": "거북섬과 오이도를 잇는 시흥시 순환형 2층버스의 경유 순서, 운행일, 요금과 주변 관광 정보를 정리했습니다.",
+      "intro": "경기도 시흥시 순환형 2층버스는 거북섬과 오이도 일대를 연결하는 관광 교통수단입니다. 거북섬 또는 오이도에서 탑승할 수 있으며, 거북섬홍보관, 해양생태과학관, 배다리선착장, 시흥오이도박물관, 거북섬마리나를 경유합니다. 운행 정보의 데이터 기준일은 2026년 4월 7일입니다.",
+      "sections": [
+        {
+          "heading": "코스 특징과 경유 순서",
+          "paragraphs": [
+            "자료에 제시된 코스 순서는 거북섬홍보관, 해양생태과학관, 배다리선착장, 시흥오이도박물관, 거북섬마리나입니다. 시티투어 운행 방식은 순환형이며, 탑승 장소명은 거북섬과 오이도로 안내되어 있습니다.",
+            "순환형 코스의 실제 이동 방향과 정류장별 승하차 가능 여부는 자료에 구체적으로 제시되어 있지 않습니다. 출발 지점과 이용할 정류장을 정하기 전, 시흥시 공식 안내나 시흥시청 관광과를 통해 확인하는 것이 필요합니다."
+          ]
+        },
+        {
+          "heading": "경유지와 주변 관광 정보",
+          "paragraphs": [
+            "공식 코스 경유지는 거북섬홍보관, 해양생태과학관, 배다리선착장, 시흥오이도박물관, 거북섬마리나입니다. 제공 자료에는 각 시설의 상세 전시 내용, 내부 프로그램, 관람 범위에 관한 정보가 없습니다.",
+            "경유지 주변 관광 정보로는 오이도선사유적공원, 오이도빨강등대, 시흥오이도박물관, 거북섬 등이 제시되어 있습니다. 다만 이 장소들이 모두 버스의 공식 정차 지점인지, 하차 후 이동 방법과 소요시간이 어떠한지는 자료만으로 확인되지 않습니다.",
+            "시흥오이도박물관의 주소는 경기도 시흥시 오이도로 332입니다. 박물관 방문을 계획한다면 시티투어 운행 정보와 별도로 개관 여부와 입장 관련 사항을 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "운행일과 이용 요금",
+          "paragraphs": [
+            "운행 기간은 1월부터 12월까지이며, 매주 수요일부터 일요일까지 매 정시에 운행합니다. 월요일과 화요일은 휴무입니다. 운행 시작 시각은 10시, 종료 시각은 22시로 기재되어 있습니다.",
+            "이용요금은 1회권 3,000원, 종일권 5,000원입니다. 배차시간은 원자료에 ‘1’로 표시되어 있으나 단위나 적용 방식은 별도로 설명되어 있지 않습니다. 실제 운행 간격은 방문 전에 확인하는 편이 안전합니다.",
+            "운행일과 운행시간은 시티투어 자료에 따른 내용이며, 각 경유지의 운영시간과 관람 가능 여부를 의미하지는 않습니다. 시설 방문을 함께 계획할 경우 해당 시설의 별도 안내를 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "함께 확인할 음식점 후보",
+          "paragraphs": [
+            "제공 자료에서는 경유지와 좌표 기준 약 2km 이내의 음식점 후보로 사라굴밥전문점본관, 엠티브이교동짬뽕, 오이도 정동진을 제시하고 있습니다. 후보 선정 과정에서 도로 이동거리, 영업 여부, 공식 투어 제휴 여부는 검증되지 않았습니다.",
+            "사라굴밥전문점본관은 경기도 시흥시 오이도9길 18, 엠티브이교동짬뽕은 경기도 시흥시 엠티브이26로19번길 1, 오이도 정동진은 경기도 시흥시 오이도로 151-1에 있습니다.",
+            "위 음식점들은 시티투어 공식 경유지나 제휴 음식점으로 확인된 곳이 아닙니다. 실제 이동거리, 영업 여부, 좌석 상황은 방문 전에 별도로 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인할 사항",
+          "paragraphs": [
+            "운행 정보의 데이터 기준일은 2026년 4월 7일입니다. 운행 여부와 요금, 정류장별 탑승 방식, 예약 가능 여부는 변경될 수 있으므로 방문 당일 기준 정보로 확정하지 말고 시흥시 공식 안내를 확인해야 합니다.",
+            "자료에는 예약 방법이 따로 제시되어 있지 않습니다. 수요일부터 일요일까지 운행하고 월요일과 화요일은 휴무라는 점, 10시부터 22시까지 운행한다는 점을 일정에 반영한 뒤 출발 전 변동 여부를 문의하는 것이 좋습니다.",
+            "시티투어 문의처는 시흥시청 관광과이며 전화번호는 031-310-2903입니다. 실제 운행 간격과 탑승 방법처럼 원자료에서 설명이 부족한 사항은 해당 문의처를 통해 확인할 수 있습니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-13T22:28:48.369Z",
+      "publishedDay": "2026-09-14",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 1108,
+          "completion_tokens": 1338,
+          "total_tokens": 2446,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1105,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 179,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2094,
+          "completion_tokens": 1383,
+          "total_tokens": 3477,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2091,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 73,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1925,
+          "completion_tokens": 538,
+          "total_tokens": 2463,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1922,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 359,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2068,
+          "completion_tokens": 333,
+          "total_tokens": 2401,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2065,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 313,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "f7fdfe358201ed",
+      "area": "충북",
+      "city": "제천시",
+      "title": "제천 시티투어 의림지·청풍호반케이블카·옥순봉 출렁다리 코스",
+      "raw": {
+        "시도명": "충청북도",
+        "시군구명": "제천시",
+        "시티투어코스명": "시티투어",
+        "시티투어문의처": "043-647-2121",
+        "시티투어운영시간": "10:00~18:00+인원모집시운영",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "제천역 앞",
+        "시티투어코스정보": "의림지-전통시장-청풍호반케이블카-제천 옥순봉 출렁다리",
+        "경유지주변관광정보": "제천 한방 치유의 숲+청풍문화재단지",
+        "시티투어코스부가정보": "자유중식",
+        "운행정보": "45인승 버스",
+        "운행시작시각": "10:00",
+        "운행종료시각": "18:00",
+        "배차시간": "1440",
+        "이용요금": "30000원",
+        "이용요금부가정보": "코스 내 모든 유료관광지 입장료 포함",
+        "홈페이지주소": "https://tour.jecheon.go.kr/tour/base/contents/view?contentsNo=18&menuLevel=3&menuNo=127",
+        "관리기관명": "충청북도 제천시청",
+        "관리기관전화번호": "043-641-6705",
+        "데이터기준일자": "2026-03-23"
+      },
+      "related": [
+        {
+          "id": "2606296",
+          "title": "청풍호반케이블카",
+          "href": "/places/spot/2606296",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/46/3356546_image2_1.jpg",
+          "address": "충청북도 제천시 청풍면 문화재길 166"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "133373",
+          "title": "느티나무횟집",
+          "href": "/food/spot/133373",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/83/3341383_image2_1.JPG",
+          "address": "충청북도 제천시 청풍면 배시론로 4"
+        },
+        {
+          "id": "2013689",
+          "title": "밥상위의 보약한첩 청풍점",
+          "href": "/food/spot/2013689",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/67/3111367_image2_1.JPG",
+          "address": "충청북도 제천시 청풍면 배시론로 40"
+        }
+      ],
+      "officialUrl": "https://tour.jecheon.go.kr/tour/base/contents/view?contentsNo=18&menuLevel=3&menuNo=127",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/46/3356546_image2_1.jpg",
+      "imageTitle": "청풍호반케이블카",
+      "priority": 30,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/46/3356546_image2_1.jpg",
+        "title": "청풍호반케이블카",
+        "location": "충청북도 제천시 청풍면 문화재길 166",
+        "placeId": "2606296",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/2606296",
+        "status": "matched",
+        "checkedAt": "2026-09-13T22:29:53.260Z"
+      },
+      "description": "제천역 앞에서 출발해 의림지, 전통시장, 청풍호반케이블카, 제천 옥순봉 출렁다리를 둘러보는 고정형 시티투어의 코스와 이용 정보를 안내합니다.",
+      "intro": "충청북도 제천 시티투어는 제천역 앞에서 출발해 의림지, 전통시장, 청풍호반케이블카, 제천 옥순봉 출렁다리를 방문하는 고정형 관광 코스입니다. 코스 내 자유중식이 포함되며, 45인승 버스로 운행됩니다. 운행 여부는 인원 모집에 따라 달라질 수 있으므로 방문 전 확인이 필요합니다.",
+      "sections": [
+        {
+          "heading": "원본 기준 코스와 주변 관광정보",
+          "paragraphs": [
+            "자료에 제시된 시티투어 코스는 의림지, 전통시장, 청풍호반케이블카, 제천 옥순봉 출렁다리 순서입니다. 각 장소에서 머무는 시간과 세부 관람 동선은 제공 자료에 안내되어 있지 않으므로, 당일 진행 안내를 확인해야 합니다.",
+            "경유지 주변 관광정보로는 제천 한방 치유의 숲과 청풍문화재단지가 제시되어 있습니다. 두 장소는 공식 시티투어 코스 정보와 별도로 제공된 주변 관광정보이므로, 투어 중 추가 방문이 가능한지와 이동 방법은 사전에 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "운행 방식과 탑승 정보",
+          "paragraphs": [
+            "시티투어는 45인승 버스로 운행되며, 탑승 장소는 제천역 앞입니다. 운행 방식은 고정형으로 안내되어 있고, 운영시간은 10시부터 18시까지입니다. 다만 인원 모집 시 운영되는 방식이므로, 운행일과 출발 여부를 미리 확인해야 합니다.",
+            "제공 자료에는 요일별 운행 일정이나 회차별 세부 시간표가 기재되어 있지 않습니다. 제천시티투어 문의처는 043-647-2121이며, 관리기관인 제천시청의 전화번호는 043-641-6705입니다. 정확한 집결 위치와 탑승 시각도 문의를 통해 확인할 수 있습니다."
+          ]
+        },
+        {
+          "heading": "예약과 이용요금",
+          "paragraphs": [
+            "자료 기준 이용요금은 30,000원입니다. 코스 내 모든 유료관광지 입장료가 포함되는 조건으로 안내되어 있으며, 중식은 자유중식입니다. 식사 비용이 이용요금에 포함되는지는 별도로 안내되어 있지 않으므로 개인 부담 여부를 확인해야 합니다.",
+            "예약 방법, 잔여 좌석, 결제 방식과 취소 기준은 제공 자료에 구체적으로 기재되어 있지 않습니다. 따라서 방문 전 공식 안내와 문의처를 통해 예약 가능 여부, 필요한 절차, 당일 이용 조건을 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "식사 후보 확인하기",
+          "paragraphs": [
+            "제공된 음식점 후보는 느티나무횟집과 밥상위의 보약한첩 청풍점입니다. 느티나무횟집의 주소는 충청북도 제천시 청풍면 배시론로 4, 밥상위의 보약한첩 청풍점의 주소는 충청북도 제천시 청풍면 배시론로 40으로 안내되어 있습니다.",
+            "두 음식점은 기존 한국관광공사 음식점 자료에서 같은 지역의 경유지와 좌표 기준 약 2km 이내 후보로 선정된 곳입니다. 따라서 공식 시티투어 제휴 음식점이거나 실제 도로 이동거리가 약 2km라는 뜻으로 단정할 수 없습니다. 영업 여부와 투어 중 이용 가능 여부도 별도로 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인할 사항",
+          "paragraphs": [
+            "운행·요금 정보의 데이터 기준일은 2026년 3월 23일입니다. 현재 실제 운영을 확정하는 자료는 아니므로, 방문일의 인원 모집 여부와 출발일, 좌석, 요금, 유료관광지 입장료 포함 범위를 공식 안내에서 다시 확인해야 합니다.",
+            "제천역 앞의 정확한 집결 위치와 탑승 시각, 전체 소요 시간, 우천 시 운영 여부, 청풍호반케이블카와 제천 옥순봉 출렁다리의 당일 이용 가능 여부도 문의하는 것이 좋습니다. 계절이나 특정 기간에만 운영된다는 별도 정보는 제공되지 않았으므로, 확인되지 않은 조건을 적용하기보다 공식 공지를 기준으로 일정을 세워야 합니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-13T22:29:53.260Z",
+      "publishedDay": "2026-09-14",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 994,
+          "completion_tokens": 1254,
+          "total_tokens": 2248,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 114,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1909,
+          "completion_tokens": 1224,
+          "total_tokens": 3133,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1906,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 71,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1792,
+          "completion_tokens": 572,
+          "total_tokens": 2364,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1789,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 445,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1805,
+          "completion_tokens": 162,
+          "total_tokens": 1967,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1802,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 142,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "fd6ce599723b99",
+      "area": "충남",
+      "city": "예산군",
+      "title": "예산군 버스투어 코스와 이용 정보",
+      "raw": {
+        "시도명": "충청남도",
+        "시군구명": "예산군",
+        "시티투어코스명": "예산군 버스투어",
+        "시티투어문의처": "041-339-8930",
+        "시티투어운영시간": "10:00~18:00",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "예산역 앞",
+        "시티투어코스정보": "예산역-예당관광지-수덕사-덕산메타세쿼이아길&덕산온천황톳길-예산상설시장",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "매주 토요일",
+        "운행시작시각": "10:00",
+        "운행종료시각": "18:00",
+        "배차시간": "0",
+        "이용요금": "무료",
+        "이용요금부가정보": "입장료+점심비+체험비 별도부담",
+        "홈페이지주소": "https://www.yesan.go.kr/prog/busTour/tour/sub06_01_01/list.do",
+        "관리기관명": "충청남도 예산군청",
+        "관리기관전화번호": "041-339-7323",
+        "데이터기준일자": "2026-05-20"
+      },
+      "related": [
+        {
+          "id": "128054",
+          "title": "예당관광지",
+          "href": "/places/spot/128054",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/06/3488406_image2_1.jpg",
+          "address": "충청남도 예산군 응봉면 예당관광로 148"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "2838998",
+          "title": "응봉상회",
+          "href": "/food/spot/2838998",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/85/2838985_image2_1.jpg",
+          "address": "충청남도 예산군 입침중촌길 21"
+        },
+        {
+          "id": "2876494",
+          "title": "카페이앙",
+          "href": "/food/spot/2876494",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/85/2876485_image2_1.png",
+          "address": "충청남도 예산군 예당관광로 146"
+        }
+      ],
+      "officialUrl": "https://www.yesan.go.kr/prog/busTour/tour/sub06_01_01/list.do",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/60/3472260.jpg",
+      "imageTitle": "덕산 메타세쿼이아길",
+      "priority": 30,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/60/3472260.jpg",
+        "title": "덕산 메타세쿼이아길",
+        "location": "충청남도 예산군 덕산면",
+        "credit": "한국관광공사 · 김영호",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "3472260",
+        "status": "matched",
+        "checkedAt": "2026-09-13T22:30:23.886Z"
+      },
+      "description": "예산역 앞에서 출발해 예당관광지, 수덕사, 덕산메타세쿼이아길·덕산온천황톳길, 예산상설시장으로 이어지는 예산군 버스투어 안내입니다.",
+      "intro": "충청남도 예산군의 시티투어 코스명은 예산군 버스투어입니다. 자료에 따르면 예산역 앞에서 출발해 정해진 경유 순서로 운행하는 고정형 투어이며, 운행일은 매주 토요일입니다. 운행시간은 10:00부터 18:00까지로 안내되어 있고 이용요금은 무료입니다. 다만 입장료, 점심비, 체험비는 별도 부담으로 기재되어 있으므로 이용 전 관련 내용을 확인해야 합니다.",
+      "sections": [
+        {
+          "heading": "코스와 탑승 장소",
+          "paragraphs": [
+            "원본에 제시된 코스 순서는 예산역-예당관광지-수덕사-덕산메타세쿼이아길&덕산온천황톳길-예산상설시장입니다. 탑승 장소는 예산역 앞이며, 운행 방식은 고정형으로 안내되어 있습니다.",
+            "자료에는 각 경유지의 체류 시간, 세부 관람 동선, 장소별 프로그램이 따로 제시되지 않았습니다. 따라서 전체 일정에서 각 장소에 머무는 시간이나 이동 순서를 임의로 예상하기보다는, 투어에서 안내하는 당일 운행 내용을 따르는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "경유지 확인",
+          "paragraphs": [
+            "예당관광지는 원본 코스에 포함된 경유지이며, 제공된 장소 정보에는 충청남도 예산군 응봉면 예당관광로 148이라는 주소가 기재되어 있습니다. 해당 장소의 개요나 내부 시설, 관람 방법에 관한 별도 설명은 제공되지 않았습니다.",
+            "수덕사, 덕산메타세쿼이아길, 덕산온천황톳길도 코스의 경유지로 제시되어 있습니다. 다만 각 장소에서 무엇을 관람하거나 체험하는지, 시설 운영 여부와 이용 조건은 자료에 안내되어 있지 않습니다. 예산상설시장은 원본 코스의 마지막 경유지로 확인됩니다."
+          ]
+        },
+        {
+          "heading": "운행일·요금·문의",
+          "paragraphs": [
+            "자료 기준 운행일은 매주 토요일이며, 운행시간은 10:00~18:00입니다. 이용요금은 무료로 기재되어 있으나 입장료, 점심비, 체험비는 별도 부담입니다. 무료 이용이 모든 일정의 비용을 포함한다는 의미는 아니므로, 별도 비용 항목을 구분해 준비해야 합니다.",
+            "예약 방법, 접수 마감, 좌석 배정, 정원, 회차별 탑승 가능 여부는 제공 자료에 명시되어 있지 않습니다. 방문 전 예산군 시티투어 문의처 041-339-8930 또는 관리기관인 예산군청 041-339-7323에 예약 필요 여부와 당일 탑승 절차를 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "주변 음식점 후보",
+          "paragraphs": [
+            "제공 자료에는 경유지 주변 음식점 후보로 응봉상회와 카페이앙이 포함되어 있습니다. 응봉상회의 주소는 충청남도 예산군 입침중촌길 21이며, 카페이앙은 충청남도 예산군 예당관광로 146으로 기재되어 있습니다.",
+            "두 곳은 기존 음식점 자료에서 경유지와 좌표 기준 약 2km 이내 후보로 선정된 장소입니다. 도로 이동거리, 영업 여부, 공식 투어 제휴 여부는 검증되지 않았으며, 공식 시티투어 코스에 포함된 장소로 확인된 것도 아닙니다. 이용하려면 실제 이동 가능 여부와 영업 여부를 별도로 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인 사항",
+          "paragraphs": [
+            "운행·요금 정보의 데이터 기준일자는 2026년 5월 20일입니다. 2026년 9월 14일 현재의 운행 여부와 세부 조건을 확정하는 정보는 아니므로, 출발 전 공식 안내를 다시 확인해야 합니다.",
+            "예산역 앞 집결 위치와 출발 시각, 매주 토요일 운행 여부, 예약 필요 여부, 잔여 좌석, 입장료·점심비·체험비의 준비 방법을 문의하는 것이 좋습니다. 홈페이지와 연락처를 통한 확인이 필요한 경우에도 자료에 기재된 예산군 시티투어 문의처 또는 예산군청 관리기관 전화번호를 이용할 수 있습니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-13T22:30:23.886Z",
+      "publishedDay": "2026-09-14",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 955,
+          "completion_tokens": 1346,
+          "total_tokens": 2301,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 115,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2008,
+          "completion_tokens": 1231,
+          "total_tokens": 3239,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2005,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 82,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1844,
+          "completion_tokens": 636,
+          "total_tokens": 2480,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1841,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 462,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1762,
+          "completion_tokens": 106,
+          "total_tokens": 1868,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1759,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 86,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "fc13691b0606c3",
+      "area": "강원",
+      "city": "정선군",
+      "title": "정선 시티투어 와와정선 2층 투어버스 코스와 탑승 안내",
+      "raw": {
+        "시도명": "강원특별자치도",
+        "시군구명": "정선군",
+        "시티투어코스명": "와와정선 2층 투어버스",
+        "시티투어문의처": "033-563-3122",
+        "시티투어운영시간": "토+일+정선5일장날 11:20~17:20",
+        "시티투어운행방식": "순환형",
+        "시티투어탑승장소명": "정선역",
+        "시티투어코스정보": "정선역 > 정선아리랑시장(농업인회관) > 정선아리랑센터&아라리촌 > 가리왕산케이블카 > 아우라지역 > 정선역",
+        "경유지주변관광정보": "아리랑센터+아라리촌+케이블카+아우라지역",
+        "시티투어코스부가정보": "관광가이드 탑승 해설",
+        "운행정보": "토+일+정선5일장날",
+        "운행시작시각": "11:20",
+        "운행종료시각": "17:20",
+        "배차시간": "0",
+        "이용요금": "일일 1만원",
+        "이용요금부가정보": "구간 5천원",
+        "홈페이지주소": "www.정선시티투어.com",
+        "관리기관명": "강원특별자치도 정선군청",
+        "관리기관전화번호": "033-560-2369",
+        "데이터기준일자": "2026-06-19"
+      },
+      "related": [
+        {
+          "id": "3068424",
+          "title": "가리왕산케이블카",
+          "href": "/places/spot/3068424",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/30/3533330_image2_1.jpg",
+          "address": "강원특별자치도 정선군 북평면 중봉길 41-35"
+        },
+        {
+          "id": "2414753",
+          "title": "아라리촌",
+          "href": "/places/spot/2414753",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/90/3565990_image2_1.jpg",
+          "address": "강원특별자치도 정선군 정선읍 애산로 37"
+        }
+      ],
+      "foodLinks": [
+        {
+          "id": "2363576",
+          "title": "대박집",
+          "href": "/food/spot/2363576",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/26/2363526_image2_1.jpg",
+          "address": "강원특별자치도 정선군 정선읍 5일장길 37-5"
+        },
+        {
+          "id": "2774488",
+          "title": "회동집",
+          "href": "/food/spot/2774488",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/91/2776891_image2_1.JPG",
+          "address": "강원특별자치도 정선군 정선읍 5일장길 37-10"
+        }
+      ],
+      "officialUrl": "",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/30/3533330_image2_1.jpg",
+      "imageTitle": "가리왕산케이블카",
+      "priority": 28,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/30/3533330_image2_1.jpg",
+        "title": "가리왕산케이블카",
+        "location": "강원특별자치도 정선군 북평면 중봉길 41-35",
+        "placeId": "3068424",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/3068424",
+        "status": "matched",
+        "checkedAt": "2026-09-13T22:30:56.432Z"
+      },
+      "description": "정선역에서 출발해 정선아리랑시장, 정선아리랑센터와 아라리촌, 가리왕산케이블카, 아우라지역을 순환하는 와와정선 2층 투어버스 안내입니다.",
+      "intro": "강원특별자치도 정선군의 와와정선 2층 투어버스는 정선역을 출발해 정선아리랑시장, 정선아리랑센터와 아라리촌, 가리왕산케이블카, 아우라지역을 거쳐 다시 정선역으로 돌아오는 순환형 코스입니다. 관광가이드가 탑승해 해설을 제공하며, 토요일과 일요일, 정선5일장날에 운행합니다.",
+      "sections": [
+        {
+          "heading": "정선 시티투어 코스와 운행 특징",
+          "paragraphs": [
+            "와와정선 2층 투어버스의 운행 방식은 순환형입니다. 정선역을 중심으로 정선아리랑시장(농업인회관), 정선아리랑센터와 아라리촌, 가리왕산케이블카, 아우라지역을 차례로 경유한 뒤 정선역으로 돌아옵니다.",
+            "자료에 안내된 운행일은 토요일, 일요일과 정선5일장날입니다. 관광가이드가 버스에 탑승해 해설을 제공하며, 평일 상시 운행 여부나 회차별 세부 일정은 제공된 자료에 별도로 제시되어 있지 않습니다."
+          ]
+        },
+        {
+          "heading": "경유지와 코스 순서",
+          "paragraphs": [
+            "탑승과 출발 지점은 정선역입니다. 이후 정선아리랑시장(농업인회관), 정선아리랑센터와 아라리촌, 가리왕산케이블카, 아우라지역을 거쳐 다시 정선역으로 이동합니다. 코스에 포함된 경유지는 자료에 안내된 장소명과 순서를 기준으로 확인할 수 있습니다.",
+            "아라리촌과 가리왕산케이블카는 경유지 주변 관광정보에도 제시된 장소입니다. 다만 제공된 자료에는 각 장소의 관람 동선, 체류 시간, 케이블카 이용 방법과 아우라지역의 세부 관람 정보가 포함되어 있지 않습니다. 실제 방문 시에는 현장 안내를 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "탑승 시간과 이용 요금",
+          "paragraphs": [
+            "운행시간은 11시 20분부터 17시 20분까지이며, 탑승 장소는 정선역입니다. 배차시간은 자료에 0으로 제공되어 구체적인 배차 간격이 확인되지 않으므로, 이용 전 출발 시각과 운행 상황을 문의처에서 확인하는 것이 좋습니다.",
+            "이용요금은 일일 1만 원이며, 구간 이용요금은 5천 원입니다. 예약 가능 여부와 예약 방법은 제공된 자료에 명시되어 있지 않습니다. 예약이나 잔여 좌석 확인이 필요한 경우 시티투어 문의처에 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "주변 관광지와 음식점 후보",
+          "paragraphs": [
+            "제공된 관광정보에는 아라리촌과 가리왕산케이블카가 주변 관광 후보로 제시되어 있습니다. 두 장소는 공식 순환 코스의 경유지이지만, 버스에서 내린 뒤의 관람 동선과 소요시간은 자료에 안내되어 있지 않습니다.",
+            "음식점 후보로는 정선읍 5일장길에 있는 대박집과 회동집이 있습니다. 이 후보들은 한국관광공사 음식점 캐시에서 같은 지역의 경유지와 좌표를 기준으로 약 2킬로미터 이내에 선정된 곳입니다. 도로 이동거리, 영업 여부, 시티투어 공식 제휴 여부는 검증되지 않았으므로 방문 전 별도로 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인 사항",
+          "paragraphs": [
+            "운행일, 운행시간과 요금은 데이터 기준일자 2026년 6월 19일 자료에 따른 안내입니다. 방문 전 시티투어 문의처 033-563-3122를 통해 운행일, 출발 시각, 좌석과 요금을 확인하는 것이 좋습니다. 홈페이지를 이용할 경우 정선시티투어 공식 홈페이지의 최신 안내를 확인하세요.",
+            "정선군청 관리기관 전화번호는 033-560-2369입니다. 정선5일장날 운행을 이용하려는 경우 해당 날짜의 운행 여부를 확인하고, 가리왕산케이블카와 각 경유지의 운영시간 및 휴무 여부는 시설별로 별도 확인해야 합니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-13T22:30:56.432Z",
+      "publishedDay": "2026-09-14",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 1097,
+          "completion_tokens": 1208,
+          "total_tokens": 2305,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1094,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 70,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2080,
+          "completion_tokens": 1158,
+          "total_tokens": 3238,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2077,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 84,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1893,
+          "completion_tokens": 648,
+          "total_tokens": 2541,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1890,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 451,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1912,
+          "completion_tokens": 14,
+          "total_tokens": 1926,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1909,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "5f6433f09123e3",
+      "area": "충남",
+      "city": "부여군",
+      "title": "부여 시티투어 부여테마여행 코스와 계절별 운행 정보",
+      "raw": {
+        "시도명": "충청남도",
+        "시군구명": "부여군",
+        "시티투어코스명": "부여테마여행",
+        "시티투어문의처": "부여문화원 041-835-3318",
+        "시티투어운영시간": "6월~11월 토 10:00 출발  ※ 7.19. ~ 8.31.",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "부여관광안내소",
+        "시티투어코스정보": "<6-8월>충남종합관광안내소(집결) → 궁남지 → 부소산성(황포돛배) → 점심 식사  → 국립부여박물관 → 신동엽문학관 → 정림사지 →백강문화관 → 충남종합관광안내소(해산), <9-11월>충남종합관광안내소(집결) → 부여왕릉원과 부여나성 → 점심 식사 → 무량사 → 반교마을 돌담길  → 국립부여박물관 → 백강문화관 → 충남종합관광안내소(해산)",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "6월~8월 / 9월~11월 (토)",
+        "운행시작시각": "10:00",
+        "운행종료시각": "16:10",
+        "배차시간": "1440",
+        "이용요금": "<6월~8월>성인 10000 /<9월~11월>성인 5000",
+        "이용요금부가정보": "<6월~8월>경로 10000+청소년 9000+어린이 6000  / <9월~11월>경로 3000+청소년 4000+어린이 3000",
+        "홈페이지주소": "https://www.buyeo.go.kr/html/tour/bus/bus_0501.html",
+        "관리기관명": "충청남도 부여군청",
+        "관리기관전화번호": "041-830-2218",
+        "데이터기준일자": "2026-06-08"
+      },
+      "related": [],
+      "foodLinks": [],
+      "officialUrl": "https://www.buyeo.go.kr/html/tour/bus/bus_0501.html",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/88/3022288.jpg",
+      "imageTitle": "정림사지",
+      "priority": 27,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/88/3022288.jpg",
+        "title": "정림사지",
+        "location": "충청남도 부여군 부여읍",
+        "credit": "한국관광공사 · 심현우",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "3022288",
+        "status": "matched",
+        "checkedAt": "2026-09-13T22:33:51.254Z"
+      },
+      "description": "부여테마여행은 6~8월과 9~11월에 서로 다른 경유지를 포함해 운영되는 고정형 시티투어입니다. 운행일과 요금, 집결 장소는 방문 전 공식 확인이 필요합니다.",
+      "intro": "충청남도 부여군의 부여테마여행은 토요일에 운영되는 고정형 시티투어입니다. 자료상 6월부터 11월까지 운행하며, 시기에 따라 코스와 요금이 달라집니다. 두 기간 모두 국립부여박물관과 백강문화관을 경유하고, 나머지 방문지는 계절별 코스에 따라 달라집니다.",
+      "sections": [
+        {
+          "heading": "6~8월 코스",
+          "paragraphs": [
+            "6~8월 코스는 충남종합관광안내소에서 집결한 뒤 궁남지, 부소산성(황포돛배), 점심 식사, 국립부여박물관, 신동엽문학관, 정림사지, 백강문화관을 거쳐 충남종합관광안내소에서 해산하는 순서로 안내되어 있습니다.",
+            "이 기간의 공식 경유지에는 궁남지, 부소산성(황포돛배), 국립부여박물관, 신동엽문학관, 정림사지, 백강문화관이 포함됩니다. 코스 정보에 기재된 장소 외의 세부 관람 내용이나 이용 방법은 제공 자료에 없습니다."
+          ]
+        },
+        {
+          "heading": "9~11월 코스",
+          "paragraphs": [
+            "9~11월 코스는 충남종합관광안내소에서 출발해 부여왕릉원과 부여나성, 점심 식사, 무량사, 반교마을 돌담길, 국립부여박물관, 백강문화관을 차례로 방문한 뒤 충남종합관광안내소에서 마무리합니다.",
+            "6~8월 코스와 비교하면 부여왕릉원과 부여나성, 무량사, 반교마을 돌담길이 포함되고, 궁남지·부소산성(황포돛배)·신동엽문학관·정림사지는 해당 기간 코스 정보에 기재되어 있지 않습니다. 국립부여박물관과 백강문화관은 두 기간 모두 포함되어 있습니다."
+          ]
+        },
+        {
+          "heading": "운행 일정과 탑승 장소",
+          "paragraphs": [
+            "자료상 운행 기간은 6월부터 11월까지이며, 운행 요일은 토요일입니다. 출발 시각은 10시, 종료 시각은 16시 10분으로 안내되어 있고, 운행 방식은 고정형입니다.",
+            "탑승 장소명은 부여관광안내소로 기재되어 있습니다. 한편 코스 정보의 집결 및 해산 장소는 충남종합관광안내소로 표시되어 두 장소의 명칭이 서로 다릅니다. 실제 집결 장소와 탑승 절차는 방문 전에 확인해야 합니다. 자료에 함께 표기된 ‘7.19. ~ 8.31.’의 적용 조건도 공식 안내를 통해 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "계절별 요금과 문의처",
+          "paragraphs": [
+            "6~8월 이용요금은 성인 1만원, 경로 1만원, 청소년 9천원, 어린이 6천원입니다. 9~11월에는 성인 5천원, 경로 3천원, 청소년 4천원, 어린이 3천원으로 안내되어 있습니다.",
+            "예약 가능 여부, 신청 방법, 좌석 운영, 점심 식사 비용 포함 여부는 제공 자료에 기재되어 있지 않습니다. 운행일과 집결 장소, 요금, 잔여 좌석은 기준일 이후 변경될 수 있으므로 출발 전에 부여문화원 041-835-3318 또는 부여군청 041-830-2218로 문의하세요."
+          ]
+        },
+        {
+          "heading": "출발 전 확인사항",
+          "paragraphs": [
+            "이 안내는 2026년 6월 8일 기준 자료를 바탕으로 정리했습니다. 실제 이용 전에는 방문 시기에 맞는 코스와 요금을 확인하고, 부여관광안내소와 충남종합관광안내소 중 어느 곳에서 집결하는지 운영기관에 문의하는 것이 필요합니다.",
+            "코스에 적힌 ‘점심 식사’는 일정에 포함된 항목으로 표시되어 있으나, 식사 장소와 비용, 제공 방식은 자료에 제시되지 않았습니다. 따라서 식사 관련 사항은 투어 운영기관에 별도로 확인해야 합니다. 각 경유지의 관람 범위, 입장료, 이용 시간과 해설 운영 여부 역시 제공 자료만으로는 확인할 수 없습니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-13T22:33:51.254Z",
+      "publishedDay": "2026-09-14",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 960,
+          "completion_tokens": 1374,
+          "total_tokens": 2334,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 126,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2099,
+          "completion_tokens": 1153,
+          "total_tokens": 3252,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2096,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 60,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1866,
+          "completion_tokens": 635,
+          "total_tokens": 2501,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1863,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 392,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1794,
+          "completion_tokens": 317,
+          "total_tokens": 2111,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1791,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 297,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
     }
   ],
   "rejected": [
@@ -12925,10 +14412,37 @@
       "reason": "Local quality gate",
       "date": "2026-09-13",
       "version": 2
+    },
+    {
+      "id": "3a75685f3f7b78",
+      "title": "안산 시내권코스(토요일)",
+      "reason": "Fact review",
+      "issues": [
+        "음식점 후보를 '안산식물원 인근'이라고 단정했지만, 자료에는 같은 지역의 경유지와 좌표 기준 약 2km 이내 후보라고만 되어 있어 안산식물원과의 구체적인 거리·인접성이 확인되지 않습니다. '경유지 주변 음식점 후보' 등으로 표현을 수정해야 합니다."
+      ],
+      "date": "2026-09-14",
+      "version": 2
+    },
+    {
+      "id": "e058f796cca811",
+      "title": "2026 파주시티투어 당일코스(수요일)",
+      "reason": "Fact review",
+      "issues": [
+        "휴무 조건의 의미가 부정확합니다. 자료의 ‘명절 당일 및 전후(3일간)’에서 ‘(3일간)’은 휴무 기간이 총 3일이라는 의미로 볼 수 있는데, 초안은 ‘명절 당일 및 전후 3일간’이라고 작성해 명절 전후 각각 3일씩 총 7일간으로 해석될 여지가 있습니다. 원문처럼 ‘명절 당일을 포함한 전후 3일간’ 등으로 명확히 수정해야 합니다."
+      ],
+      "date": "2026-09-14",
+      "version": 2
+    },
+    {
+      "id": "15f3dcd49ba8d0",
+      "title": "정규코스. 특별코스",
+      "reason": "Local quality gate",
+      "date": "2026-09-14",
+      "version": 2
     }
   ],
   "sourceUrl": "https://www.data.go.kr/data/15025456/standard.do",
   "rawCount": 298,
   "uniqueCount": 296,
-  "updatedAt": "2026-09-12T19:07:42.588Z"
+  "updatedAt": "2026-09-13T22:33:51.254Z"
 }
