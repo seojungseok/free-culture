@@ -3,7 +3,7 @@
   "timezone": "Asia/Seoul",
   "dailyPublicationLimit": 30,
   "dailyNewWritingLimit": 30,
-  "updatedAt": "2026-09-12T22:20:57.030Z",
+  "updatedAt": "2026-09-13T01:03:22.739Z",
   "jobs": [
     {
       "placeId": "place-143680",
@@ -341,17 +341,20 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "working",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
       "publicationDay": "2026-09-13",
       "scheduledAt": "2026-09-13T06:00:00+09:00",
       "holdReasons": [],
-      "attempts": 0,
+      "attempts": 1,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-13T05:00:00+09:00"
+      "writingAt": "2026-09-13T05:00:00+09:00",
+      "writingDay": "2026-09-13",
+      "startedDay": "2026-09-13",
+      "lastAttemptAt": "2026-09-13T01:04:32.256Z"
     },
     {
       "placeId": "place-133259",
