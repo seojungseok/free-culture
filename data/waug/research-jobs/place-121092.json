@@ -1,0 +1,60 @@
+{
+  "placeId": "place-121092",
+  "productIds": ["hvHij5lw"],
+  "checkedAt": "2026-09-13T01:04:41.961Z",
+  "productProbe": {
+    "productId": "121092",
+    "detailUrl": "https://www.waug.com/ko/activities/121092",
+    "affiliateUrl": "https://www.waug.com/r/hvHij5lw",
+    "actualName": "경기 화성 하피랜드 온천 & 찜질방 입장권",
+    "address": "경기도 화성시 팔탄면 율암리 483-26",
+    "area": "경기",
+    "saleStatus": "listed",
+    "validFrom": null,
+    "validUntil": "2026-09-30",
+    "entryTime": "오전 05:00 ~ 오후 22:00",
+    "includedFacilities": "온천, 사우나, 찜질방",
+    "excludedFacility": "참숯가마",
+    "usageCondition": "당일 구매·당일 사용 가능, 이용 1시간 전 구매 필수",
+    "pageSha256": "7955fff2a5a83f2488bbd5ec31f5fcf9914706e1adaec71c484f79ff1cebdc66",
+    "sourceUrls": ["https://www.waug.com/ko/activities/121092"]
+  },
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "공식 시설 자료를 이번 실행에서 확인하지 못함"
+  },
+  "imageReview": {
+    "sourceUrl": "https://www.waug.com/ko/activities/121092",
+    "provider": "waug",
+    "visuallyCheckedAt": "2026-09-13T01:05:00Z",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/07/01/16566584041896.jpg",
+        "visualStatus": "place-relevant-sauna-room",
+        "faceReview": "no-identifiable-faces",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/07/01/16566581404376.jpg",
+        "visualStatus": "place-relevant-charcoal-room",
+        "faceReview": "no-identifiable-faces",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/07/01/16566581418846.jpg",
+        "visualStatus": "place-relevant-sauna-room",
+        "faceReview": "identifiable-face-on-screen",
+        "rightsStatus": "pending",
+        "use": "reject"
+      }
+    ],
+    "unreviewedCandidateCount": 3
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "본문 사진 2장 이상의 권리 및 화면 검수 미완료"
+  ]
+}

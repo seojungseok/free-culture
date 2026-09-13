@@ -341,14 +341,28 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": null,
-      "status": "working",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-13",
-      "scheduledAt": "2026-09-13T06:00:00+09:00",
-      "holdReasons": [],
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "reason": "공식 시설 자료 대조 및 WAUG 사진 상업 이용 권리·permissionBasis 미확인"
+        }
+      ],
       "attempts": 1,
-      "stages": {},
+      "stages": {
+        "research": {
+          "status": "complete",
+          "checkedAt": "2026-09-13T01:04:41.961Z",
+          "source": "data/waug/research-jobs/place-121092.json"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료·사진 권리 검증 전에는 초안 생성 및 승인 불가"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-09-30",
       "writingAt": "2026-09-13T05:00:00+09:00",
