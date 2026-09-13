@@ -78,6 +78,7 @@ function mapProduct(p) {
   };
 }
 async function apiGet(urlPath) {
+  if(!urlPath.split('?')[0].endsWith('/products/search'))return null; // Unbounded bulk endpoints remain disabled.
   const res = await fetch(DOMAIN + urlPath, { method: "GET", headers: { Authorization: generateHmac("GET", urlPath) } });
   if (!res.ok) { console.warn(`  ⚠️ HTTP ${res.status} — ${urlPath.slice(0, 70)}`); return null; }
   return res.json().catch(() => null);

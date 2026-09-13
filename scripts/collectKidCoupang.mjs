@@ -32,7 +32,7 @@ function generateHmac(method, u) {
   return `CEA algorithm=HmacSHA256, access-key=${ACCESS_KEY}, signed-date=${dt}, signature=${sig}`;
 }
 const mapP = (p) => ({ id: String(p.productId), name: p.productName, price: p.productPrice, image: p.productImage, url: p.productUrl, isRocket: !!p.isRocket });
-async function apiGet(u) { const r = await fetch(DOMAIN + u, { headers: { Authorization: generateHmac("GET", u) } }); if (!r.ok) { console.warn(`  ⚠️ HTTP ${r.status}`); return null; } return r.json().catch(() => null); }
+async function apiGet(u) { if(!u.split('?')[0].endsWith('/products/search'))return null; const r = await fetch(DOMAIN + u, { headers: { Authorization: generateHmac("GET", u) } }); if (!r.ok) { console.warn(`  ⚠️ HTTP ${r.status}`); return null; } return r.json().catch(() => null); }
 async function search(kw, n = 3) { const j = await apiGet(`/v2/providers/affiliate_open_api/apis/openapi/v1/products/search?keyword=${encodeURIComponent(kw)}&limit=${n}`); return (j?.data?.productData || []).map(mapP); }
 async function goldbox() { const j = await apiGet(`/v2/providers/affiliate_open_api/apis/openapi/v1/products/goldbox`); return (j?.data || []).map(mapP); }
 const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };

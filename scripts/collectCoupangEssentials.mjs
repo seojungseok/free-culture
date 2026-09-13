@@ -83,6 +83,7 @@ function generateHmac(method, urlPathWithQuery) {
   return `CEA algorithm=HmacSHA256, access-key=${ACCESS_KEY}, signed-date=${datetime}, signature=${signature}`;
 }
 async function apiGet(urlPath) {
+  if(!urlPath.split('?')[0].endsWith('/products/search'))return null; // Preserve the accumulated pool; no unbounded bulk request.
   const res = await fetch(DOMAIN + urlPath, { method: "GET", headers: { Authorization: generateHmac("GET", urlPath) } });
   if (!res.ok) { console.warn(`  ⚠️ HTTP ${res.status} — ${urlPath.slice(0, 70)}`); return null; }
   return res.json().catch(() => null);

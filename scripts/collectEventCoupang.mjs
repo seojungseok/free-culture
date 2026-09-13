@@ -46,6 +46,7 @@ function generateHmac(method, urlPathWithQuery) {
 }
 const mapProduct = (p) => ({ id: String(p.productId), name: p.productName, price: p.productPrice, image: p.productImage, url: p.productUrl, isRocket: !!p.isRocket });
 async function apiGet(urlPath) {
+  if(!urlPath.split('?')[0].endsWith('/products/search'))return null;
   const res = await fetch(DOMAIN + urlPath, { headers: { Authorization: generateHmac("GET", urlPath) } });
   if (!res.ok) { console.warn(`  ⚠️ HTTP ${res.status} — ${urlPath.slice(0, 60)}`); return null; }
   return res.json().catch(() => null);
