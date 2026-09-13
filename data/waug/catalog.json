@@ -825,8 +825,8 @@
       "writingStatus": "not_written",
       "imageStatus": "not_started",
       "queueHoldReason": null,
-      "plannedPublicationDay": "2026-09-14",
-      "plannedWritingAt": "2026-09-14T05:00:00+09:00"
+      "plannedPublicationDay": "2026-09-13",
+      "plannedWritingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "id": "kw7mruAC",
@@ -900,7 +900,7 @@
       "writingStatus": "not_written",
       "imageStatus": "not_started",
       "queueHoldReason": null,
-      "plannedPublicationDay": "2026-09-13",
+      "plannedPublicationDay": null,
       "plannedWritingAt": "2026-09-13T05:00:00+09:00"
     },
     {
@@ -1147,8 +1147,8 @@
       "writingStatus": "not_written",
       "imageStatus": "not_started",
       "queueHoldReason": null,
-      "plannedPublicationDay": "2026-09-15",
-      "plannedWritingAt": "2026-09-15T05:00:00+09:00"
+      "plannedPublicationDay": "2026-09-14",
+      "plannedWritingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "id": "99PBHMQK",
@@ -1809,8 +1809,8 @@
       "writingStatus": "not_written",
       "imageStatus": "not_started",
       "queueHoldReason": null,
-      "plannedPublicationDay": "2026-09-14",
-      "plannedWritingAt": "2026-09-14T05:00:00+09:00"
+      "plannedPublicationDay": "2026-09-13",
+      "plannedWritingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "id": "U5ZNqfXS",
@@ -3312,8 +3312,8 @@
       "writingStatus": "not_written",
       "imageStatus": "not_started",
       "queueHoldReason": null,
-      "plannedPublicationDay": "2026-09-13",
-      "plannedWritingAt": "2026-09-13T05:00:00+09:00"
+      "plannedPublicationDay": "2026-09-14",
+      "plannedWritingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "id": "tL8qi56O",
@@ -7274,8 +7274,8 @@
         "sourceUrl": "https://www.waug.com/ko/activities/141327",
         "checkedAt": "2026-09-10T15:30:09.118Z"
       },
-      "plannedPublicationDay": "2026-09-13",
-      "plannedWritingAt": "2026-09-13T05:00:00+09:00"
+      "plannedPublicationDay": "2026-09-14",
+      "plannedWritingAt": "2026-09-14T05:00:00+09:00"
     },
     {
       "id": "onins2gc",
@@ -8090,8 +8090,8 @@
         "sourceUrl": "https://www.waug.com/ko/activities/119521",
         "checkedAt": "2026-09-10T15:30:09.118Z"
       },
-      "plannedPublicationDay": "2026-09-14",
-      "plannedWritingAt": "2026-09-14T05:00:00+09:00"
+      "plannedPublicationDay": "2026-09-13",
+      "plannedWritingAt": "2026-09-13T05:00:00+09:00"
     },
     {
       "id": "r7coJoJz",
