@@ -1,29 +1,29 @@
 {
-  "version": 12,
+  "version": 14,
   "products": [
     {
       "id": "7689270513",
       "name": "탐사 샘물",
       "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7689270513&itemId=20877904748&vendorItemId=87945140914&traceid=V0-113-6080a97a4592b297&pt=0&slot=72",
       "image": "https://image13.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/93702155226173-fcebe9fc-46f2-4aa2-955c-3810ef885a5a_1751243766668.jpg",
-      "source": "data/coupangEssentials.json (기존 운영 상품 캐시)",
-      "checkedAt": "2026-09-12T18:49:46.102Z",
-      "specification": "",
-      "options": "",
-      "verified": false,
-      "evidence": "피크닉 준비 후보. 원본 판매처의 규격·옵션·사진 대조 후 연결을 승인하세요."
+      "source": "https://www.coupang.com/vp/products/7689270513?itemId=20877904748&vendorItemId=87945140914",
+      "checkedAt": "2026-09-13T12:07:25.322Z",
+      "specification": "병당 2L",
+      "options": "2L × 24개 묶음",
+      "verified": true,
+      "evidence": "2026-09-13 브라우저에서 원본 제휴 URL의 판매처 도착, 상품번호·itemId·vendorItemId, 선택 옵션 및 기존 등록 사진과 판매처 대표 사진의 일치를 직접 확인. 가격·배송·후기·효능은 사용하지 않음."
     },
     {
       "id": "305672892",
       "name": "탐사 클래식 물티슈 캡형",
       "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=305672892&itemId=3984481086&vendorItemId=71968792459&traceid=V0-143-df6e481d96579701&pt=0&slot=16",
       "image": "https://image4.coupangcdn.com/image/retail/images/378809628427809-724ea0d4-3f60-4be2-bf73-e5ede3fc3144.jpg",
-      "source": "data/coupangEssentials.json (기존 운영 상품 캐시)",
-      "checkedAt": "2026-09-08T19:21:52.48Z",
-      "specification": "",
-      "options": "",
-      "verified": false,
-      "evidence": "피크닉 준비 후보. 원본 판매처의 규격·옵션·사진 대조 후 연결을 승인하세요."
+      "source": "https://www.coupang.com/vp/products/305672892?itemId=3984481086&vendorItemId=71968792459",
+      "checkedAt": "2026-09-13T12:07:25.322Z",
+      "specification": "캡형, 팩당 100매",
+      "options": "100매 × 20개 묶음",
+      "verified": true,
+      "evidence": "2026-09-13 브라우저에서 원본 제휴 URL의 판매처 도착, 상품번호·itemId·vendorItemId, 선택 옵션 및 기존 등록 사진과 판매처 대표 사진의 일치를 직접 확인. 가격·배송·후기·효능은 사용하지 않음."
     }
   ],
   "articles": [
@@ -32,10 +32,10 @@
       "title": "짐을 줄이는 피크닉 준비 방법",
       "description": "머무를 자리와 먹을거리, 돌아올 때의 정리까지. 집에 있는 물건부터 살펴보며 짧은 공원 나들이를 준비해요.",
       "category": "피크닉·나들이",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:35.710Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/picnic-korean-cover.webp",
         "alt": "햇살이 드는 공원 피크닉 장면과 가볍게 챙긴 오후라는 한글 문구",
@@ -64,7 +64,7 @@
         },
         {
           "heading": "먹을 것과 마실 것을 먼저 한 묶음으로",
-          "text": "먹을거리는 집에서 나눠 담을 수 있는 메뉴로 정하면 현장에서 꺼낼 물건을 줄이기 좋아요. 잘라야 하는 음식이라면 먹기 편한 크기로 준비하고, 뚜껑이 맞는 용기에 담아 가방 안에서 열리지 않는지 확인해요. 음식에 맞는 보관 방법은 제품 표시를 따르고, 오래 둘 음식은 보관할 수단부터 정하세요.\n마실 물은 집에 있는 물병을 활용해도 괜찮아요. 따로 준비할 생수 후보로는 탐사 샘물이 등록되어 있어요. 묶음 수량과 병 크기는 구매 전에 옵션에서 확인하고, 사진 속 물병과 같은 상품이라고 생각하지 않도록 해요.",
+          "text": "먹을거리는 집에서 나눠 담을 수 있는 메뉴로 정하면 현장에서 꺼낼 물건을 줄이기 좋아요. 잘라야 하는 음식이라면 먹기 편한 크기로 준비하고, 뚜껑이 맞는 용기에 담아 가방 안에서 열리지 않는지 확인해요. 음식에 맞는 보관 방법은 제품 표시를 따르고, 오래 둘 음식은 보관할 수단부터 정하세요.\n마실 물은 집에 있는 물병을 활용해도 괜찮아요. 별도 생수가 필요하다면 탐사 샘물의 용량과 묶음을 확인하세요. 연결 상품은 2L 24개 묶음이며 사진 속 휴대용 물병과 같은 상품이 아니에요. 나들이에는 필요한 양만 준비해요.",
           "productIds": [
             "7689270513"
           ],
@@ -102,6 +102,14 @@
           "productIds": []
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 샘물은 2L 24개 묶음 상품입니다. 전부 가져갈 필요 없이 실제 사용할 물의 양과 이동 방법을 먼저 정하세요.\n탐사 클래식 물티슈 캡형은 100매 20개 묶음 상품입니다. 집에 남은 물품을 먼저 확인하고 필요한 팩만 챙기세요. 사용 대상은 포장 안내를 따르며 손 씻기·음식 세척·소독을 대신하지 않습니다.",
+          "productIds": [
+            "7689270513",
+            "305672892"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 머무는 시간과 음식 반입 안내 확인하기\n2. 집에 있는 용기와 가방부터 펼쳐 보기\n3. 먹은 뒤 되가져갈 물건의 공간 남기기",
           "productIds": []
@@ -127,10 +135,10 @@
       "title": "캠핑 국물요리 재료를 나눠 챙기는 방법",
       "description": "캠핑 국물요리를 준비할 때는 장보기 전에 가져갈 냄비와 식기부터 꺼내 보세요.",
       "category": "캠핑 먹거리",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:33.105Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-soup-packing-cover-v1.webp",
         "width": 1200,
@@ -178,6 +186,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 샘물은 2L 24개 묶음 상품입니다. 전부 가져갈 필요 없이 실제 사용할 물의 양과 이동 방법을 먼저 정하세요.",
+          "productIds": [
+            "7689270513"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 냄비와 식기의 실제 크기 대조하기\n2. 재료별 보관 안내와 알레르기 확인하기\n3. 사용한 국자와 빈 용기를 나눠 가져오기",
           "productIds": []
@@ -198,10 +213,10 @@
       "title": "철수하는 아침, 설거지를 줄이는 캠핑 식사 준비",
       "description": "철수하는 날은 식사 뒤에 텐트와 식기를 모두 정리해야 해요.",
       "category": "캠핑 먹거리",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:33.331Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-breakfast-cleanup-cover-v1.webp",
         "width": 1200,
@@ -249,6 +264,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 샘물은 2L 24개 묶음 상품입니다. 전부 가져갈 필요 없이 실제 사용할 물의 양과 이동 방법을 먼저 정하세요.",
+          "productIds": [
+            "7689270513"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 전날 저녁 아침용 식기만 남기기\n2. 섭취 전 표시사항을 확인할 수 있게 보관하기\n3. 설거지 후 말릴 자리와 귀가 후 꺼낼 가방 정하기",
           "productIds": []
@@ -269,10 +291,10 @@
       "title": "캠핑 먹거리 보관, 먹는 순서에 따라 짐 나누기",
       "description": "캠핑 먹거리를 한 상자에 모두 넣으면 매 끼니마다 짐을 다시 펼치기 쉬워요.",
       "category": "캠핑 먹거리",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:33.563Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-food-storage-zones-cover-v1.webp",
         "width": 1200,
@@ -320,6 +342,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 샘물은 2L 24개 묶음 상품입니다. 전부 가져갈 필요 없이 실제 사용할 물의 양과 이동 방법을 먼저 정하세요.",
+          "productIds": [
+            "7689270513"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 보관 조건별로 먼저 분류하기\n2. 같은 보관 조건 안에서 먹는 순서 표시하기\n3. 남은 식품과 빈 용기를 구분할 자리 마련하기",
           "productIds": []
@@ -340,10 +369,10 @@
       "title": "바비큐에 곁들일 채소와 곁들임 메뉴 준비",
       "description": "바비큐 상을 준비할 때 모든 반찬을 새로 만들 필요는 없어요.",
       "category": "바비큐",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:33.783Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/barbecue-side-menu-cover-v1.webp",
         "width": 1200,
@@ -391,6 +420,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 클래식 물티슈 캡형은 100매 20개 묶음 상품입니다. 집에 남은 물품을 먼저 확인하고 필요한 팩만 챙기세요. 사용 대상은 포장 안내를 따르며 손 씻기·음식 세척·소독을 대신하지 않습니다.",
+          "productIds": [
+            "305672892"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 함께 먹는 사람의 제외 재료 물어보기\n2. 곁들임과 양념을 별도 그릇에 준비하기\n3. 덜어 먹을 도구와 빈 접시 자리 남기기",
           "productIds": []
@@ -411,10 +447,10 @@
       "title": "굽는 자리와 먹는 자리를 나누는 바비큐 상차림",
       "description": "바비큐 장소를 정했다면 해당 구역에서 어떤 조리 도구를 사용할 수 있는지 먼저 확인하세요.",
       "category": "바비큐",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:34.009Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/barbecue-table-zones-cover-v1.webp",
         "width": 1200,
@@ -462,6 +498,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 클래식 물티슈 캡형은 100매 20개 묶음 상품입니다. 집에 남은 물품을 먼저 확인하고 필요한 팩만 챙기세요. 사용 대상은 포장 안내를 따르며 손 씻기·음식 세척·소독을 대신하지 않습니다.",
+          "productIds": [
+            "305672892"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 현장의 화기 사용 안내 확인하기\n2. 준비 도구와 식사용 도구를 구분하기\n3. 뜨거운 기구 옆을 지나지 않는 정리 동선 만들기",
           "productIds": []
@@ -482,10 +525,10 @@
       "title": "바비큐 후 남은 음식과 도구를 정리하는 순서",
       "description": "바비큐가 끝나면 음식, 식기, 포장재, 조리 기구가 동시에 남아요.",
       "category": "바비큐",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:34.241Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/barbecue-cleanup-plan-cover-v1.webp",
         "width": 1200,
@@ -533,6 +576,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 클래식 물티슈 캡형은 100매 20개 묶음 상품입니다. 집에 남은 물품을 먼저 확인하고 필요한 팩만 챙기세요. 사용 대상은 포장 안내를 따르며 손 씻기·음식 세척·소독을 대신하지 않습니다.",
+          "productIds": [
+            "305672892"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 음식·식기·포장재의 귀가 공간 나누기\n2. 현장 폐기물 처리 규칙 확인하기\n3. 집에서 다시 세척할 물건을 가장 먼저 꺼내기",
           "productIds": []
@@ -553,10 +603,10 @@
       "title": "첫 캠핑, 빌려도 되는 물건과 먼저 챙길 물건",
       "description": "첫 캠핑을 준비하면서 다른 사람의 긴 준비물 목록을 그대로 따라 살 필요는 없어요.",
       "category": "캠핑 초보 준비물",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:34.471Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/first-camping-borrow-or-buy-cover-v1.webp",
         "width": 1200,
@@ -604,6 +654,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 클래식 물티슈 캡형은 100매 20개 묶음 상품입니다. 집에 남은 물품을 먼저 확인하고 필요한 팩만 챙기세요. 사용 대상은 포장 안내를 따르며 손 씻기·음식 세척·소독을 대신하지 않습니다.",
+          "productIds": [
+            "305672892"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 숙박·조리 여부와 제공 시설 확인하기\n2. 대여 구성과 반납 조건 대조하기\n3. 사용하지 않은 물건은 다음 준비 목록에서 재검토하기",
           "productIds": []
@@ -624,10 +681,10 @@
       "title": "캠핑장에 도착해서 먼저 꺼낼 가방 만들기",
       "description": "캠핑장에 도착하자마자 짐을 모두 꺼내면 작업 공간이 어수선해질 수 있어요.",
       "category": "캠핑 초보 준비물",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:34.695Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-arrival-bag-cover-v1.webp",
         "width": 1200,
@@ -675,6 +732,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 샘물은 2L 24개 묶음 상품입니다. 전부 가져갈 필요 없이 실제 사용할 물의 양과 이동 방법을 먼저 정하세요.",
+          "productIds": [
+            "7689270513"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 도착 후 바로 할 일 순서 적기\n2. 설명서와 부속품을 장비별로 묶기\n3. 설치 후 작은 도구를 같은 주머니로 돌려놓기",
           "productIds": []
@@ -695,10 +759,10 @@
       "title": "캠핑 철수 때 젖은 짐과 마른 짐 분리하기",
       "description": "캠핑 철수 때는 마른 옷, 젖은 천, 사용한 식기를 한꺼번에 차에 싣기 쉬워요.",
       "category": "캠핑 초보 준비물",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:34.924Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-wet-dry-packing-cover-v1.webp",
         "width": 1200,
@@ -746,6 +810,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 클래식 물티슈 캡형은 100매 20개 묶음 상품입니다. 집에 남은 물품을 먼저 확인하고 필요한 팩만 챙기세요. 사용 대상은 포장 안내를 따르며 손 씻기·음식 세척·소독을 대신하지 않습니다.",
+          "productIds": [
+            "305672892"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 젖은 짐과 오염된 짐을 구분하기\n2. 깨끗한 소지품과 분리해 운반하기\n3. 귀가 후 건조·세척할 물건부터 꺼내기",
           "productIds": []
@@ -766,10 +837,10 @@
       "title": "공원 비눗방울 놀이, 자리 고르기부터 마무리까지",
       "description": "공원에서 비눗방울 놀이를 하려면 먼저 공원의 이용 안내와 주변 상황을 확인하세요.",
       "category": "아이와 놀이",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:35.149Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/park-bubble-play-cover-v1.webp",
         "width": 1200,
@@ -817,6 +888,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 클래식 물티슈 캡형은 100매 20개 묶음 상품입니다. 집에 남은 물품을 먼저 확인하고 필요한 팩만 챙기세요. 사용 대상은 포장 안내를 따르며 손 씻기·음식 세척·소독을 대신하지 않습니다.",
+          "productIds": [
+            "305672892"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 통행에 방해되지 않는 허용 구역 확인하기\n2. 보호자가 제품 표시와 주의사항 살피기\n3. 용액·도구를 먹을거리와 따로 가져오기",
           "productIds": []
@@ -837,10 +915,10 @@
       "title": "모래놀이 준비물과 집에 돌아오기 전 정리 방법",
       "description": "모래놀이를 계획했다면 놀이가 허용된 구역과 현장 이용 안내를 먼저 살펴보세요.",
       "category": "아이와 놀이",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:35.375Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/sand-play-cleanup-cover-v1.webp",
         "width": 1200,
@@ -888,6 +966,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 클래식 물티슈 캡형은 100매 20개 묶음 상품입니다. 집에 남은 물품을 먼저 확인하고 필요한 팩만 챙기세요. 사용 대상은 포장 안내를 따르며 손 씻기·음식 세척·소독을 대신하지 않습니다.",
+          "productIds": [
+            "305672892"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 현장 시설과 모래 상태 직접 살피기\n2. 사용 전후 큰 도구의 개수 확인하기\n3. 손 씻는 곳과 사용한 도구의 귀가 공간 마련하기",
           "productIds": []
@@ -908,10 +993,10 @@
       "title": "비 오는 주말, 집에 있는 물건으로 놀이 자리 만들기",
       "description": "비가 오는 날 집에서 놀 때는 새 장난감을 고르기 전에 활동할 공간부터 살펴보세요.",
       "category": "아이와 놀이",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:35.598Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/rainy-day-indoor-play-cover-v1.webp",
         "width": 1200,
@@ -959,7 +1044,14 @@
           }
         },
         {
-          "heading": "출발 전에 짧게 확인해요",
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 클래식 물티슈 캡형은 100매 20개 묶음 상품입니다. 집에 남은 물품을 먼저 확인하고 필요한 팩만 챙기세요. 사용 대상은 포장 안내를 따르며 손 씻기·음식 세척·소독을 대신하지 않습니다.",
+          "productIds": [
+            "305672892"
+          ]
+        },
+        {
+          "heading": "놀이 전에 짧게 확인해요",
           "text": "1. 생활 동선을 남기고 바닥 정리하기\n2. 연령 표시와 재료의 실제 상태 확인하기\n3. 완성한 그림과 도구의 보관 자리를 따로 정하기",
           "productIds": []
         }
@@ -979,10 +1071,10 @@
       "title": "피크닉 도시락, 먹기 편한 구성과 되가져올 용기 준비",
       "description": "피크닉 도시락은 멋진 사진보다 실제로 먹을 자리와 이동 방법을 먼저 생각해 준비해요.",
       "category": "피크닉·나들이",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:35.941Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/picnic-lunch-packing-cover-v1.webp",
         "width": 1200,
@@ -1030,6 +1122,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 샘물은 2L 24개 묶음 상품입니다. 전부 가져갈 필요 없이 실제 사용할 물의 양과 이동 방법을 먼저 정하세요.",
+          "productIds": [
+            "7689270513"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 실제 먹는 장소에 맞는 용기 고르기\n2. 이동 중 보관 조건을 유지할 수 있는지 확인하기\n3. 빈 용기와 개인 소지품을 분리해 가져오기",
           "productIds": []
@@ -1050,10 +1149,10 @@
       "title": "산책 중 잠깐 쉬어 갈 때 필요한 작은 나들이 가방",
       "description": "산책 도중 잠깐 쉬는 계획이라면 본격적인 피크닉 준비물을 모두 가져갈 필요는 없어요.",
       "category": "피크닉·나들이",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:36.158Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/walking-break-kit-cover-v1.webp",
         "width": 1200,
@@ -1082,7 +1181,7 @@
         },
         {
           "heading": "자주 꺼낼 물건만 가까이에 둬요",
-          "text": "마실 물과 개인 소지품처럼 자주 사용하는 물건을 구분해 넣어 보세요. 물이 새면 곤란한 전자기기와 종이류는 따로 보관해요. 탐사 샘물은 준비 후보로 등록되어 있지만 실제 크기와 묶음 옵션이 확인되지 않아 작은 가방에 들어간다고 안내할 수 없어요. 이미 가지고 있는 음용수와 용기를 활용하는 선택도 가능해요.",
+          "text": "마실 물과 개인 소지품처럼 자주 사용하는 물건을 구분해 넣어 보세요. 물이 새면 곤란한 전자기기와 종이류는 따로 보관해요. 이 글에 연결된 탐사 샘물은 2L 24개 묶음으로, 작은 휴대용 병 상품이 아니에요. 짧은 산책에는 집에 있는 깨끗한 물병을 활용하고 실제 무게와 가방 크기를 확인하세요.",
           "productIds": []
         },
         {
@@ -1099,6 +1198,13 @@
             "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Close view of hands picking up a small bag and bottle from a clean park bench at end of a walking break, no litter, leafy path behind. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
             "tags": []
           }
+        },
+        {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 샘물은 2L 24개 묶음 상품입니다. 전부 가져갈 필요 없이 실제 사용할 물의 양과 이동 방법을 먼저 정하세요.",
+          "productIds": [
+            "7689270513"
+          ]
         },
         {
           "heading": "출발 전에 짧게 확인해요",
@@ -1121,10 +1227,10 @@
       "title": "하룻밤 여행 가방을 사용 순서대로 나누는 방법",
       "description": "하룻밤 여행은 짧지만 이동 중에 큰 가방을 여러 번 열면 번거로워요.",
       "category": "여행 준비물",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:36.365Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/overnight-travel-pouches-cover-v1.webp",
         "width": 1200,
@@ -1172,6 +1278,13 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 클래식 물티슈 캡형은 100매 20개 묶음 상품입니다. 집에 남은 물품을 먼저 확인하고 필요한 팩만 챙기세요. 사용 대상은 포장 안내를 따르며 손 씻기·음식 세척·소독을 대신하지 않습니다.",
+          "productIds": [
+            "305672892"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 이동 중 물건과 숙소용 짐 나누기\n2. 제공 물품과 반입 조건을 공식 안내로 확인하기\n3. 사용했던 위치별로 체크아웃 점검하기",
           "productIds": []
@@ -1192,10 +1305,10 @@
       "title": "가족 여행에서 함께 쓸 물건과 따로 챙길 물건",
       "description": "가족 여행에서 같은 준비물을 여러 사람이 챙기면 가방이 쉽게 늘어나요.",
       "category": "여행 준비물",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:36.586Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/family-travel-shared-items-cover-v1.webp",
         "width": 1200,
@@ -1243,6 +1356,14 @@
           }
         },
         {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 샘물은 2L 24개 묶음 상품입니다. 전부 가져갈 필요 없이 실제 사용할 물의 양과 이동 방법을 먼저 정하세요.\n탐사 클래식 물티슈 캡형은 100매 20개 묶음 상품입니다. 집에 남은 물품을 먼저 확인하고 필요한 팩만 챙기세요. 사용 대상은 포장 안내를 따르며 손 씻기·음식 세척·소독을 대신하지 않습니다.",
+          "productIds": [
+            "7689270513",
+            "305672892"
+          ]
+        },
+        {
           "heading": "출발 전에 짧게 확인해요",
           "text": "1. 공용과 개인용 목록 구분하기\n2. 담당자와 사용 후 보관 위치 정하기\n3. 귀가 때 공용 수량과 개인 짐을 각각 확인하기",
           "productIds": []
@@ -1264,10 +1385,10 @@
       "title": "여행 마지막 날, 세탁할 옷과 남은 짐 정리하기",
       "description": "여행 마지막 날에는 새로 꺼낼 옷보다 돌아가서 정리할 짐을 생각해 보세요.",
       "category": "여행 준비물",
-      "status": "draft",
-      "publishAt": "",
-      "updatedAt": "2026-09-13T11:50:36.817Z",
-      "reviewed": false,
+      "status": "published",
+      "publishAt": "2026-09-13T12:07:25.322Z",
+      "updatedAt": "2026-09-13T12:07:25.322Z",
+      "reviewed": true,
       "cover": {
         "url": "/prep-images/travel-return-laundry-cover-v1.webp",
         "width": 1200,
@@ -1313,6 +1434,13 @@
             "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Back home after travel, adult hanging used clothing on a laundry rack according to fabric care while empty suitcase stands open nearby, calm daylight, no detergent claims. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
             "tags": []
           }
+        },
+        {
+          "heading": "준비물은 집에 있는 것부터 확인해요",
+          "text": "탐사 클래식 물티슈 캡형은 100매 20개 묶음 상품입니다. 집에 남은 물품을 먼저 확인하고 필요한 팩만 챙기세요. 사용 대상은 포장 안내를 따르며 손 씻기·음식 세척·소독을 대신하지 않습니다.",
+          "productIds": [
+            "305672892"
+          ]
         },
         {
           "heading": "출발 전에 짧게 확인해요",

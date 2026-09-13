@@ -22,7 +22,7 @@ test('all 18 articles contain three distinct reviewed images, 54 total',async()=
  }
  assert.equal(total,54);assert.equal(hashes.size,54);
 });
-test('18 drafts have unique reviewed AI covers; no article exceeds four images',async()=>{
+test('18 articles have unique reviewed AI covers; no article exceeds four images',async()=>{
  assert.equal(manifest.images.length,17);assert.equal(store.articles.length,18);
  const hashes=new Set();
  for(const a of store.articles){
@@ -32,7 +32,7 @@ test('18 drafts have unique reviewed AI covers; no article exceeds four images',
   assert(meta.width<=1200&&meta.height<=800);assert(bytes.length<400000);
   hashes.add(crypto.createHash('sha256').update(bytes).digest('hex'));
   assert([a.cover,...a.sections.map(s=>s.image).filter(Boolean)].filter(i=>i.generated).length<=4);
-  assert.equal(a.status,'draft','image approval does not approve products/publication');
+  assert.equal(a.status,'published');assert(a.reviewed);
  }
  assert.equal(hashes.size,18);
 });
