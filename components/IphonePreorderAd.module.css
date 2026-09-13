@@ -20,8 +20,8 @@
 }
 @media (max-height: 450px) { .dialog { width: min(300px, calc(100vw - 32px)); } .bannerArtwork { width: min(100%, 360px); } }
 .shine { position: absolute; display: block; overflow: hidden; pointer-events: none; border-radius: 8px; }
-.bannerShine { left: 17.25%; top: 72.6%; width: 21.1%; height: 13.5%; }
-.popupShine { left: 5.1%; top: 80.2%; width: 90%; height: 12.9%; border-radius: 12px; }
+.bannerShine { left: 7.8%; top: 69.5%; width: 28.8%; height: 15.3%; border-radius: 999px; }
+.popupShine { left: 6.4%; top: 86.3%; width: 87.3%; height: 8.7%; border-radius: 999px; }
 .shine::after { content: ""; position: absolute; top: -30%; left: -55%; width: 40%; height: 160%; background: linear-gradient(100deg, transparent 5%, #80c8ff40 30%, #ffffffd9 50%, #80c8ff40 70%, transparent 95%); transform: skewX(-18deg); animation: reservationShine 4.8s ease-in-out infinite; }
 @keyframes reservationShine { 0%, 55% { left: -55%; opacity: 0; } 60% { opacity: .85; } 85% { left: 125%; opacity: .85; } 86%, 100% { left: 125%; opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .shine::after { animation: none; display: none; } }

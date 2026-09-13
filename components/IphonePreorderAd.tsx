@@ -63,7 +63,7 @@ export default function IphonePreorderAd() {
     <aside ref={banner} className={styles.bannerWrap} aria-label="아이폰 18 사전예약 광고">
       <a className={styles.banner} href={OFFER_URL} target="_blank" rel="sponsored noopener noreferrer">
         <span className={styles.bannerArtwork}>
-          <img className={styles.bannerImage} src="/ads/iphone18-shopping-banner.webp" alt="아이폰 18 Pro 사전예약 · 로켓배송 · 사전예약 혜택 보기" width="1600" height="510" />
+          <img className={styles.bannerImage} src="/ads/iphone18-autumn-banner-20260913.webp" alt="주말 사진, 더 잘 남기고 싶다면 · 아이폰 18 Pro 사전예약 · 가격·혜택 확인하기" width="1600" height="537" />
           <span aria-hidden="true" className={`${styles.shine} ${styles.bannerShine}`} />
         </span>
       </a>
@@ -73,7 +73,7 @@ export default function IphonePreorderAd() {
       <div className={styles.popup}>
         <button type="button" className={styles.close} onClick={() => dismiss()} aria-label="광고 닫기" autoFocus>×</button>
         <a href={OFFER_URL} target="_blank" rel="sponsored noopener noreferrer" className={styles.poster} onClick={() => dismiss()}>
-          <img src="/ads/iphone18-shopping-popup.webp" alt="아이폰 18 Pro 사전예약 · 로켓배송 · 사전예약 혜택 보기" width="800" height="1000" />
+          <img src="/ads/iphone18-autumn-popup-20260913.webp" alt="주말 사진, 더 잘 남기고 싶다면 · 아이폰 18 Pro 사전예약 · 가격·혜택 확인하기" width="960" height="1200" />
           <span aria-hidden="true" className={`${styles.shine} ${styles.popupShine}`} />
         </a>
         <p id="iphone18-ad-disclosure" className={styles.popupDisclosure}>{DISCLOSURE}</p>
