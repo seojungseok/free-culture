@@ -15,9 +15,9 @@ test('106 original affiliate codes and special conditions survive import',()=>{
  for(const day of new Set(q.jobs.map(j=>j.publicationDay).filter(Boolean)))assert.ok(q.jobs.filter(j=>j.publicationDay===day).length<=30);
 });
 
-test('general 30 and tickets 30 are independent daily buckets',()=>{
+test('general 30 and tickets 20 are independent daily buckets',()=>{
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'separate-50-'));fs.mkdirSync(path.join(root,'data/waug'),{recursive:true});const save=(name,data)=>fs.writeFileSync(path.join(root,'data',name+'.json'),JSON.stringify(data));
  for(const name of ['place-articles','course-articles','city-tour-articles'])save(name,{articles:Array.from({length:10},(_,i)=>({id:i,publishedAt:'2026-09-11T01:00:00Z'}))});
- save('waug/editorial',{articles:[],history:[]});let b=publicationBudget(root,new Date('2026-09-11T03:00:00Z'));assert.equal(b.unreserved,0);assert.equal(b.remaining,30);
- save('waug/editorial',{articles:[],history:Array.from({length:30},(_,i)=>({slug:'t'+i,day:'2026-09-11'}))});b=publicationBudget(root,new Date('2026-09-11T03:00:00Z'));assert.equal(b.published,60);assert.equal(b.remaining,0);assert.equal(b.unreserved,0);
+ save('waug/editorial',{articles:[],history:[]});let b=publicationBudget(root,new Date('2026-09-11T03:00:00Z'));assert.equal(b.unreserved,0);assert.equal(b.remaining,20);
+ save('waug/editorial',{articles:[],history:Array.from({length:20},(_,i)=>({slug:'t'+i,day:'2026-09-11'}))});b=publicationBudget(root,new Date('2026-09-11T03:00:00Z'));assert.equal(b.published,50);assert.equal(b.remaining,0);assert.equal(b.unreserved,0);
 });

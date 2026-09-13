@@ -3,8 +3,8 @@ import path from 'node:path';
 export const dayKST=(date=new Date())=>date.toLocaleDateString('sv-SE',{timeZone:'Asia/Seoul'});
 const read=(root,file,fallback)=>{const p=path.join(root,file);return fs.existsSync(p)?JSON.parse(fs.readFileSync(p,'utf8')):fallback;};
 export function publicationBudget(root=process.cwd(),now=new Date()){
- const policy=read(root,'data/publication-policy.json',{general:{daily:30},tickets:{daily:30}});
- const ticketPolicy=read(root,'data/waug/publication-policy.json',{dailyAdditionalLimit:30});
+ const policy=read(root,'data/publication-policy.json',{general:{daily:30},tickets:{daily:20}});
+ const ticketPolicy=read(root,'data/waug/publication-policy.json',{dailyAdditionalLimit:20});
  const day=dayKST(now), seen=new Set(), categories={};
  for(const file of ['place-articles','course-articles','city-tour-articles']){
   const rows=read(root,`data/${file}.json`,{}).articles||{};

@@ -49,7 +49,7 @@ test('one failed ticket never blocks the other 19 due publications',()=>{
 });
 test('existing same-day history caps backlog after retries',()=>{
   const {products,state}=fixture(25);schedule(state,products,now);
-  state.history=Array.from({length:29},(_,i)=>({slug:`old-${i}`,day:'2026-09-11'}));
+  state.history=Array.from({length:19},(_,i)=>({slug:`old-${i}`,day:'2026-09-11'}));
   assert.equal(publish(state,products,new Date('2026-09-10T21:00:00Z')).length,1);
 });
 test('launch still respects the current daily ticket cap',()=>{
