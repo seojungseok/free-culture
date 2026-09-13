@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 15,
   "products": [
     {
       "id": "7689270513",
@@ -24,6 +24,54 @@
       "options": "100매 × 20개 묶음",
       "verified": true,
       "evidence": "2026-09-13 브라우저에서 원본 제휴 URL의 판매처 도착, 상품번호·itemId·vendorItemId, 선택 옵션 및 기존 등록 사진과 판매처 대표 사진의 일치를 직접 확인. 가격·배송·후기·효능은 사용하지 않음."
+    },
+    {
+      "id": "7853820445",
+      "name": "[로켓프레시] 설래담 모둠해물탕 (냉동), 750g, 1개",
+      "image": "https://ads-partners.coupang.com/image1/7LIYDziTc5qZxHbk7BK7B6WoNcXlfp98g3HSoJIWhPXdHCpP7mBQDqJI4FSeOVze1tyMw9Nvg73QTvY8MbOy3ZzNeYuzLBy40AX-c3I6xrNFE5k5eQG99tBHf0pueJxqZTAqqfbzdOqfjzxmgp5No3fvZvf-9wc7exlrrbca__15v5VkozdVh6mfg3fOszeKkgvXc1fpaWAlIMuGPUccZs7av08J9g7L46480v9R7-2-jTW4B8wumCuqYqUf94LRdb2M3XgQXbNNGSbVWs1hbrGAkJJOnN0Jyt1semyLo3Mp_1ACfG16hT3fNgeQOUKGpNanOOp0-jEieYIsmWUCBjkpXBdCUt0I6rZhALn0-xfiyux3zGCNEqgFh8nRTH-arrV2qq5Q-PNi3ga_BhuAGouqZJ46N9ANONmdWt_40h1-YEdDQm1Z3n77AXPbeekCMPijNPJThWPGkvEvwKnzojJCDPaekLW1dRntuuO4KzjwbgUA_LE3rvNPUOxUkAs=",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7853820445&itemId=21414074090&vendorItemId=88470377068&traceid=V0-153-d20b7fa29c68962d&clickBeacon=f9fa4610-af71-11f1-9f4c-be23062129a5%7E3&requestid=20260913215228469281392967&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/7853820445?itemId=21414074090&vendorItemId=88470377068",
+      "checkedAt": "2026-09-13T13:44:30.026Z",
+      "verified": true,
+      "specification": "냉동보관, 총 중량 750g",
+      "options": "750g × 1개",
+      "evidence": "판매처의 상품번호·선택 옵션과 원본 상품 사진을 대조했습니다. AI 연출은 구성·양·인쇄를 완전히 재현한 상품 사진이 아닙니다. 가격·배송·사용 후기는 평가하지 않았습니다."
+    },
+    {
+      "id": "9487214712",
+      "name": "Yumly 304 스텐 인덕션 양수 냄비 곰솥, 1개, 실버, 20cm",
+      "image": "https://ads-partners.coupang.com/image1/2mwKE6dUSy0kcFi12je1Glv6HN_xyTY6jET42QZxHrlGgq5IpXlQTGwSM7_N4onBTF3td2HfGises7YLqS7LRA2YKKxSoC6-3TURt7Fsf-qkDS9QiIAnv-y1nCkzc18PKyseiMSvdFIDStLDCqNch6LYSQUyJIXs844CzbW62aqw0nsc2xG4P5ovrQI1T5bZ_hoG-7A25p5Wf7Kxu44j0CCT1QyzYEH9ELbBSk9bCY8WeqEhMAs2TtrhOvwqEfPz2KwO54gir9rw7xvkt6ZvTpI5a4tc_ZshsYIltiQHA2Mt39IIFymw_mA0bpcCYAvS4-QfNLUwKwDx48lZ96S1wufFcNrJb33eTTkGkGyWWGgfiO59dZA9xNe8P6k4ntEGXnruQffOYnCeCexxokP6pvWbkYT0iKtKgHc9qKPEsf503XwS_cMQnejAdERL-zaVS1ARQlPW1wkP999M_0ZrXFyvoMts1PmMxvjSEKGxRD3zCWoG6t119sEzk6XKXPgXfREZQbkBr8CFrLc9QwixGoaQH2gTN3mw1g==",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9487214712&itemId=28252068439&vendorItemId=95205441725&traceid=V0-153-54acad6d51d123a0&clickBeacon=001a4450-af72-11f1-9ed6-d77adb5118ee%7E3&requestid=20260913215238735089846764&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9487214712?itemId=28252068439&vendorItemId=95205441725",
+      "checkedAt": "2026-09-13T13:44:30.026Z",
+      "verified": true,
+      "specification": "SUS304 스테인리스 양수냄비, 뚜껑 포함",
+      "options": "실버 · 20cm · 1개",
+      "evidence": "판매처의 상품번호·선택 옵션과 원본 상품 사진을 대조했습니다. AI 연출은 구성·양·인쇄를 완전히 재현한 상품 사진이 아닙니다. 가격·배송·사용 후기는 평가하지 않았습니다."
+    },
+    {
+      "id": "9206620361",
+      "name": "꽁용 316 스텐 미니 국자 스테인레스, 1개, 실버",
+      "image": "https://ads-partners.coupang.com/image1/xh-HLw4CfEA0F6Vlxszl1187AA_A0qBhPgnL1QpLvSw4VBUzvsoUQTiDCVocIX6qcOB__1iFN7n-dApFbiLTrVgeMRVkjRDQxDTsZBe3xtqFIiGGakmaPr-YnuoUz9DlyRZQqMAzvhlYlrtV7hLTvEH8bzYQ8pOGSOpfCOM4JhcXXoz-HbRzCARV-SoTrE-8tdrxxqwT4JX8wBspCK_mtdk6UhFca8AAxAFuTnoSIASgMmDGf3nGLxEZPkUkHHOw9Li62-MVxe7GVp2FKB1IZUUV3-ZrIGqAptx4vp9HDrFpqTp6ZGEgeAJyu7TBRxHfYDPzPMTX0wk8NprCSk9xpCZiBNUXBW_K3IHjbiBf5_LXD4ElhgnVZ8jQ3xmIiHrZ85lTxC9RK-U8fbKJ_hbz_7C1jhQe8lnYdflthvFn8SoBZSQpfJoumJaR-LCgr5753PCEAVm9PPOjr9g0q8ubjcPHP1VITMo8B6_ibVPIpBZpyYILyv7ZPd6-Vrz0aiVF-JKfKBkxFmvzLLZFVUD_7vDgReHMSkE=",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9206620361&itemId=27190322093&vendorItemId=94157833755&traceid=V0-153-004084ae0a8789ad&clickBeacon=064231d0-af72-11f1-adfd-1f3a4bba38bf%7E3&requestid=20260913215249066302162200&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9206620361?itemId=27190322093&vendorItemId=94157833755",
+      "checkedAt": "2026-09-13T13:44:30.026Z",
+      "verified": true,
+      "specification": "스테인리스 서빙국자, 소형",
+      "options": "실버 · 1개",
+      "evidence": "판매처의 상품번호·선택 옵션과 원본 상품 사진을 대조했습니다. AI 연출은 구성·양·인쇄를 완전히 재현한 상품 사진이 아닙니다. 가격·배송·사용 후기는 평가하지 않았습니다."
+    },
+    {
+      "id": "9676631018",
+      "name": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+      "image": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+      "source": "https://www.coupang.com/vp/products/9676631018?itemId=28934222035&vendorItemId=95865399449",
+      "checkedAt": "2026-09-13T13:44:30.026Z",
+      "verified": true,
+      "specification": "스테인리스 국그릇. 상품명 표기 107x62의 단위·실측은 판매처 확인 필요",
+      "options": "국그릇 뚜껑세트 · 연결된 단일 옵션",
+      "evidence": "판매처의 상품번호·선택 옵션과 원본 상품 사진을 대조했습니다. AI 연출은 구성·양·인쇄를 완전히 재현한 상품 사진이 아닙니다. 가격·배송·사용 후기는 평가하지 않았습니다."
     }
   ],
   "articles": [
@@ -127,84 +175,6 @@
         {
           "href": "/camping",
           "label": "캠핑 장소와 이용 안내 살펴보기"
-        }
-      ]
-    },
-    {
-      "slug": "camping-soup-packing",
-      "title": "캠핑 국물요리 재료를 나눠 챙기는 방법",
-      "description": "캠핑 국물요리를 준비할 때는 장보기 전에 가져갈 냄비와 식기부터 꺼내 보세요.",
-      "category": "캠핑 먹거리",
-      "status": "published",
-      "publishAt": "2026-09-13T12:07:25.322Z",
-      "updatedAt": "2026-09-13T12:07:25.322Z",
-      "reviewed": true,
-      "cover": {
-        "url": "/prep-images/camping-soup-packing-cover-v1.webp",
-        "width": 1200,
-        "height": 800,
-        "alt": "캠핑 테이블 위 채소 국물 냄비와 나눠 담은 재료, 국물 한 냄비의 여유라는 한글 문구",
-        "generated": true,
-        "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Asset type: Korean weekend editorial website thumbnail, landscape 3:2. Scene: Outdoor camping table near a tent with a plain stainless pot of vegetable soup on a trivet, small preparation bowls of washed vegetables, no flame, natural forest bokeh, intimate three-quarter close view. Warm natural magazine photography, realistic modest household objects, cream and forest green tones. Elegant large perfectly legible Korean headline exactly \"국물 한 냄비의 여유\" in upper left with enough contrast and generous safe margins. Small readable caption exactly \"AI 연출 이미지\" at bottom left. No other text. No logos, prices, claims, star ratings, identifiable branded products, sales buttons, or collage. Not a product listing photograph.",
-        "tags": []
-      },
-      "sections": [
-        {
-          "heading": "먼저 냄비와 먹는 사람 수를 정해요",
-          "text": "캠핑 국물요리를 준비할 때는 장보기 전에 가져갈 냄비와 식기부터 꺼내 보세요. 냄비에 담을 수 있는 양과 함께 먹을 사람을 생각해 메뉴를 좁히면 재료가 여러 봉지로 늘어나는 것을 줄일 수 있어요. 알레르기나 먹지 못하는 재료는 미리 묻고, 같은 국물에 넣어도 되는지 확인해요.",
-          "productIds": [],
-          "image": {
-            "url": "/prep-images/camping-soup-packing-body-1-v1.webp",
-            "width": 1200,
-            "height": 800,
-            "alt": "채소를 씻고 국물 요리 재료를 나누는 준비 장면 · AI 연출 이미지",
-            "generated": true,
-            "reviewed": true,
-            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. Separate washed vegetables in three small bowls beside a clean cutting board at a home kitchen, hands arranging ingredients before a camping trip. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
-            "tags": []
-          }
-        },
-        {
-          "heading": "재료는 넣는 순서보다 보관 조건부터 나눠요",
-          "text": "채소, 양념, 손질하지 않은 재료를 한 용기에 모두 담기보다 제품에 표시된 보관 조건을 먼저 살펴보세요. 개별 포장을 유지해야 하는 재료는 그대로 가져가고, 손질한 재료를 옮겨 담았다면 내용물을 적어 두면 좋아요. 조리는 선택한 재료의 표시사항을 따르고, 임의의 짧은 시간만으로 익었다고 판단하지 않아요.",
-          "productIds": []
-        },
-        {
-          "heading": "물과 정리할 용기를 따로 챙겨요",
-          "text": "국물요리는 마실 물과 조리에 쓸 물을 나눠 생각하면 준비 목록을 정리하기 쉬워요. 목적지에서 음용수를 이용할 수 있는지 확인하고, 필요한 물은 원래 표시와 보관 안내를 따라 준비하세요. 냄비와 국자는 사용한 뒤 다른 소지품에 묻지 않도록 따로 담고, 남은 재료를 보관할 용기도 마련해요. 보관 조건을 유지하기 어려운 일정이라면 처음부터 준비할 양이나 메뉴를 줄이는 방법을 선택하세요.",
-          "productIds": [],
-          "image": {
-            "url": "/prep-images/camping-soup-packing-body-2-v1.webp",
-            "width": 1200,
-            "height": 800,
-            "alt": "식후 냄비와 뚜껑을 닫은 용기를 나누어 정리한 모습 · AI 연출 이미지",
-            "generated": true,
-            "reviewed": true,
-            "prompt": "Use case: photorealistic-natural. Landscape 3:2 explanatory body image for Korean weekend how-to article, NOT a thumbnail or collage. At a campsite clean pot and ladle stored separately from closed leftover containers inside an open return crate, after-meal packing, no flames. Warm natural documentary-style magazine photography, realistic modest objects, varied composition suitable to demonstrate this specific preparation or cleanup step. No branded products, no fabricated performance claims, no price, no headline, no large typography. Only small legible Korean disclosure at bottom left: \"AI 연출 이미지\". No raw meat touching ready-to-eat food. This is a generic activity illustration, not an exact sales product photo.",
-            "tags": []
-          }
-        },
-        {
-          "heading": "준비물은 집에 있는 것부터 확인해요",
-          "text": "탐사 샘물은 2L 24개 묶음 상품입니다. 전부 가져갈 필요 없이 실제 사용할 물의 양과 이동 방법을 먼저 정하세요.",
-          "productIds": [
-            "7689270513"
-          ]
-        },
-        {
-          "heading": "출발 전에 짧게 확인해요",
-          "text": "1. 냄비와 식기의 실제 크기 대조하기\n2. 재료별 보관 안내와 알레르기 확인하기\n3. 사용한 국자와 빈 용기를 나눠 가져오기",
-          "productIds": []
-        }
-      ],
-      "productIds": [
-        "7689270513"
-      ],
-      "internalLinks": [
-        {
-          "href": "/camping",
-          "label": "캠핑 장소 살펴보기"
         }
       ]
     },
@@ -1455,6 +1425,218 @@
         {
           "href": "/places",
           "label": "나들이 장소 살펴보기"
+        }
+      ]
+    },
+    {
+      "slug": "camp-seafood-pot-table",
+      "title": "캠핑 해물탕 준비법: 냉동 재료부터 냄비·식기까지",
+      "description": "캠핑 해물탕을 준비할 때 챙길 재료와 도구를 나눠 정리했습니다. 제품 구성 확인, 현장 조리 준비, 개인 그릇에 덜어 먹기와 식사 뒤 정리 순서를 살펴보세요.",
+      "category": "캠핑 먹거리",
+      "contentStyle": "shoppable-scene-v2",
+      "status": "published",
+      "publishAt": "2026-09-13T13:44:30.026Z",
+      "updatedAt": "2026-09-13T13:44:30.026Z",
+      "reviewed": true,
+      "productIds": [
+        "7853820445",
+        "9487214712",
+        "9206620361",
+        "9676631018"
+      ],
+      "cover": {
+        "url": "/prep-images/camp-seafood-pot-table-cover-v2.webp",
+        "alt": "야외 식탁의 해물탕 포장과 양수냄비, 작은 국자, 국그릇",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "prompt": "Use case: compositing. Asset type: Korean shoppable weekend editorial hero, landscape 3:2. Create one beautiful believable outdoor camping lunch table photograph using ALL FOUR supplied real product reference images, faithfully preserving their actual silhouettes and colors. Image 1 is the Seollaedam seafood soup product: reproduce the white rectangular retail package (not its black cooking pan); food is only a serving suggestion. Image 2 is the actual polished silver 20cm two-handled stockpot, woodgrain trapezoid side handles and tall woodgrain hollow lid handle; keep exact distinctive handle construction. Image 3 is the short shiny broad all-metal ladle with curved hooked handle; not folding, no extra joints. Image 4 is the simple stainless soup bowl with subtly banded double-wall exterior. Arrange package clearly at left about x18% y65%, stockpot center x55% y55% with its matching lid nearby, ladle alone diagonally at front x55% y84%, empty bowl at right x84% y75%. All four products must be separately visible, neither overlapping nor cropped, with realistic relative scale (bowl diameter about half the 20cm pot). Natural warm daylight, peaceful greenery softly blurred beyond wood camp table; premium realistic Korean lifestyle magazine photograph, not catalog collage. No burner, flame, extra utensils, people, star ratings, price, discounts or unsupported ingredients. Elegant highly legible Korean headline in top breathing space EXACTLY '숲에서 나누는\\n따뜻한 한 냄비'. Do not bake plus buttons into the image: website overlays them. Keep reference package lettering as faithful as possible, no invented claims. Small unobtrusive exact Korean text 'AI 연출 이미지' at bottom left. Product fidelity is more important than embellishment.",
+        "referenceProducts": [
+          {
+            "productId": "7853820445",
+            "imageUrl": "https://ads-partners.coupang.com/image1/7LIYDziTc5qZxHbk7BK7B6WoNcXlfp98g3HSoJIWhPXdHCpP7mBQDqJI4FSeOVze1tyMw9Nvg73QTvY8MbOy3ZzNeYuzLBy40AX-c3I6xrNFE5k5eQG99tBHf0pueJxqZTAqqfbzdOqfjzxmgp5No3fvZvf-9wc7exlrrbca__15v5VkozdVh6mfg3fOszeKkgvXc1fpaWAlIMuGPUccZs7av08J9g7L46480v9R7-2-jTW4B8wumCuqYqUf94LRdb2M3XgQXbNNGSbVWs1hbrGAkJJOnN0Jyt1semyLo3Mp_1ACfG16hT3fNgeQOUKGpNanOOp0-jEieYIsmWUCBjkpXBdCUt0I6rZhALn0-xfiyux3zGCNEqgFh8nRTH-arrV2qq5Q-PNi3ga_BhuAGouqZJ46N9ANONmdWt_40h1-YEdDQm1Z3n77AXPbeekCMPijNPJThWPGkvEvwKnzojJCDPaekLW1dRntuuO4KzjwbgUA_LE3rvNPUOxUkAs="
+          },
+          {
+            "productId": "9487214712",
+            "imageUrl": "https://ads-partners.coupang.com/image1/2mwKE6dUSy0kcFi12je1Glv6HN_xyTY6jET42QZxHrlGgq5IpXlQTGwSM7_N4onBTF3td2HfGises7YLqS7LRA2YKKxSoC6-3TURt7Fsf-qkDS9QiIAnv-y1nCkzc18PKyseiMSvdFIDStLDCqNch6LYSQUyJIXs844CzbW62aqw0nsc2xG4P5ovrQI1T5bZ_hoG-7A25p5Wf7Kxu44j0CCT1QyzYEH9ELbBSk9bCY8WeqEhMAs2TtrhOvwqEfPz2KwO54gir9rw7xvkt6ZvTpI5a4tc_ZshsYIltiQHA2Mt39IIFymw_mA0bpcCYAvS4-QfNLUwKwDx48lZ96S1wufFcNrJb33eTTkGkGyWWGgfiO59dZA9xNe8P6k4ntEGXnruQffOYnCeCexxokP6pvWbkYT0iKtKgHc9qKPEsf503XwS_cMQnejAdERL-zaVS1ARQlPW1wkP999M_0ZrXFyvoMts1PmMxvjSEKGxRD3zCWoG6t119sEzk6XKXPgXfREZQbkBr8CFrLc9QwixGoaQH2gTN3mw1g=="
+          },
+          {
+            "productId": "9206620361",
+            "imageUrl": "https://ads-partners.coupang.com/image1/xh-HLw4CfEA0F6Vlxszl1187AA_A0qBhPgnL1QpLvSw4VBUzvsoUQTiDCVocIX6qcOB__1iFN7n-dApFbiLTrVgeMRVkjRDQxDTsZBe3xtqFIiGGakmaPr-YnuoUz9DlyRZQqMAzvhlYlrtV7hLTvEH8bzYQ8pOGSOpfCOM4JhcXXoz-HbRzCARV-SoTrE-8tdrxxqwT4JX8wBspCK_mtdk6UhFca8AAxAFuTnoSIASgMmDGf3nGLxEZPkUkHHOw9Li62-MVxe7GVp2FKB1IZUUV3-ZrIGqAptx4vp9HDrFpqTp6ZGEgeAJyu7TBRxHfYDPzPMTX0wk8NprCSk9xpCZiBNUXBW_K3IHjbiBf5_LXD4ElhgnVZ8jQ3xmIiHrZ85lTxC9RK-U8fbKJ_hbz_7C1jhQe8lnYdflthvFn8SoBZSQpfJoumJaR-LCgr5753PCEAVm9PPOjr9g0q8ubjcPHP1VITMo8B6_ibVPIpBZpyYILyv7ZPd6-Vrz0aiVF-JKfKBkxFmvzLLZFVUD_7vDgReHMSkE="
+          },
+          {
+            "productId": "9676631018",
+            "imageUrl": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p"
+          }
+        ],
+        "productMatchReviewed": true,
+        "tags": [
+          {
+            "productId": "7853820445",
+            "x": 17,
+            "y": 54
+          },
+          {
+            "productId": "9487214712",
+            "x": 55,
+            "y": 57
+          },
+          {
+            "productId": "9206620361",
+            "x": 58,
+            "y": 80
+          },
+          {
+            "productId": "9676631018",
+            "x": 86,
+            "y": 69
+          }
+        ]
+      },
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "캠핑장 시설과 이용 정보 확인하기"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "한 냄비 메뉴라면 준비도 세 묶음으로 나누세요",
+          "text": "캠핑 해물탕은 식재료, 조리 도구, 먹을 때 쓰는 식기를 나눠 챙기면 준비할 일이 선명해집니다. 먼저 식재료 포장에서 이미 들어 있는 것을 확인하고, 냄비와 국자를 고른 뒤, 인원에 맞게 개인 그릇을 챙기는 순서입니다. 같은 국물 메뉴를 여러 개 준비하기보다 밥이나 이미 계획한 곁들임과 겹치는 재료가 없는지 살펴보세요.\n이 글은 실제 상품 정보를 참고한 준비 안내이며 직접 먹어 본 후기가 아닙니다. 연결 상품은 각각 별도 판매 상품입니다. 집에 알맞은 냄비와 식기가 있다면 새로 살 필요 없이 활용할 수 있습니다.",
+          "productIds": []
+        },
+        {
+          "heading": "해물탕 포장을 확인하고 추가 재료는 필요한 만큼만",
+          "text": "[로켓프레시] 설래담 모둠해물탕 (냉동), 750g, 1개는 이 글에 연결한 식재료입니다. 판매처는 냉동보관 제품으로 안내하며 해물과 야채팩, 소스를 구성으로 설명하고 있습니다. 야채팩에는 애호박·양파·대파가 안내돼 있으므로 같은 채소를 별도로 많이 준비하기 전에 실제 받은 포장을 먼저 살펴보세요.\n구성품과 별도로 추가할 채소는 선택 사항입니다. 함께 먹을 사람이 피해야 할 원재료가 있는지 포장 표시를 확인하고, 이동 중에도 제품의 보관 조건을 유지할 수 있는 준비가 되는지 살펴봅니다. 개별 포장을 모두 뜯어 한 통에 합치기보다 현장에서 확인할 보관·조리 안내가 남도록 준비하는 편이 좋습니다.",
+          "productIds": [
+            "7853820445"
+          ]
+        },
+        {
+          "heading": "출발 전에는 물과 세척 장소, 조리 안내를 함께 확인하기",
+          "text": "집에서는 포장에 적힌 조리 순서와 필요한 물을 확인해 두세요. 판매처에는 해물을 해동·세척한 뒤 물과 함께 끓이고, 소스와 야채를 더하는 순서가 안내돼 있습니다. 제품이 바뀌거나 포장 안내가 달라질 수 있으므로 실제 받은 제품의 설명을 우선합니다.\n현장에서 쓸 물과 캠핑장 세척 시설을 미리 확인하고, 재료를 다루는 자리와 씻어 둔 식기를 놓는 자리를 구분하세요. 물과 세척 준비가 어려운 장소라면 생재료를 손질하는 메뉴 자체를 다시 고르는 방법도 있습니다. 버너를 쓴다면 지정된 야외 취사 장소에서 해당 기기와 냄비의 사용 안내를 따릅니다.",
+          "productIds": [],
+          "image": {
+            "url": "/prep-images/camp-seafood-pot-table-preparation-v2.webp",
+            "alt": "출발 전에 해물탕 포장과 조리·식사 도구를 나눠 확인하는 준비 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean weekend editorial. Reproduce the FOUR actual reference products, not generic substitutes: Image1 white Seollaedam seafood soup retail box with food picture, use only main product name '모둠해물탕' and leave all fine print illegible, no invented weight/nutrition figures, do NOT copy its black pan; Image2 silver 20cm stockpot with distinctive woodgrain trapezoid side handles and matching lid with tall hollow woodgrain handle; Image3 short broad stainless ladle with curved hook end, not folding; Image4 simple banded double-wall silver soup bowl. Bowl diameter about half stockpot diameter. Product silhouettes and colors must match. No unsupported accessories, claims, prices, ratings or functional changes. No baked plus buttons, no headline. Tiny caption 'AI 연출 이미지'. Warm natural light, realistic material textures. Scene: preparing at home before departure, an uncluttered sunlit kitchen island, all four items separated in an intentional packing-check layout: retail box at upper-left, CLOSED pot with lid at upper-right, bowl front-left, ladle front-right, each fully visible. Do not add a cooler, bags or other sale products. Focus on the practical preparation arrangement rather than cooked food.",
+            "referenceProducts": [
+              {
+                "productId": "7853820445",
+                "imageUrl": "https://ads-partners.coupang.com/image1/7LIYDziTc5qZxHbk7BK7B6WoNcXlfp98g3HSoJIWhPXdHCpP7mBQDqJI4FSeOVze1tyMw9Nvg73QTvY8MbOy3ZzNeYuzLBy40AX-c3I6xrNFE5k5eQG99tBHf0pueJxqZTAqqfbzdOqfjzxmgp5No3fvZvf-9wc7exlrrbca__15v5VkozdVh6mfg3fOszeKkgvXc1fpaWAlIMuGPUccZs7av08J9g7L46480v9R7-2-jTW4B8wumCuqYqUf94LRdb2M3XgQXbNNGSbVWs1hbrGAkJJOnN0Jyt1semyLo3Mp_1ACfG16hT3fNgeQOUKGpNanOOp0-jEieYIsmWUCBjkpXBdCUt0I6rZhALn0-xfiyux3zGCNEqgFh8nRTH-arrV2qq5Q-PNi3ga_BhuAGouqZJ46N9ANONmdWt_40h1-YEdDQm1Z3n77AXPbeekCMPijNPJThWPGkvEvwKnzojJCDPaekLW1dRntuuO4KzjwbgUA_LE3rvNPUOxUkAs="
+              },
+              {
+                "productId": "9487214712",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2mwKE6dUSy0kcFi12je1Glv6HN_xyTY6jET42QZxHrlGgq5IpXlQTGwSM7_N4onBTF3td2HfGises7YLqS7LRA2YKKxSoC6-3TURt7Fsf-qkDS9QiIAnv-y1nCkzc18PKyseiMSvdFIDStLDCqNch6LYSQUyJIXs844CzbW62aqw0nsc2xG4P5ovrQI1T5bZ_hoG-7A25p5Wf7Kxu44j0CCT1QyzYEH9ELbBSk9bCY8WeqEhMAs2TtrhOvwqEfPz2KwO54gir9rw7xvkt6ZvTpI5a4tc_ZshsYIltiQHA2Mt39IIFymw_mA0bpcCYAvS4-QfNLUwKwDx48lZ96S1wufFcNrJb33eTTkGkGyWWGgfiO59dZA9xNe8P6k4ntEGXnruQffOYnCeCexxokP6pvWbkYT0iKtKgHc9qKPEsf503XwS_cMQnejAdERL-zaVS1ARQlPW1wkP999M_0ZrXFyvoMts1PmMxvjSEKGxRD3zCWoG6t119sEzk6XKXPgXfREZQbkBr8CFrLc9QwixGoaQH2gTN3mw1g=="
+              },
+              {
+                "productId": "9206620361",
+                "imageUrl": "https://ads-partners.coupang.com/image1/xh-HLw4CfEA0F6Vlxszl1187AA_A0qBhPgnL1QpLvSw4VBUzvsoUQTiDCVocIX6qcOB__1iFN7n-dApFbiLTrVgeMRVkjRDQxDTsZBe3xtqFIiGGakmaPr-YnuoUz9DlyRZQqMAzvhlYlrtV7hLTvEH8bzYQ8pOGSOpfCOM4JhcXXoz-HbRzCARV-SoTrE-8tdrxxqwT4JX8wBspCK_mtdk6UhFca8AAxAFuTnoSIASgMmDGf3nGLxEZPkUkHHOw9Li62-MVxe7GVp2FKB1IZUUV3-ZrIGqAptx4vp9HDrFpqTp6ZGEgeAJyu7TBRxHfYDPzPMTX0wk8NprCSk9xpCZiBNUXBW_K3IHjbiBf5_LXD4ElhgnVZ8jQ3xmIiHrZ85lTxC9RK-U8fbKJ_hbz_7C1jhQe8lnYdflthvFn8SoBZSQpfJoumJaR-LCgr5753PCEAVm9PPOjr9g0q8ubjcPHP1VITMo8B6_ibVPIpBZpyYILyv7ZPd6-Vrz0aiVF-JKfKBkxFmvzLLZFVUD_7vDgReHMSkE="
+              },
+              {
+                "productId": "9676631018",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p"
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "7853820445",
+                "x": 26,
+                "y": 38
+              },
+              {
+                "productId": "9487214712",
+                "x": 72,
+                "y": 44
+              },
+              {
+                "productId": "9206620361",
+                "x": 72,
+                "y": 77
+              },
+              {
+                "productId": "9676631018",
+                "x": 34,
+                "y": 69
+              }
+            ]
+          }
+        },
+        {
+          "heading": "냄비는 손잡이를 포함한 공간과 열원 호환성을 살펴보기",
+          "text": "Yumly 304 스텐 인덕션 양수 냄비 곰솥, 1개, 실버, 20cm는 양쪽 손잡이와 뚜껑이 있는 제품입니다. 판매처의 재질·뚜껑 표기와 선택 옵션을 대조했으며, 사진의 나무무늬만으로 손잡이의 재질이나 내열 성능을 판단하지 않았습니다.\n가져갈 열원에 사용할 수 있는지 확인하고, 냄비 몸통뿐 아니라 손잡이까지 놓을 공간을 잡아 주세요. 담을 양에 비해 냄비가 작다면 무리하게 가득 채우기보다 메뉴 양이나 도구를 조정합니다. 이 냄비가 어떤 버너에나 맞는다거나, 특정 인원에게 충분하다고 단정할 수는 없습니다.",
+          "productIds": [
+            "9487214712"
+          ]
+        },
+        {
+          "heading": "국자 놓을 자리와 개인 그릇을 먼저 정하기",
+          "text": "꽁용 316 스텐 미니 국자 스테인레스, 1개, 실버는 작은 서빙국자입니다. 냄비 깊이와 손잡이 길이가 사용하기에 맞는지 확인하고, 사용한 국자를 식탁에 그대로 내려놓지 않도록 받칠 자리를 준비해 보세요. 개인 숟가락과 함께 쓰는 국자를 구분하면 덜어 먹는 동작도 정리하기 쉽습니다.\n세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62는 별도로 연결한 식기입니다. 판매처의 스테인리스 표기를 확인했으며 상품명 숫자의 단위나 실제 수용량은 임의로 계산하지 않았습니다. 사진에는 그릇을 중심으로 배치했지만 실제 구매 구성은 상세 안내를 확인하세요. 연출된 음식의 양과 그릇에 담긴 모습은 판매 수량을 뜻하지 않습니다.",
+          "productIds": [
+            "9206620361",
+            "9676631018"
+          ],
+          "image": {
+            "url": "/prep-images/camp-seafood-pot-table-serving-v2.webp",
+            "alt": "야외 식탁에서 해물탕을 국자로 개인 그릇에 덜어 담는 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "Use case: compositing. Landscape 3:2 photorealistic Korean weekend editorial. Reproduce the FOUR actual reference products, not generic substitutes: Image1 white Seollaedam seafood soup retail box with food picture, use only main product name '모둠해물탕' and leave all fine print illegible, no invented weight/nutrition figures, do NOT copy its black pan; Image2 silver 20cm stockpot with distinctive woodgrain trapezoid side handles and matching lid with tall hollow woodgrain handle; Image3 short broad stainless ladle with curved hook end, not folding; Image4 simple banded double-wall silver soup bowl. Bowl diameter about half stockpot diameter. Product silhouettes and colors must match. No unsupported accessories, claims, prices, ratings or functional changes. No baked plus buttons, no headline. Tiny caption 'AI 연출 이미지'. Warm natural light, realistic material textures. Scene: serving lunch at a wooden outdoor camping table, closer eye-level composition than a hero photo, stockpot filled with seafood soup matching the reference food suggestion at left, matching lid rested behind, retail box clearly visible back-right with NO fine print, soup bowl front-right. Only an adult hand holds the short ladle above the bowl, ladle fully visible rather than submerged or hidden. Keep the pot and bowl physically separate. No flame or burner. The four products should be easy to individually identify and tag.",
+            "referenceProducts": [
+              {
+                "productId": "7853820445",
+                "imageUrl": "https://ads-partners.coupang.com/image1/7LIYDziTc5qZxHbk7BK7B6WoNcXlfp98g3HSoJIWhPXdHCpP7mBQDqJI4FSeOVze1tyMw9Nvg73QTvY8MbOy3ZzNeYuzLBy40AX-c3I6xrNFE5k5eQG99tBHf0pueJxqZTAqqfbzdOqfjzxmgp5No3fvZvf-9wc7exlrrbca__15v5VkozdVh6mfg3fOszeKkgvXc1fpaWAlIMuGPUccZs7av08J9g7L46480v9R7-2-jTW4B8wumCuqYqUf94LRdb2M3XgQXbNNGSbVWs1hbrGAkJJOnN0Jyt1semyLo3Mp_1ACfG16hT3fNgeQOUKGpNanOOp0-jEieYIsmWUCBjkpXBdCUt0I6rZhALn0-xfiyux3zGCNEqgFh8nRTH-arrV2qq5Q-PNi3ga_BhuAGouqZJ46N9ANONmdWt_40h1-YEdDQm1Z3n77AXPbeekCMPijNPJThWPGkvEvwKnzojJCDPaekLW1dRntuuO4KzjwbgUA_LE3rvNPUOxUkAs="
+              },
+              {
+                "productId": "9487214712",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2mwKE6dUSy0kcFi12je1Glv6HN_xyTY6jET42QZxHrlGgq5IpXlQTGwSM7_N4onBTF3td2HfGises7YLqS7LRA2YKKxSoC6-3TURt7Fsf-qkDS9QiIAnv-y1nCkzc18PKyseiMSvdFIDStLDCqNch6LYSQUyJIXs844CzbW62aqw0nsc2xG4P5ovrQI1T5bZ_hoG-7A25p5Wf7Kxu44j0CCT1QyzYEH9ELbBSk9bCY8WeqEhMAs2TtrhOvwqEfPz2KwO54gir9rw7xvkt6ZvTpI5a4tc_ZshsYIltiQHA2Mt39IIFymw_mA0bpcCYAvS4-QfNLUwKwDx48lZ96S1wufFcNrJb33eTTkGkGyWWGgfiO59dZA9xNe8P6k4ntEGXnruQffOYnCeCexxokP6pvWbkYT0iKtKgHc9qKPEsf503XwS_cMQnejAdERL-zaVS1ARQlPW1wkP999M_0ZrXFyvoMts1PmMxvjSEKGxRD3zCWoG6t119sEzk6XKXPgXfREZQbkBr8CFrLc9QwixGoaQH2gTN3mw1g=="
+              },
+              {
+                "productId": "9206620361",
+                "imageUrl": "https://ads-partners.coupang.com/image1/xh-HLw4CfEA0F6Vlxszl1187AA_A0qBhPgnL1QpLvSw4VBUzvsoUQTiDCVocIX6qcOB__1iFN7n-dApFbiLTrVgeMRVkjRDQxDTsZBe3xtqFIiGGakmaPr-YnuoUz9DlyRZQqMAzvhlYlrtV7hLTvEH8bzYQ8pOGSOpfCOM4JhcXXoz-HbRzCARV-SoTrE-8tdrxxqwT4JX8wBspCK_mtdk6UhFca8AAxAFuTnoSIASgMmDGf3nGLxEZPkUkHHOw9Li62-MVxe7GVp2FKB1IZUUV3-ZrIGqAptx4vp9HDrFpqTp6ZGEgeAJyu7TBRxHfYDPzPMTX0wk8NprCSk9xpCZiBNUXBW_K3IHjbiBf5_LXD4ElhgnVZ8jQ3xmIiHrZ85lTxC9RK-U8fbKJ_hbz_7C1jhQe8lnYdflthvFn8SoBZSQpfJoumJaR-LCgr5753PCEAVm9PPOjr9g0q8ubjcPHP1VITMo8B6_ibVPIpBZpyYILyv7ZPd6-Vrz0aiVF-JKfKBkxFmvzLLZFVUD_7vDgReHMSkE="
+              },
+              {
+                "productId": "9676631018",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p"
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "7853820445",
+                "x": 74,
+                "y": 32
+              },
+              {
+                "productId": "9487214712",
+                "x": 35,
+                "y": 62
+              },
+              {
+                "productId": "9206620361",
+                "x": 81,
+                "y": 46
+              },
+              {
+                "productId": "9676631018",
+                "x": 71,
+                "y": 80
+              }
+            ]
+          }
+        },
+        {
+          "heading": "식사 뒤에는 남은 포장과 젖은 도구를 따로 정리하기",
+          "text": "캠핑장에 지정된 음식물 처리·세척 시설을 이용하고, 국물이나 기름을 주변 땅에 버리지 않습니다. 국자와 그릇, 냄비는 각 제품의 세척 방법에 맞게 관리한 뒤 건조 상태를 확인해 수납하세요. 현장에서 충분히 말리지 못했다면 집에 돌아와 다시 정리할 물건을 따로 표시해 두면 잊기 어렵습니다.\n철수 전에는 가져온 포장과 작은 도구가 모두 회수됐는지 확인합니다. 다음 캠핑에는 실제로 사용하지 않은 도구를 덜어내 보세요. 본문의 세 이미지는 실제 상품 사진을 참고한 AI 연출입니다. 추가 고명·음식의 양·포장 인쇄·배치 소품은 판매 구성과 다를 수 있으며, 사진의 +는 각각 연결된 준비물 상품으로 이동합니다.",
+          "productIds": []
         }
       ]
     }
