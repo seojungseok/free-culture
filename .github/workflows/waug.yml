@@ -1,7 +1,7 @@
 name: 와그 입장권 관리·예약 발행
 on:
   schedule:
-    - cron: '0 21,22 * * *' # KST 06:00 + 07:00 retry; total remains <=30/day
+    - cron: '0 20,21 * * *' # KST 05:00 primary / 06:00 retry; total remains <=20/day
   workflow_dispatch:
     inputs:
       action:

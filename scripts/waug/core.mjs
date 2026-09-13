@@ -62,10 +62,11 @@ export function schedule(state, products, now = new Date()) {
   // Only future reservations are rearranged. Already-due reservations remain queued.
   const future=candidates.filter(a=>!a.scheduledAt);
   let day=nextDay(kstDay(now)); const scheduled=[];
+  const limit = Number(state.publicationPolicy?.dailyAdditionalLimit) || 20;
   while (future.length) {
     const existing=state.history.filter(h=>h.day===day).length + candidates.filter(a=>a.scheduledAt?.slice(0,10)===day && !future.includes(a)).length;
-    const batch=ordered([...future],day).slice(0,Math.max(0,30-existing));
-    for(const a of batch){ a.scheduledAt=`${day}T06:00:00+09:00`; a.status='scheduled'; scheduled.push(a.slug); future.splice(future.indexOf(a),1); }
+    const batch=ordered([...future],day).slice(0,Math.max(0,limit-existing));
+    for(const a of batch){ a.scheduledAt=`${day}T05:00:00+09:00`; a.status='scheduled'; scheduled.push(a.slug); future.splice(future.indexOf(a),1); }
     day=nextDay(day);
   }
   for(const a of state.articles) if(!a.publishedAt && readiness(a,products,now).length && a.scheduledAt){a.scheduledAt=null;a.status='held';}
@@ -76,7 +77,7 @@ export function publish(state, products, now = new Date()) {
   if(state.paused) return [];
   const day=kstDay(now);
   const already=new Set(state.history.map(h=>h.slug));
-  const limit=30;
+  const limit=Number(state.publicationPolicy?.dailyAdditionalLimit)||20;
   const remaining=Math.max(0,limit-state.history.filter(h=>h.day===day).length);
   const due=state.articles.filter(a=>a.status==='scheduled' && !a.publishedAt && !already.has(a.slug) && validDate(a.scheduledAt) && Date.parse(a.scheduledAt)<=+now);
   const eligible=[];

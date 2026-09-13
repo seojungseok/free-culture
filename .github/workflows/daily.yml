@@ -7,7 +7,7 @@ name: 일일 데이터·글 (통합, 1일 1배포)
 # Pro 전환(2026-07-29) — 하루 1배포 스케줄 복구. ISR 캐시 초기화는 하루 1회로만.
 on:
   schedule:
-    - cron: "0 16 * * *" # UTC 16:00 = KST 01:00 (하루 1회)
+    - cron: "0 20 * * *" # UTC 20:00 = KST 05:00 (하루 1회)
   workflow_dispatch:
     inputs:
       test_count:
@@ -27,7 +27,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: site-content-publication
+  # 입장권 발행 작업은 별도 데이터 파일을 쓰므로 5시 동시 실행을 허용한다.
+  group: general-content-publication
   cancel-in-progress: false
 
 jobs:
@@ -73,7 +74,7 @@ jobs:
           COLLECT_CONCURRENCY: "10"
         run: node scripts/collect.mjs
 
-      # ── 관광지 글 생성·발행 (재료는 이미 받아둔 캐시 사용, 신규 소개만 소량 on-demand) ──
+      # ── 일반 자동글 30개: 가을나들이 10 + 여행코스 10 + 시티투어 10 ──
       - name: 발행글 재점검 (needsRewrite)
         continue-on-error: true
         run: node scripts/auditArticles.mjs --write
