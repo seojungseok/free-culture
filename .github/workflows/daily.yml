@@ -180,12 +180,18 @@ jobs:
           CITY_LIMIT: "10"
         run: node scripts/generateCityTours.mjs
 
+      # 기존 글 작성 수·시간·순서는 유지. 검토된 주말 준비물만 별도 5개 quota.
+      - name: 주말 준비물 예약 발행 (전체 합계 5개, 글별 실패 격리)
+        continue-on-error: true
+        run: node scripts/prep/publish-daily.mjs
+
       - name: 변경분 커밋 (통합, 1회)
         id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/events.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
+                  data/weekend-prep.json data/weekend-prep-daily-report.json \
                   data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json \
                   data/coupang.json data/coupangEssentials.json data/eventCoupang.json data/kidCoupang.json data/pet-travel.json data/city-tour-articles.json
           if git diff --staged --quiet; then

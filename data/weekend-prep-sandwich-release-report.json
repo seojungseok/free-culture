@@ -1,0 +1,18 @@
+{
+  "slug": "camp-morning-sandwich",
+  "publishedAt": "2026-09-13T14:14:20.615Z",
+  "images": 3,
+  "products": [
+    "9398250478",
+    "9707359364",
+    "9127118279"
+  ],
+  "hotspots": 9,
+  "omittedFoodProduct": {
+    "id": "7313487398",
+    "reason": "검토 화면에서 일시품절 표시를 확인해 제휴 상품 목록에서 제외"
+  },
+  "mode": "built-in imagegen",
+  "correctedSource": "exec-ae1a863d-85bd-48f1-bdcb-247981dda578.png",
+  "oneTimeBrowserLinkReview": true
+}

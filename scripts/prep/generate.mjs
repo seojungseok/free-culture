@@ -2,13 +2,17 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import sharp from 'sharp';
 import {readStore} from './store.mjs';
+import {sceneReferences,imageRequest} from './image-request.mjs';
 // Reuses the existing account/model, with durable intent before any paid request.
 export async function generateImage({slug,slot,prompt,headline}){
  if(!/^[a-z0-9-]{3,100}$/.test(slug)||!/^cover$|^body-[0-9]+$/.test(slot)||typeof prompt!=='string'||prompt.length<20||prompt.length>4000)throw Error('이미지 주제와 장면을 구체적으로 입력하세요.');
  if(slot==='cover'&&(!headline||!/[가-힣]/.test(headline)||headline.length>40))throw Error('대표 이미지에는 40자 이내 한글 문구가 필요합니다.');
  const key=process.env.OPENAI_API_KEY;if(!key)throw Error('이미지 생성 키 미연결');
- const full=`Photorealistic Korean weekend editorial concept image. ${prompt}. No brand logos or implied product identity. Do not invent features or package components. Warm natural magazine aesthetic. ${slot==='cover'?`Legible elegant Korean headline, exact text: ${headline}.`:'No headline.'} Small visible Korean disclosure: AI 연출 이미지.`;
- const hash=crypto.createHash('sha256').update(slug+slot+full).digest('hex').slice(0,20);
+ const source=readStore(),article=source.articles.find(a=>a.slug===slug);if(!article||article.status!=='draft')throw Error('비공개 초안을 먼저 저장하세요. 공개·예약 글 이미지는 자동으로 바꾸지 않습니다.');
+ const references=sceneReferences(article,source.products);
+ const identity=references.length?`Input images in order are exact product references: ${references.map((r,i)=>`${i+1}: ${r.name}; option ${r.options}`).join(' / ')}. Preserve their shape, color, material and components. Show each product separately and clearly for website hotspots. No invented package fine print, numbers or claims.`:'No brand logos or implied product identity.';
+ const full=`Photorealistic Korean weekend editorial concept image. ${prompt}. ${identity} Do not invent features or package components. Warm natural magazine aesthetic. ${slot==='cover'?`Legible elegant Korean headline, exact text: ${headline}.`:'No headline.'} Small visible Korean disclosure: AI 연출 이미지. No baked plus icons; the website adds them after inspection.`;
+ const hash=crypto.createHash('sha256').update(slug+slot+full+JSON.stringify(references)).digest('hex').slice(0,20);
  const dir='data/weekend-prep-jobs';fs.mkdirSync(dir,{recursive:true});const record=`${dir}/${hash}.json`;
  if(fs.existsSync(record)){const old=JSON.parse(fs.readFileSync(record,'utf8'));if(old.status==='complete')return old.image;throw Error('기존 생성 요청이 있습니다. 과금 중복 방지를 위해 결과 복구 후 진행하세요.');}
  const lockFile=`${dir}/${slug}.lock`;const lock=fs.openSync(lockFile,'wx');
@@ -20,12 +24,13 @@ export async function generateImage({slug,slot,prompt,headline}){
   slots.add(slot);if(slots.size>4)throw Error('대표 썸네일 포함 AI 이미지 최대 4장. 기존 이미지 배치·요청 기록을 확인하세요.');
   fs.writeFileSync(record,JSON.stringify(job,null,2),{flag:'wx'});
  }finally{fs.closeSync(lock);fs.unlinkSync(lockFile);}
- const response=await fetch('https://api.openai.com/v1/images/generations',{method:'POST',headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},body:JSON.stringify({model:job.model,size:'1536x1024',quality:'medium',n:1,output_format:'webp',prompt:full}),signal:AbortSignal.timeout(240000)});
+ const request=await imageRequest({model:job.model,prompt:full,references});
+ const response=await fetch(`https://api.openai.com/v1/images/${request.endpoint}`,{method:'POST',headers:{Authorization:`Bearer ${key}`,...request.headers},body:request.body,signal:AbortSignal.timeout(240000)});
  if(!response.ok)throw Error('이미지 생성 요청 실패. 기록을 확인하세요. HTTP '+response.status);
  const result=await response.json();const bytes=result.data?.[0]?.b64_json;if(!bytes)throw Error('생성 결과 확인 필요');
  fs.mkdirSync('public/prep-images',{recursive:true});const url=`/prep-images/${slug}-${slot}-${hash}.webp`;
  await sharp(Buffer.from(bytes,'base64')).resize(1200,800,{fit:'inside'}).webp({quality:82}).toFile('public'+url);
- const image={url,width:1200,height:800,alt:prompt,generated:true,reviewed:false,prompt:full,tags:[]};fs.writeFileSync(record,JSON.stringify({...job,status:'complete',image},null,2));return image;
+ const image={url,width:1200,height:800,alt:prompt,generated:true,reviewed:false,prompt:full,referenceProducts:references.map(({productId,imageUrl})=>({productId,imageUrl})),productMatchReviewed:false,tags:[]};fs.writeFileSync(record,JSON.stringify({...job,status:'complete',image},null,2));return image;
 }
 export async function generateDraft({title,category,products,existingTitles}){
  if(!title||!products.length)throw Error('주제와 등록 상품을 선택하세요.');

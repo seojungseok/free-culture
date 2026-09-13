@@ -1,7 +1,10 @@
 {
   "version": 1,
   "enabled": false,
-  "blockedReason": "검증된 상품 자료·중앙 제한기 연결·생성 및 검토 파이프라인 운영 검증 필요",
+  "publisherEnabled": true,
+  "generationEnabled": false,
+  "executionMode": "github-actions-reviewed-queue",
+  "blockedReason": "서버 예약 발행기는 연결됨. 상품 사진 대조·AI 이미지 작성 자동 실행 방식 확정 및 검토된 예약 원고 공급 필요. 전체 자동 생성은 아직 비활성.",
   "timezone": "Asia/Seoul",
   "dailyStartDate": "2026-09-14",
   "publishHour": 5,

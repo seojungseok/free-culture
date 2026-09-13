@@ -1,12 +1,15 @@
-name: 주말 준비물 예약 발행
+name: 주말 준비물 예약 발행 (수동 복구)
 on:
-  schedule:
-    - cron: '23 * * * *'
   workflow_dispatch:
+    inputs:
+      check_only:
+        description: '쓰기·발행 없이 연결만 확인'
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
-  group: weekend-prep-publication
+  group: general-content-publication
   cancel-in-progress: false
 jobs:
   publish:
@@ -16,12 +19,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node scripts/prep/publish.mjs
+      - run: node scripts/prep/publish-daily.mjs
+        env:
+          PREP_CHECK_ONLY: ${{ inputs.check_only }}
       - name: 통과한 예약 글만 반영
+        if: inputs.check_only != true
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/weekend-prep.json
+          git add data/weekend-prep.json data/weekend-prep-daily-report.json
           if ! git diff --cached --quiet; then
             git commit -m 'Publish reviewed weekend preparation articles'
             git pull --rebase origin main
