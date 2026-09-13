@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
+import NextImage, {type ImageProps} from 'next/image';
+function Image(props:ImageProps){return props.src?<NextImage {...props}/>:<div className="prep-no-image">이미지 검토 대기 · 비공개 초안</div>;}
 import {getPrepArticles,isPrepReview} from '@/lib/weekend-prep/data';
 import {PREP_CATEGORIES} from '@/lib/weekend-prep/types';
 import {SITE} from '@/lib/site';
