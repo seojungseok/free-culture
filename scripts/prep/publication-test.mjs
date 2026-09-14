@@ -1,8 +1,10 @@
 import {spawn} from 'node:child_process';
+import {createRequire} from 'node:module';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 const base=process.env.PREP_VERIFY_BASE||'http://127.0.0.1:3258';
-const child=process.env.PREP_VERIFY_BASE?null:spawn(process.execPath,['node_modules/next/dist/bin/next','start','--hostname','127.0.0.1','--port','3258'],{stdio:'ignore',windowsHide:true});
+const nextBin=createRequire(import.meta.url).resolve('next/dist/bin/next');
+const child=process.env.PREP_VERIFY_BASE?null:spawn(process.execPath,[nextBin,'start','--hostname','127.0.0.1','--port','3258'],{stdio:'ignore',windowsHide:true});
 const store=JSON.parse(fs.readFileSync('data/weekend-prep.json','utf8'));
 async function page(path){const r=await fetch(base+path,{headers:{'Cache-Control':'no-cache'}});assert.equal(r.status,200,path);return r.text();}
 try{
@@ -19,5 +21,6 @@ try{
  }
  assert.equal((await fetch(base+'/api/weekend-prep/admin')).status,403);
  assert.equal((await fetch(base+'/weekend-prep/not-a-real-prep-article')).status,404);
- console.log('PASS: 18 public articles, six categories, 54 images referenced, preserved links, canonical/schema/sitemap/filter protection');
+ const imageCount=store.articles.reduce((n,a)=>n+1+a.sections.filter(s=>s.image).length,0);
+ console.log(`PASS: ${store.articles.length} curated public articles, ${imageCount} images, product links, canonical/schema/sitemap/filter protection`);
 }finally{child?.kill();}

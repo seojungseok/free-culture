@@ -1,0 +1,24 @@
+{
+  "updatedAt": "2026-09-14T11:31:38.571Z",
+  "version": 22,
+  "published": [
+    "camp-seafood-pot-table",
+    "camp-morning-sandwich",
+    "camp-noodle-lunch",
+    "grilled-vegetable-side-dishes",
+    "autumn-camp-tarp-rest-corner",
+    "family-park-ring-ball-play"
+  ],
+  "removedDrafts": [
+    "barbecue-serving-station",
+    "pork-grill-vegetable-table",
+    "autumn-sunset-picnic-layering"
+  ],
+  "publicArticles": 6,
+  "products": 32,
+  "images": 18,
+  "newImages": 13,
+  "reusedImages": 5,
+  "coupangApiRecords": 20,
+  "note": "상품 가격·할인·배송·후기 미작성. 음식은 재료-조리-완성-간편 선택, 캠핑은 제품 장점, 가족놀이는 단일 제품 구조."
+}
