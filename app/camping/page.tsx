@@ -5,6 +5,7 @@ import { Band } from "@/components/Band";
 import CampingBrowser, { type CampRow } from "@/components/CampingBrowser";
 import { CAMP_FACILITIES, CAMP_TYPES, campAreaCounts, getAllCamps, getCampCount, type Camp } from "@/lib/camping";
 import { SIDO_SLUG } from "@/lib/classify";
+import CampingSoupChecklistLinks from "@/components/CampingSoupChecklistLinks";
 
 export const revalidate = 86400;
 
@@ -79,6 +80,7 @@ export default function CampingPage() {
           </nav>
         </details>
       </Band>
+      <CampingSoupChecklistLinks />
       <Suspense fallback={null}>
         <CampingBrowser camps={camps} areas={areas} total={total} />
       </Suspense>

@@ -20,8 +20,8 @@ test('all saved articles contain three or four distinct compressed images',async
  }
  assert.equal(hashes.size,total);
 });
-test('all eleven curated articles are published and fully reviewed',()=>{
- assert.equal(store.articles.length,11);
+test('all curated articles are published and fully reviewed',()=>{
+ assert(store.articles.length>=16);
  for(const a of store.articles){
   const errors=publicationErrors(a,store);
   if(a.status==='published')assert.deepEqual(errors,[],a.slug);

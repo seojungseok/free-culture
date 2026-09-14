@@ -7,7 +7,7 @@ function fixture(){
  const store=JSON.parse(fs.readFileSync('data/weekend-prep.json','utf8'));
  store.articles=[structuredClone(store.articles[0])];
  const a=store.articles[0];a.contentStyle='shoppable-scene-v2';
- delete a.salesFormat;delete a.quietProductIds;delete a.shortcutProductId;
+ delete a.salesFormat;delete a.quietProductIds;delete a.shortcutProductId;delete a.checklist;
  store.products=Array.from({length:4},(_,i)=>({...store.products[0],id:`fixture-${i}`,name:`테스트 상품 ${i}`,affiliateUrl:`https://link.coupang.com/a/fixture${i}`,image:`https://example.test/product-${i}.jpg`}));
  a.productIds=store.products.map(p=>p.id);
  for(const s of a.sections)s.productIds=[];

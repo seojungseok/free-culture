@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-export const categories=['캠핑 요리','바비큐 요리','캠핑용품','야외 놀이','피크닉 준비','여행 준비'];
+export const categories=['캠핑 요리','요리 준비물','바비큐 요리','캠핑용품','야외 놀이','피크닉 준비','여행 준비'];
 export function affiliateUrl(value){try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&['link.coupang.com','www.coupang.com','coupa.ng'].includes(u.hostname)&&!u.port;}catch{return false;}}
 export function safeImage(value){return typeof value==='string'&&/^\/prep-images\/[a-zA-Z0-9_-]+\.(webp|jpg|png)$/.test(value);}
 export function matchesLinkIdentity(p){const u=new URL(p.affiliateUrl);const id=u.searchParams.get('pageKey')||u.pathname.match(/\/vp\/products\/(\d+)/)?.[1];return !id||id===p.id;}
@@ -11,7 +11,8 @@ export function validateShape(store){
  for(const a of store.articles){if(!/^[a-z0-9-]{3,100}$/.test(a.slug)||!a.title||!a.description||!categories.includes(a.category)||!['draft','scheduled','published'].includes(a.status)||!Array.isArray(a.sections)||!Array.isArray(a.productIds)||!a.cover||!Array.isArray(a.internalLinks))throw Error('글 형식 확인 필요');
  if([a.cover,...a.sections.map(s=>s.image).filter(Boolean)].length>4)throw Error('이미지는 대표 썸네일 포함 글당 최대 4장입니다.');
  if(a.contentStyle!==undefined&&a.contentStyle!=='shoppable-scene-v2')throw Error('지원하지 않는 콘텐츠 형식');
- if(a.salesFormat!==undefined&&!['food-recipe','camping-gear','single-product-play'].includes(a.salesFormat))throw Error('지원하지 않는 판매형 글 형식');
+ if(a.salesFormat!==undefined&&!['food-recipe','food-checklist','camping-gear','single-product-play'].includes(a.salesFormat))throw Error('지원하지 않는 판매형 글 형식');
+ if(a.checklist!==undefined&&(!Array.isArray(a.checklist)||a.checklist.some(x=>!x.id||!x.label||!x.role||!['main','seasoning','common'].includes(x.group)||!a.productIds.includes(x.productId))||new Set(a.checklist.map(x=>x.id)).size!==a.checklist.length))throw Error('준비물 체크리스트 형식 오류');
  if(a.quietProductIds!==undefined&&(!Array.isArray(a.quietProductIds)||a.quietProductIds.some(id=>!a.productIds.includes(id))))throw Error('설명 생략 상품 연결 오류');
  if(a.shortcutProductId!==undefined&&!a.productIds.includes(a.shortcutProductId))throw Error('간편식 상품 연결 오류');
  for(const im of [a.cover,...a.sections.map(s=>s.image).filter(Boolean)]){
@@ -37,11 +38,13 @@ export function publicationErrors(a,store,{exists=p=>fs.existsSync(path.join(pro
   if(single?(ids.size!==1||im.tags.length!==1):(ids.size<3||ids.size>4||ids.size!==im.tags.length))errors.push(single?'한 제품 놀이 글은 사진마다 같은 상품 태그 1개 필요':'상품 장면마다 서로 다른 상품 태그 3~4개 필요');
   if(!im.productMatchReviewed)errors.push('합성 장면의 상품 외형·위치 대조 필요');
   for(const id of ids){const p=store.products.find(p=>p.id===id);if(!p||!im.referenceProducts?.some(r=>r.productId===id&&r.imageUrl===p.image))errors.push('태그 상품의 실제 참고 사진 기록 필요');
-   if(!a.quietProductIds?.includes(id)&&!a.sections.some(s=>s.productIds.includes(id)&&s.text.trim().length>=80))errors.push('사진 속 각 상품의 본문 설명 필요');
+   const checklistExplains=a.salesFormat==='food-checklist'&&a.checklist?.some(x=>x.productId===id&&x.role.trim().length>=4);
+   if(!checklistExplains&&!a.quietProductIds?.includes(id)&&!a.sections.some(s=>s.productIds.includes(id)&&s.text.trim().length>=80))errors.push('사진 속 각 상품의 본문 설명 필요');
   }
  }
  if(a.salesFormat==='single-product-play'&&a.productIds.length!==1)errors.push('한 제품 놀이 글은 상품 1개만 연결');
  if(a.salesFormat==='food-recipe'&&(!a.shortcutProductId||!a.sections.at(-1)?.productIds.includes(a.shortcutProductId)))errors.push('음식 글 마지막 간편식 상품 연결 필요');
+ if(a.salesFormat==='food-checklist'&&(!a.checklist||a.checklist.length<8||a.checklist.some(x=>!store.products.some(p=>p.id===x.productId))))errors.push('요리 준비물 체크리스트 상품 연결 필요');
  if(!Number.isFinite(Date.parse(a.publishAt)))errors.push('발행 시각 필요');
  if(a.sections.length<2||a.sections.map(s=>s.text).join('').length<350)errors.push('미완성 본문');
  if(!a.productIds.length)errors.push('등록 상품 연결 필요');

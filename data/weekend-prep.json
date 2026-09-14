@@ -1,5 +1,5 @@
 {
-  "version": 24,
+  "version": 29,
   "products": [
     {
       "id": "7853820445",
@@ -540,9 +540,1433 @@
       "specification": "40cm 티타늄코팅 캠핑 그리들. 실제 사용 가능 열원은 판매 페이지 안내를 확인",
       "options": "40cm × 1개",
       "evidence": "2026-09-14 쿠팡 API가 반환한 상품번호·선택 제휴 URL과 원본 상품 사진을 대조했습니다. 가격·할인·배송·개인 사용 후기는 확인하거나 인용하지 않았습니다."
+    },
+    {
+      "id": "9603803528",
+      "name": "국내산 알배기 암꽃게 선상급랭 냉동 꽃게, 1박스, 5kg(15-25미)",
+      "image": "https://ads-partners.coupang.com/image1/IEHLyd6DsGh_z0BKILE35aA15ieRUy8CUJ6gP2YyFTTmHn0YVVoyG9LSdjPgd0jJhKsMmGivKmIFj8o6-ft8yGG9fuiEE192VDtrbytNilCEHzARXVdx5siSNObu_eaaN-w00bVjeDgztIsZYJW-hcT3lZb9VH8mOP7osbjQ3DtU7gvWexCKjS_eZIvTqf14VvGCT_5IHMmg5Dk-bw5tFn-LIxypc5cBYj2efo2V5i3YiRE3c9N6c-v-IARBelo-vCzr7fsEAPNWKO1n3hPGphvL1-yMwYEJ_r_86wqt9Vi8ITXbOYwAi8pKyjZBZPDWSJZikWTx_VqNUGq4A4w-Rg7NgzgsyOExoF0_27SaNLZ7XrGVhAWGgZaySMyMtsP9wlUwOpC5edxcgeqsffr-JS7-KOaPLR9mgjv3omNV9IHC2GsyLkb9hm6oqf58Kq_JVWdj5WMEgmWMymZpq-lakxmir0vdSFhbPzlvi7Hpdp_CiF3BJmpe4uUa5NFF2UdBjPiYJYx-i7xlASwRyzuF47WShYd_s1sR",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9603803528&itemId=28669744846&vendorItemId=95476295207&traceid=V0-153-7613dc4df221e34d&clickBeacon=90e42cd0-b049-11f1-a906-8ca853a61467%7E3&requestid=20260914233543442301486848&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/9603803528",
+      "checkedAt": "2026-09-14T14:35:34.257Z",
+      "verified": true,
+      "specification": "냉동 꽃게. 상품명 기준 국내산 알배기 암꽃게",
+      "options": "5kg(15~25미) × 1박스",
+      "evidence": "2026-09-14 쿠팡 파트너스 API가 반환한 상품번호·상품명·원본 제휴 URL·대표 사진을 기록하고, 대표 사진과 AI 준비 장면의 품목 외형을 대조했습니다. 가격·할인·배송·후기는 사용하지 않았습니다."
+    },
+    {
+      "id": "8682238562",
+      "name": "40년 전통 밀가루 없는 부산 수제 모둠 대, 1개, 1.1kg",
+      "image": "https://ads-partners.coupang.com/image1/zkAly6ob4bCVlia8zifJhG4rkt4YMW-jcAdR_A7EYarFoUSLEeUuOBfXVh7rC8i5TMnhFeBSnysJHyq5-ffKfoK3fZFofDGSyn5RYVQUWUD2kk4rdYE-XCWTfThcWwwSQ5nx6c7YC_iAhT3nwZK8pFDS1kYRmSCkKPMn5uQN2WI_WL6SeNQLAg-mKKDrsw5bE-SL4zJ4wlDhxooK0EdAXLWflsbNCXhZ4pnhASwfDB_mdioQCE4-yZ5C_ww-6HW4l6B9SeCsUoD0J4TwQj4-zzfFpFosEwErjfaTHezezN9cBkMBr_1KkFqAAwLxz486CyyaOpZPo1ReeEGl5i1KIyJBdcVQNaNnDdTjEPRMTFf6Yo1jyTB4e65gLsrv40lbb-jl1X1ZlK_sVI1x13saLQklkkGww-EEGM_veY_1fqxiupXHQ2awPvdyAobOTih5Y9xgw1wveJA8_fj671q8Z1vP7L8VdKHy5e_Ev2_GcZxnLxwgFE3Tfhk4Sc5NW336t8woGxkSJ3FK_7tJF7ZbZZwPO9j3Wv0=",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8682238562&itemId=25203991363&vendorItemId=92200550237&traceid=V0-153-6608501d1ef85bbc&clickBeacon=9ca66dd0-b049-11f1-a6a4-686f308fc400%7E3&requestid=20260914233603176157265017&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/8682238562",
+      "checkedAt": "2026-09-14T14:35:54.153Z",
+      "verified": true,
+      "specification": "탕에 넣기 좋은 모둠 어묵",
+      "options": "1.1kg × 1개",
+      "evidence": "2026-09-14 쿠팡 파트너스 API가 반환한 상품번호·상품명·원본 제휴 URL·대표 사진을 기록하고, 대표 사진과 AI 준비 장면의 품목 외형을 대조했습니다. 가격·할인·배송·후기는 사용하지 않았습니다."
+    },
+    {
+      "id": "7380618503",
+      "name": "리얼 햄 소시지 듬뿍 부대찌개, 600g, 3개",
+      "image": "https://ads-partners.coupang.com/image1/HFmsl8n6advGPzAaHGUDZCyAY1pv08rs7tHCVkOmy58bWMLWysreD1-dgWTdFE_60bHfSrJo0GvrYM0ZENqDmrA2mrl7aywZlycGk-i1M6ffVDowppvL20NZ8noLUaCpm-p1_C46g8checC0QdlPPFRmCAXAEpHYv3DQqHs99MZ3EeLTUNhum5E5i9QzRQnCJPv06RTmvr-l49HFWCbMUx0WPi4Or3vjf18HK-nreN7Ji8jYFuy3a8X3A7gtD-MuEhL1-mFCoyBPYgxUYTJzw0fHDZuLKu0W0xW9kz2_r0vtG1N-LvBvU0rFfUofQf6LrDqqzcNxfmF5o7FYf1Qw1hmfvNDQ5ukhB2BfmRzAQYuu-Lrz0CilXBZ5pBPOstFR6qmFlcPHGPU5wUMLz66z1Ou8zDZLZUjQlT0BBSsyr0lG7hAogyE8g8dU67jwRguc0kOQ3AiBJV5nei32YyRBn4Ga0ysmMR8baGCT4cbmdu8uGHZ0KJsQ00E8fr_vazwcpfE4sYDAdcFg-Zg9OkUBKcr27qpVHw==",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7380618503&itemId=20146066798&vendorItemId=80081363471&traceid=V0-153-548f0341e0149e3b&clickBeacon=a2cbc340-b049-11f1-85b7-431a02227bf6%7E3&requestid=20260914233613495076432060&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/7380618503",
+      "checkedAt": "2026-09-14T14:36:04.252Z",
+      "verified": true,
+      "specification": "햄·소시지가 포함된 부대찌개 구성",
+      "options": "600g × 3개",
+      "evidence": "2026-09-14 쿠팡 파트너스 API가 반환한 상품번호·상품명·원본 제휴 URL·대표 사진을 기록하고, 대표 사진과 AI 준비 장면의 품목 외형을 대조했습니다. 가격·할인·배송·후기는 사용하지 않았습니다."
+    },
+    {
+      "id": "7679993842",
+      "name": "대한푸드상회 소고기 폭탄 샤브샤브 대용량 밀키트, 1개, 1.21kg",
+      "image": "https://ads-partners.coupang.com/image1/fxaDvC1Rxt5QfSmRf7exaFJkJa_wgx7DMhiqm0GQ7Xuq27j2fckZah5W4mzRZv2hkSSzM3PFU-Q1Nefco77DDeWzImTmGD9ikQj5OH_9tTsL0Jd5_Cb4ukkx1kr6YgVzq9DjDWPcOu4QF6ijNvFWPt13Fcy_9o0ytyC08uGKL5GHxk59zVt5zILKW7vSbgB2RlMm5kQT_HYDxbUhc0hLkAEmuSS_99bPXYZvs7xpQFW6sB-iVg-6Hd0ODhr6Lq3YFX56En9XJU-8Dm_kQtupDFnI6gcNtdkMzxG5jJ5w2rPjVFPVSs-sNA4k2zUz-EAUkpGufeqNr2fNmEJdYdkViJBxYBMps10kg9bU2rQwKLo7_kcP_G6PD9tCSyB7m9W4JG-deT0Ia54Xbo4Yuvf7-Wk7dA8Ot6-bN5GDPXQwRWqcKmqHghxSIVmN1ewNfwt1uUgpk2oJePVqMDkOkbfJ589S3oXJI77m8FA7JEE6MMohk9MiITf9Wu8XZvoks7Ug5Cvs9Iz5HmxalJVplQm9SiYGIGVAHX3DlQ==",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7679993842&itemId=20510608473&vendorItemId=87588336060&traceid=V0-153-10eecd7805f68a14&clickBeacon=a8b19eb0-b049-11f1-a8da-4f54fdddad05%7E3&requestid=20260914233623369143015472&token=31850C%7CCMG&pt=1&slot=1",
+      "source": "https://www.coupang.com/vp/products/7679993842",
+      "checkedAt": "2026-09-14T14:36:14.174Z",
+      "verified": true,
+      "specification": "소고기 샤브샤브 대용량 밀키트",
+      "options": "1.21kg × 1개",
+      "evidence": "2026-09-14 쿠팡 파트너스 API가 반환한 상품번호·상품명·원본 제휴 URL·대표 사진을 기록하고, 대표 사진과 AI 준비 장면의 품목 외형을 대조했습니다. 가격·할인·배송·후기는 사용하지 않았습니다."
+    },
+    {
+      "id": "6211502021",
+      "name": "전골용 모둠버섯",
+      "image": "https://ads-partners.coupang.com/image1/YoJ7giHIMbnbZkBVYhSYr570E0-HV-k-SKBQFQclCWY__ewH40fDJtDzjuHXLJe9Mf9BHyKYlokSgrHQGXIVaj4P6H5nCTHvzYdGf61aMy6Bg1cF6kNWZXLBC7RF8VdJRLdv7CO3a1SihH80EqR7zuJHXRQhu4PGVSpA94SE9-gnTDRQAC0Y61w7qyr4ADLKBkRmIizNyjuT5IInTI1iqtHNUSjw_9lB6E_XbRe5fVSYxrNJtI1jBy2iDiijJSOrn1Rt11YSfZHhZwY9_UmpS_ZD1Zu-J2m-wQArtocPw_WsOtJNqcvuEJ24J8nlPQHsVhyFOfv9Dgdf82ez-0cZfaL6CCWCkCEA47h7VG9XcuIXS5vRfqAPzXnHVmiFczzMbdOjsEZq9XCPqr63y94sXDZEgaYyg7Ki3dSbOkHnsD2t4sWJN04jOL-bTT_Vbx4BS2olP77-QZbzPRhgDkOWSIbesgv-BKNG2MZx03FT6T2exTLPNsp9d4rGDbYW0yUpq6VS3VwWH5BvsB3FMTH1v9iRka9FzQ==",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6211502021&itemId=12383335839&vendorItemId=79653026988&traceid=V0-153-f764d020dc3a5f72&requestid=20260914233633381016133961&token=31850C%7CCMG&pt=0&slot=1",
+      "source": "https://www.coupang.com/vp/products/6211502021",
+      "checkedAt": "2026-09-14T14:36:24.205Z",
+      "verified": true,
+      "specification": "전골용 모둠버섯",
+      "options": "중량과 구성은 판매 페이지에서 확인",
+      "evidence": "2026-09-14 쿠팡 파트너스 API가 반환한 상품번호·상품명·원본 제휴 URL·대표 사진을 기록하고, 대표 사진과 AI 준비 장면의 품목 외형을 대조했습니다. 가격·할인·배송·후기는 사용하지 않았습니다."
+    },
+    {
+      "id": "6528172171",
+      "name": "흙대파",
+      "image": "https://ads-partners.coupang.com/image1/bTqPc52sn3Ty1lbvbY7irn-tESM5GjRMTdAPhfnLdUJmcZoN5mFm_SVA_mo0TL9S16Y7q4UEaSJJMGjdLNRmTJ4xStTUfVlgWkcg_Svogw3Y8YS2ORDwvF6iVdSxKfGKISo__JslIgDlixkwgvPosngqsc-MWqxQ8-mCtdPDzwzdtMJrkudl0_6JykUD_MtQOs8Wi6JWDEDh2xk0l-kv5xbFadfj6c1jrBfJg89OJrVhePrW39RnKwtSlPo-UmPDugS7xOCZ5ZPPvSblWbs38_AKZOkU1PFeIWZznrs3JxeALNrH2PRYvoFwKlcAxv-nr8NsZwx4HTweai4sWQXjs5YWGXCc9OSuQS8r9LQxUyrh1HOr_h1YqOTBAf5FNaGRQsvN418bjoLHMHi4FRnbSYSVUPokTb-m2rSJ-ueqA5RMxzCGTOm46Mh-cenW_ZeFMZ07qXKWF8Z-0xJV3xFn94fh4Zesl_SdEnXnH8L-okSd53UkJoZKb_TVUaD4ZCSiDu6U-A_2ugFbC2E5Z-r2XQk=",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6528172171&itemId=5911958170&vendorItemId=73210037048&traceid=V0-153-ea3e109dddeaf065&requestid=20260914233654217018409591&token=31850C%7CGM&pt=0&slot=1",
+      "source": "https://www.coupang.com/vp/products/6528172171",
+      "checkedAt": "2026-09-14T14:36:45.134Z",
+      "verified": true,
+      "specification": "흙대파",
+      "options": "중량과 수량은 판매 페이지에서 확인",
+      "evidence": "2026-09-14 쿠팡 파트너스 API가 반환한 상품번호·상품명·원본 제휴 URL·대표 사진을 기록하고, 대표 사진과 AI 준비 장면의 품목 외형을 대조했습니다. 가격·할인·배송·후기는 사용하지 않았습니다."
+    },
+    {
+      "id": "7689270513",
+      "name": "탐사 샘물",
+      "affiliateUrl": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7689270513&itemId=20877904748&vendorItemId=87945140914&traceid=V0-113-6080a97a4592b297&pt=0&slot=72",
+      "image": "https://image13.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/93702155226173-fcebe9fc-46f2-4aa2-955c-3810ef885a5a_1751243766668.jpg",
+      "source": "https://www.coupang.com/vp/products/7689270513?itemId=20877904748&vendorItemId=87945140914",
+      "checkedAt": "2026-09-13T12:07:25.322Z",
+      "specification": "병당 2L",
+      "options": "2L × 24개 묶음",
+      "verified": true,
+      "evidence": "2026-09-13 원본 제휴 URL의 판매처 도착, 상품번호·itemId·vendorItemId, 선택 옵션 및 대표 사진을 확인했습니다. 가격·배송·후기·효능은 사용하지 않았습니다."
     }
   ],
   "articles": [
+    {
+      "slug": "autumn-flower-crab-soup-ingredient-checklist",
+      "title": "가을 대표 요리 꽃게탕 재료 체크리스트",
+      "description": "가을 캠핑 전 꽃게탕에 필요한 꽃게·대파·애호박·미나리·양념·육수와 냄비까지 빠짐없이 확인하는 장보기 체크리스트입니다.",
+      "category": "요리 준비물",
+      "contentStyle": "shoppable-scene-v2",
+      "salesFormat": "food-checklist",
+      "coverLabel": "가을 꽃게탕 준비물",
+      "status": "published",
+      "publishAt": "2026-09-14T15:00:00.000Z",
+      "updatedAt": "2026-09-14T15:00:00.000Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/autumn-crab-soup-checklist-cover.webp",
+        "alt": "가을 꽃게탕 재료를 펼쳐 둔 캠핑 준비 장면",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "prompt": "가을 캠핑 테이블 위 꽃게·대파·애호박·매운탕 양념을 펼친 대표 썸네일",
+        "referenceProducts": [
+          {
+            "productId": "9603803528",
+            "imageUrl": "https://ads-partners.coupang.com/image1/IEHLyd6DsGh_z0BKILE35aA15ieRUy8CUJ6gP2YyFTTmHn0YVVoyG9LSdjPgd0jJhKsMmGivKmIFj8o6-ft8yGG9fuiEE192VDtrbytNilCEHzARXVdx5siSNObu_eaaN-w00bVjeDgztIsZYJW-hcT3lZb9VH8mOP7osbjQ3DtU7gvWexCKjS_eZIvTqf14VvGCT_5IHMmg5Dk-bw5tFn-LIxypc5cBYj2efo2V5i3YiRE3c9N6c-v-IARBelo-vCzr7fsEAPNWKO1n3hPGphvL1-yMwYEJ_r_86wqt9Vi8ITXbOYwAi8pKyjZBZPDWSJZikWTx_VqNUGq4A4w-Rg7NgzgsyOExoF0_27SaNLZ7XrGVhAWGgZaySMyMtsP9wlUwOpC5edxcgeqsffr-JS7-KOaPLR9mgjv3omNV9IHC2GsyLkb9hm6oqf58Kq_JVWdj5WMEgmWMymZpq-lakxmir0vdSFhbPzlvi7Hpdp_CiF3BJmpe4uUa5NFF2UdBjPiYJYx-i7xlASwRyzuF47WShYd_s1sR"
+          },
+          {
+            "productId": "6528172171",
+            "imageUrl": "https://ads-partners.coupang.com/image1/bTqPc52sn3Ty1lbvbY7irn-tESM5GjRMTdAPhfnLdUJmcZoN5mFm_SVA_mo0TL9S16Y7q4UEaSJJMGjdLNRmTJ4xStTUfVlgWkcg_Svogw3Y8YS2ORDwvF6iVdSxKfGKISo__JslIgDlixkwgvPosngqsc-MWqxQ8-mCtdPDzwzdtMJrkudl0_6JykUD_MtQOs8Wi6JWDEDh2xk0l-kv5xbFadfj6c1jrBfJg89OJrVhePrW39RnKwtSlPo-UmPDugS7xOCZ5ZPPvSblWbs38_AKZOkU1PFeIWZznrs3JxeALNrH2PRYvoFwKlcAxv-nr8NsZwx4HTweai4sWQXjs5YWGXCc9OSuQS8r9LQxUyrh1HOr_h1YqOTBAf5FNaGRQsvN418bjoLHMHi4FRnbSYSVUPokTb-m2rSJ-ueqA5RMxzCGTOm46Mh-cenW_ZeFMZ07qXKWF8Z-0xJV3xFn94fh4Zesl_SdEnXnH8L-okSd53UkJoZKb_TVUaD4ZCSiDu6U-A_2ugFbC2E5Z-r2XQk="
+          },
+          {
+            "productId": "8443644467",
+            "imageUrl": "https://ads-partners.coupang.com/image1/je05R7JHu39aBC3vjWibLFgXEfBE8ASgFmkhChk7lJtAU5PiKOJvGnLc9qx3OUKRVo4d6NvdDJ7vGkVRjss5L82zrPKEx5fpwHnDerBLqaCrS_yvcgxcfrDSmhNHDL7OBHlcL7ZYgMgkBALJLzAgmzF2bVQSLEttxYAa5PAcMG5IpSdza3YZaqczgEp2qFUcNKw82DnCbxl1BEuXKJto2GckvoBwETKpXqtNsluactmy5LDUsjpAZzu_POGn3dASRlFtDBIaxRz4zqIN102bQ2BDhhdlKkYyAYd4Yt0FdCOUYGs7wpYlkEjxPal0a79Cx0LwIeNWja_eGifjnTCqTqtsQvIaIj2KudpbZFb3Wihv5-V0YC_8bfwFXZvqgfexPXIidiuljkuz95rELeiZ4_hndU3OqWmokU4jzzh7AkbkZ8UGH8d3OJFE8PPjwax3iZdd2EC_zQLXbx0YC8fbMH96tOum3CiWD8R_ZFq1RZbX4SYm2th_h9-cMQ3TkKpuQd1ZrZJoZMXkfoRQeg1065vuBNYhoiOq"
+          },
+          {
+            "productId": "8574770164",
+            "imageUrl": "https://ads-partners.coupang.com/image1/skCH9EZNyASV8lMZsvhxRYjrVeLSiMQZXAm7xsnwI1Hl1NnV0U1hJWdeV8ajK7g0ORh8Po3LJ031nJ-efUoW-Kj7_BZG63vpd0znvjv9OwWFWPpmoSnVUwjjbDVoisEmZ_ACNctxQiIB35r0JKdM4UPZYs5ab0nFDWv3ywjwzWtLbsdIUErAltnJOqKyzHOh2_RJBGHtBY890SR-0N2sIC2hMPx7sjzVxdzclepbHcllEbWHTtKWdcUxxfHbM_dts_7zSlkKc_sGGJwKQ2qiHwoVkTxqNi7euEloXKZ35UESK5umhX4WdmY1IN-g1eOjYQaB8WBmIBCeaLPraSoABpW4xKhnVPy0dXMKiD-li4gZo7eQFZfaOoAkZz0x3o7EjJqOcdLh0ckP8D3hNXZIPJiLTxVS-g38jhwjCxp1lISYtbQemIyzvpW92qka_1VUDK8-D5bs4EF8CDONEQdeJqbJgvSMwK2e6bc_DdBbQfrbkHTDQjH2TFWoHIrmLZr8BlB4vQJxC0Y="
+          }
+        ],
+        "productMatchReviewed": true,
+        "tags": [
+          {
+            "productId": "9603803528",
+            "x": 22,
+            "y": 38
+          },
+          {
+            "productId": "6528172171",
+            "x": 54,
+            "y": 34
+          },
+          {
+            "productId": "8443644467",
+            "x": 81,
+            "y": 26
+          },
+          {
+            "productId": "8574770164",
+            "x": 73,
+            "y": 56
+          }
+        ]
+      },
+      "checklist": [
+        {
+          "id": "crab",
+          "label": "냉동 꽃게",
+          "role": "국물의 중심이 되는 주재료. 이동 전 냉동 상태와 보냉 공간부터 확인",
+          "group": "main",
+          "productId": "9603803528"
+        },
+        {
+          "id": "green-onion",
+          "label": "대파",
+          "role": "국물 향과 채소 건더기를 더하는 기본 채소",
+          "group": "main",
+          "productId": "6528172171"
+        },
+        {
+          "id": "zucchini",
+          "label": "애호박",
+          "role": "부드러운 채소 건더기와 단맛을 보태는 재료",
+          "group": "main",
+          "productId": "8443644467"
+        },
+        {
+          "id": "minari",
+          "label": "미나리",
+          "role": "마지막에 넣어 향을 살리는 마무리 채소",
+          "group": "main",
+          "productId": "9604422506"
+        },
+        {
+          "id": "seasoning",
+          "label": "매운탕 양념",
+          "role": "고춧가루·장류를 따로 챙기지 않을 때 쓰는 기본 양념",
+          "group": "seasoning",
+          "productId": "8574770164"
+        },
+        {
+          "id": "broth",
+          "label": "국물육수 다시팩",
+          "role": "맹물보다 국물 바탕을 빠르게 내기 위한 육수 재료",
+          "group": "seasoning",
+          "productId": "57577364"
+        },
+        {
+          "id": "water",
+          "label": "생수",
+          "role": "현장에서 육수 양을 맞출 때 쓰는 조리용 물",
+          "group": "common",
+          "productId": "7689270513"
+        },
+        {
+          "id": "pot",
+          "label": "20cm 양수냄비",
+          "role": "국물 재료를 한 번에 담는 조리 냄비",
+          "group": "common",
+          "productId": "9487214712"
+        },
+        {
+          "id": "ladle",
+          "label": "국자",
+          "role": "완성된 국물과 건더기를 나누어 담는 도구",
+          "group": "common",
+          "productId": "9206620361"
+        },
+        {
+          "id": "bowl",
+          "label": "국그릇",
+          "role": "뜨거운 국물요리를 개인별로 나누어 담는 그릇",
+          "group": "common",
+          "productId": "9676631018"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "장보기 전 확인",
+          "text": "먼저 꽃게 포장 단위가 인원수와 보냉함 크기에 맞는지 확인하세요. 냉동 꽃게는 출발 직전에 보냉 가방으로 옮기고, 대파·애호박·미나리는 씻어서 물기를 뺀 뒤 각각 봉투에 나누면 현장에서 빠뜨린 재료를 찾기 쉽습니다. 매운탕 양념과 육수팩은 이미 장바구니에 있더라도 실제 짐에 들어갔는지 체크해야 합니다. 꽃게 포장이 크면 출발 전에 냄비에도 들어가는지 확인하세요.",
+          "productIds": [
+            "9603803528",
+            "6528172171",
+            "8443644467",
+            "9604422506",
+            "8574770164",
+            "57577364"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-crab-soup-checklist-support.webp",
+            "alt": "꽃게탕 육수와 생수, 미나리를 따로 확인하는 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "육수 다시팩·생수·미나리를 분리해 둔 가을 캠핑 준비 장면",
+            "referenceProducts": [
+              {
+                "productId": "57577364",
+                "imageUrl": "https://ads-partners.coupang.com/image1/Eh0byLokTJWxq2BSEs6tWe37cMnLKGldHhUAEh8YQi-YwH6awkVpTPAg4Z11sd0ICYAisF1mo0WBWElwwA_I3XNHt2PX3pJjNGWxPSLLhyXn7MVIMiSoNx1YXLPSaMLC8wsTXpxSXwrzkQHyQ_ybypBLn1yg_XKkrtB-oC8BmestGug0fgEkaU1WbZETo7fGxBzJYujDYJi6_Kjcd-KzXJ2ZzGZb2BPcTWh8WMl8YVjX-HFWh6l72ZhKV_inmZPHstq4mTtyi-ivhpc-0NAnDMrfwoO6yOWj96T7rnwKYkYw8_5KXtRFucczk2HjpmvYb7FH6S-BpAEkPXDxH9Hp68GDcdUfvdW6-L-ldQoV9krGmsFII1hE8loWnWJ7I87szpf9KPea5l8I78LNvszG21cWHbqRCfx1R9AUtgqpFPDLn4_sWQ9OYDl5VG3v_m1xEAIdd835nQXtKn7eYMEdkw4plwJIk-3Kj-SLnlOHdY3RHLggB8BnXB-ymmvWnEW3fuDkB3j6dw=="
+              },
+              {
+                "productId": "7689270513",
+                "imageUrl": "https://image13.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/93702155226173-fcebe9fc-46f2-4aa2-955c-3810ef885a5a_1751243766668.jpg"
+              },
+              {
+                "productId": "9604422506",
+                "imageUrl": "https://ads-partners.coupang.com/image1/XUsp_JbHfaM_kHHJXczlf4oN-wbebsMZOVNgtQIADiSFP84_fDCKsjZeTu-qsEHMp26yZmXqr0yiobbtwSfeajF7rwQYZLwZdlSxZJfBWR7U_O8IVbhRZ2pkeiYU_zMm272hzxnFYmOVti74Ry1lcnGPHKQLh9vRS5ecnb_Ba4081aFqiEOrrmO0y6h9IoC9W_I5azhLtIp0OZLNz-JAdzAJS9ksl4OIvwt0znOBK2yAVBeYuBQng8EADnzUfrFVLP_3enW1RLVF13vr4_5s4dYj_j689muLmCCPOpIzZ3I-_EWqOQr-bcgTDv8TePpjepPv-_5ltMQDC7sT67aUraLyDN1gO7csRvHTVlKfh0DLYfu2iWa64vh7a2-GeP2U4eKSC-JuxOVsCFgVX1i1-zK26wZaN4W9XGAR8HhxJus97A2iQVEQ1ox54Uy2Kvoz1_Vdp5bn9rzxAqqcrCL2_yukXgVjfFelEJZhIiVJpZEQ4Qsav_38GtZWOi7_RquFdL_2LtPDx6T40GNucRJ8ymGOrwcROM1agQ=="
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "57577364",
+                "x": 18,
+                "y": 40
+              },
+              {
+                "productId": "7689270513",
+                "x": 55,
+                "y": 36
+              },
+              {
+                "productId": "9604422506",
+                "x": 82,
+                "y": 58
+              }
+            ]
+          }
+        },
+        {
+          "heading": "출발 직전 공통 준비물",
+          "text": "체크하지 않은 항목만 오른쪽 주문하기 버튼이 남습니다. 집에 흔히 있는 생수·냄비·국자·국그릇은 아래쪽 공통 준비물에서 마지막에 확인하세요. 냄비는 꽃게와 채소가 눌리지 않게 들어갈 크기인지, 생수는 마실 물과 조리용을 합쳐 충분한지 확인한 뒤 체크하면 됩니다. 체크 상태는 이 브라우저에 저장됩니다.",
+          "productIds": [
+            "7689270513",
+            "9487214712",
+            "9206620361",
+            "9676631018"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-crab-soup-checklist-tools.webp",
+            "alt": "꽃게탕 공통 준비물인 냄비와 국자, 국그릇, 생수",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "냄비·국자·국그릇·생수를 구분한 출발 직전 점검 장면",
+            "referenceProducts": [
+              {
+                "productId": "9487214712",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2mwKE6dUSy0kcFi12je1Glv6HN_xyTY6jET42QZxHrlGgq5IpXlQTGwSM7_N4onBTF3td2HfGises7YLqS7LRA2YKKxSoC6-3TURt7Fsf-qkDS9QiIAnv-y1nCkzc18PKyseiMSvdFIDStLDCqNch6LYSQUyJIXs844CzbW62aqw0nsc2xG4P5ovrQI1T5bZ_hoG-7A25p5Wf7Kxu44j0CCT1QyzYEH9ELbBSk9bCY8WeqEhMAs2TtrhOvwqEfPz2KwO54gir9rw7xvkt6ZvTpI5a4tc_ZshsYIltiQHA2Mt39IIFymw_mA0bpcCYAvS4-QfNLUwKwDx48lZ96S1wufFcNrJb33eTTkGkGyWWGgfiO59dZA9xNe8P6k4ntEGXnruQffOYnCeCexxokP6pvWbkYT0iKtKgHc9qKPEsf503XwS_cMQnejAdERL-zaVS1ARQlPW1wkP999M_0ZrXFyvoMts1PmMxvjSEKGxRD3zCWoG6t119sEzk6XKXPgXfREZQbkBr8CFrLc9QwixGoaQH2gTN3mw1g=="
+              },
+              {
+                "productId": "9206620361",
+                "imageUrl": "https://ads-partners.coupang.com/image1/xh-HLw4CfEA0F6Vlxszl1187AA_A0qBhPgnL1QpLvSw4VBUzvsoUQTiDCVocIX6qcOB__1iFN7n-dApFbiLTrVgeMRVkjRDQxDTsZBe3xtqFIiGGakmaPr-YnuoUz9DlyRZQqMAzvhlYlrtV7hLTvEH8bzYQ8pOGSOpfCOM4JhcXXoz-HbRzCARV-SoTrE-8tdrxxqwT4JX8wBspCK_mtdk6UhFca8AAxAFuTnoSIASgMmDGf3nGLxEZPkUkHHOw9Li62-MVxe7GVp2FKB1IZUUV3-ZrIGqAptx4vp9HDrFpqTp6ZGEgeAJyu7TBRxHfYDPzPMTX0wk8NprCSk9xpCZiBNUXBW_K3IHjbiBf5_LXD4ElhgnVZ8jQ3xmIiHrZ85lTxC9RK-U8fbKJ_hbz_7C1jhQe8lnYdflthvFn8SoBZSQpfJoumJaR-LCgr5753PCEAVm9PPOjr9g0q8ubjcPHP1VITMo8B6_ibVPIpBZpyYILyv7ZPd6-Vrz0aiVF-JKfKBkxFmvzLLZFVUD_7vDgReHMSkE="
+              },
+              {
+                "productId": "9676631018",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p"
+              },
+              {
+                "productId": "7689270513",
+                "imageUrl": "https://image13.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/93702155226173-fcebe9fc-46f2-4aa2-955c-3810ef885a5a_1751243766668.jpg"
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "9487214712",
+                "x": 29,
+                "y": 34
+              },
+              {
+                "productId": "9206620361",
+                "x": 62,
+                "y": 49
+              },
+              {
+                "productId": "9676631018",
+                "x": 42,
+                "y": 69
+              },
+              {
+                "productId": "7689270513",
+                "x": 82,
+                "y": 43
+              }
+            ]
+          }
+        }
+      ],
+      "productIds": [
+        "9603803528",
+        "6528172171",
+        "8443644467",
+        "9604422506",
+        "8574770164",
+        "57577364",
+        "7689270513",
+        "9487214712",
+        "9206620361",
+        "9676631018"
+      ],
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "가을 캠핑장 찾아보기"
+        }
+      ]
+    },
+    {
+      "slug": "camping-fishcake-soup-ingredient-checklist",
+      "title": "캠핑 어묵탕 재료 체크리스트",
+      "description": "캠핑 어묵탕에 필요한 모둠 어묵·대파·육수 재료와 생수·냄비·국자·국그릇을 출발 전에 확인하는 준비물 체크리스트입니다.",
+      "category": "요리 준비물",
+      "contentStyle": "shoppable-scene-v2",
+      "salesFormat": "food-checklist",
+      "coverLabel": "캠핑 어묵탕 준비물",
+      "status": "published",
+      "publishAt": "2026-09-14T15:00:00.000Z",
+      "updatedAt": "2026-09-14T15:00:00.000Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/camp-fishcake-soup-checklist-cover.webp",
+        "alt": "캠핑 어묵탕 재료를 펼쳐 둔 가을 준비 장면",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "prompt": "모둠 어묵·대파·육수팩을 펼친 캠핑 어묵탕 대표 썸네일",
+        "referenceProducts": [
+          {
+            "productId": "8682238562",
+            "imageUrl": "https://ads-partners.coupang.com/image1/zkAly6ob4bCVlia8zifJhG4rkt4YMW-jcAdR_A7EYarFoUSLEeUuOBfXVh7rC8i5TMnhFeBSnysJHyq5-ffKfoK3fZFofDGSyn5RYVQUWUD2kk4rdYE-XCWTfThcWwwSQ5nx6c7YC_iAhT3nwZK8pFDS1kYRmSCkKPMn5uQN2WI_WL6SeNQLAg-mKKDrsw5bE-SL4zJ4wlDhxooK0EdAXLWflsbNCXhZ4pnhASwfDB_mdioQCE4-yZ5C_ww-6HW4l6B9SeCsUoD0J4TwQj4-zzfFpFosEwErjfaTHezezN9cBkMBr_1KkFqAAwLxz486CyyaOpZPo1ReeEGl5i1KIyJBdcVQNaNnDdTjEPRMTFf6Yo1jyTB4e65gLsrv40lbb-jl1X1ZlK_sVI1x13saLQklkkGww-EEGM_veY_1fqxiupXHQ2awPvdyAobOTih5Y9xgw1wveJA8_fj671q8Z1vP7L8VdKHy5e_Ev2_GcZxnLxwgFE3Tfhk4Sc5NW336t8woGxkSJ3FK_7tJF7ZbZZwPO9j3Wv0="
+          },
+          {
+            "productId": "6528172171",
+            "imageUrl": "https://ads-partners.coupang.com/image1/bTqPc52sn3Ty1lbvbY7irn-tESM5GjRMTdAPhfnLdUJmcZoN5mFm_SVA_mo0TL9S16Y7q4UEaSJJMGjdLNRmTJ4xStTUfVlgWkcg_Svogw3Y8YS2ORDwvF6iVdSxKfGKISo__JslIgDlixkwgvPosngqsc-MWqxQ8-mCtdPDzwzdtMJrkudl0_6JykUD_MtQOs8Wi6JWDEDh2xk0l-kv5xbFadfj6c1jrBfJg89OJrVhePrW39RnKwtSlPo-UmPDugS7xOCZ5ZPPvSblWbs38_AKZOkU1PFeIWZznrs3JxeALNrH2PRYvoFwKlcAxv-nr8NsZwx4HTweai4sWQXjs5YWGXCc9OSuQS8r9LQxUyrh1HOr_h1YqOTBAf5FNaGRQsvN418bjoLHMHi4FRnbSYSVUPokTb-m2rSJ-ueqA5RMxzCGTOm46Mh-cenW_ZeFMZ07qXKWF8Z-0xJV3xFn94fh4Zesl_SdEnXnH8L-okSd53UkJoZKb_TVUaD4ZCSiDu6U-A_2ugFbC2E5Z-r2XQk="
+          },
+          {
+            "productId": "57577364",
+            "imageUrl": "https://ads-partners.coupang.com/image1/Eh0byLokTJWxq2BSEs6tWe37cMnLKGldHhUAEh8YQi-YwH6awkVpTPAg4Z11sd0ICYAisF1mo0WBWElwwA_I3XNHt2PX3pJjNGWxPSLLhyXn7MVIMiSoNx1YXLPSaMLC8wsTXpxSXwrzkQHyQ_ybypBLn1yg_XKkrtB-oC8BmestGug0fgEkaU1WbZETo7fGxBzJYujDYJi6_Kjcd-KzXJ2ZzGZb2BPcTWh8WMl8YVjX-HFWh6l72ZhKV_inmZPHstq4mTtyi-ivhpc-0NAnDMrfwoO6yOWj96T7rnwKYkYw8_5KXtRFucczk2HjpmvYb7FH6S-BpAEkPXDxH9Hp68GDcdUfvdW6-L-ldQoV9krGmsFII1hE8loWnWJ7I87szpf9KPea5l8I78LNvszG21cWHbqRCfx1R9AUtgqpFPDLn4_sWQ9OYDl5VG3v_m1xEAIdd835nQXtKn7eYMEdkw4plwJIk-3Kj-SLnlOHdY3RHLggB8BnXB-ymmvWnEW3fuDkB3j6dw=="
+          }
+        ],
+        "productMatchReviewed": true,
+        "tags": [
+          {
+            "productId": "8682238562",
+            "x": 23,
+            "y": 45
+          },
+          {
+            "productId": "6528172171",
+            "x": 55,
+            "y": 36
+          },
+          {
+            "productId": "57577364",
+            "x": 82,
+            "y": 39
+          }
+        ]
+      },
+      "checklist": [
+        {
+          "id": "fishcake",
+          "label": "모둠 어묵",
+          "role": "어묵탕의 주재료. 포장 중량과 보관 방법을 먼저 확인",
+          "group": "main",
+          "productId": "8682238562"
+        },
+        {
+          "id": "green-onion",
+          "label": "대파",
+          "role": "국물 향과 고명을 더하는 채소",
+          "group": "main",
+          "productId": "6528172171"
+        },
+        {
+          "id": "broth",
+          "label": "국물육수 다시팩",
+          "role": "어묵 국물의 기본 바탕을 내는 재료",
+          "group": "seasoning",
+          "productId": "57577364"
+        },
+        {
+          "id": "powder",
+          "label": "잔치국수 분말",
+          "role": "현장에서 간을 보완할 때 조금씩 쓰는 분말 조미료",
+          "group": "seasoning",
+          "productId": "6168487275"
+        },
+        {
+          "id": "water",
+          "label": "생수",
+          "role": "현장에서 육수 양을 맞출 때 쓰는 조리용 물",
+          "group": "common",
+          "productId": "7689270513"
+        },
+        {
+          "id": "pot",
+          "label": "20cm 양수냄비",
+          "role": "국물 재료를 한 번에 담는 조리 냄비",
+          "group": "common",
+          "productId": "9487214712"
+        },
+        {
+          "id": "ladle",
+          "label": "국자",
+          "role": "완성된 국물과 건더기를 나누어 담는 도구",
+          "group": "common",
+          "productId": "9206620361"
+        },
+        {
+          "id": "bowl",
+          "label": "국그릇",
+          "role": "뜨거운 국물요리를 개인별로 나누어 담는 그릇",
+          "group": "common",
+          "productId": "9676631018"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "장보기 전 확인",
+          "text": "모둠 어묵은 포장 중량과 보관 방법을 먼저 보고 인원수에 맞춰 준비하세요. 대파는 씻어 썰어 두면 현장에서 도마 사용을 줄일 수 있습니다. 육수팩과 분말 조미료는 둘 다 무조건 넣는 목록이 아니라, 평소 쓰는 국물 방식에 맞춰 필요한 것을 체크하는 보완 재료입니다. 작은 지퍼백에 모아 두면 찾기 쉽습니다. 냉장 보관 표시가 있으면 보냉 가방 자리도 먼저 확보하세요.",
+          "productIds": [
+            "8682238562",
+            "6528172171",
+            "57577364",
+            "6168487275"
+          ],
+          "image": {
+            "url": "/prep-images/camp-fishcake-soup-checklist-support.webp",
+            "alt": "어묵탕 육수 재료와 생수, 국그릇 준비 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "육수팩·분말·생수·국그릇을 나눠 둔 캠핑 준비 장면",
+            "referenceProducts": [
+              {
+                "productId": "57577364",
+                "imageUrl": "https://ads-partners.coupang.com/image1/Eh0byLokTJWxq2BSEs6tWe37cMnLKGldHhUAEh8YQi-YwH6awkVpTPAg4Z11sd0ICYAisF1mo0WBWElwwA_I3XNHt2PX3pJjNGWxPSLLhyXn7MVIMiSoNx1YXLPSaMLC8wsTXpxSXwrzkQHyQ_ybypBLn1yg_XKkrtB-oC8BmestGug0fgEkaU1WbZETo7fGxBzJYujDYJi6_Kjcd-KzXJ2ZzGZb2BPcTWh8WMl8YVjX-HFWh6l72ZhKV_inmZPHstq4mTtyi-ivhpc-0NAnDMrfwoO6yOWj96T7rnwKYkYw8_5KXtRFucczk2HjpmvYb7FH6S-BpAEkPXDxH9Hp68GDcdUfvdW6-L-ldQoV9krGmsFII1hE8loWnWJ7I87szpf9KPea5l8I78LNvszG21cWHbqRCfx1R9AUtgqpFPDLn4_sWQ9OYDl5VG3v_m1xEAIdd835nQXtKn7eYMEdkw4plwJIk-3Kj-SLnlOHdY3RHLggB8BnXB-ymmvWnEW3fuDkB3j6dw=="
+              },
+              {
+                "productId": "6168487275",
+                "imageUrl": "https://ads-partners.coupang.com/image1/Ig5HsnrPMGUKcJLTIq3H4Te9WlP1SS6rFRLPMn3DB3p-DE8phVpaNjg3NaXzoess4h2fYtWmF5h_YfXts-WU5Z4PFsSY5_liocIP18zrCv6pF9B3loUOXzVjVvn6xgaMftX16o9YdJYKB9NwOSQNfzx9dZRWYrvxVjONoLkujmW3SKOEjEZCQaoOmpVFKAZsZZLUFU_OPZLbLvA7G1uvScjINvTcVFWuG6HoFh_u0ffVu3ytmbVMGL3zAOG4xmuRYO5DZe7Ex33J-Je6I4MonABaRrKoogjPTSXDW1VAP4XHU6otRm1UqaAmtmf59BchtGRpBws25c8zRzp3JImMvm3MYgXzEQsw8VUjbU4_UpHiKQFW6tZBt3dGthZ1TTc0nV2nAhibskLxZeevbNm1gEZ9Z5ULa6-Qst3P2omUPywUkHhS50c3ltUnlMLGXXatcDYM1AvUHOgCblHXYfQvnSTJd3MebhveWMR98aBbmy-Wnnak_vUxRWpZR9dmdQtMsQrqE_LGYDz7tQ=="
+              },
+              {
+                "productId": "7689270513",
+                "imageUrl": "https://image13.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/93702155226173-fcebe9fc-46f2-4aa2-955c-3810ef885a5a_1751243766668.jpg"
+              },
+              {
+                "productId": "9676631018",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p"
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "57577364",
+                "x": 20,
+                "y": 45
+              },
+              {
+                "productId": "6168487275",
+                "x": 43,
+                "y": 58
+              },
+              {
+                "productId": "7689270513",
+                "x": 65,
+                "y": 39
+              },
+              {
+                "productId": "9676631018",
+                "x": 85,
+                "y": 64
+              }
+            ]
+          }
+        },
+        {
+          "heading": "출발 직전 공통 준비물",
+          "text": "식재료 확인이 끝난 뒤 아래 공통 준비물을 보세요. 냄비는 어묵이 불었을 때도 넘치지 않을 여유가 있는지, 생수는 조리용 분량을 따로 잡았는지 확인합니다. 국자와 국그릇은 빼먹기 쉬워 출발 직전 한 번 더 체크하는 항목입니다. 체크하지 않은 준비물만 주문하기 버튼이 보이고 완료 상태는 브라우저에 남습니다.",
+          "productIds": [
+            "7689270513",
+            "9487214712",
+            "9206620361",
+            "9676631018"
+          ],
+          "image": {
+            "url": "/prep-images/camp-fishcake-soup-checklist-tools.webp",
+            "alt": "어묵탕 공통 준비물 냄비와 국자, 국그릇, 생수",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "초록 수납함 옆 냄비·국자·국그릇·생수 점검 장면",
+            "referenceProducts": [
+              {
+                "productId": "9487214712",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2mwKE6dUSy0kcFi12je1Glv6HN_xyTY6jET42QZxHrlGgq5IpXlQTGwSM7_N4onBTF3td2HfGises7YLqS7LRA2YKKxSoC6-3TURt7Fsf-qkDS9QiIAnv-y1nCkzc18PKyseiMSvdFIDStLDCqNch6LYSQUyJIXs844CzbW62aqw0nsc2xG4P5ovrQI1T5bZ_hoG-7A25p5Wf7Kxu44j0CCT1QyzYEH9ELbBSk9bCY8WeqEhMAs2TtrhOvwqEfPz2KwO54gir9rw7xvkt6ZvTpI5a4tc_ZshsYIltiQHA2Mt39IIFymw_mA0bpcCYAvS4-QfNLUwKwDx48lZ96S1wufFcNrJb33eTTkGkGyWWGgfiO59dZA9xNe8P6k4ntEGXnruQffOYnCeCexxokP6pvWbkYT0iKtKgHc9qKPEsf503XwS_cMQnejAdERL-zaVS1ARQlPW1wkP999M_0ZrXFyvoMts1PmMxvjSEKGxRD3zCWoG6t119sEzk6XKXPgXfREZQbkBr8CFrLc9QwixGoaQH2gTN3mw1g=="
+              },
+              {
+                "productId": "9206620361",
+                "imageUrl": "https://ads-partners.coupang.com/image1/xh-HLw4CfEA0F6Vlxszl1187AA_A0qBhPgnL1QpLvSw4VBUzvsoUQTiDCVocIX6qcOB__1iFN7n-dApFbiLTrVgeMRVkjRDQxDTsZBe3xtqFIiGGakmaPr-YnuoUz9DlyRZQqMAzvhlYlrtV7hLTvEH8bzYQ8pOGSOpfCOM4JhcXXoz-HbRzCARV-SoTrE-8tdrxxqwT4JX8wBspCK_mtdk6UhFca8AAxAFuTnoSIASgMmDGf3nGLxEZPkUkHHOw9Li62-MVxe7GVp2FKB1IZUUV3-ZrIGqAptx4vp9HDrFpqTp6ZGEgeAJyu7TBRxHfYDPzPMTX0wk8NprCSk9xpCZiBNUXBW_K3IHjbiBf5_LXD4ElhgnVZ8jQ3xmIiHrZ85lTxC9RK-U8fbKJ_hbz_7C1jhQe8lnYdflthvFn8SoBZSQpfJoumJaR-LCgr5753PCEAVm9PPOjr9g0q8ubjcPHP1VITMo8B6_ibVPIpBZpyYILyv7ZPd6-Vrz0aiVF-JKfKBkxFmvzLLZFVUD_7vDgReHMSkE="
+              },
+              {
+                "productId": "9676631018",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p"
+              },
+              {
+                "productId": "7689270513",
+                "imageUrl": "https://image13.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/93702155226173-fcebe9fc-46f2-4aa2-955c-3810ef885a5a_1751243766668.jpg"
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "9487214712",
+                "x": 47,
+                "y": 46
+              },
+              {
+                "productId": "9206620361",
+                "x": 79,
+                "y": 66
+              },
+              {
+                "productId": "9676631018",
+                "x": 20,
+                "y": 67
+              },
+              {
+                "productId": "7689270513",
+                "x": 81,
+                "y": 39
+              }
+            ]
+          }
+        }
+      ],
+      "productIds": [
+        "8682238562",
+        "6528172171",
+        "57577364",
+        "6168487275",
+        "7689270513",
+        "9487214712",
+        "9206620361",
+        "9676631018"
+      ],
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "가을 캠핑장 찾아보기"
+        }
+      ]
+    },
+    {
+      "slug": "camping-budae-jjigae-ingredient-checklist",
+      "title": "캠핑 부대찌개 재료 체크리스트",
+      "description": "캠핑 부대찌개용 햄·소시지 구성과 추가 햄·치즈·대파·육수, 생수와 냄비까지 순서대로 확인하는 준비물 체크리스트입니다.",
+      "category": "요리 준비물",
+      "contentStyle": "shoppable-scene-v2",
+      "salesFormat": "food-checklist",
+      "coverLabel": "캠핑 부대찌개 준비물",
+      "status": "published",
+      "publishAt": "2026-09-14T15:00:00.000Z",
+      "updatedAt": "2026-09-14T15:00:00.000Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/camp-budae-soup-checklist-cover.webp",
+        "alt": "캠핑 부대찌개 햄과 치즈, 대파를 펼쳐 둔 준비 장면",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "prompt": "부대찌개 장면 옆 추가 햄·치즈·대파를 펼친 대표 썸네일",
+        "referenceProducts": [
+          {
+            "productId": "7380618503",
+            "imageUrl": "https://ads-partners.coupang.com/image1/HFmsl8n6advGPzAaHGUDZCyAY1pv08rs7tHCVkOmy58bWMLWysreD1-dgWTdFE_60bHfSrJo0GvrYM0ZENqDmrA2mrl7aywZlycGk-i1M6ffVDowppvL20NZ8noLUaCpm-p1_C46g8checC0QdlPPFRmCAXAEpHYv3DQqHs99MZ3EeLTUNhum5E5i9QzRQnCJPv06RTmvr-l49HFWCbMUx0WPi4Or3vjf18HK-nreN7Ji8jYFuy3a8X3A7gtD-MuEhL1-mFCoyBPYgxUYTJzw0fHDZuLKu0W0xW9kz2_r0vtG1N-LvBvU0rFfUofQf6LrDqqzcNxfmF5o7FYf1Qw1hmfvNDQ5ukhB2BfmRzAQYuu-Lrz0CilXBZ5pBPOstFR6qmFlcPHGPU5wUMLz66z1Ou8zDZLZUjQlT0BBSsyr0lG7hAogyE8g8dU67jwRguc0kOQ3AiBJV5nei32YyRBn4Ga0ysmMR8baGCT4cbmdu8uGHZ0KJsQ00E8fr_vazwcpfE4sYDAdcFg-Zg9OkUBKcr27qpVHw=="
+          },
+          {
+            "productId": "8243714135",
+            "imageUrl": "https://ads-partners.coupang.com/image1/wXNTDv78AGDpPbmCwcyiS4UeeKCDYUTVhyCUz86HihYWIg_mzPLbsfcmEGfWln1ScdClV5ZBV39ChvntjH5yewph1Cn6lji1eFkiscuGIH0YgxDkRRNtrs4oL-j_Un6ZLgHNstRamDoeC4SFmRuq9hsfTJik1cARqbc_Ey34-vbrHgA0rfNsUVk76BQ5c8SNB49CPLPAfXnOwmD-q0uxgTQyQEJSw5cik5pxmTtdNJcB0MBnYeFyOre-BQHFTI4mz34ywE6-5WLE1Qcg6z5inxMvxX91xJfd-e2RwYCaojamEiaJMKx3Hom34CkeLnxTmT1AmR5diLh33uLBtePe2P1vqjP40a-6epM9ms43eiNtgN0Z2zO-ilAu2M8Xzcq9wrVGK6-puX7DtMhj-MB_won8eHrIvPU0-cRk2Fb01bL8EB30pcqZHzOtJpLgOgJ0_uPt5-o_Xx8oFZbLp0sl780RKqs8EVltUxowAS3W8Sk1fRTiMBjxxX3QcvyXPycwwFIvMCs7v9l_4hDOcti7_rTyGZ6yBeTuS3uU7tW4Onk-a9Gi"
+          },
+          {
+            "productId": "6959448489",
+            "imageUrl": "https://ads-partners.coupang.com/image1/ARyzsD2VZa7J4ljIAWJC0RFDgs0y4kfs04VQPRF1LrL9kXcnIHyFTy1bBiFah7_UYXGIaiHnNkVpBWnoAc3lBZEA33rphzAdQaimktzJTIGPgLEvfYPw9vQVjEewxHRuiTFLjerF3sSnvbjHEaJxC3R6Dv_GxxRot3NnfLIzdpYKE3FOwjGFu3ioqe90WnHRf7AcZsj3TXUClQRhDjx8eaEQ6hIOQrKRQ_-P4VsmROq5-mBT2LlQyPcQ4_KjrL6TFXhykXGAyap7LTfQ8yGpa6FpyZoyerRgaSvSs5Ve8_YAacRQv3VSbKAaUMtgPBTvVDLlKLtcsBu2iW5oc4NUrsNsMKnIEjcgSpWbI2TOsWyPB9nDQejCbNY9RCx3WpQHZIy1SIFRSn-nhFfqaC0GL_142Hbcy8ebkbuoqut8ye_RYrMUgrZszMc5ehozPiJs9UnpR86OrAQSlPfnfoz5MT10ktRAHsiVGiFhHw1HpPFnlOsb6zOrP7yUbYUYe6XilP3La2B-06YEwRSURfEdIxBtRFpnao1iw56aNUEESsgrfzfA"
+          },
+          {
+            "productId": "6528172171",
+            "imageUrl": "https://ads-partners.coupang.com/image1/bTqPc52sn3Ty1lbvbY7irn-tESM5GjRMTdAPhfnLdUJmcZoN5mFm_SVA_mo0TL9S16Y7q4UEaSJJMGjdLNRmTJ4xStTUfVlgWkcg_Svogw3Y8YS2ORDwvF6iVdSxKfGKISo__JslIgDlixkwgvPosngqsc-MWqxQ8-mCtdPDzwzdtMJrkudl0_6JykUD_MtQOs8Wi6JWDEDh2xk0l-kv5xbFadfj6c1jrBfJg89OJrVhePrW39RnKwtSlPo-UmPDugS7xOCZ5ZPPvSblWbs38_AKZOkU1PFeIWZznrs3JxeALNrH2PRYvoFwKlcAxv-nr8NsZwx4HTweai4sWQXjs5YWGXCc9OSuQS8r9LQxUyrh1HOr_h1YqOTBAf5FNaGRQsvN418bjoLHMHi4FRnbSYSVUPokTb-m2rSJ-ueqA5RMxzCGTOm46Mh-cenW_ZeFMZ07qXKWF8Z-0xJV3xFn94fh4Zesl_SdEnXnH8L-okSd53UkJoZKb_TVUaD4ZCSiDu6U-A_2ugFbC2E5Z-r2XQk="
+          }
+        ],
+        "productMatchReviewed": true,
+        "tags": [
+          {
+            "productId": "7380618503",
+            "x": 21,
+            "y": 35
+          },
+          {
+            "productId": "8243714135",
+            "x": 61,
+            "y": 34
+          },
+          {
+            "productId": "6959448489",
+            "x": 54,
+            "y": 65
+          },
+          {
+            "productId": "6528172171",
+            "x": 86,
+            "y": 37
+          }
+        ]
+      },
+      "checklist": [
+        {
+          "id": "budae",
+          "label": "부대찌개 구성",
+          "role": "햄·소시지가 포함된 중심 재료. 포장 구성과 중량을 먼저 확인",
+          "group": "main",
+          "productId": "7380618503"
+        },
+        {
+          "id": "ham",
+          "label": "슬라이스 햄",
+          "role": "인원수에 맞춰 건더기를 추가할 때 쓰는 햄",
+          "group": "main",
+          "productId": "8243714135"
+        },
+        {
+          "id": "cheese",
+          "label": "체다 슬라이스 치즈",
+          "role": "원할 때 한 장씩 더하는 선택 재료",
+          "group": "main",
+          "productId": "6959448489"
+        },
+        {
+          "id": "green-onion",
+          "label": "대파",
+          "role": "국물 향과 채소 건더기를 더하는 재료",
+          "group": "main",
+          "productId": "6528172171"
+        },
+        {
+          "id": "zucchini",
+          "label": "애호박",
+          "role": "햄 사이에 넣을 채소 건더기를 보태는 재료",
+          "group": "main",
+          "productId": "8443644467"
+        },
+        {
+          "id": "broth",
+          "label": "국물육수 다시팩",
+          "role": "별도 육수 바탕이 필요할 때 쓰는 재료",
+          "group": "seasoning",
+          "productId": "57577364"
+        },
+        {
+          "id": "water",
+          "label": "생수",
+          "role": "현장에서 육수 양을 맞출 때 쓰는 조리용 물",
+          "group": "common",
+          "productId": "7689270513"
+        },
+        {
+          "id": "pot",
+          "label": "20cm 양수냄비",
+          "role": "국물 재료를 한 번에 담는 조리 냄비",
+          "group": "common",
+          "productId": "9487214712"
+        },
+        {
+          "id": "ladle",
+          "label": "국자",
+          "role": "완성된 국물과 건더기를 나누어 담는 도구",
+          "group": "common",
+          "productId": "9206620361"
+        },
+        {
+          "id": "bowl",
+          "label": "국그릇",
+          "role": "뜨거운 국물요리를 개인별로 나누어 담는 그릇",
+          "group": "common",
+          "productId": "9676631018"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "장보기 전 확인",
+          "text": "먼저 부대찌개 구성품 안에 햄과 소시지가 얼마나 들어 있는지 판매 페이지에서 확인하고, 부족할 때만 추가 햄을 체크하세요. 치즈는 취향에 따라 빼도 되는 선택 재료이며 대파와 애호박은 씻어 썰어 가면 편합니다. 냉장 또는 냉동 식품은 출발 직전에 보냉 가방으로 옮기고 서로 섞이지 않게 봉투를 나눕니다. 구성품과 추가 재료가 겹치지 않는지도 한 번 확인하세요.",
+          "productIds": [
+            "7380618503",
+            "8243714135",
+            "6959448489",
+            "6528172171",
+            "8443644467",
+            "57577364"
+          ],
+          "image": {
+            "url": "/prep-images/camp-budae-soup-checklist-support.webp",
+            "alt": "부대찌개 육수와 애호박, 생수, 국그릇을 확인하는 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "육수팩·애호박·생수·국그릇을 펼친 가을 캠핑 준비 장면",
+            "referenceProducts": [
+              {
+                "productId": "57577364",
+                "imageUrl": "https://ads-partners.coupang.com/image1/Eh0byLokTJWxq2BSEs6tWe37cMnLKGldHhUAEh8YQi-YwH6awkVpTPAg4Z11sd0ICYAisF1mo0WBWElwwA_I3XNHt2PX3pJjNGWxPSLLhyXn7MVIMiSoNx1YXLPSaMLC8wsTXpxSXwrzkQHyQ_ybypBLn1yg_XKkrtB-oC8BmestGug0fgEkaU1WbZETo7fGxBzJYujDYJi6_Kjcd-KzXJ2ZzGZb2BPcTWh8WMl8YVjX-HFWh6l72ZhKV_inmZPHstq4mTtyi-ivhpc-0NAnDMrfwoO6yOWj96T7rnwKYkYw8_5KXtRFucczk2HjpmvYb7FH6S-BpAEkPXDxH9Hp68GDcdUfvdW6-L-ldQoV9krGmsFII1hE8loWnWJ7I87szpf9KPea5l8I78LNvszG21cWHbqRCfx1R9AUtgqpFPDLn4_sWQ9OYDl5VG3v_m1xEAIdd835nQXtKn7eYMEdkw4plwJIk-3Kj-SLnlOHdY3RHLggB8BnXB-ymmvWnEW3fuDkB3j6dw=="
+              },
+              {
+                "productId": "8443644467",
+                "imageUrl": "https://ads-partners.coupang.com/image1/je05R7JHu39aBC3vjWibLFgXEfBE8ASgFmkhChk7lJtAU5PiKOJvGnLc9qx3OUKRVo4d6NvdDJ7vGkVRjss5L82zrPKEx5fpwHnDerBLqaCrS_yvcgxcfrDSmhNHDL7OBHlcL7ZYgMgkBALJLzAgmzF2bVQSLEttxYAa5PAcMG5IpSdza3YZaqczgEp2qFUcNKw82DnCbxl1BEuXKJto2GckvoBwETKpXqtNsluactmy5LDUsjpAZzu_POGn3dASRlFtDBIaxRz4zqIN102bQ2BDhhdlKkYyAYd4Yt0FdCOUYGs7wpYlkEjxPal0a79Cx0LwIeNWja_eGifjnTCqTqtsQvIaIj2KudpbZFb3Wihv5-V0YC_8bfwFXZvqgfexPXIidiuljkuz95rELeiZ4_hndU3OqWmokU4jzzh7AkbkZ8UGH8d3OJFE8PPjwax3iZdd2EC_zQLXbx0YC8fbMH96tOum3CiWD8R_ZFq1RZbX4SYm2th_h9-cMQ3TkKpuQd1ZrZJoZMXkfoRQeg1065vuBNYhoiOq"
+              },
+              {
+                "productId": "7689270513",
+                "imageUrl": "https://image13.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/93702155226173-fcebe9fc-46f2-4aa2-955c-3810ef885a5a_1751243766668.jpg"
+              },
+              {
+                "productId": "9676631018",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p"
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "57577364",
+                "x": 22,
+                "y": 39
+              },
+              {
+                "productId": "8443644467",
+                "x": 38,
+                "y": 72
+              },
+              {
+                "productId": "7689270513",
+                "x": 67,
+                "y": 37
+              },
+              {
+                "productId": "9676631018",
+                "x": 84,
+                "y": 66
+              }
+            ]
+          }
+        },
+        {
+          "heading": "출발 직전 공통 준비물",
+          "text": "육수팩은 구입한 부대찌개 구성에 육수가 포함됐는지 확인한 뒤 필요한 경우만 준비하세요. 생수·냄비·국자·국그릇은 음식 재료보다 아래에 배치해 마지막 짐 점검에 쓰도록 했습니다. 체크하면 글자가 회색 취소선으로 바뀌고 주문 버튼이 사라집니다. 남은 항목만 보면서 현장에 가져갈 실제 짐을 다시 확인하세요. 보냉 가방에 넣은 재료도 마지막에 체크해야 합니다.",
+          "productIds": [
+            "7689270513",
+            "9487214712",
+            "9206620361",
+            "9676631018"
+          ],
+          "image": {
+            "url": "/prep-images/camp-budae-soup-checklist-tools.webp",
+            "alt": "부대찌개 공통 준비물 냄비와 국자, 국그릇, 생수",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "붉은 체크 천 위 냄비·국자·국그릇·생수 점검 장면",
+            "referenceProducts": [
+              {
+                "productId": "9487214712",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2mwKE6dUSy0kcFi12je1Glv6HN_xyTY6jET42QZxHrlGgq5IpXlQTGwSM7_N4onBTF3td2HfGises7YLqS7LRA2YKKxSoC6-3TURt7Fsf-qkDS9QiIAnv-y1nCkzc18PKyseiMSvdFIDStLDCqNch6LYSQUyJIXs844CzbW62aqw0nsc2xG4P5ovrQI1T5bZ_hoG-7A25p5Wf7Kxu44j0CCT1QyzYEH9ELbBSk9bCY8WeqEhMAs2TtrhOvwqEfPz2KwO54gir9rw7xvkt6ZvTpI5a4tc_ZshsYIltiQHA2Mt39IIFymw_mA0bpcCYAvS4-QfNLUwKwDx48lZ96S1wufFcNrJb33eTTkGkGyWWGgfiO59dZA9xNe8P6k4ntEGXnruQffOYnCeCexxokP6pvWbkYT0iKtKgHc9qKPEsf503XwS_cMQnejAdERL-zaVS1ARQlPW1wkP999M_0ZrXFyvoMts1PmMxvjSEKGxRD3zCWoG6t119sEzk6XKXPgXfREZQbkBr8CFrLc9QwixGoaQH2gTN3mw1g=="
+              },
+              {
+                "productId": "9206620361",
+                "imageUrl": "https://ads-partners.coupang.com/image1/xh-HLw4CfEA0F6Vlxszl1187AA_A0qBhPgnL1QpLvSw4VBUzvsoUQTiDCVocIX6qcOB__1iFN7n-dApFbiLTrVgeMRVkjRDQxDTsZBe3xtqFIiGGakmaPr-YnuoUz9DlyRZQqMAzvhlYlrtV7hLTvEH8bzYQ8pOGSOpfCOM4JhcXXoz-HbRzCARV-SoTrE-8tdrxxqwT4JX8wBspCK_mtdk6UhFca8AAxAFuTnoSIASgMmDGf3nGLxEZPkUkHHOw9Li62-MVxe7GVp2FKB1IZUUV3-ZrIGqAptx4vp9HDrFpqTp6ZGEgeAJyu7TBRxHfYDPzPMTX0wk8NprCSk9xpCZiBNUXBW_K3IHjbiBf5_LXD4ElhgnVZ8jQ3xmIiHrZ85lTxC9RK-U8fbKJ_hbz_7C1jhQe8lnYdflthvFn8SoBZSQpfJoumJaR-LCgr5753PCEAVm9PPOjr9g0q8ubjcPHP1VITMo8B6_ibVPIpBZpyYILyv7ZPd6-Vrz0aiVF-JKfKBkxFmvzLLZFVUD_7vDgReHMSkE="
+              },
+              {
+                "productId": "9676631018",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p"
+              },
+              {
+                "productId": "7689270513",
+                "imageUrl": "https://image13.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/93702155226173-fcebe9fc-46f2-4aa2-955c-3810ef885a5a_1751243766668.jpg"
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "9487214712",
+                "x": 47,
+                "y": 45
+              },
+              {
+                "productId": "9206620361",
+                "x": 61,
+                "y": 70
+              },
+              {
+                "productId": "9676631018",
+                "x": 19,
+                "y": 68
+              },
+              {
+                "productId": "7689270513",
+                "x": 84,
+                "y": 44
+              }
+            ]
+          }
+        }
+      ],
+      "productIds": [
+        "7380618503",
+        "8243714135",
+        "6959448489",
+        "6528172171",
+        "8443644467",
+        "57577364",
+        "7689270513",
+        "9487214712",
+        "9206620361",
+        "9676631018"
+      ],
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "가을 캠핑장 찾아보기"
+        }
+      ]
+    },
+    {
+      "slug": "camping-beef-mushroom-hotpot-ingredient-checklist",
+      "title": "캠핑 소고기 버섯전골 재료 체크리스트",
+      "description": "캠핑 소고기 버섯전골에 필요한 소고기 구성·모둠버섯·대파·애호박·육수와 공통 조리도구를 확인하는 준비물 체크리스트입니다.",
+      "category": "요리 준비물",
+      "contentStyle": "shoppable-scene-v2",
+      "salesFormat": "food-checklist",
+      "coverLabel": "소고기 버섯전골 준비물",
+      "status": "published",
+      "publishAt": "2026-09-14T15:00:00.000Z",
+      "updatedAt": "2026-09-14T15:00:00.000Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/camp-beef-mushroom-hotpot-checklist-cover.webp",
+        "alt": "소고기 버섯전골 재료를 펼쳐 둔 가을 캠핑 준비 장면",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "prompt": "소고기 전골 장면과 버섯·대파·애호박을 펼친 대표 썸네일",
+        "referenceProducts": [
+          {
+            "productId": "7679993842",
+            "imageUrl": "https://ads-partners.coupang.com/image1/fxaDvC1Rxt5QfSmRf7exaFJkJa_wgx7DMhiqm0GQ7Xuq27j2fckZah5W4mzRZv2hkSSzM3PFU-Q1Nefco77DDeWzImTmGD9ikQj5OH_9tTsL0Jd5_Cb4ukkx1kr6YgVzq9DjDWPcOu4QF6ijNvFWPt13Fcy_9o0ytyC08uGKL5GHxk59zVt5zILKW7vSbgB2RlMm5kQT_HYDxbUhc0hLkAEmuSS_99bPXYZvs7xpQFW6sB-iVg-6Hd0ODhr6Lq3YFX56En9XJU-8Dm_kQtupDFnI6gcNtdkMzxG5jJ5w2rPjVFPVSs-sNA4k2zUz-EAUkpGufeqNr2fNmEJdYdkViJBxYBMps10kg9bU2rQwKLo7_kcP_G6PD9tCSyB7m9W4JG-deT0Ia54Xbo4Yuvf7-Wk7dA8Ot6-bN5GDPXQwRWqcKmqHghxSIVmN1ewNfwt1uUgpk2oJePVqMDkOkbfJ589S3oXJI77m8FA7JEE6MMohk9MiITf9Wu8XZvoks7Ug5Cvs9Iz5HmxalJVplQm9SiYGIGVAHX3DlQ=="
+          },
+          {
+            "productId": "6211502021",
+            "imageUrl": "https://ads-partners.coupang.com/image1/YoJ7giHIMbnbZkBVYhSYr570E0-HV-k-SKBQFQclCWY__ewH40fDJtDzjuHXLJe9Mf9BHyKYlokSgrHQGXIVaj4P6H5nCTHvzYdGf61aMy6Bg1cF6kNWZXLBC7RF8VdJRLdv7CO3a1SihH80EqR7zuJHXRQhu4PGVSpA94SE9-gnTDRQAC0Y61w7qyr4ADLKBkRmIizNyjuT5IInTI1iqtHNUSjw_9lB6E_XbRe5fVSYxrNJtI1jBy2iDiijJSOrn1Rt11YSfZHhZwY9_UmpS_ZD1Zu-J2m-wQArtocPw_WsOtJNqcvuEJ24J8nlPQHsVhyFOfv9Dgdf82ez-0cZfaL6CCWCkCEA47h7VG9XcuIXS5vRfqAPzXnHVmiFczzMbdOjsEZq9XCPqr63y94sXDZEgaYyg7Ki3dSbOkHnsD2t4sWJN04jOL-bTT_Vbx4BS2olP77-QZbzPRhgDkOWSIbesgv-BKNG2MZx03FT6T2exTLPNsp9d4rGDbYW0yUpq6VS3VwWH5BvsB3FMTH1v9iRka9FzQ=="
+          },
+          {
+            "productId": "6528172171",
+            "imageUrl": "https://ads-partners.coupang.com/image1/bTqPc52sn3Ty1lbvbY7irn-tESM5GjRMTdAPhfnLdUJmcZoN5mFm_SVA_mo0TL9S16Y7q4UEaSJJMGjdLNRmTJ4xStTUfVlgWkcg_Svogw3Y8YS2ORDwvF6iVdSxKfGKISo__JslIgDlixkwgvPosngqsc-MWqxQ8-mCtdPDzwzdtMJrkudl0_6JykUD_MtQOs8Wi6JWDEDh2xk0l-kv5xbFadfj6c1jrBfJg89OJrVhePrW39RnKwtSlPo-UmPDugS7xOCZ5ZPPvSblWbs38_AKZOkU1PFeIWZznrs3JxeALNrH2PRYvoFwKlcAxv-nr8NsZwx4HTweai4sWQXjs5YWGXCc9OSuQS8r9LQxUyrh1HOr_h1YqOTBAf5FNaGRQsvN418bjoLHMHi4FRnbSYSVUPokTb-m2rSJ-ueqA5RMxzCGTOm46Mh-cenW_ZeFMZ07qXKWF8Z-0xJV3xFn94fh4Zesl_SdEnXnH8L-okSd53UkJoZKb_TVUaD4ZCSiDu6U-A_2ugFbC2E5Z-r2XQk="
+          },
+          {
+            "productId": "8443644467",
+            "imageUrl": "https://ads-partners.coupang.com/image1/je05R7JHu39aBC3vjWibLFgXEfBE8ASgFmkhChk7lJtAU5PiKOJvGnLc9qx3OUKRVo4d6NvdDJ7vGkVRjss5L82zrPKEx5fpwHnDerBLqaCrS_yvcgxcfrDSmhNHDL7OBHlcL7ZYgMgkBALJLzAgmzF2bVQSLEttxYAa5PAcMG5IpSdza3YZaqczgEp2qFUcNKw82DnCbxl1BEuXKJto2GckvoBwETKpXqtNsluactmy5LDUsjpAZzu_POGn3dASRlFtDBIaxRz4zqIN102bQ2BDhhdlKkYyAYd4Yt0FdCOUYGs7wpYlkEjxPal0a79Cx0LwIeNWja_eGifjnTCqTqtsQvIaIj2KudpbZFb3Wihv5-V0YC_8bfwFXZvqgfexPXIidiuljkuz95rELeiZ4_hndU3OqWmokU4jzzh7AkbkZ8UGH8d3OJFE8PPjwax3iZdd2EC_zQLXbx0YC8fbMH96tOum3CiWD8R_ZFq1RZbX4SYm2th_h9-cMQ3TkKpuQd1ZrZJoZMXkfoRQeg1065vuBNYhoiOq"
+          }
+        ],
+        "productMatchReviewed": true,
+        "tags": [
+          {
+            "productId": "7679993842",
+            "x": 22,
+            "y": 39
+          },
+          {
+            "productId": "6211502021",
+            "x": 62,
+            "y": 40
+          },
+          {
+            "productId": "6528172171",
+            "x": 87,
+            "y": 31
+          },
+          {
+            "productId": "8443644467",
+            "x": 63,
+            "y": 66
+          }
+        ]
+      },
+      "checklist": [
+        {
+          "id": "beef",
+          "label": "소고기 샤브샤브 구성",
+          "role": "전골의 중심이 되는 고기 재료. 중량과 포함 채소를 먼저 확인",
+          "group": "main",
+          "productId": "7679993842"
+        },
+        {
+          "id": "mushroom",
+          "label": "전골용 모둠버섯",
+          "role": "종류가 다른 버섯 건더기를 한 번에 준비하는 재료",
+          "group": "main",
+          "productId": "6211502021"
+        },
+        {
+          "id": "green-onion",
+          "label": "대파",
+          "role": "국물 향을 더하는 기본 채소",
+          "group": "main",
+          "productId": "6528172171"
+        },
+        {
+          "id": "zucchini",
+          "label": "애호박",
+          "role": "부드러운 채소 건더기를 보태는 재료",
+          "group": "main",
+          "productId": "8443644467"
+        },
+        {
+          "id": "broth",
+          "label": "국물육수 다시팩",
+          "role": "전골 국물의 바탕을 따로 낼 때 쓰는 재료",
+          "group": "seasoning",
+          "productId": "57577364"
+        },
+        {
+          "id": "water",
+          "label": "생수",
+          "role": "현장에서 육수 양을 맞출 때 쓰는 조리용 물",
+          "group": "common",
+          "productId": "7689270513"
+        },
+        {
+          "id": "pot",
+          "label": "20cm 양수냄비",
+          "role": "국물 재료를 한 번에 담는 조리 냄비",
+          "group": "common",
+          "productId": "9487214712"
+        },
+        {
+          "id": "ladle",
+          "label": "국자",
+          "role": "완성된 국물과 건더기를 나누어 담는 도구",
+          "group": "common",
+          "productId": "9206620361"
+        },
+        {
+          "id": "bowl",
+          "label": "국그릇",
+          "role": "뜨거운 국물요리를 개인별로 나누어 담는 그릇",
+          "group": "common",
+          "productId": "9676631018"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "장보기 전 확인",
+          "text": "소고기 구성품에 이미 들어 있는 채소와 육수 범위를 먼저 확인하면 중복 구매를 줄일 수 있습니다. 모둠버섯은 포장 안의 종류와 양을 보고, 대파와 애호박은 필요한 만큼 씻어 소분하세요. 고기와 채소는 보관 조건이 다르므로 각각 밀봉하고 고기는 출발 직전에 보냉 가방 안쪽에 넣는 순서로 점검합니다. 구성 안에 든 재료는 중복 체크하지 않아도 됩니다.",
+          "productIds": [
+            "7679993842",
+            "6211502021",
+            "6528172171",
+            "8443644467",
+            "57577364"
+          ],
+          "image": {
+            "url": "/prep-images/camp-beef-mushroom-hotpot-checklist-support.webp",
+            "alt": "버섯전골 육수와 애호박, 생수, 국그릇을 확인하는 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "짙은 초록 천 위 육수팩·애호박·생수·국그릇 준비 장면",
+            "referenceProducts": [
+              {
+                "productId": "57577364",
+                "imageUrl": "https://ads-partners.coupang.com/image1/Eh0byLokTJWxq2BSEs6tWe37cMnLKGldHhUAEh8YQi-YwH6awkVpTPAg4Z11sd0ICYAisF1mo0WBWElwwA_I3XNHt2PX3pJjNGWxPSLLhyXn7MVIMiSoNx1YXLPSaMLC8wsTXpxSXwrzkQHyQ_ybypBLn1yg_XKkrtB-oC8BmestGug0fgEkaU1WbZETo7fGxBzJYujDYJi6_Kjcd-KzXJ2ZzGZb2BPcTWh8WMl8YVjX-HFWh6l72ZhKV_inmZPHstq4mTtyi-ivhpc-0NAnDMrfwoO6yOWj96T7rnwKYkYw8_5KXtRFucczk2HjpmvYb7FH6S-BpAEkPXDxH9Hp68GDcdUfvdW6-L-ldQoV9krGmsFII1hE8loWnWJ7I87szpf9KPea5l8I78LNvszG21cWHbqRCfx1R9AUtgqpFPDLn4_sWQ9OYDl5VG3v_m1xEAIdd835nQXtKn7eYMEdkw4plwJIk-3Kj-SLnlOHdY3RHLggB8BnXB-ymmvWnEW3fuDkB3j6dw=="
+              },
+              {
+                "productId": "8443644467",
+                "imageUrl": "https://ads-partners.coupang.com/image1/je05R7JHu39aBC3vjWibLFgXEfBE8ASgFmkhChk7lJtAU5PiKOJvGnLc9qx3OUKRVo4d6NvdDJ7vGkVRjss5L82zrPKEx5fpwHnDerBLqaCrS_yvcgxcfrDSmhNHDL7OBHlcL7ZYgMgkBALJLzAgmzF2bVQSLEttxYAa5PAcMG5IpSdza3YZaqczgEp2qFUcNKw82DnCbxl1BEuXKJto2GckvoBwETKpXqtNsluactmy5LDUsjpAZzu_POGn3dASRlFtDBIaxRz4zqIN102bQ2BDhhdlKkYyAYd4Yt0FdCOUYGs7wpYlkEjxPal0a79Cx0LwIeNWja_eGifjnTCqTqtsQvIaIj2KudpbZFb3Wihv5-V0YC_8bfwFXZvqgfexPXIidiuljkuz95rELeiZ4_hndU3OqWmokU4jzzh7AkbkZ8UGH8d3OJFE8PPjwax3iZdd2EC_zQLXbx0YC8fbMH96tOum3CiWD8R_ZFq1RZbX4SYm2th_h9-cMQ3TkKpuQd1ZrZJoZMXkfoRQeg1065vuBNYhoiOq"
+              },
+              {
+                "productId": "7689270513",
+                "imageUrl": "https://image13.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/93702155226173-fcebe9fc-46f2-4aa2-955c-3810ef885a5a_1751243766668.jpg"
+              },
+              {
+                "productId": "9676631018",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p"
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "57577364",
+                "x": 21,
+                "y": 42
+              },
+              {
+                "productId": "8443644467",
+                "x": 37,
+                "y": 71
+              },
+              {
+                "productId": "7689270513",
+                "x": 61,
+                "y": 38
+              },
+              {
+                "productId": "9676631018",
+                "x": 84,
+                "y": 65
+              }
+            ]
+          }
+        },
+        {
+          "heading": "출발 직전 공통 준비물",
+          "text": "육수팩은 구입한 구성에 별도 육수가 없을 때 확인하는 항목입니다. 공통 준비물은 생수, 냄비, 국자, 국그릇 순으로 아래에 모았습니다. 냄비는 모든 재료를 넣고도 국물이 넘치지 않을 크기인지 확인하고, 생수는 마실 물과 조리용을 구분해 수량을 잡으세요. 체크하지 않은 항목에는 오른쪽 주문하기 버튼이 계속 표시됩니다. 실제 짐에 넣은 뒤 체크하는 방식으로 쓰세요.",
+          "productIds": [
+            "7689270513",
+            "9487214712",
+            "9206620361",
+            "9676631018"
+          ],
+          "image": {
+            "url": "/prep-images/camp-beef-mushroom-hotpot-checklist-tools.webp",
+            "alt": "버섯전골 공통 준비물 냄비와 국자, 국그릇, 생수",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "산 캠핑장 테이블 위 냄비·국자·국그릇·생수 점검 장면",
+            "referenceProducts": [
+              {
+                "productId": "9487214712",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2mwKE6dUSy0kcFi12je1Glv6HN_xyTY6jET42QZxHrlGgq5IpXlQTGwSM7_N4onBTF3td2HfGises7YLqS7LRA2YKKxSoC6-3TURt7Fsf-qkDS9QiIAnv-y1nCkzc18PKyseiMSvdFIDStLDCqNch6LYSQUyJIXs844CzbW62aqw0nsc2xG4P5ovrQI1T5bZ_hoG-7A25p5Wf7Kxu44j0CCT1QyzYEH9ELbBSk9bCY8WeqEhMAs2TtrhOvwqEfPz2KwO54gir9rw7xvkt6ZvTpI5a4tc_ZshsYIltiQHA2Mt39IIFymw_mA0bpcCYAvS4-QfNLUwKwDx48lZ96S1wufFcNrJb33eTTkGkGyWWGgfiO59dZA9xNe8P6k4ntEGXnruQffOYnCeCexxokP6pvWbkYT0iKtKgHc9qKPEsf503XwS_cMQnejAdERL-zaVS1ARQlPW1wkP999M_0ZrXFyvoMts1PmMxvjSEKGxRD3zCWoG6t119sEzk6XKXPgXfREZQbkBr8CFrLc9QwixGoaQH2gTN3mw1g=="
+              },
+              {
+                "productId": "9206620361",
+                "imageUrl": "https://ads-partners.coupang.com/image1/xh-HLw4CfEA0F6Vlxszl1187AA_A0qBhPgnL1QpLvSw4VBUzvsoUQTiDCVocIX6qcOB__1iFN7n-dApFbiLTrVgeMRVkjRDQxDTsZBe3xtqFIiGGakmaPr-YnuoUz9DlyRZQqMAzvhlYlrtV7hLTvEH8bzYQ8pOGSOpfCOM4JhcXXoz-HbRzCARV-SoTrE-8tdrxxqwT4JX8wBspCK_mtdk6UhFca8AAxAFuTnoSIASgMmDGf3nGLxEZPkUkHHOw9Li62-MVxe7GVp2FKB1IZUUV3-ZrIGqAptx4vp9HDrFpqTp6ZGEgeAJyu7TBRxHfYDPzPMTX0wk8NprCSk9xpCZiBNUXBW_K3IHjbiBf5_LXD4ElhgnVZ8jQ3xmIiHrZ85lTxC9RK-U8fbKJ_hbz_7C1jhQe8lnYdflthvFn8SoBZSQpfJoumJaR-LCgr5753PCEAVm9PPOjr9g0q8ubjcPHP1VITMo8B6_ibVPIpBZpyYILyv7ZPd6-Vrz0aiVF-JKfKBkxFmvzLLZFVUD_7vDgReHMSkE="
+              },
+              {
+                "productId": "9676631018",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p"
+              },
+              {
+                "productId": "7689270513",
+                "imageUrl": "https://image13.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/93702155226173-fcebe9fc-46f2-4aa2-955c-3810ef885a5a_1751243766668.jpg"
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "9487214712",
+                "x": 35,
+                "y": 40
+              },
+              {
+                "productId": "9206620361",
+                "x": 54,
+                "y": 70
+              },
+              {
+                "productId": "9676631018",
+                "x": 72,
+                "y": 67
+              },
+              {
+                "productId": "7689270513",
+                "x": 83,
+                "y": 37
+              }
+            ]
+          }
+        }
+      ],
+      "productIds": [
+        "7679993842",
+        "6211502021",
+        "6528172171",
+        "8443644467",
+        "57577364",
+        "7689270513",
+        "9487214712",
+        "9206620361",
+        "9676631018"
+      ],
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "가을 캠핑장 찾아보기"
+        }
+      ]
+    },
+    {
+      "slug": "camping-seafood-hotpot-ingredient-checklist",
+      "title": "캠핑 해물탕 재료 체크리스트",
+      "description": "캠핑 해물탕용 모둠해물·오만둥이·미나리·애호박·매운탕 양념·육수와 냄비까지 확인하는 가을 준비물 체크리스트입니다.",
+      "category": "요리 준비물",
+      "contentStyle": "shoppable-scene-v2",
+      "salesFormat": "food-checklist",
+      "coverLabel": "캠핑 해물탕 준비물",
+      "status": "published",
+      "publishAt": "2026-09-14T15:00:00.000Z",
+      "updatedAt": "2026-09-14T15:00:00.000Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/camp-seafood-hotpot-checklist-cover.webp",
+        "alt": "캠핑 해물탕 재료를 펼쳐 둔 가을 준비 장면",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "prompt": "모둠해물탕·오만둥이·매운탕 양념·미나리를 펼친 대표 썸네일",
+        "referenceProducts": [
+          {
+            "productId": "7853820445",
+            "imageUrl": "https://ads-partners.coupang.com/image1/7LIYDziTc5qZxHbk7BK7B6WoNcXlfp98g3HSoJIWhPXdHCpP7mBQDqJI4FSeOVze1tyMw9Nvg73QTvY8MbOy3ZzNeYuzLBy40AX-c3I6xrNFE5k5eQG99tBHf0pueJxqZTAqqfbzdOqfjzxmgp5No3fvZvf-9wc7exlrrbca__15v5VkozdVh6mfg3fOszeKkgvXc1fpaWAlIMuGPUccZs7av08J9g7L46480v9R7-2-jTW4B8wumCuqYqUf94LRdb2M3XgQXbNNGSbVWs1hbrGAkJJOnN0Jyt1semyLo3Mp_1ACfG16hT3fNgeQOUKGpNanOOp0-jEieYIsmWUCBjkpXBdCUt0I6rZhALn0-xfiyux3zGCNEqgFh8nRTH-arrV2qq5Q-PNi3ga_BhuAGouqZJ46N9ANONmdWt_40h1-YEdDQm1Z3n77AXPbeekCMPijNPJThWPGkvEvwKnzojJCDPaekLW1dRntuuO4KzjwbgUA_LE3rvNPUOxUkAs="
+          },
+          {
+            "productId": "8630066299",
+            "imageUrl": "https://ads-partners.coupang.com/image1/0DYh8wlC8pGAdLiB0HvlY2QX8JzpHVQ6bfstWWb-tONHsS6GZvKZRQ0l_to52ZN1pX22N35h1G6BUtjNY6H65wFgkDj_COcahstsYtMbo-wSfRwrBfrCEZNnb1dVyG4NFTgHhfmFY1e6dsLTbvaktEqlr6yYBkOeaCstpD9527yLT277PNvNEAaDMuduGW_ohekBkt7F53KPom77aCZQe6n4s1rj5dcIyLJoTms_1BSGWIXda18qGfpYlVdKmu30fp3Y0BhWfjI-anQ4UJaYQ92cMwbZBPzLFVOy5dxIQKv-bGTnjDhYr0Q5-5flOwzVBQApDKL7Jcsm8bELRDWJqoBJGSKiHcRLEGzMOmUMdIkpWk3dPEBDzlulVrjpeph5_JxZ-eVXvTTMIsjsNjikRhRriaDIbWB5s2767p8M2cG1CizdVgnw5s0ZGDHohu6cc6-RmGZ017vbPo_cU62JyvRTDnxH3gyZXcqeznwyWbLludsJgCqiB3zchXN_x0wqBfHx2ZqRuv7x4FDetF-rgnNmUAJm-a_O"
+          },
+          {
+            "productId": "8574770164",
+            "imageUrl": "https://ads-partners.coupang.com/image1/skCH9EZNyASV8lMZsvhxRYjrVeLSiMQZXAm7xsnwI1Hl1NnV0U1hJWdeV8ajK7g0ORh8Po3LJ031nJ-efUoW-Kj7_BZG63vpd0znvjv9OwWFWPpmoSnVUwjjbDVoisEmZ_ACNctxQiIB35r0JKdM4UPZYs5ab0nFDWv3ywjwzWtLbsdIUErAltnJOqKyzHOh2_RJBGHtBY890SR-0N2sIC2hMPx7sjzVxdzclepbHcllEbWHTtKWdcUxxfHbM_dts_7zSlkKc_sGGJwKQ2qiHwoVkTxqNi7euEloXKZ35UESK5umhX4WdmY1IN-g1eOjYQaB8WBmIBCeaLPraSoABpW4xKhnVPy0dXMKiD-li4gZo7eQFZfaOoAkZz0x3o7EjJqOcdLh0ckP8D3hNXZIPJiLTxVS-g38jhwjCxp1lISYtbQemIyzvpW92qka_1VUDK8-D5bs4EF8CDONEQdeJqbJgvSMwK2e6bc_DdBbQfrbkHTDQjH2TFWoHIrmLZr8BlB4vQJxC0Y="
+          },
+          {
+            "productId": "9604422506",
+            "imageUrl": "https://ads-partners.coupang.com/image1/XUsp_JbHfaM_kHHJXczlf4oN-wbebsMZOVNgtQIADiSFP84_fDCKsjZeTu-qsEHMp26yZmXqr0yiobbtwSfeajF7rwQYZLwZdlSxZJfBWR7U_O8IVbhRZ2pkeiYU_zMm272hzxnFYmOVti74Ry1lcnGPHKQLh9vRS5ecnb_Ba4081aFqiEOrrmO0y6h9IoC9W_I5azhLtIp0OZLNz-JAdzAJS9ksl4OIvwt0znOBK2yAVBeYuBQng8EADnzUfrFVLP_3enW1RLVF13vr4_5s4dYj_j689muLmCCPOpIzZ3I-_EWqOQr-bcgTDv8TePpjepPv-_5ltMQDC7sT67aUraLyDN1gO7csRvHTVlKfh0DLYfu2iWa64vh7a2-GeP2U4eKSC-JuxOVsCFgVX1i1-zK26wZaN4W9XGAR8HhxJus97A2iQVEQ1ox54Uy2Kvoz1_Vdp5bn9rzxAqqcrCL2_yukXgVjfFelEJZhIiVJpZEQ4Qsav_38GtZWOi7_RquFdL_2LtPDx6T40GNucRJ8ymGOrwcROM1agQ=="
+          }
+        ],
+        "productMatchReviewed": true,
+        "tags": [
+          {
+            "productId": "7853820445",
+            "x": 18,
+            "y": 28
+          },
+          {
+            "productId": "8630066299",
+            "x": 26,
+            "y": 58
+          },
+          {
+            "productId": "8574770164",
+            "x": 52,
+            "y": 37
+          },
+          {
+            "productId": "9604422506",
+            "x": 82,
+            "y": 52
+          }
+        ]
+      },
+      "checklist": [
+        {
+          "id": "seafood",
+          "label": "모둠해물탕",
+          "role": "해물탕의 중심 재료. 냉동 상태와 포장 중량을 먼저 확인",
+          "group": "main",
+          "productId": "7853820445"
+        },
+        {
+          "id": "omandungi",
+          "label": "손질 오만둥이",
+          "role": "해물 건더기를 추가할 때 쓰는 선택 재료",
+          "group": "main",
+          "productId": "8630066299"
+        },
+        {
+          "id": "minari",
+          "label": "미나리",
+          "role": "마지막에 향을 더하는 채소",
+          "group": "main",
+          "productId": "9604422506"
+        },
+        {
+          "id": "zucchini",
+          "label": "애호박",
+          "role": "부드러운 채소 건더기를 보태는 재료",
+          "group": "main",
+          "productId": "8443644467"
+        },
+        {
+          "id": "seasoning",
+          "label": "매운탕 양념",
+          "role": "해물탕의 기본 간을 준비하는 양념",
+          "group": "seasoning",
+          "productId": "8574770164"
+        },
+        {
+          "id": "broth",
+          "label": "국물육수 다시팩",
+          "role": "국물 바탕을 별도로 낼 때 쓰는 재료",
+          "group": "seasoning",
+          "productId": "57577364"
+        },
+        {
+          "id": "water",
+          "label": "생수",
+          "role": "현장에서 육수 양을 맞출 때 쓰는 조리용 물",
+          "group": "common",
+          "productId": "7689270513"
+        },
+        {
+          "id": "pot",
+          "label": "20cm 양수냄비",
+          "role": "국물 재료를 한 번에 담는 조리 냄비",
+          "group": "common",
+          "productId": "9487214712"
+        },
+        {
+          "id": "ladle",
+          "label": "국자",
+          "role": "완성된 국물과 건더기를 나누어 담는 도구",
+          "group": "common",
+          "productId": "9206620361"
+        },
+        {
+          "id": "bowl",
+          "label": "국그릇",
+          "role": "뜨거운 국물요리를 개인별로 나누어 담는 그릇",
+          "group": "common",
+          "productId": "9676631018"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "장보기 전 확인",
+          "text": "모둠해물탕 포장의 중량과 포함된 해물 종류를 먼저 확인하고, 오만둥이는 건더기를 더하고 싶을 때만 체크하세요. 냉동 해물은 녹으면서 물이 샐 수 있으므로 밀폐 봉투에 한 번 더 넣어 보냉 가방 안쪽에 둡니다. 미나리와 애호박은 씻어 물기를 뺀 뒤 따로 포장하면 현장에서 목록과 실제 재료를 대조하기 쉽습니다.",
+          "productIds": [
+            "7853820445",
+            "8630066299",
+            "9604422506",
+            "8443644467",
+            "8574770164",
+            "57577364"
+          ],
+          "image": {
+            "url": "/prep-images/camp-seafood-hotpot-checklist-support.webp",
+            "alt": "해물탕 육수와 애호박, 생수, 국그릇을 확인하는 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "바닷가 캠핑 테이블에 육수팩·애호박·생수·국그릇을 둔 장면",
+            "referenceProducts": [
+              {
+                "productId": "57577364",
+                "imageUrl": "https://ads-partners.coupang.com/image1/Eh0byLokTJWxq2BSEs6tWe37cMnLKGldHhUAEh8YQi-YwH6awkVpTPAg4Z11sd0ICYAisF1mo0WBWElwwA_I3XNHt2PX3pJjNGWxPSLLhyXn7MVIMiSoNx1YXLPSaMLC8wsTXpxSXwrzkQHyQ_ybypBLn1yg_XKkrtB-oC8BmestGug0fgEkaU1WbZETo7fGxBzJYujDYJi6_Kjcd-KzXJ2ZzGZb2BPcTWh8WMl8YVjX-HFWh6l72ZhKV_inmZPHstq4mTtyi-ivhpc-0NAnDMrfwoO6yOWj96T7rnwKYkYw8_5KXtRFucczk2HjpmvYb7FH6S-BpAEkPXDxH9Hp68GDcdUfvdW6-L-ldQoV9krGmsFII1hE8loWnWJ7I87szpf9KPea5l8I78LNvszG21cWHbqRCfx1R9AUtgqpFPDLn4_sWQ9OYDl5VG3v_m1xEAIdd835nQXtKn7eYMEdkw4plwJIk-3Kj-SLnlOHdY3RHLggB8BnXB-ymmvWnEW3fuDkB3j6dw=="
+              },
+              {
+                "productId": "8443644467",
+                "imageUrl": "https://ads-partners.coupang.com/image1/je05R7JHu39aBC3vjWibLFgXEfBE8ASgFmkhChk7lJtAU5PiKOJvGnLc9qx3OUKRVo4d6NvdDJ7vGkVRjss5L82zrPKEx5fpwHnDerBLqaCrS_yvcgxcfrDSmhNHDL7OBHlcL7ZYgMgkBALJLzAgmzF2bVQSLEttxYAa5PAcMG5IpSdza3YZaqczgEp2qFUcNKw82DnCbxl1BEuXKJto2GckvoBwETKpXqtNsluactmy5LDUsjpAZzu_POGn3dASRlFtDBIaxRz4zqIN102bQ2BDhhdlKkYyAYd4Yt0FdCOUYGs7wpYlkEjxPal0a79Cx0LwIeNWja_eGifjnTCqTqtsQvIaIj2KudpbZFb3Wihv5-V0YC_8bfwFXZvqgfexPXIidiuljkuz95rELeiZ4_hndU3OqWmokU4jzzh7AkbkZ8UGH8d3OJFE8PPjwax3iZdd2EC_zQLXbx0YC8fbMH96tOum3CiWD8R_ZFq1RZbX4SYm2th_h9-cMQ3TkKpuQd1ZrZJoZMXkfoRQeg1065vuBNYhoiOq"
+              },
+              {
+                "productId": "7689270513",
+                "imageUrl": "https://image13.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/93702155226173-fcebe9fc-46f2-4aa2-955c-3810ef885a5a_1751243766668.jpg"
+              },
+              {
+                "productId": "9676631018",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p"
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "57577364",
+                "x": 18,
+                "y": 44
+              },
+              {
+                "productId": "8443644467",
+                "x": 38,
+                "y": 67
+              },
+              {
+                "productId": "7689270513",
+                "x": 64,
+                "y": 38
+              },
+              {
+                "productId": "9676631018",
+                "x": 84,
+                "y": 63
+              }
+            ]
+          }
+        },
+        {
+          "heading": "출발 직전 공통 준비물",
+          "text": "매운탕 양념은 포장 구성에 양념이 포함됐는지 확인한 뒤 준비하고, 육수팩은 별도 국물 바탕이 필요할 때 선택합니다. 생수·냄비·국자·국그릇은 아래 공통 준비물에서 마지막에 점검하세요. 냄비 크기는 해물과 채소를 모두 넣을 여유가 있는지 확인합니다. 체크하지 않은 항목만 주문하기 버튼이 남아 출발 전 빠진 짐을 바로 구분할 수 있습니다.",
+          "productIds": [
+            "7689270513",
+            "9487214712",
+            "9206620361",
+            "9676631018"
+          ],
+          "image": {
+            "url": "/prep-images/camp-seafood-hotpot-checklist-tools.webp",
+            "alt": "해물탕 공통 준비물 냄비와 국자, 국그릇, 생수",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "prompt": "해안 캠핑장 테이블 위 냄비·국자·국그릇·생수 점검 장면",
+            "referenceProducts": [
+              {
+                "productId": "9487214712",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2mwKE6dUSy0kcFi12je1Glv6HN_xyTY6jET42QZxHrlGgq5IpXlQTGwSM7_N4onBTF3td2HfGises7YLqS7LRA2YKKxSoC6-3TURt7Fsf-qkDS9QiIAnv-y1nCkzc18PKyseiMSvdFIDStLDCqNch6LYSQUyJIXs844CzbW62aqw0nsc2xG4P5ovrQI1T5bZ_hoG-7A25p5Wf7Kxu44j0CCT1QyzYEH9ELbBSk9bCY8WeqEhMAs2TtrhOvwqEfPz2KwO54gir9rw7xvkt6ZvTpI5a4tc_ZshsYIltiQHA2Mt39IIFymw_mA0bpcCYAvS4-QfNLUwKwDx48lZ96S1wufFcNrJb33eTTkGkGyWWGgfiO59dZA9xNe8P6k4ntEGXnruQffOYnCeCexxokP6pvWbkYT0iKtKgHc9qKPEsf503XwS_cMQnejAdERL-zaVS1ARQlPW1wkP999M_0ZrXFyvoMts1PmMxvjSEKGxRD3zCWoG6t119sEzk6XKXPgXfREZQbkBr8CFrLc9QwixGoaQH2gTN3mw1g=="
+              },
+              {
+                "productId": "9206620361",
+                "imageUrl": "https://ads-partners.coupang.com/image1/xh-HLw4CfEA0F6Vlxszl1187AA_A0qBhPgnL1QpLvSw4VBUzvsoUQTiDCVocIX6qcOB__1iFN7n-dApFbiLTrVgeMRVkjRDQxDTsZBe3xtqFIiGGakmaPr-YnuoUz9DlyRZQqMAzvhlYlrtV7hLTvEH8bzYQ8pOGSOpfCOM4JhcXXoz-HbRzCARV-SoTrE-8tdrxxqwT4JX8wBspCK_mtdk6UhFca8AAxAFuTnoSIASgMmDGf3nGLxEZPkUkHHOw9Li62-MVxe7GVp2FKB1IZUUV3-ZrIGqAptx4vp9HDrFpqTp6ZGEgeAJyu7TBRxHfYDPzPMTX0wk8NprCSk9xpCZiBNUXBW_K3IHjbiBf5_LXD4ElhgnVZ8jQ3xmIiHrZ85lTxC9RK-U8fbKJ_hbz_7C1jhQe8lnYdflthvFn8SoBZSQpfJoumJaR-LCgr5753PCEAVm9PPOjr9g0q8ubjcPHP1VITMo8B6_ibVPIpBZpyYILyv7ZPd6-Vrz0aiVF-JKfKBkxFmvzLLZFVUD_7vDgReHMSkE="
+              },
+              {
+                "productId": "9676631018",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YnuoTEOUCaE9lGqrYoq8_pxp2MefRKwHNfLJtWfQzy-DNk8a3kps9vNsyoAZ2ojlYOP6sbOl3DoJgMEaOQ7y83avDRxmfhXmcv8C8zPF6_jxmfoUE2WwgOLkRO4-N-E2HIssGM6EKm4hlbHAYq_6gF0WlwnzRwfMfVEVNzypzUcTSPEW8If9DBvFtxgmukAmH7N7a8cpejImVsdMlTk_9TskWYbK7RVMeC9qgy29eXQBJy3HWKCHjEpmsNDdk2oRr_sURCjkvQKY5BC3cd3rQlx3ZWfdwTPwNK0XGdkKkUVcW60VzMju7cpCBuTr027Cm--SDL-C4EMThQprdQcpK83HHug_Wn5Vu5psKjqxrSdrxO-BECDTPGAqqil9w1uEp2QYPRIAe21GQNXg2ZNLHbJ55ayRbZORUrnHIpFvDS8BnDlZl_EOQnvgkpN3lXHi0sKlB0SSBZRUoIpdBlotlYr97TVega-dhsPinkHR-leFOmJcIaz9qEGHnACO5zKFFtFg9U2hkR2N71SSoKdcNoL3D__5fymWaZBOL3yBoi-p"
+              },
+              {
+                "productId": "7689270513",
+                "imageUrl": "https://image13.coupangcdn.com/image/vendor_inventory/image_audit/stage/manual/93702155226173-fcebe9fc-46f2-4aa2-955c-3810ef885a5a_1751243766668.jpg"
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "9487214712",
+                "x": 37,
+                "y": 43
+              },
+              {
+                "productId": "9206620361",
+                "x": 58,
+                "y": 70
+              },
+              {
+                "productId": "9676631018",
+                "x": 20,
+                "y": 66
+              },
+              {
+                "productId": "7689270513",
+                "x": 79,
+                "y": 38
+              }
+            ]
+          }
+        }
+      ],
+      "productIds": [
+        "7853820445",
+        "8630066299",
+        "9604422506",
+        "8443644467",
+        "8574770164",
+        "57577364",
+        "7689270513",
+        "9487214712",
+        "9206620361",
+        "9676631018"
+      ],
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "가을 캠핑장 찾아보기"
+        }
+      ]
+    },
     {
       "slug": "camp-seafood-pot-table",
       "title": "캠핑 해물탕 끓이는 법｜무 육수부터 미나리까지 맛을 내는 순서",
