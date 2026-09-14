@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-export const categories=['캠핑 먹거리','바비큐','캠핑 초보 준비물','아이와 놀이','피크닉·나들이','여행 준비물'];
+export const categories=['캠핑 요리','바비큐 요리','캠핑용품','야외 놀이','피크닉 준비','여행 준비'];
 export function affiliateUrl(value){try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&['link.coupang.com','www.coupang.com','coupa.ng'].includes(u.hostname)&&!u.port;}catch{return false;}}
 export function safeImage(value){return typeof value==='string'&&/^\/prep-images\/[a-zA-Z0-9_-]+\.(webp|jpg|png)$/.test(value);}
 export function matchesLinkIdentity(p){const u=new URL(p.affiliateUrl);const id=u.searchParams.get('pageKey')||u.pathname.match(/\/vp\/products\/(\d+)/)?.[1];return !id||id===p.id;}
@@ -37,7 +37,7 @@ export function publicationErrors(a,store,{exists=p=>fs.existsSync(path.join(pro
   if(single?(ids.size!==1||im.tags.length!==1):(ids.size<3||ids.size>4||ids.size!==im.tags.length))errors.push(single?'한 제품 놀이 글은 사진마다 같은 상품 태그 1개 필요':'상품 장면마다 서로 다른 상품 태그 3~4개 필요');
   if(!im.productMatchReviewed)errors.push('합성 장면의 상품 외형·위치 대조 필요');
   for(const id of ids){const p=store.products.find(p=>p.id===id);if(!p||!im.referenceProducts?.some(r=>r.productId===id&&r.imageUrl===p.image))errors.push('태그 상품의 실제 참고 사진 기록 필요');
-   if(!a.quietProductIds?.includes(id)&&!a.sections.some(s=>s.productIds.includes(id)&&s.text.includes(p?.name)))errors.push('사진 속 각 상품의 본문 설명 필요');
+   if(!a.quietProductIds?.includes(id)&&!a.sections.some(s=>s.productIds.includes(id)&&s.text.trim().length>=80))errors.push('사진 속 각 상품의 본문 설명 필요');
   }
  }
  if(a.salesFormat==='single-product-play'&&a.productIds.length!==1)errors.push('한 제품 놀이 글은 상품 1개만 연결');

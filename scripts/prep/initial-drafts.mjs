@@ -100,7 +100,7 @@ for(const topic of planInitial(config)){
  store.articles.push({slug:topic.slug,title:topic.title,description:content[0][1].split('. ')[0]+'.',category:topic.category,status:'draft',publishAt:'',updatedAt:new Date().toISOString(),reviewed:false,
  cover:{url:'',alt:'',width:1200,height:800,generated:false,reviewed:false,tags:[]},
  sections:content.map(([heading,text])=>({heading,text,productIds:[]})),productIds:ids,
- internalLinks:[{href:topic.category==='아이와 놀이'?'/kids':topic.category==='여행 준비물'||topic.category==='피크닉·나들이'?'/places':'/camping',label:topic.category==='아이와 놀이'?'아이와 함께 갈 곳 살펴보기':topic.category==='여행 준비물'||topic.category==='피크닉·나들이'?'나들이 장소 살펴보기':'캠핑 장소 살펴보기'}]});added++;
+ internalLinks:[{href:topic.category==='야외 놀이'?'/kids':topic.category==='여행 준비'||topic.category==='피크닉 준비'?'/places':'/camping',label:topic.category==='야외 놀이'?'아이와 함께 갈 곳 살펴보기':topic.category==='여행 준비'||topic.category==='피크닉 준비'?'나들이 장소 살펴보기':'캠핑 장소 살펴보기'}]});added++;
 }
 if(added)saveStore(store,store.version);
 console.log(JSON.stringify({added,totalInitial:store.articles.filter(a=>config.initialTopics.some(t=>t.slug===a.slug)).length,published:store.articles.filter(a=>a.status==='published').length}));

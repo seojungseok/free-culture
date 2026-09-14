@@ -63,7 +63,7 @@ export default function Header() {
               { href: "/date", label: "데이트" },
               { href: "/season", label: `${s.label} 나들이` },
               { href: "/tickets", label: "입장권·체험" },
-              { href: "/weekend-prep", label: "주말 준비물" },
+              { href: "/weekend-prep", label: "준비 가이드" },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="block rounded-xl px-3 py-2.5 text-[14px] font-bold text-ink-soft hover:bg-tint hover:text-brandblue">
                 {item.label}

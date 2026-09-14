@@ -62,7 +62,7 @@ const articles = [
     slug: 'camp-seafood-pot-table',
     title: '캠핑 해물탕 맛있게 끓이는 법: 재료 준비부터 한 냄비 완성까지',
     description: '오만둥이와 매운탕 양념, 미나리를 한 상에 준비하고 국물 맛을 살리는 순서로 끓이는 캠핑 해물탕 레시피입니다. 마지막에는 손질이 번거로운 날 고를 수 있는 해물탕 밀키트도 소개합니다.',
-    category: '캠핑 먹거리', contentStyle: 'shoppable-scene-v2', salesFormat: 'food-recipe', coverLabel: '칼칼하고 시원한 캠핑 해물탕', quietProductIds: ['9676631018'], shortcutProductId: '7853820445', status: 'published', publishAt: now, updatedAt: now, reviewed: true,
+    category: '캠핑 요리', contentStyle: 'shoppable-scene-v2', salesFormat: 'food-recipe', coverLabel: '칼칼하고 시원한 캠핑 해물탕', quietProductIds: ['9676631018'], shortcutProductId: '7853820445', status: 'published', publishAt: now, updatedAt: now, reviewed: true,
     productIds: ['8630066299','8574770164','9604422506','9487214712','9206620361','9676631018','7853820445'],
     cover: photo('/prep-images/camp-seafood-pot-table-cover-v3.webp','해물과 오만둥이, 매운탕 양념, 미나리, 무, 대파와 냄비를 펼쳐 놓은 캠핑 해물탕 재료상','야외 캠핑 테이블에 해물탕 재료를 모두 펼쳐 놓은 클릭을 부르는 음식 썸네일. 포장·글자·워터마크 없음.',[tag('8630066299',58,55),tag('8574770164',12,72),tag('9604422506',20,36),tag('9487214712',82,18)]),
     sections: [
@@ -74,7 +74,7 @@ const articles = [
     ], internalLinks:[{href:'/camping',label:'취사 가능한 캠핑장 찾아보기'}]
   },
   {
-    slug:'camp-morning-sandwich',title:'캠핑 샌드위치 맛있게 만드는 법: 햄치즈 속재료와 굽는 순서',description:'식빵·햄·치즈를 한 상에 펼쳐 준비하고, 겉은 바삭하고 속은 촉촉하게 굽는 캠핑 햄치즈 샌드위치 레시피입니다. 재료 준비를 더 줄이고 싶은 날의 냉동 치아바타도 마지막에 소개합니다.',category:'캠핑 먹거리',contentStyle:'shoppable-scene-v2',salesFormat:'food-recipe',coverLabel:'바삭한 햄치즈 캠핑 샌드위치',quietProductIds:['9127118279'],shortcutProductId:'9252211443',status:'published',publishAt:now,updatedAt:now,reviewed:true,
+    slug:'camp-morning-sandwich',title:'캠핑 샌드위치 맛있게 만드는 법: 햄치즈 속재료와 굽는 순서',description:'식빵·햄·치즈를 한 상에 펼쳐 준비하고, 겉은 바삭하고 속은 촉촉하게 굽는 캠핑 햄치즈 샌드위치 레시피입니다. 재료 준비를 더 줄이고 싶은 날의 냉동 치아바타도 마지막에 소개합니다.',category:'캠핑 요리',contentStyle:'shoppable-scene-v2',salesFormat:'food-recipe',coverLabel:'바삭한 햄치즈 캠핑 샌드위치',quietProductIds:['9127118279'],shortcutProductId:'9252211443',status:'published',publishAt:now,updatedAt:now,reviewed:true,
     productIds:['8386334253','8243714135','6959448489','9398250478','9707359364','9127118279','9252211443'],
     cover:photo('/prep-images/camp-morning-sandwich-cover-v3.webp','식빵과 슬라이스 햄, 체다치즈, 채소, 달걀, 샌드위치팬을 펼쳐 놓은 아침 식탁','식빵 햄 치즈 채소와 샌드위치팬을 한눈에 보여 주는 캠핑 아침 썸네일. 글자·포장·워터마크 없음.',[tag('8386334253',16,38),tag('8243714135',22,74),tag('6959448489',53,76),tag('9398250478',85,40)]),
     sections:[
@@ -86,7 +86,7 @@ const articles = [
     ],internalLinks:[{href:'/camping',label:'아침 식사하기 좋은 캠핑장 찾아보기'}]
   },
   {
-    slug:'camp-noodle-lunch',title:'캠핑 잔치국수 맛있게 만드는 법: 멸치육수와 고명 준비',description:'소면과 멸치 다시팩, 계란지단, 김가루를 한눈에 준비하고 맑고 감칠맛 나는 잔치국수를 만드는 순서를 정리했습니다. 육수 내기까지 번거로운 날 쓸 수 있는 잔치국수 분말도 마지막에 소개합니다.',category:'캠핑 먹거리',contentStyle:'shoppable-scene-v2',salesFormat:'food-recipe',coverLabel:'맑고 따뜻한 캠핑 잔치국수',shortcutProductId:'6168487275',status:'published',publishAt:now,updatedAt:now,reviewed:true,
+    slug:'camp-noodle-lunch',title:'캠핑 잔치국수 맛있게 만드는 법: 멸치육수와 고명 준비',description:'소면과 멸치 다시팩, 계란지단, 김가루를 한눈에 준비하고 맑고 감칠맛 나는 잔치국수를 만드는 순서를 정리했습니다. 육수 내기까지 번거로운 날 쓸 수 있는 잔치국수 분말도 마지막에 소개합니다.',category:'캠핑 요리',contentStyle:'shoppable-scene-v2',salesFormat:'food-recipe',coverLabel:'맑고 따뜻한 캠핑 잔치국수',shortcutProductId:'6168487275',status:'published',publishAt:now,updatedAt:now,reviewed:true,
     productIds:['9278969662','57577364','8243681175','9468295724','5375328805','1570991286','6168487275'],
     cover:photo('/prep-images/camp-noodle-lunch-cover-v3.webp','소면과 멸치 다시팩, 달걀지단, 애호박, 당근, 대파, 김가루를 펼쳐 놓은 잔치국수 재료상','잔치국수 재료와 고명을 한 상에 펼친 모바일 음식 썸네일. 글자·포장·워터마크 없음.',[tag('9278969662',19,66),tag('57577364',42,48),tag('8243681175',57,77),tag('9468295724',66,87)]),
     sections:[
@@ -109,7 +109,7 @@ const articles = [
     ],internalLinks:[{href:'/camping',label:'바비큐 시설이 있는 캠핑장 찾아보기'}]
   },
   {
-    slug:'autumn-camp-tarp-rest-corner',title:'초보 캠핑용품 추천: 에어텐트·타프·릴렉스체어 장점과 배치법',description:'처음 캠핑할 때 가장 먼저 체감하는 에어텐트, 그늘을 만드는 타프, 오래 앉기 편한 릴렉스체어의 장점을 실제 캠핑 블로그처럼 정리했습니다. 사진 속 세 제품은 모두 + 링크로 바로 확인할 수 있습니다.',category:'캠핑 초보 준비물',contentStyle:'shoppable-scene-v2',salesFormat:'camping-gear',coverLabel:'첫 캠핑, 이 세 가지부터',status:'published',publishAt:now,updatedAt:now,reviewed:true,
+    slug:'autumn-camp-tarp-rest-corner',title:'초보 캠핑용품 추천: 에어텐트·타프·릴렉스체어 장점과 배치법',description:'처음 캠핑할 때 가장 먼저 체감하는 에어텐트, 그늘을 만드는 타프, 오래 앉기 편한 릴렉스체어의 장점을 실제 캠핑 블로그처럼 정리했습니다. 사진 속 세 제품은 모두 + 링크로 바로 확인할 수 있습니다.',category:'캠핑용품',contentStyle:'shoppable-scene-v2',salesFormat:'camping-gear',coverLabel:'첫 캠핑, 이 세 가지부터',status:'published',publishAt:now,updatedAt:now,reviewed:true,
     productIds:['8880587680','8682120809','9072324584'],
     cover:photo('/prep-images/autumn-camp-tarp-rest-corner-cover-v2.webp','가을 호숫가에 검은 에어텐트와 베이지 타프, 브라운 릴렉스체어 두 개를 설치한 캠핑장','에어텐트 타프 릴렉스체어 장점을 한 장에 보여 주는 캠핑 썸네일. 글자·포장·워터마크 없음.',[tag('8880587680',24,58),tag('8682120809',70,35),tag('9072324584',71,64)]),
     sections:[
@@ -120,7 +120,7 @@ const articles = [
     ],internalLinks:[{href:'/camping',label:'장비 크기에 맞는 캠핑장 찾아보기'}]
   },
   {
-    slug:'family-park-ring-ball-play',title:'14세 이상 자녀와 공원 고리던지기: 한 제품으로 오래 노는 법',description:'고리던지기 세트 하나만 들고 공원에 나가 설치부터 거리 조절, 번갈아 던지기, 정리까지 실제로 사용하듯 자세히 소개합니다. 이 상품은 판매처 표시 기준 14세 이상용입니다.',category:'아이와 놀이',contentStyle:'shoppable-scene-v2',salesFormat:'single-product-play',coverLabel:'고리 하나에 집중되는 공원 놀이',status:'published',publishAt:now,updatedAt:now,reviewed:true,
+    slug:'family-park-ring-ball-play',title:'14세 이상 자녀와 공원 고리던지기: 한 제품으로 오래 노는 법',description:'고리던지기 세트 하나만 들고 공원에 나가 설치부터 거리 조절, 번갈아 던지기, 정리까지 실제로 사용하듯 자세히 소개합니다. 이 상품은 판매처 표시 기준 14세 이상용입니다.',category:'야외 놀이',contentStyle:'shoppable-scene-v2',salesFormat:'single-product-play',coverLabel:'고리 하나에 집중되는 공원 놀이',status:'published',publishAt:now,updatedAt:now,reviewed:true,
     productIds:['9305516249'],
     cover:photo('/prep-images/family-ring-toss-review-cover-v2.webp','보호자와 14세 이상 자녀가 가을 공원에서 고리던지기 세트로 노는 모습','한 제품만 크게 보여 주는 14세 이상 가족 고리던지기 썸네일. 글자·포장·워터마크 없음.',[tag('9305516249',72,69)],'이 글의 연결 상품은 판매처 최소 연령 14세 표시를 확인했습니다. 14세 미만에게 권하지 않습니다.'),
     sections:[

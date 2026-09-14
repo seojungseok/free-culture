@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "enabled": false,
   "publisherEnabled": true,
   "generationEnabled": false,
@@ -12,23 +12,95 @@
   "initialBatchId": "weekend-prep-initial-18-v1",
   "initialPerCategory": 3,
   "initialTopics": [
-    {"slug":"camping-soup-packing","category":"캠핑 먹거리","title":"캠핑 국물요리 재료를 나눠 챙기는 방법"},
-    {"slug":"camping-breakfast-cleanup","category":"캠핑 먹거리","title":"철수하는 아침, 설거지를 줄이는 캠핑 식사 준비"},
-    {"slug":"camping-food-storage-zones","category":"캠핑 먹거리","title":"캠핑 먹거리 보관, 먹는 순서에 따라 짐 나누기"},
-    {"slug":"barbecue-side-menu","category":"바비큐","title":"바비큐에 곁들일 채소와 곁들임 메뉴 준비"},
-    {"slug":"barbecue-table-zones","category":"바비큐","title":"굽는 자리와 먹는 자리를 나누는 바비큐 상차림"},
-    {"slug":"barbecue-cleanup-plan","category":"바비큐","title":"바비큐 후 남은 음식과 도구를 정리하는 순서"},
-    {"slug":"first-camping-borrow-or-buy","category":"캠핑 초보 준비물","title":"첫 캠핑, 빌려도 되는 물건과 먼저 챙길 물건"},
-    {"slug":"camping-arrival-bag","category":"캠핑 초보 준비물","title":"캠핑장에 도착해서 먼저 꺼낼 가방 만들기"},
-    {"slug":"camping-wet-dry-packing","category":"캠핑 초보 준비물","title":"캠핑 철수 때 젖은 짐과 마른 짐 분리하기"},
-    {"slug":"park-bubble-play","category":"아이와 놀이","title":"공원 비눗방울 놀이, 자리 고르기부터 마무리까지"},
-    {"slug":"sand-play-cleanup","category":"아이와 놀이","title":"모래놀이 준비물과 집에 돌아오기 전 정리 방법"},
-    {"slug":"rainy-day-indoor-play","category":"아이와 놀이","title":"비 오는 주말, 집에 있는 물건으로 놀이 자리 만들기"},
-    {"slug":"light-picnic-packing","category":"피크닉·나들이","title":"짐을 줄이는 피크닉 준비 방법"},
-    {"slug":"picnic-lunch-packing","category":"피크닉·나들이","title":"피크닉 도시락, 먹기 편한 구성과 되가져올 용기 준비"},
-    {"slug":"walking-break-kit","category":"피크닉·나들이","title":"산책 중 잠깐 쉬어 갈 때 필요한 작은 나들이 가방"},
-    {"slug":"overnight-travel-pouches","category":"여행 준비물","title":"하룻밤 여행 가방을 사용 순서대로 나누는 방법"},
-    {"slug":"family-travel-shared-items","category":"여행 준비물","title":"가족 여행에서 함께 쓸 물건과 따로 챙길 물건"},
-    {"slug":"travel-return-laundry","category":"여행 준비물","title":"여행 마지막 날, 세탁할 옷과 남은 짐 정리하기"}
+    {
+      "slug": "camping-soup-packing",
+      "category": "캠핑 요리",
+      "title": "캠핑 국물요리 재료를 나눠 챙기는 방법"
+    },
+    {
+      "slug": "camping-breakfast-cleanup",
+      "category": "캠핑 요리",
+      "title": "철수하는 아침, 설거지를 줄이는 캠핑 식사 준비"
+    },
+    {
+      "slug": "camping-food-storage-zones",
+      "category": "캠핑 요리",
+      "title": "캠핑 식재료 보관, 먹는 순서에 따라 짐 나누기"
+    },
+    {
+      "slug": "barbecue-side-menu",
+      "category": "바비큐 요리",
+      "title": "바비큐에 곁들일 채소와 곁들임 메뉴 준비"
+    },
+    {
+      "slug": "barbecue-table-zones",
+      "category": "바비큐 요리",
+      "title": "굽는 자리와 먹는 자리를 나누는 바비큐 상차림"
+    },
+    {
+      "slug": "barbecue-cleanup-plan",
+      "category": "바비큐 요리",
+      "title": "바비큐 후 남은 음식과 도구를 정리하는 순서"
+    },
+    {
+      "slug": "first-camping-borrow-or-buy",
+      "category": "캠핑용품",
+      "title": "첫 캠핑, 빌려도 되는 물건과 먼저 챙길 물건"
+    },
+    {
+      "slug": "camping-arrival-bag",
+      "category": "캠핑용품",
+      "title": "캠핑장에 도착해서 먼저 꺼낼 가방 만들기"
+    },
+    {
+      "slug": "camping-wet-dry-packing",
+      "category": "캠핑용품",
+      "title": "캠핑 철수 때 젖은 짐과 마른 짐 분리하기"
+    },
+    {
+      "slug": "park-bubble-play",
+      "category": "야외 놀이",
+      "title": "공원 비눗방울 놀이, 자리 고르기부터 마무리까지"
+    },
+    {
+      "slug": "sand-play-cleanup",
+      "category": "야외 놀이",
+      "title": "모래놀이 준비물과 집에 돌아오기 전 정리 방법"
+    },
+    {
+      "slug": "rainy-day-indoor-play",
+      "category": "야외 놀이",
+      "title": "비 오는 주말, 집에 있는 물건으로 놀이 자리 만들기"
+    },
+    {
+      "slug": "light-picnic-packing",
+      "category": "피크닉 준비",
+      "title": "짐을 줄이는 피크닉 준비 방법"
+    },
+    {
+      "slug": "picnic-lunch-packing",
+      "category": "피크닉 준비",
+      "title": "피크닉 도시락, 먹기 편한 구성과 되가져올 용기 준비"
+    },
+    {
+      "slug": "walking-break-kit",
+      "category": "피크닉 준비",
+      "title": "산책 중 잠깐 쉬어 갈 때 필요한 작은 나들이 가방"
+    },
+    {
+      "slug": "overnight-travel-pouches",
+      "category": "여행 준비",
+      "title": "하룻밤 여행 가방을 사용 순서대로 나누는 방법"
+    },
+    {
+      "slug": "family-travel-shared-items",
+      "category": "여행 준비",
+      "title": "가족 여행에서 함께 쓸 물건과 따로 챙길 물건"
+    },
+    {
+      "slug": "travel-return-laundry",
+      "category": "여행 준비",
+      "title": "여행 마지막 날, 세탁할 옷과 남은 짐 정리하기"
+    }
   ]
 }

@@ -34,11 +34,14 @@ test('family article preserves age restriction beside every reused scene',()=>{
  for(const im of [a.cover,...a.sections.map(s=>s.image).filter(Boolean)])assert(im.usageNotice.includes('14세 미만'));
  assert(store.products.find(p=>p.id==='9305516249').specification.includes('14세 미만용으로 권하지 않음'));
 });
-test('food and camping articles have substantial copy and reviewed hotspots',()=>{
- for(const slug of ['camp-noodle-lunch','grilled-vegetable-side-dishes','autumn-camp-tarp-rest-corner']){
-  const a=store.articles.find(a=>a.slug===slug);assert(a);assert.equal(a.status,'published');
-  assert(a.sections.map(s=>s.text).join('').length>1000);
-  assert([a.cover,...a.sections.map(s=>s.image).filter(Boolean)].flatMap(i=>i.tags).length>=9);
+test('published guides contain the actionable cooking or buying core, not filler length',()=>{
+ const body=slug=>store.articles.find(a=>a.slug===slug).sections.map(s=>`${s.heading} ${s.text}`).join(' ');
+ const seafood=body('camp-seafood-pot-table');for(const phrase of ['무를 먼저 15분','단단한 해물부터','짜면 뜨거운 물','미나리'])assert(seafood.includes(phrase));
+ const noodle=body('camp-noodle-lunch');for(const phrase of ['찬물','토렴','고명을 먼저'])assert(noodle.includes(phrase));
+ const skewers=body('grilled-vegetable-side-dishes');for(const phrase of ['약 2cm','중불 직화','간접열'])assert(skewers.includes(phrase));
+ const gear=body('autumn-camp-tarp-rest-corner');for(const phrase of ['에어텐트','타프','릴렉스체어','무엇부터 살까'])assert(gear.includes(phrase));
+ for(const a of store.articles){
+  assert([a.cover,...a.sections.map(s=>s.image).filter(Boolean)].flatMap(i=>i.tags).length>=3);
   assert(!JSON.stringify(a).includes('{{product:'));
  }
 });

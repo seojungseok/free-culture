@@ -17,17 +17,16 @@ let logs='';for(const s of [child.stdout,child.stderr])s.on('data',d=>{logs=(log
  const menuBox=await menu.boundingBox(),ticketBox=await menu.evaluate(e=>{const r=e.previousElementSibling.getBoundingClientRect();return {x:r.x,y:r.y};});assert(menuBox.x>ticketBox.x);assert(Math.abs(menuBox.y-ticketBox.y)<3);
  if(width<1024){await page.locator('header summary').click();assert(await page.locator('header details a[href="/weekend-prep"]').isVisible());await page.locator('header summary').click();}
  await page.goto(base+'/weekend-prep',{waitUntil:'domcontentloaded'});
- await page.locator('.prep-card').first().waitFor();assert.equal(await page.locator('.prep-card').count(),9);
- assert.equal(await page.getByRole('link',{name:'캠핑 먹거리',exact:true}).count(),1);
- assert.equal(await page.getByRole('navigation',{name:'페이지',exact:true}).getByRole('link').count(),2);
+ await page.locator('.prep-card').first().waitFor();assert.equal(await page.locator('.prep-card').count(),6);
+ assert.equal(await page.getByRole('link',{name:'캠핑 요리',exact:true}).count(),1);
+ assert.equal(await page.getByRole('navigation',{name:'페이지',exact:true}).count(),0);
  for(const img of await page.locator('.prep-card img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>e.decode());assert(await img.evaluate(e=>e.naturalWidth>0));}
  await page.evaluate(()=>scrollTo(0,0));
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  await page.screenshot({path:`.cache/prep-qa/list-${width}.png`,fullPage:true});
- if(width===390){await page.goto(base+'/weekend-prep?page=2',{waitUntil:'domcontentloaded'});assert.equal(await page.locator('.prep-card').count(),9);for(const img of await page.locator('.prep-card img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>e.decode());assert(await img.evaluate(e=>e.naturalWidth>0));}await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'.cache/prep-qa/list-page2-390.png',fullPage:true});await page.goto(base+'/weekend-prep',{waitUntil:'domcontentloaded'});}
- await page.getByLabel('주말 준비물 글 검색').fill('없는검색어');await page.getByRole('button',{name:'검색',exact:true}).click();await page.getByText('검색 결과가 없어요. 다른 단어로 찾아보세요.').waitFor();
+ await page.getByLabel('주말 준비 가이드 검색').fill('없는검색어');await page.getByRole('button',{name:'검색',exact:true}).click();await page.getByText('검색 결과가 없어요. 다른 단어로 찾아보세요.').waitFor();
  assert((await page.locator('meta[name=robots]').getAttribute('content')).includes('noindex'));
- await page.goto(base+'/weekend-prep/light-picnic-packing');await page.locator('.prep-tag').first().waitFor();
+ await page.goto(base+'/weekend-prep/camp-seafood-pot-table');await page.locator('.prep-tag').first().waitFor();
  const tag=page.locator('.prep-tag').first();await tag.focus();await page.keyboard.press('Enter');await page.getByRole('region',{name:'준비물 정보'}).waitFor();
  const panel=page.getByRole('region',{name:'준비물 정보'}),link=panel.getByRole('link');assert((await link.getAttribute('href')).startsWith('https://link.coupang.com/'));assert.equal(await link.getAttribute('rel'),'sponsored noopener');
  await page.keyboard.press('Escape');assert.equal(await panel.count(),0);assert(await tag.evaluate(e=>e===document.activeElement));
