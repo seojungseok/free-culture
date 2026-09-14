@@ -1,632 +1,632 @@
 {
-  "checkedAt": "2026-09-13T22:03:17.148Z",
+  "checkedAt": "2026-09-14T22:55:47.818Z",
   "entries": {
     "https://www.waug.com/r/MYBgKK7a": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/MYBgKK7a",
       "sourceUrl": "https://www.waug.com/ko/activities/114542",
-      "checkedAt": "2026-09-13T22:02:27.685Z",
-      "reviewedAt": "2026-09-13T22:02:27.685Z",
-      "expiresAt": "2026-09-14T22:02:27.685Z",
+      "checkedAt": "2026-09-14T22:54:58.102Z",
+      "reviewedAt": "2026-09-14T22:54:58.102Z",
+      "expiresAt": "2026-09-15T22:54:58.102Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "b2fdb8de332272f265cc732334fb7a4f3a6f4ae8ec83965478aa9267af6ea774"
+      "pageSha256": "943c00d86ff9c1426f7584535c216381896b17c479caa08bf354746b45b5061a"
     },
     "https://www.waug.com/r/Q2smxc67": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/Q2smxc67",
       "sourceUrl": "https://www.waug.com/ko/activities/116926",
-      "checkedAt": "2026-09-13T22:02:28.577Z",
-      "reviewedAt": "2026-09-13T22:02:28.577Z",
-      "expiresAt": "2026-09-14T22:02:28.577Z",
+      "checkedAt": "2026-09-14T22:54:59.014Z",
+      "reviewedAt": "2026-09-14T22:54:59.014Z",
+      "expiresAt": "2026-09-15T22:54:59.014Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "d57a8e119bde6d3f80575fd01afe7139fab09cdb0790f541723d8c6d77799048"
+      "pageSha256": "7b0ecfaf767c7a7d3c78918c476d6f5ff121753d342091e29ccd89bf8d7e004c"
     },
     "https://www.waug.com/r/ItVb8utR": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/ItVb8utR",
       "sourceUrl": "https://www.waug.com/ko/activities/120023",
-      "checkedAt": "2026-09-13T22:02:29.131Z",
-      "reviewedAt": "2026-09-13T22:02:29.131Z",
-      "expiresAt": "2026-09-14T22:02:29.131Z",
+      "checkedAt": "2026-09-14T22:54:59.551Z",
+      "reviewedAt": "2026-09-14T22:54:59.551Z",
+      "expiresAt": "2026-09-15T22:54:59.551Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "bff8eb1d962ef9478c1b69632371813ab7bb142a0c1a5bbdf59f316bf04755e4"
+      "pageSha256": "16c61b268e2a3c94d8ce310d7e1358f395dea46dcbc43b3b2a23d7b1531f5ec8"
     },
     "https://www.waug.com/r/zL05y2Xy": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/zL05y2Xy",
       "sourceUrl": "https://www.waug.com/ko/activities/116927",
-      "checkedAt": "2026-09-13T22:02:29.675Z",
-      "reviewedAt": "2026-09-13T22:02:29.675Z",
-      "expiresAt": "2026-09-14T22:02:29.675Z",
+      "checkedAt": "2026-09-14T22:55:00.157Z",
+      "reviewedAt": "2026-09-14T22:55:00.157Z",
+      "expiresAt": "2026-09-15T22:55:00.157Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "33c87ffa325a39b5c0bb972c2efaf427839e34fc672109cc0e4fa773a92c19ec"
+      "pageSha256": "ffc7a32af882927724fbe2d6faa25ff9ba61ae67f2d076ad65f83851dfd4b6fb"
     },
     "https://www.waug.com/r/ZdkVAM9x": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/ZdkVAM9x",
       "sourceUrl": "https://www.waug.com/ko/activities/115669",
-      "checkedAt": "2026-09-13T22:02:30.659Z",
-      "reviewedAt": "2026-09-13T22:02:30.659Z",
-      "expiresAt": "2026-09-14T22:02:30.659Z",
+      "checkedAt": "2026-09-14T22:55:00.957Z",
+      "reviewedAt": "2026-09-14T22:55:00.957Z",
+      "expiresAt": "2026-09-15T22:55:00.957Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "a11ca9445ea1e8b545767feae441b73e9f3818afc51ad73568e7e219c08625d5"
+      "pageSha256": "63b4a148d95cd2035659b62973ea8231edf456c18557672b1ec575b07bd80f3f"
     },
     "https://www.waug.com/r/vF4Z6VsG": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/vF4Z6VsG",
       "sourceUrl": "https://www.waug.com/ko/activities/116857",
-      "checkedAt": "2026-09-13T22:02:31.174Z",
-      "reviewedAt": "2026-09-13T22:02:31.174Z",
-      "expiresAt": "2026-09-14T22:02:31.174Z",
+      "checkedAt": "2026-09-14T22:55:01.528Z",
+      "reviewedAt": "2026-09-14T22:55:01.528Z",
+      "expiresAt": "2026-09-15T22:55:01.528Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "00abe65f0d8debb5fe8564855a43b77c3aefd7fc7a9c1b232a9a4e8637c7657f"
+      "pageSha256": "31f8e5128e706e91625992fd9c7c6efc00d5e33d467c745e3faa906a2d397f7a"
     },
     "https://www.waug.com/r/poSKc1qk": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/poSKc1qk",
       "sourceUrl": "https://www.waug.com/ko/activities/116667",
-      "checkedAt": "2026-09-13T22:02:31.677Z",
-      "reviewedAt": "2026-09-13T22:02:31.677Z",
-      "expiresAt": "2026-09-14T22:02:31.677Z",
+      "checkedAt": "2026-09-14T22:55:02.333Z",
+      "reviewedAt": "2026-09-14T22:55:02.333Z",
+      "expiresAt": "2026-09-15T22:55:02.333Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "0dbd6540fe0e7bdd8dc06e9758bb196be772ddf758130470c1faa5d5b24db50f"
+      "pageSha256": "65a157656ca327cf0e46e8c0e37a7225a9ce34ded1fab84fd81eaf22a306ac6f"
     },
     "https://www.waug.com/r/y9ppQMxK": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/y9ppQMxK",
       "sourceUrl": "https://www.waug.com/ko/activities/116323",
-      "checkedAt": "2026-09-13T22:02:32.280Z",
-      "reviewedAt": "2026-09-13T22:02:32.280Z",
-      "expiresAt": "2026-09-14T22:02:32.280Z",
+      "checkedAt": "2026-09-14T22:55:02.938Z",
+      "reviewedAt": "2026-09-14T22:55:02.938Z",
+      "expiresAt": "2026-09-15T22:55:02.938Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "5bd8926f72207dcf3b5e52e502780bb04bf504f35018e2e53958ce0266a84102"
+      "pageSha256": "55e10538cd92384efef25611104a1cb4acf971ce73686c322a7092d67137ff92"
     },
     "https://www.waug.com/r/DmaD1hOQ": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/DmaD1hOQ",
       "sourceUrl": "https://www.waug.com/ko/activities/117038",
-      "checkedAt": "2026-09-13T22:02:32.802Z",
-      "reviewedAt": "2026-09-13T22:02:32.802Z",
-      "expiresAt": "2026-09-14T22:02:32.802Z",
+      "checkedAt": "2026-09-14T22:55:03.455Z",
+      "reviewedAt": "2026-09-14T22:55:03.455Z",
+      "expiresAt": "2026-09-15T22:55:03.455Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "f26b1b6093ba5272f33e570213312a2e6a9645d06bafacbd36db998843748808"
+      "pageSha256": "dbae216ced154861a8ac5cbe51c3aca818aae8f10facc3baae7c2e8ff0ec11ad"
     },
     "https://www.waug.com/r/zY8A9h0l": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/zY8A9h0l",
       "sourceUrl": "https://www.waug.com/ko/activities/123500",
-      "checkedAt": "2026-09-13T22:02:33.839Z",
-      "reviewedAt": "2026-09-13T22:02:33.839Z",
-      "expiresAt": "2026-09-14T22:02:33.839Z",
+      "checkedAt": "2026-09-14T22:55:04.574Z",
+      "reviewedAt": "2026-09-14T22:55:04.574Z",
+      "expiresAt": "2026-09-15T22:55:04.574Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "2d62f1a46ab7e74fef77bc7d18582bfbc6f52ceb4853173947f37fb7e29f57e3"
+      "pageSha256": "1a1f89b21bf04a9ad7f6e68b406265e8980bf43808a212c7b248e52afc3f3395"
     },
     "https://www.waug.com/r/99PBHMQK": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/99PBHMQK",
       "sourceUrl": "https://www.waug.com/ko/activities/112090",
-      "checkedAt": "2026-09-13T22:02:34.351Z",
-      "reviewedAt": "2026-09-13T22:02:34.351Z",
-      "expiresAt": "2026-09-14T22:02:34.351Z",
+      "checkedAt": "2026-09-14T22:55:05.058Z",
+      "reviewedAt": "2026-09-14T22:55:05.058Z",
+      "expiresAt": "2026-09-15T22:55:05.058Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "227ec2a079d8171735cd8eff36d7f44bd4958f939f3505d51f32079e4fd64b30"
+      "pageSha256": "5ae6f81d2e97847f52994094b64c51e2b3ccfc671c895c286776f284aa76b42e"
     },
     "https://www.waug.com/r/guSwDhHr": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/guSwDhHr",
       "sourceUrl": "https://www.waug.com/ko/activities/153283",
-      "checkedAt": "2026-09-13T22:02:35.000Z",
-      "reviewedAt": "2026-09-13T22:02:35.000Z",
-      "expiresAt": "2026-09-14T22:02:35.000Z",
+      "checkedAt": "2026-09-14T22:55:05.555Z",
+      "reviewedAt": "2026-09-14T22:55:05.555Z",
+      "expiresAt": "2026-09-15T22:55:05.555Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "d25620608fd9c092fc1d1493bdc1e5446b55380b151416098e95f1976d02945b"
+      "pageSha256": "5359a9a354580aabbd7b5ab03e61820598b20ffb15d39dbb8f557071be959858"
     },
     "https://www.waug.com/r/1pX5q6lb": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/1pX5q6lb",
       "sourceUrl": "https://www.waug.com/ko/activities/147289",
-      "checkedAt": "2026-09-13T22:02:35.508Z",
-      "reviewedAt": "2026-09-13T22:02:35.508Z",
-      "expiresAt": "2026-09-14T22:02:35.508Z",
+      "checkedAt": "2026-09-14T22:55:06.059Z",
+      "reviewedAt": "2026-09-14T22:55:06.059Z",
+      "expiresAt": "2026-09-15T22:55:06.059Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "913f52c648c13fba987521163039186d5465db6b3e604945b064e940a3d78df3"
+      "pageSha256": "57f5e1cbbce621c4e4ef23e40446ffa2a69e0977e528217bc277d65de1d29fe4"
     },
     "https://www.waug.com/r/ZXzqLZwA": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/ZXzqLZwA",
       "sourceUrl": "https://www.waug.com/ko/activities/124089",
-      "checkedAt": "2026-09-13T22:02:36.047Z",
-      "reviewedAt": "2026-09-13T22:02:36.047Z",
-      "expiresAt": "2026-09-14T22:02:36.047Z",
+      "checkedAt": "2026-09-14T22:55:06.543Z",
+      "reviewedAt": "2026-09-14T22:55:06.543Z",
+      "expiresAt": "2026-09-15T22:55:06.543Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "890d57e0b5575418341d63d2142861126918e2dbb9c7a4572db63fd2b338efb2"
+      "pageSha256": "7b5a49558c2bec75b1ee4ea22f4ebc311c80fab2ceaea431898ee67bd4ef8ddd"
     },
     "https://www.waug.com/r/muLavTBe": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/muLavTBe",
       "sourceUrl": "https://www.waug.com/ko/activities/110286",
-      "checkedAt": "2026-09-13T22:02:36.624Z",
-      "reviewedAt": "2026-09-13T22:02:36.624Z",
-      "expiresAt": "2026-09-14T22:02:36.624Z",
+      "checkedAt": "2026-09-14T22:55:07.063Z",
+      "reviewedAt": "2026-09-14T22:55:07.063Z",
+      "expiresAt": "2026-09-15T22:55:07.063Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "f71821ba263ba815fee0a0195e325f6478fda2f08b056a4f9cee50b1c8cd9c15"
+      "pageSha256": "91b39825500f5a4552ad6c1a2ea9b59ba3aca929ae55c0e91728f01f4becccda"
     },
     "https://www.waug.com/r/YxlBFStb": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/YxlBFStb",
       "sourceUrl": "https://www.waug.com/ko/activities/134830",
-      "checkedAt": "2026-09-13T22:02:37.138Z",
-      "reviewedAt": "2026-09-13T22:02:37.138Z",
-      "expiresAt": "2026-09-14T22:02:37.138Z",
+      "checkedAt": "2026-09-14T22:55:07.592Z",
+      "reviewedAt": "2026-09-14T22:55:07.592Z",
+      "expiresAt": "2026-09-15T22:55:07.592Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "b856a82e7e8ff2bcbf51448dbda99a58d5955ef1d61111fd2e8dd0348903082a"
+      "pageSha256": "2ad1c398fa3987477e14cada671393e8743806f34878623ef8d8e938e8db7c47"
     },
     "https://www.waug.com/r/WR3WtcJA": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/WR3WtcJA",
       "sourceUrl": "https://www.waug.com/ko/activities/121130",
-      "checkedAt": "2026-09-13T22:02:38.775Z",
-      "reviewedAt": "2026-09-13T22:02:38.775Z",
-      "expiresAt": "2026-09-14T22:02:38.775Z",
+      "checkedAt": "2026-09-14T22:55:09.246Z",
+      "reviewedAt": "2026-09-14T22:55:09.246Z",
+      "expiresAt": "2026-09-15T22:55:09.246Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "8dd71e1be59d21fb390c8b513fd0ad219dcdc564c80d561ef467ae8ac83c5557"
+      "pageSha256": "b4c9848be1b7009261a72511f3b5faa05ef35c82eb9430ebfa43810b1c2751a0"
     },
     "https://www.waug.com/r/T3i1gzzj": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/T3i1gzzj",
       "sourceUrl": "https://www.waug.com/ko/activities/110807",
-      "checkedAt": "2026-09-13T22:02:40.499Z",
-      "reviewedAt": "2026-09-13T22:02:40.499Z",
-      "expiresAt": "2026-09-14T22:02:40.499Z",
+      "checkedAt": "2026-09-14T22:55:10.771Z",
+      "reviewedAt": "2026-09-14T22:55:10.771Z",
+      "expiresAt": "2026-09-15T22:55:10.771Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "1334c00c90f6218e0b37631c5b112fc3a51199e3174418dd1d40e2bfaa6fbf0d"
+      "pageSha256": "622ea2a31f5fda4a288450602c03cc15b46171b7904d30d107102ffeaf86a8d0"
     },
     "https://www.waug.com/r/ehfD2Ulu": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/ehfD2Ulu",
       "sourceUrl": "https://www.waug.com/ko/activities/117728",
-      "checkedAt": "2026-09-13T22:02:41.004Z",
-      "reviewedAt": "2026-09-13T22:02:41.004Z",
-      "expiresAt": "2026-09-14T22:02:41.004Z",
+      "checkedAt": "2026-09-14T22:55:11.492Z",
+      "reviewedAt": "2026-09-14T22:55:11.492Z",
+      "expiresAt": "2026-09-15T22:55:11.492Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "36598d88a9e8fef720c41d8e5497f63db0638fd0d138f9921efa375c2260417d"
+      "pageSha256": "b3b466ead6c81361d558e4c10e8f58d327b2e274685cab1e13c9a3266d38e5f4"
     },
     "https://www.waug.com/r/TnJ7oVIL": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/TnJ7oVIL",
       "sourceUrl": "https://www.waug.com/ko/activities/117726",
-      "checkedAt": "2026-09-13T22:02:41.525Z",
-      "reviewedAt": "2026-09-13T22:02:41.525Z",
-      "expiresAt": "2026-09-14T22:02:41.525Z",
+      "checkedAt": "2026-09-14T22:55:11.995Z",
+      "reviewedAt": "2026-09-14T22:55:11.995Z",
+      "expiresAt": "2026-09-15T22:55:11.995Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "a39d311c6f41a51f3bd4e540175eb55c717f84a92b9eab1fd9c52f6eae1ca6d4"
+      "pageSha256": "1c1e354fa0337b3735c7e650cf75b1910e4e7f6fd1aa76757dd71ef120a15b74"
     },
     "https://www.waug.com/r/i3RL4kYw": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/i3RL4kYw",
       "sourceUrl": "https://www.waug.com/ko/activities/117715",
-      "checkedAt": "2026-09-13T22:02:42.062Z",
-      "reviewedAt": "2026-09-13T22:02:42.062Z",
-      "expiresAt": "2026-09-14T22:02:42.062Z",
+      "checkedAt": "2026-09-14T22:55:12.507Z",
+      "reviewedAt": "2026-09-14T22:55:12.507Z",
+      "expiresAt": "2026-09-15T22:55:12.507Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "d4cefa583b743d91b2b7f7f157a32d3f84aceee3ceb8a6b9b3589c63bafc4ad3"
+      "pageSha256": "93d7a283d3065053e91accfe66373e27a38bc0d832d0d02014736f25c25e336d"
     },
     "https://www.waug.com/r/VH1Cjga1": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/VH1Cjga1",
       "sourceUrl": "https://www.waug.com/ko/activities/144259",
-      "checkedAt": "2026-09-13T22:02:42.562Z",
-      "reviewedAt": "2026-09-13T22:02:42.562Z",
-      "expiresAt": "2026-09-14T22:02:42.562Z",
+      "checkedAt": "2026-09-14T22:55:13.021Z",
+      "reviewedAt": "2026-09-14T22:55:13.021Z",
+      "expiresAt": "2026-09-15T22:55:13.021Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "b335aff7f88cc838363d01edef9650be3387ddcbb890bae116d35bc56dd2394c"
+      "pageSha256": "8de38d954bf38293de65708ee92e2d8c428c9221998889854f95280236fe9e12"
     },
     "https://www.waug.com/r/wevX1T04": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/wevX1T04",
       "sourceUrl": "https://www.waug.com/ko/activities/137871",
-      "checkedAt": "2026-09-13T22:02:43.662Z",
-      "reviewedAt": "2026-09-13T22:02:43.662Z",
-      "expiresAt": "2026-09-14T22:02:43.662Z",
+      "checkedAt": "2026-09-14T22:55:14.056Z",
+      "reviewedAt": "2026-09-14T22:55:14.056Z",
+      "expiresAt": "2026-09-15T22:55:14.056Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "39a76aac527d5574cf40821f4b237992fd385bcbd5fda44eb4504b29e14a4b71"
+      "pageSha256": "c257cd4e90c347bceca2f28dbf0822df5a3e3733f121f4c284383036232fe920"
     },
     "https://www.waug.com/r/8YvEYsQG": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/8YvEYsQG",
       "sourceUrl": "https://www.waug.com/ko/activities/150990",
-      "checkedAt": "2026-09-13T22:02:44.185Z",
-      "reviewedAt": "2026-09-13T22:02:44.185Z",
-      "expiresAt": "2026-09-14T22:02:44.185Z",
+      "checkedAt": "2026-09-14T22:55:14.820Z",
+      "reviewedAt": "2026-09-14T22:55:14.820Z",
+      "expiresAt": "2026-09-15T22:55:14.820Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "0d84deec7dc8e33285c0f6d22f357f56204edd3092299a6e2234f06e8a124f27"
+      "pageSha256": "b0400b6af7cea8b9b4d60ff085099dfe50b186dea3449aaffefee06fc55d8039"
     },
     "https://www.waug.com/r/QlTVQvXT": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/QlTVQvXT",
       "sourceUrl": "https://www.waug.com/ko/activities/119403",
-      "checkedAt": "2026-09-13T22:02:44.693Z",
-      "reviewedAt": "2026-09-13T22:02:44.693Z",
-      "expiresAt": "2026-09-14T22:02:44.693Z",
+      "checkedAt": "2026-09-14T22:55:15.335Z",
+      "reviewedAt": "2026-09-14T22:55:15.335Z",
+      "expiresAt": "2026-09-15T22:55:15.335Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "992121b5e79a39b9b2efa7597f8dbc0b2205935e535de9e978e99261c8abf7e0"
+      "pageSha256": "319e827bbce54f4e61280bc16050f57b27003fed9a5846f3884cd062398d4248"
     },
     "https://www.waug.com/r/h4gdvnhg": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/h4gdvnhg",
       "sourceUrl": "https://www.waug.com/ko/activities/129757",
-      "checkedAt": "2026-09-13T22:02:45.715Z",
-      "reviewedAt": "2026-09-13T22:02:45.715Z",
-      "expiresAt": "2026-09-14T22:02:45.715Z",
+      "checkedAt": "2026-09-14T22:55:16.604Z",
+      "reviewedAt": "2026-09-14T22:55:16.604Z",
+      "expiresAt": "2026-09-15T22:55:16.604Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "c7a9721a2b56d7a55f229a675d444c69cae5a5b1bfd276bd8401aa8a1af4b936"
+      "pageSha256": "e58821b550b6e078df5b4f9de45660d5d06661128436bd2970bc9f4955651f4b"
     },
     "https://www.waug.com/r/tiNrXkcN": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/tiNrXkcN",
       "sourceUrl": "https://www.waug.com/ko/activities/113546",
-      "checkedAt": "2026-09-13T22:02:46.234Z",
-      "reviewedAt": "2026-09-13T22:02:46.234Z",
-      "expiresAt": "2026-09-14T22:02:46.234Z",
+      "checkedAt": "2026-09-14T22:55:17.105Z",
+      "reviewedAt": "2026-09-14T22:55:17.105Z",
+      "expiresAt": "2026-09-15T22:55:17.105Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "c69ba49629eb53be51c5b0cea2ef105b5a562a4aa968f426538d117a3e1139c5"
+      "pageSha256": "c4424ac45f101a6675be527fd0285e56de987627b0d508b7bc01299dfb73d232"
     },
     "https://www.waug.com/r/0X7invFD": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/0X7invFD",
       "sourceUrl": "https://www.waug.com/ko/activities/109404",
-      "checkedAt": "2026-09-13T22:02:46.960Z",
-      "reviewedAt": "2026-09-13T22:02:46.960Z",
-      "expiresAt": "2026-09-14T22:02:46.960Z",
+      "checkedAt": "2026-09-14T22:55:17.602Z",
+      "reviewedAt": "2026-09-14T22:55:17.602Z",
+      "expiresAt": "2026-09-15T22:55:17.602Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "b96639a18f6f13758fa05d27ba35fd20cba7b37f3c2469642deb5de1d4d88466"
+      "pageSha256": "ea0d0574df474de6e6f95d0d7727c345e3947036d3159e79c3766cdcf4f0eaea"
     },
     "https://www.waug.com/r/QLHlnsJF": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/QLHlnsJF",
       "sourceUrl": "https://www.waug.com/ko/activities/132659",
-      "checkedAt": "2026-09-13T22:02:47.475Z",
-      "reviewedAt": "2026-09-13T22:02:47.475Z",
-      "expiresAt": "2026-09-14T22:02:47.475Z",
+      "checkedAt": "2026-09-14T22:55:18.100Z",
+      "reviewedAt": "2026-09-14T22:55:18.100Z",
+      "expiresAt": "2026-09-15T22:55:18.100Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "ffdc42d347ec9beafdb8d5981c961ced84df4fb37fa5417059d0923aad43579f"
+      "pageSha256": "c424a31fe718938f1189d34da70691f59211dc09b59f4890097ebe37b7a0b761"
     },
     "https://www.waug.com/r/HHk6csWc": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/HHk6csWc",
       "sourceUrl": "https://www.waug.com/ko/activities/120468",
-      "checkedAt": "2026-09-13T22:02:48.513Z",
-      "reviewedAt": "2026-09-13T22:02:48.513Z",
-      "expiresAt": "2026-09-14T22:02:48.513Z",
+      "checkedAt": "2026-09-14T22:55:19.306Z",
+      "reviewedAt": "2026-09-14T22:55:19.306Z",
+      "expiresAt": "2026-09-15T22:55:19.306Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "c6d2fa59ad7a7e4139a5b076bb2fcae5f0264e1c1ed61dcefd1ea3c623e82b80"
+      "pageSha256": "bb685627a3ebdc792ba175fad3d42e853e9a98ade4e25d447419e995496ce903"
     },
     "https://www.waug.com/r/E319zHqQ": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/E319zHqQ",
       "sourceUrl": "https://www.waug.com/ko/activities/148960",
-      "checkedAt": "2026-09-13T22:02:50.088Z",
-      "reviewedAt": "2026-09-13T22:02:50.088Z",
-      "expiresAt": "2026-09-14T22:02:50.088Z",
+      "checkedAt": "2026-09-14T22:55:21.101Z",
+      "reviewedAt": "2026-09-14T22:55:21.101Z",
+      "expiresAt": "2026-09-15T22:55:21.101Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "04e4f46494e34643f90ca31ad4333fc2912209f49f960e9b2740728c3745cb2e"
+      "pageSha256": "599e5ef0942e28f169e86f1724ae0d167e69418b56005cfbb4c235e42fb41f23"
     },
     "https://www.waug.com/r/Uap0KkL3": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/Uap0KkL3",
       "sourceUrl": "https://www.waug.com/ko/activities/137562",
-      "checkedAt": "2026-09-13T22:02:51.166Z",
-      "reviewedAt": "2026-09-13T22:02:51.166Z",
-      "expiresAt": "2026-09-14T22:02:51.166Z",
+      "checkedAt": "2026-09-14T22:55:22.107Z",
+      "reviewedAt": "2026-09-14T22:55:22.107Z",
+      "expiresAt": "2026-09-15T22:55:22.107Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "786db157aff4ced3cc3db6606a360efd45f249448911abf653100a2abe096772"
+      "pageSha256": "67176329b5b85b5a4a9a634a1316aa9ab547565ad7f9fe41564d13102d47220c"
     },
     "https://www.waug.com/r/wffjCJKf": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/wffjCJKf",
       "sourceUrl": "https://www.waug.com/ko/activities/103543",
-      "checkedAt": "2026-09-13T22:02:51.695Z",
-      "reviewedAt": "2026-09-13T22:02:51.695Z",
-      "expiresAt": "2026-09-14T22:02:51.695Z",
+      "checkedAt": "2026-09-14T22:55:22.638Z",
+      "reviewedAt": "2026-09-14T22:55:22.638Z",
+      "expiresAt": "2026-09-15T22:55:22.638Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "ca4c6a106da954054bf214eff3b9df0de54173b2d78f58f2c3bcbdc1bf6f07d0"
+      "pageSha256": "6267b8791f575ac051ecedfd90f2bddbca1acabf72c69ddaa34167ed35e9120a"
     },
     "https://www.waug.com/r/mfT6fpsB": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/mfT6fpsB",
       "sourceUrl": "https://www.waug.com/ko/activities/116548",
-      "checkedAt": "2026-09-13T22:02:52.242Z",
-      "reviewedAt": "2026-09-13T22:02:52.242Z",
-      "expiresAt": "2026-09-14T22:02:52.242Z",
+      "checkedAt": "2026-09-14T22:55:23.184Z",
+      "reviewedAt": "2026-09-14T22:55:23.184Z",
+      "expiresAt": "2026-09-15T22:55:23.184Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "37c49528667bf9c2d9b6d32c4a303ef62952c0350d9ee77fafeb1b324bb840d5"
+      "pageSha256": "32bc38a2a5507fa1777a2cf95620c354590716e2f1995a0542b8cb799eec4ab5"
     },
     "https://www.waug.com/r/GoxsznZA": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/GoxsznZA",
       "sourceUrl": "https://www.waug.com/ko/activities/145354",
-      "checkedAt": "2026-09-13T22:02:53.238Z",
-      "reviewedAt": "2026-09-13T22:02:53.238Z",
-      "expiresAt": "2026-09-14T22:02:53.238Z",
+      "checkedAt": "2026-09-14T22:55:24.705Z",
+      "reviewedAt": "2026-09-14T22:55:24.705Z",
+      "expiresAt": "2026-09-15T22:55:24.705Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "d94a345d0f0e88db382434fbc42b9f47a771f26d3ec8f4594516ca4f3ca107d9"
+      "pageSha256": "65ec3c91255bef924f6e6fba0d2667adc23c7ac74c9e222c7ec1789b758f43c5"
     },
     "https://www.waug.com/r/x0AGDJHE": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/x0AGDJHE",
       "sourceUrl": "https://www.waug.com/ko/activities/129361",
-      "checkedAt": "2026-09-13T22:02:54.545Z",
-      "reviewedAt": "2026-09-13T22:02:54.545Z",
-      "expiresAt": "2026-09-14T22:02:54.545Z",
+      "checkedAt": "2026-09-14T22:55:25.731Z",
+      "reviewedAt": "2026-09-14T22:55:25.731Z",
+      "expiresAt": "2026-09-15T22:55:25.731Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "b8d14ece1bc3f9aef050aa663f21a21482b6240202c1161fc44292d69ab4cde9"
+      "pageSha256": "b4699636445f6dc788556ab0059d1525bca4154deba58942b2a6240df520ef0f"
     },
     "https://www.waug.com/r/7x577Y3V": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/7x577Y3V",
       "sourceUrl": "https://www.waug.com/ko/activities/139590",
-      "checkedAt": "2026-09-13T22:02:55.544Z",
-      "reviewedAt": "2026-09-13T22:02:55.544Z",
-      "expiresAt": "2026-09-14T22:02:55.544Z",
+      "checkedAt": "2026-09-14T22:55:26.755Z",
+      "reviewedAt": "2026-09-14T22:55:26.755Z",
+      "expiresAt": "2026-09-15T22:55:26.755Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "dd31970b1841814d3854ea8a2e288894a84310bc2700b2a67007a97d4c6e028b"
+      "pageSha256": "69f180f3648b391e181f8860e540881b7f133c0df41f8624074a295b45244ccc"
     },
     "https://www.waug.com/r/P6Xz6CDX": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/P6Xz6CDX",
       "sourceUrl": "https://www.waug.com/ko/activities/144734",
-      "checkedAt": "2026-09-13T22:02:56.540Z",
-      "reviewedAt": "2026-09-13T22:02:56.540Z",
-      "expiresAt": "2026-09-14T22:02:56.540Z",
+      "checkedAt": "2026-09-14T22:55:27.940Z",
+      "reviewedAt": "2026-09-14T22:55:27.940Z",
+      "expiresAt": "2026-09-15T22:55:27.940Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "71c70be57b709995c694c05679c3eb7808e6d6a0ddace5e82eeaf5845f9c6a6c"
+      "pageSha256": "45d27a851ca4fb68998c463b7a655a90bd9a7cf480ab34f48fb1b40efd74a5fa"
     },
     "https://www.waug.com/r/VOJkrlK3": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/VOJkrlK3",
       "sourceUrl": "https://www.waug.com/ko/activities/119559",
-      "checkedAt": "2026-09-13T22:02:59.267Z",
-      "reviewedAt": "2026-09-13T22:02:59.267Z",
-      "expiresAt": "2026-09-14T22:02:59.267Z",
+      "checkedAt": "2026-09-14T22:55:30.969Z",
+      "reviewedAt": "2026-09-14T22:55:30.969Z",
+      "expiresAt": "2026-09-15T22:55:30.969Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "d6f3e56a01e47d31d19bfc3cf7fce78aedf02caf4cc464871bbb4dd00d64ac5c"
+      "pageSha256": "4963f051be19786acfc968b8ea3778a4a8be8e8e969f8226e91525ef164c113c"
     },
     "https://www.waug.com/r/1YSKjEDy": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/1YSKjEDy",
       "sourceUrl": "https://www.waug.com/ko/activities/120453",
-      "checkedAt": "2026-09-13T22:02:59.785Z",
-      "reviewedAt": "2026-09-13T22:02:59.785Z",
-      "expiresAt": "2026-09-14T22:02:59.785Z",
+      "checkedAt": "2026-09-14T22:55:31.498Z",
+      "reviewedAt": "2026-09-14T22:55:31.498Z",
+      "expiresAt": "2026-09-15T22:55:31.498Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "29b71476d178b3c0253f3c4468d643afa30561df551a469d69584d17e220541c"
+      "pageSha256": "d2b4ac7296dfdf4f78e28ec9c2afadcba5a57a2adba777df052d94e98848d7c1"
     },
     "https://www.waug.com/r/98LCdMZ7": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/98LCdMZ7",
       "sourceUrl": "https://www.waug.com/ko/activities/118033",
-      "checkedAt": "2026-09-13T22:03:00.322Z",
-      "reviewedAt": "2026-09-13T22:03:00.322Z",
-      "expiresAt": "2026-09-14T22:03:00.322Z",
+      "checkedAt": "2026-09-14T22:55:31.982Z",
+      "reviewedAt": "2026-09-14T22:55:31.982Z",
+      "expiresAt": "2026-09-15T22:55:31.982Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "c9bcb3d91781655c4386ac834297553e2fa3350585e4a20151a6775d330988eb"
+      "pageSha256": "d5218f8d83abcaf566a0b92381bbe2fe52fd98eb8ca01de0ccd9c3b12287d4d9"
     },
     "https://www.waug.com/r/zrHyPXgl": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/zrHyPXgl",
       "sourceUrl": "https://www.waug.com/ko/activities/148437",
-      "checkedAt": "2026-09-13T22:03:00.819Z",
-      "reviewedAt": "2026-09-13T22:03:00.819Z",
-      "expiresAt": "2026-09-14T22:03:00.819Z",
+      "checkedAt": "2026-09-14T22:55:32.590Z",
+      "reviewedAt": "2026-09-14T22:55:32.590Z",
+      "expiresAt": "2026-09-15T22:55:32.590Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "676384b9ade9a980513e7c7ed53b07aef758dfa945f1a3279495d895c084fd9c"
+      "pageSha256": "1e5324adeb3c18c552be45b56da894bc1c2b3b669723e8d74b6d5c031197f23b"
     },
     "https://www.waug.com/r/aXoOkaDi": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/aXoOkaDi",
       "sourceUrl": "https://www.waug.com/ko/activities/120930",
-      "checkedAt": "2026-09-13T22:03:01.346Z",
-      "reviewedAt": "2026-09-13T22:03:01.346Z",
-      "expiresAt": "2026-09-14T22:03:01.346Z",
+      "checkedAt": "2026-09-14T22:55:33.080Z",
+      "reviewedAt": "2026-09-14T22:55:33.080Z",
+      "expiresAt": "2026-09-15T22:55:33.080Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "9b4668319362220fbf26d5543cc68f5e620015bf8fa1112b85ab1498ef168f6a"
+      "pageSha256": "c0deac4d1056b29e81ae5333607b336a20a5316858f8d93049fbdef54b75a739"
     },
     "https://www.waug.com/r/wxbzaiuw": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/wxbzaiuw",
       "sourceUrl": "https://www.waug.com/ko/activities/116786",
-      "checkedAt": "2026-09-13T22:03:02.087Z",
-      "reviewedAt": "2026-09-13T22:03:02.087Z",
-      "expiresAt": "2026-09-14T22:03:02.087Z",
+      "checkedAt": "2026-09-14T22:55:33.573Z",
+      "reviewedAt": "2026-09-14T22:55:33.573Z",
+      "expiresAt": "2026-09-15T22:55:33.573Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "961057e2e2b4daadc21c13ec13b28dcc3a5a8d427f684dacdd2cbb45e0d048a2"
+      "pageSha256": "745a789ab9c21f31c72d96a563f3b49330390e4a59aad0a9d22e685c4de1994c"
     },
     "https://www.waug.com/r/sFvgr7bD": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/sFvgr7bD",
       "sourceUrl": "https://www.waug.com/ko/activities/148264",
-      "checkedAt": "2026-09-13T22:03:02.611Z",
-      "reviewedAt": "2026-09-13T22:03:02.611Z",
-      "expiresAt": "2026-09-14T22:03:02.611Z",
+      "checkedAt": "2026-09-14T22:55:34.071Z",
+      "reviewedAt": "2026-09-14T22:55:34.071Z",
+      "expiresAt": "2026-09-15T22:55:34.071Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "4e09181107ad687b5517100840acd9695bd40e8bb295a53f520d0eb7b99c6bb3"
+      "pageSha256": "a357582be752656d45ea14a3e5ee562707955a2b559e2473a2fb6ba5a093162f"
     },
     "https://www.waug.com/r/FtUM2T63": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/FtUM2T63",
       "sourceUrl": "https://www.waug.com/ko/activities/139416",
-      "checkedAt": "2026-09-13T22:03:03.141Z",
-      "reviewedAt": "2026-09-13T22:03:03.141Z",
-      "expiresAt": "2026-09-14T22:03:03.141Z",
+      "checkedAt": "2026-09-14T22:55:34.726Z",
+      "reviewedAt": "2026-09-14T22:55:34.726Z",
+      "expiresAt": "2026-09-15T22:55:34.726Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "fa41ae2bc0ff2b6be6bc2311a3cffa955c1165fd8326b92cb62a6dafa6446b91"
+      "pageSha256": "eb47fd03d493c76564df984384fafdcc04999c929893621949419c35e1bb3676"
     },
     "https://www.waug.com/r/0albnuBE": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/0albnuBE",
       "sourceUrl": "https://www.waug.com/ko/activities/147318",
-      "checkedAt": "2026-09-13T22:03:04.142Z",
-      "reviewedAt": "2026-09-13T22:03:04.142Z",
-      "expiresAt": "2026-09-14T22:03:04.142Z",
+      "checkedAt": "2026-09-14T22:55:35.747Z",
+      "reviewedAt": "2026-09-14T22:55:35.747Z",
+      "expiresAt": "2026-09-15T22:55:35.747Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "b2608f8c87df74159bd627c2da7b53df72edf30042e4590f6dcaacda8f6e1d10"
+      "pageSha256": "db0cddf07bfdbd63acaa9003ef074af99b2b93d155c76661d19e667bffd49258"
     },
     "https://www.waug.com/r/ENtQOkUN": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/ENtQOkUN",
       "sourceUrl": "https://www.waug.com/ko/activities/143373",
-      "checkedAt": "2026-09-13T22:03:05.137Z",
-      "reviewedAt": "2026-09-13T22:03:05.137Z",
-      "expiresAt": "2026-09-14T22:03:05.137Z",
+      "checkedAt": "2026-09-14T22:55:36.729Z",
+      "reviewedAt": "2026-09-14T22:55:36.729Z",
+      "expiresAt": "2026-09-15T22:55:36.729Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "203d107d8b479bc556dcb6cc40ed5a3142513b2e93cb09d90f1f899fc97d3f6b"
+      "pageSha256": "883098fd2ad3657d1b4dedf2509185c5f91abf2a81dc447f41afa41e4894bb10"
     },
     "https://www.waug.com/r/lumJv16l": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/lumJv16l",
       "sourceUrl": "https://www.waug.com/ko/activities/138629",
-      "checkedAt": "2026-09-13T22:03:06.106Z",
-      "reviewedAt": "2026-09-13T22:03:06.106Z",
-      "expiresAt": "2026-09-14T22:03:06.106Z",
+      "checkedAt": "2026-09-14T22:55:37.715Z",
+      "reviewedAt": "2026-09-14T22:55:37.715Z",
+      "expiresAt": "2026-09-15T22:55:37.715Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "dae2c0006e056d3a03e783275412eef657d9d8e17323618696e4295091eccc00"
+      "pageSha256": "6d559a11c6a6e3fbf524b00456216fc3a875468ab0a21b3997ae554e873dc5e4"
     },
     "https://www.waug.com/r/kXcP6533": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/kXcP6533",
       "sourceUrl": "https://www.waug.com/ko/activities/103905",
-      "checkedAt": "2026-09-13T22:03:08.326Z",
-      "reviewedAt": "2026-09-13T22:03:08.326Z",
-      "expiresAt": "2026-09-14T22:03:08.326Z",
+      "checkedAt": "2026-09-14T22:55:39.928Z",
+      "reviewedAt": "2026-09-14T22:55:39.928Z",
+      "expiresAt": "2026-09-15T22:55:39.928Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "e8fd7783c0fa94361341226e8d235c5948a2a06a896453a425b1920a6097b82d"
+      "pageSha256": "3d90cb0ae632e3b65bc2c52574aab217cd641dac624928cdaa3eb4a971817fcc"
     },
     "https://www.waug.com/r/NLSJid0b": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/NLSJid0b",
       "sourceUrl": "https://www.waug.com/ko/activities/148389",
-      "checkedAt": "2026-09-13T22:03:10.057Z",
-      "reviewedAt": "2026-09-13T22:03:10.057Z",
-      "expiresAt": "2026-09-14T22:03:10.057Z",
+      "checkedAt": "2026-09-14T22:55:41.598Z",
+      "reviewedAt": "2026-09-14T22:55:41.598Z",
+      "expiresAt": "2026-09-15T22:55:41.598Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "5e2bd82c1b1233254b706dc6b460c119a3eac99503593ab5e9edfab9f88f301b"
+      "pageSha256": "558153509bce3e70bb1220b0796f1d7a373fec8c8bff7cd681cc7b7d75b8ec67"
     },
     "https://www.waug.com/r/2wDe1CLW": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/2wDe1CLW",
       "sourceUrl": "https://www.waug.com/ko/activities/142465",
-      "checkedAt": "2026-09-13T22:03:11.085Z",
-      "reviewedAt": "2026-09-13T22:03:11.085Z",
-      "expiresAt": "2026-09-14T22:03:11.085Z",
+      "checkedAt": "2026-09-14T22:55:42.587Z",
+      "reviewedAt": "2026-09-14T22:55:42.587Z",
+      "expiresAt": "2026-09-15T22:55:42.587Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "66fb4a9796d4d3c8009badfc739b758306ea99a409d496078f8160588cc45b5d"
+      "pageSha256": "e7f19ec71234f926f39fd5b9ffeec9698d89b9fcf9a202b407874f91f08f6bfb"
     },
     "https://www.waug.com/r/0W8QChE8": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/0W8QChE8",
       "sourceUrl": "https://www.waug.com/ko/activities/110561",
-      "checkedAt": "2026-09-13T22:03:11.608Z",
-      "reviewedAt": "2026-09-13T22:03:11.608Z",
-      "expiresAt": "2026-09-14T22:03:11.608Z",
+      "checkedAt": "2026-09-14T22:55:43.343Z",
+      "reviewedAt": "2026-09-14T22:55:43.343Z",
+      "expiresAt": "2026-09-15T22:55:43.343Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "1e29292fa18f631f82de7eafd202f0d899ee56c54d310f69474388a489e867d4"
+      "pageSha256": "a398e4f916cc7067888d892172eb1da0d3f96d894b2badbe72d400e7b89e7b00"
     },
     "https://www.waug.com/r/Jlmt4oJC": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/Jlmt4oJC",
       "sourceUrl": "https://www.waug.com/ko/activities/120082",
-      "checkedAt": "2026-09-13T22:03:13.435Z",
-      "reviewedAt": "2026-09-13T22:03:13.435Z",
-      "expiresAt": "2026-09-14T22:03:13.435Z",
+      "checkedAt": "2026-09-14T22:55:44.363Z",
+      "reviewedAt": "2026-09-14T22:55:44.363Z",
+      "expiresAt": "2026-09-15T22:55:44.363Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "5153a98b526e209fe919241c4fc75759a8cfec1fce9f1fcd17c0e8a45846dac5"
+      "pageSha256": "cf3a1a8d36bd330df677db98c2eb17dc4d01b62e6a685b6b892032639735509d"
     },
     "https://www.waug.com/r/1HwoOPsa": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/1HwoOPsa",
       "sourceUrl": "https://www.waug.com/ko/activities/122172",
-      "checkedAt": "2026-09-13T22:03:15.477Z",
-      "reviewedAt": "2026-09-13T22:03:15.477Z",
-      "expiresAt": "2026-09-14T22:03:15.477Z",
+      "checkedAt": "2026-09-14T22:55:46.583Z",
+      "reviewedAt": "2026-09-14T22:55:46.583Z",
+      "expiresAt": "2026-09-15T22:55:46.583Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "2a817ed4ef9d8bf14f7d457336a12f5a67f2c3f2fa4b1ceafa14231edf8f5262"
+      "pageSha256": "8a9a64d700ce4cd1898589b1605f71df786ca38175d606bd62bbb216376b7aab"
     },
     "https://www.waug.com/r/Iez1tnrF": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/Iez1tnrF",
       "sourceUrl": "https://www.waug.com/ko/activities/121492",
-      "checkedAt": "2026-09-13T22:03:15.974Z",
-      "reviewedAt": "2026-09-13T22:03:15.974Z",
-      "expiresAt": "2026-09-14T22:03:15.974Z",
+      "checkedAt": "2026-09-14T22:55:47.071Z",
+      "reviewedAt": "2026-09-14T22:55:47.071Z",
+      "expiresAt": "2026-09-15T22:55:47.071Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "ec0873263828286a2edaf53f578982d3ffdcbdd056bc73ef8acb70dbd5d64e21"
+      "pageSha256": "803b893a4f00050149107a7b7154ede80c323bb5fd6c5c0b29efe16e3dfa682e"
     },
     "https://www.waug.com/r/w4Eh4SqA": {
       "status": "confirmed",
       "affiliateUrl": "https://www.waug.com/r/w4Eh4SqA",
       "sourceUrl": "https://www.waug.com/ko/activities/118762",
-      "checkedAt": "2026-09-13T22:03:17.147Z",
-      "reviewedAt": "2026-09-13T22:03:17.147Z",
-      "expiresAt": "2026-09-14T22:03:17.147Z",
+      "checkedAt": "2026-09-14T22:55:47.817Z",
+      "reviewedAt": "2026-09-14T22:55:47.817Z",
+      "expiresAt": "2026-09-15T22:55:47.817Z",
       "evidenceText": "최저가 보장",
       "conditions": "상품별 와그 최저가보장 조건 적용. 자세한 조건은 연결된 와그 상품 안내 참조.",
-      "pageSha256": "f28d5218baf1377ae0efdd1be87bad3f05bfa44572097b3c758af8c58bc6feca"
+      "pageSha256": "20543340831929e1506f8cad46f675e555f94069fcbf789e53d627867ae0bcf2"
     }
   }
 }
