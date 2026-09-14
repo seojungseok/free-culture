@@ -20,12 +20,28 @@ test('all saved articles contain three or four distinct compressed images',async
  }
  assert.equal(hashes.size,total);
 });
-test('all six curated articles are published and fully reviewed',()=>{
- assert.equal(store.articles.length,6);
+test('all eleven curated articles are published and fully reviewed',()=>{
+ assert.equal(store.articles.length,11);
  for(const a of store.articles){
   const errors=publicationErrors(a,store);
   if(a.status==='published')assert.deepEqual(errors,[],a.slug);
   assert.equal(a.status,'published');
+ }
+});
+test('five camping stir-fry guides can be followed from measured prep through recovery',()=>{
+ const expected={
+  'camp-jeyuk-bokkeum':['돼지고기 600g','40~60초','중심에 붉은 기','물이 고였다면','간편 제육볶음'],
+  'camp-sundae-bokkeum':['순대 500g','1.5~2cm','주걱 두 개','양념이 바닥에 눌어붙으면','순대볶음 밀키트'],
+  'camp-dakgalbi':['양념 닭 500g','고구마 150g','13~15분','가장 큰 닭 조각','양념된 한입 닭갈비'],
+  'camp-ojingeo-bokkeum':['손질 오징어 500g','채소를 먼저','마지막 2~3분','오징어만 먼저','냉동 오징어볶음'],
+  'camp-kimchi-fried-rice':['찬밥 420g','김치 국물은 분리','30~40초','밥이 질게','냉동 김치볶음밥'],
+ };
+ for(const [slug,phrases] of Object.entries(expected)){
+  const article=store.articles.find(article=>article.slug===slug);assert(article,slug);
+  const body=article.sections.map(section=>`${section.heading} ${section.text}`).join(' ');
+  assert(body.length>1800,`${slug}: 본문이 따라 하기엔 짧습니다.`);
+  for(const phrase of phrases)assert(body.includes(phrase),`${slug}: ${phrase}`);
+  assert.equal(article.sections.at(-1).productIds.includes(article.shortcutProductId),true,slug);
  }
 });
 test('family article preserves age restriction beside every reused scene',()=>{

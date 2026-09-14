@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "createdAt": "2026-09-14T21:40:00+09:00",
+  "topics": [
+    {
+      "slug": "camp-jeyuk-bokkeum",
+      "title": "캠핑 제육볶음 만드는 법",
+      "keywords": ["제육볶음용 돼지고기 앞다리살", "제육볶음 양념", "제육볶음 밀키트"]
+    },
+    {
+      "slug": "camp-sundae-bokkeum",
+      "title": "캠핑 순대볶음 만드는 법",
+      "keywords": ["찰순대 500g", "순대볶음 양념", "순대볶음 밀키트"]
+    },
+    {
+      "slug": "camp-dakgalbi",
+      "title": "캠핑 닭갈비 만드는 법",
+      "keywords": ["닭갈비용 닭다리살", "닭갈비 양념", "닭갈비 밀키트"]
+    },
+    {
+      "slug": "camp-ojingeo-bokkeum",
+      "title": "캠핑 오징어볶음 만드는 법",
+      "keywords": ["손질 오징어 냉동", "오징어볶음 양념", "오징어볶음 밀키트"]
+    },
+    {
+      "slug": "camp-kimchi-bokkeumbap",
+      "title": "캠핑 김치볶음밥 만드는 법",
+      "keywords": ["볶음김치", "김치볶음밥 냉동", "풀무원 김치볶음밥 냉동"]
+    },
+    {
+      "slug": "shared-stir-fry-pan",
+      "title": "볶음요리 공용 팬",
+      "keywords": ["캠핑 그리들 36cm"]
+    }
+  ]
+}
