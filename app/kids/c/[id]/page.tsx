@@ -7,6 +7,7 @@ import KidCoupangDeals from "@/components/KidCoupangDeals";
 import { getKidCourse, getKidCourses, kidCoursesByArea, kmLabel, kidHeadline, type KidStop } from "@/lib/kidCourses";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
+import { getRestaurantMenu } from "@/lib/tourExtra";
 
 export const dynamicParams = true;
 export const revalidate = 2592000; // 30일 — 좌표·구성 거의 불변
@@ -70,6 +71,8 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
   const canonical = `${SITE.url}/kids/c/${id}`;
   const related = kidCoursesByArea(c.area).filter((x) => x.id !== c.id && x.theme === c.theme).slice(0, 6);
   const total = getKidCourses().length;
+  const registeredMenu = c.food ? getRestaurantMenu(c.food.id) : undefined;
+  const menuSummary = registeredMenu && (registeredMenu.length > 100 ? `${registeredMenu.slice(0, 100).trim()}…` : registeredMenu);
 
   const breadcrumbLd = {
     "@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -115,7 +118,7 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
         <b className="font-bold text-ink">{c.area} {c.city}</b>에서 아이와 반나절 보내기 좋은 코스예요.
         <b className="font-bold text-ink"> {c.spot.title}</b>에서 신나게 놀고
         {c.park && <> , 가까운 <b className="font-bold text-ink">{c.park.title}</b>에서 잠깐 걷다가</>}
-        {c.food && <> <b className="font-bold text-ink">{c.food.title}</b>에서 아이가 좋아하는 음식으로 마무리</>}해요.
+        {c.food && <> 가까운 식사 장소인 <b className="font-bold text-ink">{c.food.title}</b>로 이동</>}해요.
         {" "}좌표로 연결한 방문 후보이며, 실제 도로 이동시간과 운영시간·예약 가능 여부는 확인이 필요합니다.
       </p>
 
@@ -131,7 +134,7 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
 
       <Stop stop={c.spot} label={`1. ${th.label}`} emoji={th.emoji} intro={`${c.spot.addr}에 있어요. 이 코스의 출발점으로, 아이와 여기서 충분히 논 뒤 근처로 이동하면 동선이 자연스러워요.`} />
       {c.park && <Stop stop={c.park} label="2. 공원 산책" emoji="🌳" fromTitle={c.spot.title} intro={`명소에서 직선거리 ${kmLabel(c.park.distKm)}에 있는 산책 후보입니다. 실제 이동 경로와 공원 이용 안내를 확인하세요.`} />}
-      {c.food && <Stop stop={c.food} label={c.park ? "3. 아이 맛집" : "2. 아이 맛집"} emoji="🍽" fromTitle={c.park ? c.park.title : c.spot.title} intro={`${kmLabel(c.food.distKm)} 거리예요. 아이가 좋아할 만한 메뉴로 하루를 마무리하기 좋아요. 방문 전 영업시간은 확인해 주세요.`} />}
+      {c.food && <Stop stop={c.food} label={c.park ? "3. 근처 식사" : "2. 근처 식사"} emoji="🍽" fromTitle={c.park ? c.park.title : c.spot.title} intro={`직선거리 ${kmLabel(c.food.distKm)}에 있는 식사 장소 후보입니다.${menuSummary ? ` 한국관광공사에 등록된 메뉴 정보는 ${menuSummary}입니다.` : ""} 메뉴 제공 여부와 영업시간, 아이 동반 이용 가능 여부는 방문 전에 확인해 주세요.`} />}
 
       {related.length > 0 && (
         <section className="mt-10 border-t border-line pt-6">

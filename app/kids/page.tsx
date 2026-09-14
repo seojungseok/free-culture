@@ -9,8 +9,8 @@ export const revalidate = 86400;
 
 export function generateMetadata(): Metadata {
   const n = getKidCourses().length;
-  const title = `아이와 함께 — 테마별 아이 코스 ${n.toLocaleString()}개 (명소·공원·아이 맛집)`;
-  const description = `동물원·과학관·수목원·놀이공원에서 놀고, 근처 공원을 걷고, 아이가 좋아하는 음식으로 마무리. 테마와 지역으로 고르는 아이와 함께 코스 ${n.toLocaleString()}개. 비 오는 날 실내 코스도 한 번에.`;
+  const title = `아이와 함께 — 테마별 아이 코스 ${n.toLocaleString()}개 (명소·공원·근처 식사)`;
+  const description = `동물원·과학관·수목원·놀이공원과 근처 공원, 식사 장소를 좌표 거리로 연결한 아이와 함께 코스 ${n.toLocaleString()}개. 테마와 지역으로 고르고, 실제 이동 경로와 운영 정보는 방문 전에 확인하세요.`;
   return {
     title,
     description,
@@ -54,7 +54,7 @@ export default function KidsPage() {
           아이와 <span className="text-free">함께</span>
         </h1>
         <p className="mt-1.5 text-[14px] leading-relaxed text-ink-soft">
-          아이랑 놀고 → 근처 공원 걷고 → 아이가 좋아하는 음식으로 마무리.
+          아이랑 놀고 → 근처 공원 걷고 → 가까운 식사 장소로 이동.
           <br className="hidden sm:block" />
           테마와 지역을 골라 오늘 아이와 갈 코스를 정해보세요.
         </p>

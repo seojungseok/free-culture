@@ -1,6 +1,6 @@
 // lib/kidCourses.ts
 // "아이와 함께" 테마별 코스 — 카페데이트 엔진을 아이용으로.
-//   [테마 명소(놀거리)] → [근처 공원(산책)] → [아이가 좋아하는 음식]
+//   [테마 명소(놀거리)] → [근처 공원(산책)] → [근처 식사 장소]
 //   차량 이동거리로 가까운 것끼리 좌표로 자동 구성(비용 0, 환각 없음).
 // 테마: 동물/놀이/배우는/자연/공연(문화행사). 실내는 indoor 플래그로 교차 필터.
 
@@ -69,7 +69,7 @@ export interface KidCourse {
   indoor: boolean;
   spot: KidStop;         // 테마 명소 (출발)
   park: KidStop | null;  // 근처 공원
-  food: KidStop | null;  // 아이 좋아하는 음식
+  food: KidStop | null;  // 근처 식사 장소
   totalKm: number; driveMin: number;
   image: string;
 }
@@ -82,7 +82,11 @@ function distKm(a: { mapx: string; mapy: string }, b: { mapx: string; mapy: stri
   return 2 * R * Math.asin(Math.sqrt(s));
 }
 export function driveMinutes(km: number): number { return Math.max(1, Math.round((km / 22) * 60)); }
-export function kmLabel(km: number): string { return km < 1 ? `${Math.round(km * 10) * 100}m` : `${km.toFixed(1)}km`; }
+export function kmLabel(km: number): string {
+  if (!Number.isFinite(km) || km < 0) return "거리 확인 필요";
+  if (km < 0.1) return "100m 미만";
+  return km < 1 ? `${Math.round(km * 10) * 100}m` : `${km.toFixed(1)}km`;
+}
 
 interface Row { id: string; title: string; addr: string; area: string; image?: string; mapx: string; mapy: string; cat3?: string }
 

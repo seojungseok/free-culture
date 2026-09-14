@@ -124,7 +124,8 @@ export default async function SpotDetailPage({
     ...placeCourses.map((c) => ({ name: c.title, href: `/course/c/${c.id}` })),
   ].filter((l) => l.name && l.name !== spot.title);
   // 입장료: 캐시 우선(intro → fees) → 없을 때만 런타임 조회(ISR 1주 캐시)
-  const cachedAdmission = getIntro(id)?.admission ?? getAdmission(id);
+  const cachedIntro = getIntro(id);
+  const cachedAdmission = cachedIntro?.admission ?? getAdmission(id);
 
   const [detail, extraImages, admission] = await Promise.all([
     // 자체 본문이 있으면 외부 overview를 기다릴 필요가 없다. 메타데이터와 보조정보용이다.
@@ -135,8 +136,20 @@ export default async function SpotDetailPage({
   const overview = detail.overview;
   const homepage = detail.homepage;
   const tel = detail.tel || spot.tel;
+  // detailIntro2의 fee뿐 아니라 detailInfo2가 "시설이용료"로 내려주는 경우도 있다.
+  // 실제 공공데이터 요금 설명이 있으면 상단에서 "정보 없음"이라고 모순되게 표시하지 않는다.
+  const hasDetailedFee = Boolean(
+    cachedIntro?.fee?.trim() ||
+    facilities.some((item) => /입장료|이용료|요금/.test(item.name) && item.text.trim()),
+  );
   const admissionLabel =
-    admission === "free" ? "무료" : admission === "paid" ? "유료" : "정보 없음 — 방문 전 확인 권장";
+    admission === "free"
+      ? "무료"
+      : admission === "paid"
+        ? "유료"
+        : hasDetailedFee
+          ? "요금 안내 있음 — 아래 방문 정보 확인"
+          : "정보 없음 — 방문 전 확인 권장";
 
   // 갤러리 = 대표사진(firstimage) + 추가사진, URL 기준 중복 제거
   const gallery: GalleryImage[] = [];
