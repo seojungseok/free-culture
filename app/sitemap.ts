@@ -17,7 +17,7 @@ import { getPetTravelPlaces } from "@/lib/petTravel";
 import { getKidCourses } from "@/lib/kidCourses";
 import { getAllBundles } from "@/lib/campingCollections";
 import { getTickets } from "@/lib/tickets";
-import { getPrepArticles } from '@/lib/weekend-prep/data';
+import { getPrepArticles, isCookingPrepArticle } from '@/lib/weekend-prep/data';
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
@@ -32,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const LOW = new Set(["/about", "/privacy", "/terms", "/contact"]);
   const staticRoutes = [
     ...(getPrepArticles().length ? ['/weekend-prep'] : []),
+    ...(getPrepArticles().some(isCookingPrepArticle) ? ['/camping/cooking'] : []),
     ...(getTickets().length ? ['/tickets'] : []),
     "",
     "/events",

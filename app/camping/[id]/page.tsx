@@ -12,7 +12,7 @@ import { Container } from "@/components/Band";
 import TourCard from "@/components/TourCard";
 import CoupangDeals from "@/components/CoupangDeals";
 import DetailGuidance from "@/components/DetailGuidance";
-import CampingSoupChecklistLinks from "@/components/CampingSoupChecklistLinks";
+import CampingCookingGuide from "@/components/CampingCookingGuide";
 
 export const dynamicParams = true;
 export const revalidate = 2592000; // 30일 — 캠핑장 정보 거의 불변(대역폭 절감)
@@ -175,7 +175,7 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
         </section>
       )}
 
-      <CampingSoupChecklistLinks compact />
+      <CampingCookingGuide compact />
 
       <CoupangDeals />
 

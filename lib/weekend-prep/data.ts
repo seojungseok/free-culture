@@ -1,5 +1,29 @@
 import data from '@/data/weekend-prep.json';
 import type {PrepStore} from './types';
+import type {PrepArticle} from './types';
 export const isPrepReview=process.env.NODE_ENV==='development'&&process.env.WEEKEND_PREP_LOCAL_REVIEW==='1';
 export const prepStore = data as PrepStore;
 export function getPrepArticles(){return prepStore.articles.filter(a=>isPrepReview || a.status==='published' && Date.parse(a.publishAt)<=Date.now());}
+
+const COOKING_SLUGS = new Set([
+  'autumn-flower-crab-soup-ingredient-checklist','camping-fishcake-soup-ingredient-checklist',
+  'camping-budae-jjigae-ingredient-checklist','camping-beef-mushroom-hotpot-ingredient-checklist',
+  'camping-seafood-hotpot-ingredient-checklist','camp-seafood-pot-table','camp-noodle-lunch',
+  'camp-jeyuk-bokkeum','camp-sundae-bokkeum','camp-dakgalbi','camp-ojingeo-bokkeum','camp-kimchi-fried-rice',
+]);
+
+export function prepCategoryLabel(category:string, article?:Pick<PrepArticle,'slug'|'salesFormat'>){
+  if(category==='요리 준비물' || category==='캠핑 요리' || category==='바비큐 요리' || article?.salesFormat==='food-recipe' || (article && COOKING_SLUGS.has(article.slug))) return '캠핑요리 준비하기';
+  return category;
+}
+
+export type CookingCategory = '국물요리'|'볶음요리'|'볶음밥'|'찌개'|'기타 요리';
+export function cookingCategory(article:Pick<PrepArticle,'slug'|'title'>):CookingCategory{
+  if(article.slug==='camp-kimchi-fried-rice') return '볶음밥';
+  if(article.slug==='camping-budae-jjigae-ingredient-checklist') return '찌개';
+  if(/볶음|제육|순대|닭갈비|오징어/.test(`${article.slug} ${article.title}`)) return '볶음요리';
+  if(article.slug==='camp-morning-sandwich' || article.slug==='grilled-vegetable-side-dishes') return '기타 요리';
+  return '국물요리';
+}
+
+export function isCookingPrepArticle(article:PrepArticle){return prepCategoryLabel(article.category,article)==='캠핑요리 준비하기';}

@@ -1,4 +1,4 @@
-export const PREP_CATEGORIES = ['캠핑 요리','요리 준비물','바비큐 요리','캠핑용품','야외 놀이','피크닉 준비','여행 준비'] as const;
+export const PREP_CATEGORIES = ['캠핑요리 준비하기','캠핑용품','야외 놀이','피크닉 준비','여행 준비'] as const;
 export type PrepProduct = {id:string; name:string; affiliateUrl:string; image:string; source:string; checkedAt:string; specification:string; options:string; verified:boolean; evidence:string};
 export type PrepImage = {url:string; alt:string; width:number; height:number; generated:boolean; reviewed:boolean; prompt?:string; usageNotice?:string; referenceProducts?:{productId:string;imageUrl:string}[]; productMatchReviewed?:boolean; tags:{productId:string;x:number;y:number}[]};
 export type PrepChecklistItem = {id:string; label:string; role:string; group:'main'|'seasoning'|'common'; productId:string};

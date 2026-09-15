@@ -3,16 +3,17 @@ import Image from 'next/image';
 import PrepImage from './PrepImage';
 import PrepChecklist from './PrepChecklist';
 import type {PrepArticle as Article,PrepProduct} from '@/lib/weekend-prep/types';
+import {prepCategoryLabel} from '@/lib/weekend-prep/data';
 export default function PrepArticle({article:a,products,preview=false}:{article:Article;products:PrepProduct[];preview?:boolean}){
  const chosen=products.filter(p=>a.productIds.includes(p.id));
  const linked=new Set<string>();
  const carded=new Set<string>();
  const actionLabel=a.salesFormat==='food-recipe'?'쿠팡에서 재료 확인하기':a.salesFormat==='camping-gear'?'쿠팡에서 캠핑용품 확인하기':'쿠팡에서 제품 확인하기';
  return <article className="prep-article">
-  <nav aria-label="현재 위치"><Link href="/">홈</Link> / <Link href="/weekend-prep">준비 가이드</Link> / {a.category}</nav>
+  <nav aria-label="현재 위치"><Link href="/">홈</Link> / <Link href="/weekend-prep">준비 가이드</Link> / {prepCategoryLabel(a.category,a)}</nav>
   {preview&&<p className="prep-notice">검토용 초안 · 아직 공개되지 않은 글입니다.</p>}
   <p className="prep-disclosure">이 글에는 제휴 링크가 포함되어 있습니다. 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.</p>
-  <p className="prep-eyebrow">{a.category}</p><h1>{a.title}</h1><p className="prep-lead">{a.description}</p>
+  <p className="prep-eyebrow">{prepCategoryLabel(a.category,a)}</p><h1>{a.title}</h1><p className="prep-lead">{a.description}</p>
   <PrepImage photo={a.cover} products={chosen} priority headline={a.coverLabel}/>
   {a.salesFormat==='food-checklist'&&a.checklist&&<PrepChecklist slug={a.slug} items={a.checklist} products={chosen}/>}
   {a.sections.map((s,i)=>{
