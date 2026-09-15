@@ -1,10 +1,18 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import type { Festival } from "@/lib/festivals";
 import { fmtMd } from "@/lib/festivals";
 
 const REGIONS = ["전국", "서울", "경기", "인천", "강원", "충북", "충남", "대전", "전북", "전남", "광주", "경북", "대구", "경남", "부산", "울산", "제주"];
+
+function FestivalUrlFilters({setRegion,setQuery}:{setRegion:(value:string)=>void;setQuery:(value:string)=>void}) {
+  const params=useSearchParams();
+  const region=params.get('region') || '전국', query=params.get('query') || '';
+  useEffect(()=>{setRegion(REGIONS.includes(region)?region:'전국');setQuery(query);},[region,query,setRegion,setQuery]);
+  return null;
+}
 
 function ymdNow() {
   const d = new Date();
@@ -43,6 +51,7 @@ export default function FestivalBrowser({ festivals, initialRegion = "전국", i
 
   return (
     <div>
+      <Suspense fallback={null}><FestivalUrlFilters setRegion={setRegion} setQuery={setQuery}/></Suspense>
       <div className="border-y border-line bg-[#f7fafc] px-5 py-4 sm:rounded-2xl sm:border sm:px-6">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <label className="flex min-h-11 items-center gap-2 rounded-xl border border-line bg-white px-3 text-sm text-ink-soft lg:w-[320px]">
