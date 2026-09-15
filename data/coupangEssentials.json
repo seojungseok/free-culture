@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-12T18:49:46.102Z",
-  "cursor": 3,
+  "generatedAt": "2026-09-15T23:35:09.978Z",
+  "cursor": 0,
   "pool": [
     {
       "id": "9445273260",
@@ -29,17 +29,17 @@
       "lastSeenAt": "2026-09-12T18:49:46.102Z"
     },
     {
-      "id": "305672892",
-      "name": "탐사 클래식 물티슈 캡형",
-      "image": "https://image4.coupangcdn.com/image/retail/images/378809628427809-724ea0d4-3f60-4be2-bf73-e5ede3fc3144.jpg",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=305672892&itemId=3984481086&vendorItemId=71968792459&traceid=V0-143-df6e481d96579701&pt=0&slot=16",
+      "id": "6099722379",
+      "name": "크리넥스 안심 물티슈 휴대형, 4.644g, 20매, 12개",
+      "image": "https://ads-partners.coupang.com/image1/XNB2FTR10oix1bQaXBlnO_oiD_LrKG1x-tu14KSxSSZAPd1Wfe26xFmC8iWJt9yVRXbTmqRZIs5j3k6k2Rqdd2k2q_ZOZHxdHNP2U4JEmYD74J0jhmMdoWIG0eYHPFa9RrhXZrwcCaA1ta9Znep9zOpU62IrHqDDmJ_W8bpxLPcid6KI1W551sD2xXNOiuvfQdFuf_8D2wfsOEvM30Rv-I9v5YMayUvbrNJxFA0t05EpwDMheOxk6cUhF7ADChVm0R1jzW1dMCsHJokdrM1_EC12zWeQ97C9Mz5rv2f-8ElgGuk_Nha9ORWCvd_urtu485s-aZBZBriZTHZO5o5H9DV8588jgac2VpbcCmpJ0UA6Q2FzzT5ywPgCKPDis-TOVHnFBzGTYWi4C8YwwopspxPTUzBs5DbqxF-4w8lYs4stRyVNK-so9rzKZLCeQcjL2LPtfb4LZ5GlZhkvyuLJ0hYA_R3eLP7R0Folagl47WBtS3VlyxNxIExkeWBgMdNrG7V4Vlf1xQ==",
+      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6099722379&itemId=11422989098&vendorItemId=78698714175&traceid=V0-153-9e0a729aa54a06aa&clickBeacon=1c4397b0-b15e-11f1-a0ae-c39d196b2056%7E3&requestid=20260916083518366038901819&token=31850C%7CCMG&pt=1&slot=1",
       "isRocket": true,
       "kind": "물티슈",
       "label": "물티슈",
       "best": false,
-      "deal": true,
-      "firstSeenAt": "2026-09-01T19:28:24.484Z",
-      "lastSeenAt": "2026-09-08T19:21:52.480Z"
+      "deal": false,
+      "firstSeenAt": "2026-08-24T16:52:20.652Z",
+      "lastSeenAt": "2026-09-15T23:35:09.978Z"
     },
     {
       "id": "8582731394",
@@ -146,17 +146,17 @@
       "lastSeenAt": "2026-09-12T18:49:46.102Z"
     },
     {
-      "id": "9517441976",
-      "name": "맘스럽 아토클래식 물티슈 독일 더마 테스트인증 저자극 소프트 캡형 40g 100매입 10개",
-      "image": "https://img1a.coupangcdn.com/image/vendor_inventory/7145/84d563277ba60a672915e1a2ff96231a3950053eb8eec3e7e746f549a668.png",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9517441976&itemId=28644299019&vendorItemId=95330024917&traceid=V0-143-0536c684e7d216b1&pt=0&slot=12",
-      "isRocket": false,
+      "id": "305672892",
+      "name": "탐사 클래식 물티슈 캡형",
+      "image": "https://image4.coupangcdn.com/image/retail/images/378809628427809-724ea0d4-3f60-4be2-bf73-e5ede3fc3144.jpg",
+      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=305672892&itemId=3984481086&vendorItemId=71968792459&traceid=V0-143-df6e481d96579701&pt=0&slot=16",
+      "isRocket": true,
       "kind": "물티슈",
       "label": "물티슈",
       "best": false,
       "deal": true,
-      "firstSeenAt": "2026-09-02T19:28:00.036Z",
-      "lastSeenAt": "2026-09-02T19:28:00.036Z"
+      "firstSeenAt": "2026-09-01T19:28:24.484Z",
+      "lastSeenAt": "2026-09-08T19:21:52.480Z"
     },
     {
       "id": "170016366",
@@ -250,17 +250,17 @@
       "lastSeenAt": "2026-09-12T18:49:46.102Z"
     },
     {
-      "id": "8694766208",
-      "name": "깨끗한나라 페퍼민트 물티슈 캡형",
-      "image": "https://image9.coupangcdn.com/image/retail/images/437533615332117-114db541-a95b-4cba-8ebc-960e9ec11e88.jpg",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8694766208&itemId=2427301930&vendorItemId=3059399258&traceid=V0-143-da3d3eb3a93d6235",
-      "isRocket": true,
+      "id": "9517441976",
+      "name": "맘스럽 아토클래식 물티슈 독일 더마 테스트인증 저자극 소프트 캡형 40g 100매입 10개",
+      "image": "https://img1a.coupangcdn.com/image/vendor_inventory/7145/84d563277ba60a672915e1a2ff96231a3950053eb8eec3e7e746f549a668.png",
+      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9517441976&itemId=28644299019&vendorItemId=95330024917&traceid=V0-143-0536c684e7d216b1&pt=0&slot=12",
+      "isRocket": false,
       "kind": "물티슈",
       "label": "물티슈",
       "best": false,
       "deal": true,
-      "firstSeenAt": "2026-08-31T21:37:02.602Z",
-      "lastSeenAt": "2026-08-31T21:37:02.602Z"
+      "firstSeenAt": "2026-09-02T19:28:00.036Z",
+      "lastSeenAt": "2026-09-02T19:28:00.036Z"
     },
     {
       "id": "170016339",
@@ -354,17 +354,17 @@
       "lastSeenAt": "2026-09-12T18:49:46.102Z"
     },
     {
-      "id": "6099722379",
-      "name": "크리넥스 안심 물티슈 휴대형",
-      "image": "https://ads-partners.coupang.com/image1/j9o-KRyzroldk_tOj8soVRGYKMt4XXoCd3PcF2pk9JZfHFYeow6KmCgZj54uRY4JG4H8SXNziGGVDcbhyIgIDfticHJWk_A4_j1pIwWAWK1_9HtV5PhD-WjU1BhgLGu8BkCOEjkYkbVAVlSEpvh9JgYREA9b04o-S2f4VqZSzxvw0WO65cp65g94WrlaLYWxUFh7AielUobdWVY5unHt_QNhVtQbyB0-kqzhjHHZOzTEfhH7Y2cIeeS9Ot8qIa_2kMHQeKZb-S-klcqGlIzbMt1RXSzbvrQaatR5aopI1YLBAxH2",
-      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6099722379&itemId=11422989098&vendorItemId=78698714175&traceid=V0-153-9e0a729aa54a06aa&requestid=20260829094040335091677865&token=31850C%7CMIXED",
+      "id": "8694766208",
+      "name": "깨끗한나라 페퍼민트 물티슈 캡형",
+      "image": "https://image9.coupangcdn.com/image/retail/images/437533615332117-114db541-a95b-4cba-8ebc-960e9ec11e88.jpg",
+      "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8694766208&itemId=2427301930&vendorItemId=3059399258&traceid=V0-143-da3d3eb3a93d6235",
       "isRocket": true,
       "kind": "물티슈",
       "label": "물티슈",
       "best": false,
-      "deal": false,
-      "firstSeenAt": "2026-08-24T16:52:20.652Z",
-      "lastSeenAt": "2026-08-29T00:40:08.970Z"
+      "deal": true,
+      "firstSeenAt": "2026-08-31T21:37:02.602Z",
+      "lastSeenAt": "2026-08-31T21:37:02.602Z"
     },
     {
       "id": "8776336017",
