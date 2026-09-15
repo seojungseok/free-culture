@@ -2037,17 +2037,20 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "working",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
       "holdReasons": [],
-      "attempts": 0,
+      "attempts": 1,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-27",
-      "writingAt": "2026-09-16T00:17:00+09:00"
+      "writingAt": "2026-09-16T00:17:00+09:00",
+      "writingDay": "2026-09-16",
+      "startedDay": "2026-09-16",
+      "lastAttemptAt": "2026-09-15T22:18:29.844Z"
     },
     {
       "placeId": "place-118660",
