@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Container } from '@/components/Band';
 import CampingCookingGuide from '@/components/CampingCookingGuide';
-import { cookingCategory, getPrepArticles, isCookingPrepArticle, type CookingCategory } from '@/lib/weekend-prep/data';
+import { COOKING_CATEGORIES, cookingCategory, getPrepArticles, isCookingPrepArticle, type CookingCategory } from '@/lib/weekend-prep/data';
 import type { PrepArticle } from '@/lib/weekend-prep/types';
 
 export const revalidate = 86400;
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/camping/cooking' },
 };
 
-const CATEGORIES: CookingCategory[] = ['국물요리', '볶음요리', '볶음밥', '찌개', '기타 요리'];
+const CATEGORIES: CookingCategory[] = COOKING_CATEGORIES;
 
 function CookingCard({ article }: { article: PrepArticle }) {
   return <Link href={`/weekend-prep/${article.slug}`} className="group overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">

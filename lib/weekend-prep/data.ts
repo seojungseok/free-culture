@@ -17,12 +17,14 @@ export function prepCategoryLabel(category:string, article?:Pick<PrepArticle,'sl
   return category;
 }
 
-export type CookingCategory = '국물요리'|'볶음요리'|'볶음밥'|'찌개'|'기타 요리';
+export type CookingCategory = '국물요리'|'볶음요리'|'볶음밥'|'찌개'|'삼겹살·바비큐'|'장작·불멍 간식'|'간편식·아침'|'기타 요리';
+export const COOKING_CATEGORIES: CookingCategory[] = ['국물요리','볶음요리','볶음밥','찌개','삼겹살·바비큐','장작·불멍 간식','간편식·아침','기타 요리'];
 export function cookingCategory(article:Pick<PrepArticle,'slug'|'title'>):CookingCategory{
   if(article.slug==='camp-kimchi-fried-rice') return '볶음밥';
   if(article.slug==='camping-budae-jjigae-ingredient-checklist') return '찌개';
   if(/볶음|제육|순대|닭갈비|오징어/.test(`${article.slug} ${article.title}`)) return '볶음요리';
-  if(article.slug==='camp-morning-sandwich' || article.slug==='grilled-vegetable-side-dishes') return '기타 요리';
+  if(article.slug==='grilled-vegetable-side-dishes') return '삼겹살·바비큐';
+  if(article.slug==='camp-morning-sandwich') return '간편식·아침';
   return '국물요리';
 }
 
