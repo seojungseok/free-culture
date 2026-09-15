@@ -23,7 +23,9 @@ export function cookingCategory(article:Pick<PrepArticle,'slug'|'title'>):Cookin
   if(article.slug==='camp-kimchi-fried-rice') return '볶음밥';
   if(article.slug==='camping-budae-jjigae-ingredient-checklist') return '찌개';
   if(/볶음|제육|순대|닭갈비|오징어/.test(`${article.slug} ${article.title}`)) return '볶음요리';
-  if(article.slug==='grilled-vegetable-side-dishes') return '삼겹살·바비큐';
+  if(article.slug==='camp-griddle-barbecue-party') return '삼겹살·바비큐';
+  if(article.slug==='camp-woodfire-snack-checklist') return '장작·불멍 간식';
+  if(article.slug==='grilled-vegetable-side-dishes') return '기타 요리';
   if(article.slug==='camp-morning-sandwich') return '간편식·아침';
   return '국물요리';
 }
