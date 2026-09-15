@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {Suspense} from 'react';
 import TicketBrowser from '@/components/TicketBrowser';
 import {getTickets} from '@/lib/tickets';
-export const revalidate=3600;
+export const revalidate=86400;
 export function generateMetadata():Metadata{return {title:'입장권·체험 — 주말 나들이 방문 가이드',description:'테마파크부터 체험 공간까지, 지역별 방문 정보와 이용권 선택 기준을 확인하세요.',alternates:{canonical:'/tickets'},robots:getTickets().length?{index:true,follow:true}:{index:false,follow:true}};}
 export default function TicketsPage(){
   const articles=getTickets().map(({slug,placeName,listTitle,area,theme,thumbnail})=>({slug,placeName,listTitle,area,theme,thumbnail}));

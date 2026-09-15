@@ -14,6 +14,7 @@ const nextConfig = {
     ];
   },
   images: {
+    minimumCacheTTL: 604800, // 같은 사진의 변환 결과를 최소 7일 재사용
     // 문화포털 포스터 이미지는 http(www.culture.go.kr)로 제공됨
     remotePatterns: [
       { protocol: "http", hostname: "www.culture.go.kr" },

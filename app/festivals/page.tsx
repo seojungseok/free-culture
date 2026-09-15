@@ -4,7 +4,7 @@ import FestivalBrowser from "@/components/FestivalBrowser";
 import { SITE } from "@/lib/site";
 import { getAllFestivals } from "@/lib/festivals";
 
-export const revalidate = 3600;
+export const revalidate = 10800;
 
 export const metadata: Metadata = {
   title: "전국 축제 일정 | 지역별 축제·가볼만한곳",

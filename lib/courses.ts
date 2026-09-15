@@ -156,16 +156,28 @@ const validCoord = (x?: string, y?: string) => {
 };
 
 const norm = (s: string) => String(s || "").replace(/\s|\(.*?\)/g, "");
+const MATCH_PLACES = getAllPlaces();
+const EXACT_PLACES = new Map<string, (typeof MATCH_PLACES)[number]>();
+const NORMAL_PLACES = new Map<string, (typeof MATCH_PLACES)[number]>();
+const NORMAL_NAMES = MATCH_PLACES.map(place => {
+  const name = norm(place.title);
+  if (!EXACT_PLACES.has(place.title)) EXACT_PLACES.set(place.title, place);
+  if (!NORMAL_PLACES.has(name)) NORMAL_PLACES.set(name, place);
+  return { place, name };
+});
+const PLACE_MATCHES = new Map<string, (typeof MATCH_PLACES)[number] | undefined>();
 /** 경유지 → 관광지 데이터 매칭(정규화: 공백·괄호 제거). 공식 코스의 주소·좌표 복원용. */
 function matchPlace(name: string) {
   if (!name) return undefined;
-  const places = getAllPlaces();
+  if (PLACE_MATCHES.has(name)) return PLACE_MATCHES.get(name);
   const n = norm(name);
-  return (
-    places.find((pl) => pl.title === name) ||
-    places.find((pl) => norm(pl.title) === n) ||
-    places.find((pl) => norm(pl.title).includes(n) || n.includes(norm(pl.title)))
+  const result = (
+    EXACT_PLACES.get(name) ||
+    NORMAL_PLACES.get(n) ||
+    NORMAL_NAMES.find(entry => entry.name.includes(n) || n.includes(entry.name))?.place
   );
+  PLACE_MATCHES.set(name, result);
+  return result;
 }
 
 /**

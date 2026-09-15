@@ -13,7 +13,7 @@ import {SITE} from '@/lib/site';
 function photoCredit(photo:TicketArticle['thumbnail']|TicketArticle['photos'][number]) {
   return photo.kind==='waug-original'||photo.rightsUrl?.includes('waug-marketing-partners')?'사진: 와그 공식 자료 활용':photo.credit;
 }
-export const revalidate=3600;
+export const revalidate=86400;
 export const dynamicParams=true;
 export function generateStaticParams(){return getTickets().map(a=>({slug:a.slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{

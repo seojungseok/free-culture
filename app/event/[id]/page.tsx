@@ -21,7 +21,7 @@ import { SIDO_SLUG } from "@/lib/classify";
 
 // ISR: 1시간 재검증. 종료 상태를 반영하면서 기존 상세 URL은 유지한다.
 // 전체를 빌드 때 만들지 않고 주목도 높은 일부만 사전 생성, 나머지는 첫 요청 때 생성 후 캐시.
-export const revalidate = 3600;
+export const revalidate = 10800;
 
 export function generateStaticParams() {
   return getAllEvents()

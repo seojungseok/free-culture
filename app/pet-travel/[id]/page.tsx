@@ -6,6 +6,7 @@ import { getTourById, tourTypeLabel } from "@/lib/tour";
 import { fetchPetTravelDetail, getPetTravelPlace, normalizePetIntro, sanitizePetInfoText } from "@/lib/petTravel";
 
 export const revalidate = 86400;
+export function generateStaticParams() { return []; }
 
 async function findPlace(id: string) {
   return getPetTravelPlace(id) || await fetchPetTravelDetail(id) || getTourById(id);
