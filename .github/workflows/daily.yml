@@ -1,10 +1,8 @@
 name: 일일 데이터·글 (통합, 1일 1배포)
 
-# 기존 collect·tour-backfill·camping-images·articles 를 하나로 통합.
-#  목적: 데이터 커밋을 하루 1회로 묶어 Vercel 재배포(=ISR 캐시 초기화) 횟수를 줄인다.
-#  → 재배포마다 크롤러가 상세페이지를 재생성하며 ISR Writes가 늘어나므로, 배포 빈도가 핵심 절감 레버.
-#  각 수집 스텝은 continue-on-error 로 독립 → 하나 실패해도 나머지 데이터는 그대로 커밋.
-# Pro 전환(2026-07-29) — 하루 1배포 스케줄 복구. ISR 캐시 초기화는 하루 1회로만.
+# 일반 글·시티투어·준비물·입장권과 혜택 갱신을 마지막 커밋 한 번에 반영한다.
+# 비공개 작성 중간 기록은 저장하되 Vercel 빌드를 생략한다.
+# 각 수집/발행 스텝은 실패를 격리해 준비된 다른 글은 계속 반영한다.
 on:
   schedule:
     - cron: "0 20 * * *" # UTC 20:00 = KST 05:00 (하루 1회)
@@ -27,8 +25,8 @@ permissions:
   contents: write
 
 concurrency:
-  # 입장권 발행 작업은 별도 데이터 파일을 쓰므로 5시 동시 실행을 허용한다.
-  group: general-content-publication
+  # Serialize with the ticket editor and manual publisher to protect durable history.
+  group: site-content-publication
   cancel-in-progress: false
 
 jobs:
@@ -38,6 +36,9 @@ jobs:
       COUPANG_QUEUE_GITHUB_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -185,6 +186,31 @@ jobs:
         continue-on-error: true
         run: node scripts/prep/publish-daily.mjs
 
+      # Ticket generation stays in waug-editorial.yml; only reviewed due articles
+      # are published here. Retries reload durable state and respect daily caps.
+      - name: 입장권 발행 규칙 검사
+        id: ticket_rules
+        continue-on-error: true
+        run: node --test scripts/waug/core.test.mjs scripts/waug/content-policy.test.mjs
+
+      - name: 검수된 입장권 예약 발행 (통합 배포, 최대 3회 재시도)
+        if: steps.ticket_rules.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          for attempt in 1 2 3; do
+            if node scripts/waug/manage.mjs run; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then sleep 10; fi
+          done
+          echo '::warning::입장권 발행 실패. 일반 글은 계속 반영하고 다음 실행에서 재시도합니다.'
+          exit 1
+
+      - name: 기존 입장권 최저가보장 근거 갱신 (통합 배포)
+        continue-on-error: true
+        run: node scripts/waug/refresh-booking-guarantees.mjs
+
       - name: 변경분 커밋 (통합, 1회)
         id: commit
         run: |
@@ -193,23 +219,28 @@ jobs:
           git add data/events.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
                   data/weekend-prep.json data/weekend-prep-daily-report.json \
                   data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json \
-                  data/coupang.json data/coupangEssentials.json data/eventCoupang.json data/kidCoupang.json data/pet-travel.json data/city-tour-articles.json
+                  data/coupang.json data/coupangEssentials.json data/eventCoupang.json data/kidCoupang.json data/pet-travel.json data/city-tour-articles.json \
+                  data/waug/booking-guarantees.json data/waug/catalog.json data/waug/editorial.json data/waug/published.json data/waug/places.json data/waug/queue.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "chore: 일일 데이터·글 갱신 ($(date -u +%Y-%m-%d))"
+            git commit -m "chore: 일일 데이터·글 통합 발행 ($(TZ=Asia/Seoul date +%Y-%m-%d))"
             for i in 1 2 3; do
-              git pull --rebase --autostash origin main && git push && break
+              if git pull --rebase --autostash origin main && git push origin HEAD:main; then
+                echo "changed=true" >> "$GITHUB_OUTPUT"
+                exit 0
+              fi
+              # A merge conflict requires attention, never another publication.
+              if [ -d .git/rebase-merge ] || [ -d .git/rebase-apply ]; then
+                echo '::error::원격 변경과 충돌하여 통합 발행을 중단했습니다.'
+                exit 1
+              fi
               echo "push 재시도 $i…"; sleep 5
             done
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo '::error::통합 발행 결과를 원격에 저장하지 못했습니다.'
+            exit 1
           fi
 
-      # 새 글 페이지만 on-demand 갱신(재배포 후에도 즉시 반영 보장 + 목록 갱신)
-      - name: 새 글 on-demand revalidate
-        if: steps.commit.outputs.changed == 'true'
-        env:
-          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
-          SITE_URL: https://mwohaji.kr
-        run: node scripts/revalidatePublished.mjs
+      # JSON data is bundled by the new deployment. Invalidating the old live
+      # deployment immediately after push cannot publish that new JSON.

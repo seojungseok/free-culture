@@ -1,7 +1,7 @@
-name: 와그 입장권 관리·예약 발행
+name: 와그 입장권 수동 관리·예약 발행
 on:
-  schedule:
-    - cron: '0 20,21 * * *' # KST 05:00 primary / 06:00 retry; total remains <=20/day
+  # Scheduled publication and guarantee refresh run in daily.yml's one batch.
+  # Keep explicit manual import/pause/resume/publication available.
   workflow_dispatch:
     inputs:
       action:
