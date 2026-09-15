@@ -21,7 +21,7 @@ export function prepCategoryLabel(category:string, article?:Pick<PrepArticle,'sl
 export type CookingCategory = '국물요리'|'볶음요리'|'볶음밥'|'찌개'|'삼겹살·바비큐'|'장작·불멍 간식'|'간편식·아침'|'기타 요리';
 export const COOKING_CATEGORIES: CookingCategory[] = ['국물요리','볶음요리','볶음밥','찌개','삼겹살·바비큐','장작·불멍 간식','간편식·아침','기타 요리'];
 export function cookingCategory(article:Pick<PrepArticle,'slug'|'title'>):CookingCategory{
-  const fresh:Record<string,CookingCategory>={'camp-omandungi-maeuntang-checklist':'국물요리','camp-ham-paprika-stirfry-checklist':'볶음요리','camp-ham-cheese-friedrice-checklist':'볶음밥','camp-sundae-jeongol-checklist':'찌개','camp-chicken-skewer-bbq-checklist':'삼겹살·바비큐','camp-woodfire-ciabatta-toast-checklist':'장작·불멍 간식','camp-jidan-gimgaru-breakfast-checklist':'간편식·아침','camp-paprika-cheese-grill-checklist':'기타 요리'};
+  const fresh:Record<string,CookingCategory>={'camp-omandungi-maeuntang-checklist':'국물요리','camp-ham-paprika-stirfry-checklist':'볶음요리','camp-ham-cheese-friedrice-checklist':'볶음밥','camp-sundae-jeongol-checklist':'찌개','camp-chicken-skewer-bbq-checklist':'삼겹살·바비큐','camp-samgyeopsal-bbq-ingredient-checklist':'삼겹살·바비큐','camp-woodfire-ciabatta-toast-checklist':'장작·불멍 간식','camp-jidan-gimgaru-breakfast-checklist':'간편식·아침','camp-paprika-cheese-grill-checklist':'기타 요리'};
   if(fresh[article.slug]) return fresh[article.slug];
   if(article.slug==='camp-kimchi-fried-rice') return '볶음밥';
   if(article.slug==='camping-budae-jjigae-ingredient-checklist') return '찌개';

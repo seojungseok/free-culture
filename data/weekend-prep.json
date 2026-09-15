@@ -1,5 +1,5 @@
 {
-  "version": 35,
+  "version": 36,
   "products": [
     {
       "id": "7853820445",
@@ -4624,8 +4624,8 @@
       "salesFormat": "food-checklist",
       "coverLabel": "오만둥이 매운탕 준비물",
       "status": "published",
-      "publishAt": "2026-09-15T14:31:48.435Z",
-      "updatedAt": "2026-09-15T14:31:48.435Z",
+      "publishAt": "2026-09-15T14:37:11.985Z",
+      "updatedAt": "2026-09-15T14:37:11.985Z",
       "reviewed": true,
       "productIds": [
         "8630066299",
@@ -4882,8 +4882,8 @@
       "salesFormat": "food-checklist",
       "coverLabel": "햄 파프리카 볶음 준비물",
       "status": "published",
-      "publishAt": "2026-09-15T14:31:48.435Z",
-      "updatedAt": "2026-09-15T14:31:48.435Z",
+      "publishAt": "2026-09-15T14:37:11.985Z",
+      "updatedAt": "2026-09-15T14:37:11.985Z",
       "reviewed": true,
       "productIds": [
         "8243714135",
@@ -5140,8 +5140,8 @@
       "salesFormat": "food-checklist",
       "coverLabel": "햄치즈 볶음밥 준비물",
       "status": "published",
-      "publishAt": "2026-09-15T14:31:48.435Z",
-      "updatedAt": "2026-09-15T14:31:48.435Z",
+      "publishAt": "2026-09-15T14:37:11.985Z",
+      "updatedAt": "2026-09-15T14:37:11.985Z",
       "reviewed": true,
       "productIds": [
         "8243714135",
@@ -5398,8 +5398,8 @@
       "salesFormat": "food-checklist",
       "coverLabel": "순대전골 준비물",
       "status": "published",
-      "publishAt": "2026-09-15T14:31:48.435Z",
-      "updatedAt": "2026-09-15T14:31:48.435Z",
+      "publishAt": "2026-09-15T14:37:11.985Z",
+      "updatedAt": "2026-09-15T14:37:11.985Z",
       "reviewed": true,
       "productIds": [
         "8960028100",
@@ -5656,8 +5656,8 @@
       "salesFormat": "food-checklist",
       "coverLabel": "닭꼬치 바비큐 준비물",
       "status": "published",
-      "publishAt": "2026-09-15T14:31:48.435Z",
-      "updatedAt": "2026-09-15T14:31:48.435Z",
+      "publishAt": "2026-09-15T14:37:11.985Z",
+      "updatedAt": "2026-09-15T14:37:11.985Z",
       "reviewed": true,
       "productIds": [
         "9627651159",
@@ -5906,6 +5906,264 @@
       ]
     },
     {
+      "slug": "camp-samgyeopsal-bbq-ingredient-checklist",
+      "title": "캠핑 삼겹살 바비큐 재료 체크리스트",
+      "description": "삼겹살 바비큐를 계획할 때 조리판·집게·곁들임 채소를 출발 전에 확인하는 준비물 체크리스트.",
+      "category": "요리 재료 체크리스트",
+      "contentStyle": "shoppable-scene-v2",
+      "salesFormat": "food-checklist",
+      "coverLabel": "삼겹살 바비큐 준비물",
+      "status": "published",
+      "publishAt": "2026-09-15T14:37:11.985Z",
+      "updatedAt": "2026-09-15T14:37:11.985Z",
+      "reviewed": true,
+      "productIds": [
+        "9587833030",
+        "9707359364",
+        "8443644467",
+        "8655440206"
+      ],
+      "cover": {
+        "url": "/prep-images/camp-samgyeopsal-bbq-ingredient-checklist-cover-v1.webp",
+        "width": 1200,
+        "height": 800,
+        "alt": "삼겹살 바비큐 준비물에 필요한 실제 등록 상품 사진을 나눠 놓은 재료 체크 이미지",
+        "generated": true,
+        "reviewed": true,
+        "prompt": "삼겹살 바비큐 준비물 재료를 실제 등록 상품 사진으로 새로 배치한 체크리스트 이미지.",
+        "usageNotice": "AI로 구성한 재료 점검 이미지입니다. 실제 상품 사진과 옵션은 각 상품 페이지에서 다시 확인하세요.",
+        "referenceProducts": [
+          {
+            "productId": "9587833030",
+            "imageUrl": "https://ads-partners.coupang.com/image1/B8DJ5eRTAGpSH3NQBybi3RRp7gp_7wy-PYzMB5D6uDq85WCvqeG2kku8_im7BcMPsOuCcJ0O0nbuYpByYmDDW6QVqyKCy6WgYimKRj3CZuV790O95o9CINkWxWahljUl6Oj0nVAyO2YtCkoX0_Kj_WP5amksD-scOX7We4v6ek45giCGLJ9wfxffYgawk-I5PAmCUbIMHBPSmZF4K6q4sUATpyaJ1EL5mplA3ZChgtRj5Ry_GhzimXmKcbGvmFO9jvDY0Ue0KdbT3opebm5qsVznLjTmhswY388ItpvqfstsXun-iwDZi8Yrv7SofWJV91BK47o_0tKQhfdRn0WVDywUmI8gaVUors1DJRak_k2gPJiDT_CoTkw3hQSfF5csVm8m9Dt9FT27ThqFZCmZ2QCIxzvFHDq-FaNxbAi9pzx2PkNX4TBPsSJQFk9YjQ6GbVBG6QAL7Db2Vbk-hX-h9g3726ZMuBNS523A_JHiYfBw1osLgkwMxwf5vRfbnAdKqFonuLbR0_lRIKJSehmlA4QTPkzQcPzjdg=="
+          },
+          {
+            "productId": "9707359364",
+            "imageUrl": "https://ads-partners.coupang.com/image1/oqlxH5nj8uy6G_QMolvXw-of8nW4K3NI2sDWDopOdWzo6GZyLT1XvrHc1uXaXI8W3U_q29MpSqBp1GpMyrA8O4tQU0RV6qJAZBL_8j7OmP8GuirQr31LrbVoZDJhCbgA3v0C-jQBKkdub1w4aDhhS0g9E4mvKYW473zh29X9RyzTIOagfeTviGkKKXeQfD7qGyRv9o87F82WGq5YN5jXlUiNp_Hz4cZPAx-Fq5TRDI85ej1MmpyVO-UCpry_Q7-bsU9mFrVxxzZ-x4SeVBJwLMQYP2udtFOG3NgvgfjUI8jKLzB6v4zy6iIbyXvJUS76eY1FF_mWVWLH_eW0ZKRzkRs3RkZ0tgmwKd1EfXd1tqRgyc9bcLF5T_eZmtgqX7KWdPoWRainSlTpuEnJF2yKfOI8kltdzGgCenaX2H_NzMa1YHTBOBnQR8VbdGVqaPt4V2I9oCWsMKN3LWDnRxspsNCM0l_cTfNe_ax4uMC2jk1Y5ChNMtfyWqQBQdtgakhNIW6SC_rru4dyYb4-L3dPJGAUBjL_nVaofhaeo6v9b6G2"
+          },
+          {
+            "productId": "8443644467",
+            "imageUrl": "https://ads-partners.coupang.com/image1/je05R7JHu39aBC3vjWibLFgXEfBE8ASgFmkhChk7lJtAU5PiKOJvGnLc9qx3OUKRVo4d6NvdDJ7vGkVRjss5L82zrPKEx5fpwHnDerBLqaCrS_yvcgxcfrDSmhNHDL7OBHlcL7ZYgMgkBALJLzAgmzF2bVQSLEttxYAa5PAcMG5IpSdza3YZaqczgEp2qFUcNKw82DnCbxl1BEuXKJto2GckvoBwETKpXqtNsluactmy5LDUsjpAZzu_POGn3dASRlFtDBIaxRz4zqIN102bQ2BDhhdlKkYyAYd4Yt0FdCOUYGs7wpYlkEjxPal0a79Cx0LwIeNWja_eGifjnTCqTqtsQvIaIj2KudpbZFb3Wihv5-V0YC_8bfwFXZvqgfexPXIidiuljkuz95rELeiZ4_hndU3OqWmokU4jzzh7AkbkZ8UGH8d3OJFE8PPjwax3iZdd2EC_zQLXbx0YC8fbMH96tOum3CiWD8R_ZFq1RZbX4SYm2th_h9-cMQ3TkKpuQd1ZrZJoZMXkfoRQeg1065vuBNYhoiOq"
+          },
+          {
+            "productId": "8655440206",
+            "imageUrl": "https://ads-partners.coupang.com/image1/YCPbIlQme_aHHT9rYBjIrjSFNhQjcLE90MhtcMVJRo8SyeqCHlKQoTpz9tKSAxP5GbPVVGpThjORd9h1nVR-Jo7j5uBAD7KfEeDS5E8tTWRlZ1mRMHIERRpTqXEvBBwV0bvUCXXcJjgJhbRDQvji7L3ZklWgIYtToV8mvLY8WvInP23zf3UfgtcwNRdFqYi8XL4IIfyFHFIgmIIFDIaU-9AqSTKBjWNyXw-3KhNyCCw06TwyRVrbA_gwEw2DT0AgeCt3b1ZZImJ_6uLYrK-Xx-v3sMo6QsMeAAJwgY0CosnuTCmZq64wkYvZBu8-U6Q8SB2HTGzzGObGZbNujYmCX5gsb-nvvNoaNKgivQU7C2-rywyX522m-kGiYL1RqCztosO0o68DL6QeHYZVYMG6a2JxpVLhTkqwWeYWPDN6DJNFSvXIrA4Y95O2TDKQX8Owq1HEyXbW4RtLuM_evvl5bQag2pj0C9BmoZnnz9jFJp2JqtdBlnyrhNh9469OLQkFHqsoRHhftOME0fOUskEcUisSHotVwA=="
+          }
+        ],
+        "productMatchReviewed": true,
+        "tags": [
+          {
+            "productId": "9587833030",
+            "x": 28,
+            "y": 38
+          },
+          {
+            "productId": "9707359364",
+            "x": 70,
+            "y": 38
+          },
+          {
+            "productId": "8443644467",
+            "x": 28,
+            "y": 77
+          },
+          {
+            "productId": "8655440206",
+            "x": 70,
+            "y": 77
+          }
+        ]
+      },
+      "checklist": [
+        {
+          "id": "camp-samgyeopsal-bbq-ingredient-checklist-1a",
+          "label": "국내산 티타늄코팅 삽겹살 고기불판 가정용 인덕션 모든불원가능 캠핑 그리들, 1개, 40cm",
+          "role": "상품명과 옵션을 보고 필요한 구성인지 확인하세요.",
+          "group": "main",
+          "productId": "9587833030"
+        },
+        {
+          "id": "camp-samgyeopsal-bbq-ingredient-checklist-1b",
+          "label": "국내산 티타늄코팅 삽겹살 고기불판 가정용 인덕션 모든불원가능 캠핑 그리들, 1개, 40cm 보관 확인",
+          "role": "포장에 적힌 보관 방법과 출발 전 포장 상태를 확인하세요.",
+          "group": "seasoning",
+          "productId": "9587833030"
+        },
+        {
+          "id": "camp-samgyeopsal-bbq-ingredient-checklist-2a",
+          "label": "니가사 다용도 스탠딩 실리콘 주방 집게",
+          "role": "상품명과 옵션을 보고 필요한 구성인지 확인하세요.",
+          "group": "seasoning",
+          "productId": "9707359364"
+        },
+        {
+          "id": "camp-samgyeopsal-bbq-ingredient-checklist-2b",
+          "label": "니가사 다용도 스탠딩 실리콘 주방 집게 보관 확인",
+          "role": "포장에 적힌 보관 방법과 출발 전 포장 상태를 확인하세요.",
+          "group": "seasoning",
+          "productId": "9707359364"
+        },
+        {
+          "id": "camp-samgyeopsal-bbq-ingredient-checklist-3a",
+          "label": "클릭마켓 애호박 국내산, 10개",
+          "role": "상품명과 옵션을 보고 필요한 구성인지 확인하세요.",
+          "group": "seasoning",
+          "productId": "8443644467"
+        },
+        {
+          "id": "camp-samgyeopsal-bbq-ingredient-checklist-3b",
+          "label": "클릭마켓 애호박 국내산, 10개 보관 확인",
+          "role": "포장에 적힌 보관 방법과 출발 전 포장 상태를 확인하세요.",
+          "group": "seasoning",
+          "productId": "8443644467"
+        },
+        {
+          "id": "camp-samgyeopsal-bbq-ingredient-checklist-4a",
+          "label": "팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg",
+          "role": "상품명과 옵션을 보고 필요한 구성인지 확인하세요.",
+          "group": "seasoning",
+          "productId": "8655440206"
+        },
+        {
+          "id": "camp-samgyeopsal-bbq-ingredient-checklist-4b",
+          "label": "팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg 보관 확인",
+          "role": "포장에 적힌 보관 방법과 출발 전 포장 상태를 확인하세요.",
+          "group": "common",
+          "productId": "8655440206"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "장보기 전 재료 확인",
+          "text": "캠핑 삼겹살 바비큐에는 국내산 티타늄코팅 삽겹살 고기불판 가정용 인덕션 모든불원가능 캠핑 그리들, 1개, 40cm, 니가사 다용도 스탠딩 실리콘 주방 집게, 클릭마켓 애호박 국내산, 10개, 팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg을(를) 연결했습니다. 삼겹살은 출발 직전 정육 판매처에서 부위와 냉장 보관 상태를 따로 확인합니다. 조리판과 집게는 식재료와 분리하고, 애호박과 버섯은 물기 없이 곁들임 재료 상자에 넣습니다. 상품 확인 메모: 국내산 티타늄코팅 삽겹살 고기불판 가정용 인덕션 모든불원가능 캠핑 그리들, 1개, 40cm 40cm 티타늄코팅 캠핑 그리들. 실제 사용 가능 열원은 판매 페이지 안내를 확인 40cm × 1개 / 니가사 다용도 스탠딩 실리콘 주방 집게 실리콘 집게. 내열 온도와 열원 직접 접촉 허용 여부는 제품 안내 확인 블랙 × 1개 / 클릭마켓 애호박 국내산, 10개 국내산 애호박 10개 / 팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg 친환경 새송이버섯 특 2kg × 1박스. 이 글은 조리 순서가 아니라 출발 전 재료 확인에만 집중합니다.",
+          "productIds": [
+            "9587833030",
+            "9707359364",
+            "8443644467",
+            "8655440206"
+          ],
+          "image": {
+            "url": "/prep-images/camp-samgyeopsal-bbq-ingredient-checklist-ingredients-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "삼겹살 바비큐 준비물 · 주재료에 필요한 실제 등록 상품 사진을 나눠 놓은 재료 체크 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "삼겹살 바비큐 준비물 · 주재료 재료를 실제 등록 상품 사진으로 새로 배치한 체크리스트 이미지.",
+            "usageNotice": "AI로 구성한 재료 점검 이미지입니다. 실제 상품 사진과 옵션은 각 상품 페이지에서 다시 확인하세요.",
+            "referenceProducts": [
+              {
+                "productId": "9587833030",
+                "imageUrl": "https://ads-partners.coupang.com/image1/B8DJ5eRTAGpSH3NQBybi3RRp7gp_7wy-PYzMB5D6uDq85WCvqeG2kku8_im7BcMPsOuCcJ0O0nbuYpByYmDDW6QVqyKCy6WgYimKRj3CZuV790O95o9CINkWxWahljUl6Oj0nVAyO2YtCkoX0_Kj_WP5amksD-scOX7We4v6ek45giCGLJ9wfxffYgawk-I5PAmCUbIMHBPSmZF4K6q4sUATpyaJ1EL5mplA3ZChgtRj5Ry_GhzimXmKcbGvmFO9jvDY0Ue0KdbT3opebm5qsVznLjTmhswY388ItpvqfstsXun-iwDZi8Yrv7SofWJV91BK47o_0tKQhfdRn0WVDywUmI8gaVUors1DJRak_k2gPJiDT_CoTkw3hQSfF5csVm8m9Dt9FT27ThqFZCmZ2QCIxzvFHDq-FaNxbAi9pzx2PkNX4TBPsSJQFk9YjQ6GbVBG6QAL7Db2Vbk-hX-h9g3726ZMuBNS523A_JHiYfBw1osLgkwMxwf5vRfbnAdKqFonuLbR0_lRIKJSehmlA4QTPkzQcPzjdg=="
+              },
+              {
+                "productId": "9707359364",
+                "imageUrl": "https://ads-partners.coupang.com/image1/oqlxH5nj8uy6G_QMolvXw-of8nW4K3NI2sDWDopOdWzo6GZyLT1XvrHc1uXaXI8W3U_q29MpSqBp1GpMyrA8O4tQU0RV6qJAZBL_8j7OmP8GuirQr31LrbVoZDJhCbgA3v0C-jQBKkdub1w4aDhhS0g9E4mvKYW473zh29X9RyzTIOagfeTviGkKKXeQfD7qGyRv9o87F82WGq5YN5jXlUiNp_Hz4cZPAx-Fq5TRDI85ej1MmpyVO-UCpry_Q7-bsU9mFrVxxzZ-x4SeVBJwLMQYP2udtFOG3NgvgfjUI8jKLzB6v4zy6iIbyXvJUS76eY1FF_mWVWLH_eW0ZKRzkRs3RkZ0tgmwKd1EfXd1tqRgyc9bcLF5T_eZmtgqX7KWdPoWRainSlTpuEnJF2yKfOI8kltdzGgCenaX2H_NzMa1YHTBOBnQR8VbdGVqaPt4V2I9oCWsMKN3LWDnRxspsNCM0l_cTfNe_ax4uMC2jk1Y5ChNMtfyWqQBQdtgakhNIW6SC_rru4dyYb4-L3dPJGAUBjL_nVaofhaeo6v9b6G2"
+              },
+              {
+                "productId": "8443644467",
+                "imageUrl": "https://ads-partners.coupang.com/image1/je05R7JHu39aBC3vjWibLFgXEfBE8ASgFmkhChk7lJtAU5PiKOJvGnLc9qx3OUKRVo4d6NvdDJ7vGkVRjss5L82zrPKEx5fpwHnDerBLqaCrS_yvcgxcfrDSmhNHDL7OBHlcL7ZYgMgkBALJLzAgmzF2bVQSLEttxYAa5PAcMG5IpSdza3YZaqczgEp2qFUcNKw82DnCbxl1BEuXKJto2GckvoBwETKpXqtNsluactmy5LDUsjpAZzu_POGn3dASRlFtDBIaxRz4zqIN102bQ2BDhhdlKkYyAYd4Yt0FdCOUYGs7wpYlkEjxPal0a79Cx0LwIeNWja_eGifjnTCqTqtsQvIaIj2KudpbZFb3Wihv5-V0YC_8bfwFXZvqgfexPXIidiuljkuz95rELeiZ4_hndU3OqWmokU4jzzh7AkbkZ8UGH8d3OJFE8PPjwax3iZdd2EC_zQLXbx0YC8fbMH96tOum3CiWD8R_ZFq1RZbX4SYm2th_h9-cMQ3TkKpuQd1ZrZJoZMXkfoRQeg1065vuBNYhoiOq"
+              },
+              {
+                "productId": "8655440206",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YCPbIlQme_aHHT9rYBjIrjSFNhQjcLE90MhtcMVJRo8SyeqCHlKQoTpz9tKSAxP5GbPVVGpThjORd9h1nVR-Jo7j5uBAD7KfEeDS5E8tTWRlZ1mRMHIERRpTqXEvBBwV0bvUCXXcJjgJhbRDQvji7L3ZklWgIYtToV8mvLY8WvInP23zf3UfgtcwNRdFqYi8XL4IIfyFHFIgmIIFDIaU-9AqSTKBjWNyXw-3KhNyCCw06TwyRVrbA_gwEw2DT0AgeCt3b1ZZImJ_6uLYrK-Xx-v3sMo6QsMeAAJwgY0CosnuTCmZq64wkYvZBu8-U6Q8SB2HTGzzGObGZbNujYmCX5gsb-nvvNoaNKgivQU7C2-rywyX522m-kGiYL1RqCztosO0o68DL6QeHYZVYMG6a2JxpVLhTkqwWeYWPDN6DJNFSvXIrA4Y95O2TDKQX8Owq1HEyXbW4RtLuM_evvl5bQag2pj0C9BmoZnnz9jFJp2JqtdBlnyrhNh9469OLQkFHqsoRHhftOME0fOUskEcUisSHotVwA=="
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "9587833030",
+                "x": 20,
+                "y": 43
+              },
+              {
+                "productId": "9707359364",
+                "x": 50,
+                "y": 43
+              },
+              {
+                "productId": "8443644467",
+                "x": 20,
+                "y": 43
+              },
+              {
+                "productId": "8655440206",
+                "x": 50,
+                "y": 75
+              }
+            ]
+          }
+        },
+        {
+          "heading": "출발 전 분리 포장",
+          "text": "삼겹살은 출발 직전 정육 판매처에서 부위와 냉장 보관 상태를 따로 확인합니다. 조리판과 집게는 식재료와 분리하고, 애호박과 버섯은 물기 없이 곁들임 재료 상자에 넣습니다. 캠핑 삼겹살 바비큐 재료는 포장에 적힌 보관 방법대로 나누어 담고, 국내산 티타늄코팅 삽겹살 고기불판 가정용 인덕션 모든불원가능 캠핑 그리들, 1개, 40cm 40cm 티타늄코팅 캠핑 그리들. 실제 사용 가능 열원은 판매 페이지 안내를 확인 40cm × 1개 / 니가사 다용도 스탠딩 실리콘 주방 집게 실리콘 집게. 내열 온도와 열원 직접 접촉 허용 여부는 제품 안내 확인 블랙 × 1개 / 클릭마켓 애호박 국내산, 10개 국내산 애호박 10개 / 팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg 친환경 새송이버섯 특 2kg × 1박스. 캠핑장 취사 규칙과 실제 포장 라벨의 안전 안내를 우선 확인합니다.",
+          "productIds": [
+            "9587833030",
+            "9707359364",
+            "8443644467",
+            "8655440206"
+          ],
+          "image": {
+            "url": "/prep-images/camp-samgyeopsal-bbq-ingredient-checklist-packing-v1.webp",
+            "width": 1200,
+            "height": 800,
+            "alt": "삼겹살 바비큐 준비물 · 출발 전 확인에 필요한 실제 등록 상품 사진을 나눠 놓은 재료 체크 이미지",
+            "generated": true,
+            "reviewed": true,
+            "prompt": "삼겹살 바비큐 준비물 · 출발 전 확인 재료를 실제 등록 상품 사진으로 새로 배치한 체크리스트 이미지.",
+            "usageNotice": "AI로 구성한 재료 점검 이미지입니다. 실제 상품 사진과 옵션은 각 상품 페이지에서 다시 확인하세요.",
+            "referenceProducts": [
+              {
+                "productId": "9587833030",
+                "imageUrl": "https://ads-partners.coupang.com/image1/B8DJ5eRTAGpSH3NQBybi3RRp7gp_7wy-PYzMB5D6uDq85WCvqeG2kku8_im7BcMPsOuCcJ0O0nbuYpByYmDDW6QVqyKCy6WgYimKRj3CZuV790O95o9CINkWxWahljUl6Oj0nVAyO2YtCkoX0_Kj_WP5amksD-scOX7We4v6ek45giCGLJ9wfxffYgawk-I5PAmCUbIMHBPSmZF4K6q4sUATpyaJ1EL5mplA3ZChgtRj5Ry_GhzimXmKcbGvmFO9jvDY0Ue0KdbT3opebm5qsVznLjTmhswY388ItpvqfstsXun-iwDZi8Yrv7SofWJV91BK47o_0tKQhfdRn0WVDywUmI8gaVUors1DJRak_k2gPJiDT_CoTkw3hQSfF5csVm8m9Dt9FT27ThqFZCmZ2QCIxzvFHDq-FaNxbAi9pzx2PkNX4TBPsSJQFk9YjQ6GbVBG6QAL7Db2Vbk-hX-h9g3726ZMuBNS523A_JHiYfBw1osLgkwMxwf5vRfbnAdKqFonuLbR0_lRIKJSehmlA4QTPkzQcPzjdg=="
+              },
+              {
+                "productId": "9707359364",
+                "imageUrl": "https://ads-partners.coupang.com/image1/oqlxH5nj8uy6G_QMolvXw-of8nW4K3NI2sDWDopOdWzo6GZyLT1XvrHc1uXaXI8W3U_q29MpSqBp1GpMyrA8O4tQU0RV6qJAZBL_8j7OmP8GuirQr31LrbVoZDJhCbgA3v0C-jQBKkdub1w4aDhhS0g9E4mvKYW473zh29X9RyzTIOagfeTviGkKKXeQfD7qGyRv9o87F82WGq5YN5jXlUiNp_Hz4cZPAx-Fq5TRDI85ej1MmpyVO-UCpry_Q7-bsU9mFrVxxzZ-x4SeVBJwLMQYP2udtFOG3NgvgfjUI8jKLzB6v4zy6iIbyXvJUS76eY1FF_mWVWLH_eW0ZKRzkRs3RkZ0tgmwKd1EfXd1tqRgyc9bcLF5T_eZmtgqX7KWdPoWRainSlTpuEnJF2yKfOI8kltdzGgCenaX2H_NzMa1YHTBOBnQR8VbdGVqaPt4V2I9oCWsMKN3LWDnRxspsNCM0l_cTfNe_ax4uMC2jk1Y5ChNMtfyWqQBQdtgakhNIW6SC_rru4dyYb4-L3dPJGAUBjL_nVaofhaeo6v9b6G2"
+              },
+              {
+                "productId": "8443644467",
+                "imageUrl": "https://ads-partners.coupang.com/image1/je05R7JHu39aBC3vjWibLFgXEfBE8ASgFmkhChk7lJtAU5PiKOJvGnLc9qx3OUKRVo4d6NvdDJ7vGkVRjss5L82zrPKEx5fpwHnDerBLqaCrS_yvcgxcfrDSmhNHDL7OBHlcL7ZYgMgkBALJLzAgmzF2bVQSLEttxYAa5PAcMG5IpSdza3YZaqczgEp2qFUcNKw82DnCbxl1BEuXKJto2GckvoBwETKpXqtNsluactmy5LDUsjpAZzu_POGn3dASRlFtDBIaxRz4zqIN102bQ2BDhhdlKkYyAYd4Yt0FdCOUYGs7wpYlkEjxPal0a79Cx0LwIeNWja_eGifjnTCqTqtsQvIaIj2KudpbZFb3Wihv5-V0YC_8bfwFXZvqgfexPXIidiuljkuz95rELeiZ4_hndU3OqWmokU4jzzh7AkbkZ8UGH8d3OJFE8PPjwax3iZdd2EC_zQLXbx0YC8fbMH96tOum3CiWD8R_ZFq1RZbX4SYm2th_h9-cMQ3TkKpuQd1ZrZJoZMXkfoRQeg1065vuBNYhoiOq"
+              },
+              {
+                "productId": "8655440206",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YCPbIlQme_aHHT9rYBjIrjSFNhQjcLE90MhtcMVJRo8SyeqCHlKQoTpz9tKSAxP5GbPVVGpThjORd9h1nVR-Jo7j5uBAD7KfEeDS5E8tTWRlZ1mRMHIERRpTqXEvBBwV0bvUCXXcJjgJhbRDQvji7L3ZklWgIYtToV8mvLY8WvInP23zf3UfgtcwNRdFqYi8XL4IIfyFHFIgmIIFDIaU-9AqSTKBjWNyXw-3KhNyCCw06TwyRVrbA_gwEw2DT0AgeCt3b1ZZImJ_6uLYrK-Xx-v3sMo6QsMeAAJwgY0CosnuTCmZq64wkYvZBu8-U6Q8SB2HTGzzGObGZbNujYmCX5gsb-nvvNoaNKgivQU7C2-rywyX522m-kGiYL1RqCztosO0o68DL6QeHYZVYMG6a2JxpVLhTkqwWeYWPDN6DJNFSvXIrA4Y95O2TDKQX8Owq1HEyXbW4RtLuM_evvl5bQag2pj0C9BmoZnnz9jFJp2JqtdBlnyrhNh9469OLQkFHqsoRHhftOME0fOUskEcUisSHotVwA=="
+              }
+            ],
+            "productMatchReviewed": true,
+            "tags": [
+              {
+                "productId": "9587833030",
+                "x": 20,
+                "y": 43
+              },
+              {
+                "productId": "9707359364",
+                "x": 50,
+                "y": 43
+              },
+              {
+                "productId": "8443644467",
+                "x": 20,
+                "y": 43
+              },
+              {
+                "productId": "8655440206",
+                "x": 50,
+                "y": 75
+              }
+            ]
+          }
+        }
+      ],
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "재료를 챙겨 갈 캠핑장 찾아보기"
+        }
+      ]
+    },
+    {
       "slug": "camp-woodfire-ciabatta-toast-checklist",
       "title": "캠핑 불멍 치아바타 토스트 재료 체크리스트",
       "description": "치아바타·치즈·햄과 토스트팬을 분리해 챙기는 캠핑 불멍 간식 체크리스트.",
@@ -5914,8 +6172,8 @@
       "salesFormat": "food-checklist",
       "coverLabel": "치아바타 토스트 준비물",
       "status": "published",
-      "publishAt": "2026-09-15T14:31:48.435Z",
-      "updatedAt": "2026-09-15T14:31:48.435Z",
+      "publishAt": "2026-09-15T14:37:11.985Z",
+      "updatedAt": "2026-09-15T14:37:11.985Z",
       "reviewed": true,
       "productIds": [
         "9252211443",
@@ -6172,8 +6430,8 @@
       "salesFormat": "food-checklist",
       "coverLabel": "아침 주먹밥 준비물",
       "status": "published",
-      "publishAt": "2026-09-15T14:31:48.435Z",
-      "updatedAt": "2026-09-15T14:31:48.435Z",
+      "publishAt": "2026-09-15T14:37:11.985Z",
+      "updatedAt": "2026-09-15T14:37:11.985Z",
       "reviewed": true,
       "productIds": [
         "8243681175",
@@ -6430,8 +6688,8 @@
       "salesFormat": "food-checklist",
       "coverLabel": "파프리카 치즈구이 준비물",
       "status": "published",
-      "publishAt": "2026-09-15T14:31:48.435Z",
-      "updatedAt": "2026-09-15T14:31:48.435Z",
+      "publishAt": "2026-09-15T14:37:11.985Z",
+      "updatedAt": "2026-09-15T14:37:11.985Z",
       "reviewed": true,
       "productIds": [
         "7935223581",
