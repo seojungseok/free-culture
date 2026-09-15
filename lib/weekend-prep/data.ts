@@ -13,13 +13,16 @@ const COOKING_SLUGS = new Set([
 ]);
 
 export function prepCategoryLabel(category:string, article?:Pick<PrepArticle,'slug'|'salesFormat'>){
-  if(category==='요리 준비물' || category==='캠핑 요리' || category==='바비큐 요리' || article?.salesFormat==='food-recipe' || (article && COOKING_SLUGS.has(article.slug))) return '캠핑요리 준비하기';
+  if(article?.salesFormat==='food-checklist' || category==='요리 준비물') return '요리 재료 체크리스트';
+  if(category==='캠핑 요리' || category==='바비큐 요리' || article?.salesFormat==='food-recipe' || (article && COOKING_SLUGS.has(article.slug))) return '캠핑요리 가이드';
   return category;
 }
 
 export type CookingCategory = '국물요리'|'볶음요리'|'볶음밥'|'찌개'|'삼겹살·바비큐'|'장작·불멍 간식'|'간편식·아침'|'기타 요리';
 export const COOKING_CATEGORIES: CookingCategory[] = ['국물요리','볶음요리','볶음밥','찌개','삼겹살·바비큐','장작·불멍 간식','간편식·아침','기타 요리'];
 export function cookingCategory(article:Pick<PrepArticle,'slug'|'title'>):CookingCategory{
+  const fresh:Record<string,CookingCategory>={'camp-omandungi-maeuntang-checklist':'국물요리','camp-ham-paprika-stirfry-checklist':'볶음요리','camp-ham-cheese-friedrice-checklist':'볶음밥','camp-sundae-jeongol-checklist':'찌개','camp-chicken-skewer-bbq-checklist':'삼겹살·바비큐','camp-woodfire-ciabatta-toast-checklist':'장작·불멍 간식','camp-jidan-gimgaru-breakfast-checklist':'간편식·아침','camp-paprika-cheese-grill-checklist':'기타 요리'};
+  if(fresh[article.slug]) return fresh[article.slug];
   if(article.slug==='camp-kimchi-fried-rice') return '볶음밥';
   if(article.slug==='camping-budae-jjigae-ingredient-checklist') return '찌개';
   if(/볶음|제육|순대|닭갈비|오징어/.test(`${article.slug} ${article.title}`)) return '볶음요리';
@@ -30,4 +33,4 @@ export function cookingCategory(article:Pick<PrepArticle,'slug'|'title'>):Cookin
   return '국물요리';
 }
 
-export function isCookingPrepArticle(article:PrepArticle){return prepCategoryLabel(article.category,article)==='캠핑요리 준비하기';}
+export function isCookingPrepArticle(article:PrepArticle){return prepCategoryLabel(article.category,article)==='요리 재료 체크리스트';}

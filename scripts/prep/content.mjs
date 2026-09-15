@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-export const categories=['캠핑 요리','요리 준비물','바비큐 요리','캠핑용품','야외 놀이','피크닉 준비','여행 준비'];
+export const categories=['캠핑 요리','요리 준비물','요리 재료 체크리스트','캠핑요리 가이드','바비큐 요리','캠핑용품','야외 놀이','피크닉 준비','여행 준비'];
 export function affiliateUrl(value){try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&['link.coupang.com','www.coupang.com','coupa.ng'].includes(u.hostname)&&!u.port;}catch{return false;}}
 export function safeImage(value){return typeof value==='string'&&/^\/prep-images\/[a-zA-Z0-9_-]+\.(webp|jpg|png)$/.test(value);}
 export function matchesLinkIdentity(p){const u=new URL(p.affiliateUrl);const id=u.searchParams.get('pageKey')||u.pathname.match(/\/vp\/products\/(\d+)/)?.[1];return !id||id===p.id;}

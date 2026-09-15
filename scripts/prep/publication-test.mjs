@@ -9,7 +9,7 @@ const store=JSON.parse(fs.readFileSync('data/weekend-prep.json','utf8'));
 async function page(path){const r=await fetch(base+path,{headers:{'Cache-Control':'no-cache'}});assert.equal(r.status,200,path);return r.text();}
 try{
  if(child)for(let i=0;i<40;i++){try{if((await fetch(base+'/weekend-prep')).ok)break;}catch{}await new Promise(r=>setTimeout(r,500));}
- const listing=await page('/weekend-prep');assert(!listing.includes('noindex'));for(const c of new Set(store.articles.map(a=>['요리 준비물','캠핑 요리','바비큐 요리'].includes(a.category)||a.salesFormat==='food-recipe'?'캠핑요리 준비하기':a.category)))assert(listing.includes(c));
+ const listing=await page('/weekend-prep');assert(!listing.includes('noindex'));for(const c of new Set(store.articles.map(a=>a.salesFormat==='food-checklist'||a.category==='요리 준비물'?'요리 재료 체크리스트':['캠핑 요리','바비큐 요리'].includes(a.category)||a.salesFormat==='food-recipe'?'캠핑요리 가이드':a.category)))assert(listing.includes(c));
  const second=await page('/weekend-prep?page=2');assert(second.includes('noindex'));
  const search=await page('/weekend-prep?q=nomatchingprep');assert(search.includes('noindex'));
  const sitemap=await page('/sitemap.xml');
