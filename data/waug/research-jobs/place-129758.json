@@ -1,0 +1,108 @@
+{
+  "placeId": "place-129758",
+  "productIds": [
+    "wAzXcO90"
+  ],
+  "checkedAt": "2026-09-15T22:19:34.817Z",
+  "productProbe": [
+    {
+      "id": "wAzXcO90",
+      "productId": "129758",
+      "detailUrl": "https://www.waug.com/ko/activities/129758",
+      "affiliateUrl": "https://www.waug.com/r/wAzXcO90",
+      "actualName": "경기 뽀로로파크 오산중앙점 입장권",
+      "address": "경기 오산시 원동로 22 지하1층 101호~148호",
+      "area": "경기",
+      "saleStatus": "listed",
+      "validFrom": null,
+      "validUntil": "2026-09-30",
+      "pageSha256": "79582375943e0750134d84209592de6622f4cefbdf8745c3c7c10b57444d1d5d",
+      "imageCount": 8,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/129758"
+      ]
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/10/30/17617882065296.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/129758",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/10/30/17617881887068.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/129758",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/10/30/17617881921419.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/129758",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/10/30/17617882034689.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/129758",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/10/30/17617889488720.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/129758",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/10/30/17617889567527.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/129758",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/10/30/17617889615695.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/129758",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/10/30/17617889904215.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/129758",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

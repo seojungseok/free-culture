@@ -1,0 +1,101 @@
+{
+  "placeId": "place-118822",
+  "productIds": [
+    "z3R3IrOc"
+  ],
+  "checkedAt": "2026-09-15T22:19:35.089Z",
+  "productProbe": [
+    {
+      "id": "z3R3IrOc",
+      "productId": "118822",
+      "detailUrl": "https://www.waug.com/ko/activities/118822",
+      "affiliateUrl": "https://www.waug.com/r/z3R3IrOc",
+      "actualName": "경기 이천 테르메덴 풀 & 스파 미들시즌 입장권",
+      "address": "경기도 이천시 모가면 사실로 984",
+      "area": "경기",
+      "saleStatus": "listed",
+      "validFrom": "2026-09-01",
+      "validUntil": "2026-11-30",
+      "pageSha256": "53e50bd6938b66d592413de1cfbc13831d858e9f906f51d93a713a3e2d2d2f6e",
+      "imageCount": 7,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/118822"
+      ]
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/25/17720059530455.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/118822",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/05/22/17479012651632.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/118822",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/25/17720047536887.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/118822",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/25/17720049574359.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/118822",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/05/22/17479012650931.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/118822",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/25/17720056802591.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/118822",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/25/17720057492582.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/118822",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "실내외 물놀이·포함 시설 범위의 공식 자료 대조 미완료",
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

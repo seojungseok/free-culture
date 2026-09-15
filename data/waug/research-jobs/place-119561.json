@@ -1,0 +1,60 @@
+{
+  "placeId": "place-119561",
+  "productIds": [
+    "iKyl0WUZ"
+  ],
+  "checkedAt": "2026-09-15T22:19:38.016Z",
+  "productProbe": [
+    {
+      "id": "iKyl0WUZ",
+      "productId": "119561",
+      "detailUrl": "https://www.waug.com/ko/activities/119561",
+      "affiliateUrl": "https://www.waug.com/r/iKyl0WUZ",
+      "actualName": "부산 센텀 해운대 뮤지엄 원 '다시, 낭만의 시대' 전시 티켓",
+      "address": "부산광역시 해운대구 센텀서로 20",
+      "area": "부산",
+      "saleStatus": "listed",
+      "validFrom": null,
+      "validUntil": "2026-09-26",
+      "pageSha256": "948968c2b24c20fe42472f7a34012de9be9e519fb36e908ad3eb1c08a9fd6439",
+      "imageCount": 2,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/119561"
+      ]
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/20/17636395848270.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119561",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/07/27/17851430964129.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119561",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

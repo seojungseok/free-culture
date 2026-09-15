@@ -1,0 +1,132 @@
+{
+  "placeId": "place-105855",
+  "productIds": [
+    "mGWSjRk4"
+  ],
+  "checkedAt": "2026-09-15T22:19:38.264Z",
+  "productProbe": [
+    {
+      "id": "mGWSjRk4",
+      "productId": "105855",
+      "detailUrl": "https://www.waug.com/ko/activities/105855",
+      "affiliateUrl": "https://www.waug.com/r/mGWSjRk4",
+      "actualName": "경남 거제 씨월드 입장권",
+      "address": "경상남도 거제시 일운면 지세포해안로 15",
+      "area": "경남",
+      "saleStatus": "listed",
+      "validFrom": null,
+      "validUntil": "2026-09-30",
+      "pageSha256": "1a95a676af901a39e29a0f1457c881e6da4e58d1affe35a0dfea7bfc2f37cea0",
+      "imageCount": 11,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/105855"
+      ]
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/04/17148267410432.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/105855",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/01/27/16432642462523.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/105855",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/01/27/16432642462142.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/105855",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/01/27/16432642461976.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/105855",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/05/04/15885694533016.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/105855",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/07/13/15946107127340.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/105855",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/07/13/15946107126711.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/105855",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2019/08/14/15657628719809.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/105855",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/05/04/15885694527459.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/105855",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/05/04/15885694527509.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/105855",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2020/05/04/15885694528230.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/105855",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

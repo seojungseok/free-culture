@@ -1,0 +1,84 @@
+{
+  "placeId": "place-117699",
+  "productIds": [
+    "BDkEsnfa"
+  ],
+  "checkedAt": "2026-09-15T22:19:37.883Z",
+  "productProbe": [
+    {
+      "id": "BDkEsnfa",
+      "productId": "117699",
+      "detailUrl": "https://www.waug.com/ko/activities/117699",
+      "affiliateUrl": "https://www.waug.com/r/BDkEsnfa",
+      "actualName": "대구 엑스코 상상체험 키즈월드 입장권",
+      "address": "대구광역시 북구 엑스코로 10 (서관 1층 3홀)",
+      "area": "대구",
+      "saleStatus": "listed",
+      "validFrom": null,
+      "validUntil": "2026-09-27",
+      "pageSha256": "eb4db424bcb6ad3adc8ab942b1fa08b219f4163ff4f5157afde64c5d70c9469b",
+      "imageCount": 5,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/117699"
+      ]
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/12/17629155355922.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/117699",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/12/17629159537765.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/117699",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/12/17629159566666.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/117699",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/12/17629159596075.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/117699",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/12/17629159624751.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/117699",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

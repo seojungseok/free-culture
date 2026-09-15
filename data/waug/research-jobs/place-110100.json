@@ -1,0 +1,84 @@
+{
+  "placeId": "place-110100",
+  "productIds": [
+    "xLxIizik"
+  ],
+  "checkedAt": "2026-09-15T22:19:36.602Z",
+  "productProbe": [
+    {
+      "id": "xLxIizik",
+      "productId": "110100",
+      "detailUrl": "https://www.waug.com/ko/activities/110100",
+      "affiliateUrl": "https://www.waug.com/r/xLxIizik",
+      "actualName": "경주 키덜트뮤지엄 입장권",
+      "address": "경상북도 경주시 보문로 132-16",
+      "area": "경북",
+      "saleStatus": "listed",
+      "validFrom": null,
+      "validUntil": "2026-09-30",
+      "pageSha256": "550a2624c1f3b345b5ab81a663d0497ada60105a3e0bb56958a21f302decce67",
+      "imageCount": 5,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/110100"
+      ]
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/10/21/17294923142514.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/110100",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2019/08/23/15665409195698.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/110100",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2019/08/23/15665409196285.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/110100",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2019/08/23/15665409196341.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/110100",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2019/08/23/15665409196348.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/110100",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

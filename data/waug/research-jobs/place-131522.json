@@ -1,0 +1,84 @@
+{
+  "placeId": "place-131522",
+  "productIds": [
+    "6oXOEhNd"
+  ],
+  "checkedAt": "2026-09-15T22:19:35.802Z",
+  "productProbe": [
+    {
+      "id": "6oXOEhNd",
+      "productId": "131522",
+      "detailUrl": "https://www.waug.com/ko/activities/131522",
+      "affiliateUrl": "https://www.waug.com/r/6oXOEhNd",
+      "actualName": "울산 야외 방탈출 '울산 골목의 신비한 시간 여행' 잔상일지",
+      "address": "울산광역시 중구 문화의거리 28",
+      "area": "울산",
+      "saleStatus": "listed",
+      "validFrom": null,
+      "validUntil": null,
+      "pageSha256": "2c8fbc0904f12e7faa8bad5b950fe2719f24df62e46a96607ce772dafbc814f0",
+      "imageCount": 5,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/131522"
+      ]
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/04/17148092231024.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/131522",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/05/16/16841962653106.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/131522",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/05/16/16841962652875.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/131522",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/05/16/16841982048337.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/131522",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/05/16/16841982049065.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/131522",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

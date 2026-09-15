@@ -1,0 +1,68 @@
+{
+  "placeId": "place-138379",
+  "productIds": [
+    "9Z9hQ9QJ"
+  ],
+  "checkedAt": "2026-09-15T22:19:35.556Z",
+  "productProbe": [
+    {
+      "id": "9Z9hQ9QJ",
+      "productId": "138379",
+      "detailUrl": "https://www.waug.com/ko/activities/138379",
+      "affiliateUrl": "https://www.waug.com/r/9Z9hQ9QJ",
+      "actualName": "대구 히어로플레이파크 상인점 소인 입장권",
+      "address": "대구 달서구 월배로 183 상인대성 스카이렉스 홈플러스 상인점 지하1층",
+      "area": "대구",
+      "saleStatus": "listed",
+      "validFrom": null,
+      "validUntil": "2026-09-30",
+      "pageSha256": "abc42bebcb48296fc390f00444e031d5182ca0a8916fd36014f48c3d814ecc18",
+      "imageCount": 3,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/138379"
+      ]
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/23/17164533062942.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/138379",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/21/17162768763481.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/138379",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/21/17162768763003.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/138379",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}
