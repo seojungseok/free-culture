@@ -1,6 +1,6 @@
 'use client';
 import {useId,useRef,useState} from 'react';
-import Image from 'next/image';
+import Image from './PrepStaticImage';
 import type {PrepImage as Photo,PrepProduct} from '@/lib/weekend-prep/types';
 export default function PrepImage({photo,products,priority=false,onPlace,headline}:{photo:Photo;products:PrepProduct[];priority?:boolean;onPlace?:(x:number,y:number)=>void;headline?:string}){
  const [active,setActive]=useState<number|null>(null);const last=useRef<HTMLButtonElement|null>(null);const panelId=useId();

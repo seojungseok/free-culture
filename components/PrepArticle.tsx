@@ -26,6 +26,6 @@ export default function PrepArticle({article:a,products,preview=false}:{article:
   })}{a.salesFormat!=='food-checklist'&&sectionProducts.length>0&&<div className="prep-buy-grid">{sectionProducts.map(p=><a className="prep-buy-card" key={p.id} href={p.affiliateUrl} target="_blank" rel="sponsored noopener"><Image src={p.image} alt="" width={74} height={74} unoptimized/><span><strong>{p.name}</strong><small>{actionLabel} →</small></span></a>)}</div>}{s.image&&<PrepImage photo={s.image} products={chosen}/>}</section>})}
   <section className="prep-image-links"><h2>사진 속 +로 상품 확인하기</h2><p>사진에 표시된 +를 누르면 해당 재료나 제품의 쿠팡 페이지가 열립니다.</p></section>
   {!!a.internalLinks.length&&<nav aria-label="함께 읽기"><h2>함께 보면 좋은 곳</h2>{a.internalLinks.map(l=><p key={l.href}><Link href={l.href}>{l.label} →</Link></p>)}</nav>}
-  <p className="prep-ai-note">이 글의 이미지는 AI를 활용해 제작했습니다.</p>
+  <p className="prep-ai-note">{a.imageConnectionNote || '이 글의 이미지는 AI를 활용해 제작했습니다.'}</p>
  </article>;
 }

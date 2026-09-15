@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
-import NextImage, {type ImageProps} from 'next/image';
+import type {ImageProps} from 'next/image';
+import NextImage from '@/components/PrepStaticImage';
 function Image(props:ImageProps){return props.src?<NextImage {...props}/>:<div className="prep-no-image">이미지 검토 대기 · 비공개 초안</div>;}
 import {COOKING_CATEGORIES,cookingCategory,getPrepArticles,isCookingPrepArticle,isPrepReview,prepCategoryLabel} from '@/lib/weekend-prep/data';
 import {PREP_CATEGORIES} from '@/lib/weekend-prep/types';
