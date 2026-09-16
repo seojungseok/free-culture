@@ -3,7 +3,7 @@
   "timezone": "Asia/Seoul",
   "dailyPublicationLimit": 20,
   "dailyNewWritingLimit": 20,
-  "updatedAt": "2026-09-16T22:12:51.475Z",
+  "updatedAt": "2026-09-16T22:14:18.272Z",
   "jobs": [
     {
       "placeId": "place-143680",
@@ -231,17 +231,51 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-117365.json",
+          "productIds": [
+            "SSR10IOt"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": "2026-09-01",
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:16.331Z"
     },
     {
       "placeId": "place-140194",
@@ -257,17 +291,51 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-140194.json",
+          "productIds": [
+            "nzQN2NwU"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:16.429Z"
     },
     {
       "placeId": "place-137954",
@@ -283,17 +351,51 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-137954.json",
+          "productIds": [
+            "pXPZWaaq"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:16.533Z"
     },
     {
       "placeId": "place-122601",
@@ -626,17 +728,51 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-133319.json",
+          "productIds": [
+            "vapbK3ei"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:16.630Z"
     },
     {
       "placeId": "place-122728",
@@ -722,17 +858,51 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-132153.json",
+          "productIds": [
+            "qRNjJOB2"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:16.731Z"
     },
     {
       "placeId": "shinbuk-spa",
@@ -801,17 +971,51 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-135573.json",
+          "productIds": [
+            "5S3Va60e"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-11-01",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:16.831Z"
     },
     {
       "placeId": "place-115556",
@@ -1472,17 +1676,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-119861.json",
+          "productIds": [
+            "c2TCJlr1"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-11-30",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:16.931Z"
     },
     {
       "placeId": "place-119801",
@@ -1769,17 +2007,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-104077.json",
+          "productIds": [
+            "UJgob0o9"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:17.031Z"
     },
     {
       "placeId": "place-117366",
@@ -1795,17 +2067,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-117366.json",
+          "productIds": [
+            "IF0gTfK4"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": "2026-07-01",
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:17.127Z"
     },
     {
       "placeId": "place-135086",
@@ -1847,17 +2153,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-121133.json",
+          "productIds": [
+            "HY4vuPj1"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": "2026-09-01",
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:17.227Z"
     },
     {
       "placeId": "place-120090",
@@ -1899,17 +2239,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-117783.json",
+          "productIds": [
+            "Ej3qRywm"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": "2026-08-31",
       "validUntil": "2026-11-01",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:17.326Z"
     },
     {
       "placeId": "place-120959",
@@ -1951,17 +2325,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-146311.json",
+          "productIds": [
+            "PsNlPcDV"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:17.423Z"
     },
     {
       "placeId": "place-138344",
@@ -2231,17 +2639,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-118660.json",
+          "productIds": [
+            "Oj6qZc7T"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": "2026-06-01",
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:17.521Z"
     },
     {
       "placeId": "place-119561",
@@ -2295,17 +2737,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-141327.json",
+          "productIds": [
+            "zWOkcJrg"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:17.618Z"
     },
     {
       "placeId": "place-118551",
@@ -2353,17 +2829,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-120397.json",
+          "productIds": [
+            "RkjGdfIW"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:17.721Z"
     },
     {
       "placeId": "place-119740",
@@ -2379,17 +2889,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-119740.json",
+          "productIds": [
+            "HnRD4oPk"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:17.817Z"
     },
     {
       "placeId": "place-120110",
@@ -2431,17 +2975,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-103712.json",
+          "productIds": [
+            "CDyoWrhK"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:17.914Z"
     },
     {
       "placeId": "place-145594",
@@ -2521,17 +3099,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-119433.json",
+          "productIds": [
+            "a9yDUfKa"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:18.013Z"
     },
     {
       "placeId": "place-119521",
@@ -2547,17 +3159,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-119521.json",
+          "productIds": [
+            "5hzr9xck"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:18.111Z"
     },
     {
       "placeId": "place-124023",
@@ -2669,17 +3315,51 @@
       ],
       "createdAt": "2026-09-10T15:30:09.118Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "held",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-17",
-      "scheduledAt": "2026-09-17T05:00:00+09:00",
-      "holdReasons": [],
-      "attempts": 0,
-      "stages": {},
+      "publicationDay": null,
+      "scheduledAt": null,
+      "holdReasons": [
+        {
+          "stage": "research",
+          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
+        },
+        {
+          "stage": "image",
+          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
+        },
+        {
+          "stage": "writing",
+          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
+        }
+      ],
+      "attempts": 1,
+      "stages": {
+        "research": {
+          "status": "held",
+          "checkedAt": "2026-09-16T22:14:18.272Z",
+          "source": "data/waug/research-jobs/place-117258.json",
+          "productIds": [
+            "nE2r944x"
+          ],
+          "reason": "시설 공식 자료와 사진 권리 검수 미완료"
+        },
+        "writing": {
+          "status": "held",
+          "reason": "공식 자료 대조 전 작성 보류"
+        },
+        "image": {
+          "status": "held",
+          "reason": "사진 시각·권리 검수 전 제작/사용 보류"
+        }
+      },
       "notBefore": null,
       "validUntil": "2026-10-18",
-      "writingAt": "2026-09-17T00:17:00+09:00"
+      "writingAt": null,
+      "writingDay": "2026-09-17",
+      "startedDay": "2026-09-17",
+      "lastAttemptAt": "2026-09-16T22:14:18.208Z"
     },
     {
       "placeId": "place-117293",
