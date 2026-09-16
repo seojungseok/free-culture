@@ -22,7 +22,10 @@ const live=new Set(getAllPlaces().map(p=>p.id));
 for(const a of getAllArticles())if(!live.has(a.id))assert(!set.has('https://mwohaji.kr/places/spot/'+a.id));
 const robots=load('app/robots').default();
 const matches=(rule,url)=>new RegExp('^'+rule.split('*').map(p=>p.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('.*')).test(url);
-for(const r of robots.rules){const dis=[r.disallow||[]].flat();for(const url of ['/_next/static/chunks/app.js?dpl=test','/_next/image?url=photo.jpg&w=640&q=75','/search?q=서울','/api/pet-travel?area=서울','/region/seoul','/?utm_source=test'])assert(!dis.some(d=>matches(d,url)),r.userAgent+' can crawl '+url);}
+const metaTraining=robots.rules.find(r=>r.userAgent==='Meta-ExternalAgent');
+assert(metaTraining&&[metaTraining.disallow||[]].flat().includes('/'),'Meta AI training crawler is blocked');
+assert(!robots.rules.some(r=>['Meta-WebIndexer','facebookexternalhit','Meta-ExternalFetcher'].includes(r.userAgent)),'Meta search, previews and user fetchers stay available');
+for(const r of robots.rules.filter(r=>r!==metaTraining)){const dis=[r.disallow||[]].flat();for(const url of ['/_next/static/chunks/app.js?dpl=test','/_next/image?url=photo.jpg&w=640&q=75','/search?q=서울','/api/pet-travel?area=서울','/region/seoul','/?utm_source=test'])assert(!dis.some(d=>matches(d,url)),r.userAgent+' can crawl '+url);}
 const eventStory=load('lib/eventStory').eventStory;
 assert(eventStory({title:'test',realmName:'전시',area:'서울',sigungu:'',place:'',startDate:'20260901',endDate:'20260910',priceLabel:'무료 추정',priceType:'free_estimated'}).some(s=>s.includes('추정')));
 console.log(JSON.stringify({passed:true,sitemapUrls:urls.length,kidCourses:getKidCourses().length,bundles:getAllBundles().length,petDetails:urls.filter(u=>u.includes('/pet-travel/')).length,checks:['prices','no invented availability','sitemap coverage and uniqueness','canonical targets','robots asset and AI search access','estimated free copy']}));

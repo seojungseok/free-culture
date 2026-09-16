@@ -14,7 +14,11 @@ const nextConfig = {
     ];
   },
   images: {
-    minimumCacheTTL: 604800, // 같은 사진의 변환 결과를 최소 7일 재사용
+    // 관광·행사 원본은 자주 바뀌지 않는다. 변환 캐시를 Vercel 권장
+    // 장기 값으로 유지하고, 실제 레이아웃 최대 폭을 넘는 1920~3840px
+    // 파생본은 생성하지 않아 transformation/cache-write 사용량을 줄인다.
+    minimumCacheTTL: 2678400,
+    deviceSizes: [640, 750, 828, 1080, 1200],
     // 문화포털 포스터 이미지는 http(www.culture.go.kr)로 제공됨
     remotePatterns: [
       { protocol: "http", hostname: "www.culture.go.kr" },

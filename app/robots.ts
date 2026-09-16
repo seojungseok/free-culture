@@ -10,6 +10,9 @@ export default function robots(): MetadataRoute.Robots {
   const allow = ["/", "/_next/", "/api/"];
   return {
     rules: [
+      // Meta's AI-training crawler generated most recent edge traffic. Keep
+      // Meta-WebIndexer, link previews and user-triggered fetchers untouched.
+      { userAgent: "Meta-ExternalAgent", disallow: "/" },
       { userAgent: "Googlebot", allow, disallow: disallowQuery },
       { userAgent: "Googlebot-Image", allow: "/" },
       { userAgent: "Yeti", allow, disallow: disallowQuery, crawlDelay: 10 },
