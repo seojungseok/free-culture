@@ -1,0 +1,85 @@
+{
+  "placeId": "place-133319",
+  "productIds": [
+    "vapbK3ei"
+  ],
+  "checkedAt": "2026-09-16T22:13:48.006Z",
+  "productProbe": [
+    {
+      "id": "vapbK3ei",
+      "productId": "133319",
+      "detailUrl": "https://www.waug.com/ko/activities/133319",
+      "affiliateUrl": "https://www.waug.com/r/vapbK3ei",
+      "actualName": "화성 아센 사우나 & 찜질방 입장권",
+      "address": "경기도 화성시 효행로 1051 메인프라자",
+      "area": "경기",
+      "saleStatus": "listed",
+      "validFrom": null,
+      "validUntil": "2026-12-31",
+      "pageSha256": "117e26a052fdcebf9f0016c8e7a85364e6442660acbc81f2a1af27ef7f067dca",
+      "imageCount": 5,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/133319"
+      ],
+      "checkedAt": "2026-09-16T22:13:48.006Z"
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/02/12/17708664598663.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/133319",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/09/08/16941517424023.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/133319",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/09/08/16941517388432.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/133319",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/09/08/16941517388591.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/133319",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2023/09/08/16941517388846.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/133319",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

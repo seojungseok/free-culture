@@ -1,0 +1,85 @@
+{
+  "placeId": "place-137954",
+  "productIds": [
+    "pXPZWaaq"
+  ],
+  "checkedAt": "2026-09-16T22:13:47.905Z",
+  "productProbe": [
+    {
+      "id": "pXPZWaaq",
+      "productId": "137954",
+      "detailUrl": "https://www.waug.com/ko/activities/137954",
+      "affiliateUrl": "https://www.waug.com/r/pXPZWaaq",
+      "actualName": "경기 일산 원마운트 프렌디노 공룡 어린이키즈파크 입장권",
+      "address": "경기도 고양시 일산서구 한류월드로 300, 3층 3001호",
+      "area": "경기",
+      "saleStatus": "listed",
+      "validFrom": null,
+      "validUntil": "2026-09-30",
+      "pageSha256": "2fdc48a86e29190e4f29e1059a984c391f23324abc94677f3b76827d31893d63",
+      "imageCount": 5,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/137954"
+      ],
+      "checkedAt": "2026-09-16T22:13:47.905Z"
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/02/07/17389144616829.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/137954",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/02/17146106709056.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/137954",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/02/17146106709534.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/137954",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/02/17146106709163.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/137954",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/05/02/17146315738872.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/137954",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

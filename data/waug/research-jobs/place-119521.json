@@ -1,0 +1,109 @@
+{
+  "placeId": "place-119521",
+  "productIds": [
+    "5hzr9xck"
+  ],
+  "checkedAt": "2026-09-16T22:13:50.562Z",
+  "productProbe": [
+    {
+      "id": "5hzr9xck",
+      "productId": "119521",
+      "detailUrl": "https://www.waug.com/ko/activities/119521",
+      "affiliateUrl": "https://www.waug.com/r/5hzr9xck",
+      "actualName": "부산투어패스 프리패스 자유이용권",
+      "address": "",
+      "area": null,
+      "saleStatus": "listed",
+      "validFrom": null,
+      "validUntil": "2026-12-31",
+      "pageSha256": "9ee2cc105b5576b1583a6e8a10b6cb6310e712167e0230bf67b5ed0cd2dec66c",
+      "imageCount": 8,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/119521"
+      ],
+      "checkedAt": "2026-09-16T22:13:50.562Z"
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/09/04/17885132050769.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119521",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/02/28/16460390029611.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119521",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/02/28/16460392133813.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119521",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/02/28/16460391962828.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119521",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/02/28/16460389654439.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119521",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/02/28/16460389679834.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119521",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/02/28/16460389844289.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119521",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2022/02/28/16460390080553.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119521",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

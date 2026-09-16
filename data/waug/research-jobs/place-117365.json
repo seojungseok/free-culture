@@ -1,0 +1,117 @@
+{
+  "placeId": "place-117365",
+  "productIds": [
+    "SSR10IOt"
+  ],
+  "checkedAt": "2026-09-16T22:13:48.046Z",
+  "productProbe": [
+    {
+      "id": "SSR10IOt",
+      "productId": "117365",
+      "detailUrl": "https://www.waug.com/ko/activities/117365",
+      "affiliateUrl": "https://www.waug.com/r/SSR10IOt",
+      "actualName": "경기 고양 잭슨나인스 일산점 입장권",
+      "address": "경기도 고양시 일산서구 일현로 97-11",
+      "area": "경기",
+      "saleStatus": "listed",
+      "validFrom": "2026-09-01",
+      "validUntil": "2026-09-30",
+      "pageSha256": "18babf31a205467454d7b11fd3932cf6b77b39a2160d0bb6a106cb285cb8831f",
+      "imageCount": 9,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/117365"
+      ],
+      "checkedAt": "2026-09-16T22:13:48.046Z"
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2026/08/31/17881616810924.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/117365",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/05/06/16201135232049_0_0_0.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/117365",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/05/06/16201135240383_0_0_0.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/117365",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/05/06/16201135219178_0_0_0.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/117365",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/05/06/16201135239954_0_0_0.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/117365",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/05/06/16201135218737_0_0_0.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/117365",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/05/06/16201135225863_0_0_0.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/117365",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/05/06/16201135225736_0_0_0.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/117365",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2021/05/06/16201135232329_0_0_0.png",
+        "sourceUrl": "https://www.waug.com/ko/activities/117365",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

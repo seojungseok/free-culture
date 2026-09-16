@@ -3,7 +3,7 @@
   "timezone": "Asia/Seoul",
   "dailyPublicationLimit": 20,
   "dailyNewWritingLimit": 20,
-  "updatedAt": "2026-09-15T22:17:17.469Z",
+  "updatedAt": "2026-09-16T22:12:51.475Z",
   "jobs": [
     {
       "placeId": "place-143680",
@@ -593,17 +593,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -699,17 +689,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -852,20 +832,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "실외 물놀이 상품으로 확인되어 운영 대상에서 제외"
-        },
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -955,20 +922,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "실내외 물놀이·포함 시설 범위의 공식 자료 대조 미완료"
-        },
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -1154,17 +1108,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -1260,19 +1204,8 @@
       "scheduledAt": "2026-09-16T05:00:00+09:00",
       "holdReasons": [
         {
+          "id": "LC7TFFb6",
           "reason": "수영장 실내외·옵션 검수 대기"
-        },
-        {
-          "reason": "실내외 물놀이·포함 시설 범위의 공식 자료 대조 미완료"
-        },
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
         }
       ],
       "attempts": 1,
@@ -1428,17 +1361,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -1580,17 +1503,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -1628,17 +1541,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -1703,17 +1606,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -1803,17 +1696,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -1852,17 +1735,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2135,17 +2008,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2158,7 +2021,7 @@
         }
       },
       "notBefore": null,
-      "validUntil": "2026-09-30",
+      "validUntil": "2026-12-31",
       "writingAt": "2026-09-16T00:17:00+09:00",
       "writingDay": "2026-09-16",
       "startedDay": "2026-09-16",
@@ -2183,17 +2046,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2231,17 +2084,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2279,17 +2122,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2327,17 +2160,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2375,17 +2198,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2449,17 +2262,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2801,17 +2604,7 @@
       "imageStatus": "not_started",
       "publicationDay": "2026-09-16",
       "scheduledAt": "2026-09-16T05:00:00+09:00",
-      "holdReasons": [
-        {
-          "reason": "공식 시설 자료 대조 미완료"
-        },
-        {
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 미확인"
-        },
-        {
-          "reason": "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {

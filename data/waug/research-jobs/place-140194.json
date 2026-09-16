@@ -1,0 +1,93 @@
+{
+  "placeId": "place-140194",
+  "productIds": [
+    "nzQN2NwU"
+  ],
+  "checkedAt": "2026-09-16T22:13:48.145Z",
+  "productProbe": [
+    {
+      "id": "nzQN2NwU",
+      "productId": "140194",
+      "detailUrl": "https://www.waug.com/ko/activities/140194",
+      "affiliateUrl": "https://www.waug.com/r/nzQN2NwU",
+      "actualName": "경기 플레이월드 다산점 입장권",
+      "address": "경기도 남양주시 다산중앙로123번길 22-74 (9층)",
+      "area": "경기",
+      "saleStatus": "listed",
+      "validFrom": null,
+      "validUntil": "2026-12-31",
+      "pageSha256": "707ce818f5457d4eb0b358688c67d23bfe52f49653bb507bc74863e399bc573c",
+      "imageCount": 6,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/140194"
+      ],
+      "checkedAt": "2026-09-16T22:13:48.145Z"
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2024/07/25/17218765994567.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/140194",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/09/02/17567897712969.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/140194",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/09/02/17567897713221.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/140194",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/09/02/17567897712787.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/140194",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/09/02/17567897719072.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/140194",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/09/02/17567897720435.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/140194",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

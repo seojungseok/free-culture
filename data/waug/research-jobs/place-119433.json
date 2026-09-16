@@ -1,0 +1,85 @@
+{
+  "placeId": "place-119433",
+  "productIds": [
+    "a9yDUfKa"
+  ],
+  "checkedAt": "2026-09-16T22:13:50.393Z",
+  "productProbe": [
+    {
+      "id": "a9yDUfKa",
+      "productId": "119433",
+      "detailUrl": "https://www.waug.com/ko/activities/119433",
+      "affiliateUrl": "https://www.waug.com/r/a9yDUfKa",
+      "actualName": "부산 서면 런닝맨 & 다이나믹메이즈 입장권 패키지",
+      "address": "부산 부산광역시 부산진구 중앙대로 672 삼정타워 10F",
+      "area": "부산",
+      "saleStatus": "listed",
+      "validFrom": null,
+      "validUntil": null,
+      "pageSha256": "74a46974e9a97042c56f6552f49f6f08947641b3b8c72476693674879456ae22",
+      "imageCount": 5,
+      "sourceUrls": [
+        "https://www.waug.com/ko/activities/119433"
+      ],
+      "checkedAt": "2026-09-16T22:13:50.393Z"
+    }
+  ],
+  "officialSourceCheck": {
+    "status": "not_verified",
+    "sourceUrls": [],
+    "reason": "이번 실행에서 시설 공식 자료를 대조하지 못함"
+  },
+  "imageReview": {
+    "status": "not_verified",
+    "candidates": [
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/20/17636035522052.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119433",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/20/17636034874533.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119433",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/20/17636034767931.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119433",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/20/17636034720308.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119433",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      },
+      {
+        "url": "https://d2mgzmtdeipcjp.cloudfront.net/files/good/2025/11/20/17636034812019.jpg",
+        "sourceUrl": "https://www.waug.com/ko/activities/119433",
+        "provider": "waug",
+        "visualStatus": "not_visually_checked",
+        "faceReview": "not_checked",
+        "rightsStatus": "pending"
+      }
+    ],
+    "rightsStatus": "pending",
+    "reason": "이미지를 실제로 열어 시각 검수하지 않음"
+  },
+  "verificationStatus": "held",
+  "holdReasons": [
+    "공식 시설 자료 대조 미완료",
+    "WAUG 사진의 상업 이용 권리·permissionBasis 미확인",
+    "사진별 실제 장소·얼굴·본문 배치 시각 검수 미완료"
+  ]
+}

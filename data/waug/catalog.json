@@ -735,13 +735,13 @@
       "duplicateOf": null,
       "articleSlug": null,
       "scheduledAt": null,
-      "lastCheckedAt": "2026-09-10T15:27:02.318Z",
+      "lastCheckedAt": "2026-09-16T22:13:48.046Z",
       "createdAt": "2026-09-10T11:43:01.771Z",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/117365",
-        "checkedAt": "2026-09-10T15:27:02.318Z",
-        "pageSha256": "c3d0a88db516161c3040b0cc9e16bf399ec72db09c781b3c700e4a3c0d8ef79b"
+        "checkedAt": "2026-09-16T22:13:48.046Z",
+        "pageSha256": "18babf31a205467454d7b11fd3932cf6b77b39a2160d0bb6a106cb285cb8831f"
       },
       "validUntil": "2026-09-30",
       "validFrom": "2026-09-01",
@@ -772,15 +772,15 @@
       "duplicateOf": null,
       "articleSlug": null,
       "scheduledAt": null,
-      "lastCheckedAt": "2026-09-10T15:27:02.377Z",
+      "lastCheckedAt": "2026-09-16T22:13:48.145Z",
       "createdAt": "2026-09-10T11:43:01.771Z",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/140194",
-        "checkedAt": "2026-09-10T15:27:02.377Z",
-        "pageSha256": "0ad6f6feba22ec7fc6861b7f24d71b21717e23435a11e7bd89ac0ea3826cbe23"
+        "checkedAt": "2026-09-16T22:13:48.145Z",
+        "pageSha256": "707ce818f5457d4eb0b358688c67d23bfe52f49653bb507bc74863e399bc573c"
       },
-      "validUntil": "2026-09-30",
+      "validUntil": "2026-12-31",
       "validFrom": null,
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 5.0 리뷰 2개 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩75 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 MMS 유효기간내 사용 취소가능 MMS 즉시 제공 한국어 제공 AI 추천 더 저렴하거나 비슷한 상",
       "researchUrl": "https://www.waug.com/ko/activities/140194",
@@ -809,13 +809,13 @@
       "duplicateOf": null,
       "articleSlug": null,
       "scheduledAt": null,
-      "lastCheckedAt": "2026-09-10T15:27:02.437Z",
+      "lastCheckedAt": "2026-09-16T22:13:47.905Z",
       "createdAt": "2026-09-10T11:43:01.771Z",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/137954",
-        "checkedAt": "2026-09-10T15:27:02.437Z",
-        "pageSha256": "159e5083e8786b31a2cf0bb9e4c991c105ea4f0aaed1f189714098866685ad42"
+        "checkedAt": "2026-09-16T22:13:47.905Z",
+        "pageSha256": "2fdc48a86e29190e4f29e1059a984c391f23324abc94677f3b76827d31893d63"
       },
       "validUntil": "2026-09-30",
       "validFrom": null,
@@ -1793,13 +1793,13 @@
       "duplicateOf": null,
       "articleSlug": null,
       "scheduledAt": null,
-      "lastCheckedAt": "2026-09-10T15:27:03.725Z",
+      "lastCheckedAt": "2026-09-16T22:13:48.006Z",
       "createdAt": "2026-09-10T11:43:01.771Z",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/133319",
-        "checkedAt": "2026-09-10T15:27:03.725Z",
-        "pageSha256": "37752abf0c97730ec09f3bdd2c19e63f40b5d4e5d67a5e668f82e7510aa2fb1f"
+        "checkedAt": "2026-09-16T22:13:48.006Z",
+        "pageSha256": "117e26a052fdcebf9f0016c8e7a85364e6442660acbc81f2a1af27ef7f067dca"
       },
       "validUntil": "2026-12-31",
       "validFrom": null,
@@ -2264,13 +2264,13 @@
       "duplicateOf": null,
       "articleSlug": null,
       "scheduledAt": null,
-      "lastCheckedAt": "2026-09-10T15:27:04.928Z",
+      "lastCheckedAt": "2026-09-16T22:13:48.592Z",
       "createdAt": "2026-09-10T11:43:01.771Z",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/132153",
-        "checkedAt": "2026-09-10T15:27:04.928Z",
-        "pageSha256": "b8bc7ffc425a2530b5136e07a806eed115d57b57a4d9f853c83d43f7ce9e4343"
+        "checkedAt": "2026-09-16T22:13:48.592Z",
+        "pageSha256": "33d625835e635b589a501425f4bdd87b922a8dab00809c50776a876159dfb4cd"
       },
       "validUntil": "2026-12-31",
       "validFrom": null,
@@ -3259,13 +3259,13 @@
       "duplicateOf": null,
       "articleSlug": null,
       "scheduledAt": null,
-      "lastCheckedAt": "2026-09-10T15:27:05.486Z",
+      "lastCheckedAt": "2026-09-16T22:13:48.691Z",
       "createdAt": "2026-09-10T11:43:01.771Z",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/135573",
-        "checkedAt": "2026-09-10T15:27:05.486Z",
-        "pageSha256": "ef80f6fd1cca6b75a0613e0ad92733b6c4785f7aea22cefde3e7fdeca6e51065"
+        "checkedAt": "2026-09-16T22:13:48.691Z",
+        "pageSha256": "7654c628a667b46fe93cb0b499f969a97cef9cff4d0252f3afee2d45c25cca02"
       },
       "validUntil": "2026-11-01",
       "validFrom": null,
@@ -4600,15 +4600,15 @@
       "branch": null,
       "placeId": "place-119861",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:52.201Z",
+      "lastCheckedAt": "2026-09-16T22:13:48.699Z",
       "validFrom": null,
       "validUntil": "2026-11-30",
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩96 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 MMS 유효기간내 사용 취소가능 MMS 즉시 제공 한국어",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/119861",
-        "checkedAt": "2026-09-10T15:26:52.201Z",
-        "pageSha256": "ea35ca4ee47253b65bd3065203b681a0aefd3f76b753e9608496d70f7b249d7b"
+        "checkedAt": "2026-09-16T22:13:48.699Z",
+        "pageSha256": "1642b1bc5e12357dba632a502a89b5c37db9e14f039920c0b50c0453b6e18fea"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -5711,15 +5711,15 @@
       "branch": null,
       "placeId": "place-104077",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:54.474Z",
+      "lastCheckedAt": "2026-09-16T22:13:48.811Z",
       "validFrom": null,
       "validUntil": null,
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 4.0 리뷰 2개 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩48 적립 무이자 할부 혜택 최대 12개월 상품 정보 바우처 즉시 제공 2시간 이용 1명 불포함 모바일 바우처 사용 지정일사용 취소가능 한국어 제공 히어로 스튜디오 통통",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/104077",
-        "checkedAt": "2026-09-10T15:26:54.474Z",
-        "pageSha256": "616c1de222ca4adc7e037804897456bdc1459aff7f37eb6965891e8aa6f94cc0"
+        "checkedAt": "2026-09-16T22:13:48.811Z",
+        "pageSha256": "0dd8a8c9b1150dbaa21e556e3e3761d1fe1363e00247c8c18085838a497cac56"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -5752,15 +5752,15 @@
       "branch": "대구점",
       "placeId": "place-117366",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:54.554Z",
+      "lastCheckedAt": "2026-09-16T22:13:49.158Z",
       "validFrom": "2026-07-01",
       "validUntil": "2026-09-30",
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 5.0 리뷰 3개 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩105 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 MMS 유효기간내 사용 취소가능 MMS 즉시 제공 한국어 제공 AI 추천 더 저렴하거나 비슷한 ",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/117366",
-        "checkedAt": "2026-09-10T15:26:54.554Z",
-        "pageSha256": "6c443ae5dcfedbe2fdef30df3e99eb022e0a3f411d0ff761b703159865a94aa0"
+        "checkedAt": "2026-09-16T22:13:49.158Z",
+        "pageSha256": "05071795a5e0d263f0b55d963c5a97e0881cd21af597af9401d2708c52b0edef"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -6093,15 +6093,15 @@
       "branch": null,
       "placeId": "place-121133",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:55.345Z",
+      "lastCheckedAt": "2026-09-16T22:13:49.422Z",
       "validFrom": "2026-09-01",
       "validUntil": "2026-09-30",
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩143 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 MMS 유효기간내 사용 취소가능 MMS 즉시 제공 한국어 제공 AI 추천 더 저렴하거나 비슷한 상품을 찾아봤어요 ",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/121133",
-        "checkedAt": "2026-09-10T15:26:55.345Z",
-        "pageSha256": "73cbad096608e5554fa4cab97cdd16e105395da4cff841245beb3e7603ff9d1c"
+        "checkedAt": "2026-09-16T22:13:49.422Z",
+        "pageSha256": "97828370cc42e93088da4a5132c310e6a8cb828d96a05a70b54bea1e9454ea4d"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -6175,15 +6175,15 @@
       "branch": null,
       "placeId": "place-117783",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:55.428Z",
+      "lastCheckedAt": "2026-09-16T22:13:49.256Z",
       "validFrom": "2026-08-31",
       "validUntil": "2026-11-01",
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩89 적립 무이자 할부 혜택 최대 12개월 상품 정보 불포함 문자 MMS 유효기간내 사용 취소가능 MMS 즉시 제공 한국어 제공 AI 추천 더 저렴하거나 비슷한 상품을 찾아봤어요 오늘부터",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/117783",
-        "checkedAt": "2026-09-10T15:26:55.428Z",
-        "pageSha256": "ad7ea6170cf4e2221424268e39dab1e4b86ac7581bcf9e8b1d295861627391c0"
+        "checkedAt": "2026-09-16T22:13:49.256Z",
+        "pageSha256": "054120c1e253d54cbd30d0e5c86996e057f306dda0a00ff89621188c6aed8c1d"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -6377,15 +6377,15 @@
       "branch": null,
       "placeId": "place-146311",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:55.961Z",
+      "lastCheckedAt": "2026-09-16T22:13:49.363Z",
       "validFrom": null,
       "validUntil": "2026-09-30",
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩160 적립 무이자 할부 혜택 최대 12개월 상품 정보 불포함 문자 MMS 옵션별로 상이 유효기간내 사용 취소가능 MMS 즉시 ",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/146311",
-        "checkedAt": "2026-09-10T15:26:55.961Z",
-        "pageSha256": "e90f67ed2778abbc06bdc32edb8e9616d6930becb314f41c64ac8c7332e30516"
+        "checkedAt": "2026-09-16T22:13:49.363Z",
+        "pageSha256": "3f9ce0f33fa00e85276f210469770cad1e3b018685ef41d64c6068302cb30287"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -7013,15 +7013,15 @@
       "branch": null,
       "placeId": "place-118660",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:57.578Z",
+      "lastCheckedAt": "2026-09-16T22:13:49.754Z",
       "validFrom": "2026-06-01",
       "validUntil": "2026-09-30",
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 4.9 리뷰 10개 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩172 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 MMS 유효기간내 사용 취소가능 M",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/118660",
-        "checkedAt": "2026-09-10T15:26:57.578Z",
-        "pageSha256": "4f83617236057869c85700a7aa7900bb7b8778c90b91d508b3530253c1644474"
+        "checkedAt": "2026-09-16T22:13:49.754Z",
+        "pageSha256": "8962067aede69a3a6e360a6e9d603318e2127724b6716acdfe9c1fecb617b63e"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -7252,15 +7252,15 @@
       "branch": null,
       "placeId": "place-141327",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:57.983Z",
+      "lastCheckedAt": "2026-09-16T22:13:49.798Z",
       "validFrom": null,
       "validUntil": "2026-12-31",
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 5.0 리뷰 1개 부산 키즈 구매 3위 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩66 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 MMS 유효기간내",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/141327",
-        "checkedAt": "2026-09-10T15:26:57.983Z",
-        "pageSha256": "d65782cee36f84423fd6a1ebb4f87a01d412bfbf98197c7809aa97d591166c24"
+        "checkedAt": "2026-09-16T22:13:49.798Z",
+        "pageSha256": "46b88372942db6ba985c7e6c58a1b03d61ed6fd529f7bf35279cbfcb77d56b12"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -7507,15 +7507,15 @@
       "branch": null,
       "placeId": "place-120397",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:58.435Z",
+      "lastCheckedAt": "2026-09-16T22:13:49.977Z",
       "validFrom": null,
       "validUntil": "2026-12-31",
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 5.0 리뷰 8개 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩122 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 모바일 바우처 사용 유효기간내 사용 취소가",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/120397",
-        "checkedAt": "2026-09-10T15:26:58.435Z",
-        "pageSha256": "8ab57afcf087b32eaae3e4c5e96ce3f77fed812b402f8a1b45f0ec6db205620f"
+        "checkedAt": "2026-09-16T22:13:49.977Z",
+        "pageSha256": "3961b7a6ca9bdbac1984239eae9bca8ee9e5e624cf73a323bad4b6e16aa0113f"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -7548,15 +7548,15 @@
       "branch": null,
       "placeId": "place-119740",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:58.607Z",
+      "lastCheckedAt": "2026-09-16T22:13:50.223Z",
       "validFrom": null,
       "validUntil": "2026-12-31",
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 3.8 리뷰 4개 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩184 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 MMS 유효기간내 사용 취소가능 MM",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/119740",
-        "checkedAt": "2026-09-10T15:26:58.607Z",
-        "pageSha256": "870ab254d1210d0beb05ee03ac4a24de122c0fe477a345157b6f862965bfb57c"
+        "checkedAt": "2026-09-16T22:13:50.223Z",
+        "pageSha256": "1de5589ed1ceb5ea974727895ac76c7193d138f160b97af841947df96b767e3a"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -7630,15 +7630,15 @@
       "branch": "경주점",
       "placeId": "place-103712",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:58.730Z",
+      "lastCheckedAt": "2026-09-16T22:13:50.349Z",
       "validFrom": null,
-      "validUntil": "2026-09-30",
+      "validUntil": null,
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 5.0 리뷰 2개 경주 입장권/티켓 구매 5위 ₩ 1,000 가을 슈퍼세일 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩210 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 MMS",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/103712",
-        "checkedAt": "2026-09-10T15:26:58.730Z",
-        "pageSha256": "f259fd390eb0c7b0a812777b97ea79017aa927e4237961711bfb005a14f62a5a"
+        "checkedAt": "2026-09-16T22:13:50.349Z",
+        "pageSha256": "87d7d22ac437775d01a9978c9ae364f21e8e70f2af937d3829620484457c5975"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -7973,15 +7973,15 @@
       "branch": null,
       "placeId": "place-119433",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:59.305Z",
+      "lastCheckedAt": "2026-09-16T22:13:50.393Z",
       "validFrom": null,
       "validUntil": null,
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 5.0 리뷰 6개 부산 키즈 구매 2위 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩212 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 MMS 유효기간",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/119433",
-        "checkedAt": "2026-09-10T15:26:59.305Z",
-        "pageSha256": "8fce8082f78c9d892e109ea7e5e2915984672fb833dd2caec1627ac06812bf84"
+        "checkedAt": "2026-09-16T22:13:50.393Z",
+        "pageSha256": "74a46974e9a97042c56f6552f49f6f08947641b3b8c72476693674879456ae22"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -8068,15 +8068,15 @@
       "branch": null,
       "placeId": "place-119521",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:26:59.710Z",
+      "lastCheckedAt": "2026-09-16T22:13:50.562Z",
       "validFrom": null,
       "validUntil": "2026-12-31",
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 4.6 리뷰 29개 2개의 쿠폰 사용 가능 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩434 적립 무이자 할부 혜택 최대 12개월 상품 정보 1명 불포함 문자 MMS 유효기간내 사용 취소가능 MMS 즉시 제공 한국어 제",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/119521",
-        "checkedAt": "2026-09-10T15:26:59.710Z",
-        "pageSha256": "3ce14faa30cace6fcbf86522a51b75d7327ff9a64611574eb848cb7840744c84"
+        "checkedAt": "2026-09-16T22:13:50.562Z",
+        "pageSha256": "9ee2cc105b5576b1583a6e8a10b6cb6310e712167e0230bf67b5ed0cd2dec66c"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
@@ -8357,15 +8357,15 @@
       "branch": null,
       "placeId": "place-117258",
       "saleStatus": "listed",
-      "lastCheckedAt": "2026-09-10T15:27:00.391Z",
+      "lastCheckedAt": "2026-09-16T22:13:50.770Z",
       "validFrom": null,
       "validUntil": "2026-10-18",
       "saleEvidence": " 즉시 확정 오늘부터 사용가능 5.0 리뷰 7개 부산 입장권/티켓 구매 6위 부산 키즈 구매 1위 경상도 키즈 구매 3위 2% [APP] 회원 한정 할인 쿠폰 사용 조건 쿠폰 받기 결제 및 적립 혜택 토스페이먼츠 혜택 0.5% 즉시 할인 결제혜택 최대 ₩5,000 즉시 할인 적립혜택 ₩228 적립 무이자 할부 혜택 최대 ",
       "verification": {
         "status": "needs_editor_review",
         "source": "https://www.waug.com/ko/activities/117258",
-        "checkedAt": "2026-09-10T15:27:00.391Z",
-        "pageSha256": "0c72a2a3f2d9a5813d019123126da774981b10b82bb7e374e893de036e3d3ff1"
+        "checkedAt": "2026-09-16T22:13:50.770Z",
+        "pageSha256": "3cfeca25d7a6bf545652f4f4fcf0624ae13ede2ac37de997a87ac4b2f0039195"
       },
       "eligibility": "pending",
       "sourceBatch": "yeongnam-2026-09-11",
