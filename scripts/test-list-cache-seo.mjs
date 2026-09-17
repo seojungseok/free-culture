@@ -23,7 +23,9 @@ assert(empty.html.includes('검색 결과가 없어요.'));
 assert(!empty.html.includes('class="prep-card"'));
 const blank=await read('/weekend-prep?q=');
 assert(blank.html.includes('href="https://mwohaji.kr/weekend-prep"'));
-assert(!blank.r.headers.get('cache-control')?.includes('no-store'),'Empty search is the same cacheable listing');
+// Vercel matches an empty query to the results rewrite, while next start
+// treats it as absent. Both must render the full list and its base canonical.
+assert(blank.html.includes('class="prep-card"'));
 const search=await read('/search');
 assert(!search.r.headers.get('cache-control')?.includes('no-store'));
 assert(search.html.includes('noindex'));
