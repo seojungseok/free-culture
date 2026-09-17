@@ -1,4 +1,5 @@
-import { newArticleAllowance } from './lib/publication-budget.mjs';
+import {pickQueue,isImpossibleRoute,canRetryCourse,holdCourse,takeNextCourse} from './lib/course-generation-queue.mjs';
+import { newArticleAllowance, dayKST } from './lib/publication-budget.mjs';
 // 여행코스 블로그 자동 생성·발행 (GitHub Action이 매일 실행)
 // 재료 = data/courses.json (정부 공식 코스, scripts/collectCourses.mjs로 미리 수집)
 // 생성 = OpenAI(gpt-5.6-luna)만. ★제미나이 미사용★ (정부 검증 사실 리라이팅이라 환각 위험 낮음)
@@ -144,100 +145,6 @@ function splitTitle(text, fallback) {
   return { title: title || fallback, body: body || String(text || "").trim() };
 }
 
-// 여름·지방 우선 큐: 지금 여름휴가철 → 지방·바다피서부터 채워 시즌 검색 트래픽 흡수
-const REGION_PRIORITY = {
-  강원: 10, 제주: 10, 전남: 9, 전북: 9, 경남: 9, 경북: 9,
-  충남: 7, 충북: 7, 부산: 6, 대구: 6, 광주: 6, 대전: 6, 울산: 6,
-  인천: 4, 경기: 3, 세종: 3, 서울: 2,
-};
-
-// 실제 검색 의도가 강한 느린 가족 동선과 사찰·시장 코스를 우선 발행한다.
-const courseNames = (c) => (c.stops || []).map((s) => String(s.name || "")).join(" ");
-const isSeniorPlan = (c) => {
-  const text = courseNames(c);
-  return /(사찰|절(?=\s|$)|암자|향교|서원|고택|성당|성지)/.test(text) && /(시장|오일장|5일장|장터)/.test(text);
-};
-const isImpossibleRoute = (c) => {
-  const names = (c.stops || []).map((s) => String(s.name || ""));
-  const ferryIsland = /(굴업|덕적|백령|대청|연평|울릉|거문|욕지|한산|사량|청산|보길|노화|소안|흑산|추자)/;
-  return names.some((name) => ferryIsland.test(name)) && names.some((name) => !ferryIsland.test(name));
-};
-// 계절 자동 — 현재 달에 맞는 테마 우선(여름=바다, 가을=문화유적·축제, 겨울=실내)
-function seasonTheme() {
-  const m = new Date().getMonth() + 1;
-  if (m >= 6 && m <= 8) return "바다피서";
-  if (m >= 9 && m <= 11) return "문화유적";
-  if (m === 12 || m <= 2) return "가족체험";
-  return "가족체험"; // 봄
-}
-
-// 현재 계절(월 기준) — 코스의 계절 태그(seasons)와 매칭해 제철 코스 우선 발행.
-function currentSeason() {
-  const m = new Date().getMonth() + 1;
-  if (m >= 3 && m <= 5) return "spring";
-  if (m >= 6 && m <= 8) return "summer";
-  if (m >= 9 && m <= 11) return "autumn";
-  return "winter";
-}
-
-function pickQueue(courses, doneIds, n) {
-  const seasonKey = seasonTheme();
-  const curSeason = currentSeason();
-  const cand = courses.filter((c) => !doneIds.has(c.id) && !isImpossibleRoute(c) && (c.stops?.length || 0) >= 2);
-  const prio = (a, b) => {
-    // ① 제철 스팟(온천·꽃·단풍·물가 등)을 가진 코스를 최우선 — 계절별 다양화
-    const na = a.seasons?.includes(curSeason) ? 1 : 0, nb = b.seasons?.includes(curSeason) ? 1 : 0;
-    if (na !== nb) return nb - na;
-    const sa = a.themes?.includes(seasonKey) ? 1 : 0, sb = b.themes?.includes(seasonKey) ? 1 : 0;
-    if (sa !== sb) return sb - sa;                                  // 제철 테마 먼저
-    const oa = a.source === "official" ? 1 : 0, ob = b.source === "official" ? 1 : 0;
-    if (oa !== ob) return ob - oa;                                  // 공식 우선
-    const ra = REGION_PRIORITY[a.area] || 1, rb = REGION_PRIORITY[b.area] || 1;
-    if (ra !== rb) return rb - ra;                                  // 지방 우선
-    return (b.stops?.length || 0) - (a.stops?.length || 0);
-  };
-  // 기간별 비율 배분: 당일 50% · 1박2일 30% · 2박3일 20% (예: 10개 → 5·3·2).
-  //  베스트 해수욕장(finite 8개)은 데일리 비율에서 제외 — 필요시 남는 자리 채움용으로만.
-  const buckets = { "당일": [], "1박2일": [], "2박3일": [], "베스트": [] };
-  for (const c of cand) (buckets[c.duration] || (buckets[c.duration] = [])).push(c);
-  for (const k of Object.keys(buckets)) buckets[k].sort(prio);
-  const quota = { "당일": Math.round(n * 0.5), "1박2일": Math.round(n * 0.3), "2박3일": n - Math.round(n * 0.5) - Math.round(n * 0.3) };
-  const idx = { "당일": 0, "1박2일": 0, "2박3일": 0, "베스트": 0 };
-  const out = [];
-  const taken = new Set();
-  const reserve = (predicate, count) => {
-    for (const c of cand.filter(predicate).sort(prio)) {
-      if (out.length >= n || taken.has(c.id) || count <= 0) continue;
-      out.push(c); taken.add(c.id); count--;
-    }
-  };
-  // 하루 10개 기준: 사찰·전통시장 동선 3개를 먼저 확보한다.
-  reserve(isSeniorPlan, Math.min(3, n));
-  // 1) 비율만큼 우선 채움
-  for (const k of ["당일", "1박2일", "2박3일"]) {
-    const b = buckets[k];
-    let added = 0;
-    while (added < (quota[k] || 0) && idx[k] < b.length) {
-      const c = b[idx[k]++];
-      if (taken.has(c.id)) continue;
-      out.push(c); taken.add(c.id); added++;
-    }
-  }
-  // 2) 부족분은 남은 코스(당일→1박2일→2박3일→베스트)에서 채워 목표 n 맞춤
-  let progressed = true;
-  while (out.length < n && progressed) {
-    progressed = false;
-    for (const k of ["당일", "1박2일", "2박3일", "베스트"]) {
-      const b = buckets[k];
-      if (b) {
-        while (idx[k] < b.length && taken.has(b[idx[k]].id)) idx[k]++;
-        if (idx[k] < b.length) { out.push(b[idx[k]]); taken.add(b[idx[k]].id); idx[k]++; progressed = true; if (out.length >= n) break; }
-      }
-    }
-  }
-  return out;
-}
-
 // ── 상한 재적용 큐 ──
 // 기간별 관광지 상한(당일 3 · 1박2일 6 · 2박3일 7 = 하루 최대 3곳)은 페이지에 "즉시" 적용되지만,
 // 이미 발행된 글의 본문은 옛 상한(4/6/9)으로 쓰여 있어 글과 페이지가 어긋난다.
@@ -338,7 +245,7 @@ async function produceCourse(course, existingTexts) {
 }
 
 async function main() {
-  if (!OPENAI) { console.error("❌ OPENAI_API_KEY 없음 — 코스 글 생성 불가."); process.exit(1); }
+  if (!OPENAI && process.env.COURSE_CHECK_ONLY!=='true') { console.error("❌ OPENAI_API_KEY 없음 — 코스 글 생성 불가."); process.exit(1); }
 
   // 공식 + 자동 코스 병합 (둘 중 하나만 있어도 동작)
   const official = fs.existsSync(COURSES) ? (JSON.parse(fs.readFileSync(COURSES, "utf8")).courses || []) : [];
@@ -349,12 +256,25 @@ async function main() {
     ? JSON.parse(fs.readFileSync(STORE, "utf8"))
     : { startDate: new Date().toISOString().slice(0, 10), generatedAt: null, articles: {} };
   store.articles ||= {};
+  store._generationHistory ||= {};
+  const history=store._generationHistory;
+  const day=dayKST();
+  if(store._generationBudget?.day!==day)store._generationBudget={day,compositionChecks:0,newDrafts:0,rebuildDrafts:0};
+  const budget=store._generationBudget;
+  // Carry the last failed batch forward once, so the next schedule doesn't
+  // spend its entire allowance on the same rejected candidates again.
+  for(const result of store._lastRun?.results||[]){
+    const course=courses.find(c=>c.id===result.id);
+    if(course&&!history[course.id]&&['skip','error'].includes(result.outcome)&&Number.isFinite(Date.parse(store._lastRun.at)))
+      holdCourse(history,course,result.reason,{now:Date.parse(store._lastRun.at),transient:result.outcome==='error'});
+  }
+  const save=()=>fs.writeFileSync(STORE,JSON.stringify(store,null,0));
 
   const doneIds = new Set(Object.keys(store.articles));
   const existingTexts = Object.values(store.articles).map((a) => a.content);
 
-  const forcedIds = (process.env.COURSE_IDS || "").split(",").map((s) => s.trim()).filter(Boolean);
-  const target = Number(process.env.FORCE_COUNT) || Number(process.env.COURSE_DAILY) || 10;
+  const forcedIds = [...new Set((process.env.COURSE_IDS || "").split(",").map((s) => s.trim()).filter(Boolean))];
+  const target = Math.max(1,Math.min(10,Math.floor(Number(process.env.FORCE_COUNT)||Number(process.env.COURSE_DAILY)||10)));
 
   let items;
   const rebuildIds = new Set();
@@ -365,38 +285,56 @@ async function main() {
   } else {
     // (1) 상한 초과 옛 글 재생성이 먼저 — 글과 페이지가 어긋난 상태를 푸는 게 신규 발행보다 급하다. (2) 그다음 신규.
     const { queue: rebuilds, stamped, orphan } = planRebuilds(store, courses);
-    const todo = rebuilds.slice(0, REBUILD_MAX);
+    const todo = rebuilds.filter(c=>canRetryCourse(c,history)).slice(0, REBUILD_MAX);
     for (const c of todo) rebuildIds.add(c.id);
-    items = [...todo, ...pickQueue(courses, doneIds, target)];
-    console.log(`\n🧭 코스 글 신규 목표 ${target}건 · 후보풀 ${courses.length - doneIds.size} · 기존 ${doneIds.size} · 모델 ${MODEL} · 제미나이 OFF`);
+    items = [...todo, ...pickQueue(courses.filter(c=>canRetryCourse(c,history)), doneIds, target*2)];
+    console.log(`\n🧭 코스 글 신규 목표 ${target}건 · 후보풀 ${courses.length - doneIds.size} · 기존 ${doneIds.size} · 모델 ${MODEL} · 구성 교차검증 ${GEMINI?'ON':'키 없음'}`);
     console.log(`   상한 재적용(당일 ${COURSE_ATT_CAP["당일"]}·1박2일 ${COURSE_ATT_CAP["1박2일"]}·2박3일 ${COURSE_ATT_CAP["2박3일"]}, 하루 3곳) — 적합 ${stamped}건 통과 · 재생성 ${todo.length}/${rebuilds.length}건${orphan ? ` · 재료없음 ${orphan}건` : ""}`);
   }
 
   let made = 0, skipped = 0, errored = 0, rebuilt = 0;
   const report = [];
   let siteNewRemaining = newArticleAllowance(ROOT,'course-articles');
-  for (const course of items) {
-    if (!rebuildIds.has(course.id)) { if (siteNewRemaining <= 0) continue; siteNewRemaining--; }
+  if(process.env.COURSE_CHECK_ONLY==='true'){
+    console.log(JSON.stringify({checkOnly:true,apiCalls:0,target,remaining:siteNewRemaining,budget,held:courses.filter(c=>!doneIds.has(c.id)&&!canRetryCourse(c,history)).length,queue:items.map(c=>({id:c.id,duration:c.duration,rebuild:rebuildIds.has(c.id)}))}));
+    return;
+  }
+  const counts={};
+  for(const a of Object.values(store.articles))if(a.publishedAt&&dayKST(new Date(a.publishedAt))===day)counts[a.duration]=(counts[a.duration]||0)+1;
+  const pendingRebuilds=items.filter(c=>rebuildIds.has(c.id));
+  const pendingNew=items.filter(c=>!rebuildIds.has(c.id));
+  while(pendingRebuilds.length||pendingNew.length){
+    const course=pendingRebuilds.length?pendingRebuilds.shift():takeNextCourse(pendingNew,counts,target);
+    const isRebuild=rebuildIds.has(course.id);
+    if(!isRebuild&&(siteNewRemaining<=0||made-rebuilt>=target||budget.newDrafts>=target))continue;
+    if(isRebuild&&budget.rebuildDrafts>=REBUILD_MAX)continue;
    try { // 코스 하나가 에러나도 전체 중단 없이 다음으로 (부분 발행 + 커밋 보장)
     // 스팟 상한은 buildCoursePrompt·lib(courseAttractions) 모두 lib/courseSelect.js 하나를 쓰므로 여기선 자르지 않음(요약↔글 일치).
-    const isRebuild = rebuildIds.has(course.id);
-    await enrichStops(course); // 자동 코스 스팟 소개 보강(캐시/한도 내 조회)
 
     // ── 지리 실현성 검사(결정적) — 공식·자동 모두 적용. "원거리 배편 섬 + 육지" 혼합 코스 차단.
     //    섬 안에서만 도는 코스(유명 섬 단독)는 통과. 연평도·굴업도 등 배 타고 가는 섬을 육지 일정에 섞은 것 방지.
     const geo = courseGeoFeasible(course, resolvePlace);
     if (!geo.ok) {
       skipped++;
+      holdCourse(history,course,`지리 NG: ${geo.reason}`);
       report.push({ id: course.id, title: course.title, outcome: "skip", reason: `지리 NG: ${geo.reason}` });
       console.log(`  ✗ 지리 반려: ${course.title} (${geo.reason})`);
       continue;
     }
 
+    await enrichStops(course); // 유료 작성 전에 실제 출처 자료 보강(기존 호출 상한 유지)
+
     // 코스 "구성" Gemini 교차검증 — 자동 코스만(공식은 정부 큐레이션이라 신뢰). 리스트형·공식 제외.
     if (GEMINI && course.format !== "list" && course.source !== "official") {
+      if(budget.compositionChecks>=target*2+REBUILD_MAX){
+        report.push({id:course.id,title:course.title,outcome:'deferred',reason:'오늘 구성 검사 비용 상한 도달'});
+        continue;
+      }
+      budget.compositionChecks++;save();
       const comp = await checkCourseComposition(course, { apiKey: GEMINI });
       if (!comp.ok) {
         skipped++;
+        holdCourse(history,course,`구성 NG: ${comp.reason}`,{transient:comp.retryable});
         report.push({ id: course.id, title: course.title, outcome: "skip", reason: `구성 NG: ${comp.reason.slice(0, 80)}` });
         console.log(`  ✗ 구성 반려: ${course.title} (${comp.reason.slice(0, 60)})`);
         continue;
@@ -405,9 +343,11 @@ async function main() {
     // 재생성이면 "자기 자신"을 중복 비교 대상에서 뺀다(옛 글과 비슷하다고 스스로 반려되는 것 방지).
     const prevText = store.articles[course.id]?.content || "";
     const compareTexts = isRebuild ? existingTexts.filter((t) => t !== prevText) : existingTexts;
+    budget[isRebuild?'rebuildDrafts':'newDrafts']++;save();
     const { art, reasons } = await produceCourse(course, compareTexts);
     if (!art) {
       skipped++;
+      holdCourse(history,course,reasons.slice(-2).join(' | '),{transient:true});
       report.push({ id: course.id, title: course.title, outcome: "skip", reason: reasons.slice(-2).join(" | ") });
       console.log(`  ✗ ${isRebuild ? "재생성 실패(옛 글 유지)" : "스킵"}: ${course.title}`);
       continue;
@@ -429,7 +369,9 @@ async function main() {
       image: course.image || "",
       source: course.source || "official",
     };
+    delete history[course.id];
     made++;
+    if(!isRebuild){siteNewRemaining--;counts[course.duration]=(counts[course.duration]||0)+1;}
     if (isRebuild) { rebuilt++; const i = existingTexts.indexOf(prevText); if (i >= 0) existingTexts.splice(i, 1); }
     existingTexts.push(art.text);
     report.push({ id: course.id, title: course.title, outcome: isRebuild ? "rebuilt" : "published", detail: `${art.len}자/${course.duration}/${course.area}` });
@@ -437,8 +379,11 @@ async function main() {
     await sleep(800);
    } catch (e) {
     errored++;
+    holdCourse(history,course,String(e?.message||e),{transient:true});
     report.push({ id: course.id, title: course.title, outcome: "error", reason: String(e && e.message || e).slice(0, 120) });
     console.log(`  ⚠ 오류(스킵): ${course.title} — ${String(e && e.message || e).slice(0, 100)}`);
+   } finally {
+    save();
    }
   }
 
@@ -449,7 +394,7 @@ async function main() {
 
   store.generatedAt = new Date().toISOString();
   store._lastRun = {
-    at: new Date().toISOString(), made, rebuilt, skipped, errored,
+    at: new Date().toISOString(), made, rebuilt, skipped, errored, budget:{...budget},
     usage: { ...usageTotal, costUsd: Number(cost.toFixed(4)) },
     results: report,
   };

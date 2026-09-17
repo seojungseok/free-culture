@@ -897,29 +897,34 @@ export function courseStopsCheck(course, text) {
 
 // ── 코스 구성 교차검증(Gemini) — 본문은 OpenAI, "코스 짜임새"는 Gemini가 점검 ──
 //  같은 종류 중복(해수욕장→해수욕장), 비현실적 동선/일정, 기간 대비 과다 여부만 판정. 글은 안 봄.
-export async function checkCourseComposition(course, { apiKey, model = "gemini-2.5-flash-lite" } = {}) {
+export async function checkCourseComposition(course, { apiKey, model = "gemini-2.5-flash-lite", request = callGemini } = {}) {
   if (!apiKey) return { ok: true, reason: "SKIP(no key)" };
   // 실제로 글·페이지에 나가는 관광지(상한 적용분)만 검증 — 잘려나갈 스팟 때문에 "과다" NG가 나던 문제 방지.
-  const list = selectCourseStops(course).map((s, i) => `${i + 1}. ${s.name}`).join("\n");
+  const list = splitCourseDays(selectCourseStops(course),course.duration).map((stops,day)=>
+    `${day+1}일차\n`+stops.map((s,i)=>`${i+1}. ${s.name} | 주소: ${s.addr||'미확인'} | 좌표: ${s.mapx||'미확인'}, ${s.mapy||'미확인'} | 근거: ${String(s.overview||'').slice(0,400)}`).join('\n')
+  ).join('\n\n');
   const prompt = `여행 코스 "구성"이 현실적인지만 판정해라(글이 아니라 장소 조합·순서).
 [지역] ${course.area}  [기간] ${course.duration}
 [방문 순서]
 ${list}
 
 [판정 기준 — NG면 무엇이 문제인지 reason]
-- ★ 같은 종류 중복(예: 해수욕장 두 곳, 비슷한 시장 두 곳)이면 NG — 이게 핵심.
+- 같은 날 비슷한 해수욕장만 연속 방문하는 등 구체적 체험이 반복되면 NG. '문화유적' 같은 넓은 분류가 같다는 이유만으로 서로 다른 사찰·박물관·식물원을 같은 장소로 취급하지 마세요.
 - 장소 수는 이미 상한(당일 ${COURSE_ATT_CAP["당일"]}곳 · 1박2일 ${COURSE_ATT_CAP["1박2일"]}곳 · 2박3일 ${COURSE_ATT_CAP["2박3일"]}곳 = 하루 최대 ${COURSE_MAX_PER_DAY}곳)을 적용한 목록이니 **개수로는 NG 주지 마세요.**
-- 동선이 완전히 뒤엉켜 하루에 도저히 불가능하면 NG.
+- 위 일차별 분배로 판단하세요. 1박2일·2박3일의 전체 장소를 하루 일정으로 간주하지 마세요.
+- 제공된 주소·좌표·근거에 비추어 동선이 완전히 뒤엉켜 하루에 도저히 불가능하면 NG. 직선 좌표는 도로 이동시간이 아니며, 배편·운영 여부를 추측하지 마세요.
+- 지명만 보고 다른 지역 동명 장소로 바꾸거나 '폐장했을 가능성' 같은 추측만으로 판단하지 마세요. 필요한 근거가 부족해 판단할 수 없으면 NG와 확인이 필요한 내용을 명시하세요.
 - 위 문제(특히 종류 중복) 없으면 OK.
 
 JSON만: {"result":"OK 또는 NG","reason":"이유"}`;
   try {
-    const { text } = await callGemini(prompt, { apiKey, model });
+    const { text } = await request(prompt, { apiKey, model });
     const m = String(text || "").match(/\{[\s\S]*\}/);
     const parsed = JSON.parse(m ? m[0] : text);
-    return { ok: parsed.result !== "NG", reason: String(parsed.reason || "") };
+    if(!['OK','NG'].includes(parsed.result))throw Error('구성 검사 응답 형식 오류');
+    return { ok: parsed.result === "OK", reason: String(parsed.reason || "") };
   } catch (e) {
-    return { ok: true, reason: "ERROR(무시): " + (e instanceof Error ? e.message : e) }; // 검증 오류 시 통과(글 생성은 진행)
+    return { ok: false, retryable:true, reason: "구성 검증 실패: " + (e instanceof Error ? e.message : e) };
   }
 }
 

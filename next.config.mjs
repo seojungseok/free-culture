@@ -7,6 +7,18 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const nextConfig = {
   reactStrictMode: true,
   outputFileTracingRoot: __dirname,
+  async rewrites() {
+    // Keep existing query URLs and server-rendered results. Query-free landing
+    // pages can then use the CDN without a function invocation.
+    return { beforeFiles: [
+      ...['q', 'category', 'cooking', 'page'].map(key => ({
+        source: '/weekend-prep',
+        has: [{ type: 'query', key, value: '.*' }],
+        destination: '/weekend-prep/filter',
+      })),
+      { source: '/search', has: [{ type: 'query', key: 'q', value: '.*' }], destination: '/search/results' },
+    ] };
+  },
   async headers() {
     return [
       { source: '/ticket-images/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },

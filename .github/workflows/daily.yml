@@ -45,6 +45,9 @@ jobs:
       - name: 의존성 설치
         run: npm ci
 
+      - name: 발행 전 공개 글 기록 (API 호출 없음)
+        run: node scripts/report-daily-publication.mjs snapshot
+
       # ── 매일 수집은 "시간에 민감한 최신정보"만 (축제·문화행사). 나머지 정적 수집은 weekly.yml로 분리. ──
       - name: 축제 수집 (searchFestival2) — 날짜 있는 정보라 매일 최신화
         continue-on-error: true
@@ -244,3 +247,6 @@ jobs:
 
       # JSON data is bundled by the new deployment. Invalidating the old live
       # deployment immediately after push cannot publish that new JSON.
+      - name: 실제 신규 발행 수 확인
+        if: always()
+        run: node scripts/report-daily-publication.mjs
