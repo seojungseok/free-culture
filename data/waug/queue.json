@@ -3,7 +3,7 @@
   "timezone": "Asia/Seoul",
   "dailyPublicationLimit": 20,
   "dailyNewWritingLimit": 20,
-  "updatedAt": "2026-09-16T22:14:18.272Z",
+  "updatedAt": "2026-09-17T19:05:35.571Z",
   "jobs": [
     {
       "placeId": "place-143680",
@@ -19,17 +19,20 @@
       ],
       "createdAt": "2026-09-10T11:43:01.771Z",
       "articleSlug": null,
-      "status": "queued",
+      "status": "working",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
       "publicationDay": "2026-09-18",
       "scheduledAt": "2026-09-18T05:00:00+09:00",
       "holdReasons": [],
-      "attempts": 0,
+      "attempts": 1,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-18T00:17:00+09:00",
+      "writingDay": "2026-09-18",
+      "startedDay": "2026-09-18",
+      "lastAttemptAt": "2026-09-17T19:06:20.594Z"
     },
     {
       "placeId": "place-109787",
@@ -236,20 +239,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -296,20 +286,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -331,7 +308,7 @@
         }
       },
       "notBefore": null,
-      "validUntil": "2026-09-30",
+      "validUntil": "2026-12-31",
       "writingAt": null,
       "writingDay": "2026-09-17",
       "startedDay": "2026-09-17",
@@ -356,20 +333,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -733,20 +697,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -863,20 +814,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -976,20 +914,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -1681,20 +1606,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2012,20 +1924,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2072,20 +1971,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2158,20 +2044,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2244,20 +2117,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2330,20 +2190,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2644,20 +2491,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2742,20 +2576,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2834,20 +2655,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2894,20 +2702,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -2980,20 +2775,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -3015,7 +2797,7 @@
         }
       },
       "notBefore": null,
-      "validUntil": "2026-09-30",
+      "validUntil": null,
       "writingAt": null,
       "writingDay": "2026-09-17",
       "startedDay": "2026-09-17",
@@ -3104,20 +2886,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -3164,20 +2933,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
@@ -3320,20 +3076,7 @@
       "imageStatus": "not_started",
       "publicationDay": null,
       "scheduledAt": null,
-      "holdReasons": [
-        {
-          "stage": "research",
-          "reason": "상품 재확인은 완료했지만 시설 공식 자료 대조가 미완료"
-        },
-        {
-          "stage": "image",
-          "reason": "WAUG 사진의 상업 이용 권리·permissionBasis 및 사진별 얼굴·장소 시각 검수가 미완료"
-        },
-        {
-          "stage": "writing",
-          "reason": "공식 근거와 이미지 검수 전에는 본문 초안·승인을 진행하지 않음"
-        }
-      ],
+      "holdReasons": [],
       "attempts": 1,
       "stages": {
         "research": {
