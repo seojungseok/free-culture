@@ -3,7 +3,7 @@
   "timezone": "Asia/Seoul",
   "dailyPublicationLimit": 20,
   "dailyNewWritingLimit": 20,
-  "updatedAt": "2026-09-17T22:13:18.731Z",
+  "updatedAt": "2026-09-18T18:32:18.232Z",
   "jobs": [
     {
       "placeId": "place-143680",
@@ -22,14 +22,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-109787",
@@ -112,14 +112,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "hwaseong-tourpass",
@@ -208,14 +208,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-10-31",
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-117365",
@@ -446,14 +446,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-115594",
@@ -472,14 +472,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-109700",
@@ -498,14 +498,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-109007",
@@ -524,14 +524,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-150263",
@@ -550,14 +550,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-145153",
@@ -576,14 +576,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-137485",
@@ -602,14 +602,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-119942",
@@ -628,14 +628,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-109744",
@@ -857,14 +857,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": "2026-08-24",
       "validUntil": "2026-11-02",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-148445",
@@ -883,14 +883,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-135573",
@@ -994,14 +994,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": "2026-09-01",
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-111998",
@@ -1020,14 +1020,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-11-01",
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-118822",
@@ -1084,14 +1084,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2027-06-30",
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-148612",
@@ -1206,14 +1206,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-10-31",
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-138379",
@@ -1296,14 +1296,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-09-30",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "gijang-highlifeum",
@@ -1371,14 +1371,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "gyeongbuk-tourpass",
@@ -1401,14 +1401,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2027-03-31",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-136701",
@@ -1459,14 +1459,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-131522",
@@ -1523,14 +1523,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-131502",
@@ -1549,14 +1549,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-131499",
@@ -1575,14 +1575,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-119861",
@@ -1725,14 +1725,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-11-30",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-106170",
@@ -1789,14 +1789,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-12-31",
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-120838",
@@ -1815,14 +1815,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2027-03-31",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-110100",
@@ -2013,14 +2013,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-121133",
@@ -2086,14 +2086,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-10-31",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-117783",
@@ -2159,14 +2159,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-146311",
@@ -2232,14 +2232,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-19",
-      "scheduledAt": "2026-09-19T05:00:00+09:00",
+      "publicationDay": "2026-09-20",
+      "scheduledAt": "2026-09-20T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2026-10-31",
-      "writingAt": "2026-09-19T00:17:00+09:00"
+      "writingAt": "2026-09-20T00:17:00+09:00"
     },
     {
       "placeId": "place-130516",
@@ -2744,14 +2744,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2027-03-31",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-103712",
@@ -2975,14 +2975,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2027-03-31",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-105855",
@@ -3118,14 +3118,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": "2027-03-31",
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     },
     {
       "placeId": "place-140381",
@@ -3144,14 +3144,14 @@
       "status": "queued",
       "writingStatus": "not_started",
       "imageStatus": "not_started",
-      "publicationDay": "2026-09-18",
-      "scheduledAt": "2026-09-18T05:00:00+09:00",
+      "publicationDay": "2026-09-19",
+      "scheduledAt": "2026-09-19T05:00:00+09:00",
       "holdReasons": [],
       "attempts": 0,
       "stages": {},
       "notBefore": null,
       "validUntil": null,
-      "writingAt": "2026-09-18T00:17:00+09:00"
+      "writingAt": "2026-09-19T00:17:00+09:00"
     }
   ]
 }
