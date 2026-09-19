@@ -1,0 +1,55 @@
+{
+  "auditedPublishedArticles": 34,
+  "missingCaptionCount": 6,
+  "method": "built-in imagegen; text-only edit",
+  "items": [
+    {
+      "file": "camp-seafood-pot-table-cover-v3.webp",
+      "label": "캠핑 해물탕 끓이는 법",
+      "path": "C:\\Users\\tjwjd\\OneDrive\\바탕 화면\\무료공연홈페이지\\.cache\\autumn-recipes-20260919\\public\\prep-images\\camp-seafood-pot-table-cover-v3.webp",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a07b71-c1b6-73b3-b06f-dd2db253cd59\\exec-dfa05733-3638-44bc-be66-5d08db09e0f4.png",
+      "prompt": "Use case: text-localization. Edit target is the supplied existing website thumbnail. Change ONLY by adding a tasteful dark forest green semi-opaque horizontal banner inside the lower 12% of the image, inset 3% from edges. On it center the exact large bold ivory Korean text \"캠핑 해물탕 끓이는 법\". Make text large, flawless and easily legible at mobile card size. Add tiny \"AI 연출 이미지\" at bottom right. Keep original 3:2 composition, all objects, foods, product shapes, colors, people, identities, facial expressions, and positions UNCHANGED. Do not redraw, rearrange, crop or add any other objects. Preserve image geometry for existing product hotspot coordinates. No extra title elsewhere.",
+      "output": "camp-seafood-pot-table-cover-v3-caption-20260919.webp"
+    },
+    {
+      "file": "camp-morning-sandwich-cover-v3.webp",
+      "label": "캠핑 햄치즈 샌드위치",
+      "path": "C:\\Users\\tjwjd\\OneDrive\\바탕 화면\\무료공연홈페이지\\.cache\\autumn-recipes-20260919\\public\\prep-images\\camp-morning-sandwich-cover-v3.webp",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a07b71-c1b6-73b3-b06f-dd2db253cd59\\exec-eb5eb2e5-c95e-441d-83f7-93fb9d740b63.png",
+      "prompt": "Use case: text-localization. Edit target is the supplied existing website thumbnail. Change ONLY by adding a tasteful dark forest green semi-opaque horizontal banner inside the lower 12% of the image, inset 3% from edges. On it center the exact large bold ivory Korean text \"캠핑 햄치즈 샌드위치\". Make text large, flawless and easily legible at mobile card size. Add tiny \"AI 연출 이미지\" at bottom right. Keep original 3:2 composition, all objects, foods, product shapes, colors, people, identities, facial expressions, and positions UNCHANGED. Do not redraw, rearrange, crop or add any other objects. Preserve image geometry for existing product hotspot coordinates. No extra title elsewhere.",
+      "output": "camp-morning-sandwich-cover-v3-caption-20260919.webp"
+    },
+    {
+      "file": "camp-noodle-lunch-cover-v3.webp",
+      "label": "캠핑 잔치국수 만들기",
+      "path": "C:\\Users\\tjwjd\\OneDrive\\바탕 화면\\무료공연홈페이지\\.cache\\autumn-recipes-20260919\\public\\prep-images\\camp-noodle-lunch-cover-v3.webp",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a07b71-c1b6-73b3-b06f-dd2db253cd59\\exec-6986da77-4858-44da-a25f-66f77144c002.png",
+      "prompt": "Use case: text-localization. Edit target is the supplied existing website thumbnail. Change ONLY by adding a tasteful dark forest green semi-opaque horizontal banner inside the lower 12% of the image, inset 3% from edges. On it center the exact large bold ivory Korean text \"캠핑 잔치국수 만들기\". Make text large, flawless and easily legible at mobile card size. Add tiny \"AI 연출 이미지\" at bottom right. Keep original 3:2 composition, all objects, foods, product shapes, colors, people, identities, facial expressions, and positions UNCHANGED. Do not redraw, rearrange, crop or add any other objects. Preserve image geometry for existing product hotspot coordinates. No extra title elsewhere.",
+      "output": "camp-noodle-lunch-cover-v3-caption-20260919.webp"
+    },
+    {
+      "file": "grilled-vegetable-skewers-cover-v3.webp",
+      "label": "캠핑 채소꼬치 굽기",
+      "path": "C:\\Users\\tjwjd\\OneDrive\\바탕 화면\\무료공연홈페이지\\.cache\\autumn-recipes-20260919\\public\\prep-images\\grilled-vegetable-skewers-cover-v3.webp",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a07b71-c1b6-73b3-b06f-dd2db253cd59\\exec-8912401f-d210-4596-8ce5-a153ffb45ceb.png",
+      "prompt": "Use case: text-localization. Edit target is the supplied existing website thumbnail. Change ONLY by adding a tasteful dark forest green semi-opaque horizontal banner inside the lower 12% of the image, inset 3% from edges. On it center the exact large bold ivory Korean text \"캠핑 채소꼬치 굽기\". Make text large, flawless and easily legible at mobile card size. Add tiny \"AI 연출 이미지\" at bottom right. Keep original 3:2 composition, all objects, foods, product shapes, colors, people, identities, facial expressions, and positions UNCHANGED. Do not redraw, rearrange, crop or add any other objects. Preserve image geometry for existing product hotspot coordinates. No extra title elsewhere.",
+      "output": "grilled-vegetable-skewers-cover-v3-caption-20260919.webp"
+    },
+    {
+      "file": "autumn-camp-tarp-rest-corner-cover-v2.webp",
+      "label": "첫 캠핑용품 준비",
+      "path": "C:\\Users\\tjwjd\\OneDrive\\바탕 화면\\무료공연홈페이지\\.cache\\autumn-recipes-20260919\\public\\prep-images\\autumn-camp-tarp-rest-corner-cover-v2.webp",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a07b71-c1b6-73b3-b06f-dd2db253cd59\\exec-c2575712-1263-40ef-a500-f47eaa52a224.png",
+      "prompt": "Use case: text-localization. Edit target is the supplied existing website thumbnail. Change ONLY by adding a tasteful dark forest green semi-opaque horizontal banner inside the lower 12% of the image, inset 3% from edges. On it center the exact large bold ivory Korean text \"첫 캠핑용품 준비\". Make text large, flawless and easily legible at mobile card size. Add tiny \"AI 연출 이미지\" at bottom right. Keep original 3:2 composition, all objects, foods, product shapes, colors, people, identities, facial expressions, and positions UNCHANGED. Do not redraw, rearrange, crop or add any other objects. Preserve image geometry for existing product hotspot coordinates. No extra title elsewhere.",
+      "output": "autumn-camp-tarp-rest-corner-cover-v2-caption-20260919.webp"
+    },
+    {
+      "file": "family-ring-toss-review-cover-v2.webp",
+      "label": "가족 고리던지기 놀이",
+      "path": "C:\\Users\\tjwjd\\OneDrive\\바탕 화면\\무료공연홈페이지\\.cache\\autumn-recipes-20260919\\public\\prep-images\\family-ring-toss-review-cover-v2.webp",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a07b71-c1b6-73b3-b06f-dd2db253cd59\\exec-3c233e02-5407-4176-bdc9-294ea64d2ce6.png",
+      "prompt": "Use case: text-localization. Edit target is the supplied existing website thumbnail. Change ONLY by adding a tasteful dark forest green semi-opaque horizontal banner inside the lower 12% of the image, inset 3% from edges. On it center the exact large bold ivory Korean text \"가족 고리던지기 놀이\". Make text large, flawless and easily legible at mobile card size. Add tiny \"AI 연출 이미지\" at bottom right. Keep original 3:2 composition, all objects, foods, product shapes, colors, people, identities, facial expressions, and positions UNCHANGED. Do not redraw, rearrange, crop or add any other objects. Preserve image geometry for existing product hotspot coordinates. No extra title elsewhere.",
+      "output": "family-ring-toss-review-cover-v2-caption-20260919.webp"
+    }
+  ]
+}

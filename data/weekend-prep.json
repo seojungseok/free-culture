@@ -1,5 +1,5 @@
 {
-  "version": 40,
+  "version": 41,
   "products": [
     {
       "id": "7853820445",
@@ -2269,7 +2269,7 @@
       "shortcutProductId": "7853820445",
       "status": "published",
       "publishAt": "2026-09-14T11:31:38.571Z",
-      "updatedAt": "2026-09-14T12:18:57.851Z",
+      "updatedAt": "2026-09-19T07:14:21.357Z",
       "reviewed": true,
       "productIds": [
         "8630066299",
@@ -2281,13 +2281,13 @@
         "7853820445"
       ],
       "cover": {
-        "url": "/prep-images/camp-seafood-pot-table-cover-v3.webp",
+        "url": "/prep-images/camp-seafood-pot-table-cover-v3-caption-20260919.webp",
         "alt": "해물과 오만둥이, 매운탕 양념, 미나리, 무, 대파와 냄비를 펼쳐 놓은 캠핑 해물탕 재료상",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "야외 캠핑 테이블에 해물탕 재료를 모두 펼쳐 놓은 클릭을 부르는 음식 썸네일. 포장·글자·워터마크 없음.",
+        "prompt": "야외 캠핑 테이블에 해물탕 재료를 모두 펼쳐 놓은 클릭을 부르는 음식 썸네일. 포장·글자·워터마크 없음.\nCaption edit: Use case: text-localization. Edit target is the supplied existing website thumbnail. Change ONLY by adding a tasteful dark forest green semi-opaque horizontal banner inside the lower 12% of the image, inset 3% from edges. On it center the exact large bold ivory Korean text \"캠핑 해물탕 끓이는 법\". Make text large, flawless and easily legible at mobile card size. Add tiny \"AI 연출 이미지\" at bottom right. Keep original 3:2 composition, all objects, foods, product shapes, colors, people, identities, facial expressions, and positions UNCHANGED. Do not redraw, rearrange, crop or add any other objects. Preserve image geometry for existing product hotspot coordinates. No extra title elsewhere.",
         "referenceProducts": [
           {
             "productId": "8630066299",
@@ -2488,7 +2488,7 @@
       "shortcutProductId": "9252211443",
       "status": "published",
       "publishAt": "2026-09-14T11:31:38.571Z",
-      "updatedAt": "2026-09-14T12:18:57.852Z",
+      "updatedAt": "2026-09-19T07:14:21.358Z",
       "reviewed": true,
       "productIds": [
         "8386334253",
@@ -2500,13 +2500,13 @@
         "9252211443"
       ],
       "cover": {
-        "url": "/prep-images/camp-morning-sandwich-cover-v3.webp",
+        "url": "/prep-images/camp-morning-sandwich-cover-v3-caption-20260919.webp",
         "alt": "식빵과 슬라이스 햄, 체다치즈, 채소, 달걀, 샌드위치팬을 펼쳐 놓은 아침 식탁",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "식빵 햄 치즈 채소와 샌드위치팬을 한눈에 보여 주는 캠핑 아침 썸네일. 글자·포장·워터마크 없음.",
+        "prompt": "식빵 햄 치즈 채소와 샌드위치팬을 한눈에 보여 주는 캠핑 아침 썸네일. 글자·포장·워터마크 없음.\nCaption edit: Use case: text-localization. Edit target is the supplied existing website thumbnail. Change ONLY by adding a tasteful dark forest green semi-opaque horizontal banner inside the lower 12% of the image, inset 3% from edges. On it center the exact large bold ivory Korean text \"캠핑 햄치즈 샌드위치\". Make text large, flawless and easily legible at mobile card size. Add tiny \"AI 연출 이미지\" at bottom right. Keep original 3:2 composition, all objects, foods, product shapes, colors, people, identities, facial expressions, and positions UNCHANGED. Do not redraw, rearrange, crop or add any other objects. Preserve image geometry for existing product hotspot coordinates. No extra title elsewhere.",
         "referenceProducts": [
           {
             "productId": "8386334253",
@@ -2703,7 +2703,7 @@
       "shortcutProductId": "6168487275",
       "status": "published",
       "publishAt": "2026-09-14T11:31:38.571Z",
-      "updatedAt": "2026-09-14T12:18:57.852Z",
+      "updatedAt": "2026-09-19T07:14:21.358Z",
       "reviewed": true,
       "productIds": [
         "9278969662",
@@ -2715,13 +2715,13 @@
         "6168487275"
       ],
       "cover": {
-        "url": "/prep-images/camp-noodle-lunch-cover-v3.webp",
+        "url": "/prep-images/camp-noodle-lunch-cover-v3-caption-20260919.webp",
         "alt": "소면과 멸치 다시팩, 달걀지단, 애호박, 당근, 대파, 김가루를 펼쳐 놓은 잔치국수 재료상",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "잔치국수 재료와 고명을 한 상에 펼친 모바일 음식 썸네일. 글자·포장·워터마크 없음.",
+        "prompt": "잔치국수 재료와 고명을 한 상에 펼친 모바일 음식 썸네일. 글자·포장·워터마크 없음.\nCaption edit: Use case: text-localization. Edit target is the supplied existing website thumbnail. Change ONLY by adding a tasteful dark forest green semi-opaque horizontal banner inside the lower 12% of the image, inset 3% from edges. On it center the exact large bold ivory Korean text \"캠핑 잔치국수 만들기\". Make text large, flawless and easily legible at mobile card size. Add tiny \"AI 연출 이미지\" at bottom right. Keep original 3:2 composition, all objects, foods, product shapes, colors, people, identities, facial expressions, and positions UNCHANGED. Do not redraw, rearrange, crop or add any other objects. Preserve image geometry for existing product hotspot coordinates. No extra title elsewhere.",
         "referenceProducts": [
           {
             "productId": "9278969662",
@@ -2759,8 +2759,8 @@
           },
           {
             "productId": "9468295724",
-            "x": 66,
-            "y": 87
+            "x": 69,
+            "y": 78
           }
         ]
       },
@@ -2914,7 +2914,7 @@
       "shortcutProductId": "9627651159",
       "status": "published",
       "publishAt": "2026-09-14T11:31:38.571Z",
-      "updatedAt": "2026-09-14T12:18:57.852Z",
+      "updatedAt": "2026-09-19T07:14:21.358Z",
       "reviewed": true,
       "productIds": [
         "7935223581",
@@ -2926,13 +2926,13 @@
         "9627651159"
       ],
       "cover": {
-        "url": "/prep-images/grilled-vegetable-skewers-cover-v3.webp",
+        "url": "/prep-images/grilled-vegetable-skewers-cover-v3-caption-20260919.webp",
         "alt": "파프리카와 애호박, 새송이버섯, 양파, 방울토마토, 꼬치, 소스를 펼쳐 놓은 캠핑 채소꼬치 재료상",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "채소꼬치 재료를 풍성하게 펼쳐 놓은 광고형 음식 썸네일. 글자·포장·워터마크 없음.",
+        "prompt": "채소꼬치 재료를 풍성하게 펼쳐 놓은 광고형 음식 썸네일. 글자·포장·워터마크 없음.\nCaption edit: Use case: text-localization. Edit target is the supplied existing website thumbnail. Change ONLY by adding a tasteful dark forest green semi-opaque horizontal banner inside the lower 12% of the image, inset 3% from edges. On it center the exact large bold ivory Korean text \"캠핑 채소꼬치 굽기\". Make text large, flawless and easily legible at mobile card size. Add tiny \"AI 연출 이미지\" at bottom right. Keep original 3:2 composition, all objects, foods, product shapes, colors, people, identities, facial expressions, and positions UNCHANGED. Do not redraw, rearrange, crop or add any other objects. Preserve image geometry for existing product hotspot coordinates. No extra title elsewhere.",
         "referenceProducts": [
           {
             "productId": "7935223581",
@@ -2970,8 +2970,8 @@
           },
           {
             "productId": "7614412503",
-            "x": 56,
-            "y": 80
+            "x": 50,
+            "y": 77
           }
         ]
       },
@@ -3115,7 +3115,7 @@
       "coverLabel": "잠자리·그늘·휴식, 역할부터 비교",
       "status": "published",
       "publishAt": "2026-09-14T11:31:38.571Z",
-      "updatedAt": "2026-09-14T12:18:57.852Z",
+      "updatedAt": "2026-09-19T07:14:21.358Z",
       "reviewed": true,
       "productIds": [
         "8880587680",
@@ -3123,13 +3123,13 @@
         "9072324584"
       ],
       "cover": {
-        "url": "/prep-images/autumn-camp-tarp-rest-corner-cover-v2.webp",
+        "url": "/prep-images/autumn-camp-tarp-rest-corner-cover-v2-caption-20260919.webp",
         "alt": "가을 호숫가에 검은 에어텐트와 베이지 타프, 브라운 릴렉스체어 두 개를 설치한 캠핑장",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "에어텐트 타프 릴렉스체어 장점을 한 장에 보여 주는 캠핑 썸네일. 글자·포장·워터마크 없음.",
+        "prompt": "에어텐트 타프 릴렉스체어 장점을 한 장에 보여 주는 캠핑 썸네일. 글자·포장·워터마크 없음.\nCaption edit: Use case: text-localization. Edit target is the supplied existing website thumbnail. Change ONLY by adding a tasteful dark forest green semi-opaque horizontal banner inside the lower 12% of the image, inset 3% from edges. On it center the exact large bold ivory Korean text \"첫 캠핑용품 준비\". Make text large, flawless and easily legible at mobile card size. Add tiny \"AI 연출 이미지\" at bottom right. Keep original 3:2 composition, all objects, foods, product shapes, colors, people, identities, facial expressions, and positions UNCHANGED. Do not redraw, rearrange, crop or add any other objects. Preserve image geometry for existing product hotspot coordinates. No extra title elsewhere.",
         "referenceProducts": [
           {
             "productId": "8880587680",
@@ -3290,19 +3290,19 @@
       "coverLabel": "거리만 바꿔도 다시 재미있어져요",
       "status": "published",
       "publishAt": "2026-09-14T11:31:38.571Z",
-      "updatedAt": "2026-09-14T12:18:57.852Z",
+      "updatedAt": "2026-09-19T07:14:21.358Z",
       "reviewed": true,
       "productIds": [
         "9305516249"
       ],
       "cover": {
-        "url": "/prep-images/family-ring-toss-review-cover-v2.webp",
+        "url": "/prep-images/family-ring-toss-review-cover-v2-caption-20260919.webp",
         "alt": "보호자와 14세 이상 자녀가 가을 공원에서 고리던지기 세트로 노는 모습",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "한 제품만 크게 보여 주는 14세 이상 가족 고리던지기 썸네일. 글자·포장·워터마크 없음.",
+        "prompt": "한 제품만 크게 보여 주는 14세 이상 가족 고리던지기 썸네일. 글자·포장·워터마크 없음.\nCaption edit: Use case: text-localization. Edit target is the supplied existing website thumbnail. Change ONLY by adding a tasteful dark forest green semi-opaque horizontal banner inside the lower 12% of the image, inset 3% from edges. On it center the exact large bold ivory Korean text \"가족 고리던지기 놀이\". Make text large, flawless and easily legible at mobile card size. Add tiny \"AI 연출 이미지\" at bottom right. Keep original 3:2 composition, all objects, foods, product shapes, colors, people, identities, facial expressions, and positions UNCHANGED. Do not redraw, rearrange, crop or add any other objects. Preserve image geometry for existing product hotspot coordinates. No extra title elsewhere.",
         "usageNotice": "이 글의 연결 상품은 판매처 최소 연령 14세 표시를 확인했습니다. 14세 미만에게 권하지 않습니다.",
         "referenceProducts": [
           {

@@ -8,7 +8,15 @@ const store=JSON.parse(fs.readFileSync('data/weekend-prep.json','utf8'));
 const recipes=recipeConfigs();
 test('ten distinct recipe checklists preserve the previous published catalog',()=>{
  const old=JSON.parse(execFileSync('git',['show','bd8a50d:data/weekend-prep.json'],{encoding:'utf8',maxBuffer:10000000}));
- for(const a of old.articles)assert.deepEqual(store.articles.find(x=>x.slug===a.slug),a);
+ const captionEdits=JSON.parse(fs.readFileSync('data/prep-cover-captions-20260919.json','utf8')).items;
+ for(const a of old.articles){
+  const actual=structuredClone(store.articles.find(x=>x.slug===a.slug));
+  // The subsequent caption-only release is checked independently against 2c4b526.
+  if(captionEdits.some(item=>'/prep-images/'+item.file===a.cover.url)){
+   actual.cover=a.cover;actual.updatedAt=a.updatedAt;
+  }
+  assert.deepEqual(actual,a);
+ }
  for(const p of old.products)assert.deepEqual(store.products.find(x=>x.id===p.id),p);
  assert.equal(recipes.length,10);
  for(const r of recipes){
