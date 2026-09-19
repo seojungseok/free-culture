@@ -16,6 +16,25 @@ function quickCookingGuide(name:string){
   : `${name}은 주재료와 채소를 쓰기 좋게 준비한 뒤, 사용하는 팬이나 그릴을 예열해 익는 속도에 맞춰 넣어 보세요. 간과 소스는 마지막에 조절하고, 제품별 손질·가열 방법은 포장 안내를 우선으로 확인하세요.`;
 }
 
+function CookingGuide({article,products}:{article:Article;products:PrepProduct[]}){
+ const product=(id:string)=>products.find(p=>p.id===id);
+ const ProductLink=({id,children}:{id:string;children:React.ReactNode})=>{
+  const p=product(id);
+  return p?<a href={p.affiliateUrl} target="_blank" rel="sponsored noopener">{children}</a>:<>{children}</>;
+ };
+ if(article.slug==='autumn-flower-crab-soup-ingredient-checklist')return <section className="prep-cooking-intro" aria-label="간단한 꽃게탕 끓이는 방법">
+  <h2>간단한 꽃게탕 끓이는 방법</h2>
+  <ol className="prep-cooking-steps">
+   <li><ProductLink id="9603803528">냉동 꽃게</ProductLink>는 포장 안내에 따라 해동합니다. 손질이 필요한 경우 흐르는 물에 헹군 뒤 아가미와 배딱지를 정리하고, 집게는 조리 가위로 잘라 준비하세요.</li>
+   <li>냄비에 물과 <ProductLink id="57577364">국물육수 다시팩</ProductLink>을 넣어 포장에 안내된 방식으로 국물 바탕을 냅니다. 무를 곁들인다면 먼저 익혀 주세요.</li>
+   <li>국물이 끓으면 꽃게를 넣고 완전히 익을 때까지 끓입니다. <ProductLink id="8574770164">매운탕 양념</ProductLink>은 한 번에 다 넣지 말고 일부부터 풀어 간을 맞춰 보세요.</li>
+   <li>애호박과 대파를 넣고 한소끔 더 끓인 뒤, 미나리는 불을 끄기 직전에 더합니다. 마지막에 국물 간을 확인해 조절하세요.</li>
+  </ol>
+  <p className="prep-cooking-note">해동·손질·가열과 양념·육수 사용량은 구매한 제품의 실제 포장 안내를 우선으로 확인하세요.</p>
+ </section>;
+ return <section className="prep-cooking-intro" aria-label="간단한 요리 방법"><h2>간단한 {dishName(article.title)} 만드는 방법</h2><p>{quickCookingGuide(dishName(article.title))}</p>{article.introduction&&article.introduction.text.split('\n').filter(Boolean).slice(0,1).map((text,i)=><p key={i}>{text}</p>)}</section>;
+}
+
 export default function PrepArticle({article:a,products,preview=false}:{article:Article;products:PrepProduct[];preview?:boolean}){
  const chosen=products.filter(p=>a.productIds.includes(p.id));
  const linked=new Set<string>();
@@ -27,7 +46,7 @@ export default function PrepArticle({article:a,products,preview=false}:{article:
   <p className="prep-disclosure">이 글에는 제휴 링크가 포함되어 있습니다. 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.</p>
   <p className="prep-eyebrow">{prepCategoryLabel(a.category,a)}</p><h1>{a.title}</h1><p className="prep-lead">{a.description}</p>
   <PrepImage photo={a.cover} products={chosen} priority />
-  {a.salesFormat==='food-checklist'&&<section className="prep-cooking-intro" aria-label="간단한 요리 방법"><h2>간단한 {dishName(a.title)} 만드는 방법</h2><p>{quickCookingGuide(dishName(a.title))}</p>{a.introduction&&a.introduction.text.split('\n').filter(Boolean).slice(0,1).map((text,i)=><p key={i}>{text}</p>)}</section>}
+  {a.salesFormat==='food-checklist'&&<CookingGuide article={a} products={chosen}/>}
   {a.salesFormat==='food-checklist'&&a.checklist&&<PrepChecklist slug={a.slug} items={a.checklist} products={chosen} dishName={dishName(a.title)}/>}
   {a.sections.map((s,i)=>{
    const sectionProducts=s.productIds.map(id=>chosen.find(p=>p.id===id)).filter((p):p is PrepProduct=>!!p&&!a.quietProductIds?.includes(p.id)&&!carded.has(p.id));
