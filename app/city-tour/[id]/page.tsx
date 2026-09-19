@@ -1,3 +1,4 @@
+import SeoulStayBanner from '@/components/SeoulStayBanner';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
@@ -33,6 +34,7 @@ export default async function Page({params}:{params:Promise<{id:string}>}){const
  {a.sections.map((s,i)=><section id={'section-'+i} key={i} className="mb-9 scroll-mt-24"><h2 className="mb-4 text-xl font-extrabold">{s.heading}</h2><div className="space-y-4 text-[15px] leading-8 text-ink-soft">{s.paragraphs.map((p,j)=><p key={j}>{p}</p>)}</div>{i===0&&<CoursePhotoGallery headingLevel={3} photos={photos.slice(1,3)} id="city-route-photos" title="사진으로 만나는 경유지"/>}{i===2&&<CoursePhotoGallery headingLevel={3} photos={photos.slice(3,5)} id="city-visit-photos" title="코스 풍경 더 살펴보기"/>}</section>)}
  <section id="visit-info" className="scroll-mt-24"><h2 className="mb-4 text-xl font-extrabold">원본 이용 정보</h2><dl className="divide-y rounded-2xl border p-5">{Object.keys(INFO_LABELS).filter(k=>a.raw[k]).map(k=><div key={k} className="py-3"><dt className="mb-1 text-sm font-bold">{INFO_LABELS[k]}</dt><dd className="whitespace-pre-line text-sm leading-7 text-ink-soft">{a.raw[k]}</dd></div>)}</dl>
  {a.officialUrl&&<a href={a.officialUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-11 items-center rounded-xl bg-brandblue px-5 font-bold text-white">공식 운영 안내 확인</a>}</section>
+ <SeoulStayBanner region={a.area} />
  <Connections title="코스 경유지 자세히 보기" items={a.related}/>
  {relatedCourses.length>0&&<section className="mt-8"><h2 className="mb-4 text-xl font-bold">같은 경유지가 있는 여행코스</h2><ul className="space-y-3">{relatedCourses.map(c=><li key={c.id}><Link href={'/course/c/'+c.id} prefetch={false} className="text-brandblue underline">{c.title}</Link></li>)}</ul></section>}
  <Link href={'/region/'+(SIDO_SLUG as Record<string,string>)[a.area]} className="mt-6 inline-flex min-h-11 items-center font-bold text-brandblue">{a.area}에서 할 일 더 찾아보기 →</Link>

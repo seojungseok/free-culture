@@ -1,3 +1,4 @@
+import SeoulStayBanner from '@/components/SeoulStayBanner';
 import NextStop from "@/components/NextStop";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -175,6 +176,7 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
         </section>
       )}
 
+      <SeoulStayBanner context="camping" />
       <CampingCookingGuide compact />
 
       <CoupangDeals />

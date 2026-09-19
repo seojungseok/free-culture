@@ -1,3 +1,4 @@
+import SeoulStayBanner from '@/components/SeoulStayBanner';
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -235,6 +236,7 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
       <p className="mt-8 text-[12px] text-ink-faint">
         전국 카페데이트 코스 {total.toLocaleString()}곳 중 하나예요 · 코스는 좌표 거리로 자동 구성했고, 영업시간·휴무는 방문 전 확인을 권해요 · 정보 제공: 한국관광공사
       </p>
+      <SeoulStayBanner />
     </Container>
   );
 }

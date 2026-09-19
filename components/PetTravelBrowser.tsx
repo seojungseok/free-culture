@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import TripSave from "./TripSave";
 
 export type PetPlace = {
   id: string;
@@ -94,8 +95,8 @@ export default function PetTravelBrowser({initial=[]}: {initial?: PetPlace[]}) {
 
         <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {list.slice(0,visibleCount).map((place) => (
+            <article key={place.id} className="relative min-w-0">
             <Link
-              key={place.id}
               href={`/pet-travel/${place.id}`}
               prefetch={false}
               className="group block overflow-hidden rounded-xl border border-line bg-white transition hover:-translate-y-0.5 hover:border-free"
@@ -121,6 +122,8 @@ export default function PetTravelBrowser({initial=[]}: {initial?: PetPlace[]}) {
                 <span className="mt-3 inline-block text-[11px] font-bold text-free sm:mt-4 sm:text-[13px]">여행지 정보 보기 →</span>
               </div>
             </Link>
+            <TripSave variant="heart" className="absolute right-2 top-2 z-10" trip={{id:"pet:"+place.id,title:place.title,stops:[{id:"pet:"+place.id,title:place.title,href:"/pet-travel/"+place.id,area:place.area,kind:"pet",address:place.address,image:place.image}]}} />
+            </article>
           ))}
         </div>
 

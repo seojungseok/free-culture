@@ -1,3 +1,4 @@
+import SeoulStayBanner from '@/components/SeoulStayBanner';
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -158,6 +159,7 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
 
       <div className="mt-10 border-t border-line pt-8">
         <h2 className="mb-4 text-[19px] font-extrabold text-ink">🛒 아이와 나들이, 이런 것도 챙겨요</h2>
+        <SeoulStayBanner />
         <KidCoupangDeals />
       </div>
 

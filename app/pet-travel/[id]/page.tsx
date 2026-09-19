@@ -9,6 +9,8 @@ import { getPetTravelPlace, getPetTravelPlaces, normalizePetIntro, normalizePetI
 export const revalidate = false;
 export function generateStaticParams() { return getPetTravelPlaces().map(p=>({id:p.id})); }
 
+import SeoulStayBanner from '@/components/SeoulStayBanner';
+
 async function findPlace(id: string) {
   return getPetTravelPlace(id) || getTourById(id);
 }
@@ -85,6 +87,7 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
           {!petInfo && <p className="mt-4 rounded-xl bg-amber-50 p-4 text-sm">이 장소의 구체적인 동반 조건을 아직 확인하지 못했습니다. 안내견 허용과 일반 반려동물 허용은 다릅니다. 일반 반려동물 동반 가능 장소로 단정하거나 코스에 자동 포함하지 않습니다.</p>}
           {petInfoParagraphs.length > 0 && <section className="mt-5 rounded-xl bg-tint p-4"><h2 className="text-[15px] font-extrabold text-ink">반려동물 이용 안내</h2><div className="mt-3 space-y-3 text-[13px] leading-6 text-ink-soft">{petInfoParagraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div></section>}
           {Object.keys(intro).length > 0 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">운영·편의시설 안내</h2><dl className="mt-3 grid gap-2 sm:grid-cols-2">{Object.entries(intro).slice(0, 12).map(([name, value]) => <div key={name} className="rounded-lg bg-panel px-3 py-3"><dt className="text-[11px] font-bold text-ink-faint">{name}</dt><dd className="mt-1 break-words text-[13px] leading-6 text-ink-soft">{String(value)}</dd></div>)}</dl></section>}
+          <SeoulStayBanner region={spot.area || ''} context="pet" />
           {gallery[1] && photo(gallery[1], 1)}
           {info.length > 0 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">시설·이용 안내</h2><div className="mt-2 space-y-3">{info.slice(0, 10).map((item, index) => <div key={`${item.name}-${index}`}><h3 className="text-[14px] font-bold text-ink">{item.name || "이용 안내"}</h3><p className="mt-1 text-[13px] leading-6 text-ink-soft">{item.text}</p></div>)}</div></section>}
           {gallery[2] && photo(gallery[2], 2)}
