@@ -192,13 +192,8 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
         </section>
       )}
 
+      {stay && <SeoulStayBanner region={stay.region} href={stay.href} />}
       {c.format !== "list" && mapStops[0] && <NearbyParking lon={Number(mapStops[0].mapx)} lat={Number(mapStops[0].mapy)} area={c.area} address={mapStops[0].addr} title={`첫 방문지 ${mapStops[0].name} 근처 주차`} />}
-      {/* 숙소 제휴 배너 — 제휴 링크가 등록된 지역에서만 (광고, 위아래 여백 확보) */}
-      {stay && (
-        <div className="my-10">
-          <SeoulStayBanner region={stay.region} href={stay.href} />
-        </div>
-      )}
 
       {/* 근처 맛집 — 코스 좌표 기준, 내부링크. 해수욕장 베스트(리스트형)엔 맛집 표시 안 함. */}
       {nearFood.length > 0 && c.format !== "list" && (

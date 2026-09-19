@@ -137,6 +137,8 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
       {c.park && <Stop stop={c.park} label="2. 공원 산책" emoji="🌳" fromTitle={c.spot.title} intro={`명소에서 직선거리 ${kmLabel(c.park.distKm)}에 있는 산책 후보입니다. 실제 이동 경로와 공원 이용 안내를 확인하세요.`} />}
       {c.food && <Stop stop={c.food} label={c.park ? "3. 근처 식사" : "2. 근처 식사"} emoji="🍽" fromTitle={c.park ? c.park.title : c.spot.title} intro={`직선거리 ${kmLabel(c.food.distKm)}에 있는 식사 장소 후보입니다.${menuSummary ? ` 한국관광공사에 등록된 메뉴 정보는 ${menuSummary}입니다.` : ""} 메뉴 제공 여부와 영업시간, 아이 동반 이용 가능 여부는 방문 전에 확인해 주세요.`} />}
 
+      <SeoulStayBanner />
+
       {related.length > 0 && (
         <section className="mt-10 border-t border-line pt-6">
           <h2 className="mb-3 text-[17px] font-extrabold text-ink">{c.area} {th.label} 다른 코스</h2>
@@ -159,7 +161,6 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
 
       <div className="mt-10 border-t border-line pt-8">
         <h2 className="mb-4 text-[19px] font-extrabold text-ink">🛒 아이와 나들이, 이런 것도 챙겨요</h2>
-        <SeoulStayBanner />
         <KidCoupangDeals />
       </div>
 

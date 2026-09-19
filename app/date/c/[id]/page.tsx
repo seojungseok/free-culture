@@ -211,6 +211,8 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
         intro={`공원에서 ${distLabel(c.food.distKm)}, 바로 근처예요. 둘러본 뒤 식사로 마무리하기 좋은 위치예요.${foodMenu ? ` 대표메뉴는 ${foodMenu.split(" / ")[0]}이에요.` : ""}`}
       />
 
+      <SeoulStayBanner />
+
       {related.length > 0 && (
         <section className="mt-10 border-t border-line pt-6">
           <h2 className="mb-3 text-[17px] font-extrabold text-ink">{c.area} 카페데이트 다른 코스</h2>
@@ -236,7 +238,6 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
       <p className="mt-8 text-[12px] text-ink-faint">
         전국 카페데이트 코스 {total.toLocaleString()}곳 중 하나예요 · 코스는 좌표 거리로 자동 구성했고, 영업시간·휴무는 방문 전 확인을 권해요 · 정보 제공: 한국관광공사
       </p>
-      <SeoulStayBanner />
     </Container>
   );
 }
