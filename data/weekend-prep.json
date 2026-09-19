@@ -1,5 +1,5 @@
 {
-  "version": 41,
+  "version": 42,
   "products": [
     {
       "id": "7853820445",
@@ -4500,16 +4500,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-15T15:49:05.695Z",
+      "updatedAt": "2026-09-19T07:23:58.540Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-seafood-ramen-ingredients-cover.webp",
+        "url": "/prep-images/camping-seafood-ramen-ingredients-cover-caption-20260919.webp",
         "alt": "해물라면 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 해물라면 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 신라면 120g, 40개 visibly placed at left (x22%,y52%). Reference 2: 신선하고 간편한 지퍼백 해물모듬 냉동 해물믹스 모둠, 2개, 600g center (x51%,y50%). Reference 3: 흙대파 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 해물라면 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 해물라면 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 신라면 120g, 40개 visibly placed at left (x22%,y52%). Reference 2: 신선하고 간편한 지퍼백 해물모듬 냉동 해물믹스 모둠, 2개, 600g center (x51%,y50%). Reference 3: 흙대파 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 해물라면 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 해물라면 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
         "referenceProducts": [
           {
             "productId": "7958974",
@@ -4732,16 +4732,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-15T15:49:05.695Z",
+      "updatedAt": "2026-09-19T07:23:58.542Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-mussel-soup-ingredients-cover.webp",
+        "url": "/prep-images/camping-mussel-soup-ingredients-cover-caption-20260919.webp",
         "alt": "홍합탕 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 홍합탕 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 바다더해 무료배송 냉동 자숙 홍합살 1kg 홍합미역국 깐홍합 손질홍합살 홍살, 1개, 1kg visibly placed at left (x22%,y52%). Reference 2: 흙대파 center (x51%,y50%). Reference 3: [팜팜]국내산 창녕 햇양파(중짜), 1박스, 5kg right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos. Mussels are orange/brown shucked mussel meat, NOT shell-on mussels; do not include any shells. Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 홍합탕 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself. 최종 수정: 원본에 없는 홍합 포장을 제거하고 홍합살·대파·양파만 남겼습니다.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 홍합탕 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 바다더해 무료배송 냉동 자숙 홍합살 1kg 홍합미역국 깐홍합 손질홍합살 홍살, 1개, 1kg visibly placed at left (x22%,y52%). Reference 2: 흙대파 center (x51%,y50%). Reference 3: [팜팜]국내산 창녕 햇양파(중짜), 1박스, 5kg right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos. Mussels are orange/brown shucked mussel meat, NOT shell-on mussels; do not include any shells. Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 홍합탕 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself. 최종 수정: 원본에 없는 홍합 포장을 제거하고 홍합살·대파·양파만 남겼습니다.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 홍합탕 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
         "referenceProducts": [
           {
             "productId": "7430379988",
@@ -4964,16 +4964,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-15T15:49:05.695Z",
+      "updatedAt": "2026-09-19T07:23:58.542Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-kimchi-fried-rice-ingredients-cover.webp",
+        "url": "/prep-images/camping-kimchi-fried-rice-ingredients-cover-caption-20260919.webp",
         "alt": "김치볶음밥 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 김치볶음밥 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 햇반 백미 윤기가득쌀밥 210g 24개, 210g, 24개 visibly placed at left (x22%,y52%). Reference 2: [김가연의 똑소리나는 김치] 포기김치 center (x51%,y50%). Reference 3: 삼초마을 난각번호1번 계란 자연방사 유정란 무항생제, 40구, 1개 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 김치볶음밥 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 김치볶음밥 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 햇반 백미 윤기가득쌀밥 210g 24개, 210g, 24개 visibly placed at left (x22%,y52%). Reference 2: [김가연의 똑소리나는 김치] 포기김치 center (x51%,y50%). Reference 3: 삼초마을 난각번호1번 계란 자연방사 유정란 무항생제, 40구, 1개 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 김치볶음밥 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 김치볶음밥 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
         "referenceProducts": [
           {
             "productId": "7488621084",
@@ -5205,16 +5205,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-15T15:49:05.695Z",
+      "updatedAt": "2026-09-19T07:23:58.542Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-squid-stir-fry-ingredients-cover.webp",
+        "url": "/prep-images/camping-squid-stir-fry-ingredients-cover-caption-20260919.webp",
         "alt": "오징어볶음 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 오징어볶음 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 두툼한 생물 급냉 냉동 오징어 손질오징어, 1세트, 2미(300~350g) visibly placed at left (x22%,y52%). Reference 2: [팜팜]국내산 창녕 햇양파(중짜), 1박스, 5kg center (x51%,y50%). Reference 3: 흙대파 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 오징어볶음 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 오징어볶음 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 두툼한 생물 급냉 냉동 오징어 손질오징어, 1세트, 2미(300~350g) visibly placed at left (x22%,y52%). Reference 2: [팜팜]국내산 창녕 햇양파(중짜), 1박스, 5kg center (x51%,y50%). Reference 3: 흙대파 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 오징어볶음 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 오징어볶음 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
         "referenceProducts": [
           {
             "productId": "9169365991",
@@ -5437,16 +5437,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-15T15:49:05.695Z",
+      "updatedAt": "2026-09-19T07:23:58.542Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-chicken-skewer-ingredients-cover.webp",
+        "url": "/prep-images/camping-chicken-skewer-ingredients-cover-caption-20260919.webp",
         "alt": "닭꼬치구이 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 닭꼬치구이 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: [산아푸드] 100% 국내산 모둠꼬치 450g 닭꼬치 염통꼬치 (캠핑/아이간식), 450g, 1개 visibly placed at left (x22%,y52%). Reference 2: 팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg center (x51%,y50%). Reference 3: 못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 닭꼬치구이 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 닭꼬치구이 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: [산아푸드] 100% 국내산 모둠꼬치 450g 닭꼬치 염통꼬치 (캠핑/아이간식), 450g, 1개 visibly placed at left (x22%,y52%). Reference 2: 팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg center (x51%,y50%). Reference 3: 못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 닭꼬치구이 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 닭꼬치구이 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
         "referenceProducts": [
           {
             "productId": "9627651159",
@@ -5669,16 +5669,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-15T15:49:05.695Z",
+      "updatedAt": "2026-09-19T07:23:58.542Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-kimchi-pancake-ingredients-cover.webp",
+        "url": "/prep-images/camping-kimchi-pancake-ingredients-cover-caption-20260919.webp",
         "alt": "김치전 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 김치전 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: [김가연의 똑소리나는 김치] 포기김치 visibly placed at left (x22%,y52%). Reference 2: 백설 부침가루, 1kg, 2개 center (x51%,y50%). Reference 3: 흙대파 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 김치전 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 김치전 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: [김가연의 똑소리나는 김치] 포기김치 visibly placed at left (x22%,y52%). Reference 2: 백설 부침가루, 1kg, 2개 center (x51%,y50%). Reference 3: 흙대파 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 김치전 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 김치전 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
         "referenceProducts": [
           {
             "productId": "7692122826",
@@ -5901,16 +5901,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-15T15:49:05.695Z",
+      "updatedAt": "2026-09-19T07:23:58.542Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-pork-belly-bbq-ingredients-cover.webp",
+        "url": "/prep-images/camping-pork-belly-bbq-ingredients-cover-caption-20260919.webp",
         "alt": "삼겹살 바비큐 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 삼겹살 바비큐 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 통삼겹살 캠핑용 바베큐 구이용 보쌈용 2kg, 2kg, 1개 visibly placed at left (x22%,y52%). Reference 2: 팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg center (x51%,y50%). Reference 3: 못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 삼겹살 바비큐 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 삼겹살 바비큐 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 통삼겹살 캠핑용 바베큐 구이용 보쌈용 2kg, 2kg, 1개 visibly placed at left (x22%,y52%). Reference 2: 팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg center (x51%,y50%). Reference 3: 못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 삼겹살 바비큐 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 삼겹살 바비큐 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
         "referenceProducts": [
           {
             "productId": "9668476214",
@@ -6133,16 +6133,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-15T15:49:05.695Z",
+      "updatedAt": "2026-09-19T07:23:58.542Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-tofu-kimchi-ingredients-cover.webp",
+        "url": "/prep-images/camping-tofu-kimchi-ingredients-cover-caption-20260919.webp",
         "alt": "두부김치 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 두부김치 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 맑은물에 촌두부, 800g, 2개 visibly placed at left (x22%,y52%). Reference 2: [김가연의 똑소리나는 김치] 포기김치 center (x51%,y50%). Reference 3: [팜팜]국내산 창녕 햇양파(중짜), 1박스, 5kg right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 두부김치 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 두부김치 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 맑은물에 촌두부, 800g, 2개 visibly placed at left (x22%,y52%). Reference 2: [김가연의 똑소리나는 김치] 포기김치 center (x51%,y50%). Reference 3: [팜팜]국내산 창녕 햇양파(중짜), 1박스, 5kg right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 두부김치 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 두부김치 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
         "referenceProducts": [
           {
             "productId": "7867851377",

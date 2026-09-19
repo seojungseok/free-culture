@@ -4,6 +4,7 @@ const file='data/weekend-prep.json';
 const store=JSON.parse(fs.readFileSync(file,'utf8'));
 const manifest=JSON.parse(fs.readFileSync('data/prep-cover-captions-20260919.json','utf8'));
 for(const item of manifest.items){
+ if(store.articles.some(a=>a.cover.url==='/prep-images/'+item.output))continue;
  const article=store.articles.find(a=>a.cover.url==='/prep-images/'+item.file);
  assert(article, 'Expected original cover '+item.file);
  assert(fs.existsSync('public/prep-images/'+item.output));
@@ -23,4 +24,4 @@ for(const item of manifest.items){
 }
 store.version++;
 fs.writeFileSync(file,JSON.stringify(store,null,2)+'\n');
-console.log('Applied six visually reviewed caption edits; products and affiliate links unchanged.');
+console.log('Applied visually reviewed caption edits; products and affiliate links unchanged.');

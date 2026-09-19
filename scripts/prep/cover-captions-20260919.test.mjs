@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import sharp from 'sharp';
-test('six caption-only covers preserve all text, URLs, products and remaining media',async()=>{
+test('caption-only covers preserve all text, URLs, products and remaining media',async()=>{
  const old=JSON.parse(execFileSync('git',['show','2c4b526:data/weekend-prep.json'],{encoding:'utf8',maxBuffer:10000000}));
  const now=JSON.parse(fs.readFileSync('data/weekend-prep.json','utf8'));
  const changes=JSON.parse(fs.readFileSync('data/prep-cover-captions-20260919.json','utf8')).items;
@@ -25,5 +25,5 @@ test('six caption-only covers preserve all text, URLs, products and remaining me
   }
   assert.deepEqual(after,before);
  }
- assert.equal(changed,6);
+ assert.equal(changed,changes.length);
 });
