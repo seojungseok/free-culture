@@ -4,6 +4,18 @@ import PrepImage from './PrepImage';
 import PrepChecklist from './PrepChecklist';
 import type {PrepArticle as Article,PrepProduct} from '@/lib/weekend-prep/types';
 import {prepCategoryLabel} from '@/lib/weekend-prep/data';
+
+function dishName(title:string){
+ return title.split('|')[0].replace(/^(가을 대표 요리|가을 캠핑|캠핑)\s*/,'').replace(/\s*재료 체크리스트.*$/,'').trim();
+}
+
+function quickCookingGuide(name:string){
+ const soupLike=/(탕|찌개|전골|라면|수제비|떡볶이)/.test(name);
+ return soupLike
+  ? `${name}은 국물 재료와 익는 데 시간이 필요한 주재료를 먼저 끓이고, 빨리 익는 채소·두부·면·대파는 마무리에 더해 보세요. 간은 마지막에 확인해 조절하고, 제품별 손질·가열 방법은 포장 안내를 우선으로 확인하세요.`
+  : `${name}은 주재료와 채소를 쓰기 좋게 준비한 뒤, 사용하는 팬이나 그릴을 예열해 익는 속도에 맞춰 넣어 보세요. 간과 소스는 마지막에 조절하고, 제품별 손질·가열 방법은 포장 안내를 우선으로 확인하세요.`;
+}
+
 export default function PrepArticle({article:a,products,preview=false}:{article:Article;products:PrepProduct[];preview?:boolean}){
  const chosen=products.filter(p=>a.productIds.includes(p.id));
  const linked=new Set<string>();
@@ -15,8 +27,8 @@ export default function PrepArticle({article:a,products,preview=false}:{article:
   <p className="prep-disclosure">이 글에는 제휴 링크가 포함되어 있습니다. 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.</p>
   <p className="prep-eyebrow">{prepCategoryLabel(a.category,a)}</p><h1>{a.title}</h1><p className="prep-lead">{a.description}</p>
   <PrepImage photo={a.cover} products={chosen} priority />
-  {a.salesFormat==='food-checklist'&&a.introduction&&<section className="prep-cooking-intro" aria-label="요리 소개"><h2>{a.introduction.heading}</h2>{a.introduction.text.split('\n').filter(Boolean).map((text,i)=><p key={i}>{text}</p>)}</section>}
-  {a.salesFormat==='food-checklist'&&a.checklist&&<PrepChecklist slug={a.slug} items={a.checklist} products={chosen}/>}
+  {a.salesFormat==='food-checklist'&&<section className="prep-cooking-intro" aria-label="간단한 요리 방법"><h2>간단한 {dishName(a.title)} 만드는 방법</h2><p>{quickCookingGuide(dishName(a.title))}</p>{a.introduction&&a.introduction.text.split('\n').filter(Boolean).slice(0,1).map((text,i)=><p key={i}>{text}</p>)}</section>}
+  {a.salesFormat==='food-checklist'&&a.checklist&&<PrepChecklist slug={a.slug} items={a.checklist} products={chosen} dishName={dishName(a.title)}/>}
   {a.sections.map((s,i)=>{
    const sectionProducts=s.productIds.map(id=>chosen.find(p=>p.id===id)).filter((p):p is PrepProduct=>!!p&&!a.quietProductIds?.includes(p.id)&&!carded.has(p.id));
    sectionProducts.forEach(p=>carded.add(p.id));
