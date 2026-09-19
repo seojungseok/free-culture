@@ -18414,6 +18414,490 @@
           }
         }
       }
+    },
+    {
+      "id": "2fd14eb1f9604b",
+      "area": "충남",
+      "city": "서천군",
+      "title": "서천 시티투어 보랏빛코스: 주요 경유지를 잇는 고정형 여행",
+      "raw": {
+        "시도명": "충청남도",
+        "시군구명": "서천군",
+        "시티투어코스명": "보랏빛코스",
+        "시티투어문의처": "서천종합관광안내소041-952-9525 + 서천군청(관광진흥과)041-950-4020",
+        "시티투어운영시간": "화+수+목+금+토+일",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "서천역+장항역+서천종합관광안내소",
+        "시티투어코스정보": "국립생태원-장항6080음식골목 맛나로(중식)-장항도시탐험역-장항송림자연휴양림-국립해양생물자원관-조류생태전시관-서천특화시장",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "이용자는 반드시 개별적으로 여행자보험 가입+미가입으로 인한 피해의 책임은 이용자 본인에게 있음+상기 일정은 날씨 및 기타 사정에 의해 변경될수 있음",
+        "운행시작시각": "10:00",
+        "운행종료시각": "17:00",
+        "배차시간": "40",
+        "이용요금": "13세 이상 4000원+ 65세 이상 3000원+ 장애인 또는 어린이 1000원+ 보호자를 동반한 5세 이하 무료",
+        "이용요금부가정보": "국립생태원 30퍼센트 할인 + 국립해양생물자원관 30퍼센트 할인",
+        "홈페이지주소": "http://www.seocheon.go.kr/tour/sub03_02_01.do",
+        "관리기관명": "충청남도 서천군청",
+        "관리기관전화번호": "041-950-4020",
+        "데이터기준일자": "2025-12-22"
+      },
+      "related": [
+        {
+          "id": "1937012",
+          "title": "장항송림자연휴양림",
+          "href": "/places/spot/1937012",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/72/3529172_image2_1.jpg",
+          "address": "충청남도 서천군 장항읍 장항산단로34번길 122-16"
+        }
+      ],
+      "foodLinks": [],
+      "officialUrl": "http://www.seocheon.go.kr/tour/sub03_02_01.do",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/72/3529172_image2_1.jpg",
+      "imageTitle": "장항송림자연휴양림",
+      "priority": 18,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/72/3529172_image2_1.jpg",
+        "title": "장항송림자연휴양림",
+        "location": "충청남도 서천군 장항읍 장항산단로34번길 122-16",
+        "placeId": "1937012",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/1937012",
+        "status": "matched",
+        "checkedAt": "2026-09-19T22:35:09.555Z"
+      },
+      "description": "서천 보랏빛코스의 경유 순서와 탑승 장소, 운행일, 이용요금, 할인 정보를 정리했습니다. 운행 및 시설 이용 정보는 방문 전 공식 확인이 필요합니다.",
+      "intro": "충청남도 서천군 보랏빛코스는 국립생태원, 장항 지역의 여러 장소, 국립해양생물자원관, 조류생태전시관, 서천특화시장을 잇는 고정형 시티투어입니다. 탑승 장소는 서천역, 장항역, 서천종합관광안내소이며, 원본 자료에는 화요일부터 일요일까지 운행하는 것으로 안내되어 있습니다.",
+      "sections": [
+        {
+          "heading": "보랏빛코스 경유 순서",
+          "paragraphs": [
+            "보랏빛코스는 국립생태원에서 시작해 장항6080음식골목 맛나로에서 중식을 거친 뒤 장항도시탐험역, 장항송림자연휴양림, 국립해양생물자원관, 조류생태전시관, 서천특화시장 순서로 이어집니다. 자료에 기재된 경유지를 정해진 순서에 따라 이동하는 고정형 코스입니다.",
+            "장항6080음식골목 맛나로는 중식 장소로 안내되어 있지만, 개별 음식점이나 특정 매장 정보는 제공되지 않았습니다. 서천특화시장도 코스의 경유지로 제시되어 있으며, 시장의 영업 여부와 이용 가능한 점포는 별도 확인이 필요합니다."
+          ]
+        },
+        {
+          "heading": "경유지와 주소 확인",
+          "paragraphs": [
+            "코스에는 국립생태원, 장항도시탐험역, 장항송림자연휴양림, 국립해양생물자원관, 조류생태전시관, 서천특화시장 등이 포함됩니다. 자료에는 각 장소의 상세한 시설 설명이나 현재 운영 중인 전시 정보가 별도로 제공되지 않았으므로, 방문 목적과 관람 가능 여부는 각 기관에 확인하는 것이 좋습니다.",
+            "장항송림자연휴양림의 주소는 충청남도 서천군 장항읍 장항산단로34번길 122-16입니다. 제공된 주변 관광정보에는 별도 내용이 없으므로, 이곳을 포함한 각 경유지의 세부 이용 방법과 현장 운영 상황은 출발 전에 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "탑승 장소와 운행 정보",
+          "paragraphs": [
+            "보랏빛코스의 탑승 장소는 서천역, 장항역, 서천종합관광안내소입니다. 운행 방식은 고정형이며, 운행일은 화요일·수요일·목요일·금요일·토요일·일요일로 안내되어 있습니다. 월요일 운행 여부는 원본 자료에 포함되어 있지 않습니다.",
+            "운행 시작 시각은 10시, 종료 시각은 17시로 기재되어 있고 배차시간은 40으로 제공되어 있습니다. 다만 배차시간이 어떤 기준으로 적용되는지, 탑승 장소별 출발 시각이 무엇인지는 자료만으로 확정하기 어렵습니다. 예약 필요 여부와 당일 운행 여부도 방문 전 문의를 통해 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "이용요금과 할인 정보",
+          "paragraphs": [
+            "시티투어 이용요금은 13세 이상 4,000원, 65세 이상 3,000원, 장애인 또는 어린이 1,000원입니다. 보호자를 동반한 5세 이하 어린이는 무료로 안내되어 있습니다. 연령이나 대상별 요금 적용에 필요한 증빙 기준은 별도 안내가 없으므로 이용 전에 확인해야 합니다.",
+            "시티투어 이용자는 국립생태원과 국립해양생물자원관 이용요금의 30퍼센트 할인을 받을 수 있는 것으로 기재되어 있습니다. 할인 적용 방법과 현재 시설 입장료, 조류생태전시관의 이용 조건은 자료에 없으므로 현장 적용 여부를 미리 문의하는 것이 안전합니다."
+          ]
+        },
+        {
+          "heading": "출발 전 문의할 사항",
+          "paragraphs": [
+            "운행일, 운행시간, 요금과 할인 정보는 데이터 기준일자 2025년 12월 22일 자료에 따른 내용입니다. 2026년 방문 일정에 그대로 적용된다고 단정할 수 없으므로 서천종합관광안내소 041-952-9525 또는 서천군청 관광진흥과 041-950-4020으로 최신 정보를 확인하세요.",
+            "원본 자료에는 날씨 및 기타 사정에 따라 일정이 변경될 수 있다고 안내되어 있습니다. 또한 이용자는 개별적으로 여행자보험에 가입해야 하며, 미가입으로 인한 피해의 책임은 이용자 본인에게 있습니다. 출발 전 운행 변경, 탑승 가능 여부, 시설 운영 및 할인 조건을 함께 확인하면 됩니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-19T22:35:09.555Z",
+      "publishedDay": "2026-09-20",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 984,
+          "completion_tokens": 1380,
+          "total_tokens": 2364,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 148,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2043,
+          "completion_tokens": 1223,
+          "total_tokens": 3266,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2040,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 91,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1874,
+          "completion_tokens": 535,
+          "total_tokens": 2409,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1871,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 356,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1857,
+          "completion_tokens": 219,
+          "total_tokens": 2076,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1854,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 199,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "cb3b3b76c72136",
+      "area": "전북",
+      "city": "익산시",
+      "title": "익산 시티투어 세계유산코스: 익산쌍릉·왕궁리유적·미륵사지",
+      "raw": {
+        "시도명": "전북특별자치도",
+        "시군구명": "익산시",
+        "시티투어코스명": "세계유산코스",
+        "시티투어문의처": "(유)호남해외여행사(063-856-5100)",
+        "시티투어운영시간": "15인 이상사전예약",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "익산역",
+        "시티투어코스정보": "익산역-익산쌍릉-왕궁리유적(백제왕궁)-미륵사지(국립익산박물관)-익산역",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "사전예약시 운행",
+        "운행시작시각": "13:00",
+        "운행종료시각": "17:00",
+        "배차시간": "0",
+        "이용요금": "성인2000원+익산시민+초중고+경로+장애인+군인+아동 1000원",
+        "이용요금부가정보": "",
+        "홈페이지주소": "http://www.iksan.go.kr/tour",
+        "관리기관명": "전북특별자치도 익산시청 문화관광산업과",
+        "관리기관전화번호": "063-859-5824",
+        "데이터기준일자": "2025-12-24"
+      },
+      "related": [
+        {
+          "id": "127435",
+          "title": "익산 쌍릉",
+          "href": "/places/spot/127435",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/60/3564360_image2_1.jpg",
+          "address": "전북특별자치도 익산시 쌍능길 65 (석왕동)"
+        }
+      ],
+      "foodLinks": [],
+      "officialUrl": "http://www.iksan.go.kr/tour",
+      "image": "https://tong.visitkorea.or.kr/cms/resource/60/3564360_image2_1.jpg",
+      "imageTitle": "익산 쌍릉",
+      "priority": 18,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms/resource/60/3564360_image2_1.jpg",
+        "title": "익산 쌍릉",
+        "location": "전북특별자치도 익산시 쌍능길 65 (석왕동)",
+        "placeId": "127435",
+        "credit": "한국관광공사",
+        "sourceUrl": "/places/spot/127435",
+        "status": "matched",
+        "checkedAt": "2026-09-19T22:35:52.007Z"
+      },
+      "description": "익산역에서 출발해 익산쌍릉, 왕궁리유적(백제왕궁), 미륵사지(국립익산박물관)를 둘러보는 15인 이상 사전예약형 고정 코스 안내입니다.",
+      "intro": "전북특별자치도 익산시 세계유산코스는 익산역을 출발지와 도착지로 정하고, 익산쌍릉·왕궁리유적·미륵사지를 차례로 경유하는 시티투어입니다. 미륵사지 구간에는 국립익산박물관이 함께 표시되어 있습니다. 자료 기준으로 15인 이상 사전예약 시 운행합니다.",
+      "sections": [
+        {
+          "heading": "코스 순서와 운행 방식",
+          "paragraphs": [
+            "공식 코스 순서는 익산역-익산쌍릉-왕궁리유적(백제왕궁)-미륵사지(국립익산박물관)-익산역입니다. 출발과 도착 장소는 모두 익산역으로 안내되어 있습니다.",
+            "고정형으로 운영되며, 운행 시간은 13시부터 17시까지입니다. 별도 배차시간은 0으로 기재되어 있고, 운행 정보에는 사전예약 시 운행한다고 안내되어 있습니다. 15인 이상 사전예약 조건이 있으므로 예약 없이 탑승할 수 있는지는 방문 전에 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "경유지 안내",
+          "paragraphs": [
+            "익산쌍릉은 제공 자료에서 전북특별자치도 익산시 쌍능길 65로 안내되어 있습니다. 왕궁리유적은 코스 정보에 ‘백제왕궁’으로 표기되어 있으며, 미륵사지 구간에는 국립익산박물관이 함께 표시되어 있습니다.",
+            "자료에는 왕궁리유적과 미륵사지의 별도 주소나 위치 정보, 각 장소의 세부 해설과 관람 소요시간이 제시되어 있지 않습니다. 따라서 실제 이동 동선과 각 경유지 체류 시간은 예약 전에 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "예약과 이용요금",
+          "paragraphs": [
+            "예약 및 투어 운행 문의는 (유)호남해외여행사에서 담당하며 전화번호는 063-856-5100입니다. 관리기관은 전북특별자치도 익산시청 문화관광산업과이고, 문의 전화는 063-859-5824로 안내되어 있습니다.",
+            "이용요금은 성인 2,000원입니다. 익산시민, 초중고생, 경로 대상자, 장애인, 군인, 아동은 1,000원으로 기재되어 있습니다. 대상별 적용 기준과 증빙서류, 예약 및 결제 방식은 자료에 상세히 없으므로 신청할 때 문의해야 합니다."
+          ]
+        },
+        {
+          "heading": "국립익산박물관과 현장 관람",
+          "paragraphs": [
+            "코스 정보에는 미륵사지와 함께 국립익산박물관이 표시되어 있습니다. 다만 제공 자료만으로는 박물관의 실제 관람 가능 여부, 전시 내용, 관람료, 개관 시간과 휴관일을 확인할 수 없습니다.",
+            "익산쌍릉과 왕궁리유적에 대해서도 세부 시설이나 해설 프로그램 정보는 제공되지 않았습니다. 박물관 방문이나 각 유적의 관람을 계획한다면 해당 기관의 공식 안내를 별도로 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인 사항",
+          "paragraphs": [
+            "운행·요금 정보의 데이터 기준일자는 2025년 12월 24일입니다. 2026년 9월 방문을 계획한다면 실제 운행일, 15인 이상 모집 여부, 출발 시각, 예약 가능 여부와 요금을 투어 문의처 또는 익산시청 문화관광산업과에 확인해야 합니다.",
+            "제공된 주변 관광정보에는 익산쌍릉만 등록되어 있으며 별도 음식점 정보는 없습니다. 식사 장소나 추가 방문지를 계획할 경우 공식 코스 경유지와 구분하고, 영업 여부와 이동 동선은 직접 확인하는 것이 좋습니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-19T22:35:52.007Z",
+      "publishedDay": "2026-09-20",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 853,
+          "completion_tokens": 1210,
+          "total_tokens": 2063,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 114,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1778,
+          "completion_tokens": 1147,
+          "total_tokens": 2925,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1775,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 95,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1607,
+          "completion_tokens": 552,
+          "total_tokens": 2159,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1604,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 371,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1563,
+          "completion_tokens": 298,
+          "total_tokens": 1861,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1560,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 278,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "11b3f2a30891b9",
+      "area": "경남",
+      "city": "밀양시",
+      "title": "밀양 시티투어 동부산악권 투어 1 코스와 탑승 안내",
+      "raw": {
+        "시도명": "경상남도",
+        "시군구명": "밀양시",
+        "시티투어코스명": "동부산악권 투어 1",
+        "시티투어문의처": "밀양문화관광재단 055-359-4582",
+        "시티투어운영시간": "매주 토요일(9~10월)",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "밀양역",
+        "시티투어코스정보": "밀양역 → 선샤인밀양테마파크 → 중식(표충사 인근 식당) → 향교 → 월연정 또는 금시당 → 밀양역",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "5인이상",
+        "운행시작시각": "09:30",
+        "운행종료시각": "17:20",
+        "배차시간": "370",
+        "이용요금": "성인청소년어린이10000원",
+        "이용요금부가정보": "36개월 미만 영아 무료",
+        "홈페이지주소": "https://www.mycf.or.kr/sub/04_03.php",
+        "관리기관명": "밀양문화관광재단 관광팀",
+        "관리기관전화번호": "055-359-4582",
+        "데이터기준일자": "2025-12-19"
+      },
+      "related": [],
+      "foodLinks": [],
+      "officialUrl": "https://www.mycf.or.kr/sub/04_03.php",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/08/1837008.jpg",
+      "imageTitle": "밀양역",
+      "priority": 15,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/08/1837008.jpg",
+        "title": "밀양역",
+        "location": "경상남도 밀양",
+        "credit": "한국관광공사 · 한국관광공사 이범수 ",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "1837008",
+        "status": "matched",
+        "checkedAt": "2026-09-19T22:36:39.538Z"
+      },
+      "description": "밀양역에서 출발해 선샤인밀양테마파크, 표충사 인근 중식, 향교와 월연정 또는 금시당을 거쳐 돌아오는 토요일 운영 시티투어입니다.",
+      "intro": "경상남도 밀양시의 동부산악권 투어 1은 밀양역을 출발지와 도착지로 하는 고정형 시티투어입니다. 매주 토요일 9~10월에 운영되며, 코스에는 선샤인밀양테마파크, 표충사 인근 식당에서의 중식, 향교, 월연정 또는 금시당이 포함되어 있습니다. 세부 운영 여부와 방문지는 탑승 전 확인이 필요합니다.",
+      "sections": [
+        {
+          "heading": "코스와 경유 순서",
+          "paragraphs": [
+            "원본에 안내된 경유 순서는 ‘밀양역 → 선샤인밀양테마파크 → 중식(표충사 인근 식당) → 향교 → 월연정 또는 금시당 → 밀양역’입니다. 밀양역에서 출발한 뒤 선샤인밀양테마파크를 거치고, 표충사 인근 식당에서 중식을 먹은 다음 향교와 월연정 또는 금시당을 방문하고 밀양역으로 돌아오는 일정입니다.",
+            "월연정과 금시당 가운데 어느 곳을 방문하는지는 자료에 확정되어 있지 않습니다. 두 장소 중 실제 방문지가 어디인지, 당일 코스가 변경되는지 여부는 예약 또는 탑승 전에 운영기관에 문의해 확인하는 것이 좋습니다. 제공 자료에는 각 경유지의 세부 이동 방식이나 해설 내용도 별도로 기재되어 있지 않습니다."
+          ]
+        },
+        {
+          "heading": "경유지 이용 정보",
+          "paragraphs": [
+            "선샤인밀양테마파크와 향교, 월연정 또는 금시당은 투어 경유지로 안내되어 있습니다. 다만 제공 자료에는 각 장소의 관람 구역, 이용 가능한 시설, 운영 프로그램, 해설 제공 여부가 적혀 있지 않습니다.",
+            "따라서 특정 전시나 체험, 내부 관람을 계획한다면 현장에서 이용 가능 여부와 개방 범위를 확인해야 합니다. 자료만으로는 각 경유지에서 머무는 시간이나 세부 관람 방법을 확정할 수 없습니다."
+          ]
+        },
+        {
+          "heading": "운행 시간과 탑승 조건",
+          "paragraphs": [
+            "탑승 장소는 밀양역이며, 운행 시작 시각은 09:30, 종료 시각은 17:20입니다. 운행 방식은 고정형이고 운행 조건은 5인 이상입니다. 운영일은 매주 토요일로, 운행 시기는 9~10월로 안내되어 있습니다.",
+            "이용요금은 원자료에 ‘성인청소년어린이 10,000원’으로 표기되어 있습니다. 성인·청소년·어린이별 요금이 모두 10,000원이라는 뜻인지, 요금 구분이 생략된 표기인지는 자료만으로 명확하지 않습니다. 36개월 미만 영아는 무료입니다."
+          ]
+        },
+        {
+          "heading": "중식과 주변 이용",
+          "paragraphs": [
+            "중식 장소는 ‘표충사 인근 식당’으로 안내되어 있으며, 특정 음식점명이나 메뉴는 제공되지 않았습니다. 따라서 투어에 포함된 중식 장소를 미리 확정된 식당으로 안내하기는 어렵습니다.",
+            "주변 음식점 후보에 대해서는 도로 이동거리, 영업 여부, 공식 투어 제휴 여부가 검증되지 않았습니다. 식당을 별도로 이용하거나 식사 계획을 세울 경우에는 실제 방문 식당과 영업 여부를 운영기관에 확인하는 것이 필요합니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인 사항",
+          "paragraphs": [
+            "5인 이상 운행 조건이 있으므로 방문하려는 토요일에 투어가 실제로 운행되는지 먼저 확인해야 합니다. 잔여 좌석과 예약 필요 여부, 탑승 절차, 성인·청소년·어린이 요금 적용, 월연정 또는 금시당 중 당일 방문지, 중식 장소도 함께 문의하는 것이 좋습니다.",
+            "문의처는 밀양문화관광재단 관광팀이며 전화번호는 055-359-4582입니다. 제공 자료의 기준일자는 2025년 12월 19일이므로, 방문 시점의 운행일과 요금이 달라졌을 가능성을 고려해 최신 정보를 확인한 뒤 밀양역 집결 시간과 준비물을 정하는 것이 안전합니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-19T22:36:39.538Z",
+      "publishedDay": "2026-09-20",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 755,
+          "completion_tokens": 1373,
+          "total_tokens": 2128,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 168,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1789,
+          "completion_tokens": 1223,
+          "total_tokens": 3012,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1786,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 110,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1618,
+          "completion_tokens": 334,
+          "total_tokens": 1952,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1615,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 153,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1526,
+          "completion_tokens": 160,
+          "total_tokens": 1686,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1523,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 140,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
     }
   ],
   "rejected": [
@@ -18778,10 +19262,38 @@
       ],
       "date": "2026-09-19",
       "version": 2
+    },
+    {
+      "id": "12e0a17e487ad6",
+      "title": "화순적벽 버스투어(적벽 셔틀버스)",
+      "reason": "Local quality gate",
+      "date": "2026-09-20",
+      "version": 2
+    },
+    {
+      "id": "6e18e7a7d5e0c6",
+      "title": "세종관광명소B투어",
+      "reason": "Local quality gate",
+      "date": "2026-09-20",
+      "version": 2
+    },
+    {
+      "id": "34c0cfaa18c9c2",
+      "title": "자연친화코스1",
+      "reason": "Local quality gate",
+      "date": "2026-09-20",
+      "version": 2
+    },
+    {
+      "id": "bf2701b266c313",
+      "title": "선비 코스",
+      "reason": "Local quality gate",
+      "date": "2026-09-20",
+      "version": 2
     }
   ],
   "sourceUrl": "https://www.data.go.kr/data/15025456/standard.do",
   "rawCount": 298,
   "uniqueCount": 296,
-  "updatedAt": "2026-09-18T22:47:09.647Z"
+  "updatedAt": "2026-09-19T22:36:39.538Z"
 }
