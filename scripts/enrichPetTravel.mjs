@@ -6,7 +6,7 @@ if (!hasKey()) { console.error("TourAPI 키가 없습니다."); process.exit(1);
 const count = Number(process.env.PET_ENRICH_DAILY || 10);
 const store = readCache("pet-travel.json", { generatedAt: null, places: {} });
 // Rotate attempted records to the back, and alternate areas rather than filling one region first.
-const pending = Object.values(store.places || {}).filter(p => !petQuality(p).publishable).sort((a,b)=>(a.lastAttemptAt || '').localeCompare(b.lastAttemptAt || ''));
+const pending = Object.values(store.places || {}).filter(p => !petQuality(p).publishable && (process.env.PET_ENRICH_NEW_ONLY !== '1' || !p.enrichedAt)).sort((a,b)=>(a.lastAttemptAt || '').localeCompare(b.lastAttemptAt || ''));
 const groups = new Map();
 for (const p of pending) {if(!groups.has(p.area)) groups.set(p.area,[]); groups.get(p.area).push(p);}
 const targets=[];
@@ -39,6 +39,11 @@ for (const place of targets) {
       enrichedAt: new Date().toISOString(),
     };
     done++;
+    if(done % 20 === 0) {
+      store.generatedAt=new Date().toISOString();
+      writeCache('pet-travel.json',store);
+      console.log(`상세 보강 진행 ${done}/${targets.length} · API콜 ${budget.used}`);
+    }
   } catch (e) {
     if (e instanceof QuotaError) break;
     failed++;

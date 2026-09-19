@@ -41,3 +41,7 @@ test('pet pages use prebuilt JSON with no client refetch or timed regeneration',
  assert(!fs.readFileSync('components/PetTravelBrowser.tsx','utf8').includes('fetch('));
  assert(fs.readFileSync('app/api/pet-travel/route.ts','utf8').includes("dynamic = 'force-static'"));
 });
+test('every qualifying result is reachable without the old 120-place cap',()=>{
+ const browser=fs.readFileSync('components/PetTravelBrowser.tsx','utf8');
+ assert(!browser.includes('.slice(0, 120)'));assert(browser.includes('여행지 더 보기'));assert(browser.includes('list.slice(0,visibleCount)'));
+});

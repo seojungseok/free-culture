@@ -20,6 +20,7 @@ const types = [
   { k: "14", t: "문화시설" },
   { k: "28", t: "체험·레포츠" },
   { k: "32", t: "숙박" },
+  { k: "38", t: "쇼핑·복합시설" },
   { k: "39", t: "음식점" },
   { k: "15", t: "축제" },
 ];
@@ -29,6 +30,7 @@ export default function PetTravelBrowser({initial=[]}: {initial?: PetPlace[]}) {
   const [region, setRegion] = useState("전체");
   const [type, setType] = useState("");
   const [query, setQuery] = useState("");
+  const [visibleCount, setVisibleCount] = useState(36);
   const loading = false;
 
   const list = useMemo(() => {
@@ -37,8 +39,7 @@ export default function PetTravelBrowser({initial=[]}: {initial?: PetPlace[]}) {
       .filter((place) => {
         const searchable = `${place.title} ${place.address} ${place.summary}`.toLowerCase();
         return (!region || region === "전체" || place.area === region) && (!type || place.type === type) && (!keyword || searchable.includes(keyword));
-      })
-      .slice(0, 120);
+      });
   }, [items, region, type, query]);
 
   const regionCounts = useMemo(
@@ -56,7 +57,7 @@ export default function PetTravelBrowser({initial=[]}: {initial?: PetPlace[]}) {
           <input
             aria-label="반려동물 여행지 검색"
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(event) => {setQuery(event.target.value);setVisibleCount(36);}}
             placeholder="장소명이나 지역을 검색해보세요"
             className="min-h-11 flex-1 rounded-xl border border-line bg-white px-4 text-[14px] outline-none focus:border-free"
           />
@@ -70,7 +71,7 @@ export default function PetTravelBrowser({initial=[]}: {initial?: PetPlace[]}) {
             <button
               key={item}
               type="button"
-              onClick={() => setRegion(item)}
+              onClick={() => {setRegion(item);setVisibleCount(36);}}
               className={["min-h-9 shrink-0 rounded-full px-3.5 text-[13px] font-bold", region === item ? "bg-free text-white" : "border border-line bg-white text-ink-soft"].join(" ")}
             >
               {item} <span className="ml-0.5 text-[11px] opacity-75">{item === "전체" ? items.length : regionCounts[item] || 0}</span>
@@ -83,7 +84,7 @@ export default function PetTravelBrowser({initial=[]}: {initial?: PetPlace[]}) {
             <button
               key={item.k}
               type="button"
-              onClick={() => setType(item.k)}
+              onClick={() => {setType(item.k);setVisibleCount(36);}}
               className={["min-h-9 rounded-full px-3.5 text-[13px] font-bold", type === item.k ? "bg-ink text-white" : "border border-line bg-white text-ink-soft"].join(" ")}
             >
               {item.t}
@@ -92,7 +93,7 @@ export default function PetTravelBrowser({initial=[]}: {initial?: PetPlace[]}) {
         </div>
 
         <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-          {list.map((place) => (
+          {list.slice(0,visibleCount).map((place) => (
             <Link
               key={place.id}
               href={`/pet-travel/${place.id}`}
@@ -123,6 +124,7 @@ export default function PetTravelBrowser({initial=[]}: {initial?: PetPlace[]}) {
           ))}
         </div>
 
+        {visibleCount < list.length && <div className="mt-6 text-center"><button type="button" onClick={()=>setVisibleCount(n=>n+36)} className="min-h-11 rounded-xl border border-line bg-white px-6 py-3 text-sm font-bold text-ink">여행지 더 보기 ({Math.min(visibleCount,list.length)} / {list.length})</button></div>}
         {!loading && !list.length && <p className="py-16 text-center text-[14px] text-ink-soft">조건에 맞는 반려동물 여행지가 없습니다. 지역이나 유형을 바꿔보세요.</p>}
 
         <nav className="mt-10 border-t border-line pt-5" aria-label="관련 여행 정보">

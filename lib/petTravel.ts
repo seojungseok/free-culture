@@ -37,6 +37,9 @@ export function getPetTravelPlaces() {
 const clean = (value: unknown) => String(value ?? "").replace(/<br\s*\/?>(?=\S)/gi, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 const arr = (value: any) => value == null ? [] : Array.isArray(value) ? value : [value];
 const introLabels: Record<string, string> = {
+  checkintime: "체크인", checkouttime: "체크아웃", chkcooking: "객실 내 취사", roomtype: "객실 유형", roomcount: "객실 수",
+  infocenterlodging: "문의 및 안내", parkinglodging: "주차", reservationlodging: "예약 안내", subfacility: "부대시설", foodplace: "식음료 시설", pickup: "픽업 안내", refundregulation: "취소·환불 안내",
+  infocentershopping: "문의 및 안내", restdateshopping: "휴무일", parkingshopping: "주차", opentime: "영업시간", saleitem: "판매 품목", shopguide: "시설 안내", restroom: "화장실",
   usetime: "이용시간", usetimeculture: "이용시간", usetimeleports: "이용시간", opentimefood: "영업시간",
   restdate: "휴무일", restdateculture: "휴무일", restdateleports: "휴무일", restdatefood: "휴무일",
   parking: "주차", parkingculture: "주차", parkingleports: "주차", parkingfood: "주차", parkingfee: "주차요금", parkingfeeleports: "주차요금",
