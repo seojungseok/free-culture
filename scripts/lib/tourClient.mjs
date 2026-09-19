@@ -193,7 +193,7 @@ export async function petDetailInfoRaw(contentId, contentTypeId, budget) {
 }
 
 export async function petImageListRaw(contentId, contentTypeId, budget) {
-  const j = await fetchJson("detailImage2", { contentId, contentTypeId, numOfRows: 30, pageNo: 1 }, budget, PET_BASE);
+  const j = await fetchJson("detailImage2", { contentId, numOfRows: 30, pageNo: 1 }, budget, PET_BASE);
   return arr(j?.response?.body?.items?.item);
 }
 

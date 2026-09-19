@@ -3,22 +3,24 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTourById, tourTypeLabel } from "@/lib/tour";
-import { fetchPetTravelDetail, getPetTravelPlace, normalizePetIntro, sanitizePetInfoText } from "@/lib/petTravel";
+import { getPetTravelPlace, getPetTravelPlaces, normalizePetIntro, normalizePetInfo, sanitizePetInfoText, petOverview, petQuality } from "@/lib/petTravel";
 
-export const revalidate = 86400;
-export function generateStaticParams() { return []; }
+// Data changes only in a new deployment; do not regenerate unchanged JSON per day/visitor.
+export const revalidate = false;
+export function generateStaticParams() { return getPetTravelPlaces().map(p=>({id:p.id})); }
 
 async function findPlace(id: string) {
-  return getPetTravelPlace(id) || await fetchPetTravelDetail(id) || getTourById(id);
+  return getPetTravelPlace(id) || getTourById(id);
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const id = (await params).id;
   const spot = await findPlace(id);
   if (!spot) return {};
-  const description = `${spot.area || "전국"} ${spot.title} 반려동물 동반 여행 정보. 주소, 사진, 이용 안내와 방문 전 확인할 내용을 한곳에서 확인해보세요.`;
+  const description = petOverview(spot).slice(0,155) || `${spot.title} 상세정보 보강 중입니다.`;
   return {
-    title: `${spot.title} 반려동물 동반 여행 | 오늘은 뭐하지`,
+    title: `${spot.title} 반려동물 동반 여행`,
+    robots: petQuality(spot).publishable ? undefined : {index:false,follow:true},
     description,
     keywords: [spot.title, `${spot.area || "전국"} 반려동물 여행`, "강아지와 가볼만한곳", "애견동반 여행지"],
     alternates: { canonical: `/pet-travel/${spot.id}` },
@@ -31,15 +33,18 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
   const spot = await findPlace(id);
   if (!spot) notFound();
 
+  if (!petQuality(spot).publishable) return <main className="mx-auto max-w-[960px] px-5 py-10"><h1 className="text-2xl font-bold">{spot.title}</h1><p className="my-5 leading-7">장소 소개와 반려동물 동반 조건을 확인하고 있습니다. 정보가 충분히 확보될 때까지 여행지 추천에서 제외합니다.</p><Link href="/pet-travel" className="font-bold text-free">상세정보가 준비된 반려동물 여행지 보기 →</Link></main>;
+
   const type = "type" in spot ? spot.type || "" : "";
   const address = "address" in spot ? spot.address : spot.addr;
-  const petInfo = "petInfo" in spot ? sanitizePetInfoText(spot.petInfo) : "";
-  const summary = "summary" in spot ? spot.summary : "";
+  const petInfo = "petRaw" in spot && spot.petRaw ? normalizePetInfo(spot.petRaw) : "petInfo" in spot ? sanitizePetInfoText(spot.petInfo) : "";
+  const summary = petOverview(spot);
   const intro = "intro" in spot ? normalizePetIntro(spot.intro || {}) : {};
   const info = "info" in spot ? spot.info || [] : [];
-  const gallery = "images" in spot ? spot.images?.slice(1) || [] : [];
+  const hero = spot.image || ("images" in spot ? spot.images?.[0] : '') || '';
+  const gallery = "images" in spot ? [...new Set(spot.images || [])].filter(src=>src.replace(/^http:/,'https:')!==hero.replace(/^http:/,'https:')) : [];
   const description = `${spot.area || "전국"} ${spot.title} 반려동물 동반 여행 정보`;
-  const summaryParagraphs = (summary || "반려동물과 함께 방문을 계획하기 좋은 여행지입니다.")
+  const summaryParagraphs = summary
     .split(/(?<=[.!?])\s+/)
     .reduce<string[]>((parts, sentence, index) => {
       const bucket = Math.floor(index / 2);
@@ -65,7 +70,7 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
       <Link href="/pet-travel" className="text-[13px] font-bold text-free">← 반려동물 여행지 목록</Link>
       <article className="mt-5 overflow-hidden rounded-2xl border border-line bg-white">
         <div className="aspect-[16/7] bg-tint">
-          {spot.image ? <img src={spot.image} alt={`${spot.title} 반려동물 여행 사진`} className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center text-5xl">🐾</div>}
+          {hero ? <img src={hero} alt={`${spot.title} 반려동물 여행 사진`} className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center text-5xl">🐾</div>}
         </div>
         <div className="p-5 sm:p-8">
           <p className="text-[13px] font-bold text-free">{spot.area || "전국"} · {tourTypeLabel(type)}</p>
@@ -74,7 +79,6 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
           <section className="mt-5 space-y-4 text-[14px] leading-7 text-ink-soft">
             <p><strong className="text-ink">{spot.title} 반려동물 동반 여행</strong></p>
             {summaryParagraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
-            <p>가을에는 한결 선선한 날씨 속에서 산책과 풍경 감상을 함께 즐기기 좋아, 방문 시간과 동반 조건을 미리 확인하고 여유 있게 둘러보는 일정이 잘 어울립니다.</p>
           </section>
           {gallery[0] && photo(gallery[0], 0)}
 
@@ -84,7 +88,7 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
           {gallery[1] && photo(gallery[1], 1)}
           {info.length > 0 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">시설·이용 안내</h2><div className="mt-2 space-y-3">{info.slice(0, 10).map((item, index) => <div key={`${item.name}-${index}`}><h3 className="text-[14px] font-bold text-ink">{item.name || "이용 안내"}</h3><p className="mt-1 text-[13px] leading-6 text-ink-soft">{item.text}</p></div>)}</div></section>}
           {gallery[2] && photo(gallery[2], 2)}
-          <section className="mt-6 rounded-xl border border-line bg-panel p-4"><h2 className="text-[18px] font-extrabold text-ink">방문 전 체크하면 좋은 것</h2><p className="mt-2 text-[13px] leading-6 text-ink-soft">목줄 또는 이동장, 배변봉투와 물을 준비하고, 실내 출입 가능 여부와 추가 요금·예약 여부는 출발 전 공식 안내에서 확인하세요. 계절 행사나 운영시간은 달라질 수 있어 전화 확인을 곁들이면 더욱 편합니다.</p></section>
+          <p className="mt-6 text-[12px] leading-6 text-ink-faint">출처: 한국관광공사 반려동물 동반여행 정보{("enrichedAt" in spot && spot.enrichedAt) ? ` · 수집 확인일 ${spot.enrichedAt.slice(0,10)}` : ''}. 동반 조건과 운영정보는 변경될 수 있으니 방문 전 운영처에서 확인해 주세요.</p>
           {gallery.length > 3 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">여행 사진 더 보기</h2><div className="mt-3 grid grid-cols-2 gap-2">{gallery.slice(3, 8).map((src, index) => <img key={src} src={src} alt={`${spot.title} 반려동물 여행 사진 ${index + 4}`} loading="lazy" className="aspect-[4/3] w-full rounded-lg object-cover" />)}</div></section>}
           {address && <p className="mt-5 text-[14px] leading-6 text-ink-soft"><strong className="text-ink">주소</strong><br />{address}</p>}
           {spot.tel && <p className="mt-2 text-[14px] leading-6 text-ink-soft"><strong className="text-ink">전화</strong><br /><a href={`tel:${spot.tel}`} className="text-free">{spot.tel}</a></p>}

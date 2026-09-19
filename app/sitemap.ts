@@ -304,7 +304,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...courseThemeRoutes,
     ...getAllBundles().map(b => ({url: `${base}/camping/collections/${b.slug}`, changeFrequency: "weekly" as const})),
     ...getKidCourses().map(c => ({url: `${base}/kids/c/${c.id}`, changeFrequency: "weekly" as const})),
-    ...getPetTravelPlaces().filter(p => p.title && (p.address || p.addr) && (p.petInfo || p.overview || p.summary)).map(p => ({url: `${base}/pet-travel/${p.id}`, changeFrequency: "weekly" as const})),
+    ...getPetTravelPlaces().map(p => ({url: `${base}/pet-travel/${p.id}`, lastModified:p.enrichedAt, changeFrequency: "weekly" as const})),
     // 2) 발행글 있는 상세 (최신 lastmod — 새 글 우선 크롤)
     ...articleSpotRoutes,
     ...courseDetailRoutes,

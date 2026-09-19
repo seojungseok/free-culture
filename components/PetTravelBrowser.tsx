@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 
 export type PetPlace = {
@@ -19,24 +19,17 @@ const types = [
   { k: "12", t: "관광지" },
   { k: "14", t: "문화시설" },
   { k: "28", t: "체험·레포츠" },
+  { k: "32", t: "숙박" },
   { k: "39", t: "음식점" },
   { k: "15", t: "축제" },
 ];
 
 export default function PetTravelBrowser({initial=[]}: {initial?: PetPlace[]}) {
-  const [items, setItems] = useState<PetPlace[]>(initial);
+  const items = initial;
   const [region, setRegion] = useState("전체");
   const [type, setType] = useState("");
   const [query, setQuery] = useState("");
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("/api/pet-travel")
-      .then((response) => response.json())
-      .then((json) => { if(Array.isArray(json.items) && json.items.length) setItems(json.items); })
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  }, []);
+  const loading = false;
 
   const list = useMemo(() => {
     const keyword = query.trim().toLowerCase();

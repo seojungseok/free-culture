@@ -18,7 +18,7 @@ for (const areaCode of AREA_CODES) {
         const title = cleanText(item.title);
         if (!id || !title) continue;
         const old = store.places[id] || {};
-        store.places[id] = { ...old, id, title, address: cleanText(item.addr1 || item.addr2), area: AREA_TO_SIDO[areaCode] || cleanText(item.areaname), image: cleanText(item.firstimage || item.firstimage2), mapx: cleanText(item.mapx), mapy: cleanText(item.mapy), type: cleanText(item.contenttypeid), tel: cleanText(item.tel), homepage: cleanText(item.homepage), summary: cleanText(item.addr2), index: i, updatedAt: new Date().toISOString() };
+        store.places[id] = { ...old, id, title, address: cleanText(item.addr1 || item.addr2), area: AREA_TO_SIDO[areaCode] || cleanText(item.areaname), image: cleanText(item.firstimage || item.firstimage2) || old.image || '', mapx: cleanText(item.mapx), mapy: cleanText(item.mapy), type: cleanText(item.contenttypeid), tel: cleanText(item.tel) || old.tel || '', homepage: cleanText(item.homepage) || old.homepage || '', summary: old.overview || old.summary || '', index: i, updatedAt: new Date().toISOString() };
         ok++;
       }
     }

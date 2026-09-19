@@ -1,4 +1,6 @@
 import petData from "@/data/pet-travel.json";
+import { petQuality } from "./petContent.mjs";
+export { petQuality, petOverview } from "./petContent.mjs";
 
 export type PetTravelPlace = {
   id: string;
@@ -29,7 +31,7 @@ export function getPetTravelPlace(id: string) {
 }
 
 export function getPetTravelPlaces() {
-  return Object.values(places);
+  return Object.values(places).filter(p => petQuality(p).publishable);
 }
 
 const clean = (value: unknown) => String(value ?? "").replace(/<br\s*\/?>(?=\S)/gi, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
@@ -53,7 +55,7 @@ const readable = (value: unknown) => {
   return text;
 };
 export const normalizePetIntro = (raw: Record<string, unknown>) => Object.fromEntries(
-  Object.entries(raw || {}).map(([key, value]) => [introLabels[key] || "", readable(value)])
+  Object.entries(raw || {}).map(([key, value]) => [introLabels[key] || (Object.values(introLabels).includes(key) ? key : ""), clean(value)])
     .filter(([label, value]) => Boolean(label && value)),
 );
 const petLabels: Record<string, string> = {
