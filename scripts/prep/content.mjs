@@ -11,6 +11,7 @@ export function validateShape(store){
  for(const a of store.articles){if(!/^[a-z0-9-]{3,100}$/.test(a.slug)||!a.title||!a.description||!categories.includes(a.category)||!['draft','scheduled','published'].includes(a.status)||!Array.isArray(a.sections)||!Array.isArray(a.productIds)||!a.cover||!Array.isArray(a.internalLinks))throw Error('글 형식 확인 필요');
  if([a.cover,...a.sections.map(s=>s.image).filter(Boolean)].length>4)throw Error('이미지는 대표 썸네일 포함 글당 최대 4장입니다.');
  if(a.contentStyle!==undefined&&a.contentStyle!=='shoppable-scene-v2')throw Error('지원하지 않는 콘텐츠 형식');
+ if(a.introduction!==undefined&&(!a.introduction||typeof a.introduction.heading!=='string'||!a.introduction.heading.trim()||typeof a.introduction.text!=='string'||!a.introduction.text.trim()||a.introduction.text.length>2000))throw Error('요리 소개 형식 오류');
  if(a.salesFormat!==undefined&&!['food-recipe','food-checklist','camping-gear','single-product-play'].includes(a.salesFormat))throw Error('지원하지 않는 판매형 글 형식');
  if(a.checklist!==undefined&&(!Array.isArray(a.checklist)||a.checklist.some(x=>!x.id||!x.label||!x.role||!['main','seasoning','common'].includes(x.group)||!a.productIds.includes(x.productId))||new Set(a.checklist.map(x=>x.id)).size!==a.checklist.length))throw Error('준비물 체크리스트 형식 오류');
  if(a.quietProductIds!==undefined&&(!Array.isArray(a.quietProductIds)||a.quietProductIds.some(id=>!a.productIds.includes(id))))throw Error('설명 생략 상품 연결 오류');

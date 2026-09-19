@@ -11,6 +11,10 @@ test('ten distinct recipe checklists preserve the previous published catalog',()
  const captionEdits=JSON.parse(fs.readFileSync('data/prep-cover-captions-20260919.json','utf8')).items;
  for(const a of old.articles){
   const actual=structuredClone(store.articles.find(x=>x.slug===a.slug));
+  // Subsequent introduction-only edits are covered by cooking-intros tests.
+  if(actual.introduction&&a.salesFormat==='food-checklist'){
+   delete actual.introduction;actual.updatedAt=a.updatedAt;
+  }
   // The subsequent caption-only release is checked independently against 2c4b526.
   if(captionEdits.some(item=>'/prep-images/'+item.file===a.cover.url)){
    actual.cover=a.cover;actual.updatedAt=a.updatedAt;

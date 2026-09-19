@@ -12,6 +12,10 @@ test('caption-only covers preserve all text, URLs, products and remaining media'
  let changed=0;
  for(const before of old.articles){
   const after=structuredClone(now.articles.find(a=>a.slug===before.slug));
+  // Later editorial introductions have their own preservation test.
+  if(after.introduction&&before.salesFormat==='food-checklist'){
+   delete after.introduction;after.updatedAt=before.updatedAt;
+  }
   const item=changes.find(i=>'/prep-images/'+i.file===before.cover.url);
   if(item){
    changed++;

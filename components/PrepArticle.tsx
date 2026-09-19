@@ -15,6 +15,7 @@ export default function PrepArticle({article:a,products,preview=false}:{article:
   <p className="prep-disclosure">이 글에는 제휴 링크가 포함되어 있습니다. 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.</p>
   <p className="prep-eyebrow">{prepCategoryLabel(a.category,a)}</p><h1>{a.title}</h1><p className="prep-lead">{a.description}</p>
   <PrepImage photo={a.cover} products={chosen} priority />
+  {a.salesFormat==='food-checklist'&&a.introduction&&<section className="prep-cooking-intro" aria-label="요리 소개"><h2>{a.introduction.heading}</h2>{a.introduction.text.split('\n').filter(Boolean).map((text,i)=><p key={i}>{text}</p>)}</section>}
   {a.salesFormat==='food-checklist'&&a.checklist&&<PrepChecklist slug={a.slug} items={a.checklist} products={chosen}/>}
   {a.sections.map((s,i)=>{
    const sectionProducts=s.productIds.map(id=>chosen.find(p=>p.id===id)).filter((p):p is PrepProduct=>!!p&&!a.quietProductIds?.includes(p.id)&&!carded.has(p.id));
