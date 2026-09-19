@@ -22,6 +22,16 @@ export type CookingCategory = '국물요리'|'볶음요리'|'볶음밥'|'찌개'
 export const COOKING_CATEGORIES: CookingCategory[] = ['국물요리','볶음요리','볶음밥','찌개','삼겹살·바비큐','장작·불멍 간식','간편식·아침','기타 요리'];
 export function cookingCategory(article:Pick<PrepArticle,'slug'|'title'>):CookingCategory{
   const newChecklists:Record<string,CookingCategory>={
+    'autumn-camping-pork-kimchi-stew-ingredient-checklist':'찌개',
+    'autumn-camping-doenjang-stew-ingredient-checklist':'찌개',
+    'autumn-camping-perilla-mushroom-soup-ingredient-checklist':'국물요리',
+    'autumn-camping-potato-sujebi-ingredient-checklist':'국물요리',
+    'autumn-camping-shrimp-butter-grill-ingredient-checklist':'삼겹살·바비큐',
+    'autumn-camping-mackerel-potato-braise-ingredient-checklist':'기타 요리',
+    'autumn-camping-chicken-potato-stew-ingredient-checklist':'찌개',
+    'autumn-camping-tteokbokki-ingredient-checklist':'기타 요리',
+    'autumn-camping-zucchini-pancake-ingredient-checklist':'기타 요리',
+    'autumn-camping-corn-cheese-ingredient-checklist':'기타 요리',
     'camping-seafood-ramen-ingredients':'국물요리',
     'camping-mussel-soup-ingredients':'국물요리',
     'camping-kimchi-fried-rice-ingredients':'볶음밥',

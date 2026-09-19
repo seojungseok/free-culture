@@ -1,0 +1,495 @@
+{
+  "checkedAt": "2026-09-19T06:38:27.805Z",
+  "results": [
+    {
+      "id": "7265684367",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "7692122826",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "7867851377",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "6528172171",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "7673804291",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "9457848435",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "57577364",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "7573349147",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "8443644467",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "8655440206",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "7290581164",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "6211502021",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "9656363105",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "1221150659",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "1761375156",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "7847571181",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "487322",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "7935223581",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "8311251159",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "7235302196",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "8188252337",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "1628662667",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "1883548582",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "8682238562",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "8326848865",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "6269223291",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "35160",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "6959448489",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "8243714135",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "9487214712",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "9206620361",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "9676631018",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "9587833030",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "9707359364",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "id": "9127118279",
+      "identity": true,
+      "hops": [
+        {
+          "host": "link.coupang.com",
+          "status": 302
+        },
+        {
+          "host": "www.coupang.com",
+          "status": 403
+        }
+      ]
+    }
+  ]
+}
