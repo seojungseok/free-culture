@@ -9490,6 +9490,1242 @@
         "heading": "버터콘치즈, 바비큐 옆에서 나누는 작은 팬",
         "text": "옥수수에 버터와 체다치즈를 더한 콘치즈는 구이 옆에 놓고 조금씩 나누기 좋은 메뉴예요. 이 글은 마요네즈 없이 만드는 구성으로, 양파를 함께 익혀 준비합니다.\n버터콘치즈 재료를 챙길 때는 옥수수 물기를 빼고 사용할 양만 준비하세요. 치즈는 불을 낮춘 뒤 더해 바닥이 눋지 않게 살펴봅니다. 사진의 +에서 옥수수·치즈·버터의 실제 판매 구성을 확인할 수 있어요."
       }
+    },
+    {
+      "slug": "autumn-20260920-soy-butter-potato-grill",
+      "title": "가을 캠핑 간장버터감자구이 재료 체크리스트",
+      "description": "가을 캠핑에서 간장버터감자구이를 만들 때 필요한 감자·버터·간장과 조리도구를 순서대로 확인하는 체크리스트입니다.",
+      "category": "요리 재료 체크리스트",
+      "contentStyle": "shoppable-scene-v2",
+      "salesFormat": "food-checklist",
+      "coverLabel": "간장버터감자구이 재료",
+      "status": "published",
+      "publishAt": "2026-09-20T06:20:00.000Z",
+      "updatedAt": "2026-09-20T06:20:00.000Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/autumn-20260920-soy-butter-potato-grill-cover.webp",
+        "alt": "간장버터감자구이용 감자와 버터, 간장을 준비한 가을 캠핑 장면",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "productMatchReviewed": true,
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+        "referenceProducts": [
+          {
+            "productId": "9656363105",
+            "imageUrl": "https://ads-partners.coupang.com/image1/bDdkdCaQxODeObshbLPlvuVrz9wEJLWMbGjgl68LkWYXQf0SrXSmu0-wFv-QHEqdi3ctYmEhpO3_ERRxyi3B_bGbK9YnD-x76mxCvlad2mygC92VYc0ZDXXeSQNZSkVGJeGnk8vC3kJzCOS7wH1-g6L0INLXEotCNW6AqDFhMdCSyDXdvqSjybQ6onU_bFmt_YlOCaVwpbojmzRhEin5AsdpcZqpDU-Yqa3en0g0HG7unQJuObNfUNHtocBdNLlDWUn7m_NNdFXelzLt6j6d3c6df01J6X_Z3m7t_tQL49ai91GTdeJn6mpoR8YaSxUT-fiU8b3WyFveC2qRFvprpHJM9Q7QvwkFIH2eb3vqn25xVRCkx1X4yk_Hm1o-Pv7ErecGtmAzEo99pqAE0m77I2SnsPKKJoXZNHFeALlmr4RKVO8_4Ln4BDbwgvgcJ7UGKUQpDh62GQrgg7L50JmfRwCI6OXR_EdKS-L_jmanAkma6VGH1omv-7m6vJeBx6c320ZomLyM84FLa86paiG3MCzURENnbBfU"
+          },
+          {
+            "productId": "7847571181",
+            "imageUrl": "https://ads-partners.coupang.com/image1/OKslucKno4bTxUeOODrEMBvL8YHXxD7ulhCYLIVyuWvlgsctW7ubuTrS_t212lHg0EHv9r3VI46RrOUZHVqHbdSxJxFGNk2UdMlpb7USjVrqw2gOPrhmCNYM49k2WYBAJdZXhGcDfoPBYTO28wSRr7WWuG-QpsFESvcGv9596awdF8pauoMkvqQojZwwvHrUxPBLpYVMXbdQwBplQIcBjhkcVaGcS9znB_7qFXNiOj53Gv4nBZAyoQp87hjOBUQz0J-Zrfqt6t49UD0xWBVt6i3cbwEJoMngNJXffp8HvN7Xa_ygurYlLpyb_wlRX109jmqQPkn8Lld3E8zAwDaDj5pJoKL4spRpegAWu4fpDsACbuF9dycbm3ZXwAzPJ4cqw-2aC0liiY1UnMMhtuMsd3eSxY8eG0gFSnwHnu2vqjCdCCtSVS9_2Jlem_OB5Z2oSn9sS1K_f2qtzwC6TQ7pp7S_rbr9LrJC9GXhhnrMGgwVSdXdSHXQ5dhBqEqU6zSHwH8mV4TO9EpdwAhw__MzDfbwlBqJbbM="
+          },
+          {
+            "productId": "7235302196",
+            "imageUrl": "https://ads-partners.coupang.com/image1/zvwl_ku9NmEbObWVzrSGWKWwFlVhP9Qbjgmkm7mF5qtzmTU6E0MNvx2oNFHPnMYEmT33KzIOyx2IZwR7FHUbfWs3sszK5EQz1lugDCZRbe3P_gl2qNKzCMXz0sYqHWvlfjF8wnORdd60K8_suVnT05FSAVXz0tURAERPe3Z-iy1WUzJnmbfoAoG0u7xPIbMS4hDQ0l66cIr3YhAm_HP-L32gTSTBnxitv8udCkNQa2K0qTaaam1NBspwWo2n5Ojr15jmRFfczqb6tF0sJ1942J4M9F5jrVv9k3PByERoku0xLtgerdb2FGVNQK8asL_uduW8_0RQBKJ7Ki4XOSlkr68BFN-7ZuqVyczPib-jBIoiZFo-VvAFGAEVgjOGY8dT2B2T_cRHvqNeS851T1C1tyjIJXRCeRuFFtgqielL0J1jtOd1D2wsaAKXQIyDKcoh8YSEyfH0s3FJNC6lwdKKLVVQhTjiWBjAKmter0xqnoXRQJeRyBTE5vpR1pFwk6SwhUzPVA2ykRQ="
+          }
+        ],
+        "tags": [
+          {
+            "productId": "9656363105",
+            "x": 18,
+            "y": 36
+          },
+          {
+            "productId": "7847571181",
+            "x": 52,
+            "y": 56
+          },
+          {
+            "productId": "7235302196",
+            "x": 80,
+            "y": 42
+          }
+        ]
+      },
+      "productIds": [
+        "9656363105",
+        "7847571181",
+        "7235302196",
+        "9457848435",
+        "6528172171",
+        "487322",
+        "9587833030",
+        "9707359364",
+        "9127118279"
+      ],
+      "checklist": [
+        {
+          "id": "ingredient-9656363105",
+          "label": "감자",
+          "role": "껍질 상태를 보고 씻어 한입 크기로 자르는 주재료",
+          "group": "main",
+          "productId": "9656363105"
+        },
+        {
+          "id": "ingredient-7847571181",
+          "label": "무염 버터",
+          "role": "감자에 고소한 향을 더하는 재료",
+          "group": "seasoning",
+          "productId": "7847571181"
+        },
+        {
+          "id": "ingredient-7235302196",
+          "label": "진간장",
+          "role": "버터와 섞어 마무리 간을 하는 재료",
+          "group": "seasoning",
+          "productId": "7235302196"
+        },
+        {
+          "id": "ingredient-9457848435",
+          "label": "양파",
+          "role": "함께 볶아 단맛을 더하는 곁들임",
+          "group": "main",
+          "productId": "9457848435"
+        },
+        {
+          "id": "ingredient-6528172171",
+          "label": "대파",
+          "role": "마무리에 더하는 향채",
+          "group": "main",
+          "productId": "6528172171"
+        },
+        {
+          "id": "ingredient-487322",
+          "label": "식용유",
+          "role": "팬에 눌어붙지 않게 소량 사용하는 기름",
+          "group": "seasoning",
+          "productId": "487322"
+        },
+        {
+          "id": "ingredient-9587833030",
+          "label": "팬 또는 그리들",
+          "role": "버너 허용 크기를 확인하고 사용하는 조리 팬",
+          "group": "common",
+          "productId": "9587833030"
+        },
+        {
+          "id": "ingredient-9707359364",
+          "label": "조리 집게",
+          "role": "재료를 뒤집고 덜어낼 때 쓰는 도구",
+          "group": "common",
+          "productId": "9707359364"
+        },
+        {
+          "id": "ingredient-9127118279",
+          "label": "개인 접시",
+          "role": "완성된 음식을 나누어 담는 식기",
+          "group": "common",
+          "productId": "9127118279"
+        }
+      ],
+      "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "요리를 준비해 떠날 캠핑장 찾아보기"
+        },
+        {
+          "href": "/season",
+          "label": "캠핑 전후 가을 나들이 장소 둘러보기"
+        }
+      ],
+      "introduction": {
+        "heading": "간장버터감자구이, 쌀쌀한 저녁에 한 팬으로",
+        "text": "감자를 노릇하게 굽고 버터와 간장을 더하면 바비큐 옆에 두기 좋은 따뜻한 곁들임이 됩니다. 현장에서는 감자를 너무 크게 자르지 않고 익는 속도를 맞추는 것이 편합니다. 아래에서 재료와 도구를 먼저 확인해 보세요."
+      },
+      "sections": [
+        {
+          "heading": "감자를 먼저 익히는 준비",
+          "text": "감자는 깨끗이 씻어 비슷한 크기로 자르고 물기를 닦습니다. 팬을 예열한 뒤 식용유를 아주 조금 두르고 감자와 양파를 먼저 익혀 주세요. 겉면이 노릇해진 뒤 버터와 간장을 더하면 팬에 눌어붙는 것을 줄이면서 향을 살릴 수 있습니다.",
+          "productIds": [
+            "9656363105",
+            "9457848435",
+            "487322"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-20260920-soy-butter-potato-grill-prep.webp",
+            "alt": "간장버터감자구이를 위해 손질할 감자와 버터, 대파를 둔 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "productMatchReviewed": true,
+            "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+            "referenceProducts": [
+              {
+                "productId": "9656363105",
+                "imageUrl": "https://ads-partners.coupang.com/image1/bDdkdCaQxODeObshbLPlvuVrz9wEJLWMbGjgl68LkWYXQf0SrXSmu0-wFv-QHEqdi3ctYmEhpO3_ERRxyi3B_bGbK9YnD-x76mxCvlad2mygC92VYc0ZDXXeSQNZSkVGJeGnk8vC3kJzCOS7wH1-g6L0INLXEotCNW6AqDFhMdCSyDXdvqSjybQ6onU_bFmt_YlOCaVwpbojmzRhEin5AsdpcZqpDU-Yqa3en0g0HG7unQJuObNfUNHtocBdNLlDWUn7m_NNdFXelzLt6j6d3c6df01J6X_Z3m7t_tQL49ai91GTdeJn6mpoR8YaSxUT-fiU8b3WyFveC2qRFvprpHJM9Q7QvwkFIH2eb3vqn25xVRCkx1X4yk_Hm1o-Pv7ErecGtmAzEo99pqAE0m77I2SnsPKKJoXZNHFeALlmr4RKVO8_4Ln4BDbwgvgcJ7UGKUQpDh62GQrgg7L50JmfRwCI6OXR_EdKS-L_jmanAkma6VGH1omv-7m6vJeBx6c320ZomLyM84FLa86paiG3MCzURENnbBfU"
+              },
+              {
+                "productId": "7847571181",
+                "imageUrl": "https://ads-partners.coupang.com/image1/OKslucKno4bTxUeOODrEMBvL8YHXxD7ulhCYLIVyuWvlgsctW7ubuTrS_t212lHg0EHv9r3VI46RrOUZHVqHbdSxJxFGNk2UdMlpb7USjVrqw2gOPrhmCNYM49k2WYBAJdZXhGcDfoPBYTO28wSRr7WWuG-QpsFESvcGv9596awdF8pauoMkvqQojZwwvHrUxPBLpYVMXbdQwBplQIcBjhkcVaGcS9znB_7qFXNiOj53Gv4nBZAyoQp87hjOBUQz0J-Zrfqt6t49UD0xWBVt6i3cbwEJoMngNJXffp8HvN7Xa_ygurYlLpyb_wlRX109jmqQPkn8Lld3E8zAwDaDj5pJoKL4spRpegAWu4fpDsACbuF9dycbm3ZXwAzPJ4cqw-2aC0liiY1UnMMhtuMsd3eSxY8eG0gFSnwHnu2vqjCdCCtSVS9_2Jlem_OB5Z2oSn9sS1K_f2qtzwC6TQ7pp7S_rbr9LrJC9GXhhnrMGgwVSdXdSHXQ5dhBqEqU6zSHwH8mV4TO9EpdwAhw__MzDfbwlBqJbbM="
+              },
+              {
+                "productId": "6528172171",
+                "imageUrl": "https://ads-partners.coupang.com/image1/bTqPc52sn3Ty1lbvbY7irn-tESM5GjRMTdAPhfnLdUJmcZoN5mFm_SVA_mo0TL9S16Y7q4UEaSJJMGjdLNRmTJ4xStTUfVlgWkcg_Svogw3Y8YS2ORDwvF6iVdSxKfGKISo__JslIgDlixkwgvPosngqsc-MWqxQ8-mCtdPDzwzdtMJrkudl0_6JykUD_MtQOs8Wi6JWDEDh2xk0l-kv5xbFadfj6c1jrBfJg89OJrVhePrW39RnKwtSlPo-UmPDugS7xOCZ5ZPPvSblWbs38_AKZOkU1PFeIWZznrs3JxeALNrH2PRYvoFwKlcAxv-nr8NsZwx4HTweai4sWQXjs5YWGXCc9OSuQS8r9LQxUyrh1HOr_h1YqOTBAf5FNaGRQsvN418bjoLHMHi4FRnbSYSVUPokTb-m2rSJ-ueqA5RMxzCGTOm46Mh-cenW_ZeFMZ07qXKWF8Z-0xJV3xFn94fh4Zesl_SdEnXnH8L-okSd53UkJoZKb_TVUaD4ZCSiDu6U-A_2ugFbC2E5Z-r2XQk="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "9656363105",
+                "x": 18,
+                "y": 36
+              },
+              {
+                "productId": "7847571181",
+                "x": 52,
+                "y": 56
+              },
+              {
+                "productId": "6528172171",
+                "x": 80,
+                "y": 42
+              }
+            ]
+          }
+        },
+        {
+          "heading": "완성 직전에는 간을 나누어 확인",
+          "text": "감자가 충분히 익은 뒤 버터와 진간장을 한꺼번에 많이 넣지 말고 조금씩 더해 맛을 보세요. 대파는 마무리에 넣고, 뜨거운 팬과 집게 사용 시 화상에 주의합니다. 완성 사진은 담는 예시이며 재료의 익힘 정도와 사용량은 상황에 맞춰 조절하세요. 남은 감자는 식힌 뒤 밀폐 용기에 보관하고, 현장에서는 버너를 끈 뒤 팬을 옮기는 것이 안전합니다. 간이 부족하면 소금을 더하기보다 간장을 아주 조금씩 나누어 넣어 맛의 변화를 확인하세요.",
+          "productIds": [
+            "7847571181",
+            "7235302196",
+            "6528172171",
+            "9587833030"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-20260920-soy-butter-potato-grill-serving.webp",
+            "alt": "그리들에서 노릇하게 익힌 간장버터감자구이 완성 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "productMatchReviewed": true,
+            "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+            "referenceProducts": [
+              {
+                "productId": "9587833030",
+                "imageUrl": "https://ads-partners.coupang.com/image1/B8DJ5eRTAGpSH3NQBybi3RRp7gp_7wy-PYzMB5D6uDq85WCvqeG2kku8_im7BcMPsOuCcJ0O0nbuYpByYmDDW6QVqyKCy6WgYimKRj3CZuV790O95o9CINkWxWahljUl6Oj0nVAyO2YtCkoX0_Kj_WP5amksD-scOX7We4v6ek45giCGLJ9wfxffYgawk-I5PAmCUbIMHBPSmZF4K6q4sUATpyaJ1EL5mplA3ZChgtRj5Ry_GhzimXmKcbGvmFO9jvDY0Ue0KdbT3opebm5qsVznLjTmhswY388ItpvqfstsXun-iwDZi8Yrv7SofWJV91BK47o_0tKQhfdRn0WVDywUmI8gaVUors1DJRak_k2gPJiDT_CoTkw3hQSfF5csVm8m9Dt9FT27ThqFZCmZ2QCIxzvFHDq-FaNxbAi9pzx2PkNX4TBPsSJQFk9YjQ6GbVBG6QAL7Db2Vbk-hX-h9g3726ZMuBNS523A_JHiYfBw1osLgkwMxwf5vRfbnAdKqFonuLbR0_lRIKJSehmlA4QTPkzQcPzjdg=="
+              },
+              {
+                "productId": "9707359364",
+                "imageUrl": "https://ads-partners.coupang.com/image1/oqlxH5nj8uy6G_QMolvXw-of8nW4K3NI2sDWDopOdWzo6GZyLT1XvrHc1uXaXI8W3U_q29MpSqBp1GpMyrA8O4tQU0RV6qJAZBL_8j7OmP8GuirQr31LrbVoZDJhCbgA3v0C-jQBKkdub1w4aDhhS0g9E4mvKYW473zh29X9RyzTIOagfeTviGkKKXeQfD7qGyRv9o87F82WGq5YN5jXlUiNp_Hz4cZPAx-Fq5TRDI85ej1MmpyVO-UCpry_Q7-bsU9mFrVxxzZ-x4SeVBJwLMQYP2udtFOG3NgvgfjUI8jKLzB6v4zy6iIbyXvJUS76eY1FF_mWVWLH_eW0ZKRzkRs3RkZ0tgmwKd1EfXd1tqRgyc9bcLF5T_eZmtgqX7KWdPoWRainSlTpuEnJF2yKfOI8kltdzGgCenaX2H_NzMa1YHTBOBnQR8VbdGVqaPt4V2I9oCWsMKN3LWDnRxspsNCM0l_cTfNe_ax4uMC2jk1Y5ChNMtfyWqQBQdtgakhNIW6SC_rru4dyYb4-L3dPJGAUBjL_nVaofhaeo6v9b6G2"
+              },
+              {
+                "productId": "9127118279",
+                "imageUrl": "https://ads-partners.coupang.com/image1/9xd8eOdT68qb09ND90tDPlhWEAL8FTr6JdG0MUc0nVCtMeDeHooL6sKrZjBfNpGfyAx_a5zwPMuoGMF5rGUKUtv5YR7U5xyQVhH8zuwsvwa9UKkWOVoy8pz9szFXKKCA_BXwKdV5pNucUsFmN1qUvjXPtH0UGvy806rhGZsHk-Bz3VLZ51NvNS0QwTWT8Q8sNc24XwAbiThk41NT5FrORO6TXydcnJKW7CzsO76zqO_vM1e_2mGUpFGO76Zy3O7aOhVlbZPVsF2eg_bYVTrrGPiC5twNxvL9Z5qwCdTa9ApIHEGkieEq7KWRVhcBHey7ly-0WdMrXQ8d9fVTnmSqJxCzKLn2D8ZUivW2lEEmA8b1Zdh7WdvR76xLAumNISBebCIDBZdfsw_piSsUMPHspSkBb8fgAbu8kZ1RjMYFqyYJ-QHb5Vp0oGS89HxL2PISlcwjp8ZgYcu0AxRyOvd2LWZOvpAg5iOsLYsLgYBlJ9PNPyWG98cxrvSn-CuLaGbbJ5Ks_O2ACtM="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "9587833030",
+                "x": 18,
+                "y": 36
+              },
+              {
+                "productId": "9707359364",
+                "x": 52,
+                "y": 56
+              },
+              {
+                "productId": "9127118279",
+                "x": 80,
+                "y": 42
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "autumn-20260920-shrimp-jeon",
+      "title": "가을 캠핑 새우전 재료 체크리스트",
+      "description": "가을 캠핑에서 새우전을 부칠 때 필요한 새우·달걀·부침가루와 팬, 집게를 확인하는 장보기 체크리스트입니다.",
+      "category": "요리 재료 체크리스트",
+      "contentStyle": "shoppable-scene-v2",
+      "salesFormat": "food-checklist",
+      "coverLabel": "새우전 재료",
+      "status": "published",
+      "publishAt": "2026-09-20T06:20:00.000Z",
+      "updatedAt": "2026-09-20T06:20:00.000Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/autumn-20260920-shrimp-jeon-cover.webp",
+        "alt": "새우전용 새우와 달걀, 부침가루를 준비한 가을 캠핑 장면",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "productMatchReviewed": true,
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+        "referenceProducts": [
+          {
+            "productId": "1761375156",
+            "imageUrl": "https://ads-partners.coupang.com/image1/6sBu6DU3nDQr7yPB6tKYcEVAgT9WaJNJSKRoboNoVcgam6kKQfvrhYwCR3sy4SFzfuMpTF6jHv8oH-GzYoUps71DQkVEkvxgSX0wk3jvy_V3uOA3eo6THT0S4QDkft5e1qkJEIeYlBBOQSuBAgg9ViypLUOdEGAzR-3evB3hxk5FFdZI7mO8g7SYaAeeJlueLOEpuXU7ZBd9mUD8BTtuELlQlF0oZ_thqlieGcxmA0Lxwj3mWpnX4mffupnxFXNPBb-HqtTVSMNa9YMpj9m-GTAQRsKYEsBabdFpaGqpecVO5LhycPsghCQVWyMqcxBA52QwjZaxOGzP672NZR3din0QafwlBWCJqQSWQNZTr5uQQYPv5bpSJ5uxpKO8_4FrxP0kOKr1pKvJvNbT9lzmzy3-KAkXStThyGQ56DsXfM2bhiPsWnavtqV3WucpCxaPLJGUzKeKnFulS-wYJz8wLWqStHBbJ0s-e61Ut51ATZLNDpCKqqhdGa64mfO_wselpEqpKqjcl0GfMFj_vhPebKQbRAssRMkQd6qOeGkogGjwEw=="
+          },
+          {
+            "productId": "8326848865",
+            "imageUrl": "https://ads-partners.coupang.com/image1/E-T2ptj2hnm1fATYE0FK8GLQmb3FORv2VlOChXKqQXiQGwowxkEqVW_tauCHhe-9slWUZvzASSo2EIheIzwelXcXJKs_f2q_koiqyjyq22FiRklIqpMjGCOEt1E2Y7mlHP8DafB_m058ppx9tVKTCZDG3y9fNdaLMrt6FS0nPJ7s9bSgzxXWQrHDFkyaYx93kGeHq5szGXON4hRzjb7-bJud_YV9M1PRmyCdYdw9SDTxmqtI55hOg_cUz9PhvBB1BjRHV9zw_EVT8kzFE4Znd2mchArZeNqrhk3lGmtxynRcd9dyXBbvoIus97-aZwQl4GCJIf3TkzLREbHyB726saWmXOgoM_5mBtmO5Tt0CN6_MIQy6lH1XZ8sYTtBd5K7-i4y7_M16czt6skNmEoq4g_ug6EI0Mro9BDU0lFYAdDDzA0wr565qyJwY1KY0vNusFOuxTIV4HvjupaOxjtb8YwknWiuibGYwyw3qQcSanIvgPup4EiVZPAhSpUSwsyZlsoHzp35_0fXplBTPrcdBW2iFckoXWQ="
+          },
+          {
+            "productId": "6269223291",
+            "imageUrl": "https://ads-partners.coupang.com/image1/7wqG9RsR3SmUObZF73hrJzgz6K-RoQtIClnNUp0QQtZ4aj9vvkcjA7utOgS4mtODlX3MlR1AnLUag4sE5t4sfZL6YQ00ZUf0gbaRh9jR6LE--c3mmlANK-88z3Azr-_sfCtXfqPM6Oaq4KKIY9XHBgbjTHn-TvgJpvOGFgtY_tw9zwXlMSBdLOuL1R-oFnUh5PxQOczJ2HHnc4XOV9fFdNAWCU8xozFcFqPjK4esyzBKFPXpFWEkE51GAt4hKXsn8CoEEqsWf9hwxZ0yPFuLNe7pIKmMgeEgfunq6u_0xYrNS8l3eSvRZGRTFy82xFh533oqgnhzPkilHVfPXcVS7aSypFhNqCej-lWCi9aqVINJ1BRhhy3T-kYDzIXgs-cS31d5IqQK2kg8sMlOzFj8Fw-E3UNkJcWnUVrwyUxIu06bZWZ56N7bvtA9eggnjqzgfFzrs5OAxKq5qN6Gebd_9J07-Y1OR-FHuV7_okodfSwrdcmTh3Fpn1ciqDSl2ZvP391WCAhJ9gxX2oIPjwOUNOJdmxRi81w="
+          }
+        ],
+        "tags": [
+          {
+            "productId": "1761375156",
+            "x": 18,
+            "y": 36
+          },
+          {
+            "productId": "8326848865",
+            "x": 52,
+            "y": 56
+          },
+          {
+            "productId": "6269223291",
+            "x": 80,
+            "y": 42
+          }
+        ]
+      },
+      "productIds": [
+        "1761375156",
+        "8326848865",
+        "6269223291",
+        "6528172171",
+        "9457848435",
+        "487322",
+        "9587833030",
+        "9707359364",
+        "9127118279"
+      ],
+      "checklist": [
+        {
+          "id": "ingredient-1761375156",
+          "label": "칵테일새우",
+          "role": "해동과 물기 제거를 확인할 주재료",
+          "group": "main",
+          "productId": "1761375156"
+        },
+        {
+          "id": "ingredient-8326848865",
+          "label": "달걀",
+          "role": "새우에 입힐 달걀물 재료",
+          "group": "main",
+          "productId": "8326848865"
+        },
+        {
+          "id": "ingredient-6269223291",
+          "label": "부침가루",
+          "role": "겉면을 가볍게 묻히는 재료",
+          "group": "seasoning",
+          "productId": "6269223291"
+        },
+        {
+          "id": "ingredient-6528172171",
+          "label": "대파",
+          "role": "전 반죽에 더할 향채",
+          "group": "main",
+          "productId": "6528172171"
+        },
+        {
+          "id": "ingredient-9457848435",
+          "label": "양파",
+          "role": "얇게 썰어 곁들이는 채소",
+          "group": "main",
+          "productId": "9457848435"
+        },
+        {
+          "id": "ingredient-487322",
+          "label": "식용유",
+          "role": "팬에 소량 두르는 기름",
+          "group": "seasoning",
+          "productId": "487322"
+        },
+        {
+          "id": "ingredient-9587833030",
+          "label": "팬 또는 그리들",
+          "role": "버너 허용 크기를 확인하고 사용하는 조리 팬",
+          "group": "common",
+          "productId": "9587833030"
+        },
+        {
+          "id": "ingredient-9707359364",
+          "label": "조리 집게",
+          "role": "재료를 뒤집고 덜어낼 때 쓰는 도구",
+          "group": "common",
+          "productId": "9707359364"
+        },
+        {
+          "id": "ingredient-9127118279",
+          "label": "개인 접시",
+          "role": "완성된 음식을 나누어 담는 식기",
+          "group": "common",
+          "productId": "9127118279"
+        }
+      ],
+      "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "요리를 준비해 떠날 캠핑장 찾아보기"
+        },
+        {
+          "href": "/season",
+          "label": "캠핑 전후 가을 나들이 장소 둘러보기"
+        }
+      ],
+      "introduction": {
+        "heading": "새우전, 바삭하게 부쳐 나누는 한 접시",
+        "text": "새우에 달걀물과 가루를 얇게 입혀 부치는 새우전은 캠핑 식탁에 올리기 좋은 메뉴입니다. 새우의 해동 상태와 물기를 먼저 확인하고, 전은 한 번에 너무 많이 올리지 않는 편이 다루기 편합니다."
+      },
+      "sections": [
+        {
+          "heading": "새우 물기부터 정리하기",
+          "text": "새우는 구매한 제품의 해동·보관 안내를 먼저 확인한 뒤 물기를 닦아 준비합니다. 달걀은 풀고, 새우에 부침가루를 얇게 묻힌 다음 달걀물을 입혀 주세요. 대파와 양파는 얇게 썰어 반죽에 조금씩 더하면 한입에 먹기 좋습니다.",
+          "productIds": [
+            "1761375156",
+            "8326848865",
+            "6269223291"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-20260920-shrimp-jeon-prep.webp",
+            "alt": "새우전 조리를 위해 새우와 달걀, 대파를 손질한 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "productMatchReviewed": true,
+            "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+            "referenceProducts": [
+              {
+                "productId": "1761375156",
+                "imageUrl": "https://ads-partners.coupang.com/image1/6sBu6DU3nDQr7yPB6tKYcEVAgT9WaJNJSKRoboNoVcgam6kKQfvrhYwCR3sy4SFzfuMpTF6jHv8oH-GzYoUps71DQkVEkvxgSX0wk3jvy_V3uOA3eo6THT0S4QDkft5e1qkJEIeYlBBOQSuBAgg9ViypLUOdEGAzR-3evB3hxk5FFdZI7mO8g7SYaAeeJlueLOEpuXU7ZBd9mUD8BTtuELlQlF0oZ_thqlieGcxmA0Lxwj3mWpnX4mffupnxFXNPBb-HqtTVSMNa9YMpj9m-GTAQRsKYEsBabdFpaGqpecVO5LhycPsghCQVWyMqcxBA52QwjZaxOGzP672NZR3din0QafwlBWCJqQSWQNZTr5uQQYPv5bpSJ5uxpKO8_4FrxP0kOKr1pKvJvNbT9lzmzy3-KAkXStThyGQ56DsXfM2bhiPsWnavtqV3WucpCxaPLJGUzKeKnFulS-wYJz8wLWqStHBbJ0s-e61Ut51ATZLNDpCKqqhdGa64mfO_wselpEqpKqjcl0GfMFj_vhPebKQbRAssRMkQd6qOeGkogGjwEw=="
+              },
+              {
+                "productId": "8326848865",
+                "imageUrl": "https://ads-partners.coupang.com/image1/E-T2ptj2hnm1fATYE0FK8GLQmb3FORv2VlOChXKqQXiQGwowxkEqVW_tauCHhe-9slWUZvzASSo2EIheIzwelXcXJKs_f2q_koiqyjyq22FiRklIqpMjGCOEt1E2Y7mlHP8DafB_m058ppx9tVKTCZDG3y9fNdaLMrt6FS0nPJ7s9bSgzxXWQrHDFkyaYx93kGeHq5szGXON4hRzjb7-bJud_YV9M1PRmyCdYdw9SDTxmqtI55hOg_cUz9PhvBB1BjRHV9zw_EVT8kzFE4Znd2mchArZeNqrhk3lGmtxynRcd9dyXBbvoIus97-aZwQl4GCJIf3TkzLREbHyB726saWmXOgoM_5mBtmO5Tt0CN6_MIQy6lH1XZ8sYTtBd5K7-i4y7_M16czt6skNmEoq4g_ug6EI0Mro9BDU0lFYAdDDzA0wr565qyJwY1KY0vNusFOuxTIV4HvjupaOxjtb8YwknWiuibGYwyw3qQcSanIvgPup4EiVZPAhSpUSwsyZlsoHzp35_0fXplBTPrcdBW2iFckoXWQ="
+              },
+              {
+                "productId": "6528172171",
+                "imageUrl": "https://ads-partners.coupang.com/image1/bTqPc52sn3Ty1lbvbY7irn-tESM5GjRMTdAPhfnLdUJmcZoN5mFm_SVA_mo0TL9S16Y7q4UEaSJJMGjdLNRmTJ4xStTUfVlgWkcg_Svogw3Y8YS2ORDwvF6iVdSxKfGKISo__JslIgDlixkwgvPosngqsc-MWqxQ8-mCtdPDzwzdtMJrkudl0_6JykUD_MtQOs8Wi6JWDEDh2xk0l-kv5xbFadfj6c1jrBfJg89OJrVhePrW39RnKwtSlPo-UmPDugS7xOCZ5ZPPvSblWbs38_AKZOkU1PFeIWZznrs3JxeALNrH2PRYvoFwKlcAxv-nr8NsZwx4HTweai4sWQXjs5YWGXCc9OSuQS8r9LQxUyrh1HOr_h1YqOTBAf5FNaGRQsvN418bjoLHMHi4FRnbSYSVUPokTb-m2rSJ-ueqA5RMxzCGTOm46Mh-cenW_ZeFMZ07qXKWF8Z-0xJV3xFn94fh4Zesl_SdEnXnH8L-okSd53UkJoZKb_TVUaD4ZCSiDu6U-A_2ugFbC2E5Z-r2XQk="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "1761375156",
+                "x": 18,
+                "y": 36
+              },
+              {
+                "productId": "8326848865",
+                "x": 52,
+                "y": 56
+              },
+              {
+                "productId": "6528172171",
+                "x": 80,
+                "y": 42
+              }
+            ]
+          }
+        },
+        {
+          "heading": "약불에서 뒤집어 익히기",
+          "text": "예열한 팬에 기름을 소량 두르고 새우전을 올린 뒤, 한쪽 면이 잡히면 집게로 조심히 뒤집습니다. 새우는 중심까지 충분히 가열하고, 완성 후에는 접시에 나누어 담아 뜨거울 때 드세요. 해동과 가열 시간은 제품 포장 안내를 우선으로 확인합니다. 팬이 너무 뜨거우면 겉면이 먼저 색이 날 수 있으니 불을 줄여 상태를 살피고, 한 번에 굽는 양을 줄여 뒤집을 공간을 남겨 두세요. 전을 쌓아 둘 때는 종이를 사이에 두면 눅눅해지는 것을 줄이는 데 도움이 됩니다.",
+          "productIds": [
+            "487322",
+            "9587833030",
+            "9707359364"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-20260920-shrimp-jeon-serving.webp",
+            "alt": "그리들에서 노릇하게 부친 새우전 완성 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "productMatchReviewed": true,
+            "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+            "referenceProducts": [
+              {
+                "productId": "9587833030",
+                "imageUrl": "https://ads-partners.coupang.com/image1/B8DJ5eRTAGpSH3NQBybi3RRp7gp_7wy-PYzMB5D6uDq85WCvqeG2kku8_im7BcMPsOuCcJ0O0nbuYpByYmDDW6QVqyKCy6WgYimKRj3CZuV790O95o9CINkWxWahljUl6Oj0nVAyO2YtCkoX0_Kj_WP5amksD-scOX7We4v6ek45giCGLJ9wfxffYgawk-I5PAmCUbIMHBPSmZF4K6q4sUATpyaJ1EL5mplA3ZChgtRj5Ry_GhzimXmKcbGvmFO9jvDY0Ue0KdbT3opebm5qsVznLjTmhswY388ItpvqfstsXun-iwDZi8Yrv7SofWJV91BK47o_0tKQhfdRn0WVDywUmI8gaVUors1DJRak_k2gPJiDT_CoTkw3hQSfF5csVm8m9Dt9FT27ThqFZCmZ2QCIxzvFHDq-FaNxbAi9pzx2PkNX4TBPsSJQFk9YjQ6GbVBG6QAL7Db2Vbk-hX-h9g3726ZMuBNS523A_JHiYfBw1osLgkwMxwf5vRfbnAdKqFonuLbR0_lRIKJSehmlA4QTPkzQcPzjdg=="
+              },
+              {
+                "productId": "9707359364",
+                "imageUrl": "https://ads-partners.coupang.com/image1/oqlxH5nj8uy6G_QMolvXw-of8nW4K3NI2sDWDopOdWzo6GZyLT1XvrHc1uXaXI8W3U_q29MpSqBp1GpMyrA8O4tQU0RV6qJAZBL_8j7OmP8GuirQr31LrbVoZDJhCbgA3v0C-jQBKkdub1w4aDhhS0g9E4mvKYW473zh29X9RyzTIOagfeTviGkKKXeQfD7qGyRv9o87F82WGq5YN5jXlUiNp_Hz4cZPAx-Fq5TRDI85ej1MmpyVO-UCpry_Q7-bsU9mFrVxxzZ-x4SeVBJwLMQYP2udtFOG3NgvgfjUI8jKLzB6v4zy6iIbyXvJUS76eY1FF_mWVWLH_eW0ZKRzkRs3RkZ0tgmwKd1EfXd1tqRgyc9bcLF5T_eZmtgqX7KWdPoWRainSlTpuEnJF2yKfOI8kltdzGgCenaX2H_NzMa1YHTBOBnQR8VbdGVqaPt4V2I9oCWsMKN3LWDnRxspsNCM0l_cTfNe_ax4uMC2jk1Y5ChNMtfyWqQBQdtgakhNIW6SC_rru4dyYb4-L3dPJGAUBjL_nVaofhaeo6v9b6G2"
+              },
+              {
+                "productId": "9127118279",
+                "imageUrl": "https://ads-partners.coupang.com/image1/9xd8eOdT68qb09ND90tDPlhWEAL8FTr6JdG0MUc0nVCtMeDeHooL6sKrZjBfNpGfyAx_a5zwPMuoGMF5rGUKUtv5YR7U5xyQVhH8zuwsvwa9UKkWOVoy8pz9szFXKKCA_BXwKdV5pNucUsFmN1qUvjXPtH0UGvy806rhGZsHk-Bz3VLZ51NvNS0QwTWT8Q8sNc24XwAbiThk41NT5FrORO6TXydcnJKW7CzsO76zqO_vM1e_2mGUpFGO76Zy3O7aOhVlbZPVsF2eg_bYVTrrGPiC5twNxvL9Z5qwCdTa9ApIHEGkieEq7KWRVhcBHey7ly-0WdMrXQ8d9fVTnmSqJxCzKLn2D8ZUivW2lEEmA8b1Zdh7WdvR76xLAumNISBebCIDBZdfsw_piSsUMPHspSkBb8fgAbu8kZ1RjMYFqyYJ-QHb5Vp0oGS89HxL2PISlcwjp8ZgYcu0AxRyOvd2LWZOvpAg5iOsLYsLgYBlJ9PNPyWG98cxrvSn-CuLaGbbJ5Ks_O2ACtM="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "9587833030",
+                "x": 18,
+                "y": 36
+              },
+              {
+                "productId": "9707359364",
+                "x": 52,
+                "y": 56
+              },
+              {
+                "productId": "9127118279",
+                "x": 80,
+                "y": 42
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "autumn-20260920-mushroom-cheese-grill",
+      "title": "가을 캠핑 버섯치즈구이 재료 체크리스트",
+      "description": "가을 캠핑에서 버섯치즈구이를 만들 때 필요한 새송이버섯·버터·체다치즈와 그리들 도구를 확인하는 체크리스트입니다.",
+      "category": "요리 재료 체크리스트",
+      "contentStyle": "shoppable-scene-v2",
+      "salesFormat": "food-checklist",
+      "coverLabel": "버섯치즈구이 재료",
+      "status": "published",
+      "publishAt": "2026-09-20T06:20:00.000Z",
+      "updatedAt": "2026-09-20T06:20:00.000Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/autumn-20260920-mushroom-cheese-grill-cover.webp",
+        "alt": "버섯치즈구이용 새송이버섯과 치즈, 버터를 준비한 가을 캠핑 장면",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "productMatchReviewed": true,
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+        "referenceProducts": [
+          {
+            "productId": "8655440206",
+            "imageUrl": "https://ads-partners.coupang.com/image1/YCPbIlQme_aHHT9rYBjIrjSFNhQjcLE90MhtcMVJRo8SyeqCHlKQoTpz9tKSAxP5GbPVVGpThjORd9h1nVR-Jo7j5uBAD7KfEeDS5E8tTWRlZ1mRMHIERRpTqXEvBBwV0bvUCXXcJjgJhbRDQvji7L3ZklWgIYtToV8mvLY8WvInP23zf3UfgtcwNRdFqYi8XL4IIfyFHFIgmIIFDIaU-9AqSTKBjWNyXw-3KhNyCCw06TwyRVrbA_gwEw2DT0AgeCt3b1ZZImJ_6uLYrK-Xx-v3sMo6QsMeAAJwgY0CosnuTCmZq64wkYvZBu8-U6Q8SB2HTGzzGObGZbNujYmCX5gsb-nvvNoaNKgivQU7C2-rywyX522m-kGiYL1RqCztosO0o68DL6QeHYZVYMG6a2JxpVLhTkqwWeYWPDN6DJNFSvXIrA4Y95O2TDKQX8Owq1HEyXbW4RtLuM_evvl5bQag2pj0C9BmoZnnz9jFJp2JqtdBlnyrhNh9469OLQkFHqsoRHhftOME0fOUskEcUisSHotVwA=="
+          },
+          {
+            "productId": "7847571181",
+            "imageUrl": "https://ads-partners.coupang.com/image1/OKslucKno4bTxUeOODrEMBvL8YHXxD7ulhCYLIVyuWvlgsctW7ubuTrS_t212lHg0EHv9r3VI46RrOUZHVqHbdSxJxFGNk2UdMlpb7USjVrqw2gOPrhmCNYM49k2WYBAJdZXhGcDfoPBYTO28wSRr7WWuG-QpsFESvcGv9596awdF8pauoMkvqQojZwwvHrUxPBLpYVMXbdQwBplQIcBjhkcVaGcS9znB_7qFXNiOj53Gv4nBZAyoQp87hjOBUQz0J-Zrfqt6t49UD0xWBVt6i3cbwEJoMngNJXffp8HvN7Xa_ygurYlLpyb_wlRX109jmqQPkn8Lld3E8zAwDaDj5pJoKL4spRpegAWu4fpDsACbuF9dycbm3ZXwAzPJ4cqw-2aC0liiY1UnMMhtuMsd3eSxY8eG0gFSnwHnu2vqjCdCCtSVS9_2Jlem_OB5Z2oSn9sS1K_f2qtzwC6TQ7pp7S_rbr9LrJC9GXhhnrMGgwVSdXdSHXQ5dhBqEqU6zSHwH8mV4TO9EpdwAhw__MzDfbwlBqJbbM="
+          },
+          {
+            "productId": "6959448489",
+            "imageUrl": "https://ads-partners.coupang.com/image1/ARyzsD2VZa7J4ljIAWJC0RFDgs0y4kfs04VQPRF1LrL9kXcnIHyFTy1bBiFah7_UYXGIaiHnNkVpBWnoAc3lBZEA33rphzAdQaimktzJTIGPgLEvfYPw9vQVjEewxHRuiTFLjerF3sSnvbjHEaJxC3R6Dv_GxxRot3NnfLIzdpYKE3FOwjGFu3ioqe90WnHRf7AcZsj3TXUClQRhDjx8eaEQ6hIOQrKRQ_-P4VsmROq5-mBT2LlQyPcQ4_KjrL6TFXhykXGAyap7LTfQ8yGpa6FpyZoyerRgaSvSs5Ve8_YAacRQv3VSbKAaUMtgPBTvVDLlKLtcsBu2iW5oc4NUrsNsMKnIEjcgSpWbI2TOsWyPB9nDQejCbNY9RCx3WpQHZIy1SIFRSn-nhFfqaC0GL_142Hbcy8ebkbuoqut8ye_RYrMUgrZszMc5ehozPiJs9UnpR86OrAQSlPfnfoz5MT10ktRAHsiVGiFhHw1HpPFnlOsb6zOrP7yUbYUYe6XilP3La2B-06YEwRSURfEdIxBtRFpnao1iw56aNUEESsgrfzfA"
+          }
+        ],
+        "tags": [
+          {
+            "productId": "8655440206",
+            "x": 18,
+            "y": 36
+          },
+          {
+            "productId": "7847571181",
+            "x": 52,
+            "y": 56
+          },
+          {
+            "productId": "6959448489",
+            "x": 80,
+            "y": 42
+          }
+        ]
+      },
+      "productIds": [
+        "8655440206",
+        "7847571181",
+        "6959448489",
+        "9457848435",
+        "7935223581",
+        "487322",
+        "9587833030",
+        "9707359364",
+        "9127118279"
+      ],
+      "checklist": [
+        {
+          "id": "ingredient-8655440206",
+          "label": "새송이버섯",
+          "role": "두툼하게 썰어 굽는 주재료",
+          "group": "main",
+          "productId": "8655440206"
+        },
+        {
+          "id": "ingredient-7847571181",
+          "label": "무염 버터",
+          "role": "버섯을 굽는 향을 더하는 재료",
+          "group": "seasoning",
+          "productId": "7847571181"
+        },
+        {
+          "id": "ingredient-6959448489",
+          "label": "체다 슬라이스 치즈",
+          "role": "버섯 위에 올려 녹이는 재료",
+          "group": "main",
+          "productId": "6959448489"
+        },
+        {
+          "id": "ingredient-9457848435",
+          "label": "양파",
+          "role": "함께 굽는 곁들임 채소",
+          "group": "main",
+          "productId": "9457848435"
+        },
+        {
+          "id": "ingredient-7935223581",
+          "label": "파프리카",
+          "role": "색과 식감을 더하는 채소",
+          "group": "main",
+          "productId": "7935223581"
+        },
+        {
+          "id": "ingredient-487322",
+          "label": "식용유",
+          "role": "팬에 소량 두르는 기름",
+          "group": "seasoning",
+          "productId": "487322"
+        },
+        {
+          "id": "ingredient-9587833030",
+          "label": "팬 또는 그리들",
+          "role": "버너 허용 크기를 확인하고 사용하는 조리 팬",
+          "group": "common",
+          "productId": "9587833030"
+        },
+        {
+          "id": "ingredient-9707359364",
+          "label": "조리 집게",
+          "role": "재료를 뒤집고 덜어낼 때 쓰는 도구",
+          "group": "common",
+          "productId": "9707359364"
+        },
+        {
+          "id": "ingredient-9127118279",
+          "label": "개인 접시",
+          "role": "완성된 음식을 나누어 담는 식기",
+          "group": "common",
+          "productId": "9127118279"
+        }
+      ],
+      "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "요리를 준비해 떠날 캠핑장 찾아보기"
+        },
+        {
+          "href": "/season",
+          "label": "캠핑 전후 가을 나들이 장소 둘러보기"
+        }
+      ],
+      "introduction": {
+        "heading": "버섯치즈구이, 불향과 치즈가 만나는 가을 한 팬",
+        "text": "도톰한 새송이버섯을 굽고 치즈를 올리면 고기와 함께 나누기 좋은 한 팬 요리가 됩니다. 버섯에서 물이 나올 수 있으니 센 불보다 중불에서 먼저 수분을 날리고, 치즈는 불을 줄인 뒤 올리는 순서가 편합니다."
+      },
+      "sections": [
+        {
+          "heading": "버섯은 두께를 맞춰 손질하기",
+          "text": "새송이버섯은 겉면을 정리한 뒤 비슷한 두께로 썰고, 양파와 파프리카도 한입 크기로 준비합니다. 예열한 팬에 식용유와 버터를 소량 두른 뒤 버섯을 먼저 구우면 수분을 조절하기 쉽습니다. 재료를 한꺼번에 너무 많이 올리지 않는 것이 좋습니다.",
+          "productIds": [
+            "8655440206",
+            "7847571181",
+            "487322"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-20260920-mushroom-cheese-grill-prep.webp",
+            "alt": "버섯치즈구이를 위해 버섯과 양파, 치즈를 손질한 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "productMatchReviewed": true,
+            "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+            "referenceProducts": [
+              {
+                "productId": "8655440206",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YCPbIlQme_aHHT9rYBjIrjSFNhQjcLE90MhtcMVJRo8SyeqCHlKQoTpz9tKSAxP5GbPVVGpThjORd9h1nVR-Jo7j5uBAD7KfEeDS5E8tTWRlZ1mRMHIERRpTqXEvBBwV0bvUCXXcJjgJhbRDQvji7L3ZklWgIYtToV8mvLY8WvInP23zf3UfgtcwNRdFqYi8XL4IIfyFHFIgmIIFDIaU-9AqSTKBjWNyXw-3KhNyCCw06TwyRVrbA_gwEw2DT0AgeCt3b1ZZImJ_6uLYrK-Xx-v3sMo6QsMeAAJwgY0CosnuTCmZq64wkYvZBu8-U6Q8SB2HTGzzGObGZbNujYmCX5gsb-nvvNoaNKgivQU7C2-rywyX522m-kGiYL1RqCztosO0o68DL6QeHYZVYMG6a2JxpVLhTkqwWeYWPDN6DJNFSvXIrA4Y95O2TDKQX8Owq1HEyXbW4RtLuM_evvl5bQag2pj0C9BmoZnnz9jFJp2JqtdBlnyrhNh9469OLQkFHqsoRHhftOME0fOUskEcUisSHotVwA=="
+              },
+              {
+                "productId": "9457848435",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2LbbJsMMXuqZZAXD2GMMLxzBxIXPOh0kh-EvcHMcVlbjDxf1VcrmnIlnlcHArRN9nC1_UkbFo9VEGY4sy841atBU6valzG1c6_3Tp1XLWpBNu-JgcQedvG5745IlaZcYNq2_Iz6N9R6vMvIOsI9J-WLkpPd-SehTFfAt_26haZSoJn_v28M4AybT5MCn-rw-gP6f9Zd29-xGKl_bIcXRIFeczu1CYTnx_ZpJR7JgRJfF8QaRThM0l1CU0Vnm9Wz1KujFcXcj3pcQ5E41TKc-BKhof5sk0B1Igqziv9HZPsp5jg5QnZ8NL8-k8OC_82blWFkHnSdSClnLxdyd3IrGrYg-U9KyKW1O2qY8lsBTguEiHKQD_RTPbbtfvhP4iSytWeNnlxwsPObFc2Dvn20wHSMFFi1cyDGK4SiPT_uKfx7lcPYZ42TIWh6Q6U1usJbZTcRbmxsuVQNXzPFXngFCVT2uLssi8ERedAI5noceduPm9VgzN5TOuS5ZcLm5EHrXwBeSI-OLL4hBFbx848eiF4nwDomsZQ8="
+              },
+              {
+                "productId": "6959448489",
+                "imageUrl": "https://ads-partners.coupang.com/image1/ARyzsD2VZa7J4ljIAWJC0RFDgs0y4kfs04VQPRF1LrL9kXcnIHyFTy1bBiFah7_UYXGIaiHnNkVpBWnoAc3lBZEA33rphzAdQaimktzJTIGPgLEvfYPw9vQVjEewxHRuiTFLjerF3sSnvbjHEaJxC3R6Dv_GxxRot3NnfLIzdpYKE3FOwjGFu3ioqe90WnHRf7AcZsj3TXUClQRhDjx8eaEQ6hIOQrKRQ_-P4VsmROq5-mBT2LlQyPcQ4_KjrL6TFXhykXGAyap7LTfQ8yGpa6FpyZoyerRgaSvSs5Ve8_YAacRQv3VSbKAaUMtgPBTvVDLlKLtcsBu2iW5oc4NUrsNsMKnIEjcgSpWbI2TOsWyPB9nDQejCbNY9RCx3WpQHZIy1SIFRSn-nhFfqaC0GL_142Hbcy8ebkbuoqut8ye_RYrMUgrZszMc5ehozPiJs9UnpR86OrAQSlPfnfoz5MT10ktRAHsiVGiFhHw1HpPFnlOsb6zOrP7yUbYUYe6XilP3La2B-06YEwRSURfEdIxBtRFpnao1iw56aNUEESsgrfzfA"
+              }
+            ],
+            "tags": [
+              {
+                "productId": "8655440206",
+                "x": 18,
+                "y": 36
+              },
+              {
+                "productId": "9457848435",
+                "x": 52,
+                "y": 56
+              },
+              {
+                "productId": "6959448489",
+                "x": 80,
+                "y": 42
+              }
+            ]
+          }
+        },
+        {
+          "heading": "치즈는 마지막에 올리기",
+          "text": "버섯의 앞뒤가 노릇해지면 양파와 파프리카를 더하고, 불을 낮춘 다음 체다치즈를 올려 녹입니다. 집게로 옮길 때 치즈가 뜨거울 수 있으니 주의하고, 완성 후에는 접시에 나누어 드세요. 치즈의 보관과 가열 안내는 포장 표시를 우선합니다. 물기가 많은 버섯은 팬에 닿는 면을 바꾸어 수분을 날린 뒤 치즈를 올리면 더 다루기 좋고, 치즈가 녹은 뒤에는 오래 가열하지 않는 편이 좋습니다. 남은 채소는 다음 식사에 쓸 수 있도록 따로 식혀 보관하세요.",
+          "productIds": [
+            "6959448489",
+            "9587833030",
+            "9707359364"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-20260920-mushroom-cheese-grill-serving.webp",
+            "alt": "그리들에서 치즈를 녹인 버섯치즈구이 완성 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "productMatchReviewed": true,
+            "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+            "referenceProducts": [
+              {
+                "productId": "9587833030",
+                "imageUrl": "https://ads-partners.coupang.com/image1/B8DJ5eRTAGpSH3NQBybi3RRp7gp_7wy-PYzMB5D6uDq85WCvqeG2kku8_im7BcMPsOuCcJ0O0nbuYpByYmDDW6QVqyKCy6WgYimKRj3CZuV790O95o9CINkWxWahljUl6Oj0nVAyO2YtCkoX0_Kj_WP5amksD-scOX7We4v6ek45giCGLJ9wfxffYgawk-I5PAmCUbIMHBPSmZF4K6q4sUATpyaJ1EL5mplA3ZChgtRj5Ry_GhzimXmKcbGvmFO9jvDY0Ue0KdbT3opebm5qsVznLjTmhswY388ItpvqfstsXun-iwDZi8Yrv7SofWJV91BK47o_0tKQhfdRn0WVDywUmI8gaVUors1DJRak_k2gPJiDT_CoTkw3hQSfF5csVm8m9Dt9FT27ThqFZCmZ2QCIxzvFHDq-FaNxbAi9pzx2PkNX4TBPsSJQFk9YjQ6GbVBG6QAL7Db2Vbk-hX-h9g3726ZMuBNS523A_JHiYfBw1osLgkwMxwf5vRfbnAdKqFonuLbR0_lRIKJSehmlA4QTPkzQcPzjdg=="
+              },
+              {
+                "productId": "9707359364",
+                "imageUrl": "https://ads-partners.coupang.com/image1/oqlxH5nj8uy6G_QMolvXw-of8nW4K3NI2sDWDopOdWzo6GZyLT1XvrHc1uXaXI8W3U_q29MpSqBp1GpMyrA8O4tQU0RV6qJAZBL_8j7OmP8GuirQr31LrbVoZDJhCbgA3v0C-jQBKkdub1w4aDhhS0g9E4mvKYW473zh29X9RyzTIOagfeTviGkKKXeQfD7qGyRv9o87F82WGq5YN5jXlUiNp_Hz4cZPAx-Fq5TRDI85ej1MmpyVO-UCpry_Q7-bsU9mFrVxxzZ-x4SeVBJwLMQYP2udtFOG3NgvgfjUI8jKLzB6v4zy6iIbyXvJUS76eY1FF_mWVWLH_eW0ZKRzkRs3RkZ0tgmwKd1EfXd1tqRgyc9bcLF5T_eZmtgqX7KWdPoWRainSlTpuEnJF2yKfOI8kltdzGgCenaX2H_NzMa1YHTBOBnQR8VbdGVqaPt4V2I9oCWsMKN3LWDnRxspsNCM0l_cTfNe_ax4uMC2jk1Y5ChNMtfyWqQBQdtgakhNIW6SC_rru4dyYb4-L3dPJGAUBjL_nVaofhaeo6v9b6G2"
+              },
+              {
+                "productId": "9127118279",
+                "imageUrl": "https://ads-partners.coupang.com/image1/9xd8eOdT68qb09ND90tDPlhWEAL8FTr6JdG0MUc0nVCtMeDeHooL6sKrZjBfNpGfyAx_a5zwPMuoGMF5rGUKUtv5YR7U5xyQVhH8zuwsvwa9UKkWOVoy8pz9szFXKKCA_BXwKdV5pNucUsFmN1qUvjXPtH0UGvy806rhGZsHk-Bz3VLZ51NvNS0QwTWT8Q8sNc24XwAbiThk41NT5FrORO6TXydcnJKW7CzsO76zqO_vM1e_2mGUpFGO76Zy3O7aOhVlbZPVsF2eg_bYVTrrGPiC5twNxvL9Z5qwCdTa9ApIHEGkieEq7KWRVhcBHey7ly-0WdMrXQ8d9fVTnmSqJxCzKLn2D8ZUivW2lEEmA8b1Zdh7WdvR76xLAumNISBebCIDBZdfsw_piSsUMPHspSkBb8fgAbu8kZ1RjMYFqyYJ-QHb5Vp0oGS89HxL2PISlcwjp8ZgYcu0AxRyOvd2LWZOvpAg5iOsLYsLgYBlJ9PNPyWG98cxrvSn-CuLaGbbJ5Ks_O2ACtM="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "9587833030",
+                "x": 18,
+                "y": 36
+              },
+              {
+                "productId": "9707359364",
+                "x": 52,
+                "y": 56
+              },
+              {
+                "productId": "9127118279",
+                "x": 80,
+                "y": 42
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "autumn-20260920-tofu-soy-grill",
+      "title": "가을 캠핑 두부간장구이 재료 체크리스트",
+      "description": "가을 캠핑에서 두부간장구이를 만들 때 필요한 두부·간장·마늘과 팬, 집게를 확인하는 재료 체크리스트입니다.",
+      "category": "요리 재료 체크리스트",
+      "contentStyle": "shoppable-scene-v2",
+      "salesFormat": "food-checklist",
+      "coverLabel": "두부간장구이 재료",
+      "status": "published",
+      "publishAt": "2026-09-20T06:20:00.000Z",
+      "updatedAt": "2026-09-20T06:20:00.000Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/autumn-20260920-tofu-soy-grill-cover.webp",
+        "alt": "두부간장구이용 두부와 간장, 마늘을 준비한 가을 캠핑 장면",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "productMatchReviewed": true,
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+        "referenceProducts": [
+          {
+            "productId": "7867851377",
+            "imageUrl": "https://ads-partners.coupang.com/image1/YV2P_mRHeJVTzYXKYTtr82OSAcDxfZPuzC56WCy5ULerOOQxev3vrRFzZ_VfUMcJjU11IdFNTh-NIuO7JoElPEDIt3JwqzzE7SmnSnskUcA3vpCbnDU4B-173gPh_Hrk2L7pzULryNGNr4H3K3q1uzqx1eDG5txmtBtUSDANrT4n0I9pZrItTpIKMWTdX8CpeWiZO-JLjsthkzxJt4LJ1PmZbS_bnfaKbjOvYxc_QykYr6VaZVyIjrtZYMvj5AkqxJ_ClL-MtBIl7kb2JNevj6YazF-dFPeKA0a9ZEWvYW8R6OCd4y_5GyjVc6cNKGMyOlqc52cVgwOXBX7xISxVkFftLGcnKVkwAmkEHrM21GV-vuPGM5Ooqvl-IPJVbOB9ICi8eFNAozLJez_PV7a6FKYjJPsZL1NZSy9uiumlEG8G7ldem__uTPl7_YmZfOPGs5H3aBGZNRa-cd3KCADb6dH-G61SEqi8CFePRwanqaGa8nJbs3uTlo9i829jTW-Vea6rbgqgmCey"
+          },
+          {
+            "productId": "7235302196",
+            "imageUrl": "https://ads-partners.coupang.com/image1/zvwl_ku9NmEbObWVzrSGWKWwFlVhP9Qbjgmkm7mF5qtzmTU6E0MNvx2oNFHPnMYEmT33KzIOyx2IZwR7FHUbfWs3sszK5EQz1lugDCZRbe3P_gl2qNKzCMXz0sYqHWvlfjF8wnORdd60K8_suVnT05FSAVXz0tURAERPe3Z-iy1WUzJnmbfoAoG0u7xPIbMS4hDQ0l66cIr3YhAm_HP-L32gTSTBnxitv8udCkNQa2K0qTaaam1NBspwWo2n5Ojr15jmRFfczqb6tF0sJ1942J4M9F5jrVv9k3PByERoku0xLtgerdb2FGVNQK8asL_uduW8_0RQBKJ7Ki4XOSlkr68BFN-7ZuqVyczPib-jBIoiZFo-VvAFGAEVgjOGY8dT2B2T_cRHvqNeS851T1C1tyjIJXRCeRuFFtgqielL0J1jtOd1D2wsaAKXQIyDKcoh8YSEyfH0s3FJNC6lwdKKLVVQhTjiWBjAKmter0xqnoXRQJeRyBTE5vpR1pFwk6SwhUzPVA2ykRQ="
+          },
+          {
+            "productId": "7673804291",
+            "imageUrl": "https://ads-partners.coupang.com/image1/fy47eY8EeBgUjbgSf61eGl6Nw33h06JGcsju1gQu6H5AOhtzT3_cqAD66XTitaST0AcG_A_UB2ZutMvsUhChFtziqY3m5VAYRZigy2zpcs9kQHqElPLH-CkAwS9nDEwL9N_h8WvBcWvjQyXxkg7DixAb9e_kMmZFvCDMnocXpT1HuQrGDzcQxC8XYw_IHVqm_HcKzvWLZQAunnffPs2ndiyd3_Z_YcBSENK6NZNVHroeBEBLIt9usBxGVssqTwn0qCti_hEMY0QcMHtbUm3iRS9cZi2bFIvHV_HDbq94dYrAsX7LK7yQZXu227RO68SJ_nPd6OikfR35F3qwfBVUvBuf62-8HOiQK4Tcp2hLbxqzDnDVSHOND1cXdZSIPdINEU-b0Xn3_E4N93tWdjD7E3oiD_qB9x8RwLRBptaCu8Bdd2-3_nmXThLjI352Gz2N_gRwmtlotOEFs-lYiQIHnML-Y4e_b-VHLLcDWgz8T4HJGTmy-2itbWpXO7x8wcwew7Q2MKGttDRLsBsCy_Gw1tfubsQPSC4="
+          }
+        ],
+        "tags": [
+          {
+            "productId": "7867851377",
+            "x": 18,
+            "y": 36
+          },
+          {
+            "productId": "7235302196",
+            "x": 52,
+            "y": 56
+          },
+          {
+            "productId": "7673804291",
+            "x": 80,
+            "y": 42
+          }
+        ]
+      },
+      "productIds": [
+        "7867851377",
+        "7235302196",
+        "7673804291",
+        "6528172171",
+        "9457848435",
+        "487322",
+        "9587833030",
+        "9707359364",
+        "9127118279"
+      ],
+      "checklist": [
+        {
+          "id": "ingredient-7867851377",
+          "label": "촌두부",
+          "role": "물기를 빼고 도톰하게 자를 주재료",
+          "group": "main",
+          "productId": "7867851377"
+        },
+        {
+          "id": "ingredient-7235302196",
+          "label": "진간장",
+          "role": "두부에 입힐 간장 양념 재료",
+          "group": "seasoning",
+          "productId": "7235302196"
+        },
+        {
+          "id": "ingredient-7673804291",
+          "label": "다진마늘",
+          "role": "간장 양념에 향을 더하는 재료",
+          "group": "seasoning",
+          "productId": "7673804291"
+        },
+        {
+          "id": "ingredient-6528172171",
+          "label": "대파",
+          "role": "마무리에 뿌릴 향채",
+          "group": "main",
+          "productId": "6528172171"
+        },
+        {
+          "id": "ingredient-9457848435",
+          "label": "양파",
+          "role": "함께 굽는 곁들임 채소",
+          "group": "main",
+          "productId": "9457848435"
+        },
+        {
+          "id": "ingredient-487322",
+          "label": "식용유",
+          "role": "팬에 소량 두르는 기름",
+          "group": "seasoning",
+          "productId": "487322"
+        },
+        {
+          "id": "ingredient-9587833030",
+          "label": "팬 또는 그리들",
+          "role": "버너 허용 크기를 확인하고 사용하는 조리 팬",
+          "group": "common",
+          "productId": "9587833030"
+        },
+        {
+          "id": "ingredient-9707359364",
+          "label": "조리 집게",
+          "role": "재료를 뒤집고 덜어낼 때 쓰는 도구",
+          "group": "common",
+          "productId": "9707359364"
+        },
+        {
+          "id": "ingredient-9127118279",
+          "label": "개인 접시",
+          "role": "완성된 음식을 나누어 담는 식기",
+          "group": "common",
+          "productId": "9127118279"
+        }
+      ],
+      "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "요리를 준비해 떠날 캠핑장 찾아보기"
+        },
+        {
+          "href": "/season",
+          "label": "캠핑 전후 가을 나들이 장소 둘러보기"
+        }
+      ],
+      "introduction": {
+        "heading": "두부간장구이, 따뜻한 밥과 곁들이기 좋은 한 팬",
+        "text": "두부를 도톰하게 잘라 노릇하게 굽고 간장과 마늘을 더하면 간단한 캠핑 한 끼가 됩니다. 두부는 물기를 먼저 빼고, 간장 양념은 두부 표면이 잡힌 뒤 넣어야 팬에서 부서지는 일을 줄일 수 있습니다."
+      },
+      "sections": [
+        {
+          "heading": "두부 물기를 빼고 굽기",
+          "text": "두부는 제품의 보관 안내를 확인한 뒤 꺼내 키친타월 등으로 겉물기를 닦고 도톰하게 자릅니다. 팬을 예열하고 식용유를 소량 두른 뒤 두부를 올려 한쪽 면이 단단해질 때까지 기다립니다. 양파는 얇게 썰어 두부 옆에서 함께 익힙니다.",
+          "productIds": [
+            "7867851377",
+            "9457848435",
+            "487322"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-20260920-tofu-soy-grill-prep.webp",
+            "alt": "두부간장구이를 위해 두부와 대파, 양파를 준비한 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "productMatchReviewed": true,
+            "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+            "referenceProducts": [
+              {
+                "productId": "7867851377",
+                "imageUrl": "https://ads-partners.coupang.com/image1/YV2P_mRHeJVTzYXKYTtr82OSAcDxfZPuzC56WCy5ULerOOQxev3vrRFzZ_VfUMcJjU11IdFNTh-NIuO7JoElPEDIt3JwqzzE7SmnSnskUcA3vpCbnDU4B-173gPh_Hrk2L7pzULryNGNr4H3K3q1uzqx1eDG5txmtBtUSDANrT4n0I9pZrItTpIKMWTdX8CpeWiZO-JLjsthkzxJt4LJ1PmZbS_bnfaKbjOvYxc_QykYr6VaZVyIjrtZYMvj5AkqxJ_ClL-MtBIl7kb2JNevj6YazF-dFPeKA0a9ZEWvYW8R6OCd4y_5GyjVc6cNKGMyOlqc52cVgwOXBX7xISxVkFftLGcnKVkwAmkEHrM21GV-vuPGM5Ooqvl-IPJVbOB9ICi8eFNAozLJez_PV7a6FKYjJPsZL1NZSy9uiumlEG8G7ldem__uTPl7_YmZfOPGs5H3aBGZNRa-cd3KCADb6dH-G61SEqi8CFePRwanqaGa8nJbs3uTlo9i829jTW-Vea6rbgqgmCey"
+              },
+              {
+                "productId": "6528172171",
+                "imageUrl": "https://ads-partners.coupang.com/image1/bTqPc52sn3Ty1lbvbY7irn-tESM5GjRMTdAPhfnLdUJmcZoN5mFm_SVA_mo0TL9S16Y7q4UEaSJJMGjdLNRmTJ4xStTUfVlgWkcg_Svogw3Y8YS2ORDwvF6iVdSxKfGKISo__JslIgDlixkwgvPosngqsc-MWqxQ8-mCtdPDzwzdtMJrkudl0_6JykUD_MtQOs8Wi6JWDEDh2xk0l-kv5xbFadfj6c1jrBfJg89OJrVhePrW39RnKwtSlPo-UmPDugS7xOCZ5ZPPvSblWbs38_AKZOkU1PFeIWZznrs3JxeALNrH2PRYvoFwKlcAxv-nr8NsZwx4HTweai4sWQXjs5YWGXCc9OSuQS8r9LQxUyrh1HOr_h1YqOTBAf5FNaGRQsvN418bjoLHMHi4FRnbSYSVUPokTb-m2rSJ-ueqA5RMxzCGTOm46Mh-cenW_ZeFMZ07qXKWF8Z-0xJV3xFn94fh4Zesl_SdEnXnH8L-okSd53UkJoZKb_TVUaD4ZCSiDu6U-A_2ugFbC2E5Z-r2XQk="
+              },
+              {
+                "productId": "9457848435",
+                "imageUrl": "https://ads-partners.coupang.com/image1/2LbbJsMMXuqZZAXD2GMMLxzBxIXPOh0kh-EvcHMcVlbjDxf1VcrmnIlnlcHArRN9nC1_UkbFo9VEGY4sy841atBU6valzG1c6_3Tp1XLWpBNu-JgcQedvG5745IlaZcYNq2_Iz6N9R6vMvIOsI9J-WLkpPd-SehTFfAt_26haZSoJn_v28M4AybT5MCn-rw-gP6f9Zd29-xGKl_bIcXRIFeczu1CYTnx_ZpJR7JgRJfF8QaRThM0l1CU0Vnm9Wz1KujFcXcj3pcQ5E41TKc-BKhof5sk0B1Igqziv9HZPsp5jg5QnZ8NL8-k8OC_82blWFkHnSdSClnLxdyd3IrGrYg-U9KyKW1O2qY8lsBTguEiHKQD_RTPbbtfvhP4iSytWeNnlxwsPObFc2Dvn20wHSMFFi1cyDGK4SiPT_uKfx7lcPYZ42TIWh6Q6U1usJbZTcRbmxsuVQNXzPFXngFCVT2uLssi8ERedAI5noceduPm9VgzN5TOuS5ZcLm5EHrXwBeSI-OLL4hBFbx848eiF4nwDomsZQ8="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "7867851377",
+                "x": 18,
+                "y": 36
+              },
+              {
+                "productId": "6528172171",
+                "x": 52,
+                "y": 56
+              },
+              {
+                "productId": "9457848435",
+                "x": 80,
+                "y": 42
+              }
+            ]
+          }
+        },
+        {
+          "heading": "간장과 마늘은 마지막에 더하기",
+          "text": "두부의 양면이 노릇해진 뒤 간장과 다진마늘을 조금씩 더해 표면에 입힙니다. 대파는 불을 끄기 전 넣고, 집게로 뒤집을 때는 두부가 부서지지 않도록 한 조각씩 다룹니다. 두부의 가열·보관 조건은 포장 표시를 우선으로 확인하세요. 양념을 일찍 넣으면 수분이 생길 수 있으므로 두부 표면이 충분히 잡힌 뒤 더하고, 남은 양념은 생두부에 다시 사용하지 않도록 분리해 두세요. 팬에 붙으면 불을 줄이고 잠시 기다린 뒤 뒤집어 보세요.",
+          "productIds": [
+            "7235302196",
+            "7673804291",
+            "9587833030"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-20260920-tofu-soy-grill-serving.webp",
+            "alt": "그리들에서 간장 양념으로 구운 두부간장구이 완성 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "productMatchReviewed": true,
+            "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+            "referenceProducts": [
+              {
+                "productId": "9587833030",
+                "imageUrl": "https://ads-partners.coupang.com/image1/B8DJ5eRTAGpSH3NQBybi3RRp7gp_7wy-PYzMB5D6uDq85WCvqeG2kku8_im7BcMPsOuCcJ0O0nbuYpByYmDDW6QVqyKCy6WgYimKRj3CZuV790O95o9CINkWxWahljUl6Oj0nVAyO2YtCkoX0_Kj_WP5amksD-scOX7We4v6ek45giCGLJ9wfxffYgawk-I5PAmCUbIMHBPSmZF4K6q4sUATpyaJ1EL5mplA3ZChgtRj5Ry_GhzimXmKcbGvmFO9jvDY0Ue0KdbT3opebm5qsVznLjTmhswY388ItpvqfstsXun-iwDZi8Yrv7SofWJV91BK47o_0tKQhfdRn0WVDywUmI8gaVUors1DJRak_k2gPJiDT_CoTkw3hQSfF5csVm8m9Dt9FT27ThqFZCmZ2QCIxzvFHDq-FaNxbAi9pzx2PkNX4TBPsSJQFk9YjQ6GbVBG6QAL7Db2Vbk-hX-h9g3726ZMuBNS523A_JHiYfBw1osLgkwMxwf5vRfbnAdKqFonuLbR0_lRIKJSehmlA4QTPkzQcPzjdg=="
+              },
+              {
+                "productId": "9707359364",
+                "imageUrl": "https://ads-partners.coupang.com/image1/oqlxH5nj8uy6G_QMolvXw-of8nW4K3NI2sDWDopOdWzo6GZyLT1XvrHc1uXaXI8W3U_q29MpSqBp1GpMyrA8O4tQU0RV6qJAZBL_8j7OmP8GuirQr31LrbVoZDJhCbgA3v0C-jQBKkdub1w4aDhhS0g9E4mvKYW473zh29X9RyzTIOagfeTviGkKKXeQfD7qGyRv9o87F82WGq5YN5jXlUiNp_Hz4cZPAx-Fq5TRDI85ej1MmpyVO-UCpry_Q7-bsU9mFrVxxzZ-x4SeVBJwLMQYP2udtFOG3NgvgfjUI8jKLzB6v4zy6iIbyXvJUS76eY1FF_mWVWLH_eW0ZKRzkRs3RkZ0tgmwKd1EfXd1tqRgyc9bcLF5T_eZmtgqX7KWdPoWRainSlTpuEnJF2yKfOI8kltdzGgCenaX2H_NzMa1YHTBOBnQR8VbdGVqaPt4V2I9oCWsMKN3LWDnRxspsNCM0l_cTfNe_ax4uMC2jk1Y5ChNMtfyWqQBQdtgakhNIW6SC_rru4dyYb4-L3dPJGAUBjL_nVaofhaeo6v9b6G2"
+              },
+              {
+                "productId": "9127118279",
+                "imageUrl": "https://ads-partners.coupang.com/image1/9xd8eOdT68qb09ND90tDPlhWEAL8FTr6JdG0MUc0nVCtMeDeHooL6sKrZjBfNpGfyAx_a5zwPMuoGMF5rGUKUtv5YR7U5xyQVhH8zuwsvwa9UKkWOVoy8pz9szFXKKCA_BXwKdV5pNucUsFmN1qUvjXPtH0UGvy806rhGZsHk-Bz3VLZ51NvNS0QwTWT8Q8sNc24XwAbiThk41NT5FrORO6TXydcnJKW7CzsO76zqO_vM1e_2mGUpFGO76Zy3O7aOhVlbZPVsF2eg_bYVTrrGPiC5twNxvL9Z5qwCdTa9ApIHEGkieEq7KWRVhcBHey7ly-0WdMrXQ8d9fVTnmSqJxCzKLn2D8ZUivW2lEEmA8b1Zdh7WdvR76xLAumNISBebCIDBZdfsw_piSsUMPHspSkBb8fgAbu8kZ1RjMYFqyYJ-QHb5Vp0oGS89HxL2PISlcwjp8ZgYcu0AxRyOvd2LWZOvpAg5iOsLYsLgYBlJ9PNPyWG98cxrvSn-CuLaGbbJ5Ks_O2ACtM="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "9587833030",
+                "x": 18,
+                "y": 36
+              },
+              {
+                "productId": "9707359364",
+                "x": 52,
+                "y": 56
+              },
+              {
+                "productId": "9127118279",
+                "x": 80,
+                "y": 42
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "autumn-20260920-kimchi-fishcake-stirfry",
+      "title": "가을 캠핑 김치어묵볶음 재료 체크리스트",
+      "description": "가을 캠핑에서 김치어묵볶음을 만들 때 필요한 김치·어묵·양파와 조리도구를 확인하는 장보기 체크리스트입니다.",
+      "category": "요리 재료 체크리스트",
+      "contentStyle": "shoppable-scene-v2",
+      "salesFormat": "food-checklist",
+      "coverLabel": "김치어묵볶음 재료",
+      "status": "published",
+      "publishAt": "2026-09-20T06:20:00.000Z",
+      "updatedAt": "2026-09-20T06:20:00.000Z",
+      "reviewed": true,
+      "cover": {
+        "url": "/prep-images/autumn-20260920-kimchi-fishcake-stirfry-cover.webp",
+        "alt": "김치어묵볶음용 김치와 어묵, 양파를 준비한 가을 캠핑 장면",
+        "width": 1200,
+        "height": 800,
+        "generated": true,
+        "reviewed": true,
+        "productMatchReviewed": true,
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+        "referenceProducts": [
+          {
+            "productId": "7692122826",
+            "imageUrl": "https://ads-partners.coupang.com/image1/M6BwSjtsorPOgEg4M0lYX9i8J_HmQBGsd-w-UVgxIOetMsYjvsR-pF55-Bec80gBtZ9f4p1nz3NmbVRvE_kON9kLwrSLAXpuFIz8B6aZfNEfh55Y0mKNsuM5v9IO8brE7oOrQuPqLMN35KgAozP81bIgv3bdtxdSqT4yI3O7fUF12nlMcHmGHYbUq4RFsgXUD0OpV7Dv2vQGySA_ogWnsK1rQ8EgvAe5R19A05TtpU8O23J464adKpMZoiLw_vIoXzvmXX4XwE4aQue51jPcx5Ob5u9oMG6IOWVuM8UGb79iFG4v3HiZhoLXVn-OPSZB3n23Ht-tf73MEpICLrmsuT73LK4D0Zj7Qlm1XzMLTB-TU8kL2inwDiYYVMgWAVQ8McmPbmOSZSpxLTZ_CwN8xGWSA2pzAYXXa2288bI03oXm62FFxKJuAsueDd3PC-RnY7QtErkvML3TFAE3Jxzni3lzopR8g_eNE0o10sOqw4cqrMYtFxTb0CSFa7IjAjNn7BHQ4ydBGKJpiye_tOTqAcc89rNVGpwU1e64BknF--kExR-o"
+          },
+          {
+            "productId": "8682238562",
+            "imageUrl": "https://ads-partners.coupang.com/image1/zkAly6ob4bCVlia8zifJhG4rkt4YMW-jcAdR_A7EYarFoUSLEeUuOBfXVh7rC8i5TMnhFeBSnysJHyq5-ffKfoK3fZFofDGSyn5RYVQUWUD2kk4rdYE-XCWTfThcWwwSQ5nx6c7YC_iAhT3nwZK8pFDS1kYRmSCkKPMn5uQN2WI_WL6SeNQLAg-mKKDrsw5bE-SL4zJ4wlDhxooK0EdAXLWflsbNCXhZ4pnhASwfDB_mdioQCE4-yZ5C_ww-6HW4l6B9SeCsUoD0J4TwQj4-zzfFpFosEwErjfaTHezezN9cBkMBr_1KkFqAAwLxz486CyyaOpZPo1ReeEGl5i1KIyJBdcVQNaNnDdTjEPRMTFf6Yo1jyTB4e65gLsrv40lbb-jl1X1ZlK_sVI1x13saLQklkkGww-EEGM_veY_1fqxiupXHQ2awPvdyAobOTih5Y9xgw1wveJA8_fj671q8Z1vP7L8VdKHy5e_Ev2_GcZxnLxwgFE3Tfhk4Sc5NW336t8woGxkSJ3FK_7tJF7ZbZZwPO9j3Wv0="
+          },
+          {
+            "productId": "9457848435",
+            "imageUrl": "https://ads-partners.coupang.com/image1/2LbbJsMMXuqZZAXD2GMMLxzBxIXPOh0kh-EvcHMcVlbjDxf1VcrmnIlnlcHArRN9nC1_UkbFo9VEGY4sy841atBU6valzG1c6_3Tp1XLWpBNu-JgcQedvG5745IlaZcYNq2_Iz6N9R6vMvIOsI9J-WLkpPd-SehTFfAt_26haZSoJn_v28M4AybT5MCn-rw-gP6f9Zd29-xGKl_bIcXRIFeczu1CYTnx_ZpJR7JgRJfF8QaRThM0l1CU0Vnm9Wz1KujFcXcj3pcQ5E41TKc-BKhof5sk0B1Igqziv9HZPsp5jg5QnZ8NL8-k8OC_82blWFkHnSdSClnLxdyd3IrGrYg-U9KyKW1O2qY8lsBTguEiHKQD_RTPbbtfvhP4iSytWeNnlxwsPObFc2Dvn20wHSMFFi1cyDGK4SiPT_uKfx7lcPYZ42TIWh6Q6U1usJbZTcRbmxsuVQNXzPFXngFCVT2uLssi8ERedAI5noceduPm9VgzN5TOuS5ZcLm5EHrXwBeSI-OLL4hBFbx848eiF4nwDomsZQ8="
+          }
+        ],
+        "tags": [
+          {
+            "productId": "7692122826",
+            "x": 18,
+            "y": 36
+          },
+          {
+            "productId": "8682238562",
+            "x": 52,
+            "y": 56
+          },
+          {
+            "productId": "9457848435",
+            "x": 80,
+            "y": 42
+          }
+        ]
+      },
+      "productIds": [
+        "7692122826",
+        "8682238562",
+        "9457848435",
+        "6528172171",
+        "7235302196",
+        "487322",
+        "9587833030",
+        "9707359364",
+        "9127118279"
+      ],
+      "checklist": [
+        {
+          "id": "ingredient-7692122826",
+          "label": "포기김치",
+          "role": "먹기 좋게 잘라 볶는 주재료",
+          "group": "main",
+          "productId": "7692122826"
+        },
+        {
+          "id": "ingredient-8682238562",
+          "label": "모둠 어묵",
+          "role": "김치와 함께 볶는 재료",
+          "group": "main",
+          "productId": "8682238562"
+        },
+        {
+          "id": "ingredient-9457848435",
+          "label": "양파",
+          "role": "단맛을 더하는 곁들임 채소",
+          "group": "main",
+          "productId": "9457848435"
+        },
+        {
+          "id": "ingredient-6528172171",
+          "label": "대파",
+          "role": "마무리에 더하는 향채",
+          "group": "main",
+          "productId": "6528172171"
+        },
+        {
+          "id": "ingredient-7235302196",
+          "label": "진간장",
+          "role": "김치의 간을 본 뒤 소량 더하는 양념",
+          "group": "seasoning",
+          "productId": "7235302196"
+        },
+        {
+          "id": "ingredient-487322",
+          "label": "식용유",
+          "role": "팬에 소량 두르는 기름",
+          "group": "seasoning",
+          "productId": "487322"
+        },
+        {
+          "id": "ingredient-9587833030",
+          "label": "팬 또는 그리들",
+          "role": "버너 허용 크기를 확인하고 사용하는 조리 팬",
+          "group": "common",
+          "productId": "9587833030"
+        },
+        {
+          "id": "ingredient-9707359364",
+          "label": "조리 집게",
+          "role": "재료를 뒤집고 덜어낼 때 쓰는 도구",
+          "group": "common",
+          "productId": "9707359364"
+        },
+        {
+          "id": "ingredient-9127118279",
+          "label": "개인 접시",
+          "role": "완성된 음식을 나누어 담는 식기",
+          "group": "common",
+          "productId": "9127118279"
+        }
+      ],
+      "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
+      "internalLinks": [
+        {
+          "href": "/camping",
+          "label": "요리를 준비해 떠날 캠핑장 찾아보기"
+        },
+        {
+          "href": "/season",
+          "label": "캠핑 전후 가을 나들이 장소 둘러보기"
+        }
+      ],
+      "introduction": {
+        "heading": "김치어묵볶음, 가을 저녁에 빠르게 더하는 반찬",
+        "text": "김치와 어묵을 한 팬에 볶으면 밥이나 구이 옆에 곁들이기 좋은 메뉴가 됩니다. 김치와 어묵의 염도는 제품마다 다를 수 있어 간장은 마지막에 맛을 본 뒤 더하는 편이 안전합니다."
+      },
+      "sections": [
+        {
+          "heading": "김치와 어묵은 따로 준비하기",
+          "text": "김치는 먹기 좋은 길이로 자르고, 어묵은 제품의 보관·가열 안내를 확인한 뒤 알맞은 크기로 준비합니다. 팬에 기름을 소량 두르고 양파를 먼저 볶은 뒤 김치를 넣어 수분을 날립니다. 김치 국물이 많으면 조금씩 조절하세요.",
+          "productIds": [
+            "7692122826",
+            "8682238562",
+            "9457848435"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-20260920-kimchi-fishcake-stirfry-prep.webp",
+            "alt": "김치어묵볶음을 위해 김치와 어묵, 대파를 손질한 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "productMatchReviewed": true,
+            "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+            "referenceProducts": [
+              {
+                "productId": "7692122826",
+                "imageUrl": "https://ads-partners.coupang.com/image1/M6BwSjtsorPOgEg4M0lYX9i8J_HmQBGsd-w-UVgxIOetMsYjvsR-pF55-Bec80gBtZ9f4p1nz3NmbVRvE_kON9kLwrSLAXpuFIz8B6aZfNEfh55Y0mKNsuM5v9IO8brE7oOrQuPqLMN35KgAozP81bIgv3bdtxdSqT4yI3O7fUF12nlMcHmGHYbUq4RFsgXUD0OpV7Dv2vQGySA_ogWnsK1rQ8EgvAe5R19A05TtpU8O23J464adKpMZoiLw_vIoXzvmXX4XwE4aQue51jPcx5Ob5u9oMG6IOWVuM8UGb79iFG4v3HiZhoLXVn-OPSZB3n23Ht-tf73MEpICLrmsuT73LK4D0Zj7Qlm1XzMLTB-TU8kL2inwDiYYVMgWAVQ8McmPbmOSZSpxLTZ_CwN8xGWSA2pzAYXXa2288bI03oXm62FFxKJuAsueDd3PC-RnY7QtErkvML3TFAE3Jxzni3lzopR8g_eNE0o10sOqw4cqrMYtFxTb0CSFa7IjAjNn7BHQ4ydBGKJpiye_tOTqAcc89rNVGpwU1e64BknF--kExR-o"
+              },
+              {
+                "productId": "8682238562",
+                "imageUrl": "https://ads-partners.coupang.com/image1/zkAly6ob4bCVlia8zifJhG4rkt4YMW-jcAdR_A7EYarFoUSLEeUuOBfXVh7rC8i5TMnhFeBSnysJHyq5-ffKfoK3fZFofDGSyn5RYVQUWUD2kk4rdYE-XCWTfThcWwwSQ5nx6c7YC_iAhT3nwZK8pFDS1kYRmSCkKPMn5uQN2WI_WL6SeNQLAg-mKKDrsw5bE-SL4zJ4wlDhxooK0EdAXLWflsbNCXhZ4pnhASwfDB_mdioQCE4-yZ5C_ww-6HW4l6B9SeCsUoD0J4TwQj4-zzfFpFosEwErjfaTHezezN9cBkMBr_1KkFqAAwLxz486CyyaOpZPo1ReeEGl5i1KIyJBdcVQNaNnDdTjEPRMTFf6Yo1jyTB4e65gLsrv40lbb-jl1X1ZlK_sVI1x13saLQklkkGww-EEGM_veY_1fqxiupXHQ2awPvdyAobOTih5Y9xgw1wveJA8_fj671q8Z1vP7L8VdKHy5e_Ev2_GcZxnLxwgFE3Tfhk4Sc5NW336t8woGxkSJ3FK_7tJF7ZbZZwPO9j3Wv0="
+              },
+              {
+                "productId": "6528172171",
+                "imageUrl": "https://ads-partners.coupang.com/image1/bTqPc52sn3Ty1lbvbY7irn-tESM5GjRMTdAPhfnLdUJmcZoN5mFm_SVA_mo0TL9S16Y7q4UEaSJJMGjdLNRmTJ4xStTUfVlgWkcg_Svogw3Y8YS2ORDwvF6iVdSxKfGKISo__JslIgDlixkwgvPosngqsc-MWqxQ8-mCtdPDzwzdtMJrkudl0_6JykUD_MtQOs8Wi6JWDEDh2xk0l-kv5xbFadfj6c1jrBfJg89OJrVhePrW39RnKwtSlPo-UmPDugS7xOCZ5ZPPvSblWbs38_AKZOkU1PFeIWZznrs3JxeALNrH2PRYvoFwKlcAxv-nr8NsZwx4HTweai4sWQXjs5YWGXCc9OSuQS8r9LQxUyrh1HOr_h1YqOTBAf5FNaGRQsvN418bjoLHMHi4FRnbSYSVUPokTb-m2rSJ-ueqA5RMxzCGTOm46Mh-cenW_ZeFMZ07qXKWF8Z-0xJV3xFn94fh4Zesl_SdEnXnH8L-okSd53UkJoZKb_TVUaD4ZCSiDu6U-A_2ugFbC2E5Z-r2XQk="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "7692122826",
+                "x": 18,
+                "y": 36
+              },
+              {
+                "productId": "8682238562",
+                "x": 52,
+                "y": 56
+              },
+              {
+                "productId": "6528172171",
+                "x": 80,
+                "y": 42
+              }
+            ]
+          }
+        },
+        {
+          "heading": "어묵과 대파를 넣어 마무리하기",
+          "text": "김치가 충분히 볶아지면 어묵을 더해 함께 데우고, 간은 진간장을 아주 조금씩 넣으며 확인합니다. 대파는 마지막에 넣고 집게로 골고루 섞어 주세요. 뜨거운 팬과 어묵의 중심 온도에 주의하며, 제품별 가열 안내를 우선합니다. 김치의 국물과 어묵의 간이 모두 다를 수 있어 처음부터 양념을 많이 넣지 않는 것이 좋고, 남은 음식은 충분히 식힌 뒤 따로 보관하세요. 밥이나 구이와 곁들일 때는 개인 접시에 나누어 담으면 편합니다.",
+          "productIds": [
+            "7235302196",
+            "6528172171",
+            "9587833030"
+          ],
+          "image": {
+            "url": "/prep-images/autumn-20260920-kimchi-fishcake-stirfry-serving.webp",
+            "alt": "그리들에서 볶은 김치어묵볶음 완성 장면",
+            "width": 1200,
+            "height": 800,
+            "generated": true,
+            "reviewed": true,
+            "productMatchReviewed": true,
+            "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.",
+            "referenceProducts": [
+              {
+                "productId": "9587833030",
+                "imageUrl": "https://ads-partners.coupang.com/image1/B8DJ5eRTAGpSH3NQBybi3RRp7gp_7wy-PYzMB5D6uDq85WCvqeG2kku8_im7BcMPsOuCcJ0O0nbuYpByYmDDW6QVqyKCy6WgYimKRj3CZuV790O95o9CINkWxWahljUl6Oj0nVAyO2YtCkoX0_Kj_WP5amksD-scOX7We4v6ek45giCGLJ9wfxffYgawk-I5PAmCUbIMHBPSmZF4K6q4sUATpyaJ1EL5mplA3ZChgtRj5Ry_GhzimXmKcbGvmFO9jvDY0Ue0KdbT3opebm5qsVznLjTmhswY388ItpvqfstsXun-iwDZi8Yrv7SofWJV91BK47o_0tKQhfdRn0WVDywUmI8gaVUors1DJRak_k2gPJiDT_CoTkw3hQSfF5csVm8m9Dt9FT27ThqFZCmZ2QCIxzvFHDq-FaNxbAi9pzx2PkNX4TBPsSJQFk9YjQ6GbVBG6QAL7Db2Vbk-hX-h9g3726ZMuBNS523A_JHiYfBw1osLgkwMxwf5vRfbnAdKqFonuLbR0_lRIKJSehmlA4QTPkzQcPzjdg=="
+              },
+              {
+                "productId": "9707359364",
+                "imageUrl": "https://ads-partners.coupang.com/image1/oqlxH5nj8uy6G_QMolvXw-of8nW4K3NI2sDWDopOdWzo6GZyLT1XvrHc1uXaXI8W3U_q29MpSqBp1GpMyrA8O4tQU0RV6qJAZBL_8j7OmP8GuirQr31LrbVoZDJhCbgA3v0C-jQBKkdub1w4aDhhS0g9E4mvKYW473zh29X9RyzTIOagfeTviGkKKXeQfD7qGyRv9o87F82WGq5YN5jXlUiNp_Hz4cZPAx-Fq5TRDI85ej1MmpyVO-UCpry_Q7-bsU9mFrVxxzZ-x4SeVBJwLMQYP2udtFOG3NgvgfjUI8jKLzB6v4zy6iIbyXvJUS76eY1FF_mWVWLH_eW0ZKRzkRs3RkZ0tgmwKd1EfXd1tqRgyc9bcLF5T_eZmtgqX7KWdPoWRainSlTpuEnJF2yKfOI8kltdzGgCenaX2H_NzMa1YHTBOBnQR8VbdGVqaPt4V2I9oCWsMKN3LWDnRxspsNCM0l_cTfNe_ax4uMC2jk1Y5ChNMtfyWqQBQdtgakhNIW6SC_rru4dyYb4-L3dPJGAUBjL_nVaofhaeo6v9b6G2"
+              },
+              {
+                "productId": "9127118279",
+                "imageUrl": "https://ads-partners.coupang.com/image1/9xd8eOdT68qb09ND90tDPlhWEAL8FTr6JdG0MUc0nVCtMeDeHooL6sKrZjBfNpGfyAx_a5zwPMuoGMF5rGUKUtv5YR7U5xyQVhH8zuwsvwa9UKkWOVoy8pz9szFXKKCA_BXwKdV5pNucUsFmN1qUvjXPtH0UGvy806rhGZsHk-Bz3VLZ51NvNS0QwTWT8Q8sNc24XwAbiThk41NT5FrORO6TXydcnJKW7CzsO76zqO_vM1e_2mGUpFGO76Zy3O7aOhVlbZPVsF2eg_bYVTrrGPiC5twNxvL9Z5qwCdTa9ApIHEGkieEq7KWRVhcBHey7ly-0WdMrXQ8d9fVTnmSqJxCzKLn2D8ZUivW2lEEmA8b1Zdh7WdvR76xLAumNISBebCIDBZdfsw_piSsUMPHspSkBb8fgAbu8kZ1RjMYFqyYJ-QHb5Vp0oGS89HxL2PISlcwjp8ZgYcu0AxRyOvd2LWZOvpAg5iOsLYsLgYBlJ9PNPyWG98cxrvSn-CuLaGbbJ5Ks_O2ACtM="
+              }
+            ],
+            "tags": [
+              {
+                "productId": "9587833030",
+                "x": 18,
+                "y": 36
+              },
+              {
+                "productId": "9707359364",
+                "x": 52,
+                "y": 56
+              },
+              {
+                "productId": "9127118279",
+                "x": 80,
+                "y": 42
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }
