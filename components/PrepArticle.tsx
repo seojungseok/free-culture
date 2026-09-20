@@ -84,10 +84,10 @@ export default function PrepArticle({article:a,products,preview=false}:{article:
   <p className="prep-disclosure">이 글에는 제휴 링크가 포함되어 있습니다. 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.</p>
   <p className="prep-eyebrow">{prepCategoryLabel(a.category,a)}</p><h1>{a.title}</h1>{a.salesFormat!=='food-checklist'&&<p className="prep-lead">{a.description}</p>}
   {a.salesFormat!=='food-checklist'&&<PrepImage photo={a.cover} products={chosen} priority />}
-  {a.salesFormat==='food-checklist'&&<PrepImage photo={a.cover} products={chosen} priority />}
+  {a.salesFormat==='food-checklist'&&<PrepImage photo={a.cover} products={chosen} priority headline={a.coverLabel} />}
   {a.salesFormat==='food-checklist'&&<CookingGuide article={a} products={chosen}/>}
   {a.salesFormat==='food-checklist'&&a.checklist&&<PrepChecklist slug={a.slug} items={a.checklist} products={chosen} dishName={dishName(a.title)}/>}
-  {a.salesFormat==='food-checklist'&&<FoodChecklistDetails slug={a.slug} articles={getPrepArticles()} shoppingImage={a.sections[0]?.image?<PrepImage photo={a.sections[0].image} products={chosen}/>:null} tipImage={a.sections[1]?.image&&!completedFoodPhotos[a.slug]?<PrepImage photo={a.sections[1].image} products={chosen}/>:null} images={<div className="prep-food-images">{completedPhoto&&<PrepImage photo={completedPhoto} products={chosen}/>}<p className="prep-ai-note">{a.imageConnectionNote || '이 글의 이미지는 AI를 활용해 제작했습니다.'}</p></div>}/>}
+  {a.salesFormat==='food-checklist'&&<FoodChecklistDetails slug={a.slug} articles={getPrepArticles()} shoppingImage={a.sections[0]?.image?<PrepImage photo={a.sections[0].image} products={chosen}/>:null} tipImage={a.sections[1]?.image&&!completedFoodPhotos[a.slug]?<PrepImage photo={a.sections[1].image} products={chosen}/>:null} images={<div className="prep-food-images">{completedPhoto&&<PrepImage photo={completedPhoto} products={chosen} showTags={false}/>}<p className="prep-ai-note">{a.imageConnectionNote || '이 글의 이미지는 AI를 활용해 제작했습니다.'}</p></div>}/>}
   {a.salesFormat!=='food-checklist'&&a.sections.map((s,i)=>{
    const sectionProducts=s.productIds.map(id=>chosen.find(p=>p.id===id)).filter((p):p is PrepProduct=>!!p&&!a.quietProductIds?.includes(p.id)&&!carded.has(p.id));
    sectionProducts.forEach(p=>carded.add(p.id));
