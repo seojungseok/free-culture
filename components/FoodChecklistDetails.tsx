@@ -43,14 +43,14 @@ const details:Record<string,Details>={
  'autumn-20260920-kimchi-fishcake-stirfry':{shopping:['김치와 어묵은 보관 방법을 각각 확인하세요.','김치 국물은 필요하면 따로 담습니다.','대파와 양파는 미리 손질해 분리합니다.'],tips:['김치를 먼저 볶아 수분을 정리합니다.','어묵은 마지막에 넣어 충분히 데웁니다.','간장은 맛을 본 뒤 소량만 더합니다.'],related:['camping-kimchi-fried-rice-ingredients','camping-fishcake-soup-ingredient-checklist','camping-tofu-kimchi-ingredients']}
 };
 
-export function FoodChecklistDetails({slug,articles,images}:{slug:string;articles:{slug:string;title:string}[];images:ReactNode}){
+export function FoodChecklistDetails({slug,articles,shoppingImage,tipImage,images}:{slug:string;articles:{slug:string;title:string}[];shoppingImage:ReactNode;tipImage:ReactNode;images:ReactNode}){
  const data=details[slug];
  if(!data)return null;
  const titleBySlug=new Map(articles.map(article=>[article.slug,article.title]));
  const related=data.related.filter(relatedSlug=>relatedSlug!==slug&&titleBySlug.has(relatedSlug)).slice(0,3);
  return <>
-  <section><h2>장보기 전 확인</h2><ul>{data.shopping.map(item=><li key={item}>{item}</li>)}</ul></section>
-  <section><h2>맛있게 만드는 팁</h2><ul>{data.tips.map(item=><li key={item}>{item}</li>)}</ul></section>
+  <section><h2>장보기 전 확인</h2><ul>{data.shopping.map(item=><li key={item}>{item}</li>)}</ul>{shoppingImage}</section>
+  <section><h2>맛있게 만드는 팁</h2><ul>{data.tips.map(item=><li key={item}>{item}</li>)}</ul>{tipImage}</section>
   {images}
   <nav aria-label="함께 보면 좋은 요리"><h2>함께 보면 좋은 요리</h2>{related.map(relatedSlug=><p key={relatedSlug}><Link href={`/weekend-prep/${relatedSlug}`}>{titleBySlug.get(relatedSlug)} →</Link></p>)}</nav>
  </>;

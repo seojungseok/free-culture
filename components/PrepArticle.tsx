@@ -16,6 +16,9 @@ function quickCookingGuide(name:string){
   ? `${name}은 국물 재료와 익는 데 시간이 필요한 주재료를 먼저 끓이고, 빨리 익는 채소·두부·면·대파는 마무리에 더해 보세요. 간은 마지막에 확인해 조절하고, 제품별 손질·가열 방법은 포장 안내를 우선으로 확인하세요.`
   : `${name}은 주재료와 채소를 쓰기 좋게 준비한 뒤, 사용하는 팬이나 그릴을 예열해 익는 속도에 맞춰 넣어 보세요. 간과 소스는 마지막에 조절하고, 제품별 손질·가열 방법은 포장 안내를 우선으로 확인하세요.`;
 }
+const completedFoodPhotos:Record<string,string>={
+ 'autumn-flower-crab-soup-ingredient-checklist':'autumn-crab-soup-checklist-finished','camping-fishcake-soup-ingredient-checklist':'camp-fishcake-soup-finished','camping-budae-jjigae-ingredient-checklist':'camp-budae-soup-finished','camping-beef-mushroom-hotpot-ingredient-checklist':'camp-beef-mushroom-hotpot-finished','camping-seafood-hotpot-ingredient-checklist':'camp-seafood-hotpot-finished','camping-seafood-ramen-ingredients':'camping-seafood-ramen-finished','camping-mussel-soup-ingredients':'camping-mussel-soup-finished','camping-kimchi-fried-rice-ingredients':'camping-kimchi-fried-rice-finished','camping-squid-stir-fry-ingredients':'camping-squid-stir-fry-finished','camping-chicken-skewer-ingredients':'camping-chicken-skewer-finished','camping-kimchi-pancake-ingredients':'camping-kimchi-pancake-finished','camping-pork-belly-bbq-ingredients':'camping-pork-belly-bbq-finished','camping-tofu-kimchi-ingredients':'camping-tofu-kimchi-finished','autumn-camping-pork-kimchi-stew-ingredient-checklist':'autumn-20260919-pork-kimchi-stew-finished','autumn-camping-doenjang-stew-ingredient-checklist':'autumn-20260919-doenjang-stew-finished','autumn-camping-perilla-mushroom-soup-ingredient-checklist':'autumn-20260919-perilla-mushroom-soup-finished','autumn-camping-potato-sujebi-ingredient-checklist':'autumn-20260919-potato-sujebi-finished','autumn-camping-shrimp-butter-grill-ingredient-checklist':'autumn-20260919-shrimp-butter-grill-finished','autumn-camping-mackerel-potato-braise-ingredient-checklist':'autumn-20260919-mackerel-potato-braise-finished','autumn-camping-chicken-potato-stew-ingredient-checklist':'autumn-20260919-chicken-potato-stew-finished','autumn-camping-tteokbokki-ingredient-checklist':'autumn-20260919-tteokbokki-finished','autumn-camping-zucchini-pancake-ingredient-checklist':'autumn-20260919-zucchini-pancake-finished','autumn-camping-corn-cheese-ingredient-checklist':'autumn-20260919-corn-cheese-finished'
+};
 
 type CookingGuideData={title:string;steps:string[];links:Record<string,string>};
 const cookingGuides:Record<string,CookingGuideData>={
@@ -64,15 +67,17 @@ export default function PrepArticle({article:a,products,preview=false}:{article:
  const linked=new Set<string>();
  const carded=new Set<string>();
  const actionLabel=a.salesFormat==='food-recipe'?'쿠팡에서 재료 확인하기':a.salesFormat==='camping-gear'?'쿠팡에서 캠핑용품 확인하기':'쿠팡에서 제품 확인하기';
+ const completedPhoto=completedFoodPhotos[a.slug]?{...a.cover,url:`/prep-images/${completedFoodPhotos[a.slug]}.webp`,alt:`완성된 ${dishName(a.title)} 요리 장면`}:a.sections.find(section=>section.image?.alt.includes('완성'))?.image;
  return <article className="prep-article">
   <nav aria-label="현재 위치"><Link href="/">홈</Link> / <Link href="/weekend-prep">준비 가이드</Link> / {prepCategoryLabel(a.category,a)}</nav>
   {preview&&<p className="prep-notice">검토용 초안 · 아직 공개되지 않은 글입니다.</p>}
   <p className="prep-disclosure">이 글에는 제휴 링크가 포함되어 있습니다. 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.</p>
   <p className="prep-eyebrow">{prepCategoryLabel(a.category,a)}</p><h1>{a.title}</h1>{a.salesFormat!=='food-checklist'&&<p className="prep-lead">{a.description}</p>}
   {a.salesFormat!=='food-checklist'&&<PrepImage photo={a.cover} products={chosen} priority />}
+  {a.salesFormat==='food-checklist'&&<PrepImage photo={a.cover} products={chosen} priority />}
   {a.salesFormat==='food-checklist'&&<CookingGuide article={a} products={chosen}/>}
   {a.salesFormat==='food-checklist'&&a.checklist&&<PrepChecklist slug={a.slug} items={a.checklist} products={chosen} dishName={dishName(a.title)}/>}
-  {a.salesFormat==='food-checklist'&&<FoodChecklistDetails slug={a.slug} articles={getPrepArticles()} images={<div className="prep-food-images"><PrepImage photo={a.cover} products={chosen} priority />{a.sections.map((section,index)=>section.image&&<PrepImage key={index} photo={section.image} products={chosen}/>)}<p className="prep-ai-note">{a.imageConnectionNote || '이 글의 이미지는 AI를 활용해 제작했습니다.'}</p></div>}/>}
+  {a.salesFormat==='food-checklist'&&<FoodChecklistDetails slug={a.slug} articles={getPrepArticles()} shoppingImage={a.sections[0]?.image?<PrepImage photo={a.sections[0].image} products={chosen}/>:null} tipImage={a.sections[1]?.image?<PrepImage photo={a.sections[1].image} products={chosen}/>:null} images={<div className="prep-food-images">{completedPhoto&&<PrepImage photo={completedPhoto} products={chosen}/>}<p className="prep-ai-note">{a.imageConnectionNote || '이 글의 이미지는 AI를 활용해 제작했습니다.'}</p></div>}/>}
   {a.salesFormat!=='food-checklist'&&a.sections.map((s,i)=>{
    const sectionProducts=s.productIds.map(id=>chosen.find(p=>p.id===id)).filter((p):p is PrepProduct=>!!p&&!a.quietProductIds?.includes(p.id)&&!carded.has(p.id));
    sectionProducts.forEach(p=>carded.add(p.id));
