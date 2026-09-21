@@ -27,10 +27,7 @@ export default function PrepListing({params:p={},directory}:{params?:PrepListPar
     <nav className="prep-filters" aria-label="준비물 분류"><Link href={href('')} aria-current={!category?'page':undefined}>전체 보기</Link>{PREP_CATEGORIES.filter(c=>all.some(a=>prepCategoryLabel(a.category,a)===c)).map(c=><Link key={c} href={href(c)} aria-current={category===c?'page':undefined}>{c}</Link>)}</nav>
     {category==='요리 재료 체크리스트'&&<nav className="prep-filters" aria-label="메뉴 종류">{COOKING_CATEGORIES.map(c=><Link key={c} href={href(category,1,c)} aria-current={cooking===c?'page':undefined}>{c}</Link>)}</nav>}
     {!list.length?<div className="prep-empty">{all.length?'검색 결과가 없어요. 다른 단어로 찾아보세요.':'알찬 주말 준비 이야기를 준비하고 있어요.'}<p><Link href="/camping">캠핑 장소 둘러보기 →</Link></p></div>:<div className="prep-grid">{list.slice((page-1)*9,page*9).map(a=><Link className="prep-card" href={`/weekend-prep/${a.slug}`} key={a.slug}>
-      <div className="prep-card-media">
-        <Image src={a.cover.url} alt={a.cover.alt} width={a.cover.width} height={a.cover.height} sizes="(max-width:480px) 100vw,(max-width:760px) 50vw,360px"/>
-        {a.salesFormat==='food-checklist'&&a.coverLabel&&<strong className="prep-card-label">{a.coverLabel}</strong>}
-      </div>
+      <div className="prep-card-media"><Image src={a.cover.url} alt={a.cover.alt} width={a.cover.width} height={a.cover.height} sizes="(max-width:480px) 100vw,(max-width:760px) 50vw,360px"/></div>
       <div className="prep-card-copy"><span className="prep-eyebrow">{prepCategoryLabel(a.category,a)}{isCookingPrepArticle(a)&&<small> · {cookingCategory(a)}</small>}</span><h2>{a.title}</h2><p>{a.description}</p></div>
     </Link>)}</div>}
     {pages>1&&<nav aria-label="페이지" className="prep-pages">{Array.from({length:pages},(_,i)=><Link key={i} aria-current={page===i+1?'page':undefined} href={href(category,i+1,cooking)}>{i+1}</Link>)}</nav>}

@@ -9,5 +9,4 @@
 
 .prep-directory{margin-top:40px;border-top:1px solid #dce3dd;padding-top:12px}.prep-directory>p{color:#60716d;line-height:1.8}.prep-directory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:24px}.prep-directory h3{font-weight:750;color:#204e40}.prep-directory ul{margin-top:8px;padding-left:18px;list-style:disc}.prep-directory li{padding:6px 0;line-height:1.6;overflow-wrap:anywhere}.prep-directory a{text-decoration:underline;text-underline-offset:3px}@media(max-width:560px){.prep-directory-grid{grid-template-columns:1fr}}
 
-/* 목록에서도 대표 썸네일 문구를 상세 대표 이미지와 같은 강도로 보여준다. */
-.prep-card-media{position:relative;aspect-ratio:3/2;overflow:hidden}.prep-card-media img{display:block;height:100%;object-fit:cover}.prep-card-label{position:absolute;left:14px;right:14px;bottom:14px;padding:13px 16px;border-radius:12px;background:#112f26dc;color:#fff;font-size:clamp(18px,5.6vw,28px);font-weight:800;line-height:1.25;letter-spacing:-.035em;box-shadow:0 8px 24px #0004}@media(max-width:560px){.prep-card-label{left:12px;right:12px;bottom:12px;padding:12px 14px}}
+.prep-card-media{aspect-ratio:3/2;overflow:hidden}.prep-card-media img{display:block;height:100%;object-fit:cover}
