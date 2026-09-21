@@ -1,5 +1,5 @@
 {
-  "version": 49,
+  "version": 51,
   "products": [
     {
       "id": "7853820445",
@@ -925,16 +925,16 @@
       "coverLabel": "가을 꽃게탕 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-09-19T08:04:03.230Z",
+      "updatedAt": "2026-09-21T13:29:03.408Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-crab-soup-checklist-cover.webp",
+        "url": "/prep-images/autumn-crab-soup-checklist-cover-unified-v2.webp",
         "alt": "가을 꽃게탕 재료를 펼쳐 둔 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "가을 캠핑 테이블 위 꽃게·대파·애호박·매운탕 양념을 펼친 대표 썸네일",
+        "prompt": "가을 캠핑 테이블 위 꽃게·대파·애호박·매운탕 양념을 펼친 대표 썸네일\n대표 썸네일 통일: 가을 꽃게탕 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 가을 꽃게탕 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "9603803528",
@@ -1197,16 +1197,16 @@
       "coverLabel": "캠핑 어묵탕 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:29:03.522Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camp-fishcake-soup-checklist-cover.webp",
+        "url": "/prep-images/camp-fishcake-soup-checklist-cover-unified-v2.webp",
         "alt": "캠핑 어묵탕 재료를 펼쳐 둔 가을 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "모둠 어묵·대파·육수팩을 펼친 캠핑 어묵탕 대표 썸네일",
+        "prompt": "모둠 어묵·대파·육수팩을 펼친 캠핑 어묵탕 대표 썸네일\n대표 썸네일 통일: 어묵탕 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 어묵탕 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "8682238562",
@@ -1451,16 +1451,16 @@
       "coverLabel": "캠핑 부대찌개 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:29:03.645Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camp-budae-soup-checklist-cover.webp",
+        "url": "/prep-images/camp-budae-soup-checklist-cover-unified-v2.webp",
         "alt": "캠핑 부대찌개 햄과 치즈, 대파를 펼쳐 둔 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "부대찌개 장면 옆 추가 햄·치즈·대파를 펼친 대표 썸네일",
+        "prompt": "부대찌개 장면 옆 추가 햄·치즈·대파를 펼친 대표 썸네일\n대표 썸네일 통일: 부대찌개 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 부대찌개 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7380618503",
@@ -1732,16 +1732,16 @@
       "coverLabel": "소고기 버섯전골 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:29:03.763Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camp-beef-mushroom-hotpot-checklist-cover.webp",
+        "url": "/prep-images/camp-beef-mushroom-hotpot-checklist-cover-unified-v2.webp",
         "alt": "소고기 버섯전골 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "소고기 전골 장면과 버섯·대파·애호박을 펼친 대표 썸네일",
+        "prompt": "소고기 전골 장면과 버섯·대파·애호박을 펼친 대표 썸네일\n대표 썸네일 통일: 소고기 버섯전골 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 소고기 버섯전골 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7679993842",
@@ -2004,16 +2004,16 @@
       "coverLabel": "캠핑 해물탕 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:29:03.881Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camp-seafood-hotpot-checklist-cover.webp",
+        "url": "/prep-images/camp-seafood-hotpot-checklist-cover-unified-v2.webp",
         "alt": "캠핑 해물탕 재료를 펼쳐 둔 가을 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "모둠해물탕·오만둥이·매운탕 양념·미나리를 펼친 대표 썸네일",
+        "prompt": "모둠해물탕·오만둥이·매운탕 양념·미나리를 펼친 대표 썸네일\n대표 썸네일 통일: 해물탕 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 해물탕 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7853820445",
@@ -4520,16 +4520,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:29:03.986Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-seafood-ramen-ingredients-cover-caption-20260919.webp",
+        "url": "/prep-images/camping-seafood-ramen-ingredients-cover-unified-v2.webp",
         "alt": "해물라면 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 해물라면 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 신라면 120g, 40개 visibly placed at left (x22%,y52%). Reference 2: 신선하고 간편한 지퍼백 해물모듬 냉동 해물믹스 모둠, 2개, 600g center (x51%,y50%). Reference 3: 흙대파 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 해물라면 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 해물라면 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 해물라면 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 신라면 120g, 40개 visibly placed at left (x22%,y52%). Reference 2: 신선하고 간편한 지퍼백 해물모듬 냉동 해물믹스 모둠, 2개, 600g center (x51%,y50%). Reference 3: 흙대파 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 해물라면 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 해물라면 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.\n대표 썸네일 통일: 해물라면 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 해물라면 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7958974",
@@ -4756,16 +4756,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:29:04.091Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-mussel-soup-ingredients-cover-caption-20260919.webp",
+        "url": "/prep-images/camping-mussel-soup-ingredients-cover-unified-v2.webp",
         "alt": "홍합탕 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 홍합탕 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 바다더해 무료배송 냉동 자숙 홍합살 1kg 홍합미역국 깐홍합 손질홍합살 홍살, 1개, 1kg visibly placed at left (x22%,y52%). Reference 2: 흙대파 center (x51%,y50%). Reference 3: [팜팜]국내산 창녕 햇양파(중짜), 1박스, 5kg right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos. Mussels are orange/brown shucked mussel meat, NOT shell-on mussels; do not include any shells. Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 홍합탕 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself. 최종 수정: 원본에 없는 홍합 포장을 제거하고 홍합살·대파·양파만 남겼습니다.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 홍합탕 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 홍합탕 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 바다더해 무료배송 냉동 자숙 홍합살 1kg 홍합미역국 깐홍합 손질홍합살 홍살, 1개, 1kg visibly placed at left (x22%,y52%). Reference 2: 흙대파 center (x51%,y50%). Reference 3: [팜팜]국내산 창녕 햇양파(중짜), 1박스, 5kg right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos. Mussels are orange/brown shucked mussel meat, NOT shell-on mussels; do not include any shells. Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 홍합탕 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself. 최종 수정: 원본에 없는 홍합 포장을 제거하고 홍합살·대파·양파만 남겼습니다.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 홍합탕 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.\n대표 썸네일 통일: 홍합탕 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 홍합탕 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7430379988",
@@ -4992,16 +4992,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:29:04.192Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-kimchi-fried-rice-ingredients-cover-caption-20260919.webp",
+        "url": "/prep-images/camping-kimchi-fried-rice-ingredients-cover-unified-v2.webp",
         "alt": "김치볶음밥 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 김치볶음밥 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 햇반 백미 윤기가득쌀밥 210g 24개, 210g, 24개 visibly placed at left (x22%,y52%). Reference 2: [김가연의 똑소리나는 김치] 포기김치 center (x51%,y50%). Reference 3: 삼초마을 난각번호1번 계란 자연방사 유정란 무항생제, 40구, 1개 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 김치볶음밥 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 김치볶음밥 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 김치볶음밥 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 햇반 백미 윤기가득쌀밥 210g 24개, 210g, 24개 visibly placed at left (x22%,y52%). Reference 2: [김가연의 똑소리나는 김치] 포기김치 center (x51%,y50%). Reference 3: 삼초마을 난각번호1번 계란 자연방사 유정란 무항생제, 40구, 1개 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 김치볶음밥 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 김치볶음밥 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.\n대표 썸네일 통일: 김치볶음밥 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 김치볶음밥 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7488621084",
@@ -5237,16 +5237,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:29:04.294Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-squid-stir-fry-ingredients-cover-caption-20260919.webp",
+        "url": "/prep-images/camping-squid-stir-fry-ingredients-cover-unified-v2.webp",
         "alt": "오징어볶음 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 오징어볶음 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 두툼한 생물 급냉 냉동 오징어 손질오징어, 1세트, 2미(300~350g) visibly placed at left (x22%,y52%). Reference 2: [팜팜]국내산 창녕 햇양파(중짜), 1박스, 5kg center (x51%,y50%). Reference 3: 흙대파 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 오징어볶음 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 오징어볶음 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 오징어볶음 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 두툼한 생물 급냉 냉동 오징어 손질오징어, 1세트, 2미(300~350g) visibly placed at left (x22%,y52%). Reference 2: [팜팜]국내산 창녕 햇양파(중짜), 1박스, 5kg center (x51%,y50%). Reference 3: 흙대파 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 오징어볶음 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 오징어볶음 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.\n대표 썸네일 통일: 오징어볶음 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 오징어볶음 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "9169365991",
@@ -5473,16 +5473,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:29:04.398Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-chicken-skewer-ingredients-cover-caption-20260919.webp",
+        "url": "/prep-images/camping-chicken-skewer-ingredients-cover-unified-v2.webp",
         "alt": "닭꼬치구이 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 닭꼬치구이 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: [산아푸드] 100% 국내산 모둠꼬치 450g 닭꼬치 염통꼬치 (캠핑/아이간식), 450g, 1개 visibly placed at left (x22%,y52%). Reference 2: 팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg center (x51%,y50%). Reference 3: 못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 닭꼬치구이 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 닭꼬치구이 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 닭꼬치구이 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: [산아푸드] 100% 국내산 모둠꼬치 450g 닭꼬치 염통꼬치 (캠핑/아이간식), 450g, 1개 visibly placed at left (x22%,y52%). Reference 2: 팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg center (x51%,y50%). Reference 3: 못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 닭꼬치구이 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 닭꼬치구이 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.\n대표 썸네일 통일: 닭꼬치구이 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 닭꼬치구이 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "9627651159",
@@ -5709,16 +5709,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:29:04.512Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-kimchi-pancake-ingredients-cover-caption-20260919.webp",
+        "url": "/prep-images/camping-kimchi-pancake-ingredients-cover-unified-v2.webp",
         "alt": "김치전 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 김치전 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: [김가연의 똑소리나는 김치] 포기김치 visibly placed at left (x22%,y52%). Reference 2: 백설 부침가루, 1kg, 2개 center (x51%,y50%). Reference 3: 흙대파 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 김치전 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 김치전 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 김치전 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: [김가연의 똑소리나는 김치] 포기김치 visibly placed at left (x22%,y52%). Reference 2: 백설 부침가루, 1kg, 2개 center (x51%,y50%). Reference 3: 흙대파 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 김치전 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 김치전 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.\n대표 썸네일 통일: 김치전 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 김치전 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7692122826",
@@ -5945,16 +5945,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:29:04.636Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-pork-belly-bbq-ingredients-cover-caption-20260919.webp",
+        "url": "/prep-images/camping-pork-belly-bbq-ingredients-cover-unified-v2.webp",
         "alt": "삼겹살 바비큐 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 삼겹살 바비큐 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 통삼겹살 캠핑용 바베큐 구이용 보쌈용 2kg, 2kg, 1개 visibly placed at left (x22%,y52%). Reference 2: 팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg center (x51%,y50%). Reference 3: 못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 삼겹살 바비큐 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 삼겹살 바비큐 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 삼겹살 바비큐 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 통삼겹살 캠핑용 바베큐 구이용 보쌈용 2kg, 2kg, 1개 visibly placed at left (x22%,y52%). Reference 2: 팜n팜 친환경 새송이 버섯, 1박스, 새송이 특 2kg center (x51%,y50%). Reference 3: 못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개 right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 삼겹살 바비큐 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 삼겹살 바비큐 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.\n대표 썸네일 통일: 삼겹살 바비큐 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 삼겹살 바비큐 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "9668476214",
@@ -6181,16 +6181,16 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:29:04.742Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-tofu-kimchi-ingredients-cover-caption-20260919.webp",
+        "url": "/prep-images/camping-tofu-kimchi-ingredients-cover-unified-v2.webp",
         "alt": "두부김치 재료를 펼쳐 둔 가을 캠핑 준비 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
-        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 두부김치 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 맑은물에 촌두부, 800g, 2개 visibly placed at left (x22%,y52%). Reference 2: [김가연의 똑소리나는 김치] 포기김치 center (x51%,y50%). Reference 3: [팜팜]국내산 창녕 햇양파(중짜), 1박스, 5kg right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 두부김치 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 두부김치 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.",
+        "prompt": "Use case: photorealistic-natural. Landscape 3:2 premium Korean camping 두부김치 ingredient checklist photograph. Create ONE naturally coherent autumn lakeside camping table ingredient overview. Physical objects from input photos only, not input layouts. Reference 1: 맑은물에 촌두부, 800g, 2개 visibly placed at left (x22%,y52%). Reference 2: [김가연의 똑소리나는 김치] 포기김치 center (x51%,y50%). Reference 3: [팜팜]국내산 창녕 햇양파(중짜), 1박스, 5kg right (x80%,y52%). Preserve original object appearance, package designs and ingredient types. Ingredients may be naturally served from their packaging in bowls, but show the source package if packaged. NO people from product photos.  Beautiful appetizing fresh ingredient textures, gentle autumn light, tent and lake softly blurred.  Small elegant Korean text directly on upper left of scene: '가을 캠핑 두부김치 준비물'. NO shape behind the text. Entire frame is a full photographic scene edge to edge with no separately reserved area. NO collage, NO pasted white source-photo rectangles, NO grids, NO product cards, NO boxes, NO dark empty lower band, NO title bar, NO panel, NO plus marks. Website will overlay clickable + tags itself.\nCaption edit: Use case: text-localization. Edit target: this existing recipe thumbnail. Remove ONLY the small upper-left title (restore natural background behind its letters). Add ONE forest-green semi-opaque band inset 3% from edges across the bottom 12%, with very large bold ivory Korean text EXACTLY \"캠핑 두부김치 재료\". Put tiny \"AI 연출 이미지\" bottom right. All other pixels/content must stay unchanged: same exact foods, brands, packaging, sizes, product locations, scene, lighting and 3:2 framing. No new ingredients, no repackaging, no crop, no movement. Preserve geometry for product hotspot links. Make title readable at 320px thumbnail size.\n대표 썸네일 통일: 두부김치 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 두부김치 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7867851377",
@@ -6418,17 +6418,17 @@
       "coverLabel": "가을 캠핑 돼지고기 김치찌개 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:18:35.880Z",
+      "updatedAt": "2026-09-21T13:29:04.861Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-pork-kimchi-stew-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260919-pork-kimchi-stew-cover-unified-v2.webp",
         "alt": "돼지고기 김치찌개 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping pork-kimchi-stew cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 돼지고기 김치찌개 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 돼지고기 김치찌개 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "Photorealistic autumn camping pork-kimchi-stew cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 돼지고기 김치찌개 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 돼지고기 김치찌개 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 돼지고기 김치찌개 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 돼지고기 김치찌개 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7265684367",
@@ -6729,17 +6729,17 @@
       "coverLabel": "가을 캠핑 된장찌개 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:18:35.993Z",
+      "updatedAt": "2026-09-21T13:29:04.966Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-doenjang-stew-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260919-doenjang-stew-cover-unified-v2.webp",
         "alt": "된장찌개 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping doenjang-stew cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 된장찌개 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 된장찌개 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "Photorealistic autumn camping doenjang-stew cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 된장찌개 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 된장찌개 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 된장찌개 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 된장찌개 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7573349147",
@@ -7040,17 +7040,17 @@
       "coverLabel": "가을 캠핑 들깨버섯탕 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:18:36.104Z",
+      "updatedAt": "2026-09-21T13:29:05.084Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-cover-unified-v2.webp",
         "alt": "들깨버섯탕 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping perilla-mushroom-soup cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 들깨버섯탕 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 들깨버섯탕 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "Photorealistic autumn camping perilla-mushroom-soup cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 들깨버섯탕 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 들깨버섯탕 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 들깨버섯탕 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 들깨버섯탕 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7290581164",
@@ -7351,17 +7351,17 @@
       "coverLabel": "가을 캠핑 감자수제비 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:18:36.213Z",
+      "updatedAt": "2026-09-21T13:29:05.189Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-potato-sujebi-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260919-potato-sujebi-cover-unified-v2.webp",
         "alt": "감자수제비 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Corrected light-green Korean aehobak and wide fresh wheat sujebi dough from actual reference; preserve remaining ingredient photo and title.\n대표 썸네일 문구: 감자수제비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 감자수제비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "Corrected light-green Korean aehobak and wide fresh wheat sujebi dough from actual reference; preserve remaining ingredient photo and title.\n대표 썸네일 문구: 감자수제비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 감자수제비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 감자수제비 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 감자수제비 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "9656363105",
@@ -7662,17 +7662,17 @@
       "coverLabel": "가을 캠핑 새우버터구이 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:18:36.321Z",
+      "updatedAt": "2026-09-21T13:29:05.303Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-shrimp-butter-grill-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260919-shrimp-butter-grill-cover-unified-v2.webp",
         "alt": "새우버터구이 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping shrimp-butter-grill cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 새우버터구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우버터구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "Photorealistic autumn camping shrimp-butter-grill cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 새우버터구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우버터구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 새우버터구이 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 새우버터구이 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "1761375156",
@@ -7964,17 +7964,17 @@
       "coverLabel": "가을 캠핑 고등어감자조림 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:18:36.432Z",
+      "updatedAt": "2026-09-21T13:29:05.417Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-mackerel-potato-braise-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260919-mackerel-potato-braise-cover-unified-v2.webp",
         "alt": "고등어감자조림 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping mackerel-potato-braise cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 고등어감자조림 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 고등어감자조림 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "Photorealistic autumn camping mackerel-potato-braise cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 고등어감자조림 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 고등어감자조림 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 고등어감자조림 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 고등어감자조림 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "8311251159",
@@ -8275,17 +8275,17 @@
       "coverLabel": "가을 캠핑 닭볶음탕 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:18:36.541Z",
+      "updatedAt": "2026-09-21T13:29:05.531Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-chicken-potato-stew-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260919-chicken-potato-stew-cover-unified-v2.webp",
         "alt": "닭볶음탕 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping chicken-potato-stew cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 닭볶음탕 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭볶음탕 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "Photorealistic autumn camping chicken-potato-stew cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 닭볶음탕 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭볶음탕 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 닭볶음탕 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 닭볶음탕 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "1628662667",
@@ -8586,17 +8586,17 @@
       "coverLabel": "가을 캠핑 떡볶이 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:18:36.658Z",
+      "updatedAt": "2026-09-21T13:29:05.647Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-tteokbokki-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260919-tteokbokki-cover-unified-v2.webp",
         "alt": "떡볶이 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping tteokbokki cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 떡볶이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 떡볶이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "Photorealistic autumn camping tteokbokki cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 떡볶이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 떡볶이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 떡볶이 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 떡볶이 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "1883548582",
@@ -8897,17 +8897,17 @@
       "coverLabel": "가을 캠핑 애호박전 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:18:36.768Z",
+      "updatedAt": "2026-09-21T13:29:05.761Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-zucchini-pancake-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260919-zucchini-pancake-cover-unified-v2.webp",
         "alt": "애호박전 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping zucchini-pancake cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 애호박전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 애호박전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "Photorealistic autumn camping zucchini-pancake cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 애호박전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 애호박전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 애호박전 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 애호박전 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "8443644467",
@@ -9199,17 +9199,17 @@
       "coverLabel": "가을 캠핑 버터콘치즈 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:18:36.872Z",
+      "updatedAt": "2026-09-21T13:29:05.866Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-corn-cheese-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260919-corn-cheese-cover-unified-v2.webp",
         "alt": "버터콘치즈 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Edit reference image 1 only: replace the upper left Ottogi corn can with a single RICHIS whole kernel sweet corn can exactly matching the upper-left product in reference board 2: pale light blue/green paper label, red oval RICHIS logo, dark green Korean 홀 커널 스위트 콘, corn illustration, silver tin. Keep the same can position and realistic perspective. Do not put a five-can quantity badge on the photo, show one can as illustrative ingredient. Do not invent dates, health claims, certification marks. Keep the cheddar cheese box, Anchor butter, onions and Korean cover headline and AI disclosure unchanged. Preserve autumn campsite photorealistic styling and 3:2 composition.\n대표 썸네일 문구: 버터콘치즈 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버터콘치즈 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "Edit reference image 1 only: replace the upper left Ottogi corn can with a single RICHIS whole kernel sweet corn can exactly matching the upper-left product in reference board 2: pale light blue/green paper label, red oval RICHIS logo, dark green Korean 홀 커널 스위트 콘, corn illustration, silver tin. Keep the same can position and realistic perspective. Do not put a five-can quantity badge on the photo, show one can as illustrative ingredient. Do not invent dates, health claims, certification marks. Keep the cheddar cheese box, Anchor butter, onions and Korean cover headline and AI disclosure unchanged. Preserve autumn campsite photorealistic styling and 3:2 composition.\n대표 썸네일 문구: 버터콘치즈 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버터콘치즈 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 버터콘치즈 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 버터콘치즈 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "1909538",
@@ -9501,17 +9501,17 @@
       "coverLabel": "간장버터감자구이 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:18:34.766Z",
+      "updatedAt": "2026-09-21T13:29:05.973Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260920-soy-butter-potato-grill-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260920-soy-butter-potato-grill-cover-unified-v2.webp",
         "alt": "간장버터감자구이용 감자와 버터, 간장을 준비한 가을 캠핑 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 간장버터감자구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 간장버터감자구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 간장버터감자구이 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 간장버터감자구이 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "9656363105",
@@ -9749,17 +9749,17 @@
       "coverLabel": "새우전 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:18:34.874Z",
+      "updatedAt": "2026-09-21T13:29:06.081Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260920-shrimp-jeon-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260920-shrimp-jeon-cover-unified-v2.webp",
         "alt": "새우전용 새우와 달걀, 부침가루를 준비한 가을 캠핑 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 새우전 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 새우전 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 새우전 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 새우전 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "1761375156",
@@ -9996,17 +9996,17 @@
       "coverLabel": "버섯치즈구이 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:18:34.983Z",
+      "updatedAt": "2026-09-21T13:29:06.189Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260920-mushroom-cheese-grill-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260920-mushroom-cheese-grill-cover-unified-v2.webp",
         "alt": "버섯치즈구이용 새송이버섯과 치즈, 버터를 준비한 가을 캠핑 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 버섯치즈구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 버섯치즈구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 버섯치즈구이 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 버섯치즈구이 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "8655440206",
@@ -10243,17 +10243,17 @@
       "coverLabel": "두부간장구이 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:18:35.089Z",
+      "updatedAt": "2026-09-21T13:29:06.292Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260920-tofu-soy-grill-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260920-tofu-soy-grill-cover-unified-v2.webp",
         "alt": "두부간장구이용 두부와 간장, 마늘을 준비한 가을 캠핑 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 두부간장구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 두부간장구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 두부간장구이 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 두부간장구이 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7867851377",
@@ -10490,17 +10490,17 @@
       "coverLabel": "김치어묵볶음 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:18:35.201Z",
+      "updatedAt": "2026-09-21T13:29:06.395Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260920-kimchi-fishcake-stirfry-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260920-kimchi-fishcake-stirfry-cover-unified-v2.webp",
         "alt": "김치어묵볶음용 김치와 어묵, 양파를 준비한 가을 캠핑 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 김치어묵볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 김치어묵볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 김치어묵볶음 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 김치어묵볶음 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7692122826",
@@ -10733,7 +10733,7 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:18:35.320Z",
+      "updatedAt": "2026-09-21T13:29:06.510Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -10831,14 +10831,14 @@
         "text": "매콤한 제육볶음은 재료를 미리 나누어 준비하면 캠핑장에서도 한 팬으로 빠르게 만들기 좋습니다. 고기는 차갑게 보관하고 채소는 물기를 닦아 따로 챙긴 뒤, 체크리스트에서 빠진 재료가 없는지 확인해 보세요."
       },
       "cover": {
-        "url": "/prep-images/autumn-20260920-jeyuk-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260920-jeyuk-cover-unified-v2.webp",
         "alt": "가을 캠핑에서 제육볶음을 준비한 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 제육볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 제육볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 제육볶음 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 제육볶음 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "8987385839",
@@ -10980,7 +10980,7 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:18:35.433Z",
+      "updatedAt": "2026-09-21T13:29:06.616Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -11078,14 +11078,14 @@
         "text": "순대볶음은 채소와 양념을 먼저 볶아 팬의 수분을 정리한 뒤 순대를 넣으면 한결 다루기 편합니다. 순대와 채소를 분리해 가져가고, 포장에 적힌 보관과 가열 방법을 확인한 다음 준비물을 체크해 보세요."
       },
       "cover": {
-        "url": "/prep-images/autumn-20260920-sundae-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260920-sundae-cover-unified-v2.webp",
         "alt": "가을 캠핑 순대볶음을 준비한 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 순대볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 순대볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 순대볶음 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 순대볶음 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "8960028100",
@@ -11227,7 +11227,7 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:18:35.545Z",
+      "updatedAt": "2026-09-21T13:29:06.726Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -11325,14 +11325,14 @@
         "text": "양념 닭갈비는 닭의 중심까지 익히는 것이 우선이라 채소는 익는 속도에 맞춰 나누어 넣는 편이 좋습니다. 고기는 조리 전까지 차갑게 보관하고 채소의 물기를 닦아 둔 뒤 체크리스트를 확인해 보세요."
       },
       "cover": {
-        "url": "/prep-images/autumn-20260920-dakgalbi-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260920-dakgalbi-cover-unified-v2.webp",
         "alt": "가을 캠핑에서 춘천 닭갈비를 준비한 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 춘천 닭갈비 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 춘천 닭갈비 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 춘천 닭갈비 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 춘천 닭갈비 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "344228023",
@@ -11474,7 +11474,7 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:18:35.655Z",
+      "updatedAt": "2026-09-21T13:29:06.830Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -11572,14 +11572,14 @@
         "text": "김치볶음밥은 김치를 먼저 볶아 수분을 정리하면 밥알이 뭉치지 않고 볶기 편합니다. 포장 볶음밥과 달걀은 보관 안내를 확인해 차갑게 가져가고, 필요한 재료와 도구를 순서대로 체크해 보세요."
       },
       "cover": {
-        "url": "/prep-images/autumn-20260920-chicken-kimchi-rice-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260920-chicken-kimchi-rice-cover-unified-v2.webp",
         "alt": "가을 캠핑 닭가슴살 김치볶음밥을 준비한 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 닭가슴살 김치볶음밥 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 닭가슴살 김치볶음밥 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 닭가슴살 김치볶음밥 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 닭가슴살 김치볶음밥 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "68121544",
@@ -11721,7 +11721,7 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:18:35.756Z",
+      "updatedAt": "2026-09-21T13:29:06.931Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -11811,14 +11811,14 @@
         "text": "홍합미역국은 미역을 충분히 불리고 국물 바탕을 만든 뒤 홍합살을 마지막에 넣으면 준비가 한결 간단합니다. 해물은 조리 전까지 차갑게 보관하고, 냄비와 국자까지 빠짐없이 체크해 보세요."
       },
       "cover": {
-        "url": "/prep-images/autumn-20260920-mussel-seaweed-cover-caption-v3.webp",
+        "url": "/prep-images/autumn-20260920-mussel-seaweed-cover-unified-v2.webp",
         "alt": "가을 캠핑에서 홍합미역국을 준비한 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 홍합미역국 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 홍합미역국 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 통일: 홍합미역국 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.\n대표 썸네일 통일: 홍합미역국 재료 알아보기. 꽃게탕 기준의 중앙 정렬 녹색 그라데이션 제목 배너를 적용하고 별도 AI 문구는 넣지 않았습니다.",
         "referenceProducts": [
           {
             "productId": "7430379988",
