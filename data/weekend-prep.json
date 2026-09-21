@@ -1,5 +1,5 @@
 {
-  "version": 47,
+  "version": 49,
   "products": [
     {
       "id": "7853820445",
@@ -6418,17 +6418,17 @@
       "coverLabel": "가을 캠핑 돼지고기 김치찌개 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:18:35.880Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-pork-kimchi-stew-cover.webp",
+        "url": "/prep-images/autumn-20260919-pork-kimchi-stew-cover-caption-v3.webp",
         "alt": "돼지고기 김치찌개 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping pork-kimchi-stew cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.",
+        "prompt": "Photorealistic autumn camping pork-kimchi-stew cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 돼지고기 김치찌개 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 돼지고기 김치찌개 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "7265684367",
@@ -6729,17 +6729,17 @@
       "coverLabel": "가을 캠핑 된장찌개 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:18:35.993Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-doenjang-stew-cover.webp",
+        "url": "/prep-images/autumn-20260919-doenjang-stew-cover-caption-v3.webp",
         "alt": "된장찌개 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping doenjang-stew cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.",
+        "prompt": "Photorealistic autumn camping doenjang-stew cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 된장찌개 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 된장찌개 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "7573349147",
@@ -7040,17 +7040,17 @@
       "coverLabel": "가을 캠핑 들깨버섯탕 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:18:36.104Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-cover.webp",
+        "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-cover-caption-v3.webp",
         "alt": "들깨버섯탕 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping perilla-mushroom-soup cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.",
+        "prompt": "Photorealistic autumn camping perilla-mushroom-soup cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 들깨버섯탕 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 들깨버섯탕 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "7290581164",
@@ -7351,17 +7351,17 @@
       "coverLabel": "가을 캠핑 감자수제비 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:18:36.213Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-potato-sujebi-cover.webp",
+        "url": "/prep-images/autumn-20260919-potato-sujebi-cover-caption-v3.webp",
         "alt": "감자수제비 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Corrected light-green Korean aehobak and wide fresh wheat sujebi dough from actual reference; preserve remaining ingredient photo and title.",
+        "prompt": "Corrected light-green Korean aehobak and wide fresh wheat sujebi dough from actual reference; preserve remaining ingredient photo and title.\n대표 썸네일 문구: 감자수제비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 감자수제비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "9656363105",
@@ -7662,17 +7662,17 @@
       "coverLabel": "가을 캠핑 새우버터구이 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:18:36.321Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-shrimp-butter-grill-cover.webp",
+        "url": "/prep-images/autumn-20260919-shrimp-butter-grill-cover-caption-v3.webp",
         "alt": "새우버터구이 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping shrimp-butter-grill cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.",
+        "prompt": "Photorealistic autumn camping shrimp-butter-grill cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 새우버터구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우버터구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "1761375156",
@@ -7964,17 +7964,17 @@
       "coverLabel": "가을 캠핑 고등어감자조림 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:18:36.432Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-mackerel-potato-braise-cover.webp",
+        "url": "/prep-images/autumn-20260919-mackerel-potato-braise-cover-caption-v3.webp",
         "alt": "고등어감자조림 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping mackerel-potato-braise cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.",
+        "prompt": "Photorealistic autumn camping mackerel-potato-braise cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 고등어감자조림 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 고등어감자조림 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "8311251159",
@@ -8275,17 +8275,17 @@
       "coverLabel": "가을 캠핑 닭볶음탕 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:18:36.541Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-chicken-potato-stew-cover.webp",
+        "url": "/prep-images/autumn-20260919-chicken-potato-stew-cover-caption-v3.webp",
         "alt": "닭볶음탕 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping chicken-potato-stew cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.",
+        "prompt": "Photorealistic autumn camping chicken-potato-stew cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 닭볶음탕 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭볶음탕 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "1628662667",
@@ -8586,17 +8586,17 @@
       "coverLabel": "가을 캠핑 떡볶이 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:18:36.658Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-tteokbokki-cover.webp",
+        "url": "/prep-images/autumn-20260919-tteokbokki-cover-caption-v3.webp",
         "alt": "떡볶이 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping tteokbokki cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.",
+        "prompt": "Photorealistic autumn camping tteokbokki cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 떡볶이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 떡볶이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "1883548582",
@@ -8897,17 +8897,17 @@
       "coverLabel": "가을 캠핑 애호박전 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:18:36.768Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-zucchini-pancake-cover.webp",
+        "url": "/prep-images/autumn-20260919-zucchini-pancake-cover-caption-v3.webp",
         "alt": "애호박전 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Photorealistic autumn camping zucchini-pancake cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.",
+        "prompt": "Photorealistic autumn camping zucchini-pancake cover. Supplied actual ingredient photo reference board. Korean ingredient checklist cover text; distinct ingredient groups; AI disclosure.\n대표 썸네일 문구: 애호박전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 애호박전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "8443644467",
@@ -9199,17 +9199,17 @@
       "coverLabel": "가을 캠핑 버터콘치즈 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-19T08:04:03.231Z",
+      "updatedAt": "2026-09-21T13:18:36.872Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-corn-cheese-cover.webp",
+        "url": "/prep-images/autumn-20260919-corn-cheese-cover-caption-v3.webp",
         "alt": "버터콘치즈 주재료를 펼친 가을 캠핑 장보기 장면",
         "width": 1200,
         "height": 800,
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "Edit reference image 1 only: replace the upper left Ottogi corn can with a single RICHIS whole kernel sweet corn can exactly matching the upper-left product in reference board 2: pale light blue/green paper label, red oval RICHIS logo, dark green Korean 홀 커널 스위트 콘, corn illustration, silver tin. Keep the same can position and realistic perspective. Do not put a five-can quantity badge on the photo, show one can as illustrative ingredient. Do not invent dates, health claims, certification marks. Keep the cheddar cheese box, Anchor butter, onions and Korean cover headline and AI disclosure unchanged. Preserve autumn campsite photorealistic styling and 3:2 composition.",
+        "prompt": "Edit reference image 1 only: replace the upper left Ottogi corn can with a single RICHIS whole kernel sweet corn can exactly matching the upper-left product in reference board 2: pale light blue/green paper label, red oval RICHIS logo, dark green Korean 홀 커널 스위트 콘, corn illustration, silver tin. Keep the same can position and realistic perspective. Do not put a five-can quantity badge on the photo, show one can as illustrative ingredient. Do not invent dates, health claims, certification marks. Keep the cheddar cheese box, Anchor butter, onions and Korean cover headline and AI disclosure unchanged. Preserve autumn campsite photorealistic styling and 3:2 composition.\n대표 썸네일 문구: 버터콘치즈 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버터콘치즈 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "1909538",
@@ -9501,7 +9501,7 @@
       "coverLabel": "간장버터감자구이 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:13:04.753Z",
+      "updatedAt": "2026-09-21T13:18:34.766Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260920-soy-butter-potato-grill-cover-caption-v3.webp",
@@ -9511,7 +9511,7 @@
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 간장버터감자구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 간장버터감자구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 간장버터감자구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "9656363105",
@@ -9749,7 +9749,7 @@
       "coverLabel": "새우전 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:13:04.865Z",
+      "updatedAt": "2026-09-21T13:18:34.874Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260920-shrimp-jeon-cover-caption-v3.webp",
@@ -9759,7 +9759,7 @@
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 새우전 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 새우전 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 새우전 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "1761375156",
@@ -9996,7 +9996,7 @@
       "coverLabel": "버섯치즈구이 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:13:04.978Z",
+      "updatedAt": "2026-09-21T13:18:34.983Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260920-mushroom-cheese-grill-cover-caption-v3.webp",
@@ -10006,7 +10006,7 @@
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 버섯치즈구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 버섯치즈구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 버섯치즈구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "8655440206",
@@ -10243,7 +10243,7 @@
       "coverLabel": "두부간장구이 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:13:05.087Z",
+      "updatedAt": "2026-09-21T13:18:35.089Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260920-tofu-soy-grill-cover-caption-v3.webp",
@@ -10253,7 +10253,7 @@
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 두부간장구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 두부간장구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 두부간장구이 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "7867851377",
@@ -10490,7 +10490,7 @@
       "coverLabel": "김치어묵볶음 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:13:05.198Z",
+      "updatedAt": "2026-09-21T13:18:35.201Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260920-kimchi-fishcake-stirfry-cover-caption-v3.webp",
@@ -10500,7 +10500,7 @@
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 김치어묵볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 김치어묵볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 김치어묵볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "7692122826",
@@ -10733,7 +10733,7 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:13:05.319Z",
+      "updatedAt": "2026-09-21T13:18:35.320Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -10838,7 +10838,7 @@
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 제육볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 제육볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 제육볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "8987385839",
@@ -10980,7 +10980,7 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:13:05.432Z",
+      "updatedAt": "2026-09-21T13:18:35.433Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -11085,7 +11085,7 @@
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 순대볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 순대볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 순대볶음 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "8960028100",
@@ -11227,7 +11227,7 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:13:05.544Z",
+      "updatedAt": "2026-09-21T13:18:35.545Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -11332,7 +11332,7 @@
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 춘천 닭갈비 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 춘천 닭갈비 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 춘천 닭갈비 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "344228023",
@@ -11474,7 +11474,7 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:13:05.654Z",
+      "updatedAt": "2026-09-21T13:18:35.655Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -11579,7 +11579,7 @@
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 닭가슴살 김치볶음밥 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 닭가슴살 김치볶음밥 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 닭가슴살 김치볶음밥 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "68121544",
@@ -11721,7 +11721,7 @@
       "salesFormat": "food-checklist",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:13:05.760Z",
+      "updatedAt": "2026-09-21T13:18:35.756Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -11818,7 +11818,7 @@
         "generated": true,
         "reviewed": true,
         "productMatchReviewed": true,
-        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 홍합미역국 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
+        "prompt": "AI로 제작한 가을 캠핑 요리 장면. 실제 상품의 포장·수량·완성 모습은 판매 구성이나 조리 결과를 보증하지 않습니다.\n대표 썸네일 문구: 가을 홍합미역국 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 준비물. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.\n대표 썸네일 문구: 홍합미역국 재료. 원본 사진 위에 꽃게탕과 같은 하단 제목 배너를 적용했습니다.",
         "referenceProducts": [
           {
             "productId": "7430379988",
