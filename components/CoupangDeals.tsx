@@ -9,6 +9,7 @@
 import deals from "@/data/coupang.json";
 import ScrollRail from "@/components/ScrollRail";
 import AffiliateNotice from "@/components/AffiliateNotice";
+import { ADSENSE_REVIEW_MODE } from "@/lib/adsenseReview";
 
 interface Product { id: string; name: string; price: number; image: string; url: string; isRocket: boolean }
 interface Section { key: string; heading: string; subtitle: string; products: Product[] }
@@ -61,6 +62,7 @@ function Card({ p, highlight }: { p: Product; highlight?: boolean }) {
 }
 
 export default function CoupangDeals() {
+  if (ADSENSE_REVIEW_MODE) return null;
   const d = deals as unknown as Deals;
   const products = (d?.sections || [])
     .filter((s) => s.key === "staples" || s.key === "seasonal")

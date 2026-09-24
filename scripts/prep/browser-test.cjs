@@ -11,7 +11,6 @@ let logs='';for(const s of [child.stdout,child.stderr])s.on('data',d=>{logs=(log
  for(const width of [320,390,1024,1280]){const page=await browser.newPage({viewport:{width,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.stack||e.message));
  await page.route(/google-analytics|googletagmanager|doubleclick/,r=>r.abort());
  await page.addInitScript(()=>{window.__prepRejections=[];window.addEventListener('unhandledrejection',e=>window.__prepRejections.push({type:e.reason?.type,src:e.reason?.target?.src,message:e.reason?.message}));});
- await page.addInitScript(()=>sessionStorage.setItem('mwohaji:iphone18:popup-dismissed','1'));
  await page.goto(base+'/',{waitUntil:'domcontentloaded'});
  const menu=page.locator('a[href="/weekend-prep"]').filter({hasText:'🧺'});await menu.waitFor();
  assert(await menu.evaluate(e=>e.previousElementSibling?.getAttribute('href')==='/tickets'));

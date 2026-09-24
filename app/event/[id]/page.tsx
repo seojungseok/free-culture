@@ -83,6 +83,19 @@ export default async function EventPage({
     place: ev.place, startDate: ev.startDate, endDate: ev.endDate,
     priceLabel: ev.priceLabel, priceType: ev.priceType, audiences: ev.audiences,
   });
+  const guidanceRecommended = [
+    ev.audiences?.includes("kids") ? `아이와 함께 볼 ${ev.realmName || "문화행사"}를 찾는 분` : null,
+    ev.audiences?.includes("couple") ? `${ev.area}에서 함께 볼 ${ev.realmName || "문화행사"}를 찾는 분` : null,
+  ].filter((item): item is string => Boolean(item));
+  const guidanceChecks = [
+    `${fmtRange(ev.startDate, ev.endDate)} 일정과 ${ev.place || ev.area} 장소가 방문 계획에 맞는지 확인하세요.`,
+    ev.priceType === "unknown" || ev.priceType === "free_estimated" ? "요금이 확정되지 않았으니 공식 안내에서 확인하세요." : null,
+    ev.priceType === "partial_free" && ev.freeCondition ? `무료 적용 조건: ${ev.freeCondition}` : null,
+  ].filter((item): item is string => Boolean(item));
+  const guidanceTips = [
+    ev.address ? `이동 전 주소(${ev.address})를 지도에서 확인하세요.` : null,
+    ev.phone ? `예약·운영 문의가 필요하면 제공된 연락처(${ev.phone})를 이용하세요.` : null,
+  ].filter((item): item is string => Boolean(item));
   const related = getAllEvents()
     .filter((e) => e.id !== ev.id && e.genreKey === ev.genreKey && e.imgUrl && e.endDate >= todayYmd())
     .sort((a,b)=>Number(b.area===ev.area)-Number(a.area===ev.area))
@@ -265,10 +278,11 @@ export default async function EventPage({
           </p>
 
           <DetailGuidance
-            recommended={[`${ev.realmName || "문화행사"}를 관심 있게 보고 있는 분`, "행사 기간과 장소를 확인한 뒤 여유 있게 방문하려는 분"]}
-            checks={["행사 일정과 운영 여부는 방문 전 공식 페이지에서 다시 확인해 주세요.", ev.officialUrl ? "예매·관람 방법은 공식 페이지 안내를 우선 확인해 주세요." : "공식 홈페이지나 주최 측 안내가 있다면 방문 전 확인해 주세요.", ev.phone ? `문의가 필요하면 안내된 전화번호(${ev.phone})로 확인해 주세요.` : "날짜·장소가 변경될 수 있으니 출발 전 최신 안내를 확인해 주세요."]}
-            tips={["주소와 장소명을 지도에 미리 저장하면 이동 동선을 잡기 편합니다.", "요금 정보가 불확실한 경우 현장 방문 전 공식 안내를 기준으로 준비해 주세요."]}
+            recommended={guidanceRecommended}
+            checks={guidanceChecks}
+            tips={guidanceTips}
           />
+          <p className="mt-6 text-sm leading-6 text-ink-faint">정보 출처: 공공데이터포털(한국문화정보원). {ev.officialUrl && <a href={ev.officialUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">행사 공식 페이지 확인 ↗</a>}</p>
 
           <AdSlot label="상세 하단 광고" />
         </div>

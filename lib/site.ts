@@ -1,9 +1,9 @@
 export const SITE = {
   name: "주말에 뭐하지?",
   nameEn: "WEEKEND PICK",
-  tagline: "무료로, 저렴하게 즐기는 전국 문화생활",
+  tagline: "이번 주말 갈 곳을 고르는 나들이·문화 정보",
   description:
-    "이번 주말 갈 만한 전국의 전시·공연·문화행사를 무료·저렴한 순으로 모았습니다. 무료 행사만 골라 보거나, 1만원 이하·아이와 함께·곧 종료 등으로 빠르게 찾아보세요. 매일 자동 업데이트됩니다.",
+    "이번 주말 갈 만한 문화행사와 나들이, 여행코스, 캠핑장을 지역과 조건으로 찾아보세요. 일정·요금·장소를 비교하고 공식 안내를 확인할 수 있습니다.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://mwohaji.kr",
   ogImage: "/og-default.png",
   source: "공공데이터포털 (한국문화정보원)",

@@ -22,7 +22,6 @@ const nextConfig = {
   async headers() {
     return [
       { source: '/ticket-images/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
-      ...['/ads/iphone18-autumn-banner-20260913.webp', '/ads/iphone18-autumn-popup-20260913.webp'].map(source => ({ source, headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] })),
     ];
   },
   images: {
