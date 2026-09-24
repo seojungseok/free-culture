@@ -8,8 +8,8 @@ import FilterableGrid from "@/components/FilterableGrid";
 import { Band, Container } from "@/components/Band";
 import type { CultureEvent } from "@/lib/types";
 
-// 조합 페이지는 "무료"에 초점 (free + 무료추정)
-const isFree = (t: string) => t === "free" || t === "free_estimated";
+// 무료가 확인된 행사만 지역별 무료 목록에 포함한다.
+const isFree = (t: string) => t === "free";
 const MAIN_GENRES = GENRES.filter((g) => g.key !== "etc");
 
 function comboEvents(sido: string, genreKey: string) {

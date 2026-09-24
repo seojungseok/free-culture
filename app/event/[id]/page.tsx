@@ -14,7 +14,6 @@ import { fmtRange, placeText, dday } from "@/lib/format";
 import { SITE } from "@/lib/site";
 import PriceBadge from "@/components/PriceBadge";
 import EventCoupangDeals from "@/components/EventCoupangDeals";
-import DetailGuidance from "@/components/DetailGuidance";
 import AdSlot from "@/components/AdSlot";
 import PosterCard from "@/components/PosterCard";
 import ShareButtons from "@/components/ShareButtons";
@@ -48,7 +47,7 @@ export async function generateMetadata({
   const desc = `${ev.endDate < todayYmd() ? "종료된 행사 · " : ""}${ev.priceLabel} · ${fmtRange(ev.startDate, ev.endDate)} · ${where}. ${
     contents ? contents.slice(0, 80) : `${ev.realmName} 행사 정보를 확인하세요.`
   }`;
-  const isFree = /free/.test(ev.priceType);
+  const isFree = ev.priceType === "free";
   const keywords = [
     `${ev.area} ${ev.realmName}`,
     isFree ? `${ev.area} 무료 ${ev.realmName}` : `${ev.area} ${ev.realmName} 공연`,
@@ -88,19 +87,6 @@ export default async function EventPage({
     place: ev.place, startDate: ev.startDate, endDate: ev.endDate,
     priceLabel: ev.priceLabel, priceType: ev.priceType, audiences: ev.audiences,
   });
-  const guidanceRecommended = [
-    ev.audiences?.includes("kids") ? `아이와 함께 볼 ${ev.realmName || "문화행사"}를 찾는 분` : null,
-    ev.audiences?.includes("couple") ? `${ev.area}에서 함께 볼 ${ev.realmName || "문화행사"}를 찾는 분` : null,
-  ].filter((item): item is string => Boolean(item));
-  const guidanceChecks = [
-    `${fmtRange(ev.startDate, ev.endDate)} 일정과 ${ev.place || ev.area} 장소가 방문 계획에 맞는지 확인하세요.`,
-    ev.priceType === "unknown" || ev.priceType === "free_estimated" ? "요금이 확정되지 않았으니 공식 안내에서 확인하세요." : null,
-    ev.priceType === "partial_free" && ev.freeCondition ? `무료 적용 조건: ${ev.freeCondition}` : null,
-  ].filter((item): item is string => Boolean(item));
-  const guidanceTips = [
-    ev.address ? `이동 전 주소(${ev.address})를 지도에서 확인하세요.` : null,
-    ev.phone ? `예약·운영 문의가 필요하면 제공된 연락처(${ev.phone})를 이용하세요.` : null,
-  ].filter((item): item is string => Boolean(item));
   const related = getAllEvents()
     .filter((e) => e.id !== ev.id && e.genreKey === ev.genreKey && e.imgUrl && e.endDate >= todayYmd())
     .sort((a,b)=>Number(b.area===ev.area)-Number(a.area===ev.area))
@@ -215,14 +201,6 @@ export default async function EventPage({
             {ev.phone && <Row label="문의">{ev.phone}</Row>}
           </dl>
 
-          {/* 무료 추정 참고 문구 (작게, 회색) */}
-          {ev.priceType === "free_estimated" && (
-            <p className="mt-2.5 text-[13px] leading-relaxed text-ink-faint">
-              ※ 요금 정보가 없어 행사 유형으로 추정한 것입니다. 방문 전 공식
-              페이지에서 확인해주세요.
-            </p>
-          )}
-
           {/* 요금 정보 없음 안내 */}
           {ev.priceType === "unknown" && (
             <div className="mt-4 rounded-xl border-l-4 border-neutral-300 bg-neutral-50 p-4">
@@ -282,11 +260,6 @@ export default async function EventPage({
             </a>
           </p>
 
-          <DetailGuidance
-            recommended={guidanceRecommended}
-            checks={guidanceChecks}
-            tips={guidanceTips}
-          />
           <p className="mt-6 text-sm leading-6 text-ink-faint">정보 출처: 공공데이터포털(한국문화정보원). {ev.officialUrl && <a href={ev.officialUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">행사 공식 페이지 확인 ↗</a>}</p>
 
           <AdSlot label="상세 하단 광고" />

@@ -1,11 +1,9 @@
-import SeoulStayBanner from '@/components/SeoulStayBanner';
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Band";
-import KidCoupangDeals from "@/components/KidCoupangDeals";
-import { getKidCourse, getKidCourses, kidCoursesByArea, kmLabel, kidHeadline, type KidStop } from "@/lib/kidCourses";
+import { getKidCourse, kidCoursesByArea, kmLabel, kidHeadline, type KidStop } from "@/lib/kidCourses";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { getRestaurantMenu } from "@/lib/tourExtra";
@@ -32,13 +30,14 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const description = `${c.area} ${c.city} 아이와 함께 ${th} 코스. ${[c.spot.title,c.park?.title,c.food?.title].filter(Boolean).join(' → ')} 순서의 방문 후보와 위치를 확인하세요. 좌표로 구성한 코스이며 실제 이동 경로와 운영시간은 방문 전 확인이 필요합니다.`;
   return {
     title, description,
+    robots: { index: false, follow: true },
     keywords: [`${c.city} 아이와 갈만한 곳`, `${c.area} 아이와 함께`, `${c.city} ${th}`, c.spot.title, headline, `${c.city} 아이 나들이`, `${c.city} 키즈`],
     alternates: { canonical: `/kids/c/${id}` },
     openGraph: { title, description, ...(c.image ? { images: [{ url: c.image }] } : {}), type: "article" },
   };
 }
 
-function Stop({ stop, label, emoji, fromTitle, intro }: { stop: KidStop; label: string; emoji: string; fromTitle?: string; intro: string }) {
+function Stop({ stop, label, emoji, fromTitle, detail }: { stop: KidStop; label: string; emoji: string; fromTitle?: string; detail?: string }) {
   return (
     <section className="mt-9">
       <div className="mb-1 flex flex-wrap items-center gap-2">
@@ -51,7 +50,7 @@ function Stop({ stop, label, emoji, fromTitle, intro }: { stop: KidStop; label: 
           <Image src={stop.image} alt={`${stop.title} — ${label}`} fill sizes="(max-width:820px) 100vw, 820px" className="object-cover" loading="lazy" unoptimized />
         </div>
       )}
-      <p className="mt-3 text-[15px] leading-[1.85] text-ink-soft">{intro}</p>
+      {detail && <p className="mt-3 text-[15px] leading-[1.85] text-ink-soft">{detail}</p>}
       <div className="mt-3 flex flex-wrap gap-2">
         <Link href={stop.href} className="inline-flex items-center rounded-full border border-line bg-white px-3.5 py-1.5 text-[13px] font-bold text-ink-soft transition hover:border-free/40 hover:text-free">{stop.title} 자세히 →</Link>
         {stop.mapx && stop.mapy && (
@@ -71,7 +70,6 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
   const areaSlug = (SIDO_SLUG as Record<string, string>)[c.area] || "";
   const canonical = `${SITE.url}/kids/c/${id}`;
   const related = kidCoursesByArea(c.area).filter((x) => x.id !== c.id && x.theme === c.theme).slice(0, 6);
-  const total = getKidCourses().length;
   const registeredMenu = c.food ? getRestaurantMenu(c.food.id) : undefined;
   const menuSummary = registeredMenu && (registeredMenu.length > 100 ? `${registeredMenu.slice(0, 100).trim()}…` : registeredMenu);
 
@@ -83,19 +81,9 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
       { "@type": "ListItem", position: 3, name: `${c.spot.title} 코스`, item: canonical },
     ],
   };
-  const articleLd = {
-    "@context": "https://schema.org", "@type": "Article",
-    headline: `${c.spot.title} — ${c.area} ${c.city} 아이와 함께 코스`,
-    image: [c.spot.image, c.park?.image, c.food?.image].filter(Boolean),
-    articleSection: `${c.area} 아이와 함께`,
-    publisher: { "@type": "Organization", name: SITE.name },
-    mainEntityOfPage: canonical,
-  };
-
   return (
     <Container className="max-w-[820px] pb-16 pt-5">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
 
       <nav className="mb-3 flex flex-wrap items-center gap-1 text-[12.5px] text-ink-faint">
         <Link href="/kids" className="hover:text-free">아이와 함께</Link>
@@ -115,13 +103,7 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
       </h1>
       <p className="mt-1 text-[13.5px] text-ink-faint">{c.area} {c.city} · 아이와 함께 {th.label} 코스</p>
 
-      <p className="mt-3 text-[15px] leading-[1.85] text-ink-soft">
-        <b className="font-bold text-ink">{c.area} {c.city}</b>에서 아이와 반나절 보내기 좋은 코스예요.
-        <b className="font-bold text-ink"> {c.spot.title}</b>에서 신나게 놀고
-        {c.park && <> , 가까운 <b className="font-bold text-ink">{c.park.title}</b>에서 잠깐 걷다가</>}
-        {c.food && <> 가까운 식사 장소인 <b className="font-bold text-ink">{c.food.title}</b>로 이동</>}해요.
-        {" "}좌표로 연결한 방문 후보이며, 실제 도로 이동시간과 운영시간·예약 가능 여부는 확인이 필요합니다.
-      </p>
+      <p className="mt-3 text-sm text-ink-soft">좌표상 가까운 장소를 연결한 방문 후보입니다. 실제 도로 이동 경로와 운영 여부는 각 장소의 안내를 확인하세요.</p>
 
       {/* 코스 한눈에 */}
       <div className="mt-5 rounded-2xl bg-panel px-4 py-4 sm:px-5">
@@ -133,11 +115,9 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
         </ol>
       </div>
 
-      <Stop stop={c.spot} label={`1. ${th.label}`} emoji={th.emoji} intro={`${c.spot.addr}에 있어요. 이 코스의 출발점으로, 아이와 여기서 충분히 논 뒤 근처로 이동하면 동선이 자연스러워요.`} />
-      {c.park && <Stop stop={c.park} label="2. 공원 산책" emoji="🌳" fromTitle={c.spot.title} intro={`명소에서 직선거리 ${kmLabel(c.park.distKm)}에 있는 산책 후보입니다. 실제 이동 경로와 공원 이용 안내를 확인하세요.`} />}
-      {c.food && <Stop stop={c.food} label={c.park ? "3. 근처 식사" : "2. 근처 식사"} emoji="🍽" fromTitle={c.park ? c.park.title : c.spot.title} intro={`직선거리 ${kmLabel(c.food.distKm)}에 있는 식사 장소 후보입니다.${menuSummary ? ` 한국관광공사에 등록된 메뉴 정보는 ${menuSummary}입니다.` : ""} 메뉴 제공 여부와 영업시간, 아이 동반 이용 가능 여부는 방문 전에 확인해 주세요.`} />}
-
-      <SeoulStayBanner />
+      <Stop stop={c.spot} label={`1. ${th.label}`} emoji={th.emoji} detail={c.spot.addr} />
+      {c.park && <Stop stop={c.park} label="2. 공원 산책" emoji="🌳" fromTitle={c.spot.title} detail={c.park.addr} />}
+      {c.food && <Stop stop={c.food} label={c.park ? "3. 근처 식사" : "2. 근처 식사"} emoji="🍽" fromTitle={c.park ? c.park.title : c.spot.title} detail={[c.food.addr, menuSummary ? `등록 메뉴: ${menuSummary}` : ""].filter(Boolean).join(" · ")} />}
 
       {related.length > 0 && (
         <section className="mt-10 border-t border-line pt-6">
@@ -159,12 +139,7 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
         </section>
       )}
 
-      <div className="mt-10 border-t border-line pt-8">
-        <h2 className="mb-4 text-[19px] font-extrabold text-ink">🛒 아이와 나들이, 이런 것도 챙겨요</h2>
-        <KidCoupangDeals />
-      </div>
-
-      <p className="mt-8 text-[12px] text-ink-faint">아이와 함께 코스 {total.toLocaleString()}개 중 하나예요 · 코스는 좌표 거리로 자동 구성했고, 영업시간·휴무는 방문 전 확인을 권해요 · 정보 제공: 한국관광공사</p>
+      <p className="mt-8 text-[12px] text-ink-faint">좌표 거리로 연결한 방문 후보 · 영업시간·휴무는 방문 전 확인 · 정보 제공: 한국관광공사</p>
     </Container>
   );
 }

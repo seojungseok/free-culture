@@ -6,6 +6,7 @@ import InjeAutumnCourse from "@/components/InjeAutumnCourse";
 import { filterCourses, getCourseAreaCounts, getCourseCount, slimCourse } from "@/lib/courses";
 import { areaFestivals } from "@/lib/festivals";
 import Link from "next/link";
+import InitialIndexPreview from "@/components/InitialIndexPreview";
 
 export const revalidate = 86400;
 
@@ -18,7 +19,12 @@ export const metadata: Metadata = {
 
 export default function CoursePage() {
   const total = getCourseCount();
-  const courses = filterCourses().map(slimCourse);
+  const publishedCourses = filterCourses();
+  const courses = publishedCourses.map(slimCourse);
+  const preview = publishedCourses.slice(0, 18).map((course) => ({
+    href: `/course/c/${course.id}`, title: course.title,
+    meta: `${course.area} · ${course.stops.slice(0, 3).map((stop) => stop.name).join(" → ")}`,
+  }));
   const injeFestival = areaFestivals("강원", { withinDays: 120, limit: 20 })
     .find((festival) => /인제/.test(`${festival.title} ${festival.addr}`));
 
@@ -38,7 +44,7 @@ export default function CoursePage() {
         <p className="mt-2">지역부터 정했다면 <Link href="/region/seoul" className="font-semibold text-brandblue underline">서울 이번 주말 정보</Link>처럼 지역 페이지를 보고, 캠핑을 포함한 일정은 <Link href="/camping" className="font-semibold text-brandblue underline">캠핑장 조건 검색</Link>에서 시설과 예약 정보를 비교할 수 있습니다.</p>
       </section>
       {injeFestival && <InjeAutumnCourse festival={injeFestival} />}
-      <Suspense fallback={null}>
+      <Suspense fallback={<InitialIndexPreview title="등록된 여행코스" items={preview} />}>
         <CourseBrowser courses={courses} areas={getCourseAreaCounts()} total={total} />
       </Suspense>
     </>

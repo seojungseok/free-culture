@@ -56,8 +56,7 @@ export default function FilterableGrid({
       paid: 0,
     };
     for (const e of events) {
-      // "무료" 탭 = 확정무료 + 무료추정
-      if (e.priceType === "free" || e.priceType === "free_estimated") c.free++;
+      if (e.priceType === "free") c.free++;
       else if (e.priceType === "partial_free") c.partial++;
       else if (e.priceType === "cheap") c.cheap++;
       else if (e.priceType === "paid") c.paid++;
@@ -69,11 +68,8 @@ export default function FilterableGrid({
     const base = region === "all" ? events : events.filter((e) => e.area === region);
     if (price === "all") return base;
     if (price === "free") {
-      // 확정무료 먼저, 무료추정 뒤
-      const rank = (t: string) => (t === "free" ? 0 : 1);
       return base
-        .filter((e) => e.priceType === "free" || e.priceType === "free_estimated")
-        .sort((a, b) => rank(a.priceType) - rank(b.priceType));
+        .filter((e) => e.priceType === "free");
     }
     const tab = TABS.find((t) => t.key === price);
     if (!tab || !tab.match) return events;

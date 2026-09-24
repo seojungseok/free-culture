@@ -42,7 +42,7 @@ function build(): SearchDoc[] {
   }
 
   // 문화행사 + 축제(genreKey=festival) 분리
-  const freeish = new Set(["free", "free_estimated", "partial_free"]);
+  const freeish = new Set(["free", "partial_free"]);
   for (const e of getAllEvents()) {
     const isFest = e.genreKey === "festival";
     const price = freeish.has(e.priceType) ? (e.priceType === "partial_free" ? "partial" : "free")

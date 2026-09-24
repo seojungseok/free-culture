@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { getPlaceCount, getPlacesSample, getTourAreaCounts, getTypeCounts, slimTours } from "@/lib/tour";
+import { getPlaceCount, getPlacesSample, getTourAreaCounts, getTypeCounts, slimTours, tourTypeLabel } from "@/lib/tour";
 import PlacesBrowser from "@/components/PlacesBrowser";
 import { Band } from "@/components/Band";
+import InitialIndexPreview from "@/components/InitialIndexPreview";
 
 // 목록은 하루 1회 재생성 → 새 데이터 하루 내 반영
 export const revalidate = 86400;
@@ -19,6 +20,10 @@ export default function PlacesPage() {
   const total = getPlaceCount();
   const spots = slimTours(getPlacesSample(600));
   const areas = getTourAreaCounts();
+  const preview = spots.slice(0, 18).map((spot) => ({
+    href: `/places/spot/${spot.id}`, title: spot.title,
+    meta: `${spot.area} · ${tourTypeLabel(spot.type)}${spot.addr ? ` · ${spot.addr}` : ""}`,
+  }));
 
   return (
     <>
@@ -30,7 +35,7 @@ export default function PlacesPage() {
           전국 관광지·문화시설·체험 명소 <span className="whitespace-nowrap">{total.toLocaleString()}곳</span> — 지역·유형으로 골라보세요
         </p>
       </Band>
-      <Suspense fallback={null}>
+      <Suspense fallback={<InitialIndexPreview title="나들이 장소 미리보기" items={preview} />}>
         <PlacesBrowser spots={spots} areas={areas} total={total} typeTotals={getTypeCounts()} />
       </Suspense>
     </>

@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { getAllEvents, slimForClient } from "@/lib/data";
 import DateBrowser from "@/components/DateBrowser";
 import { Band } from "@/components/Band";
+import InitialIndexPreview from "@/components/InitialIndexPreview";
+import { todayYmd } from "@/lib/dates";
+import { fmtRange } from "@/lib/format";
 
 // 목록은 하루 1회 재생성 → 새 행사 하루 내 반영
 export const revalidate = 86400;
@@ -16,6 +19,8 @@ export const metadata: Metadata = {
 
 export default function EventsPage() {
   const events = slimForClient(getAllEvents());
+  const preview = events.filter((event) => event.endDate >= todayYmd()).slice(0, 18)
+    .map((event) => ({ href: `/event/${event.id}`, title: event.title, meta: `${event.area} · ${fmtRange(event.startDate, event.endDate)} · ${event.place || "장소 확인 필요"}` }));
   return (
     <>
       <Band tone="tint" innerClassName="py-5">
@@ -26,7 +31,7 @@ export default function EventsPage() {
           무료·저렴 전시·공연·축제를 날짜·지역·분야·가격으로 골라보세요
         </p>
       </Band>
-      <Suspense fallback={null}>
+      <Suspense fallback={<InitialIndexPreview title="현재 등록된 문화행사" items={preview} />}>
         <DateBrowser events={events} openFilters />
       </Suspense>
     </>

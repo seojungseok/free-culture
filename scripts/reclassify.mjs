@@ -1,4 +1,4 @@
-// 기존 data/events.json 을 새 판별 로직(classifyEvent, free_estimated 포함)으로 재분석 (API 호출 없음)
+// 기존 data/events.json 을 확인된 요금 정보로 재분류 (API 호출 없음)
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -51,14 +51,6 @@ for (const t of PRICE_TYPES) {
   const pct = ((n / data.events.length) * 100).toFixed(1);
   console.log(`  ${PRICE_LABELS[t].padEnd(6)} (${t.padEnd(14)}): ${String(n).padStart(4)}건  ${pct}%`);
 }
-
-// 무료 추정 랜덤 20건
-const est = data.events.filter((e) => e.priceType === "free_estimated");
-console.log(`\n🟢 무료 추정(free_estimated) 랜덤 20건 [총 ${est.length}건]:`);
-const shuffled = [...est].sort(() => Math.random() - 0.5).slice(0, 20);
-shuffled.forEach((e, i) =>
-  console.log(`  ${String(i + 1).padStart(2)}. [${e.genreKey}] ${e.title}  @ ${e.area} ${e.place}`)
-);
 
 // 남은 unknown 분포
 const unk = data.events.filter((e) => e.priceType === "unknown");

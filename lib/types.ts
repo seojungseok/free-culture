@@ -1,6 +1,5 @@
 export type PriceType =
   | "free"
-  | "free_estimated"
   | "partial_free"
   | "cheap"
   | "paid"

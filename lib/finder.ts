@@ -28,7 +28,7 @@ export function nadeuliCount(f: NadeuliF): number {
   return list.length;
 }
 
-const FREEISH = new Set(["free", "free_estimated", "partial_free"]);
+const FREEISH = new Set(["free"]);
 function overlaps(e: { startDate: string; endDate: string }, start: string, end: string) {
   return e.startDate <= end && e.endDate >= start;
 }

@@ -58,17 +58,15 @@ export function getFeatured(limit = 8): CultureEvent[] {
     .slice(0, limit);
 }
 
-/** 무료 계열: 확정무료 + 무료추정 (조건부무료 포함 여부 선택). 확정무료가 먼저 오도록 정렬 */
+/** 무료로 확인된 행사. 조건부 무료는 요청한 목록에서만 포함한다. */
 export function getFree(includePartial = false): CultureEvent[] {
-  const rank = (t: string) => (t === "free" ? 0 : t === "free_estimated" ? 1 : 2);
   return load()
     .events.filter(
       (e) =>
         e.priceType === "free" ||
-        e.priceType === "free_estimated" ||
         (includePartial && e.priceType === "partial_free")
     )
-    .sort((a, b) => rank(a.priceType) - rank(b.priceType));
+    .sort((a, b) => (a.priceType === "free" ? 0 : 1) - (b.priceType === "free" ? 0 : 1));
 }
 
 /** 1만원 이하 (cheap) */
@@ -116,7 +114,6 @@ export function getNow(): CultureEvent[] {
 export function countByType(events: CultureEvent[]): Record<PriceType, number> {
   const c: Record<PriceType, number> = {
     free: 0,
-    free_estimated: 0,
     partial_free: 0,
     cheap: 0,
     paid: 0,

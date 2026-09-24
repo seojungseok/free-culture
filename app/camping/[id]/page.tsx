@@ -12,7 +12,6 @@ import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
 import TourCard from "@/components/TourCard";
 import CoupangDeals from "@/components/CoupangDeals";
-import DetailGuidance from "@/components/DetailGuidance";
 import CampingCookingGuide from "@/components/CampingCookingGuide";
 
 export const dynamicParams = true;
@@ -140,12 +139,6 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
       </dl>
 
       <p className="mt-3 rounded-xl bg-tint/60 px-4 py-3 text-[13px] text-ink-soft">⚠️ 시설·요금·운영은 바뀔 수 있어요. 방문 전 예약처·공식 채널에서 다시 확인해 주세요.</p>
-
-      <DetailGuidance
-        recommended={[`${region}에서 캠핑장 시설과 운영기간을 미리 확인하고 싶은 분`, c.types.length ? `${c.types.slice(0, 2).join("·")} 형태의 캠핑을 찾는 분` : "자연 속에서 쉬어갈 캠핑장을 찾는 분"]}
-        checks={[c.operPd ? `운영기간은 ${c.operPd}로 안내되어 있습니다. 계절별 운영 여부를 다시 확인해 주세요.` : "운영기간과 이용 가능 여부는 방문 전 공식 채널에서 확인해 주세요.", c.resve ? `예약 방법은 ${c.resve}로 안내되어 있습니다.` : "예약 방법과 요금은 예약처·공식 채널에서 확인해 주세요.", "날씨와 현장 상황에 따라 이용 조건이 달라질 수 있습니다."]}
-        tips={[facs.length ? `등록된 시설은 ${facs.slice(0, 3).join("·")}입니다.` : "필요한 시설이 있는지 출발 전 확인해 주세요.", c.mapx && c.mapy ? "지도에서 위치와 이동 경로를 미리 확인하면 도착 후 동선을 줄일 수 있습니다." : "주소를 지도에 저장하고 출발 전 이동 경로를 확인해 주세요."]}
-      />
 
       <div className="mt-5 flex flex-wrap gap-2.5">
         {mapUrl && <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-free px-5 py-2.5 text-sm font-bold text-white transition hover:bg-freedark">🗺️ 카카오맵 길찾기</a>}

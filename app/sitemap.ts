@@ -14,14 +14,13 @@ import { getDateCourses, dateAreaCounts, dateCityParams } from "@/lib/dateCourse
 import { getAllFestivals } from "@/lib/festivals";
 import { getCityTours } from "@/lib/cityTours";
 import { getPetTravelPlaces } from "@/lib/petTravel";
-import { getKidCourses } from "@/lib/kidCourses";
 import { getAllBundles } from "@/lib/campingCollections";
 import { getTickets } from "@/lib/tickets";
 import { getPrepArticles, isCookingPrepArticle } from '@/lib/weekend-prep/data';
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
-const isFree = (t: string) => t === "free" || t === "free_estimated";
+const isFree = (t: string) => t === "free";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url.replace(/\/$/, "");
@@ -303,7 +302,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...courseDurRoutes,
     ...courseThemeRoutes,
     ...getAllBundles().map(b => ({url: `${base}/camping/collections/${b.slug}`, changeFrequency: "weekly" as const})),
-    ...getKidCourses().map(c => ({url: `${base}/kids/c/${c.id}`, changeFrequency: "weekly" as const})),
     ...getPetTravelPlaces().map(p => ({url: `${base}/pet-travel/${p.id}`, lastModified:p.enrichedAt, changeFrequency: "weekly" as const})),
     // 2) 발행글 있는 상세 (최신 lastmod — 새 글 우선 크롤)
     ...articleSpotRoutes,

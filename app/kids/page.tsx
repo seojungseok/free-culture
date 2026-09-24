@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import { Band, Container } from "@/components/Band";
 import KidCoursesBrowser from "@/components/KidCoursesBrowser";
-import KidCoupangDeals from "@/components/KidCoupangDeals";
-import { getKidCourses, kidCoursesLite, kidAreaCounts } from "@/lib/kidCourses";
+import { kidCoursesLite, kidAreaCounts } from "@/lib/kidCourses";
 import { SITE } from "@/lib/site";
 
 export const revalidate = 86400;
 
 export function generateMetadata(): Metadata {
-  const n = getKidCourses().length;
-  const title = `아이와 함께 — 테마별 아이 코스 ${n.toLocaleString()}개 (명소·공원·근처 식사)`;
-  const description = `동물원·과학관·수목원·놀이공원과 근처 공원, 식사 장소를 좌표 거리로 연결한 아이와 함께 코스 ${n.toLocaleString()}개. 테마와 지역으로 고르고, 실제 이동 경로와 운영 정보는 방문 전에 확인하세요.`;
+  const title = "아이와 함께 — 테마별 나들이 코스";
+  const description = "동물원·과학관·수목원·놀이공원과 근처 공원, 식사 장소를 좌표 거리로 연결한 아이와 함께 나들이 후보. 테마와 지역으로 고르고, 실제 이동 경로와 운영 정보는 방문 전에 확인하세요.";
   return {
     title,
     description,
@@ -66,14 +64,6 @@ export default function KidsPage() {
           <KidCoursesBrowser courses={courses} areas={areas} />
         </Container>
 
-        {/* 쿠팡 4줄 — 장난감·피크닉·특가·생활용품 */}
-        <Container className="pb-12 pt-2">
-          <div className="mb-4 border-t border-line pt-8">
-            <h2 className="text-[19px] font-extrabold text-ink">🛒 아이와 나들이, 이런 것도 챙겨요</h2>
-            <p className="mt-1 text-[13px] text-ink-faint">장난감부터 피크닉·생활용품까지</p>
-          </div>
-          <KidCoupangDeals />
-        </Container>
       </div>
     </>
   );

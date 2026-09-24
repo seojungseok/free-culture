@@ -179,11 +179,11 @@ async function main() {
   // 2) 상세조회 대상 = 신규 + 기존 unknown(요금이 나중에 채워질 수 있으므로 매번 재확인)
   const allSeqs = [...listMap.keys()];
   const newSeqs = allSeqs.filter((s) => !prevById.has(s));
-  // 요금이 비어있던 항목(unknown/무료추정)은 나중에 원본이 채워질 수 있어 매번 재확인
+  // 요금이 비어있던 항목은 나중에 원본이 채워질 수 있어 재확인한다.
   const recheckSeqs = allSeqs.filter(
     (s) =>
       prevById.has(s) &&
-      ["unknown", "free_estimated"].includes(prevById.get(s).priceType)
+      prevById.get(s).priceType === "unknown"
   );
   const targetSeqs = [...new Set([...newSeqs, ...recheckSeqs])];
   const toFetch = targetSeqs.slice(0, MAX_DETAIL);
@@ -297,7 +297,7 @@ async function main() {
   events.sort((a, b) => b.featuredScore - a.featuredScore || a.startDate.localeCompare(b.startDate));
 
   // 통계
-  const stat = { free: 0, free_estimated: 0, partial_free: 0, cheap: 0, paid: 0, unknown: 0 };
+  const stat = { free: 0, partial_free: 0, cheap: 0, paid: 0, unknown: 0 };
   for (const e of events) stat[e.priceType] = (stat[e.priceType] || 0) + 1;
   const featuredCount = events.filter((e) => e.featured).length;
 
@@ -320,7 +320,7 @@ async function main() {
 
   console.log(`\n💾 저장: data/events.json`);
   console.log(
-    `   총 ${events.length}건 | 무료 ${stat.free} · 무료추정 ${stat.free_estimated} · 조건부무료 ${stat.partial_free} · 1만↓ ${stat.cheap} · 유료 ${stat.paid} · 확인필요 ${stat.unknown}`
+    `   총 ${events.length}건 | 무료 ${stat.free} · 일부무료 ${stat.partial_free} · 1만↓ ${stat.cheap} · 유료 ${stat.paid} · 확인필요 ${stat.unknown}`
   );
   console.log(`   종료 제거 ${dropExpired}건 | 큰행사(featured) ${featuredCount}건`);
   console.log(`   API 호출: period2=${calls.period2} area2=${calls.area2} detail2=${calls.detail2}\n`);

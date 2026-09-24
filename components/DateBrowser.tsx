@@ -34,12 +34,12 @@ type Sort = "free" | "ending" | "name";
 type PriceKey = "all" | "free" | "partial" | "cheap" | "paid";
 
 const PAGE = 42;
-const PRICE_RANK: Record<string, number> = { free: 0, free_estimated: 1, partial_free: 2, cheap: 3, paid: 4, unknown: 5 };
-const isFreeLike = (t: string) => t === "free" || t === "free_estimated" || t === "partial_free";
+const PRICE_RANK: Record<string, number> = { free: 0, partial_free: 1, cheap: 2, paid: 3, unknown: 4 };
+const isFreeLike = (t: string) => t === "free";
 
 const PRICE_MATCH: Record<PriceKey, (t: string) => boolean> = {
   all: () => true,
-  free: (t) => t === "free" || t === "free_estimated",
+  free: (t) => t === "free",
   partial: (t) => t === "partial_free",
   cheap: (t) => t === "cheap",
   paid: (t) => t === "paid",
