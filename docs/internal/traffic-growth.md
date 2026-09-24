@@ -39,4 +39,6 @@
 - `npx tsc --noEmit`: 통과.
 - `npm run build`: 통과. 기존 `<img>`·Hook 의존성 경고는 남아 있으며 이번 변경에서 새 빌드 오류는 없다.
 - `node scripts/test-affiliate-html.cjs`: 관리자 화면을 제외한 정적 HTML 1,514개에서 제휴 목적지 없음. 홈 특가 문구도 없음.
-- 주요 URL의 운영 반영 및 모바일 검증은 배포 후 확인한다.
+- 운영 커밋 `6ec9d18`의 Vercel 상태는 성공. 캐시 우회 응답에서 `/`, `/weekend`, `/region/seoul`, `/event/374432`, 대표 준비 가이드, `/tickets/seoulland`, `/course`가 모두 HTTP 200이며, 각 HTML의 제휴 목적지는 0건이다. `/weekend`의 신규 지역 허브 문구도 확인했다.
+- 운영 홈 DOM에서 AdSense 스크립트 태그는 1개이며 공개 제휴 앵커는 0개다. 코드의 `AdSlot`은 `NEXT_PUBLIC_SHOW_AD_SLOTS=1`이 아니면 렌더되지 않고 실제 광고 단위 코드는 아직 없다. AdSense 승인이나 Auto Ads 계정 설정은 코드로 확인할 수 없다.
+- 인앱 브라우저의 390px 모바일 뷰포트에서 `/weekend`의 문서 가로폭은 380px로 넘침이 없고, 지역·방문일·목적 선택과 검색 입력이 정상 배치된 것을 화면으로 확인했다.
