@@ -12,6 +12,7 @@ import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
 import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
+import { hasSubstantiveRestaurantInfo } from "@/lib/placeQuality";
 
 // 음식점 상세 — 맛집 탐방(/food) 소속. 예전 주소(/places/spot/[id])는 여기로 301.
 export const dynamicParams = true;
@@ -40,6 +41,7 @@ export async function generateMetadata({
   return {
     title,
     description,
+    robots: { index: hasSubstantiveRestaurantInfo(id), follow: true },
     keywords: [
       `${r.area} ${food}`,
       gu ? `${gu} 맛집` : `${r.area} 맛집`,

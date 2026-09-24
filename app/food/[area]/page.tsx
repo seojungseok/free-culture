@@ -58,7 +58,7 @@ export default async function FoodAreaPage({ params }: { params: Promise<{ area:
       <div className="bg-panel">
         <Container className="space-y-2.5 py-4">
           <FilterRow label="업종">
-            {FOOD_CATS.map((c) => (
+            {FOOD_CATS.filter((c) => catCount(c.code) > 0).map((c) => (
               <Chip key={c.code} href={`/food/${area}/${c.slug}`} active={false} label={c.label} count={catCount(c.code)} />
             ))}
           </FilterRow>

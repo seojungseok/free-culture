@@ -16,7 +16,8 @@ for(const a of articles){
  const blocks=[...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].flatMap(m=>JSON.parse(m[1]));
  assert(blocks.some(b=>b['@type']==='Article'&&b.headline===a.title&&b.dateModified===a.updatedAt));
  assert(blocks.some(b=>b['@type']==='BreadcrumbList'));
- assert(html.includes('type="checkbox"'));assert(html.includes('rel="sponsored noopener"'));
+ assert(html.includes('type="checkbox"'));
+ assert(!/link\.coupang|coupa\.ng|waug\.com\/r\/|rel="sponsored/i.test(html),path+' no affiliate links');
  for(const photo of [a.cover,...a.sections.map(s=>s.image).filter(Boolean)]){
   assert(html.includes(photo.url));const im=await fetch(base+photo.url,{method:'HEAD'});assert.equal(im.status,200);
  }

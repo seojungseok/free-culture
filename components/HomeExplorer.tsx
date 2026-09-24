@@ -10,7 +10,7 @@ import GamePromoBanner from './GamePromoBanner';
 export type HomeItem = { id: string; href: string; title: string; meta: string; image: string; badge: string; area?: string; start?: string; end?: string };
 type Props = { regional: Record<string, HomeItem[]>; eventItems: HomeItem[]; freeItems: HomeItem[]; kidItems: HomeItem[]; dateItems: HomeItem[]; campItems: HomeItem[]; courseItems: HomeItem[]; seasonItems: HomeItem[]; prepItems: HomeItem[]; placeItems: HomeItem[]; newItems: HomeItem[]; regions: { name: string; href: string }[]; siteName: string };
 const savedKey = SAVED_KEY;
-const categories = [["🎭", "문화행사", "/events"], ["🌿", "나들이", "/places"], ["🗺️", "여행코스", "/course"], ["🚌", "시티투어", "/city-tour"], ["⛺", "캠핑", "/camping"], ["🍽️", "맛집탐방", "/food"], ["🐾", "반려동물 여행", "/pet-travel"], ["👨‍👩‍👧", "아이와 함께", "/kids"], ["💛", "데이트", "/date"], ["🍂", "가을나들이", "/season"], ["🎟️", "체험 장소", "/tickets"], ["🧺", "준비 가이드", "/weekend-prep"]];
+const categories = [["🎭", "문화행사", "/events"], ["🌿", "나들이", "/places"], ["🗺️", "여행코스", "/course"], ["🚌", "시티투어", "/city-tour"], ["⛺", "캠핑", "/camping"], ["🍽️", "맛집탐방", "/food"], ["🐾", "반려동물 여행", "/pet-travel"], ["👨‍👩‍👧", "아이와 함께", "/kids"], ["💛", "데이트", "/date"], ["🍂", "가을나들이", "/season"], ["🧺", "준비 가이드", "/weekend-prep"]];
 
 export default function HomeExplorer({ regional, eventItems, freeItems, kidItems, dateItems, campItems, courseItems, seasonItems, prepItems, placeItems, newItems, regions, siteName }: Props) {
   const router = useRouter(); const [query, setQuery] = useState(""); const [region, setRegion] = useState("서울"); const [saved, setSaved] = useState<string[]>([]);

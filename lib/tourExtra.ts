@@ -48,6 +48,11 @@ export function getInfo(id: string): InfoItem[] {
   return info[id] || [];
 }
 
+export function isUsefulVisitText(value: string): boolean {
+  const text = String(value || "").trim();
+  return Boolean(text) && !/^(?:정보\s*없음|미상|확인\s*필요|미기재|미제공|해당\s*정보\s*없음)[.!]?$/i.test(text);
+}
+
 // 방문 정보 표시 순서 + 라벨 (값 있는 것만 화면에 노출)
 export const INTRO_FIELDS: { key: keyof PlaceIntro; label: string }[] = [
   { key: "usetime", label: "이용시간" },
@@ -84,7 +89,7 @@ function rowsFrom(it: PlaceIntro | undefined, fields: typeof INTRO_FIELDS): { la
   const rows: { label: string; value: string }[] = [];
   for (const f of fields) {
     const v = it[f.key];
-    if (v && String(v).trim()) rows.push({ label: f.label, value: String(v) });
+    if (v && isUsefulVisitText(String(v))) rows.push({ label: f.label, value: String(v).trim() });
   }
   return rows;
 }

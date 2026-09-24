@@ -1,4 +1,4 @@
-export const NEAR_KINDS = [{value:'all',label:'전체'},{value:'place',label:'나들이'},{value:'event',label:'문화행사'},{value:'ticket',label:'입장권·체험'},{value:'food',label:'맛집'}] as const;
+export const NEAR_KINDS = [{value:'all',label:'전체'},{value:'place',label:'나들이'},{value:'event',label:'문화행사'},{value:'food',label:'맛집'}] as const;
 export type NearKind = typeof NEAR_KINDS[number]['value'];
 export const NEAR_RADII = [5,10,20,50] as const;
 export type NearPoint = {lat:number;lng:number};

@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCamp, type Camp } from "@/lib/camping";
-import { campingStory } from "@/lib/campingStory";
+import { hasSubstantiveCampInfo } from "@/lib/placeQuality";
+import { isUsefulVisitText } from "@/lib/tourExtra";
 import { nearbyPlaces, nearbyRestaurants, distanceLabel, foodTypeLabel } from "@/lib/nearby";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
@@ -27,7 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title: {
       absolute: `${c.name} - ${region} ${type} | ${SITE.name}`,
     },
-    description: `${region}의 ${type} 캠핑장 ${c.name}. ${facs.length ? facs.slice(0, 4).join("·") + " 등 시설" : "시설"}${c.pet ? " · 반려동물 동반 가능" : ""}. 요금·예약·지도 정보를 확인하세요.`,
+    description: [`${region} ${type} ${c.name}.`, facs.length ? `등록 시설: ${facs.slice(0, 4).join("·")}.` : "", c.operPd ? `운영기간: ${c.operPd}.` : ""].filter(Boolean).join(" "),
+    robots: { index: hasSubstantiveCampInfo(c), follow: true },
     keywords: [`${c.area} ${type}`, `${c.sigungu} 캠핑장`, `${c.area} 캠핑장`, c.pet ? `${c.area} 반려동물 캠핑장` : "", c.name].filter((k) => k && k.trim()),
     alternates: { canonical: `/camping/${id}` },
     openGraph: { title: `${c.name} - ${region} ${type}`, ...(c.image ? { images: [{ url: c.image }] } : {}) },
@@ -47,13 +49,7 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
   const spotLike = { id: c.id, area: c.area, mapx: c.mapx, mapy: c.mapy } as unknown as Parameters<typeof nearbyPlaces>[0];
   const nearPlaces = nearbyPlaces(spotLike, 6);
   const nearFood = nearbyRestaurants({ area: c.area, mapx: c.mapx, mapy: c.mapy }, 3);
-  const story = campingStory({
-    camp: c,
-    region,
-    facilities: facs,
-    nearFood: nearFood.map((r) => r.title),
-    nearPlaces: nearPlaces.map((p) => p.title),
-  });
+  const story = c.intro.trim();
 
   const jsonLd = {
     "@context": "https://schema.org", "@type": "Campground",
@@ -65,7 +61,7 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
     ...(c.homepage ? { url: c.homepage } : {}),
     amenityFeature: [
       ...facs.map((f) => ({ "@type": "LocationFeatureSpecification", name: f, value: true })),
-      { "@type": "LocationFeatureSpecification", name: "반려동물 동반", value: c.pet },
+      ...(c.pet || isUsefulVisitText(c.petRaw) ? [{ "@type": "LocationFeatureSpecification", name: "반려동물 동반", value: c.pet }] : []),
     ],
   };
   const breadcrumbLd = {
@@ -111,23 +107,19 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
       )}
 
       {/* 소개글 — 구조화 데이터로 조합한 읽을거리(네이버블로그식 여백) */}
-      <section className="mt-6">
+      {story && <section className="mt-6">
         <h2 className="mb-3 flex items-center gap-1.5 text-[17px] font-extrabold text-ink">
           <span>📖</span> 이런 곳이에요
         </h2>
-        <div className="space-y-4 text-[15px] leading-[1.85] text-ink-soft">
-          {story.map((para, i) => (
-            <p key={i}>{para}</p>
-          ))}
-        </div>
-      </section>
+        <p className="text-[15px] leading-[1.85] text-ink-soft">{story}</p>
+      </section>}
 
       <dl className="mt-7 divide-y divide-line rounded-2xl border border-line bg-white">
         {c.addr && <Row label="주소" value={c.addr} />}
         {c.tel && <Row label="전화" value={c.tel} />}
         {c.operPd && <Row label="운영기간" value={c.operPd} />}
         {c.resve && <Row label="예약" value={c.resve} />}
-        <Row label="반려동물" value={c.petRaw || (c.pet ? "가능" : "정보 없음")} />
+        {(isUsefulVisitText(c.petRaw) || c.pet) && <Row label="반려동물" value={isUsefulVisitText(c.petRaw) ? c.petRaw : "가능"} />}
         {c.homepage && (
           <div className="flex gap-3 px-4 py-3">
             <dt className="w-16 shrink-0 text-[13px] font-bold text-ink-faint">홈페이지</dt>
@@ -136,7 +128,6 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
         )}
       </dl>
 
-      <p className="mt-3 rounded-xl bg-tint/60 px-4 py-3 text-[13px] text-ink-soft">⚠️ 시설·요금·운영은 바뀔 수 있어요. 방문 전 예약처·공식 채널에서 다시 확인해 주세요.</p>
 
       <div className="mt-5 flex flex-wrap gap-2.5">
         {mapUrl && <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-free px-5 py-2.5 text-sm font-bold text-white transition hover:bg-freedark">🗺️ 카카오맵 길찾기</a>}

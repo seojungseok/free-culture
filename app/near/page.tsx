@@ -4,7 +4,8 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "내 주변 갈 만한 곳",
-  description: "현재 위치나 지역으로 나들이, 문화행사, 체험 장소, 맛집을 찾아보세요.",
+  description: "현재 위치나 지역으로 나들이, 문화행사, 맛집을 찾아보세요.",
+  robots: { index: false, follow: true },
   alternates: { canonical: "/near" },
 };
 
@@ -13,7 +14,7 @@ export default function NearPage() {
     <main className="mx-auto max-w-[1180px] px-4 py-6 sm:px-6 sm:py-8">
       <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">내 주변 갈 만한 곳</h1>
       <p className="mt-1 text-[14px] text-ink-soft sm:text-[15px]">
-        현재 위치나 지역으로 가까운 <b className="font-bold text-ink">나들이·문화행사·입장권·맛집</b>을 찾아보세요.
+        현재 위치나 지역으로 가까운 <b className="font-bold text-ink">나들이·문화행사·맛집</b>을 찾아보세요.
       </p>
       <div className="mt-5">
         <NearFinder />

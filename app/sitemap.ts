@@ -15,8 +15,8 @@ import { getAllFestivals } from "@/lib/festivals";
 import { getCityTours } from "@/lib/cityTours";
 import { getPetTravelPlaces } from "@/lib/petTravel";
 import { getAllBundles } from "@/lib/campingCollections";
-import { getTickets } from "@/lib/tickets";
 import { getPrepArticles, isCookingPrepArticle } from '@/lib/weekend-prep/data';
+import { hasSubstantivePlaceInfo, hasSubstantiveRestaurantInfo, hasSubstantiveCampInfo } from "@/lib/placeQuality";
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
@@ -32,7 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     ...(getPrepArticles().length ? ['/weekend-prep'] : []),
     ...(getPrepArticles().some(isCookingPrepArticle) ? ['/camping/cooking'] : []),
-    ...(getTickets().length ? ['/tickets'] : []),
     "",
     "/events",
     "/festivals",
@@ -49,25 +48,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kids",
     "/season",
     "/camping/collections",
-    "/game",
-    "/game/roulette",
-    "/game/ladder",
-    "/game/pick",
-    "/game/dice",
-    "/game/bomb",
-    "/game/mission",
-    "/game/finger",
-    "/game/reaction",
-    "/game/slot",
-    "/game/balloon",
-    "/game/timer",
-    "/game/stop",
-    "/game/russian",
-    "/game/tap",
-    "/game/voice",
-    "/game/catch",
-    "/game/number",
-    "/game/memory",
     "/about",
     "/privacy",
     "/terms",
@@ -106,7 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const articleAt = new Map<string, string>();
   const livePlaceIds = new Set(getAllPlaces().map(p => p.id));
   for (const a of getAllArticles()) {
-    if (a.status === "published" && livePlaceIds.has(a.id)) articleAt.set(a.id, a.publishedAt || a.generatedAt || "");
+    if (a.status === "published" && livePlaceIds.has(a.id) && hasSubstantivePlaceInfo(a.id)) articleAt.set(a.id, a.publishedAt || a.generatedAt || "");
   }
   const articleSpotRoutes = [...articleAt].map(([id, at]) => ({
     url: `${base}/places/spot/${id}`,
@@ -115,9 +95,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // 가볼만한 곳 상세 (전량 — 롱테일 색인). 발행글 있는 건 위 그룹에서 처리(중복 제외).
+  // 저장된 설명이나 방문 정보가 충분한 장소만 포함한다.
   const placeSpotRoutes = getAllPlaces()
-    .filter((s) => !articleAt.has(s.id))
+    .filter((s) => !articleAt.has(s.id) && hasSubstantivePlaceInfo(s.id))
     .map((s) => ({
       url: `${base}/places/spot/${s.id}`,
 
@@ -149,8 +129,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  // 음식점 상세 (전량 — 롱테일 색인, /food/spot/[id]로 렌더)
-  const restaurantRoutes = getAllRestaurants().map((r) => ({
+  // 확인된 영업·메뉴 정보가 있는 음식점만 검색용 목록에 포함한다.
+  const restaurantRoutes = getAllRestaurants().filter((r) => hasSubstantiveRestaurantInfo(r.id)).map((r) => ({
     url: `${base}/food/spot/${r.id}`,
 
     changeFrequency: "monthly" as const,
@@ -203,8 +183,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // 캠핑 상세 (전량 — 롱테일 색인)
-  const campRoutes = getAllCamps().map((c) => ({
+  // 소개 또는 여러 확인된 시설·운영 정보가 있는 캠핑장만 포함한다.
+  const campRoutes = getAllCamps().filter(hasSubstantiveCampInfo).map((c) => ({
     url: `${base}/camping/${c.id}`,
 
     changeFrequency: "monthly" as const,
@@ -313,7 +293,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...campRoutes,
     ...eventRoutes,
     ...festivalRoutes,
-    ...getTickets().filter(a=>a.indexable).map(a=>({url:`${base}/tickets/${a.slug}`,lastModified:new Date(a.checkedAt),changeFrequency:'weekly' as const,priority:0.7})),
     ...getPrepArticles().map(a=>({url:`${base}/weekend-prep/${a.slug}`,lastModified:new Date(a.updatedAt),changeFrequency:'monthly' as const,priority:0.6})),
   ];
 }

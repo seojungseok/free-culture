@@ -20,6 +20,7 @@ assert(!('availability' in eventOffer({priceType:'free',priceMin:0,priceMax:0}))
 const sitemap=load('app/sitemap').default(),urls=sitemap.map(s=>s.url),set=new Set(urls);
 assert.equal(urls.length,set.size,'Unique sitemap URLs');
 assert(!urls.some(u=>u.includes('/traditional-market')), 'Hidden markets stay out of sitemap');
+assert(!urls.some(u=>/\/tickets(?:\/|$)|\/kids\/c\/|\/near(?:\/|$)|\/game(?:\/|$)/.test(u)), 'Redirected and thin routes stay out of sitemap');
 assert(urls.length<50000,'Single sitemap URL limit');
 assert(urls.every(u=>u.startsWith('https://mwohaji.kr')&&!u.includes('?')&&!u.includes('undefined')));
 assert(!urls.some(u=>/\/(search|saved|plan|admin)(\/|$)/.test(u)));
@@ -28,8 +29,14 @@ const {getKidCourses}=load('lib/kidCourses'),{getAllBundles}=load('lib/campingCo
 assert(getKidCourses().every(c=>!set.has('https://mwohaji.kr/kids/c/'+c.id)));
 assert(getAllBundles().every(c=>set.has('https://mwohaji.kr/camping/collections/'+c.slug)));
 const {getAllArticles}=load('lib/articles'),{getAllPlaces}=load('lib/tour');
+const {getAllRestaurants}=load('lib/food');
+const {hasSubstantivePlaceInfo,hasSubstantiveRestaurantInfo,hasSubstantiveCampInfo}=load('lib/placeQuality');
 const live=new Set(getAllPlaces().map(p=>p.id));
 for(const a of getAllArticles())if(!live.has(a.id))assert(!set.has('https://mwohaji.kr/places/spot/'+a.id));
+for(const p of getAllPlaces())assert.equal(set.has('https://mwohaji.kr/places/spot/'+p.id),hasSubstantivePlaceInfo(p.id),p.id+' place quality');
+for(const r of getAllRestaurants())assert.equal(set.has('https://mwohaji.kr/food/spot/'+r.id),hasSubstantiveRestaurantInfo(r.id),r.id+' restaurant quality');
+const {getAllCamps}=load('lib/camping');
+for(const c of getAllCamps())assert.equal(set.has('https://mwohaji.kr/camping/'+c.id),hasSubstantiveCampInfo(c),c.id+' camp quality');
 const robots=load('app/robots').default();
 const matches=(rule,url)=>new RegExp('^'+rule.split('*').map(p=>p.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('.*')).test(url);
 const metaTraining=robots.rules.find(r=>r.userAgent==='Meta-ExternalAgent');

@@ -68,7 +68,7 @@ export default async function FoodAreaCatPage({ params }: { params: Promise<{ ar
         <Container className="space-y-2.5 py-4">
           <FilterRow label="업종">
             <Chip href={`/food/${area}`} active={false} label="전체" count={filterRestaurants({ area: sido }).length} />
-            {FOOD_CATS.map((f) => (
+            {FOOD_CATS.filter((f) => filterRestaurants({ area: sido, cat3: f.code }).length > 0).map((f) => (
               <Chip key={f.code} href={`/food/${area}/${f.slug}`} active={f.slug === cat} label={f.label} count={filterRestaurants({ area: sido, cat3: f.code }).length} />
             ))}
           </FilterRow>

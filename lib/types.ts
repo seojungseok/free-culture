@@ -15,7 +15,7 @@ export interface CultureEvent {
   priceType: PriceType;
   /** 요약 배지 텍스트 (예: "무료", "조건부 무료", "1만원 이하") */
   priceLabel: string;
-  /** 최저가(원). 무료 tier가 있으면 0 */
+  /** 확인된 요금 하한(원). 무료 구간이 있으면 0 */
   priceMin: number | null;
   /** 최고가(원) */
   priceMax: number | null;

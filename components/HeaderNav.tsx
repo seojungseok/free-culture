@@ -17,7 +17,6 @@ export default function HeaderNav({ seasonLabel }: { seasonLabel: string }) {
     { href: "/places", label: "나들이", path: "/places" },
     { href: "/course", label: "여행코스", path: "/course" },
     { href: "/camping", label: "캠핑", path: "/camping" },
-    { href: "/tickets", label: "체험 장소", path: "/tickets" },
     { href: "/weekend-prep", label: "준비 가이드", path: "/weekend-prep" },
   ];
 

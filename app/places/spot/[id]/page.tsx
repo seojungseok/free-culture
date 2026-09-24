@@ -7,7 +7,7 @@ import { getTourById, tourTypeLabel, isCampingDupe, campingDupeTarget } from "@/
 import { getArticle } from "@/lib/articles";
 import { fetchPlaceOverview, fetchPlaceImages, fetchAdmission } from "@/lib/tourDetail";
 import { getAdmission } from "@/lib/fees";
-import { getIntro, introRows, getInfo } from "@/lib/tourExtra";
+import { getIntro, introRows, getInfo, isUsefulVisitText } from "@/lib/tourExtra";
 import { nearbyPlaces, nearbyPlacesByDistance, nearbyRestaurants, distanceLabel, foodTypeLabel, getRestaurantById } from "@/lib/nearby";
 import TourCard from "@/components/TourCard";
 import CourseCard from "@/components/CourseCard";
@@ -61,6 +61,7 @@ export async function generateMetadata({
   return {
     title,
     description,
+    robots: { index: hasSubstantivePlaceInfo(id), follow: true },
     keywords: (() => {
       const gu = (spot.addr.match(/[가-힣]{2,}(?:구|군)/) || [])[0];
       // 장소명에서 구체 유형어 추출(생태공원·박물관·궁궐 등) → 검색 키워드 풍부화
@@ -105,7 +106,7 @@ export default async function SpotDetailPage({
   const article = getArticle(id); // 발행된 자체 소개글(있으면 본문으로)
   // 방문 팁·볼거리: 미리 수집한 캐시로만 서빙(런타임 API 호출 없음)
   const tipRows = introRows(id);
-  const facilities = getInfo(id);
+  const facilities = getInfo(id).filter((item) => isUsefulVisitText(item.text));
   // 주변 나들이 장소·맛집: 좌표 거리 계산(결정론적, 사실만)
   const nearPlaces = nearbyPlaces(spot, 5);
   const nearFood = nearbyRestaurants(spot, 3);
@@ -132,20 +133,6 @@ export default async function SpotDetailPage({
   const overview = detail.overview;
   const homepage = detail.homepage;
   const tel = detail.tel || spot.tel;
-  // detailIntro2의 fee뿐 아니라 detailInfo2가 "시설이용료"로 내려주는 경우도 있다.
-  // 실제 공공데이터 요금 설명이 있으면 상단에서 "정보 없음"이라고 모순되게 표시하지 않는다.
-  const hasDetailedFee = Boolean(
-    cachedIntro?.fee?.trim() ||
-    facilities.some((item) => /입장료|이용료|요금/.test(item.name) && item.text.trim()),
-  );
-  const admissionLabel =
-    admission === "free"
-      ? "무료"
-      : admission === "paid"
-        ? "유료"
-        : hasDetailedFee
-          ? "요금 안내 있음 — 아래 방문 정보 확인"
-          : "정보 없음 — 방문 전 확인 권장";
 
   // 갤러리 = 대표사진(firstimage) + 추가사진, URL 기준 중복 제거
   const gallery: GalleryImage[] = [];
@@ -178,9 +165,9 @@ export default async function SpotDetailPage({
     "@context": "https://schema.org",
     "@type": "TouristAttraction",
     name: spot.title,
-    description:
-      (article ? article.content.replace(/[#*>`-]/g, " ").replace(/\s+/g, " ").trim() : overview) ||
-      `${spot.area}에서 가볼만한 ${tourTypeLabel(spot.type)}, ${spot.title}`,
+    ...((article?.content || overview)
+      ? { description: article ? article.content.replace(/[#*>`-]/g, " ").replace(/\s+/g, " ").trim() : overview }
+      : {}),
     image: gallery.slice(0, 6).map((g) => g.full),
     address: {
       "@type": "PostalAddress",
@@ -264,19 +251,15 @@ export default async function SpotDetailPage({
       ) : null}
 
       {hasSubstantivePlaceInfo(id) && <AdSlot label="본문 중간 광고" />}
-      <dl className="mt-6 divide-y divide-line rounded-2xl border border-line bg-white">
-        <div className="flex gap-3 px-4 py-3">
-          <dt className="w-14 shrink-0 text-[13px] font-bold text-ink-faint">입장료</dt>
-          <dd className="min-w-0 flex-1 text-[14px]">
-            {admission === "free" ? (
-              <span className="font-bold text-free">무료</span>
-            ) : admission === "paid" ? (
-              <span className="font-semibold text-ink">유료</span>
-            ) : (
-              <span className="text-ink-faint">{admissionLabel}</span>
-            )}
-          </dd>
-        </div>
+      {(admission !== "unknown" || spot.addr || tel || homepage) && <dl className="mt-6 divide-y divide-line rounded-2xl border border-line bg-white">
+        {admission !== "unknown" && !cachedIntro?.fee?.trim() && (
+          <div className="flex gap-3 px-4 py-3">
+            <dt className="w-14 shrink-0 text-[13px] font-bold text-ink-faint">입장료</dt>
+            <dd className="min-w-0 flex-1 text-[14px]">
+              {admission === "free" ? <span className="font-bold text-free">무료</span> : <span className="font-semibold text-ink">유료</span>}
+            </dd>
+          </div>
+        )}
         {spot.addr && <Row label="주소" value={spot.addr} />}
         {tel && <Row label="전화" value={tel} />}
         {homepage && (
@@ -289,7 +272,8 @@ export default async function SpotDetailPage({
             </dd>
           </div>
         )}
-      </dl>      {/* 방문 정보 (detailIntro2 캐시) — 이용시간·휴무일·주차·요금 등 */}
+      </dl>}
+      {/* 방문 정보 (detailIntro2 캐시) — 이용시간·휴무일·주차·요금 등 */}
       {tipRows.length > 0 && (
         <section className="mt-6">
           <h2 className="mb-2 text-[16px] font-extrabold text-ink">🧭 방문 정보</h2>
