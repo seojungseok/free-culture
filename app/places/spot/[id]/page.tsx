@@ -76,7 +76,6 @@ export async function generateMetadata({
       ];
     })(),
     alternates: { canonical: `/places/spot/${id}` },
-    robots: { index: hasSubstantivePlaceInfo(id), follow: true },
     openGraph: {
       title,
       description,
