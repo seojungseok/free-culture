@@ -261,11 +261,7 @@ export default async function SpotDetailPage({
         <p className="mt-5 whitespace-pre-line text-[15px] leading-[1.8] text-ink-soft">
           {overview}
         </p>
-      ) : (
-        <p className="mt-5 text-[15px] leading-[1.8] text-ink-faint">
-          {spot.area} {spot.addr}에 위치한 {tourTypeLabel(spot.type)}입니다. 방문 전 지도와 홈페이지에서 상세 정보를 확인하세요.
-        </p>
-      )}
+      ) : null}
 
       {hasSubstantivePlaceInfo(id) && <AdSlot label="본문 중간 광고" />}
       <dl className="mt-6 divide-y divide-line rounded-2xl border border-line bg-white">
