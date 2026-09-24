@@ -15,12 +15,11 @@ import { coursesContaining, slimCourse } from "@/lib/courses";
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
 import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
 import ArticleBody from "@/components/ArticleBody";
-import SeoulStayBanner from "@/components/SeoulStayBanner";
-import { stayLinkFor } from "@/lib/stayLinks";
 import { galleryForSpot } from "@/lib/photoGallery";
+import { hasSubstantivePlaceInfo } from "@/lib/placeQuality";
+import AdSlot from "@/components/AdSlot";
 
 // 상세는 방문 시점에 detailCommon2로 overview를 받아 ISR 캐시 (빌드 시 전량 프리렌더 X)
 export const dynamicParams = true;
@@ -77,6 +76,7 @@ export async function generateMetadata({
       ];
     })(),
     alternates: { canonical: `/places/spot/${id}` },
+    robots: { index: hasSubstantivePlaceInfo(id), follow: true },
     openGraph: {
       title,
       description,
@@ -104,8 +104,6 @@ export default async function SpotDetailPage({
   }
 
   const article = getArticle(id); // 발행된 자체 소개글(있으면 본문으로)
-  const stay = stayLinkFor(spot.area, spot.addr); // 지역별 숙소 제휴 링크(없으면 null → 미노출)
-
   // 방문 팁·볼거리: 미리 수집한 캐시로만 서빙(런타임 API 호출 없음)
   const tipRows = introRows(id);
   const facilities = getInfo(id);
@@ -232,7 +230,7 @@ export default async function SpotDetailPage({
       <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
         {spot.title}
       </h1>
-      {stay && <AffiliateNotice className="mt-1.5" />}
+      {hasSubstantivePlaceInfo(id) && <AdSlot label="본문 상단 광고" />}
 
       {gallery.length > 0 && (
         <div className="mt-4">
@@ -270,6 +268,7 @@ export default async function SpotDetailPage({
         </p>
       )}
 
+      {hasSubstantivePlaceInfo(id) && <AdSlot label="본문 중간 광고" />}
       <dl className="mt-6 divide-y divide-line rounded-2xl border border-line bg-white">
         <div className="flex gap-3 px-4 py-3">
           <dt className="w-14 shrink-0 text-[13px] font-bold text-ink-faint">입장료</dt>
@@ -295,16 +294,7 @@ export default async function SpotDetailPage({
             </dd>
           </div>
         )}
-      </dl>
-
-      {/* 숙소 제휴 배너 — 제휴 링크가 등록된 지역에서만 (광고, 위아래 여백 확보) */}
-      {stay && (
-        <div className="my-8">
-          <SeoulStayBanner region={stay.region} href={stay.href} />
-        </div>
-      )}
-
-      {/* 방문 정보 (detailIntro2 캐시) — 이용시간·휴무일·주차·요금 등 */}
+      </dl>      {/* 방문 정보 (detailIntro2 캐시) — 이용시간·휴무일·주차·요금 등 */}
       {tipRows.length > 0 && (
         <section className="mt-6">
           <h2 className="mb-2 text-[16px] font-extrabold text-ink">🧭 방문 정보</h2>
@@ -358,9 +348,6 @@ export default async function SpotDetailPage({
       {placeCourses.length > 0 && (
         <section className="mt-6">
           <h2 className="mb-1 text-[16px] font-extrabold text-ink">🧭 이곳이 포함된 여행코스</h2>
-          <p className="mb-3 text-[13.5px] text-ink-faint">
-            {spot.title}을(를) 넣어 짠 코스예요. 주변 일정까지 한 번에 볼 수 있어요.
-          </p>
           <div className="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3">
             {placeCourses.map((c) => (
               <CourseCard key={c.id} course={slimCourse(c)} />
@@ -400,6 +387,7 @@ export default async function SpotDetailPage({
         </Link>
       </div>
 
+      {hasSubstantivePlaceInfo(id) && <AdSlot label="본문 하단 광고" />}
       <p className="mt-8 text-[12px] text-ink-faint">관광정보 제공: 한국관광공사 (TourAPI)</p>
     </Container>
   );

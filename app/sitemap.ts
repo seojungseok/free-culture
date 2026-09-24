@@ -17,6 +17,7 @@ import { getPetTravelPlaces } from "@/lib/petTravel";
 import { getAllBundles } from "@/lib/campingCollections";
 import { getTickets } from "@/lib/tickets";
 import { getPrepArticles, isCookingPrepArticle } from '@/lib/weekend-prep/data';
+import { hasSubstantivePlaceInfo } from "@/lib/placeQuality";
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
@@ -106,7 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const articleAt = new Map<string, string>();
   const livePlaceIds = new Set(getAllPlaces().map(p => p.id));
   for (const a of getAllArticles()) {
-    if (a.status === "published" && livePlaceIds.has(a.id)) articleAt.set(a.id, a.publishedAt || a.generatedAt || "");
+    if (a.status === "published" && livePlaceIds.has(a.id) && hasSubstantivePlaceInfo(a.id)) articleAt.set(a.id, a.publishedAt || a.generatedAt || "");
   }
   const articleSpotRoutes = [...articleAt].map(([id, at]) => ({
     url: `${base}/places/spot/${id}`,
@@ -117,7 +118,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 가볼만한 곳 상세 (전량 — 롱테일 색인). 발행글 있는 건 위 그룹에서 처리(중복 제외).
   const placeSpotRoutes = getAllPlaces()
-    .filter((s) => !articleAt.has(s.id))
+    .filter((s) => !articleAt.has(s.id) && hasSubstantivePlaceInfo(s.id))
     .map((s) => ({
       url: `${base}/places/spot/${s.id}`,
 
@@ -313,7 +314,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...campRoutes,
     ...eventRoutes,
     ...festivalRoutes,
-    ...getTickets().map(a=>({url:`${base}/tickets/${a.slug}`,lastModified:new Date(a.checkedAt),changeFrequency:'weekly' as const,priority:0.7})),
+    ...getTickets().filter(a=>a.indexable).map(a=>({url:`${base}/tickets/${a.slug}`,lastModified:new Date(a.checkedAt),changeFrequency:'weekly' as const,priority:0.7})),
     ...getPrepArticles().map(a=>({url:`${base}/weekend-prep/${a.slug}`,lastModified:new Date(a.updatedAt),changeFrequency:'monthly' as const,priority:0.6})),
   ];
 }

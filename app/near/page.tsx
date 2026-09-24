@@ -4,7 +4,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "내 주변 갈 만한 곳",
-  description: "현재 위치나 지역으로 나들이, 문화행사, 입장권·체험, 맛집을 찾아보세요.",
+  description: "현재 위치나 지역으로 나들이, 문화행사, 체험 장소, 맛집을 찾아보세요.",
   alternates: { canonical: "/near" },
 };
 

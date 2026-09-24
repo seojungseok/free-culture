@@ -83,10 +83,7 @@ export default async function FoodAreaCatPage({ params }: { params: Promise<{ ar
           <p className="mt-6 text-center text-[13px] text-ink-faint">
             {sido} {c.label} 맛집 {list.length.toLocaleString()}곳 중 {CAP}곳 표시
           </p>
-        )}
-
-        {/* 쿠팡 제휴 배너 — 목록 끝, 광고와 간격 확보 */}
-      </Container>
+        )}      </Container>
     </>
   );
 }

@@ -31,7 +31,7 @@ export default function Footer() {
             <div className="text-[15px] font-extrabold text-ink">{SITE.name}</div>
             <p className="mt-0.5 text-ink-faint">{SITE.tagline}</p>
             <p className="mt-1">
-              광고·제보·문의:{" "}
+              제보·문의:{" "}
               <a href={`mailto:${SITE.email}`} className="font-semibold text-ink hover:underline">
                 {SITE.email}
               </a>

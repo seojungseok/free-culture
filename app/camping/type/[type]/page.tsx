@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { filterCamps, campAreaCounts, CAMP_TYPE_SLUG, campTypeFromSlug } from "@/lib/camping";
 import CampCard from "@/components/CampCard";
-import CoupangDeals from "@/components/CoupangDeals";
 import { Band, Container } from "@/components/Band";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import { SIDO_SLUG } from "@/lib/classify";
@@ -69,14 +68,7 @@ export default async function CampingTypePage({ params }: { params: Promise<{ ty
           <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {shown.map((c) => <CampCard key={c.id} camp={c} />)}
           </div>
-          <p className="mt-8 text-center text-[13px] text-ink-faint">지역을 선택하면 더 많은 {t.label}을 볼 수 있어요</p>
-
-          {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 목록 끝, 광고와 간격 확보 */}
-          <div className="mt-8">
-            <CoupangDeals />
-          </div>
-
-          {/* 지역별 {유형} — 지역 캠핑장 라우트로 내부링크 */}
+          <p className="mt-8 text-center text-[13px] text-ink-faint">지역을 선택하면 더 많은 {t.label}을 볼 수 있어요</p>          {/* 지역별 {유형} — 지역 캠핑장 라우트로 내부링크 */}
           <section className="mt-12 border-t border-line pt-6">
             <h2 className="mb-3 text-[15px] font-extrabold text-ink">지역별 {t.label}</h2>
             <div className="flex flex-wrap gap-2">

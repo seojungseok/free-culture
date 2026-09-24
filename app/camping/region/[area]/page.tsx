@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { filterCamps, campAreaCounts, CAMP_TYPE_SLUG } from "@/lib/camping";
 import { getAllBundles } from "@/lib/campingCollections";
 import CampCard from "@/components/CampCard";
-import CoupangDeals from "@/components/CoupangDeals";
 import { Band, Container } from "@/components/Band";
 import { FilterRow, Chip } from "@/components/FilterChips";
 import { SIDO_SLUG, sidoFromSlug } from "@/lib/classify";
@@ -81,14 +80,7 @@ export default async function CampingRegionPage({ params }: { params: Promise<{ 
           <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {shown.map((c) => <CampCard key={c.id} camp={c} />)}
           </div>
-          {list.length > CAP && <p className="mt-8 text-center text-[13px] text-ink-faint">{sido} 캠핑장 {list.length.toLocaleString()}곳 중 {CAP}곳 표시</p>}
-
-          {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 목록 끝, 광고와 간격 확보 */}
-          <div className="mt-8">
-            <CoupangDeals />
-          </div>
-
-          {otherAreas.length > 0 && (
+          {list.length > CAP && <p className="mt-8 text-center text-[13px] text-ink-faint">{sido} 캠핑장 {list.length.toLocaleString()}곳 중 {CAP}곳 표시</p>}          {otherAreas.length > 0 && (
             <section className="mt-12 border-t border-line pt-6">
               <h2 className="mb-3 text-[15px] font-extrabold text-ink">다른 지역 캠핑장</h2>
               <div className="flex flex-wrap gap-2">

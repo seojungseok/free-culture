@@ -1,4 +1,3 @@
-import SeoulStayBanner from '@/components/SeoulStayBanner';
 import NextStop from "@/components/NextStop";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -11,7 +10,6 @@ import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
 import TourCard from "@/components/TourCard";
-import CoupangDeals from "@/components/CoupangDeals";
 import CampingCookingGuide from "@/components/CampingCookingGuide";
 
 export const dynamicParams = true;
@@ -169,10 +167,8 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
         </section>
       )}
 
-      <SeoulStayBanner context="camping" />
       <CampingCookingGuide compact />
 
-      <CoupangDeals />
 
       <p className="mt-8 text-[12px] text-ink-faint">캠핑정보 제공: 한국관광공사 고캠핑</p>
     </Container>

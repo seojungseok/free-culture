@@ -13,7 +13,6 @@ import { eventContentsText, eventContentsParagraphs } from "@/lib/eventContents"
 import { fmtRange, placeText, dday } from "@/lib/format";
 import { SITE } from "@/lib/site";
 import PriceBadge from "@/components/PriceBadge";
-import EventCoupangDeals from "@/components/EventCoupangDeals";
 import AdSlot from "@/components/AdSlot";
 import PosterCard from "@/components/PosterCard";
 import ShareButtons from "@/components/ShareButtons";
@@ -278,7 +277,6 @@ export default async function EventPage({
           </div>
         </section>
       )}
-      <EventCoupangDeals realmName={ev.realmName} />
     </article>
   );
 }

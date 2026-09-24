@@ -7,8 +7,8 @@ const COOKING_SLUGS = new Set([
   "camp-jeyuk-bokkeum", "camp-sundae-bokkeum", "camp-dakgalbi", "camp-ojingeo-bokkeum", "camp-kimchi-fried-rice",
 ]);
 
-export function prepCategoryLabel(category: string, article?: Pick<PrepArticle, "slug" | "salesFormat">) {
-  if (article?.salesFormat === "food-checklist" || category === "요리 준비물") return "요리 재료 체크리스트";
-  if (category === "캠핑 요리" || category === "바비큐 요리" || article?.salesFormat === "food-recipe" || (article && COOKING_SLUGS.has(article.slug))) return "캠핑요리 가이드";
+export function prepCategoryLabel(category: string, article?: Pick<PrepArticle, "slug" | "checklist">) {
+  if (article?.checklist?.length || category === "요리 준비물") return "요리 재료 체크리스트";
+  if (category === "캠핑 요리" || category === "바비큐 요리" || (article && COOKING_SLUGS.has(article.slug))) return "캠핑요리 가이드";
   return category;
 }

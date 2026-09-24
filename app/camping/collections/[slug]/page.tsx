@@ -6,7 +6,6 @@ import { SITE } from "@/lib/site";
 import { SIDO_SLUG } from "@/lib/classify";
 import { Container } from "@/components/Band";
 import CampCard from "@/components/CampCard";
-import CoupangDeals from "@/components/CoupangDeals";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -78,14 +77,7 @@ export default async function BundlePage({ params }: { params: Promise<{ slug: s
       <h2 className="mb-3 mt-10 text-[16px] font-extrabold text-ink">사진으로 보기</h2>
       <div className="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 md:grid-cols-4">
         {camps.filter((c) => c.image).slice(0, 12).map((c) => <CampCard key={c.id} camp={c} />)}
-      </div>
-
-      {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 본문 끝, 광고와 간격 확보 */}
-      <div className="mt-8">
-        <CoupangDeals />
-      </div>
-
-      <div className="mt-8">
+      </div>      <div className="mt-8">
         <Link href={`/camping/region/${(SIDO_SLUG as Record<string, string>)[b.area]}`} className="inline-flex rounded-full border border-line bg-white px-5 py-2.5 text-sm font-bold text-ink-soft transition hover:border-free/40 hover:text-free">{b.area} 캠핑장 전체 보기 →</Link>
       </div>
       <p className="mt-6 text-[12px] text-ink-faint">캠핑정보 제공: 한국관광공사 고캠핑 · 목록은 데이터 기준으로 자동 정리되며 주관적 평가를 담지 않습니다.</p>

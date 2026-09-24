@@ -73,10 +73,7 @@ export default async function FoodAreaPage({ params }: { params: Promise<{ area:
           <p className="mt-6 text-center text-[13px] text-ink-faint">
             {sido} 맛집 {list.length.toLocaleString()}곳 중 {CAP}곳 표시 — 업종을 선택해 더 좁혀보세요.
           </p>
-        )}
-
-        {/* 쿠팡 제휴 배너 — 목록 끝, 광고와 간격 확보 */}
-        {/* 다른 지역 맛집 — 내부링크(크롤 유도) */}
+        )}        {/* 다른 지역 맛집 — 내부링크(크롤 유도) */}
         {otherAreas.length > 0 && (
           <section className="mt-10 border-t border-line pt-6">
             <h2 className="mb-3 text-[15px] font-extrabold text-ink">다른 지역 맛집</h2>

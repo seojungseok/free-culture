@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Band } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
 import CourseCard from "@/components/CourseCard";
-import SeoulStayBanner from "@/components/SeoulStayBanner";
-import { stayLinkFor } from "@/lib/stayLinks";
 import {
   filterCourses, getCourseAreaCounts, getDurationCounts, getThemeCounts,
   DURATIONS, THEMES, areaSlug, sidoFromSlug, durationSlug, slimCourse,
@@ -53,7 +50,6 @@ export default async function CourseAreaPage({ params }: { params: Promise<{ are
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">
           <span className="text-free">{area}</span> 여행코스
         </h1>
-        {stayLinkFor(area) && <AffiliateNotice className="mt-1.5" />}
         <p className="mt-1 text-[14px] text-ink-soft">
           {area} 가볼만한 곳을 이어 만든 하루 여행 <span className="whitespace-nowrap">{list.length}개</span> — 밥집까지 함께
         </p>
@@ -82,16 +78,7 @@ export default async function CourseAreaPage({ params }: { params: Promise<{ are
 
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {list.map((c) => <CourseCard key={c.id} course={c} />)}
-        </div>
-
-        {/* 숙소 제휴 배너 — 제휴 링크가 등록된 지역에서만 (광고, 위아래 여백 확보) */}
-        {stayLinkFor(area) && (
-          <div className="my-10">
-            <SeoulStayBanner region={stayLinkFor(area)!.region} href={stayLinkFor(area)!.href} />
-          </div>
-        )}
-
-        {otherAreas.length > 0 && (
+        </div>        {otherAreas.length > 0 && (
           <div className="mt-8 border-t border-line pt-5">
             <h2 className="mb-2 text-[13px] font-bold text-ink-faint">다른 지역 여행코스</h2>
             <div className="flex flex-wrap gap-2">

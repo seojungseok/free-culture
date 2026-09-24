@@ -1,9 +1,0 @@
-import test from 'node:test';import assert from 'node:assert/strict';
-import {coupangFetch} from './coupang.mjs';
-test('gateway enforces one product, correct signed date, shared cache, and no bulk endpoints',async()=>{
- const original=globalThis.fetch;const names=['COUPANG_QUEUE_GITHUB_TOKEN','COUPANG_ACCESS_KEY','COUPANG_SECRET_KEY'];const previous=Object.fromEntries(names.map(n=>[n,process.env[n]]));let calls=0,rev=1;
- let state={version:1,revision:'initial',cap:10,window:60000,interval:6100,nextAt:0,events:[],lock:null,cache:{}};
- Object.assign(process.env,{COUPANG_QUEUE_GITHUB_TOKEN:'test',COUPANG_ACCESS_KEY:'test',COUPANG_SECRET_KEY:'test'});
- globalThis.fetch=async(input,options)=>{const u=new URL(input);if(u.hostname==='api.github.com'){if(options.method==='PUT'){const b=JSON.parse(options.body);assert.equal(b.sha,String(rev));state=JSON.parse(Buffer.from(b.content,'base64').toString());rev++;return Response.json({},{headers:{date:new Date().toUTCString()}});}return Response.json({sha:String(rev),encoding:'base64',content:Buffer.from(JSON.stringify(state)).toString('base64')},{headers:{date:new Date().toUTCString()}});}calls++;assert.equal(u.hostname,'api-gateway.coupang.com');assert.equal(u.searchParams.get('limit'),'1');assert.match(options.headers.Authorization,/signed-date=\d{6}T\d{6}Z/);return Response.json({data:{productData:[{productId:1}]}});};
- try{const url='https://api-gateway.coupang.com/v2/providers/affiliate_open_api/apis/openapi/v1/products/search?keyword=picnic&limit=100';await coupangFetch(url);const second=await coupangFetch(url);assert.equal(calls,1);assert.equal(second.headers.get('X-Prep-Cache'),'hit');await assert.rejects(coupangFetch('https://api-gateway.coupang.com/v2/providers/affiliate_open_api/apis/openapi/v1/products/goldbox'));assert.equal(calls,1);}finally{globalThis.fetch=original;for(const n of names){if(previous[n]===undefined)delete process.env[n];else process.env[n]=previous[n];}}
-});

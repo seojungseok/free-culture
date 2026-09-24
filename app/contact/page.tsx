@@ -3,7 +3,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "문의",
-  description: `${SITE.name}에 광고 문의, 행사 정보 오류 제보, 행사 등록 요청, 기타 문의를 남겨주세요.`,
+  description: `${SITE.name}에 행사 정보 오류 제보, 행사 등록 요청, 기타 문의를 남겨주세요.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -22,13 +22,6 @@ export default function ContactPage() {
         <a href={`mailto:${MAIL}`} className="text-lg font-bold">
           {MAIL}
         </a>
-      </p>
-
-      <h2>📢 광고 문의</h2>
-      <p>
-        배너·제휴 광고를 원하시면{" "}
-        <a href={`mailto:${MAIL}?subject=[광고문의]`}>{MAIL}</a> 로 매체 소개와
-        함께 문의해 주세요.
       </p>
 
       <h2>🛠 행사 정보 오류 제보</h2>

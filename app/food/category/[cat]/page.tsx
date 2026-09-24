@@ -72,10 +72,7 @@ export default async function FoodCategoryPage({ params }: { params: Promise<{ c
           <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {shown.map((r) => <FoodCard key={r.id} r={r} />)}
           </div>
-          <p className="mt-8 text-center text-[13px] text-ink-faint">지역을 선택하면 더 많은 {c.label} 맛집을 볼 수 있어요</p>
-
-          {/* 쿠팡 제휴 배너 — 목록 끝, 광고와 간격 확보 */}
-          {/* 지역별 {업종} 맛집 — /food/[지역]/[업종] 정적 라우트로 내부링크 */}
+          <p className="mt-8 text-center text-[13px] text-ink-faint">지역을 선택하면 더 많은 {c.label} 맛집을 볼 수 있어요</p>          {/* 지역별 {업종} 맛집 — /food/[지역]/[업종] 정적 라우트로 내부링크 */}
           <section className="mt-12 border-t border-line pt-6">
             <h2 className="mb-3 text-[15px] font-extrabold text-ink">지역별 {c.label} 맛집</h2>
             <div className="flex flex-wrap gap-2">

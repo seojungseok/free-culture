@@ -3,7 +3,6 @@ import Link from "next/link";
 import { getAllBundles } from "@/lib/campingCollections";
 import { SITE } from "@/lib/site";
 import { Band, Container } from "@/components/Band";
-import CoupangDeals from "@/components/CoupangDeals";
 
 export const metadata: Metadata = {
   title: {
@@ -39,11 +38,7 @@ export default function CollectionsIndex() {
                 ))}
               </div>
             </section>
-          ))}
-
-          {/* 캠핑용품 제휴 배너 (쿠팡 파트너스) — 목록 끝, 광고와 간격 확보 */}
-          <CoupangDeals />
-        </Container>
+          ))}        </Container>
       </div>
     </>
   );

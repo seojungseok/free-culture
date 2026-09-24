@@ -5,9 +5,7 @@ import { pathToFileURL } from 'node:url';
 // Published articles, listings, guarantees, assets and unknown files always build.
 export function isNonRuntimePath(file) {
   return /^(docs\/|\.github\/|\.cache\/)/.test(file) ||
-    /^(README\.md|AGENTS\.md)$/.test(file) ||
-    /^data\/waug\/(research\/|editorial-research\/|inbox\/|processed\/|image-jobs\/|research-jobs\/)/.test(file) ||
-    /^data\/waug\/(queue|editorial|catalog|places|launch-selection|publication-policy)\.json$/.test(file);
+    /^(README\.md|AGENTS\.md)$/.test(file);
 }
 
 export function shouldSkip(files) {

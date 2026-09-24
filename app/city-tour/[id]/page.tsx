@@ -1,4 +1,3 @@
-import SeoulStayBanner from '@/components/SeoulStayBanner';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
@@ -30,7 +29,6 @@ export default async function Page({params}:{params:Promise<{id:string}>}){const
  {a.raw['시티투어탑승장소명']&&<div><dt className="font-bold">어디에서 타나요?</dt><dd>{a.raw['시티투어탑승장소명']}</dd></div>}
  {stops.length>0&&<div><dt className="font-bold">어떤 경유지를 미리 살펴볼 수 있나요?</dt><dd>{stops.slice(0,4).map((p,i)=><span key={p.placeId}>{i>0?' · ':''}<Link prefetch={false} href={'/places/spot/'+p.placeId} className="text-brandblue underline">{p.name}</Link></span>)}. 실제 중간 승하차 가능 여부와 체류시간은 공식 운영 안내를 확인하세요.</dd></div>}
  </dl></section>
- <SeoulStayBanner region={a.area} />
  <nav aria-label="글 목차" className="mb-8 rounded-xl bg-slate-50 p-5"><p className="mb-3 font-bold">이 글에서 확인할 내용</p><ol className="space-y-2 text-sm">{a.sections.map((s,i)=><li key={i}><a href={'#section-'+i} className="underline underline-offset-4">{s.heading}</a></li>)}<li><a href="#visit-info" className="underline">원본 이용 정보</a></li></ol></nav>
  {a.sections.map((s,i)=><section id={'section-'+i} key={i} className="mb-9 scroll-mt-24"><h2 className="mb-4 text-xl font-extrabold">{s.heading}</h2><div className="space-y-4 text-[15px] leading-8 text-ink-soft">{s.paragraphs.map((p,j)=><p key={j}>{p}</p>)}</div>{i===0&&<CoursePhotoGallery headingLevel={3} photos={photos.slice(1,3)} id="city-route-photos" title="사진으로 만나는 경유지"/>}{i===2&&<CoursePhotoGallery headingLevel={3} photos={photos.slice(3,5)} id="city-visit-photos" title="코스 풍경 더 살펴보기"/>}</section>)}
  <section id="visit-info" className="scroll-mt-24"><h2 className="mb-4 text-xl font-extrabold">원본 이용 정보</h2><dl className="divide-y rounded-2xl border p-5">{Object.keys(INFO_LABELS).filter(k=>a.raw[k]).map(k=><div key={k} className="py-3"><dt className="mb-1 text-sm font-bold">{INFO_LABELS[k]}</dt><dd className="whitespace-pre-line text-sm leading-7 text-ink-soft">{a.raw[k]}</dd></div>)}</dl>

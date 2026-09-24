@@ -7,8 +7,6 @@ export const groups=[
   {name:'관광지',file:'place-articles.json',target:10,status:true},
   {name:'여행코스',file:'course-articles.json',target:10,status:true},
   {name:'시티투어',file:'city-tour-articles.json',target:10,review:true},
-  {name:'입장권·체험',file:'waug/published.json',target:20},
-  {name:'주말 준비물 (별도)',file:'weekend-prep.json',target:5,status:true},
 ];
 export function publicIds(store,group,now=Date.now()){
   return Object.entries(store.articles).filter(([,a])=>{

@@ -4,13 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Band";
-import AffiliateNotice from "@/components/AffiliateNotice";
 import CourseArticleBody from "@/components/CourseArticleBody";
 import CoursePhotoGallery from "@/components/CoursePhotoGallery";
 import CourseCard from "@/components/CourseCard";
 import CourseShare from "@/components/CourseShare";
-import SeoulStayBanner from "@/components/SeoulStayBanner";
-import { stayLinkFor } from "@/lib/stayLinks";
 import {
   getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays, courseFoodStops, courseAttractions, courseStopCount,
 } from "@/lib/courses";
@@ -79,11 +76,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
     return best && bd <= 8 ? best : "";
   };
   const festivals = areaFestivals(c.area, { limit: 4 }); // 보는 시점 날짜 연동
-  const days = courseDays(c); // 일차별 분할(하루 최대 3곳)
-  // 제휴 링크가 등록된 지역의 코스에만 숙소 배너
-  const stay = stayLinkFor(c.area, c.stops.map((s) => s.addr || "").join(" "));
-
-  const itemListLd = {
+  const days = courseDays(c); // 일차별 분할(하루 최대 3곳)  const itemListLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: c.title,
@@ -145,7 +138,6 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
           </div>
         </div>
       </div>
-      {stay && <AffiliateNotice className="mt-1.5" />}
 
       {c.image && (
         <div className="relative mt-4 aspect-[16/9] w-full overflow-hidden rounded-2xl bg-neutral-100 ring-1 ring-black/[0.04]">
@@ -192,7 +184,6 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
         </section>
       )}
 
-      {stay && <SeoulStayBanner region={stay.region} href={stay.href} />}
       {c.format !== "list" && mapStops[0] && <NearbyParking lon={Number(mapStops[0].mapx)} lat={Number(mapStops[0].mapy)} area={c.area} address={mapStops[0].addr} title={`첫 방문지 ${mapStops[0].name} 근처 주차`} />}
 
       {/* 근처 맛집 — 코스 좌표 기준, 내부링크. 해수욕장 베스트(리스트형)엔 맛집 표시 안 함. */}

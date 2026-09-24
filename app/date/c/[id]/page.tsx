@@ -1,4 +1,3 @@
-import SeoulStayBanner from '@/components/SeoulStayBanner';
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -211,7 +210,6 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
         intro={`공원에서 ${distLabel(c.food.distKm)}, 바로 근처예요. 둘러본 뒤 식사로 마무리하기 좋은 위치예요.${foodMenu ? ` 대표메뉴는 ${foodMenu.split(" / ")[0]}이에요.` : ""}`}
       />
 
-      <SeoulStayBanner />
 
       {related.length > 0 && (
         <section className="mt-10 border-t border-line pt-6">

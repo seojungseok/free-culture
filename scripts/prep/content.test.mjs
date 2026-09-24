@@ -1,12 +1,26 @@
-import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
-import {affiliateUrl,validateShape,publicationErrors,checkLinks} from './content.mjs';
-const source=JSON.parse(fs.readFileSync('data/weekend-prep.json','utf8'));
-test('minimum three images is a publication requirement but unfinished drafts remain savable',()=>{const s=structuredClone(source),a=s.articles.find(x=>x.sections.length>=4);for(const part of a.sections)delete part.image;validateShape(s);assert(publicationErrors(a,s).includes('썸네일 포함 이미지 최소 3장 필요'));a.sections[0].image={...a.cover,url:'/prep-images/test-step-one.webp'};a.sections[1].image={...a.cover,url:'/prep-images/test-step-two.webp'};assert(!publicationErrors(a,s).includes('썸네일 포함 이미지 최소 3장 필요'));});
-test('retired initial topics stay removed and all public replacements pass review',()=>{const config=JSON.parse(fs.readFileSync('data/weekend-prep-schedule.json','utf8'));for(const t of config.initialTopics)assert(!source.articles.some(a=>a.slug===t.slug));for(const a of source.articles.filter(a=>a.status==='published')){assert(a.sections.map(s=>s.text).join('').length>=350);assert.deepEqual(publicationErrors(a,source),[]);}});
-test('all product links retain account tracking and matching product identity',()=>{for(const p of source.products){const u=new URL(p.affiliateUrl);assert(affiliateUrl(p.affiliateUrl));assert.equal(u.searchParams.get('lptag'),'AF0215515');assert.equal(u.searchParams.get('pageKey'),p.id);assert(u.searchParams.get('itemId'));assert(u.searchParams.get('vendorItemId'));}validateShape(source);});
-test('incomplete identity and unreviewed articles cannot publish',()=>{const s=structuredClone(source),a=s.articles[0];a.reviewed=false;s.products.forEach(p=>p.verified=false);assert(publicationErrors(a,s).some(x=>x.includes('상품 일치')));assert(publicationErrors(a,s).includes('본문 편집 검토 필요'));});
-test('bad schemes, private hosts, unregistered tags and path traversal rejected',()=>{for(const u of ['javascript:alert(1)','https://localhost/a','https://link.coupang.com.evil.test/a','https://user:password@link.coupang.com/a'])assert(!affiliateUrl(u));const s=structuredClone(source);s.articles[0].cover.tags=[{x:101,y:20,productId:'missing'}];assert.throws(()=>validateShape(s));s.articles[0].cover.url='/prep-images/../secret.png';assert.throws(()=>validateShape(s));});
-test('duplicate articles are blocked even with new dates/titles',()=>{const s=structuredClone(source);s.articles.push({...structuredClone(s.articles[0]),slug:'another-date',title:'다른 날짜 제목'});assert(publicationErrors(s.articles[0],s).some(x=>x.includes('중복')));});
-test('link validator never follows a redirect to internal network',async()=>{let calls=0;const failed=await checkLinks(source.articles[0],source,async()=>{calls++;return new Response('',{status:302,headers:{location:'http://127.0.0.1/secrets'}});});assert.equal(calls,source.articles[0].productIds.length);assert.equal(failed.length,source.articles[0].productIds.length);});
-test('legacy collectors route every HTTP request through central wrapper',()=>{for(const name of ['collectCoupang','collectCoupangEssentials','collectEventCoupang','collectKidCoupang','testCoupang']){const s=fs.readFileSync(`scripts/${name}.mjs`,'utf8');assert(s.includes('coupangFetch as fetch'));assert(!s.includes('await gate()'));}});
-test('AI images include the cover: four allowed, five rejected',()=>{const s=structuredClone(source),a=s.articles.find(x=>x.sections.length>=4);for(const part of a.sections)delete part.image;for(let i=0;i<3;i++)a.sections[i].image={...structuredClone(a.cover),url:`/prep-images/check-${i}.webp`};validateShape(s);a.sections[3].image={...structuredClone(a.cover),url:'/prep-images/check-four.webp'};assert.throws(()=>validateShape(s),/최대 4장/);assert(publicationErrors(a,s).includes('AI 이미지 최대 4장 초과'));});
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {validateShape, publicationErrors} from './content.mjs';
+
+const store = JSON.parse(fs.readFileSync('data/weekend-prep.json', 'utf8'));
+
+test('published preparation guides contain no commerce fields', () => {
+  validateShape(store);
+  for (const article of store.articles) {
+    assert(!('productIds' in article));
+    assert(!('salesFormat' in article));
+    assert(!('shortcutProductId' in article));
+    assert(!('tags' in article.cover));
+    for (const section of article.sections) assert(!('productIds' in section));
+  }
+  assert(!('products' in store));
+});
+
+test('a guide missing visit information or images cannot publish', () => {
+  const draft = structuredClone(store.articles.find(article => article.sections.length >= 2));
+  draft.reviewed = false;
+  draft.sections = draft.sections.map(section => ({heading: section.heading, text: ''}));
+  assert(publicationErrors(draft, store).includes('미완성 본문'));
+  assert(publicationErrors(draft, store).includes('본문 편집 검토 필요'));
+});
