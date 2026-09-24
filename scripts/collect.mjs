@@ -23,11 +23,13 @@ import {
   computeAudiences,
   SIDO_LIST,
 } from "../lib/classify.js";
+import { mergeEventArchive } from './eventArchive.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(ROOT, "data");
 const OUT_FILE = path.join(DATA_DIR, "events.json");
+const ARCHIVE_FILE = path.join(DATA_DIR, "events-archive.json");
 
 const BASE = "https://apis.data.go.kr/B553457/cultureinfo";
 const parser = new XMLParser({ ignoreAttributes: true, trimValues: true });
@@ -300,6 +302,13 @@ async function main() {
   const featuredCount = events.filter((e) => e.featured).length;
 
   fs.mkdirSync(DATA_DIR, { recursive: true });
+  const existingArchive = fs.existsSync(ARCHIVE_FILE)
+    ? JSON.parse(fs.readFileSync(ARCHIVE_FILE, 'utf8')).events || []
+    : [];
+  const nextArchive = mergeEventArchive(existingArchive, prevEvents, events, TODAY);
+  if (JSON.stringify(nextArchive) !== JSON.stringify(existingArchive)) {
+    fs.writeFileSync(ARCHIVE_FILE, JSON.stringify({updatedAt:new Date().toISOString(),events:nextArchive}));
+  }
   fs.writeFileSync(
     OUT_FILE,
     JSON.stringify(

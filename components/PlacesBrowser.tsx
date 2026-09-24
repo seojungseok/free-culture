@@ -5,10 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { TourSpot } from "@/lib/tour";
 import { SIDO_SLUG } from "@/lib/classify";
 import TourCard from "./TourCard";
-import SeoulStayBanner from "./SeoulStayBanner";
-import { stayLinkFor } from "@/lib/stayLinks";
 import { Container } from "./Band";
-import AffiliateNotice from "./AffiliateNotice";
 
 const PAGE = 24;
 
@@ -67,7 +64,6 @@ export default function PlacesBrowser({
     [areaSpots, type]
   );
   const shown = filtered.slice(0, visible);
-  const stay = stayLinkFor(area); // 선택한 지역에 숙소 제휴 링크가 있으면 배너 노출
   const grandTotal = total ?? spots.length;
   const isNationSample = !area && total != null && total > spots.length;
   // 제목 옆 개수 — 전체 집계가 있으면 현재 유형의 전체 수, 없으면 기존 로직
@@ -144,7 +140,6 @@ export default function PlacesBrowser({
             {displayCount.toLocaleString()}곳
           </span>
         </div>
-        {stay && <AffiliateNotice className="mb-1" />}
         {isNationSample && (
           <p className="mb-4 text-[12.5px] text-ink-faint">
             추천 {spots.length.toLocaleString()}곳 미리보기 · <b className="font-bold text-ink-soft">지역을 선택하면 전부 볼 수 있어요</b>
@@ -163,12 +158,6 @@ export default function PlacesBrowser({
           </div>
         )}
 
-        {/* 숙소 제휴 배너 — 제휴 링크가 등록된 지역을 고른 경우만. 광고, 위아래 여백 확보 */}
-        {stay && shown.length > 0 && (
-          <div className="mt-10">
-            <SeoulStayBanner region={stay.region} href={stay.href} />
-          </div>
-        )}
 
         {visible < filtered.length && (
           <div className="mt-9 flex justify-center">

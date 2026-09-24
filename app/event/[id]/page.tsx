@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllEvents, getEventById } from "@/lib/data";
+import archivedEventsData from "@/data/events-archive.json";
+import type { CultureEvent } from "@/lib/types";
 import { eventStory } from "@/lib/eventStory";
 import { eventContentsText, eventContentsParagraphs } from "@/lib/eventContents";
 import { fmtRange, placeText, dday } from "@/lib/format";
@@ -18,6 +20,9 @@ import PosterCard from "@/components/PosterCard";
 import ShareButtons from "@/components/ShareButtons";
 import { eventOffer } from "@/lib/eventSeo";
 import { SIDO_SLUG } from "@/lib/classify";
+
+const archivedEvents = new Map((archivedEventsData.events as CultureEvent[]).map(event => [event.id, event]));
+const eventForDetail = (id: string) => getEventById(id) || archivedEvents.get(id);
 
 // ISR: 1시간 재검증. 종료 상태를 반영하면서 기존 상세 URL은 유지한다.
 // 전체를 빌드 때 만들지 않고 주목도 높은 일부만 사전 생성, 나머지는 첫 요청 때 생성 후 캐시.
@@ -36,11 +41,11 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const ev = getEventById(id);
+  const ev = eventForDetail(id);
   if (!ev) return { title: "행사를 찾을 수 없습니다" };
   const where = placeText(ev.area, ev.sigungu, ev.place);
   const contents = eventContentsText(ev.contents).replace(/\s+/g, " ");
-  const desc = `${ev.priceLabel} · ${fmtRange(ev.startDate, ev.endDate)} · ${where}. ${
+  const desc = `${ev.endDate < todayYmd() ? "종료된 행사 · " : ""}${ev.priceLabel} · ${fmtRange(ev.startDate, ev.endDate)} · ${where}. ${
     contents ? contents.slice(0, 80) : `${ev.realmName} 행사 정보를 확인하세요.`
   }`;
   const isFree = /free/.test(ev.priceType);
@@ -71,7 +76,7 @@ export default async function EventPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const ev = getEventById(id);
+  const ev = eventForDetail(id);
   if (!ev) notFound();
 
   const d = dday(ev.startDate, ev.endDate);
@@ -117,7 +122,7 @@ export default async function EventPage({
       name: ev.place || ev.area,
       address: ev.address || `${ev.area} ${ev.sigungu}`.trim(),
     },
-    offers: eventOffer(ev),
+    offers: ended ? undefined : eventOffer(ev),
   };
 
   return (
@@ -160,9 +165,9 @@ export default async function EventPage({
                 {ev.title}
               </div>
             )}
-            <div className="absolute right-3 top-3">
+            {!ended && <div className="absolute right-3 top-3">
               <PriceBadge type={ev.priceType} label={ev.priceLabel} />
-            </div>
+            </div>}
           </div>
         </div>
 
@@ -191,7 +196,7 @@ export default async function EventPage({
           {ended && <p className="mt-4 rounded-xl bg-amber-50 p-4 text-sm leading-6">등록된 일정 기준으로 종료된 행사입니다. 지난 행사 정보는 참고용으로 보존합니다. {regionSlug&&<Link href={'/region/'+regionSlug} className="font-bold underline">현재 {ev.area} 행사·나들이 찾기</Link>}</p>}
 
           <dl className="mt-6 divide-y divide-black/5 rounded-2xl border border-black/5 bg-white">
-            <Row label="요금">
+            <Row label={ended ? "당시 안내 요금" : "요금"}>
               <span className="font-semibold">{ev.priceRaw || ev.priceLabel}</span>
               {ev.priceType === "unknown" && (
                 <span className="ml-2 text-xs text-ink-faint">

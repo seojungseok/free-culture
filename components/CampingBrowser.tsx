@@ -4,7 +4,6 @@ import { useMemo } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { Camp } from "@/lib/camping";
 import CampCard from "@/components/CampCard";
-import CoupangDeals from "@/components/CoupangDeals";
 import { Container } from "@/components/Band";
 import { FilterRow } from "@/components/FilterChips";
 
@@ -151,7 +150,6 @@ export default function CampingBrowser({
           <p className="mt-8 text-center text-[13px] text-ink-faint">상위 {CAP}곳 표시 · 유형·시설·지역 필터로 좁혀보세요</p>
         )}
         <div className="mt-8">
-          <CoupangDeals />
         </div>
         <p className="mt-6 text-[12px] text-ink-faint">캠핑정보 제공: 한국관광공사 고캠핑</p>
       </Container>
