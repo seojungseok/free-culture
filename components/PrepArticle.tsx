@@ -4,7 +4,7 @@ import PrepImage from './PrepImage';
 import PrepChecklist from './PrepChecklist';
 import {FoodChecklistDetails} from './FoodChecklistDetails';
 import type {PrepArticle as Article,PrepProduct} from '@/lib/weekend-prep/types';
-import {getPrepArticles,prepCategoryLabel} from '@/lib/weekend-prep/data';
+import {prepCategoryLabel} from '@/lib/weekend-prep/categoryLabel';
 import {AFFILIATE_ENABLED} from '@/lib/affiliate';
 
 function dishName(title:string){
@@ -73,7 +73,7 @@ function CookingGuide({article,products}:{article:Article;products:PrepProduct[]
  return <section className="prep-cooking-intro" aria-label={guide.title}><h2>{guide.title}</h2><ol className="prep-cooking-steps">{guide.steps.map((step,index)=><li key={index}>{linkText(step)}</li>)}</ol><p className="prep-cooking-note">해동·손질·가열과 양념 사용량은 구매한 제품의 실제 포장 안내를 우선으로 확인하세요.</p></section>;
 }
 
-export default function PrepArticle({article:a,products,preview=false}:{article:Article;products:PrepProduct[];preview?:boolean}){
+export default function PrepArticle({article:a,products,preview=false,relatedArticles=[]}:{article:Article;products:PrepProduct[];preview?:boolean;relatedArticles?:{slug:string;title:string}[]}){
  const chosen=products.filter(p=>a.productIds.includes(p.id)).map(p=>AFFILIATE_ENABLED?p:{...p,affiliateUrl:''});
  const linked=new Set<string>();
  const carded=new Set<string>();
@@ -88,7 +88,7 @@ export default function PrepArticle({article:a,products,preview=false}:{article:
   {a.salesFormat==='food-checklist'&&<PrepImage photo={a.cover} products={chosen} priority />}
   {a.salesFormat==='food-checklist'&&<CookingGuide article={a} products={chosen}/>}
   {a.salesFormat==='food-checklist'&&a.checklist&&<PrepChecklist slug={a.slug} items={a.checklist} products={chosen} dishName={dishName(a.title)}/>}
-  {a.salesFormat==='food-checklist'&&<FoodChecklistDetails slug={a.slug} articles={getPrepArticles()} shoppingImage={a.sections[0]?.image?<PrepImage photo={a.sections[0].image} products={chosen}/>:null} tipImage={a.sections[1]?.image&&!completedFoodPhotos[a.slug]?<PrepImage photo={a.sections[1].image} products={chosen}/>:null} images={<div className="prep-food-images">{completedPhoto&&<PrepImage photo={completedPhoto} products={chosen} showTags={false}/>}<p className="prep-ai-note">{a.imageConnectionNote || '이 글의 이미지는 AI를 활용해 제작했습니다.'}</p></div>}/>}
+  {a.salesFormat==='food-checklist'&&<FoodChecklistDetails slug={a.slug} articles={relatedArticles} shoppingImage={a.sections[0]?.image?<PrepImage photo={a.sections[0].image} products={chosen}/>:null} tipImage={a.sections[1]?.image&&!completedFoodPhotos[a.slug]?<PrepImage photo={a.sections[1].image} products={chosen}/>:null} images={<div className="prep-food-images">{completedPhoto&&<PrepImage photo={completedPhoto} products={chosen} showTags={false}/>}<p className="prep-ai-note">{a.imageConnectionNote || '이 글의 이미지는 AI를 활용해 제작했습니다.'}</p></div>}/>}
   {a.salesFormat!=='food-checklist'&&a.sections.map((s,i)=>{
    const sectionProducts=s.productIds.map(id=>chosen.find(p=>p.id===id)).filter((p):p is PrepProduct=>!!p&&!a.quietProductIds?.includes(p.id)&&!carded.has(p.id));
    sectionProducts.forEach(p=>carded.add(p.id));
