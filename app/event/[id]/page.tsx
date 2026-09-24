@@ -261,7 +261,7 @@ export default async function EventPage({
             </div>
           </section>
 
-          {ev.endDate >= todayYmd() ? <NextStop anchor={{id:"event:"+ev.id,title:ev.title,href:"/event/"+ev.id,area:ev.area,kind:"event",image:ev.imgUrl,address:ev.address || ev.place,x:Number(ev.gpsX),y:Number(ev.gpsY),free:ev.priceType==="free",kids:ev.audiences?.includes("kids"),start:ev.startDate,end:ev.endDate}}/> : <p className="mt-5 rounded-xl bg-amber-50 p-4 text-sm">등록된 일정 기준으로 종료된 행사입니다. <Link href="/weekend" className="font-bold underline">이번 주말 행사 보기</Link></p>}
+          {ev.endDate >= todayYmd() ? <NextStop anchor={{id:"event:"+ev.id,title:ev.title,href:"/event/"+ev.id,area:ev.area,kind:"event",image:ev.imgUrl,address:ev.address || ev.place,x:Number(ev.gpsX),y:Number(ev.gpsY),free:ev.priceType==="free",kids:ev.audiences?.includes("kids"),start:ev.startDate,end:ev.endDate}}/> : <section className="mt-5 rounded-xl bg-amber-50 p-4 text-sm"><h2 className="font-bold">이 행사는 종료되었습니다</h2><p className="mt-2">등록된 일정 기준입니다. 현재 갈 곳을 다시 찾아보세요.</p><nav className="mt-3 flex flex-wrap gap-4 font-bold underline"><Link href="/weekend">이번 주말 행사 보기</Link>{regionSlug&&<Link href={`/region/${regionSlug}`}>{ev.area} 이번 주말 가볼 곳</Link>}</nav></section>}
           {ev.endDate >= todayYmd() && <NearbyParking lon={Number(ev.gpsX)} lat={Number(ev.gpsY)} area={ev.area} address={ev.address} title="행사장 근처 주차 확인" />}
           <ShareButtons title={ev.title} officialUrl={ev.officialUrl} />
 

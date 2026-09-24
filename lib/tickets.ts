@@ -4,6 +4,7 @@ import bookingGuarantees from '@/data/waug/booking-guarantees.json';
 import fs from 'node:fs';
 import path from 'node:path';
 import type {PriceGuarantee} from './ticket-guarantee.mjs';
+import {AFFILIATE_ENABLED} from './affiliate';
 
 export type TicketArticle = {
   editorialRevision?:string;
@@ -41,3 +42,9 @@ export function getTickets():TicketArticle[] {
   return enrich((data.articles as TicketArticle[]).filter(a=>Date.parse(a.publishedAt)<=Date.now()));
 }
 export function getTicket(slug:string){return getTickets().find(a=>a.slug===slug);}
+export function publicTicket(article:TicketArticle):TicketArticle {
+  if(AFFILIATE_ENABLED)return article;
+  const isAffiliate=(url:string)=>/waug\.com\/r\/|3ha\.in\/r\/|link\.coupang\.com|toss\.im\/_m\//i.test(url);
+  const publicPhoto=(photo:TicketArticle['photos'][number])=>({url:photo.url,alt:photo.alt,credit:photo.credit,caption:photo.caption,rightsUrl:photo.rightsUrl&&!isAffiliate(photo.rightsUrl)?photo.rightsUrl:undefined,width:photo.width,height:photo.height,kind:photo.kind});
+  return {...article,tickets:[],ticketComparison:[],thumbnail:{url:article.thumbnail.url,alt:article.thumbnail.alt,credit:article.thumbnail.credit,width:article.thumbnail.width,height:article.thumbnail.height,kind:article.thumbnail.kind,rightsUrl:article.thumbnail.rightsUrl&&!isAffiliate(article.thumbnail.rightsUrl)?article.thumbnail.rightsUrl:undefined},photos:article.photos.map(publicPhoto),sources:article.sources.filter(source=>!isAffiliate(source.url)),visitInfo:article.visitInfo?.map(info=>({...info,sourceUrls:info.sourceUrls.filter(url=>!isAffiliate(url))})),location:article.location&&isAffiliate(article.location.sourceUrl)?{...article.location,sourceUrl:''}:article.location};
+}

@@ -16,6 +16,7 @@ export default function NotFound() {
       >
         홈으로 가기
       </Link>
+      <nav className="mt-5 flex flex-wrap justify-center gap-4 text-sm font-bold text-brandblue" aria-label="다른 나들이 찾기"><Link href="/weekend">이번 주말 행사</Link><Link href="/places">지역별 나들이</Link><Link href="/kids">아이와 가볼 곳</Link></nav>
     </div>
   );
 }

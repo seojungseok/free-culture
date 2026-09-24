@@ -8,8 +8,9 @@ import {TICKET_POLICY} from '@/lib/ticket-guarantee.mjs';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
-import {getTicket,getTickets,type TicketArticle} from '@/lib/tickets';
+import {getTicket,getTickets,publicTicket,type TicketArticle} from '@/lib/tickets';
 import {SITE} from '@/lib/site';
+import {AFFILIATE_ENABLED} from '@/lib/affiliate';
 function photoCredit(photo:TicketArticle['thumbnail']|TicketArticle['photos'][number]) {
   return photo.kind==='waug-original'||photo.rightsUrl?.includes('waug-marketing-partners')?'사진: 와그 공식 자료 활용':photo.credit;
 }
@@ -23,13 +24,13 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
   return {title:a.title,description:a.description,alternates:{canonical:`/tickets/${a.slug}`},openGraph:{title:a.title,description:a.description,type:'article',url:`${SITE.url}/tickets/${a.slug}`,images:[image]},twitter:{card:'summary_large_image',title:a.title,description:a.description,images:[a.thumbnail.url]}};
 }
 export default async function TicketPage({params}:{params:Promise<{slug:string}>}){
-  const a=getTicket((await params).slug);if(!a)notFound();
+  const original=getTicket((await params).slug);if(!original)notFound();const a=publicTicket(original);
   if(a.contentPolicyVersion===TICKET_POLICY)return <TicketEditorial article={a}/>;
   const jsonLd={'@context':'https://schema.org','@type':'Article',headline:a.title,description:a.description,image:[a.thumbnail.url],datePublished:a.publishedAt,dateModified:a.checkedAt,mainEntityOfPage:`${SITE.url}/tickets/${a.slug}`,author:{'@type':'Organization',name:SITE.name}};
   return <main className="mx-auto max-w-3xl px-5 py-8 sm:px-8">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd).replace(/</g,'\\u003c')}}/>
     <Link href="/tickets" className="text-sm font-bold text-free">← 입장권·체험</Link>
-    <p className="mb-5 mt-6 rounded-xl bg-gray-100 px-4 py-3 text-sm leading-6 text-gray-700">이 포스팅은 와그 파트너스 활동의 일환으로, 구매 시 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    {AFFILIATE_ENABLED&&<p className="mb-5 mt-6 rounded-xl bg-gray-100 px-4 py-3 text-sm leading-6 text-gray-700">이 포스팅은 와그 파트너스 활동의 일환으로, 구매 시 이에 따른 일정액의 수수료를 제공받습니다.</p>}
     <p className="text-sm font-bold text-free">{a.area} · {a.theme}</p><h1 className="mt-2 break-keep text-3xl font-black leading-tight sm:text-4xl">{a.title}</h1>
     <p className="mt-4 text-sm text-ink-soft">정보 확인 {a.checkedAt.slice(0,10)}</p>
     <figure className="my-7">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={a.thumbnail.url} alt={a.thumbnail.alt} width={a.thumbnail.width} height={a.thumbnail.height} className="h-auto w-full rounded-2xl object-contain" fetchPriority="high"/><figcaption className="mt-2 text-xs leading-5 text-ink-soft">{photoCredit(a.thumbnail)}</figcaption></figure>

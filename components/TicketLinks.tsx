@@ -3,6 +3,7 @@ import type {TicketArticle} from '@/lib/tickets';
 import TicketComparison from './TicketComparison';
 import useTicketClock from './useTicketClock';
 import {guaranteeActive} from '@/lib/ticket-guarantee.mjs';
+import {AFFILIATE_ENABLED} from '@/lib/affiliate';
 
 export default function TicketLinks({article}:{article:TicketArticle}){
  const {now,day}=useTicketClock(article);
@@ -13,6 +14,7 @@ export default function TicketLinks({article}:{article:TicketArticle}){
  const guarantee=!!ticket&&!expired&&guaranteeActive(ticket.priceGuarantee,ticket.href,now);
  const benefit=ticket?.verifiedBenefit;
  const discount=!expired&&!!(benefit?.sourceUrl&&benefit.conditions&&benefit.checkedAt&&Date.parse(benefit.checkedAt)<=now&&now-Date.parse(benefit.checkedAt)<86400000&&Date.parse(benefit.startsAt)<=now&&Date.parse(benefit.endsAt)>now);
+ if(!AFFILIATE_ENABLED)return null;
  return <><TicketComparison article={article}/><aside aria-label="이용권 안내" className="my-8 rounded-[20px] border border-[#d7e3d3] bg-[#f7faf5] p-4 shadow-[0_10px_30px_rgba(34,74,43,0.06)] sm:p-5">
   <h2 className="break-keep text-lg font-extrabold tracking-[-0.02em] sm:text-xl">{article.placeName} 이용권 알아보기</h2>
   <p className="mt-1.5 break-keep text-sm leading-6 text-ink-soft">방문 날짜와 인원을 넣어 이용 가능한 옵션과 가격을 살펴볼 수 있어요.</p>

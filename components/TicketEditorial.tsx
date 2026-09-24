@@ -8,6 +8,7 @@ import TicketFaq from './TicketFaq';
 import TicketAddress from './TicketAddress';
 import TicketNearby from './TicketNearby';
 import styles from './TicketEditorial.module.css';
+import {AFFILIATE_ENABLED} from '@/lib/affiliate';
 function photoCredit(photo:TicketArticle['thumbnail']|TicketArticle['photos'][number]) {
   return photo.kind==='waug-original'||photo.rightsUrl?.includes('waug-marketing-partners')?'사진: 와그 공식 자료 활용':photo.credit;
 }
@@ -22,17 +23,17 @@ export default function TicketEditorial({article:a}:{article:TicketArticle}) {
   return <main className={styles.article} data-ticket-policy={a.contentPolicyVersion}>
     {a.previewScenario&&<p role="status" className={styles.disclosure}>{a.previewScenario}</p>}
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd).replace(/</g,'\\u003c')}}/>
-    <Link href="/tickets">입장권·체험</Link><p className={styles.disclosure}>{AFFILIATE_DISCLOSURE}</p>
+    <Link href="/tickets">입장권·체험</Link>{AFFILIATE_ENABLED&&<p className={styles.disclosure}>{AFFILIATE_DISCLOSURE}</p>}
     <p>{a.area} · {a.theme}</p><h1>{a.title}</h1><p className={styles.note}>정보 확인 {new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul'}).format(new Date(a.checkedAt))}</p>
     <Photo photo={a.thumbnail} hero/><p>{a.intro}</p><TicketAddress article={a}/>
     {a.sections.map((s,i)=><section key={i}><TicketSectionCopy article={a} section={s}/>
       {s.kind==='visit'&&<dl className={styles.facts}>{a.visitInfo?.filter(f=>f.status==='confirmed').map(f=><div key={f.topic}><dt>{f.topic}</dt><dd>{f.value}</dd></div>)}</dl>}
-      {s.photoIndex!==undefined&&a.photos[s.photoIndex]&&<Photo photo={a.photos[s.photoIndex]}/>}{s.tickets&&<TicketBooking article={a}/>}
+      {s.photoIndex!==undefined&&a.photos[s.photoIndex]&&<Photo photo={a.photos[s.photoIndex]}/>}{AFFILIATE_ENABLED&&s.tickets&&<TicketBooking article={a}/>}
     </section>)}
     <TicketFaq article={a}/>
     <TicketNearby article={a}/>
     <nav aria-label="관련 입장권 체험 정보"><h2>관련 입장권·체험 더 보기</h2>{a.internalLinks.map(l=><p key={l.href}><Link href={l.href}>{l.label}</Link></p>)}</nav>
-    <details><summary>확인한 자료와 출처</summary>{a.sources.map(s=><p key={s.url} className={styles.note}><a href={s.url} target="_blank" rel={s.url.includes('waug.com')?'sponsored noopener noreferrer':'noopener noreferrer'}>{s.label}</a> · {s.checkedAt.slice(0,10)}</p>)}</details>
+    <details><summary>확인한 자료와 출처</summary>{a.sources.filter(s=>AFFILIATE_ENABLED||!s.url.includes('waug.com/r/')).map(s=><p key={s.url} className={styles.note}><a href={s.url} target="_blank" rel={s.url.includes('waug.com')?'sponsored noopener noreferrer':'noopener noreferrer'}>{s.label}</a> · {s.checkedAt.slice(0,10)}</p>)}</details>
 
   </main>;
 }

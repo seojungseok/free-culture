@@ -1,8 +1,10 @@
 import { DOMESTIC_STAY_URL } from '@/lib/stayLinks';
+import { AFFILIATE_ENABLED } from '@/lib/affiliate';
 import styles from './StayCard.module.css';
 
 /** 기존 호출부를 보존하는 국내 숙소 카드. 외부 요청이나 방문자별 스크립트 없음. */
 export default function SeoulStayBanner({ region = '', href = DOMESTIC_STAY_URL, context = 'travel' } = {}) {
+  if (!AFFILIATE_ENABLED) return null;
   void region; // 기존 지역별 호출부 호환용: 현재는 하나의 전국 링크를 사용합니다.
   const copy = context === 'pet'
     ? ['함께 떠난 여행, 하루 더 즐기기', '반려동물 동반 조건은 숙소별로 확인해 주세요.']

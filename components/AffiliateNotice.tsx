@@ -6,6 +6,7 @@
  * partner="coupang" — 쿠팡 파트너스는 "쿠팡 파트너스 활동의 일환" 표현을 요구하므로
  * 이 문구를 상단 고지에 포함시키고, 배너 하단 문구는 중복이라 두지 않는다.
  */
+import { AFFILIATE_ENABLED } from '@/lib/affiliate';
 export default function AffiliateNotice({
   className = "",
   partner,
@@ -13,6 +14,7 @@ export default function AffiliateNotice({
   className?: string;
   partner?: "coupang";
 }) {
+  if (!AFFILIATE_ENABLED) return null;
   const text =
     partner === "coupang"
       ? "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
