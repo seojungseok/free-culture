@@ -17,6 +17,7 @@ import AdSlot from "@/components/AdSlot";
 import PosterCard from "@/components/PosterCard";
 import ShareButtons from "@/components/ShareButtons";
 import { eventOffer } from "@/lib/eventSeo";
+import { hasSubstantiveEventInfo } from "@/lib/eventQuality";
 import { SIDO_SLUG } from "@/lib/classify";
 
 const archivedEvents = new Map((archivedEventsData.events as CultureEvent[]).map(event => [event.id, event]));
@@ -57,6 +58,7 @@ export async function generateMetadata({
   return {
     title: ev.title,
     description: desc,
+    robots: ev.endDate < todayYmd() || !hasSubstantiveEventInfo(ev) ? { index: false, follow: true } : undefined,
     keywords,
     alternates: { canonical: `/event/${ev.id}` },
     openGraph: {

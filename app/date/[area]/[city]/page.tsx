@@ -31,6 +31,7 @@ export async function generateMetadata({
   return {
     title: `${ambiguous ? sido + ' ' : ''}${city} 카페데이트 — 카페 ${list.length}곳과 산책·맛집 코스`,
     description: `${sido} ${city} 카페데이트 코스 ${list.length}곳. ${names.join(", ")} 등 카페에서 시작해 가까운 공원을 걷고 맛집에서 마무리하는 반나절 동선을 모았어요.`,
+    robots: { index: false, follow: true },
     keywords: [
       `${city} 카페데이트`,
       `${city} 카페`,

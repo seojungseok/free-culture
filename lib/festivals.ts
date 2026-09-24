@@ -19,7 +19,7 @@ const ALL = [
     .map((event) => ({
       id: `event-${event.id}`, title: event.title, addr: event.address || event.place || "", area: event.area,
       image: event.imgUrl || "", mapx: event.gpsX || "", mapy: event.gpsY || "", startDate: event.startDate, endDate: event.endDate,
-      description: event.contents || `${event.area}에서 열리는 축제·행사입니다.`, place: event.place, homepage: event.officialUrl, tel: event.phone,
+      description: event.contents || "", place: event.place, homepage: event.officialUrl, tel: event.phone,
       source: "공공 문화행사 데이터",
     } as Festival)),
 ].filter((festival, index, all) => all.findIndex((item) => item.title === festival.title && item.startDate === festival.startDate) === index);
@@ -48,6 +48,11 @@ export function getAllFestivals(): Festival[] {
 
 export function getFestivalById(id: string): Festival | undefined {
   return ALL.find((festival) => festival.id === id);
+}
+
+/** Culture events already have their own detail URL; avoid linking a duplicate. */
+export function festivalHref(festival: Festival): string {
+  return festival.id.startsWith("event-") ? `/event/${festival.id.slice(6)}` : `/festivals/${festival.id}`;
 }
 
 /** YYYYMMDD → "10.22" */

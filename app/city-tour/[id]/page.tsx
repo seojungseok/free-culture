@@ -8,7 +8,9 @@ import Image from 'next/image';
 import CoursePhotoGallery from '@/components/CoursePhotoGallery';
 import {cityTourPhotos,cityTourStops} from '@/lib/cityTourPhotos';
 import {filterCourses} from '@/lib/courses';
+import {getAllPlaces} from '@/lib/tour';
 import {SIDO_SLUG} from '@/lib/classify';
+const livePlaceIds=new Set(getAllPlaces().map(place=>place.id));
 const INFO_LABELS:Record<string,string>={'시티투어코스명':'코스 이름','시티투어탑승장소명':'탑승 장소','시티투어코스정보':'경유 순서','시티투어운영시간':'운영일·시간','운행정보':'운행 조건','운행시작시각':'시작 시각','운행종료시각':'종료 시각','이용요금':'이용 요금','이용요금부가정보':'요금 안내','시티투어문의처':'문의처'};
 export function generateStaticParams(){return getCityTours().map(a=>({id:a.id}));}
 export async function generateMetadata({params}:{params:Promise<{id:string}>}):Promise<Metadata>{const {id}=await params;const a=getCityTour(id);if(!a)return {};const hero=cityTourPhotos(a)[0];return {title:a.title,description:a.description,alternates:{canonical:'/city-tour/'+a.id},openGraph:{title:a.title,description:a.description,type:'article',...(hero?{images:[{url:hero.image,alt:hero.title}]}:{})}};}
@@ -41,4 +43,4 @@ export default async function Page({params}:{params:Promise<{id:string}>}){const
  <div className="mt-8 flex flex-wrap gap-4 text-sm"><Link href="/city-tour" className="underline">전체 시티투어</Link><Link href="/plan" className="underline">다른 나들이 직접 고르기</Link><Link href="/saved" className="underline">보관함 보기</Link></div>
  <footer className="mt-8 border-t pt-5 text-xs leading-6 text-ink-faint">출처: <a href={CITY_SOURCE} className="underline">전국시티투어정보표준데이터</a> · {a.raw['관리기관명']}. 원본 기준일 {a.raw['데이터기준일자']}. AI 보조 작성 후 자료 대조 검수를 거친 안내이며 실시간 운행 확인이나 직접 탑승 후기가 아닙니다.</footer>
  </article>;}
-function Connections({title,items}:{title:string;items:CityLink[]}){if(!items.length)return null;return <section className="mt-8"><h2 className="mb-4 text-xl font-bold">{title}</h2><div className="grid gap-4 sm:grid-cols-2">{items.map(p=><Link key={p.href} href={p.href} prefetch={false} className="overflow-hidden rounded-xl border"><div className="p-4"><h3 className="font-bold">{p.title}</h3><p className="mt-2 text-sm text-ink-soft">{p.address}</p></div></Link>)}</div></section>;}
+function Connections({title,items}:{title:string;items:CityLink[]}){const valid=items.filter(p=>!p.href.startsWith('/places/spot/')||livePlaceIds.has(p.id));if(!valid.length)return null;return <section className="mt-8"><h2 className="mb-4 text-xl font-bold">{title}</h2><div className="grid gap-4 sm:grid-cols-2">{valid.map(p=><Link key={p.href} href={p.href} prefetch={false} className="overflow-hidden rounded-xl border"><div className="p-4"><h3 className="font-bold">{p.title}</h3><p className="mt-2 text-sm text-ink-soft">{p.address}</p></div></Link>)}</div></section>;}

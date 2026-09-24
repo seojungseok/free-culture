@@ -10,13 +10,13 @@ import {
 } from "@/lib/courses";
 import { GENRES, SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
-import { getDateCourses, dateAreaCounts, dateCityParams } from "@/lib/dateCourses";
 import { getAllFestivals } from "@/lib/festivals";
 import { getCityTours } from "@/lib/cityTours";
 import { getPetTravelPlaces } from "@/lib/petTravel";
-import { getAllBundles } from "@/lib/campingCollections";
 import { getPrepArticles, isCookingPrepArticle } from '@/lib/weekend-prep/data';
 import { hasSubstantivePlaceInfo, hasSubstantiveRestaurantInfo, hasSubstantiveCampInfo } from "@/lib/placeQuality";
+import { hasSubstantiveEventInfo } from "@/lib/eventQuality";
+import { todayYmd } from "@/lib/dates";
 
 const COURSE_INDEX_MIN = 3; // 얇은 조합은 sitemap 제외(구글 크롤 예산 보호)
 
@@ -47,7 +47,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ending-soon",
     "/kids",
     "/season",
-    "/camping/collections",
     "/about",
     "/privacy",
     "/terms",
@@ -105,29 +104,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.4,
     }));
 
-  // 카페데이트 — 허브 + 지역 + 코스 상세(롱테일: "OO 카페데이트")
-  const dateRoutes = [
-    { url: `${base}/date`,  changeFrequency: "weekly" as const, priority: 0.7 },
-    ...dateAreaCounts().map((a) => ({
-      url: `${base}/date/${a.slug}`,
-
-      changeFrequency: "weekly" as const,
-      priority: 0.6,
-    })),
-    // 시군구 — "종로구 카페데이트" 같은 롱테일
-    ...dateCityParams().map((p) => ({
-      url: `${base}/date/${p.area}/${encodeURIComponent(p.city)}`,
-
-      changeFrequency: "weekly" as const,
-      priority: 0.6,
-    })),
-    ...getDateCourses().map((c) => ({
-      url: `${base}/date/c/${c.id}`,
-
-      changeFrequency: "monthly" as const,
-      priority: 0.5,
-    })),
-  ];
+  // Generated cafe/park/restaurant combinations remain browsable but lack
+  // independent editorial content for search indexing.
+  const dateRoutes = [{ url: `${base}/date`, changeFrequency: "weekly" as const, priority: 0.7 }];
 
   // 확인된 영업·메뉴 정보가 있는 음식점만 검색용 목록에 포함한다.
   const restaurantRoutes = getAllRestaurants().filter((r) => hasSubstantiveRestaurantInfo(r.id)).map((r) => ({
@@ -216,14 +195,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  const eventRoutes = all.map((e) => ({
+  const eventRoutes = all.filter((e) => e.endDate >= todayYmd() && hasSubstantiveEventInfo(e)).map((e) => ({
     url: `${base}/event/${e.id}`,
 
     changeFrequency: "weekly" as const,
     priority: 0.4,
   }));
 
-  const festivalRoutes = getAllFestivals().map((festival) => ({
+  const festivalRoutes = getAllFestivals().filter((festival) => !festival.id.startsWith("event-") && (festival.description || "").trim().length >= 150).map((festival) => ({
     url: `${base}/festivals/${festival.id}`,
 
     changeFrequency: "weekly" as const,
@@ -281,7 +260,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...dateRoutes,
     ...courseDurRoutes,
     ...courseThemeRoutes,
-    ...getAllBundles().map(b => ({url: `${base}/camping/collections/${b.slug}`, changeFrequency: "weekly" as const})),
     ...getPetTravelPlaces().map(p => ({url: `${base}/pet-travel/${p.id}`, lastModified:p.enrichedAt, changeFrequency: "weekly" as const})),
     // 2) 발행글 있는 상세 (최신 lastmod — 새 글 우선 크롤)
     ...articleSpotRoutes,

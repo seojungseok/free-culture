@@ -20,12 +20,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   if (!spot) return {};
   const description = petOverview(spot).slice(0,155) || `${spot.title} 상세정보 보강 중입니다.`;
   return {
-    title: `${spot.title} 반려동물 동반 여행`,
+    title: `${spot.area || "전국"} ${spot.title} 반려동물 동반 여행`,
     robots: petQuality(spot).publishable ? undefined : {index:false,follow:true},
     description,
     keywords: [spot.title, `${spot.area || "전국"} 반려동물 여행`, "강아지와 가볼만한곳", "애견동반 여행지"],
     alternates: { canonical: `/pet-travel/${spot.id}` },
-    openGraph: { title: `${spot.title} 반려동물 동반 여행`, description, url: `/pet-travel/${spot.id}`, images: spot.image ? [spot.image] : undefined },
+    openGraph: { title: `${spot.area || "전국"} ${spot.title} 반려동물 동반 여행`, description, url: `/pet-travel/${spot.id}`, images: spot.image ? [spot.image] : undefined },
   };
 }
 

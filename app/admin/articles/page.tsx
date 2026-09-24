@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllArticles, getArticleStats } from "@/lib/articles";
+import { getAllPlaces } from "@/lib/tour";
 import { SIDO_SLUG } from "@/lib/classify";
 import ArticleBody from "@/components/ArticleBody";
 import { Container } from "@/components/Band";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 
 export default function AdminArticlesPage() {
   const stats = getArticleStats();
+  const livePlaceIds = new Set(getAllPlaces().map((place) => place.id));
   const articles = getAllArticles().sort((a, b) => {
     // 초안 먼저, 최신순
     if (a.status !== b.status) return a.status === "draft" ? -1 : 1;
@@ -52,12 +54,12 @@ export default function AdminArticlesPage() {
                 <span className="text-[12.5px] text-ink-faint">
                   {a.area} · {a.typeLabel || a.type} · {a.length ?? "?"}자 · {a.model}
                 </span>
-                <Link
+                {livePlaceIds.has(a.id) && <Link
                   href={`/places/spot/${a.id}`}
                   className="ml-auto text-[12.5px] font-bold text-brandblue hover:underline"
                 >
                   상세 열기 ↗
-                </Link>
+                </Link>}
               </div>
               <h2 className="mt-2 text-[18px] font-extrabold text-ink">
                 {a.title}

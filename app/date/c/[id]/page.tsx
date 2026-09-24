@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title,
     description,
+    robots: { index: false, follow: true },
     keywords: [
       `${c.city} 카페데이트`,
       `${c.area} 카페데이트`,

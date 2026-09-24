@@ -24,10 +24,13 @@ assert(!urls.some(u=>/\/tickets(?:\/|$)|\/kids\/c\/|\/near(?:\/|$)|\/game(?:\/|$
 assert(urls.length<50000,'Single sitemap URL limit');
 assert(urls.every(u=>u.startsWith('https://mwohaji.kr')&&!u.includes('?')&&!u.includes('undefined')));
 assert(!urls.some(u=>/\/(search|saved|plan|admin)(\/|$)/.test(u)));
-for(const p of ['/season','/camping/collections'])assert(set.has('https://mwohaji.kr'+p));
+for(const p of ['/season','/date','/camping'])assert(set.has('https://mwohaji.kr'+p));
+assert(!urls.some(u=>/\/date\/|\/camping\/collections(?:\/|$)/.test(u)),'Generated date and camping collections stay out of sitemap');
 const {getKidCourses}=load('lib/kidCourses'),{getAllBundles}=load('lib/campingCollections');
 assert(getKidCourses().every(c=>!set.has('https://mwohaji.kr/kids/c/'+c.id)));
-assert(getAllBundles().every(c=>set.has('https://mwohaji.kr/camping/collections/'+c.slug)));
+assert(getAllBundles().every(c=>!set.has('https://mwohaji.kr/camping/collections/'+c.slug)));
+const {getAllEvents}=load('lib/data'),{hasSubstantiveEventInfo}=load('lib/eventQuality'),{todayYmd}=load('lib/dates');
+for(const e of getAllEvents())assert.equal(set.has('https://mwohaji.kr/event/'+e.id),e.endDate>=todayYmd()&&hasSubstantiveEventInfo(e),e.id+' event quality');
 const {getAllArticles}=load('lib/articles'),{getAllPlaces}=load('lib/tour');
 const {getAllRestaurants}=load('lib/food');
 const {hasSubstantivePlaceInfo,hasSubstantiveRestaurantInfo,hasSubstantiveCampInfo}=load('lib/placeQuality');

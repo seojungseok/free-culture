@@ -13,7 +13,7 @@ import { eventContentsText } from "@/lib/eventContents";
 import { filterSeasonPlaces } from "@/lib/season";
 import { getPrepArticles } from "@/lib/weekend-prep/data";
 import { getAllArticles } from "@/lib/articles";
-import { hasSubstantivePlaceInfo } from "@/lib/placeQuality";
+import { hasSubstantivePlaceInfo, hasSubstantiveCampInfo } from "@/lib/placeQuality";
 
 export const revalidate = 3600;
 export const metadata: Metadata = {
@@ -54,9 +54,9 @@ function rotateItems(items: HomeItem[], key: string): HomeItem[] {
 export default function HomePage() {
   const weekendEvents = getWeekend().filter((item) => item.imgUrl);
   const today = todayYmd();
-  const places = getAllPlaces().filter((item) => item.image);
+  const places = getAllPlaces().filter((item) => item.image && hasSubstantivePlaceInfo(item.id));
   const courses = getAllCourses().map(slimCourse).filter((item) => item.image);
-  const camps = getAllCamps().filter((item) => item.image);
+  const camps = getAllCamps().filter((item) => item.image && hasSubstantiveCampInfo(item));
   const dateCourses = getDateCourses().filter((item) => item.image);
   const placeItems: HomeItem[] = places.map((item) => ({ id: `place-${item.id}`, href: `/places/spot/${item.id}`, title: item.title, meta: item.area, image: item.image, badge: item.isKid ? "아이와" : "나들이", area: item.area }));
   const courseItems: HomeItem[] = courses.map((item) => ({ id: `course-${item.id}`, href: `/course/c/${item.id}`, title: item.title, meta: [item.area, item.duration].filter(Boolean).join(" · "), image: item.image, badge: "여행코스", area: item.area }));

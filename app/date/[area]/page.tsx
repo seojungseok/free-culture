@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
   return {
     title: `${sido} 카페데이트 — 카페·공원·맛집 코스 ${list.length}곳`,
     description: `${sido} 카페데이트 코스 ${list.length}곳. ${top.join("·")} 등 ${cities.length}개 동네에서 카페부터 공원·맛집까지 걸어서 이어지는 반나절 코스를 골라보세요.`,
+    robots: { index: false, follow: true },
     keywords: [
       `${sido} 카페데이트`, `${sido} 카페 데이트 코스`, `${sido} 데이트 코스`,
       ...top.map((c) => `${c} 카페데이트`),
