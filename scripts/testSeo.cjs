@@ -8,7 +8,8 @@ assert.equal(classifyEvent({priceRaw:'무료'}).type,'free');
 assert.equal(classifyEvent({priceRaw:'어린이 무료, 성인 10,000원'}).type,'partial_free');
 for(const file of ['data/events.json','data/events-archive.json']){
   const events=load(file).events;
-  assert(!events.some(e=>e.priceType==='free_estimated'||e.priceLabel==='무료 추정'),file+' must not infer free admission');
+  const allowedPrices=new Set(['free','partial_free','cheap','paid','unknown']);
+  assert(events.every(e=>allowedPrices.has(e.priceType)),file+' has an unrecognized price classification');
   assert(events.filter(e=>e.priceType==='unknown').every(e=>e.priceLabel==='요금 정보 확인 필요'),file+' unknown label');
 }
 assert.equal(eventOffer({priceType:'free',priceMin:0,priceMax:0}).price,0);

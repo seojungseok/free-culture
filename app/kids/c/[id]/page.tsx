@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const th = THEME_LABEL[c.theme]?.label || "아이와 함께";
   const headline = kidHeadline(c.theme, c.spot.title);
   const title = `${headline} — ${c.area} ${c.city} 아이와 함께 코스`;
-  const description = `${c.area} ${c.city} 아이와 함께 ${th} 코스. ${[c.spot.title,c.park?.title,c.food?.title].filter(Boolean).join(' → ')} 순서의 방문 후보와 위치를 확인하세요. 좌표로 구성한 코스이며 실제 이동 경로와 운영시간은 방문 전 확인이 필요합니다.`;
+  const description = `${c.area} ${c.city} 아이와 함께 ${th} 코스. ${[c.spot.title,c.park?.title,c.food?.title].filter(Boolean).join(' → ')} 순서의 방문 후보와 위치를 확인하세요.`;
   return {
     title, description,
     robots: { index: false, follow: true },
@@ -103,7 +103,7 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
       </h1>
       <p className="mt-1 text-[13.5px] text-ink-faint">{c.area} {c.city} · 아이와 함께 {th.label} 코스</p>
 
-      <p className="mt-3 text-sm text-ink-soft">좌표상 가까운 장소를 연결한 방문 후보입니다. 실제 도로 이동 경로와 운영 여부는 각 장소의 안내를 확인하세요.</p>
+      <p className="mt-3 text-sm text-ink-soft">표시된 구간 거리는 직선거리입니다.</p>
 
       {/* 코스 한눈에 */}
       <div className="mt-5 rounded-2xl bg-panel px-4 py-4 sm:px-5">
@@ -139,7 +139,7 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
         </section>
       )}
 
-      <p className="mt-8 text-[12px] text-ink-faint">좌표 거리로 연결한 방문 후보 · 영업시간·휴무는 방문 전 확인 · 정보 제공: 한국관광공사</p>
+      <p className="mt-8 text-[12px] text-ink-faint">정보 출처: 한국관광공사</p>
     </Container>
   );
 }

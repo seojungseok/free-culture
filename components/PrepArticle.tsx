@@ -74,7 +74,7 @@ function CookingGuide({article,products}:{article:Article;products:PrepProduct[]
 }
 
 export default function PrepArticle({article:a,products,preview=false,relatedArticles=[]}:{article:Article;products:PrepProduct[];preview?:boolean;relatedArticles?:{slug:string;title:string}[]}){
- const chosen=products.filter(p=>a.productIds.includes(p.id)).map(p=>AFFILIATE_ENABLED?p:{...p,affiliateUrl:''});
+ const chosen=products.filter(p=>a.productIds.includes(p.id)).map(p=>AFFILIATE_ENABLED?p:{...p,affiliateUrl:'',source:'',evidence:''});
  const linked=new Set<string>();
  const carded=new Set<string>();
  const actionLabel=a.salesFormat==='food-recipe'?'쿠팡에서 재료 확인하기':a.salesFormat==='camping-gear'?'쿠팡에서 캠핑용품 확인하기':'쿠팡에서 제품 확인하기';
