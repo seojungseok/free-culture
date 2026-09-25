@@ -8,6 +8,7 @@ import { season } from "@/lib/finder";
 import { getAllPlaces } from "@/lib/tour";
 // 관광지 선별(식당 제외 + 기간별 상한 + 동선 최적화)은 생성 스크립트와 공유하는 단일 모듈에서.
 import { selectCourseStops, splitCourseDays, isCourseFoodStop } from "@/lib/courseSelect";
+import { indexableCourseIds } from "@/lib/courseIndexQuality";
 
 export interface CourseStop {
   num: number;
@@ -113,14 +114,19 @@ const PUBLISHED: Course[] = RAW.filter((c) => ARTS[c.id]?.status === "published"
   };
 }).sort((a, b) => (b.publishedAt || "").localeCompare(a.publishedAt || ""));
 
+const INDEXABLE_IDS = indexableCourseIds(PUBLISHED);
+const INDEXABLE = PUBLISHED.filter((course) => INDEXABLE_IDS.has(course.id));
+export function isIndexableCourse(id: string): boolean { return INDEXABLE_IDS.has(id); }
+
 export function getAllCourses(): Course[] { return PUBLISHED; }
-export function getCourseCount(): number { return PUBLISHED.length; }
+export function getIndexableCourses(): Course[] { return INDEXABLE; }
+export function getCourseCount(): number { return INDEXABLE.length; }
 export function getCourse(id: string): Course | undefined { return PUBLISHED.find((c) => c.id === id); }
 
 export function filterCourses(
   { area, duration, theme, limit }: { area?: string; duration?: string; theme?: string; limit?: number } = {}
 ): Course[] {
-  let list = PUBLISHED;
+  let list = INDEXABLE;
   if (area) list = list.filter((c) => c.area === area);
   if (duration) list = list.filter((c) => c.duration === duration);
   if (theme) list = list.filter((c) => (c.themes || []).includes(theme));
@@ -130,13 +136,13 @@ export function filterCourses(
 /** 발행 코스가 있는 시도 + 개수 (시도 순) */
 export function getCourseAreaCounts(): { area: string; count: number }[] {
   const c: Record<string, number> = {};
-  for (const x of PUBLISHED) c[x.area] = (c[x.area] || 0) + 1;
+  for (const x of INDEXABLE) c[x.area] = (c[x.area] || 0) + 1;
   return SIDO_LIST.filter((a) => c[a] > 0).map((area) => ({ area, count: c[area] }));
 }
 
 /** 기간별 개수 (area 주면 그 지역 안에서) */
 export function getDurationCounts(area?: string): Record<string, number> {
-  const list = area ? PUBLISHED.filter((c) => c.area === area) : PUBLISHED;
+  const list = area ? INDEXABLE.filter((c) => c.area === area) : INDEXABLE;
   const out: Record<string, number> = {};
   for (const c of list) out[c.duration] = (out[c.duration] || 0) + 1;
   return out;
@@ -145,7 +151,7 @@ export function getDurationCounts(area?: string): Record<string, number> {
 /** 테마별 개수 (전국) */
 export function getThemeCounts(): Record<string, number> {
   const out: Record<string, number> = {};
-  for (const c of PUBLISHED) for (const t of c.themes || []) out[t] = (out[t] || 0) + 1;
+  for (const c of INDEXABLE) for (const t of c.themes || []) out[t] = (out[t] || 0) + 1;
   return out;
 }
 
@@ -236,7 +242,7 @@ export function courseDays(c: Course): CourseStop[][] {
  */
 const COURSES_BY_PLACE: Map<string, Course[]> = (() => {
   const m = new Map<string, Course[]>();
-  for (const c of PUBLISHED) {
+  for (const c of INDEXABLE) {
     for (const st of c.stops || []) {
       const k = String((st as { placeId?: string }).placeId || "");
       if (!k) continue;
@@ -252,8 +258,8 @@ export function coursesContaining(placeId: string, n = 3): Course[] {
 }
 
 export function relatedCourses(course: Course, n = 4): Course[] {
-  return PUBLISHED.filter((c) => c.id !== course.id && c.area === course.area).slice(0, n)
-    .concat(PUBLISHED.filter((c) => c.id !== course.id && c.area !== course.area))
+  return INDEXABLE.filter((c) => c.id !== course.id && c.area === course.area).slice(0, n)
+    .concat(INDEXABLE.filter((c) => c.id !== course.id && c.area !== course.area))
     .slice(0, n);
 }
 
@@ -288,7 +294,7 @@ export function getCourseKeywords(): { label: string; href: string }[] {
   for (const t of THEMES) if (tc[t.key]) add(`${t.label} 여행코스`, `/course/theme/${t.slug}`);
 
   // 개별 코스명(짧고 매력적인 것)
-  for (const c of PUBLISHED) if (c.title.length <= 24) add(c.title, `/course/c/${c.id}`);
+  for (const c of INDEXABLE) if (c.title.length <= 24) add(c.title, `/course/c/${c.id}`);
 
   return out;
 }

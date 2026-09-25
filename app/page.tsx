@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import HomeExplorer, { type HomeItem } from "@/components/HomeExplorer";
 import { getWeekend, getFree } from "@/lib/data";
 import { getAllPlaces } from "@/lib/tour";
-import { getAllCourses, slimCourse } from "@/lib/courses";
+import { getIndexableCourses, slimCourse } from "@/lib/courses";
 import { getAllCamps } from "@/lib/camping";
 import { getDateCourses } from "@/lib/dateCourses";
 import { SIDO_LIST, SIDO_SLUG } from "@/lib/classify";
@@ -55,7 +55,7 @@ export default function HomePage() {
   const weekendEvents = getWeekend().filter((item) => item.imgUrl);
   const today = todayYmd();
   const places = getAllPlaces().filter((item) => item.image && hasSubstantivePlaceInfo(item.id));
-  const courses = getAllCourses().map(slimCourse).filter((item) => item.image);
+  const courses = getIndexableCourses().map(slimCourse).filter((item) => item.image);
   const camps = getAllCamps().filter((item) => item.image && hasSubstantiveCampInfo(item));
   const dateCourses = getDateCourses().filter((item) => item.image);
   const placeItems: HomeItem[] = places.map((item) => ({ id: `place-${item.id}`, href: `/places/spot/${item.id}`, title: item.title, meta: item.area, image: item.image, badge: item.isKid ? "아이와" : "나들이", area: item.area }));

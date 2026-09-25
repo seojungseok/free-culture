@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Band } from "@/components/Band";
 import CourseCard from "@/components/CourseCard";
 import {
-  filterCourses, getCourseAreaCounts, getDurationCounts, getThemeCounts,
+  filterCourses, getAllCourses, getCourseAreaCounts, getDurationCounts, getThemeCounts,
   DURATIONS, THEMES, areaSlug, sidoFromSlug, durationSlug, slimCourse,
 } from "@/lib/courses";
 
@@ -19,10 +19,12 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
   const { area: slug } = await params;
   const area = sidoFromSlug(slug);
   if (!area) return {};
+  const hasIndexableCourses = filterCourses({ area }).length > 0;
   return {
     title: `${area} 여행코스 — 당일치기·1박2일 ${area} 여행 일정 추천`,
     description: `${area} 여행코스를 기간·테마별로 모았어요. ${area} 가볼만한 곳을 이어 하루 동선으로, 밥집까지 함께. 당일치기부터 1박2일까지.`,
     keywords: [`${area} 여행코스`, `${area} 여행`, `${area} 당일치기`, `${area} 1박2일`, `${area} 가볼만한곳`],
+    robots: hasIndexableCourses ? undefined : { index: false, follow: true },
     alternates: { canonical: `/course/${slug}` },
   };
 }
@@ -32,7 +34,8 @@ export default async function CourseAreaPage({ params }: { params: Promise<{ are
   const area = sidoFromSlug(slug);
   if (!area) notFound();
 
-  const list = filterCourses({ area }).map(slimCourse);
+  const indexable = filterCourses({ area });
+  const list = (indexable.length ? indexable : getAllCourses().filter((course) => course.area === area)).map(slimCourse);
   if (list.length === 0) notFound();
 
   const durCounts = getDurationCounts(area);

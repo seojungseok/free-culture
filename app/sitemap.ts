@@ -5,7 +5,7 @@ import { getAllCamps, campAreaCounts } from "@/lib/camping";
 import { getAllRestaurants, foodAreas } from "@/lib/food";
 import { getAllArticles } from "@/lib/articles";
 import {
-  getAllCourses, getCourseAreaCounts,
+  getAllCourses, getCourseAreaCounts, isIndexableCourse,
 } from "@/lib/courses";
 import { GENRES, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
@@ -155,7 +155,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.4,
   }));
 
-  const festivalRoutes = getAllFestivals().filter((festival) => !festival.id.startsWith("event-") && (festival.description || "").trim().length >= 150).map((festival) => ({
+  const festivalRoutes = getAllFestivals().filter((festival) => !festival.id.startsWith("event-") && festival.endDate >= todayYmd() && (festival.description || "").trim().length >= 150).map((festival) => ({
     url: `${base}/festivals/${festival.id}`,
 
     changeFrequency: "weekly" as const,
@@ -172,7 +172,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   // 기간·테마 목록은 개별 편집 콘텐츠 없이 같은 코스를 다시 나열하므로 탐색용으로만 둔다.
   // 개별 코스 상세 (/course/c/[id])
-  const courseDetailRoutes = getAllCourses().map((c) => ({
+  const courseDetailRoutes = getAllCourses().filter((c) => isIndexableCourse(c.id)).map((c) => ({
     url: `${base}/course/c/${c.id}`,
     lastModified: c.publishedAt && Number.isFinite(Date.parse(c.publishedAt)) ? new Date(c.publishedAt) : undefined,
     changeFrequency: "monthly" as const, priority: 0.6,

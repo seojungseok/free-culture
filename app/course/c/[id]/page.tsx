@@ -9,7 +9,7 @@ import CoursePhotoGallery from "@/components/CoursePhotoGallery";
 import CourseCard from "@/components/CourseCard";
 import CourseShare from "@/components/CourseShare";
 import {
-  getAllCourses, getCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays, courseFoodStops, courseAttractions, courseStopCount,
+  getIndexableCourses, getCourse, isIndexableCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays, courseFoodStops, courseAttractions, courseStopCount,
 } from "@/lib/courses";
 import { coursesNearbyFood, distanceLabel, foodTypeLabel, distanceKm } from "@/lib/nearby";
 import { areaFestivals, fmtMd } from "@/lib/festivals";
@@ -21,7 +21,7 @@ export const revalidate = 86400;
 export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return getAllCourses().map((c) => ({ id: c.id }));
+  return getIndexableCourses().map((c) => ({ id: c.id }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title: `${c.title} — ${c.area} ${durationLabel(c.duration)} 여행코스`,
     description: desc || `${c.area} ${durationLabel(c.duration)} 여행코스. ${atts.map((s) => s.name).slice(0, 4).join(", ")} 등을 잇는 여행 일정.`,
+    robots: { index: isIndexableCourse(id), follow: true },
     keywords: [`${c.area} 여행코스`, `${c.area} ${durationLabel(c.duration)}`, ...atts.slice(0, 3).map((s) => s.name)],
     alternates: { canonical: `/course/c/${id}` },
     openGraph: { title: c.title, description: desc, images: c.image ? [c.image] : [], type: "article" },
