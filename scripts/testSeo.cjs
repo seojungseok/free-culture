@@ -36,6 +36,8 @@ assert(getKidCourses().every(c=>!set.has('https://mwohaji.kr/kids/c/'+c.id)));
 assert(set.has('https://mwohaji.kr/kids'),'Kids hub remains indexable');
 assert(getAllBundles().every(c=>!set.has('https://mwohaji.kr/camping/collections/'+c.slug)));
 const {getAllEvents}=load('lib/data'),{hasSubstantiveEventInfo}=load('lib/eventQuality'),{todayYmd}=load('lib/dates');
+assert(getAllEvents().every(event=>!event.addressConflict),'Conflicting event regions stay out of current listings');
+assert(load('lib/data').getEventById('399707')?.addressConflict,'Existing event detail remains accessible for review');
 for(const e of getAllEvents())assert.equal(set.has('https://mwohaji.kr/event/'+e.id),e.endDate>=todayYmd()&&hasSubstantiveEventInfo(e),e.id+' event quality');
 const {getAllFestivals}=load('lib/festivals');
 for(const f of getAllFestivals())assert.equal(set.has('https://mwohaji.kr/festivals/'+f.id),!f.id.startsWith('event-')&&f.endDate>=todayYmd()&&(f.description||'').trim().length>=150,f.id+' festival quality');
@@ -74,4 +76,29 @@ assert(!robots.rules.some(r=>['Meta-WebIndexer','facebookexternalhit','Meta-Exte
 for(const r of robots.rules.filter(r=>r!==metaTraining)){const dis=[r.disallow||[]].flat();for(const url of ['/_next/static/chunks/app.js?dpl=test','/_next/image?url=photo.jpg&w=640&q=75','/search?q=서울','/api/pet-travel?area=서울','/region/seoul','/?utm_source=test'])assert(!dis.some(d=>matches(d,url)),r.userAgent+' can crawl '+url);}
 const eventStory=load('lib/eventStory').eventStory;
 assert(eventStory({title:'test',realmName:'전시',area:'서울',sigungu:'',place:'',startDate:'20260901',endDate:'20260910',priceLabel:'요금 정보 확인 필요',priceType:'unknown'}).some(s=>s.includes('장소 서울')));
+const {getCityTours}=load('lib/cityTours'),{getPrepArticles}=load('lib/weekend-prep/data');
+const allDynamicIds={
+  '/places/spot/':new Set(getAllPlaces().map(row=>row.id)),
+  '/food/spot/':new Set(getAllRestaurants().map(row=>row.id)),
+  '/camping/':new Set(getAllCamps().map(row=>row.id)),
+  '/event/':new Set(getAllEvents().map(row=>row.id)),
+  '/festivals/':new Set(getAllFestivals().map(row=>row.id)),
+  '/course/c/':new Set(getAllCourses().map(row=>row.id)),
+  '/city-tour/':new Set(getCityTours().map(row=>row.id)),
+  '/pet-travel/':new Set(getPetTravelPlaces().map(row=>row.id)),
+  '/weekend-prep/':new Set(getPrepArticles().map(row=>row.slug)),
+};
+const hubPaths=new Set(['/', '/events', '/festivals', '/places', '/course', '/city-tour', '/camping', '/food', '/pet-travel', '/free', '/cheap', '/weekend', '/ending-soon', '/kids', '/season', '/about', '/privacy', '/terms', '/contact', '/date', '/weekend-prep', '/camping/cooking']);
+const {SIDO_SLUG,GENRES}=load('lib/classify');
+const areaSlugs=new Set(Object.values(SIDO_SLUG)),genreSlugs=new Set(GENRES.map(row=>row.key));
+for(const url of urls){
+  const route=new URL(url).pathname;
+  if(hubPaths.has(route))continue;
+  if(/^\/(?:region|places|food|course)\/[^/]+$/.test(route)&&areaSlugs.has(route.split('/')[2]))continue;
+  if(/^\/camping\/region\/[^/]+$/.test(route)&&areaSlugs.has(route.split('/')[3]))continue;
+  if(/^\/genre\/[^/]+$/.test(route)&&genreSlugs.has(route.split('/')[2]))continue;
+  if(/^\/month\/(?:[1-9]|1[0-2])$/.test(route))continue;
+  const detail=Object.entries(allDynamicIds).find(([prefix])=>route.startsWith(prefix));
+  assert(detail&&detail[1].has(route.slice(detail[0].length)),url+' is not backed by a live page record');
+}
 console.log(JSON.stringify({passed:true,sitemapUrls:urls.length,kidCourses:getKidCourses().length,indexableCourses:getAllCourses().filter(c=>isIndexableCourse(c.id)).length,indexableAutoCourses:getAllCourses().filter(c=>c.source==='auto'&&isIndexableCourse(c.id)).length,totalCourses:getAllCourses().length,nonIndexableCourseAreas,bundles:getAllBundles().length,petDetails:urls.filter(u=>u.includes('/pet-travel/')).length,checks:['confirmed prices','no inferred free admission','course index quality','sitemap coverage and uniqueness','canonical targets','robots asset and AI search access']}));

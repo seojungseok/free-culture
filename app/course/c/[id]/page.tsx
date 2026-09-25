@@ -24,14 +24,23 @@ export function generateStaticParams() {
   return getIndexableCourses().map((c) => ({ id: c.id }));
 }
 
+const courseTitleKey = (course: { title: string; area: string; duration: string }) =>
+  `${course.title}|${course.area}|${durationLabel(course.duration)}`;
+const courseTitleCounts = new Map<string, number>();
+for (const course of getIndexableCourses()) {
+  const key = courseTitleKey(course);
+  courseTitleCounts.set(key, (courseTitleCounts.get(key) || 0) + 1);
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   const c = getCourse(id);
   if (!c) return {};
   const desc = c.content.replace(/[#*>`-]/g, " ").replace(/\s+/g, " ").trim().slice(0, 150);
   const atts = courseAttractions(c); // 실제 노출 관광지(식당 제외·상한 적용)
+  const firstStop = courseTitleCounts.get(courseTitleKey(c))! > 1 ? ` · ${atts[0]?.name || ""}` : "";
   return {
-    title: `${c.title} — ${c.area} ${durationLabel(c.duration)} 여행코스`,
+    title: `${c.title}${firstStop} — ${c.area} ${durationLabel(c.duration)} 여행코스`,
     description: desc || `${c.area} ${durationLabel(c.duration)} 여행코스. ${atts.map((s) => s.name).slice(0, 4).join(", ")} 등을 잇는 여행 일정.`,
     robots: { index: isIndexableCourse(id), follow: true },
     keywords: [`${c.area} 여행코스`, `${c.area} ${durationLabel(c.duration)}`, ...atts.slice(0, 3).map((s) => s.name)],

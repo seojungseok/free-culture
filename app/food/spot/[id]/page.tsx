@@ -13,6 +13,7 @@ import { SITE } from "@/lib/site";
 import { Container } from "@/components/Band";
 import PlaceGallery, { type GalleryImage } from "@/components/PlaceGallery";
 import { hasSubstantiveRestaurantInfo } from "@/lib/placeQuality";
+import { getAllRestaurants } from "@/lib/food";
 
 // 음식점 상세 — 맛집 탐방(/food) 소속. 예전 주소(/places/spot/[id])는 여기로 301.
 export const dynamicParams = true;
@@ -20,6 +21,13 @@ export const revalidate = 2592000; // 30일 — 음식점 정보는 거의 안 �
 
 export function generateStaticParams() {
   return []; // 모든 상세는 온디맨드 생성 후 캐시
+}
+
+const restaurantTitleKey = (restaurant: Pick<Restaurant, "title" | "area" | "cat3">) => `${restaurant.title}|${restaurant.area}|${foodTypeLabel(restaurant)}`;
+const restaurantTitleCounts = new Map<string, number>();
+for (const restaurant of getAllRestaurants()) {
+  const key = restaurantTitleKey(restaurant);
+  restaurantTitleCounts.set(key, (restaurantTitleCounts.get(key) || 0) + 1);
 }
 
 export async function generateMetadata({
@@ -32,7 +40,9 @@ export async function generateMetadata({
   if (!r) return { title: "맛집을 찾을 수 없습니다" };
   const food = foodTypeLabel(r);
   const gu = (r.addr.match(/[가-힣]{2,}(?:구|군)/) || [])[0];
-  const title = `${r.title} — ${r.area} ${food} 맛집`;
+  const locality = restaurantTitleCounts.get(restaurantTitleKey(r))! > 1
+    ? ` ${r.addr.split(/\s+/).slice(1, 3).join(" ")}` : "";
+  const title = `${r.title} — ${r.area}${locality} ${food} 맛집`;
   // 수집된 영업정보(영업시간·메뉴 등)가 있으면 메타 설명에 그대로 반영 → 롱테일 키워드·정보성 강화
   const summary = restaurantSummary(id);
   const description = summary

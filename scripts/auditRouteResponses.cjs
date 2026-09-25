@@ -63,12 +63,13 @@ async function check([route, status, index]) {
     assert.equal(response.status, 301, route);
     assert.equal(new URL(response.headers.get('location'), base).pathname, target, route);
   }
-  for (const route of ['/places/spot/2774564?utm_source=audit', '/events?utm_medium=audit', '/food?ref=audit&source=test']) {
+  for (const route of ['/places/spot/2774564?utm_source=audit', '/events?utm_medium=audit', '/?utm_campaign=audit', '/food?ref=audit&source=test']) {
     const response = await fetch(base + route);
     assert.equal(response.status, 200, route);
     const html = await response.text();
     const canonical = attr(headTag(html, 'link', 'rel', 'canonical'), 'href');
-    assert.equal(canonical, 'https://mwohaji.kr' + route.split('?')[0], route + ' canonical');
+    const pathname = route.split('?')[0];
+    assert.equal(canonical, 'https://mwohaji.kr' + (pathname === '/' ? '' : pathname), route + ' canonical');
   }
   const ads = await fetch(base + '/ads.txt');
   assert.equal(ads.status, 200);

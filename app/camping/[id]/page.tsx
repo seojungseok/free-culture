@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCamp, type Camp } from "@/lib/camping";
+import { getCamp, getAllCamps, type Camp } from "@/lib/camping";
 import { hasSubstantiveCampInfo } from "@/lib/placeQuality";
 import { isUsefulVisitText } from "@/lib/tourExtra";
 import { nearbyPlaces, nearbyRestaurants, distanceLabel, foodTypeLabel } from "@/lib/nearby";
@@ -17,16 +17,24 @@ export const dynamicParams = true;
 export const revalidate = 2592000; // 30일 — 캠핑장 정보 거의 불변(대역폭 절감)
 export function generateStaticParams() { return []; }
 
+const campTitleKey = (camp: Camp) => `${camp.name}|${camp.area}|${camp.sigungu}|${camp.types[0] || "캠핑장"}`;
+const campTitleCounts = new Map<string, number>();
+for (const camp of getAllCamps()) {
+  const key = campTitleKey(camp);
+  campTitleCounts.set(key, (campTitleCounts.get(key) || 0) + 1);
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   const c = getCamp(id);
   if (!c) return { title: "캠핑장을 찾을 수 없습니다" };
   const type = c.types[0] || "캠핑장";
   const region = [c.area, c.sigungu].filter(Boolean).join(" ");
+  const location = campTitleCounts.get(campTitleKey(c))! > 1 ? ` ${c.addr.split(/\s+/).slice(-2).join(" ")}` : "";
   const facs = Object.entries(c.facilities).filter(([, v]) => v).map(([k]) => k);
   return {
     title: {
-      absolute: `${c.name} - ${region} ${type} | ${SITE.name}`,
+      absolute: `${c.name} - ${region}${location} ${type} | ${SITE.name}`,
     },
     description: [`${region} ${type} ${c.name}.`, facs.length ? `등록 시설: ${facs.slice(0, 4).join("·")}.` : "", c.operPd ? `운영기간: ${c.operPd}.` : ""].filter(Boolean).join(" "),
     robots: { index: hasSubstantiveCampInfo(c), follow: true },

@@ -48,13 +48,13 @@ export async function generateMetadata({
   const { id } = await params;
   const ev = eventForDetail(id);
   if (!ev) return { title: "행사를 찾을 수 없습니다" };
-  const where = placeText(ev.area, ev.sigungu, ev.place);
+  const where = ev.addressConflict ? ev.place || "장소 확인 필요" : placeText(ev.area, ev.sigungu, ev.place);
   const contents = eventContentsText(ev.contents).replace(/\s+/g, " ");
   const desc = `${ev.endDate < todayYmd() ? "종료된 행사 · " : ""}${ev.priceLabel} · ${fmtRange(ev.startDate, ev.endDate)} · ${where}. ${
     contents ? contents.slice(0, 80) : `${ev.realmName} 행사 정보를 확인하세요.`
   }`;
   const isFree = ev.priceType === "free";
-  const keywords = [
+  const keywords = ev.addressConflict ? [ev.title, ev.realmName] : [
     `${ev.area} ${ev.realmName}`,
     isFree ? `${ev.area} 무료 ${ev.realmName}` : `${ev.area} ${ev.realmName} 공연`,
     ev.sigungu ? `${ev.sigungu} 문화행사` : `${ev.area} 문화행사`,
@@ -89,7 +89,7 @@ export default async function EventPage({
   const ended = ev.endDate < todayYmd();
   const regionSlug = (SIDO_SLUG as Record<string,string>)[ev.area];
   const contents = eventContentsParagraphs(ev.contents);
-  const story = eventStory({
+  const story = ev.addressConflict ? [] : eventStory({
     title: ev.title, realmName: ev.realmName, area: ev.area, sigungu: ev.sigungu,
     place: ev.place, startDate: ev.startDate, endDate: ev.endDate,
     priceLabel: ev.priceLabel, priceType: ev.priceType, audiences: ev.audiences,
@@ -112,8 +112,8 @@ export default async function EventPage({
     description: contents.join("\n\n") || `${ev.realmName} · ${ev.priceLabel}`,
     location: {
       "@type": "Place",
-      name: ev.place || ev.area,
-      address: ev.address || `${ev.area} ${ev.sigungu}`.trim(),
+      name: ev.place || (ev.addressConflict ? "장소 확인 필요" : ev.area),
+      ...(!ev.addressConflict ? { address: ev.address || `${ev.area} ${ev.sigungu}`.trim() } : {}),
     },
     offers: ended ? undefined : eventOffer(ev),
   };
@@ -204,7 +204,7 @@ export default async function EventPage({
             </Row>
             <Row label="기간"><time dateTime={iso(ev.startDate)}>{fmtRange(ev.startDate, ev.startDate)}</time>{ev.startDate!==ev.endDate&&<> ~ <time dateTime={iso(ev.endDate)}>{fmtRange(ev.endDate,ev.endDate)}</time></>}</Row>
             <Row label="장소">{ev.place || "-"}</Row>
-            <Row label="주소">{ev.address || `${ev.area} ${ev.sigungu}`.trim() || "-"}</Row>
+            {!ev.addressConflict && <Row label="주소">{ev.address || `${ev.area} ${ev.sigungu}`.trim() || "-"}</Row>}
             {ev.phone && <Row label="문의">{ev.phone}</Row>}
           </dl>
 
@@ -240,7 +240,7 @@ export default async function EventPage({
 
           {/* 소개글 — 구조화 데이터로 조합(공식 소개 없는 행사도 읽을거리 확보).
               네이버블로그처럼 여백 있고 읽기 편하게(짧은 문단, 넉넉한 줄간격) */}
-          <section className="mt-7 rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6">
+          {story.length > 0 && <section className="mt-7 rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6">
             <h2 className="mb-4 flex items-center gap-1.5 text-[17px] font-extrabold text-ink">
               <span>📖</span> 행사 소개
             </h2>
@@ -249,10 +249,10 @@ export default async function EventPage({
                 <p key={i} className={i === 0 ? "font-medium text-ink" : ""}>{para}</p>
               ))}
             </div>
-          </section>
+          </section>}
 
-          {ev.endDate >= todayYmd() ? <NextStop anchor={{id:"event:"+ev.id,title:ev.title,href:"/event/"+ev.id,area:ev.area,kind:"event",image:ev.imgUrl,address:ev.address || ev.place,x:Number(ev.gpsX),y:Number(ev.gpsY),free:ev.priceType==="free",kids:ev.audiences?.includes("kids"),start:ev.startDate,end:ev.endDate}}/> : <section className="mt-5 rounded-xl bg-amber-50 p-4 text-sm"><h2 className="font-bold">이 행사는 종료되었습니다</h2><p className="mt-2">등록된 일정 기준입니다. 현재 갈 곳을 다시 찾아보세요.</p><nav className="mt-3 flex flex-wrap gap-4 font-bold underline"><Link href="/weekend">이번 주말 행사 보기</Link>{regionSlug&&<Link href={`/region/${regionSlug}`}>{ev.area} 이번 주말 가볼 곳</Link>}</nav></section>}
-          {ev.endDate >= todayYmd() && <NearbyParking lon={Number(ev.gpsX)} lat={Number(ev.gpsY)} area={ev.area} address={ev.address} title="행사장 근처 주차 확인" />}
+          {ev.endDate >= todayYmd() ? (!ev.addressConflict && <NextStop anchor={{id:"event:"+ev.id,title:ev.title,href:"/event/"+ev.id,area:ev.area,kind:"event",image:ev.imgUrl,address:ev.address || ev.place,x:Number(ev.gpsX),y:Number(ev.gpsY),free:ev.priceType==="free",kids:ev.audiences?.includes("kids"),start:ev.startDate,end:ev.endDate}}/>) : <section className="mt-5 rounded-xl bg-amber-50 p-4 text-sm"><h2 className="font-bold">이 행사는 종료되었습니다</h2><p className="mt-2">등록된 일정 기준입니다. 현재 갈 곳을 다시 찾아보세요.</p><nav className="mt-3 flex flex-wrap gap-4 font-bold underline"><Link href="/weekend">이번 주말 행사 보기</Link>{regionSlug&&<Link href={`/region/${regionSlug}`}>{ev.area} 이번 주말 가볼 곳</Link>}</nav></section>}
+          {ev.endDate >= todayYmd() && !ev.addressConflict && <NearbyParking lon={Number(ev.gpsX)} lat={Number(ev.gpsY)} area={ev.area} address={ev.address} title="행사장 근처 주차 확인" />}
           <ShareButtons title={ev.title} officialUrl={ev.officialUrl} />
 
           <p className="mt-4 text-[13px] text-ink-faint">

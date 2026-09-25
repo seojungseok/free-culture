@@ -13,7 +13,13 @@ const normalizedEvents: EventsData = {
     addressConflict: Boolean(event.address && !displayAddress(event.address, event.area)),
   })),
 };
-function load(): EventsData { return normalizedEvents; }
+// Keep conflicting records available at their existing detail URLs while their
+// source location is checked; they must not appear in current-region listings.
+const visibleEvents: EventsData = {
+  ...normalizedEvents,
+  events: normalizedEvents.events.filter((event) => !event.addressConflict),
+};
+function load(): EventsData { return visibleEvents; }
 
 export function getAllEvents(): CultureEvent[] {
   return load().events;
@@ -24,7 +30,7 @@ export function getGeneratedAt(): string {
 }
 
 export function getEventById(id: string): CultureEvent | undefined {
-  return load().events.find((e) => e.id === id);
+  return normalizedEvents.events.find((e) => e.id === id);
 }
 
 export function getByRegion(area: string): CultureEvent[] {

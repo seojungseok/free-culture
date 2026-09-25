@@ -12,24 +12,27 @@ function walk(dir) {
   });
 }
 const linked = new Set();
+const badMarkup = [];
 for (const file of walk(root)) {
   const html = fs.readFileSync(file, 'utf8');
-  for (const match of html.matchAll(/<a\b[^>]*\bhref=["']([^"']+)["']/gi)) {
+  for (const match of html.matchAll(/<a\b[^>]*\bhref=["']([^"']*)["']/gi)) {
     const href = match[1].replace(/&amp;/g, '&');
+    if (!href) { badMarkup.push({ file, problem: 'empty href' }); continue; }
     if (!href.startsWith('/')) continue;
     const pathname = new URL(href, 'https://mwohaji.kr').pathname;
+    if (/^\/tickets(?:\/|$)/.test(pathname)) badMarkup.push({ file, pathname, problem: 'old tickets link' });
     if (!pathname.startsWith('/_next/') && !pathname.startsWith('/api/')) linked.add(pathname);
   }
 }
 const toCheck = [...linked].filter((pathname) => !listed.has(pathname));
-const bad = [];
+const bad = [...badMarkup];
 const statuses = {};
 let done = 0;
 async function check(route) {
   try {
-    const response = await fetch(base + route, { method: 'HEAD', redirect: 'follow', signal: AbortSignal.timeout(15000) });
+    const response = await fetch(base + route, { method: 'HEAD', redirect: 'manual', signal: AbortSignal.timeout(15000) });
     statuses[response.status] = (statuses[response.status] || 0) + 1;
-    if (response.status >= 400) bad.push({ route, status: response.status });
+    if (response.status >= 300) bad.push({ route, status: response.status, location: response.headers.get('location') });
   } catch (error) {
     bad.push({ route, error: error.message });
   }
