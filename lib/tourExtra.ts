@@ -111,14 +111,14 @@ export function restaurantIntroRows(id: string): { label: string; value: string 
 /** 음식점 문의 전화 (infocenter) — 없으면 undefined */
 export function getRestaurantPhone(id: string): string | undefined {
   const v = restaurantIntro[id]?.infocenter;
-  return v && String(v).trim() ? String(v) : undefined;
+  return isUsefulVisitText(v) ? String(v).trim() : undefined;
 }
 
 /** 대표/취급 메뉴 문자열 (JSON-LD·본문용) — 없으면 undefined */
 export function getRestaurantMenu(id: string): string | undefined {
   const it = restaurantIntro[id];
   if (!it) return undefined;
-  const v = [it.firstmenu, it.treatmenu].filter((s) => s && String(s).trim()).join(" / ");
+  const v = [it.firstmenu, it.treatmenu].filter(isUsefulVisitText).join(" / ");
   return v || undefined;
 }
 
@@ -135,11 +135,11 @@ export function restaurantSummary(id: string): string {
     return v.length > n ? v.slice(0, n).trim() + "…" : v;
   };
   const parts: string[] = [];
-  if (it.usetime) parts.push(`영업 ${clip(it.usetime, 30)}`);
-  if (it.restdate) parts.push(`${clip(it.restdate, 20)} 휴무`);
-  if (it.firstmenu) parts.push(`대표메뉴 ${clip(it.firstmenu, 24)}`);
-  else if (it.treatmenu) parts.push(`메뉴 ${clip(it.treatmenu, 30)}`);
-  if (it.parking) parts.push(`주차 ${clip(it.parking, 10)}`);
+  if (isUsefulVisitText(it.usetime)) parts.push(`영업 ${clip(it.usetime, 30)}`);
+  if (isUsefulVisitText(it.restdate)) parts.push(`${clip(it.restdate, 20)} 휴무`);
+  if (isUsefulVisitText(it.firstmenu)) parts.push(`대표메뉴 ${clip(it.firstmenu, 24)}`);
+  else if (isUsefulVisitText(it.treatmenu)) parts.push(`메뉴 ${clip(it.treatmenu, 30)}`);
+  if (isUsefulVisitText(it.parking)) parts.push(`주차 ${clip(it.parking, 10)}`);
   return parts.join(" · ");
 }
 

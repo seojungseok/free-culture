@@ -1,4 +1,5 @@
 import "server-only";
+import { isUsefulDisplayValue } from "@/lib/displayValue";
 
 // 상세 페이지에서만 호출: detailCommon2 로 장소 소개글(overview)·홈페이지를 가져옴.
 // Next fetch 캐시(revalidate)로 한 번 부르면 재사용 → 일 1,000회 제한 방어.
@@ -119,10 +120,12 @@ export async function fetchPlaceOverview(contentId: string): Promise<PlaceOvervi
     const item = j?.response?.body?.items?.item;
     const it = Array.isArray(item) ? item[0] : item;
     if (!it) return empty;
+    const overview = cleanText(it.overview);
+    const tel = String(it.tel ?? "").trim();
     return {
-      overview: cleanText(it.overview),
+      overview: isUsefulDisplayValue(overview) ? overview : "",
       homepage: extractUrl(it.homepage),
-      tel: String(it.tel || "").trim(),
+      tel: isUsefulDisplayValue(tel) ? tel : "",
     };
   } catch {
     return empty;
