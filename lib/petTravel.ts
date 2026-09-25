@@ -1,5 +1,6 @@
 import petData from "@/data/pet-travel.json";
 import { petQuality } from "./petContent.mjs";
+import { isUsefulDisplayValue } from "./displayValue";
 export { petQuality, petOverview } from "./petContent.mjs";
 
 export type PetTravelPlace = {
@@ -52,14 +53,14 @@ const introLabels: Record<string, string> = {
 const noisyKey = /^(contentid|contenttypeid|mapx|mapy|mlevel|modifiedtime|createdtime|serialnum|booktour|cpyrhtdivcd|sigungucode|areacode|cat[123])$/i;
 const readable = (value: unknown) => {
   const text = clean(value);
-  if (!text || /^[-+.,:/()\s\d]+$/.test(text)) return "";
+  if (!isUsefulDisplayValue(text) || /^[-+.,:/()\s\d]+$/.test(text)) return "";
   if (text === "Y") return "가능";
   if (text === "N") return "없음";
   return text;
 };
 export const normalizePetIntro = (raw: Record<string, unknown>) => Object.fromEntries(
   Object.entries(raw || {}).map(([key, value]) => [introLabels[key] || (Object.values(introLabels).includes(key) ? key : ""), clean(value)])
-    .filter(([label, value]) => Boolean(label && value)),
+    .filter(([label, value]) => Boolean(label && isUsefulDisplayValue(value))),
 );
 const petLabels: Record<string, string> = {
   acmpytypecd: "동반 가능 구역",

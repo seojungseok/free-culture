@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTourById, tourTypeLabel } from "@/lib/tour";
 import { getPetTravelPlace, getPetTravelPlaces, normalizePetIntro, normalizePetInfo, sanitizePetInfoText, petOverview, petQuality } from "@/lib/petTravel";
+import { isUsefulDisplayValue } from "@/lib/displayValue";
 
 // Data changes only in a new deployment; do not regenerate unchanged JSON per day/visitor.
 export const revalidate = false;
@@ -41,7 +42,7 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
   const petInfo = "petRaw" in spot && spot.petRaw ? normalizePetInfo(spot.petRaw) : "petInfo" in spot ? sanitizePetInfoText(spot.petInfo) : "";
   const summary = petOverview(spot);
   const intro = "intro" in spot ? normalizePetIntro(spot.intro || {}) : {};
-  const info = "info" in spot ? spot.info || [] : [];
+  const info = ("info" in spot ? spot.info || [] : []).filter((item) => isUsefulDisplayValue(item.text));
   const hero = spot.image || ("images" in spot ? spot.images?.[0] : '') || '';
   const gallery = "images" in spot ? [...new Set(spot.images || [])].filter(src=>src.replace(/^http:/,'https:')!==hero.replace(/^http:/,'https:')) : [];
   const description = `${spot.area || "전국"} ${spot.title} 반려동물 동반 여행 정보`;

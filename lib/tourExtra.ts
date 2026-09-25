@@ -6,6 +6,7 @@ import infoData from "@/data/place-info.json";
 import restaurantIntroData from "@/data/restaurant-intro.json";
 import type { Admission } from "@/lib/fees";
 import { displayAddress } from "@/lib/address";
+import { isUsefulDisplayValue } from "@/lib/displayValue";
 
 export interface PlaceIntro {
   type?: string;
@@ -49,10 +50,7 @@ export function getInfo(id: string): InfoItem[] {
   return info[id] || [];
 }
 
-export function isUsefulVisitText(value: string): boolean {
-  const text = String(value || "").trim();
-  return Boolean(text) && !/^(?:정보\s*없음|미상|확인\s*필요|미기재|미제공|해당\s*정보\s*없음)[.!]?$/i.test(text);
-}
+export const isUsefulVisitText = isUsefulDisplayValue;
 
 // 방문 정보 표시 순서 + 라벨 (값 있는 것만 화면에 노출)
 export const INTRO_FIELDS: { key: keyof PlaceIntro; label: string }[] = [
