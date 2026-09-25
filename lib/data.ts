@@ -2,10 +2,18 @@
 import { weekendRangeYmd } from "@/lib/dates";
 import eventsData from "@/data/events.json";
 import type { CultureEvent, EventsData, PriceType } from "./types";
+import { displayAddress, displayRegionTitle } from "@/lib/address";
 
-function load(): EventsData {
-  return eventsData as unknown as EventsData;
-}
+const normalizedEvents: EventsData = {
+  ...(eventsData as unknown as EventsData),
+  events: (eventsData as unknown as EventsData).events.map((event) => ({
+    ...event,
+    title: displayRegionTitle(event.title, event.area),
+    address: displayAddress(event.address || "", event.area),
+    addressConflict: Boolean(event.address && !displayAddress(event.address, event.area)),
+  })),
+};
+function load(): EventsData { return normalizedEvents; }
 
 export function getAllEvents(): CultureEvent[] {
   return load().events;

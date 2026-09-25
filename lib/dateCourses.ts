@@ -3,6 +3,7 @@
 //       (LLM 없음 → 환각 없음, 비용 0)
 import restaurantsData from "@/data/restaurants.json";
 import placesData from "@/data/places.json";
+import { displayAddress } from "@/lib/address";
 import { SIDO_SLUG, sidoFromSlug } from "@/lib/classify";
 
 const CAFE_CAT = "A05020900"; // TourAPI 음식점 분류: 카페·찻집
@@ -108,8 +109,8 @@ export function dateCourseGeo(): CourseGeo[] {
 }
 
 function build(): DateCourse[] {
-  const restaurants = (restaurantsData as unknown as { restaurants: Row[] }).restaurants;
-  const places = (placesData as unknown as { spots: Row[] }).spots;
+  const restaurants = (restaurantsData as unknown as { restaurants: Row[] }).restaurants.map((r) => ({ ...r, addr: displayAddress(r.addr, r.area) }));
+  const places = (placesData as unknown as { spots: Row[] }).spots.map((p) => ({ ...p, addr: displayAddress(p.addr, p.area) }));
 
   const hasGeo = (r: Row) => Boolean(r.mapx && r.mapy);
   const cafes = restaurants.filter((r) => r.cat3 === CAFE_CAT && hasGeo(r));

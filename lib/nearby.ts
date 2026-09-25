@@ -3,6 +3,7 @@
 import { getAllPlaces, tourTypeLabel, type TourSpot } from "@/lib/tour";
 import restaurantsData from "@/data/restaurants.json";
 import articlesData from "@/data/place-articles.json";
+import { displayAddress } from "@/lib/address";
 
 // 글이 발행된 장소 id — "주변 나들이 장소"를 고를 때 읽을거리가 있는 곳을 앞세우는 데 쓴다.
 const ARTICLE_IDS: Set<string> = new Set(
@@ -16,7 +17,8 @@ export interface Restaurant {
   image: string; mapx: string; mapy: string; tel: string;
   type: string; cat1?: string; cat2?: string; cat3?: string;
 }
-const restaurants = (restaurantsData as unknown as { restaurants: Restaurant[] }).restaurants || [];
+const restaurants = ((restaurantsData as unknown as { restaurants: Restaurant[] }).restaurants || [])
+  .map((restaurant) => ({ ...restaurant, addr: displayAddress(restaurant.addr, restaurant.area) }));
 
 const rad = (d: number) => (d * Math.PI) / 180;
 /** 두 좌표 거리(km). 좌표 없으면 Infinity */

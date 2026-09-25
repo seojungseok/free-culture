@@ -2,6 +2,7 @@
 // 코스 페이지에 "지금 이 지역에서 열리는/곧 열리는 축제"를 날짜 연동으로 노출.
 import festivalsData from "@/data/festivals.json";
 import { getAllEvents } from "@/lib/data";
+import { displayAddress } from "@/lib/address";
 
 export interface Festival {
   id: string; title: string; addr: string; area: string;
@@ -11,7 +12,8 @@ export interface Festival {
   info?: { name: string; text: string }[]; enrichedAt?: string;
 }
 
-const COLLECTED = (festivalsData as unknown as { festivals?: Festival[] }).festivals || [];
+const COLLECTED = ((festivalsData as unknown as { festivals?: Festival[] }).festivals || [])
+  .map((festival) => ({ ...festival, addr: displayAddress(festival.addr, festival.area) }));
 const ALL = [
   ...COLLECTED,
   ...getAllEvents()

@@ -29,6 +29,8 @@ export interface CultureEvent {
   area: string; // 시도
   sigungu: string;
   address: string;
+  /** 원본 주소의 행정구역과 지역 분류가 서로 다른 경우 */
+  addressConflict?: boolean;
 
   realmName: string; // 분야명 (전시, 공연 등)
   /** 내부 분류용 장르 키 (URL slug) */

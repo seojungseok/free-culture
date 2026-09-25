@@ -8,6 +8,7 @@ import { getKidTours } from "@/lib/tour";
 import { getByAudience } from "@/lib/data";
 import restaurantsData from "@/data/restaurants.json";
 import placesData from "@/data/places.json";
+import { displayAddress } from "@/lib/address";
 import { SIDO_SLUG, SIDO_LIST } from "@/lib/classify";
 import { cityOf } from "@/lib/dateCourses";
 
@@ -91,8 +92,8 @@ export function kmLabel(km: number): string {
 interface Row { id: string; title: string; addr: string; area: string; image?: string; mapx: string; mapy: string; cat3?: string }
 
 function build(): KidCourse[] {
-  const restaurants = (restaurantsData as unknown as { restaurants: Row[] }).restaurants.filter((r) => r.mapx && r.mapy);
-  const places = (placesData as unknown as { spots: Row[] }).spots.filter((p) => p.mapx && p.mapy);
+  const restaurants = (restaurantsData as unknown as { restaurants: Row[] }).restaurants.filter((r) => r.mapx && r.mapy).map((r) => ({ ...r, addr: displayAddress(r.addr, r.area) }));
+  const places = (placesData as unknown as { spots: Row[] }).spots.filter((p) => p.mapx && p.mapy).map((p) => ({ ...p, addr: displayAddress(p.addr, p.area) }));
 
   const byArea = <T extends Row>(list: T[]) => {
     const m = new Map<string, T[]>();

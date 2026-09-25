@@ -36,8 +36,8 @@ export async function generateMetadata({
   // 수집된 영업정보(영업시간·메뉴 등)가 있으면 메타 설명에 그대로 반영 → 롱테일 키워드·정보성 강화
   const summary = restaurantSummary(id);
   const description = summary
-    ? `${gu ? `${r.area} ${gu}` : r.area} ${food} ${r.title}. ${summary}. 위치·지도·연락처를 확인하세요.`
-    : `${r.area} ${r.addr}에 위치한 ${food} ${r.title}. 위치·지도·연락처와 주변 나들이 장소를 확인하세요.`;
+    ? `${gu ? `${r.area} ${gu}` : r.area} ${food} ${r.title}. ${summary}.`
+    : `${r.title} · ${food}. ${r.addr || r.area}`;
   return {
     title,
     description,
@@ -95,7 +95,6 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
 
   const openingHoursSpec = restaurantOpeningSpec(r.id);
   const menu = getRestaurantMenu(r.id);
-  const bizSummary = restaurantSummary(r.id);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
@@ -153,14 +152,8 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
         </div>
       )}
 
-      {overview ? (
+      {overview && (
         <p className="mt-5 whitespace-pre-line text-[15px] leading-[1.8] text-ink-soft">{overview}</p>
-      ) : (
-        <p className="mt-5 text-[15px] leading-[1.8] text-ink-soft">
-          {r.area} {r.addr}에 위치한 {food} <b className="font-bold text-ink">{r.title}</b>입니다.
-          {bizSummary && <> {bizSummary}.</>}{" "}
-          방문 전 지도와 연락처로 영업 여부를 확인하세요.
-        </p>
       )}
 
       <dl className="mt-6 divide-y divide-line rounded-2xl border border-line bg-white">
@@ -206,10 +199,6 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
           </dl>
         </section>
       )}
-
-      <p className="mt-3 rounded-xl bg-tint/50 px-4 py-3 text-[13px] leading-[1.6] text-ink-soft">
-        영업시간·휴무는 바뀔 수 있어요. 방문 전 전화나 지도로 <b className="font-bold text-ink">영업 여부를 확인</b>하시길 권해요.
-      </p>
 
       {nearPlaces.length > 0 && (
         <section className="mt-6">

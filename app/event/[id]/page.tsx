@@ -19,8 +19,14 @@ import ShareButtons from "@/components/ShareButtons";
 import { eventOffer } from "@/lib/eventSeo";
 import { hasSubstantiveEventInfo } from "@/lib/eventQuality";
 import { SIDO_SLUG } from "@/lib/classify";
+import { displayAddress, displayRegionTitle } from "@/lib/address";
 
-const archivedEvents = new Map((archivedEventsData.events as CultureEvent[]).map(event => [event.id, event]));
+const archivedEvents = new Map((archivedEventsData.events as CultureEvent[]).map(event => [event.id, {
+  ...event,
+  title: displayRegionTitle(event.title, event.area),
+  address: displayAddress(event.address || "", event.area),
+  addressConflict: Boolean(event.address && !displayAddress(event.address, event.area)),
+}]));
 const eventForDetail = (id: string) => getEventById(id) || archivedEvents.get(id);
 
 // ISR: 1시간 재검증. 종료 상태를 반영하면서 기존 상세 URL은 유지한다.

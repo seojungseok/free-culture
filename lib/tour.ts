@@ -3,6 +3,7 @@
 import placesData from "@/data/places.json";
 import dupeData from "@/data/camping-dupe-ids.json";
 import { SIDO_LIST } from "@/lib/classify";
+import { displayAddress } from "@/lib/address";
 
 export interface TourSpot {
   id: string;
@@ -29,7 +30,7 @@ const DUPE_MAP = (dupeData as unknown as { ids: Record<string, string> }).ids ||
 const DUPE = new Set(Object.keys(DUPE_MAP));
 // Same attraction and address with two TourAPI IDs: retain the record with fuller visit facts.
 const SAME_PLACE_TARGET: Record<string, string> = { "3353336": "2774564" };
-const RAW = data.spots || [];
+const RAW = (data.spots || []).map((spot) => ({ ...spot, addr: displayAddress(spot.addr, spot.area) }));
 const LIVE = RAW.filter((s) => !DUPE.has(s.id) && !SAME_PLACE_TARGET[s.id]);
 
 /** 이 장소가 캠핑으로 분리됐는지(상세 페이지 301 판단용) */

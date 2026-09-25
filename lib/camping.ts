@@ -2,6 +2,7 @@
 import campingData from "@/data/camping.json";
 import campingImages from "@/data/camping-images.json";
 import { SIDO_LIST } from "@/lib/classify";
+import { displayAddress } from "@/lib/address";
 
 export interface Camp {
   id: string; name: string; area: string; sigungu: string; addr: string;
@@ -16,9 +17,11 @@ const raw = campingData as unknown as { count: number; camps: Camp[] };
 const imgOverride = campingImages as unknown as Record<string, string>;
 const data = {
   count: raw.count,
-  camps: (raw.camps || []).map((c) =>
-    c.image || !imgOverride[c.id] ? c : { ...c, image: imgOverride[c.id] }
-  ),
+  camps: (raw.camps || []).map((c) => ({
+    ...c,
+    addr: displayAddress(c.addr, c.area),
+    image: c.image || imgOverride[c.id] || "",
+  })),
 };
 
 export const CAMP_TYPES = ["일반야영장", "오토캠핑", "글램핑", "카라반"] as const;

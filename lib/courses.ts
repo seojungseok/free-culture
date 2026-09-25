@@ -9,6 +9,7 @@ import { getAllPlaces } from "@/lib/tour";
 // 관광지 선별(식당 제외 + 기간별 상한 + 동선 최적화)은 생성 스크립트와 공유하는 단일 모듈에서.
 import { selectCourseStops, splitCourseDays, isCourseFoodStop } from "@/lib/courseSelect";
 import { indexableCourseIds } from "@/lib/courseIndexQuality";
+import { displayAddress } from "@/lib/address";
 
 export interface CourseStop {
   num: number;
@@ -63,7 +64,10 @@ const isImpossibleRoute = (course: CourseRaw) => {
 const RAW: CourseRaw[] = [
   ...((coursesData as unknown as { courses: CourseRaw[] }).courses || []),   // 공식(정부) 코스
   ...((coursesAuto as unknown as { courses: CourseRaw[] }).courses || []),   // 자동 조합 코스
-].filter((course) => !isImpossibleRoute(course));
+].filter((course) => !isImpossibleRoute(course)).map((course) => ({
+  ...course,
+  stops: course.stops.map((stop) => ({ ...stop, addr: stop.addr ? displayAddress(stop.addr) : stop.addr })),
+}));
 const ARTS = (courseArticles as unknown as { articles?: Record<string, CourseArticle> }).articles || {};
 
 // ── 기간·테마 라벨/슬러그 (URL·SEO용) ──

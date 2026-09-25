@@ -5,6 +5,7 @@ import introData from "@/data/place-intro.json";
 import infoData from "@/data/place-info.json";
 import restaurantIntroData from "@/data/restaurant-intro.json";
 import type { Admission } from "@/lib/fees";
+import { displayAddress } from "@/lib/address";
 
 export interface PlaceIntro {
   type?: string;
@@ -79,9 +80,14 @@ export const INTRO_FIELDS: { key: keyof PlaceIntro; label: string }[] = [
 export const FOOD_INTRO_FIELDS: { key: keyof PlaceIntro; label: string }[] = [
   { key: "usetime", label: "영업시간" },
   { key: "restdate", label: "휴무일" },
+  { key: "fee", label: "가격정보" },
   { key: "parking", label: "주차" },
   { key: "firstmenu", label: "대표메뉴" },
   { key: "treatmenu", label: "취급메뉴" },
+  { key: "packing", label: "포장" },
+  { key: "kidsfacility", label: "어린이 시설" },
+  { key: "creditcard", label: "카드 결제" },
+  { key: "seat", label: "좌석" },
 ];
 
 function rowsFrom(it: PlaceIntro | undefined, fields: typeof INTRO_FIELDS): { label: string; value: string }[] {
@@ -89,7 +95,7 @@ function rowsFrom(it: PlaceIntro | undefined, fields: typeof INTRO_FIELDS): { la
   const rows: { label: string; value: string }[] = [];
   for (const f of fields) {
     const v = it[f.key];
-    if (v && isUsefulVisitText(String(v))) rows.push({ label: f.label, value: String(v).trim() });
+    if (v && isUsefulVisitText(String(v))) rows.push({ label: f.label, value: displayAddress(String(v)) });
   }
   return rows;
 }

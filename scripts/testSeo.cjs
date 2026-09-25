@@ -58,6 +58,14 @@ for(const p of getAllPlaces())assert.equal(set.has('https://mwohaji.kr/places/sp
 for(const r of getAllRestaurants())assert.equal(set.has('https://mwohaji.kr/food/spot/'+r.id),hasSubstantiveRestaurantInfo(r.id),r.id+' restaurant quality');
 const {getAllCamps}=load('lib/camping');
 for(const c of getAllCamps())assert.equal(set.has('https://mwohaji.kr/camping/'+c.id),hasSubstantiveCampInfo(c),c.id+' camp quality');
+const {displayAddress,displayRegionTitle}=load('lib/address');
+assert.equal(displayAddress('전남광주통합특별시 광산구 하남대로 1'),'광주광역시 광산구 하남대로 1');
+assert.equal(displayAddress('전남광주통합특별시 여수시 해안로 1'),'전라남도 여수시 해안로 1');
+assert.equal(displayAddress('전남광주통합특별시 확인되지않은구 도로 1'),'확인되지않은구 도로 1');
+assert.equal(displayAddress('전남광주통합특별시 진도군 고군면', '경남'), '');
+assert.equal(displayRegionTitle('전남광주통합특별시립오페라단','광주'),'광주시립오페라단');
+for(const row of [...getAllPlaces(),...getAllRestaurants(),...getAllCamps()])assert(!row.addr.includes('전남광주통합특별시'),row.id+' malformed displayed address');
+for(const row of getAllEvents())assert(!`${row.title} ${row.address}`.includes('전남광주통합특별시'),row.id+' malformed current event');
 const robots=load('app/robots').default();
 const matches=(rule,url)=>new RegExp('^'+rule.split('*').map(p=>p.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('.*')).test(url);
 const metaTraining=robots.rules.find(r=>r.userAgent==='Meta-ExternalAgent');

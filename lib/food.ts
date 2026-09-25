@@ -2,6 +2,7 @@
 import restaurantsData from "@/data/restaurants.json";
 import restaurantIntroData from "@/data/restaurant-intro.json";
 import { SIDO_LIST } from "@/lib/classify";
+import { displayAddress } from "@/lib/address";
 
 export interface Restaurant {
   id: string; title: string; addr: string; area: string;
@@ -20,7 +21,7 @@ function phoneOf(id: string): string | undefined {
 const restaurants: Restaurant[] = ((restaurantsData as unknown as { restaurants: Restaurant[] }).restaurants || [])
   .map((r) => {
     const phone = phoneOf(r.id);
-    return phone ? { ...r, phone } : r;
+    return { ...r, addr: displayAddress(r.addr, r.area), ...(phone ? { phone } : {}) };
   });
 
 // 업종(cat3) — TourAPI 음식점 분류. slug는 /food/[area]/[cat] 라우트용(영문·SEO).
