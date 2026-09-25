@@ -73,6 +73,8 @@ export interface KidCourse {
   food: KidStop | null;  // 근처 식사 장소
   totalKm: number; driveMin: number;
   image: string;
+  // Only prose actually rendered on the detail page counts toward indexing.
+  editorial?: { intro: string; route: string; spot: string; park?: string; food: string };
 }
 
 const num = (v: unknown) => Number(v) || 0;

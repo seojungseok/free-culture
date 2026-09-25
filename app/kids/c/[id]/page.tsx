@@ -7,6 +7,7 @@ import { getKidCourse, kidCoursesByArea, kmLabel, kidHeadline, type KidStop } fr
 import { SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { getRestaurantMenu } from "@/lib/tourExtra";
+import { isIndexableKidCourse } from "@/lib/kidCourseQuality";
 
 export const dynamicParams = true;
 export const revalidate = 2592000; // 30일 — 좌표·구성 거의 불변
@@ -30,16 +31,16 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const description = `${c.area} ${c.city} 아이와 함께 ${th} 코스. ${[c.spot.title,c.park?.title,c.food?.title].filter(Boolean).join(' → ')} 순서의 방문 후보와 위치를 확인하세요.`;
   return {
     title, description,
-    robots: { index: false, follow: true },
+    robots: { index: isIndexableKidCourse(c), follow: true },
     keywords: [`${c.city} 아이와 갈만한 곳`, `${c.area} 아이와 함께`, `${c.city} ${th}`, c.spot.title, headline, `${c.city} 아이 나들이`, `${c.city} 키즈`],
     alternates: { canonical: `/kids/c/${id}` },
     openGraph: { title, description, ...(c.image ? { images: [{ url: c.image }] } : {}), type: "article" },
   };
 }
 
-function Stop({ stop, label, emoji, fromTitle, detail }: { stop: KidStop; label: string; emoji: string; fromTitle?: string; detail?: string }) {
+function Stop({ stop, label, emoji, fromTitle, detail, description }: { stop: KidStop; label: string; emoji: string; fromTitle?: string; detail?: string; description?: string }) {
   return (
-    <section className="mt-9">
+    <section data-kid-stop className="mt-9">
       <div className="mb-1 flex flex-wrap items-center gap-2">
         <span className="rounded-full bg-free px-2.5 py-0.5 text-[11px] font-black text-white">{label}</span>
         {fromTitle && <span className="text-[12.5px] text-ink-faint">{fromTitle}에서 {kmLabel(stop.distKm)}</span>}
@@ -50,7 +51,8 @@ function Stop({ stop, label, emoji, fromTitle, detail }: { stop: KidStop; label:
           <Image src={stop.image} alt={`${stop.title} — ${label}`} fill sizes="(max-width:820px) 100vw, 820px" className="object-cover" loading="lazy" unoptimized />
         </div>
       )}
-      {detail && <p className="mt-3 text-[15px] leading-[1.85] text-ink-soft">{detail}</p>}
+      {detail && <p data-kid-stop-fact className="mt-3 text-[15px] leading-[1.85] text-ink-soft">{detail}</p>}
+      {description && <p data-kid-stop-description className="mt-3 text-[15px] leading-[1.85] text-ink-soft">{description}</p>}
       <div className="mt-3 flex flex-wrap gap-2">
         <Link href={stop.href} className="inline-flex items-center rounded-full border border-line bg-white px-3.5 py-1.5 text-[13px] font-bold text-ink-soft transition hover:border-free/40 hover:text-free">{stop.title} 자세히 →</Link>
         {stop.mapx && stop.mapy && (
@@ -98,10 +100,13 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
         <span className="text-[12px] text-ink-faint">· 구간별 직선거리 합계 {kmLabel(c.totalKm)}</span>
       </div>
 
+      <article data-kid-course-content>
       <h1 className="text-[24px] font-black leading-tight tracking-[-0.02em] text-ink sm:text-[30px]">
         {kidHeadline(c.theme, c.spot.title)}
       </h1>
       <p className="mt-1 text-[13.5px] text-ink-faint">{c.area} {c.city} · 아이와 함께 {th.label} 코스</p>
+      {c.editorial?.intro && <p data-kid-intro className="mt-4 text-[15px] leading-[1.85] text-ink-soft">{c.editorial.intro}</p>}
+      {c.editorial?.route && <p data-kid-route className="mt-3 text-[15px] leading-[1.85] text-ink-soft">{c.editorial.route}</p>}
 
       <p className="mt-3 text-sm text-ink-soft">표시된 구간 거리는 직선거리입니다.</p>
 
@@ -115,9 +120,10 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
         </ol>
       </div>
 
-      <Stop stop={c.spot} label={`1. ${th.label}`} emoji={th.emoji} detail={c.spot.addr} />
-      {c.park && <Stop stop={c.park} label="2. 공원 산책" emoji="🌳" fromTitle={c.spot.title} detail={c.park.addr} />}
-      {c.food && <Stop stop={c.food} label={c.park ? "3. 근처 식사" : "2. 근처 식사"} emoji="🍽" fromTitle={c.park ? c.park.title : c.spot.title} detail={[c.food.addr, menuSummary ? `등록 메뉴: ${menuSummary}` : ""].filter(Boolean).join(" · ")} />}
+      <Stop stop={c.spot} label={`1. ${th.label}`} emoji={th.emoji} detail={c.spot.addr} description={c.editorial?.spot} />
+      {c.park && <Stop stop={c.park} label="2. 공원 산책" emoji="🌳" fromTitle={c.spot.title} detail={c.park.addr} description={c.editorial?.park} />}
+      {c.food && <Stop stop={c.food} label={c.park ? "3. 근처 식사" : "2. 근처 식사"} emoji="🍽" fromTitle={c.park ? c.park.title : c.spot.title} detail={[c.food.addr, menuSummary ? `등록 메뉴: ${menuSummary}` : ""].filter(Boolean).join(" · ")} description={c.editorial?.food} />}
+      </article>
 
       {related.length > 0 && (
         <section className="mt-10 border-t border-line pt-6">

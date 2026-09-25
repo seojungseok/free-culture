@@ -20,7 +20,7 @@ assert(!('availability' in eventOffer({priceType:'free',priceMin:0,priceMax:0}))
 const sitemap=load('app/sitemap').default(),urls=sitemap.map(s=>s.url),set=new Set(urls);
 assert.equal(urls.length,set.size,'Unique sitemap URLs');
 assert(!urls.some(u=>u.includes('/traditional-market')), 'Hidden markets stay out of sitemap');
-assert(!urls.some(u=>/\/tickets(?:\/|$)|\/kids\/c\/|\/near(?:\/|$)|\/game(?:\/|$)/.test(u)), 'Redirected and thin routes stay out of sitemap');
+assert(!urls.some(u=>/\/tickets(?:\/|$)|\/near(?:\/|$)|\/game(?:\/|$)/.test(u)), 'Redirected and thin routes stay out of sitemap');
 assert(urls.length<50000,'Single sitemap URL limit');
 assert(urls.every(u=>u.startsWith('https://mwohaji.kr')&&!u.includes('?')&&!u.includes('undefined')));
 assert(!urls.some(u=>/\/(search|saved|plan|admin)(\/|$)/.test(u)));
@@ -31,8 +31,8 @@ assert(!urls.some(u=>/\/date\/|\/camping\/collections(?:\/|$)/.test(u)),'Generat
 assert(!urls.some(u=>/\/food\/category\/|\/food\/(?!spot\/)[^/]+\/[^/]+$|\/course\/theme\/|\/course\/(?!c\/)[^/]+\/[^/]+$|\/camping\/type\/|\/region\/[^/]+\/[^/]+$/.test(u)),'Filter combinations stay out of sitemap');
 const currentMonth=new Date(Date.now()+9*60*60*1000).getUTCMonth()+1;
 assert(!urls.some(u=>{const match=u.match(/\/month\/(\d+)$/);return match&&Number(match[1])<currentMonth;}),'Past month archives stay out of sitemap');
-const {getKidCourses}=load('lib/kidCourses'),{getAllBundles}=load('lib/campingCollections');
-assert(getKidCourses().every(c=>!set.has('https://mwohaji.kr/kids/c/'+c.id)));
+const {getKidCourses}=load('lib/kidCourses'),{isIndexableKidCourse}=load('lib/kidCourseQuality'),{getAllBundles}=load('lib/campingCollections');
+assert(getKidCourses().every(c=>set.has('https://mwohaji.kr/kids/c/'+c.id)===isIndexableKidCourse(c)));
 assert(set.has('https://mwohaji.kr/kids'),'Kids hub remains indexable');
 assert(getAllBundles().every(c=>!set.has('https://mwohaji.kr/camping/collections/'+c.slug)));
 const {getAllEvents}=load('lib/data'),{hasSubstantiveEventInfo}=load('lib/eventQuality'),{todayYmd}=load('lib/dates');

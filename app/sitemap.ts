@@ -13,6 +13,8 @@ import { getAllFestivals } from "@/lib/festivals";
 import { getCityTours } from "@/lib/cityTours";
 import { getPetTravelPlaces } from "@/lib/petTravel";
 import { getPrepArticles, isCookingPrepArticle } from '@/lib/weekend-prep/data';
+import { getKidCourses } from "@/lib/kidCourses";
+import { isIndexableKidCourse } from "@/lib/kidCourseQuality";
 import { hasSubstantivePlaceInfo, hasSubstantiveRestaurantInfo, hasSubstantiveCampInfo } from "@/lib/placeQuality";
 import { hasSubstantiveEventInfo } from "@/lib/eventQuality";
 import { monthRangeYmd, todayYmd } from "@/lib/dates";
@@ -177,6 +179,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: c.publishedAt && Number.isFinite(Date.parse(c.publishedAt)) ? new Date(c.publishedAt) : undefined,
     changeFrequency: "monthly" as const, priority: 0.6,
   }));
+  const kidDetailRoutes = getKidCourses().filter(isIndexableKidCourse).map((course) => ({
+    url: `${base}/kids/c/${course.id}`,
+    changeFrequency: "monthly" as const, priority: 0.5,
+  }));
 
   return [
     // 1) 홈·주요 목록·허브 (높은 우선순위 — 크롤 예산 집중)
@@ -193,6 +199,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // 2) 발행글 있는 상세 (최신 lastmod — 새 글 우선 크롤)
     ...articleSpotRoutes,
     ...courseDetailRoutes,
+    ...kidDetailRoutes,
     ...getCityTours().map(t => ({url: `${base}/city-tour/${t.id}`, lastModified: new Date(t.publishedAt), changeFrequency: "monthly" as const, priority: 0.7})),
     // 3) 대량 롱테일 상세 (낮은 우선순위·가끔)
     ...placeSpotRoutes,
