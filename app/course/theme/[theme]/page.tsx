@@ -19,7 +19,6 @@ export async function generateMetadata({ params }: { params: Promise<{ theme: st
   const { theme: slug } = await params;
   const th = themeFromSlug(slug);
   if (!th) return {};
-  const count = filterCourses({ theme: th.key }).length;
   const kw = th.key === "바다피서"
     ? ["여름 여행코스", "바다 여행코스", "해수욕장 코스", "여름휴가 가볼만한곳"]
     : [`${th.label} 여행코스`, `${th.label} 코스`, "국내여행 코스"];
@@ -28,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ theme: st
     description: `전국 ${th.label} 여행코스 모음. 테마에 딱 맞는 곳들을 이어 만든 하루 여행 동선을 지역별로 골라보세요.`,
     keywords: kw,
     alternates: { canonical: `/course/theme/${slug}` },
-    ...(count < INDEX_MIN ? { robots: { index: false, follow: true } } : {}),
+    robots: { index: false, follow: true },
   };
 }
 

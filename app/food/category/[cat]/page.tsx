@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ cat: stri
     title: `전국 ${c.label} 맛집 ${n.toLocaleString()}곳 — 지역별 ${c.label} 추천`,
     description: `전국 ${c.label} 맛집 ${n.toLocaleString()}곳을 지역별로 모았어요. 위치·전화·영업정보를 확인하고 가볼 만한 ${c.label} 음식점을 찾아보세요.`,
     keywords: [`${c.label} 맛집`, `전국 ${c.label} 맛집`, `${c.label} 맛집 추천`, `${c.label} 맛집 순위`],
+    robots: { index: false, follow: true },
     alternates: { canonical: `/food/category/${cat}` },
   };
 }

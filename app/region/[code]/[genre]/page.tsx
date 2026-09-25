@@ -53,6 +53,7 @@ export async function generateMetadata({
     title: `${sido} ${label} 무료 행사 ${n}곳`,
     description: `${month} ${sido}에서 무료로 즐길 수 있는 ${label} ${n}건을 모았습니다. 날짜·장소별로 확인하고 주말 나들이를 계획하세요.`,
     keywords: [`${sido} 무료 ${label}`, `${sido} ${label}`, `${sido} 무료 문화행사`, `${sido} 주말 나들이`],
+    robots: { index: false, follow: true },
     alternates: { canonical: `/region/${code}/${genre}` },
   };
 }

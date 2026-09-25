@@ -27,13 +27,16 @@ const data = placesData as unknown as { generatedAt: string; count: number; spot
 // 캠핑으로 분리된 레포츠(중복) 제외 — 목록·집계·검색은 LIVE, 상세조회(리다이렉트용)는 RAW
 const DUPE_MAP = (dupeData as unknown as { ids: Record<string, string> }).ids || {};
 const DUPE = new Set(Object.keys(DUPE_MAP));
+// Same attraction and address with two TourAPI IDs: retain the record with fuller visit facts.
+const SAME_PLACE_TARGET: Record<string, string> = { "3353336": "2774564" };
 const RAW = data.spots || [];
-const LIVE = RAW.filter((s) => !DUPE.has(s.id));
+const LIVE = RAW.filter((s) => !DUPE.has(s.id) && !SAME_PLACE_TARGET[s.id]);
 
 /** 이 장소가 캠핑으로 분리됐는지(상세 페이지 301 판단용) */
 export function isCampingDupe(id: string): boolean { return DUPE.has(id); }
 /** 캠핑 분리된 장소의 대응 고캠핑 id ("" = 좌표매칭 없음 → /camping 목록으로) */
 export function campingDupeTarget(id: string): string { return DUPE_MAP[id] || ""; }
+export function samePlaceTarget(id: string): string { return SAME_PLACE_TARGET[id] || ""; }
 
 export function getAllPlaces(): TourSpot[] {
   return LIVE;

@@ -7,6 +7,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const nextConfig = {
   reactStrictMode: true,
   outputFileTracingRoot: __dirname,
+  async redirects() {
+    return [{ source: '/places/spot/3353336', destination: '/places/spot/2774564', statusCode: 301 }];
+  },
   async rewrites() {
     // Keep existing query URLs and server-rendered results. Query-free landing
     // pages can then use the CDN without a function invocation.

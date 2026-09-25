@@ -28,13 +28,12 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
   const area = sidoFromSlug(slug);
   const dur = durationFromSlug(dslug);
   if (!area || !dur) return {};
-  const count = filterCourses({ area, duration: dur.key }).length;
   return {
     title: `${area} ${dur.label} 여행코스 — ${area} ${dur.label} 여행 일정 추천`,
     description: `${area} ${dur.label} 여행코스 모음. ${area} 가볼만한 곳을 이어 만든 ${dur.label} 동선과 밥집까지 한 번에.`,
     keywords: [`${area} ${dur.label}`, `${area} ${dur.label} 코스`, `${area} 여행코스`, `${area} 여행`],
     alternates: { canonical: `/course/${slug}/${dslug}` },
-    ...(count < INDEX_MIN ? { robots: { index: false, follow: true } } : {}),
+    robots: { index: false, follow: true },
   };
 }
 

@@ -13,6 +13,10 @@ export const revalidate = 86400;
 
 const MONTH_NAMES = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"];
 const MONTH_THEMES = ["겨울 실내 나들이", "설날·겨울 행사", "봄꽃·문화행사", "벚꽃·축제", "가정의 달 행사", "초여름 나들이", "여름방학·축제", "휴가철 문화행사", "가을 문화행사·축제", "단풍·가을 행사", "늦가을 전시·공연", "겨울 축제·연말 행사"];
+function currentKstMonth() {
+  const now = new Date(Date.now() + 9 * 60 * 60 * 1000);
+  return { year: now.getUTCFullYear(), month: now.getUTCMonth() + 1 };
+}
 
 export function generateStaticParams() {
   return MONTH_NAMES.map((_, i) => ({ month: String(i + 1) }));
@@ -21,10 +25,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ month: string }> }): Promise<Metadata> {
   const { month } = await params;
   const n = Math.min(12, Math.max(1, Number(month) || 9));
+  const current = currentKstMonth();
+  const range = monthRangeYmd(current.year, n - 1);
+  const eventCount = getAllEvents().filter((event) => event.startDate <= range.end && event.endDate >= range.start).length;
   return {
     title: `${n}월에 뭐하지? · ${MONTH_THEMES[n - 1]} 전국 행사·축제`,
     description: `${n}월에 가볼 만한 전국 문화행사와 축제, 지역별 나들이를 날짜·지역·가격 필터로 찾아보세요.`,
     keywords: [`${n}월에 뭐하지`, `${n}월 가볼만한곳`, `${n}월 행사`, `${n}월 축제`, "전국 문화행사", "주말 나들이"],
+    robots: n < current.month || eventCount < 3 ? { index: false, follow: true } : undefined,
     alternates: { canonical: `/month/${n}` },
   };
 }
@@ -35,7 +43,7 @@ const FESTIVALS = ((festivalsData as unknown as { festivals?: Festival[] }).fest
 export default async function MonthlyPage({ params }: { params: Promise<{ month: string }> }) {
   const { month } = await params;
   const n = Math.min(12, Math.max(1, Number(month) || 9));
-  const year = 2026;
+  const { year, month: currentMonth } = currentKstMonth();
   const range = monthRangeYmd(year, n - 1);
   const events = getAllEvents()
     .filter((event) => event.startDate <= range.end && event.endDate >= range.start)
@@ -46,7 +54,7 @@ export default async function MonthlyPage({ params }: { params: Promise<{ month:
   return <>
     <Band tone="panel" innerClassName="py-6 sm:py-8">
       <h1 className="text-[25px] font-black tracking-tight text-ink sm:text-[34px]">{n}월에 뭐하지?</h1>
-      <p className="mt-2 max-w-3xl text-[14px] leading-6 text-ink-soft">{n}월 {MONTH_THEMES[n - 1]}를 기준으로 전국 문화행사와 축제를 모았습니다. 날짜·지역·분야·가격 필터로 이번 달에 실제로 갈 곳을 골라보세요.</p>
+      <p className="mt-2 max-w-3xl text-[14px] leading-6 text-ink-soft">{year}년 {n}월 {MONTH_THEMES[n - 1]}를 기준으로 전국 문화행사와 축제를 모았습니다. {n < currentMonth ? "지난달 자료는 기록으로 살펴보고 현재 행사는 이번 주말 목록에서 확인하세요." : "날짜·지역·분야·가격 필터로 방문할 곳을 골라보세요."}</p>
     </Band>
     <main className="mx-auto w-full max-w-[1180px] px-5 pb-12 sm:px-6 lg:px-8">
       <section className={`mt-6 rounded-2xl border p-5 sm:p-6 ${themeClass}`}>

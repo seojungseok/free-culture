@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
     title: `전국 ${t.label} ${n.toLocaleString()}곳 — 지역별 ${t.label} 추천`,
     description: `전국 ${t.label} ${n.toLocaleString()}곳을 지역별로 모았어요. 요금·예약·편의시설·지도 정보를 확인하고 가볼 만한 ${t.label}을 찾아보세요.`,
     keywords: [`${t.label}`, `전국 ${t.label}`, `${t.label} 추천`, `${t.label} 예약`],
+    robots: { index: false, follow: true },
     alternates: { canonical: `/camping/type/${type}` },
   };
 }

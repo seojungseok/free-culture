@@ -3,7 +3,7 @@ import NearbyParking from "@/components/NearbyParking";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
-import { getTourById, tourTypeLabel, isCampingDupe, campingDupeTarget } from "@/lib/tour";
+import { getTourById, tourTypeLabel, isCampingDupe, campingDupeTarget, samePlaceTarget } from "@/lib/tour";
 import { getArticle } from "@/lib/articles";
 import { fetchPlaceOverview, fetchPlaceImages, fetchAdmission } from "@/lib/tourDetail";
 import { getAdmission } from "@/lib/fees";
@@ -52,11 +52,17 @@ export async function generateMetadata({
     : "";
   const overview = articlePlain ? "" : (await fetchPlaceOverview(id)).overview;
   const base = articlePlain || overview;
+  const visitFacts = introRows(id).slice(0, 3).map(({ label, value }) => `${label} ${value.replace(/\s+/g, " ").slice(0, 42)}`);
+  if (!visitFacts.length) {
+    visitFacts.push(...getInfo(id).filter((item) => isUsefulVisitText(item.text)).slice(0, 2).map((item) => `${item.name} ${item.text.replace(/\s+/g, " ").slice(0, 42)}`));
+  }
   const description = base
     ? base.length > 155
       ? `${base.slice(0, 155)}…`
       : base
-    : `${spot.area}에서 가볼만한 ${type}, ${spot.title}. 위치·지도·사진과 방문 정보를 확인하세요.`;
+    : visitFacts.length
+      ? `${spot.title}(${spot.area}) · ${visitFacts.join(" · ")}`.slice(0, 160)
+      : `${spot.title} · ${spot.area} ${type}. ${spot.addr}`.slice(0, 160);
   const title = `${spot.title} — ${spot.area} 나들이·가볼만한 곳`;
   return {
     title,
@@ -91,6 +97,8 @@ export default async function SpotDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+  const samePlace = samePlaceTarget(id);
+  if (samePlace) permanentRedirect(`/places/spot/${samePlace}`);
   // 캠핑으로 분리된 장소 → /camping 상세로 영구 이동(색인 이전)
   if (isCampingDupe(id)) {
     const t = campingDupeTarget(id);

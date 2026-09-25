@@ -3,6 +3,10 @@ const base = process.env.AUDIT_BASE || 'http://127.0.0.1:3027';
 const cases = [
   ['/', 200, true], ['/about', 200, true], ['/contact', 200, true],
   ['/privacy', 200, true], ['/kids', 200, true], ['/date', 200, true],
+  ['/region/seoul', 200, true], ['/places/seoul', 200, true],
+  ['/food/seoul/korean', 200, false], ['/food/category/korean', 200, false],
+  ['/course/incheon/day', 200, false], ['/course/theme/beach', 200, false],
+  ['/camping/type/general', 200, false], ['/region/seoul/exhibition', 200, false],
   ['/date/seoul', 200, false], ['/date/seoul/종로구', 200, false],
   ['/date/c/2717547', 200, false], ['/kids/c/2476731', 200, false],
   ['/event/374432', 200, true], ['/event/383591', 200, false],
@@ -16,6 +20,9 @@ const cases = [
   ['/pet-travel/127422', 200, true], ['/pet-travel/2738711', 200, true],
   ['/not-a-real-page-adsense-audit', 404, null],
 ];
+const month = new Date(Date.now() + 9 * 60 * 60 * 1000).getUTCMonth() + 1;
+cases.push([`/month/${month}`, 200, true]);
+if (month > 1) cases.push([`/month/${month - 1}`, 200, false]);
 
 function attr(tag, name) {
   return tag.match(new RegExp(`(?:^|\\s)${name}=["']([^"']*)["']`, 'i'))?.[1] || '';
@@ -45,13 +52,21 @@ async function check([route, status, index]) {
   for (let i = 0; i < cases.length; i += 4) {
     results.push(...await Promise.all(cases.slice(i, i + 4).map(check)));
   }
-  for (const [route, target] of [['/tickets', '/places'], ['/tickets/place-ga75y9uv', '/places/spot/2451912']]) {
+  const redirects = [['/tickets', '/places'], ['/tickets/place-ga75y9uv', '/places/spot/2451912'], ['/places/spot/3353336', '/places/spot/2774564']];
+  for (const [route, target] of redirects) {
     const response = await fetch(base + route, { redirect: 'manual' });
     assert.equal(response.status, 301, route);
-    assert.equal(new URL(response.headers.get('location')).pathname, target, route);
+    assert.equal(new URL(response.headers.get('location'), base).pathname, target, route);
+  }
+  for (const route of ['/places/spot/2774564?utm_source=audit', '/events?utm_medium=audit', '/food?ref=audit&source=test']) {
+    const response = await fetch(base + route);
+    assert.equal(response.status, 200, route);
+    const html = await response.text();
+    const canonical = attr(headTag(html, 'link', 'rel', 'canonical'), 'href');
+    assert.equal(canonical, 'https://mwohaji.kr' + route.split('?')[0], route + ' canonical');
   }
   const ads = await fetch(base + '/ads.txt');
   assert.equal(ads.status, 200);
   assert.match(await ads.text(), /^google\.com, pub-\d{16}, DIRECT, f08c47fec0942fa0/m);
-  console.log(JSON.stringify({ checked: results.length, redirects: 2, adsTxt: 'valid', results }, null, 2));
+  console.log(JSON.stringify({ checked: results.length, redirects: redirects.length, adsTxt: 'valid', results }, null, 2));
 })().catch((error) => { console.error(error); process.exitCode = 1; });
