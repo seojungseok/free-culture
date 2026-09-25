@@ -19,11 +19,6 @@ const nextConfig = {
       { source: '/search', has: [{ type: 'query', key: 'q', value: '.*' }], destination: '/search/results' },
     ] };
   },
-  async headers() {
-    return [
-      { source: '/ticket-images/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
-    ];
-  },
   images: {
     // 관광·행사 원본은 자주 바뀌지 않는다. 변환 캐시를 Vercel 권장
     // 장기 값으로 유지하고, 실제 레이아웃 최대 폭을 넘는 1920~3840px

@@ -9,7 +9,7 @@ const yaml = require('js-yaml');
 
 test('public content always triggers a build', () => {
   assert.equal(shouldSkip(['docs/operations.md']), true);
-  for (const file of ['data/ticket-guides.json', 'data/weekend-prep.json', 'app/page.tsx', 'app/sitemap.ts']) {
+  for (const file of ['data/weekend-prep.json', 'app/page.tsx', 'app/sitemap.ts']) {
     assert.equal(shouldSkip([file]), false, file);
   }
   assert.equal(ignoredBuildExit({}, () => ''), 1);
