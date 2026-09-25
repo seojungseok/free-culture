@@ -12,9 +12,11 @@ import {
   getIndexableCourses, getCourse, isIndexableCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays, courseFoodStops, courseAttractions, courseStopCount,
 } from "@/lib/courses";
 import { coursesNearbyFood, distanceLabel, foodTypeLabel, distanceKm } from "@/lib/nearby";
-import { areaFestivals, fmtMd } from "@/lib/festivals";
+import { areaFestivals, festivalHref, fmtMd } from "@/lib/festivals";
 import { SITE } from "@/lib/site";
 import { galleryForStops } from "@/lib/photoGallery";
+import { getAllPlaces } from "@/lib/tour";
+import { hasSubstantivePlaceInfo } from "@/lib/placeQuality";
 
 import NearbyParking from "@/components/NearbyParking";
 export const revalidate = 86400;
@@ -58,6 +60,8 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   const slug = areaSlug(c.area);
   const related = relatedCourses(c, 4).map(slimCourse);
   const mapStops = courseAttractions(c).filter((s) => s.name); // 글·동선에 실제 노출되는 관광지만(식당 제외·상한 적용)
+  const livePlaceIds = new Set(getAllPlaces().map((place) => place.id));
+  const linkedStops = mapStops.filter((stop) => stop.placeId && livePlaceIds.has(stop.placeId) && hasSubstantivePlaceInfo(stop.placeId)).slice(0, 4);
   const galleryPhotos = galleryForStops(mapStops);
   // 근처 맛집(내부링크) — 좌표 있으면 거리순, 없으면 코스 도시(주소) 기준. 음식점 데이터 있는 지역만.
   const centroid = courseCentroid(c);
@@ -196,6 +200,11 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
 
       {c.format !== "list" && mapStops[0] && <NearbyParking lon={Number(mapStops[0].mapx)} lat={Number(mapStops[0].mapy)} area={c.area} address={mapStops[0].addr} title={`첫 방문지 ${mapStops[0].name} 근처 주차`} />}
 
+      {linkedStops.length > 0 && <section className="mt-8">
+        <h2 className="text-lg font-extrabold text-ink">코스에 포함된 장소 자세히 보기</h2>
+        <ul className="mt-3 grid gap-2 sm:grid-cols-2">{linkedStops.map((stop) => <li key={stop.placeId}><Link href={`/places/spot/${stop.placeId}`} className="flex min-h-11 items-center rounded-xl border border-line px-4 text-sm font-bold text-brandblue hover:border-brandblue">{stop.name} 방문 정보 →</Link></li>)}</ul>
+      </section>}
+
       {/* 근처 맛집 — 코스 좌표 기준, 내부링크. 해수욕장 베스트(리스트형)엔 맛집 표시 안 함. */}
       {nearFood.length > 0 && c.format !== "list" && (
         <section className="mt-9">
@@ -241,10 +250,10 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
             <span className="rounded-full bg-free px-2.5 py-1 text-[11px] font-black text-white">지금 이맘때</span>
             <h2 className="text-[18px] font-extrabold tracking-tight text-ink sm:text-[20px]">🎪 {c.area} 축제·행사</h2>
           </div>
-          <p className="mb-4 text-[13px] text-ink-soft">여행 날짜에 열리는 축제예요 — 제철 먹거리가 있다면 아래 <b>근처 맛집</b>과 함께 즐겨보세요! (날짜별 자동 갱신)</p>
+          <p className="mb-4 text-[13px] text-ink-soft">현재 진행 중이거나 곧 시작하는 지역 행사입니다. 실제 여행 날짜와 겹치는지 상세 일정에서 확인하세요.</p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {festivals.map((f) => (
-              <Link key={f.id} href={`/search?q=${encodeURIComponent(f.title)}`} className="group block overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.05] shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover">
+              <Link key={f.id} href={festivalHref(f)} className="group block overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.05] shadow-sm transition hover:-translate-y-0.5 hover:shadow-cardhover">
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
                   {f.image ? (
                     <Image src={f.image} alt={f.title} fill sizes="(max-width:640px) 50vw, 200px" className="object-cover transition group-hover:scale-105" loading="lazy" unoptimized />
@@ -282,6 +291,11 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
           </div>
         </section>
       )}
+      {slug && <nav aria-label={`${c.area} 관련 정보`} className="mt-9 flex flex-wrap gap-3 border-t border-line pt-5 text-sm font-bold text-brandblue">
+        <Link href={`/region/${slug}`}>{c.area} 이번 주말 나들이 →</Link>
+        <Link href={`/places/${slug}`}>{c.area} 장소 더 보기 →</Link>
+        <Link href={`/region/${slug}#events`}>{c.area} 이번 주말 행사 →</Link>
+      </nav>}
     </Container>
   );
 }

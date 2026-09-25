@@ -95,8 +95,8 @@ export default async function EventPage({
     priceLabel: ev.priceLabel, priceType: ev.priceType, audiences: ev.audiences,
   });
   const related = getAllEvents()
-    .filter((e) => e.id !== ev.id && e.genreKey === ev.genreKey && e.imgUrl && e.endDate >= todayYmd())
-    .sort((a,b)=>Number(b.area===ev.area)-Number(a.area===ev.area))
+    .filter((e) => e.id !== ev.id && e.area === ev.area && e.imgUrl && e.endDate >= todayYmd())
+    .sort((a,b)=>Number(b.genreKey===ev.genreKey)-Number(a.genreKey===ev.genreKey) || a.endDate.localeCompare(b.endDate))
     .slice(0, 5);
 
   const jsonLd = {
@@ -276,7 +276,7 @@ export default async function EventPage({
       {related.length > 0 && (
         <section className="mt-16">
           <h2 className="mb-5 text-lg font-extrabold text-ink">
-            비슷한 {ev.realmName || "문화"} 행사
+            같은 지역에서 이어서 볼 행사
           </h2>
           <div className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:grid-cols-5">
             {related.map((e) => (
@@ -285,6 +285,11 @@ export default async function EventPage({
           </div>
         </section>
       )}
+      {regionSlug && <nav aria-label={`${ev.area} 관련 나들이`} className="mt-9 flex flex-wrap gap-4 border-t border-line pt-5 text-sm font-bold text-brandblue">
+        <Link href={`/region/${regionSlug}#events`}>{ev.area} 이번 주말 행사 →</Link>
+        <Link href={`/region/${regionSlug}#places`}>{ev.area} 나들이 장소 →</Link>
+        {ev.audiences?.includes("kids") && <Link href={`/region/${regionSlug}#kids`}>{ev.area} 아이와 나들이 →</Link>}
+      </nav>}
     </article>
   );
 }

@@ -3,6 +3,7 @@
 import festivalsData from "@/data/festivals.json";
 import { getAllEvents } from "@/lib/data";
 import { displayAddress } from "@/lib/address";
+import { addDaysYmd, todayYmd } from "@/lib/dates";
 
 export interface Festival {
   id: string; title: string; addr: string; area: string;
@@ -25,13 +26,10 @@ const ALL = [
       source: "공공 문화행사 데이터",
     } as Festival)),
 ].filter((festival, index, all) => all.findIndex((item) => item.title === festival.title && item.startDate === festival.startDate) === index);
-const ymd = (d: Date) => `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}`;
-
 /** 해당 지역에서 지금 열리는/곧(기본 60일 내) 열리는 축제. 시작일 순. */
 export function areaFestivals(area: string, { withinDays = 60, limit = 4 } = {}): (Festival & { ongoing: boolean })[] {
-  const now = new Date();
-  const today = ymd(now);
-  const soon = ymd(new Date(now.getTime() + withinDays * 86400000));
+  const today = todayYmd();
+  const soon = addDaysYmd(today, withinDays);
   return ALL
     .filter((f) => f.area === area && f.endDate >= today && f.startDate <= soon)
     .sort((a, b) => a.startDate.localeCompare(b.startDate))
@@ -40,12 +38,12 @@ export function areaFestivals(area: string, { withinDays = 60, limit = 4 } = {})
 }
 
 export function upcomingFestivals(limit = 12): Festival[] {
-  const today = ymd(new Date());
+  const today = todayYmd();
   return ALL.filter((f) => f.endDate >= today).sort((a, b) => a.startDate.localeCompare(b.startDate)).slice(0, limit);
 }
 
 export function getAllFestivals(): Festival[] {
-  return ALL.filter((festival) => festival.endDate >= ymd(new Date())).sort((a, b) => a.startDate.localeCompare(b.startDate));
+  return ALL.filter((festival) => festival.endDate >= todayYmd()).sort((a, b) => a.startDate.localeCompare(b.startDate));
 }
 
 export function getFestivalById(id: string): Festival | undefined {

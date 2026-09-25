@@ -29,7 +29,7 @@ import {
   monthRangeYmd,
 } from "@/lib/dates";
 
-type Kind = "all" | "day" | "weekend" | "week" | "month";
+type Kind = "all" | "day" | "weekend" | "week" | "nextweek" | "month";
 type Sort = "free" | "ending" | "name";
 type PriceKey = "all" | "free" | "partial" | "cheap" | "paid";
 
@@ -58,6 +58,7 @@ const PERIODS: { key: Kind; label: string }[] = [
   { key: "day", label: "오늘" },
   { key: "weekend", label: "이번 주말" },
   { key: "week", label: "이번 주" },
+  { key: "nextweek", label: "다음 주" },
   { key: "month", label: "이번 달" },
 ];
 const SORTS: { key: Sort; label: string }[] = [
@@ -87,7 +88,7 @@ export default function DateBrowser({
   const initDate = searchParams.get("date");
   const initPeriod = searchParams.get("period") as Kind | null;
   const [kind, setKind] = useState<Kind>(
-    initPeriod && ["all", "weekend", "week", "month"].includes(initPeriod)
+    initPeriod && ["all", "weekend", "week", "nextweek", "month"].includes(initPeriod)
       ? initPeriod
       : initDate
       ? "day"
@@ -123,6 +124,7 @@ export default function DateBrowser({
     if (kind === "day") return { start: day, end: day };
     if (kind === "weekend") return weekendRangeYmd(today);
     if (kind === "week") return weekRangeYmd(today);
+    if (kind === "nextweek") return weekRangeYmd(addDaysYmd(today, 7));
     return monthRangeYmd(Number(today.slice(0, 4)), Number(today.slice(4, 6)) - 1);
   }, [kind, day, today]);
 
@@ -227,7 +229,7 @@ export default function DateBrowser({
     router.replace(pathname, { scroll: false });
   }
 
-  const headerLabel = kind === "all" ? "전체 행사" : kind === "day" ? formatKoreanDate(day) : kind === "weekend" ? "이번 주말" : kind === "week" ? "이번 주" : "이번 달";
+  const headerLabel = kind === "all" ? "전체 행사" : kind === "day" ? formatKoreanDate(day) : kind === "weekend" ? "이번 주말" : kind === "week" ? "이번 주" : kind === "nextweek" ? "다음 주" : "이번 달";
 
   // 선택된 필터 요약
   const chips: { label: string; onRemove: () => void }[] = [];
@@ -263,9 +265,9 @@ export default function DateBrowser({
               <span className="min-w-[84px] text-center text-[14px] font-bold text-ink">{view.y}년 {view.m + 1}월</span>
               <button onClick={() => shiftMonth(1)} aria-label="다음 달" className="flex h-7 w-7 items-center justify-center rounded-full text-ink-soft transition hover:bg-black/5">›</button>
             </div>
-            <div className="flex gap-1">
+            <div className="flex max-w-full gap-1 overflow-x-auto pb-1 no-scrollbar">
               {PERIODS.map((pp) => (
-                <button key={pp.key} onClick={() => pickPeriod(pp.key)} className={["rounded-full px-3 py-1 text-[12.5px] font-bold transition", kind === pp.key ? "bg-free text-white" : "border border-line bg-white text-ink-soft hover:border-free/40 hover:text-free"].join(" ")}>{pp.label}</button>
+                <button key={pp.key} onClick={() => pickPeriod(pp.key)} className={["min-h-11 min-w-11 shrink-0 rounded-full px-3 py-1 text-[12.5px] font-bold transition", kind === pp.key ? "bg-free text-white" : "border border-line bg-white text-ink-soft hover:border-free/40 hover:text-free"].join(" ")}>{pp.label}</button>
               ))}
             </div>
           </div>
