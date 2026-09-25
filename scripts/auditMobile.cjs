@@ -37,7 +37,7 @@ const paths = process.argv.slice(3).length ? process.argv.slice(3) : ["/", "/eve
             h1: rect("h1"),
             header: rect("header"),
             footer: rect("footer"),
-            menuButton: rect("header summary"),
+            menuButton: rect("header details.lg\\:hidden summary"),
             searchButton: rect('header a[aria-label="검색"]'),
           };
         });

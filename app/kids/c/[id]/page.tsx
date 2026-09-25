@@ -108,8 +108,6 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
       {c.editorial?.intro && <p data-kid-intro className="mt-4 text-[15px] leading-[1.85] text-ink-soft">{c.editorial.intro}</p>}
       {c.editorial?.route && <p data-kid-route className="mt-3 text-[15px] leading-[1.85] text-ink-soft">{c.editorial.route}</p>}
 
-      <p className="mt-3 text-sm text-ink-soft">표시된 구간 거리는 직선거리입니다.</p>
-
       {/* 코스 한눈에 */}
       <div className="mt-5 rounded-2xl bg-panel px-4 py-4 sm:px-5">
         <h2 className="mb-2 text-[15px] font-extrabold text-ink">🧭 코스 한눈에 보기</h2>

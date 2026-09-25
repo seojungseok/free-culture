@@ -3,9 +3,11 @@ import { SITE } from "@/lib/site";
 import BackButton from "./BackButton";
 import HeaderNav from "./HeaderNav";
 import { season } from "@/lib/finder";
+import { headerNavigation } from "@/lib/siteNavigation";
 
 export default function Header() {
   const s = season();
+  const navigation = headerNavigation(s.label);
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex h-[72px] w-full max-w-[1180px] items-center gap-1 px-3 sm:h-[70px] sm:gap-3 sm:px-6 lg:px-8">
@@ -48,22 +50,7 @@ export default function Header() {
             </svg>
           </summary>
           <div className="absolute right-0 top-[calc(100%+10px)] w-[220px] max-h-[80dvh] overflow-y-auto rounded-2xl border border-line bg-white p-2 shadow-lg">
-            {[
-              { href: "/weekend", label: "이번 주말" },
-              { href: "/plan", label: "맞춤 추천" },
-              { href: "/saved", label: "보관함" },
-              { href: "/pet-travel", label: "반려동물 여행" },
-              { href: "/events", label: "문화행사" },
-              { href: "/places", label: "나들이" },
-              { href: "/course", label: "여행코스" },
-              { href: "/city-tour", label: "시티투어" },
-              { href: "/camping", label: "캠핑" },
-              { href: "/food", label: "맛집 탐방" },
-              { href: "/kids", label: "아이와 함께" },
-              { href: "/date", label: "데이트" },
-              { href: "/season", label: `${s.label} 나들이` },
-              { href: "/weekend-prep", label: "준비 가이드" },
-            ].map((item) => (
+            {[...navigation.primary, ...navigation.more].map((item) => (
               <Link key={item.href} href={item.href} className="block rounded-xl px-3 py-2.5 text-[14px] font-bold text-ink-soft hover:bg-tint hover:text-brandblue">
                 {item.label}
               </Link>
