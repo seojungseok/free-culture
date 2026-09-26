@@ -19210,6 +19210,630 @@
           }
         }
       }
+    },
+    {
+      "id": "6d1b73662e0652",
+      "area": "경남",
+      "city": "합천군",
+      "title": "합천광역시티투어 누비고 코스와 예약 전 확인사항",
+      "raw": {
+        "시도명": "경상남도",
+        "시군구명": "합천군",
+        "시티투어코스명": "합천광역시티투어 누비고",
+        "시티투어문의처": "대구삼성여행사",
+        "시티투어운영시간": "2026년 3월~5월 및 10월~11월(예정)",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "대구",
+        "시티투어코스정보": "해인사, 대장경테마파크, 핫들생태공원, 영상테마파크 등",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "최소 20명, 최대 42명",
+        "운행정보": "미정",
+        "운행시작시각": "08:00",
+        "운행종료시각": "18:00",
+        "배차시간": "0",
+        "이용요금": "미정",
+        "이용요금부가정보": "",
+        "홈페이지주소": "https://www.123tour.co.kr/",
+        "관리기관명": "경상남도 합천군청",
+        "관리기관전화번호": "055-930-4666",
+        "데이터기준일자": "2025-11-28"
+      },
+      "related": [],
+      "foodLinks": [],
+      "officialUrl": "https://www.123tour.co.kr/",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/45/3514245.jpg",
+      "imageTitle": "핫들생태공원",
+      "priority": 15,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/45/3514245.jpg",
+        "title": "핫들생태공원",
+        "location": "경상남도 합천군 율곡면",
+        "credit": "한국관광공사 · 이환우",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "3514245",
+        "status": "matched",
+        "checkedAt": "2026-09-26T23:29:58.398Z"
+      },
+      "description": "대구에서 출발하는 합천광역시티투어 누비고의 운영 기간, 코스, 인원 정보와 예약 전 확인할 사항을 자료 기준으로 안내합니다.",
+      "intro": "합천광역시티투어 누비고는 대구를 탑승 장소로 안내하는 고정형 시티투어입니다. 원본 코스 정보에는 해인사, 대장경테마파크, 핫들생태공원, 영상테마파크 등이 기재되어 있으며, 운영 시간은 08:00부터 18:00까지로 안내되어 있습니다. 다만 운행정보와 이용요금은 아직 미정입니다.",
+      "sections": [
+        {
+          "heading": "투어 기본 정보",
+          "paragraphs": [
+            "이 시티투어의 시도명은 경상남도, 시군구명은 합천군이며, 코스명은 ‘합천광역시티투어 누비고’입니다. 탑승 장소는 대구로 안내되어 있고, 운행 방식은 고정형입니다.",
+            "자료에는 운행 시작 시각이 08:00, 운행 종료 시각이 18:00로 기재되어 있습니다. 배차 시간은 0으로 표시되어 있으나, 이 값만으로 구체적인 운행 방식이나 승하차 방법을 해석하기는 어렵습니다. 실제 출발 집결 장소와 운행 일정은 예약 전에 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "원본에 기재된 코스",
+          "paragraphs": [
+            "코스 정보에는 해인사, 대장경테마파크, 핫들생태공원, 영상테마파크 등이 명시되어 있습니다. 원본 자료에는 각 경유지의 방문 순서, 장소별 체류 시간, 세부 프로그램, 관람 가능 구역이 별도로 제시되어 있지 않습니다.",
+            "따라서 이 글에서는 각 장소의 성격이나 관람 내용을 별도로 단정하지 않습니다. 실제 방문 장소와 일정에 포함되는 세부 내용은 예약 과정에서 제공되는 안내와 현장 공지를 기준으로 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "운영 기간과 인원 정보",
+          "paragraphs": [
+            "시티투어 운영 시간은 2026년 3월부터 5월까지 및 10월부터 11월까지로 예정되어 있습니다. ‘예정’으로 안내된 기간이므로, 해당 기간의 모든 날짜에 운행이 확정되었다고 보기는 어렵습니다.",
+            "코스 부가정보에는 최소 20명, 최대 42명이라는 인원 정보가 있습니다. 다만 이 수치가 모객 기준인지, 차량 정원인지, 회차별 운영 인원인지 원본에 구체적으로 설명되어 있지 않으므로 의미를 단정할 수 없습니다. 예약 시 적용 기준을 문의해야 합니다."
+          ]
+        },
+        {
+          "heading": "요금과 예약 전 확인사항",
+          "paragraphs": [
+            "이용요금은 미정이며, 운행정보도 미정으로 기재되어 있습니다. 따라서 현재 자료만으로는 요금, 포함 사항, 세부 운행 일정, 출발 집결 시각과 정확한 탑승 위치를 확인할 수 없습니다.",
+            "예약 가능 여부와 운행 확정 여부는 시티투어 문의처인 대구삼성여행사에 문의해야 합니다. 최소·최대 인원 정보의 적용 기준, 이용요금, 출발 장소, 방문 순서, 장소별 체류 시간, 일정 변경 여부도 함께 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "최신 정보 확인",
+          "paragraphs": [
+            "관리기관은 경상남도 합천군청이며 관리기관 전화번호는 055-930-4666입니다. 운영 기간과 요금, 운행 여부는 원본 데이터 기준일 이후 변경될 수 있으므로 방문 전 문의처와 관리기관의 최신 안내를 확인해야 합니다.",
+            "자료에는 경유지 주변 관광정보가 별도로 제공되지 않았고, 이번 안내에 활용할 음식점 정보도 없습니다. 투어 외에 주변 장소나 식사 일정을 추가하려면 공식 코스 포함 여부와 이동 가능 여부를 별도로 확인해야 합니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-26T23:29:58.398Z",
+      "publishedDay": "2026-09-27",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 734,
+          "completion_tokens": 1390,
+          "total_tokens": 2124,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 162,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 2037,
+          "completion_tokens": 967,
+          "total_tokens": 3004,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 2034,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 58,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1620,
+          "completion_tokens": 706,
+          "total_tokens": 2326,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1617,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 279,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1384,
+          "completion_tokens": 161,
+          "total_tokens": 1545,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1381,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 141,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "86845c329717ca",
+      "area": "경기",
+      "city": "연천군",
+      "title": "연천군 시티투어 연천명소코스, 재인폭포와 전곡리유적을 잇는 순환 여행",
+      "raw": {
+        "시도명": "경기도",
+        "시군구명": "연천군",
+        "시티투어코스명": "연천명소코스",
+        "시티투어문의처": "031-834-1230",
+        "시티투어운영시간": "매주 금~일요일",
+        "시티투어운행방식": "순환형",
+        "시티투어탑승장소명": "연천역 앞",
+        "시티투어코스정보": "연천역-재인폭포-전곡시장-선사박물관-전곡리유적-연천역",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "3월~11월 매주 금~일요일",
+        "운행시작시각": "10:00",
+        "운행종료시각": "15:00",
+        "배차시간": "60",
+        "이용요금": "성인10000원+연천군민·경로·유공자·군인·장애인·초중고어린이(6세이상)8000원",
+        "이용요금부가정보": "온라인 사전예약 및 현장결제 가능+승차권 결제 시 현금·카드 사용 가능+여행자보험 미포함+점심식사 및 체험비 개별+감면대상자의 경우 신분증 등 증빙서류 제시",
+        "홈페이지주소": "https://www.yeoncheon.go.kr/citytour/index.do",
+        "관리기관명": "경기도 연천군청",
+        "관리기관전화번호": "031-839-2061",
+        "데이터기준일자": "2025-12-10"
+      },
+      "related": [],
+      "foodLinks": [],
+      "officialUrl": "https://www.yeoncheon.go.kr/citytour/index.do",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/52/3332952.jpg",
+      "imageTitle": "재인폭포",
+      "priority": 15,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/52/3332952.jpg",
+        "title": "재인폭포",
+        "location": "경기도 연천군 연천읍",
+        "credit": "한국관광공사 · 김주원",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "3332952",
+        "status": "matched",
+        "checkedAt": "2026-09-26T23:30:36.959Z"
+      },
+      "description": "연천역에서 출발해 재인폭포, 전곡시장, 선사박물관, 전곡리유적을 거쳐 연천역으로 돌아오는 연천명소코스의 경유 순서, 운행 일정, 요금과 이용 전 확인사항을 안내합니다.",
+      "intro": "경기도 연천군 연천명소코스는 연천역 앞에서 탑승해 재인폭포, 전곡시장, 선사박물관, 전곡리유적을 거쳐 연천역으로 돌아오는 순환형 시티투어입니다. 자료상 운행 기간은 3월부터 11월까지이며, 매주 금요일부터 일요일까지 운영됩니다. 자연 명소와 시장, 박물관, 유적을 연결하는 코스로 제시되어 있어 연천의 주요 경유지를 한 번에 살펴볼 수 있습니다.",
+      "sections": [
+        {
+          "heading": "연천명소코스 경유 순서",
+          "paragraphs": [
+            "자료에 제시된 경유 순서는 연천역-재인폭포-전곡시장-선사박물관-전곡리유적-연천역입니다. 탑승 장소와 돌아오는 장소는 모두 연천역으로 안내되어 있으며, 운행 방식은 순환형입니다.",
+            "코스에 포함된 경유지는 재인폭포, 전곡시장, 선사박물관, 전곡리유적입니다. 각 장소의 세부 관람 내용이나 이용 방식은 제공 자료에 별도로 제시되어 있지 않으므로, 시설 이용을 계획한다면 방문 전 관련 안내를 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "탑승 장소와 운행 일정",
+          "paragraphs": [
+            "시티투어 탑승 장소는 연천역 앞입니다. 자료상 운행 시간은 10시부터 15시까지이며, 배차시간은 60분으로 안내되어 있습니다. 배차시간은 회차 간격에 관한 정보이며, 자료에는 각 회차의 구체적인 출발 시각이 별도로 제시되어 있지 않습니다.",
+            "운행 요일은 매주 금요일부터 일요일까지이고, 운행 기간은 3월부터 11월까지입니다. 따라서 제공 자료상 12월부터 2월까지는 운행 기간에서 제외됩니다. 방문 날짜를 정한 뒤에는 해당 날짜의 실제 운행 여부와 구체적인 출발 시각을 공식 안내에서 확인하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "이용 요금과 결제 방법",
+          "paragraphs": [
+            "성인 요금은 1만 원입니다. 연천군민·경로·유공자·군인·장애인·초중고 어린이 가운데 6세 이상 대상자는 8천 원으로 안내되어 있습니다. 감면 대상자는 이용 시 신분증 등 증빙서류를 제시해야 합니다.",
+            "온라인 사전예약과 현장결제가 모두 가능하며, 승차권 결제에는 현금과 카드를 사용할 수 있습니다. 여행자보험은 요금에 포함되지 않고, 점심식사와 체험비도 개별 부담입니다. 따라서 승차권 외 비용이 발생할 수 있는 항목은 별도로 준비해야 합니다."
+          ]
+        },
+        {
+          "heading": "공식 경유지 이용 계획",
+          "paragraphs": [
+            "연천명소코스에서 공식 경유지로 안내된 곳은 재인폭포, 전곡시장, 선사박물관, 전곡리유적입니다. 제공 자료에는 각 경유지의 체류 시간, 입장 조건, 전시 내용, 체험 운영 여부가 구체적으로 기재되어 있지 않습니다.",
+            "이에 따라 특정 장소의 관람 가능 시간이나 이용 방법을 이 자료만으로 확정하기는 어렵습니다. 코스에 포함된 경유지라는 사실과 각 장소에서 실제로 이용할 수 있는 시설 및 프로그램은 구분해 확인하는 것이 좋습니다. 별도의 주변 관광지나 음식점 정보도 제공 자료에는 없습니다."
+          ]
+        },
+        {
+          "heading": "출발 전 확인할 사항",
+          "paragraphs": [
+            "운영 자료의 기준일자는 2025년 12월 10일입니다. 여행 전에는 공식 안내를 통해 방문 예정일의 운행 여부, 온라인 예약 가능 여부, 현장 이용 가능 여부, 해당 회차의 출발 시각을 확인하세요. 잔여 좌석 정보 역시 자료에 제시되어 있지 않으므로 필요한 경우 문의처를 통해 확인하는 것이 좋습니다.",
+            "시티투어 문의처는 031-834-1230이며, 관리기관인 연천군청 문의처는 031-839-2061입니다. 공식 홈페이지와 문의처를 통해 운행 및 예약 정보를 확인한 뒤 방문 일정을 정하면 됩니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-26T23:30:36.959Z",
+      "publishedDay": "2026-09-27",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 816,
+          "completion_tokens": 1204,
+          "total_tokens": 2020,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 122,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1799,
+          "completion_tokens": 1093,
+          "total_tokens": 2892,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1796,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 42,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1556,
+          "completion_tokens": 550,
+          "total_tokens": 2106,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1553,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 297,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1608,
+          "completion_tokens": 181,
+          "total_tokens": 1789,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1605,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 161,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "96c085d9bdda48",
+      "area": "경남",
+      "city": "사천시",
+      "title": "사천시티투어 역사탐방 코스 안내",
+      "raw": {
+        "시도명": "경상남도",
+        "시군구명": "사천시",
+        "시티투어코스명": "역사탐방 코스",
+        "시티투어문의처": "055-831-2781",
+        "시티투어운영시간": "10:00 ~ 17:00",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "사천시외버스터미널 or 삼천포시외버스터미널 or 진주역",
+        "시티투어코스정보": "다솔사, 세종대왕·단종 태실지 - 선진리성 - 사천바다케이블카, 사천아라마루아쿠아리움, 삼천포대교공원 - 대방진굴항 or 노산공원 일원",
+        "경유지주변관광정보": "",
+        "시티투어코스부가정보": "",
+        "운행정보": "휴무일(월+설 연휴+추석연휴)",
+        "운행시작시각": "09:30",
+        "운행종료시각": "17:00",
+        "배차시간": "0",
+        "이용요금": "성인 5천원+청소년(19세 미만) 3천원+어린이(7세 이하)·국가유공자·경로우대자(65세 이상)·장애인 2천원",
+        "이용요금부가정보": "",
+        "홈페이지주소": "http://www.toursacheon.net/citytour/",
+        "관리기관명": "경상남도 사천시",
+        "관리기관전화번호": "055-831-2781",
+        "데이터기준일자": "2025-11-17"
+      },
+      "related": [],
+      "foodLinks": [],
+      "officialUrl": "http://www.toursacheon.net/citytour/",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/75/2704875.jpg",
+      "imageTitle": "사천바다케이블카",
+      "priority": 15,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/75/2704875.jpg",
+        "title": "사천바다케이블카",
+        "location": "경상남도 사천시 대방동",
+        "credit": "한국관광공사 · 라이브스튜디오",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "2704875",
+        "status": "matched",
+        "checkedAt": "2026-09-26T23:31:05.387Z"
+      },
+      "description": "다솔사, 세종대왕·단종 태실지, 선진리성, 사천바다케이블카 일원을 경유하는 사천시 고정형 시티투어입니다. 운행 시각과 세부 코스, 시설 이용 가능 여부는 방문 전 공식 확인이 필요합니다.",
+      "intro": "경상남도 사천시 역사탐방 코스는 다솔사와 세종대왕·단종 태실지, 선진리성, 사천바다케이블카·사천아라마루아쿠아리움·삼천포대교공원, 대방진굴항 또는 노산공원 일원을 경유하는 고정형 시티투어입니다. 탑승장소와 요금, 휴무일이 안내되어 있으며, 일부 운행 정보에는 시작 시각이 다르게 기재되어 있어 출발 전 확인이 필요합니다.",
+      "sections": [
+        {
+          "heading": "코스와 운행 형태",
+          "paragraphs": [
+            "이 시티투어는 고정형으로 운영됩니다. 자료의 시티투어 운영시간은 10:00부터 17:00까지이며, 별도 운행정보에는 운행 시작 시각 09:30, 종료 시각 17:00로 기재되어 있습니다. 시작 시각이 서로 다르므로 실제 출발 시각은 예약이나 탑승 전에 공식 안내로 확인해야 합니다.",
+            "자료에 제시된 경유 순서는 다솔사, 세종대왕·단종 태실지, 선진리성, 사천바다케이블카·사천아라마루아쿠아리움·삼천포대교공원, 대방진굴항 또는 노산공원 일원입니다. 마지막 구간은 두 장소 중 하나로 표시되어 있으므로 당일 운행에 포함되는 장소를 별도로 문의하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "경유지 확인",
+          "paragraphs": [
+            "다솔사와 세종대왕·단종 태실지, 선진리성은 코스의 앞부분에 제시된 경유지입니다. 제공 자료에는 각 장소의 상세 설명이나 관람 방법이 별도로 안내되어 있지 않으므로, 방문 시 확인할 수 있는 시설과 체류시간은 시티투어 운영기관에 문의해야 합니다.",
+            "사천바다케이블카, 사천아라마루아쿠아리움, 삼천포대교공원은 다음 경유지로 안내되어 있습니다. 이후 대방진굴항 또는 노산공원 일원이 포함될 수 있습니다. 경유지로 기재된 사실과 각 장소를 실제로 이용하거나 관람할 수 있는지는 구분해야 하며, 투어 중 이용 가능 여부와 체류시간은 사전에 확인하는 것이 필요합니다."
+          ]
+        },
+        {
+          "heading": "탑승장소와 이용요금",
+          "paragraphs": [
+            "탑승장소는 사천시외버스터미널, 삼천포시외버스터미널 또는 진주역입니다. 자료에는 예약 방법과 좌석 운영 방식이 구체적으로 제시되어 있지 않으므로, 탑승장소별 출발 여부와 예약 필요 여부는 시티투어 문의처 또는 공식 홈페이지에서 확인해야 합니다.",
+            "이용요금은 성인 5,000원, 청소년 3,000원입니다. 청소년은 19세 미만으로 안내되어 있습니다. 어린이 7세 이하, 국가유공자, 경로우대자 65세 이상, 장애인은 각 2,000원입니다. 할인 또는 감면 적용에 필요한 증빙서류와 세부 기준은 방문 전에 문의하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "시설 이용 여부 확인",
+          "paragraphs": [
+            "사천바다케이블카와 사천아라마루아쿠아리움은 코스 경유지 목록에 포함되어 있습니다. 다만 제공 자료만으로는 시티투어 중 실제 탑승이나 관람이 가능한지, 투어 이용요금에 관련 시설의 입장료 또는 이용료가 포함되는지 확인되지 않습니다.",
+            "해당 시설을 이용하려는 경우에는 투어의 정차 및 체류시간, 별도 이용요금, 당일 운영 여부를 함께 확인해야 합니다. 삼천포대교공원, 대방진굴항, 노산공원 일원도 실제 방문 범위와 순서는 운행 당일 안내에 따라 달라질 수 있으므로 출발 전에 문의하는 것이 필요합니다."
+          ]
+        },
+        {
+          "heading": "휴무일과 문의처",
+          "paragraphs": [
+            "휴무일은 월요일과 설 연휴, 추석 연휴입니다. 자료 기준일자는 2025년 11월 17일이며, 방문일이 2026년인 경우 현재 운행 여부와 운행 시각, 탑승장소, 요금, 경유지 순서가 변경되었는지 공식 자료로 확인해야 합니다.",
+            "시티투어 문의처와 관리기관 전화번호는 055-831-2781이며, 관리기관은 경상남도 사천시입니다. 운행 시작 시각처럼 자료 안에서 다르게 제시된 내용과 대방진굴항 또는 노산공원 일원의 포함 여부는 전화나 공식 홈페이지를 통해 확인한 뒤 일정을 정하는 것이 좋습니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-26T23:31:05.387Z",
+      "publishedDay": "2026-09-27",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 825,
+          "completion_tokens": 1247,
+          "total_tokens": 2072,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 74,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1878,
+          "completion_tokens": 1211,
+          "total_tokens": 3089,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1875,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 50,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1656,
+          "completion_tokens": 625,
+          "total_tokens": 2281,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1653,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 393,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1727,
+          "completion_tokens": 176,
+          "total_tokens": 1903,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1724,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 156,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "9919f5cf6b1dcd",
+      "area": "경북",
+      "city": "경산시",
+      "title": "경산 시티투어 소원성취·삼성현명품투어 코스 안내",
+      "raw": {
+        "시도명": "경상북도",
+        "시군구명": "경산시",
+        "시티투어코스명": "소원성취코스,삼성현명품투어코스",
+        "시티투어문의처": "경산문화관광재단",
+        "시티투어운영시간": "삼성현명품투어 : 매월 넷째주 소원성취투어 :매월 둘째주 목요일 운영 수시운영 : 월별테마운여",
+        "시티투어운행방식": "고정형",
+        "시티투어탑승장소명": "경산역,임당역",
+        "시티투어코스정보": "소원성취코스 : 갓바위, 삽살개육종연구소,샘이깊은물 삼성현명품투어 : 임당동고분군, 시립박물관, 삼성현역사문화공원, 동의한방촌,반곡지",
+        "경유지주변관광정보": "자인계정숲+남매지+불굴사 등",
+        "시티투어코스부가정보": "",
+        "운행정보": "매월둘째주목요일+넷째주토요일운행+수시운영",
+        "운행시작시각": "09:30",
+        "운행종료시각": "17:00",
+        "배차시간": "0",
+        "이용요금": "버스이용료 5000원(체험비,식사비등 개별부담)",
+        "이용요금부가정보": "",
+        "홈페이지주소": "http://www.gsctf.or.kr/",
+        "관리기관명": "경산문화관광재단",
+        "관리기관전화번호": "053-819-0333",
+        "데이터기준일자": "2025-07-28"
+      },
+      "related": [],
+      "foodLinks": [],
+      "officialUrl": "http://www.gsctf.or.kr/",
+      "image": "https://tong.visitkorea.or.kr/cms2/website/19/3035819.jpg",
+      "imageTitle": "반곡지",
+      "priority": 15,
+      "heroPhoto": {
+        "image": "https://tong.visitkorea.or.kr/cms2/website/19/3035819.jpg",
+        "title": "반곡지",
+        "location": "경상북도 경산시 남산면",
+        "credit": "한국관광공사 · 임태원",
+        "sourceUrl": "https://korean.visitkorea.or.kr",
+        "galleryId": "3035819",
+        "status": "matched",
+        "checkedAt": "2026-09-26T23:31:32.010Z"
+      },
+      "description": "경산 시티투어의 두 코스 경유지, 운행 일정, 탑승 장소, 요금과 방문 전 확인사항을 자료에 따라 정리했습니다.",
+      "intro": "경상북도 경산 시티투어는 갓바위, 삽살개육종연구소, 샘이깊은물을 둘러보는 소원성취코스와 임당동고분군, 시립박물관, 삼성현역사문화공원, 동의한방촌, 반곡지를 잇는 삼성현명품투어로 구성됩니다. 고정형 버스로 운영되며 탑승 장소는 경산역과 임당역으로 안내되어 있습니다.",
+      "sections": [
+        {
+          "heading": "두 가지 코스와 운행 일정",
+          "paragraphs": [
+            "소원성취코스는 갓바위, 삽살개육종연구소, 샘이깊은물을 경유합니다. 삼성현명품투어는 임당동고분군, 시립박물관, 삼성현역사문화공원, 동의한방촌, 반곡지를 방문하는 구성입니다.",
+            "자료에는 소원성취투어가 매월 둘째 주 목요일에 운영되고, 삼성현명품투어는 매월 넷째 주에 운영된다고 기재되어 있습니다. 한편 운행 정보에는 매월 둘째 주 목요일과 넷째 주 토요일 운행으로 안내되어 있어 삼성현명품투어의 운행일 표현에 차이가 있습니다. 월별 테마에 따른 수시 운영도 안내되어 있으므로 방문일의 실제 코스와 운행 여부는 사전에 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "원본 경유 순서와 관람 정보",
+          "paragraphs": [
+            "소원성취코스의 경유 순서는 갓바위, 삽살개육종연구소, 샘이깊은물입니다. 삼성현명품투어의 경유 순서는 임당동고분군, 시립박물관, 삼성현역사문화공원, 동의한방촌, 반곡지로 안내되어 있습니다.",
+            "각 경유지에서 관람할 수 있는 세부 전시, 체험, 내부 동선과 체류 시간은 제공된 자료에 포함되어 있지 않습니다. 특정 장소의 관람 범위나 프로그램을 확인하려면 출발 전에 해당 시설 또는 경산문화관광재단에 별도로 문의하는 것이 좋습니다."
+          ]
+        },
+        {
+          "heading": "탑승 장소와 이용 요금",
+          "paragraphs": [
+            "탑승 장소는 경산역과 임당역입니다. 운행 시작 시각은 09:30, 종료 시각은 17:00으로 제공되어 있으며, 배차시간은 0으로 기재되어 있습니다. 따라서 일반 노선처럼 정해진 간격으로 반복 운행되는 방식인지 여부는 자료만으로 확인할 수 없으며, 고정형 투어 운행 일정에 맞춰 이용하는 형태로 안내되어 있습니다.",
+            "버스 이용료는 5,000원입니다. 체험비와 식사비 등은 개별 부담으로 안내되어 있습니다. 예약 방법, 좌석 마감 여부와 추가 비용의 구체적인 내용은 자료에 제시되지 않았으므로 운행 코스와 함께 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "주변 관광정보와 공식 경유지 구분",
+          "paragraphs": [
+            "경유지 주변 관광정보로 자인계정숲, 남매지, 불굴사 등이 제시되어 있습니다. 이 장소들은 시티투어의 경유지 목록과는 구분되는 주변 관광 후보이며, 투어 차량이 정차하거나 코스 안에서 방문한다고 단정할 수 없습니다.",
+            "이번 자료에는 각 경유지의 내부 관람 시설, 전시실, 체험 공간에 대한 별도 설명도 포함되어 있지 않습니다. 시립박물관이나 삼성현역사문화공원 등의 내부 프로그램을 이용하려는 경우에는 해당 기관의 운영 여부와 관람 조건을 따로 확인해야 합니다."
+          ]
+        },
+        {
+          "heading": "방문 전 확인할 사항",
+          "paragraphs": [
+            "운행 정보에는 매월 둘째 주 목요일과 넷째 주 토요일 운행, 수시 운영이 함께 기재되어 있습니다. 코스별 안내와 삼성현명품투어 운행일 표현에도 차이가 있으므로 실제 방문일의 운행 코스, 운행 여부, 탑승 장소와 시간을 공식적으로 확인한 뒤 일정을 정하는 것이 필요합니다.",
+            "자료 기준일은 2025년 7월 28일입니다. 현재 운행 일정과 요금이 그대로 유지된다고 확정할 수 없으므로 방문 전 경산문화관광재단에 문의해야 합니다. 예약 필요 여부, 잔여 좌석, 체험비·식사비, 시설별 운영 조건은 경산문화관광재단 전화 053-819-0333을 통해 확인할 수 있습니다."
+          ]
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "generatedModel": "gpt-5.6-luna",
+      "publishedAt": "2026-09-26T23:31:32.010Z",
+      "publishedDay": "2026-09-27",
+      "reviewed": true,
+      "usage": {
+        "first": {
+          "prompt_tokens": 846,
+          "completion_tokens": 1280,
+          "total_tokens": 2126,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 143,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1805,
+          "completion_tokens": 1183,
+          "total_tokens": 2988,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1802,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 87,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "reviewUsage": {
+        "first": {
+          "prompt_tokens": 1641,
+          "completion_tokens": 514,
+          "total_tokens": 2155,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1638,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 340,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        },
+        "revision": {
+          "prompt_tokens": 1683,
+          "completion_tokens": 14,
+          "total_tokens": 1697,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1680,
+            "audio_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
     }
   ],
   "rejected": [
@@ -19633,10 +20257,38 @@
       "reason": "Local quality gate",
       "date": "2026-09-21",
       "version": 2
+    },
+    {
+      "id": "269cb2539028cf",
+      "title": "광양힐링코스",
+      "reason": "Fact review",
+      "issues": [
+        "자료에는 ‘10명 이상 예약 시 운영’이라고 되어 있으나, 본문 일부에서 이를 ‘10명 이상 예약 시 출발하는 조건’으로 표현해 출발 확정 조건처럼 확대 해석했습니다. ‘운영 조건’ 또는 ‘운행 여부 조건’으로 표현하는 것이 정확합니다.",
+        "자료는 세 곳을 탑승 장소로 제시하지만 이용자가 임의로 선택할 수 있다고 명시하지는 않았으므로, ‘선택할 수 있습니다’보다는 ‘탑승 장소로 안내되어 있습니다’가 안전합니다."
+      ],
+      "date": "2026-09-27",
+      "version": 2
+    },
+    {
+      "id": "de7c141cf7eff0",
+      "title": "(박물관 출발) 고군산코스",
+      "reason": "Fact review",
+      "issues": [
+        "자료의 운행시작시각·운행종료시각을 근거로 ‘13시 출발’과 ‘17시 종료’라고 표현했으나, 해당 시각이 실제 차량 출발·도착 시각인지 자료만으로는 명확하지 않습니다. ‘운행시간 13시~17시’로 표현하고 실제 출발·도착 시각은 확인하도록 수정하는 것이 안전합니다."
+      ],
+      "date": "2026-09-27",
+      "version": 2
+    },
+    {
+      "id": "709b8f35b9b197",
+      "title": "특별운영",
+      "reason": "Local quality gate",
+      "date": "2026-09-27",
+      "version": 2
     }
   ],
   "sourceUrl": "https://www.data.go.kr/data/15025456/standard.do",
   "rawCount": 298,
   "uniqueCount": 296,
-  "updatedAt": "2026-09-20T23:24:59.672Z"
+  "updatedAt": "2026-09-26T23:31:32.010Z"
 }
