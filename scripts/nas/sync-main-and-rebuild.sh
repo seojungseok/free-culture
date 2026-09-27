@@ -92,7 +92,7 @@ done
 
 # Never delete or overwrite NAS-only secrets and deployment state.
 STEP="synchronize app source"
-"$RSYNC" -a --delete \
+"$RSYNC" -a \
   --exclude '/runtime/' \
   --exclude '/compose.yaml' \
   --exclude '/.deploy/' \

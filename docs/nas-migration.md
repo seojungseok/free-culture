@@ -27,7 +27,7 @@
 ## 자동 발행과 NAS 자동 갱신
 
 - 콘텐츠 수집·AI 작성·사실 검수·Git 커밋은 기존 GitHub Actions의 일일 05:00 KST 및 주간 월요일 03:00 KST 작업만 유지한다. NAS에서는 같은 생성 스크립트를 예약 실행하지 않아 API 중복 호출과 중복 발행을 막는다.
-- NAS는 `scripts/nas/sync-main-and-rebuild.sh`로 공개 `main` 아카이브가 바뀐 경우에만 앱 소스를 동기화하고 새 이미지를 빌드한다. `runtime/`, `compose.yaml`, `.deploy/`는 동기화·삭제 대상에서 제외한다. 빌드가 성공한 뒤 robots와 sitemap을 확인해야 새 아카이브 해시를 완료 상태로 기록한다.
+- NAS는 `scripts/nas/sync-main-and-rebuild.sh`로 공개 `main` 아카이브가 바뀐 경우에만 앱 소스를 동기화하고 새 이미지를 빌드한다. `runtime/`, `compose.yaml`, `.deploy/`는 동기화 대상에서 제외하고, 초기 전환 기간에는 앱의 기존 파일을 자동 삭제하지 않는다. 오래된 파일 정리는 별도 검증 후 수행한다. 빌드가 성공한 뒤 robots와 sitemap을 확인해야 새 아카이브 해시를 완료 상태로 기록한다.
 - 이 작업은 Container Manager의 Docker CLI를 사용하며 DSM 작업 스케줄러의 root 계정에서 실행한다. 최초 수동 실행으로 바이너리 경로, 재빌드, 비밀파일 보존, 기존 컨테이너 교체, 실패 시 기존 컨테이너 유지 여부를 확인한 뒤 정기 일정을 켠다.
 - `NAS_SMOKE_BASE=http://192.168.0.115:3275 node scripts/nas/smoke.mjs`로 홈·목록·검색·대표 상세·시티투어·API·robots·sitemap 총 9개 경로를 저부하로 재검사할 수 있다. 2026-09-27 LAN 실행에서 9/9 통과했다. 이 검사기는 응답 본문·키를 출력하지 않으며 실제 브라우저 검사나 외부망 검사의 대체물은 아니다.
 
