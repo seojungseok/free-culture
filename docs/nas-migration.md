@@ -25,6 +25,13 @@
 - 비밀값 없는 시험 빌드에서는 외부 키가 필요한 경로를 실서비스 수준으로 검증할 수 없다. 사용자의 승인으로 DSM SSH를 임시 활성화했고 LAN `192.168.0.115:22` 접근을 확인했지만, 비밀번호 직접 입력과 키 이전이 끝나기 전에는 공개 전환하지 않는다. 이전 완료 또는 보류 종료 시 SSH를 다시 비활성화한다. 공유기 포트포워딩은 추가하지 않는다.
 - `NAS_SMOKE_BASE=http://192.168.0.115:3275 node scripts/nas/smoke.mjs`로 홈·목록·검색·대표 상세·시티투어·API·robots·sitemap 총 9개 경로를 저부하로 재검사할 수 있다. 2026-09-27 LAN 실행에서 9/9 통과했다. 이 검사기는 응답 본문·키를 출력하지 않으며 실제 브라우저 검사나 외부망 검사의 대체물은 아니다.
 
+## 비밀 환경변수 이전 범위
+
+- 현재 Vercel Production 목록의 이름은 `KCISA_API_KEY`, `VWORLD_API_DOMAIN`, `VWORLD_API_KEY`, `COUPANG_ACCESS_KEY`, `COUPANG_SECRET_KEY`, `OPENAI_API_KEY`, `GEMINI_API_KEY`, `TOUR_API_KEY`, `DATA_GO_KR_KEY`다. 값은 이 문서와 Git에 기록하지 않는다. 잠긴 Vercel Secret은 관리 화면에서 값을 다시 읽을 수 있다고 가정하지 않는다.
+- 현재 서버 요청에 필요한 것은 `VWORLD_API_KEY`/`VWORLD_API_DOMAIN`(전통시장), `TOUR_API_KEY` 또는 `DATA_GO_KR_KEY`(관광·주차·반려동물 상세 데이터)다. 자동 발행에는 추가로 `OPENAI_API_KEY`, `GEMINI_API_KEY`와 공공 데이터 키가 필요하다. `KCISA_API_KEY`와 쿠팡 키는 현행 공개 코드에서 방문자 렌더링에 사용되지 않아, 보존 여부를 확인하되 기본 웹 컨테이너에 불필요하게 주입하지 않는다.
+- 로컬 `.env.local`에는 일부 키 이름이 있지만 `VWORLD_API_KEY`와 `KCISA_API_KEY`는 없다. 이 둘은 원본 키를 안전한 입력 경로로 재등록해야 한다. 새 키를 채팅·HTTP 관리 화면·GitHub·로그에 붙여넣지 않는다. 전송 전에는 공개 도메인을 전환하지 않는다.
+- 웹 런타임과 자동 발행 작업의 환경파일을 분리한다. NAS의 `/volume1/projects/free-culture/runtime`에만 저장하고 권한을 제한한다. 실제 키 값을 비교하거나 로그에 출력하지 않고, 해당 API의 최소 기능 테스트로 이전을 검증한다. GitHub Actions가 발행을 계속하는 동안 NAS에서 같은 발행 작업은 실행하지 않는다.
+
 ## 이전 순서와 보류 조건
 
 1. NAS 운영 폴더에 검토한 코드만 넣고 `runtime/app.env`를 NAS에서만 준비한다. `runtime`과 `.env*`는 Git·Docker 빌드 컨텍스트에서 제외한다. 키 이름만 확인하고 값은 출력하지 않는다.
