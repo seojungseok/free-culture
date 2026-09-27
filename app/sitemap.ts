@@ -10,7 +10,7 @@ import {
 import { GENRES, SIDO_SLUG } from "@/lib/classify";
 import { SITE } from "@/lib/site";
 import { getAllFestivals } from "@/lib/festivals";
-import { getCityTours } from "@/lib/cityTours";
+import { getCityTours, isIndexableCityTour } from "@/lib/cityTours";
 import { getPetTravelPlaces } from "@/lib/petTravel";
 import { getPrepArticles, isCookingPrepArticle } from '@/lib/weekend-prep/data';
 import { getKidCourses } from "@/lib/kidCourses";
@@ -200,7 +200,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...articleSpotRoutes,
     ...courseDetailRoutes,
     ...kidDetailRoutes,
-    ...getCityTours().map(t => ({url: `${base}/city-tour/${t.id}`, lastModified: new Date(t.publishedAt), changeFrequency: "monthly" as const, priority: 0.7})),
+    ...getCityTours().filter(isIndexableCityTour).map(t => ({url: `${base}/city-tour/${t.id}`, lastModified: new Date(t.publishedAt), changeFrequency: "monthly" as const, priority: 0.7})),
     // 3) 대량 롱테일 상세 (낮은 우선순위·가끔)
     ...placeSpotRoutes,
     ...restaurantRoutes,

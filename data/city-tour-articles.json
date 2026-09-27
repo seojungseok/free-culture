@@ -156,7 +156,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 198일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "b2c85d7e3f7c38",
@@ -350,7 +360,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 258일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "b3d9e2b721f7c4",
@@ -940,7 +960,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 220일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "109cc60e4c33b1",
@@ -1072,7 +1102,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.992Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 124일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "2cbbe64c21c51c",
@@ -1485,7 +1525,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 459일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "0012cac98051f9",
@@ -1827,7 +1877,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.992Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 496일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "97ccb13524da05",
@@ -2042,7 +2102,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 210일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "6abe32c468478f",
@@ -2245,7 +2315,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 229일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "161aec6640b215",
@@ -2439,7 +2519,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 173일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "65712d26482437",
@@ -2634,7 +2724,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 242일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "e23ef7d0fcd8db",
@@ -2821,7 +2921,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 130일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "153005e6691951",
@@ -3011,7 +3121,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.991Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 173일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "34edeb55dd5a91",
@@ -3199,7 +3319,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 184일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "3c42216c767564",
@@ -3387,7 +3517,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 130일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "4353aca7bc99cc",
@@ -3552,7 +3692,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.992Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 132일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "5874b027f25302",
@@ -3741,7 +3891,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.992Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 208일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "f40712d5f4a625",
@@ -3936,7 +4096,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 258일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "7365f83fbd485b",
@@ -4154,7 +4324,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 279일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "13e5e9cbd2f52e",
@@ -4549,7 +4729,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 198일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "93f013ef81cf12",
@@ -4904,7 +5094,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 124일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "2a59110f5e8872",
@@ -5267,7 +5467,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.992Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 220일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "65192ebdb3b031",
@@ -5635,7 +5845,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.992Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 459일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "1c96f937240000",
@@ -5822,7 +6042,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 258일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "1ae6fcc8b7f7cd",
@@ -6210,7 +6440,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 198일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "c361e191c78cc0",
@@ -6411,7 +6651,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 202일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "7b87900732cd6e",
@@ -6540,7 +6790,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.992Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 124일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "48899548d2ba66",
@@ -6697,7 +6957,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.992Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 220일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "9cc38deb9fbce3",
@@ -7071,7 +7341,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 180일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "ce92d9af22556b",
@@ -7265,7 +7545,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 173일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "e9e7af9d0d730b",
@@ -7434,7 +7724,17 @@
         "status": "matched",
         "checkedAt": "2026-09-10T16:09:47.993Z"
       },
-      "heroPhotoStatus": "matched"
+      "heroPhotoStatus": "matched",
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 242일 전 기준"
+          }
+        ]
+      }
     },
     {
       "id": "526a044686deef",
@@ -7616,6 +7916,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 258일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -7996,6 +8306,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 198일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -8167,6 +8487,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 202일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -8377,6 +8707,20 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "high",
+        "reasons": [
+          {
+            "code": "missing_official_url",
+            "label": "운행 정보 확인용 공식 주소 없음"
+          },
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 424일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -8716,6 +9060,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 220일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -8875,6 +9229,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 496일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -9047,6 +9411,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 238일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -9238,6 +9612,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 173일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -9424,6 +9808,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 258일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -9797,6 +10191,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 198일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -9969,6 +10373,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 202일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -10162,6 +10576,20 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "high",
+        "reasons": [
+          {
+            "code": "missing_official_url",
+            "label": "운행 정보 확인용 공식 주소 없음"
+          },
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 424일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -10502,6 +10930,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 132일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -10676,6 +11114,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 180일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -10819,6 +11267,16 @@
           "accepted_prediction_tokens": 0,
           "rejected_prediction_tokens": 0
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 130일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -10991,6 +11449,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 238일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -11147,6 +11615,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 258일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -11304,6 +11782,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 198일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -11490,6 +11978,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 202일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -11683,6 +12181,20 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "high",
+        "reasons": [
+          {
+            "code": "missing_official_url",
+            "label": "운행 정보 확인용 공식 주소 없음"
+          },
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 424일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -11862,6 +12374,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 130일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -12049,6 +12571,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 238일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -12217,6 +12749,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 242일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -12571,6 +13113,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 164일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -12757,6 +13309,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 130일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -12914,6 +13476,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 198일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -13070,6 +13642,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 202일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -13234,6 +13816,20 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "high",
+        "reasons": [
+          {
+            "code": "missing_official_url",
+            "label": "운행 정보 확인용 공식 주소 없음"
+          },
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 424일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -13354,6 +13950,16 @@
           "accepted_prediction_tokens": 0,
           "rejected_prediction_tokens": 0
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 124일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -13544,6 +14150,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 173일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -13723,6 +14339,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 188일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -13902,6 +14528,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 130일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -14088,6 +14724,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "high",
+        "reasons": [
+          {
+            "code": "missing_official_url",
+            "label": "운행 정보 확인용 공식 주소 없음"
+          }
+        ]
       }
     },
     {
@@ -14400,6 +15046,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 198일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -14589,6 +15245,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 132일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -14747,6 +15413,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 242일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -14933,6 +15609,20 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "high",
+        "reasons": [
+          {
+            "code": "missing_official_url",
+            "label": "운행 정보 확인용 공식 주소 없음"
+          },
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 136일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -15112,6 +15802,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "high",
+        "reasons": [
+          {
+            "code": "missing_official_url",
+            "label": "운행 정보 확인용 공식 주소 없음"
+          }
+        ]
       }
     },
     {
@@ -15298,6 +15998,20 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "high",
+        "reasons": [
+          {
+            "code": "missing_official_url",
+            "label": "운행 정보 확인용 공식 주소 없음"
+          },
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 159일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -15498,6 +16212,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 303일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -15679,6 +16403,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 132일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -15851,6 +16585,20 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "high",
+        "reasons": [
+          {
+            "code": "missing_official_url",
+            "label": "운행 정보 확인용 공식 주소 없음"
+          },
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 136일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -16053,6 +16801,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 549일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -16209,6 +16967,20 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "high",
+        "reasons": [
+          {
+            "code": "missing_official_url",
+            "label": "운행 정보 확인용 공식 주소 없음"
+          },
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 159일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -16380,6 +17152,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 277일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -16536,6 +17318,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 132일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -16722,6 +17514,20 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "high",
+        "reasons": [
+          {
+            "code": "missing_official_url",
+            "label": "운행 정보 확인용 공식 주소 없음"
+          },
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 136일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -16917,6 +17723,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 549일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -17088,6 +17904,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 279일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -17396,6 +18222,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 132일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -17567,6 +18403,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 277일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -17763,6 +18609,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 381일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -17934,6 +18790,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 279일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -18062,6 +18928,16 @@
           "accepted_prediction_tokens": 0,
           "rejected_prediction_tokens": 0
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 282일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -18249,6 +19125,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 270일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -18413,6 +19299,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 314일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -18577,6 +19473,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 279일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -18741,6 +19647,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 277일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -18897,6 +19813,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 282일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -19053,6 +19979,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 502일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -19209,6 +20145,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 301일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -19365,6 +20311,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 303일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -19521,6 +20477,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 291일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -19677,6 +20643,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 314일 전 기준"
+          }
+        ]
       }
     },
     {
@@ -19833,6 +20809,16 @@
             "rejected_prediction_tokens": 0
           }
         }
+      },
+      "qualityAudit": {
+        "version": 1,
+        "priority": "review",
+        "reasons": [
+          {
+            "code": "stale_operation_data",
+            "label": "운행·요금 원본이 426일 전 기준"
+          }
+        ]
       }
     }
   ],

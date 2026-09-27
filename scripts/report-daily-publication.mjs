@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
+import { isNewPublicationEnabled } from './lib/publication-policy.mjs';
 
 export const groups=[
   {name:'관광지',file:'place-articles.json',target:10,status:true},
@@ -33,8 +34,13 @@ function main(){
   }
   if(!fs.existsSync(file))throw Error('발행 전 기록 없음: 신규 발행 수를 확인할 수 없습니다.');
   const rows=compare(JSON.parse(fs.readFileSync(file,'utf8')),snapshot());
-  const lines=['## 자동 글 실제 발행 결과','','공개 데이터의 작업 전후 차이입니다. 기존 글 수정은 신규 글로 세지 않습니다. 운영 반영은 커밋·배포 성공 여부를 함께 확인하세요.','','| 구분 | 이번 실행 신규 공개 | 일일 목표/상한 |','| --- | ---: | ---: |',...rows.map(r=>`| ${r.name} | ${r.count} | ${r.target} |`),''];
-  for(const r of rows)if(r.count<r.target)console.log(`::warning::${r.name}: 신규 공개 ${r.count}/${r.target}. 후보 부족·검수 보류·작성 실패 여부를 해당 단계에서 확인하세요.`);
+  const publicationEnabled=isNewPublicationEnabled(process.cwd());
+  const effectiveRows=rows.map(row=>({...row,target:publicationEnabled?row.target:0}));
+  const lines=['## 공개 글 변동 결과','','공개 데이터의 작업 전후 차이입니다. 기존 글 수정은 신규 글로 세지 않습니다. 신규 자동 발행 중지 기간에는 새 공개 수가 반드시 0이어야 합니다.','','| 구분 | 이번 실행 신규 공개 | 일일 목표/상한 |','| --- | ---: | ---: |',...effectiveRows.map(r=>`| ${r.name} | ${r.count} | ${r.target} |`),''];
+  for(const r of effectiveRows){
+    if(!publicationEnabled&&r.count>0)console.log(`::error::신규 자동 발행 중지 중인데 ${r.name} 새 공개 ${r.count}건이 감지됐습니다.`);
+    else if(publicationEnabled&&r.count<r.target)console.log(`::warning::${r.name}: 신규 공개 ${r.count}/${r.target}. 후보 부족·검수 보류·작성 실패 여부를 해당 단계에서 확인하세요.`);
+  }
   console.log(lines.join('\n'));
   if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,lines.join('\n'));
 }

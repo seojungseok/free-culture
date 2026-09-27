@@ -1,10 +1,15 @@
 import {chooseCityPhoto,photoKey} from './lib/city-tour-photos.mjs';
 import { newArticleAllowance } from './lib/publication-budget.mjs';
+import { isNewPublicationEnabled, publicationMode } from './lib/publication-policy.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+if(!isNewPublicationEnabled(ROOT)){
+ console.log(`신규 자동 발행 중지 상태(${publicationMode(ROOT)}) — 시티투어 새 글을 만들지 않습니다.`);
+ process.exit(0);
+}
 const read=n=>JSON.parse(fs.readFileSync(path.join(ROOT,'data',n),'utf8'));
 const source=read('city-tour-source.json');
 const storeFile=path.join(ROOT,'data/city-tour-articles.json');

@@ -1,7 +1,7 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
-import {getCityTour,getCityTours,CITY_SOURCE,type CityLink} from '@/lib/cityTours';
+import {getCityTour,getCityTours,isIndexableCityTour,CITY_SOURCE,type CityLink} from '@/lib/cityTours';
 import TripSave from '@/components/TripSave';
 import CourseShare from '@/components/CourseShare';
 import Image from 'next/image';
@@ -13,7 +13,7 @@ import {SIDO_SLUG} from '@/lib/classify';
 const livePlaceIds=new Set(getAllPlaces().map(place=>place.id));
 const INFO_LABELS:Record<string,string>={'시티투어코스명':'코스 이름','시티투어탑승장소명':'탑승 장소','시티투어코스정보':'경유 순서','시티투어운영시간':'운영일·시간','운행정보':'운행 조건','운행시작시각':'시작 시각','운행종료시각':'종료 시각','이용요금':'이용 요금','이용요금부가정보':'요금 안내','시티투어문의처':'문의처'};
 export function generateStaticParams(){return getCityTours().map(a=>({id:a.id}));}
-export async function generateMetadata({params}:{params:Promise<{id:string}>}):Promise<Metadata>{const {id}=await params;const a=getCityTour(id);if(!a)return {};const hero=cityTourPhotos(a)[0];return {title:a.title,description:a.description,alternates:{canonical:'/city-tour/'+a.id},openGraph:{title:a.title,description:a.description,type:'article',...(hero?{images:[{url:hero.image,alt:hero.title}]}:{})}};}
+export async function generateMetadata({params}:{params:Promise<{id:string}>}):Promise<Metadata>{const {id}=await params;const a=getCityTour(id);if(!a)return {};const hero=cityTourPhotos(a)[0];return {title:a.title,description:a.description,robots:{index:isIndexableCityTour(a),follow:true},alternates:{canonical:'/city-tour/'+a.id},openGraph:{title:a.title,description:a.description,type:'article',...(hero?{images:[{url:hero.image,alt:hero.title}]}:{})}};}
 export default async function Page({params}:{params:Promise<{id:string}>}){const {id}=await params,a=getCityTour(id);if(!a)notFound();const others=getCityTours().filter(x=>x.id!==a.id&&x.area===a.area).slice(0,3);
  const photos=cityTourPhotos(a),hero=photos[0],stops=cityTourStops(a);
  const relatedCourses=filterCourses({area:a.area}).filter(c=>c.stops.some(s=>stops.some(p=>p.placeId===s.placeId&&!!s.placeId))).slice(0,2);

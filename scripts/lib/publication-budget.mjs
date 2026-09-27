@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { isNewPublicationEnabled } from './publication-policy.mjs';
 
 export const dayKST = (date = new Date()) => date.toLocaleDateString('sv-SE', {timeZone: 'Asia/Seoul'});
 const read = (root, file, fallback) => {
@@ -25,6 +26,7 @@ export function publicationBudget(root = process.cwd(), now = new Date()) {
 }
 
 export function newArticleAllowance(root = process.cwd(), category) {
+  if (!isNewPublicationEnabled(root)) return 0;
   const budget = publicationBudget(root);
   const policy = read(root, 'data/publication-policy.json', {general: {daily: 30, categories: {}}});
   return Math.min(budget.unreserved, category

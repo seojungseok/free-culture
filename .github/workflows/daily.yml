@@ -1,25 +1,11 @@
-name: 일일 데이터·글 (통합, 1일 1배포)
+name: 일일 최신정보·기존 글 품질 점검 (신규 발행 중지)
 
-# 행사·관광지·여행코스·시티투어 등 정보성 데이터와 글을 한 번에 반영한다.
-# 비공개 작성 중간 기록은 저장하되 Vercel 빌드를 생략한다.
-# 각 수집/발행 스텝은 실패를 격리해 준비된 다른 글은 계속 반영한다.
+# 시간에 민감한 공공 정보는 갱신하되, AdSense 품질 개선 기간에는
+# 새 글을 생성·재생성·발행하지 않는다. 기존 글의 품질 표식만 갱신한다.
 on:
   schedule:
     - cron: "0 20 * * *" # UTC 20:00 = KST 05:00 (하루 1회)
   workflow_dispatch:
-    inputs:
-      test_count:
-        description: "글 테스트 생성 개수 (비우면 램프업대로)"
-        required: false
-        default: ""
-      test_ids:
-        description: "특정 contentId만 글 생성 (콤마구분)"
-        required: false
-        default: ""
-      course_ids:
-        description: "특정 여행코스만 생성 (콤마구분, 비우면 하루 10개)"
-        required: false
-        default: ""
 
 permissions:
   contents: write
@@ -78,31 +64,13 @@ jobs:
           COLLECT_CONCURRENCY: "10"
         run: node scripts/collect.mjs
 
-      # ── 일반 자동글 30개: 가을나들이 10 + 여행코스 10 + 시티투어 10 ──
-      - name: 발행글 재점검 (needsRewrite)
+      - name: 기존 관광지 글 재점검 (재작성 후보 표시)
         continue-on-error: true
         run: node scripts/auditArticles.mjs --write
 
-      - name: 글 생성·검증·발행 (3중 안전망)
+      - name: 기존 공개 글 통합 품질 점검 (사실·중복·최신성)
         continue-on-error: true
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: "gpt-5.6-luna" # 주 모델: 생성·검증 Luna 고정(80% 인하). 바꾸려면 이 값만 수정.
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # 보조: 독립 팩트체크(환각 교차검증)
-          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
-          FORCE_COUNT: ${{ github.event.inputs.test_count }}
-          TEST_IDS: ${{ github.event.inputs.test_ids }}
-          # ── 비용 조절 손잡이 (여기 숫자만 바꾸면 됨) ──────────────────
-          #  실측 단가(2026-08-24, gpt-5.6-luna $0.20/$1.20 + web_search $10/1k콜):
-          #    · 검색 붙는 글 $0.0222  · 검색 없는 글 $0.0064  · 여행코스 $0.0037
-          #  하루 = RESEARCH_MAX×$0.0222 + (DAILY−RESEARCH_MAX)×$0.0064 + 코스(최대 14건)×$0.0037
-          #  가을 시즌값(10 / 10 / 코스재생성 4) = 가을 대표명소 10건 모두 조사+작성 → 약 $0.22/일 + 코스 최대 $0.052.
-          #  web_search는 토큰과 별개로 호출 1회당 약 $0.01 → 검색 상한이 비용의 핵심.
-          AUTUMN_ARTICLES: "on" # 가을나들이 후보를 대표 명소부터 우선 발행
-          ARTICLE_DAILY: "10" # 가을나들이 글 하루 10개 추가
-          ARTICLE_RESEARCH_MAX: "10" # 10개 모두 조사+AI 글작성 모드
-        run: node scripts/generateArticles.mjs
+        run: node scripts/auditPublishedContent.mjs --write
 
       # ── 자동 코스 조합(좌표 기반, API 0) — 지역×테마×기간 코스 풀 갱신 ──
       - name: 자동 여행코스 조합 (buildCourses)
@@ -126,27 +94,6 @@ jobs:
           PET_ENRICH_DAILY: "10"
         run: node scripts/enrichPetTravel.mjs
 
-      # ── 여행코스 블로그 생성 (하루 10개, 계절·지방 우선). OpenAI 전용 ★제미나이 미사용★ ──
-      # 재료: data/courses.json(공식, 수동 수집) + data/courses-auto.json(자동). 스팟 소개는 발행분만 보강.
-      - name: 여행코스 글 생성·발행 (OpenAI만)
-        continue-on-error: true
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: "gpt-5.6-luna" # 본문 생성은 Luna로 저렴하게
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # 코스 "구성" 교차검증(중복·비현실 동선 차단)
-          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }} # 발행 코스 스팟 소개 보강용(한도 내)
-          COURSE_IDS: ${{ github.event.inputs.course_ids }}
-          COURSE_DAILY: "10" # 일반 여행 글 합계30: 관광지10 + 코스10 + 시티투어10
-          COURSE_REBUILD_MAX: "4" # 기존 글 보완은 신규 작성 수와 구분
-        run: node scripts/generateCourses.mjs
-
-      - name: 시티투어 글 작성·검수 (Luna, 하루 최대 10개)
-        continue-on-error: true
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          CITY_LIMIT: "10"
-        run: node scripts/generateCityTours.mjs
-
       - name: 변경분 커밋 (통합, 1회)
         id: commit
         run: |
@@ -159,7 +106,7 @@ jobs:
             echo "변경 없음 — 커밋 건너뜀"
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "chore: 일일 데이터·글 통합 발행 ($(TZ=Asia/Seoul date +%Y-%m-%d))"
+            git commit -m "chore: 일일 정보 갱신·기존 글 품질 점검 ($(TZ=Asia/Seoul date +%Y-%m-%d))"
             for i in 1 2 3; do
               if git pull --rebase --autostash origin main && git push origin HEAD:main; then
                 echo "changed=true" >> "$GITHUB_OUTPUT"

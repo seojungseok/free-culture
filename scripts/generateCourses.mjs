@@ -1,5 +1,6 @@
 import {pickQueue,isImpossibleRoute,canRetryCourse,holdCourse,takeNextCourse} from './lib/course-generation-queue.mjs';
 import { newArticleAllowance, dayKST } from './lib/publication-budget.mjs';
+import { isNewPublicationEnabled, publicationMode } from './lib/publication-policy.mjs';
 // 여행코스 블로그 자동 생성·발행 (GitHub Action이 매일 실행)
 // 재료 = data/courses.json (정부 공식 코스, scripts/collectCourses.mjs로 미리 수집)
 // 생성 = OpenAI(gpt-5.6-luna)만. ★제미나이 미사용★ (정부 검증 사실 리라이팅이라 환각 위험 낮음)
@@ -245,6 +246,10 @@ async function produceCourse(course, existingTexts) {
 }
 
 async function main() {
+  if (!isNewPublicationEnabled(ROOT)) {
+    console.log(`신규 자동 발행 중지 상태(${publicationMode(ROOT)}) — 여행코스 재생성도 편집 검토 전에는 실행하지 않습니다.`);
+    return;
+  }
   if (!OPENAI && process.env.COURSE_CHECK_ONLY!=='true') { console.error("❌ OPENAI_API_KEY 없음 — 코스 글 생성 불가."); process.exit(1); }
 
   // 공식 + 자동 코스 병합 (둘 중 하나만 있어도 동작)

@@ -2,13 +2,15 @@
   "version": 1,
   "timezone": "Asia/Seoul",
   "general": {
-    "daily": 30,
+    "mode": "existing-content-review",
+    "newPublicationEnabled": false,
+    "daily": 0,
     "categories": {
-      "place-articles": 10,
-      "course-articles": 10,
-      "city-tour-articles": 10
+      "place-articles": 0,
+      "course-articles": 0,
+      "city-tour-articles": 0
     }
   },
-  "totalDaily": 30,
-  "notes": "기존 예약 및 당일 실제 공개 수를 해당 그룹에서만 차감. 미검수 글로 수량 채우지 않음."
+  "totalDaily": 0,
+  "notes": "신규 자동 발행은 중지한다. 기존 공개 글은 사실·중복·실용성 점검 후 사람의 편집 확인이 끝난 경우에만 별도 보완한다."
 }

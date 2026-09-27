@@ -1,4 +1,5 @@
 import { newArticleAllowance } from './lib/publication-budget.mjs';
+import { isNewPublicationEnabled, publicationMode } from './lib/publication-policy.mjs';
 // 글 자동 생성·발행 (GitHub Action이 매일 실행)
 // 주=OpenAI(gpt-5.6-luna)가 생성·개선, 보조=Gemini가 독립 팩트체크(환각 교차검증).
 // 파이프라인: [주]Luna 생성 → 로컬 품질검사 → 로컬 패턴검사 → [주]Luna 검증·개선
@@ -252,6 +253,10 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
 }
 
 async function main() {
+  if (!isNewPublicationEnabled(ROOT)) {
+    console.log(`신규 자동 발행 중지 상태(${publicationMode(ROOT)}) — 기존 글은 품질 점검 및 편집 검토만 진행합니다.`);
+    return;
+  }
   const places = JSON.parse(fs.readFileSync(PLACES, "utf8")).spots;
   const store = fs.existsSync(STORE)
     ? JSON.parse(fs.readFileSync(STORE, "utf8"))

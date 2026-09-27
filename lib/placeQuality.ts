@@ -6,6 +6,9 @@ import type { Camp } from "@/lib/camping";
 /** Only pages with a substantive, stored description or several verified visit facts enter the sitemap. */
 export function hasSubstantivePlaceInfo(id: string): boolean {
   const article = getArticle(id);
+  // A page remains directly accessible, but an article awaiting a high-priority
+  // source check must not be promoted on hubs, ads, or the sitemap.
+  if ((article as (typeof article & { qualityAudit?: { priority?: string } }) | undefined)?.qualityAudit?.priority === "high") return false;
   if (article?.content && article.content.replace(/[#*`>-]/g, " ").trim().length >= 300) return true;
   const overview = (overviews as Record<string, string>)[id] || "";
   if (overview.trim().length >= 150) return true;

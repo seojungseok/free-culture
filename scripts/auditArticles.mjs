@@ -48,11 +48,9 @@ function main() {
   const keep = rows.filter((r) => !r.rewrite);
   console.log(`\n📋 발행글 재점검 — 총 ${rows.length}건 · 재작성 ${rewrite.length} · 유지 ${keep.length}\n`);
   console.log("── 재작성 대상 ──");
-  for (const r of rewrite.sort((a, b) => a.len - b.len))
+  for (const r of rewrite.sort((a, b) => a.len - b.len).slice(0, 30))
     console.log(`  ✗ ${r.title.padEnd(14)} ${String(r.len).padStart(4)}자 · ${r.reasons.join(" · ")}`);
-  console.log("\n── 유지 ──");
-  for (const r of keep.sort((a, b) => b.len - a.len))
-    console.log(`  ✓ ${r.title.padEnd(14)} ${String(r.len).padStart(4)}자`);
+  if (rewrite.length > 30) console.log(`  … 추가 ${rewrite.length - 30}건`);
 
   if (WRITE) {
     store._audit = { at: new Date().toISOString(), total: rows.length, rewrite: rewrite.length };
