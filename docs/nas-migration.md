@@ -1,6 +1,6 @@
 # mwohaji.kr NAS 이전 기록
 
-이 문서는 `khyun-studio/free-culture`만 대상으로 한다. `bannerpick`, `myeongeon-story`는 변경하지 않는다. **현재 상태: 2026-09-28 `mwohaji.kr`과 `www.mwohaji.kr`을 전용 Cloudflare Tunnel의 NAS 앱으로 전환했다. 대표 페이지·검색·API·이미지·robots·sitemap·ads.txt의 외부 HTTPS 응답을 확인했고, Hyper Backup 실행과 격리된 파일 복원 및 MD5 일치를 확인했다. NAS 자동 갱신 작업은 매일 07:00 KST로 활성화했다. 사용자 최종 확인 뒤 Vercel의 `khyun-studio/free-culture` 프로젝트만 영구 삭제했다. Vercel 팀/Pro 구독 상태는 별도이며 프로젝트 삭제만으로 구독료가 자동 취소된다고 단정하지 않는다.** 검증되지 않은 단계를 완료로 표시하지 않는다.
+이 문서는 `khyun-studio/free-culture`만 대상으로 한다. `bannerpick`, `myeongeon-story`는 변경하지 않는다. **현재 상태: 2026-09-28 `mwohaji.kr`과 `www.mwohaji.kr`을 전용 Cloudflare Tunnel의 NAS 앱으로 전환했다. 대표 페이지·검색·API·이미지·robots·sitemap·ads.txt의 외부 HTTPS 응답을 확인했고, Hyper Backup 실행과 격리된 파일 복원 및 MD5 일치를 확인했다. NAS 자동 갱신 작업은 매일 07:00 KST로 활성화했다. 사용자 최종 확인 뒤 Vercel의 `khyun-studio/free-culture` 프로젝트만 영구 삭제했으며, 프로젝트 0개를 확인한 뒤 Pro 구독도 무료 Hobby로 즉시 다운그레이드했다.** 검증되지 않은 단계를 완료로 표시하지 않는다.
 
 ## 2026-09-27 이전 기준
 
@@ -49,4 +49,4 @@
 6. `/volume1/projects/free-culture`의 코드·영구 데이터를 `/volume2/backup`에 백업하고 실제 파일 1개를 별도 경로에 복원해 바이트/해시를 비교한다. `.next/cache`는 재생성 가능한 캐시로 분류한다. 같은 NAS의 디스크 3·4 백업은 화재/도난/본체 고장에 대한 외부 백업이 아니다.
 7. 공개 전환 뒤 Cloudflare 경로에서 대표 URL 10개와 이미지·사이트맵을 확인했다. 사이트맵은 12,477개 URL이며 당시 Vercel 운영본과 길이 및 SHA-256 `990026542EDF56068BD37C1F7B95128426E83F304E311B18F89E6D8E6AB21E7A`가 일치했다. 사용자 요청에 따라 48시간 대기 대신 수동 갱신·공개 응답·백업·복원을 확인한 뒤, 삭제 대상 `khyun-studio/free-culture`와 결과를 다시 알리고 최종 확인을 받아 해당 프로젝트만 영구 삭제했다. 삭제 직후 Cloudflare 주소 `172.67.214.232`를 지정한 외부 HTTPS 검사에서 홈·목록·상세·검색·API·robots·sitemap·ads.txt가 모두 HTTP 200이었다.
 
-Vercel `free-culture` 삭제가 곧 Vercel 팀/Pro 구독료 0원을 뜻하지 않는다. 삭제 직전 팀 화면은 `khyun-studio Pro`로 표시됐으며, 프로젝트 삭제와 Pro 구독 해지는 별개다. 구독 해지는 결제 변경이므로 별도 확인과 처리가 필요하다. 도메인 등록료, Cloudflare 유료 기능을 추가한 경우의 비용, 외부 AI·공공 API 비용도 별도다.
+Vercel `free-culture` 삭제 직후 팀 화면은 `khyun-studio Pro`로 남아 있어 프로젝트 삭제만으로 구독이 끝나지 않았다. 프로젝트 0개와 당시 예정 청구액 `$35.94`를 확인하고 사용자에게 즉시 다운그레이드·Pro 기능 종료·환불 없음 조건을 알린 뒤 최종 확인을 받았다. 이후 결제 화면에서 `Hobby Plan`, `Active`를 확인했다. 이미 발생한 사용료·현재 청구 예정액은 별도로 청구될 수 있지만 이후 Pro 정기요금은 중단된다. 도메인 등록료, Cloudflare 유료 기능을 추가한 경우의 비용, 외부 AI·공공 API 비용은 별도다.
