@@ -104,9 +104,23 @@ cp "$APP/compose.nas.yml" "$APP/compose.yaml"
 cd "$APP"
 STEP="build containers"
 "$DOCKER" compose -p free-culture-nas -f compose.yaml up -d --build
+
+smoke_url() {
+  url="$1"
+  attempt=1
+  while [ "$attempt" -le 40 ]; do
+    if "$CURL" --fail --silent --show-error --max-time 30 "$url" >/dev/null 2>&1; then
+      return 0
+    fi
+    sleep 3
+    attempt=$((attempt + 1))
+  done
+  "$CURL" --fail --silent --show-error --max-time 30 "$url" >/dev/null
+}
+
 STEP="smoke check"
-"$CURL" --fail --silent --show-error --max-time 30 "$PREVIEW/robots.txt" >/dev/null
-"$CURL" --fail --silent --show-error --max-time 30 "$PREVIEW/sitemap.xml" >/dev/null
+smoke_url "$PREVIEW/robots.txt"
+smoke_url "$PREVIEW/sitemap.xml"
 
 printf '%s\n' "$NEW_HASH" > "$HASH_FILE"
 printf '%s update complete\n' "$(timestamp)" >> "$LOG"
