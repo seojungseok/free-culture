@@ -1,13 +1,13 @@
 # mwohaji.kr NAS 이전 기록
 
-이 문서는 `khyun-studio/free-culture`만 대상으로 한다. `bannerpick`, `myeongeon-story`는 변경하지 않는다. **현재 상태: NAS LAN 시험 배포·대표 기능 검사·공유 폴더 백업 및 격리된 파일 복원·NAS 전용 비밀 환경변수 입력·Cloudflare Tunnel 연결 완료. 네임서버 전환, 공개 주소 검사, 자동 갱신 작업 등록, 48시간 검증, Vercel 삭제는 미완료.** 검증되지 않은 단계를 완료로 표시하지 않는다.
+이 문서는 `khyun-studio/free-culture`만 대상으로 한다. `bannerpick`, `myeongeon-story`는 변경하지 않는다. **현재 상태: NAS LAN 시험 배포·대표 기능 검사·공유 폴더 백업 및 격리된 파일 복원·NAS 전용 비밀 환경변수 입력·Cloudflare Tunnel 연결 완료. 2026-09-28 가비아에서 Cloudflare 네임서버 변경을 확인했으나 외부 DNS 전파와 Cloudflare 활성화는 대기 중이다. 공개 주소 검사, 자동 갱신 작업 검증, 48시간 검증, Vercel 삭제는 미완료.** 검증되지 않은 단계를 완료로 표시하지 않는다.
 
 ## 2026-09-27 이전 기준
 
 - GitHub `seojungseok/free-culture`의 `main`은 `7c438335d5d520ac2438caa7a6cba804acca3383`. 기존 로컬 작업 폴더는 수정 중이므로 별도 `codex/nas-migration` 작업본을 사용한다.
 - Vercel `khyun-studio/free-culture`의 Production은 같은 커밋이며 `mwohaji.kr`과 `free-culture.vercel.app`에 연결돼 있다. 삭제하지 않았다.
 - 공개 홈과 `/events`, `/places`, `/course`, `/camping`, `/food`, `/pet-travel`, `/city-tour`, `/weekend-prep`, `/search`, `/robots.txt`, `/sitemap.xml`은 HTTP 200. 공개 사이트맵 URL 12,516개. 사이트맵 SHA-256: `F99FB7E8E5D484566744D23D8F62B09805A7A5CED5D438D19F2B9999F39EB965`.
-- `mwohaji.kr`의 권한 있는 NS는 가비아 3개(`ns.gabia.net`, `ns.gabia.co.kr`, `ns1.gabia.co.kr`). 가비아 관리 화면에서 확인한 레코드 전체는 루트 A `216.198.79.1`(TTL 1800), `www`의 Vercel CNAME(TTL 600), 루트 검색엔진 소유권 TXT(TTL 600) 3개다. MX 레코드는 없다. Cloudflare 무료 영역에는 동일한 3개를 가져와 DNS-only 상태로 보관했지만 권한 NS는 여전히 가비아다. 온보딩 보호 경고 단계에서 멈췄고 **도메인 전환은 하지 않았다**.
+- 2026-09-27 기준 `mwohaji.kr`의 권한 있는 NS는 가비아 3개(`ns.gabia.net`, `ns.gabia.co.kr`, `ns1.gabia.co.kr`)였다. 가비아 관리 화면에서 확인한 레코드는 루트 A `216.198.79.1`(TTL 1800), `www`의 Vercel CNAME(TTL 600), 루트 검색엔진 소유권 TXT(TTL 600)이며 MX 레코드는 없다. Cloudflare 무료 영역에는 이 3개 레코드를 DNS-only 상태로 보관한다. 2026-09-28 가비아 관리 화면에서 NS가 `aitana.ns.cloudflare.com`, `graham.ns.cloudflare.com`으로 변경된 것을 확인했지만, 직후 1.1.1.1 DNS 조회와 Cloudflare 상태는 아직 전파 대기다. Cloudflare의 A/CNAME은 이 시점에 기존 Vercel을 가리킨다.
 - NAS DS1821+의 RAM은 사용자 확인 기준 20GB. `/volume1/projects/free-culture/app`에 정리된 앱 소스와 Secret이 없는 `runtime/app.env`를 두고 Container Manager 프로젝트 `free-culture-nas`로 LAN 바인딩 `192.168.0.115:3275`에 실행했다. 기존 Vercel은 그대로 운영 중이다.
 - 운영 디스크 1·2의 `projects` 공유 폴더는 기존 Hyper Backup의 매일 03:00 작업 대상이다. 2026-09-27 22:06 수동 백업 성공 후 백업 탐색기에서 `free-culture/app/Dockerfile.nas`를 선택해 `/volume1/projects/free-culture/restore-check-20260927/Dockerfile.nas`로 복원했다. File Station에서 복원 파일 1.1KB와 원본 수정시각을 확인했다. 바이트/해시 비교는 아직 수행하지 않았다. 디스크 3·4는 같은 NAS의 `/volume2/backup`이므로 오프사이트 백업을 대체하지 않는다.
 
@@ -22,7 +22,7 @@
 - `scripts/testSeoHttp.mjs`를 NAS 형식 로컬 서버에 실행해 96개 URL 검사 실패 0, 의도한 404 응답, 외부 원본 이미지 16개 HTTP 206 및 이미지 MIME을 확인했다. 첫 실행의 이미지 연결 오류는 제한된 네트워크에서 발생했고 정상 네트워크 재검사에서 전부 통과했다.
 - 같은 검사기를 NAS LAN 서버에 적용해 대표 URL 96개 실패 0, 외부 원본 이미지 16개 HTTP 206을 확인했다. NAS 사이트맵은 공개 Vercel 사이트맵과 12,516개 URL 및 SHA-256이 일치한다. 대표 상세의 canonical은 기존 `https://mwohaji.kr/event/383591`, JSON-LD 두 블록이 있다. 브라우저 콘솔 오류는 없고 320·360·375·390·430px에서 가로 넘침은 없었다. 보관함 저장·새로고침 후 유지·삭제를 NAS 시험 주소에서 확인했다.
 - 낮은 부하의 LAN 측정: 홈 5회 중앙값 17ms, 행사 목록 26ms, 상세 10ms, `/api/pet-travel` 12ms, 검색 `q=서울` 305ms(최대 384ms). 각 경로 모두 HTTP 200이다. 혼합 동시 10건도 전부 200, 완료시간 약 297~490ms였다. 이 수치는 짧은 LAN 시험이지 외부망·3천명/일 보증이 아니다. 검색 HTML은 약 603KB와 `no-store`였으며, 나머지 HTML은 기존 ISR 캐시 헤더를 유지했다.
-- SSH 비밀번호 인증은 사용하지 않았다. 배너픽과 같은 DSM 웹 관리 경로로 NAS 전용 `runtime/app.env`와 `runtime/vercel-secrets.env`를 준비했으며 비밀값은 문서·Git·채팅·빌드 로그에 기록하지 않는다. 2026-09-27 비밀 파일 저장 뒤 웹 컨테이너를 재빌드했고 홈·robots·sitemap의 LAN HTTP 200을 다시 확인했다. SSH는 이전 경로에 필요하지 않으므로 비활성 상태를 유지하고 공유기 포트포워딩도 추가하지 않는다.
+- SSH 비밀번호 인증은 사용하지 않았다. 배너픽과 같은 DSM 웹 관리 경로로 NAS 전용 `app/runtime/app.env`와 `app/runtime/vercel-secrets.env`를 준비했으며 비밀값은 문서·Git·채팅·빌드 로그에 기록하지 않는다. 2026-09-27 비밀 파일 저장 뒤 웹 컨테이너를 재빌드했고 홈·robots·sitemap의 LAN HTTP 200을 다시 확인했다. 2026-09-28 DSM 제어판에서 SSH와 Telnet 서비스가 모두 꺼져 있음을 확인했다. 공유기 포트포워딩은 추가하지 않았다.
 
 ## 자동 발행과 NAS 자동 갱신
 
@@ -36,7 +36,7 @@
 - 현재 Vercel Production 목록의 이름은 `KCISA_API_KEY`, `VWORLD_API_DOMAIN`, `VWORLD_API_KEY`, `COUPANG_ACCESS_KEY`, `COUPANG_SECRET_KEY`, `OPENAI_API_KEY`, `GEMINI_API_KEY`, `TOUR_API_KEY`, `DATA_GO_KR_KEY`다. 값은 이 문서와 Git에 기록하지 않는다. 잠긴 Vercel Secret은 관리 화면에서 값을 다시 읽을 수 있다고 가정하지 않는다.
 - 현재 서버 요청에 필요한 것은 `VWORLD_API_KEY`/`VWORLD_API_DOMAIN`(전통시장), `TOUR_API_KEY` 또는 `DATA_GO_KR_KEY`(관광·주차·반려동물 상세 데이터)다. 자동 발행에는 추가로 `OPENAI_API_KEY`, `GEMINI_API_KEY`와 공공 데이터 키가 필요하다. `KCISA_API_KEY`와 쿠팡 키는 현행 공개 코드에서 방문자 렌더링에 사용되지 않아, 보존 여부를 확인하되 기본 웹 컨테이너에 불필요하게 주입하지 않는다.
 - 로컬 `.env.local`에는 일부 키 이름이 있지만 `VWORLD_API_KEY`와 `KCISA_API_KEY`는 없다. 이 둘은 원본 키를 안전한 입력 경로로 재등록해야 한다. 새 키를 채팅·HTTP 관리 화면·GitHub·로그에 붙여넣지 않는다. 전송 전에는 공개 도메인을 전환하지 않는다.
-- 웹 런타임과 자동 발행 작업의 환경파일을 분리한다. NAS의 `/volume1/projects/free-culture/runtime`에만 저장하고 권한을 제한한다. 실제 키 값을 비교하거나 로그에 출력하지 않고, 해당 API의 최소 기능 테스트로 이전을 검증한다. GitHub Actions가 발행을 계속하는 동안 NAS에서 같은 발행 작업은 실행하지 않는다.
+- 웹 런타임과 자동 발행 작업의 환경파일을 분리한다. 현재 NAS 전용 비밀 파일은 `/volume1/projects/free-culture/app/runtime`에 있으며 Git·Docker 빌드 컨텍스트에서 제외한다. 파일 권한 숫자는 아직 확인하지 못했으므로 제한됐다고 단정하지 않는다. 실제 키 값을 비교하거나 로그에 출력하지 않고, 해당 API의 최소 기능 테스트로 이전을 검증한다. GitHub Actions가 발행을 계속하는 동안 NAS에서 같은 발행 작업은 실행하지 않는다.
 
 ## 이전 순서와 보류 조건
 
