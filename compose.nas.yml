@@ -21,5 +21,19 @@ services:
       - ALL
     mem_limit: 4g
 
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    env_file:
+      - ./runtime/vercel-secrets.env
+    depends_on:
+      - web
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 512m
+
 volumes:
   next_cache:
