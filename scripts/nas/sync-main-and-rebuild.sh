@@ -58,8 +58,6 @@ STEP="locate curl"
 CURL="$(find_cmd /usr/bin/curl /bin/curl)"
 STEP="locate tar"
 TAR="$(find_cmd /usr/bin/tar /bin/tar)"
-STEP="locate rsync"
-RSYNC="$(find_cmd /usr/bin/rsync /bin/rsync)"
 STEP="locate sha256sum"
 SHA256SUM="$(find_cmd /usr/bin/sha256sum /bin/sha256sum)"
 STEP="locate docker"
@@ -90,13 +88,17 @@ for required in package.json Dockerfile.nas compose.nas.yml scripts/nas/smoke.mj
   fi
 done
 
-# Never delete or overwrite NAS-only secrets and deployment state.
+# Never delete or overwrite NAS-only secrets and deployment state. DSM does
+# not guarantee rsync is installed, so merge top-level source entries with cp.
 STEP="synchronize app source"
-"$RSYNC" -a \
-  --exclude '/runtime/' \
-  --exclude '/compose.yaml' \
-  --exclude '/.deploy/' \
-  "$SOURCE/" "$APP/"
+for entry in "$SOURCE"/* "$SOURCE"/.[!.]*; do
+  [ -e "$entry" ] || continue
+  name="${entry##*/}"
+  case "$name" in
+    runtime|compose.yaml|.deploy) continue ;;
+  esac
+  cp -a "$entry" "$APP/"
+done
 cp "$APP/compose.nas.yml" "$APP/compose.yaml"
 
 cd "$APP"
