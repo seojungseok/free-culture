@@ -23,7 +23,9 @@ async function fetchAll(origin: string): Promise<TraditionalMarket[]> {
     });
     const raw = await response.text();
     let json: any;
-    try { json = JSON.parse(raw); } catch { throw new Error(`VWorld non-JSON ${response.status} ${raw.slice(0, 120).replace(/\s+/g, " ")}`); }
+    // Upstream bodies can contain request details; never copy them to NAS logs
+    // or the optional diagnostic response.
+    try { json = JSON.parse(raw); } catch { throw new Error(`VWorld non-JSON HTTP ${response.status}`); }
     const code = json?.response?.status;
     if (!response.ok || code !== "OK") throw new Error("VWorld response " + String(code || response.status));
     const recordTotal = Number(json?.response?.record?.total || 0);
