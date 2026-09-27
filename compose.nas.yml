@@ -1,0 +1,25 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.nas
+    image: free-culture:nas
+    restart: unless-stopped
+    env_file:
+      - ./runtime/app.env
+    ports:
+      # LAN-only preview. Router port forwarding must remain disabled.
+      - "192.168.0.115:3275:3000"
+    volumes:
+      - next_cache:/app/.next/cache
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=128m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    pids_limit: 256
+    mem_limit: 4g
+
+volumes:
+  next_cache:

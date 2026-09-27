@@ -1,0 +1,11 @@
+.git
+.github
+.claude
+.cache
+.next
+node_modules
+.env*
+runtime
+*.log
+*.zip
+docs

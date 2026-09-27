@@ -6,6 +6,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Vercel keeps its native output; NAS builds a self-contained Node server.
+  ...(process.env.NAS_STANDALONE === "1" ? { output: "standalone" } : {}),
   outputFileTracingRoot: __dirname,
   async redirects() {
     return [{ source: '/places/spot/3353336', destination: '/places/spot/2774564', statusCode: 301 }];
