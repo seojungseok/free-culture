@@ -1,13 +1,13 @@
 # mwohaji.kr NAS 이전 기록
 
-이 문서는 `khyun-studio/free-culture`만 대상으로 한다. `bannerpick`, `myeongeon-story`는 변경하지 않는다. **현재 상태: NAS LAN 시험 배포·대표 기능 검사·공유 폴더 백업 및 격리된 파일 복원·NAS 전용 비밀 환경변수 입력·Cloudflare Tunnel 연결 완료. 2026-09-28 가비아에서 Cloudflare 네임서버 변경을 확인했으나 외부 DNS 전파와 Cloudflare 활성화는 대기 중이다. 공개 주소 검사, 자동 갱신 작업 검증, 48시간 검증, Vercel 삭제는 미완료.** 검증되지 않은 단계를 완료로 표시하지 않는다.
+이 문서는 `khyun-studio/free-culture`만 대상으로 한다. `bannerpick`, `myeongeon-story`는 변경하지 않는다. **현재 상태: NAS LAN 시험 배포·대표 기능 검사·공유 폴더 백업 및 격리된 파일 복원·NAS 전용 비밀 환경변수 입력·Cloudflare Tunnel 연결 완료. 2026-09-28 Cloudflare 영역과 네임서버 활성화를 확인했다. 공개 주소는 아직 Vercel을 가리킨다. NAS 자동 갱신 작업은 비활성화 상태로 수동 실행 검증 중이며, 공개 주소 전환·48시간 검증·Vercel 삭제는 미완료.** 검증되지 않은 단계를 완료로 표시하지 않는다.
 
 ## 2026-09-27 이전 기준
 
 - GitHub `seojungseok/free-culture`의 `main`은 `7c438335d5d520ac2438caa7a6cba804acca3383`. 기존 로컬 작업 폴더는 수정 중이므로 별도 `codex/nas-migration` 작업본을 사용한다.
 - Vercel `khyun-studio/free-culture`의 Production은 같은 커밋이며 `mwohaji.kr`과 `free-culture.vercel.app`에 연결돼 있다. 삭제하지 않았다.
 - 공개 홈과 `/events`, `/places`, `/course`, `/camping`, `/food`, `/pet-travel`, `/city-tour`, `/weekend-prep`, `/search`, `/robots.txt`, `/sitemap.xml`은 HTTP 200. 공개 사이트맵 URL 12,516개. 사이트맵 SHA-256: `F99FB7E8E5D484566744D23D8F62B09805A7A5CED5D438D19F2B9999F39EB965`.
-- 2026-09-27 기준 `mwohaji.kr`의 권한 있는 NS는 가비아 3개(`ns.gabia.net`, `ns.gabia.co.kr`, `ns1.gabia.co.kr`)였다. 가비아 관리 화면에서 확인한 레코드는 루트 A `216.198.79.1`(TTL 1800), `www`의 Vercel CNAME(TTL 600), 루트 검색엔진 소유권 TXT(TTL 600)이며 MX 레코드는 없다. Cloudflare 무료 영역에는 이 3개 레코드를 DNS-only 상태로 보관한다. 2026-09-28 가비아 관리 화면에서 NS가 `aitana.ns.cloudflare.com`, `graham.ns.cloudflare.com`으로 변경된 것을 확인했지만, 직후 1.1.1.1 DNS 조회와 Cloudflare 상태는 아직 전파 대기다. Cloudflare의 A/CNAME은 이 시점에 기존 Vercel을 가리킨다.
+- 2026-09-27 기준 `mwohaji.kr`의 권한 있는 NS는 가비아 3개(`ns.gabia.net`, `ns.gabia.co.kr`, `ns1.gabia.co.kr`)였다. 가비아 관리 화면에서 확인한 레코드는 루트 A `216.198.79.1`(TTL 1800), `www`의 Vercel CNAME(TTL 600), 루트 검색엔진 소유권 TXT(TTL 600)이며 MX 레코드는 없다. Cloudflare 무료 영역에는 이 3개 레코드를 DNS-only 상태로 보관한다. 2026-09-28 가비아·1.1.1.1의 NS가 `aitana.ns.cloudflare.com`, `graham.ns.cloudflare.com`으로 바뀌고 Cloudflare 영역이 Active인 것을 확인했다. 공개 `mwohaji.kr/robots.txt`의 응답 서버는 여전히 Vercel이며, Cloudflare의 A/CNAME도 기존 Vercel을 가리킨다.
 - NAS DS1821+의 RAM은 사용자 확인 기준 20GB. `/volume1/projects/free-culture/app`에 정리된 앱 소스와 Secret이 없는 `runtime/app.env`를 두고 Container Manager 프로젝트 `free-culture-nas`로 LAN 바인딩 `192.168.0.115:3275`에 실행했다. 기존 Vercel은 그대로 운영 중이다.
 - 운영 디스크 1·2의 `projects` 공유 폴더는 기존 Hyper Backup의 매일 03:00 작업 대상이다. 2026-09-27 22:06 수동 백업 성공 후 백업 탐색기에서 `free-culture/app/Dockerfile.nas`를 선택해 `/volume1/projects/free-culture/restore-check-20260927/Dockerfile.nas`로 복원했다. File Station에서 복원 파일 1.1KB와 원본 수정시각을 확인했다. 바이트/해시 비교는 아직 수행하지 않았다. 디스크 3·4는 같은 NAS의 `/volume2/backup`이므로 오프사이트 백업을 대체하지 않는다.
 
@@ -27,7 +27,8 @@
 ## 자동 발행과 NAS 자동 갱신
 
 - 콘텐츠 수집·AI 작성·사실 검수·Git 커밋은 기존 GitHub Actions의 일일 05:00 KST 및 주간 월요일 03:00 KST 작업만 유지한다. NAS에서는 같은 생성 스크립트를 예약 실행하지 않아 API 중복 호출과 중복 발행을 막는다.
-- NAS는 `scripts/nas/sync-main-and-rebuild.sh`로 공개 `main` 아카이브가 바뀐 경우에만 앱 소스를 동기화하고 새 이미지를 빌드한다. `runtime/`, `compose.yaml`, `.deploy/`는 동기화 대상에서 제외하고, 초기 전환 기간에는 앱의 기존 파일을 자동 삭제하지 않는다. 오래된 파일 정리는 별도 검증 후 수행한다. 빌드가 성공한 뒤 robots와 sitemap을 확인해야 새 아카이브 해시를 완료 상태로 기록한다.
+- NAS는 `scripts/nas/sync-main-and-rebuild.sh`로 공개 `main` tar.gz 아카이브가 바뀐 경우에만 앱 소스를 동기화하고 새 이미지를 빌드한다. `runtime/`, `compose.yaml`, `.deploy/`는 동기화 대상에서 제외하고, 초기 전환 기간에는 앱의 기존 파일을 자동 삭제하지 않는다. 오래된 파일 정리는 별도 검증 후 수행한다. Compose 프로젝트 이름은 기존 Container Manager 등록명 `free-culture-nas`로 고정해 중복 프로젝트 생성을 막는다. 빌드가 성공한 뒤 robots와 sitemap을 확인해야 새 아카이브 해시를 완료 상태로 기록한다.
+- 2026-09-28 DSM의 비활성화된 root 작업을 2회 수동 시험했으나, 각각 도구 탐색 및 `unzip` 부재 단계에서 종료됐다. 앱 동기화·재빌드 단계에는 도달하지 않아 기존 웹 컨테이너는 유지됐다. 이후 `unzip`·`rsync` 의존성을 제거한 스크립트를 NAS에 업로드하고 문법을 검사했다. 성공 실행과 정기 일정 활성화는 아직 하지 않았다.
 - 이 작업은 Container Manager의 Docker CLI를 사용하며 DSM 작업 스케줄러의 root 계정에서 실행한다. 최초 수동 실행으로 바이너리 경로, 재빌드, 비밀파일 보존, 기존 컨테이너 교체, 실패 시 기존 컨테이너 유지 여부를 확인한 뒤 정기 일정을 켠다.
 - `NAS_SMOKE_BASE=http://192.168.0.115:3275 node scripts/nas/smoke.mjs`로 홈·목록·검색·대표 상세·시티투어·API·robots·sitemap 총 9개 경로를 저부하로 재검사할 수 있다. 2026-09-27 LAN 실행에서 9/9 통과했다. 이 검사기는 응답 본문·키를 출력하지 않으며 실제 브라우저 검사나 외부망 검사의 대체물은 아니다.
 

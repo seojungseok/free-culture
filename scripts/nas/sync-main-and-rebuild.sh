@@ -103,7 +103,7 @@ cp "$APP/compose.nas.yml" "$APP/compose.yaml"
 
 cd "$APP"
 STEP="build containers"
-"$DOCKER" compose -f compose.yaml up -d --build --remove-orphans
+"$DOCKER" compose -p free-culture-nas -f compose.yaml up -d --build
 STEP="smoke check"
 "$CURL" --fail --silent --show-error --max-time 30 "$PREVIEW/robots.txt" >/dev/null
 "$CURL" --fail --silent --show-error --max-time 30 "$PREVIEW/sitemap.xml" >/dev/null
