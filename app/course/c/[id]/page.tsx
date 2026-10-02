@@ -8,15 +8,15 @@ import CourseArticleBody from "@/components/CourseArticleBody";
 import CoursePhotoGallery from "@/components/CoursePhotoGallery";
 import CourseCard from "@/components/CourseCard";
 import CourseShare from "@/components/CourseShare";
+import CourseVisitPlan from "@/components/CourseVisitPlan";
+import { courseVisitPlan } from "@/lib/coursePlanning";
 import {
-  getIndexableCourses, getCourse, isIndexableCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseDays, courseFoodStops, courseAttractions, courseStopCount,
+  getIndexableCourses, getCourse, isIndexableCourse, relatedCourses, durationLabel, themeEmoji, areaSlug, slimCourse, courseCentroid, courseCity, courseFoodStops, courseAttractions, courseStopCount,
 } from "@/lib/courses";
 import { coursesNearbyFood, distanceLabel, foodTypeLabel, distanceKm } from "@/lib/nearby";
 import { areaFestivals, festivalHref, fmtMd } from "@/lib/festivals";
 import { SITE } from "@/lib/site";
 import { galleryForStops } from "@/lib/photoGallery";
-import { getAllPlaces } from "@/lib/tour";
-import { hasSubstantivePlaceInfo } from "@/lib/placeQuality";
 
 import NearbyParking from "@/components/NearbyParking";
 export const revalidate = 86400;
@@ -59,9 +59,8 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
   const canonical = `${SITE.url}/course/c/${id}`;
   const slug = areaSlug(c.area);
   const related = relatedCourses(c, 4).map(slimCourse);
-  const mapStops = courseAttractions(c).filter((s) => s.name); // 글·동선에 실제 노출되는 관광지만(식당 제외·상한 적용)
-  const livePlaceIds = new Set(getAllPlaces().map((place) => place.id));
-  const linkedStops = mapStops.filter((stop) => stop.placeId && livePlaceIds.has(stop.placeId) && hasSubstantivePlaceInfo(stop.placeId)).slice(0, 4);
+  const visitPlan = courseVisitPlan(c);
+  const mapStops = visitPlan.days.flatMap((day) => day.stops); // 글과 방문 안내에 같은 관광지를 표시
   const galleryPhotos = galleryForStops(mapStops);
   // 근처 맛집(내부링크) — 좌표 있으면 거리순, 없으면 코스 도시(주소) 기준. 음식점 데이터 있는 지역만.
   const centroid = courseCentroid(c);
@@ -90,7 +89,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
     return best && bd <= 8 ? best : "";
   };
   const festivals = areaFestivals(c.area, { limit: 4 }); // 보는 시점 날짜 연동
-  const days = courseDays(c); // 일차별 분할(하루 최대 3곳)  const itemListLd = {
+  const itemListLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: c.title,
@@ -146,7 +145,16 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
       <div className="mt-1">
         <h1 className="break-keep text-[24px] font-black leading-tight tracking-[-0.02em] text-ink [overflow-wrap:anywhere] sm:text-[30px]">{c.title}</h1>
         <div className="mt-4 flex flex-wrap items-start gap-3" role="group" aria-label="코스 저장 및 공유">
-          <TripSave className="" trip={{id:"course:"+c.id,title:c.title,stops:[{id:"course:"+c.id,title:c.title,href:"/course/c/"+c.id,area:c.area,kind:"course"}]}}/>
+          <TripSave className="" trip={{id:"course:"+c.id,title:c.title,stops:mapStops.length ? mapStops.map((stop, index) => ({
+            id: stop.detailHref ? "place:" + stop.placeId : `course:${c.id}:${index}`,
+            title: stop.name, href: stop.detailHref || "/course/c/" + c.id,
+            area: stop.area, kind: stop.detailHref ? "place" as const : "course" as const,
+            address: stop.address, image: stop.image,
+            hoursText: stop.facts.find((fact) => fact.label === "이용시간")?.value,
+            restText: stop.facts.find((fact) => fact.label === "휴무일")?.value,
+            parkingText: stop.facts.find((fact) => fact.label === "주차")?.value,
+            ...(Number.isFinite(distanceKm(stop, stop)) ? { x: Number(stop.mapx), y: Number(stop.mapy) } : {}),
+          })) : [{id:"course:"+c.id,title:c.title,href:"/course/c/"+c.id,area:c.area,kind:"course"}]}}/>
           <div className="flex-none">
           <CourseShare title={c.title} compact />
           </div>
@@ -159,57 +167,20 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
         </div>
       )}
 
+      <CourseVisitPlan plan={visitPlan} isList={c.format === "list"} />
+
       {/* 블로그 글 — 각 스팟 소제목 뒤에 사진 삽입 */}
       <CourseArticleBody content={c.content} stops={mapStops} />
 
       <CoursePhotoGallery photos={galleryPhotos} />
 
-      {/* 코스 한눈에 보기 — 일차별로 묶어 장소명 표기 (하루 최대 3곳) */}
-      {mapStops.length > 0 && (
-        <section className="mt-9 rounded-2xl bg-panel px-4 py-5 sm:px-5">
-          <h2 className="mb-3 text-[17px] font-extrabold tracking-tight text-ink sm:text-[18px]">{c.format === "list" ? "🏖 해수욕장 목록" : "🧭 코스 한눈에 보기"}</h2>
-          <div className="space-y-3">
-            {days.map((dayStops, di) => (
-              <div key={di}>
-                {days.length > 1 && (
-                  <p className="mb-1.5 text-[13px] font-black text-free">{di + 1}일차</p>
-                )}
-                <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-2">
-                  {dayStops.map((s, i) => (
-                    <li key={i} className="flex items-center gap-1.5">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[13px] font-bold text-ink ring-1 ring-line">
-                        <span className="text-[11px] font-black text-free">{i + 1}</span>
-                        {s.name}
-                      </span>
-                      {i < dayStops.length - 1 && c.format !== "list" && <span className="text-ink-faint">→</span>}
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            ))}
-          </div>
-          {centroid && (
-            <a href={`https://map.kakao.com/link/map/${encodeURIComponent(c.title)},${centroid.mapy},${centroid.mapx}`}
-              target="_blank" rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-1 rounded-full bg-white px-4 py-2 text-[13px] font-bold text-freedark ring-1 ring-line transition hover:bg-tint">
-              🗺 지도에서 코스 위치 보기
-            </a>
-          )}
-        </section>
-      )}
-
       {c.format !== "list" && mapStops[0] && <NearbyParking lon={Number(mapStops[0].mapx)} lat={Number(mapStops[0].mapy)} area={c.area} address={mapStops[0].addr} title={`첫 방문지 ${mapStops[0].name} 근처 주차`} />}
-
-      {linkedStops.length > 0 && <section className="mt-8">
-        <h2 className="text-lg font-extrabold text-ink">코스에 포함된 장소 자세히 보기</h2>
-        <ul className="mt-3 grid gap-2 sm:grid-cols-2">{linkedStops.map((stop) => <li key={stop.placeId}><Link href={`/places/spot/${stop.placeId}`} className="flex min-h-11 items-center rounded-xl border border-line px-4 text-sm font-bold text-brandblue hover:border-brandblue">{stop.name} 방문 정보 →</Link></li>)}</ul>
-      </section>}
 
       {/* 근처 맛집 — 코스 좌표 기준, 내부링크. 해수욕장 베스트(리스트형)엔 맛집 표시 안 함. */}
       {nearFood.length > 0 && c.format !== "list" && (
         <section className="mt-9">
-          <h2 className="mb-1 text-[19px] font-extrabold tracking-tight text-ink sm:text-[20px]">🍽 이 코스 근처 맛집</h2>
-          <p className="mb-4 text-[13px] text-ink-faint">코스 동선 근처에서 한 끼 하기 좋은 곳이에요</p>
+          <h2 className="mb-1 text-[19px] font-extrabold tracking-tight text-ink sm:text-[20px]">🍽 여행 지역의 음식점</h2>
+          <p className="mb-4 text-[13px] text-ink-faint">주소와 위치를 비교해 식사할 곳을 골라보세요. 거리 표시는 직선거리이며, 실제 이동 경로는 지도로 확인할 수 있습니다.</p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {nearFood.map((r) => {
               const ext = r.href.startsWith("http");
@@ -232,7 +203,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
                   {(() => {
                     const cap = r.onCourse
                       ? (r.addr || "")
-                      : nearStopName(r) ? `${nearStopName(r)} 근처` : typeof r.dist === "number" ? `코스에서 ${distanceLabel(r.dist)}` : r.addr;
+                      : nearStopName(r) ? `${nearStopName(r)} 주변` : typeof r.dist === "number" ? `코스 중심에서 직선 ${distanceLabel(r.dist)}` : r.addr;
                     return cap ? <p className="mt-0.5 line-clamp-1 text-[12px] text-ink-faint">{cap}</p> : null;
                   })()}
                 </div>

@@ -85,7 +85,7 @@ export default function CourseArticleBody({ content, stops }: { content: string;
       // 번호 매칭 우선, 이름이 어긋나면 이름 포함으로 보정
       if (byNum && (byNum.name === name || headingText.includes(byNum.name) || byNum.name.includes(name))) return byNum;
       const byName = stops.find((s) => name.includes(s.name) || s.name.includes(name));
-      return byName || byNum;
+      return byName;
     }
     return stops.find((s) => headingText.includes(s.name));
   };

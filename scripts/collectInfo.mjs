@@ -47,11 +47,15 @@ async function main() {
   console.log(`\n🖼️  볼거리(detailInfo2) 수집 — 미수집 ${targetsTotal} · 이번 실행 ${batch.length} (상한 ${DAILY})`);
 
   const budget = createBudget(DAILY);
-  let ok = 0, empty = 0, fail = 0;
+  let ok = 0, empty = 0, fail = 0, retrieved = 0;
   for (const p of batch) {
     try {
       const items = await detailInfoRaw(p.id, p.type, budget);
+      retrieved++;
       const norm = normalizeInfo(items);
+      if (!norm.length && store.info[p.id]?.length) { empty++; await sleep(220); continue; }
+      store.checkedAt ||= {};
+      store.checkedAt[p.id] = new Date().toISOString();
       store.info[p.id] = norm; // 빈 배열도 저장(재조회 방지)
       if (norm.length) ok++; else empty++;
     } catch (e) {
@@ -62,6 +66,8 @@ async function main() {
     await sleep(220);
   }
 
+  if (batch.length && !retrieved) { console.error("시설정보 조회 실패 — 기존 자료 유지"); process.exitCode = 1; return; }
+  if (!batch.length) return;
   store.generatedAt = new Date().toISOString();
   const mb = writeCache(OUT, store);
   const total = Object.keys(store.info).length;

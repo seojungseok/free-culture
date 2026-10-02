@@ -1,10 +1,11 @@
 // 지역 관광기관 축제 API를 공통 축제 캐시로 병합한다.
 // 방문자 요청 시 API를 호출하지 않고 주간 동기화에서만 실행한다.
-import { readCache, writeCache, loadKey, cleanText, https } from "./lib/tourClient.mjs";
+import { readCache, writeCache, loadKey, cleanText, https, safeApiError } from "./lib/tourClient.mjs";
+import { mergeCollectedRecord } from "./lib/collectorState.mjs";
 import { XMLParser } from "fast-xml-parser";
 
-const KEY = loadKey();
-const TODAY = new Date().toISOString().slice(0, 10).replaceAll("-", "");
+const KEY = loadKey("public");
+const TODAY = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10).replaceAll("-", "");
 const OUT = "festivals.json";
 const parser = new XMLParser({ ignoreAttributes: false });
 const value = (obj, ...keys) => {
@@ -26,17 +27,27 @@ const dateRange = (v) => {
   return { start: dates[0] ? ymd(dates[0]) : "", end: dates[1] ? ymd(dates[1]) : ymd(dates[0]) };
 };
 const list = (value) => Array.isArray(value) ? value : value ? [value] : [];
-const query = (params) => new URLSearchParams({ ...params, serviceKey: KEY }).toString();
+const decodedKey = () => { try { return decodeURIComponent(KEY); } catch { return KEY; } };
+const query = (params) => new URLSearchParams({ ...params, serviceKey: decodedKey() }).toString();
+function validatedResponse(json) {
+  const header = json?.response?.header || json?.getFestivalKr?.header || json?.getFestivalStatus?.header;
+  const code = header?.resultCode;
+  if (code !== undefined && !["00", "0000", "0"].includes(String(code))) {
+    throw new Error(`resultCode=${/^\d+$/.test(String(code)) ? code : "unknown"}`);
+  }
+  if (json?.OpenAPI_ServiceResponse || json?.OpenAPIServiceResponse) throw new Error("API 응답 형식 오류");
+  return json;
+}
 
 async function getJson(url, params) {
   const res = await fetch(url + "?" + query(params), { signal: AbortSignal.timeout(20000) });
-  if (!res.ok) throw new Error("HTTP " + res.status + " " + url);
-  return res.json();
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  return validatedResponse(await res.json());
 }
 async function getXml(url, params) {
   const res = await fetch(url + "?" + query(params), { signal: AbortSignal.timeout(20000) });
-  if (!res.ok) throw new Error("HTTP " + res.status + " " + url);
-  return parser.parse(await res.text());
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  return validatedResponse(parser.parse(await res.text()));
 }
 function event({ id, title, addr, area, image, mapx = "", mapy = "", tel = "", startDate, endDate, source, description = "", place = "", homepage = "" }) {
   const start = ymd(startDate);
@@ -92,19 +103,29 @@ async function jeonnam() {
 }
 async function main() {
   if (!KEY) throw new Error("DATA_GO_KR_KEY / TOUR_API_KEY 없음");
+  const checkedAt = new Date().toISOString();
   const jobs = [["부산", busan], ["경주", gyeongju], ["울산", ulsan], ["전남", jeonnam]];
   const results = await Promise.all(jobs.map(async ([name, fn]) => {
-    try { const items = await fn(); console.log(name + ": " + items.length + "건"); return items; }
-    catch (error) { console.warn(name + " 수집 실패: " + error.message); return []; }
+    try { const items = await fn(); console.log(name + ": 진행·예정 " + items.length + "건"); return { name, items, success: true }; }
+    catch (error) { console.warn(name + " 수집 실패: " + safeApiError(error)); return { name, items: [], success: false }; }
   }));
+  if (!results.some((result) => result.success)) throw new Error("지역 축제 전체 실패 — 기존 스냅샷 유지");
   const store = readCache(OUT, { generatedAt: null, count: 0, festivals: [] });
   const map = new Map((store.festivals || []).map((item) => [item.id, item]));
-  for (const items of results) for (const item of items) map.set(item.id, item);
-  const festivals = [...map.values()].filter((item) => item.endDate >= TODAY)
+  for (const result of results) for (const item of result.items) map.set(item.id, mergeCollectedRecord(map.get(item.id), item, checkedAt));
+  const festivals = [...map.values()]
     .sort((a, b) => a.startDate.localeCompare(b.startDate));
   store.festivals = festivals; store.count = festivals.length; store.generatedAt = new Date().toISOString();
+  store.sourceRefresh ||= {};
+  for (const result of results) store.sourceRefresh[result.name] = {
+    ...(store.sourceRefresh[result.name] || {}), lastAttemptAt: checkedAt,
+    ...(result.success ? { checkedAt, currentRecords: result.items.length } : {}), success: result.success,
+  };
+  const failures = results.filter((result) => !result.success).length;
+  if (failures) store.incompleteRefresh = true;
   writeCache(OUT, store);
   console.log("저장: data/" + OUT + " (" + festivals.length + "건, API 4회)");
   console.log("대전은 현재 제공받은 경로가 라이브 응답을 반환하지 않아 임의 행사 생성을 하지 않았습니다.");
+  if (failures) process.exitCode = 1;
 }
-main().catch((error) => { console.error(error); process.exit(1); });
+main().catch((error) => { console.error(`지역 축제 갱신 실패: ${safeApiError(error)}`); process.exit(1); });

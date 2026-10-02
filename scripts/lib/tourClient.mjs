@@ -18,24 +18,21 @@ export const BASE = "https://apis.data.go.kr/B551011/KorService2";
 export const PET_BASE = "https://apis.data.go.kr/B551011/KorPetTourService2";
 
 // ── 키 ──────────────────────────────────────────────────────────
-export function loadKey() {
-  if (process.env.PET_TOUR_API_KEY) return process.env.PET_TOUR_API_KEY.trim();
-  if (process.env.TOUR_API_KEY) return process.env.TOUR_API_KEY.trim();
-  if (process.env.DATA_GO_KR_KEY) return process.env.DATA_GO_KR_KEY.trim();
+export function loadKey(scope = "tour") {
+  const names = scope === "pet" ? ["PET_TOUR_API_KEY", "TOUR_API_KEY", "DATA_GO_KR_KEY"]
+    : scope === "public" ? ["DATA_GO_KR_KEY", "TOUR_API_KEY"] : ["TOUR_API_KEY", "DATA_GO_KR_KEY"];
+  for (const name of names) if (process.env[name]?.trim()) return process.env[name].trim();
   const p = path.join(ROOT, ".env.local");
   if (fs.existsSync(p)) {
     const lines = fs.readFileSync(p, "utf8").split(/\r?\n/);
-    for (const n of ["PET_TOUR_API_KEY", "TOUR_API_KEY", "DATA_GO_KR_KEY"]) {
+    for (const n of names) {
       const l = lines.find((x) => x.startsWith(n + "="));
       if (l && l.slice(n.length + 1).trim()) return l.slice(n.length + 1).trim();
     }
   }
   return "";
 }
-const KEY = loadKey();
-// 이미 URL 인코딩된 키(%2B 등)는 그대로, 아니면 인코딩
-const KEY_PARAM = /%[0-9A-Fa-f]{2}/.test(KEY) ? KEY : encodeURIComponent(KEY);
-export function hasKey() { return Boolean(KEY); }
+export function hasKey(scope = "tour") { return Boolean(loadKey(scope)); }
 
 // ── 유틸 ────────────────────────────────────────────────────────
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -68,6 +65,11 @@ export const AREA_TO_SIDO = {
   36: "경남", 37: "전북", 38: "전남", 39: "제주",
 };
 export const AREA_CODES = Object.keys(AREA_TO_SIDO).map(Number);
+const LEGAL_AREA_TO_SIDO = { 11: "서울", 26: "부산", 27: "대구", 28: "인천", 29: "광주", 30: "대전", 31: "울산", 36: "세종", 41: "경기", 42: "강원", 51: "강원", 43: "충북", 44: "충남", 45: "전북", 52: "전북", 46: "전남", 47: "경북", 48: "경남", 50: "제주" };
+export function tourArea(item, fallback = "") {
+  return LEGAL_AREA_TO_SIDO[String(item?.lDongRegnCd || "").slice(0, 2)]
+    || AREA_TO_SIDO[item?.areacode] || fallback;
+}
 
 // ── 캐시 read/write ────────────────────────────────────────────
 export function readCache(file, fallback) {
@@ -84,40 +86,62 @@ export function writeCache(file, obj) {
 
 // ── 예산(일일 한도) ─────────────────────────────────────────────
 export class QuotaError extends Error {}
+export function safeApiError(error) {
+  if (error instanceof QuotaError) return "API 요청 예산 또는 제공기관 한도에 도달했습니다";
+  const message = String(error?.message || "");
+  if (/인증키 없음/.test(message)) return "공공 API 인증키가 설정되지 않았습니다";
+  const code = message.match(/(?:HTTP|resultCode)\s*[=:]?\s*(\d{2,4})/i)?.[0];
+  if (code) return code;
+  if (/timeout|시간 초과|aborted/i.test(message)) return "API 응답 시간 초과";
+  if (/JSON|응답 형식/.test(message)) return "API 응답 형식 오류";
+  return "API 응답을 확인하지 못했습니다";
+}
 export function createBudget(max) {
   return { max: Number(max) || 900, used: 0, stopped: false };
 }
 
 // ── 코어 요청: 재시도 + 한도 감지 → QuotaError ───────────────────
-async function fetchJson(endpoint, params, budget, base = BASE) {
-  if (budget) {
-    if (budget.stopped) throw new QuotaError("budget stopped");
-    if (budget.used >= budget.max) { budget.stopped = true; throw new QuotaError("budget reached"); }
-  }
-  const qs = Object.entries(params).map(([k, v]) => `${k}=${v}`).join("&");
+export async function fetchJson(endpoint, params, budget, base = BASE) {
+  const key = loadKey(base === PET_BASE ? "pet" : base.endsWith("/GoCamping") ? "public" : "tour");
+  if (!key) throw new Error("공공 API 인증키 없음");
+  const KEY_PARAM = /%[0-9A-Fa-f]{2}/.test(key) ? key : encodeURIComponent(key);
+  const qs = new URLSearchParams(Object.entries(params).filter(([, v]) => v !== undefined && v !== null)).toString();
   const url = `${base}/${endpoint}?serviceKey=${KEY_PARAM}&MobileOS=ETC&MobileApp=mwohaji&_type=json&${qs}`;
   for (let i = 0; i < 3; i++) {
+    if (budget) {
+      if (budget.stopped || budget.used >= budget.max) { budget.stopped = true; throw new QuotaError("budget reached"); }
+      // A timeout is also an attempted request; retries never escape the cap.
+      budget.used++;
+    }
     let res;
     try {
       res = await fetch(url, { signal: AbortSignal.timeout(20000) });
     } catch (e) {
-      if (i === 2) throw e;
+      if (i === 2) throw new Error(e?.name === "TimeoutError" ? "API 응답 시간 초과" : "API 연결 실패");
       await sleep(700 * (i + 1));
       continue;
     }
-    if (budget) budget.used++;
     const text = await res.text();
     // 일일 한도 초과 — 즉시 중단(재시도 무의미)
     if (res.status === 429 || /quota exceeded|LIMITED_NUMBER_OF_SERVICE|서비스 요청제한/i.test(text)) {
       if (budget) budget.stopped = true;
       throw new QuotaError("API 일일 한도 초과");
     }
+    if (!res.ok) {
+      if (res.status < 500 || i === 2) throw new Error(`HTTP ${res.status}`);
+      await sleep(700 * (i + 1)); continue;
+    }
     let j;
     try { j = JSON.parse(text); }
-    catch { if (i === 2) throw new Error("JSON 파싱 실패: " + text.slice(0, 80)); await sleep(700 * (i + 1)); continue; }
+    catch {
+      const xmlCode = text.match(/<(?:returnReasonCode|resultCode)>\s*(\d+)\s*<\//)?.[1];
+      if (xmlCode) throw new Error(`resultCode=${xmlCode}`);
+      if (i === 2) throw new Error("API JSON 응답 형식 오류");
+      await sleep(700 * (i + 1)); continue;
+    }
     const code = j?.response?.header?.resultCode;
     if (code === "22") { if (budget) budget.stopped = true; throw new QuotaError("resultCode 22 한도 초과"); }
-    if (code !== "0000") throw new Error(`resultCode=${code} ${j?.response?.header?.resultMsg || ""}`);
+    if (code !== "0000") throw new Error(`resultCode=${/^\d+$/.test(String(code)) ? code : "unknown"}`);
     return j;
   }
 }
@@ -250,13 +274,4 @@ export function normalizeInfo(items) {
 }
 
 /** 요금 텍스트 → free/paid/unknown (모든 유형 공통) */
-export function classifyAdmission(fee) {
-  const s = cleanText(fee);
-  if (!s) return "unknown";
-  const hasPrice = /\d[\d,]*\s*원/.test(s);
-  const hasFree = /무료/.test(s);
-  if (hasFree && !hasPrice) return "free";
-  if (hasPrice) return "paid";
-  if (hasFree) return "free";
-  return "unknown";
-}
+export { classifyAdmission } from "../../lib/admission.js";

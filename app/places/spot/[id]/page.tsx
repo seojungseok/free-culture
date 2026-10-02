@@ -1,4 +1,9 @@
 import NextStop from "@/components/NextStop";
+import VisitChecklist from "@/components/VisitChecklist";
+import SourceNote from "@/components/SourceNote";
+import { visitChecks } from "@/lib/visitPlanning";
+import { visitInfoDates } from "@/lib/tourExtra";
+import placeData from "@/data/places.json";
 import NearbyParking from "@/components/NearbyParking";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -134,13 +139,20 @@ export default async function SpotDetailPage({
 
   const [detail, extraImages, admission] = await Promise.all([
     // 자체 본문이 있으면 외부 overview를 기다릴 필요가 없다. 메타데이터와 보조정보용이다.
-    article ? Promise.resolve({ overview: "", homepage: "", tel: "" }) : fetchPlaceOverview(id),
+    fetchPlaceOverview(id),
     fetchPlaceImages(id),
     cachedAdmission ? Promise.resolve(cachedAdmission) : fetchAdmission(id, spot.type),
   ]);
   const overview = detail.overview;
   const homepage = detail.homepage;
   const tel = detail.tel || spot.tel;
+  const plan = visitChecks({
+    kind: "place", hours: cachedIntro?.usetime, closed: cachedIntro?.restdate,
+    fee: cachedIntro?.fee || facilities.find((f) => /이용료|입장료|요금/.test(f.name))?.text,
+    parking: cachedIntro?.parking, parkingFee: cachedIntro?.parkingfee,
+    reservation: cachedIntro?.reservation || facilities.find((f) => /예약/.test(f.name))?.text,
+    pet: cachedIntro?.pet, stroller: cachedIntro?.babycarriage, season: cachedIntro?.openperiod,
+  });
 
   // 갤러리 = 대표사진(firstimage) + 추가사진, URL 기준 중복 제거
   const gallery: GalleryImage[] = [];
@@ -231,6 +243,8 @@ export default async function SpotDetailPage({
           <PlaceGallery images={gallery} title={spot.title} freeBadge={admission === "free"} />
         </div>
       )}
+
+      <VisitChecklist pageId={`place:${id}`} items={plan} />
 
       {article ? (
         <>
@@ -375,7 +389,7 @@ export default async function SpotDetailPage({
       </div>
 
       {hasSubstantivePlaceInfo(id) && <AdSlot label="본문 하단 광고" />}
-      <p className="mt-8 text-[12px] text-ink-faint">관광정보 제공: 한국관광공사 (TourAPI)</p>
+      <SourceNote name="한국관광공사 관광정보" href="https://korean.visitkorea.or.kr/" dates={[{ label: "기본정보 수집일", at: (spot as typeof spot & { checkedAt?: string }).checkedAt }, { label: "기본 목록 갱신일", at: placeData.generatedAt }, { label: "소개정보 수집일", at: detail.overviewCheckedAt }, ...visitInfoDates(id)]} officialUrl={homepage} />
     </Container>
   );
 }

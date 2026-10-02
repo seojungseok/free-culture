@@ -5,25 +5,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readCache, writeCache, createBudget, fetchJson, safeApiError, hasKey } from "./lib/tourClient.mjs";
+import { mergeCollectedRecord, checkedSnapshot } from "./lib/collectorState.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "data", "camping.json");
 const BASE = "https://apis.data.go.kr/B551011/GoCamping";
 
-function loadKey() {
-  if (process.env.DATA_GO_KR_KEY) return process.env.DATA_GO_KR_KEY.trim();
-  if (process.env.TOUR_API_KEY) return process.env.TOUR_API_KEY.trim();
-  const p = path.join(ROOT, ".env.local");
-  const lines = fs.readFileSync(p, "utf8").split(/\r?\n/);
-  for (const n of ["DATA_GO_KR_KEY", "TOUR_API_KEY"]) {
-    const l = lines.find((x) => x.startsWith(n + "="));
-    if (l && l.slice(n.length + 1).trim()) return l.slice(n.length + 1).trim();
-  }
-  return "";
-}
-const KEY = loadKey();
-if (!KEY) { console.error("❌ DATA_GO_KR_KEY 없음"); process.exit(1); }
-const KP = /%[0-9A-Fa-f]{2}/.test(KEY) ? KEY : encodeURIComponent(KEY);
+if (!hasKey("public")) { console.error("❌ DATA_GO_KR_KEY 없음"); process.exit(1); }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const arr = (x) => (x == null ? [] : Array.isArray(x) ? x : [x]);
 const https = (u) => String(u || "").replace(/^http:\/\//i, "https://");
@@ -73,29 +62,41 @@ function facilitiesOf(it) {
   };
 }
 
-async function fetchPage(pageNo, rows) {
-  const url = `${BASE}/basedList?serviceKey=${KP}&numOfRows=${rows}&pageNo=${pageNo}&MobileOS=ETC&MobileApp=mwohaji&_type=json`;
-  const r = await fetch(url, { signal: AbortSignal.timeout(30000) });
-  const t = await r.text();
-  const j = JSON.parse(t);
-  if (j?.response?.header?.resultCode !== "0000") throw new Error(`resultCode=${j?.response?.header?.resultCode} ${j?.response?.header?.resultMsg}`);
+async function fetchPage(pageNo, rows, budget) {
+  const j = await fetchJson("basedList", { numOfRows: rows, pageNo }, budget, BASE);
   const body = j?.response?.body;
   return { total: Number(body?.totalCount || 0), items: arr(body?.items?.item) };
 }
 
 async function main() {
+  const previous = readCache("camping.json", { camps: [] });
+  const budget = createBudget(Number(process.env.CAMPING_LIST_BUDGET || 8));
+  const checkedAt = new Date().toISOString();
   const ROWS = 1000;
-  const first = await fetchPage(1, ROWS);
+  const first = await fetchPage(1, ROWS, budget);
+  if (!first.total || !first.items.length) throw new Error("캠핑 확인 0건 — 기존 스냅샷 유지");
   const pages = Math.ceil(first.total / ROWS);
   console.log(`\n🏕️  고캠핑 수집 — 전국 ${first.total}곳 (${pages}페이지 × ${ROWS})`);
   const items = [...first.items];
-  for (let p = 2; p <= pages; p++) { await sleep(250); items.push(...(await fetchPage(p, ROWS)).items); }
+  let failures = 0;
+  for (let p = 2; p <= pages; p++) {
+    await sleep(250);
+    try {
+      const page = await fetchPage(p, ROWS, budget);
+      if (!page.items.length) throw new Error("API 응답 형식 오류");
+      items.push(...page.items);
+    } catch (error) {
+      failures++; console.warn(`캠핑 p${p} 갱신 보류: ${safeApiError(error)}`);
+      if (budget.stopped) break;
+    }
+  }
 
-  const camps = [];
+  const byId = new Map((previous.camps || []).map((camp) => [camp.id, camp]));
+  const checkedIds = new Set();
   for (const it of items) {
     const id = String(it.contentId || "");
-    if (!id) continue;
-    camps.push({
+    if (!id || !String(it.facltNm || "").trim()) continue;
+    byId.set(id, mergeCollectedRecord(byId.get(id), {
       id,
       name: String(it.facltNm || "").trim(),
       area: areaOf(it),
@@ -113,17 +114,24 @@ async function main() {
       homepage: String(it.homepage || it.resveUrl || "").trim(),
       image: it.firstImageUrl ? https(it.firstImageUrl) : "",
       intro: String(it.lineIntro || "").replace(/\s+/g, " ").trim(),
-    });
+      sourceModifiedAt: String(it.modifiedtime || ""),
+    }, checkedAt));
+    checkedIds.add(id);
   }
 
+  if (!checkedIds.size) throw new Error("캠핑 확인 0건 — 기존 스냅샷 유지");
+  const camps = [...byId.values()];
   const byType = {}, byArea = {};
   let withImg = 0, pet = 0;
   for (const c of camps) { for (const t of c.types) byType[t] = (byType[t] || 0) + 1; byArea[c.area] = (byArea[c.area] || 0) + 1; if (c.image) withImg++; if (c.pet) pet++; }
 
-  fs.writeFileSync(OUT, JSON.stringify({ generatedAt: new Date().toISOString(), count: camps.length, camps }));
+  const complete = failures === 0 && !budget.stopped && items.length >= first.total;
+  writeCache("camping.json", checkedSnapshot(previous, camps, "camps", { checkedAt, calls: budget.used, failures, complete }));
   const mb = (fs.statSync(OUT).size / 1048576).toFixed(2);
   console.log(`\n💾 저장: data/camping.json (${camps.length}곳, ${mb}MB)`);
   console.log(`   유형: ${Object.entries(byType).map(([k, v]) => `${k} ${v}`).join(" · ")}`);
   console.log(`   사진有 ${withImg} · 반려동물 ${pet} · 지역수 ${Object.keys(byArea).length}`);
+  console.log(`   실제 확인 ${checkedIds.size} · API콜 ${budget.used} · 전체완료 ${complete} · 기존 ID 보존`);
+  if (!complete) process.exitCode = 1;
 }
-main().catch((e) => { console.error("❌ 실패:", e.message); process.exit(1); });
+main().catch((e) => { console.error("❌ 실패:", safeApiError(e)); process.exit(1); });

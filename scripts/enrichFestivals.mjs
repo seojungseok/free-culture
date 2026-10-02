@@ -3,14 +3,14 @@
 import {
   readCache, writeCache, createBudget, QuotaError, detailCommon, detailIntroRaw,
   detailInfoRaw, detailImageListRaw, normalizeIntro, normalizeInfo, sleep, hasKey,
-  cleanText, https,
+  cleanText, https, safeApiError,
 } from "./lib/tourClient.mjs";
 
 if (!hasKey()) { console.error("TourAPI 키가 없습니다."); process.exit(1); }
 
 const count = Number(process.env.FESTIVAL_ENRICH_DAILY || 20);
 const store = readCache("festivals.json", { generatedAt: null, count: 0, festivals: [] });
-const today = new Date().toISOString().slice(0, 10).replaceAll("-", "");
+const today = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10).replaceAll("-", "");
 const targets = [...(store.festivals || [])]
   .filter((festival) => !String(festival.id).startsWith("busan-") && !String(festival.id).startsWith("gyeongju-") && !String(festival.id).startsWith("ulsan-") && !String(festival.id).startsWith("jeonnam-"))
   .filter((festival) => !festival.enrichedAt)
@@ -20,7 +20,7 @@ const targets = [...(store.festivals || [])]
     return aLive - bLive || a.startDate.localeCompare(b.startDate);
   })
   .slice(0, count);
-const budget = createBudget(Math.max(count * 5, 50));
+const budget = createBudget(Number(process.env.FESTIVAL_ENRICH_BUDGET || Math.max(count * 5, 50)));
 let done = 0;
 let failed = 0;
 
@@ -34,27 +34,34 @@ for (const festival of targets) {
     ]);
     const intro = normalizeIntro("15", introRaw);
     const images = imageRaw.map((item) => https(cleanText(item.originimgurl || item.smallimageurl))).filter(Boolean);
+    const info = normalizeInfo(infoRaw).slice(0, 12);
+    if (!common.overview && !common.homepage && !common.tel && !Object.keys(intro).length && !info.length && !images.length) {
+      failed++; console.warn("축제 상세 정보 0건 — 기존 내용 보존"); continue;
+    }
     Object.assign(festival, {
       description: common.overview || festival.description || "",
       homepage: common.homepage || festival.homepage || "",
       tel: common.tel || festival.tel || "",
       place: intro.eventplace || festival.place || "",
-      intro,
-      info: normalizeInfo(infoRaw).slice(0, 12),
+      intro: { ...(festival.intro || {}), ...intro },
+      info: info.length ? info : festival.info || [],
       images: [...new Set([festival.image, ...images].filter(Boolean))].slice(0, 8),
       enrichedAt: new Date().toISOString(),
     });
     if (!festival.image && festival.images?.[0]) festival.image = festival.images[0];
     done++;
   } catch (error) {
-    if (error instanceof QuotaError) break;
     failed++;
-    console.warn(`상세 조회 실패 (${festival.title}): ${error instanceof Error ? error.message : String(error)}`);
+    console.warn(`축제 상세 조회 실패: ${safeApiError(error)}`);
+    if (error instanceof QuotaError) break;
   }
   await sleep(220);
 }
 
-store.count = (store.festivals || []).length;
-store.generatedAt = new Date().toISOString();
-writeCache("festivals.json", store);
+if (done) {
+  store.count = (store.festivals || []).length;
+  store.generatedAt = new Date().toISOString();
+  writeCache("festivals.json", store);
+}
 console.log(`축제 상세 보강: 완료 ${done} · 실패 ${failed} · API콜 ${budget.used} · 누적 ${store.count}건`);
+if (failed || budget.stopped) process.exitCode = 1;

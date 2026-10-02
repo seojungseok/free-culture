@@ -7,6 +7,7 @@ import restaurantIntroData from "@/data/restaurant-intro.json";
 import type { Admission } from "@/lib/fees";
 import { displayAddress } from "@/lib/address";
 import { isUsefulDisplayValue } from "@/lib/displayValue";
+import { classifyAdmission } from "@/lib/admission";
 
 export interface PlaceIntro {
   type?: string;
@@ -40,11 +41,23 @@ const info = (infoData as unknown as { info: Record<string, InfoItem[]> }).info 
 const restaurantIntro = (restaurantIntroData as unknown as { intro: Record<string, PlaceIntro> }).intro || {};
 
 export function getIntro(id: string): PlaceIntro | undefined {
-  return intro[id];
+  const value = intro[id];
+  return value?.fee?.trim() ? { ...value, admission: classifyAdmission(value.fee) } : value;
+}
+
+/** Successful per-place retrieval time, never the latest file-wide write time. */
+export function visitInfoDates(id: string, restaurant = false) {
+  const main = restaurant ? restaurantIntro[id] : intro[id];
+  const infoAt = (infoData as unknown as { checkedAt?: Record<string, string> }).checkedAt?.[id];
+  return [
+    { label: restaurant ? "영업정보 수집일" : "방문정보 수집일", at: main?.checkedAt },
+    ...(!restaurant ? [{ label: "시설정보 수집일", at: infoAt }] : []),
+  ];
 }
 /** 음식점(39) 방문정보 — restaurant-intro.json (수집분만) */
 export function getRestaurantIntro(id: string): PlaceIntro | undefined {
-  return restaurantIntro[id];
+  const value = restaurantIntro[id];
+  return value?.fee?.trim() ? { ...value, admission: classifyAdmission(value.fee) } : value;
 }
 export function getInfo(id: string): InfoItem[] {
   return info[id] || [];
@@ -188,7 +201,7 @@ export function restaurantOpeningSpec(id: string):
 export function introStats() {
   const ids = Object.keys(intro);
   const withData = ids.filter(
-    (id) => Object.keys(intro[id]).filter((k) => k !== "type").length > 0
+    (id) => Object.entries(intro[id]).some(([key, value]) => key !== "type" && key !== "checkedAt" && isUsefulVisitText(value))
   ).length;
   return { collected: ids.length, withData };
 }

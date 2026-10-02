@@ -2,22 +2,24 @@
 // intro 백필이 detailIntro2 전체(요금 포함)를 수집하므로 fees의 상위집합. fees→intro 순 폴백.
 import feesData from "@/data/place-fees.json";
 import introData from "@/data/place-intro.json";
+import { classifyAdmission, type Admission } from "@/lib/admission";
 
-export type Admission = "free" | "paid" | "unknown";
+export type { Admission } from "@/lib/admission";
 
 const data = feesData as unknown as {
   generatedAt: string | null;
   fees: Record<string, Admission>;
 };
-const intro = (introData as unknown as { intro: Record<string, { admission?: Admission }> }).intro || {};
+const intro = (introData as unknown as { intro: Record<string, { admission?: Admission; fee?: string }> }).intro || {};
 
-/** 캐시된 입장료 상태 (fees → intro 폴백, 둘 다 없으면 undefined) */
+/** Recheck an actual fee notice before trusting a legacy badge-only cache. */
 export function getAdmission(id: string): Admission | undefined {
+  if (intro[id]?.fee?.trim()) return classifyAdmission(intro[id].fee);
   return data.fees[id] ?? intro[id]?.admission;
 }
 
 export function getFeeStats() {
-  const v = Object.values(data.fees);
+  const v = Object.keys(data.fees).map(getAdmission);
   return {
     total: v.length,
     free: v.filter((x) => x === "free").length,

@@ -1,10 +1,15 @@
 import "server-only";
+import storedOverviews from "@/data/place-overviews.json";
+import storedDetails from "@/data/place-details.json";
 import { isUsefulDisplayValue } from "@/lib/displayValue";
+import { classifyAdmission, type Admission } from "@/lib/admission";
+export { classifyAdmission } from "@/lib/admission";
 
 // 상세 페이지에서만 호출: detailCommon2 로 장소 소개글(overview)·홈페이지를 가져옴.
 // Next fetch 캐시(revalidate)로 한 번 부르면 재사용 → 일 1,000회 제한 방어.
 
 const KEY = (process.env.TOUR_API_KEY || process.env.DATA_GO_KR_KEY || "").trim();
+const keyParam = /%[0-9A-Fa-f]{2}/.test(KEY) ? KEY : encodeURIComponent(KEY);
 
 const cleanText = (s: string) =>
   String(s || "")
@@ -31,6 +36,8 @@ export interface PlaceOverview {
   overview: string;
   homepage: string;
   tel: string;
+  checkedAt?: string;
+  overviewCheckedAt?: string;
 }
 
 const https = (u: string) => String(u || "").replace(/^http:\/\//i, "https://");
@@ -38,27 +45,13 @@ const https = (u: string) => String(u || "").replace(/^http:\/\//i, "https://");
 // 상세 본문을 외부 API 응답 때문에 오래 붙잡지 않도록 제한한다.
 const apiSignal = () => AbortSignal.timeout(4500);
 
-export type Admission = "free" | "paid" | "unknown";
-
-/** 요금 텍스트 → 무료/유료/정보없음 (모든 유형 공통 규칙) */
-export function classifyAdmission(fee: string): Admission {
-  const s = String(fee || "").replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/gi, " ").replace(/\s+/g, " ").trim();
-  if (!s) return "unknown";
-  const hasPrice = /\d[\d,]*\s*원/.test(s);
-  const hasFree = /무료/.test(s);
-  if (hasFree && !hasPrice) return "free";
-  if (hasPrice) return "paid";
-  if (hasFree) return "free";
-  return "unknown";
-}
+export type { Admission } from "@/lib/admission";
 
 /** detailIntro2 요금 필드 조회 (문화시설=usefee, 레포츠=usefeeleports). 관광지 등은 요금 필드가 없어 unknown. ISR 캐시. */
 export async function fetchAdmission(contentId: string, type: string): Promise<Admission> {
   if (!KEY || !contentId) return "unknown";
   if (type !== "14" && type !== "28") return "unknown"; // 요금 필드 없는 유형은 호출 생략
-  const url = `https://apis.data.go.kr/B551011/KorService2/detailIntro2?serviceKey=${encodeURIComponent(
-    KEY
-  )}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${contentId}&contentTypeId=${type}`;
+  const url = `https://apis.data.go.kr/B551011/KorService2/detailIntro2?serviceKey=${keyParam}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${contentId}&contentTypeId=${type}`;
   try {
     const res = await fetch(url, { next: { revalidate: 604800 }, signal: apiSignal() });
     if (!res.ok) return "unknown";
@@ -82,9 +75,7 @@ export interface PlaceImage {
 /** detailImage2 — 공식 추가 사진 갤러리 (originimgurl/smallimageurl). ISR 캐시. */
 export async function fetchPlaceImages(contentId: string): Promise<PlaceImage[]> {
   if (!KEY || !contentId) return [];
-  const url = `https://apis.data.go.kr/B551011/KorService2/detailImage2?serviceKey=${encodeURIComponent(
-    KEY
-  )}&MobileOS=ETC&MobileApp=mwohaji&_type=json&imageYN=Y&numOfRows=30&contentId=${contentId}`;
+  const url = `https://apis.data.go.kr/B551011/KorService2/detailImage2?serviceKey=${keyParam}&MobileOS=ETC&MobileApp=mwohaji&_type=json&imageYN=Y&numOfRows=30&contentId=${contentId}`;
   try {
     const res = await fetch(url, { next: { revalidate: 604800 }, signal: apiSignal() }); // 1주 캐시
     if (!res.ok) return [];
@@ -107,11 +98,12 @@ export async function fetchPlaceImages(contentId: string): Promise<PlaceImage[]>
 }
 
 export async function fetchPlaceOverview(contentId: string): Promise<PlaceOverview> {
-  const empty: PlaceOverview = { overview: "", homepage: "", tel: "" };
+  const detailCache = (storedDetails as unknown as { details: Record<string, PlaceOverview> }).details[contentId];
+  const cached = (storedOverviews as Record<string, string>)[contentId];
+  const empty: PlaceOverview = { overview: isUsefulDisplayValue(detailCache?.overview) ? cleanText(detailCache.overview) : isUsefulDisplayValue(cached) ? cleanText(cached) : "", homepage: detailCache?.homepage || "", tel: detailCache?.tel || "", checkedAt: detailCache?.checkedAt, overviewCheckedAt: detailCache?.overviewCheckedAt };
+  if (detailCache?.checkedAt && Date.now() - Date.parse(detailCache.checkedAt) < 30 * 86400000) return empty;
   if (!KEY || !contentId) return empty;
-  const url = `https://apis.data.go.kr/B551011/KorService2/detailCommon2?serviceKey=${encodeURIComponent(
-    KEY
-  )}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${contentId}`;
+  const url = `https://apis.data.go.kr/B551011/KorService2/detailCommon2?serviceKey=${keyParam}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${contentId}`;
   try {
     const res = await fetch(url, { next: { revalidate: 604800 }, signal: apiSignal() }); // 1주 캐시
     if (!res.ok) return empty;
@@ -123,9 +115,9 @@ export async function fetchPlaceOverview(contentId: string): Promise<PlaceOvervi
     const overview = cleanText(it.overview);
     const tel = String(it.tel ?? "").trim();
     return {
-      overview: isUsefulDisplayValue(overview) ? overview : "",
-      homepage: extractUrl(it.homepage),
-      tel: isUsefulDisplayValue(tel) ? tel : "",
+      overview: isUsefulDisplayValue(overview) ? overview : empty.overview,
+      homepage: extractUrl(it.homepage) || empty.homepage,
+      tel: isUsefulDisplayValue(tel) ? tel : empty.tel,
     };
   } catch {
     return empty;

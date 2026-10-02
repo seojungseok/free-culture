@@ -1,4 +1,8 @@
 import NextStop from "@/components/NextStop";
+import VisitChecklist from "@/components/VisitChecklist";
+import SourceNote from "@/components/SourceNote";
+import { visitChecks } from "@/lib/visitPlanning";
+import campingData from "@/data/camping.json";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -58,6 +62,7 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
   const nearPlaces = nearbyPlaces(spotLike, 6);
   const nearFood = nearbyRestaurants({ area: c.area, mapx: c.mapx, mapy: c.mapy }, 3);
   const story = c.intro.trim();
+  const plan = visitChecks({ kind: "camp", season: c.operPd, reservation: c.resve, facilities: facs, pet: c.petRaw });
 
   const jsonLd = {
     "@context": "https://schema.org", "@type": "Campground",
@@ -114,7 +119,9 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
         </div>
       )}
 
-      {/* 소개글 — 구조화 데이터로 조합한 읽을거리(네이버블로그식 여백) */}
+      <VisitChecklist pageId={`camp:${id}`} items={plan} />
+
+      {/* 소개글 — 원출처에서 받은 실제 안내 */}
       {story && <section className="mt-6">
         <h2 className="mb-3 flex items-center gap-1.5 text-[17px] font-extrabold text-ink">
           <span>📖</span> 이런 곳이에요
@@ -169,7 +176,7 @@ export default async function CampDetailPage({ params }: { params: Promise<{ id:
       <CampingCookingGuide compact />
 
 
-      <p className="mt-8 text-[12px] text-ink-faint">캠핑정보 제공: 한국관광공사 고캠핑</p>
+      <SourceNote name="한국관광공사 고캠핑" href="https://www.gocamping.or.kr/" dates={[{ label: "기본정보 수집일", at: (c as typeof c & { checkedAt?: string }).checkedAt }, { label: "기본 목록 갱신일", at: campingData.generatedAt }]} officialUrl={c.homepage} />
     </Container>
   );
 }

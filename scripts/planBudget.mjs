@@ -26,7 +26,11 @@ const introRemaining = places.filter((p) => !(p.id in pIntro)).length;
 const infoRemaining = places.filter((p) => !(p.id in pInfo)).length;
 
 // 기본 배분(현행) + RIN이 덜 쓰는 만큼(freed)을 intro·info로 이관(60:40)
-const RIN_BASE = 500, INTRO_BASE = 250, INFO_BASE = 150; // 합 900
+// Weekly also reserves calls for refreshed lists, overviews and the day's
+// festival run. Keep the historical default for other manual workflows.
+const envelope = Math.min(900, Math.max(0, Number(process.env.TOUR_BACKFILL_BUDGET || 900)));
+const RIN_BASE = Math.floor(envelope * 5 / 9), INTRO_BASE = Math.floor(envelope * 2.5 / 9);
+const INFO_BASE = envelope - RIN_BASE - INTRO_BASE;
 
 const rin = Math.min(RIN_BASE, rinRemaining);
 const freed = RIN_BASE - rin; // RIN 완주에 가까울수록 커짐
@@ -44,5 +48,5 @@ if (out) fs.appendFileSync(out, lines);
 
 console.log("📊 TourAPI 예산 자동 배분");
 console.log(`   미수집 — 음식점영업(RIN) ${rinRemaining} · 방문팁 ${introRemaining} · 볼거리 ${infoRemaining}`);
-console.log(`   오늘 배분 — RIN ${rin} · 방문팁 ${intro} · 볼거리 ${info} (합 ${rin + intro + info} + 축제 100 ≈ ${rin + intro + info + 100})`);
+console.log(`   오늘 배분 — RIN ${rin} · 방문팁 ${intro} · 볼거리 ${info} (합 ${rin + intro + info} / backfill 상한 ${envelope})`);
 if (freed > 0) console.log(`   ♻ RIN 여유분 ${freed} → 방문팁·볼거리로 자동 이관`);

@@ -5,6 +5,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { classifyAdmission } from "../lib/admission.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PLACES = path.join(ROOT, "data", "places.json");
@@ -26,17 +27,6 @@ function loadKey() {
 }
 const KEY = loadKey();
 if (!KEY) { console.error("❌ TOUR_API_KEY / DATA_GO_KR_KEY 없음"); process.exit(1); }
-
-function classifyAdmission(fee) {
-  const s = String(fee || "").replace(/<[^>]+>/g, " ").replace(/&[a-z#0-9]+;/gi, " ").replace(/\s+/g, " ").trim();
-  if (!s) return "unknown";
-  const hasPrice = /\d[\d,]*\s*원/.test(s);
-  const hasFree = /무료/.test(s);
-  if (hasFree && !hasPrice) return "free";
-  if (hasPrice) return "paid";
-  if (hasFree) return "free";
-  return "unknown";
-}
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

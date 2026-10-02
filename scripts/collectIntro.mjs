@@ -52,14 +52,17 @@ async function main() {
   console.log(`\n🧭 방문 팁(detailIntro2) 수집 — 미수집 ${targetsTotal} · 이번 실행 ${batch.length} (상한 ${DAILY})`);
 
   const budget = createBudget(DAILY);
-  let ok = 0, empty = 0, fail = 0;
+  let ok = 0, empty = 0, fail = 0, retrieved = 0;
   for (const p of batch) {
     try {
       const raw = await detailIntroRaw(p.id, p.type, budget);
+      retrieved++;
       const norm = normalizeIntro(p.type, raw || {});
       norm.type = p.type;
+      norm.checkedAt = new Date().toISOString();
       if (norm.fee) norm.admission = classifyAdmission(norm.fee);
-      const keys = Object.keys(norm).filter((k) => k !== "type");
+      const keys = Object.keys(norm).filter((k) => !["type", "checkedAt"].includes(k));
+      if (!keys.length && store.intro[p.id]) { empty++; await sleep(220); continue; }
       store.intro[p.id] = norm;
       if (keys.length) ok++; else empty++;
     } catch (e) {
@@ -70,11 +73,13 @@ async function main() {
     await sleep(220);
   }
 
+  if (batch.length && !retrieved) { console.error("방문정보 조회 실패 — 기존 자료 유지"); process.exitCode = 1; return; }
+  if (!batch.length) return;
   store.generatedAt = new Date().toISOString();
   const mb = writeCache(OUT, store);
   const total = Object.keys(store.intro).length;
   const withData = Object.values(store.intro).filter(
-    (v) => Object.keys(v).filter((k) => k !== "type").length > 0
+    (v) => Object.keys(v).filter((k) => !["type", "checkedAt"].includes(k)).length > 0
   ).length;
   console.log(`\n💾 저장: data/${OUT} (${mb}MB)`);
   console.log(`   이번: 내용있음 ${ok} · 빈응답 ${empty} · 실패 ${fail} · API콜 ${budget.used}`);

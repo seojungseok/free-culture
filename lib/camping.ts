@@ -3,6 +3,7 @@ import campingData from "@/data/camping.json";
 import campingImages from "@/data/camping-images.json";
 import { SIDO_LIST } from "@/lib/classify";
 import { displayAddress } from "@/lib/address";
+import { normalizeExternalUrl } from "@/lib/externalUrl";
 
 export interface Camp {
   id: string; name: string; area: string; sigungu: string; addr: string;
@@ -19,8 +20,25 @@ const data = {
   count: raw.count,
   camps: (raw.camps || []).map((c) => ({
     ...c,
-    addr: displayAddress(c.addr, c.area),
-    image: c.image || imgOverride[c.id] || "",
+    id: String(c.id ?? ""),
+    name: String(c.name ?? ""),
+    area: String(c.area ?? ""),
+    sigungu: String(c.sigungu ?? ""),
+    addr: displayAddress(String(c.addr ?? ""), String(c.area ?? "")),
+    mapx: String(c.mapx ?? ""),
+    mapy: String(c.mapy ?? ""),
+    types: Array.isArray(c.types) ? c.types.filter((type) => typeof type === "string" && type.trim()) : [],
+    facilities: c.facilities && typeof c.facilities === "object" && !Array.isArray(c.facilities)
+      ? Object.fromEntries(Object.entries(c.facilities).map(([name, value]) => [name, value === true])) : {},
+    pet: c.pet === true,
+    petRaw: String(c.petRaw ?? ""),
+    lctCl: String(c.lctCl ?? ""),
+    resve: String(c.resve ?? ""),
+    operPd: String(c.operPd ?? ""),
+    tel: String(c.tel ?? ""),
+    homepage: normalizeExternalUrl(c.homepage),
+    image: String(c.image || imgOverride[c.id] || ""),
+    intro: String(c.intro ?? ""),
   })),
 };
 

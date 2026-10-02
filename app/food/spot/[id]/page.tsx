@@ -1,4 +1,8 @@
 import TripSave from "@/components/TripSave";
+import VisitChecklist from "@/components/VisitChecklist";
+import SourceNote from "@/components/SourceNote";
+import { visitChecks } from "@/lib/visitPlanning";
+import { getRestaurantIntro, visitInfoDates } from "@/lib/tourExtra";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -84,6 +88,9 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
   const telHref = tel ? (tel.match(/[\d+][\d\-]+\d/) || [])[0]?.replace(/-/g, "") : undefined;
   // 영업정보(수집분만) — 영업시간·휴무·주차·대표메뉴. 없으면 표 자체 숨김
   const bizRows = restaurantIntroRows(r.id);
+  const visit = getRestaurantIntro(r.id);
+  const plan = visitChecks({ kind: "food", hours: visit?.usetime, closed: visit?.restdate,
+    menu: getRestaurantMenu(r.id), parking: visit?.parking, reservation: visit?.reservation });
 
   // 갤러리 = 대표사진 + 추가사진(중복 제거)
   const gallery: GalleryImage[] = [];
@@ -161,6 +168,8 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
           <PlaceGallery images={gallery} title={r.title} />
         </div>
       )}
+
+      <VisitChecklist pageId={`food:${r.id}`} items={plan} />
 
       {overview && (
         <p className="mt-5 whitespace-pre-line text-[15px] leading-[1.8] text-ink-soft">{overview}</p>
@@ -240,7 +249,7 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
         </Link>
       </div>
 
-      <p className="mt-8 text-[12px] text-ink-faint">관광정보 제공: 한국관광공사 (TourAPI)</p>
+      <SourceNote name="한국관광공사 관광정보" href="https://korean.visitkorea.or.kr/" dates={[{ label: "소개정보 수집일", at: detail.overviewCheckedAt }, ...visitInfoDates(r.id, true)]} officialUrl={homepage} />
     </Container>
   );
 }

@@ -40,18 +40,22 @@ async function main() {
 
   const areaFilter = (process.env.RIN_AREAS || "").split(",").map((s) => s.trim()).filter(Boolean);
   const targets = orderTargets(restaurants, store.intro, areaFilter);
-  const batch = targets.slice(0, DAILY);
+  const requested = (process.argv[2] || "").split(",").map((id) => id.trim()).filter(Boolean);
+  const batch = requested.length ? restaurants.filter((r) => requested.includes(r.id)).slice(0, DAILY) : targets.slice(0, DAILY);
   console.log(`\n🍽️🧭 음식점 방문정보(detailIntro2) 수집 — 미수집 ${targets.length} · 이번 실행 ${batch.length} (상한 ${DAILY})`);
 
   const budget = createBudget(DAILY);
-  let ok = 0, empty = 0, fail = 0;
+  let ok = 0, empty = 0, fail = 0, retrieved = 0;
   for (const r of batch) {
     try {
       const raw = await detailIntroRaw(r.id, CT, budget);
+      retrieved++;
       const norm = normalizeIntro(CT, raw || {});
       norm.type = CT;
+      norm.checkedAt = new Date().toISOString();
+      if (!Object.keys(norm).some((key) => !["type", "checkedAt"].includes(key)) && store.intro[r.id]) { empty++; await sleep(220); continue; }
       store.intro[r.id] = norm;
-      if (Object.keys(norm).filter((k) => k !== "type").length) ok++; else empty++;
+      if (Object.keys(norm).filter((k) => !["type", "checkedAt"].includes(k)).length) ok++; else empty++;
     } catch (e) {
       if (e instanceof QuotaError) { console.log(`\n⛔ ${e.message} — 진행분 저장 후 중단`); break; }
       fail++;
@@ -60,11 +64,13 @@ async function main() {
     await sleep(220);
   }
 
+  if (batch.length && !retrieved) { console.error("영업정보 조회 실패 — 기존 자료 유지"); process.exitCode = 1; return; }
+  if (!batch.length) return;
   store.generatedAt = new Date().toISOString();
   const mb = writeCache(OUT, store);
   const total = Object.keys(store.intro).length;
   const withData = Object.values(store.intro).filter(
-    (v) => Object.keys(v).filter((k) => k !== "type").length > 0
+    (v) => Object.keys(v).filter((k) => !["type", "checkedAt"].includes(k)).length > 0
   ).length;
   console.log(`\n💾 저장: data/${OUT} (${mb}MB)`);
   console.log(`   이번: 내용있음 ${ok} · 빈응답 ${empty} · 실패 ${fail} · API콜 ${budget.used}`);

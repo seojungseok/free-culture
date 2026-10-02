@@ -11,7 +11,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: weekly-static
+  # Serialize with the daily update to avoid conflicting writes and API runs.
+  group: site-content-publication
   cancel-in-progress: false
 
 jobs:
@@ -19,6 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -26,6 +30,7 @@ jobs:
         run: npm ci
 
       - name: 검증 가능한 근처 주차 후보 갱신 (제한 표본, 실패 시 기존 파일 유지)
+        id: parking
         continue-on-error: true
         timeout-minutes: 20
         env:
@@ -33,20 +38,46 @@ jobs:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
         run: node scripts/collectParking.mjs
 
-      # 예산 자동 배분(RIN 완주 시 방문팁·볼거리로 이관)
+      - name: 관광지 기본정보 갱신 (기존 URL 보존, 최대 120회)
+        id: places
+        continue-on-error: true
+        timeout-minutes: 12
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          TOUR_LIST_BUDGET: "120"
+        run: node scripts/collectTour.mjs
+
+      - name: 캠핑 기본정보 갱신 (기존 URL 보존, 최대 8회)
+        id: camping
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          CAMPING_LIST_BUDGET: "8"
+        run: node scripts/collectCamping.mjs
+
+      # 650 backfill + 120 places + 100 restaurants = 870.
+      # Daily reserves at most 120 more (festival 10 + enrichment 90 + details 20).
+      # Include retries within each cap instead of assuming
+      # every endpoint has a separate quota. Provider limits remain authoritative.
       - name: TourAPI 예산 계획
         id: plan
+        env:
+          TOUR_BACKFILL_BUDGET: "650"
         run: node scripts/planBudget.mjs
 
       - name: 음식점 수집 (areaBasedList2)
+        id: restaurants
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          RESTO_DAILY: "300"
+          RESTO_DAILY: "100"
           RESTO_MAX: "8000"
         run: node scripts/collectRestaurants.mjs
 
       - name: 음식점 영업정보 (detailIntro2) — 전화·영업시간
+        id: restaurant_intro
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
@@ -54,6 +85,7 @@ jobs:
         run: node scripts/collectRestaurantIntro.mjs
 
       - name: 방문 팁 수집 (detailIntro2)
+        id: intro
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
@@ -61,6 +93,7 @@ jobs:
         run: node scripts/collectIntro.mjs
 
       - name: 볼거리 수집 (detailInfo2)
+        id: info
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
@@ -68,19 +101,22 @@ jobs:
         run: node scripts/collectInfo.mjs
 
       - name: 캠핑 이미지 백필 (goCamping imageList — 별도 한도)
+        id: camping_images
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          CIMG_DAILY: "1000"
+          CIMG_DAILY: "100"
         run: node scripts/collectCampingImages.mjs
 
       - name: 관광사진갤러리 동기화 (galleryList1)
+        id: gallery
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
         run: node scripts/collectPhotoGallery.mjs
 
       - name: 반려동물 동반여행 전국 기본정보 누적 수집
+        id: pet
         continue-on-error: true
         env:
           PET_TOUR_API_KEY: ${{ secrets.PET_TOUR_API_KEY }}
@@ -89,6 +125,7 @@ jobs:
         run: node scripts/collectPetTravel.mjs
 
       - name: 반려동물 상세정보·사진 보강 (하루 10곳)
+        id: pet_details
         continue-on-error: true
         env:
           PET_TOUR_API_KEY: ${{ secrets.PET_TOUR_API_KEY }}
@@ -97,6 +134,7 @@ jobs:
         run: node scripts/enrichPetTravel.mjs
 
       - name: 지역 축제 API 동기화 (부산·경주·울산·전남)
+        id: regional
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
@@ -106,11 +144,40 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/restaurants.json data/restaurant-intro.json data/place-intro.json \
+          git add data/places.json data/camping.json data/place-details.json data/place-overviews.json \
+                  data/restaurants.json data/restaurant-intro.json data/place-intro.json \
                   data/place-info.json data/camping-images.json data/photo-gallery.json data/festivals.json data/pet-travel.json data/parking.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
           else
             git commit -m "chore: 주간 정적 데이터 갱신 ($(date -u +%Y-%m-%d))"
-            git push
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          fi
+
+      - name: 실제 수집 단계 결과 확인
+        if: always()
+        env:
+          PARKING: ${{ steps.parking.outcome }}
+          PLACES: ${{ steps.places.outcome }}
+          CAMPING: ${{ steps.camping.outcome }}
+          RESTAURANTS: ${{ steps.restaurants.outcome }}
+          RESTAURANT_INTRO: ${{ steps.restaurant_intro.outcome }}
+          INTRO: ${{ steps.intro.outcome }}
+          INFO: ${{ steps.info.outcome }}
+          CAMPING_IMAGES: ${{ steps.camping_images.outcome }}
+          GALLERY: ${{ steps.gallery.outcome }}
+          PET: ${{ steps.pet.outcome }}
+          PET_DETAILS: ${{ steps.pet_details.outcome }}
+          REGIONAL: ${{ steps.regional.outcome }}
+        run: |
+          failed=0
+          for name in PARKING PLACES CAMPING RESTAURANTS RESTAURANT_INTRO INTRO INFO CAMPING_IMAGES GALLERY PET PET_DETAILS REGIONAL; do
+            outcome="${!name}"
+            echo "$name: $outcome"
+            if [ "$outcome" = "failure" ]; then failed=1; fi
+          done
+          if [ "$failed" = "1" ]; then
+            echo '::error::일부 API 수집이 실패했습니다. 성공한 데이터와 기존 URL은 보존했으며 실패 단계 로그를 확인해야 합니다.'
+            exit 1
           fi

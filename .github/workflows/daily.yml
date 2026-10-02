@@ -32,15 +32,18 @@ jobs:
       - name: 발행 전 공개 글 기록 (API 호출 없음)
         run: node scripts/report-daily-publication.mjs snapshot
 
-      # ── 매일 수집은 "시간에 민감한 최신정보"만 (축제·문화행사). 나머지 정적 수집은 weekly.yml로 분리. ──
+      # Dates are refreshed daily; existing place facts gain at most 20 detail
+      # requests a day. No new AI article is generated or published.
       - name: 축제 수집 (searchFestival2) — 날짜 있는 정보라 매일 최신화
+        id: festivals
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          FEST_DAILY: "300"
+          FEST_DAILY: "10"
         run: node scripts/collectFestivals.mjs
 
       - name: 지역 축제 수집 — 부산·경주·울산·전남 공식 API 병합
+        id: regional
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
@@ -48,14 +51,27 @@ jobs:
         run: node scripts/collectRegionalFestivals.mjs
 
       - name: 축제 상세정보·사진 보강 (하루 20곳)
+        id: festival_details
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
           FESTIVAL_ENRICH_DAILY: "20"
+          FESTIVAL_ENRICH_BUDGET: "90"
         run: node scripts/enrichFestivals.mjs
 
+      - name: 기존 관광지 소개·공식 홈페이지 보강 (최대 20회)
+        id: details
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          PLACE_DETAIL_DAILY: "20"
+        run: node scripts/collectPlaceDetails.mjs
+
       - name: 문화행사 수집 (KorService2) — 신규·종료 반영 위해 매일 최신화
+        id: events
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
@@ -79,6 +95,7 @@ jobs:
 
       # ── 반려동물 전국 기본정보 누적 수집(개발계정 한도 내) ──
       - name: 반려동물 동반여행 기본정보 수집
+        id: pet
         continue-on-error: true
         env:
           PET_TOUR_API_KEY: ${{ secrets.PET_TOUR_API_KEY }}
@@ -87,6 +104,7 @@ jobs:
         run: node scripts/collectPetTravel.mjs
 
       - name: 반려동물 상세정보·사진 보강 (하루 10곳)
+        id: pet_details
         continue-on-error: true
         env:
           PET_TOUR_API_KEY: ${{ secrets.PET_TOUR_API_KEY }}
@@ -100,7 +118,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/events.json data/events-archive.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
-                  data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json \
+                  data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json data/place-details.json \
                   data/pet-travel.json data/city-tour-articles.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
@@ -128,3 +146,25 @@ jobs:
       - name: 실제 신규 발행 수 확인
         if: always()
         run: node scripts/report-daily-publication.mjs
+
+      - name: 실제 API 수집 단계 결과 확인
+        if: always()
+        env:
+          FESTIVALS: ${{ steps.festivals.outcome }}
+          REGIONAL: ${{ steps.regional.outcome }}
+          FESTIVAL_DETAILS: ${{ steps.festival_details.outcome }}
+          DETAILS: ${{ steps.details.outcome }}
+          EVENTS: ${{ steps.events.outcome }}
+          PET: ${{ steps.pet.outcome }}
+          PET_DETAILS: ${{ steps.pet_details.outcome }}
+        run: |
+          failed=0
+          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS EVENTS PET PET_DETAILS; do
+            outcome="${!name}"
+            echo "$name: $outcome"
+            if [ "$outcome" = "failure" ]; then failed=1; fi
+          done
+          if [ "$failed" = "1" ]; then
+            echo '::error::일부 API 수집이 실패했습니다. 성공한 데이터와 기존 URL은 보존했으며 실패 단계 로그를 확인해야 합니다.'
+            exit 1
+          fi

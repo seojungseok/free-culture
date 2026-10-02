@@ -1,0 +1,270 @@
+{
+  "generatedAt": "2026-10-02T19:52:34.933Z",
+  "referenceDayKst": "20261003",
+  "mode": "stored-data-only; network disabled",
+  "categories": {
+    "places": {
+      "total": 9292,
+      "indexable": 3003,
+      "noindex": 6289,
+      "sourceRecords": 10704,
+      "redirectedSourceRecords": 1412
+    },
+    "restaurants": {
+      "total": 7496,
+      "indexable": 7107,
+      "noindex": 389
+    },
+    "camping": {
+      "total": 3198,
+      "indexable": 2085,
+      "noindex": 1113
+    },
+    "courses": {
+      "total": 228,
+      "indexable": 72,
+      "noindex": 156
+    },
+    "events": {
+      "total": 1086,
+      "indexable": 352,
+      "noindex": 734,
+      "storedCurrentRecords": 1096,
+      "addressConflictExcludedFromLists": 10,
+      "currentAndArchiveDetailUrls": 4541,
+      "endedDetailRecords": 3495
+    },
+    "petTravel": {
+      "total": 535,
+      "indexable": 378,
+      "noindex": 157,
+      "publiclyListedRecords": 378
+    },
+    "cityTours": {
+      "total": 112,
+      "indexable": 101,
+      "noindex": 11
+    },
+    "kidsCourses": {
+      "total": 1558,
+      "indexable": 0,
+      "noindex": 1558
+    },
+    "festivals": {
+      "total": 312,
+      "indexable": 2,
+      "noindex": 310,
+      "publiclyListedCurrentRecords": 312,
+      "duplicateEventAliases": 57
+    },
+    "weekendPrep": {
+      "total": 44,
+      "indexable": 44,
+      "noindex": 0
+    },
+    "dateCourses": {
+      "total": 491,
+      "indexable": 0,
+      "noindex": 491
+    }
+  },
+  "informationCoverage": {
+    "places": {
+      "publishedArticle": 950,
+      "cachedOverview": 125,
+      "visitRows": 3182,
+      "facilityRows": 1037,
+      "noStoredDescriptionOrVisitFacts": 6083,
+      "missingHours": 6220,
+      "missingFeeText": 8278,
+      "perPlaceVisitCollectionDate": 3,
+      "missingImage": 0
+    },
+    "restaurants": {
+      "visitRows": 7131,
+      "noStoredBusinessFacts": 365,
+      "missingHours": 382,
+      "missingMenus": 477,
+      "perPlaceCollectionDate": 2,
+      "missingImage": 0
+    },
+    "camping": {
+      "noIntro": 1539,
+      "noIntroAndFewerThanThreeFacilities": 883,
+      "perPlaceCollectionDate": 3115,
+      "missingOperationPeriod": 676,
+      "missingReservationMethod": 1162,
+      "missingHomepage": 1190,
+      "missingImage": 770
+    },
+    "events": {
+      "noDescription": 1028,
+      "endedInCurrentList": 50,
+      "missingOfficialUrl": 603,
+      "missingImage": 0
+    },
+    "petTravel": {
+      "unpublishedReasonCounts": {
+        "장소 사진 3장 미만": 141,
+        "구체적인 동반 안내 부족": 17,
+        "시설·이용 정보 부족": 11,
+        "장소별 소개 부족": 37,
+        "일반 반려동물 허용 확인 필요": 3
+      }
+    }
+  },
+  "newUiCoverage": {
+    "checklistAndSourceInstalled": true,
+    "places": 9292,
+    "restaurants": 7496,
+    "camping": 3198,
+    "total": 19986,
+    "coursesWithVisitPlan": 228
+  },
+  "coursePlanning": {
+    "coursesWithPlanning": 228,
+    "coursesWithStoredVisitFacts": 166,
+    "coursesWithCompleteCoordinateSegments": 185,
+    "shownStopReferences": 944,
+    "exactPlaceDetailLinks": 729,
+    "mapOnlyStopReferences": 215,
+    "mapOnlySamples": [
+      {
+        "courseId": "jeju-heritage-day-3c1pmi",
+        "name": "에코힐글램핑"
+      },
+      {
+        "courseId": "jeonnam-heritage-2n3d-yiog3y",
+        "name": "가우도카라반펜션"
+      },
+      {
+        "courseId": "jeonnam-heritage-2n3d-yiog3y",
+        "name": "국립천관산자연휴양림캠핑장"
+      },
+      {
+        "courseId": "chungbuk-heritage-1n2d-1qkdasm",
+        "name": "낭추골캠핑장"
+      },
+      {
+        "courseId": "gangwon-heritage-day-1vle7ar",
+        "name": "병풍바위야영장"
+      },
+      {
+        "courseId": "gyeongbuk-heritage-2n3d-1woty7g",
+        "name": "증산수도계곡캠핑장"
+      },
+      {
+        "courseId": "gangwon-nature-1n2d-19h3vvq",
+        "name": "국립삼봉자연휴양림 야영장"
+      },
+      {
+        "courseId": "gyeonggi-family-day-1j7a6s6",
+        "name": "양평수목원캠핑장"
+      }
+    ]
+  },
+  "sitemap": {
+    "totalUrls": 13260,
+    "uniqueUrls": 13260,
+    "expectedDetailUrls": 13144,
+    "actualDetailUrls": 13144,
+    "missingExpectedCount": 0,
+    "unexpectedDetailCount": 0,
+    "missingExpected": [],
+    "unexpectedDetails": [],
+    "invalidLastModifiedCount": 0,
+    "baselineUrlCount": 13199,
+    "addedCount": 62,
+    "removedCount": 1,
+    "added": [
+      "https://mwohaji.kr/camping/102275",
+      "https://mwohaji.kr/camping/102034",
+      "https://mwohaji.kr/camping/102206",
+      "https://mwohaji.kr/camping/102236",
+      "https://mwohaji.kr/camping/102021",
+      "https://mwohaji.kr/camping/101962",
+      "https://mwohaji.kr/camping/179",
+      "https://mwohaji.kr/camping/102337",
+      "https://mwohaji.kr/camping/1803",
+      "https://mwohaji.kr/camping/102340"
+    ],
+    "removed": [
+      "https://mwohaji.kr/camping/7671"
+    ]
+  },
+  "urlContinuity": {
+    "baselineCommit": "bc126d8f34e5f403729a40ce6b3e29cafba363eb",
+    "baselineAvailableDetailUrls": 28835,
+    "currentAvailableDetailUrls": 29219,
+    "removedCount": 0,
+    "removed": [],
+    "interpretation": "Stored route identity/lookup comparison; production HTTP responses are checked separately."
+  },
+  "links": {
+    "staticInternalReferencesChecked": 7048,
+    "missingReferenceCount": 0,
+    "uniqueMissingTargets": 0,
+    "missingSamples": [],
+    "malformedSourceCampHomepages": 231,
+    "recoveredClickableCampHomepages": 178,
+    "withheldNonUrlSourceCampHomepages": 59,
+    "malformedRenderedCampHomepages": 0,
+    "malformedHomepageSamples": [],
+    "invalidNonemptyMapCoordinatePairs": 0,
+    "invalidMapSamples": [],
+    "externalHttpStatus": "Not requested: this audit does not call providers or external websites."
+  },
+  "risks": [
+    {
+      "priority": 1,
+      "issue": "Stored place descriptions and visit facts are missing on many retained pages",
+      "count": 6083,
+      "source": "lib/placeQuality.ts; data/place-overviews.json; lib/tourExtra.ts",
+      "mitigation": "Sparse detail URLs remain available but are excluded from the sitemap by their existing noindex gate. New checklists do not supply missing facts."
+    },
+    {
+      "priority": 3,
+      "issue": "Existing visit/business rows lack per-place collection dates",
+      "count": 10308,
+      "source": "lib/tourExtra.ts::visitInfoDates; scripts/collectIntro.mjs; scripts/collectRestaurantIntro.mjs",
+      "mitigation": "Do not call a file-wide timestamp a per-place check. Updated collectors record successful retrieval dates for future refreshes."
+    },
+    {
+      "priority": 4,
+      "issue": "Course stops without an unambiguous stored place match",
+      "count": 215,
+      "source": "lib/coursePlanning.ts::resolveCoursePlace",
+      "mitigation": "Show map search instead of attaching another place's details or opening times. Match resolution does not make an actual route/travel-time guarantee."
+    },
+    {
+      "priority": 5,
+      "issue": "Camps lack operation-period or reservation details",
+      "count": 1321,
+      "source": "data/camping.json; lib/visitPlanning.ts",
+      "mitigation": "Checklists explicitly ask users to confirm missing operating/reservation conditions with the operator."
+    },
+    {
+      "priority": 2,
+      "issue": "Current culture events without stored descriptive content",
+      "count": 1028,
+      "source": "data/events.json; lib/eventQuality.ts",
+      "mitigation": "Dates and contact facts can support an eligible page, but missing event-specific descriptions still need source enrichment. Sparse and ended detail pages retain their noindex gate."
+    }
+  ],
+  "changedDataFiles": [
+    "data/camping.json",
+    "data/chuseok.json",
+    "data/festivals.json",
+    "data/place-info.json",
+    "data/place-intro.json",
+    "data/place-overviews.json",
+    "data/restaurant-intro.json"
+  ],
+  "limitations": [
+    "Indexable/noindex counts follow the current code publication gates; they are not Google index counts or AdSense approval evidence.",
+    "Pet candidate noindex is the stored-candidate universe; only publishable candidates appear in public lists.",
+    "A usable retained URL may intentionally redirect to a canonical category/detail route.",
+    "Stored link resolution does not prove production HTTP status, external availability or search performance."
+  ],
+  "failures": []
+}
