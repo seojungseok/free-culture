@@ -3,11 +3,13 @@ import { weekendRangeYmd } from "@/lib/dates";
 import eventsData from "@/data/events.json";
 import type { CultureEvent, EventsData, PriceType } from "./types";
 import { displayAddress, displayRegionTitle } from "@/lib/address";
+import { eventSourceDetail } from '@/lib/eventSource';
 
 const normalizedEvents: EventsData = {
   ...(eventsData as unknown as EventsData),
   events: (eventsData as unknown as EventsData).events.map((event) => ({
     ...event,
+    sourceDetail:eventSourceDetail(event),
     title: displayRegionTitle(event.title, event.area),
     address: displayAddress(event.address || "", event.area),
     addressConflict: Boolean(event.address && !displayAddress(event.address, event.area)),

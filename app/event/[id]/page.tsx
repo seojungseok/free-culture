@@ -238,6 +238,13 @@ export default async function EventPage({
             </section>
           )}
 
+          {ev.sourceDetail&&<section aria-labelledby="event-source-details-heading" className="mt-6 rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6">
+            <h2 id="event-source-details-heading" className="mb-4 text-[17px] font-extrabold text-ink">공식 안내의 관람·참여 정보</h2>
+            {ev.sourceDetail.facts.length>0&&<dl className="space-y-3 text-[14px] leading-7">{ev.sourceDetail.facts.map(fact=><div key={fact.label} className="grid gap-1 sm:grid-cols-[140px_1fr] sm:gap-3"><dt className="min-w-0 break-words font-bold">{fact.label}</dt><dd className="min-w-0 break-words">{fact.value}</dd></div>)}</dl>}
+            {ev.sourceDetail.excerpt&&<blockquote className="mt-4 border-l-2 border-free/30 pl-4 text-sm leading-7 text-ink-soft">{ev.sourceDetail.excerpt}</blockquote>}
+            <p className="mt-4 text-xs leading-6 text-ink-faint">공식 안내 확인: {new Date(ev.sourceDetail.checkedAt).toLocaleDateString('ko-KR',{timeZone:'Asia/Seoul'})}. <a href={ev.sourceDetail.url} target="_blank" rel="noopener noreferrer" className="font-bold underline">전체 프로그램·신청 조건 확인 ↗</a></p>
+          </section>}
+
           {/* 소개글 — 구조화 데이터로 조합(공식 소개 없는 행사도 읽을거리 확보).
               네이버블로그처럼 여백 있고 읽기 편하게(짧은 문단, 넉넉한 줄간격) */}
           {story.length > 0 && <section className="mt-7 rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6">

@@ -24,6 +24,9 @@ import {
   SIDO_LIST,
 } from "../lib/classify.js";
 import { mergeEventArchive } from './eventArchive.mjs';
+import {loadSourceEnv} from './lib/sourceEnv.mjs';
+import {QuotaError,safeApiError} from './lib/tourClient.mjs';
+loadSourceEnv();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -57,7 +60,7 @@ if (!KEY) {
 const DAYS = Number(process.env.COLLECT_DAYS || 60);
 const MAX_DETAIL = Number(process.env.COLLECT_MAX || 2000);
 const ONLY_SIDO = process.env.COLLECT_SIDO || "";
-const CONCURRENCY = Number(process.env.COLLECT_CONCURRENCY || 8);
+const CONCURRENCY = Math.max(1,Math.min(4,Number(process.env.COLLECT_CONCURRENCY || 2)));
 
 // ---- 날짜 유틸 (KST 기준) ---------------------------------------------------
 function kstNow() {
@@ -76,23 +79,29 @@ const TO = ymd(new Date(kstNow().getTime() + DAYS * 24 * 60 * 60 * 1000));
 // ---- 호출 카운터 (트래픽 로깅/상한) ----------------------------------------
 const calls = { period2: 0, area2: 0, detail2: 0 };
 const DAILY_LIMIT = 10000;
+let nextRequestAt=0,providerQuota=null,detailFailures=0;
 
 async function fetchXml(url, kind) {
-  calls[kind]++;
-  if (calls[kind] > DAILY_LIMIT) {
-    throw new Error(`⛔ ${kind} 일일 호출 상한(${DAILY_LIMIT}) 초과 — 중단`);
-  }
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
+      const at=Math.max(Date.now(),nextRequestAt);nextRequestAt=at+650;
+      if(at>Date.now())await new Promise(r=>setTimeout(r,at-Date.now()));
+      if(providerQuota)throw providerQuota;
+      if(calls[kind]>=(kind==='detail2'?MAX_DETAIL:DAILY_LIMIT))throw new QuotaError('local');
+      calls[kind]++;
       const res = await fetch(url, { signal: AbortSignal.timeout(20000) });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const text = await res.text();
+      const limitCode=text.match(/<(?:returnReasonCode|resultCode)>\s*(22|23)\s*</)?.[1];
+      if((limitCode==='23'||text.includes('LIMITED_NUMBER_OF_SERVICE_REQUESTS_PER_SECOND_EXCEEDS_ERROR'))&&attempt<2){await new Promise(r=>setTimeout(r,Math.max(1.5,Math.min(30,Number(res.headers.get('retry-after'))||1.5))*1000));continue;}
+      if(res.status===429||limitCode==='22'||/LIMITED_NUMBER_OF_SERVICE_REQUESTS/.test(text)){providerQuota=new QuotaError('provider',{status:res.status,endpoint:kind,code:limitCode});throw providerQuota;}
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const json = parser.parse(text);
       const code = json?.response?.header?.resultCode;
       if (code !== "00" && code !== 0)
-        throw new Error(`resultCode=${code} msg=${json?.response?.header?.resultMsg}`);
+        throw new Error(`resultCode=${/^\d+$/.test(String(code))?code:'unknown'}`);
       return json;
     } catch (e) {
+      if(e instanceof QuotaError)throw e;
       if (attempt === 2) throw e;
       await new Promise((r) => setTimeout(r, 500 * (attempt + 1)));
     }
@@ -205,7 +214,7 @@ async function main() {
         const d = await fetchDetail(seq);
         if (d) detailMap.set(seq, d);
       } catch (e) {
-        // 개별 실패는 건너뜀 (사이트는 유지)
+        if(!(e instanceof QuotaError)){detailFailures++;console.error(`문화행사 ${seq}: ${safeApiError(e)}`);}
       }
     },
     (done, total) => process.stdout.write(`  ...상세 ${done}/${total}\r`)
@@ -254,7 +263,7 @@ async function main() {
             freeCondition: prev.freeCondition ?? "",
           };
     const { featured, score } = computeFeatured({ realmName, place, title });
-    const contents = de ? decodeEntities(de.contents1) : prev?.contents || "";
+    const contents = de?.contents1 ? decodeEntities(de.contents1) : prev?.contents || "";
     const audiences = computeAudiences({
       title,
       realmName,
@@ -278,12 +287,12 @@ async function main() {
       place,
       area,
       sigungu,
-      address: de ? decodeEntities(de.placeAddr) : prev?.address || "",
+      address: de?.placeAddr ? decodeEntities(de.placeAddr) : prev?.address || "",
       realmName,
       genreKey,
       imgUrl,
-      officialUrl: de ? String(de.url || "") : prev?.officialUrl || "",
-      phone: de ? decodeEntities(de.phone) : prev?.phone || "",
+      officialUrl: de?.url ? decodeEntities(de.url) : prev?.officialUrl || "",
+      phone: de?.phone ? decodeEntities(de.phone) : prev?.phone || "",
       contents,
       gpsX: String(li.gpsX ?? de?.gpsX ?? prev?.gpsX ?? ""),
       gpsY: String(li.gpsY ?? de?.gpsY ?? prev?.gpsY ?? ""),
@@ -324,10 +333,12 @@ async function main() {
   );
   console.log(`   종료 제거 ${dropExpired}건 | 큰행사(featured) ${featuredCount}건`);
   console.log(`   API 호출: period2=${calls.period2} area2=${calls.area2} detail2=${calls.detail2}\n`);
+  if(detailFailures)process.exitCode=1;
+  else if(providerQuota){console.warn('문화행사 제공기관 호출 한도: 저장한 정보를 보존하고 다음 실행으로 이월');process.exitCode=75;}
 }
 
 main().catch((e) => {
-  console.error("\n❌ 수집 실패:", e.message);
+  console.error("\n❌ 수집 실패:", safeApiError(e));
   console.error("   기존 events.json 은 유지됩니다.");
-  process.exit(1);
+  process.exit(e instanceof QuotaError&&e.reason==='provider'?75:1);
 });

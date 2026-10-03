@@ -5,6 +5,11 @@ export type PriceType =
   | "paid"
   | "unknown";
 
+export interface EventSourceDetail {
+  status:string;title:string;url:string;checkedAt:string;excerpt?:string;
+  eventTitle:string;eventStartDate:string;eventEndDate:string;
+  facts:{label:string;value:string}[];
+}
 export interface CultureEvent {
   /** API의 seq (고유 id) */
   id: string;
@@ -40,6 +45,7 @@ export interface CultureEvent {
   officialUrl: string; // 공식 상세 페이지
   phone: string;
   contents: string; // 설명 (있을 때)
+  sourceDetail?: EventSourceDetail;
 
   gpsX: string;
   gpsY: string;

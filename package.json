@@ -41,6 +41,7 @@
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",
     "autoprefixer": "10.4.20",
+    "cheerio": "1.2.0",
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.5.21",
     "fast-xml-parser": "^5.10.1",

@@ -33,6 +33,8 @@ jobs:
         run: |
           node --test scripts/lib/tourClient.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs
           node scripts/test-tour-detail-fallback.cjs
+          node --test scripts/enrichCourseStops.test.mjs scripts/enrichCoursePlaces.test.mjs scripts/enrichCultureEvents.test.mjs
+          node scripts/test-course-planning.cjs
 
       - name: 일일 공공 API 예산 (월요일은 주간 수집분 예약)
         id: api_budget
@@ -89,15 +91,44 @@ jobs:
           PLACE_IMAGE_DAILY: ${{ steps.api_budget.outputs.images }}
         run: node scripts/run-collector.mjs scripts/collectPlaceImages.mjs
 
-      - name: 문화행사 수집 (KorService2) — 신규·종료 반영 위해 매일 최신화
+      - name: 문화행사 수집 (cultureinfo) — 신규·종료 반영 위해 매일 최신화
         id: events
         continue-on-error: true
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           COLLECT_DAYS: "90"
-          COLLECT_MAX: "3000"
-          COLLECT_CONCURRENCY: "10"
-        run: node scripts/collect.mjs
+          COLLECT_MAX: "200"
+          COLLECT_CONCURRENCY: "2"
+        run: node scripts/run-collector.mjs scripts/collect.mjs
+
+      - name: 공식 여행코스 경유지 ID 대조 (30일 재점검)
+        id: course_stops
+        continue-on-error: true
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          COURSE_STOP_DAILY: ${{ steps.api_budget.outputs.course_stops }}
+        run: node scripts/run-collector.mjs scripts/enrichCourseStops.mjs
+
+      - name: 코스에만 남아 있는 장소의 운영·예약 정보 저장
+        id: course_places
+        continue-on-error: true
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          COURSE_PLACE_DAILY: ${{ steps.api_budget.outputs.course_places }}
+        run: node scripts/run-collector.mjs scripts/enrichCoursePlaces.mjs
+
+      - name: 문화행사 설명·공식 프로그램·참여 조건 보강
+        id: culture_details
+        continue-on-error: true
+        timeout-minutes: 12
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          CULTURE_DETAIL_DAILY: "300"
+          CULTURE_SOURCE_PAGES: "80"
+          CULTURE_SOURCE_WORKERS: "2"
+        run: node scripts/run-collector.mjs scripts/enrichCultureEvents.mjs
 
       - name: 기존 관광지 글 재점검 (재작성 후보 표시)
         continue-on-error: true
@@ -138,7 +169,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/events.json data/events-archive.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
                   data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json data/place-details.json \
-                  data/pet-travel.json data/city-tour-articles.json
+                  data/pet-travel.json data/city-tour-articles.json data/course-stop-checks.json data/course-place-details.json data/event-source-details.json
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 건너뜀"
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -177,17 +208,23 @@ jobs:
           EVENTS: ${{ steps.events.outcome }}
           PET: ${{ steps.pet.outcome }}
           PET_DETAILS: ${{ steps.pet_details.outcome }}
+          COURSE_STOPS: ${{ steps.course_stops.outcome }}
+          COURSE_PLACES: ${{ steps.course_places.outcome }}
+          CULTURE_DETAILS: ${{ steps.culture_details.outcome }}
           FESTIVAL_DETAIL_STATUS: ${{ steps.festival_details.outputs.collector_status }}
           PLACE_DETAIL_STATUS: ${{ steps.details.outputs.collector_status }}
           IMAGE_STATUS: ${{ steps.images.outputs.collector_status }}
+          COURSE_STOP_STATUS: ${{ steps.course_stops.outputs.collector_status }}
+          COURSE_PLACE_STATUS: ${{ steps.course_places.outputs.collector_status }}
+          CULTURE_DETAIL_STATUS: ${{ steps.culture_details.outputs.collector_status }}
         run: |
           failed=0
-          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS; do
+          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS; do
             outcome="${!name}"
             echo "$name: $outcome"
             if [ "$outcome" = "failure" ]; then failed=1; fi
           done
-          for name in FESTIVAL_DETAIL_STATUS PLACE_DETAIL_STATUS IMAGE_STATUS; do
+          for name in FESTIVAL_DETAIL_STATUS PLACE_DETAIL_STATUS IMAGE_STATUS COURSE_STOP_STATUS COURSE_PLACE_STATUS CULTURE_DETAIL_STATUS; do
             if [ "${!name}" = "deferred" ]; then
               echo "$name: 제공기관 한도로 연기 (기존 정보 보존)"
             fi

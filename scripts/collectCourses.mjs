@@ -94,6 +94,7 @@ async function fetchStops(id) {
       .map((s) => ({
         num: Number(s.subnum || 0),
         name: clean(s.subname),
+        ...( /^[1-9]\d*$/.test(String(s.subcontentid||'')) ? {placeId:String(s.subcontentid),sourceOverview:clean(s.subdetailoverview),placeIdSource:{provider:'한국관광공사',courseId:id,subnum:Number(s.subnum),subname:clean(s.subname),subcontentid:String(s.subcontentid),endpoint:'detailInfo2',checkedAt:new Date().toISOString()}} : {} ),
         overview: clean(s.subdetailoverview),
         image: https(s.subdetailimg || ""),
       }))

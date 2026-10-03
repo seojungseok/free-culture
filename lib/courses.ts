@@ -20,6 +20,8 @@ export interface CourseStop {
   mapy?: string;
   addr?: string;
   placeId?: string;
+  sourceOverview?: string;
+  placeIdSource?: {provider:string;courseId:string;subnum:number;subname:string;subcontentid:string;endpoint:string;checkedAt:string};
   food?: boolean;
 }
 export interface CourseRaw {

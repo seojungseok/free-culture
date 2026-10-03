@@ -125,6 +125,9 @@ const informationCoverage = {
   },
   events: {
     noDescription: count(events, item => !text(item.contents)),
+    withOfficialParticipationFacts: count(events,item=>Boolean(item.sourceDetail?.facts?.length)),
+    withOfficialExcerpt: count(events,item=>Boolean(item.sourceDetail?.excerpt)),
+    noEventSpecificSourceContent: count(events,item=>!text(item.contents)&&!item.sourceDetail?.facts?.length&&!item.sourceDetail?.excerpt),
     endedInCurrentList: count(events, item => item.endDate < today),
     missingOfficialUrl: count(events, item => !item.officialUrl),
     missingImage: count(events, item => !item.imgUrl),
@@ -136,6 +139,7 @@ const informationCoverage = {
 const plans = courses.map(item => ({ item, plan: load('lib/coursePlanning').courseVisitPlan(item) }));
 const planStops = plans.flatMap(({item, plan}) => plan.days.flatMap(day => day.stops.map(stop => ({courseId:item.id, name:stop.name, detailHref:stop.detailHref, mapHref:stop.mapHref, facts:stop.facts}))));
 const coursePlanning = {
+  unresolvedSourceReferences: courses.reduce((sum,item)=>sum+course.courseAttractions(item).filter(stop=>!load('lib/coursePlanning').resolveCoursePlace(stop,item.area)).length,0),
   coursesWithPlanning: plans.length,
   coursesWithStoredVisitFacts: count(plans, item => item.plan.hasVisitFacts),
   coursesWithCompleteCoordinateSegments: count(plans, item => item.plan.days.some(day => day.totalStraightKm !== null)),
@@ -210,9 +214,9 @@ const links = { staticInternalReferencesChecked:linkReferences.length, missingRe
 const risks = [
   { priority:1, issue:'Stored place descriptions and visit facts are missing on many retained pages', count:informationCoverage.places.noStoredDescriptionOrVisitFacts, source:'lib/placeQuality.ts; data/place-overviews.json; lib/tourExtra.ts', mitigation:'Sparse detail URLs remain available but are excluded from the sitemap by their existing noindex gate. New checklists do not supply missing facts.' },
   { priority:3, issue:'Existing visit/business rows lack per-place collection dates', count:informationCoverage.places.visitRows-informationCoverage.places.perPlaceVisitCollectionDate+informationCoverage.restaurants.visitRows-informationCoverage.restaurants.perPlaceCollectionDate, source:'lib/tourExtra.ts::visitInfoDates; scripts/collectIntro.mjs; scripts/collectRestaurantIntro.mjs', mitigation:'Do not call a file-wide timestamp a per-place check. Updated collectors record successful retrieval dates for future refreshes.' },
-  { priority:4, issue:'Course stops without an unambiguous stored place match', count:coursePlanning.mapOnlyStopReferences, source:'lib/coursePlanning.ts::resolveCoursePlace', mitigation:'Show map search instead of attaching another place\'s details or opening times. Match resolution does not make an actual route/travel-time guarantee.' },
+  { priority:4, issue:'Course stops without an unambiguous source place binding', count:coursePlanning.unresolvedSourceReferences, source:'lib/coursePlanning.ts::resolveCoursePlace', mitigation:'Official source IDs or unique exact stored names establish identity. Stops without their own local detail URL show source descriptions inline; they do not inherit another place\'s hours.' },
   { priority:5, issue:'Camps lack operation-period or reservation details', count:count(camps,item=>!useful(item.operPd)||!useful(item.resve)), source:'data/camping.json; lib/visitPlanning.ts', mitigation:'Checklists explicitly ask users to confirm missing operating/reservation conditions with the operator.' },
-  { priority:2, issue:'Current culture events without stored descriptive content', count:informationCoverage.events.noDescription, source:'data/events.json; lib/eventQuality.ts', mitigation:'Dates and contact facts can support an eligible page, but missing event-specific descriptions still need source enrichment. Sparse and ended detail pages retain their noindex gate.' },
+  { priority:2, issue:'Current culture events without descriptive content or verified event-specific source facts', count:informationCoverage.events.noEventSpecificSourceContent, source:'data/events.json; data/event-source-details.json; lib/eventQuality.ts', mitigation:'Missing facts stay in the throttled refresh queue. Verified source excerpts and participation conditions supplement the page; publication gates remain unchanged.' },
 ];
 const report = { generatedAt:new Date().toISOString(), referenceDayKst:today, mode:'stored-data-only; network disabled', categories, informationCoverage, newUiCoverage:{ checklistAndSourceInstalled:checklistInstalled, places:places.length, restaurants:restaurants.length, camping:camps.length, total:places.length+restaurants.length+camps.length, coursesWithVisitPlan:plans.length }, coursePlanning, sitemap:sitemapAudit, urlContinuity, links, risks, changedDataFiles, limitations:['Indexable/noindex counts follow the current code publication gates; they are not Google index counts or AdSense approval evidence.','Pet candidate noindex is the stored-candidate universe; only publishable candidates appear in public lists.','A usable retained URL may intentionally redirect to a canonical category/detail route.','Stored link resolution does not prove production HTTP status, external availability or search performance.'] };
 const failures = [];

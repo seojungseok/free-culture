@@ -57,14 +57,14 @@ jobs:
           CAMPING_LIST_BUDGET: "8"
         run: node scripts/collectCamping.mjs
 
-      # 630 backfill + 120 places + 100 restaurants = 850.
-      # Daily reserves at most 130 more (festival 10 + enrichment 90 + details 20 + images 10).
+      # 610 backfill + 120 places + 100 restaurants = 830; reserve daily course enrichment.
+      # Daily reserves 170 more (festival 10 + enrichment 90 + details 20 + images 10 + courses 40).
       # Include retries within each cap instead of assuming
       # every endpoint has a separate quota. Provider limits remain authoritative.
       - name: TourAPI 예산 계획
         id: plan
         env:
-          TOUR_BACKFILL_BUDGET: "630"
+          TOUR_BACKFILL_BUDGET: "610"
         run: node scripts/planBudget.mjs
 
       - name: 음식점 수집 (areaBasedList2)

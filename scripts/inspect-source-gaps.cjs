@@ -1,0 +1,18 @@
+const fs = require('node:fs'), path = require('node:path'), Module = require('node:module'), ts = require('typescript');
+const root = path.resolve(__dirname,'..');
+const resolve = Module._resolveFilename, originalJs = Module._extensions['.js'];
+Module._resolveFilename = function(request,parent,...args) { if(request.startsWith('@/')) request=path.join(root,request.slice(2)); return resolve.call(this,request,parent,...args); };
+const compile=(mod,file)=>mod._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020,esModuleInterop:true}}).outputText,file);
+Module._extensions['.ts']=compile;
+Module._extensions['.mjs']=compile;
+Module._extensions['.js']=(mod,file)=>file.startsWith(path.join(root,'lib')+path.sep)?compile(mod,file):originalJs(mod,file);
+const {getAllCourses,courseAttractions}=require('../lib/courses.ts');
+const {resolveCoursePlace}=require('../lib/coursePlanning.ts');
+const missing=[];
+for(const course of getAllCourses()) for(const stop of courseAttractions(course)) if(!resolveCoursePlace(stop,course.area)) missing.push({courseId:course.id,source:course.source,area:course.area,num:stop.num,name:stop.name,placeId:stop.placeId||''});
+const events=JSON.parse(fs.readFileSync(path.join(root,'data/events.json'))).events;
+const {eventSourceDetail:getEventSourceDetail}=require('../lib/eventSource.ts');
+const sources=events.map(e=>getEventSourceDetail(e)).filter(Boolean);
+const report={checkedAt:new Date().toISOString(),courseReferencesMissing:missing.length,officialMissing:missing.filter(x=>x.source==='official').length,autoMissing:missing.filter(x=>x.source==='auto').length,missingStops:missing,eventCount:events.length,eventDescriptionMissing:events.filter(e=>!e.contents?.trim()).length,verifiedOfficialDetails:sources.length,eventSources:sources.filter(e=>e.facts?.length).length,officialExcerpts:sources.filter(e=>e.excerpt).length,withoutEventSpecificInformation:events.filter(e=>!e.contents?.trim()&&!getEventSourceDetail(e)).length};
+fs.writeFileSync(path.join(root,'docs/source-gaps-current.json'),JSON.stringify(report,null,2));
+console.log(JSON.stringify({...report,missingStops:missing.slice(0,35)},null,2));

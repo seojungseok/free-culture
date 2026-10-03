@@ -34,6 +34,8 @@ try {
   assert.equal(resolveCoursePlace(stop("국립"), "서울"), undefined, "partial names must not borrow another place's facts");
   assert.equal(resolveCoursePlace(stop("존재하지 않는 장소"), "서울"), undefined);
   const places = getAllPlaces();
+  const camps=require('../lib/camping.ts').getAllCamps();
+  const restaurants=require('../lib/food.ts').getAllRestaurants();
   const byName = new Map();
   for (const place of places) {
     const key = place.title.replace(/\s+/g, "");
@@ -74,7 +76,12 @@ try {
       for (const entry of day.stops) {
         if (!entry.detailHref) continue;
         linkedStops++;
-        assert.ok(places.some((place) => `/places/spot/${place.id}` === entry.detailHref), `${item.id}: detail link must exist`);
+        assert.ok(places.some((place) => `/places/spot/${place.id}` === entry.detailHref)||camps.some(c=>`/camping/${c.id}`===entry.detailHref)||restaurants.some(r=>`/food/spot/${r.id}`===entry.detailHref), `${item.id}: detail link must exist`);
+        if(entry.detailHref.startsWith('/camping/')) {
+          const camp=camps.find(c=>`/camping/${c.id}`===entry.detailHref);
+          for(const fact of entry.facts)assert.ok([camp.resve,camp.operPd,camp.tel,camp.petRaw].includes(fact.value),`${item.id}: camping facts must come from the exact linked camp`);
+          continue;
+        }
         const facts = introRows(entry.placeId).map((row) => ({ label: row.label, value: eventContentsText(row.value) }));
         for (const fact of entry.facts) assert.ok(facts.some((row) => row.label === fact.label && row.value === fact.value), `${item.id}: visit facts must match stored source exactly`);
         assert.equal(entry.sourceCollectedAt, getIntro(entry.placeId)?.checkedAt, `${item.id}: only the per-place retrieval date may be displayed`);

@@ -1,0 +1,1731 @@
+{
+  "checkedAt": "2026-10-03T00:25:31.424Z",
+  "courseReferencesMissing": 215,
+  "officialMissing": 181,
+  "autoMissing": 34,
+  "missingStops": [
+    {
+      "courseId": "jeju-heritage-day-3c1pmi",
+      "source": "auto",
+      "area": "제주",
+      "num": 2,
+      "name": "에코힐글램핑",
+      "placeId": "2747494"
+    },
+    {
+      "courseId": "jeonnam-heritage-2n3d-yiog3y",
+      "source": "auto",
+      "area": "전남",
+      "num": 3,
+      "name": "가우도카라반펜션",
+      "placeId": "2740970"
+    },
+    {
+      "courseId": "jeonnam-heritage-2n3d-yiog3y",
+      "source": "auto",
+      "area": "전남",
+      "num": 5,
+      "name": "국립천관산자연휴양림캠핑장",
+      "placeId": "2739374"
+    },
+    {
+      "courseId": "chungbuk-heritage-1n2d-1qkdasm",
+      "source": "auto",
+      "area": "충북",
+      "num": 5,
+      "name": "낭추골캠핑장",
+      "placeId": "2907868"
+    },
+    {
+      "courseId": "gangwon-heritage-day-1vle7ar",
+      "source": "auto",
+      "area": "강원",
+      "num": 1,
+      "name": "병풍바위야영장",
+      "placeId": "2752768"
+    },
+    {
+      "courseId": "gyeongbuk-heritage-2n3d-1woty7g",
+      "source": "auto",
+      "area": "경북",
+      "num": 4,
+      "name": "증산수도계곡캠핑장",
+      "placeId": "2747502"
+    },
+    {
+      "courseId": "gangwon-nature-1n2d-19h3vvq",
+      "source": "auto",
+      "area": "강원",
+      "num": 3,
+      "name": "국립삼봉자연휴양림 야영장",
+      "placeId": "2755592"
+    },
+    {
+      "courseId": "gyeonggi-family-day-1j7a6s6",
+      "source": "auto",
+      "area": "경기",
+      "num": 1,
+      "name": "양평수목원캠핑장",
+      "placeId": "2734864"
+    },
+    {
+      "courseId": "gangwon-heritage-day-1xo0phy",
+      "source": "auto",
+      "area": "강원",
+      "num": 2,
+      "name": "강촌버즈글램핑",
+      "placeId": "2759582"
+    },
+    {
+      "courseId": "gangwon-heritage-day-1wqssz7",
+      "source": "auto",
+      "area": "강원",
+      "num": 2,
+      "name": "여울소리",
+      "placeId": "2757998"
+    },
+    {
+      "courseId": "chungbuk-heritage-1n2d-dln3bc",
+      "source": "auto",
+      "area": "충북",
+      "num": 2,
+      "name": "낭추골캠핑장",
+      "placeId": "2907868"
+    },
+    {
+      "courseId": "gangwon-heritage-day-1m59tr3",
+      "source": "auto",
+      "area": "강원",
+      "num": 1,
+      "name": "행복나드리 캠핑장",
+      "placeId": "2757181"
+    },
+    {
+      "courseId": "chungbuk-nature-2n3d-i5azzs",
+      "source": "auto",
+      "area": "충북",
+      "num": 5,
+      "name": "화양숲노리캠핑장",
+      "placeId": "2908043"
+    },
+    {
+      "courseId": "gyeonggi-nature-day-binuc",
+      "source": "auto",
+      "area": "경기",
+      "num": 2,
+      "name": "또올래캠프",
+      "placeId": "2732992"
+    },
+    {
+      "courseId": "gyeonggi-heritage-day-binuc",
+      "source": "auto",
+      "area": "경기",
+      "num": 2,
+      "name": "또올래캠프",
+      "placeId": "2732992"
+    },
+    {
+      "courseId": "2987555",
+      "source": "official",
+      "area": "인천",
+      "num": 1,
+      "name": "소창체험관",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987555",
+      "source": "official",
+      "area": "인천",
+      "num": 3,
+      "name": "교동도 대룡시장",
+      "placeId": ""
+    },
+    {
+      "courseId": "jeonbuk-heritage-2n3d-1w19l4t",
+      "source": "auto",
+      "area": "전북",
+      "num": 6,
+      "name": "자두마을캠핑",
+      "placeId": "2734238"
+    },
+    {
+      "courseId": "gyeongnam-heritage-2n3d-o9ewfc",
+      "source": "auto",
+      "area": "경남",
+      "num": 3,
+      "name": "청광새들녘캠핑",
+      "placeId": "2739372"
+    },
+    {
+      "courseId": "gangwon-heritage-2n3d-1e1bleg",
+      "source": "auto",
+      "area": "강원",
+      "num": 2,
+      "name": "[해파랑길] 47코스",
+      "placeId": "2782509"
+    },
+    {
+      "courseId": "gangwon-heritage-2n3d-1e1bleg",
+      "source": "auto",
+      "area": "강원",
+      "num": 3,
+      "name": "봉수대오토캠핑장",
+      "placeId": "2727232"
+    },
+    {
+      "courseId": "gyeongbuk-heritage-1n2d-1fj306t",
+      "source": "auto",
+      "area": "경북",
+      "num": 4,
+      "name": "증산수도계곡캠핑장",
+      "placeId": "2747502"
+    },
+    {
+      "courseId": "gangwon-heritage-1n2d-p6ktj7",
+      "source": "auto",
+      "area": "강원",
+      "num": 2,
+      "name": "[해파랑길] 47코스",
+      "placeId": "2782509"
+    },
+    {
+      "courseId": "gangwon-heritage-1n2d-p6ktj7",
+      "source": "auto",
+      "area": "강원",
+      "num": 3,
+      "name": "봉수대오토캠핑장",
+      "placeId": "2727232"
+    },
+    {
+      "courseId": "gangwon-heritage-day-1qz0him",
+      "source": "auto",
+      "area": "강원",
+      "num": 2,
+      "name": "[해파랑길] 47코스",
+      "placeId": "2782509"
+    },
+    {
+      "courseId": "chungbuk-family-1n2d-19y10s7",
+      "source": "auto",
+      "area": "충북",
+      "num": 1,
+      "name": "낭추골캠핑장",
+      "placeId": "2907868"
+    },
+    {
+      "courseId": "jeju-nature-1n2d-aavn19",
+      "source": "auto",
+      "area": "제주",
+      "num": 5,
+      "name": "제주도파인비치 펜션",
+      "placeId": "2747514"
+    },
+    {
+      "courseId": "jeonnam-nature-day-1o5a1bd",
+      "source": "auto",
+      "area": "전남",
+      "num": 1,
+      "name": "불태산 글램핑",
+      "placeId": "2727287"
+    },
+    {
+      "courseId": "jeonnam-nature-day-1xq92cn",
+      "source": "auto",
+      "area": "전남",
+      "num": 2,
+      "name": "담양금성오토캠핑장",
+      "placeId": "2729195"
+    },
+    {
+      "courseId": "jeonbuk-family-day-1x6me0f",
+      "source": "auto",
+      "area": "전북",
+      "num": 1,
+      "name": "강변사리마을캠핑장",
+      "placeId": "2726718"
+    },
+    {
+      "courseId": "gyeongnam-nature-day-1c0lf6o",
+      "source": "auto",
+      "area": "경남",
+      "num": 2,
+      "name": "더하루캠핑파크",
+      "placeId": "2728926"
+    },
+    {
+      "courseId": "gyeongbuk-nature-day-hv9rjj",
+      "source": "auto",
+      "area": "경북",
+      "num": 1,
+      "name": "에코팡팡랜드 오토캠핑장",
+      "placeId": "2908645"
+    },
+    {
+      "courseId": "gyeongnam-nature-day-14aj7fs",
+      "source": "auto",
+      "area": "경남",
+      "num": 2,
+      "name": "지리산리조트글램핑",
+      "placeId": "2734250"
+    },
+    {
+      "courseId": "gyeongbuk-nature-day-s3618",
+      "source": "auto",
+      "area": "경북",
+      "num": 2,
+      "name": "상의자동차야영장",
+      "placeId": "2371472"
+    },
+    {
+      "courseId": "gyeongbuk-heritage-day-s3618",
+      "source": "auto",
+      "area": "경북",
+      "num": 2,
+      "name": "상의자동차야영장",
+      "placeId": "2371472"
+    },
+    {
+      "courseId": "gangwon-heritage-day-18dn285",
+      "source": "auto",
+      "area": "강원",
+      "num": 2,
+      "name": "소금강오토캠프장",
+      "placeId": "2734026"
+    },
+    {
+      "courseId": "2987549",
+      "source": "official",
+      "area": "경기",
+      "num": 2,
+      "name": "철원 한탄강 주상절리길(잔도)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987549",
+      "source": "official",
+      "area": "경기",
+      "num": 3,
+      "name": "비수구미마을(비수구미계곡)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987549",
+      "source": "official",
+      "area": "경기",
+      "num": 4,
+      "name": "화천 반지교&아를테마수목공원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987549",
+      "source": "official",
+      "area": "경기",
+      "num": 5,
+      "name": "국립 방태산자연휴양림",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987549",
+      "source": "official",
+      "area": "경기",
+      "num": 6,
+      "name": "강원평화누리길 17코스 고성 송지호 철새길",
+      "placeId": ""
+    },
+    {
+      "courseId": "2895293",
+      "source": "official",
+      "area": "경기",
+      "num": 0,
+      "name": "태풍전망대",
+      "placeId": ""
+    },
+    {
+      "courseId": "2895293",
+      "source": "official",
+      "area": "경기",
+      "num": 1,
+      "name": "연강갤러리",
+      "placeId": ""
+    },
+    {
+      "courseId": "2895293",
+      "source": "official",
+      "area": "경기",
+      "num": 2,
+      "name": "임진강댑싸리공원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2895293",
+      "source": "official",
+      "area": "경기",
+      "num": 3,
+      "name": "임진강 주상절리 (한탄강 국가지질공원)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2895293",
+      "source": "official",
+      "area": "경기",
+      "num": 4,
+      "name": "서가네한우마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "2895293",
+      "source": "official",
+      "area": "경기",
+      "num": 6,
+      "name": "연천 호로고루",
+      "placeId": ""
+    },
+    {
+      "courseId": "2823807",
+      "source": "official",
+      "area": "대구",
+      "num": 2,
+      "name": "교항리 이팝나무 군락지",
+      "placeId": ""
+    },
+    {
+      "courseId": "2823807",
+      "source": "official",
+      "area": "대구",
+      "num": 6,
+      "name": "대구수목원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2823807",
+      "source": "official",
+      "area": "대구",
+      "num": 7,
+      "name": "대구 평화시장",
+      "placeId": ""
+    },
+    {
+      "courseId": "2867109",
+      "source": "official",
+      "area": "충북",
+      "num": 1,
+      "name": "다누리아쿠아리움",
+      "placeId": ""
+    },
+    {
+      "courseId": "2867109",
+      "source": "official",
+      "area": "충북",
+      "num": 2,
+      "name": "단양구경시장 (1, 6일)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2867109",
+      "source": "official",
+      "area": "충북",
+      "num": 3,
+      "name": "도담삼봉",
+      "placeId": ""
+    },
+    {
+      "courseId": "2867109",
+      "source": "official",
+      "area": "충북",
+      "num": 4,
+      "name": "제천 옥순봉 출렁다리",
+      "placeId": ""
+    },
+    {
+      "courseId": "2867109",
+      "source": "official",
+      "area": "충북",
+      "num": 6,
+      "name": "명가박달재",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987541",
+      "source": "official",
+      "area": "경기",
+      "num": 0,
+      "name": "마장호수 출렁다리",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987541",
+      "source": "official",
+      "area": "경기",
+      "num": 1,
+      "name": "파주 DMZ 곤돌라",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987541",
+      "source": "official",
+      "area": "경기",
+      "num": 2,
+      "name": "파주 장단콩마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987554",
+      "source": "official",
+      "area": "경기",
+      "num": 2,
+      "name": "백마고지 위령비와 기념관",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987554",
+      "source": "official",
+      "area": "경기",
+      "num": 4,
+      "name": "고석정 꽃밭",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987554",
+      "source": "official",
+      "area": "경기",
+      "num": 5,
+      "name": "칠성전망대",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987564",
+      "source": "official",
+      "area": "경기",
+      "num": 2,
+      "name": "라베니체광장",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987564",
+      "source": "official",
+      "area": "경기",
+      "num": 4,
+      "name": "조양방직",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987564",
+      "source": "official",
+      "area": "경기",
+      "num": 5,
+      "name": "강화 전등사",
+      "placeId": ""
+    },
+    {
+      "courseId": "2807090",
+      "source": "official",
+      "area": "경남",
+      "num": 0,
+      "name": "가천 다랭이마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "2807090",
+      "source": "official",
+      "area": "경남",
+      "num": 2,
+      "name": "금산 보리암(남해)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2807090",
+      "source": "official",
+      "area": "경남",
+      "num": 3,
+      "name": "국립 남해편백자연휴양림",
+      "placeId": ""
+    },
+    {
+      "courseId": "2807090",
+      "source": "official",
+      "area": "경남",
+      "num": 5,
+      "name": "창선교와 원시어업 죽방렴",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804863",
+      "source": "official",
+      "area": "전남",
+      "num": 2,
+      "name": "미평산림욕장",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804863",
+      "source": "official",
+      "area": "전남",
+      "num": 3,
+      "name": "한려해상국립공원 (오동도)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804863",
+      "source": "official",
+      "area": "전남",
+      "num": 4,
+      "name": "고소동 천사벽화마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "2899221",
+      "source": "official",
+      "area": "경기",
+      "num": 0,
+      "name": "동이손만두",
+      "placeId": ""
+    },
+    {
+      "courseId": "2899221",
+      "source": "official",
+      "area": "경기",
+      "num": 1,
+      "name": "국립수목원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2899221",
+      "source": "official",
+      "area": "경기",
+      "num": 2,
+      "name": "포천무형문화재 전수교육관",
+      "placeId": ""
+    },
+    {
+      "courseId": "2899221",
+      "source": "official",
+      "area": "경기",
+      "num": 3,
+      "name": "포천 산사원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2899221",
+      "source": "official",
+      "area": "경기",
+      "num": 4,
+      "name": "장수촌",
+      "placeId": ""
+    },
+    {
+      "courseId": "2899221",
+      "source": "official",
+      "area": "경기",
+      "num": 5,
+      "name": "포천아트밸리",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987539",
+      "source": "official",
+      "area": "경기",
+      "num": 0,
+      "name": "벽초지수목원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987539",
+      "source": "official",
+      "area": "경기",
+      "num": 1,
+      "name": "마장호수 출렁다리",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987539",
+      "source": "official",
+      "area": "경기",
+      "num": 2,
+      "name": "파주 장단콩마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987539",
+      "source": "official",
+      "area": "경기",
+      "num": 4,
+      "name": "임진강댑싸리공원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2936862",
+      "source": "official",
+      "area": "인천",
+      "num": 0,
+      "name": "금풍양조장",
+      "placeId": ""
+    },
+    {
+      "courseId": "2936862",
+      "source": "official",
+      "area": "인천",
+      "num": 2,
+      "name": "강화 전등사",
+      "placeId": ""
+    },
+    {
+      "courseId": "2936862",
+      "source": "official",
+      "area": "인천",
+      "num": 3,
+      "name": "교동도 대룡시장",
+      "placeId": ""
+    },
+    {
+      "courseId": "2936862",
+      "source": "official",
+      "area": "인천",
+      "num": 4,
+      "name": "강화도제적봉 평화전망대",
+      "placeId": ""
+    },
+    {
+      "courseId": "2932734",
+      "source": "official",
+      "area": "전북",
+      "num": 2,
+      "name": "익산 왕궁리유적",
+      "placeId": ""
+    },
+    {
+      "courseId": "2932734",
+      "source": "official",
+      "area": "전북",
+      "num": 3,
+      "name": "국립익산박물관",
+      "placeId": ""
+    },
+    {
+      "courseId": "2932734",
+      "source": "official",
+      "area": "전북",
+      "num": 5,
+      "name": "익산 미륵사지",
+      "placeId": ""
+    },
+    {
+      "courseId": "2932734",
+      "source": "official",
+      "area": "전북",
+      "num": 6,
+      "name": "웨스턴라이프호텔",
+      "placeId": ""
+    },
+    {
+      "courseId": "2932734",
+      "source": "official",
+      "area": "전북",
+      "num": 7,
+      "name": "용안생태습지",
+      "placeId": ""
+    },
+    {
+      "courseId": "2932734",
+      "source": "official",
+      "area": "전북",
+      "num": 8,
+      "name": "익산교도소세트장",
+      "placeId": ""
+    },
+    {
+      "courseId": "2916281",
+      "source": "official",
+      "area": "전남",
+      "num": 1,
+      "name": "목포근대역사관 1관",
+      "placeId": ""
+    },
+    {
+      "courseId": "2916281",
+      "source": "official",
+      "area": "전남",
+      "num": 4,
+      "name": "갓바위 문화타운",
+      "placeId": ""
+    },
+    {
+      "courseId": "2916281",
+      "source": "official",
+      "area": "전남",
+      "num": 5,
+      "name": "포미아구찜 평화광장점",
+      "placeId": ""
+    },
+    {
+      "courseId": "2916281",
+      "source": "official",
+      "area": "전남",
+      "num": 7,
+      "name": "신안비치호텔",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987551",
+      "source": "official",
+      "area": "인천",
+      "num": 0,
+      "name": "교동도(강화)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987551",
+      "source": "official",
+      "area": "인천",
+      "num": 1,
+      "name": "조양방직",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987551",
+      "source": "official",
+      "area": "인천",
+      "num": 2,
+      "name": "애기봉평화생태공원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987551",
+      "source": "official",
+      "area": "인천",
+      "num": 3,
+      "name": "파주 DMZ 곤돌라",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987551",
+      "source": "official",
+      "area": "인천",
+      "num": 4,
+      "name": "말똥도넛 디저트타운",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987504",
+      "source": "official",
+      "area": "인천",
+      "num": 0,
+      "name": "배미꾸미조각공원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987504",
+      "source": "official",
+      "area": "인천",
+      "num": 1,
+      "name": "김포 장릉(인헌왕후) [유네스코 세계문화유산]",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987504",
+      "source": "official",
+      "area": "인천",
+      "num": 3,
+      "name": "파주 임진각(평화누리공원)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987504",
+      "source": "official",
+      "area": "인천",
+      "num": 4,
+      "name": "재인폭포 (한탄강 국가지질공원)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987504",
+      "source": "official",
+      "area": "인천",
+      "num": 5,
+      "name": "연강갤러리",
+      "placeId": ""
+    },
+    {
+      "courseId": "2826888",
+      "source": "official",
+      "area": "경북",
+      "num": 0,
+      "name": "부용대",
+      "placeId": ""
+    },
+    {
+      "courseId": "2826888",
+      "source": "official",
+      "area": "경북",
+      "num": 2,
+      "name": "하회별신굿탈놀이",
+      "placeId": ""
+    },
+    {
+      "courseId": "2826888",
+      "source": "official",
+      "area": "경북",
+      "num": 3,
+      "name": "병산서원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2826888",
+      "source": "official",
+      "area": "경북",
+      "num": 6,
+      "name": "이상루 고택",
+      "placeId": ""
+    },
+    {
+      "courseId": "2826888",
+      "source": "official",
+      "area": "경북",
+      "num": 7,
+      "name": "봉정사",
+      "placeId": ""
+    },
+    {
+      "courseId": "2826888",
+      "source": "official",
+      "area": "경북",
+      "num": 9,
+      "name": "까치구멍집",
+      "placeId": ""
+    },
+    {
+      "courseId": "2826888",
+      "source": "official",
+      "area": "경북",
+      "num": 10,
+      "name": "안동포타운",
+      "placeId": ""
+    },
+    {
+      "courseId": "2988349",
+      "source": "official",
+      "area": "강원",
+      "num": 1,
+      "name": "고석정 꽃밭",
+      "placeId": ""
+    },
+    {
+      "courseId": "2988349",
+      "source": "official",
+      "area": "강원",
+      "num": 4,
+      "name": "양구 수목원",
+      "placeId": ""
+    },
+    {
+      "courseId": "1937646",
+      "source": "official",
+      "area": "충남",
+      "num": 0,
+      "name": "보령 방자구이마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "1937646",
+      "source": "official",
+      "area": "충남",
+      "num": 1,
+      "name": "점심식사(고향굴구이)",
+      "placeId": ""
+    },
+    {
+      "courseId": "1937646",
+      "source": "official",
+      "area": "충남",
+      "num": 3,
+      "name": "국립생태원",
+      "placeId": ""
+    },
+    {
+      "courseId": "1937646",
+      "source": "official",
+      "area": "충남",
+      "num": 4,
+      "name": "장항 솔숲",
+      "placeId": ""
+    },
+    {
+      "courseId": "1937646",
+      "source": "official",
+      "area": "충남",
+      "num": 5,
+      "name": "서천이색체험마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804720",
+      "source": "official",
+      "area": "전남",
+      "num": 1,
+      "name": "여귀산",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804720",
+      "source": "official",
+      "area": "전남",
+      "num": 3,
+      "name": "고하도 전망대",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804720",
+      "source": "official",
+      "area": "전남",
+      "num": 5,
+      "name": "목포근대역사관 1관",
+      "placeId": ""
+    },
+    {
+      "courseId": "2807088",
+      "source": "official",
+      "area": "강원",
+      "num": 0,
+      "name": "김일성 별장",
+      "placeId": ""
+    },
+    {
+      "courseId": "2807088",
+      "source": "official",
+      "area": "강원",
+      "num": 1,
+      "name": "백섬해상전망대",
+      "placeId": ""
+    },
+    {
+      "courseId": "2807088",
+      "source": "official",
+      "area": "강원",
+      "num": 2,
+      "name": "고성 왕곡마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "2807088",
+      "source": "official",
+      "area": "강원",
+      "num": 3,
+      "name": "송지호 해안 서낭바위 (강원평화지역 국가지질공원)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2807088",
+      "source": "official",
+      "area": "강원",
+      "num": 4,
+      "name": "능파대 (강원평화지역 국가지질공원)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2807088",
+      "source": "official",
+      "area": "강원",
+      "num": 5,
+      "name": "장사항",
+      "placeId": ""
+    },
+    {
+      "courseId": "2833445",
+      "source": "official",
+      "area": "경기",
+      "num": 0,
+      "name": "안산 다문화거리",
+      "placeId": ""
+    },
+    {
+      "courseId": "2833445",
+      "source": "official",
+      "area": "경기",
+      "num": 1,
+      "name": "솔티 인도네팔레스토랑",
+      "placeId": ""
+    },
+    {
+      "courseId": "2833445",
+      "source": "official",
+      "area": "경기",
+      "num": 4,
+      "name": "연미정",
+      "placeId": ""
+    },
+    {
+      "courseId": "2833445",
+      "source": "official",
+      "area": "경기",
+      "num": 5,
+      "name": "성공회 강화성당",
+      "placeId": ""
+    },
+    {
+      "courseId": "2833445",
+      "source": "official",
+      "area": "경기",
+      "num": 7,
+      "name": "강화 고려궁지",
+      "placeId": ""
+    },
+    {
+      "courseId": "2833445",
+      "source": "official",
+      "area": "경기",
+      "num": 8,
+      "name": "강화 소창체험관",
+      "placeId": ""
+    },
+    {
+      "courseId": "2822525",
+      "source": "official",
+      "area": "전북",
+      "num": 0,
+      "name": "남원 아담원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2822525",
+      "source": "official",
+      "area": "전북",
+      "num": 1,
+      "name": "남원시립김병종미술관",
+      "placeId": ""
+    },
+    {
+      "courseId": "2822525",
+      "source": "official",
+      "area": "전북",
+      "num": 2,
+      "name": "광한루원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2822525",
+      "source": "official",
+      "area": "전북",
+      "num": 3,
+      "name": "구 서도역",
+      "placeId": ""
+    },
+    {
+      "courseId": "2822525",
+      "source": "official",
+      "area": "전북",
+      "num": 5,
+      "name": "지리산고원흑돈유통센타",
+      "placeId": ""
+    },
+    {
+      "courseId": "1855403",
+      "source": "official",
+      "area": "경남",
+      "num": 0,
+      "name": "창선교와 죽방렴",
+      "placeId": ""
+    },
+    {
+      "courseId": "1855403",
+      "source": "official",
+      "area": "경남",
+      "num": 1,
+      "name": "독일마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "1855403",
+      "source": "official",
+      "area": "경남",
+      "num": 4,
+      "name": "상주 은모래비치",
+      "placeId": ""
+    },
+    {
+      "courseId": "1855403",
+      "source": "official",
+      "area": "경남",
+      "num": 5,
+      "name": "금산 보리암",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804862",
+      "source": "official",
+      "area": "경남",
+      "num": 0,
+      "name": "상족암군립공원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804862",
+      "source": "official",
+      "area": "경남",
+      "num": 3,
+      "name": "고성 송학동 고분군",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804862",
+      "source": "official",
+      "area": "경남",
+      "num": 4,
+      "name": "남산공원(고성)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804862",
+      "source": "official",
+      "area": "경남",
+      "num": 5,
+      "name": "해지개다리",
+      "placeId": ""
+    },
+    {
+      "courseId": "2363051",
+      "source": "official",
+      "area": "경기",
+      "num": 0,
+      "name": "부천 물 박물관",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804685",
+      "source": "official",
+      "area": "부산",
+      "num": 0,
+      "name": "오륙도 (부산 국가지질공원)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804685",
+      "source": "official",
+      "area": "부산",
+      "num": 2,
+      "name": "해운대해수욕장",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804685",
+      "source": "official",
+      "area": "부산",
+      "num": 3,
+      "name": "청사포",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804685",
+      "source": "official",
+      "area": "부산",
+      "num": 4,
+      "name": "해동 용궁사(부산)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804685",
+      "source": "official",
+      "area": "부산",
+      "num": 5,
+      "name": "간절곶 등대",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804685",
+      "source": "official",
+      "area": "부산",
+      "num": 6,
+      "name": "장생포 고래문화마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804868",
+      "source": "official",
+      "area": "충남",
+      "num": 2,
+      "name": "서천 마량리 동백나무 숲",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804868",
+      "source": "official",
+      "area": "충남",
+      "num": 3,
+      "name": "무창포해수욕장",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804868",
+      "source": "official",
+      "area": "충남",
+      "num": 4,
+      "name": "순교성지 갈매못",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804867",
+      "source": "official",
+      "area": "경북",
+      "num": 1,
+      "name": "경주 감은사지",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804867",
+      "source": "official",
+      "area": "경북",
+      "num": 4,
+      "name": "포항 장기읍성",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804867",
+      "source": "official",
+      "area": "경북",
+      "num": 5,
+      "name": "구룡포 말목장성탐방로",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987535",
+      "source": "official",
+      "area": "강원",
+      "num": 0,
+      "name": "원대리 자작나무 숲 (속삭이는 자작나무 숲)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987535",
+      "source": "official",
+      "area": "강원",
+      "num": 1,
+      "name": "화암사(고성)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987535",
+      "source": "official",
+      "area": "강원",
+      "num": 3,
+      "name": "인제스피디움리조트 서킷",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987535",
+      "source": "official",
+      "area": "강원",
+      "num": 4,
+      "name": "한반도섬",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987542",
+      "source": "official",
+      "area": "강원",
+      "num": 0,
+      "name": "한탄강(국가지질공원, 고석정)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987542",
+      "source": "official",
+      "area": "강원",
+      "num": 1,
+      "name": "화천 목재문화체험장",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987542",
+      "source": "official",
+      "area": "강원",
+      "num": 3,
+      "name": "두타연 (강원평화지역 국가지질공원)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987542",
+      "source": "official",
+      "area": "강원",
+      "num": 4,
+      "name": "만해마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987542",
+      "source": "official",
+      "area": "강원",
+      "num": 5,
+      "name": "백담사",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987534",
+      "source": "official",
+      "area": "경기",
+      "num": 0,
+      "name": "김포 장릉(인헌왕후) [유네스코 세계문화유산]",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987534",
+      "source": "official",
+      "area": "경기",
+      "num": 1,
+      "name": "조양방직",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987534",
+      "source": "official",
+      "area": "경기",
+      "num": 2,
+      "name": "라베니체광장",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987543",
+      "source": "official",
+      "area": "경기",
+      "num": 0,
+      "name": "파주 DMZ 곤돌라",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987543",
+      "source": "official",
+      "area": "경기",
+      "num": 1,
+      "name": "파주 장단콩마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987558",
+      "source": "official",
+      "area": "경기",
+      "num": 1,
+      "name": "전곡재래시장 (4, 9일)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2961651",
+      "source": "official",
+      "area": "인천",
+      "num": 0,
+      "name": "소창체험관",
+      "placeId": ""
+    },
+    {
+      "courseId": "2961651",
+      "source": "official",
+      "area": "인천",
+      "num": 1,
+      "name": "조양방직",
+      "placeId": ""
+    },
+    {
+      "courseId": "2961651",
+      "source": "official",
+      "area": "인천",
+      "num": 2,
+      "name": "김포 장릉",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804869",
+      "source": "official",
+      "area": "전북",
+      "num": 1,
+      "name": "고창 고인돌 유적 [유네스코 세계문화유산]",
+      "placeId": ""
+    },
+    {
+      "courseId": "2804869",
+      "source": "official",
+      "area": "전북",
+      "num": 2,
+      "name": "운곡 람사르",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987536",
+      "source": "official",
+      "area": "강원",
+      "num": 1,
+      "name": "고석정 꽃밭",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987536",
+      "source": "official",
+      "area": "강원",
+      "num": 4,
+      "name": "인제스피디움리조트 서킷",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987536",
+      "source": "official",
+      "area": "강원",
+      "num": 5,
+      "name": "백담사",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987536",
+      "source": "official",
+      "area": "강원",
+      "num": 6,
+      "name": "아야진해변",
+      "placeId": ""
+    },
+    {
+      "courseId": "2821974",
+      "source": "official",
+      "area": "경남",
+      "num": 0,
+      "name": "동부저수지",
+      "placeId": ""
+    },
+    {
+      "courseId": "2821974",
+      "source": "official",
+      "area": "경남",
+      "num": 1,
+      "name": "학동흑진주 몽돌해변",
+      "placeId": ""
+    },
+    {
+      "courseId": "2821974",
+      "source": "official",
+      "area": "경남",
+      "num": 2,
+      "name": "거제 케이블카",
+      "placeId": ""
+    },
+    {
+      "courseId": "2821974",
+      "source": "official",
+      "area": "경남",
+      "num": 3,
+      "name": "소노캄 거제 마리나베이 요트투어",
+      "placeId": ""
+    },
+    {
+      "courseId": "2821974",
+      "source": "official",
+      "area": "경남",
+      "num": 4,
+      "name": "어방가",
+      "placeId": ""
+    },
+    {
+      "courseId": "2821974",
+      "source": "official",
+      "area": "경남",
+      "num": 5,
+      "name": "숲소리공원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987552",
+      "source": "official",
+      "area": "강원",
+      "num": 0,
+      "name": "칠성전망대",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987552",
+      "source": "official",
+      "area": "강원",
+      "num": 2,
+      "name": "화천시장 (3, 8일)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987552",
+      "source": "official",
+      "area": "강원",
+      "num": 3,
+      "name": "두타연 (강원평화지역 국가지질공원)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987552",
+      "source": "official",
+      "area": "강원",
+      "num": 5,
+      "name": "아야진해변",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987565",
+      "source": "official",
+      "area": "강원",
+      "num": 0,
+      "name": "화천 반지교&아를테마수목공원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987565",
+      "source": "official",
+      "area": "강원",
+      "num": 1,
+      "name": "한반도섬",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987565",
+      "source": "official",
+      "area": "강원",
+      "num": 2,
+      "name": "국토정중앙천문대",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987565",
+      "source": "official",
+      "area": "강원",
+      "num": 3,
+      "name": "원대리 자작나무 숲 (속삭이는 자작나무 숲)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987565",
+      "source": "official",
+      "area": "강원",
+      "num": 4,
+      "name": "백담사",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987565",
+      "source": "official",
+      "area": "강원",
+      "num": 5,
+      "name": "아야진해변",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987537",
+      "source": "official",
+      "area": "인천",
+      "num": 0,
+      "name": "마니산(강화)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987537",
+      "source": "official",
+      "area": "인천",
+      "num": 1,
+      "name": "강화 전등사",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987537",
+      "source": "official",
+      "area": "인천",
+      "num": 2,
+      "name": "김포 문수산성",
+      "placeId": ""
+    },
+    {
+      "courseId": "2514416",
+      "source": "official",
+      "area": "충남",
+      "num": 0,
+      "name": "마량리동백나무숲",
+      "placeId": ""
+    },
+    {
+      "courseId": "2514416",
+      "source": "official",
+      "area": "충남",
+      "num": 1,
+      "name": "동백정",
+      "placeId": ""
+    },
+    {
+      "courseId": "2514416",
+      "source": "official",
+      "area": "충남",
+      "num": 2,
+      "name": "금강하구둑관광단지",
+      "placeId": ""
+    },
+    {
+      "courseId": "2990340",
+      "source": "official",
+      "area": "충북",
+      "num": 0,
+      "name": "단양패러마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "2990340",
+      "source": "official",
+      "area": "충북",
+      "num": 2,
+      "name": "만천하 스카이워크",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987538",
+      "source": "official",
+      "area": "강원",
+      "num": 0,
+      "name": "화천 반지교&아를테마수목공원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987538",
+      "source": "official",
+      "area": "강원",
+      "num": 1,
+      "name": "양구 수목원",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987538",
+      "source": "official",
+      "area": "강원",
+      "num": 2,
+      "name": "인제나르샤파크(구. 인제 밀리터리 테마파크)",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987544",
+      "source": "official",
+      "area": "강원",
+      "num": 1,
+      "name": "아야진해변",
+      "placeId": ""
+    },
+    {
+      "courseId": "2987544",
+      "source": "official",
+      "area": "강원",
+      "num": 2,
+      "name": "만해마을",
+      "placeId": ""
+    },
+    {
+      "courseId": "2833450",
+      "source": "official",
+      "area": "강원",
+      "num": 0,
+      "name": "천곡동굴",
+      "placeId": ""
+    },
+    {
+      "courseId": "2833450",
+      "source": "official",
+      "area": "강원",
+      "num": 4,
+      "name": "무릉별유천지",
+      "placeId": ""
+    }
+  ],
+  "eventCount": 1071,
+  "eventDescriptionMissing": 1011,
+  "eventSources": 0
+}

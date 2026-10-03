@@ -37,6 +37,7 @@ export default function CourseVisitPlan({ plan, isList = false }: { plan: Course
                         {stop.address && <p className="mt-1 text-xs leading-5 text-ink-faint">{stop.address}</p>}
                       </div>
                     </div>
+                    {stop.sourceOverview&&<div className="mt-3 text-[13px] leading-6 text-ink-soft"><p className="whitespace-pre-line break-words">{stop.sourceOverview}</p><p className="mt-2 text-xs text-ink-faint">{stop.sourceProvider}에 등록된 경유지 안내입니다. 운영·예약 조건은 장소의 최신 공지를 확인하세요.</p></div>}
                     {stop.facts.length > 0 && (
                       <dl className="mt-3 grid gap-y-2 text-[13px] leading-6 sm:grid-cols-[72px_1fr] sm:gap-x-3">
                         {stop.facts.map((fact) => (

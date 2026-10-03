@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T19:52:34.933Z",
+  "generatedAt": "2026-10-03T01:17:55.421Z",
   "referenceDayKst": "20261003",
   "mode": "stored-data-only; network disabled",
   "categories": {
@@ -26,12 +26,12 @@
       "noindex": 156
     },
     "events": {
-      "total": 1086,
-      "indexable": 352,
-      "noindex": 734,
-      "storedCurrentRecords": 1096,
-      "addressConflictExcludedFromLists": 10,
-      "currentAndArchiveDetailUrls": 4541,
+      "total": 1052,
+      "indexable": 408,
+      "noindex": 644,
+      "storedCurrentRecords": 1071,
+      "addressConflictExcludedFromLists": 19,
+      "currentAndArchiveDetailUrls": 4566,
       "endedDetailRecords": 3495
     },
     "petTravel": {
@@ -51,11 +51,11 @@
       "noindex": 1558
     },
     "festivals": {
-      "total": 312,
+      "total": 316,
       "indexable": 2,
-      "noindex": 310,
-      "publiclyListedCurrentRecords": 312,
-      "duplicateEventAliases": 57
+      "noindex": 314,
+      "publiclyListedCurrentRecords": 316,
+      "duplicateEventAliases": 61
     },
     "weekendPrep": {
       "total": 44,
@@ -98,9 +98,12 @@
       "missingImage": 770
     },
     "events": {
-      "noDescription": 1028,
-      "endedInCurrentList": 50,
-      "missingOfficialUrl": 603,
+      "noDescription": 966,
+      "withOfficialParticipationFacts": 234,
+      "withOfficialExcerpt": 125,
+      "noEventSpecificSourceContent": 614,
+      "endedInCurrentList": 0,
+      "missingOfficialUrl": 11,
       "missingImage": 0
     },
     "petTravel": {
@@ -122,24 +125,17 @@
     "coursesWithVisitPlan": 228
   },
   "coursePlanning": {
+    "unresolvedSourceReferences": 0,
     "coursesWithPlanning": 228,
-    "coursesWithStoredVisitFacts": 166,
-    "coursesWithCompleteCoordinateSegments": 185,
+    "coursesWithStoredVisitFacts": 180,
+    "coursesWithCompleteCoordinateSegments": 187,
     "shownStopReferences": 944,
-    "exactPlaceDetailLinks": 729,
-    "mapOnlyStopReferences": 215,
+    "exactPlaceDetailLinks": 776,
+    "mapOnlyStopReferences": 168,
     "mapOnlySamples": [
       {
         "courseId": "jeju-heritage-day-3c1pmi",
         "name": "에코힐글램핑"
-      },
-      {
-        "courseId": "jeonnam-heritage-2n3d-yiog3y",
-        "name": "가우도카라반펜션"
-      },
-      {
-        "courseId": "jeonnam-heritage-2n3d-yiog3y",
-        "name": "국립천관산자연휴양림캠핑장"
       },
       {
         "courseId": "chungbuk-heritage-1n2d-1qkdasm",
@@ -150,58 +146,64 @@
         "name": "병풍바위야영장"
       },
       {
-        "courseId": "gyeongbuk-heritage-2n3d-1woty7g",
-        "name": "증산수도계곡캠핑장"
-      },
-      {
         "courseId": "gangwon-nature-1n2d-19h3vvq",
         "name": "국립삼봉자연휴양림 야영장"
       },
       {
         "courseId": "gyeonggi-family-day-1j7a6s6",
         "name": "양평수목원캠핑장"
+      },
+      {
+        "courseId": "chungbuk-heritage-1n2d-dln3bc",
+        "name": "낭추골캠핑장"
+      },
+      {
+        "courseId": "2987555",
+        "name": "소창체험관"
+      },
+      {
+        "courseId": "2987555",
+        "name": "교동도 대룡시장"
       }
     ]
   },
   "sitemap": {
-    "totalUrls": 13260,
-    "uniqueUrls": 13260,
-    "expectedDetailUrls": 13144,
-    "actualDetailUrls": 13144,
+    "totalUrls": 13316,
+    "uniqueUrls": 13316,
+    "expectedDetailUrls": 13200,
+    "actualDetailUrls": 13200,
     "missingExpectedCount": 0,
     "unexpectedDetailCount": 0,
     "missingExpected": [],
     "unexpectedDetails": [],
     "invalidLastModifiedCount": 0,
-    "baselineUrlCount": 13199,
-    "addedCount": 62,
-    "removedCount": 1,
+    "baselineUrlCount": 13303,
+    "addedCount": 13,
+    "removedCount": 0,
     "added": [
-      "https://mwohaji.kr/camping/102275",
-      "https://mwohaji.kr/camping/102034",
-      "https://mwohaji.kr/camping/102206",
-      "https://mwohaji.kr/camping/102236",
-      "https://mwohaji.kr/camping/102021",
-      "https://mwohaji.kr/camping/101962",
-      "https://mwohaji.kr/camping/179",
-      "https://mwohaji.kr/camping/102337",
-      "https://mwohaji.kr/camping/1803",
-      "https://mwohaji.kr/camping/102340"
+      "https://mwohaji.kr/event/393308",
+      "https://mwohaji.kr/event/400463",
+      "https://mwohaji.kr/event/364983",
+      "https://mwohaji.kr/event/364982",
+      "https://mwohaji.kr/event/393104",
+      "https://mwohaji.kr/event/393147",
+      "https://mwohaji.kr/event/392374",
+      "https://mwohaji.kr/event/394462",
+      "https://mwohaji.kr/event/398148",
+      "https://mwohaji.kr/event/400594"
     ],
-    "removed": [
-      "https://mwohaji.kr/camping/7671"
-    ]
+    "removed": []
   },
   "urlContinuity": {
-    "baselineCommit": "bc126d8f34e5f403729a40ce6b3e29cafba363eb",
-    "baselineAvailableDetailUrls": 28835,
-    "currentAvailableDetailUrls": 29219,
+    "baselineCommit": "6611003a5dfbd4c1571411a109bfbdeb8acc5e63",
+    "baselineAvailableDetailUrls": 29248,
+    "currentAvailableDetailUrls": 29248,
     "removedCount": 0,
     "removed": [],
     "interpretation": "Stored route identity/lookup comparison; production HTTP responses are checked separately."
   },
   "links": {
-    "staticInternalReferencesChecked": 7048,
+    "staticInternalReferencesChecked": 7095,
     "missingReferenceCount": 0,
     "uniqueMissingTargets": 0,
     "missingSamples": [],
@@ -231,10 +233,10 @@
     },
     {
       "priority": 4,
-      "issue": "Course stops without an unambiguous stored place match",
-      "count": 215,
+      "issue": "Course stops without an unambiguous source place binding",
+      "count": 0,
       "source": "lib/coursePlanning.ts::resolveCoursePlace",
-      "mitigation": "Show map search instead of attaching another place's details or opening times. Match resolution does not make an actual route/travel-time guarantee."
+      "mitigation": "Official source IDs or unique exact stored names establish identity. Stops without their own local detail URL show source descriptions inline; they do not inherit another place's hours."
     },
     {
       "priority": 5,
@@ -245,20 +247,15 @@
     },
     {
       "priority": 2,
-      "issue": "Current culture events without stored descriptive content",
-      "count": 1028,
-      "source": "data/events.json; lib/eventQuality.ts",
-      "mitigation": "Dates and contact facts can support an eligible page, but missing event-specific descriptions still need source enrichment. Sparse and ended detail pages retain their noindex gate."
+      "issue": "Current culture events without descriptive content or verified event-specific source facts",
+      "count": 614,
+      "source": "data/events.json; data/event-source-details.json; lib/eventQuality.ts",
+      "mitigation": "Missing facts stay in the throttled refresh queue. Verified source excerpts and participation conditions supplement the page; publication gates remain unchanged."
     }
   ],
   "changedDataFiles": [
-    "data/camping.json",
-    "data/chuseok.json",
-    "data/festivals.json",
-    "data/place-info.json",
-    "data/place-intro.json",
-    "data/place-overviews.json",
-    "data/restaurant-intro.json"
+    "data/courses.json",
+    "data/events.json"
   ],
   "limitations": [
     "Indexable/noindex counts follow the current code publication gates; they are not Google index counts or AdSense approval evidence.",
