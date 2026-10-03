@@ -11,8 +11,10 @@ ARCHIVE="$STATE/main.tar.gz"
 UNPACK="$STATE/unpack"
 SOURCE="$UNPACK/free-culture-main"
 HASH_FILE="$STATE/main.tar.gz.sha256"
+COMMIT_FILE="$STATE/main.commit"
 LOG="$STATE/update.log"
 REPOSITORY_ARCHIVE="https://codeload.github.com/seojungseok/free-culture/tar.gz/refs/heads/main"
+REPOSITORY_REF="https://api.github.com/repos/seojungseok/free-culture/git/ref/heads/main"
 PREVIEW="http://192.168.0.115:3275"
 
 # Run from deployment state so source synchronization cannot overwrite the
@@ -63,6 +65,24 @@ SHA256SUM="$(find_cmd /usr/bin/sha256sum /bin/sha256sum)"
 STEP="locate docker"
 DOCKER="$(find_cmd /var/packages/ContainerManager/target/usr/bin/docker /usr/local/bin/docker /usr/bin/docker)"
 
+# Hourly checks download one small public ref response. Unchanged commits do
+# not download the archive or rebuild. Pin the archive to that verified SHA so
+# a concurrent data commit cannot be recorded as a different deployment.
+STEP="check main commit"
+REMOTE_SHA=""
+if "$CURL" --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 45 \
+  --output "$STATE/main-ref.json.tmp" "$REPOSITORY_REF"; then
+  REMOTE_SHA="$(sed -n 's/^[[:space:]]*"sha": "\([0-9a-f]\{40\}\)".*/\1/p' "$STATE/main-ref.json.tmp" | sed -n '1p')"
+fi
+if [ -n "$REMOTE_SHA" ] && [ -f "$COMMIT_FILE" ] && [ "$REMOTE_SHA" = "$(sed -n '1p' "$COMMIT_FILE")" ]; then
+  printf '%s update skipped: main commit unchanged\n' "$(timestamp)" >> "$LOG"
+  exit 0
+fi
+if [ -n "$REMOTE_SHA" ]; then
+  REPOSITORY_ARCHIVE="https://codeload.github.com/seojungseok/free-culture/tar.gz/$REMOTE_SHA"
+  SOURCE="$UNPACK/free-culture-$REMOTE_SHA"
+fi
+
 STEP="download main"
 "$CURL" --fail --silent --show-error --location --retry 3 --connect-timeout 20 \
   --output "$ARCHIVE.tmp" "$REPOSITORY_ARCHIVE"
@@ -72,6 +92,7 @@ if [ -f "$HASH_FILE" ]; then
   OLD_HASH="$(sed -n '1p' "$HASH_FILE")"
 fi
 if [ "$NEW_HASH" = "$OLD_HASH" ]; then
+  if [ -n "$REMOTE_SHA" ]; then printf '%s\n' "$REMOTE_SHA" > "$COMMIT_FILE"; fi
   printf '%s update skipped: main unchanged\n' "$(timestamp)" >> "$LOG"
   exit 0
 fi
@@ -122,5 +143,13 @@ STEP="smoke check"
 smoke_url "$PREVIEW/robots.txt"
 smoke_url "$PREVIEW/sitemap.xml"
 
+STEP="verify stored public information mode"
+RUNTIME_MODE="$("$DOCKER" compose -p free-culture-nas -f compose.yaml exec -T web node -p 'process.env.TOUR_RUNTIME_FETCH')"
+if [ "$RUNTIME_MODE" != "0" ]; then
+  printf '%s update failed: public TourAPI mode must be stored\n' "$(timestamp)" >> "$LOG"
+  exit 1
+fi
+
 printf '%s\n' "$NEW_HASH" > "$HASH_FILE"
-printf '%s update complete\n' "$(timestamp)" >> "$LOG"
+if [ -n "$REMOTE_SHA" ]; then printf '%s\n' "$REMOTE_SHA" > "$COMMIT_FILE"; fi
+printf '%s update complete: commit=%s public TourAPI mode=stored\n' "$(timestamp)" "${REMOTE_SHA:-archive-hash}" >> "$LOG"

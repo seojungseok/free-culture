@@ -4,7 +4,7 @@ name: 일일 최신정보·기존 글 품질 점검 (신규 발행 중지)
 # 새 글을 생성·재생성·발행하지 않는다. 기존 글의 품질 표식만 갱신한다.
 on:
   schedule:
-    - cron: "0 20 * * *" # UTC 20:00 = KST 05:00 (하루 1회)
+    - cron: "17 20 * * *" # KST 05:17 예정. 정각 혼잡을 피하되 실제 실행은 지연될 수 있다.
   workflow_dispatch:
 
 permissions:
@@ -29,11 +29,20 @@ jobs:
       - name: 의존성 설치
         run: npm ci
 
+      - name: 수집 한도·저장정보 보존 검사 (실 API 호출 없음)
+        run: |
+          node --test scripts/lib/tourClient.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs
+          node scripts/test-tour-detail-fallback.cjs
+
+      - name: 일일 공공 API 예산 (월요일은 주간 수집분 예약)
+        id: api_budget
+        run: node scripts/daily-api-budget.mjs
+
       - name: 발행 전 공개 글 기록 (API 호출 없음)
         run: node scripts/report-daily-publication.mjs snapshot
 
       # Dates are refreshed daily; existing place facts gain at most 20 detail
-      # requests a day. No new AI article is generated or published.
+      # requests on Monday and 100 otherwise. No new AI article is generated or published.
       - name: 축제 수집 (searchFestival2) — 날짜 있는 정보라 매일 최신화
         id: festivals
         continue-on-error: true
@@ -58,17 +67,27 @@ jobs:
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
           FESTIVAL_ENRICH_DAILY: "20"
           FESTIVAL_ENRICH_BUDGET: "90"
-        run: node scripts/enrichFestivals.mjs
+        run: node scripts/run-collector.mjs scripts/enrichFestivals.mjs
 
-      - name: 기존 관광지 소개·공식 홈페이지 보강 (최대 20회)
+      - name: 관광지·음식점 소개·공식 홈페이지 보강 (월요일 20회·그 외 100회)
         id: details
         continue-on-error: true
         timeout-minutes: 8
         env:
           TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          PLACE_DETAIL_DAILY: "20"
-        run: node scripts/collectPlaceDetails.mjs
+          PLACE_DETAIL_DAILY: ${{ steps.api_budget.outputs.details }}
+        run: node scripts/run-collector.mjs scripts/collectPlaceDetails.mjs
+
+      - name: 관광지·음식점 추가 사진 저장 (월요일 10회·그 외 30회)
+        id: images
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          PLACE_IMAGE_DAILY: ${{ steps.api_budget.outputs.images }}
+        run: node scripts/run-collector.mjs scripts/collectPlaceImages.mjs
 
       - name: 문화행사 수집 (KorService2) — 신규·종료 반영 위해 매일 최신화
         id: events
@@ -154,15 +173,24 @@ jobs:
           REGIONAL: ${{ steps.regional.outcome }}
           FESTIVAL_DETAILS: ${{ steps.festival_details.outcome }}
           DETAILS: ${{ steps.details.outcome }}
+          IMAGES: ${{ steps.images.outcome }}
           EVENTS: ${{ steps.events.outcome }}
           PET: ${{ steps.pet.outcome }}
           PET_DETAILS: ${{ steps.pet_details.outcome }}
+          FESTIVAL_DETAIL_STATUS: ${{ steps.festival_details.outputs.collector_status }}
+          PLACE_DETAIL_STATUS: ${{ steps.details.outputs.collector_status }}
+          IMAGE_STATUS: ${{ steps.images.outputs.collector_status }}
         run: |
           failed=0
-          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS EVENTS PET PET_DETAILS; do
+          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS; do
             outcome="${!name}"
             echo "$name: $outcome"
             if [ "$outcome" = "failure" ]; then failed=1; fi
+          done
+          for name in FESTIVAL_DETAIL_STATUS PLACE_DETAIL_STATUS IMAGE_STATUS; do
+            if [ "${!name}" = "deferred" ]; then
+              echo "$name: 제공기관 한도로 연기 (기존 정보 보존)"
+            fi
           done
           if [ "$failed" = "1" ]; then
             echo '::error::일부 API 수집이 실패했습니다. 성공한 데이터와 기존 URL은 보존했으며 실패 단계 로그를 확인해야 합니다.'

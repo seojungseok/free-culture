@@ -4,7 +4,7 @@ name: 주간 정적 수집 (관광지 정보·음식점·캠핑)
 #  방문팁·볼거리(관광지), 음식점 목록·영업정보, 캠핑 이미지. 재실행 시 신규만 이어서 수집.
 on:
   schedule:
-    - cron: "0 18 * * 0" # 매주 일요일 18:00 UTC = 월요일 03:00 KST (daily와 시간 분리)
+    - cron: "23 18 * * 0" # 월요일 03:23 KST 예정 (정각 혼잡 회피, daily와 시간 분리)
   workflow_dispatch:
 
 permissions:
@@ -57,14 +57,14 @@ jobs:
           CAMPING_LIST_BUDGET: "8"
         run: node scripts/collectCamping.mjs
 
-      # 650 backfill + 120 places + 100 restaurants = 870.
-      # Daily reserves at most 120 more (festival 10 + enrichment 90 + details 20).
+      # 630 backfill + 120 places + 100 restaurants = 850.
+      # Daily reserves at most 130 more (festival 10 + enrichment 90 + details 20 + images 10).
       # Include retries within each cap instead of assuming
       # every endpoint has a separate quota. Provider limits remain authoritative.
       - name: TourAPI 예산 계획
         id: plan
         env:
-          TOUR_BACKFILL_BUDGET: "650"
+          TOUR_BACKFILL_BUDGET: "630"
         run: node scripts/planBudget.mjs
 
       - name: 음식점 수집 (areaBasedList2)

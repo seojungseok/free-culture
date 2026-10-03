@@ -85,9 +85,24 @@ export function writeCache(file, obj) {
 }
 
 // ── 예산(일일 한도) ─────────────────────────────────────────────
-export class QuotaError extends Error {}
+export class QuotaError extends Error {
+  constructor(reason = "local", { status, code, endpoint } = {}) {
+    const provider = reason === "provider";
+    super(provider ? "제공기관 API 요청 한도에 도달했습니다" : "수집기 요청 예산에 도달했습니다");
+    this.name = "QuotaError";
+    this.reason = provider ? "provider" : "local";
+    // Never retain a request URL, response body, or arbitrary provider message.
+    if (Number.isInteger(status) && status >= 100 && status <= 599) this.status = status;
+    if (/^\d{1,4}$/.test(String(code)) || code === "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR") this.code = String(code);
+    if (typeof endpoint === "string" && /^[A-Za-z][A-Za-z0-9_]{0,63}$/.test(endpoint)) this.endpoint = endpoint;
+  }
+}
 export function safeApiError(error) {
-  if (error instanceof QuotaError) return "API 요청 예산 또는 제공기관 한도에 도달했습니다";
+  if (error instanceof QuotaError) {
+    const description = error.reason === "provider" ? "제공기관 API 요청 한도에 도달하여 갱신을 연기합니다" : "수집기 요청 예산에 도달했습니다";
+    const details = [`reason=${error.reason}`, error.status && `HTTP ${error.status}`, error.code && `code=${error.code}`, error.endpoint && `endpoint=${error.endpoint}`].filter(Boolean);
+    return `${description} (${details.join(", ")})`;
+  }
   const message = String(error?.message || "");
   if (/인증키 없음/.test(message)) return "공공 API 인증키가 설정되지 않았습니다";
   const code = message.match(/(?:HTTP|resultCode)\s*[=:]?\s*(\d{2,4})/i)?.[0];
@@ -100,6 +115,16 @@ export function createBudget(max) {
   return { max: Number(max) || 900, used: 0, stopped: false };
 }
 
+function stopForQuota(budget, reason, details) {
+  const error = new QuotaError(reason, details);
+  if (budget) {
+    budget.stopped = true;
+    // A concurrent request must retain an earlier provider stop, not turn it into a local cap.
+    if (!budget.quotaError || reason === "provider") budget.quotaError = error;
+  }
+  return error;
+}
+
 // ── 코어 요청: 재시도 + 한도 감지 → QuotaError ───────────────────
 export async function fetchJson(endpoint, params, budget, base = BASE) {
   const key = loadKey(base === PET_BASE ? "pet" : base.endsWith("/GoCamping") ? "public" : "tour");
@@ -109,7 +134,10 @@ export async function fetchJson(endpoint, params, budget, base = BASE) {
   const url = `${base}/${endpoint}?serviceKey=${KEY_PARAM}&MobileOS=ETC&MobileApp=mwohaji&_type=json&${qs}`;
   for (let i = 0; i < 3; i++) {
     if (budget) {
-      if (budget.stopped || budget.used >= budget.max) { budget.stopped = true; throw new QuotaError("budget reached"); }
+      if (budget.stopped || budget.used >= budget.max) {
+        if (budget.quotaError) throw budget.quotaError;
+        throw stopForQuota(budget, "local", { endpoint });
+      }
       // A timeout is also an attempted request; retries never escape the cap.
       budget.used++;
     }
@@ -124,8 +152,8 @@ export async function fetchJson(endpoint, params, budget, base = BASE) {
     const text = await res.text();
     // 일일 한도 초과 — 즉시 중단(재시도 무의미)
     if (res.status === 429 || /quota exceeded|LIMITED_NUMBER_OF_SERVICE|서비스 요청제한/i.test(text)) {
-      if (budget) budget.stopped = true;
-      throw new QuotaError("API 일일 한도 초과");
+      const code = /LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR/.test(text) ? "LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS_ERROR" : undefined;
+      throw stopForQuota(budget, "provider", { status: res.status, code, endpoint });
     }
     if (!res.ok) {
       if (res.status < 500 || i === 2) throw new Error(`HTTP ${res.status}`);
@@ -135,12 +163,13 @@ export async function fetchJson(endpoint, params, budget, base = BASE) {
     try { j = JSON.parse(text); }
     catch {
       const xmlCode = text.match(/<(?:returnReasonCode|resultCode)>\s*(\d+)\s*<\//)?.[1];
+      if (xmlCode === "22") throw stopForQuota(budget, "provider", { status: res.status, code: xmlCode, endpoint });
       if (xmlCode) throw new Error(`resultCode=${xmlCode}`);
       if (i === 2) throw new Error("API JSON 응답 형식 오류");
       await sleep(700 * (i + 1)); continue;
     }
     const code = j?.response?.header?.resultCode;
-    if (code === "22") { if (budget) budget.stopped = true; throw new QuotaError("resultCode 22 한도 초과"); }
+    if (String(code) === "22") throw stopForQuota(budget, "provider", { status: res.status, code, endpoint });
     if (code !== "0000") throw new Error(`resultCode=${/^\d+$/.test(String(code)) ? code : "unknown"}`);
     return j;
   }

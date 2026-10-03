@@ -3,10 +3,13 @@ import storedOverviews from "@/data/place-overviews.json";
 import storedDetails from "@/data/place-details.json";
 import { isUsefulDisplayValue } from "@/lib/displayValue";
 import { classifyAdmission, type Admission } from "@/lib/admission";
+import { getIntro } from "@/lib/tourExtra";
+import { getAdmission } from "@/lib/fees";
 export { classifyAdmission } from "@/lib/admission";
 
-// 상세 페이지에서만 호출: detailCommon2 로 장소 소개글(overview)·홈페이지를 가져옴.
-// Next fetch 캐시(revalidate)로 한 번 부르면 재사용 → 일 1,000회 제한 방어.
+// 방문·빌드에서는 저장된 수집 결과만 사용한다.
+// 관리자가 TOUR_RUNTIME_FETCH=1을 명시한 경우에만 외부 API 조회를 허용한다.
+// Next fetch 캐시는 계정 전체 요청량을 제한하지 않으므로 기본 동작은 API를 호출하지 않는다.
 
 const KEY = (process.env.TOUR_API_KEY || process.env.DATA_GO_KR_KEY || "").trim();
 const keyParam = /%[0-9A-Fa-f]{2}/.test(KEY) ? KEY : encodeURIComponent(KEY);
@@ -47,23 +50,26 @@ const apiSignal = () => AbortSignal.timeout(4500);
 
 export type { Admission } from "@/lib/admission";
 
-/** detailIntro2 요금 필드 조회 (문화시설=usefee, 레포츠=usefeeleports). 관광지 등은 요금 필드가 없어 unknown. ISR 캐시. */
+/** 저장된 요금 안내를 우선 사용하고, 명시적 opt-in에서만 detailIntro2를 조회한다. */
 export async function fetchAdmission(contentId: string, type: string): Promise<Admission> {
-  if (!KEY || !contentId) return "unknown";
-  if (type !== "14" && type !== "28") return "unknown"; // 요금 필드 없는 유형은 호출 생략
+  const intro = getIntro(contentId);
+  const saved = intro?.fee?.trim() ? classifyAdmission(intro.fee) : getAdmission(contentId) ?? intro?.admission ?? "unknown";
+  if (process.env.TOUR_RUNTIME_FETCH !== "1" || !KEY || !contentId) return saved;
+  if (type !== "14" && type !== "28") return saved; // 요금 필드 없는 유형은 호출 생략
   const url = `https://apis.data.go.kr/B551011/KorService2/detailIntro2?serviceKey=${keyParam}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${contentId}&contentTypeId=${type}`;
   try {
     const res = await fetch(url, { next: { revalidate: 604800 }, signal: apiSignal() });
-    if (!res.ok) return "unknown";
+    if (!res.ok) return saved;
     const j = await res.json();
-    if (j?.response?.header?.resultCode !== "0000") return "unknown";
+    if (j?.response?.header?.resultCode !== "0000") return saved;
     const item = j?.response?.body?.items?.item;
     const it = Array.isArray(item) ? item[0] : item;
-    if (!it) return "unknown";
+    if (!it) return saved;
     const fee = type === "14" ? it.usefee : it.usefeeleports;
-    return classifyAdmission(fee);
+    // 새 요금 안내에 유료 예외가 있으면 오래된 무료 배지로 되돌리지 않는다.
+    return isUsefulDisplayValue(fee) ? classifyAdmission(fee) : saved;
   } catch {
-    return "unknown";
+    return saved;
   }
 }
 
@@ -72,15 +78,33 @@ export interface PlaceImage {
   thumb: string;
 }
 
-/** detailImage2 — 공식 추가 사진 갤러리 (originimgurl/smallimageurl). ISR 캐시. */
+const detailRecords = (storedDetails as unknown as { details?: Record<string, PlaceOverview & { images?: PlaceImage[] }> }).details || {};
+
+function savedImages(contentId: string): PlaceImage[] {
+  const images = detailRecords[contentId]?.images;
+  if (!Array.isArray(images)) return [];
+  const seen = new Set<string>();
+  const out: PlaceImage[] = [];
+  for (const image of images) {
+    const full = String(image?.full || "").trim();
+    if (!/^https?:\/\//i.test(full) || seen.has(full)) continue;
+    seen.add(full);
+    const thumb = String(image?.thumb || "").trim();
+    out.push({ full, thumb: /^https?:\/\//i.test(thumb) ? thumb : full });
+  }
+  return out;
+}
+
+/** 저장된 공식 추가 사진을 반환한다. 명시적 opt-in에서만 detailImage2를 조회한다. */
 export async function fetchPlaceImages(contentId: string): Promise<PlaceImage[]> {
-  if (!KEY || !contentId) return [];
+  const saved = savedImages(contentId);
+  if (process.env.TOUR_RUNTIME_FETCH !== "1" || !KEY || !contentId) return saved;
   const url = `https://apis.data.go.kr/B551011/KorService2/detailImage2?serviceKey=${keyParam}&MobileOS=ETC&MobileApp=mwohaji&_type=json&imageYN=Y&numOfRows=30&contentId=${contentId}`;
   try {
     const res = await fetch(url, { next: { revalidate: 604800 }, signal: apiSignal() }); // 1주 캐시
-    if (!res.ok) return [];
+    if (!res.ok) return saved;
     const j = await res.json();
-    if (j?.response?.header?.resultCode !== "0000") return [];
+    if (j?.response?.header?.resultCode !== "0000") return saved;
     const item = j?.response?.body?.items?.item;
     const arr = Array.isArray(item) ? item : item ? [item] : [];
     const out: PlaceImage[] = [];
@@ -91,18 +115,18 @@ export async function fetchPlaceImages(contentId: string): Promise<PlaceImage[]>
       seen.add(full);
       out.push({ full, thumb: https(it.smallimageurl || "") || full });
     }
-    return out;
+    return out.length ? out : saved;
   } catch {
-    return [];
+    return saved;
   }
 }
 
 export async function fetchPlaceOverview(contentId: string): Promise<PlaceOverview> {
-  const detailCache = (storedDetails as unknown as { details: Record<string, PlaceOverview> }).details[contentId];
+  const detailCache = detailRecords[contentId];
   const cached = (storedOverviews as Record<string, string>)[contentId];
   const empty: PlaceOverview = { overview: isUsefulDisplayValue(detailCache?.overview) ? cleanText(detailCache.overview) : isUsefulDisplayValue(cached) ? cleanText(cached) : "", homepage: detailCache?.homepage || "", tel: detailCache?.tel || "", checkedAt: detailCache?.checkedAt, overviewCheckedAt: detailCache?.overviewCheckedAt };
   if (detailCache?.checkedAt && Date.now() - Date.parse(detailCache.checkedAt) < 30 * 86400000) return empty;
-  if (!KEY || !contentId) return empty;
+  if (process.env.TOUR_RUNTIME_FETCH !== "1" || !KEY || !contentId) return empty;
   const url = `https://apis.data.go.kr/B551011/KorService2/detailCommon2?serviceKey=${keyParam}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${contentId}`;
   try {
     const res = await fetch(url, { next: { revalidate: 604800 }, signal: apiSignal() }); // 1주 캐시

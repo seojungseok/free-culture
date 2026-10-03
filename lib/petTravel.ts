@@ -95,10 +95,12 @@ export const sanitizePetInfoText = (value: unknown) => String(value || "")
   .filter(Boolean)
   .join("\n\n");
 
-/** 캐시가 아직 갱신되지 않은 장소도 상세 URL에서 API 상세정보를 제공한다. */
+/** 기본값은 저장된 장소만 반환한다. 명시적 opt-in에서만 외부 상세 API를 조회한다. */
 export async function fetchPetTravelDetail(id: string): Promise<PetTravelPlace | null> {
+  const saved = getPetTravelPlace(id);
+  if (process.env.TOUR_RUNTIME_FETCH !== "1") return saved;
   const key = (process.env.PET_TOUR_API_KEY || process.env.TOUR_API_KEY || process.env.DATA_GO_KR_KEY || "").trim();
-  if (!key) return null;
+  if (!key || !id) return saved;
   const base = "https://apis.data.go.kr/B551011/KorPetTourService2";
   const request = async (endpoint: string, extra: Record<string, string> = {}) => {
     const qs = new URLSearchParams({ serviceKey: key, MobileOS: "ETC", MobileApp: "mwohaji", _type: "json", contentId: id, ...extra });
@@ -121,10 +123,10 @@ export async function fetchPetTravelDetail(id: string): Promise<PetTravelPlace |
     const infoRows = arr(info?.response?.body?.items?.item).map((row: any) => ({ name: clean(row?.infoname || row?.name || row?.title), text: clean(row?.infotext || row?.text || Object.values(row || {}).join(" ")) })).filter((row: { name: string; text: string }) => row.name || row.text);
     const photoRows = arr(images?.response?.body?.items?.item).map((row: any) => clean(row?.originimgurl || row?.smallimageurl)).filter(Boolean);
     const title = clean(c.title);
-    if (!title) return null;
+    if (!title) return saved;
     const address = clean(c.addr1 || c.addr2);
     return { id, title, address, area: address.split(" ")[0], image: clean(c.firstimage || c.firstimage2), mapx: clean(c.mapx), mapy: clean(c.mapy), type: clean(c.contenttypeid), tel: clean(c.tel), homepage: clean(c.homepage), overview: clean(c.overview), summary: clean(c.overview), petInfo: normalizePetInfo(p), intro: normalizePetIntro(i), info: infoRows, images: [...new Set([clean(c.firstimage || c.firstimage2), ...photoRows].filter(Boolean))] };
   } catch {
-    return null;
+    return saved;
   }
 }
