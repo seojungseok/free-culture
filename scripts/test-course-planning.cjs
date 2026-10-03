@@ -74,6 +74,7 @@ try {
         assert.equal(day.segmentsKm[i], Number.isFinite(raw) ? raw : null);
       }
       for (const entry of day.stops) {
+        if(entry.sourceProvider==='한국관광공사 공식 코스')assert.ok(expected.find(stop=>stop.name===entry.name)?.sourceOverview,`${item.id}: an ID lookup does not verify the old editorial introduction`);
         if (!entry.detailHref) continue;
         linkedStops++;
         assert.ok(places.some((place) => `/places/spot/${place.id}` === entry.detailHref)||camps.some(c=>`/camping/${c.id}`===entry.detailHref)||restaurants.some(r=>`/food/spot/${r.id}`===entry.detailHref), `${item.id}: detail link must exist`);

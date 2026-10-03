@@ -23,7 +23,7 @@ for (const place of places) {
 }
 
 /** Never attach opening hours or a detail URL using a partial name match. */
-type CourseDestination = TourSpot & {detailHref?:string;sourceOnly?:boolean;visitFacts?:{label:string;value:string}[];sourceCollectedAt?:string};
+type CourseDestination = TourSpot & {detailHref?:string;sourceOnly?:boolean;sourceDescriptionProvider?:string;visitFacts?:{label:string;value:string}[];sourceCollectedAt?:string};
 const camps=getAllCamps(), foods=new Map(getAllRestaurants().map(p=>[p.id,p]));
 const courseDetails=courseDetailsData as unknown as {places:Record<string,{id:string;title:string;type:string;addr:string;mapx:string;mapy:string;tel:string;homepage:string;overview:string;intro?:Record<string,string>;introCheckedAt?:string;info?:{name:string;text:string}[]}>};
 const sourceFactLabels:Record<string,string>={usetime:'이용시간',restdate:'휴무일',parking:'주차',fee:'이용요금',reservation:'예약',openperiod:'운영기간',infocenter:'문의처',expguide:'체험 안내',firstmenu:'대표 메뉴',playtime:'공연시간',program:'프로그램',agelimit:'관람연령'};
@@ -40,15 +40,15 @@ export function resolveCoursePlace(stop: CourseStop, area: string): CourseDestin
         const camp=matches[0];
         return {...raw,addr:camp.addr,mapx:camp.mapx,mapy:camp.mapy,detailHref:`/camping/${camp.id}`,visitFacts:[{label:'예약',value:camp.resve},{label:'운영기간',value:camp.operPd},{label:'문의처',value:camp.tel},{label:'동반 조건',value:camp.petRaw}].filter(f=>isUsefulVisitText(f.value))};
       }
-      return {...raw,sourceOnly:true};
+      return {...raw,sourceOnly:true,sourceDescriptionProvider:'저장된 장소 기본정보'};
     }
     const food=foods.get(id);
     if(food) return {...food,type:'39',detailHref:`/food/spot/${food.id}`};
     const proof=stop.placeIdSource;
     if(proof&&['detailInfo2','searchKeyword2'].includes(proof.endpoint)&&proof.subcontentid===id&&fullName(proof.subname)===fullName(stop.name)) {
       const detail=courseDetails.places[id];
-      if(detail?.id===id) return {id,title:detail.title,type:detail.type,addr:detail.addr,area:'',image:stop.image,mapx:detail.mapx,mapy:detail.mapy,tel:detail.tel,homepage:detail.homepage,overview:detail.overview||stop.sourceOverview||stop.overview,sourceOnly:true,sourceCollectedAt:detail.introCheckedAt,visitFacts:Object.entries(detail.intro||{}).filter(([key,value])=>sourceFactLabels[key]&&isUsefulVisitText(value)).map(([key,value])=>({label:sourceFactLabels[key],value}))};
-      return {id,title:proof.subname,addr:stop.addr||'',area:'',image:stop.image,mapx:stop.mapx||'',mapy:stop.mapy||'',tel:'',type:'',overview:stop.sourceOverview||stop.overview,sourceOnly:true,sourceCollectedAt:proof.checkedAt};
+      if(detail?.id===id) return {id,title:detail.title,type:detail.type,addr:detail.addr,area:'',image:stop.image,mapx:detail.mapx,mapy:detail.mapy,tel:detail.tel,homepage:detail.homepage,overview:detail.overview||stop.sourceOverview||stop.overview,sourceDescriptionProvider:detail.overview?'한국관광공사 관광정보':stop.sourceOverview?'한국관광공사 공식 코스':'기존 코스 소개',sourceOnly:true,sourceCollectedAt:detail.introCheckedAt,visitFacts:Object.entries(detail.intro||{}).filter(([key,value])=>sourceFactLabels[key]&&isUsefulVisitText(value)).map(([key,value])=>({label:sourceFactLabels[key],value}))};
+      return {id,title:proof.subname,addr:stop.addr||'',area:'',image:stop.image,mapx:stop.mapx||'',mapy:stop.mapy||'',tel:'',type:'',overview:stop.sourceOverview||stop.overview,sourceDescriptionProvider:stop.sourceOverview?'한국관광공사 공식 코스':'기존 코스 소개',sourceOnly:true,sourceCollectedAt:proof.checkedAt};
     }
   }
   const exact = fullNames.get(fullName(stop.name)) || [];
@@ -96,7 +96,7 @@ function enrichStop(stop: CourseStop, area: string): CourseVisitStop {
   return {
     ...stop,
     ...(place ? { placeId: place.id, ...(!place.sourceOnly?{detailHref:place.detailHref||`/places/spot/${place.id}`}:{}) } : {}),
-    ...(place?.sourceOnly&&place.overview?{sourceOverview:eventContentsText(place.overview),sourceProvider:'한국관광공사 공식 코스'}:{}),
+    ...(place?.sourceOnly&&place.overview?{sourceOverview:eventContentsText(place.overview),sourceProvider:place.sourceDescriptionProvider||'기존 코스 소개'}:{}),
     mapx, mapy, address, facts, area: place?.area || area,
     ...(place&&(place.sourceCollectedAt||getIntro(place.id)?.checkedAt)?{sourceCollectedAt:place.sourceCollectedAt||getIntro(place.id)!.checkedAt}:{}),
     mapHref: Number.isFinite(distanceKm({ mapx, mapy }, { mapx, mapy }))
