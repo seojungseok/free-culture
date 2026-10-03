@@ -219,10 +219,15 @@ jobs:
           CULTURE_DETAIL_STATUS: ${{ steps.culture_details.outputs.collector_status }}
         run: |
           failed=0
+          failed_names=()
           for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS; do
             outcome="${!name}"
             echo "$name: $outcome"
-            if [ "$outcome" = "failure" ]; then failed=1; fi
+            if [ "$outcome" = "failure" ]; then
+              failed=1
+              failed_names+=("$name")
+            fi
+            echo "- $name: $outcome" >> "$GITHUB_STEP_SUMMARY"
           done
           for name in FESTIVAL_DETAIL_STATUS PLACE_DETAIL_STATUS IMAGE_STATUS COURSE_STOP_STATUS COURSE_PLACE_STATUS CULTURE_DETAIL_STATUS; do
             if [ "${!name}" = "deferred" ]; then
@@ -230,6 +235,6 @@ jobs:
             fi
           done
           if [ "$failed" = "1" ]; then
-            echo '::error::일부 API 수집이 실패했습니다. 성공한 데이터와 기존 URL은 보존했으며 실패 단계 로그를 확인해야 합니다.'
+            echo "::error::API 수집 실패 단계: ${failed_names[*]}. 성공한 데이터와 기존 URL은 보존했습니다."
             exit 1
           fi
