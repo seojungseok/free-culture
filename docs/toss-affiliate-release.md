@@ -65,3 +65,12 @@ imagegen 기본 내장 도구 생성 프롬프트 요약 및 저장 경로:
 사용자가 지정한 두 번째 긴 배너 자리에는 숙소 5컷을 배치한다. 바다·숲·도심·가족·커플 객실의 새 AI 사진을 별도로 만들고, 사진 전체를 자르지 않고 7:1 원본 배너 캔버스에 문구를 직접 디자인한 완성 WebP를 사용한다. 데스크톱 2100×300, 모바일은 문구가 읽히는 별도 1050×300. 페이지 HTML이 문구를 별도로 덧씌우지 않는다. 독립 SVG 원본을 렌더링한 실제 완성 bitmap으로 배포한다. 작은 일반 상품 사진을 숙소 자리에서 표시하지 않는다. 5컷 모두 기존 숙소 제휴 URL https://3ha.in/r/722026 으로 연결한다. 특정 객실·전망이 예약 상품임을 주장하지 않으며 AI 연출 표시 및 제휴 고지를 유지한다. 기존 와그 배너는 별도 입장권 위치에 유지한다.
 
 최종 이미지 생성은 내장 imagegen 사용. 기본 프롬프트 집합: (1) 최고 해상도 3:1 숯불 소고기 구이, 붉은 숯·그릴·육즙·젓가락·황혼 캠핑, 왼쪽35% 어두운 카피 공간, 문구/브랜드 없음, 삼겹살 지방층 제외; (2) 동일 조건의 숯불 삼겹살, 바삭한 황금빛 겉면과 지방·고기층, 집게, 소고기와 다른 사진; (3) 3:1 순대 철길과 미니 캠핑 장면; (4) 3:1 컵라면 천문대와 면발 혜성; (5) 3:1 얼음 콜라 파도와 피크닉; (6-10) 문구·브랜드·가격 없는 3:1 전체 객실 사진: 바다 전망/숲속/야경 도심/두 침대 가족 객실/커플 휴식. 숙소 원본 사진을 완전 포함하고 문구 및 CTA를 원래 7:1 레이아웃에 디자인하여 독립 이미지로 완성했다. 고기 원본은 2172×724 및 2170×725이며 축소 없이 WebP quality94로 저장했다. 나머지 음식은 1800px 폭 WebP. 최종 파일은 public/affiliate-images/*-v5.webp 및 숙소 편집 가능 *-v5.svg 이다. 생성된 넓은 문구 시안의 비율이 맞지 않아 그 시안은 배포하지 않았다.
+
+## 2026-10-07 mobile v6
+- Search moved directly below the header; removed oversized introductory block.
+- Ten travel categories use a 5 by 2 mobile grid and a compact nearby button.
+- Regional travel content appears before the food product rail.
+- Campaign rotation changed to 5000 ms with existing pause controls retained.
+- At 390px: main banner 178px, lodging banner approximately 99px, no document overflow. Product cards show the next partial item.
+- At 1280px: full-width shallow campaign, top search and single-row travel categories; no document overflow.
+- TypeScript and production build passed. Affiliate URLs and disclosures preserved.

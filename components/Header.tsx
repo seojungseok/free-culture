@@ -10,7 +10,7 @@ export default function Header() {
   const navigation = headerNavigation(s.label);
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur-md">
-      <div className="mx-auto flex h-[72px] w-full max-w-[1180px] items-center gap-1 px-3 sm:h-[70px] sm:gap-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[56px] w-full max-w-[1180px] items-center gap-1 px-3 sm:h-[70px] sm:gap-3 sm:px-6 lg:px-8">
         <BackButton />
         <Link href="/" aria-label={`${SITE.name} 홈`} className="flex shrink-0 items-center gap-2">
           <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 shrink-0 text-brandblue sm:h-7 sm:w-7">

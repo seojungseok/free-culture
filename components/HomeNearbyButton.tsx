@@ -11,5 +11,5 @@ export default function HomeNearbyButton(){
   try{sessionStorage.setItem(NEAR_SESSION,JSON.stringify(state));sessionStorage.removeItem('near-return');}catch{}
   router.push('/near');setBusy(false);
  }
- return <button type="button" onClick={find} disabled={busy} className="mt-3 min-h-11 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-brandblue shadow-sm disabled:opacity-60">{busy?'위치 확인 중…':'📍 내 주변 갈 만한 곳'}</button>;
+ return <button type="button" onClick={find} disabled={busy} className="min-h-9 rounded-full border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-brandblue shadow-sm disabled:opacity-60">{busy?'위치 확인 중…':'📍 내 주변'}</button>;
 }

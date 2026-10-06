@@ -9,7 +9,7 @@ const disclosure='[광고] 토스쇼핑 쉐어링크 활동으로, 링크 구매
 function track(event:string,p:TossProduct,placement:string,page:string){
  affiliateTrack(event,'toss',placement,page,p.id);
 }
-export default function TossAffiliate({initial,position,compact=false,initialIndex=0,collection='camp'}:{initial:TossFeed;position:'top'|'article';compact?:boolean;initialIndex?:number;collection?:'camp'|'daily'|'travel'|'stay'}){
+export default function TossAffiliate({initial,position,compact=false,initialIndex=0,collection='camp',display='both'}:{initial:TossFeed;position:'top'|'article';compact?:boolean;initialIndex?:number;collection?:'camp'|'daily'|'travel'|'stay';display?:'both'|'banner'|'rail'}){
  const page=usePathname()||'/';
  const [feed,setFeed]=useState(initial),[now,setNow]=useState(0),[saved,setSaved]=useState<number[]>([]),[message,setMessage]=useState('');
  const box=useRef<HTMLElement>(null),seen=useRef(new Set<string>());
@@ -28,7 +28,7 @@ export default function TossAffiliate({initial,position,compact=false,initialInd
   const observer=new IntersectionObserver(entries=>{if(!entries.some(e=>e.isIntersecting))return;for(const p of items){const key=`${page}:${p.id}`;if(!seen.current.has(key)){track('affiliate_impression',p,position,page);seen.current.add(key);}}},{threshold:0.5});observer.observe(node);return()=>observer.disconnect();
  },[page,position,items]);
  function toggle(p:TossProduct){try{const next=saved.includes(p.id)?saved.filter(id=>id!==p.id):[p.id,...saved].slice(0,100);localStorage.setItem('mwohaji-toss-saved',JSON.stringify(next));setSaved(next);setMessage(next.includes(p.id)?'이 브라우저에 저장했습니다. 다시 방문하면 저장 표시를 확인할 수 있어요. 저장은 가격이나 재고를 예약하지 않습니다.':'저장을 해제했습니다.');track('affiliate_save',p,position,page);}catch{setMessage('이 브라우저에서는 저장할 수 없습니다.');}}
- if(page==='/'&&position==='top')return <HomeAffiliateShowcase products={items} checkedAt={feed.checkedAt} compact={compact} initialIndex={initialIndex} collection={collection}/>;
+ if(page==='/'&&position==='top')return <HomeAffiliateShowcase products={items} checkedAt={feed.checkedAt} compact={compact} initialIndex={initialIndex} collection={collection} display={display}/>;
  if(!items.length)return null;
  const checked=new Date(feed.checkedAt).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
  return <section ref={box} aria-label="토스쇼핑 제휴 추천" className="mx-auto my-5 w-[calc(100%-2.5rem)] max-w-6xl rounded-2xl border border-blue-100 bg-blue-50/70 p-4 sm:p-6">
