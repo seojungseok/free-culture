@@ -38,8 +38,8 @@ try {
    const cached=previous?.products?.find(q=>q.id===p.tacaItemId&&q.name===p.displayName)?.links?.home;
    const link=cached?.startsWith('https://toss.shopping/')?{shortUrl:cached}:await request('/links',{method:'POST',body:{tacaItemId:p.tacaItemId,publisherId,subTagId:'mwohaji_home'}});
    if(!link.shortUrl?.startsWith('https://'))throw new Error('Invalid original Sharelink');
-   const old=products.findIndex(p=>p.id===deal.tacaItemId);if(old>=0)products.splice(old,1);
-   products.push({id:p.tacaItemId,topic:homeDealGroup(p.displayName)==='camp'?'camp-food':'daily-food',homeFeature:true,headline:homeDealGroup(p.displayName)==='camp'?'캠핑 먹거리, 오늘의 하루특가':'집에서 가볍게, 오늘의 하루특가',name:p.displayName,option:p.displayName,image:p.mainImageUrls.find(u=>u.includes('/live/temp/'))||p.mainImageUrls.find(u=>u.startsWith('https://')),imageNote:'판매처 제공 상품 사진',price:p.displayPrice,discountRate:p.discountRate,endAt:deal.endAt,reason:'구매 전에 구성과 수량을 확인하세요.',caution:'보관·조리 방법과 배송 조건은 판매처에서 확인하세요.',links:{home:link.shortUrl}});
+   const old=products.findIndex(p=>p.id===deal.tacaItemId);const existingLinks=old>=0?products[old].links:{};if(old>=0)products.splice(old,1);
+   products.push({id:p.tacaItemId,topic:homeDealGroup(p.displayName)==='camp'?'camp-food':'daily-food',homeFeature:true,headline:homeDealGroup(p.displayName)==='camp'?'캠핑 먹거리, 오늘의 하루특가':'집에서 가볍게, 오늘의 하루특가',name:p.displayName,option:p.displayName,image:p.mainImageUrls.find(u=>u.includes('/live/temp/'))||p.mainImageUrls.find(u=>u.startsWith('https://')),imageNote:'판매처 제공 상품 사진',price:p.displayPrice,discountRate:p.discountRate,endAt:deal.endAt,reason:'구매 전에 구성과 수량을 확인하세요.',caution:'보관·조리 방법과 배송 조건은 판매처에서 확인하세요.',links:{...existingLinks,home:link.shortUrl}});
   }
   const feed={version:1,checkedAt:new Date().toISOString(),products};
   fs.mkdirSync(path.dirname(output),{recursive:true});
