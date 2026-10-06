@@ -28,3 +28,23 @@
 중간 띠 배너는 별도 큰 버튼과 상단 라벨을 줄여 실제 높이를 낮춘다. 제목·이미지는 모두 클릭 가능하고 조작 버튼은 유지한다.
 
 컵라면: 육개장 18개+김치 6개 구성의 실제 판매처 사진·가격·옵션을 검토했다. 캠핑에서 김이 올라오는 라면을 젓가락으로 드는 배경은 AI 일반 연출로 표시하며 해당 상품의 조리 결과라고 주장하지 않는다. imagegen 기본 프롬프트: macro steaming unbranded ramen lifted by chopsticks at a misty mountain campsite sunrise, dark negative space, no logo or text. 파일 public/affiliate-images/weekend-ramen-v2.webp.
+
+## 2026-10-07 가로 광고 재구성
+
+쿠팡 공개 홈페이지 DOM의 이미지 원본 및 렌더링 치수를 확인했다. 메인은 1920×450 원본과 높이 450px, 중간 띠는 980×140 원본과 1020×145.7 표시로 7:1 비율이다. 공개 참고: https://www.coupang.com/ . 소스 광고를 복제하지 않고 이 비율을 기준으로 자체 광고를 구성한다.
+
+첫 기획전은 캠핑 먹거리 6개(양념 목살·삼겹살·편육·컵라면·햇반·순대), 두 번째는 음료와 생활 품목 5개(콜라·생수 2종·두유·휴대 티슈), 세 번째는 와그·세시간전으로 나눈다. 판매량을 검증하지 않은 '베스트셀러' 문구는 사용하지 않는다. 토스의 확인한 할인율과 SALE을 표시하며 정상 할인 상품에 하루특가 종료시간을 만들지 않는다. 전환은 사용자 요청에 따라 1.5초, 호버·포커스·일시정지·화면 밖·움직임 줄이기 설정에서는 멈춘다.
+
+최종 배너를 네이티브 HTML/CSS로 구성한다. 메인 1920px 폭 기준 높이450px, 중간 aspect-ratio 7/1, 모바일 중간132px이다. 가격·문구·원본 상품 증빙·광고 장면을 별도 레이어로 배치한다. 사진에 cover 크롭을 사용하지 않고 contain으로 전체를 보존한다. 신규 이미지는 비율을 유지한 리사이즈와 WebP 압축만 했으며 자르지 않았다.
+
+imagegen 기본 내장 도구 생성 프롬프트 요약 및 저장 경로:
+- public/affiliate-images/camp-meat-v3.webp: sizzling grilled pork mountain with a tiny campsite, premium surreal food photography, no text/logo/price.
+- public/affiliate-images/camp-rice-v3.webp: glossy rice bowl floating as a sunset cloud over a campsite, no text/logo/price.
+- public/affiliate-images/camp-water-v3.webp: high-speed water splash forms transparent mountains, no text/logo/price.
+- public/affiliate-images/camp-drink-v3.webp: creamy grain beverage pours into a golden road to a campsite, no health claims/text/logo/price.
+- public/affiliate-images/camp-sundae-v3.webp: generic sundae platter with steam forming a tent constellation, no text/logo/price. Full scene inside short horizontal frame.
+- public/affiliate-images/ramen-galaxy-v3.webp: lifted golden noodles become the Milky Way above a campsite; steaming generic cup, no text/logo/price.
+
+위 AI 장면은 실제 상품 조리 사진이 아니다. 원본 상품 사진은 별도 '실제 연결 상품' 레이어로 유지하고 각 영역에 대가성 및 AI 표시를 한다. 생성된 일반 돼지고기 슬라이스 시안(output/imagegen/pork-platter-concept.png)은 편육 외형과 다르므로 배포 배너에 사용하지 않았다.
+
+추가 순대 선택: 773646201, 맛팜 옛고을 찰순대400g+내장모둠500g, 원본 사진 https://shopping.toss.im/live/temp/2026-02-03/34c623c6-7d78-47ff-8170-65ddc7af7a42.jpeg . API에서 판매 가능, 표시가격8900원·할인율54%를 확인하고 원본 사진을 시각 검토했다. 정가 대비 표시 할인이지 타 쇼핑몰 최저가 비교 결과가 아니다. mwohaji_home 및 mwohaji_sundae 원본 추적 링크를 발급했다.

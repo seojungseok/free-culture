@@ -1,7 +1,25 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-06T15:02:28.855Z",
+  "checkedAt": "2026-10-06T15:30:19.303Z",
   "products": [
+    {
+      "id": 773646201,
+      "imageNote": "판매처 조리 예시 · 찰순대와 내장 모둠",
+      "option": "찰순대 400g + 내장 모둠 500g",
+      "topic": "sundae",
+      "homeFeature": true,
+      "headline": "캠핑 식탁에 분식집을 데려오세요",
+      "reason": "함께 먹는 인원과 이동 중 냉장 보관 방법을 먼저 확인하세요.",
+      "caution": "배너는 일반 순대 상차림의 AI 연출입니다. 실제 상품의 조리 결과가 아닙니다. 원재료·알레르기·보관·가열 방법은 상품 상세와 포장 안내를 확인하세요.",
+      "name": "맛팜 옛고을 찰순대, 400g, 1개 + 푸짐한 내장 모둠, 500g, 1개",
+      "image": "https://shopping.toss.im/live/temp/2026-02-03/34c623c6-7d78-47ff-8170-65ddc7af7a42.jpeg",
+      "price": 8900,
+      "discountRate": 54,
+      "links": {
+        "home": "https://toss.shopping/_m/pNdSysjd",
+        "sundae": "https://toss.shopping/_m/NPcC9XWf"
+      }
+    },
     {
       "id": 2584893075,
       "imageNote": "판매처 포장 사진 · 총 24개 구성",
@@ -139,8 +157,8 @@
       "caution": "보관 온도와 섭취·조리 방법은 실제 포장 안내를 확인하세요. 사진의 채소·식기는 포함되지 않습니다.",
       "name": "장충동 쫄깃한 편육, 150g, 5개",
       "image": "https://shopping.toss.im/live/temp/2026-02-05/02da64e4-1e38-4a9d-a6b8-041d49d7692e.jpeg",
-      "price": 13100,
-      "discountRate": 46,
+      "price": 15000,
+      "discountRate": 38,
       "links": {
         "home": "https://toss.shopping/_m/rQcp6x5B",
         "meat": "https://toss.shopping/_m/tLp678W"
@@ -157,8 +175,8 @@
       "caution": "원재료·알레르기 표시와 개봉 전후 보관 방법은 포장 안내를 확인하세요.",
       "name": "파이토메이드 고칼슘&비타민D 두유 21곡 미숫가루, 190ml, 24개",
       "image": "https://shopping.toss.im/live/temp/2026-06-16/b1e9c145-5424-4198-9449-4beace9264e8.jpeg",
-      "price": 7900,
-      "discountRate": 50,
+      "price": 8200,
+      "discountRate": 48,
       "links": {
         "home": "https://toss.shopping/_m/FO5t9XN4",
         "snack": "https://toss.shopping/_m/rZhRlLx8"

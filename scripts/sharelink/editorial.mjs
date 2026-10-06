@@ -6,4 +6,4 @@ export const selections = [
   {id:340640477,expectedName:'쉬젤 러반 스테인레스 IH 양수냄비 24cm',imageUrl:'https://shopping.toss.im/live/temp/2025-11-20/2c5cb0ca-03ff-405d-9cdc-e8d5fecef515.jpeg',imageNote:'판매처 제공 상품 사진 · 음식은 연출 예시',option:'연결 옵션: 24cm 양수냄비',topic:'cooking-pot',headline:'국물 요리 준비, 냄비 크기부터 확인하세요',reason:'함께 먹는 인원과 국물 양을 정한 뒤 사용할 화구와 냄비 바닥 크기를 비교해 보세요.',caution:'상품명은 IH 양수냄비입니다. 실제 사용 가능한 열원·용량·손잡이 주의사항은 판매처 안내를 확인하세요. 사진 속 음식·소품은 구성품이 아닙니다.'},
   {id:2273213673,expectedName:'셰프라인 하트 다이아몬드 프라이팬, 빨강, 28cm, 1개',imageUrl:'https://shopping.toss.im/live/temp/2026-06-16/66cd7152-f617-4d66-9ef6-92cd1a0b5c47.jpeg',imageNote:'판매처 제공 상품 사진',option:'연결 옵션: 빨강 · 28cm · 1개',topic:'cooking-pan',headline:'볶음·전 요리 전에, 팬 크기를 살펴보세요',reason:'한 번에 조리할 양과 화구 크기를 먼저 정하세요. 이동할 때는 손잡이가 수납 공간에 들어가는지도 확인해 보세요.',caution:'인덕션 등 열원 호환성, 코팅 관리와 세척 방법은 구매 상세에서 확인하세요.'},
 ];
-export const channels=['home','picnic','camping','cooking-pot','cooking-pan','meat','water','snack','travel','cola','rice','ramen'];
+export const channels=['home','picnic','camping','cooking-pot','cooking-pan','meat','water','snack','travel','cola','rice','ramen','sundae'];

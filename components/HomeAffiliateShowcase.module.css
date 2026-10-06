@@ -8,3 +8,42 @@
 .compact .hero{min-height:145px;padding-top:12px;padding-bottom:30px}.compact .eyebrow,.compact .cta{display:none}.compact .visual img{height:90px}.compact .copy h2{margin:2px 0 5px}.compact .copy h2 a:hover{text-decoration:underline;text-underline-offset:4px}.compact .copy .end{font-size:10px}.compact .price{margin:4px 0}@media(max-width:640px){.compact .hero{min-height:140px;padding-top:10px;padding-bottom:28px}.compact .visual img{height:80px}.compact .copy h2{font-size:17px}.compact .price strong{font-size:22px}}
 
 .ramen{background:linear-gradient(90deg,#291c17f2 10%,#291c1780 60%,#291c1730),url(/affiliate-images/weekend-ramen-v2.webp) center/cover;color:#fff}.ramen .visual img{max-width:200px;height:165px}.menu button{min-height:30px;padding-top:7px;padding-bottom:7px}@media(max-width:640px){.ramen .visual img{height:115px}.menu button{min-height:34px}}.compact .ramen .visual img{height:90px}@media(max-width:640px){.compact .ramen .visual img{height:80px}}
+
+/* The banner is composed at its final dimensions. Campaign photos are contained,
+   never cropped as cover backgrounds; price and product proof are separate layers. */
+.hero{height:min(450px,23.4375vw);min-height:320px;padding-top:20px;padding-bottom:32px;gap:18px}
+.stage{grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);height:100%;gap:10px;animation:appear .22s ease-out}
+.copy h2{font-size:36px;max-width:360px}.price strong{font-size:36px}.eyebrow{background:#ffe34a;color:#292018;border:0;font-size:12px;letter-spacing:.03em}
+.visual,.visual>a,.visual figure{display:block;width:100%;height:100%}.visual{position:relative;min-width:0}.visual .creative{position:relative;margin:0;display:flex;align-items:center;justify-content:center}
+.visual .campaignArt{width:100%;height:100%;max-width:none;object-fit:contain;border-radius:0;background:none;box-shadow:none}
+.visual .productProof{position:absolute;left:0;bottom:30px;width:94px;padding:5px;background:#fff;border-radius:8px;box-shadow:0 3px 12px #0003;color:#263344}
+.visual .productProof img{display:block;max-width:none;width:100%;height:78px;object-fit:contain;border-radius:0;background:#fff;box-shadow:none}
+.productProof span{display:block;text-align:center;font-size:9px;font-weight:800;margin-top:3px}
+.visual figcaption{position:absolute;bottom:3px;left:0;right:0;max-width:none;margin:0;text-align:right;font-size:9px}
+.visual .originalOnly{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}.visual .originalOnly img{width:230px;height:220px;max-width:100%;object-fit:contain;border-radius:12px;background:#fff}.originalOnly span{font-size:10px;margin-top:5px}
+.meat{background:#261713;color:#fff}.ramen{background:#071424;color:#fff}.rice{background:#282025;color:#fff}.water{background:#102033;color:#fff}.cola{background:#740b18;color:#fff}.sundae{background:#390814;color:#fff}.drink{background:#302019;color:#fff}.everyday{background:#eae4f9;color:#222743}.ticket{background:#17382e;color:white}.stay{background:#192546;color:white}
+.rice .price>span,.water .price>span{color:#ffe34a}.rice .cta,.water .cta{background:white;color:#1a2639}
+.visual .scenePhoto,.stay .visual .scenePhoto{width:100%;height:100%;max-width:none;object-fit:contain;opacity:1;background:none;box-shadow:none;border-radius:0}
+.collectionTitle{font-size:20px;font-weight:900;letter-spacing:-.04em;margin:0 0 12px}
+.withArt .visual,.withArt .visual>a,.withArt .visual .creative{position:static}
+.withArt .visual .campaignArt{position:absolute;left:50%;top:0;transform:translateX(-65%);height:100%;width:auto;max-width:none;object-fit:contain;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.copy,.menu,.controls{position:relative;z-index:2}.controls{position:absolute}
+.withArt .visual .productProof{left:calc(50% - 40px);bottom:27px;z-index:2}.withArt .visual figcaption{left:calc(50% + 40px);right:auto;width:270px;bottom:8px;z-index:2}
+.compact .hero{height:auto;min-height:0;aspect-ratio:7/1;padding:8px 28px 22px;border-radius:8px}
+.compact .stage{width:100%;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);height:100%;gap:8px}
+.compact .copy h2{font-size:23px;max-width:430px;margin:0 0 5px}.compact .copy>p{font-size:11px;margin:3px 0}.compact .price strong{font-size:27px}.compact .price>span{font-size:21px}.compact .eyebrow{display:inline-block;padding:2px 6px;font-size:9px;margin-bottom:4px}.compact .cta{display:none}
+.compact .visual .campaignArt,.compact .visual .scenePhoto{height:100%;max-width:none;border-radius:0;object-fit:contain}
+.compact .withArt .visual .campaignArt{height:100%;width:auto;max-width:65%;left:auto;right:0;transform:none;object-position:right center}
+.compact .withArt .visual .productProof{left:56%;bottom:7px}.compact .withArt .visual figcaption{left:auto;right:110px;width:210px;bottom:2px}
+.compact .cola .visual .productProof{width:160px;left:55%;bottom:18px}.compact .cola .visual .productProof img{height:102px}
+.compact .visual .productProof{left:10px;bottom:6px;width:66px;padding:3px;border-radius:5px}.compact .visual .productProof img{height:47px}.compact .productProof span{font-size:7px;margin-top:1px}.compact .visual figcaption{font-size:7px;bottom:0}
+.compact .visual .originalOnly img{width:110px;height:90px}.compact .originalOnly span{font-size:8px}.compact .controls{bottom:3px;right:7px}.compact .controls button{height:20px;min-width:22px;font-size:15px}
+@media(max-width:640px){
+ .hero{height:auto;min-height:245px;padding:15px 16px 45px;gap:0}.stage{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);height:175px;gap:6px}.copy h2{font-size:21px;max-width:none;margin:8px 0}.copy>p{font-size:10px}.price strong{font-size:25px}.price>span{font-size:19px}.eyebrow{font-size:9px;padding:4px 7px}.copy .cta{font-size:10px;min-height:36px;padding:7px 10px;gap:8px}.visual .productProof{width:54px;bottom:12px;padding:3px}.visual .productProof img{height:40px}.productProof span{font-size:7px}.visual figcaption{font-size:7px;bottom:0}.visual .originalOnly img{height:140px;width:140px}
+ .withArt .visual .campaignArt{left:0;right:auto;top:auto;bottom:38px;width:100%;height:auto;transform:none;max-width:none}.withArt .visual .productProof{left:auto;right:14px;bottom:48px}.withArt .visual figcaption{left:auto;right:12px;width:150px;bottom:40px;font-size:6px}
+ .compact{padding:0 20px}.collectionTitle{font-size:17px;margin-bottom:9px}.compact .hero{aspect-ratio:auto;height:132px;min-height:0;padding:7px 10px 22px}.compact .stage{height:100%;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}.compact .copy h2{font-size:15px;line-height:1.25;margin:0 0 3px}.compact .copy>p{font-size:8px}.compact .price strong{font-size:21px}.compact .price>span{font-size:15px}.compact .eyebrow{font-size:8px;margin-bottom:3px;padding:1px 5px}.compact .visual .productProof{left:0;bottom:6px;width:40px;padding:2px}.compact .visual .productProof img{height:29px}.compact .productProof span{font-size:5px}.compact .visual figcaption{font-size:5px}.compact .visual .originalOnly img{width:80px;height:70px}
+ .compact .withArt .visual .campaignArt{width:58%;max-width:none;height:auto;left:auto;right:0;top:50%;bottom:auto;transform:translateY(-50%)}.compact .withArt .visual .productProof{left:auto;right:10px;bottom:20px}.compact .withArt .visual figcaption{right:80px;width:130px;bottom:3px}
+ .compact .cola .visual .productProof{width:90px;left:auto;right:14px;bottom:22px}.compact .cola .visual .productProof img{height:64px}
+ .wrap:not(.compact) .hero{height:280px;min-height:280px;padding-bottom:50px}.wrap:not(.compact) .stage{height:215px}
+ .menu{position:absolute;bottom:7px;left:12px;right:105px;width:auto;height:32px;display:flex;overflow-x:auto;border-radius:6px}.menu button{min-height:32px;padding:5px 9px;flex-shrink:0}.controls{bottom:7px;right:9px}
+}
