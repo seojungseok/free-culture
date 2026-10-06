@@ -12,7 +12,7 @@ export default function TossAffiliate({initial,position}:{initial:TossFeed;posit
  const page=usePathname()||'/';
  const [feed,setFeed]=useState(initial),[now,setNow]=useState(0),[saved,setSaved]=useState<number[]>([]),[message,setMessage]=useState('');
  const box=useRef<HTMLElement>(null),seen=useRef(new Set<string>());
- const channel=page==='/'?'home':page.startsWith('/camping/')?'camping':/^\/(event\/[^/]+|places\/spot\/[^/]+|course\/c\/[^/]+|date\/c\/[^/]+)/.test(page)?'picnic':page.startsWith('/weekend-prep/')&&/picnic|park|outing/.test(page)?'picnic':null;
+ const channel=page==='/'?'home':/^\/camping\/\d+$/.test(page)?'camping':/^\/(event\/[^/]+|places\/spot\/[^/]+|course\/c\/[^/]+|date\/c\/[^/]+)/.test(page)?'picnic':page.startsWith('/weekend-prep/')?(/soup|stew|hotpot|ramen|noodle|sujebi|tteokbokki|fishcake|crab|mussel/.test(page)?'cooking-pot':/grill|rice|pancake|sandwich|skewer|stir-fry|jeon|corn-cheese|tofu-kimchi/.test(page)?'cooking-pan':/picnic|park|outing/.test(page)?'picnic':null):null;
  const correctPosition=(page==='/'&&position==='top')||(page!=='/'&&position==='article');
  const items=useMemo(()=>correctPosition&&channel&&now>0?currentProducts(feed,now).filter(p=>p.links[channel]).slice(0,page==='/'?1:2):[],[correctPosition,channel,now,feed,page]);
  useEffect(()=>{

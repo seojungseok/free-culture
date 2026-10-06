@@ -126,12 +126,14 @@ for entry in "$SOURCE"/* "$SOURCE"/.[!.]*; do
 done
 cp "$APP/compose.nas.yml" "$APP/compose.yaml"
 mkdir -p "$APP/runtime/sharelink/public"
+chmod 755 "$APP/runtime/sharelink/public"
 mkdir -p "$APP/runtime/sharelink/events"
 chown 10001:10001 "$APP/runtime/sharelink/events"
 chmod 700 "$APP/runtime/sharelink/events"
 if [ ! -f "$APP/runtime/sharelink/public/editorial.json" ] && [ -f "$APP/data/sharelink-editorial.json" ]; then
   cp "$APP/data/sharelink-editorial.json" "$APP/runtime/sharelink/public/editorial.json"
 fi
+[ ! -f "$APP/runtime/sharelink/public/editorial.json" ] || chmod 644 "$APP/runtime/sharelink/public/editorial.json"
 if [ -f "$APP/scripts/nas/refresh-sharelink.sh" ]; then
   /bin/sh "$APP/scripts/nas/refresh-sharelink.sh" >> "$LOG" 2>&1 || printf '%s sharelink refresh deferred\n' "$(timestamp)" >> "$LOG"
 fi
