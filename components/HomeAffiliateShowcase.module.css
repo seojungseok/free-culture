@@ -47,3 +47,4 @@
  .wrap:not(.compact) .hero{height:280px;min-height:280px;padding-bottom:50px}.wrap:not(.compact) .stage{height:215px}
  .menu{position:absolute;bottom:7px;left:12px;right:105px;width:auto;height:32px;display:flex;overflow-x:auto;border-radius:6px}.menu button{min-height:32px;padding:5px 9px;flex-shrink:0}.controls{bottom:7px;right:9px}
 }
+@media(max-width:640px){.wrap:not(.compact) .price em{display:none}.wrap:not(.compact) .copy h2{font-size:20px;line-height:1.25}}
