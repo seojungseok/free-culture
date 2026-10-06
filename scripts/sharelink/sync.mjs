@@ -10,7 +10,7 @@ try {
   const tags=await request('/sub-tags/create',{method:'POST',body:{subTags:channels.map(c=>({subTagId:`mwohaji_${c}`,label:`주말에 뭐하지 ${c}`}))}});
   if(tags.results?.length!==channels.length||tags.results.some(r=>!['CREATED','RESTORED','ALREADY_EXISTS'].includes(r.status)))throw new Error('Sharelink channel registration failed');
   const details=await request(`/products/detail?tacaItemIds=${selections.map(p=>p.id).join(',')}`);
-  const deals=await request('/products/today-deals?size=30');
+  const deals=await request('/products/today-deals?size=100');
   const products=[];
   for(const choice of selections){
    const p=details.items?.find(p=>p.tacaItemId===choice.id);

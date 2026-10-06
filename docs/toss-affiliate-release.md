@@ -1,6 +1,6 @@
 # 토스·티켓·숙소 제휴 운영
 
-기존 글과 URL을 유지하며 메인 상단 토스 상품 1개, 주제에 맞는 글 하단 추천, 메인 지역 선택 이후 티켓·숙소 카드를 추가한다. 티켓은 현재 유효성을 확인한 허브아일랜드부터 노출한다. 숙소는 기존 세시간전 원본 링크 `https://3ha.in/r/722026`를 보존한다. 지역 자동 선택이나 일률적인 할인액을 약속하지 않는다.
+기존 글과 URL을 유지하며 내 주변 갈 만한 곳 아래에 낮고 넓은 기획전 슬라이드와 좌우 드래그 상품 목록을 배치한다. 고기·생수·여행 음료·휴대 준비물·와그·세시간전은 순서대로 6초 자동 전환하며 일시정지, 포커스·호버 정지와 모션 감소 설정을 지원한다. 글 하단 숙소·티켓 카드는 작은 가로형으로 배치한다. 토스 상품 이미지와 구매 버튼 모두 원본 제휴 링크로 이동한다. 티켓은 현재 유효성을 확인한 허브아일랜드부터 노출한다. 숙소는 기존 세시간전 원본 링크 `https://3ha.in/r/722026`를 보존한다. 지역 자동 선택이나 일률적인 할인액을 약속하지 않는다.
 
 ## 갱신과 사실 확인
 
@@ -19,3 +19,8 @@
 토스 subTag: `mwohaji_home`, `mwohaji_picnic`, `mwohaji_camping`, `mwohaji_cooking-pot`, `mwohaji_cooking-pan`. 국물 요리에는 냄비, 볶음·전·구이에는 팬을 연결한다. 원본 발급 링크를 사용한다. 700명 중 10명 구매는 방문자 대비 약 1.43% 목표다. 예를 들어 제휴 클릭 후 구매 전환율이 10%라면 하루 100명의 제휴 클릭이 필요하다. 이것은 목표 계산이며 예상 실적이 아니다.
 
 검증: 만료 경계, 오래된·미래 시각 캐시, 정상 0건과 HTTP 200 사업 오류 테스트, Next 빌드, 공개 API·제휴 연결·390px UI 확인.
+
+숙소 배너는 imagegen 기본 도구로 만든 일반 객실 분위기 이미지다. 실제 특정 숙소로 오해하지 않도록 AI 연출 문구를 표시한다. 생성 프롬프트: ivory linen hotel bed, warm wood, green mountain window at golden morning, premium editorial photograph, no people/text/logos/price claims. 파일: public/affiliate-images/weekend-stay-v2.webp. 상품 사진은 실제 판매처 원본을 유지한다.
+
+지역별 나들이 뒤와 캠핑 뒤에 145px급(모바일 콘텐츠 기준 약 170px) 낮은 중간 기획전을 배치한다. 중간 배너도 동일한 유효 상품·원본 링크만 쓰며 별도 시작 항목에서 6초 전환한다. 풀무원 상품을 임의로 등록하거나 광고를 복제하지 않는다.
+고기 배너 배경: public/affiliate-images/weekend-picnic-v2.webp. imagegen 기본 도구 프롬프트: warm autumn picnic table and forest bokeh, clean dark green negative space, no food/products/text/people/logos. 실제 상품은 원본 사진으로 별도 노출하고 배경 AI 표시를 붙인다.

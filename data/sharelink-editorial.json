@@ -1,7 +1,117 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-06T14:16:07.217Z",
+  "checkedAt": "2026-10-06T14:38:13.435Z",
   "products": [
+    {
+      "id": 288570013,
+      "imageNote": "판매처 조리 예시 · 채소·소품 제외",
+      "option": "냉동 삼겹살 · 1kg × 2개",
+      "topic": "meat",
+      "homeFeature": true,
+      "headline": "이번 캠핑의 한 끼, 삼겹살부터",
+      "reason": "함께 먹을 인원과 조리 도구를 정한 뒤 중량을 비교하세요.",
+      "caution": "냉동 상품입니다. 이동 중 보관과 해동·가열 방법은 상품 포장 안내를 확인하세요.",
+      "name": "신선하랑 냉동 삼겹살, 1kg, 2개",
+      "image": "https://shopping.toss.im/live/temp/2026-02-09/f2e5b456-3d79-4109-93ad-e51bbf4a6431.jpeg",
+      "price": 18900,
+      "discountRate": 51,
+      "links": {
+        "home": "https://toss.shopping/_m/vf2imXi7",
+        "meat": "https://toss.shopping/_m/Hy9vjkxd"
+      }
+    },
+    {
+      "id": 12833301,
+      "imageNote": "판매처 상품 예시 사진",
+      "option": "500ml · 40개",
+      "topic": "water",
+      "homeFeature": true,
+      "headline": "길 위에서도, 물 한 병은 미리",
+      "reason": "휴대할 병 크기와 인원에 맞춰 필요한 수량을 챙기세요.",
+      "caution": "사진은 판매처 예시입니다. 연결 옵션은 500ml 40개이며 사진 속 병 개수와 다릅니다. 배송 조건을 확인하세요.",
+      "name": "에브리워터 무라벨, 500ml, 40개",
+      "image": "https://shopping.toss.im/live/temp/2026-02-17/32d41410-98f1-42d9-a442-9e8820fad904.jpeg",
+      "price": 7970,
+      "discountRate": 59,
+      "links": {
+        "home": "https://toss.shopping/_m/95eVnLFe",
+        "water": "https://toss.shopping/_m/hnOsuj6m"
+      }
+    },
+    {
+      "id": 187425049,
+      "imageNote": "판매처 공통 사진 · 연결 옵션 2L 6개",
+      "option": "2L · 6개 · 라벨랜덤",
+      "topic": "water",
+      "homeFeature": true,
+      "headline": "캠핑 물 준비, 필요한 만큼 챙겨요",
+      "reason": "차량 적재 공간과 조리·음용에 사용할 양을 먼저 확인하세요.",
+      "caution": "판매처 사진에는 다른 용량과 수량이 함께 보입니다. 구매 연결 옵션은 2L 6개입니다.",
+      "name": "동원샘물 생수, 라벨랜덤, 2L, 6개",
+      "image": "https://shopping.toss.im/live/temp/2025-08-12/32fee74d-2d00-4184-94a9-86ed81a7d9cb.jpeg",
+      "price": 3480,
+      "discountRate": 55,
+      "links": {
+        "home": "https://toss.shopping/_m/npD3WfMo",
+        "water": "https://toss.shopping/_m/1OCoevls"
+      }
+    },
+    {
+      "id": 9133579,
+      "imageNote": "판매처 상차림 예시 · 소품 제외",
+      "option": "150g · 5개",
+      "topic": "meat",
+      "homeFeature": true,
+      "headline": "나들이 한 끼, 편육도 살펴보세요",
+      "reason": "소포장 중량과 함께 먹을 인원을 비교해 보세요.",
+      "caution": "보관 온도와 섭취·조리 방법은 실제 포장 안내를 확인하세요. 사진의 채소·식기는 포함되지 않습니다.",
+      "name": "장충동 쫄깃한 편육, 150g, 5개",
+      "image": "https://shopping.toss.im/live/temp/2026-02-05/02da64e4-1e38-4a9d-a6b8-041d49d7692e.jpeg",
+      "price": 13100,
+      "discountRate": 46,
+      "links": {
+        "home": "https://toss.shopping/_m/rQcp6x5B",
+        "meat": "https://toss.shopping/_m/tLp678W"
+      },
+      "endAt": "2026-10-07T00:00:00+09:00"
+    },
+    {
+      "id": 296698859,
+      "imageNote": "판매처 제공 상품 사진",
+      "option": "190ml · 24개",
+      "topic": "snack",
+      "homeFeature": true,
+      "headline": "출발 전 챙기는, 작은 음료 한 팩",
+      "reason": "휴대할 수량과 용량을 확인하고 필요한 만큼 따로 챙기세요.",
+      "caution": "원재료·알레르기 표시와 개봉 전후 보관 방법은 포장 안내를 확인하세요.",
+      "name": "파이토메이드 고칼슘&비타민D 두유 21곡 미숫가루, 190ml, 24개",
+      "image": "https://shopping.toss.im/live/temp/2026-06-16/b1e9c145-5424-4198-9449-4beace9264e8.jpeg",
+      "price": 7900,
+      "discountRate": 50,
+      "links": {
+        "home": "https://toss.shopping/_m/FO5t9XN4",
+        "snack": "https://toss.shopping/_m/rZhRlLx8"
+      },
+      "endAt": "2026-10-07T00:00:00+09:00"
+    },
+    {
+      "id": 172086345,
+      "imageNote": "판매처 제공 상품 사진",
+      "option": "50매 · 12개",
+      "topic": "travel",
+      "homeFeature": true,
+      "headline": "작은 준비물 하나로, 외출이 편하게",
+      "reason": "주머니나 차 안에 넣을 크기와 필요한 수량을 비교하세요.",
+      "caution": "물티슈가 아닌 휴대용 티슈입니다. 패키지 디자인과 상세 구성을 확인하세요.",
+      "name": "크리넥스 카카오프렌즈 휴대용 티슈, 50매, 12개",
+      "image": "https://shopping.toss.im/live/temp/2025-08-26/96f66cdf-d1a4-4ede-b43c-a5be9dd2f24b.jpeg",
+      "price": 9200,
+      "discountRate": 33,
+      "links": {
+        "home": "https://toss.shopping/_m/Bjfa2pGf",
+        "travel": "https://toss.shopping/_m/5VK8fDJo"
+      }
+    },
     {
       "id": 11755635,
       "imageNote": "판매처 사진: 블루 예시",

@@ -15,6 +15,7 @@ import { getPrepArticles } from "@/lib/weekend-prep/data";
 import { getAllArticles } from "@/lib/articles";
 import { hasSubstantivePlaceInfo, hasSubstantiveCampInfo } from "@/lib/placeQuality";
 
+import {readTossFeed} from '@/lib/sharelink';
 export const revalidate = 3600;
 export const metadata: Metadata = {
   title: { absolute: "이번 주말 어디 가지? 전국 가볼만한 곳·축제·여행코스 추천 · 주말에 뭐하지?" },
@@ -77,5 +78,5 @@ export default function HomePage() {
   const editorialPlaces = publishedPlaces.map((article) => byPlaceId.get(article.id)).filter((item): item is HomeItem => Boolean(item));
   const representativeItems = editorialPlaces.slice(-6).reverse();
   const newItems = editorialPlaces.filter((item) => !representativeItems.some((representative) => representative.id === item.id)).slice(0, 6);
-  return <HomeExplorer regional={regional} eventItems={weekendItems.slice(0, 8)} kidItems={kidItems} dateItems={dateItems.slice(0, 6)} campItems={campItems.slice(0, 6)} courseItems={courseItems.filter((_, index) => courses[index].duration === "당일").slice(0, 6)} seasonItems={seasonItems} prepItems={prepItems} placeItems={representativeItems} newItems={newItems} freeItems={freeItems} regions={SIDO_LIST.map((name) => ({ name, href: `/region/${(SIDO_SLUG as Record<string, string>)[name]}` }))} siteName={SITE.name} />;
+  return <HomeExplorer tossFeed={readTossFeed()} regional={regional} eventItems={weekendItems.slice(0, 8)} kidItems={kidItems} dateItems={dateItems.slice(0, 6)} campItems={campItems.slice(0, 6)} courseItems={courseItems.filter((_, index) => courses[index].duration === "당일").slice(0, 6)} seasonItems={seasonItems} prepItems={prepItems} placeItems={representativeItems} newItems={newItems} freeItems={freeItems} regions={SIDO_LIST.map((name) => ({ name, href: `/region/${(SIDO_SLUG as Record<string, string>)[name]}` }))} siteName={SITE.name} />;
 }

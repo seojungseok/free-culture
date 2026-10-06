@@ -1,7 +1,9 @@
+import {tripSelections} from './trip-editorial.mjs';
 export const selections = [
+  ...tripSelections,
   {id:11755635,expectedName:'체크 피크닉 매트, 방수, 접이식, 가방 일체형, 옐로우, 대형, 200x200cm, 1개',imageUrl:'https://shopping.toss.im/live/product/564655/2405a9ae-4f0c-4646-a571-20f4b41c6ce8.jpg',imageNote:'판매처 사진: 블루 예시',option:'연결 옵션: 옐로우 · 200×200cm · 1개',topic:'picnic',headline:'돗자리부터 챙기면, 나들이 준비가 가벼워져요',reason:'앉을 자리와 펼칠 공간을 먼저 정하고, 접었을 때 들고 갈 크기도 확인하세요.',caution:'판매처 공통 사진은 블루이며 연결 상품은 옐로우 옵션입니다. 현장 바닥 상태와 세척 방법을 확인하세요.'},
   {id:1190159839,expectedName:'버팔로 로다 캠핑체어, 아이보리, 2개',imageUrl:'https://shopping.toss.im/live/temp/2026-03-19/a01c511f-435b-4849-8e11-f7a57c65eee5.jpeg',imageNote:'판매처 제공 상품 사진',option:'연결 옵션: 아이보리 · 2개',topic:'camping',headline:'캠핑에서 쉴 자리, 의자부터 살펴보세요',reason:'함께 가는 인원에 맞춰 수량을 정하고 차량의 수납 공간과 비교해 보세요.',caution:'허용 하중과 펼친 크기는 구매 상세에서 확인하세요.'},
   {id:340640477,expectedName:'쉬젤 러반 스테인레스 IH 양수냄비 24cm',imageUrl:'https://shopping.toss.im/live/temp/2025-11-20/2c5cb0ca-03ff-405d-9cdc-e8d5fecef515.jpeg',imageNote:'판매처 제공 상품 사진 · 음식은 연출 예시',option:'연결 옵션: 24cm 양수냄비',topic:'cooking-pot',headline:'국물 요리 준비, 냄비 크기부터 확인하세요',reason:'함께 먹는 인원과 국물 양을 정한 뒤 사용할 화구와 냄비 바닥 크기를 비교해 보세요.',caution:'상품명은 IH 양수냄비입니다. 실제 사용 가능한 열원·용량·손잡이 주의사항은 판매처 안내를 확인하세요. 사진 속 음식·소품은 구성품이 아닙니다.'},
   {id:2273213673,expectedName:'셰프라인 하트 다이아몬드 프라이팬, 빨강, 28cm, 1개',imageUrl:'https://shopping.toss.im/live/temp/2026-06-16/66cd7152-f617-4d66-9ef6-92cd1a0b5c47.jpeg',imageNote:'판매처 제공 상품 사진',option:'연결 옵션: 빨강 · 28cm · 1개',topic:'cooking-pan',headline:'볶음·전 요리 전에, 팬 크기를 살펴보세요',reason:'한 번에 조리할 양과 화구 크기를 먼저 정하세요. 이동할 때는 손잡이가 수납 공간에 들어가는지도 확인해 보세요.',caution:'인덕션 등 열원 호환성, 코팅 관리와 세척 방법은 구매 상세에서 확인하세요.'},
 ];
-export const channels=['home','picnic','camping','cooking-pot','cooking-pan'];
+export const channels=['home','picnic','camping','cooking-pot','cooking-pan','meat','water','snack','travel'];

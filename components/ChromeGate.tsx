@@ -29,7 +29,7 @@ export default function ChromeGate({
   return (
     <>
       {header}
-      <main className="w-full"><TossAffiliate initial={tossFeed} position="top" />{children}<TossAffiliate initial={tossFeed} position="article" />{p!=='/'&&<TravelAffiliate />}</main>
+      <main className="w-full">{children}{p!=='/'&&<><TossAffiliate initial={tossFeed} position="article" /><TravelAffiliate /></>}</main>
       {footer}
       {floating}
     </>

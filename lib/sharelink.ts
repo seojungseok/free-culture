@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {currentProducts} from './sharelink-policy.mjs';
-export type TossProduct={id:number;topic:string;headline:string;reason:string;caution:string;name:string;image:string;imageNote?:string;option?:string;price:number;discountRate?:number;links:Record<string,string>;endAt?:string};
+export type TossProduct={id:number;topic:string;homeFeature?:boolean;headline:string;reason:string;caution:string;name:string;image:string;imageNote?:string;option?:string;price:number;discountRate?:number;links:Record<string,string>;endAt?:string};
 export type TossFeed={version:number;checkedAt:string;products:TossProduct[]};
 export function readTossFeed():TossFeed {
  try {
