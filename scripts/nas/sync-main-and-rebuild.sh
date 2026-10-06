@@ -69,6 +69,10 @@ DOCKER="$(find_cmd /var/packages/ContainerManager/target/usr/bin/docker /usr/loc
 # not download the archive or rebuild. Pin the archive to that verified SHA so
 # a concurrent data commit cannot be recorded as a different deployment.
 STEP="check main commit"
+# Refresh selected affiliate products even when the source commit is unchanged.
+if [ -f "$APP/scripts/nas/refresh-sharelink.sh" ]; then
+  /bin/sh "$APP/scripts/nas/refresh-sharelink.sh" >> "$LOG" 2>&1 || printf '%s sharelink refresh deferred\n' "$(timestamp)" >> "$LOG"
+fi
 REMOTE_SHA=""
 if "$CURL" --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 45 \
   --output "$STATE/main-ref.json.tmp" "$REPOSITORY_REF"; then
@@ -121,6 +125,16 @@ for entry in "$SOURCE"/* "$SOURCE"/.[!.]*; do
   cp -a "$entry" "$APP/"
 done
 cp "$APP/compose.nas.yml" "$APP/compose.yaml"
+mkdir -p "$APP/runtime/sharelink/public"
+mkdir -p "$APP/runtime/sharelink/events"
+chown 10001:10001 "$APP/runtime/sharelink/events"
+chmod 700 "$APP/runtime/sharelink/events"
+if [ ! -f "$APP/runtime/sharelink/public/editorial.json" ] && [ -f "$APP/data/sharelink-editorial.json" ]; then
+  cp "$APP/data/sharelink-editorial.json" "$APP/runtime/sharelink/public/editorial.json"
+fi
+if [ -f "$APP/scripts/nas/refresh-sharelink.sh" ]; then
+  /bin/sh "$APP/scripts/nas/refresh-sharelink.sh" >> "$LOG" 2>&1 || printf '%s sharelink refresh deferred\n' "$(timestamp)" >> "$LOG"
+fi
 
 cd "$APP"
 STEP="build containers"

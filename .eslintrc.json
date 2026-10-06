@@ -1,4 +1,5 @@
 {
+  "root": true,
   "extends": ["next/core-web-vitals"],
   "ignorePatterns": ["자료/**", "data/**", ".next/**", "node_modules/**", "**/*.d.mts"]
 }

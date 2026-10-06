@@ -11,11 +11,15 @@ services:
     environment:
       # Scheduled collectors own the provider allowance; page views use JSON.
       TOUR_RUNTIME_FETCH: "0"
+      TOSS_SHARELINK_PUBLIC_FILE: "/app/runtime/sharelink/public/editorial.json"
+      AFFILIATE_EVENTS_DIR: "/app/affiliate-events"
     ports:
       # LAN-only preview. Router port forwarding must remain disabled.
       - "192.168.0.115:3275:3000"
     volumes:
       - next_cache:/app/.next/cache
+      - ./runtime/sharelink/public:/app/runtime/sharelink/public:ro
+      - ./runtime/sharelink/events:/app/affiliate-events
     tmpfs:
       - /tmp:rw,noexec,nosuid,size=128m
     security_opt:

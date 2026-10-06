@@ -2,6 +2,8 @@
 .env
 .env.local
 .env*.local
+/.cache/sharelink/
+/runtime/sharelink/
 /runtime/
 
 # 의존성
