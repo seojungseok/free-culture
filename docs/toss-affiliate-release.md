@@ -24,3 +24,7 @@
 
 지역별 나들이 뒤와 캠핑 뒤에 145px급(모바일 콘텐츠 기준 약 170px) 낮은 중간 기획전을 배치한다. 중간 배너도 동일한 유효 상품·원본 링크만 쓰며 별도 시작 항목에서 6초 전환한다. 풀무원 상품을 임의로 등록하거나 광고를 복제하지 않는다.
 고기 배너 배경: public/affiliate-images/weekend-picnic-v2.webp. imagegen 기본 도구 프롬프트: warm autumn picnic table and forest bokeh, clean dark green negative space, no food/products/text/people/logos. 실제 상품은 원본 사진으로 별도 노출하고 배경 AI 표시를 붙인다.
+추가 검토 상품: 코카콜라 500ml 24개, 햇반 210g 24개, 양념 목살 600g 3개. 품절인 햇반 36개와 고추장 불고기는 제외했다. 할인율은 토스 표시 기준이며 하루특가는 유효한 endAt이 있는 항목만 구분한다. 콜라 배경 파일 public/affiliate-images/weekend-cola-v2.webp는 imagegen 기본 도구로 생성했다. 프롬프트: cherry red cold cola campaign background with ice and condensation, negative space, no bottles/cans/logos/people/text; 원본 상품 사진 별도 노출.
+중간 띠 배너는 별도 큰 버튼과 상단 라벨을 줄여 실제 높이를 낮춘다. 제목·이미지는 모두 클릭 가능하고 조작 버튼은 유지한다.
+
+컵라면: 육개장 18개+김치 6개 구성의 실제 판매처 사진·가격·옵션을 검토했다. 캠핑에서 김이 올라오는 라면을 젓가락으로 드는 배경은 AI 일반 연출로 표시하며 해당 상품의 조리 결과라고 주장하지 않는다. imagegen 기본 프롬프트: macro steaming unbranded ramen lifted by chopsticks at a misty mountain campsite sunrise, dark negative space, no logo or text. 파일 public/affiliate-images/weekend-ramen-v2.webp.

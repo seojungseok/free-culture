@@ -1,7 +1,79 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-06T14:38:13.435Z",
+  "checkedAt": "2026-10-06T15:02:28.855Z",
   "products": [
+    {
+      "id": 2584893075,
+      "imageNote": "판매처 포장 사진 · 총 24개 구성",
+      "option": "육개장 86g 18개 + 김치 86g 6개",
+      "topic": "ramen",
+      "homeFeature": true,
+      "headline": "캠핑 한 끼, 컵라면도 챙겨요",
+      "reason": "함께 먹을 인원에 맞춰 구성을 비교하고 뜨거운 물을 준비할 방법을 확인하세요.",
+      "caution": "배너 배경은 일반 라면의 AI 연출이며 실제 상품의 완성 모습이 아닙니다. 포장에 표시된 조리 방법·원재료·알레르기 표시를 확인하세요.",
+      "name": "농심 육개장사발면 86g 18개 + 김치사발면 86g 6개, 1세트",
+      "image": "https://shopping.toss.im/live/temp/2026-08-06/0e4b7528-81e7-4aa0-bd34-0521052da8fd.png",
+      "price": 23500,
+      "discountRate": 46,
+      "links": {
+        "home": "https://toss.shopping/_m/pZDyirPk",
+        "ramen": "https://toss.shopping/_m/tIFW8R66"
+      }
+    },
+    {
+      "id": 2643055003,
+      "imageNote": "판매처 상품 예시 · 연결 옵션 24개",
+      "option": "500ml · 24개",
+      "topic": "cola",
+      "homeFeature": true,
+      "headline": "캠핑 음료, 코카콜라로 챙겨요",
+      "reason": "인원과 휴대 공간에 맞춰 용량·수량을 비교하세요.",
+      "caution": "사진은 판매처 예시입니다. 실제 구매 옵션은 500ml 24개이며 배송·보관 조건을 확인하세요.",
+      "name": "코카콜라, 500ml, 24개",
+      "image": "https://shopping.toss.im/live/temp/2026-09-02/54e354d4-ac3c-46ed-b88f-ccab74748d2d.png",
+      "price": 21575,
+      "discountRate": 10,
+      "links": {
+        "home": "https://toss.shopping/_m/7R40cFpe",
+        "cola": "https://toss.shopping/_m/LDrBy1Xl"
+      }
+    },
+    {
+      "id": 135279271,
+      "imageNote": "판매처 제공 상품 사진",
+      "option": "210g · 24개",
+      "topic": "rice",
+      "homeFeature": true,
+      "headline": "고기 옆 한 공기, 햇반도 미리",
+      "reason": "먹을 인원과 끼니 수에 맞춰 수량을 정하고 현장에서 사용 가능한 가열 도구를 확인하세요.",
+      "caution": "가열 방법은 포장 안내를 따르세요. 전자레인지가 없는 캠핑장에서는 준비 가능한 조리 방법을 먼저 확인하세요.",
+      "name": "햇반 윤기가득 쌀밥, 210g, 24개",
+      "image": "https://shopping.toss.im/live/temp/2025-07-08/45769b34-6a9f-4644-8402-27f2113dd85d.jpeg",
+      "price": 25860,
+      "discountRate": 25,
+      "links": {
+        "home": "https://toss.shopping/_m/7esJMkHp",
+        "rice": "https://toss.shopping/_m/t0kJNa9x"
+      }
+    },
+    {
+      "id": 1179530071,
+      "imageNote": "판매처 조리 예시 · 완성 음식 사진",
+      "option": "600g · 3개",
+      "topic": "meat",
+      "homeFeature": true,
+      "headline": "캠핑 저녁, 양념 목살 한 상",
+      "reason": "총중량과 인원을 비교하고 사용할 팬·그릴을 먼저 준비하세요.",
+      "caution": "이동 중 보관 온도와 가열 방법은 상품 상세 및 포장 안내를 확인하세요. 사진은 조리 예시입니다.",
+      "name": "순살 양념 목살구이, 600g, 3개",
+      "image": "https://shopping.toss.im/live/temp/2026-03-18/14f10847-8dcc-4412-bdc0-de3145a1d2f1.jpeg",
+      "price": 20900,
+      "discountRate": 47,
+      "links": {
+        "home": "https://toss.shopping/_m/XF4jaKWA",
+        "meat": "https://toss.shopping/_m/TjcbCMY4"
+      }
+    },
     {
       "id": 288570013,
       "imageNote": "판매처 조리 예시 · 채소·소품 제외",
@@ -72,8 +144,7 @@
       "links": {
         "home": "https://toss.shopping/_m/rQcp6x5B",
         "meat": "https://toss.shopping/_m/tLp678W"
-      },
-      "endAt": "2026-10-07T00:00:00+09:00"
+      }
     },
     {
       "id": 296698859,
@@ -91,8 +162,7 @@
       "links": {
         "home": "https://toss.shopping/_m/FO5t9XN4",
         "snack": "https://toss.shopping/_m/rZhRlLx8"
-      },
-      "endAt": "2026-10-07T00:00:00+09:00"
+      }
     },
     {
       "id": 172086345,
