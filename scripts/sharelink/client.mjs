@@ -32,6 +32,16 @@ export async function withClient(work,{fetchImpl=fetch,stateDir=process.env.TOSS
     let lastRequest=0;
     const request=async(endpoint,{method='GET',body}={})=>{
       if(!endpoint.startsWith('/')||endpoint.startsWith('//')||endpoint.includes('://'))throw new Error('Invalid Sharelink endpoint');
+      const query=new URL(endpoint,base).searchParams;
+      const productCount=endpoint.startsWith('/products/detail')?(query.get('tacaItemIds')||'').split(',').filter(Boolean).length: /^\/products\/(today-deals|best-categories)/.test(endpoint)?Number(query.get('size')||10):0;
+      if(!Number.isInteger(productCount)||productCount>10)throw new Error('Sharelink product batch exceeds conservative collector limit');
+      const budgetPath=path.join(stateDir,'request-budget.json');
+      for(;;){
+        let history;try{history=JSON.parse(fs.readFileSync(budgetPath,'utf8'));}catch{history=[];}
+        const now=Date.now();history=history.filter(r=>Number.isFinite(r.at)&&r.at>now-60000);
+        if(history.length<10&&history.reduce((n,r)=>n+r.products,0)+productCount<=10){history.push({at:now,products:productCount});fs.writeFileSync(budgetPath,JSON.stringify(history),{mode:0o600});break;}
+        await new Promise(r=>setTimeout(r,Math.max(1100,history[0].at+60100-now)));
+      }
       let cooldown;try{cooldown=JSON.parse(fs.readFileSync(cooldownPath,'utf8'));}catch{}
       if(cooldown?.until>Date.now())throw new Error('Sharelink cooldown active');
       const delay=1100-(Date.now()-lastRequest);if(delay>0)await new Promise(r=>setTimeout(r,delay));

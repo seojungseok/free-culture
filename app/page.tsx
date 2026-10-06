@@ -16,7 +16,7 @@ import { getAllArticles } from "@/lib/articles";
 import { hasSubstantivePlaceInfo, hasSubstantiveCampInfo } from "@/lib/placeQuality";
 
 import {readTossFeed} from '@/lib/sharelink';
-export const revalidate = 3600;
+export const revalidate = 60;
 export const metadata: Metadata = {
   title: { absolute: "이번 주말 어디 가지? 전국 가볼만한 곳·축제·여행코스 추천 · 주말에 뭐하지?" },
   description: "이번 주말 갈 만한 전국 문화행사·나들이·여행코스를 지역과 테마로 빠르게 찾아보세요. 무료 행사, 아이와 갈 곳, 데이트 코스도 한곳에 모았습니다.",
