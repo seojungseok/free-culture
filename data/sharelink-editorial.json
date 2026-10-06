@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-06T16:19:10.714Z",
+  "checkedAt": "2026-10-06T17:31:51.052Z",
   "products": [
     {
       "id": 773646201,
       "imageNote": "판매처 조리 예시 · 찰순대와 내장 모둠",
       "option": "찰순대 400g + 내장 모둠 500g",
       "topic": "sundae",
-      "homeFeature": false,
+      "homeFeature": true,
       "headline": "캠핑 식탁에 분식집을 데려오세요",
       "reason": "함께 먹는 인원과 이동 중 냉장 보관 방법을 먼저 확인하세요.",
       "caution": "배너는 일반 순대 상차림의 AI 연출입니다. 실제 상품의 조리 결과가 아닙니다. 원재료·알레르기·보관·가열 방법은 상품 상세와 포장 안내를 확인하세요.",
@@ -25,7 +25,7 @@
       "imageNote": "판매처 포장 사진 · 총 24개 구성",
       "option": "육개장 86g 18개 + 김치 86g 6개",
       "topic": "ramen",
-      "homeFeature": false,
+      "homeFeature": true,
       "headline": "캠핑 한 끼, 컵라면도 챙겨요",
       "reason": "함께 먹을 인원에 맞춰 구성을 비교하고 뜨거운 물을 준비할 방법을 확인하세요.",
       "caution": "배너 배경은 일반 라면의 AI 연출이며 실제 상품의 완성 모습이 아닙니다. 포장에 표시된 조리 방법·원재료·알레르기 표시를 확인하세요.",
@@ -43,7 +43,7 @@
       "imageNote": "판매처 상품 예시 · 연결 옵션 24개",
       "option": "500ml · 24개",
       "topic": "cola",
-      "homeFeature": false,
+      "homeFeature": true,
       "headline": "캠핑 음료, 코카콜라로 챙겨요",
       "reason": "인원과 휴대 공간에 맞춰 용량·수량을 비교하세요.",
       "caution": "사진은 판매처 예시입니다. 실제 구매 옵션은 500ml 24개이며 배송·보관 조건을 확인하세요.",
@@ -61,7 +61,7 @@
       "imageNote": "판매처 제공 상품 사진",
       "option": "210g · 24개",
       "topic": "rice",
-      "homeFeature": false,
+      "homeFeature": true,
       "headline": "고기 옆 한 공기, 햇반도 미리",
       "reason": "먹을 인원과 끼니 수에 맞춰 수량을 정하고 현장에서 사용 가능한 가열 도구를 확인하세요.",
       "caution": "가열 방법은 포장 안내를 따르세요. 전자레인지가 없는 캠핑장에서는 준비 가능한 조리 방법을 먼저 확인하세요.",
@@ -79,7 +79,7 @@
       "imageNote": "판매처 조리 예시 · 완성 음식 사진",
       "option": "600g · 3개",
       "topic": "meat",
-      "homeFeature": false,
+      "homeFeature": true,
       "headline": "캠핑 저녁, 양념 목살 한 상",
       "reason": "총중량과 인원을 비교하고 사용할 팬·그릴을 먼저 준비하세요.",
       "caution": "이동 중 보관 온도와 가열 방법은 상품 상세 및 포장 안내를 확인하세요. 사진은 조리 예시입니다.",
@@ -97,7 +97,7 @@
       "imageNote": "판매처 조리 예시 · 채소·소품 제외",
       "option": "냉동 삼겹살 · 1kg × 2개",
       "topic": "meat",
-      "homeFeature": false,
+      "homeFeature": true,
       "headline": "이번 캠핑의 한 끼, 삼겹살부터",
       "reason": "함께 먹을 인원과 조리 도구를 정한 뒤 중량을 비교하세요.",
       "caution": "냉동 상품입니다. 이동 중 보관과 해동·가열 방법은 상품 포장 안내를 확인하세요.",
@@ -115,7 +115,7 @@
       "imageNote": "판매처 상품 예시 사진",
       "option": "500ml · 40개",
       "topic": "water",
-      "homeFeature": false,
+      "homeFeature": true,
       "headline": "길 위에서도, 물 한 병은 미리",
       "reason": "휴대할 병 크기와 인원에 맞춰 필요한 수량을 챙기세요.",
       "caution": "사진은 판매처 예시입니다. 연결 옵션은 500ml 40개이며 사진 속 병 개수와 다릅니다. 배송 조건을 확인하세요.",
@@ -133,7 +133,7 @@
       "imageNote": "판매처 공통 사진 · 연결 옵션 2L 6개",
       "option": "2L · 6개 · 라벨랜덤",
       "topic": "water",
-      "homeFeature": false,
+      "homeFeature": true,
       "headline": "캠핑 물 준비, 필요한 만큼 챙겨요",
       "reason": "차량 적재 공간과 조리·음용에 사용할 양을 먼저 확인하세요.",
       "caution": "판매처 사진에는 다른 용량과 수량이 함께 보입니다. 구매 연결 옵션은 2L 6개입니다.",
@@ -151,7 +151,7 @@
       "imageNote": "판매처 상차림 예시 · 소품 제외",
       "option": "150g · 5개",
       "topic": "meat",
-      "homeFeature": false,
+      "homeFeature": true,
       "headline": "나들이 한 끼, 편육도 살펴보세요",
       "reason": "소포장 중량과 함께 먹을 인원을 비교해 보세요.",
       "caution": "보관 온도와 섭취·조리 방법은 실제 포장 안내를 확인하세요. 사진의 채소·식기는 포함되지 않습니다.",
@@ -169,7 +169,7 @@
       "imageNote": "판매처 제공 상품 사진",
       "option": "190ml · 24개",
       "topic": "snack",
-      "homeFeature": false,
+      "homeFeature": true,
       "headline": "출발 전 챙기는, 작은 음료 한 팩",
       "reason": "휴대할 수량과 용량을 확인하고 필요한 만큼 따로 챙기세요.",
       "caution": "원재료·알레르기 표시와 개봉 전후 보관 방법은 포장 안내를 확인하세요.",
@@ -378,6 +378,438 @@
       "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
       "links": {
         "home": "https://toss.shopping/_m/xcr3UPci"
+      }
+    },
+    {
+      "id": 2221296103,
+      "topic": "camp-food",
+      "homeFeature": true,
+      "headline": "캠핑 먹거리, 오늘의 하루특가",
+      "name": "삼겹살, 500g, 2팩",
+      "option": "삼겹살, 500g, 2팩",
+      "image": "https://shopping.toss.im/live/temp/2026-06-10/59717ce8-1f57-4bf4-b5b9-2de7325b517d.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 13900,
+      "discountRate": 52,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/pD67tmsD"
+      }
+    },
+    {
+      "id": 1378132443,
+      "topic": "camp-food",
+      "homeFeature": true,
+      "headline": "캠핑 먹거리, 오늘의 하루특가",
+      "name": "농심 신신안너짜, 신라면 10입 + 안성탕면 5입 + 너구리 5입 + 짜파게티 5입, 1박스",
+      "option": "농심 신신안너짜, 신라면 10입 + 안성탕면 5입 + 너구리 5입 + 짜파게티 5입, 1박스",
+      "image": "https://shopping.toss.im/live/temp/2026-04-03/e4b71444-7c17-4a35-84ce-1218e8cd6e08.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 17893,
+      "discountRate": 19,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/9i5y43K"
+      }
+    },
+    {
+      "id": 202152727,
+      "topic": "camp-food",
+      "homeFeature": true,
+      "headline": "캠핑 먹거리, 오늘의 하루특가",
+      "name": "배터지는 소고기 한판 세트, 등심살 300g + 살치살 200g + 부채살 200g + 갈비살 200g + 우삼겹 300g, 1.2kg, 1세트",
+      "option": "배터지는 소고기 한판 세트, 등심살 300g + 살치살 200g + 부채살 200g + 갈비살 200g + 우삼겹 300g, 1.2kg, 1세트",
+      "image": "https://shopping.toss.im/live/temp/2026-05-17/739c0ba1-fbb8-490d-b43a-4bef1f2a34f0.png",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 30350,
+      "discountRate": 39,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/52iOTff2"
+      }
+    },
+    {
+      "id": 1735230885,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "푸드앳홈 백명란젓, 파지, 1kg, 1개",
+      "option": "푸드앳홈 백명란젓, 파지, 1kg, 1개",
+      "image": "https://shopping.toss.im/live/product/57781/242e9953-0d0a-4005-bf22-81d924061013.jpg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 14900,
+      "discountRate": 59,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/3PSdr8K4"
+      }
+    },
+    {
+      "id": 2650820761,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "아침에좋은빵 제로슈가 통밀식빵, 630g, 2개",
+      "option": "아침에좋은빵 제로슈가 통밀식빵, 630g, 2개",
+      "image": "https://shopping.toss.im/live/temp/2026-09-08/726d6ca7-c9b2-4a3d-ad93-6eff7d9864b5.png",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 7060,
+      "discountRate": 74,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/BsN8XcV6"
+      }
+    },
+    {
+      "id": 48217065,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "일화 초정 탄산수 플레인, 250ml, 30개",
+      "option": "일화 초정 탄산수 플레인, 250ml, 30개",
+      "image": "https://shopping.toss.im/live/temp/2025-07-30/cad91a6f-29f0-4798-8417-c55c7e069d75.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 8990,
+      "discountRate": 35,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/Fu4nUHe8"
+      }
+    },
+    {
+      "id": 140300209,
+      "topic": "camp-food",
+      "homeFeature": true,
+      "headline": "캠핑 먹거리, 오늘의 하루특가",
+      "name": "을지로 연탄불고기식 돼지불고기, 250g, 6개",
+      "option": "을지로 연탄불고기식 돼지불고기, 250g, 6개",
+      "image": "https://shopping.toss.im/live/temp/2024-12-30/941e994a-1bc1-4c97-8f7b-53d2f550a845.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 17900,
+      "discountRate": 18,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/x97RrX7b"
+      }
+    },
+    {
+      "id": 28517,
+      "topic": "camp-food",
+      "homeFeature": true,
+      "headline": "캠핑 먹거리, 오늘의 하루특가",
+      "name": "올반 찰핫도그, 80g, 30개",
+      "option": "올반 찰핫도그, 80g, 30개",
+      "image": "https://shopping.toss.im/6405594b-35e5-4bcd-a0d4-65d4c2ad7a8d.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 23900,
+      "discountRate": 47,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/PJlgUpad"
+      }
+    },
+    {
+      "id": 90986347,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "월남관 깻잎튀김, 1kg, 1개",
+      "option": "월남관 깻잎튀김, 1kg, 1개",
+      "image": "https://shopping.toss.im/live/taca/ai/ZjJlN2Rh/QUlqamtIaE1iUFltK0RlK05LUDBWSnFsN2txLzFXU1BWRmlvTlM3c2xmV2s.png",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 9990,
+      "discountRate": 40,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/zXl5SUte"
+      }
+    },
+    {
+      "id": 194182063,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "밀스 마녀스프 토마토비프, 300g, 4팩",
+      "option": "밀스 마녀스프 토마토비프, 300g, 4팩",
+      "image": "https://shopping.toss.im/live/temp/2025-09-12/fd98ee47-0fb1-4378-8f62-bfd51a0d71fd.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 14900,
+      "discountRate": 62,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/nTczU1oh"
+      }
+    },
+    {
+      "id": 2633942241,
+      "topic": "camp-food",
+      "homeFeature": true,
+      "headline": "캠핑 먹거리, 오늘의 하루특가",
+      "name": "듀록 흑돼지 쫀삼겹살, 500g, 2팩",
+      "option": "듀록 흑돼지 쫀삼겹살, 500g, 2팩",
+      "image": "https://shopping.toss.im/live/temp/2026-08-24/1d3ce2af-6604-4f71-8253-887b7336b7ae.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 13900,
+      "discountRate": 53,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/5fubJRui"
+      }
+    },
+    {
+      "id": 146690223,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "랑주317 고메버터바 15종, 1.5kg, 1세트",
+      "option": "랑주317 고메버터바 15종, 1.5kg, 1세트",
+      "image": "https://shopping.toss.im/live/temp/2025-07-22/8d13d1b4-b719-410e-b970-ffdf37db2dd8.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 29200,
+      "discountRate": 35,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/lV26jkSj"
+      }
+    },
+    {
+      "id": 1734393331,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "백년본가 간장 전복장, 500g, 2개",
+      "option": "백년본가 간장 전복장, 500g, 2개",
+      "image": "https://shopping.toss.im/live/temp/2026-05-04/e2cf36a5-b100-4ba1-939e-bbbb84011100.png",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 14230,
+      "discountRate": 65,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/zFByxn8l"
+      }
+    },
+    {
+      "id": 132723801,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "널담 뚱낭시에, 50g, 8개입, 1박스",
+      "option": "널담 뚱낭시에, 50g, 8개입, 1박스",
+      "image": "https://shopping.toss.im/live/temp/2026-05-11/36299d3e-9e49-4ee4-8701-021ef8c76bd0.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 8900,
+      "discountRate": 52,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/JWOJmdfm"
+      }
+    },
+    {
+      "id": 2636608569,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "뉴트리원 비비랩 저분자 콜라겐, 2g, 80포, 3개",
+      "option": "뉴트리원 비비랩 저분자 콜라겐, 2g, 80포, 3개",
+      "image": "https://shopping.toss.im/live/temp/2026-08-27/89c756cf-af3a-413f-8362-185a5a1a5466.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 56000,
+      "discountRate": 56,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/h3oQYHSo"
+      }
+    },
+    {
+      "id": 2213485491,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "남도청년 썰은김치 맛김치, 10kg, 1개",
+      "option": "남도청년 썰은김치 맛김치, 10kg, 1개",
+      "image": "https://shopping.toss.im/live/taca/ai/OTc2ZDAx/QU51YnpiUG5udG0yaHR4KzJUcFo2eHM4T2FTczVHMCtjWVB4dzlZL2htNXU.png",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 22390,
+      "discountRate": 45,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/9KccQ98q"
+      }
+    },
+    {
+      "id": 171044415,
+      "topic": "camp-food",
+      "homeFeature": true,
+      "headline": "캠핑 먹거리, 오늘의 하루특가",
+      "name": "맛춤상회 소고기 모둠, 토시살 200g 1개 + 안창살 200g 1개 + 부채살 200g 1개 + 우삼겹 200g 1개, 1세트",
+      "option": "맛춤상회 소고기 모둠, 토시살 200g 1개 + 안창살 200g 1개 + 부채살 200g 1개 + 우삼겹 200g 1개, 1세트",
+      "image": "https://shopping.toss.im/live/temp/2026-10-01/e35806cb-4286-42c4-85f0-f30ef2269ca9.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 19080,
+      "discountRate": 52,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/7MI3DtFu"
+      }
+    },
+    {
+      "id": 1564278403,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "풀무원 아임리얼100 고농축 타트체리, 120ml, 24개",
+      "option": "풀무원 아임리얼100 고농축 타트체리, 120ml, 24개",
+      "image": "https://shopping.toss.im/live/taca/ai/NTMyYjY4/ZHM2MlRNbnh4YlNuWlZzemw1ZHN4bnBPZE9uSkhrdDhwZW4xaDErVWFuaz0.png",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 14700,
+      "discountRate": 67,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/R1OrxJew"
+      }
+    },
+    {
+      "id": 80351013,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "10종 과자세트, 1세트",
+      "option": "10종 과자세트, 1세트",
+      "image": "https://shopping.toss.im/live/temp/2025-02-11/b5f88d31-2cef-4d36-9bf5-95cafb76e2ae.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 17700,
+      "discountRate": 36,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/7NKFLCRy"
+      }
+    },
+    {
+      "id": 90714871,
+      "topic": "camp-food",
+      "homeFeature": true,
+      "headline": "캠핑 먹거리, 오늘의 하루특가",
+      "name": "돈팡 한돈 꼬들살, 구이/찌개용, 400g, 2개",
+      "option": "돈팡 한돈 꼬들살, 구이/찌개용, 400g, 2개",
+      "image": "https://shopping.toss.im/live/temp/2025-04-14/57edc904-2826-47ba-839d-ce7434af68aa.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 13200,
+      "discountRate": 59,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/bVfC5Yqt"
+      }
+    },
+    {
+      "id": 128635829,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "인생 누룽지, 3kg, 2개",
+      "option": "인생 누룽지, 3kg, 2개",
+      "image": "https://shopping.toss.im/live/temp/2026-05-09/0108f49b-5906-4ac1-8699-96de424fb7a8.png",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 18000,
+      "discountRate": 39,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/7t29DQVv"
+      }
+    },
+    {
+      "id": 133352183,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "온테이블 구운조미감태, 16매, 60g",
+      "option": "온테이블 구운조미감태, 16매, 60g",
+      "image": "https://shopping.toss.im/live/temp/2025-07-01/aea2809b-0a43-4c54-9433-71ba00739308.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 9990,
+      "discountRate": 56,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/jKAqUz8A"
+      }
+    },
+    {
+      "id": 2625606251,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "가마솥에서 삶은 깐다슬기, 200g, 5개",
+      "option": "가마솥에서 삶은 깐다슬기, 200g, 5개",
+      "image": "https://shopping.toss.im/live/temp/2026-08-20/728f6238-5c78-4359-a085-7bdb16687ce0.jpeg",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 22200,
+      "discountRate": 55,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/3MgCJpfB"
+      }
+    },
+    {
+      "id": 2483730933,
+      "topic": "daily-food",
+      "homeFeature": true,
+      "headline": "집에서 가볍게, 오늘의 하루특가",
+      "name": "스프린트 에너지드링크 4종 세트, 애플 6개 + 레몬 6개 + 오렌지 6개 + 자몽 6개, 1세트",
+      "option": "스프린트 에너지드링크 4종 세트, 애플 6개 + 레몬 6개 + 오렌지 6개 + 자몽 6개, 1세트",
+      "image": "https://shopping.toss.im/live/temp/2026-07-14/8673671f-454b-4c61-861c-ef53e1a22276.png",
+      "imageNote": "판매처 제공 상품 사진",
+      "price": 23900,
+      "discountRate": 66,
+      "endAt": "2026-10-08T00:00:00+09:00",
+      "reason": "구매 전에 구성과 수량을 확인하세요.",
+      "caution": "보관·조리 방법과 배송 조건은 판매처에서 확인하세요.",
+      "links": {
+        "home": "https://toss.shopping/_m/vOhqF6fC"
       }
     }
   ]

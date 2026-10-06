@@ -13,7 +13,8 @@ try {
   if(tags.results?.length!==channels.length||tags.results.some(r=>!['CREATED','RESTORED','ALREADY_EXISTS'].includes(r.status)))throw new Error('Sharelink channel registration failed');
   const details={items:[]};
   for(let i=0;i<selections.length;i+=10){const batch=await request(`/products/detail?tacaItemIds=${selections.slice(i,i+10).map(p=>p.id).join(',')}`);details.items.push(...(batch.items||[]));}
-  const deals=await request('/products/today-deals?size=10');
+  const deals={items:[]};let cursor;
+  for(let page=0;page<6;page++){const batch=await request('/products/today-deals?size=10'+(cursor?'&cursor='+encodeURIComponent(cursor):''));deals.items.push(...(batch.items||[]));if(!batch.hasNext||!batch.nextCursor)break;cursor=batch.nextCursor;}
   const products=[];
   for(const choice of selections){
    const p=details.items?.find(p=>p.tacaItemId===choice.id);
@@ -28,10 +29,10 @@ try {
    }
    const deal=deals.items?.find(d=>d.tacaItemId===choice.id&&!d.isSoldOut&&Date.parse(d.endAt)>Date.now()&&d.displayPrice===p.displayPrice);
    const {expectedName,imageUrl,...editorial}=choice;
-   products.push({...editorial,homeFeature:false,name:p.displayName,image:imageUrl,price:p.displayPrice,discountRate:p.discountRate,links,...(deal?{endAt:deal.endAt}: {})});
+   products.push({...editorial,homeFeature:Boolean(choice.homeFeature)&&choice.topic!=='travel',name:p.displayName,image:imageUrl,price:p.displayPrice,discountRate:p.discountRate,links,...(deal?{endAt:deal.endAt}: {})});
   }
-  const homeDeals=(deals.items||[]).filter(p=>homeDealGroup(p.displayName)&&!p.isSoldOut&&Date.parse(p.endAt)>Date.now()).slice(0,10);
-  const homeDetails=homeDeals.length?await request('/products/detail?tacaItemIds='+homeDeals.map(p=>p.tacaItemId).join(',')):{items:[]};
+  const homeDeals=(deals.items||[]).filter(p=>homeDealGroup(p.displayName)&&!p.isSoldOut&&Date.parse(p.endAt)>Date.now()).slice(0,30);
+  const homeDetails={items:[]};for(let i=0;i<homeDeals.length;i+=10){const batch=await request('/products/detail?tacaItemIds='+homeDeals.slice(i,i+10).map(p=>p.tacaItemId).join(','));homeDetails.items.push(...(batch.items||[]));}
   for(const deal of homeDeals){
    const p=homeDetails.items?.find(p=>p.tacaItemId===deal.tacaItemId);
    if(!eligibleHomeDeal(deal,p))continue;

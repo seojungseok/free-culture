@@ -9,13 +9,13 @@ const disclosure='[광고] 토스쇼핑 쉐어링크 활동으로, 링크 구매
 function track(event:string,p:TossProduct,placement:string,page:string){
  affiliateTrack(event,'toss',placement,page,p.id);
 }
-export default function TossAffiliate({initial,position,compact=false,initialIndex=0,collection='camp'}:{initial:TossFeed;position:'top'|'article';compact?:boolean;initialIndex?:number;collection?:'camp'|'daily'|'travel'}){
+export default function TossAffiliate({initial,position,compact=false,initialIndex=0,collection='camp'}:{initial:TossFeed;position:'top'|'article';compact?:boolean;initialIndex?:number;collection?:'camp'|'daily'|'travel'|'stay'}){
  const page=usePathname()||'/';
  const [feed,setFeed]=useState(initial),[now,setNow]=useState(0),[saved,setSaved]=useState<number[]>([]),[message,setMessage]=useState('');
  const box=useRef<HTMLElement>(null),seen=useRef(new Set<string>());
  const channel=page==='/'?'home':/^\/camping\/\d+$/.test(page)?'camping':/^\/(event\/[^/]+|places\/spot\/[^/]+|course\/c\/[^/]+|date\/c\/[^/]+)/.test(page)?'picnic':page.startsWith('/weekend-prep/')?(/soup|stew|hotpot|ramen|noodle|sujebi|tteokbokki|fishcake|crab|mussel/.test(page)?'cooking-pot':/grill|rice|pancake|sandwich|skewer|stir-fry|jeon|corn-cheese|tofu-kimchi/.test(page)?'cooking-pan':/picnic|park|outing/.test(page)?'picnic':null):null;
  const correctPosition=(page==='/'&&position==='top')||(page!=='/'&&position==='article');
- const items=useMemo(()=>correctPosition&&channel&&now>0?currentProducts(feed,now).filter(p=>p.links[channel]&&(page!=='/'||(p.homeFeature&&p.endAt&&Date.parse(p.endAt)>now))).sort((a,b)=>Number(Boolean(b.endAt))-Number(Boolean(a.endAt))).slice(0,page==='/'?12:2):[],[correctPosition,channel,now,feed,page]);
+ const items=useMemo(()=>correctPosition&&channel&&now>0?currentProducts(feed,now).filter(p=>p.links[channel]&&(page!=='/'||p.homeFeature)).sort((a,b)=>Number(Boolean(b.endAt))-Number(Boolean(a.endAt))).slice(0,page==='/'?40:2):[],[correctPosition,channel,now,feed,page]);
  useEffect(()=>{
   let active=true;const tick=()=>setNow(Date.now());tick();const clock=setInterval(tick,30000);
   const sync=()=>{try{const value=JSON.parse(localStorage.getItem('mwohaji-toss-saved')||'[]');setSaved(Array.isArray(value)?value.filter(Number.isInteger).slice(0,100):[]);}catch{setSaved([]);}};sync();window.addEventListener('storage',sync);
