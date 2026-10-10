@@ -163,7 +163,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 210일 전 기준"
+            "label": "운행·요금 원본이 211일 전 기준"
           }
         ]
       }
@@ -367,7 +367,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 270일 전 기준"
+            "label": "운행·요금 원본이 271일 전 기준"
           }
         ]
       }
@@ -585,7 +585,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 123일 전 기준"
+            "label": "운행·요금 원본이 124일 전 기준"
           }
         ]
       }
@@ -977,7 +977,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 232일 전 기준"
+            "label": "운행·요금 원본이 233일 전 기준"
           }
         ]
       }
@@ -1119,7 +1119,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 136일 전 기준"
+            "label": "운행·요금 원본이 137일 전 기준"
           }
         ]
       }
@@ -1341,7 +1341,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 123일 전 기준"
+            "label": "운행·요금 원본이 124일 전 기준"
           }
         ]
       }
@@ -1552,7 +1552,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 471일 전 기준"
+            "label": "운행·요금 원본이 472일 전 기준"
           }
         ]
       }
@@ -1904,7 +1904,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 508일 전 기준"
+            "label": "운행·요금 원본이 509일 전 기준"
           }
         ]
       }
@@ -2129,7 +2129,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 222일 전 기준"
+            "label": "운행·요금 원본이 223일 전 기준"
           }
         ]
       }
@@ -2342,7 +2342,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 241일 전 기준"
+            "label": "운행·요금 원본이 242일 전 기준"
           }
         ]
       }
@@ -2546,7 +2546,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 185일 전 기준"
+            "label": "운행·요금 원본이 186일 전 기준"
           }
         ]
       }
@@ -2751,7 +2751,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 254일 전 기준"
+            "label": "운행·요금 원본이 255일 전 기준"
           }
         ]
       }
@@ -2948,7 +2948,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 142일 전 기준"
+            "label": "운행·요금 원본이 143일 전 기준"
           }
         ]
       }
@@ -3148,7 +3148,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 185일 전 기준"
+            "label": "운행·요금 원본이 186일 전 기준"
           }
         ]
       }
@@ -3346,7 +3346,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 196일 전 기준"
+            "label": "운행·요금 원본이 197일 전 기준"
           }
         ]
       }
@@ -3544,7 +3544,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 142일 전 기준"
+            "label": "운행·요금 원본이 143일 전 기준"
           }
         ]
       }
@@ -3719,7 +3719,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 144일 전 기준"
+            "label": "운행·요금 원본이 145일 전 기준"
           }
         ]
       }
@@ -3918,7 +3918,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 220일 전 기준"
+            "label": "운행·요금 원본이 221일 전 기준"
           }
         ]
       }
@@ -4123,7 +4123,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 270일 전 기준"
+            "label": "운행·요금 원본이 271일 전 기준"
           }
         ]
       }
@@ -4351,7 +4351,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 291일 전 기준"
+            "label": "운행·요금 원본이 292일 전 기준"
           }
         ]
       }
@@ -4562,7 +4562,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 123일 전 기준"
+            "label": "운행·요금 원본이 124일 전 기준"
           }
         ]
       }
@@ -4766,7 +4766,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 210일 전 기준"
+            "label": "운행·요금 원본이 211일 전 기준"
           }
         ]
       }
@@ -5131,7 +5131,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 136일 전 기준"
+            "label": "운행·요금 원본이 137일 전 기준"
           }
         ]
       }
@@ -5342,7 +5342,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 123일 전 기준"
+            "label": "운행·요금 원본이 124일 전 기준"
           }
         ]
       }
@@ -5514,7 +5514,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 232일 전 기준"
+            "label": "운행·요금 원본이 233일 전 기준"
           }
         ]
       }
@@ -5892,7 +5892,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 471일 전 기준"
+            "label": "운행·요금 원본이 472일 전 기준"
           }
         ]
       }
@@ -6089,7 +6089,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 270일 전 기준"
+            "label": "운행·요금 원본이 271일 전 기준"
           }
         ]
       }
@@ -6300,7 +6300,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 123일 전 기준"
+            "label": "운행·요금 원본이 124일 전 기준"
           }
         ]
       }
@@ -6497,7 +6497,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 210일 전 기준"
+            "label": "운행·요금 원본이 211일 전 기준"
           }
         ]
       }
@@ -6708,7 +6708,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 214일 전 기준"
+            "label": "운행·요금 원본이 215일 전 기준"
           }
         ]
       }
@@ -6847,7 +6847,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 136일 전 기준"
+            "label": "운행·요금 원본이 137일 전 기준"
           }
         ]
       }
@@ -7014,7 +7014,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 232일 전 기준"
+            "label": "운행·요금 원본이 233일 전 기준"
           }
         ]
       }
@@ -7398,7 +7398,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 192일 전 기준"
+            "label": "운행·요금 원본이 193일 전 기준"
           }
         ]
       }
@@ -7602,7 +7602,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 185일 전 기준"
+            "label": "운행·요금 원본이 186일 전 기준"
           }
         ]
       }
@@ -7781,7 +7781,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 254일 전 기준"
+            "label": "운행·요금 원본이 255일 전 기준"
           }
         ]
       }
@@ -7973,7 +7973,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 270일 전 기준"
+            "label": "운행·요금 원본이 271일 전 기준"
           }
         ]
       }
@@ -8176,7 +8176,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 123일 전 기준"
+            "label": "운행·요금 원본이 124일 전 기준"
           }
         ]
       }
@@ -8373,7 +8373,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 210일 전 기준"
+            "label": "운행·요금 원본이 211일 전 기준"
           }
         ]
       }
@@ -8554,7 +8554,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 214일 전 기준"
+            "label": "운행·요금 원본이 215일 전 기준"
           }
         ]
       }
@@ -8778,7 +8778,7 @@
           },
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 436일 전 기준"
+            "label": "운행·요금 원본이 437일 전 기준"
           }
         ]
       }
@@ -9127,7 +9127,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 232일 전 기준"
+            "label": "운행·요금 원본이 233일 전 기준"
           }
         ]
       }
@@ -9296,7 +9296,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 508일 전 기준"
+            "label": "운행·요금 원본이 509일 전 기준"
           }
         ]
       }
@@ -9478,7 +9478,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 250일 전 기준"
+            "label": "운행·요금 원본이 251일 전 기준"
           }
         ]
       }
@@ -9679,7 +9679,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 185일 전 기준"
+            "label": "운행·요금 원본이 186일 전 기준"
           }
         ]
       }
@@ -9875,7 +9875,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 270일 전 기준"
+            "label": "운행·요금 원본이 271일 전 기준"
           }
         ]
       }
@@ -10072,7 +10072,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 123일 전 기준"
+            "label": "운행·요금 원본이 124일 전 기준"
           }
         ]
       }
@@ -10268,7 +10268,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 210일 전 기준"
+            "label": "운행·요금 원본이 211일 전 기준"
           }
         ]
       }
@@ -10450,7 +10450,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 214일 전 기준"
+            "label": "운행·요금 원본이 215일 전 기준"
           }
         ]
       }
@@ -10657,7 +10657,7 @@
           },
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 436일 전 기준"
+            "label": "운행·요금 원본이 437일 전 기준"
           }
         ]
       }
@@ -11007,7 +11007,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 144일 전 기준"
+            "label": "운행·요금 원본이 145일 전 기준"
           }
         ]
       }
@@ -11191,7 +11191,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 192일 전 기준"
+            "label": "운행·요금 원본이 193일 전 기준"
           }
         ]
       }
@@ -11344,7 +11344,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 142일 전 기준"
+            "label": "운행·요금 원본이 143일 전 기준"
           }
         ]
       }
@@ -11526,7 +11526,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 250일 전 기준"
+            "label": "운행·요금 원본이 251일 전 기준"
           }
         ]
       }
@@ -11692,7 +11692,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 270일 전 기준"
+            "label": "운행·요금 원본이 271일 전 기준"
           }
         ]
       }
@@ -11859,7 +11859,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 210일 전 기준"
+            "label": "운행·요금 원본이 211일 전 기준"
           }
         ]
       }
@@ -12055,7 +12055,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 214일 전 기준"
+            "label": "운행·요금 원본이 215일 전 기준"
           }
         ]
       }
@@ -12262,7 +12262,7 @@
           },
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 436일 전 기준"
+            "label": "운행·요금 원본이 437일 전 기준"
           }
         ]
       }
@@ -12451,7 +12451,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 142일 전 기준"
+            "label": "운행·요금 원본이 143일 전 기준"
           }
         ]
       }
@@ -12648,7 +12648,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 250일 전 기준"
+            "label": "운행·요금 원본이 251일 전 기준"
           }
         ]
       }
@@ -12826,7 +12826,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 254일 전 기준"
+            "label": "운행·요금 원본이 255일 전 기준"
           }
         ]
       }
@@ -13026,7 +13026,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 123일 전 기준"
+            "label": "운행·요금 원본이 124일 전 기준"
           }
         ]
       }
@@ -13200,7 +13200,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 176일 전 기준"
+            "label": "운행·요금 원본이 177일 전 기준"
           }
         ]
       }
@@ -13396,7 +13396,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 142일 전 기준"
+            "label": "운행·요금 원본이 143일 전 기준"
           }
         ]
       }
@@ -13563,7 +13563,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 210일 전 기준"
+            "label": "운행·요금 원본이 211일 전 기준"
           }
         ]
       }
@@ -13729,7 +13729,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 214일 전 기준"
+            "label": "운행·요금 원본이 215일 전 기준"
           }
         ]
       }
@@ -13907,7 +13907,7 @@
           },
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 436일 전 기준"
+            "label": "운행·요금 원본이 437일 전 기준"
           }
         ]
       }
@@ -14037,7 +14037,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 136일 전 기준"
+            "label": "운행·요금 원본이 137일 전 기준"
           }
         ]
       }
@@ -14237,7 +14237,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 185일 전 기준"
+            "label": "운행·요금 원본이 186일 전 기준"
           }
         ]
       }
@@ -14426,7 +14426,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 200일 전 기준"
+            "label": "운행·요금 원본이 201일 전 기준"
           }
         ]
       }
@@ -14615,7 +14615,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 142일 전 기준"
+            "label": "운행·요금 원본이 143일 전 기준"
           }
         ]
       }
@@ -14977,7 +14977,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 123일 전 기준"
+            "label": "운행·요금 원본이 124일 전 기준"
           }
         ]
       }
@@ -15143,7 +15143,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 210일 전 기준"
+            "label": "운행·요금 원본이 211일 전 기준"
           }
         ]
       }
@@ -15342,7 +15342,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 144일 전 기준"
+            "label": "운행·요금 원본이 145일 전 기준"
           }
         ]
       }
@@ -15510,7 +15510,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 254일 전 기준"
+            "label": "운행·요금 원본이 255일 전 기준"
           }
         ]
       }
@@ -15710,7 +15710,7 @@
           },
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 148일 전 기준"
+            "label": "운행·요금 원본이 149일 전 기준"
           }
         ]
       }
@@ -16099,7 +16099,7 @@
           },
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 171일 전 기준"
+            "label": "운행·요금 원본이 172일 전 기준"
           }
         ]
       }
@@ -16309,7 +16309,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 315일 전 기준"
+            "label": "운행·요금 원본이 316일 전 기준"
           }
         ]
       }
@@ -16500,7 +16500,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 144일 전 기준"
+            "label": "운행·요금 원본이 145일 전 기준"
           }
         ]
       }
@@ -16686,7 +16686,7 @@
           },
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 148일 전 기준"
+            "label": "운행·요금 원본이 149일 전 기준"
           }
         ]
       }
@@ -16898,7 +16898,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 561일 전 기준"
+            "label": "운행·요금 원본이 562일 전 기준"
           }
         ]
       }
@@ -17068,7 +17068,7 @@
           },
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 171일 전 기준"
+            "label": "운행·요금 원본이 172일 전 기준"
           }
         ]
       }
@@ -17249,7 +17249,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 289일 전 기준"
+            "label": "운행·요금 원본이 290일 전 기준"
           }
         ]
       }
@@ -17415,7 +17415,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 144일 전 기준"
+            "label": "운행·요금 원본이 145일 전 기준"
           }
         ]
       }
@@ -17615,7 +17615,7 @@
           },
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 148일 전 기준"
+            "label": "운행·요금 원본이 149일 전 기준"
           }
         ]
       }
@@ -17820,7 +17820,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 561일 전 기준"
+            "label": "운행·요금 원본이 562일 전 기준"
           }
         ]
       }
@@ -18001,7 +18001,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 291일 전 기준"
+            "label": "운행·요금 원본이 292일 전 기준"
           }
         ]
       }
@@ -18163,7 +18163,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 123일 전 기준"
+            "label": "운행·요금 원본이 124일 전 기준"
           }
         ]
       }
@@ -18329,7 +18329,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 144일 전 기준"
+            "label": "운행·요금 원본이 145일 전 기준"
           }
         ]
       }
@@ -18510,7 +18510,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 289일 전 기준"
+            "label": "운행·요금 원본이 290일 전 기준"
           }
         ]
       }
@@ -18716,7 +18716,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 393일 전 기준"
+            "label": "운행·요금 원본이 394일 전 기준"
           }
         ]
       }
@@ -18897,7 +18897,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 291일 전 기준"
+            "label": "운행·요금 원본이 292일 전 기준"
           }
         ]
       }
@@ -19035,7 +19035,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 294일 전 기준"
+            "label": "운행·요금 원본이 295일 전 기준"
           }
         ]
       }
@@ -19232,7 +19232,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 282일 전 기준"
+            "label": "운행·요금 원본이 283일 전 기준"
           }
         ]
       }
@@ -19406,7 +19406,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 326일 전 기준"
+            "label": "운행·요금 원본이 327일 전 기준"
           }
         ]
       }
@@ -19580,7 +19580,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 291일 전 기준"
+            "label": "운행·요금 원본이 292일 전 기준"
           }
         ]
       }
@@ -19754,7 +19754,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 289일 전 기준"
+            "label": "운행·요금 원본이 290일 전 기준"
           }
         ]
       }
@@ -19920,7 +19920,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 294일 전 기준"
+            "label": "운행·요금 원본이 295일 전 기준"
           }
         ]
       }
@@ -20086,7 +20086,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 514일 전 기준"
+            "label": "운행·요금 원본이 515일 전 기준"
           }
         ]
       }
@@ -20252,7 +20252,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 313일 전 기준"
+            "label": "운행·요금 원본이 314일 전 기준"
           }
         ]
       }
@@ -20418,7 +20418,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 315일 전 기준"
+            "label": "운행·요금 원본이 316일 전 기준"
           }
         ]
       }
@@ -20584,7 +20584,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 303일 전 기준"
+            "label": "운행·요금 원본이 304일 전 기준"
           }
         ]
       }
@@ -20750,7 +20750,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 326일 전 기준"
+            "label": "운행·요금 원본이 327일 전 기준"
           }
         ]
       }
@@ -20916,7 +20916,7 @@
         "reasons": [
           {
             "code": "stale_operation_data",
-            "label": "운행·요금 원본이 438일 전 기준"
+            "label": "운행·요금 원본이 439일 전 기준"
           }
         ]
       }
