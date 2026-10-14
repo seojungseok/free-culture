@@ -15,6 +15,8 @@ test('global food rail keeps regular products after midnight and prioritizes act
   {...item,id:3,endAt:new Date(now+1000).toISOString()},
   {...item,id:4,homeFeature:false},
   {...item,id:5,links:{}},
+  {...item,id:6,name:'구강 스프레이'},
+  {...item,id:7,name:'튀김냄비'},
  ]};
  assert.deepEqual(currentHomeProducts(feed,now).map(p=>p.id),[3,2]);
  assert.deepEqual(currentHomeProducts(feed,now+1000).map(p=>p.id),[2]);
@@ -26,6 +28,8 @@ test('home shows only matching active timed food deals, never regular discounts 
  for(const change of [{},{endAt:new Date(now).toISOString()},{endAt:'invalid'},{endAt:new Date(now+1000).toISOString(),isSoldOut:true}])assert.equal(eligibleHomeDeal({...p,...change},p,now),false);
  assert.equal(eligibleHomeDeal({...p,endAt:new Date(now+1000).toISOString()},{...p,displayPrice:24000},now),false);
  assert.equal(homeDealGroup('연세우유 190ml 48개'),'daily');assert.equal(homeDealGroup('가방 백팩'),null);
+ assert.equal(homeDealGroup('살림백서 구강 스프레이'),null);
+ assert.equal(homeDealGroup('스텐 튀김냄비'),null);
 });
 test('expired daily deals disappear at the exact end time; regular items remain',()=>{
  const feed={checkedAt:new Date(now-1000).toISOString(),products:[{id:1,endAt:new Date(now).toISOString()},{id:2},{id:3,endAt:'invalid'},{id:4,endAt:new Date(now+1000).toISOString()}]};
