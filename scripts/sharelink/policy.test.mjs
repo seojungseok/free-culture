@@ -1,12 +1,25 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {currentProducts,freshnessMs} from '../../lib/sharelink-policy.mjs';
+import {currentProducts,currentHomeProducts,freshnessMs} from '../../lib/sharelink-policy.mjs';
 import {unwrap,SharelinkError,withClient} from './client.mjs';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {eligibleHomeDeal,homeDealGroup} from './home-deals.mjs';
 const now=Date.parse('2026-10-06T15:00:00Z');
+test('global food rail keeps regular products after midnight and prioritizes active daily deals',()=>{
+ const item={homeFeature:true,links:{home:'https://example.com/affiliate'}};
+ const feed={checkedAt:new Date(now-1000).toISOString(),products:[
+  {...item,id:1,endAt:new Date(now).toISOString()},
+  {...item,id:2},
+  {...item,id:3,endAt:new Date(now+1000).toISOString()},
+  {...item,id:4,homeFeature:false},
+  {...item,id:5,links:{}},
+ ]};
+ assert.deepEqual(currentHomeProducts(feed,now).map(p=>p.id),[3,2]);
+ assert.deepEqual(currentHomeProducts(feed,now+1000).map(p=>p.id),[2]);
+ assert.deepEqual(currentHomeProducts(feed,now+freshnessMs),[]);
+});
 test('home shows only matching active timed food deals, never regular discounts or sold-out items',()=>{
  const p={tacaItemId:1,displayName:'토시살 200g 2팩',displayPrice:23000,isSoldOut:false,mainImageUrls:['https://example.com/product.jpg']};
  assert.equal(eligibleHomeDeal({...p,endAt:new Date(now+1000).toISOString()},p,now),true);
