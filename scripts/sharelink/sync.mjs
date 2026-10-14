@@ -5,6 +5,13 @@ import {selections,channels} from './editorial.mjs';
 import {homeDealGroup,eligibleHomeDeal} from './home-deals.mjs';
 const output=process.env.TOSS_SHARELINK_PUBLIC_FILE||'data/sharelink-editorial.json';
 let previous;try{previous=JSON.parse(fs.readFileSync(output,'utf8'));}catch{}
+// A code deployment shortly after the hourly collector reuses its verified
+// feed instead of spending another provider allowance on the same products.
+const previousCheck=Date.parse(previous?.checkedAt),cacheAge=Date.now()-previousCheck;
+if(previous?.version===1&&Array.isArray(previous.products)&&Number.isFinite(previousCheck)&&cacheAge>=0&&cacheAge<15*60000){
+ console.log(`SHARELINK_SYNC_CACHED products=${previous.products.length}`);
+ process.exit(0);
+}
 try {
  await withClient(async({request})=>{
   const publisherId=process.env.TOSS_SHARELINK_PUBLISHER_ID;
