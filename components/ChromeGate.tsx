@@ -24,12 +24,12 @@ export default function ChromeGate({
   const focus = /^\/game\/[^/]+/.test(p); // /game/roulette, /game/ladder ... = 집중 화면
 
   if (focus) {
-    return <main className="w-full">{children}</main>;
+    return <main className="w-full"><TossAffiliate initial={tossFeed} position="top" display="rail" />{children}</main>;
   }
   return (
     <>
       {header}
-      <main className="w-full">{children}{p!=='/'&&<><TossAffiliate initial={tossFeed} position="article" /><TravelAffiliate /></>}</main>
+      <main className="w-full"><TossAffiliate initial={tossFeed} position="top" display="rail" />{children}{p!=='/'&&<><TossAffiliate initial={tossFeed} position="article" /><TravelAffiliate /></>}</main>
       {footer}
       {floating}
     </>

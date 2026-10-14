@@ -69,16 +69,16 @@ DOCKER="$(find_cmd /var/packages/ContainerManager/target/usr/bin/docker /usr/loc
 # not download the archive or rebuild. Pin the archive to that verified SHA so
 # a concurrent data commit cannot be recorded as a different deployment.
 STEP="check main commit"
-# Refresh selected affiliate products even when the source commit is unchanged.
-if [ -f "$APP/scripts/nas/refresh-sharelink.sh" ]; then
-  /bin/sh "$APP/scripts/nas/refresh-sharelink.sh" >> "$LOG" 2>&1 || printf '%s sharelink refresh deferred\n' "$(timestamp)" >> "$LOG"
-fi
 REMOTE_SHA=""
 if "$CURL" --fail --silent --show-error --location --retry 2 --connect-timeout 15 --max-time 45 \
   --output "$STATE/main-ref.json.tmp" "$REPOSITORY_REF"; then
   REMOTE_SHA="$(sed -n 's/^[[:space:]]*"sha": "\([0-9a-f]\{40\}\)".*/\1/p' "$STATE/main-ref.json.tmp" | sed -n '1p')"
 fi
 if [ -n "$REMOTE_SHA" ] && [ -f "$COMMIT_FILE" ] && [ "$REMOTE_SHA" = "$(sed -n '1p' "$COMMIT_FILE")" ]; then
+# Refresh selected affiliate products even when the source commit is unchanged.
+if [ -f "$APP/scripts/nas/refresh-sharelink.sh" ]; then
+  /bin/sh "$APP/scripts/nas/refresh-sharelink.sh" >> "$LOG" 2>&1 || printf '%s sharelink refresh deferred\n' "$(timestamp)" >> "$LOG"
+fi
   printf '%s update skipped: main commit unchanged\n' "$(timestamp)" >> "$LOG"
   exit 0
 fi

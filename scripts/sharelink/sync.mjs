@@ -14,7 +14,7 @@ try {
   const details={items:[]};
   for(let i=0;i<selections.length;i+=10){const batch=await request(`/products/detail?tacaItemIds=${selections.slice(i,i+10).map(p=>p.id).join(',')}`);details.items.push(...(batch.items||[]));}
   const deals={items:[]};let cursor;
-  for(let page=0;page<6;page++){const batch=await request('/products/today-deals?size=10'+(cursor?'&cursor='+encodeURIComponent(cursor):''));deals.items.push(...(batch.items||[]));if(!batch.hasNext||!batch.nextCursor)break;cursor=batch.nextCursor;}
+  for(let page=0;page<10;page++){const batch=await request('/products/today-deals?size=10'+(cursor?'&cursor='+encodeURIComponent(cursor):''));deals.items.push(...(batch.items||[]));if(!batch.hasNext||!batch.nextCursor)break;cursor=batch.nextCursor;}
   const products=[];
   for(const choice of selections){
    const p=details.items?.find(p=>p.tacaItemId===choice.id);
@@ -31,7 +31,7 @@ try {
    const {expectedName,imageUrl,...editorial}=choice;
    products.push({...editorial,homeFeature:Boolean(choice.homeFeature)&&choice.topic!=='travel',name:p.displayName,image:imageUrl,price:p.displayPrice,discountRate:p.discountRate,links,...(deal?{endAt:deal.endAt}: {})});
   }
-  const homeDeals=(deals.items||[]).filter(p=>homeDealGroup(p.displayName)&&!p.isSoldOut&&Date.parse(p.endAt)>Date.now()).slice(0,30);
+  const homeDeals=(deals.items||[]).filter(p=>homeDealGroup(p.displayName)&&!p.isSoldOut&&Date.parse(p.endAt)>Date.now()).slice(0,40);
   const homeDetails={items:[]};for(let i=0;i<homeDeals.length;i+=10){const batch=await request('/products/detail?tacaItemIds='+homeDeals.slice(i,i+10).map(p=>p.tacaItemId).join(','));homeDetails.items.push(...(batch.items||[]));}
   for(const deal of homeDeals){
    const p=homeDetails.items?.find(p=>p.tacaItemId===deal.tacaItemId);
@@ -45,6 +45,6 @@ try {
   const feed={version:1,checkedAt:new Date().toISOString(),products};
   fs.mkdirSync(path.dirname(output),{recursive:true});
   fs.writeFileSync(output+'.tmp',JSON.stringify(feed,null,2),{mode:0o644});fs.renameSync(output+'.tmp',output);
-  console.log(`SHARELINK_SYNC_OK products=${products.length} todayDeals=${deals.items?.length||0}`);
+  console.log(`SHARELINK_SYNC_OK products=${products.length} todayDeals=${deals.items?.length||0} verifiedTimedDeals=${products.filter(p=>p.endAt).length}`);
  });
 }catch(e){console.error(e instanceof Error?e.message:'Sharelink sync failed');process.exitCode=1;}

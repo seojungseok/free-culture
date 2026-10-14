@@ -59,3 +59,31 @@
 @media(max-width:640px){
 .wrap:not(.compact) .hero{height:178px;min-height:178px;padding:9px 12px 29px}.wrap:not(.compact) .stage{height:140px;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}.wrap:not(.compact) .copy{max-width:170px}.wrap:not(.compact) .copy h2{font-size:16px;line-height:1.2;margin:5px 0}.wrap:not(.compact) .copy>p:not(.end){font-size:8px;-webkit-line-clamp:1}.wrap:not(.compact) .price{margin:5px 0;gap:4px}.wrap:not(.compact) .price strong{font-size:23px}.wrap:not(.compact) .price>span{font-size:15px}.wrap:not(.compact) .price small{font-size:12px}.wrap:not(.compact) .copy .end{font-size:8px}.wrap:not(.compact) .copy .cta{display:none}.wrap:not(.compact) .eyebrow{font-size:8px;padding:3px 6px}.withArt .visual .campaignArt{height:178px;width:auto;left:38%;top:0;bottom:auto;transform:translateX(-32%);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 92%,transparent)}.withArt .visual figcaption{display:none}.menu{left:10px;right:96px;bottom:4px;height:24px;max-height:24px}.menu button{font-size:8px;min-height:24px;padding:3px 7px}.controls{bottom:3px}.controls button{height:24px;min-width:22px}.disclosure{padding:5px 14px;font-size:8px;line-height:1.4}.shopping{padding:14px 16px 0}.railHeading h3{font-size:15px}.railDisclosure{font-size:8px;margin:4px 0 7px}.card{width:calc((100% - 28px)/2.65)}.cardImage img{height:92px}.card h4{font-size:11px;height:32px;line-height:1.4;margin:6px 0 2px}.cardPrice strong{font-size:15px}.cardPrice b{font-size:11px}.cardPrice{gap:3px;margin:3px 0}.cardImage>span{font-size:8px;left:4px;bottom:4px;padding:2px 4px}.save{height:27px;width:27px;font-size:17px}.rail{padding-bottom:5px;border-right:6px solid #eef4fa}.fine{font-size:8px}.compact{padding:0 16px}.collectionTitle{font-size:16px}.compact .hero:not(.posterHero){height:100px;padding:7px 10px 20px}.compact .copy h2{font-size:13px}.compact .copy>p{font-size:8px}.compact .disclosure{font-size:8px}.compact .posterHero{aspect-ratio:3.5/1}
 }
+
+/* Shared top product rail and readable ticket booking card. */
+.shopping{padding-top:14px;padding-bottom:10px;border-bottom:1px solid #e8edf3}
+.railHeading h2{font-size:19px;font-weight:900;letter-spacing:-.03em;color:#142744}
+.railHeading button{width:44px;height:44px;flex-shrink:0}
+.card{width:160px}.cardImage img{height:128px}.card h4{height:38px;font-size:12px}
+.save{width:44px;height:44px}.rail{border-right:0;padding-right:8px}
+.railDisclosure,.fine{font-size:11px;line-height:1.5}
+.wrap.compact .hero.ticketHero{height:auto;min-height:0;aspect-ratio:auto;padding:20px;border:1px solid #d9e6df;background:#f1f7f3;color:#183b2d;border-radius:16px}
+.ticketHero .stage{height:auto;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px}
+.ticketHero .copy h2{font-size:25px;line-height:1.35;max-width:none;margin:8px 0}
+.ticketHero .eyebrow{background:#e0ece4;color:#315544;font-size:12px;padding:5px 10px}
+.ticketHero .copy>p:not(.end){font-size:14px;line-height:1.6;display:block;overflow:visible;margin:8px 0}
+.ticketHero .copy .cta{display:inline-flex;min-height:44px;padding:11px 16px;margin-top:10px;font-size:14px;background:#1d513c;color:white;box-shadow:none}
+.ticketHero .visual .scenePhoto{height:170px;width:100%;object-fit:cover;border-radius:12px}
+.ticketHero .visual figure{height:auto}.ticketHero .visual figcaption{position:static;font-size:11px;text-align:right;margin-top:5px}
+.ticketWrap .disclosure{font-size:11px;line-height:1.6;padding:8px 0}
+@media(max-width:640px){
+.shopping{padding:12px 16px 8px}.railHeading{align-items:flex-start;gap:8px}.railHeading h2{font-size:16px;line-height:1.4;max-width:210px}.railHeading>div:after{display:none}.railHeading button{width:44px;height:44px}.railDisclosure,.fine{font-size:10px}
+.card{width:140px}.cardImage img{height:112px}.card h4{font-size:12px;line-height:1.45;height:35px}.cardPrice strong{font-size:17px}.cardPrice b{font-size:12px}.save{width:44px;height:44px;background:#fffffff0}.rail{gap:12px;scroll-padding-left:2px}
+.wrap.compact .hero.ticketHero{padding:16px;height:auto;min-height:0;border-radius:14px}
+.ticketHero .stage{display:flex;flex-direction:column-reverse;height:auto;gap:12px}
+.ticketHero .visual{width:100%}.ticketHero .visual .scenePhoto{height:150px;object-fit:cover}.ticketHero .visual figcaption{font-size:10px}
+.ticketHero .copy{width:100%;max-width:none}.ticketHero .eyebrow{display:inline-block;font-size:11px;padding:4px 8px}.ticketHero .copy h2{font-size:20px;line-height:1.4;margin:7px 0}
+.ticketHero .copy>p:not(.end){font-size:13px;line-height:1.6;display:block;-webkit-line-clamp:unset;overflow:visible;margin:6px 0}
+.ticketHero .copy .cta{display:flex;justify-content:space-between;width:100%;min-height:48px;font-size:14px;padding:12px 14px;margin-top:12px}
+.ticketWrap .disclosure{font-size:10px;line-height:1.6;padding:8px 0}
+}
