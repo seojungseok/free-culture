@@ -41,7 +41,6 @@ export default function HomeExplorer({ regional, eventItems, freeItems, kidItems
     {currentEventItems.length > 0 && <Section title="이번 주말 행사" href="/weekend" description={`${weekendLabel}에 기간이 겹치는 행사예요. 회차·운영일·예약은 상세에서 확인하세요.`}><Rail items={currentEventItems} saved={saved} toggleSave={toggleSave} /></Section>}
     {courseItems.length > 0 && <Section title="여행코스" href="/course"><Rail items={courseItems} saved={saved} toggleSave={toggleSave} /></Section>}
     {campItems.length > 0 && <Section title="캠핑" href="/camping"><Rail items={campItems} saved={saved} toggleSave={toggleSave} /></Section>}
-    <TossAffiliate initial={tossFeed} position="top" compact collection="travel" />
     {seasonItems.length > 0 && <Section title="계절별 추천" href="/season"><Rail items={seasonItems} saved={saved} toggleSave={toggleSave} /></Section>}
     {prepItems.length > 0 && <Section title="준비 가이드" href="/weekend-prep"><Rail items={prepItems} saved={saved} toggleSave={toggleSave} /></Section>}
     {placeItems.length > 0 && <Section title="대표 장소" href="/places"><Rail items={placeItems} saved={saved} toggleSave={toggleSave} /></Section>}
