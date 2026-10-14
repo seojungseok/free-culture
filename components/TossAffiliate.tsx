@@ -16,7 +16,7 @@ export default function TossAffiliate({initial,position,compact=false,initialInd
  const channel=page==='/'?'home':/^\/camping\/\d+$/.test(page)?'camping':/^\/(event\/[^/]+|places\/spot\/[^/]+|course\/c\/[^/]+|date\/c\/[^/]+)/.test(page)?'picnic':page.startsWith('/weekend-prep/')?(/soup|stew|hotpot|ramen|noodle|sujebi|tteokbokki|fishcake|crab|mussel/.test(page)?'cooking-pot':/grill|rice|pancake|sandwich|skewer|stir-fry|jeon|corn-cheese|tofu-kimchi/.test(page)?'cooking-pan':/picnic|park|outing/.test(page)?'picnic':null):null;
  const globalRail=position==='top'&&display==='rail';
  const correctPosition=position==='top'||(page!=='/'&&position==='article');
- const items=useMemo(()=>correctPosition&&(globalRail||channel)&&now>0?(globalRail?currentHomeProducts(feed,now):currentProducts(feed,now).filter(p=>p.links[channel!]&&(page!=='/'||p.homeFeature))).sort((a,b)=>Number(Boolean(b.endAt))-Number(Boolean(a.endAt))).slice(0,globalRail?40:page==='/'?40:2):[],[correctPosition,channel,now,feed,page,globalRail]);
+ const items=useMemo(()=>correctPosition&&(globalRail||channel)&&now>0?(globalRail?currentHomeProducts(feed,now):currentProducts(feed,now).filter(p=>p.links[channel!]&&(page!=='/'||p.homeFeature))).sort((a,b)=>Number(Boolean(b.endAt))-Number(Boolean(a.endAt))).slice(0,globalRail?undefined:page==='/'?40:2):[],[correctPosition,channel,now,feed,page,globalRail]);
  useEffect(()=>{
   let active=true;const tick=()=>setNow(Date.now());tick();const clock=setInterval(tick,30000);
   const sync=()=>{try{const value=JSON.parse(localStorage.getItem('mwohaji-toss-saved')||'[]');setSaved(Array.isArray(value)?value.filter(Number.isInteger).slice(0,100):[]);}catch{setSaved([]);}};sync();window.addEventListener('storage',sync);
