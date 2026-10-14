@@ -67,23 +67,42 @@
 .card{width:160px}.cardImage img{height:128px}.card h4{height:38px;font-size:12px}
 .save{width:44px;height:44px}.rail{border-right:0;padding-right:8px}
 .railDisclosure,.fine{font-size:11px;line-height:1.5}
-.wrap.compact .hero.ticketHero{height:auto;min-height:0;aspect-ratio:auto;padding:20px;border:1px solid #d9e6df;background:#f1f7f3;color:#183b2d;border-radius:16px}
-.ticketHero .stage{height:auto;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px}
-.ticketHero .copy h2{font-size:25px;line-height:1.35;max-width:none;margin:8px 0}
-.ticketHero .eyebrow{background:#e0ece4;color:#315544;font-size:12px;padding:5px 10px}
-.ticketHero .copy>p:not(.end){font-size:14px;line-height:1.6;display:block;overflow:visible;margin:8px 0}
-.ticketHero .copy .cta{display:inline-flex;min-height:44px;padding:11px 16px;margin-top:10px;font-size:14px;background:#1d513c;color:white;box-shadow:none}
-.ticketHero .visual .scenePhoto{height:170px;width:100%;object-fit:cover;border-radius:12px}
-.ticketHero .visual figure{height:auto}.ticketHero .visual figcaption{position:static;font-size:11px;text-align:right;margin-top:5px}
+
+
+
+
+
+
+
+
 .ticketWrap .disclosure{font-size:11px;line-height:1.6;padding:8px 0}
 @media(max-width:640px){
 .shopping{padding:12px 16px 8px}.railHeading{align-items:flex-start;gap:8px}.railHeading h2{font-size:16px;line-height:1.4;max-width:210px}.railHeading>div:after{display:none}.railHeading button{width:44px;height:44px}.railDisclosure,.fine{font-size:10px}
 .card{width:140px}.cardImage img{height:112px}.card h4{font-size:12px;line-height:1.45;height:35px}.cardPrice strong{font-size:17px}.cardPrice b{font-size:12px}.save{width:44px;height:44px;background:#fffffff0}.rail{gap:12px;scroll-padding-left:2px}
-.wrap.compact .hero.ticketHero{padding:16px;height:auto;min-height:0;border-radius:14px}
-.ticketHero .stage{display:flex;flex-direction:column-reverse;height:auto;gap:12px}
-.ticketHero .visual{width:100%}.ticketHero .visual .scenePhoto{height:150px;object-fit:cover}.ticketHero .visual figcaption{font-size:10px}
-.ticketHero .copy{width:100%;max-width:none}.ticketHero .eyebrow{display:inline-block;font-size:11px;padding:4px 8px}.ticketHero .copy h2{font-size:20px;line-height:1.4;margin:7px 0}
-.ticketHero .copy>p:not(.end){font-size:13px;line-height:1.6;display:block;-webkit-line-clamp:unset;overflow:visible;margin:6px 0}
-.ticketHero .copy .cta{display:flex;justify-content:space-between;width:100%;min-height:48px;font-size:14px;padding:12px 14px;margin-top:12px}
+
+
+
+
+
+
 .ticketWrap .disclosure{font-size:10px;line-height:1.6;padding:8px 0}
 }
+
+/* A shallow booking banner: readable copy beside a small garden photo. */
+.wrap.compact .hero.ticketHero{height:152px;min-height:0;aspect-ratio:auto;padding:14px 18px;background:#f8fafc;color:#102344;border:1px solid #e2e8f0;border-radius:12px}
+.ticketHero .stage{display:grid;grid-template-columns:minmax(0,1fr) 220px;height:100%;gap:24px;align-items:center}
+.ticketHero .copy{width:100%;max-width:none}.ticketHero .eyebrow{display:block;background:none;border:0;border-radius:0;color:#58708d;padding:0;margin:0;font-size:12px;line-height:16px;letter-spacing:0}
+.ticketHero .copy h2{font-size:22px;line-height:1.3;margin:5px 0;max-width:none;letter-spacing:-.03em}
+.ticketHero .copy>p:not(.end){display:none}
+.ticketHero .copy .cta{display:inline-flex;min-height:44px;margin:7px 0 0;padding:9px 14px;background:#102344;color:#fff;border-radius:8px;box-shadow:none;font-size:13px;gap:18px;line-height:20px}
+.ticketHero .visual,.ticketHero .visual>a,.ticketHero .visual figure{height:100%;width:100%}
+.ticketHero .visual .scenePhoto{height:100%;width:100%;object-fit:cover;object-position:left center;border-radius:8px}
+.ticketHero .visual figcaption{display:none}
+@media(max-width:640px){
+.wrap.compact .hero.ticketHero{height:132px;min-height:0;padding:10px 12px;border-radius:10px}
+.ticketHero .stage{display:grid;grid-template-columns:minmax(0,1fr) 104px;height:100%;gap:12px;align-items:center}
+.ticketHero .eyebrow{font-size:11px;line-height:14px}.ticketHero .copy h2{font-size:16px;line-height:20px;margin:4px 0}
+.ticketHero .copy .cta{display:inline-flex;width:auto;min-height:44px;padding:9px 12px;margin-top:6px;font-size:12px;gap:12px}
+.ticketWrap .disclosure{font-size:10px;line-height:1.5;padding:6px 0}
+}
+@media(max-width:360px){.ticketHero .stage{grid-template-columns:minmax(0,1fr) 82px;gap:10px}.ticketHero .copy h2{font-size:15px}.ticketHero .copy .cta{padding-left:10px;padding-right:10px;gap:8px}}
