@@ -141,10 +141,8 @@ if [ ! -f "$APP/runtime/sharelink/public/editorial.json" ] && [ -f "$APP/data/sh
   cp "$APP/data/sharelink-editorial.json" "$APP/runtime/sharelink/public/editorial.json"
 fi
 [ ! -f "$APP/runtime/sharelink/public/editorial.json" ] || chmod 644 "$APP/runtime/sharelink/public/editorial.json"
-if [ -f "$APP/scripts/nas/refresh-sharelink.sh" ]; then
-  /bin/sh "$APP/scripts/nas/refresh-sharelink.sh" >> "$LOG" 2>&1 || printf '%s sharelink refresh deferred\n' "$(timestamp)" >> "$LOG"
-fi
-
+# Code releases reuse the verified public feed. The unchanged-commit hourly
+# path owns product refreshes; do not delay a site fix on their API budget.
 cd "$APP"
 STEP="build containers"
 "$DOCKER" compose -p free-culture-nas -f compose.yaml up -d --build
