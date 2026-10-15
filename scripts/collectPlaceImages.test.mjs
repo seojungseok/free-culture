@@ -32,14 +32,14 @@ test("successful images append unique full URLs and preserve every existing fact
   const result = await collectImages({ items: [{ id: "retained", type: "39" }], store, ...options,
     fetchImages: async (id, type, budget) => { assert.equal(type, "39"); budget.used++; return [row("old"), row("new"), row("new")]; } });
   assert.equal(result.added, 1);
-  assert.deepEqual(store.details.retained, { ...previous, images: [image("old"), image("new")], imageCheckedAt: fixed });
+  assert.deepEqual(store.details.retained, { ...previous, images: [image("old"), image("new")], imageCheckedAt: fixed, contentUpdatedAt:fixed });
   assert.equal(store.generatedAt, old); assert.deepEqual(store.successfulChecks, { retained: old });
 });
 
 test("first images have an actual image date without inventing a description date", async () => {
   const store = { details: {} };
   await collectImages({ items: [{ id: "new" }], store, ...options, fetchImages: fixtureFetch({ new: [row("new")] }) });
-  assert.deepEqual(store.details.new, { images: [image("new")], imageCheckedAt: fixed, imagesCheckedAt: fixed });
+  assert.deepEqual(store.details.new, { images: [image("new")], imageCheckedAt: fixed, imagesCheckedAt: fixed,contentUpdatedAt:fixed });
   assert.equal(store.details.new.checkedAt, undefined);
 });
 

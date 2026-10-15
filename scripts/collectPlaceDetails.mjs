@@ -96,7 +96,9 @@ export async function collectDetails({ items, store, overviews, requested = [], 
       if (!Object.keys(values).length) {
         empty++;
       } else {
+        const changed=Object.entries(values).some(([field,value])=>store.details[id]?.[field]!==value);
         store.details[id] = { ...(store.details[id] || {}), ...values, checkedAt,
+          ...(changed?{contentUpdatedAt:checkedAt}:{}),
           ...Object.fromEntries(Object.keys(values).map((field) => [`${field}CheckedAt`, checkedAt])),
         };
         if (values.overview && overviews[id] !== values.overview) { overviews[id] = values.overview; overviewChanged = true; }

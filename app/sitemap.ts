@@ -18,9 +18,15 @@ import { isIndexableKidCourse } from "@/lib/kidCourseQuality";
 import { hasSubstantivePlaceInfo, hasSubstantiveRestaurantInfo, hasSubstantiveCampInfo } from "@/lib/placeQuality";
 import { hasSubstantiveEventInfo } from "@/lib/eventQuality";
 import { monthRangeYmd, todayYmd } from "@/lib/dates";
+import placeDetailData from '@/data/place-details.json';
+import {latestContentDate} from '@/lib/content-updates.mjs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url.replace(/\/$/, "");
+  const changedPlaces=(placeDetailData as {details?:Record<string,{contentUpdatedAt?:string}>}).details||{};
+  const articleChanges=new Map(getAllArticles().map(a=>[a.id,a.contentUpdatedAt]));
+  const listChanges=new Map(getAllPlaces().map(p=>[p.id,(p as typeof p & {contentUpdatedAt?:string}).contentUpdatedAt]));
+  const placeModified=(id:string,published?:string)=>latestContentDate(published,articleChanges.get(id),changedPlaces[id]?.contentUpdatedAt,listChanges.get(id));
   // 주요 목록/홈은 높은 우선순위·잦은 갱신. 정보성 정적 페이지는 낮게.
   const MAJOR = new Set(["/events", "/festivals", "/places", "/course", "/camping", "/food"]);
   const LOW = new Set(["/about", "/privacy", "/terms", "/contact"]);
@@ -92,7 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
   const articleSpotRoutes = [...articleAt].map(([id, at]) => ({
     url: `${base}/places/spot/${id}`,
-    lastModified: at && Number.isFinite(Date.parse(at)) ? new Date(at) : undefined,
+    lastModified: placeModified(id,at),
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
@@ -102,7 +108,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((s) => !articleAt.has(s.id) && hasSubstantivePlaceInfo(s.id))
     .map((s) => ({
       url: `${base}/places/spot/${s.id}`,
-
+      lastModified:placeModified(s.id),
       changeFrequency: "monthly" as const,
       priority: 0.4,
     }));
@@ -114,7 +120,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 확인된 영업·메뉴 정보가 있는 음식점만 검색용 목록에 포함한다.
   const restaurantRoutes = getAllRestaurants().filter((r) => hasSubstantiveRestaurantInfo(r.id)).map((r) => ({
     url: `${base}/food/spot/${r.id}`,
-
+    lastModified:latestContentDate(changedPlaces[r.id]?.contentUpdatedAt,(r as typeof r & {contentUpdatedAt?:string}).contentUpdatedAt),
     changeFrequency: "monthly" as const,
     priority: 0.4,
   }));

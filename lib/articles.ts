@@ -6,6 +6,7 @@ export interface PlaceArticle {
   status: "draft" | "published";
   generatedAt: string;
   publishedAt: string | null;
+  contentUpdatedAt?:string;
   area: string;
   type: string;
   typeLabel?: string;

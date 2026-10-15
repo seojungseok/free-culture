@@ -93,6 +93,7 @@ export async function collectImages({ items, store, requested = [], max = DAILY_
           seen.add(image.full); return true;
         });
         next.images = [...existing, ...additions];
+        if(additions.length) next.contentUpdatedAt=checkedAt;
         // A gallery retains older photos: never relabel their original confirmation date.
         if (!existing.length && !previous.imagesCheckedAt) next.imagesCheckedAt = checkedAt;
         added += additions.length;

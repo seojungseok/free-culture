@@ -16,6 +16,7 @@ COPY --from=build --chown=10001:10001 /app/.next/standalone ./
 COPY --from=build --chown=10001:10001 /app/.next/static ./.next/static
 COPY --from=build --chown=10001:10001 /app/public ./public
 COPY --from=build --chown=10001:10001 /app/data ./data
+COPY --from=build --chown=10001:10001 /app/scripts/nas/smoke.mjs ./scripts/nas/smoke.mjs
 # DSM ZIP extraction can preserve restrictive directory modes. All bundled
 # content is public/source data, while runtime secrets stay outside the image.
 RUN chmod -R a+rX /app/public /app/data /app/.next && \

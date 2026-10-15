@@ -2,7 +2,8 @@
 export function mergeCollectedRecord(previous, next, checkedAt) {
   const incoming = Object.fromEntries(Object.entries(next).filter(([key, value]) =>
     value !== null && value !== undefined && (value !== "" || previous?.[key] === undefined || previous?.[key] === "")));
-  return { ...(previous || {}), ...incoming, checkedAt };
+  const changed=Object.entries(incoming).some(([key,value])=>!['checkedAt','generatedAt','contentUpdatedAt'].includes(key)&&JSON.stringify(previous?.[key])!==JSON.stringify(value));
+  return { ...(previous || {}), ...incoming, checkedAt, ...(changed?{contentUpdatedAt:checkedAt}:{}) };
 }
 
 export function checkedSnapshot(previous, records, field, { calls, failures = 0, complete = false, checkedAt = new Date().toISOString() }) {

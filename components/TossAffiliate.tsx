@@ -1,35 +1,34 @@
 'use client';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {usePathname} from 'next/navigation';
-import type {TossFeed,TossProduct} from '@/lib/sharelink';
+import type {TossProduct} from '@/lib/sharelink';
 import {currentProducts,currentHomeProducts} from '@/lib/sharelink-policy.mjs';
 import {affiliateTrack} from '@/lib/affiliate-track';
 import HomeAffiliateShowcase from './HomeAffiliateShowcase';
+import {useTossFeed} from './TossFeedProvider';
 const disclosure='[광고] 토스쇼핑 쉐어링크 활동으로, 링크 구매 시 수수료를 지급받습니다.';
 function track(event:string,p:TossProduct,placement:string,page:string){
  affiliateTrack(event,'toss',placement,page,p.id);
 }
-export default function TossAffiliate({initial,position,compact=false,initialIndex=0,collection='camp',display='both'}:{initial:TossFeed;position:'top'|'article';compact?:boolean;initialIndex?:number;collection?:'camp'|'daily'|'travel'|'stay';display?:'both'|'banner'|'rail'}){
+export default function TossAffiliate({position,compact=false,initialIndex=0,collection='camp',display='both'}:{position:'top'|'article';compact?:boolean;initialIndex?:number;collection?:'camp'|'daily'|'travel'|'stay';display?:'both'|'banner'|'rail'}){
  const page=usePathname()||'/';
- const [feed,setFeed]=useState(initial),[now,setNow]=useState(0),[saved,setSaved]=useState<number[]>([]),[message,setMessage]=useState('');
+ const {feed,now,loading}=useTossFeed();
+ const [saved,setSaved]=useState<number[]>([]),[message,setMessage]=useState('');
  const box=useRef<HTMLElement>(null),seen=useRef(new Set<string>());
  const channel=page==='/'?'home':/^\/camping\/\d+$/.test(page)?'camping':/^\/(event\/[^/]+|places\/spot\/[^/]+|course\/c\/[^/]+|date\/c\/[^/]+)/.test(page)?'picnic':page.startsWith('/weekend-prep/')?(/soup|stew|hotpot|ramen|noodle|sujebi|tteokbokki|fishcake|crab|mussel/.test(page)?'cooking-pot':/grill|rice|pancake|sandwich|skewer|stir-fry|jeon|corn-cheese|tofu-kimchi/.test(page)?'cooking-pan':/picnic|park|outing/.test(page)?'picnic':null):null;
  const globalRail=position==='top'&&display==='rail';
  const correctPosition=position==='top'||(page!=='/'&&position==='article');
  const items=useMemo(()=>correctPosition&&(globalRail||channel)&&now>0?(globalRail?currentHomeProducts(feed,now):currentProducts(feed,now).filter(p=>p.links[channel!]&&(page!=='/'||p.homeFeature))).sort((a,b)=>Number(Boolean(b.endAt))-Number(Boolean(a.endAt))).slice(0,globalRail?undefined:page==='/'?40:2):[],[correctPosition,channel,now,feed,page,globalRail]);
  useEffect(()=>{
-  let active=true;const tick=()=>setNow(Date.now());tick();const clock=setInterval(tick,30000);
-  const sync=()=>{try{const value=JSON.parse(localStorage.getItem('mwohaji-toss-saved')||'[]');setSaved(Array.isArray(value)?value.filter(Number.isInteger).slice(0,100):[]);}catch{setSaved([]);}};sync();window.addEventListener('storage',sync);
-  const refresh=()=>fetch('/api/affiliate/toss',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(v=>{if(active&&v?.version===1&&Array.isArray(v.products))setFeed(v);}).catch(()=>{});
-  refresh();const refreshTimer=setInterval(refresh,300000);
-  return()=>{active=false;clearInterval(clock);clearInterval(refreshTimer);window.removeEventListener('storage',sync);};
+  const sync=()=>{try{const value=JSON.parse(localStorage.getItem('mwohaji-toss-saved')||'[]');setSaved(Array.isArray(value)?value.filter(Number.isInteger).slice(0,100):[]);}catch{setSaved([]);}};
+  sync();window.addEventListener('storage',sync);return()=>window.removeEventListener('storage',sync);
  },[]);
  useEffect(()=>{
   const node=box.current;if(!node||!items.length)return;
   const observer=new IntersectionObserver(entries=>{if(!entries.some(e=>e.isIntersecting))return;for(const p of items){const key=`${page}:${p.id}`;if(!seen.current.has(key)){track('affiliate_impression',p,position,page);seen.current.add(key);}}},{threshold:0.5});observer.observe(node);return()=>observer.disconnect();
  },[page,position,items]);
  function toggle(p:TossProduct){try{const next=saved.includes(p.id)?saved.filter(id=>id!==p.id):[p.id,...saved].slice(0,100);localStorage.setItem('mwohaji-toss-saved',JSON.stringify(next));setSaved(next);setMessage(next.includes(p.id)?'이 브라우저에 저장했습니다. 다시 방문하면 저장 표시를 확인할 수 있어요. 저장은 가격이나 재고를 예약하지 않습니다.':'저장을 해제했습니다.');track('affiliate_save',p,position,page);}catch{setMessage('이 브라우저에서는 저장할 수 없습니다.');}}
- if(position==='top')return <HomeAffiliateShowcase products={items} checkedAt={feed.checkedAt} compact={compact} initialIndex={initialIndex} collection={collection} display={display}/>;
+ if(position==='top')return <HomeAffiliateShowcase loading={loading} products={items} checkedAt={feed.checkedAt} compact={compact} initialIndex={initialIndex} collection={collection} display={display}/>;
  if(!items.length)return null;
  const checked=new Date(feed.checkedAt).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
  return <section ref={box} aria-label="토스쇼핑 제휴 추천" className="mx-auto my-5 w-[calc(100%-2.5rem)] max-w-6xl rounded-2xl border border-blue-100 bg-blue-50/70 p-4 sm:p-6">

@@ -74,7 +74,13 @@ if "$CURL" --fail --silent --show-error --location --retry 2 --connect-timeout 1
   --output "$STATE/main-ref.json.tmp" "$REPOSITORY_REF"; then
   REMOTE_SHA="$(sed -n 's/^[[:space:]]*"sha": "\([0-9a-f]\{40\}\)".*/\1/p' "$STATE/main-ref.json.tmp" | sed -n '1p')"
 fi
-if [ -n "$REMOTE_SHA" ] && [ -f "$COMMIT_FILE" ] && [ "$REMOTE_SHA" = "$(sed -n '1p' "$COMMIT_FILE")" ]; then
+if [ -z "$REMOTE_SHA" ]; then
+  printf '%s update deferred: could not verify main commit; existing service retained\n' "$(timestamp)" >> "$LOG"
+  exit 1
+fi
+STAMP_MATCH=0
+if [ -f "$APP/data/site-release.json" ] && grep -Fq "\"commit\":\"$REMOTE_SHA\"" "$APP/data/site-release.json"; then STAMP_MATCH=1; fi
+if [ "$STAMP_MATCH" = "1" ] && [ -f "$COMMIT_FILE" ] && [ "$REMOTE_SHA" = "$(sed -n '1p' "$COMMIT_FILE")" ]; then
 # Refresh selected affiliate products even when the source commit is unchanged.
 if [ -f "$APP/scripts/nas/refresh-sharelink.sh" ]; then
   /bin/sh "$APP/scripts/nas/refresh-sharelink.sh" >> "$LOG" 2>&1 || printf '%s sharelink refresh deferred\n' "$(timestamp)" >> "$LOG"
@@ -95,7 +101,7 @@ OLD_HASH=""
 if [ -f "$HASH_FILE" ]; then
   OLD_HASH="$(sed -n '1p' "$HASH_FILE")"
 fi
-if [ "$NEW_HASH" = "$OLD_HASH" ]; then
+if [ "$STAMP_MATCH" = "1" ] && [ "$NEW_HASH" = "$OLD_HASH" ]; then
   if [ -n "$REMOTE_SHA" ]; then printf '%s\n' "$REMOTE_SHA" > "$COMMIT_FILE"; fi
   printf '%s update skipped: main unchanged\n' "$(timestamp)" >> "$LOG"
   exit 0
@@ -125,6 +131,7 @@ for entry in "$SOURCE"/* "$SOURCE"/.[!.]*; do
   cp -a "$entry" "$APP/"
 done
 cp "$APP/compose.nas.yml" "$APP/compose.yaml"
+printf '{"commit":"%s"}\n' "$REMOTE_SHA" > "$APP/data/site-release.json"
 mkdir -p "$APP/runtime/sharelink/public"
 chmod 755 "$APP/runtime/sharelink/public"
 mkdir -p "$APP/runtime/sharelink/events"
@@ -156,8 +163,19 @@ smoke_url() {
 }
 
 STEP="smoke check"
+attempt=1
+while [ "$attempt" -le 40 ]; do
+  if "$CURL" --fail --silent --show-error --max-time 15 "$PREVIEW/api/site-status" 2>/dev/null | grep -Fq "\"commit\":\"$REMOTE_SHA\""; then break; fi
+  sleep 3
+  attempt=$((attempt + 1))
+done
+if [ "$attempt" -gt 40 ]; then
+  printf '%s update failed: expected release not serving\n' "$(timestamp)" >> "$LOG"
+  exit 1
+fi
 smoke_url "$PREVIEW/robots.txt"
 smoke_url "$PREVIEW/sitemap.xml"
+"$DOCKER" compose -p free-culture-nas -f compose.yaml exec -T -e EXPECTED_COMMIT="$REMOTE_SHA" web node scripts/nas/smoke.mjs >> "$LOG" 2>&1
 
 STEP="verify stored public information mode"
 RUNTIME_MODE="$("$DOCKER" compose -p free-culture-nas -f compose.yaml exec -T web node -p 'process.env.TOUR_RUNTIME_FETCH')"

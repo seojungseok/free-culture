@@ -5,12 +5,15 @@ const paths = [
   "/",
   "/events",
   "/places",
+  "/weekend",
+  "/places/spot/130344",
   "/city-tour",
   "/search?q=%EC%84%9C%EC%9A%B8",
   "/event/383591",
   "/api/pet-travel",
   "/robots.txt",
   "/sitemap.xml",
+  "/api/site-status",
 ];
 
 const results = [];
@@ -21,10 +24,14 @@ for (const path of paths) {
       redirect: "manual",
       signal: AbortSignal.timeout(15000),
     });
-    const body = path === "/event/383591" || path === "/sitemap.xml"
+    const body = ["/event/383591","/sitemap.xml","/api/site-status","/places/spot/130344"].includes(path)
       ? await response.text()
       : null;
-    const contentOk = path === "/event/383591"
+    const contentOk = path === '/api/site-status'
+      ? (()=>{try{const result=JSON.parse(body);return result.ready===true&&(!process.env.EXPECTED_COMMIT||result.commit===process.env.EXPECTED_COMMIT);}catch{return false;}})()
+      : path === '/places/spot/130344'
+      ? body?.includes('https://sokchocul.or.kr/')&&!body?.includes('sokcho-culture.com')
+      : path === "/event/383591"
       ? body?.includes('https://mwohaji.kr/event/383591')
       : path === "/sitemap.xml"
         ? body?.includes("https://mwohaji.kr/") && body?.includes("/event/")

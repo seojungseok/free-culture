@@ -7,6 +7,8 @@ import { getAllCamps } from "@/lib/camping";
 import { SIDO_LIST } from "@/lib/classify";
 import festivalsData from "@/data/festivals.json";
 import restaurantsData from "@/data/restaurants.json";
+import {todayYmd} from '@/lib/dates';
+import {currentSearchRecord} from '@/lib/content-updates.mjs';
 
 export type Kind = "place" | "camping" | "event" | "festival" | "food";
 export const KIND_LABEL: Record<Kind, string> = { place: "나들이", camping: "캠핑", event: "문화행사", festival: "축제", food: "맛집" };
@@ -17,6 +19,7 @@ export interface SearchDoc {
   genre?: string; placeType?: string;
   price: "free" | "cheap" | "partial" | "paid" | "unknown";
   hasImg: boolean;
+  endDate?:string;
   titleN: string; // 정규화 제목(공백제거·소문자)
   hay: string;    // 정규화 전체 검색 대상
 }
@@ -50,7 +53,7 @@ function build(): SearchDoc[] {
     docs.push({
       kind: isFest ? "festival" : "event", id: e.id, title: e.title, area: e.area,
       sub: e.sigungu || "", url: `/event/${e.id}`, image: e.imgUrl || "",
-      genre: e.genreKey, price,
+      genre: e.genreKey, price, endDate:e.endDate,
       hasImg: Boolean(e.imgUrl),
       titleN: norm(e.title),
       hay: norm(`${e.title} ${e.place} ${e.area} ${e.sigungu} ${e.address} ${e.realmName}`),
@@ -69,11 +72,11 @@ function build(): SearchDoc[] {
   }
 
   // 축제(TourAPI, festivals.json) — 수집 전이면 빈 배열
-  const fests = (festivalsData as { festivals?: { id: string; title: string; addr: string; area: string; image?: string }[] }).festivals || [];
+  const fests = (festivalsData as { festivals?: { id: string; title: string; addr: string; area: string; image?: string;endDate?:string }[] }).festivals || [];
   for (const f of fests) {
     docs.push({
       kind: "festival", id: f.id, title: f.title, area: f.area, sub: guOf(f.addr || ""),
-      url: `/festivals/${f.id}`, image: f.image || "", price: "unknown", hasImg: Boolean(f.image),
+      url: `/festivals/${f.id}`, image: f.image || "", price: "unknown", hasImg: Boolean(f.image),endDate:f.endDate,
       titleN: norm(f.title), hay: norm(`${f.title} ${f.addr} ${f.area} 축제`),
     });
   }
@@ -213,7 +216,8 @@ export function search(q: string, perGroup = 60): SearchResult {
   const hasCond = parsed.sido || parsed.price || parsed.kinds.size || parsed.genres.size || parsed.textGroups.length;
   if (!q.trim() || !hasCond) return { total: 0, groups: [], parsed };
 
-  const hits = docs().filter((d) => matchDoc(d, parsed));
+  const day=todayYmd();
+  const hits = docs().filter((d) => currentSearchRecord(d,day)&&matchDoc(d, parsed));
   hits.sort((a, b) => score(b, parsed) - score(a, parsed));
 
   const order: Kind[] = ["place", "camping", "festival", "event", "food"];

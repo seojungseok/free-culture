@@ -106,3 +106,5 @@
 .ticketWrap .disclosure{font-size:10px;line-height:1.5;padding:6px 0}
 }
 @media(max-width:360px){.ticketHero .stage{grid-template-columns:minmax(0,1fr) 82px;gap:10px}.ticketHero .copy h2{font-size:15px}.ticketHero .copy .cta{padding-left:10px;padding-right:10px;gap:8px}}
+
+.loadingDisclosure{height:34px}@media(max-width:640px){.loadingDisclosure{height:28px}}

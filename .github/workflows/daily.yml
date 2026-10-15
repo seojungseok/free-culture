@@ -31,7 +31,7 @@ jobs:
 
       - name: 수집 한도·저장정보 보존 검사 (실 API 호출 없음)
         run: |
-          node --test scripts/lib/tourClient.test.mjs scripts/lib/regionalRequest.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs
+          node --test scripts/lib/tourClient.test.mjs scripts/lib/regionalRequest.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs scripts/site-optimization.test.mjs scripts/nas/smoke.test.mjs
           node scripts/test-tour-detail-fallback.cjs
           node --test scripts/enrichCourseStops.test.mjs scripts/enrichCoursePlaces.test.mjs scripts/enrichCultureEvents.test.mjs
           node scripts/test-course-planning.cjs

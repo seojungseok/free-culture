@@ -15,7 +15,6 @@ import { getPrepArticles } from "@/lib/weekend-prep/data";
 import { getAllArticles } from "@/lib/articles";
 import { hasSubstantivePlaceInfo, hasSubstantiveCampInfo } from "@/lib/placeQuality";
 
-import {readTossFeed} from '@/lib/sharelink';
 export const revalidate = 60;
 export const metadata: Metadata = {
   title: { absolute: "이번 주말 어디 가지? 전국 가볼만한 곳·축제·여행코스 추천 · 주말에 뭐하지?" },
@@ -30,7 +29,7 @@ const regionGroups: Record<string, string[]> = {
 };
 
 function eventItem(event: ReturnType<typeof getWeekend>[number]): HomeItem {
-  return { id: `event-${event.id}`, href: `/event/${event.id}`, title: eventContentsText(event.title), meta: [event.area, fmtRange(event.startDate, event.endDate)].filter(Boolean).join(" · "), image: event.imgUrl || "", badge: event.realmName || "문화행사", area: event.area, start: event.startDate, end: event.endDate };
+  return { id: `event-${event.id}`, href: `/event/${event.id}`, title: eventContentsText(event.title), meta: [event.area, fmtRange(event.startDate, event.endDate)].filter(Boolean).join(" · "), image: event.imgUrl || "", badge: event.realmName || "문화행사", area: event.area, start: event.startDate, end: event.endDate, kids:event.audiences?.includes('kids'),free:event.priceType==='free' };
 }
 
 function mixForRegion(groups: HomeItem[][], limit = 8): HomeItem[] {
@@ -59,7 +58,7 @@ export default function HomePage() {
   const courses = getIndexableCourses().map(slimCourse).filter((item) => item.image);
   const camps = getAllCamps().filter((item) => item.image && hasSubstantiveCampInfo(item));
   const dateCourses = getDateCourses().filter((item) => item.image);
-  const placeItems: HomeItem[] = places.map((item) => ({ id: `place-${item.id}`, href: `/places/spot/${item.id}`, title: item.title, meta: item.area, image: item.image, badge: item.isKid ? "아이와" : "나들이", area: item.area }));
+  const placeItems: HomeItem[] = places.map((item) => ({ id: `place-${item.id}`, href: `/places/spot/${item.id}`, title: item.title, meta: item.area, image: item.image, badge: item.isKid ? "아이와" : "나들이", area: item.area, kids:item.isKid===true }));
   const courseItems: HomeItem[] = courses.map((item) => ({ id: `course-${item.id}`, href: `/course/c/${item.id}`, title: item.title, meta: [item.area, item.duration].filter(Boolean).join(" · "), image: item.image, badge: "여행코스", area: item.area }));
   const campItems: HomeItem[] = camps.map((item) => ({ id: `camp-${item.id}`, href: `/camping/${item.id}`, title: item.name, meta: [item.area, item.sigungu].filter(Boolean).join(" · "), image: item.image, badge: "캠핑", area: item.area }));
   const dateItems: HomeItem[] = dateCourses.map((item) => ({ id: `date-${item.id}`, href: `/date/c/${item.id}`, title: item.title, meta: `${item.area} ${item.city} · 도보 이동 약 ${item.walkMin}분`, image: item.image, badge: "데이트 코스", area: item.area }));
@@ -67,7 +66,10 @@ export default function HomePage() {
   const regional = Object.fromEntries(Object.entries(regionGroups).map(([region, areas]) => {
     const within = <T extends { area?: string }>(items: T[]) => areas.length ? items.filter((item) => item.area && areas.includes(item.area)) : items;
     const items = mixForRegion([within(weekendItems), within(placeItems), within(courseItems), within(campItems), within(dateItems)]);
-    return [region, rotateItems(items, `${today}:${region}`)];
+    // Keep the established first eight mixed cards; append only bounded choices
+    // needed by the intent filters, with original IDs and URLs.
+    const choices=[...rotateItems(items, `${today}:${region}`),...within(weekendItems).slice(0,8),...within(placeItems).filter(p=>p.kids).slice(0,8),...within(weekendItems).filter(p=>p.free).slice(0,8)];
+    return [region, Array.from(new Map(choices.map(item=>[item.id,item])).values())];
   }));
   const freeItems = getFree(true).filter((item) => item.imgUrl && item.endDate >= today).slice(0, 8).map((item) => ({ ...eventItem(item), badge: item.priceLabel || "무료 여부 확인" }));
   const kidItems = placeItems.filter((_, index) => places[index]?.isKid).slice(0, 6);
@@ -78,5 +80,5 @@ export default function HomePage() {
   const editorialPlaces = publishedPlaces.map((article) => byPlaceId.get(article.id)).filter((item): item is HomeItem => Boolean(item));
   const representativeItems = editorialPlaces.slice(-6).reverse();
   const newItems = editorialPlaces.filter((item) => !representativeItems.some((representative) => representative.id === item.id)).slice(0, 6);
-  return <HomeExplorer tossFeed={readTossFeed()} regional={regional} eventItems={weekendItems.slice(0, 8)} kidItems={kidItems} dateItems={dateItems.slice(0, 6)} campItems={campItems.slice(0, 6)} courseItems={courseItems.filter((_, index) => courses[index].duration === "당일").slice(0, 6)} seasonItems={seasonItems} prepItems={prepItems} placeItems={representativeItems} newItems={newItems} freeItems={freeItems} regions={SIDO_LIST.map((name) => ({ name, href: `/region/${(SIDO_SLUG as Record<string, string>)[name]}` }))} siteName={SITE.name} />;
+  return <HomeExplorer regional={regional} eventItems={weekendItems.slice(0, 8)} kidItems={kidItems} dateItems={dateItems.slice(0, 6)} campItems={campItems.slice(0, 6)} courseItems={courseItems.filter((_, index) => courses[index].duration === "당일").slice(0, 6)} seasonItems={seasonItems} prepItems={prepItems} placeItems={representativeItems} newItems={newItems} freeItems={freeItems} regions={SIDO_LIST.map((name) => ({ name, href: `/region/${(SIDO_SLUG as Record<string, string>)[name]}` }))} siteName={SITE.name} />;
 }
