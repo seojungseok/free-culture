@@ -5,6 +5,7 @@ import { isUsefulDisplayValue } from "@/lib/displayValue";
 import { classifyAdmission, type Admission } from "@/lib/admission";
 import { getIntro } from "@/lib/tourExtra";
 import { getAdmission } from "@/lib/fees";
+import { correctedHomepage } from "@/lib/official-homepages.mjs";
 export { classifyAdmission } from "@/lib/admission";
 
 // 방문·빌드에서는 저장된 수집 결과만 사용한다.
@@ -124,7 +125,7 @@ export async function fetchPlaceImages(contentId: string): Promise<PlaceImage[]>
 export async function fetchPlaceOverview(contentId: string): Promise<PlaceOverview> {
   const detailCache = detailRecords[contentId];
   const cached = (storedOverviews as Record<string, string>)[contentId];
-  const empty: PlaceOverview = { overview: isUsefulDisplayValue(detailCache?.overview) ? cleanText(detailCache.overview) : isUsefulDisplayValue(cached) ? cleanText(cached) : "", homepage: detailCache?.homepage || "", tel: detailCache?.tel || "", checkedAt: detailCache?.checkedAt, overviewCheckedAt: detailCache?.overviewCheckedAt };
+  const empty: PlaceOverview = { overview: isUsefulDisplayValue(detailCache?.overview) ? cleanText(detailCache.overview) : isUsefulDisplayValue(cached) ? cleanText(cached) : "", homepage: correctedHomepage(contentId, detailCache?.homepage || ""), tel: detailCache?.tel || "", checkedAt: detailCache?.checkedAt, overviewCheckedAt: detailCache?.overviewCheckedAt };
   if (detailCache?.checkedAt && Date.now() - Date.parse(detailCache.checkedAt) < 30 * 86400000) return empty;
   if (process.env.TOUR_RUNTIME_FETCH !== "1" || !KEY || !contentId) return empty;
   const url = `https://apis.data.go.kr/B551011/KorService2/detailCommon2?serviceKey=${keyParam}&MobileOS=ETC&MobileApp=mwohaji&_type=json&contentId=${contentId}`;
@@ -140,7 +141,7 @@ export async function fetchPlaceOverview(contentId: string): Promise<PlaceOvervi
     const tel = String(it.tel ?? "").trim();
     return {
       overview: isUsefulDisplayValue(overview) ? overview : empty.overview,
-      homepage: extractUrl(it.homepage) || empty.homepage,
+      homepage: correctedHomepage(contentId, extractUrl(it.homepage) || empty.homepage),
       tel: isUsefulDisplayValue(tel) ? tel : empty.tel,
     };
   } catch {

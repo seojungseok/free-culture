@@ -2,12 +2,13 @@
 // 방문자 요청 시 API를 호출하지 않고 주간 동기화에서만 실행한다.
 import { readCache, writeCache, loadKey, cleanText, https, safeApiError } from "./lib/tourClient.mjs";
 import { mergeCollectedRecord } from "./lib/collectorState.mjs";
-import { XMLParser } from "fast-xml-parser";
+import { regionalRequest, regionalRefreshStatus } from './lib/regionalRequest.mjs';
+import fs from 'node:fs';
 
 const KEY = loadKey("public");
 const TODAY = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10).replaceAll("-", "");
 const OUT = "festivals.json";
-const parser = new XMLParser({ ignoreAttributes: false });
+let requests = 0;
 const value = (obj, ...keys) => {
   for (const key of keys) if (obj?.[key] !== undefined && obj?.[key] !== null) return obj[key];
   return "";
@@ -29,25 +30,11 @@ const dateRange = (v) => {
 const list = (value) => Array.isArray(value) ? value : value ? [value] : [];
 const decodedKey = () => { try { return decodeURIComponent(KEY); } catch { return KEY; } };
 const query = (params) => new URLSearchParams({ ...params, serviceKey: decodedKey() }).toString();
-function validatedResponse(json) {
-  const header = json?.response?.header || json?.getFestivalKr?.header || json?.getFestivalStatus?.header;
-  const code = header?.resultCode;
-  if (code !== undefined && !["00", "0000", "0"].includes(String(code))) {
-    throw new Error(`resultCode=${/^\d+$/.test(String(code)) ? code : "unknown"}`);
-  }
-  if (json?.OpenAPI_ServiceResponse || json?.OpenAPIServiceResponse) throw new Error("API 응답 형식 오류");
-  return json;
-}
-
 async function getJson(url, params) {
-  const res = await fetch(url + "?" + query(params), { signal: AbortSignal.timeout(20000) });
-  if (!res.ok) throw new Error("HTTP " + res.status);
-  return validatedResponse(await res.json());
+  return regionalRequest(url + '?' + query(params), {onAttempt:()=>requests++});
 }
 async function getXml(url, params) {
-  const res = await fetch(url + "?" + query(params), { signal: AbortSignal.timeout(20000) });
-  if (!res.ok) throw new Error("HTTP " + res.status);
-  return validatedResponse(parser.parse(await res.text()));
+  return getJson(url, params);
 }
 function event({ id, title, addr, area, image, mapx = "", mapy = "", tel = "", startDate, endDate, source, description = "", place = "", homepage = "" }) {
   const start = ymd(startDate);
@@ -82,12 +69,12 @@ async function gyeongju() {
 }
 async function ulsan() {
   const j = await getXml("https://apis.data.go.kr/6310000/ulsanfestival/getUlsanfestivalList", { pageNo: 1, numOfRows: 1000 });
-  const body = j?.response?.body || j?.body || {};
+  const body = j?.rfcOpenApi?.body || j?.response?.body || j?.body || {};
   const rows = body?.data?.list || body?.data?.item || body?.item;
   return list(rows).map((it) => event({
     id: "ulsan-" + value(it, "unqId"), title: clean(value(it, "title")), addr: clean(value(it, "roadNmAddr")),
     area: "울산", image: value(it, "mainImg", "imgUrl"), mapx: value(it, "lot"), mapy: value(it, "lat"), tel: clean(value(it, "rprsTelno")),
-    startDate: value(it, "fstvlBgngYmd"), endDate: value(it, "fstvlEndYmd"), description: value(it, "fstvlCn", "contents", "description"), place: value(it, "fstvlPlace", "place"), source: "울산광역시 문화축제",
+    startDate: value(it, "fstvlBgngYmd"), endDate: value(it, "fstvlEndYmd"), description: value(it, "cn", "fstvlCn", "contents", "description"), place: value(it, "plc", "fstvlPlace", "place"), homepage: value(it, "hmpgAddr"), source: "울산광역시 문화축제",
   })).filter(Boolean);
 }
 async function jeonnam() {
@@ -107,25 +94,30 @@ async function main() {
   const jobs = [["부산", busan], ["경주", gyeongju], ["울산", ulsan], ["전남", jeonnam]];
   const results = await Promise.all(jobs.map(async ([name, fn]) => {
     try { const items = await fn(); console.log(name + ": 진행·예정 " + items.length + "건"); return { name, items, success: true }; }
-    catch (error) { console.warn(name + " 수집 실패: " + safeApiError(error)); return { name, items: [], success: false }; }
+    catch (error) { console.warn(name + " 수집 실패: " + (error.code || safeApiError(error))); return { name, items: [], success: false, transient: error.transient === true, errorCode: error.code || 'unknown' }; }
   }));
-  if (!results.some((result) => result.success)) throw new Error("지역 축제 전체 실패 — 기존 스냅샷 유지");
   const store = readCache(OUT, { generatedAt: null, count: 0, festivals: [] });
+  const status = regionalRefreshStatus(results, store.sourceRefresh || {});
   const map = new Map((store.festivals || []).map((item) => [item.id, item]));
   for (const result of results) for (const item of result.items) map.set(item.id, mergeCollectedRecord(map.get(item.id), item, checkedAt));
   const festivals = [...map.values()]
     .sort((a, b) => a.startDate.localeCompare(b.startDate));
-  store.festivals = festivals; store.count = festivals.length; store.generatedAt = new Date().toISOString();
+  store.festivals = festivals; store.count = festivals.length;
+  if (results.some(r=>r.success)) store.generatedAt = new Date().toISOString();
   store.sourceRefresh ||= {};
   for (const result of results) store.sourceRefresh[result.name] = {
     ...(store.sourceRefresh[result.name] || {}), lastAttemptAt: checkedAt,
-    ...(result.success ? { checkedAt, currentRecords: result.items.length } : {}), success: result.success,
+    ...(result.success ? { checkedAt, currentRecords: result.items.length, errorCode: null } : {errorCode:result.errorCode}), success: result.success,
+    status: result.success ? 'success' : result.transient && status==='deferred' ? 'deferred' : 'failure',
   };
   const failures = results.filter((result) => !result.success).length;
-  if (failures) store.incompleteRefresh = true;
+  store.incompleteRefresh = failures > 0;
   writeCache(OUT, store);
-  console.log("저장: data/" + OUT + " (" + festivals.length + "건, API 4회)");
+  console.log("저장: data/" + OUT + " (" + festivals.length + "건, API " + requests + "회, " + status + ")");
+  if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `collector_status=${status}\n`);
+  if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, '\n### 지역 축제 갱신\n' + results.map(r=>`- ${r.name}: ${r.success?'확인 완료':r.errorCode+' · 기존 자료 유지'}\n`).join(''));
+  if (status==='deferred') console.warn('::warning::지역 API 일시 장애가 재시도 후에도 지속되어 갱신을 연기했습니다. 72시간 이내의 마지막 확인 자료를 유지하며 다음 예약 실행에서 재시도합니다.');
   console.log("대전은 현재 제공받은 경로가 라이브 응답을 반환하지 않아 임의 행사 생성을 하지 않았습니다.");
-  if (failures) process.exitCode = 1;
+  if (status==='failure') process.exitCode = 1;
 }
 main().catch((error) => { console.error(`지역 축제 갱신 실패: ${safeApiError(error)}`); process.exit(1); });

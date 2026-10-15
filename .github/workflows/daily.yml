@@ -31,7 +31,7 @@ jobs:
 
       - name: 수집 한도·저장정보 보존 검사 (실 API 호출 없음)
         run: |
-          node --test scripts/lib/tourClient.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs
+          node --test scripts/lib/tourClient.test.mjs scripts/lib/regionalRequest.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs
           node scripts/test-tour-detail-fallback.cjs
           node --test scripts/enrichCourseStops.test.mjs scripts/enrichCoursePlaces.test.mjs scripts/enrichCultureEvents.test.mjs
           node scripts/test-course-planning.cjs
@@ -202,6 +202,7 @@ jobs:
         env:
           FESTIVALS: ${{ steps.festivals.outcome }}
           REGIONAL: ${{ steps.regional.outcome }}
+          REGIONAL_STATUS: ${{ steps.regional.outputs.collector_status }}
           FESTIVAL_DETAILS: ${{ steps.festival_details.outcome }}
           DETAILS: ${{ steps.details.outcome }}
           IMAGES: ${{ steps.images.outcome }}
@@ -234,6 +235,9 @@ jobs:
               echo "$name: 제공기관 한도로 연기 (기존 정보 보존)"
             fi
           done
+          if [ "$REGIONAL_STATUS" = "deferred" ]; then
+            echo "지역 축제: 일시 장애로 갱신 연기 · 마지막 확인 정보 유지" >> "$GITHUB_STEP_SUMMARY"
+          fi
           if [ "$failed" = "1" ]; then
             echo "::error::API 수집 실패 단계: ${failed_names[*]}. 성공한 데이터와 기존 URL은 보존했습니다."
             exit 1

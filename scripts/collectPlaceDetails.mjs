@@ -2,6 +2,7 @@
 import { readCache, writeCache, detailCommon, createBudget, hasKey, sleep, QuotaError, safeApiError } from "./lib/tourClient.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { correctedHomepage } from "../lib/official-homepages.mjs";
 
 const RECHECK_MS = 30 * 86400000;
 const DEFAULT_REQUEST_LIMIT = 20;
@@ -90,6 +91,8 @@ export async function collectDetails({ items, store, overviews, requested = [], 
       const values = Object.fromEntries(["overview", "homepage", "tel"]
         .filter((field) => typeof detail?.[field] === "string" && detail[field].trim())
         .map((field) => [field, detail[field].trim()]));
+      const homepage = correctedHomepage(id, values.homepage);
+      if (homepage) values.homepage = homepage;
       if (!Object.keys(values).length) {
         empty++;
       } else {

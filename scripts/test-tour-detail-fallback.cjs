@@ -69,6 +69,7 @@ async function main() {
       }
     }
     assert.equal(calls, 0, "100 distinct IDs in production and development must make zero provider calls even with an API key");
+    assert.equal((await fetchPlaceOverview('130344')).homepage,'https://sokchocul.or.kr/','verified homepage is available without API and cannot revive the old domain');
     assert.equal(await fetchAdmission("free", "14"), "free");
     assert.equal(await fetchAdmission("paid", "14"), "paid");
     assert.equal(await fetchAdmission("conditional", "14"), "unknown", "conditional paid exceptions cannot become a free badge");
