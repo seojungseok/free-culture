@@ -108,7 +108,7 @@ async function main() {
   for (const result of results) store.sourceRefresh[result.name] = {
     ...(store.sourceRefresh[result.name] || {}), lastAttemptAt: checkedAt,
     ...(result.success ? { checkedAt, currentRecords: result.items.length, errorCode: null } : {errorCode:result.errorCode}), success: result.success,
-    status: result.success ? 'success' : result.transient && status==='deferred' ? 'deferred' : 'failure',
+    status: result.success ? 'success' : result.transient && ['deferred','degraded'].includes(status) ? status : 'failure',
   };
   const failures = results.filter((result) => !result.success).length;
   store.incompleteRefresh = failures > 0;
@@ -117,6 +117,11 @@ async function main() {
   if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `collector_status=${status}\n`);
   if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, '\n### 지역 축제 갱신\n' + results.map(r=>`- ${r.name}: ${r.success?'확인 완료':r.errorCode+' · 기존 자료 유지'}\n`).join(''));
   if (status==='deferred') console.warn('::warning::지역 API 일시 장애가 재시도 후에도 지속되어 갱신을 연기했습니다. 72시간 이내의 마지막 확인 자료를 유지하며 다음 예약 실행에서 재시도합니다.');
+  if (status==='degraded') {
+    const message='지역 축제 부분 장애: '+results.filter(r=>!r.success).map(r=>r.name).join(', ')+' 제공기관이 응답하지 않습니다. 해당 지역 최신성은 미확인이며 기존 확인시각을 유지합니다. 정상 지역만 갱신했고 다음 예약 작업에서 재시도합니다.';
+    console.warn('::warning::'+message);
+    if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, '\n**주의: '+message+'**\n');
+  }
   console.log("대전은 현재 제공받은 경로가 라이브 응답을 반환하지 않아 임의 행사 생성을 하지 않았습니다.");
   if (status==='failure') process.exitCode = 1;
 }

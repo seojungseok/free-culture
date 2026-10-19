@@ -40,9 +40,12 @@ export async function regionalRequest(url, { fetchImpl = fetch, pause = ms => ne
 export function regionalRefreshStatus(results, previous, nowMs=Date.now()) {
   const failed=results.filter(r=>!r.success);
   if (!failed.length) return 'success';
-  // Retry on the next daily run only while the last confirmed snapshot is recent.
-  // Authentication/schema errors and outages over 72 hours still require attention.
-  return failed.every(r=>r.transient && Number.isFinite(Date.parse(previous[r.name]?.checkedAt))
+  // A partial provider outage is degraded collection, never a fresh snapshot.
+  // Keep authentication/schema errors and a complete provider outage as failures.
+  if (!failed.every(r=>r.transient)) return 'failure';
+  const recent = failed.every(r=>Number.isFinite(Date.parse(previous[r.name]?.checkedAt))
     && nowMs-Date.parse(previous[r.name].checkedAt)>=0
-    && nowMs-Date.parse(previous[r.name].checkedAt)<72*3600000) ? 'deferred' : 'failure';
+    && nowMs-Date.parse(previous[r.name].checkedAt)<72*3600000);
+  if (recent) return 'deferred';
+  return results.some(r=>r.success) ? 'degraded' : 'failure';
 }

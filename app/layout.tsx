@@ -4,6 +4,7 @@ import { SITE } from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
+import DeferredFonts from "@/components/DeferredFonts";
 import FloatingShare from "@/components/FloatingShare";
 import ChromeGate from "@/components/ChromeGate";
 import { RenderDateProvider } from "@/components/RenderDate";
@@ -68,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="bg-white font-sans antialiased">
+        <DeferredFonts />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
         {/* 게임 상세는 집중 화면(헤더·푸터 숨김), 그 외는 사이트 크롬 유지 */}

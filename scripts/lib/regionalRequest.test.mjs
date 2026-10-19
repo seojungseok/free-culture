@@ -35,3 +35,13 @@ test('Ulsan rfcOpenApi success envelope is accepted',async()=>{
  const result=await regionalRequest('fixture',{fetchImpl:async()=>response('<rfcOpenApi><header><resultCode>0</resultCode></header><body><totalCount>0</totalCount><data/></body></rfcOpenApi>')});
  assert.equal(result.rfcOpenApi.body.totalCount,0);
 });
+
+test('a long partial network outage is explicitly degraded, never fresh or a hidden auth error',()=>{
+ const now=Date.parse('2026-10-19T00:00:00Z');
+ const partial=[{name:'경주',success:false,transient:true},{name:'부산',success:true}];
+ assert.equal(regionalRefreshStatus(partial,{},now),'degraded');
+ assert.equal(regionalRefreshStatus(partial,{'경주':{checkedAt:'2026-10-13T00:00:00Z'}},now),'degraded');
+ assert.equal(regionalRefreshStatus([{...partial[0],transient:false},partial[1]],{},now),'failure');
+ assert.equal(regionalRefreshStatus([partial[0]],{},now),'failure');
+ assert.equal(regionalRefreshStatus([{name:'경주',success:true}],{},now),'success');
+});

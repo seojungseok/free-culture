@@ -170,8 +170,13 @@ jobs:
           PET: ${{ steps.pet.outcome }}
           PET_DETAILS: ${{ steps.pet_details.outcome }}
           REGIONAL: ${{ steps.regional.outcome }}
+          REGIONAL_STATUS: ${{ steps.regional.outputs.collector_status }}
         run: |
           failed=0
+          if [ "$REGIONAL_STATUS" = "degraded" ]; then
+            echo '::warning::지역 축제 제공기관 부분 장애. 실패 지역의 최신성은 미확인이며 지역 축제 갱신 요약을 확인하세요.'
+            echo '- 지역 축제: 부분 장애 · 기존 자료와 마지막 확인시각 유지' >> "$GITHUB_STEP_SUMMARY"
+          fi
           for name in PARKING PLACES CAMPING RESTAURANTS RESTAURANT_INTRO INTRO INFO CAMPING_IMAGES GALLERY PET PET_DETAILS REGIONAL; do
             outcome="${!name}"
             echo "$name: $outcome"

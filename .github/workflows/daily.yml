@@ -238,6 +238,10 @@ jobs:
           if [ "$REGIONAL_STATUS" = "deferred" ]; then
             echo "지역 축제: 일시 장애로 갱신 연기 · 마지막 확인 정보 유지" >> "$GITHUB_STEP_SUMMARY"
           fi
+          if [ "$REGIONAL_STATUS" = "degraded" ]; then
+            echo '::warning::지역 축제 제공기관 부분 장애. 실패 지역의 최신성은 미확인이며 지역 축제 갱신 요약을 확인하세요.'
+            echo '- 지역 축제: 부분 장애 · 기존 자료와 마지막 확인시각 유지' >> "$GITHUB_STEP_SUMMARY"
+          fi
           if [ "$failed" = "1" ]; then
             echo "::error::API 수집 실패 단계: ${failed_names[*]}. 성공한 데이터와 기존 URL은 보존했습니다."
             exit 1
