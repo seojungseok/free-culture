@@ -1,0 +1,6 @@
+{
+  "timezone": "Asia/Seoul",
+  "newPublicationEnabled": false,
+  "daily": {"당일": 3, "1박2일": 2},
+  "note": "겨울 코스 자동 작성 실험. 실제 원고와 운영 반영을 검증하기 전에는 공개하지 않는다."
+}

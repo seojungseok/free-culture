@@ -1,6 +1,8 @@
 export type SiteNavItem = { href: string; label: string };
 
 export function headerNavigation(seasonLabel: string): { primary: SiteNavItem[]; more: SiteNavItem[] } {
+  // /season is the established autumn page, independent of the current season.
+  void seasonLabel;
   return {
     primary: [
       { href: "/weekend", label: "이번 주말" },
@@ -9,6 +11,7 @@ export function headerNavigation(seasonLabel: string): { primary: SiteNavItem[];
       { href: "/events", label: "문화행사" },
       { href: "/places", label: "나들이" },
       { href: "/course", label: "여행코스" },
+      { href: "/winter-travel", label: "겨울 여행지" },
       { href: "/camping", label: "캠핑" },
       { href: "/weekend-prep", label: "준비 가이드" },
     ],
@@ -18,7 +21,7 @@ export function headerNavigation(seasonLabel: string): { primary: SiteNavItem[];
       { href: "/food", label: "맛집 탐방" },
       { href: "/kids", label: "아이와 함께" },
       { href: "/date", label: "데이트" },
-      { href: "/season", label: `${seasonLabel} 나들이` },
+      { href: "/season", label: "가을나들이" },
     ],
   };
 }

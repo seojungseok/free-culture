@@ -94,7 +94,7 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
           {gallery.length > 3 && <section className="mt-6"><h2 className="text-[18px] font-extrabold text-ink">여행 사진 더 보기</h2><div className="mt-3 grid grid-cols-2 gap-2">{gallery.slice(3, 8).map((src, index) => <img key={src} src={src} alt={`${spot.title} 반려동물 여행 사진 ${index + 4}`} loading="lazy" className="aspect-[4/3] w-full rounded-lg object-cover" />)}</div></section>}
           {address && <p className="mt-5 text-[14px] leading-6 text-ink-soft"><strong className="text-ink">주소</strong><br />{address}</p>}
           {spot.tel && <p className="mt-2 text-[14px] leading-6 text-ink-soft"><strong className="text-ink">전화</strong><br /><a href={`tel:${spot.tel}`} className="text-free">{spot.tel}</a></p>}
-          <nav className="mt-7 flex flex-wrap gap-4 border-t border-line pt-5 text-[13px] font-bold text-free" aria-label="관련 여행 정보"><Link href="/pet-travel">지역별 반려동물 여행지</Link><Link href="/season">계절 나들이</Link><Link href="/camping">캠핑장 동반 조건 확인</Link><Link href="/food">여행지 주변 맛집 찾아보기</Link><Link href="/course">가족 여행코스</Link></nav>
+          <nav className="mt-7 flex flex-wrap gap-4 border-t border-line pt-5 text-[13px] font-bold text-free" aria-label="관련 여행 정보"><Link href="/pet-travel">지역별 반려동물 여행지</Link><Link href="/season">가을나들이</Link><Link href="/camping">캠핑장 동반 조건 확인</Link><Link href="/food">여행지 주변 맛집 찾아보기</Link><Link href="/course">가족 여행코스</Link></nav>
         </div>
       </article>
     </main>

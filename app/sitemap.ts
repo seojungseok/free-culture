@@ -20,6 +20,7 @@ import { hasSubstantiveEventInfo } from "@/lib/eventQuality";
 import { monthRangeYmd, todayYmd } from "@/lib/dates";
 import placeDetailData from '@/data/place-details.json';
 import {latestContentDate} from '@/lib/content-updates.mjs';
+import { getPublicWinterCourses } from '@/lib/winterCourses';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url.replace(/\/$/, "");
@@ -31,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const MAJOR = new Set(["/events", "/festivals", "/places", "/course", "/camping", "/food"]);
   const LOW = new Set(["/about", "/privacy", "/terms", "/contact"]);
   const staticRoutes = [
+    ...(getPublicWinterCourses().length ? ['/winter-travel'] : []),
     ...(getPrepArticles().length ? ['/weekend-prep'] : []),
     ...(getPrepArticles().some(isCookingPrepArticle) ? ['/camping/cooking'] : []),
     "",
@@ -205,6 +207,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // 2) 발행글 있는 상세 (최신 lastmod — 새 글 우선 크롤)
     ...articleSpotRoutes,
     ...courseDetailRoutes,
+    ...getPublicWinterCourses().map(course => ({ url: `${base}/winter-travel/${course.slug}`, lastModified: new Date(course.publishedAt), changeFrequency: 'monthly' as const, priority: 0.6 })),
     ...kidDetailRoutes,
     ...getCityTours().filter(isIndexableCityTour).map(t => ({url: `${base}/city-tour/${t.id}`, lastModified: new Date(t.publishedAt), changeFrequency: "monthly" as const, priority: 0.7})),
     // 3) 대량 롱테일 상세 (낮은 우선순위·가끔)
