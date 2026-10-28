@@ -399,7 +399,7 @@ JSON만 출력: {"result":"PASS 또는 FAIL","reason":"근거 없는 사실 지�
     const { text } = await callGemini(prompt, { apiKey, model });
     const m = String(text || "").match(/\{[\s\S]*\}/);
     const parsed = JSON.parse(m ? m[0] : text);
-    return { result: parsed.result === "FAIL" ? "FAIL" : "PASS", reason: String(parsed.reason || "") };
+    return { result: parsed.result === "PASS" ? "PASS" : parsed.result === "FAIL" ? "FAIL" : "ERROR", reason: String(parsed.reason || "") };
   } catch (e) {
     return { result: "ERROR", reason: String(e instanceof Error ? e.message : e) };
   }

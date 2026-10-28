@@ -8,6 +8,23 @@ export interface VisitFacts {
   season?: string; facilities?: string[];
 }
 const useful = (value?: string) => isUsefulDisplayValue(value) ? value!.trim() : "";
+
+// 시설 원본에는 주차요금과 입장료가 함께 들어올 수 있다. 이름이 명확한
+// 항목만 구분하여 표시하고, 모호한 비용을 입장료로 추정하지 않는다.
+export function placeFacilityFees(items: { name: string; text: string }[]) {
+  const normalized = items.map((item) => ({ ...item, label: item.name.replace(/\s/g, "") }));
+  const pick = (labels: string[]) => {
+    for (const label of labels) {
+      const item = normalized.find((row) => row.label === label && useful(row.text));
+      if (item) return item.text;
+    }
+    return undefined;
+  };
+  return {
+    admission: pick(["입장료", "입장요금", "관람료", "관람요금", "이용료", "이용요금"]),
+    parking: pick(["주차요금", "주차료", "주차비"]),
+  };
+}
 export function visitChecks(facts: VisitFacts): VisitCheck[] {
   const checks: VisitCheck[] = [];
   const hours = useful(facts.hours), closed = useful(facts.closed), season = useful(facts.season);
@@ -27,7 +44,7 @@ export function visitChecks(facts: VisitFacts): VisitCheck[] {
     checks.push({ id: "fee", title: "이용 범위와 요금 확인", detail: useful(facts.fee) ? `요금 안내: ${useful(facts.fee)}` : "세부 요금 안내가 없습니다. 입장과 체험·주차 등의 비용이 별도인지 확인해 주세요." });
     if (useful(facts.reservation)) checks.push({ id: "reservation", title: "예약 조건 확인", detail: `예약 안내: ${useful(facts.reservation)}` });
   }
-  if (useful(facts.parking)) checks.push({ id: "parking", title: "주차 안내와 접근 경로 확인", detail: [`주차 안내: ${useful(facts.parking)}`, useful(facts.parkingFee) && `주차요금: ${useful(facts.parkingFee)}`].filter(Boolean).join(" · ") });
+  if (useful(facts.parking) || useful(facts.parkingFee)) checks.push({ id: "parking", title: "주차 안내와 접근 경로 확인", detail: [useful(facts.parking) && `주차 안내: ${useful(facts.parking)}`, useful(facts.parkingFee) && `주차요금: ${useful(facts.parkingFee)}`].filter(Boolean).join(" · ") });
   if (useful(facts.pet)) checks.push({ id: "pet", title: "반려동물 동반 조건 확인", detail: `동반 안내: ${useful(facts.pet)}. 출입 구역과 추가 조건은 운영처 안내를 확인해 주세요.` });
   else if (useful(facts.stroller)) checks.push({ id: "stroller", title: "유모차 대여 조건 확인", detail: `대여 안내: ${useful(facts.stroller)}. 유모차로 이동할 수 있는 구역을 뜻하는 정보는 아닙니다.` });
   return checks.slice(0, 5);

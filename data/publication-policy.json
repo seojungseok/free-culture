@@ -2,15 +2,15 @@
   "version": 1,
   "timezone": "Asia/Seoul",
   "general": {
-    "mode": "existing-content-review",
-    "newPublicationEnabled": false,
-    "daily": 0,
+    "mode": "reviewed-daily-places",
+    "newPublicationEnabled": true,
+    "daily": 5,
     "categories": {
-      "place-articles": 0,
+      "place-articles": 5,
       "course-articles": 0,
       "city-tour-articles": 0
     }
   },
-  "totalDaily": 0,
-  "notes": "신규 자동 발행은 중지한다. 기존 공개 글은 사실·중복·실용성 점검 후 사람의 편집 확인이 끝난 경우에만 별도 보완한다."
+  "totalDaily": 5,
+  "notes": "한국시간 하루 최대 5개. 공공 원문과 두 검증을 통과하지 못한 후보는 보류한다. 기존 글은 자동 재작성하지 않는다."
 }

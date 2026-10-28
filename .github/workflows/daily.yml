@@ -1,7 +1,6 @@
-name: 일일 최신정보·기존 글 품질 점검 (신규 발행 중지)
+name: 일일 최신정보·검증된 글 최대 5개
 
-# 시간에 민감한 공공 정보는 갱신하되, AdSense 품질 개선 기간에는
-# 새 글을 생성·재생성·발행하지 않는다. 기존 글의 품질 표식만 갱신한다.
+# 공공 정보를 갱신하고 원문 및 두 검증을 통과한 새 관광지 글만 발행한다.
 on:
   schedule:
     - cron: "17 20 * * *" # KST 05:17 예정. 정각 혼잡을 피하되 실제 실행은 지연될 수 있다.
@@ -44,7 +43,7 @@ jobs:
         run: node scripts/report-daily-publication.mjs snapshot
 
       # Dates are refreshed daily; existing place facts gain at most 20 detail
-      # requests on Monday and 100 otherwise. No new AI article is generated or published.
+      # requests on Monday and 100 otherwise.
       - name: 축제 수집 (searchFestival2) — 날짜 있는 정보라 매일 최신화
         id: festivals
         continue-on-error: true
@@ -138,6 +137,20 @@ jobs:
         continue-on-error: true
         run: node scripts/auditPublishedContent.mjs --write
 
+      - name: 공공 원문과 독립 검증을 통과한 관광지 글 (하루 최대 5개)
+        id: new_articles
+        continue-on-error: true
+        timeout-minutes: 35
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+          ARTICLE_DAILY: "5"
+          ARTICLE_RESEARCH: "off"
+          AUTUMN_ARTICLES: "off"
+        run: node scripts/generateArticles.mjs
+
       # ── 자동 코스 조합(좌표 기반, API 0) — 지역×테마×기간 코스 풀 갱신 ──
       - name: 자동 여행코스 조합 (buildCourses)
         continue-on-error: true
@@ -212,6 +225,7 @@ jobs:
           COURSE_STOPS: ${{ steps.course_stops.outcome }}
           COURSE_PLACES: ${{ steps.course_places.outcome }}
           CULTURE_DETAILS: ${{ steps.culture_details.outcome }}
+          NEW_ARTICLES: ${{ steps.new_articles.outcome }}
           FESTIVAL_DETAIL_STATUS: ${{ steps.festival_details.outputs.collector_status }}
           PLACE_DETAIL_STATUS: ${{ steps.details.outputs.collector_status }}
           IMAGE_STATUS: ${{ steps.images.outputs.collector_status }}
@@ -221,7 +235,7 @@ jobs:
         run: |
           failed=0
           failed_names=()
-          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS; do
+          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS NEW_ARTICLES; do
             outcome="${!name}"
             echo "$name: $outcome"
             if [ "$outcome" = "failure" ]; then

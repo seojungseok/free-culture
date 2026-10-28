@@ -15,7 +15,7 @@ export type HomeItem = { id: string; href: string; title: string; meta: string; 
 type Props = { regional: Record<string, HomeItem[]>; eventItems: HomeItem[]; freeItems: HomeItem[]; kidItems: HomeItem[]; dateItems: HomeItem[]; campItems: HomeItem[]; courseItems: HomeItem[]; seasonItems: HomeItem[]; prepItems: HomeItem[]; placeItems: HomeItem[]; newItems: HomeItem[]; regions: { name: string; href: string }[]; siteName: string };
 const savedKey = SAVED_KEY;
 const regionalAreas: Record<string, string[]> = { 충청: ["충북", "충남", "대전", "세종"], 경상: ["경북", "경남", "부산", "대구", "울산"], 전라: ["전북", "전남", "광주"], 전국: [] };
-const categories = [["🎭", "문화행사", "/events"], ["🌿", "나들이", "/places"], ["🗺️", "여행코스", "/course"], ["🚌", "시티투어", "/city-tour"], ["⛺", "캠핑", "/camping"], ["🍽️", "맛집탐방", "/food"], ["🐾", "반려동물 여행", "/pet-travel"], ["👨‍👩‍👧", "아이와 함께", "/kids"], ["💛", "데이트", "/date"], ["🍂", "가을나들이", "/season"], ["🧺", "준비 가이드", "/weekend-prep"]];
+const categories = [["🎭", "문화행사", "/events"], ["🌿", "나들이", "/places"], ["🗺️", "여행코스", "/course"], ["🚌", "시티투어", "/city-tour"], ["⛺", "캠핑", "/camping"], ["🍽️", "맛집탐방", "/food"], ["🐾", "반려동물 여행", "/pet-travel"], ["👨‍👩‍👧", "아이와 함께", "/kids"], ["💛", "데이트", "/date"], ["🌱", "계절 나들이", "/season"], ["🧺", "준비 가이드", "/weekend-prep"]];
 
 export default function HomeExplorer({ regional, eventItems, freeItems, kidItems, dateItems, campItems, courseItems, seasonItems, prepItems, placeItems, newItems, regions, siteName }: Props) {
   const day = useRenderDay();

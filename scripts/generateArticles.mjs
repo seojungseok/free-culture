@@ -1,13 +1,13 @@
 import { newArticleAllowance } from './lib/publication-budget.mjs';
 import { isNewPublicationEnabled, publicationMode } from './lib/publication-policy.mjs';
+import { cachedOverview, withUsableOverview } from './lib/article-source.mjs';
 // 글 자동 생성·발행 (GitHub Action이 매일 실행)
 // 주=OpenAI(gpt-5.6-luna)가 생성·개선, 보조=Gemini가 독립 팩트체크(환각 교차검증).
-// 파이프라인: [주]Luna 생성 → 로컬 품질검사 → 로컬 패턴검사 → [주]Luna 검증·개선
-//            → [보조]Gemini 팩트체크 → 둘 다 통과분만 자동 발행(published).
-// 계속 실패하면 "원본 최소가공 안전버전"으로 발행, 그것도 실패면 스킵(로그).
+// 파이프라인: 공공 원문 → 로컬 품질·패턴 검사 → 주 검증 및 독립 검증.
+// 어느 검증이라도 통과하지 못하거나 오류·키 누락이면 발행하지 않는다.
 //
 // 실행: node scripts/generateArticles.mjs
-// 필요: OPENAI_API_KEY(주, 필수), GEMINI_API_KEY(보조 팩트체크, 없으면 건너뜀), DATA_GO_KR_KEY(또는 TOUR_API_KEY)
+// 필요: OPENAI_API_KEY, GEMINI_API_KEY. 공개 API 원문은 저장된 캐시만 사용한다.
 // 모델: OPENAI_MODEL(GitHub repo Variables/워크플로에서 지정, 없으면 gpt-5.6-luna)
 
 import fs from "node:fs";
@@ -192,21 +192,10 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
       let finalText;
       if (v.result === "PASS") {
         finalText = v.improved || draft;
-      } else if (v.result === "FAIL") {
-        // 완화: 검증 실패해도 곧바로 버리지 않고, 근거 없는 표현만 잘라내 로컬검사 통과 시 진행
-        //  (뒤에 Gemini 독립 팩트체크가 최종 안전망 → 환각은 여전히 차단)
-        const s = sanitizeUnsupported(draft, grounds);
-        if (s.text && qualityCheck(s.text, { overview }).ok && patternCheck(s.text, grounds).ok) {
-          log(`시도${attempt} 검증 FAIL → 근거없는 표현 ${s.removed}곳 제거 후 진행`);
-          finalText = s.text;
-        } else {
-          log(`시도${attempt} 검증 FAIL: ${v.reason}`);
-          retryHint = `직전 시도가 검증에서 "${String(v.reason).slice(0, 80)}" 사유로 반려됐어요. 근거에 없는 사실을 빼고 다시 쓰세요.`;
-          await sleep(1000); continue;
-        }
-      } else { // ERROR — 검증기 오류는 로컬검사 통과한 draft로 진행(Gemini가 최종 확인)
-        log(`시도${attempt} 검증오류(무시하고 진행): ${v.reason}`);
-        finalText = draft;
+      } else {
+        log(`시도${attempt} 주 검증 미통과: ${v.result}`);
+        retryHint = "근거에 없는 사실을 빼고 다시 쓰세요.";
+        await sleep(1000); continue;
       }
       const q2 = qualityCheck(finalText, { overview });
       const p2 = patternCheck(finalText, grounds);
@@ -217,16 +206,12 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
       }
 
       // [보조] Gemini 독립 팩트체크 — 주 모델(Luna)과 다른 모델로 환각 최종 교차검증. FAIL이면 재시도.
-      let gemini = GEMINI ? "?" : "OFF";
-      if (GEMINI) {
-        const fc = await factCheckGemini(finalText, { apiKey: GEMINI, overview, facts: verifyFacts });
-        gemini = fc.result; // PASS / FAIL / ERROR / SKIP
-        if (fc.result === "FAIL") {
-          log(`시도${attempt} Gemini 팩트체크 FAIL: ${fc.reason.slice(0, 120)}`);
-          retryHint = `직전 시도가 교차검증에서 반려됐어요(${fc.reason.slice(0, 60)}). 근거에 없는 사실을 빼세요.`;
-          await sleep(1000); continue;
-        }
-        if (fc.result === "ERROR") log(`시도${attempt} Gemini 팩트체크 오류(무시): ${fc.reason.slice(0, 80)}`);
+      finalText = applyAdmission(finalText, place.id);
+      const fc = await factCheckGemini(finalText, { apiKey: GEMINI, overview, facts: verifyFacts });
+      const gemini = fc.result;
+      if (gemini !== "PASS") {
+        log(`시도${attempt} 독립 팩트체크 미통과: ${gemini}`);
+        await sleep(1000); continue;
       }
 
       const fin = qualityCheck(finalText, {});
@@ -237,18 +222,7 @@ async function produceArticle(place, overview, existingTexts, extras = {}) {
     }
   }
 
-  // 폴백: 원본 최소 가공 (안전 바닥) — minimalMode로 "원본 과유사" 검사 면제 + 근거없는 표현은 정제
-  try {
-    const raw = await gen(buildMinimalPrompt(place, overview));
-    if (!raw) { log("최소가공 OpenAI 빈 응답"); return { art: null, reasons }; }
-    const text = sanitizeUnsupported(raw, overview).text || raw;
-    const q = qualityCheck(text, { overview, existingTexts, minimalMode: true, title: place.title });
-    const p = patternCheck(text, overview);
-    if (q.ok && p.ok) return { art: { text, len: q.len, mode: "minimal", verify: "MINIMAL", gemini: "SKIP(minimal)" }, reasons };
-    log(`최소가공 반려: ${q.ok ? p.reason : q.reason}`);
-  } catch (e) {
-    log(`최소가공 오류: ${e.message}`);
-  }
+  // 검증할 수 없는 대체 원고는 발행하지 않는다.
   return { art: null, reasons };
 }
 
@@ -257,13 +231,13 @@ async function main() {
     console.log(`신규 자동 발행 중지 상태(${publicationMode(ROOT)}) — 기존 글은 품질 점검 및 편집 검토만 진행합니다.`);
     return;
   }
-  const places = JSON.parse(fs.readFileSync(PLACES, "utf8")).spots;
+  const places = withUsableOverview(JSON.parse(fs.readFileSync(PLACES, "utf8")).spots, OVERVIEW_CACHE, MIN_OVERVIEW);
   const store = fs.existsSync(STORE)
     ? JSON.parse(fs.readFileSync(STORE, "utf8"))
     : { startDate: "2026-07-27", generatedAt: null, articles: {} };
   store.articles ||= {};
 
-  if (!OPENAI) { console.error("❌ OPENAI_API_KEY 없음 — 생성·검증 모두 OpenAI. 키 필수."); process.exit(1); }
+  if (!OPENAI || !GEMINI) { console.error("❌ 생성 또는 독립 검증 키 없음 — 발행 보류."); process.exit(1); }
 
   // TEST_IDS: 지정 장소만 생성(딜쿠샤 등 콕 집어 테스트). 있으면 큐/램프업 무시.
   const testIds = (process.env.TEST_IDS || "").split(",").map((s) => s.trim()).filter(Boolean);
@@ -303,7 +277,7 @@ async function main() {
         return Boolean(article?.needsRewrite);
       })
       .sort((a, b) => (store.articles[b].rewriteScore || 0) - (store.articles[a].rewriteScore || 0));
-    for (const id of rwIds.slice(0,4)) items.push({ place: byId.get(id), mode: "rewrite" });
+    // Existing published content is preserved by the daily writer.
     const rw = items.length;
     if (AUTUMN_ARTICLES) {
       const autumnNew = places
@@ -323,10 +297,18 @@ async function main() {
   const report = []; // 진단: 각 후보 결과를 저장소에 남겨 로그 없이도 원인 파악
 
   let siteNewRemaining = newArticleAllowance(ROOT,'place-articles');
+  let attempted = 0;
+  const maxAttempts = Math.max(0, Math.min(10, target * 2));
   for (const { place, mode } of items) {
-    if (mode === "new") { if (siteNewRemaining <= 0) continue; siteNewRemaining--; }
+    if (mode !== "new") continue;
+    if (mode === "new" && siteNewRemaining <= 0) continue;
     if (mode === "new" && newPub >= target) continue;
-    const { overview, err } = await fetchOverview(place.id);
+    if (attempted >= maxAttempts) break;
+    attempted++;
+    // The daily collectors already have a shared API budget. Do not make
+    // additional unaccounted TourAPI requests from the writer.
+    const overview = cachedOverview(OVERVIEW_CACHE, place.id);
+    const err = overview ? "" : "저장된 공공 원문 없음";
     // 주변 맥락(맛집·근처 명소·코스·진행중 행사) — 전부 로컬 JSON, API 호출 0회·추가비용 0원.
     const lc = buildLocalContext(place);
     const extras = { intro: INTRO_CACHE[place.id], info: INFO_CACHE[place.id], local: lc.text };
@@ -336,12 +318,11 @@ async function main() {
 
     // 원본 빈약 + 2단계 데이터도 없음 → 일반 모드는 스킵.
     // 가을 전용 모드는 검색 근거를 먼저 확보해 대표 가을글이 빈손으로 빠지지 않게 한다.
-    if (!AUTUMN_ARTICLES && overview.length < MIN_OVERVIEW && !hasFacts) {
+    if (overview.length < MIN_OVERVIEW) {
       if (mode === "rewrite") {
-        delete store.articles[place.id];
-        removed++; made++;
-        report.push({ id: place.id, title: place.title, outcome: "removed→infocard", reason: `원본 ${overview.length}자·새데이터 없음` });
-        console.log(`  🗑  정보카드 전환(삭제): ${place.title}`);
+        skipped++;
+        report.push({ id: place.id, title: place.title, outcome: "keep-existing", reason: `원본 ${overview.length}자·새데이터 없음` });
+        console.log(`  ↩ 기존 글 유지(자료 부족): ${place.title}`);
       } else {
         skipped++;
         report.push({ id: place.id, title: place.title, outcome: "skip", reason: `원본 ${overview.length}자(<${MIN_OVERVIEW})${err ? " · " + err : ""}` });
@@ -437,7 +418,7 @@ async function main() {
       type: place.type,
       typeLabel: tourTypeLabel(place.type),
       title: place.title,
-      content: applyAdmission(art.text, place.id),
+      content: art.text,
       sources: extras.sources || [], // 웹 검색 근거의 공식 출처 URL (글 하단 표기)
       model: MODEL,
       verify: art.verify, // 주 Luna 검증: PASS / SKIP / MINIMAL
@@ -446,7 +427,7 @@ async function main() {
       length: art.len,
     };
     made++;
-    if (mode === "rewrite") rewritten++; else { newPub++; existingTexts.push(art.text); }
+    if (mode === "rewrite") rewritten++; else { newPub++; siteNewRemaining--; existingTexts.push(art.text); }
     report.push({ id: place.id, title: place.title, outcome: mode === "rewrite" ? "rewritten" : "published", detail: `${art.mode}/Luna:${art.verify}/G:${art.gemini}/${art.len}자`, overviewLen: overview.length, research: researchNote, local: `맛집${lc.counts.food}/명소${lc.counts.spots}/코스${lc.counts.courses}/행사${lc.counts.events}` });
     console.log(`  ${mode === "rewrite" ? "♻ 재작성" : "✓ 발행"} ${made}/${target}: ${place.title} (${art.len}자, ${art.mode}, Luna검증 ${art.verify}, Gemini ${art.gemini})`);
     await sleep(1000);
@@ -467,9 +448,9 @@ async function main() {
     console.log(`   🔎 신규 검색 ${searched}회(상한 ${RESEARCH_MAX}) · 검색요금 약 $${(searched * 0.01).toFixed(2)} · 누적 캐시 ${cachedTotal}곳`);
   }
 
-  const keyFp = TOURKEY ? `${TOURKEY.slice(0, 6)}...${TOURKEY.slice(-4)} (${TOURKEY.length}자)` : "❌비어있음(secret 못 읽음)";
+  const keyStatus = TOURKEY ? "configured" : "missing";
   store.generatedAt = new Date().toISOString();
-  store._lastRun = { at: new Date().toISOString(), newPub, rewritten, removed, skipped, keyFp, usage: { ...usageTotal, newSearches: searched, searchFeeUsd: Number((searched * 0.01).toFixed(3)), costUsd: Number(cost.toFixed(4)), totalUsd: Number((cost + searched * 0.01).toFixed(4)), perArticleUsd: Number(per.toFixed(5)) }, results: report }; // 진단용
+  store._lastRun = { at: new Date().toISOString(), newPub, rewritten, removed, skipped, keyStatus, usage: { ...usageTotal, newSearches: searched, searchFeeUsd: Number((searched * 0.01).toFixed(3)), costUsd: Number(cost.toFixed(4)), totalUsd: Number((cost + searched * 0.01).toFixed(4)), perArticleUsd: Number(per.toFixed(5)) }, results: report }; // 진단용
   fs.writeFileSync(STORE, JSON.stringify(store, null, 0));
   const pub = Object.values(store.articles).filter((a) => a.status === "published").length;
   console.log(`\n💾 저장: 신규 ${newPub} · 재작성 ${rewritten} · 정보카드전환 ${removed} · 스킵 ${skipped} | 총 발행 ${pub}\n`);

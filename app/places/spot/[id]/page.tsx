@@ -1,7 +1,7 @@
 import NextStop from "@/components/NextStop";
 import VisitChecklist from "@/components/VisitChecklist";
 import SourceNote from "@/components/SourceNote";
-import { visitChecks } from "@/lib/visitPlanning";
+import { placeFacilityFees, visitChecks } from "@/lib/visitPlanning";
 import { visitInfoDates } from "@/lib/tourExtra";
 import placeData from "@/data/places.json";
 import NearbyParking from "@/components/NearbyParking";
@@ -146,10 +146,11 @@ export default async function SpotDetailPage({
   const overview = detail.overview;
   const homepage = detail.homepage;
   const tel = detail.tel || spot.tel;
+  const facilityFees = placeFacilityFees(facilities);
   const plan = visitChecks({
     kind: "place", hours: cachedIntro?.usetime, closed: cachedIntro?.restdate,
-    fee: cachedIntro?.fee || facilities.find((f) => /이용료|입장료|요금/.test(f.name))?.text,
-    parking: cachedIntro?.parking, parkingFee: cachedIntro?.parkingfee,
+    fee: cachedIntro?.fee || facilityFees.admission,
+    parking: cachedIntro?.parking, parkingFee: cachedIntro?.parkingfee || facilityFees.parking,
     reservation: cachedIntro?.reservation || facilities.find((f) => /예약/.test(f.name))?.text,
     pet: cachedIntro?.pet, stroller: cachedIntro?.babycarriage, season: cachedIntro?.openperiod,
   });

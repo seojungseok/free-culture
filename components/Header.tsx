@@ -1,13 +1,11 @@
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import BackButton from "./BackButton";
-import HeaderNav from "./HeaderNav";
+import HeaderNav, { MobileHeaderNav } from "./HeaderNav";
 import { season } from "@/lib/finder";
-import { headerNavigation } from "@/lib/siteNavigation";
 
 export default function Header() {
   const s = season();
-  const navigation = headerNavigation(s.label);
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex h-[56px] w-full max-w-[1180px] items-center gap-1 px-3 sm:h-[70px] sm:gap-3 sm:px-6 lg:px-8">
@@ -40,23 +38,7 @@ export default function Header() {
             <path d="m21 21-4.3-4.3" />
           </svg>
         </Link>
-        <details className="group relative lg:hidden">
-          <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full text-[#07152f] transition hover:bg-tint [&::-webkit-details-marker]:hidden">
-            <span className="sr-only">메뉴</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-9 w-9">
-              <path d="M4 7h16" />
-              <path d="M4 12h16" />
-              <path d="M4 17h16" />
-            </svg>
-          </summary>
-          <div className="absolute right-0 top-[calc(100%+10px)] w-[220px] max-h-[80dvh] overflow-y-auto rounded-2xl border border-line bg-white p-2 shadow-lg">
-            {[...navigation.primary, ...navigation.more].map((item) => (
-              <Link key={item.href} href={item.href} className="block rounded-xl px-3 py-2.5 text-[14px] font-bold text-ink-soft hover:bg-tint hover:text-brandblue">
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </details>
+        <MobileHeaderNav seasonLabel={s.label} />
       </div>
     </header>
   );

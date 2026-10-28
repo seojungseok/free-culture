@@ -6,7 +6,7 @@ function readPolicy(root) {
   try {
     return JSON.parse(fs.readFileSync(file, "utf8"));
   } catch {
-    return { general: { daily: 30, categories: {} } };
+    return { general: { daily: 0, categories: {}, newPublicationEnabled: false } };
   }
 }
 
@@ -16,7 +16,7 @@ function readPolicy(root) {
  * cannot accidentally resume new public pages while editorial review is on.
  */
 export function isNewPublicationEnabled(root = process.cwd()) {
-  return readPolicy(root).general?.newPublicationEnabled !== false;
+  return readPolicy(root).general?.newPublicationEnabled === true;
 }
 
 export function publicationMode(root = process.cwd()) {
