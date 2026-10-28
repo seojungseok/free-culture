@@ -33,7 +33,7 @@ jobs:
           node --test scripts/lib/tourClient.test.mjs scripts/lib/regionalRequest.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs scripts/site-optimization.test.mjs scripts/nas/smoke.test.mjs
           node scripts/test-tour-detail-fallback.cjs
           node --test scripts/enrichCourseStops.test.mjs scripts/enrichCoursePlaces.test.mjs scripts/enrichCultureEvents.test.mjs
-          node --test scripts/winter-course.test.mjs scripts/winter-public-display.test.mjs scripts/lib/winter-evidence.test.mjs scripts/winter-photo.test.mjs
+          node --test scripts/winter-course.test.mjs scripts/winter-public-display.test.mjs scripts/lib/winter-evidence.test.mjs scripts/winter-photo.test.mjs scripts/winter-publication.test.mjs
           node scripts/test-course-planning.cjs
 
       - name: 일일 공공 API 예산 (월요일은 주간 수집분 예약)
@@ -152,7 +152,13 @@ jobs:
           AUTUMN_ARTICLES: "off"
         run: node scripts/generateArticles.mjs
 
-      - name: 겨울 여행코스 초안 생성 (당일 3개·1박2일 2개 목표)
+      - name: 겨울 장소 공식 자료 확인
+        id: winter_evidence
+        continue-on-error: true
+        timeout-minutes: 3
+        run: node scripts/refresh-winter-evidence.mjs
+
+      - name: 겨울 여행코스 작성·공개 (당일 3개·1박2일 2개 목표)
         id: winter_drafts
         continue-on-error: true
         timeout-minutes: 5
@@ -190,7 +196,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/winter-courses.json data/winter-budget.json data/events.json data/events-archive.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
+          git add data/winter-courses.json data/winter-budget.json data/winter-place-verifications.json data/events.json data/events-archive.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
                   data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json data/place-details.json \
                   data/pet-travel.json data/city-tour-articles.json data/course-stop-checks.json data/course-place-details.json data/event-source-details.json
           if git diff --staged --quiet; then
@@ -237,6 +243,7 @@ jobs:
           CULTURE_DETAILS: ${{ steps.culture_details.outcome }}
           NEW_ARTICLES: ${{ steps.new_articles.outcome }}
           WINTER_DRAFTS: ${{ steps.winter_drafts.outcome }}
+          WINTER_EVIDENCE: ${{ steps.winter_evidence.outcome }}
           FESTIVAL_DETAIL_STATUS: ${{ steps.festival_details.outputs.collector_status }}
           PLACE_DETAIL_STATUS: ${{ steps.details.outputs.collector_status }}
           IMAGE_STATUS: ${{ steps.images.outputs.collector_status }}
@@ -246,7 +253,7 @@ jobs:
         run: |
           failed=0
           failed_names=()
-          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS NEW_ARTICLES WINTER_DRAFTS; do
+          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS NEW_ARTICLES WINTER_DRAFTS WINTER_EVIDENCE; do
             outcome="${!name}"
             echo "$name: $outcome"
             if [ "$outcome" = "failure" ]; then

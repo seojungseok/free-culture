@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-28T12:49:49.711Z",
+  "updatedAt": "2026-10-28T13:32:56.556Z",
   "courses": [
     {
       "id": "winter-074dd08aa0b45b",
@@ -1034,6 +1034,663 @@
         }
       ],
       "holdReason": "겨울 이동·방문 적합성 추가 확인 필요"
+    },
+    {
+      "id": "winter-477aff711a3e97",
+      "slug": "seoul-bukchon-winter-daytrip",
+      "title": "서울 겨울 당일치기 여행코스 · 북촌전통공예체험관에서 백인제가옥까지",
+      "duration": "당일",
+      "area": "서울",
+      "sourceCourseId": "seoul-family-day-ervk2g",
+      "stops": [
+        {
+          "placeId": "2993183",
+          "name": "북촌전통공예체험관",
+          "addr": "서울특별시 종로구 북촌로12길 24-5 (가회동)",
+          "mapx": "126.9861254303",
+          "mapy": "37.5824719752",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/57/3540857_image2_1.jpg",
+          "kind": "관광지",
+          "day": 1,
+          "officialUrl": "https://hanok.seoul.go.kr/front/util/bcgTour03.do?lang=KOR"
+        },
+        {
+          "placeId": "130446",
+          "name": "가회민화박물관",
+          "addr": "서울특별시 종로구 북촌로 52 (가회동)",
+          "mapx": "126.9852783115",
+          "mapy": "37.5815442900",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/90/3355090_image2_1.png",
+          "kind": "문화시설",
+          "day": 1,
+          "officialUrl": "https://www.gahoemuseum.org/"
+        },
+        {
+          "placeId": "2481866",
+          "name": "백인제가옥",
+          "addr": "서울특별시 종로구 북촌로7길 16 (가회동)",
+          "mapx": "126.9841423343",
+          "mapy": "37.5804693948",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/92/3096392_image2_1.jpg",
+          "kind": "관광지",
+          "day": 1,
+          "officialUrl": "https://museum.seoul.go.kr/www/guide/vis/BIJHShow/BIJHIntro.jsp?sso=ok"
+        }
+      ],
+      "intro": "서울에서 겨울에 둘러볼 장소를 묶은 여행 계획입니다: 북촌전통공예체험관, 가회민화박물관, 백인제가옥. 날씨와 각 장소의 안내에 맞춰 순서를 조절해 보세요.",
+      "sections": [
+        {
+          "heading": "방문 순서",
+          "paragraphs": [
+            "북촌전통공예체험관 → 가회민화박물관 → 백인제가옥 순서로 둘러보는 일정입니다. 방문 순서는 교통편과 날씨에 맞춰 조정하세요.",
+            "출발 전 지도에서 실제 이동 경로와 교통편을 확인하세요."
+          ]
+        },
+        {
+          "heading": "북촌전통공예체험관",
+          "paragraphs": [
+            "서울시가 북촌의 공공한옥 시설로 안내하는 전통공예 공간입니다.",
+            "공예를 주제로 한 공공한옥이므로 관람과 체험 중 원하는 방식의 안내를 먼저 살펴보세요.",
+            "실내 공간을 일정에 넣고 체험 가능 여부는 방문 전에 확인하세요.",
+            "첫 방문 후보인 북촌전통공예체험관부터 살펴보고 동행자의 관심사에 맞춰 이 날의 일정을 시작해 보세요."
+          ]
+        },
+        {
+          "heading": "가회민화박물관",
+          "paragraphs": [
+            "북촌로에 자리한 민화 전문 박물관입니다.",
+            "민화와 부적 관련 자료를 소개하는 박물관이므로 전시 주제를 확인해 보세요.",
+            "추운 날에는 실내 전시를 중심으로 일정을 짜고 관람 가능 여부를 확인하세요.",
+            "앞서 살펴본 북촌전통공예체험관 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "백인제가옥",
+          "paragraphs": [
+            "북촌 가회동에 자리한 근대 한옥으로 사랑채와 안채가 연결돼 있습니다.",
+            "사랑채와 안채가 이어지는 한옥 구조를 살펴보고 관람 가능한 공간을 확인하세요.",
+            "한옥과 정원 관람은 겨울 날씨와 현장 개방 범위를 확인해 조절하세요.",
+            "앞서 살펴본 가회민화박물관 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "겨울 방문 전 확인",
+          "paragraphs": [
+            "출발 전 각 장소의 공식 안내에서 운영일과 예약·요금을 확인하고, 날씨와 도로 상황도 살펴보세요. 기상이 나쁘면 야외 일정은 조정하거나 생략하세요."
+          ]
+        }
+      ],
+      "status": "published",
+      "createdAt": "2026-10-28T13:22:18.708Z",
+      "validation": {
+        "version": 1,
+        "checkedAt": "2026-10-28T13:32:56.554Z",
+        "sourceKind": "cached-tour-data",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text"
+        ],
+        "needsEditorialReview": false,
+        "routeBasis": "내부 코스의 좌표 및 각 장소의 검증 기록을 대조했습니다. 실제 도로와 운영은 출발 전 확인이 필요합니다."
+      },
+      "sources": [
+        {
+          "title": "북촌전통공예체험관 공식 안내",
+          "url": "https://hanok.seoul.go.kr/front/util/bcgTour03.do?lang=KOR",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "가회민화박물관 공식 안내",
+          "url": "https://www.gahoemuseum.org/",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "백인제가옥 공식 안내",
+          "url": "https://museum.seoul.go.kr/www/guide/vis/BIJHShow/BIJHIntro.jsp?sso=ok",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        }
+      ],
+      "publishedAt": "2026-10-28T13:32:56.554Z"
+    },
+    {
+      "id": "winter-13ef404a9447a2",
+      "slug": "busan-dongbaek-winter-daytrip",
+      "title": "부산 겨울 당일치기 여행코스 · 누리마루 APEC하우스에서 씨라이프부산아쿠아리움까지",
+      "duration": "당일",
+      "area": "부산",
+      "sourceCourseId": "busan-family-day-mnyk49",
+      "stops": [
+        {
+          "placeId": "1918263",
+          "name": "누리마루 APEC하우스",
+          "addr": "부산광역시 해운대구 동백로 116",
+          "mapx": "129.1513116443",
+          "mapy": "35.1523943787",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/20/3334420_image2_1.jpg",
+          "kind": "문화시설",
+          "day": 1,
+          "officialUrl": "https://www.busan.go.kr/nurimaru/Design/sub0201.jsp"
+        },
+        {
+          "placeId": "128810",
+          "name": "동백공원",
+          "addr": "부산광역시 해운대구 동백로 99 (우동)",
+          "mapx": "129.1523226328",
+          "mapy": "35.1536609221",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/62/3575962_image2_1.jpg",
+          "kind": "관광지",
+          "day": 1,
+          "officialUrl": "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=b2145d67-505f-4235-8876-62c8ec83ddbe"
+        },
+        {
+          "placeId": "229912",
+          "name": "씨라이프부산아쿠아리움",
+          "addr": "부산광역시 해운대구 해운대해변로 266",
+          "mapx": "129.1610328343",
+          "mapy": "35.1591965750",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/09/3020609_image2_1.jpg",
+          "kind": "관광지",
+          "day": 1,
+          "officialUrl": "https://www.visitsealife.com/busan/plan-your-visit/before-you-visit/directions-parking/"
+        }
+      ],
+      "intro": "부산에서 겨울에 둘러볼 장소를 묶은 여행 계획입니다: 누리마루 APEC하우스, 동백공원, 씨라이프부산아쿠아리움. 날씨와 각 장소의 안내에 맞춰 순서를 조절해 보세요.",
+      "sections": [
+        {
+          "heading": "방문 순서",
+          "paragraphs": [
+            "누리마루 APEC하우스 → 동백공원 → 씨라이프부산아쿠아리움 순서로 둘러보는 일정입니다. 방문 순서는 교통편과 날씨에 맞춰 조정하세요.",
+            "누리마루 APEC하우스는 동백공원 권역에 있어 공원 산책과 함께 둘러볼 수 있습니다.",
+            "출발 전 지도에서 실제 이동 경로와 교통편을 확인하세요."
+          ]
+        },
+        {
+          "heading": "누리마루 APEC하우스",
+          "paragraphs": [
+            "부산시가 관리하는 동백공원 안의 APEC 정상회의 기념 공간입니다.",
+            "정상회의 장소의 건축과 기념 전시를 중심으로 둘러볼 수 있습니다.",
+            "해안 산책과 실내 관람을 조합하되 행사와 관람 가능 여부를 확인하세요.",
+            "첫 방문 후보인 누리마루 APEC하우스부터 살펴보고 동행자의 관심사에 맞춰 이 날의 일정을 시작해 보세요."
+          ]
+        },
+        {
+          "heading": "동백공원",
+          "paragraphs": [
+            "누리마루 APEC하우스와 이어지는 해운대 해안 공원입니다.",
+            "누리마루가 같은 공원에 있으므로 두 지점을 하나의 산책 구간으로 묶어 보세요.",
+            "바닷바람이 강하거나 길이 미끄러우면 야외 걷기를 줄이세요.",
+            "앞서 살펴본 누리마루 APEC하우스 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "씨라이프부산아쿠아리움",
+          "paragraphs": [
+            "해운대해변로에 자리한 실내 해양 생물 전시 시설입니다.",
+            "해양 생물에 관한 전시 안내를 살펴보고 관심 있는 구역을 골라보세요.",
+            "야외 활동이 어려운 겨울날 실내 관람 후보로 두고 관람 조건을 확인하세요.",
+            "앞서 살펴본 동백공원 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "겨울 방문 전 확인",
+          "paragraphs": [
+            "출발 전 각 장소의 공식 안내에서 운영일과 예약·요금을 확인하고, 날씨와 도로 상황도 살펴보세요. 기상이 나쁘면 야외 일정은 조정하거나 생략하세요."
+          ]
+        }
+      ],
+      "status": "published",
+      "createdAt": "2026-10-28T13:22:18.709Z",
+      "validation": {
+        "version": 1,
+        "checkedAt": "2026-10-28T13:32:56.555Z",
+        "sourceKind": "cached-tour-data",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text"
+        ],
+        "needsEditorialReview": false,
+        "routeBasis": "내부 코스의 좌표 및 각 장소의 검증 기록을 대조했습니다. 실제 도로와 운영은 출발 전 확인이 필요합니다."
+      },
+      "sources": [
+        {
+          "title": "누리마루 APEC하우스 공식 안내",
+          "url": "https://www.busan.go.kr/nurimaru/Design/sub0201.jsp",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "동백공원 공식 안내",
+          "url": "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=b2145d67-505f-4235-8876-62c8ec83ddbe",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "씨라이프부산아쿠아리움 공식 안내",
+          "url": "https://www.visitsealife.com/busan/plan-your-visit/before-you-visit/directions-parking/",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        }
+      ],
+      "publishedAt": "2026-10-28T13:32:56.555Z"
+    },
+    {
+      "id": "winter-9b9777a8fcb70d",
+      "slug": "seoul-history-winter-1n2d",
+      "title": "서울 겨울 1박 2일 여행코스 · 경희궁 흥화문에서 청계광장까지",
+      "duration": "1박2일",
+      "area": "서울",
+      "sourceCourseId": "seoul-heritage-1n2d-cfrk65",
+      "stops": [
+        {
+          "placeId": "1604784",
+          "name": "경희궁 흥화문",
+          "addr": "서울특별시 종로구 새문안로 55 (신문로2가)",
+          "mapx": "126.9707771853",
+          "mapy": "37.5698981615",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/55/3384855_image2_1.JPG",
+          "kind": "관광지",
+          "day": 1,
+          "officialUrl": "https://museum.seoul.go.kr/www/intro/annexIntro/annex_20/annex_20_04.jsp?sso=ok"
+        },
+        {
+          "placeId": "1604824",
+          "name": "경희궁공원",
+          "addr": "서울특별시 종로구 새문안로 55 (신문로2가)",
+          "mapx": "126.9707771853",
+          "mapy": "37.5698981615",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/98/3531398_image2_1.jpg",
+          "kind": "관광지",
+          "day": 1,
+          "officialUrl": "https://museum.seoul.go.kr/www/intro/annexIntro/annex_20/annex_20_02.jsp?sso=ok"
+        },
+        {
+          "placeId": "130361",
+          "name": "서울역사박물관",
+          "addr": "서울특별시 종로구 새문안로 55 (신문로2가)",
+          "mapx": "126.9707771853",
+          "mapy": "37.5698981615",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/87/2661487_image2_1.JPG",
+          "kind": "문화시설",
+          "day": 1,
+          "officialUrl": "https://museum.seoul.go.kr/chd/watch/watchGuideMap.jsp"
+        },
+        {
+          "placeId": "2778454",
+          "name": "정동길",
+          "addr": "서울특별시 중구 정동",
+          "mapx": "126.9696134574",
+          "mapy": "37.5679539218",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/80/2795180_image2_1.jpg",
+          "kind": "레포츠 시설",
+          "day": 2,
+          "officialUrl": "https://mediahub.seoul.go.kr/archives/2019537"
+        },
+        {
+          "placeId": "129186",
+          "name": "덕수궁 돌담길",
+          "addr": "서울특별시 중구 세종대로 지하 101",
+          "mapx": "126.9748935853",
+          "mapy": "37.5660820124",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/50/2658350_image2_1.jpg",
+          "kind": "관광지",
+          "day": 2,
+          "officialUrl": "https://mediahub.seoul.go.kr/archives/2019537"
+        },
+        {
+          "placeId": "2765510",
+          "name": "청계광장",
+          "addr": "서울특별시 중구 태평로1가",
+          "mapx": "126.9775154812",
+          "mapy": "37.5691539240",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/55/3385055_image2_1.JPG",
+          "kind": "관광지",
+          "day": 2,
+          "officialUrl": "https://www.sisul.or.kr/open_content/cheonggye/enjoy/guide.jsp?bridge=gwangjang"
+        }
+      ],
+      "intro": "서울에서 겨울에 둘러볼 장소를 묶은 여행 계획입니다: 경희궁 흥화문, 경희궁공원, 서울역사박물관, 정동길, 덕수궁 돌담길, 청계광장. 날씨와 각 장소의 안내에 맞춰 순서를 조절해 보세요.",
+      "sections": [
+        {
+          "heading": "1일 차 방문 순서",
+          "paragraphs": [
+            "경희궁 흥화문 → 경희궁공원 → 서울역사박물관 순서로 둘러보는 일정입니다. 방문 순서는 교통편과 날씨에 맞춰 조정하세요.",
+            "흥화문과 경희궁공원은 같은 경희궁 권역이므로 따로 먼 곳을 이동하는 일정이 아닙니다.",
+            "출발 전 지도에서 실제 이동 경로와 교통편을 확인하세요."
+          ]
+        },
+        {
+          "heading": "경희궁 흥화문",
+          "paragraphs": [
+            "흥화문은 경희궁의 정문으로 복원된 문화유산입니다.",
+            "흥화문은 경희궁의 정문이므로 경희궁 둘러보기의 출발 지점으로 살펴보세요.",
+            "경희궁 바깥 동선은 겨울 기상과 관람 안내를 확인해 조절하세요.",
+            "첫 방문 후보인 경희궁 흥화문부터 살펴보고 동행자의 관심사에 맞춰 이 날의 일정을 시작해 보세요."
+          ]
+        },
+        {
+          "heading": "경희궁공원",
+          "paragraphs": [
+            "서울역사박물관이 관리하는 경희궁 복원지입니다.",
+            "경희궁을 걸으며 복원된 건물과 정문을 함께 보는 일정으로 묶어보세요.",
+            "바깥길의 적설과 미끄러움에 유의하고 박물관 실내 관람과 묶어 보세요.",
+            "앞서 살펴본 경희궁 흥화문 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "서울역사박물관",
+          "paragraphs": [
+            "서울 종로구 새문안로에 자리한 서울의 역사와 도시문화를 다루는 박물관입니다.",
+            "서울의 도시와 역사에 관심이 있다면 박물관의 전시 안내를 먼저 확인해 보세요.",
+            "추위를 피할 실내 관람지로 일정을 조정하고 전시와 개관 안내를 확인하세요.",
+            "앞서 살펴본 경희궁공원 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "2일 차 방문 순서",
+          "paragraphs": [
+            "정동길 → 덕수궁 돌담길 → 청계광장 순서로 둘러보는 일정입니다. 방문 순서는 교통편과 날씨에 맞춰 조정하세요.",
+            "정동길과 덕수궁 돌담길은 일부 이어지는 산책 구간이므로 한 번의 산책으로 묶어 보세요.",
+            "출발 전 지도에서 실제 이동 경로와 교통편을 확인하세요."
+          ]
+        },
+        {
+          "heading": "정동길",
+          "paragraphs": [
+            "덕수궁 주변 역사문화시설이 이어지는 정동 일대의 거리입니다.",
+            "덕수궁 돌담을 따라 근현대사 건축이 이어지는 구간을 살펴보세요.",
+            "추위와 보행 상태에 맞춰 야외 구간을 짧게 조절하세요.",
+            "첫 방문 후보인 정동길부터 살펴보고 동행자의 관심사에 맞춰 이 날의 일정을 시작해 보세요."
+          ]
+        },
+        {
+          "heading": "덕수궁 돌담길",
+          "paragraphs": [
+            "정동길을 따라 이어지는 덕수궁 주변 산책 구간입니다.",
+            "정동길과 이어지는 돌담 구간이므로 같은 산책 안에서 함께 볼 수 있습니다.",
+            "야외 산책 전 결빙과 기상 상태를 확인하고 시간을 조절하세요.",
+            "앞서 살펴본 정동길 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "청계광장",
+          "paragraphs": [
+            "서울시설공단이 안내하는 청계천 진입 구간입니다.",
+            "청계천 안내도를 참고해 산책할 구간과 출입 지점을 골라보세요.",
+            "청계천의 기상과 통제 안내를 확인하고 추운 날에는 실내 일정으로 대체하세요.",
+            "앞서 살펴본 덕수궁 돌담길 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "숙박 지역 고르기",
+          "paragraphs": [
+            "첫날 마지막 후보 서울역사박물관에서 둘째 날 시작 후보 정동길까지의 실제 이동 경로를 먼저 살펴보세요.",
+            "대중교통을 이용한다면 숙소 주변 정류장과 다음 날 이동편을, 차량을 이용한다면 주차 조건을 비교해 예산에 맞게 고르세요."
+          ]
+        },
+        {
+          "heading": "겨울 방문 전 확인",
+          "paragraphs": [
+            "출발 전 각 장소의 공식 안내에서 운영일과 예약·요금을 확인하고, 날씨와 도로 상황도 살펴보세요. 기상이 나쁘면 야외 일정은 조정하거나 생략하세요."
+          ]
+        }
+      ],
+      "status": "published",
+      "createdAt": "2026-10-28T13:22:18.710Z",
+      "validation": {
+        "version": 1,
+        "checkedAt": "2026-10-28T13:32:56.556Z",
+        "sourceKind": "cached-tour-data",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text"
+        ],
+        "needsEditorialReview": false,
+        "routeBasis": "내부 코스의 좌표 및 각 장소의 검증 기록을 대조했습니다. 실제 도로와 운영은 출발 전 확인이 필요합니다."
+      },
+      "sources": [
+        {
+          "title": "경희궁 흥화문 공식 안내",
+          "url": "https://museum.seoul.go.kr/www/intro/annexIntro/annex_20/annex_20_04.jsp?sso=ok",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "경희궁공원 공식 안내",
+          "url": "https://museum.seoul.go.kr/www/intro/annexIntro/annex_20/annex_20_02.jsp?sso=ok",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "서울역사박물관 공식 안내",
+          "url": "https://museum.seoul.go.kr/chd/watch/watchGuideMap.jsp",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "정동길 공식 안내",
+          "url": "https://mediahub.seoul.go.kr/archives/2019537",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "덕수궁 돌담길 공식 안내",
+          "url": "https://mediahub.seoul.go.kr/archives/2019537",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "청계광장 공식 안내",
+          "url": "https://www.sisul.or.kr/open_content/cheonggye/enjoy/guide.jsp?bridge=gwangjang",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        }
+      ],
+      "publishedAt": "2026-10-28T13:32:56.556Z"
+    },
+    {
+      "id": "winter-29e8f4a4264bc6",
+      "slug": "busan-winter-1n2d-course",
+      "title": "부산 겨울 1박 2일 여행코스 · 부산영화체험박물관에서 부산 송도해상케이블카까지",
+      "duration": "1박2일",
+      "area": "부산",
+      "sourceCourseId": "busan-nature-1n2d-ilhzk2",
+      "stops": [
+        {
+          "placeId": "2554068",
+          "name": "부산영화체험박물관",
+          "addr": "부산광역시 중구 대청로126번길 12",
+          "mapx": "129.0336899238",
+          "mapy": "35.1017589855",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/19/3539019_image2_1.jpg",
+          "kind": "관광지",
+          "day": 1,
+          "officialUrl": "https://busanbom.kr/"
+        },
+        {
+          "placeId": "1277679",
+          "name": "부산타워(다이아몬드타워)",
+          "addr": "부산광역시 중구 용두산길 37-30 (광복동2가)",
+          "mapx": "129.0323594995",
+          "mapy": "35.1011951345",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/40/3494840_image2_1.jpg",
+          "kind": "관광지",
+          "day": 1,
+          "officialUrl": "https://busanaircruise.co.kr/cmm/?BD_CD=EVENT&MODE=view&MSEQ=243"
+        },
+        {
+          "placeId": "1018702",
+          "name": "국제시장 먹자골목",
+          "addr": "부산광역시 중구 중구로 36",
+          "mapx": "129.0280793175",
+          "mapy": "35.1011311741",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/30/3476830_image2_1.jpg",
+          "kind": "관광지",
+          "day": 1,
+          "officialUrl": "https://access.visitkorea.or.kr/ms/detail.do?cotId=706f4750-9b43-4b5f-98b4-990b046e341e"
+        },
+        {
+          "placeId": "127149",
+          "name": "민주공원",
+          "addr": "부산광역시 중구 민주공원길 19",
+          "mapx": "129.0281096457",
+          "mapy": "35.1093802515",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/47/3498447_image2_1.jpg",
+          "kind": "관광지",
+          "day": 2,
+          "officialUrl": "https://demopark.or.kr/"
+        },
+        {
+          "placeId": "2656194",
+          "name": "친환경 스카이웨이 전망대(이바구길)",
+          "addr": "부산광역시 동구 초량동",
+          "mapx": "129.0306535435",
+          "mapy": "35.1213095185",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/06/2720806_image2_1.jpg",
+          "kind": "관광지",
+          "day": 2,
+          "officialUrl": "https://www.bsdonggu.go.kr/jumin/index.donggu?menuCd=DOM_000001503012000000&welfareCo=1016000000000"
+        },
+        {
+          "placeId": "2504464",
+          "name": "부산 송도해상케이블카",
+          "addr": "부산광역시 서구 송도해변로 171",
+          "mapx": "129.0234248332",
+          "mapy": "35.0766810472",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/11/3413711_image2_1.jpg",
+          "kind": "관광지",
+          "day": 2,
+          "officialUrl": "https://busanaircruise.co.kr/"
+        }
+      ],
+      "intro": "부산에서 겨울에 둘러볼 장소를 묶은 여행 계획입니다: 부산영화체험박물관, 부산타워(다이아몬드타워), 국제시장 먹자골목, 민주공원, 친환경 스카이웨이 전망대(이바구길), 부산 송도해상케이블카. 날씨와 각 장소의 안내에 맞춰 순서를 조절해 보세요.",
+      "sections": [
+        {
+          "heading": "1일 차 방문 순서",
+          "paragraphs": [
+            "부산영화체험박물관 → 부산타워(다이아몬드타워) → 국제시장 먹자골목 순서로 둘러보는 일정입니다. 방문 순서는 교통편과 날씨에 맞춰 조정하세요.",
+            "출발 전 지도에서 실제 이동 경로와 교통편을 확인하세요."
+          ]
+        },
+        {
+          "heading": "부산영화체험박물관",
+          "paragraphs": [
+            "영화의 원리와 제작 관련 전시를 소개하는 부산 중구의 문화 시설입니다.",
+            "영화 제작과 전시를 소개하는 곳으로 관심 있는 전시 내용을 먼저 확인해 보세요.",
+            "겨울 실내 관람 후보로 삼고 현재 전시와 관람 가능 여부를 확인하세요.",
+            "첫 방문 후보인 부산영화체험박물관부터 살펴보고 동행자의 관심사에 맞춰 이 날의 일정을 시작해 보세요."
+          ]
+        },
+        {
+          "heading": "부산타워(다이아몬드타워)",
+          "paragraphs": [
+            "용두산공원에 자리한 부산의 전망 시설입니다.",
+            "용두산공원에 자리한 전망 시설로 방문 전 관람 안내를 살펴보세요.",
+            "전망 관람 전 겨울 기상과 시설의 이용 안내를 확인하세요.",
+            "앞서 살펴본 부산영화체험박물관 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "국제시장 먹자골목",
+          "paragraphs": [
+            "부산 중구 국제시장 주변에 형성된 먹거리 골목입니다.",
+            "국제시장 주변 골목에서 식사를 계획한다면 원하는 점포의 개별 안내를 확인하세요.",
+            "골목 상점의 영업 여부와 혼잡은 방문 전에 개별 확인하세요.",
+            "앞서 살펴본 부산타워(다이아몬드타워) 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "2일 차 방문 순서",
+          "paragraphs": [
+            "민주공원 → 친환경 스카이웨이 전망대(이바구길) → 부산 송도해상케이블카 순서로 둘러보는 일정입니다. 방문 순서는 교통편과 날씨에 맞춰 조정하세요.",
+            "출발 전 지도에서 실제 이동 경로와 교통편을 확인하세요."
+          ]
+        },
+        {
+          "heading": "민주공원",
+          "paragraphs": [
+            "부산 민주항쟁을 기념하는 공원과 기념관입니다.",
+            "민주항쟁기념관과 공원 공간을 함께 살펴보고 관심 있는 전시를 확인해 보세요.",
+            "실내 전시와 바깥 공원은 각각의 운영 안내와 기상 상태를 확인하세요.",
+            "첫 방문 후보인 민주공원부터 살펴보고 동행자의 관심사에 맞춰 이 날의 일정을 시작해 보세요."
+          ]
+        },
+        {
+          "heading": "친환경 스카이웨이 전망대(이바구길)",
+          "paragraphs": [
+            "초량동 이바구길에 있는 부산 동구의 전망 시설입니다.",
+            "초량동 이바구길 산책과 함께 살펴볼 수 있는 전망 시설입니다.",
+            "경사진 야외 동선은 겨울 바람과 결빙 여부를 확인하고 필요하면 생략하세요.",
+            "앞서 살펴본 민주공원 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "부산 송도해상케이블카",
+          "paragraphs": [
+            "부산 송도해변로의 해상 케이블카 시설입니다.",
+            "케이블카 탑승 계획은 바람과 운행 여부를 확인한 뒤 정하세요.",
+            "겨울 강풍 등 기상에 따라 운행이 달라질 수 있어 출발 전 운영처를 확인하세요.",
+            "앞서 살펴본 친환경 스카이웨이 전망대(이바구길) 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "숙박 지역 고르기",
+          "paragraphs": [
+            "첫날 마지막 후보 국제시장 먹자골목에서 둘째 날 시작 후보 민주공원까지의 실제 이동 경로를 먼저 살펴보세요.",
+            "대중교통을 이용한다면 숙소 주변 정류장과 다음 날 이동편을, 차량을 이용한다면 주차 조건을 비교해 예산에 맞게 고르세요."
+          ]
+        },
+        {
+          "heading": "겨울 방문 전 확인",
+          "paragraphs": [
+            "출발 전 각 장소의 공식 안내에서 운영일과 예약·요금을 확인하고, 날씨와 도로 상황도 살펴보세요. 기상이 나쁘면 야외 일정은 조정하거나 생략하세요."
+          ]
+        }
+      ],
+      "status": "published",
+      "createdAt": "2026-10-28T13:22:18.710Z",
+      "validation": {
+        "version": 1,
+        "checkedAt": "2026-10-28T13:32:56.556Z",
+        "sourceKind": "cached-tour-data",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text"
+        ],
+        "needsEditorialReview": false,
+        "routeBasis": "내부 코스의 좌표 및 각 장소의 검증 기록을 대조했습니다. 실제 도로와 운영은 출발 전 확인이 필요합니다."
+      },
+      "sources": [
+        {
+          "title": "부산영화체험박물관 공식 안내",
+          "url": "https://busanbom.kr/",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "부산타워(다이아몬드타워) 공식 안내",
+          "url": "https://busanaircruise.co.kr/cmm/?BD_CD=EVENT&MODE=view&MSEQ=243",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "국제시장 먹자골목 공식 안내",
+          "url": "https://access.visitkorea.or.kr/ms/detail.do?cotId=706f4750-9b43-4b5f-98b4-990b046e341e",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "민주공원 공식 안내",
+          "url": "https://demopark.or.kr/",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "친환경 스카이웨이 전망대(이바구길) 공식 안내",
+          "url": "https://www.bsdonggu.go.kr/jumin/index.donggu?menuCd=DOM_000001503012000000&welfareCo=1016000000000",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        },
+        {
+          "title": "부산 송도해상케이블카 공식 안내",
+          "url": "https://busanaircruise.co.kr/",
+          "checkedAt": "2026-10-28T13:20:04Z"
+        }
+      ],
+      "publishedAt": "2026-10-28T13:32:56.556Z"
     }
   ]
 }

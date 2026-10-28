@@ -11,6 +11,10 @@ test('only winter-tagged, ID and address matched, plausible coordinate data ente
  assert.equal(candidate({...base,stops:[{...stops[0],name:'다른 곳'},...stops.slice(1,3)]},places),null);
  assert.equal(candidate({...base,stops:[{...stops[0],addr:'다른 주소'},...stops.slice(1,3)]},places),null);
  assert.equal(candidate({...base,stops:[{...stops[0],mapx:'0'},...stops.slice(1,3)]},places),null);
+ const heritage={...places.get('1'),title:'고인돌 유적 [유네스코 세계유산]'};
+ const heritagePlaces=new Map(places);heritagePlaces.set('1',heritage);
+ assert.ok(candidate({...base,stops:[{...stops[0],name:heritage.title},...stops.slice(1,3)]},heritagePlaces));
+ assert.equal(candidate({...base,stops:[{...stops[0],name:'<script>장소</script>'},...stops.slice(1,3)]},places),null);
 });
 test('published and held drafts count against separate daily KST limits',()=>{
  const rows=[{status:'held',duration:'당일',createdAt:'2026-10-27T15:00:00Z'},{status:'published',duration:'1박2일',publishedAt:'2026-10-28T00:00:00Z'},{status:'draft',duration:'당일',createdAt:'2026-10-27T14:59:59Z'}];

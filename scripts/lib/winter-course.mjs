@@ -20,7 +20,7 @@ export function checkSummaries(raw, evidence) {
   }
   return map;
 }
-const validName = (value) => /^[가-힣a-zA-Z0-9\s·()\-]{2,80}$/.test(value);
+const validName = (value) => /^[가-힣a-zA-Z0-9\s·()[\]\-]{2,80}$/.test(value);
 const nonVisitor = /초등학교|중학교|고등학교|대학교|대학병원|주민센터|구청|시청|군청|읍사무소|면사무소|웰컴센터|관광안내소|스키용품|스키대여|렌탈샵|스키샵/;
 // Confirmed outdated identities or destinations requiring separate winter/ferry review.
 const reviewedHoldIds = new Set(['2472824','2553685','3066924','126890','579637']);
