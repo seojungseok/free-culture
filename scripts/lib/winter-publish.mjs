@@ -28,6 +28,14 @@ export function remainingPublications(rows, now = new Date()) {
 export function availableTargets(remaining, pool) {
   return Object.fromEntries(Object.keys(caps).map(duration=>[duration,Math.min(remaining[duration] || 0,pool.filter(course=>course.duration===duration).length)]));
 }
+// Keep any already-saved course ID unique, while only public articles are
+// considered when measuring route overlap. A held draft is not a public post.
+export function unsavedNonOverlapping(courses, rows) {
+  const saved=new Set(rows.map(row=>String(row.sourceCourseId)));
+  const published=rows.filter(row=>row.status==='published').map(row=>new Set((row.stops||[]).map(stop=>String(stop.placeId)))).filter(ids=>ids.size);
+  return courses.filter(course=>!saved.has(String(course.sourceCourseId))).filter(course=>!published.some(ids=>
+    course.stops.filter(stop=>ids.has(String(stop.placeId))).length/Math.min(ids.size,course.stops.length)>=0.67));
+}
 // Select the largest non-overlapping portfolio; favour scarce overnight
 // courses on a tie so that a day course cannot block the only overnight.
 export function bestPortfolio(pool, remaining) {
@@ -86,6 +94,7 @@ export function preparePublication(draft, registry, now = new Date()) {
     if (dayIds.has('1604784') && dayIds.has('1604824')) connections.push('흥화문과 경희궁공원은 같은 경희궁 권역이므로 따로 먼 곳을 이동하는 일정이 아닙니다.');
     if (dayIds.has('2778454') && dayIds.has('129186')) connections.push('정동길과 덕수궁 돌담길은 일부 이어지는 산책 구간이므로 한 번의 산책으로 묶어 보세요.');
     if (dayIds.has('1918263') && dayIds.has('128810')) connections.push('누리마루 APEC하우스는 동백공원 권역에 있어 공원 산책과 함께 둘러볼 수 있습니다.');
+    if (dayIds.has('945420') && dayIds.has('2601714')) connections.push('구 일본우선주식회사 인천지점 건물은 인천 아트플랫폼의 일부로, 같은 구간을 함께 살펴볼 수 있습니다. 건물 내부 개방 여부는 공식 안내를 확인하세요.');
     sections.push({heading: draft.duration === '당일' ? '방문 순서' : `${day}일 차 방문 순서`, paragraphs: [
       `${dayStops.map(stop => stop.name).join(' → ')} 순서로 둘러보는 일정입니다. 방문 순서는 교통편과 날씨에 맞춰 조정하세요.`,
       ...connections,

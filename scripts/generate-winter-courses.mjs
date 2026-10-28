@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { candidate, chooseAllowed, buildCourse, kstDay } from './lib/winter-course.mjs';
-import { preparePublication, remainingPublications, availableTargets, bestPortfolio } from './lib/winter-publish.mjs';
+import { preparePublication, remainingPublications, availableTargets, bestPortfolio, unsavedNonOverlapping } from './lib/winter-publish.mjs';
 
 const read = (path) => JSON.parse(fs.readFileSync(path, 'utf8'));
 const policy=read('data/winter-policy.json');
@@ -20,6 +20,7 @@ for(let i=0;i<store.courses.length;i++) {
   if(draft.status!=='draft'||!remaining[draft.duration])continue;
   const checked=candidate(rawById.get(String(draft.sourceCourseId)),places);
   if(!checked || checked.duration!==draft.duration || checked.stops.map(x=>x.placeId).join(',')!==draft.stops.map(x=>x.placeId).join(','))continue;
+  if(!unsavedNonOverlapping([checked],store.courses.filter((_,index)=>index!==i)).length)continue;
   const approved=preparePublication(draft,registry);
   if(approved){store.courses[i]=approved;remaining[draft.duration]--;published++;}
 }
@@ -32,9 +33,8 @@ if(budget.version!==1 || !Number.isInteger(budget.attempts) || budget.attempts<0
 const day=kstDay();
 if(budget.day!==day){budget.day=day;budget.attempts=0;}
 if(budget.attempts>=1)throw Error(`WINTER_DAILY_ATTEMPT_LIMIT: 공개 ${published}건, 나머지 후보 확인 필요`);
-const saved=new Set(store.courses.map(c=>c.sourceCourseId));
-const previous=store.courses.map(c=>new Set((c.stops||[]).map(s=>s.placeId)));
-const eligible=rawCourses.map(c=>candidate(c,places)).filter(Boolean).filter(c=>!saved.has(c.sourceCourseId)).filter(c=>!previous.some(ids=>c.stops.filter(s=>ids.has(s.placeId)).length/Math.min(ids.size,c.stops.length)>=0.67)).filter(c=>preparePublication(buildCourse(c),registry));
+const candidates=rawCourses.map(c=>candidate(c,places)).filter(Boolean);
+const eligible=unsavedNonOverlapping(candidates,store.courses).filter(c=>preparePublication(buildCourse(c),registry));
 const rotate=(a)=>[...a].sort((x,y)=>createHash('sha256').update(`${kstDay()}:${x.sourceCourseId}`).digest('hex').localeCompare(createHash('sha256').update(`${kstDay()}:${y.sourceCourseId}`).digest('hex'))).slice(0,30);
 const pool=[...rotate(eligible.filter(c=>c.duration==='당일')),...rotate(eligible.filter(c=>c.duration==='1박2일'))];
 const portfolio=bestPortfolio(pool,remaining);

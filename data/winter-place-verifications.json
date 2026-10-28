@@ -370,6 +370,33 @@
       "feature": "대전신세계 아트앤사이언스 7층에 있는 대전 관광 홍보 공간입니다.",
       "winterReason": "실내 공간이므로 방문 전 개방 시간과 휴관 여부를 확인하세요.",
       "detail": "아쿠아리움과 같은 건물에 있어 두 장소를 한 번에 둘러보는 편이 편리합니다."
+    },
+    "2994530": {
+      "name": "대불호텔전시관",
+      "eligible": true,
+      "verifiedAt": "2026-10-28T13:41:21Z",
+      "sourceUrl": "https://www.jcf.or.kr/main/space/museum6.jsp",
+      "feature": "옛 대불호텔 터에 당시 건물의 규모와 외형을 재현한 전시관입니다.",
+      "winterReason": "실내 전시 관람을 계획하고 방문 전 운영일과 이용 안내를 확인하세요.",
+      "detail": "개항기 숙박과 인천의 생활사를 함께 살펴보려면 연결된 생활사전시관도 확인하세요."
+    },
+    "945420": {
+      "name": "구 일본우선주식회사 인천지점",
+      "eligible": true,
+      "verifiedAt": "2026-10-28T13:41:21Z",
+      "sourceUrl": "https://inartplatform.kr/notice/view?no=567",
+      "feature": "인천아트플랫폼의 아카이브가 자리한 옛 일본우선주식회사 인천지점 건물입니다.",
+      "winterReason": "겨울에는 외관을 짧게 둘러보고 내부 개방 여부를 방문 전에 확인하세요.",
+      "detail": "인천아트플랫폼의 일부이므로 독립된 먼 경유지로 잡지 말고 같은 구간에서 살펴보세요."
+    },
+    "2601714": {
+      "name": "인천 아트플랫폼",
+      "eligible": true,
+      "verifiedAt": "2026-10-28T13:41:21Z",
+      "sourceUrl": "https://ifac.or.kr/culturalInfo/cuturalEvents/performanceSrch/view.do?eventSn=13889&key=m2501152621396",
+      "feature": "인천 개항장 일대의 전시와 예술 활동을 위한 문화 공간입니다.",
+      "winterReason": "실내 전시를 계획하고 방문 전 현재 전시와 각 공간의 운영 여부를 확인하세요.",
+      "detail": "옛 일본우선주식회사 인천지점 건물이 같은 플랫폼 안에 있어 함께 살펴볼 수 있습니다."
     }
   }
 }

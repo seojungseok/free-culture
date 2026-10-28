@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { remainingPublications, preparePublication, publicationSlug, availableTargets, bestPortfolio } from './lib/winter-publish.mjs';
+import { remainingPublications, preparePublication, publicationSlug, availableTargets, bestPortfolio, unsavedNonOverlapping } from './lib/winter-publish.mjs';
 import { inspectOfficialPlace } from './lib/winter-official-evidence.mjs';
 import { isPublicWinterCourse } from '../lib/winter-course-validation.mjs';
 import fs from 'node:fs';
@@ -24,6 +24,12 @@ test('overlapping candidate does not block the best partial day and overnight po
  const selected=bestPortfolio(pool,{'당일':3,'1박2일':2});
  assert.deepEqual(new Set(selected.map(c=>c.sourceCourseId)),new Set(['day2','day3','overnight']));
  assert.deepEqual(availableTargets({'당일':3,'1박2일':2},selected),{'당일':2,'1박2일':1});
+});
+test('held routes cannot suppress a different candidate but saved IDs stay unique',()=>{
+ const make=(id,ids,status)=>({sourceCourseId:id,status,stops:ids.map(placeId=>({placeId}))});
+ const candidates=[make('new',['1','2','3']),make('saved',['7','8','9']),make('public-overlap',['4','5','6'])];
+ const rows=[make('held',['1','2','3'],'held'),make('saved',['7','8','9'],'draft'),make('public',['4','5','6'],'published')];
+ assert.deepEqual(unsavedNonOverlapping(candidates,rows).map(x=>x.sourceCourseId),['new']);
 });
 test('only source-verified drafts can publish and status is consumable by the site',()=>{
  const result=preparePublication(draft,registry,now);
