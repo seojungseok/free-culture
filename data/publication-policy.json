@@ -2,8 +2,8 @@
   "version": 1,
   "timezone": "Asia/Seoul",
   "general": {
-    "mode": "reviewed-daily-places",
-    "newPublicationEnabled": true,
+    "mode": "source-freshness-review",
+    "newPublicationEnabled": false,
     "daily": 5,
     "categories": {
       "place-articles": 5,
@@ -12,5 +12,5 @@
     }
   },
   "totalDaily": 5,
-  "notes": "한국시간 하루 최대 5개. 공공 원문과 두 검증을 통과하지 못한 후보는 보류한다. 기존 글은 자동 재작성하지 않는다."
+  "notes": "공식 최신 정보와 생성 글의 불일치가 확인되어 신규 자동 공개를 보류한다. 기존 글과 하루 5개 목표는 유지한다."
 }

@@ -42,14 +42,19 @@ test('Korean-day budget counts prior published articles across the three general
   } finally { fs.rmSync(root,{recursive:true,force:true}); }
 });
 
-test('missing independent verifier key fails without changing existing articles', () => {
+test('disabled publication or a missing verifier key preserves existing articles', () => {
   const filename=path.resolve('data/place-articles.json');
   const hash=()=>createHash('sha256').update(fs.readFileSync(filename)).digest('hex');
   assert.equal(fs.existsSync('.env.local'),false,'test must not read local secrets');
   const before=hash();
   const env={...process.env,OPENAI_API_KEY:'test-only'};delete env.GEMINI_API_KEY;
   const child=spawnSync(process.execPath,['scripts/generateArticles.mjs'],{env,encoding:'utf8'});
-  assert.equal(child.status,1);assert.match(child.stderr,/발행 보류/);assert.equal(hash(),before);
+  if (isNewPublicationEnabled()) {
+    assert.equal(child.status,1);assert.match(child.stderr,/발행 보류/);
+  } else {
+    assert.equal(child.status,0);assert.match(child.stdout,/신규 자동 발행 중지/);
+  }
+  assert.equal(hash(),before);
 });
 
 test('candidate selection skips missing or too short public source before spending generation attempts', () => {
