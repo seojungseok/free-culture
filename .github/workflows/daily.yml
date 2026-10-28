@@ -33,7 +33,7 @@ jobs:
           node --test scripts/lib/tourClient.test.mjs scripts/lib/regionalRequest.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs scripts/site-optimization.test.mjs scripts/nas/smoke.test.mjs
           node scripts/test-tour-detail-fallback.cjs
           node --test scripts/enrichCourseStops.test.mjs scripts/enrichCoursePlaces.test.mjs scripts/enrichCultureEvents.test.mjs
-          node --test scripts/winter-course.test.mjs scripts/winter-public-display.test.mjs
+          node --test scripts/winter-course.test.mjs scripts/winter-public-display.test.mjs scripts/lib/winter-evidence.test.mjs scripts/winter-photo.test.mjs
           node scripts/test-course-planning.cjs
 
       - name: 일일 공공 API 예산 (월요일은 주간 수집분 예약)

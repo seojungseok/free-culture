@@ -4,7 +4,7 @@ export const kstDay = (date = new Date()) => date.toLocaleDateString('sv-SE', {t
 export const clean = (value) => String(value || '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
 const volatile = /\d|요금|가격|무료|유료|운영|영업|휴무|예약|주차|소요|시간|분|일정|매년|월요일|화요일|수요일|목요일|금요일|토요일|일요일|기온|날씨|눈꽃|적설|개장|폐장|숙박|할인|배달|권장|완공|준공|최초|최대|유일|체험|프로그램|제공|관람|공연|구입|판매/;
 export function safeEvidence(raw) {
-  return clean(raw).split(/(?<=[.!?。])\s+/u).map(clean).filter(s=>s.length>=25 && s.length<=180 && !volatile.test(s)).slice(0,2);
+  return clean(raw).split(/(?<=[.!?。])\s+/u).map(clean).filter(s=>s.length>=25 && s.length<=100 && !volatile.test(s)).slice(0,2);
 }
 export function checkSummaries(raw, evidence) {
   let parsed; try {parsed=JSON.parse(raw);} catch {throw Error('SUMMARY_OUTPUT_INVALID');}
@@ -12,8 +12,11 @@ export function checkSummaries(raw, evidence) {
   const map=new Map();
   for(const row of parsed.stops) {
     const id=String(row?.placeId||''), q=clean(row?.quote), summary=clean(row?.summary);
-    if(!evidence.has(id)||map.has(id)||!evidence.get(id).includes(q)||!q||summary.length<15||summary.length>130||volatile.test(summary)||/[<>\r\n]/.test(summary))throw Error('SUMMARY_UNVERIFIED');
-    map.set(id,{quote:q,summary});
+    if(!evidence.has(id)||map.has(id)||!evidence.get(id).includes(q)||!q||(summary && (summary.length<15||summary.length>130||volatile.test(summary)||/[<>\r\n]/.test(summary))))throw Error('SUMMARY_UNVERIFIED');
+    // A matching citation does not prove that a model's paraphrase is true.
+    // Display only the exact short source excerpt until an editor verifies it.
+    const provenance=evidence.provenance?.get(id)?.get(q) || null;
+    map.set(id,{quote:q,summary:q,provenance});
   }
   return map;
 }
@@ -88,8 +91,9 @@ export function buildCourse(c, now = new Date(), summaries = new Map()) {
       sections.push({heading:`${stop.name} · ${stop.kind}`,paragraphs:[`${stop.name}${particle(stop.name,'은','는')} 관광정보에 ${stop.kind}${particle(stop.kind,'으로','로')} 분류된 곳입니다. ${reason}`,`${stop.addr}에 있으며, 실제 운영일과 입장·예약 조건은 방문 전 공식 안내를 확인하세요.`]});
       if(summaries.has(stop.placeId)) {
         const value=summaries.get(stop.placeId);
-        sections.at(-1).paragraphs.splice(1,0,`관광자료를 바탕으로 살펴볼 특징: ${value.summary}`);
+        sections.at(-1).paragraphs.splice(1,0,`관광자료 발췌: “${value.quote}”`);
         sections.at(-1).sourceQuote=value.quote;
+        if(value.provenance) sections.at(-1).sourceEvidence=value.provenance;
       }
     }
   }

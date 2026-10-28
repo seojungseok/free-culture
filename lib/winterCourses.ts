@@ -7,6 +7,7 @@ export type WinterCourse = {
   intro: string; publishedAt: string; sourceCourseId: string; stops: WinterStop[];
   sections: { heading: string; paragraphs: string[] }[];
   sources?: { title: string; url: string; checkedAt?: string }[];
+  image?: { src: string; alt: string; caption: string; credit: string; kind: 'tour-api' | 'ai'; reviewed: boolean; width: number; height: number };
 };
 
 export function getPublicWinterCourses(): WinterCourse[] {

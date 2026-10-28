@@ -3,14 +3,31 @@ import {safeEvidence,checkSummaries} from './winter-course.mjs';
 export function collectEvidence(courses, rawCourses, overviews, details, courseDetails) {
   const sources=new Map(rawCourses.map(c=>[String(c.id),c]));
   const result=new Map();
+  // Keep the origin for each exact sentence. A cache check is not the date on
+  // which the provider published the underlying information.
+  result.provenance=new Map();
   for(const course of courses) {
     const original=sources.get(String(course.sourceCourseId));
     for(const stop of course.stops) {
       const id=String(stop.placeId);
       const sourceStop=original?.stops?.find(s=>String(s.placeId)===id && String(s.name).trim()===stop.name);
-      const options=[sourceStop?.overview,overviews[id],details[id]?.overview,courseDetails[id]?.overview];
-      const sentences=[...new Set(options.flatMap(s=>safeEvidence(s)))].slice(0,2);
-      if(sentences.length)result.set(id,sentences);
+      const options=[
+        {text:details[id]?.overview,file:'data/place-details.json',checkedAt:details[id]?.overviewCheckedAt},
+        {text:courseDetails[id]?.overview,file:'data/course-place-details.json',checkedAt:courseDetails[id]?.commonCheckedAt},
+        {text:overviews[id],file:'data/place-overviews.json'},
+        {text:sourceStop?.overview,file:'data/courses-auto.json'},
+      ];
+      const sentences=[], origins=new Map();
+      for (const option of options) for (const sentence of safeEvidence(option.text)) {
+        if (origins.has(sentence)) continue;
+        const checkedAt=typeof option.checkedAt==='string' && Number.isFinite(Date.parse(option.checkedAt)) ? option.checkedAt : null;
+        origins.set(sentence,{file:option.file,placeId:id,checkedAt});
+        sentences.push(sentence);
+      }
+      if(sentences.length) {
+        result.set(id,sentences.slice(0,2));
+        result.provenance.set(id,origins);
+      }
     }
   }
   return result;
@@ -19,9 +36,9 @@ export function collectEvidence(courses, rawCourses, overviews, details, courseD
 export async function summarizeEvidence(evidence, key, model, fetchImpl=fetch) {
   if(!evidence.size)return new Map();
   const input=[...evidence].map(([placeId,sentences])=>({placeId,sentences}));
-  const prompt=`각 장소의 제공된 문장만 근거로 고유한 특징을 1문장으로 설명하고 원문에서 인용한 문장도 그대로 적으세요. 출처에 없는 사실, 숫자, 날씨, 계절 상태, 운영일, 시간, 요금, 휴무, 예약, 체험 가능 여부를 추가하지 마세요. 문장을 안전하게 요약할 수 없는 장소는 결과에서 생략하세요. JSON만 반환: {"stops":[{"placeId":"id","quote":"제공 문장 그대로","summary":"설명"}]}. 자료: ${JSON.stringify(input)}`;
+  const prompt=`각 장소에서 고유한 특징을 설명하는 제공 문장 하나만 그대로 고르세요. 정보를 추측하거나 바꾸지 말고 적합한 문장이 없으면 그 장소를 생략하세요. JSON만 반환: {"stops":[{"placeId":"id","quote":"제공 문장 그대로"}]}. 자료: ${JSON.stringify(input)}`;
   if(prompt.length>24000)throw Error('WINTER_SUMMARY_INPUT_LIMIT');
-  const response=await fetchImpl('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${key}`},body:JSON.stringify({model,response_format:{type:'json_object'},messages:[{role:'system',content:'Only summarize the supplied source text. The output remains a private draft for editorial review.'},{role:'user',content:prompt}],max_completion_tokens:4000}),signal:AbortSignal.timeout(90000)});
+  const response=await fetchImpl('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${key}`},body:JSON.stringify({model,response_format:{type:'json_object'},messages:[{role:'system',content:'Select only exact supplied source sentences. The output remains an unpublished draft for editorial review.'},{role:'user',content:prompt}],max_completion_tokens:4000}),signal:AbortSignal.timeout(90000)});
   if(!response.ok)throw Error(`WINTER_SUMMARY_HTTP_${response.status}`);
   const json=await response.json();return checkSummaries(json.choices?.[0]?.message?.content,evidence);
 }
