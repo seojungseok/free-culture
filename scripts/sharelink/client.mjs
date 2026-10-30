@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import {isSharelinkMaintenance} from './maintenance.mjs';
 
 const base='https://sharelink.toss.im/openapi';
 export class SharelinkError extends Error {
@@ -11,6 +12,7 @@ export function unwrap(response,body){
   return body.success;
 }
 export async function withClient(work,{fetchImpl=fetch,stateDir=process.env.TOSS_SHARELINK_STATE_DIR||'.cache/sharelink'}={}){
+  if(isSharelinkMaintenance())throw new Error('Sharelink scheduled maintenance');
   fs.mkdirSync(stateDir,{recursive:true,mode:0o700});
   const lock=path.join(stateDir,'operation.lock');
   let fd;try{fd=fs.openSync(lock,'wx',0o600);}catch{throw new Error('Sharelink operation already running; inspect before manual recovery');}
@@ -22,6 +24,7 @@ export async function withClient(work,{fetchImpl=fetch,stateDir=process.env.TOSS
     const tokenPath=path.join(stateDir,'token.json');
     let token;try{token=JSON.parse(fs.readFileSync(tokenPath,'utf8'));}catch{}
     if(!token||token.fingerprint!==fingerprint||token.expiresAt<Date.now()+300000){
+      if(isSharelinkMaintenance())throw new Error('Sharelink scheduled maintenance');
       const response=await fetchImpl('https://oauth2.cert.toss.im/token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({grant_type:'client_credentials',client_id:access,client_secret:secret,scope:'sharelink:read sharelink:write'}),signal:AbortSignal.timeout(30000)});
       const body=await response.json();
       if(!response.ok||!body.access_token||!Number.isFinite(Number(body.expires_in)))throw new SharelinkError(response.status,'TOKEN_FAILED');
@@ -31,6 +34,7 @@ export async function withClient(work,{fetchImpl=fetch,stateDir=process.env.TOSS
     const cooldownPath=path.join(stateDir,'cooldown.json');
     let lastRequest=0;
     const request=async(endpoint,{method='GET',body}={})=>{
+      if(isSharelinkMaintenance())throw new Error('Sharelink scheduled maintenance');
       if(!endpoint.startsWith('/')||endpoint.startsWith('//')||endpoint.includes('://'))throw new Error('Invalid Sharelink endpoint');
       const query=new URL(endpoint,base).searchParams;
       const productCount=endpoint.startsWith('/products/detail')?(query.get('tacaItemIds')||'').split(',').filter(Boolean).length: /^\/products\/(today-deals|best-categories)/.test(endpoint)?Number(query.get('size')||10):0;
@@ -45,6 +49,7 @@ export async function withClient(work,{fetchImpl=fetch,stateDir=process.env.TOSS
       let cooldown;try{cooldown=JSON.parse(fs.readFileSync(cooldownPath,'utf8'));}catch{}
       if(cooldown?.until>Date.now())throw new Error('Sharelink cooldown active');
       const delay=1100-(Date.now()-lastRequest);if(delay>0)await new Promise(r=>setTimeout(r,delay));
+      if(isSharelinkMaintenance())throw new Error('Sharelink scheduled maintenance');
       lastRequest=Date.now();
       const response=await fetchImpl(base+endpoint,{method,headers:{Authorization:`Bearer ${token.accessToken}`,...(body?{'Content-Type':'application/json'}:{})},...(body?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(30000)});
       const data=await response.json();

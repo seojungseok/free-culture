@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {eligibleHomeDeal,homeDealGroup} from './home-deals.mjs';
+import {maintenanceStart,maintenanceEnd,isSharelinkMaintenance} from './maintenance.mjs';
 const now=Date.parse('2026-10-06T15:00:00Z');
 test('global food rail keeps regular products after midnight and prioritizes active daily deals',()=>{
  const item={homeFeature:true,links:{home:'https://example.com/affiliate'}};
@@ -47,7 +48,7 @@ test('collector delays mixed product and link calls so every rolling minute stay
  const stateDir=fs.mkdtempSync(path.join(os.tmpdir(),'sharelink-budget-test-'));
  const originalNow=Date.now,originalTimeout=globalThis.setTimeout;
  const access=process.env.TOSS_SHARELINK_ACCESS_KEY,secret=process.env.TOSS_SHARELINK_SECRET_KEY;
- let clock=originalNow();const calls=[];
+ let clock=Date.parse('2026-10-06T15:00:00Z');const calls=[];
  try {
   process.env.TOSS_SHARELINK_ACCESS_KEY='test-access';process.env.TOSS_SHARELINK_SECRET_KEY='test-secret';
   Date.now=()=>clock;globalThis.setTimeout=(cb,ms)=>{clock+=ms;queueMicrotask(cb);return 0;};
@@ -66,4 +67,29 @@ test('collector delays mixed product and link calls so every rolling minute stay
   if(secret===undefined)delete process.env.TOSS_SHARELINK_SECRET_KEY;else process.env.TOSS_SHARELINK_SECRET_KEY=secret;
   for(const name of fs.readdirSync(stateDir))fs.unlinkSync(path.join(stateDir,name));fs.rmdirSync(stateDir);
  }
+});
+
+
+test('scheduled maintenance hides even fresh products and requires a new feed after it ends',()=>{
+ const item={id:1,homeFeature:true,links:{home:'https://example.com/product'}};
+ const before={checkedAt:new Date(maintenanceStart-1).toISOString(),products:[item]};
+ assert.equal(currentProducts(before,maintenanceStart-1).length,1);
+ assert.equal(currentProducts(before,maintenanceStart).length,0);
+ const during={checkedAt:new Date(maintenanceEnd-1).toISOString(),products:[item]};
+ assert.equal(currentProducts(during,maintenanceEnd-1).length,0);
+ assert.equal(currentProducts(during,maintenanceEnd).length,0);
+ const after={checkedAt:new Date(maintenanceEnd).toISOString(),products:[item]};
+ assert.equal(currentProducts(after,maintenanceEnd).length,1);
+ assert.equal(isSharelinkMaintenance(maintenanceStart-1),false);
+ assert.equal(isSharelinkMaintenance(maintenanceStart),true);
+ assert.equal(isSharelinkMaintenance(maintenanceEnd-1),true);
+ assert.equal(isSharelinkMaintenance(maintenanceEnd),false);
+});
+
+test('collector makes no requests during the announced maintenance',async()=>{
+ const originalNow=Date.now;let calls=0;
+ try { Date.now=()=>maintenanceStart;
+  await assert.rejects(withClient(()=>{calls++;},{fetchImpl:()=>{calls++;}}),/scheduled maintenance/);
+  assert.equal(calls,0);
+ } finally {Date.now=originalNow;}
 });

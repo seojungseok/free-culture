@@ -1,14 +1,19 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {withClient} from './client.mjs';
+import {isSharelinkMaintenance,maintenanceStart,maintenanceEnd} from './maintenance.mjs';
 import {selections,channels} from './editorial.mjs';
 import {homeDealGroup,eligibleHomeDeal} from './home-deals.mjs';
+if(isSharelinkMaintenance()){
+ console.log('SHARELINK_SYNC_SKIPPED scheduled maintenance');
+ process.exit(0);
+}
 const output=process.env.TOSS_SHARELINK_PUBLIC_FILE||'data/sharelink-editorial.json';
 let previous;try{previous=JSON.parse(fs.readFileSync(output,'utf8'));}catch{}
 // A code deployment shortly after the hourly collector reuses its verified
 // feed instead of spending another provider allowance on the same products.
 const previousCheck=Date.parse(previous?.checkedAt),cacheAge=Date.now()-previousCheck;
-if(previous?.version===1&&Array.isArray(previous.products)&&Number.isFinite(previousCheck)&&cacheAge>=0&&cacheAge<15*60000){
+if(previous?.version===1&&Array.isArray(previous.products)&&Number.isFinite(previousCheck)&&cacheAge>=0&&cacheAge<15*60000&&(Date.now()<maintenanceStart||previousCheck>=maintenanceEnd)){
  console.log(`SHARELINK_SYNC_CACHED products=${previous.products.length}`);
  process.exit(0);
 }
