@@ -1,0 +1,102 @@
+{
+  "seoul-winter-daytrip-47c383edc3": {
+    "src": "https://tong.visitkorea.or.kr/cms/resource/06/2987806_image2_1.jpg",
+    "alt": "K-컬처 스크린(대한민국역사박물관) 자료 사진",
+    "caption": "K-컬처 스크린(대한민국역사박물관) 자료 사진 · 촬영 시기 미상",
+    "credit": "한국관광공사",
+    "kind": "tour-api",
+    "reviewed": true,
+    "width": 940,
+    "height": 626
+  },
+  "seoul-bukchon-winter-daytrip": {
+    "src": "https://tong.visitkorea.or.kr/cms/resource/57/3540857_image2_1.jpg",
+    "alt": "북촌전통공예체험관 자료 사진",
+    "caption": "북촌전통공예체험관 자료 사진 · 촬영 시기 미상",
+    "credit": "한국관광공사",
+    "kind": "tour-api",
+    "reviewed": true,
+    "width": 940,
+    "height": 626
+  },
+  "busan-dongbaek-winter-daytrip": {
+    "src": "https://tong.visitkorea.or.kr/cms/resource/20/3334420_image2_1.jpg",
+    "alt": "누리마루 APEC하우스 자료 사진",
+    "caption": "누리마루 APEC하우스 자료 사진 · 촬영 시기 미상",
+    "credit": "한국관광공사",
+    "kind": "tour-api",
+    "reviewed": true,
+    "width": 940,
+    "height": 617
+  },
+  "seoul-history-winter-1n2d": {
+    "src": "https://tong.visitkorea.or.kr/cms/resource/55/3384855_image2_1.JPG",
+    "alt": "경희궁 흥화문 자료 사진",
+    "caption": "경희궁 흥화문 자료 사진 · 촬영 시기 미상",
+    "credit": "한국관광공사",
+    "kind": "tour-api",
+    "reviewed": true,
+    "width": 940,
+    "height": 527
+  },
+  "busan-winter-1n2d-course": {
+    "src": "https://tong.visitkorea.or.kr/cms/resource/19/3539019_image2_1.jpg",
+    "alt": "부산영화체험박물관 자료 사진",
+    "caption": "부산영화체험박물관 자료 사진 · 촬영 시기 미상",
+    "credit": "한국관광공사",
+    "kind": "tour-api",
+    "reviewed": true,
+    "width": 940,
+    "height": 555
+  },
+  "incheon-winter-daytrip-989fea286f": {
+    "src": "https://tong.visitkorea.or.kr/cms/resource/49/2999549_image2_1.jpg",
+    "alt": "대불호텔전시관 자료 사진",
+    "caption": "대불호텔전시관 자료 사진 · 촬영 시기 미상",
+    "credit": "한국관광공사",
+    "kind": "tour-api",
+    "reviewed": true,
+    "width": 940,
+    "height": 627
+  },
+  "gyeonggi-winter-daytrip-4684cc1837": {
+    "src": "https://tong.visitkorea.or.kr/cms/resource/83/3559083_image2_1.jpg",
+    "alt": "소풍동물원 자료 사진",
+    "caption": "소풍동물원 자료 사진 · 촬영 시기 미상",
+    "credit": "한국관광공사",
+    "kind": "tour-api",
+    "reviewed": true,
+    "width": 940,
+    "height": 626
+  },
+  "daejeon-winter-1n2d-492592cafc": {
+    "src": "https://tong.visitkorea.or.kr/cms/resource/24/3453224_image2_1.JPG",
+    "alt": "발명교육센터 창의발명체험관 자료 사진",
+    "caption": "발명교육센터 창의발명체험관 자료 사진 · 촬영 시기 미상",
+    "credit": "한국관광공사",
+    "kind": "tour-api",
+    "reviewed": true,
+    "width": 940,
+    "height": 705
+  },
+  "jeonbuk-winter-1n2d-78a4874405": {
+    "src": "https://tong.visitkorea.or.kr/cms/resource/83/3373683_image2_1.jpg",
+    "alt": "고창 무장 동학농민혁명 기포지 자료 사진",
+    "caption": "고창 무장 동학농민혁명 기포지 자료 사진 · 촬영 시기 미상",
+    "credit": "한국관광공사",
+    "kind": "tour-api",
+    "reviewed": true,
+    "width": 940,
+    "height": 627
+  },
+  "jeonbuk-winter-daytrip-9a8e5ffba7": {
+    "src": "https://tong.visitkorea.or.kr/cms/resource/88/3362288_image2_1.JPG",
+    "alt": "동리국악당 자료 사진",
+    "caption": "동리국악당 자료 사진 · 촬영 시기 미상",
+    "credit": "한국관광공사",
+    "kind": "tour-api",
+    "reviewed": true,
+    "width": 940,
+    "height": 627
+  }
+}

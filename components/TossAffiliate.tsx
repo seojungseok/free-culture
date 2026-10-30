@@ -15,7 +15,7 @@ export default function TossAffiliate({position,compact=false,initialIndex=0,col
  const {feed,now,loading}=useTossFeed();
  const [saved,setSaved]=useState<number[]>([]),[message,setMessage]=useState('');
  const box=useRef<HTMLElement>(null),seen=useRef(new Set<string>());
- const channel=page==='/'?'home':/^\/camping\/\d+$/.test(page)?'camping':/^\/(event\/[^/]+|places\/spot\/[^/]+|course\/c\/[^/]+|date\/c\/[^/]+)/.test(page)?'picnic':page.startsWith('/weekend-prep/')?(/soup|stew|hotpot|ramen|noodle|sujebi|tteokbokki|fishcake|crab|mussel/.test(page)?'cooking-pot':/grill|rice|pancake|sandwich|skewer|stir-fry|jeon|corn-cheese|tofu-kimchi/.test(page)?'cooking-pan':/picnic|park|outing/.test(page)?'picnic':null):null;
+ const channel=page==='/'?'home':/^\/camping\/\d+$/.test(page)?'camping':/^\/(event\/[^/]+|places\/spot\/[^/]+|course\/c\/[^/]+|date\/c\/[^/]+|winter-travel\/[^/]+)/.test(page)?'picnic':page.startsWith('/weekend-prep/')?(/soup|stew|hotpot|ramen|noodle|sujebi|tteokbokki|fishcake|crab|mussel/.test(page)?'cooking-pot':/grill|rice|pancake|sandwich|skewer|stir-fry|jeon|corn-cheese|tofu-kimchi/.test(page)?'cooking-pan':/picnic|park|outing/.test(page)?'picnic':null):null;
  const globalRail=position==='top'&&display==='rail';
  const correctPosition=position==='top'||(page!=='/'&&position==='article');
  const items=useMemo(()=>correctPosition&&(globalRail||channel)&&now>0?(globalRail?currentHomeProducts(feed,now):currentProducts(feed,now).filter(p=>p.links[channel!]&&(page!=='/'||p.homeFeature))).sort((a,b)=>Number(Boolean(b.endAt))-Number(Boolean(a.endAt))).slice(0,globalRail?undefined:page==='/'?40:2):[],[correctPosition,channel,now,feed,page,globalRail]);

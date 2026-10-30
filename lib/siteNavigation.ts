@@ -21,7 +21,6 @@ export function headerNavigation(seasonLabel: string): { primary: SiteNavItem[];
       { href: "/food", label: "맛집 탐방" },
       { href: "/kids", label: "아이와 함께" },
       { href: "/date", label: "데이트" },
-      { href: "/season", label: "가을나들이" },
     ],
   };
 }

@@ -108,3 +108,14 @@
 @media(max-width:360px){.ticketHero .stage{grid-template-columns:minmax(0,1fr) 82px;gap:10px}.ticketHero .copy h2{font-size:15px}.ticketHero .copy .cta{padding-left:10px;padding-right:10px;gap:8px}}
 
 .loadingDisclosure{height:34px}@media(max-width:640px){.loadingDisclosure{height:28px}}
+
+/* Generic AI backdrop is separate from the original product photo. */
+.visual .winterScene{background:linear-gradient(90deg,#12203caa,#12203c22),url("/affiliate-images/winter-weekend-scene-20261030.webp") center/cover no-repeat;border-radius:12px}
+
+.hero.genericHero{background:linear-gradient(90deg,rgba(10,23,42,.94),rgba(10,23,42,.64) 46%,rgba(10,23,42,.12)),url("/affiliate-images/winter-weekend-scene-20261030.webp") center 56%/cover no-repeat;color:#fff}
+.visual .winterScene{background:transparent}
+@media(max-width:640px){.hero.genericHero{background-position:center,60% center}.genericHero .visual .originalOnly img{width:100px;height:100px}}
+
+@media(max-width:640px){.wrap:not(.compact) .disclosure{font-size:10px;line-height:1.5}}
+
+@media(max-width:640px){.wrap:not(.compact) .genericHero .copy .cta{display:inline-flex;min-height:30px;margin-top:2px;padding:5px 9px;font-size:10px}}

@@ -26,7 +26,7 @@ export default function ChromeGate({
   return (
     <>
       {header}
-      <main className="w-full">{p!=='/'&&<TossAffiliate position="top" display="rail" />}{children}{p!=='/'&&<><TossAffiliate position="article" /><TravelAffiliate /></>}</main>
+      <main className="w-full">{children}{p!=='/'&&<>{!p.startsWith('/winter-travel/')&&<TossAffiliate position="article" />}<TravelAffiliate /></>}</main>
       {footer}
       {floating}
     </>

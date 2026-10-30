@@ -74,3 +74,11 @@ imagegen 기본 내장 도구 생성 프롬프트 요약 및 저장 경로:
 - At 390px: main banner 178px, lodging banner approximately 99px, no document overflow. Product cards show the next partial item.
 - At 1280px: full-width shallow campaign, top search and single-row travel categories; no document overflow.
 - TypeScript and production build passed. Affiliate URLs and disclosures preserved.
+
+## 2026-10-30 겨울 추천 및 토스 피드 점검
+
+- 메인 겨울 추천은 공개 검증을 통과한 겨울 코스만 표시한다. 가을 모음 `/season`과 기존 글 URL은 유지하고 카테고리 메뉴에서는 숨긴다. 통합 검색에서 가을·단풍·억새를 검색하면 가을 모음으로 연결한다.
+- `data/winter-reviewed-photos.json`의 10개 사진은 코스 경유지 ID와 저장된 관광공사 원본 URL을 대조하고 축소 검토했다. 촬영 계절은 확인되지 않아 자료 사진으로 표시한다. 이미지 원본이 바뀌면 자동으로 검토 승인하지 않는다. 새 글에는 확인된 대표 사진이 없을 수 있으며 사진 검토를 통과해야 표시된다.
+- 새로운 메인 겨울 배경은 AI 연출이며 상품 사진과 구분한다. 테스트 상품은 운영 데이터에 포함하지 않는다. 가격·재고·원본 제휴 URL은 신선한 토스 피드만 사용한다.
+- 2026-10-30 NAS 작업 로그에서 토스 API가 `SHARELINK_MAINTENANCE_ISSUE_BLOCKED`를 반환하여 갱신이 보류되는 것을 확인했다. 기존 매시간 작업은 활성 상태이며 외부 API가 정상화되면 다시 시도한다. 오래된 피드의 가격을 임의로 공개하지 않는다.
+- 광고 위치는 추정에 따른 설계다. 실제 클릭 및 구매 성과는 제휴 실적과 별도로 확인해야 한다.

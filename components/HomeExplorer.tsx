@@ -15,12 +15,10 @@ export type HomeItem = { id: string; href: string; title: string; meta: string; 
 type Props = { regional: Record<string, HomeItem[]>; eventItems: HomeItem[]; freeItems: HomeItem[]; kidItems: HomeItem[]; dateItems: HomeItem[]; campItems: HomeItem[]; courseItems: HomeItem[]; seasonItems: HomeItem[]; prepItems: HomeItem[]; placeItems: HomeItem[]; newItems: HomeItem[]; regions: { name: string; href: string }[]; siteName: string };
 const savedKey = SAVED_KEY;
 const regionalAreas: Record<string, string[]> = { 충청: ["충북", "충남", "대전", "세종"], 경상: ["경북", "경남", "부산", "대구", "울산"], 전라: ["전북", "전남", "광주"], 전국: [] };
-const categories = [["🎭", "문화행사", "/events"], ["🌿", "나들이", "/places"], ["🗺️", "여행코스", "/course"], ["❄️", "겨울 여행지", "/winter-travel"], ["🚌", "시티투어", "/city-tour"], ["⛺", "캠핑", "/camping"], ["🍽️", "맛집탐방", "/food"], ["🐾", "반려동물 여행", "/pet-travel"], ["👨‍👩‍👧", "아이와 함께", "/kids"], ["💛", "데이트", "/date"], ["🍁", "가을나들이", "/season"], ["🧺", "준비 가이드", "/weekend-prep"]];
+const categories = [["🎭", "문화행사", "/events"], ["🌿", "나들이", "/places"], ["🗺️", "여행코스", "/course"], ["❄️", "겨울 여행지", "/winter-travel"], ["🚌", "시티투어", "/city-tour"], ["⛺", "캠핑", "/camping"], ["🍽️", "맛집탐방", "/food"], ["🐾", "반려동물 여행", "/pet-travel"], ["👨‍👩‍👧", "아이와 함께", "/kids"], ["💛", "데이트", "/date"], ["🧺", "준비 가이드", "/weekend-prep"]];
 
 export default function HomeExplorer({ regional, eventItems, freeItems, kidItems, dateItems, campItems, courseItems, seasonItems, prepItems, placeItems, newItems, regions, siteName }: Props) {
   const day = useRenderDay();
-  const currentMonth = Number(day.slice(5, 7));
-  const seasonHref = [12, 1, 2].includes(currentMonth) ? '/winter-travel' : [9, 10, 11].includes(currentMonth) ? '/season' : '/places';
   const weekend = weekendRangeYmd(day);
   const currentEventItems = eventItems.filter((item) => item.start && item.end && item.start <= weekend.end && item.end >= weekend.start);
   const currentFreeItems = freeItems.filter((item) => !item.end || item.end >= day);
@@ -47,7 +45,7 @@ export default function HomeExplorer({ regional, eventItems, freeItems, kidItems
     {currentEventItems.length > 0 && <Section title="이번 주말 행사" href="/weekend" description={`${weekendLabel}에 기간이 겹치는 행사예요. 회차·운영일·예약은 상세에서 확인하세요.`}><Rail items={currentEventItems} saved={saved} toggleSave={toggleSave} /></Section>}
     {courseItems.length > 0 && <Section title="여행코스" href="/course"><Rail items={courseItems} saved={saved} toggleSave={toggleSave} /></Section>}
     {campItems.length > 0 && <Section title="캠핑" href="/camping"><Rail items={campItems} saved={saved} toggleSave={toggleSave} /></Section>}
-    {seasonItems.length > 0 && <Section title="계절별 추천" href={seasonHref}><Rail items={seasonItems} saved={saved} toggleSave={toggleSave} /></Section>}
+    {seasonItems.length > 0 && <Section title="겨울 여행지" href="/winter-travel" description="사진과 함께 지역별 당일치기·1박 2일 코스를 살펴보세요."><Rail items={seasonItems} saved={saved} toggleSave={toggleSave} /></Section>}
     {prepItems.length > 0 && <Section title="준비 가이드" href="/weekend-prep"><Rail items={prepItems} saved={saved} toggleSave={toggleSave} /></Section>}
     {placeItems.length > 0 && <Section title="대표 장소" href="/places"><Rail items={placeItems} saved={saved} toggleSave={toggleSave} /></Section>}
     {newItems.length > 0 && <Section title="새로 둘러볼 콘텐츠" href="/places"><Rail items={newItems} saved={saved} toggleSave={toggleSave} /></Section>}

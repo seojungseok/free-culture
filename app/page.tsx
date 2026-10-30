@@ -10,7 +10,8 @@ import { SITE } from "@/lib/site";
 import { fmtRange } from "@/lib/format";
 import { todayYmd } from "@/lib/dates";
 import { eventContentsText } from "@/lib/eventContents";
-import { filterSeasonPlaces } from "@/lib/season";
+import { getPublicWinterCourses } from '@/lib/winterCourses';
+import { winterCourseImage } from '@/lib/winterCourseImage.mjs';
 import { getPrepArticles } from "@/lib/weekend-prep/data";
 import { getAllArticles } from "@/lib/articles";
 import { hasSubstantivePlaceInfo, hasSubstantiveCampInfo } from "@/lib/placeQuality";
@@ -73,7 +74,7 @@ export default function HomePage() {
   }));
   const freeItems = getFree(true).filter((item) => item.imgUrl && item.endDate >= today).slice(0, 8).map((item) => ({ ...eventItem(item), badge: item.priceLabel || "무료 여부 확인" }));
   const kidItems = placeItems.filter((_, index) => places[index]?.isKid).slice(0, 6);
-  const seasonItems: HomeItem[] = filterSeasonPlaces().filter((item) => hasSubstantivePlaceInfo(item.id)).slice(0, 8).map((item) => ({ id: `season-${item.id}`, href: `/places/spot/${item.id}`, title: item.title, meta: item.area, image: item.image, badge: "계절 나들이", area: item.area }));
+  const seasonItems: HomeItem[] = getPublicWinterCourses().slice(0, 8).map((item) => ({ id: `winter-${item.id}`, href: `/winter-travel/${item.slug}`, title: item.title, meta: `${item.area} · ${item.duration === "당일" ? "당일치기" : "1박 2일"}`, image: winterCourseImage(item)?.src || "", badge: "겨울 여행지", area: item.area }));
   const prepItems: HomeItem[] = getPrepArticles().slice(0, 8).map((item) => ({ id: `prep-${item.slug}`, href: `/weekend-prep/${item.slug}`, title: item.title, meta: item.category, image: item.cover.url, badge: "준비 가이드" }));
   const publishedPlaces = getAllArticles().filter((article) => article.status === "published" && article.publishedAt && article.content.length >= 300).sort((a, b) => Date.parse(b.publishedAt || "") - Date.parse(a.publishedAt || ""));
   const byPlaceId = new Map(placeItems.map((item) => [item.id.slice(6), item]));

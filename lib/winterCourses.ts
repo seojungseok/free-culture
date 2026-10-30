@@ -1,4 +1,5 @@
 import winterData from '@/data/winter-courses.json';
+import reviewedPhotos from '@/data/winter-reviewed-photos.json';
 import { isPublicWinterCourse } from '@/lib/winter-course-validation.mjs';
 
 export type WinterStop = { placeId: string; name: string; addr?: string; mapx: string | number; mapy: string | number; day: number; image?: string; officialUrl?: string };
@@ -16,7 +17,9 @@ export function getPublicWinterCourses(): WinterCourse[] {
   const unique = new Map<string, WinterCourse>();
   for (const course of data.courses) {
     if (isPublicWinterCourse(course)) {
-      const item = course as WinterCourse;
+      const original = course as WinterCourse;
+      const reviewed = (reviewedPhotos as Record<string, WinterCourse['image']>)[original.slug];
+      const item = { ...original, image: original.image || (reviewed && original.stops.some((stop) => stop.image === reviewed.src) ? reviewed : undefined) };
       if (!unique.has(item.slug)) unique.set(item.slug, item);
     }
   }

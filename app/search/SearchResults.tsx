@@ -25,6 +25,7 @@ export default function SearchResults({q=""}:{q?:string}) {
           <SearchBox size="lg" defaultValue={query} placeholder="지역·유형으로 검색 (예: 인천 무료 공연)" />
         </div>
 
+        {query && /가을|단풍|억새/.test(query) && <aside className="mx-auto mt-6 max-w-xl rounded-2xl border border-amber-200 bg-amber-50 p-4"><Link href="/season" className="font-bold text-ink hover:underline">🍂 보관된 가을나들이 모아보기 →</Link><p className="mt-1 text-sm text-ink-soft">기존 가을 장소와 글을 지역과 테마로 찾아보세요.</p></aside>}
         {!query ? (
           <div className="mx-auto mt-8 max-w-xl text-center">
             <p className="text-sm text-ink-faint">찾고 싶은 지역·유형을 입력해보세요.</p>
@@ -77,7 +78,7 @@ export default function SearchResults({q=""}:{q?:string}) {
           <div className="mx-auto mt-8 max-w-xl">
             <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-black/10 py-16 text-center">
               <div className="text-4xl">🔍</div>
-              <p className="mt-3 font-semibold text-ink-soft">&ldquo;{query}&rdquo; 결과가 없어요</p>
+              <p className="mt-3 font-semibold text-ink-soft">{/가을|단풍|억새/.test(query) ? "위의 가을나들이 모음을 확인해 보세요" : <>&ldquo;{query}&rdquo; 결과가 없어요</>}</p>
               <p className="mt-1 text-sm text-ink-faint">조건을 바꿔보세요. 지역·가격을 빼거나 다른 유형으로 검색해보세요.</p>
             </div>
             <div className="mt-4 flex flex-wrap justify-center gap-2">
