@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-29T00:06:34.185Z",
+  "updatedAt": "2026-10-30T00:03:25.084Z",
   "courses": [
     {
       "id": "winter-074dd08aa0b45b",
@@ -2365,6 +2365,125 @@
         }
       ],
       "publishedAt": "2026-10-29T00:06:34.185Z"
+    },
+    {
+      "id": "winter-9a8e5ffba75659",
+      "slug": "jeonbuk-winter-daytrip-9a8e5ffba7",
+      "title": "전북 겨울 당일치기 여행코스 · 동리국악당에서 고창읍성 도예체험장까지",
+      "duration": "당일",
+      "area": "전북",
+      "sourceCourseId": "jeonbuk-family-day-1e1mkw2",
+      "stops": [
+        {
+          "placeId": "130049",
+          "name": "동리국악당",
+          "addr": "전북특별자치도 고창군 고창읍 판소리길 20",
+          "mapx": "126.7023528922",
+          "mapy": "35.4317028988",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/88/3362288_image2_1.JPG",
+          "kind": "문화시설",
+          "day": 1,
+          "officialUrl": "https://access.visitkorea.or.kr/ms/detail.do?cotId=e590c1fe-630f-4cd8-abde-f5ad4f4085a9"
+        },
+        {
+          "placeId": "130538",
+          "name": "고창판소리박물관",
+          "addr": "전북특별자치도 고창군 고창읍 동리로 100",
+          "mapx": "126.7027306184",
+          "mapy": "35.4324167130",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/28/1602928_image2_1.jpg",
+          "kind": "문화시설",
+          "day": 1,
+          "officialUrl": "https://gctf.or.kr/web/04/40004"
+        },
+        {
+          "placeId": "2690525",
+          "name": "고창읍성 도예체험장",
+          "addr": "전북특별자치도 고창군 고창읍 동리로 120",
+          "mapx": "126.7054775943",
+          "mapy": "35.4325000830",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/28/3518628_image2_1.jpg",
+          "kind": "관광지",
+          "day": 1,
+          "officialUrl": "https://www.gochang.go.kr/tour/board/view.gochang?boardId=BBS_TOUR&categoryCode1=TOUR05&dataSid=492743&menuCd=DOM_000000402002005000&orderBy=TAG_ID+ASC%2CDATA_SID+DESC&paging=ok&startPage=1"
+        }
+      ],
+      "intro": "전북에서 겨울에 둘러볼 장소를 묶은 여행 계획입니다: 동리국악당, 고창판소리박물관, 고창읍성 도예체험장. 날씨와 각 장소의 안내에 맞춰 순서를 조절해 보세요.",
+      "sections": [
+        {
+          "heading": "방문 순서",
+          "paragraphs": [
+            "동리국악당 → 고창판소리박물관 → 고창읍성 도예체험장 순서로 둘러보는 일정입니다. 방문 순서는 교통편과 날씨에 맞춰 조정하세요.",
+            "출발 전 지도에서 실제 이동 경로와 교통편을 확인하세요."
+          ]
+        },
+        {
+          "heading": "동리국악당",
+          "paragraphs": [
+            "고창 판소리 전승과 국악 공연을 위한 문화 공간입니다.",
+            "공연이 없는 날의 시설 이용 가능 여부는 별도로 문의하세요.",
+            "실내 공연 관람을 계획한다면 방문 전 공연 일정과 입장 조건을 확인하세요.",
+            "첫 방문 후보인 동리국악당부터 살펴보고 동행자의 관심사에 맞춰 이 날의 일정을 시작해 보세요."
+          ]
+        },
+        {
+          "heading": "고창판소리박물관",
+          "paragraphs": [
+            "동리 신재효와 고창 판소리의 전통을 다루는 박물관입니다.",
+            "박물관과 동리국악당은 가까이 있어 공연 일정에 맞춰 함께 둘러볼 수 있습니다.",
+            "겨울에는 실내 전시를 중심으로 계획하고 운영 안내를 확인하세요.",
+            "앞서 살펴본 동리국악당 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "고창읍성 도예체험장",
+          "paragraphs": [
+            "고창 도자기를 주제로 한 도예 체험 장소입니다.",
+            "체험 가능 인원과 운영 시간은 시기에 따라 달라질 수 있습니다.",
+            "실내 체험은 방문일 운영 여부와 예약 조건을 미리 확인하세요.",
+            "앞서 살펴본 고창판소리박물관 다음에 이어지는 방문 후보입니다. 이동 경로는 지도에서 확인해 주세요."
+          ]
+        },
+        {
+          "heading": "겨울 방문 전 확인",
+          "paragraphs": [
+            "출발 전 각 장소의 공식 안내에서 운영일과 예약·요금을 확인하고, 날씨와 도로 상황도 살펴보세요. 기상이 나쁘면 야외 일정은 조정하거나 생략하세요."
+          ]
+        }
+      ],
+      "status": "published",
+      "createdAt": "2026-10-30T00:03:25.084Z",
+      "validation": {
+        "version": 1,
+        "checkedAt": "2026-10-30T00:03:25.084Z",
+        "sourceKind": "cached-tour-data",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text"
+        ],
+        "needsEditorialReview": false,
+        "routeBasis": "내부 코스의 좌표 및 각 장소의 검증 기록을 대조했습니다. 실제 도로와 운영은 출발 전 확인이 필요합니다."
+      },
+      "sources": [
+        {
+          "title": "동리국악당 공식 안내",
+          "url": "https://access.visitkorea.or.kr/ms/detail.do?cotId=e590c1fe-630f-4cd8-abde-f5ad4f4085a9",
+          "checkedAt": "2026-10-28T13:30:54Z"
+        },
+        {
+          "title": "고창판소리박물관 공식 안내",
+          "url": "https://gctf.or.kr/web/04/40004",
+          "checkedAt": "2026-10-28T13:30:54Z"
+        },
+        {
+          "title": "고창읍성 도예체험장 공식 안내",
+          "url": "https://www.gochang.go.kr/tour/board/view.gochang?boardId=BBS_TOUR&categoryCode1=TOUR05&dataSid=492743&menuCd=DOM_000000402002005000&orderBy=TAG_ID+ASC%2CDATA_SID+DESC&paging=ok&startPage=1",
+          "checkedAt": "2026-10-28T13:30:54Z"
+        }
+      ],
+      "publishedAt": "2026-10-30T00:03:25.084Z"
     }
   ]
 }
