@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-30T12:02:10.397Z",
+  "products": [
+    {
+      "id": "7488392281",
+      "name": "[로켓프레시] 고래사어묵 바로 끓여먹는 꼬치어묵전골 & 유부주머니 2~3인분 (냉동)",
+      "image": "/api/affiliate/coupang-image/7488392281",
+      "url": "https://link.coupang.com/a/igRbKK4XVA",
+      "checkedAt": "2026-10-30T11:59:28.261Z",
+      "art": "fishcake",
+      "imageSourceHost": "ads-partners.coupang.com",
+      "imageSourceDigest": "80526c413e1a85a6f8fbc6bc7ab0d0fa3f3615f79f2fb42caad67810615f7e05"
+    },
+    {
+      "id": "8633966193",
+      "name": "의정부식 얼큰한 부대찌개 밀키트 1kg 2팩 햄듬뿍 4~6인분 사나이쉐프",
+      "image": "/api/affiliate/coupang-image/8633966193",
+      "url": "https://link.coupang.com/a/igRi2vx7Ke",
+      "checkedAt": "2026-10-30T12:01:30.407Z",
+      "art": "rice",
+      "imageSourceHost": "ads-partners.coupang.com",
+      "imageSourceDigest": "2adc271e04f50e529af8ff856886f34c8e8f629c19ef6ed0324a2d21e79b6c8e"
+    },
+    {
+      "id": "9557790942",
+      "name": "진심만두 고기떡 만두국 5팩, 194g, 5개",
+      "image": "/api/affiliate/coupang-image/9557790942",
+      "url": "https://link.coupang.com/a/igRkwzoA6S",
+      "checkedAt": "2026-10-30T12:01:50.415Z",
+      "art": "rice",
+      "imageSourceHost": "ads-partners.coupang.com",
+      "imageSourceDigest": "85bfec0ea275da8e81f4ca85c90dc86ceac7baf72d23018710a05dcbf5dbd50f"
+    }
+  ]
+}

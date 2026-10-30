@@ -13,7 +13,7 @@ export async function POST(req:Request){
  const b=buckets.get(key)||{at:now,count:0};b.count++;buckets.set(key,b);if(b.count>60)return new Response(null,{status:429});
  try{
   const raw=await req.text();if(raw.length>2048)return new Response(null,{status:413});const v=JSON.parse(raw);
-  if(!['affiliate_click','affiliate_impression','affiliate_save'].includes(v.event)||!['toss','waug','stay'].includes(v.provider)||!['top','article','home_plan','article_plan'].includes(v.placement)||typeof v.page!=='string'||!/^\/[a-zA-Z0-9/_-]*$/.test(v.page)||v.page.length>250)return new Response(null,{status:400});
+  if(!['affiliate_click','affiliate_impression','affiliate_save'].includes(v.event)||!['toss','waug','stay','coupang'].includes(v.provider)||!['top','article','popup','home_plan','article_plan'].includes(v.placement)||typeof v.page!=='string'||!/^\/[a-zA-Z0-9/_-]*$/.test(v.page)||v.page.length>250)return new Response(null,{status:400});
   const dir=process.env.AFFILIATE_EVENTS_DIR||path.join(process.cwd(),'.cache/affiliate-events');fs.mkdirSync(dir,{recursive:true});
   const day=new Date().toISOString().slice(0,10),file=path.join(dir,day+'.jsonl');
   if(fs.existsSync(file)&&fs.statSync(file).size>8*1024*1024)return new Response(null,{status:429});

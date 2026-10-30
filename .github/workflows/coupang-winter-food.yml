@@ -1,0 +1,49 @@
+name: 겨울 먹거리 제휴 상품 일일 갱신
+on:
+  schedule:
+    - cron: '12 15 * * *' # 00:12 KST; 실행은 GitHub 상황에 따라 지연될 수 있음
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-content-publication
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci --no-audit --no-fund
+      - name: 공용 제한기와 상품 검증 시험
+        run: node --test scripts/prep/github-budget.test.mjs scripts/prep/coupang.test.mjs scripts/prep/coupang-shared.test.mjs scripts/prep/refresh-winter-food.test.mjs
+      - name: 상품과 사진 확인
+        env:
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+          COUPANG_QUEUE_GITHUB_TOKEN: ${{ github.token }}
+          COUPANG_SITE_SCHEDULE_ENABLED: '1'
+          COUPANG_FOOD_PUBLIC_FILE: data/coupang-winter-food.json
+          COUPANG_FOOD_IMAGE_DIR: public/affiliate-food
+          COUPANG_FOOD_FORCE_REFRESH: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
+        run: node scripts/prep/refresh-winter-food.mjs
+      - name: 확인된 상품만 반영
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/coupang-winter-food.json
+          if [ -d public/affiliate-food ] && [ -n "$(find public/affiliate-food -type f -print -quit)" ]; then git add public/affiliate-food; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Refresh verified winter food recommendations'
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
