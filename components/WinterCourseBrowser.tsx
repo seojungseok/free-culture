@@ -1,28 +1,36 @@
 'use client';
-
+import {useMemo} from 'react';
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
-import type { WinterCourse } from '@/lib/winterCourses';
-import { winterCourseImage } from '@/lib/winterCourseImage.mjs';
+import {useRouter,useSearchParams} from 'next/navigation';
+import {Container} from './Band';
+import {FilterRow} from './FilterChips';
+import SeasonPlaceCard from './SeasonPlaceCard';
+import type {WinterCourse} from '@/lib/winterCourses';
+import {winterCourseImage} from '@/lib/winterCourseImage.mjs';
 
-export default function WinterCourseBrowser({ courses }: { courses: WinterCourse[] }) {
-  const [query, setQuery] = useState('');
-  const [area, setArea] = useState('');
-  const [duration, setDuration] = useState('');
-  const areas = useMemo(() => [...new Set(courses.map((course) => course.area))].sort((a, b) => a.localeCompare(b, 'ko')), [courses]);
-  const matching = courses.filter((course) => {
-    const term = query.trim().toLowerCase();
-    const text = [course.title, course.area, ...course.stops.map((stop) => stop.name)].join(' ').toLowerCase();
-    return (!term || text.includes(term)) && (!area || course.area === area) && (!duration || course.duration === duration);
-  });
-  return <section aria-labelledby="winter-list-title" className="mx-auto max-w-[1120px] px-5 pb-16 pt-8 sm:px-6">
-    <h2 id="winter-list-title" className="text-xl font-black text-ink">겨울 여행코스 찾기</h2>
-    <div className="mt-4 grid gap-3 sm:grid-cols-3">
-      <label className="text-sm font-bold text-ink">지역·장소 검색<input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="예: 강릉, 박물관" className="mt-1 block min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3 text-base font-normal" /></label>
-      <label className="text-sm font-bold text-ink">지역<select value={area} onChange={(e) => setArea(e.target.value)} className="mt-1 block min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3 text-base font-normal"><option value="">전체 지역</option>{areas.map((item) => <option key={item} value={item}>{item}</option>)}</select></label>
-      <label className="text-sm font-bold text-ink">여행 기간<select value={duration} onChange={(e) => setDuration(e.target.value)} className="mt-1 block min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3 text-base font-normal"><option value="">전체 기간</option><option value="당일">당일치기</option><option value="1박2일">1박 2일</option></select></label>
-    </div>
-    <p role="status" aria-live="polite" className="mt-5 text-sm font-semibold text-ink-soft">{courses.length ? `조건에 맞는 코스 ${matching.length}개` : '검토를 마친 겨울 여행코스를 준비하고 있습니다.'}</p>
-    {matching.length ? <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{matching.map((course) => { const photo = winterCourseImage(course); return <article key={course.id} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">{photo && <figure><Link href={`/winter-travel/${course.slug}`} tabIndex={-1} aria-hidden="true"><img src={photo.src} alt="" width={photo.width} height={photo.height} loading="lazy" className="h-auto w-full" /></Link><figcaption className="px-5 pt-2 text-xs text-ink-soft">{photo.kind === 'ai' ? 'AI 연출 · ' : ''}{photo.caption} · {photo.credit}</figcaption></figure>}<div className="p-5"><p className="text-xs font-bold text-brandblue">{course.area} · {course.duration === '당일' ? '당일치기' : '1박 2일'}</p><h3 className="mt-2 text-lg font-extrabold leading-snug text-ink"><Link href={`/winter-travel/${course.slug}`} className="hover:underline">{course.title}</Link></h3><p className="mt-2 line-clamp-3 text-sm leading-6 text-ink-soft">{course.intro}</p><p className="mt-4 text-sm leading-6 text-ink-soft">{course.stops.map((stop) => stop.name).join(' → ')}</p><Link href={`/winter-travel/${course.slug}`} className="mt-3 inline-flex min-h-11 items-center font-bold text-brandblue">코스 자세히 보기 →</Link></div></article>; })}</div> : courses.length ? <p className="mt-4 rounded-2xl bg-slate-50 p-5 text-sm leading-6 text-ink-soft">조건에 맞는 코스가 없습니다. 지역이나 기간을 바꿔 보세요.</p> : <div className="mt-4 rounded-2xl bg-slate-50 p-5 text-sm leading-6 text-ink-soft"><p>운영 정보와 이동 동선을 확인한 뒤 이곳에 공개합니다.</p><Link href="/course" className="mt-2 inline-flex min-h-11 items-center font-bold text-brandblue">기존 여행코스 둘러보기 →</Link></div>}
-  </section>;
+type Filters={q?:string;area?:string;duration?:string};
+export type WinterCoursePreview=Pick<WinterCourse,'id'|'slug'|'title'|'area'|'duration'|'intro'|'image'> & {stops:{name:string}[]};
+const CAP=120;
+function matching(courses:WinterCoursePreview[],filters:Filters){const term=filters.q?.trim().toLowerCase();return courses.filter(course=>(!term||[course.title,course.area,...course.stops.map(stop=>stop.name)].join(' ').toLowerCase().includes(term))&&(!filters.area||course.area===filters.area)&&(!filters.duration||course.duration===filters.duration));}
+
+export default function WinterCourseBrowser({courses}:{courses:WinterCoursePreview[]}){
+ const router=useRouter(),params=useSearchParams();
+ const filters:Filters={q:params.get('q')||undefined,area:params.get('area')||undefined,duration:params.get('duration')||undefined};
+ const areas=useMemo(()=>[...new Set(courses.map(course=>course.area))].sort((a,b)=>a.localeCompare(b,'ko')),[courses]);
+ const list=matching(courses,filters),heading=[filters.area,filters.duration==='당일'?'당일치기':filters.duration==='1박2일'?'1박 2일':null,'겨울 여행지'].filter(Boolean).join(' ');
+ const go=(patch:Filters)=>{const query=new URLSearchParams();for(const [key,value] of Object.entries({...filters,...patch}))if(value)query.set(key,value);router.replace('/winter-travel'+(query.size?'?'+query:''),{scroll:false});};
+ const reset=()=>router.replace('/winter-travel',{scroll:false});
+ return <div className="bg-panel">
+  <Container className="space-y-2.5 py-4">
+   <FilterRow label="일정"><Chip label="전체" count={matching(courses,{...filters,duration:undefined}).length} active={!filters.duration} onClick={()=>go({duration:undefined})}/>{[['당일','당일치기'],['1박2일','1박 2일']].map(([value,label])=><Chip key={value} label={label} count={matching(courses,{...filters,duration:value}).length} active={filters.duration===value} onClick={()=>go({duration:filters.duration===value?undefined:value})}/>)}</FilterRow>
+   <FilterRow label="지역"><Chip label="전국" count={matching(courses,{...filters,area:undefined}).length} active={!filters.area} onClick={()=>go({area:undefined})}/>{areas.map(area=><Chip key={area} label={area} count={matching(courses,{...filters,area}).length} active={filters.area===area} onClick={()=>go({area:filters.area===area?undefined:area})}/>)}</FilterRow>
+   {(filters.area||filters.duration||filters.q)&&<div className="flex flex-wrap items-center gap-2 pt-0.5 text-[12.5px]"><span className="font-bold text-ink-faint">선택:</span><span className="font-semibold text-freedark">{heading}{filters.q?' · '+filters.q:''}</span><button onClick={reset} className="min-h-9 font-semibold text-ink-faint underline hover:text-ink">초기화</button></div>}
+  </Container>
+  <Container className="pb-12 pt-2">
+   <div className="mb-4 flex flex-wrap items-center justify-between gap-3"><div className="flex items-baseline gap-2"><h2 id="winter-list-title" className="text-[20px] font-extrabold tracking-tight text-ink sm:text-[22px]">{heading}</h2><span role="status" aria-live="polite" className="text-[14px] font-bold text-free">{list.length.toLocaleString()}개 코스</span></div><form key={filters.q||''} role="search" className="flex w-full gap-2 sm:w-auto" onSubmit={e=>{e.preventDefault();const value=new FormData(e.currentTarget).get('q');go({q:typeof value==='string'?value.trim()||undefined:undefined});}}><input type="search" name="q" defaultValue={filters.q||''} aria-label="겨울 여행지 검색" placeholder="지역·장소 검색" className="h-11 min-w-0 flex-1 rounded-full border border-line bg-white px-4 text-sm outline-none focus:border-free sm:w-52"/><button className="min-h-11 shrink-0 rounded-full bg-free px-4 text-sm font-bold text-white">검색</button></form></div>
+   {list.length?<div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6" aria-labelledby="winter-list-title">{list.slice(0,CAP).map(course=>{const photo=winterCourseImage(course);return <SeasonPlaceCard key={course.id} href={`/winter-travel/${course.slug}`} title={course.title} image={photo?.src} imageAlt={photo?.alt} badge={course.duration==='당일'?'당일치기':'1박 2일'} trailingBadge={photo?.kind==='ai'?'AI 연출':undefined} meta={`${course.area} · ${course.stops.length}곳 방문`} description={course.intro} twoLineTitle/>;})}</div>:<div className="rounded-2xl border border-dashed border-line bg-white py-16 text-center text-ink-soft"><p>{courses.length?'조건에 맞는 겨울 여행코스가 없습니다.':'검토를 마친 겨울 여행코스를 준비하고 있습니다.'}</p>{courses.length?<button onClick={reset} className="mt-2 min-h-11 font-bold text-free underline">전체 겨울 여행지 보기 →</button>:<Link href="/course" className="mt-2 inline-flex min-h-11 items-center font-bold text-free underline">기존 여행코스 둘러보기 →</Link>}</div>}
+   {list.length>CAP&&<p className="mt-8 text-center text-[13px] text-ink-faint">상위 {CAP}개 표시 · 지역·일정으로 좁혀보세요</p>}
+  </Container>
+ </div>;
 }
+function Chip({label,count,active,onClick}:{label:string;count:number;active:boolean;onClick:()=>void}){return <button type="button" onClick={onClick} aria-pressed={active} className={`flex min-h-[36px] shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-3.5 text-[13px] font-bold transition ${active?'bg-free text-white shadow-sm':'border border-line bg-white text-ink-soft hover:border-free/40 hover:text-free'}`}>{label}<span className={`text-[11px] tabular-nums ${active?'text-white/80':'text-ink-dim'}`}>{count}</span></button>;}
