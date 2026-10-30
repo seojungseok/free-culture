@@ -13,7 +13,7 @@ test('확인 전에는 조회하지 않는다', async () => {
 });
 test('API 결과 중 조건에 맞는 원본 링크만 저장하고 실패 시 중단한다', async () => {
   let calls=0;
-  const names=['어묵탕 밀키트','부대찌개 밀키트','떡만둣국 밀키트','해물탕 밀키트'];
+  const names=['어묵탕 밀키트','부대찌개 밀키트','떡만둣국 밀키트','삼립 단팥 호빵','팥 붕어빵'];
   const fetchProduct=async (input,options)=>{
     const i=Math.floor(calls++/2);
     if(options?.method==='POST'){
@@ -25,7 +25,7 @@ test('API 결과 중 조건에 맞는 원본 링크만 저장하고 실패 시 �
     return Response.json({rCode:'0',data:{productData:[{productId:i+1,productName:names[i],productImage:'https://images.example/product.jpg',productUrl:`https://link.coupang.com/re/AFFSDP?pageKey=${i+1}&itemId=${100+i}&lptag=AF123`} ]}});
   };
   const feed=await collectWinterFood({fetchProduct, enabled:true, clock:()=>new Date('2026-10-30T00:00:00Z')});
-  assert.equal(calls,8); assert.equal(feed.products.length,4); assert.equal(feed.products[0].name,names[0]);
+  assert.equal(calls,10); assert.equal(feed.products.length,5); assert.equal(feed.products[0].name,names[0]);
   assert.equal(publicFeed(feed).products[0].image,'/api/affiliate/coupang-image/1');
   assert.ok(!JSON.stringify(publicFeed(feed)).includes('images.example/product.jpg'));
   await assert.rejects(collectWinterFood({enabled:true,fetchProduct:async()=>new Response('',{status:429})}));

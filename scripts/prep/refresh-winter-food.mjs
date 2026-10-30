@@ -10,7 +10,8 @@ const searches = [
   {keyword:'어묵탕 밀키트', match:/어묵탕|오뎅탕|어묵전골/, art:'fishcake'},
   {keyword:'부대찌개 밀키트', match:/부대찌개/, art:'rice'},
   {keyword:'떡만둣국 밀키트', match:/떡만두|만둣국|만두국/, art:'rice'},
-  {keyword:'캠핑 해물탕 밀키트', match:/해물탕/, art:'seafood'},
+  {keyword:'삼립 단팥 호빵', match:/호빵/, art:'hoppang'},
+  {keyword:'팥 붕어빵', match:/붕어빵/, art:'bungeoppang'},
 ];
 
 function productFromResponse(product, query, now) {
