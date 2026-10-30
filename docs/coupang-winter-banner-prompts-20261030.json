@@ -1,0 +1,23 @@
+{
+  "mode": "built-in imagegen",
+  "assets": [
+    {
+      "key": "fishcake",
+      "referenceProduct": "7488392281",
+      "prompt": "Use case: ads-marketing. Create ONE premium Korean winter food commercial photograph, native panoramic canvas 3:1, at least 2100x700, composed horizontally from the start. Reference image is the actual Coupang product: 고래사 꼬치어묵전골 & 유부주머니, folded fishcake skewers and tofu pouches in rectangular aluminum tray. Preserve this product's recognizable food types, rectangular foil cooking tray, fishcake shapes; do not invent a different expensive seafood dish. Scene: winter lakeside campsite at blue hour, warm lantern, exquisite steam, believable glistening broth and scallions. Actual tray hero on right 55%, lower camera angle, food sharply in focus, the left 40% dark navy atmospheric empty copy space. Visually enticing high-end Korean ecommerce ad, photoreal lighting, rich texture, no people. No text, no logos, no numbers, no prices, no packaging inset. Important food fully framed in central vertical 65%, all margins intentional for a low wide website banner; do not produce square or vertical artwork.",
+      "output": "public/affiliate-images/coupang-winter-fishcake-20261030-v2.webp"
+    },
+    {
+      "key": "budae",
+      "referenceProduct": "8633966193",
+      "prompt": "Use case: ads-marketing. Create ONE premium winter Korean budae-jjigae commercial photograph, native panoramic 3:1 canvas, at least 2100x700, horizontally art-directed at source. The reference image is the real Coupang 사나이쉐프 의정부식 부대찌개 product photograph: preserve the visible orange-red broth, sliced ham and sausage, curled ramen, melted cheese and scallions, black shallow pot. Recreate those same food types and cooking presentation, not steak, seafood or rice. Winter campsite, softly blurred snow outside, rich lantern glow against deep dark red/navy background. Steaming photoreal appetizing pot on RIGHT 55%, food fully contained within central vertical 65%, left 40% spacious dark red/navy negative space for HTML copy. Rich food photography, expensive Korean ecommerce campaign polish. No text, no prices, no claims, no brand redesign, no tiny product inset. Horizontal original composition, no later crop required.",
+      "output": "public/affiliate-images/coupang-winter-budae-20261030-v2.webp"
+    },
+    {
+      "key": "mandu",
+      "referenceProduct": "9557790942",
+      "prompt": "Use case: ads-marketing. Create ONE premium Korean winter tteok-mandu-guk commercial photograph, original native 3:1 panoramic canvas at least 2100x700. Reference is actual Coupang 진심만두 고기떡 만두국 packaged product; use its pictured folded Korean meat dumplings and pale oval rice-cake slices as food reference, do not reproduce package lettering or create extra meat/seafood. Realistic small generous bowl of hot pale beef broth with folded meat dumplings, white oval rice cakes, restrained scallion garnish; steam beautifully lit by warm campsite lantern. Cozy winter evening, frosty window/campsite background, dark forest teal/navy. Hero bowl and one spoon lifting a dumpling on RIGHT 55%; all food central vertical 65%, left 40% sophisticated dark negative space reserved for HTML copy. Photoreal high-end Korean ecommerce food ad, crisp high resolution, credible portion, no people. No text, no logo, no prices, no packaging inset. Compose low and wide from the beginning, not a portrait cropped later.",
+      "output": "public/affiliate-images/coupang-winter-mandu-20261030-v2.webp"
+    }
+  ]
+}
