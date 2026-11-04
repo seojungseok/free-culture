@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -51,6 +52,7 @@ export default async function CampingRegionPage({ params }: { params: Promise<{ 
         </nav>
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]"><span className="text-free">{sido}</span> 캠핑장</h1>
         <p className="mt-1 text-[14px] text-ink-soft">{sido} 캠핑장 {list.length.toLocaleString()}곳 · 출처: 한국관광공사 고캠핑</p>
+      <TossTopDeals contained />
       </Band>
 
       <div className="bg-panel">

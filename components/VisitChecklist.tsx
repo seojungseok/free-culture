@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { VisitCheck } from "@/lib/visitPlanning";
+import TossTopDeals from './TossTopDeals';
 
 export default function VisitChecklist({ pageId, items }: { pageId: string; items: VisitCheck[] }) {
   const [checked, setChecked] = useState<string[]>([]);
@@ -21,7 +22,7 @@ export default function VisitChecklist({ pageId, items }: { pageId: string; item
     setChecked(next);
     try { localStorage.setItem(key, JSON.stringify({ signature, checked: next })); } catch { /* Optional persistence. */ }
   }
-  return <section className="mt-6 rounded-2xl border border-free/20 bg-tint/40 p-4 sm:p-5" aria-label="방문 전 체크리스트">
+  return <><TossTopDeals contained /><section className="mt-6 rounded-2xl border border-free/20 bg-tint/40 p-4 sm:p-5" aria-label="방문 전 체크리스트">
     <div className="flex flex-wrap items-center justify-between gap-2">
       <h2 className="text-[17px] font-extrabold text-ink">방문 전 체크리스트</h2>
       <span className="text-[12px] font-semibold text-ink-faint" aria-live="polite">{checked.length}/{items.length} 확인</span>
@@ -34,5 +35,5 @@ export default function VisitChecklist({ pageId, items }: { pageId: string; item
       </label>)}
     </div>
     {checked.length > 0 && <button type="button" onClick={() => update([])} className="mt-2 min-h-11 px-2 text-[12px] font-semibold text-ink-faint underline underline-offset-2">체크 초기화</button>}
-  </section>;
+  </section></>;
 }

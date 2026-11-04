@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import VisitChecklist from "@/components/VisitChecklist";
+import TossTopDeals from "@/components/TossTopDeals";
 import SourceNote from "@/components/SourceNote";
 import { fmtMd, getAllFestivals, getFestivalById, festivalHref, festivalStatus, festivalDateLabel, festivalVisitChecks, festivalVisitInfo } from "@/lib/festivals";
 import { SITE } from "@/lib/site";
@@ -100,6 +101,7 @@ export default async function FestivalDetailPage({ params }: { params: Promise<{
           </div>
         </div>
       </div>
+      {state === "ended" && <TossTopDeals contained />}
       {state !== "ended" && <VisitChecklist pageId={`festival:${festival.id}`} items={festivalVisitChecks(festival)} />}
       {descriptionParts.length > 1 && <section className="mt-10 max-w-3xl border-t border-line pt-7"><h2 className="text-xl font-black text-ink">축제 소개</h2>{descriptionParts.slice(1).map((paragraph, index) => <p key={index} className="mt-4 whitespace-pre-line text-[15px] leading-8 text-ink-soft">{paragraph}</p>)}</section>}
       {images.length > 1 && <section className="mt-10 border-t border-line pt-7"><h2 className="text-xl font-black text-ink">축제 이미지</h2><div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">{images.slice(1).map((image, index) => <div key={image} className="aspect-[4/3] overflow-hidden rounded-xl bg-tint"><img src={image} alt={`${festival.title} 안내 이미지 ${index + 2}`} loading="lazy" className="h-full w-full object-cover" /></div>)}</div></section>}

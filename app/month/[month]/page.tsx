@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -55,6 +56,7 @@ export default async function MonthlyPage({ params }: { params: Promise<{ month:
     <Band tone="panel" innerClassName="py-6 sm:py-8">
       <h1 className="text-[25px] font-black tracking-tight text-ink sm:text-[34px]">{n}월에 뭐하지?</h1>
       <p className="mt-2 max-w-3xl text-[14px] leading-6 text-ink-soft">{year}년 {n}월 {MONTH_THEMES[n - 1]}를 기준으로 전국 문화행사와 축제를 모았습니다. {n < currentMonth ? "지난달 자료는 기록으로 살펴보고 현재 행사는 이번 주말 목록에서 확인하세요." : "날짜·지역·분야·가격 필터로 방문할 곳을 골라보세요."}</p>
+      <TossTopDeals contained />
     </Band>
     <main className="mx-auto w-full max-w-[1180px] px-5 pb-12 sm:px-6 lg:px-8">
       <section className={`mt-6 rounded-2xl border p-5 sm:p-6 ${themeClass}`}>

@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import BalloonGame from "@/components/BalloonGame";
@@ -34,6 +35,7 @@ export default function BalloonPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🎈 풍선 터뜨리기</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">한 명씩 펌프! 풍선이 점점 커지다 <b className="text-white">터뜨리는 사람이 독박!</b> 최대 10명.</p>
 
         <div className="mt-6"><BalloonGame /></div>

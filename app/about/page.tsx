@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
@@ -13,6 +14,7 @@ export default function AboutPage() {
     <div className="prose-page">
       <h1>{SITE.name} 소개</h1>
       <p><strong>{SITE.name}</strong>은 이번 주말 어디로 갈지 고를 때 필요한 정보를 한곳에서 찾을 수 있도록 만든 서비스입니다. <Link href="/weekend">이번 주말 행사</Link>와 <Link href="/places">나들이 장소</Link>, <Link href="/course">여행코스</Link>, <Link href="/camping">캠핑장</Link>을 지역과 관심사로 살펴볼 수 있습니다. <Link href="/kids">아이와 갈 곳</Link>과 <Link href="/date">데이트 코스</Link>도 별도로 모았습니다.</p>
+      <TossTopDeals contained />
 
       <h2>자료의 출처</h2>
       <ul>

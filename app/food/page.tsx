@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Band } from "@/components/Band";
@@ -32,6 +33,7 @@ export default function FoodPage() {
         <p className="mt-2">지역과 업종으로 후보를 좁힌 뒤 주소를 확인해 방문할 장소와의 거리를 비교해 보세요. 음식점 상세에 제공된 연락처와 소개는 출발 전에 다시 확인하는 것이 좋습니다. 영업시간·메뉴·가격이 제공되지 않은 곳은 현장이나 공식 채널에서 확인해 주세요.</p>
         <p className="mt-2">식사 전후에 들를 곳을 찾는다면 <Link href="/places" className="font-semibold text-brandblue underline">지역별 나들이 장소</Link>나 <Link href="/course" className="font-semibold text-brandblue underline">여행코스</Link>를 함께 살펴보세요.</p>
       </section>
+      <TossTopDeals />
       <Suspense fallback={null}>
         <FoodBrowser restaurants={restaurants} areas={foodAreas()} />
       </Suspense>

@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import MissionRoulette from "@/components/MissionRoulette";
@@ -34,6 +35,7 @@ export default function MissionPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🎡 벌칙 룰렛</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">걸린 사람은 정했으니, <b className="text-white">무슨 벌칙일지</b> 돌려서 뽑아요! 순한맛·매운맛 선택.</p>
 
         <div className="mt-6"><MissionRoulette /></div>

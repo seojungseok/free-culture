@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import { SITE } from "@/lib/site";
 
@@ -11,6 +12,7 @@ export default function TermsPage() {
   return (
     <div className="prose-page">
       <h1>이용약관</h1>
+      <TossTopDeals contained />
 
       <h2>1. 목적</h2>
       <p>

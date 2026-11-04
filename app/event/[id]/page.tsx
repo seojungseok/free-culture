@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import NextStop from "@/components/NextStop";
 import NearbyParking from "@/components/NearbyParking";
 import { todayYmd } from "@/lib/dates";
@@ -188,6 +189,7 @@ export default async function EventPage({
 
           {ended && <p className="mt-4 rounded-xl bg-amber-50 p-4 text-sm leading-6">등록된 일정 기준으로 종료된 행사입니다. 지난 행사 정보는 참고용으로 보존합니다. {regionSlug&&<Link href={'/region/'+regionSlug} className="font-bold underline">현재 {ev.area} 행사·나들이 찾기</Link>}</p>}
 
+          <TossTopDeals contained />
           <dl className="mt-6 divide-y divide-black/5 rounded-2xl border border-black/5 bg-white">
             <Row label={ended ? "당시 안내 요금" : "요금"}>
               <span className="font-semibold">{ev.priceRaw || ev.priceLabel}</span>

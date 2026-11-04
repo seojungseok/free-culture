@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import Link from 'next/link';
 import type {Metadata} from 'next';
 import WeekendDiscovery from '@/components/WeekendDiscovery';
@@ -28,6 +29,7 @@ export default function WeekendPage(){
  const regions=['서울','경기','인천','부산','제주'].map(area=>({area,code:(SIDO_SLUG as Record<string,string>)[area],events:allEvents.filter(e=>e.area===area),kidPlaces:getKidTours(area).length,dateEvents:weekendEvents.filter(e=>e.area===area&&e.audiences?.includes('couple')).length})).filter(region=>region.code&&region.events.length>=5);
  const featured=allEvents.filter(e=>e.image).sort((a,b)=>(a.end||'').localeCompare(b.end||'')).slice(0,8);
  return <main className="mx-auto max-w-6xl px-4 py-7 sm:px-6"><nav className="mb-4 text-sm text-ink-soft"><Link href="/">홈</Link> / 이번 주말</nav><h1 className="text-2xl font-black sm:text-3xl">이번 주말 가볼 만한 곳</h1><p className="mt-3 text-sm leading-7 text-ink-soft">{formatKoreanDate(start)}{start!==end?' ~ '+formatKoreanDate(end):''} · 지역별 행사와 나들이를 먼저 살펴보고 방문일과 취향으로 좁혀 보세요.</p>
+      <TossTopDeals contained />
  <section className="mt-6" aria-label="지역별 이번 주말 일정"><h2 className="text-xl font-bold">지역별 이번 주말</h2><div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{regions.map(region=><div key={region.area} className="rounded-xl border p-4"><Link href={`/region/${region.code}`} className="font-bold text-brandblue">{region.area} 가볼 만한 곳 →</Link><p className="mt-1 text-xs text-ink-soft">이번 주말 행사 {region.events.length}건 · 아이 동반 분류 장소 {region.kidPlaces}곳</p><div className="mt-3 flex flex-wrap gap-3 text-xs font-semibold"><Link href={`/region/${region.code}#events`}>행사 보기</Link>{region.kidPlaces>=3&&<Link href={`/region/${region.code}#kids`}>아이와 보기</Link>}{region.dateEvents>=3&&<Link href={`/region/${region.code}#date`}>데이트 보기</Link>}</div></div>)}</div></section>
  <div className="mt-6"><WeekendDiscovery items={[...events,...selected.values()]} start={start} end={end} seasonLabel={seasonLabel}/></div>
  <section className="mt-10 border-t pt-7"><h2 className="text-xl font-bold">이번 주말 열리는 행사</h2><p className="mt-2 text-sm text-ink-soft">등록 일정이 이번 주말과 겹치는 행사입니다. 날짜와 운영 조건은 상세에서 확인하세요.</p><ul className="mt-4 grid gap-3 sm:grid-cols-2">{featured.map(event=><li key={event.id}><Link href={event.href} className="block rounded-xl border p-4 hover:border-brandblue"><strong className="block break-keep">{event.title}</strong><span className="mt-1 block text-xs text-ink-soft">{event.area} · {formatKoreanDate(event.end||end)}까지 등록</span></Link></li>)}</ul></section>

@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import VoiceGame from "@/components/VoiceGame";
@@ -34,6 +35,7 @@ export default function VoicePage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🎤 데시벨 배틀</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">한 명씩 3초간 소리 질러 <b className="text-white">최고 데시벨(근사치)</b>을 측정! <b className="text-white">가장 작게 지른 사람이 독박.</b> 최대 10명.</p>
 
         <div className="mt-6"><VoiceGame /></div>

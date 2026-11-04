@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SlotMachine from "@/components/SlotMachine";
@@ -34,6 +35,7 @@ export default function SlotPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🎰 독박 슬롯머신</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">한 명씩 레버를 당겨요. <b className="text-white">💀💀💀 해골 잭팟이 뜨는 사람이 독박!</b> 최대 10명.</p>
 
         <div className="mt-6"><SlotMachine /></div>

@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import DiceGame from "@/components/DiceGame";
@@ -34,6 +35,7 @@ export default function DicePage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🎲 주사위 대결</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">다 함께 굴려서 <b className="text-white">가장 낮은 눈이 나온 사람이 독박!</b> 동점은 자동 재대결. 최대 10명.</p>
 
         <div className="mt-6"><DiceGame /></div>

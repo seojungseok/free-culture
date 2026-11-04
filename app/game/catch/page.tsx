@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SnakeCatchGame from "@/components/SnakeCatchGame";
@@ -34,6 +35,7 @@ export default function CatchPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🐍 뱀 잡기</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">구불구불 도망치는 뱀을 <b className="text-white">5초 안에 최대한 많이 탭해서 잡아요.</b> 모두 같은 조건, <b className="text-white">가장 적게 잡은 사람이 독박!</b> 최대 10명.</p>
 
         <div className="mt-6"><SnakeCatchGame /></div>

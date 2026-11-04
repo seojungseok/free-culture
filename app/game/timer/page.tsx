@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import TimerStopGame from "@/components/TimerStopGame";
@@ -34,6 +35,7 @@ export default function TimerPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">⏱️ 근접 타이머 게임</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">목표 시간(예: 5초)에 <b className="text-white">가장 가깝게 멈추기!</b> 가장 멀리 빗나간 사람이 독박. 최대 10명.</p>
 
         <div className="mt-6"><TimerStopGame /></div>

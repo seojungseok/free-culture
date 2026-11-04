@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import LadderGame from "@/components/LadderGame";
@@ -37,6 +38,7 @@ export default function LadderPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🪜 사다리타기</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">이름 적고 쭉~ 내려와 <b className="text-white">벌칙 칸에 도착한 한 명이 독박!</b> 최대 10명.</p>
 
         <div className="mt-6">

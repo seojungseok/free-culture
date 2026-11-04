@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
@@ -13,6 +14,7 @@ export default function PrivacyPage() {
     <div className="prose-page">
       <h1>개인정보처리방침</h1>
       <p>이 방침은 {SITE.name}(이하 &ldquo;서비스&rdquo;)의 문의, 위치 기반 기능, 브라우저 저장과 방문 분석에서 어떤 정보가 사용되는지 설명합니다.</p>
+      <TossTopDeals contained />
 
       <h2>1. 회원가입과 이메일 문의</h2>
       <p>서비스는 회원가입 없이 이용할 수 있으며 이름·전화번호 등을 입력하는 회원가입 양식은 운영하지 않습니다. 이메일로 문의하는 경우에는 발신자 이메일 주소, 문의 내용과 이용자가 첨부한 자료를 전달받습니다. 이 정보는 문의 응대와 사실 확인에 사용합니다. 문의에 필요하지 않은 민감한 정보는 보내지 마세요.</p>

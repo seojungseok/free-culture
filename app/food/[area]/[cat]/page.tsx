@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -63,6 +64,7 @@ export default async function FoodAreaCatPage({ params }: { params: Promise<{ ar
           <span className="text-free">{sido} {c.label}</span> 맛집
         </h1>
         <p className="mt-1 text-[14px] text-ink-soft">{sido}의 {c.label} 음식점 {list.length.toLocaleString()}곳 · 출처: 한국관광공사</p>
+      <TossTopDeals contained />
       </Band>
 
       <div className="bg-panel">

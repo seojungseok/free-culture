@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import TripSave from "@/components/TripSave";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -83,6 +84,7 @@ export default async function PetTravelDetail({ params }: { params: Promise<{ id
             {summaryParagraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
           </section>
           {gallery[0] && photo(gallery[0], 0)}
+          <TossTopDeals contained />
 
           {!petInfo && <p className="mt-4 rounded-xl bg-amber-50 p-4 text-sm">이 장소의 구체적인 동반 조건을 아직 확인하지 못했습니다. 안내견 허용과 일반 반려동물 허용은 다릅니다. 일반 반려동물 동반 가능 장소로 단정하거나 코스에 자동 포함하지 않습니다.</p>}
           {petInfoParagraphs.length > 0 && <section className="mt-5 rounded-xl bg-tint p-4"><h2 className="text-[15px] font-extrabold text-ink">반려동물 이용 안내</h2><div className="mt-3 space-y-3 text-[13px] leading-6 text-ink-soft">{petInfoParagraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div></section>}

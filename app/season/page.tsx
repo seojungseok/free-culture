@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Band } from "@/components/Band";
@@ -29,6 +30,7 @@ export default function SeasonPage() {
         <p className="mt-1 max-w-[760px] text-[14px] leading-[1.7] text-ink-soft">
           가을은 날씨가 선선하고 단풍, 억새, 숲길 풍경이 좋아 걷기 편한 여행을 계획하기 좋은 계절입니다. 테마와 지역을 골라 이번 주말 갈 만한 가을나들이 장소를 빠르게 찾아보세요.
         </p>
+      <TossTopDeals contained />
       </Band>
       <Suspense fallback={null}>
         <SeasonBrowser spots={spots} keywords={keywords} areas={[...new Set(uniqueFullSpots.map((spot) => spot.area))]} seasonLabel={s.label} />

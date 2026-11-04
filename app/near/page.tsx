@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import NearFinder from "@/components/NearFinder";
 import { SITE } from "@/lib/site";
@@ -16,6 +17,7 @@ export default function NearPage() {
       <p className="mt-1 text-[14px] text-ink-soft sm:text-[15px]">
         현재 위치나 지역으로 가까운 <b className="font-bold text-ink">나들이·문화행사·맛집</b>을 찾아보세요.
       </p>
+      <TossTopDeals contained />
       <div className="mt-5">
         <NearFinder />
       </div>

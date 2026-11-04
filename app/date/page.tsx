@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Band, Container } from "@/components/Band";
@@ -74,6 +75,7 @@ export default function DateHubPage() {
           카페 → 공원 → 맛집으로 이어지는 반나절 데이트 코스 {all.length}곳
         </p>
       </Band>
+      <TossTopDeals />
 
       <div className="bg-panel">
         {/* 지역 선택기 — 전국 + 시도. 기본 서울, 걸어서/차량 데이트로 나눠 미리보기.

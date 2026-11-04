@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PickGame from "@/components/PickGame";
@@ -34,6 +35,7 @@ export default function PickPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🃏 제비뽑기 폭탄게임</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">순서대로 카드를 뒤집다가 <b className="text-white">💣 폭탄을 뽑은 사람이 독박!</b> 최대 10명.</p>
 
         <div className="mt-6"><PickGame /></div>

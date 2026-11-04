@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -46,6 +47,7 @@ export default async function GenrePage({
         <p className="mt-1 text-[14px] text-ink-soft">
           지금 열리는 {label} 행사 {genreCount.toLocaleString()}건 — 지역·가격·날짜로 골라보세요
         </p>
+      <TossTopDeals contained />
       </Band>
       <Suspense fallback={null}>
         <DateBrowser events={events} initial={{ genre: code }} />

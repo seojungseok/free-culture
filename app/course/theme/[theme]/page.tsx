@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -53,6 +54,7 @@ export default async function CourseThemePage({ params }: { params: Promise<{ th
           {th.emoji} <span className="text-free">{th.label}</span> 여행코스
         </h1>
         <p className="mt-1 text-[14px] text-ink-soft">전국 {th.label} 테마 코스 {list.length}개</p>
+      <TossTopDeals contained />
       </Band>
 
       <div className="mx-auto w-full max-w-[1280px] px-5 pb-16 pt-4 sm:px-6 lg:px-8">

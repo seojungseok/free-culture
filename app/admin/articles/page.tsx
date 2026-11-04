@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllArticles, getArticleStats } from "@/lib/articles";
@@ -28,6 +29,7 @@ export default function AdminArticlesPage() {
         시작일 {stats.startDate} · 총 {stats.total} · 초안 <b className="text-paid">{stats.draft}</b> ·
         발행 <b className="text-free">{stats.published}</b>
       </p>
+      <TossTopDeals contained />
       <div className="mt-2 rounded-lg bg-panel p-3 text-[12.5px] text-ink-soft">
         발행하려면 GitHub의 <b>Actions → “글 발행(수동)”</b>에서 Run workflow (초안을 발행 상태로 전환).
         여기서는 내용만 검토합니다.

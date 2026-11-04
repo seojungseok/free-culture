@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -188,6 +189,7 @@ export default async function DateCoursePage({ params }: { params: Promise<{ id:
         하루를 통째로 비우지 않아도 되는 동선이에요.
       </p>
 
+      <TossTopDeals contained />
       {/* 코스 한눈에 */}
       <div className="mt-5 rounded-2xl bg-panel px-4 py-4 sm:px-5">
         <h2 className="mb-2 text-[15px] font-extrabold text-ink">🧭 코스 한눈에 보기</h2>

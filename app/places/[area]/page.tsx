@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
@@ -55,6 +56,7 @@ export default async function PlacesAreaPage({
         <p className="mt-1 text-[14px] text-ink-soft">
           {sido}의 관광지·문화시설·체험 명소 {regionSpots.length.toLocaleString()}곳 — 유형·지도·소개 제공
         </p>
+      <TossTopDeals contained />
       </Band>
       <Suspense fallback={null}>
         <PlacesBrowser spots={spots} areas={areas} initialArea={sido} total={regionSpots.length} typeTotals={getTypeCounts(sido)} />

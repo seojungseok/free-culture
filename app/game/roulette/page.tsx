@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import RouletteGame from "@/components/RouletteGame";
@@ -37,6 +38,7 @@ export default function RoulettePage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🎯 독박 룰렛</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">돌려서 한 명씩 세이프로 빠지고, <b className="text-white">마지막 1인이 독박(벌칙)!</b> 최대 10명.</p>
 
         <div className="mt-6">

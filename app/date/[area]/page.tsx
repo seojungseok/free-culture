@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -66,6 +67,7 @@ export default async function DateAreaPage({ params }: { params: Promise<{ area:
           <span className="text-free">{sido} 카페데이트</span>
         </h1>
         <p className="mt-1 text-[13.5px] text-ink-soft">동네를 고르면 그 동네 코스만 볼 수 있어요</p>
+      <TossTopDeals contained />
       </Band>
 
       <div className="bg-panel">

@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import MemoryGame from "@/components/MemoryGame";
@@ -34,6 +35,7 @@ export default function MemoryPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🧠 기억력 순서</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">점점 길어지는 <b className="text-white">색 순서를 기억해 따라쳐요.</b> 성공한 최고 단계로 순위를 매겨 <b className="text-white">가장 짧게 기억한 사람이 독박!</b> 최대 10명.</p>
 
         <div className="mt-6"><MemoryGame /></div>

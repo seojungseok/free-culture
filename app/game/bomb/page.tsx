@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import BombGame from "@/components/BombGame";
@@ -34,6 +35,7 @@ export default function BombPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">💣 폭탄 돌리기</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">순서대로 폭탄을 넘기다 <b className="text-white">터지는 순간 든 사람이 독박!</b> 언제 터질지 아무도 몰라요. 최대 10명.</p>
 
         <div className="mt-6"><BombGame /></div>

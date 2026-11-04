@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import NumberBombGame from "@/components/NumberBombGame";
@@ -34,6 +35,7 @@ export default function NumberPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🔢 숫자 폭탄</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">각자 1~3 중 원하는 수를 정하고, 목표까지 순서대로 합이 차근차근 올라가요. <b className="text-white">합이 목표를 넘는 순간, 가장 근접한 사람이 독박!</b> 최대 10명.</p>
 
         <div className="mt-6"><NumberBombGame /></div>

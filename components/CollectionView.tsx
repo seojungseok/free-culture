@@ -3,6 +3,7 @@ import type { CultureEvent } from "@/lib/types";
 import FilterableGrid from "./FilterableGrid";
 import { Band, Container } from "./Band";
 import ShareLinkButton from "./ShareLinkButton";
+import TossTopDeals from "./TossTopDeals";
 
 export default function CollectionView({
   title,
@@ -30,6 +31,7 @@ export default function CollectionView({
         </div>
         <ShareLinkButton label="이 목록 공유" size="md" />
       </Band>
+      <TossTopDeals />
       <div className="bg-panel">
         <Container className="pb-10 pt-6">
           {children}

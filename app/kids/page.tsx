@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Band, Container } from "@/components/Band";
@@ -66,6 +67,7 @@ export default function KidsPage() {
           이동거리와 운영 조건은 각 장소 상세에서 확인하세요.
         </p>
       </Band>
+      <TossTopDeals />
 
       <div className="bg-panel">
         {featuredRegions.length > 0 && <Container className="pt-6">

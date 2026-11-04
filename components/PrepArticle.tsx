@@ -6,6 +6,7 @@ import {FoodChecklistDetails} from './FoodChecklistDetails';
 import type {PrepArticle as Article} from '@/lib/weekend-prep/types';
 import {prepCategoryLabel} from '@/lib/weekend-prep/categoryLabel';
 import AdSlot from './AdSlot';
+import TossTopDeals from './TossTopDeals';
 
 function dishName(title:string){
  return title.split('|')[0].replace(/^(가을 대표 요리|가을 캠핑|캠핑)\s*/,'').replace(/\s*재료 체크리스트.*$/,'').trim();
@@ -82,6 +83,7 @@ export default function PrepArticle({article:a,preview=false,relatedArticles=[]}
   <p className="prep-eyebrow">{prepCategoryLabel(a.category,a)}</p><h1>{a.title}</h1><p className="prep-lead">{a.description}</p>
   {adEligible&&<AdSlot label="본문 상단 광고"/>}
   <PrepImage photo={a.cover} priority />
+  {!preview&&<TossTopDeals contained />}
   {checklist&&<CookingGuide article={a}/>}
   {checklist&&a.checklist&&<PrepChecklist slug={a.slug} items={a.checklist} dishName={dishName(a.title)}/>}
   {adEligible&&<AdSlot label="본문 중간 광고"/>}

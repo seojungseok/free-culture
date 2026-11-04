@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -101,6 +102,7 @@ export default async function RegionGenrePage({
           모았습니다. 아래에서 기간·장소별로 확인하고 주말 나들이를 계획해 보세요.
           정확한 요금·일정은 각 행사의 공식 페이지에서 확인해 주세요.
         </p>
+      <TossTopDeals contained />
       </Band>
 
       <div className="bg-panel">

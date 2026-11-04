@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import TripSave from "@/components/TripSave";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -167,6 +168,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ i
         </div>
       )}
 
+      <TossTopDeals contained />
       <CourseVisitPlan plan={visitPlan} isList={c.format === "list"} />
 
       {/* 블로그 글 — 각 스팟 소제목 뒤에 사진 삽입 */}

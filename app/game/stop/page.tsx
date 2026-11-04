@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import StopBarGame from "@/components/StopBarGame";
@@ -34,6 +35,7 @@ export default function StopPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🎯 멈춰! 바 스톱</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">좌우로 빠르게 움직이는 바늘을 <b className="text-white">한가운데 과녁에 정확히 멈춰요.</b> 모두 같은 조건, <b className="text-white">가장 부정확한 사람이 독박!</b> 최대 10명.</p>
 
         <div className="mt-6"><StopBarGame /></div>

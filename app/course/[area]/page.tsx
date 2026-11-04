@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -56,6 +57,7 @@ export default async function CourseAreaPage({ params }: { params: Promise<{ are
         <p className="mt-1 text-[14px] text-ink-soft">
           {area} 가볼만한 곳을 이어 만든 하루 여행 <span className="whitespace-nowrap">{list.length}개</span> — 밥집까지 함께
         </p>
+      <TossTopDeals contained />
       </Band>
 
       <div className="mx-auto w-full max-w-[1280px] px-5 pb-16 pt-4 sm:px-6 lg:px-8">

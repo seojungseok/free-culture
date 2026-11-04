@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import TapBattleGame from "@/components/TapBattleGame";
@@ -34,6 +35,7 @@ export default function TapPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🔥 연타 대결</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">모두 같은 5초 동안 버튼을 최대한 빨리 눌러요. <b className="text-white">가장 적게 누른 사람이 독박!</b> 순서 운 없이 노력한 만큼 정직하게. 최대 10명.</p>
 
         <div className="mt-6"><TapBattleGame /></div>

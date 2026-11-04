@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -96,6 +97,7 @@ export default async function DateCityPage({
         <p className="mt-1 text-[13.5px] text-ink-soft">
           카페를 고르면 공원·맛집까지 이어지는 코스가 나와요 · {list.length}곳
         </p>
+      <TossTopDeals contained />
       </Band>
 
       <div className="bg-panel">

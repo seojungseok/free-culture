@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import RussianRoulette from "@/components/RussianRoulette";
@@ -34,6 +35,7 @@ export default function RussianPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🔫 러시안룰렛</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">총알 1발, 순서대로 방아쇠를 당기다 <b className="text-white">총알 든 약실을 당긴 한 명이 독박!</b> 당기기 전 <b className="text-white">실린더를 돌려</b> 총알 위치를 섞을 수 있어요. 최대 10명.</p>
 
         <div className="mt-6"><RussianRoulette /></div>

@@ -1,0 +1,5 @@
+.offer{display:flex;align-items:baseline;gap:7px;margin:5px 0 0;font-size:19px;font-weight:900;line-height:1.25}
+.offer span{color:#ffe58d}.offer strong{font-size:23px}
+.backdrop{position:absolute;inset:0 0 0 34%;width:66%;height:100%;object-fit:cover;filter:blur(18px) brightness(.36);opacity:.65;mask-image:linear-gradient(90deg,transparent,#000 25%,#000 85%,transparent);transform:scale(1.06)}
+.original{position:absolute;right:max(225px,calc((100% - 1072px)/2 + 180px));top:50%;transform:translateY(-50%);width:250px;height:250px;object-fit:contain;background:#fff;border-radius:16px}
+@media(max-width:640px){.offer{font-size:12px;gap:4px;margin:3px 0 0}.offer strong{font-size:14px}.original{right:8%;width:140px;height:140px;top:42%;border-radius:12px}.copy p{-webkit-line-clamp:1}}

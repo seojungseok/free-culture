@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
@@ -16,6 +17,7 @@ export default function ContactPage() {
     <div className="prose-page">
       <h1>문의와 정보 수정 제보</h1>
       <p>행사 일정이 바뀌었거나 장소의 운영·예약·이용 조건이 다르다면 알려주세요. 아래 이메일로 문의 내용을 보내주시면 제공된 근거와 원문 안내를 확인할 수 있습니다.</p>
+      <TossTopDeals contained />
       <p><a href={`mailto:${MAIL}`} className="text-lg font-bold">{MAIL}</a></p>
       <p>아래 버튼은 메일 앱을 엽니다. 메일 앱이 설정되어 있지 않으면 이메일 주소를 복사해 평소 사용하는 메일 서비스에서 보내주세요.</p>
 

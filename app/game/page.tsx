@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import GameShare from "@/components/GameShare";
@@ -51,6 +52,7 @@ export default function GameHub() {
         <h1 className="mt-2 text-[30px] font-black leading-tight tracking-tight sm:text-[40px]">
           오늘의 <span className="bg-gradient-to-r from-fuchsia-400 to-lime-300 bg-clip-text text-transparent">독박</span>은 누구?
         </h1>
+        <TossTopDeals contained />
         <p className="mt-2 max-w-[560px] text-[15px] text-white/70">
           친구·회식·모임에서 벌칙 정할 때. <b className="text-white">이름만 입력하면 끝.</b> 설치도 회원가입도 없이 바로, 최대 10명.
         </p>

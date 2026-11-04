@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllBundles } from "@/lib/campingCollections";
@@ -25,6 +26,7 @@ export default function CollectionsIndex() {
       <Band tone="tint" innerClassName="py-5">
         <h1 className="text-[24px] font-black tracking-[-0.02em] text-ink sm:text-[30px]">⛺ 캠핑장 모음</h1>
         <p className="mt-1 text-[14px] text-ink-soft">지역·유형별로 데이터로 추린 캠핑장 큐레이션 {bundles.length}개 · 출처: 한국관광공사 고캠핑</p>
+      <TossTopDeals contained />
       </Band>
       <div className="bg-panel">
         <Container className="space-y-8 py-7">

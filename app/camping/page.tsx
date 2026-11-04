@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -80,6 +81,7 @@ export default function CampingPage() {
           </nav>
         </details>
       </Band>
+      <TossTopDeals />
       <CampingCookingGuide />
       <Suspense fallback={null}>
         <CampingBrowser camps={camps} areas={areas} total={total} />

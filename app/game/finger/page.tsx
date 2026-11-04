@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import FingerRoulette from "@/components/FingerRoulette";
@@ -34,6 +35,7 @@ export default function FingerPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">🐍 손가락 뱀 룰렛</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">다 같이 손가락을 올리면 가운데서 뱀이 나와 돌아다니다 <b className="text-white">한 명을 콱! 물어요.</b> 물린 사람이 독박! <b className="text-white">기기가 지원하는 손가락 수만큼</b> 함께.</p>
 
         <div className="mt-6"><FingerRoulette /></div>

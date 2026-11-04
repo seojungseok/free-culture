@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -62,6 +63,7 @@ export default async function CourseAreaDurationPage({ params }: { params: Promi
           <span className="text-free">{area}</span> {dur.label} 여행코스
         </h1>
         <p className="mt-1 text-[14px] text-ink-soft">{area}에서 {dur.label}로 다녀오기 좋은 코스 {list.length}개</p>
+      <TossTopDeals contained />
       </Band>
 
       <div className="mx-auto w-full max-w-[1280px] px-5 pb-16 pt-4 sm:px-6 lg:px-8">

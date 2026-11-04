@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getPlaceCount, getPlacesSample, getTourAreaCounts, getTypeCounts, slimTours, tourTypeLabel } from "@/lib/tour";
@@ -35,6 +36,7 @@ export default function PlacesPage() {
           전국 관광지·문화시설·체험 명소 <span className="whitespace-nowrap">{total.toLocaleString()}곳</span> — 지역·유형으로 골라보세요
         </p>
       </Band>
+      <TossTopDeals />
       <Suspense fallback={<InitialIndexPreview title="나들이 장소 미리보기" items={preview} />}>
         <PlacesBrowser spots={spots} areas={areas} total={total} typeTotals={getTypeCounts()} />
       </Suspense>

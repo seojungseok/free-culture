@@ -1,3 +1,4 @@
+import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import ReactionGame from "@/components/ReactionGame";
@@ -34,6 +35,7 @@ export default function ReactionPage() {
           </div>
         </div>
         <h1 className="text-[26px] font-black tracking-tight sm:text-[32px]">⚡ 반응속도 대결</h1>
+        <TossTopDeals contained />
         <p className="mt-1 text-[14px] text-white/60">초록불이 켜지는 순간 탭! <b className="text-white">가장 느린 사람이 독박.</b> 미리 누르면 부정출발. 최대 10명.</p>
 
         <div className="mt-6"><ReactionGame /></div>

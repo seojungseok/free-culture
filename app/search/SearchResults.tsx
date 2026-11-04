@@ -4,6 +4,7 @@ import { search, relatedQueries, KIND_LABEL } from "@/lib/search";
 import SearchBox from "@/components/SearchBox";
 import SearchCard from "@/components/SearchCard";
 import { Container } from "@/components/Band";
+import TossTopDeals from "@/components/TossTopDeals";
 
 export const metadata: Metadata = {
   title: "통합 검색 — 나들이·문화행사·축제·맛집",
@@ -24,6 +25,7 @@ export default function SearchResults({q=""}:{q?:string}) {
         <div className="mx-auto max-w-xl">
           <SearchBox size="lg" defaultValue={query} placeholder="지역·유형으로 검색 (예: 인천 무료 공연)" />
         </div>
+        <TossTopDeals contained />
 
         {query && /가을|단풍|억새/.test(query) && <aside className="mx-auto mt-6 max-w-xl rounded-2xl border border-amber-200 bg-amber-50 p-4"><Link href="/season" className="font-bold text-ink hover:underline">🍂 보관된 가을나들이 모아보기 →</Link><p className="mt-1 text-sm text-ink-soft">기존 가을 장소와 글을 지역과 테마로 찾아보세요.</p></aside>}
         {!query ? (

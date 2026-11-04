@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -108,6 +109,7 @@ export default async function KidCoursePage({ params }: { params: Promise<{ id: 
       {c.editorial?.intro && <p data-kid-intro className="mt-4 text-[15px] leading-[1.85] text-ink-soft">{c.editorial.intro}</p>}
       {c.editorial?.route && <p data-kid-route className="mt-3 text-[15px] leading-[1.85] text-ink-soft">{c.editorial.route}</p>}
 
+      <TossTopDeals contained />
       {/* 코스 한눈에 */}
       <div className="mt-5 rounded-2xl bg-panel px-4 py-4 sm:px-5">
         <h2 className="mb-2 text-[15px] font-extrabold text-ink">🧭 코스 한눈에 보기</h2>

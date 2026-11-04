@@ -1,3 +1,4 @@
+import TossTopDeals from '@/components/TossTopDeals';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
@@ -26,6 +27,7 @@ export default async function Page({params}:{params:Promise<{id:string}>}){const
  <aside className="mb-6 rounded-xl bg-amber-50 p-4 text-sm leading-7">원본 기준일: {a.raw['데이터기준일자']}. 아래 운행·요금은 해당 자료의 내용이며 현재 예약 가능 여부를 보장하지 않습니다. 한시적 일정·최소 인원·휴무 조건을 공식 운영처에 확인하세요.</aside>
  {hero&&<figure className="mb-7"><div className="relative aspect-[16/9] overflow-hidden rounded-2xl"><Image src={hero.image} alt={hero.title} fill sizes="(max-width:768px) 100vw, 768px" priority unoptimized className="object-cover"/></div><figcaption className="mt-2 text-xs text-ink-faint">경유지 {hero.title} · {a.heroPhoto?.credit||'한국관광공사 제공 사진'} (실제 투어 차량 사진이 아닙니다)</figcaption></figure>}
  <p className="mb-8 text-base leading-8">{a.intro}</p>
+ <TossTopDeals contained />
  <section className="mb-8 rounded-xl bg-slate-50 p-5" aria-label="탑승 전 핵심 확인">
  <h2 className="text-lg font-bold">탑승 전 핵심 확인</h2><dl className="mt-3 space-y-3 text-sm leading-7">
  {a.raw['시티투어탑승장소명']&&<div><dt className="font-bold">어디에서 타나요?</dt><dd>{a.raw['시티투어탑승장소명']}</dd></div>}
