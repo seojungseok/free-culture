@@ -42,7 +42,7 @@ export default function TossTopDeals({contained=false}:{contained?:boolean}) {
  if(!deals.length)return null;
  return <section className={`${styles.wrap} ${contained?styles.contained:''} ${page.startsWith('/game')?styles.game:''}`} aria-label="토스쇼핑 오늘의 먹거리 하루특가">
    <div className={styles.heading}><h2>오늘의 먹거리 특가</h2><div className={styles.controls}><button type="button" aria-label="이전 특가 상품" onClick={()=>strip.current?.scrollBy({left:-strip.current.clientWidth,behavior:'auto'})}>‹</button><button type="button" aria-label="다음 특가 상품" onClick={()=>strip.current?.scrollBy({left:strip.current.clientWidth,behavior:'auto'})}>›</button></div></div>
-   <p className={styles.dealHint}>마음에 든 특가, 끝나기 전에 확인하세요</p>
+   <p className={styles.dealHint}>재고 소진 시 조기 종료될 수 있어요</p>
    <p className={styles.disclosure}>[광고] 토스쇼핑 쉐어링크 활동으로, 링크 구매 시 수수료를 지급받습니다.</p>
    <div ref={strip} className={styles.rail} role="region" aria-label="오늘의 하루특가 상품 목록. 좌우로 스크롤할 수 있습니다." tabIndex={0}>
     {deals.map(p=><article className={styles.card} data-product={p.id} key={p.id}>
@@ -52,6 +52,5 @@ export default function TossTopDeals({contained=false}:{contained?:boolean}) {
      </a>
     </article>)}
    </div>
-   <p className={styles.fine}>재고 소진 시 조기 종료될 수 있어요. 표시된 할인율·가격은 확인 시점 기준이며, 옵션·재고·배송 조건은 토스에서 확인하세요.</p>
  </section>;
 }
