@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import WinterFoodCoupang from './WinterFoodCoupang';
 import TravelAffiliate from './TravelAffiliate';
 
 // 게임 상세(/game/xxx)에서는 사이트 헤더·푸터를 숨겨 '게임 집중(포커스) 화면'으로 전환.
@@ -21,12 +20,12 @@ export default function ChromeGate({
   const focus = /^\/game\/[^/]+/.test(p); // /game/roulette, /game/ladder ... = 집중 화면
 
   if (focus) {
-    return <main className="w-full">{children}<WinterFoodCoupang slot="article" /></main>;
+    return <main className="w-full">{children}</main>;
   }
   return (
     <>
       {header}
-      <main className="w-full">{children}{p!=='/'&&<><WinterFoodCoupang slot="article" /><TravelAffiliate /></>}</main>
+      <main className="w-full">{children}{p!=='/'&&<TravelAffiliate />}</main>
       {footer}
       {floating}
     </>
