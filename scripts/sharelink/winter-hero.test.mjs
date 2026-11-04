@@ -12,6 +12,7 @@ test('고정 메인은 매일 특가가 바뀌어도 다른 상품으로 교체�
  const selected=selectWinterTossHero(feed(products),now);
  assert.deepEqual(selected.map(x=>x.id),[174755365,2584893075,288570013,773646201,2317495197]);
  assert.ok(selected.every(x=>x.image==='https://shopping.toss.im/example.jpg'));
+ assert.ok(selected.every(x=>winterTossCampaign(x)?.art?.startsWith('/affiliate-images/toss-main-')));
  assert.equal(winterTossCampaign(selected[0]).label,'어묵');
 });
 test('만료·품절·오래된 피드와 토스 외 링크를 배너에서 제외한다',()=>{

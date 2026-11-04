@@ -3,6 +3,7 @@
 .wrap.game{background:#fff;border-radius:12px;padding:14px}
 .heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .heading h2{font-size:20px;line-height:1.35;font-weight:900;letter-spacing:-.03em;margin:0}
+.dealHint{margin:2px 0 4px;color:#b23a29;font-size:12px;font-weight:750;line-height:1.5}
 .controls{display:flex;gap:6px;flex:none}
 .controls button{width:44px;height:44px;border:1px solid #dbe3ef;border-radius:50%;font-size:24px;line-height:1}
 .controls button:focus-visible,.card a:focus-visible,.rail:focus-visible{outline:3px solid #2765d8;outline-offset:2px}
