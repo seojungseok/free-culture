@@ -31,13 +31,16 @@ async function main(){
  const canonicalBase=origin(process.env.NEXT_PUBLIC_SITE_URL||siteSource.match(/url:\s*process\.env\.NEXT_PUBLIC_SITE_URL\s*\|\|\s*"([^"]+)"/)?.[1]||'https://mwohaji.kr');
  const outputFile=output?path.resolve(ROOT,output):null;
  if(outputFile&&!outputFile.startsWith(path.join(ROOT,'docs')+path.sep))throw Error('Output must be a file inside this repository docs directory');
- const courses=read('data/winter-courses.json').courses;
+ const daytrips=read('data/winter-courses.json').courses;
+ const overnights=read('data/winter-overnight-courses.json').courses;
+ const courses=[...daytrips,...overnights];
+ const coursePhotos=course=>[...new Map(course.stops.flatMap(stop=>[stop.photo,...(stop.gallery||[])]).filter(Boolean).map(photo=>[photo.src,photo])).values()];
  const retired=read('data/winter-retired-slugs.json').slugs;
  const livePaths=courses.map(course=>'/winter-travel/'+course.slug);
  const oldPaths=retired.map(slug=>'/winter-travel/'+slug);
- const photos=[...new Set(courses.flatMap(course=>course.stops.map(stop=>stop.photo.src)))];
+ const photos=[...new Set(courses.flatMap(course=>coursePhotos(course).map(photo=>photo.src)))];
  const representativePaths=['/','/events','/festivals','/places','/food','/camping','/pet-travel','/course'];
- if(courses.length!==20||new Set(livePaths).size!==20||retired.length!==17||new Set(oldPaths).size!==17||photos.length!==60||oldPaths.some(url=>livePaths.includes(url)))throw Error('Expected exactly 20 live articles, 17 retired articles, and 60 distinct photos');
+ if(daytrips.length!==20||overnights.length!==20||new Set(livePaths).size!==40||retired.length!==17||new Set(oldPaths).size!==17||photos.length<60||oldPaths.some(url=>livePaths.includes(url)))throw Error('Expected 20 day trips, 20 overnights and 17 retired articles');
  if([...livePaths,...oldPaths].some(value=>!/^\/winter-travel\/[a-z0-9-]+$/.test(value))||photos.some(value=>!/^\/winter-photos\/[A-Za-z0-9._-]+\.webp$/.test(value)))throw Error('Unexpected local release path');
  const started=Date.now(),results=[];
  let requestCount=0;
@@ -65,22 +68,22 @@ async function main(){
    const r=await request('/winter-travel'),$=load(r.body);
    const links=[...new Set($('[data-winter-cards] a[href]').map((_,node)=>$(node).attr('href')).get())];
    const {objects,malformed}=jsonLd($),list=objects.find(item=>hasType(item,'ItemList'));
-   add('hub','/winter-travel',{http200:r.status===200,h1:$('h1').length===1,canonical:$("link[rel='canonical']").attr('href')===canonicalBase+'/winter-travel',twentyServerRenderedCards:links.length===20&&livePaths.every(route=>links.includes(route)),noRetiredLinks:oldPaths.every(route=>!links.includes(route)),validJsonLd:malformed===0,itemList20:list?.numberOfItems===20&&list.itemListElement?.length===20},r.status);
+   add('hub','/winter-travel',{http200:r.status===200,h1:$('h1').length===1,canonical:$("link[rel='canonical']").attr('href')===canonicalBase+'/winter-travel',fortyServerRenderedCards:links.length===40&&livePaths.every(route=>links.includes(route)),durationFilters:$('[aria-label="겨울 여행 일정"] button').length===3,noRetiredLinks:oldPaths.every(route=>!links.includes(route)),validJsonLd:malformed===0,itemList40:list?.numberOfItems===40&&list.itemListElement?.length===40},r.status);
   }},
   ...courses.map(course=>({group:'articles',path:'/winter-travel/'+course.slug,run:async()=>{
    const route='/winter-travel/'+course.slug,r=await request(route),$=load(r.body),{objects,malformed}=jsonLd($);
    const articles=objects.filter(item=>hasType(item,'Article')),article=articles[0];
-   const expectedImages=[...new Set(course.stops.map(stop=>absolute(stop.photo.src)))];
+   const expectedImages=coursePhotos(course).map(photo=>absolute(photo.src));
    const articleImages=[article?.image].flat().filter(Boolean).map(value=>absolute(typeof value==='string'?value:value.url||value.contentUrl));
    const bodyImages=new Set($('img[src]').map((_,node)=>absolute($(node).attr('src'))).get());
    const canonical=canonicalBase+route;
-   add('articles',route,{http200:r.status===200,h1:$('h1').length===1&&normalize($('h1').text())===normalize(course.title),canonical:$("link[rel='canonical']").length===1&&$("link[rel='canonical']").attr('href')===canonical,validJsonLd:malformed===0,oneArticle:articles.length===1,articleHeadline:article?.headline===course.title,articleCanonical:article?.url===canonical&&article?.mainEntityOfPage===canonical,threeArticlePhotos:articleImages.length===3&&new Set(articleImages).size===3&&expectedImages.every(url=>articleImages.includes(url)),threeBodyPhotos:expectedImages.every(url=>bodyImages.has(url)),datePublished:sameDate(article?.datePublished,course.publishedAt),dateModified:sameDate(article?.dateModified,course.updatedAt||course.publishedAt)},r.status);
+   add('articles',route,{http200:r.status===200,h1:$('h1').length===1&&normalize($('h1').text())===normalize(course.title),canonical:$("link[rel='canonical']").length===1&&$("link[rel='canonical']").attr('href')===canonical,validJsonLd:malformed===0,oneArticle:articles.length===1,articleHeadline:article?.headline===course.title,articleCanonical:article?.url===canonical&&article?.mainEntityOfPage===canonical,reviewedArticlePhotos:articleImages.length===expectedImages.length&&new Set(articleImages).size>=3&&expectedImages.every(url=>articleImages.includes(url)),reviewedBodyPhotos:expectedImages.every(url=>bodyImages.has(url)),dayPlan:course.duration==='당일'||($('[aria-label="1박 2일 코스 순서"] h3').length===2&&$('body').text().includes(course.overnightArea)),datePublished:sameDate(article?.datePublished,course.publishedAt),dateModified:sameDate(article?.dateModified,course.updatedAt||course.publishedAt)},r.status);
   }})),
   ...oldPaths.map(route=>({group:'retired',path:route,run:async()=>{const r=await request(route);add('retired',route,{http404:r.status===404},r.status);}})),
   {group:'sitemap',path:'/sitemap.xml',run:async()=>{
    const r=await request('/sitemap.xml'),$=load(r.body,{xmlMode:true}),urls=$('url > loc').map((_,node)=>$(node).text()).get(),set=new Set(urls);
    const winter=urls.filter(url=>new URL(url).pathname.startsWith('/winter-travel/'));
-   add('sitemap','/sitemap.xml',{http200:r.status===200,uniqueUrls:set.size===urls.length,twentyWinterArticles:winter.length===20&&livePaths.every(route=>set.has(canonicalBase+route)),noRetiredArticles:oldPaths.every(route=>!set.has(canonicalBase+route)),winterHub:set.has(canonicalBase+'/winter-travel')},r.status);
+   add('sitemap','/sitemap.xml',{http200:r.status===200,uniqueUrls:set.size===urls.length,fortyWinterArticles:winter.length===40&&livePaths.every(route=>set.has(canonicalBase+route)),noRetiredArticles:oldPaths.every(route=>!set.has(canonicalBase+route)),winterHub:set.has(canonicalBase+'/winter-travel')},r.status);
   }},
   ...photos.map(route=>({group:'photos',path:route,run:async()=>{const r=await request(route,'image');add('photos',route,{http200:r.status===200,webpContentType:/^image\/webp(?:;|$)/i.test(r.type),webpSignature:r.magic},r.status);}})),
   ...representativePaths.map(route=>({group:'existingPages',path:route,run:async()=>{const r=await request(route);add('existingPages',route,{http200:r.status===200},r.status);}})),

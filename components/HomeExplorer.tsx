@@ -14,7 +14,7 @@ import { formatKoreanDate, weekendRangeYmd } from "@/lib/dates";
 import {homeFilters,homeCandidates} from "@/lib/home-discovery.mjs";
 import styles from './HomeExplorer.module.css';
 
-export type HomeItem = { id: string; href: string; title: string; meta: string; image: string; imageAlt?:string; badge: string; area?: string; start?: string; end?: string; kids?:boolean;free?:boolean; description?:string; route?:string[]; duration?:string };
+export type HomeItem = { id: string; href: string; title: string; meta: string; image: string; imageAlt?:string; badge: string; area?: string; start?: string; end?: string; kids?:boolean;free?:boolean; description?:string; route?:string[]; duration?:string; tripDuration?:'당일'|'1박2일' };
 type Props = { regional: Record<string, HomeItem[]>; eventItems: HomeItem[]; freeItems: HomeItem[]; kidItems: HomeItem[]; dateItems: HomeItem[]; campItems: HomeItem[]; courseItems: HomeItem[]; seasonItems: HomeItem[]; prepItems: HomeItem[]; placeItems: HomeItem[]; newItems: HomeItem[]; regions: { name: string; href: string }[]; siteName: string };
 const savedKey = SAVED_KEY;
 const regionalAreas: Record<string, string[]> = { 충청: ["충북", "충남", "대전", "세종"], 경상: ["경북", "경남", "부산", "대구", "울산"], 전라: ["전북", "전남", "광주"], 전국: [] };
@@ -78,14 +78,18 @@ function Rail({items,saved,toggleSave,limit=4,emptyMessage="추천할 콘텐츠�
 }
 function HomeWinterCourses({items}:{items:HomeItem[]}){
  const [area,setArea]=useState('전국');
+ const [duration,setDuration]=useState<'all'|'daytrip'|'overnight'>('all');
+ const durationItems=items.filter(item=>duration==='all'||item.tripDuration===(duration==='overnight'?'1박2일':'당일'));
  const areas=[...new Set(items.map(item=>item.area).filter((value):value is string=>Boolean(value)))];
- const featured=['서울','강원','부산','경기','전남','제주'].map(region=>items.find(item=>item.area===region)).filter((item):item is HomeItem=>Boolean(item));
- const preview=[...featured,...items.filter(item=>!featured.some(chosen=>chosen.id===item.id))].slice(0,4);
- const regionalCourses=area==='전국'?items:items.filter(item=>item.area===area);
+ const featured=['서울','강원','부산','경기','전남','제주'].map((region,index)=>durationItems.find(item=>item.area===region&&(duration!=='all'||item.tripDuration===(index%2?'당일':'1박2일')))||durationItems.find(item=>item.area===region)).filter((item):item is HomeItem=>Boolean(item));
+ const preview=[...featured,...durationItems.filter(item=>!featured.some(chosen=>chosen.id===item.id))].slice(0,4);
+ const regionalCourses=area==='전국'?durationItems:durationItems.filter(item=>item.area===area);
  const courses=area==='전국'?preview:regionalCourses.slice(0,4);
- const allCoursesHref=area==='전국'?'/winter-travel':'/winter-travel?area='+encodeURIComponent(area);
+ const query=new URLSearchParams();if(area!=='전국')query.set('area',area);if(duration!=='all')query.set('duration',duration);
+ const allCoursesHref='/winter-travel'+(query.size?'?'+query:'');
  return <section className={styles.winterSection} aria-labelledby="home-winter-title">
-  <div className={styles.sectionHeading}><h2 id="home-winter-title">겨울 당일치기 여행 <span className={styles.courseCount}>{items.length}선</span></h2><Link href={allCoursesHref} className={styles.moreLink}>전체 코스 <span aria-hidden="true">→</span></Link></div>
+  <div className={styles.sectionHeading}><h2 id="home-winter-title">겨울여행 <span className={styles.courseCount}>{items.length}코스</span></h2><Link href={allCoursesHref} className={styles.moreLink}>전체 코스 <span aria-hidden="true">→</span></Link></div>
+  <div role="group" aria-label="홈 겨울 여행 일정" className={styles.filterRow}>{([['all','전체 일정'],['daytrip','당일치기'],['overnight','1박 2일']] as const).map(([value,label])=><button type="button" key={value} onClick={()=>setDuration(value)} aria-pressed={duration===value} className={styles.regionChip}>{label}</button>)}</div>
   <div role="group" aria-label="홈 겨울 여행 지역" className={styles.filterRow}>{['전국',...areas].map(value=><button type="button" key={value} onClick={()=>setArea(value)} aria-pressed={area===value} className={styles.regionChip}>{value}</button>)}</div>
   <p role="status" className={styles.resultsLabel}>{area} · 전체 {regionalCourses.length}개 코스</p>
   <div className={styles.winterGrid} data-home-winter-cards>{courses.map(item=><article key={item.id} className={styles.card+' '+styles.winterCard}><Link href={item.href} prefetch={false} className={styles.cardLink}><div className={styles.cardImage}>{item.image&&<img src={item.image} alt={item.imageAlt||item.title} width={640} height={400} loading="lazy" decoding="async"/>}<span className={styles.locationBadge}>{item.meta}</span></div><div className={styles.cardBody}><h3>{item.title}</h3>{item.route&&<p className={styles.route}>{item.route.join(' → ')}</p>}{item.description&&<p className={styles.description}>{item.description}</p>}<div className={styles.cardFooter}><span>{item.duration||'당일치기'}</span><span>코스 보기 <span aria-hidden="true">→</span></span></div></div></Link></article>)}</div>
