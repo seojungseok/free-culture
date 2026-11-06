@@ -43,6 +43,7 @@
 .intentChip[aria-pressed="true"] {background:#eaf2ff;border-color:#a7c6f4;color:#1d4e97}
 .resultsLabel {margin-bottom:14px;color:var(--home-muted);font-size:13px;font-weight:650;line-height:1.6}
 .cardGrid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cardGrid>:nth-child(n+3),.winterGrid>:nth-child(n+3) {display:none}
 .card {position:relative;min-width:0;overflow:hidden;border:1px solid var(--home-line);border-radius:16px;background:#fff;box-shadow:0 2px 4px #10234406}
 .cardLink {display:flex;height:100%;min-width:0;flex-direction:column;border-radius:inherit}
 .cardImage {position:relative;aspect-ratio:16/10;overflow:hidden;background:#eef2f7}
@@ -59,11 +60,11 @@
 .winterSection {margin-top:32px;padding-block:22px;background:var(--home-soft);border-block:1px solid var(--home-line)}
 .winterSection .sectionHeading {align-items:flex-start}
 .courseCount {display:inline-block;color:var(--home-blue);white-space:nowrap}
-.winterGrid {display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.winterGrid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .locationBadge {position:absolute;left:12px;top:12px;max-width:calc(100% - 24px);padding:5px 10px;border-radius:999px;background:#fffffff5;color:var(--home-navy);font-size:12px;font-weight:750;line-height:1.5}
-.winterCard .cardBody {padding:16px}
-.winterCard .cardBody h3 {display:block;min-height:0;overflow:visible;font-size:17px;line-height:1.6;word-break:keep-all}
-.route {margin-top:10px;color:var(--home-blue);font-size:13px;font-weight:650;line-height:1.85;word-break:keep-all;overflow-wrap:anywhere}
+.winterCard .cardBody {padding:13px}
+.winterCard .cardBody h3 {display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;min-height:66px;overflow:hidden;font-size:14px;line-height:22px;word-break:keep-all}
+.route {display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;margin-top:10px;color:var(--home-blue);font-size:13px;font-weight:650;line-height:1.85;word-break:keep-all;overflow-wrap:anywhere}
 .description {display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;margin-top:8px;color:var(--home-muted);font-size:14px;line-height:1.7}
 .cardFooter {display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:auto;padding-top:16px;color:var(--home-muted);font-size:12px;font-weight:650;line-height:1.6}
 .cardFooter>span:last-child {color:var(--home-blue);font-weight:800}
@@ -85,15 +86,19 @@
  .section {padding-top:40px}
  .sectionHeading h2 {font-size:24px}
  .cardGrid {grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .cardGrid>:nth-child(-n+3),.winterGrid>:nth-child(-n+3) {display:block}
  .cardBody {padding:15px}
  .cardBody h3 {font-size:15px;line-height:24px;min-height:48px}
  .cardMeta {font-size:13px}
  .winterSection {padding-block:28px;border:1px solid var(--home-line);border-radius:20px}
- .winterGrid {grid-template-columns:repeat(2,minmax(0,1fr))}
+ .winterGrid {grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .winterCard .cardBody {padding:15px}
+ .winterCard .cardBody h3 {font-size:15px;line-height:24px;min-height:72px}
 }
 @media(min-width:1024px) {
  .searchArea,.categories,.quickNav,.section,.winterSection {padding-inline:32px}
  .categoryGrid {grid-template-columns:repeat(10,minmax(0,1fr));gap:12px}
  .cardGrid {grid-template-columns:repeat(4,minmax(0,1fr))}
- .winterGrid {grid-template-columns:repeat(3,minmax(0,1fr))}
+ .winterGrid {grid-template-columns:repeat(4,minmax(0,1fr))}
+ .cardGrid>:nth-child(-n+4),.winterGrid>:nth-child(-n+4) {display:block}
 }

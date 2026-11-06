@@ -43,23 +43,23 @@ export default function HomeExplorer({ regional, eventItems, freeItems, kidItems
         <button type="submit">검색</button>
       </form>
     </section>
-    <TossWinterHero/>
     <nav className={styles.categories} aria-label="여행 카테고리"><div className={styles.categoryGrid}>{categories.filter(item=>item[2]!=='/pet-travel').map(([icon,label,href],index)=><Link key={label} href={href} prefetch={index<5?undefined:false} className={styles.category+(href==='/winter-travel'?' '+styles.seasonCategory:'')}><span className={styles.categoryIcon} aria-hidden="true">{icon}</span><span>{label}</span></Link>)}</div></nav>
     <nav className={styles.quickNav} aria-label="빠른 나들이 찾기"><HomeNearbyButton/><Link href="/weekend">이번 주말</Link><Link href="/plan">맞춤 추천</Link><Link href="/saved">♡ 보관함</Link></nav>
-    <TossTopDeals/>
     <Section title="지역별 나들이" href="/places">
       <div className={styles.filterRow} role="group" aria-label="나들이 지역">{Object.keys(regional).map(name=><button type="button" key={name} onClick={()=>chooseRegion(name)} aria-pressed={region===name} className={styles.regionChip}>{name}</button>)}</div>
       <div role="group" aria-label="나들이 조건" className={styles.intentRow}>{homeFilters.map(([value,label])=><button type="button" key={value} onClick={()=>setIntent(value)} aria-pressed={intent===value} className={styles.intentChip}>{label}</button>)}</div>
       <p className={styles.resultsLabel} aria-live="polite">{region} · {intent==='all'?'가볼 만한 곳':homeFilters.find(([value])=>value===intent)?.[1]}</p>
-      <Rail items={picks} saved={saved} toggleSave={toggleSave} emptyMessage="선택한 지역·조건의 후보가 없습니다. 아래 지역 전체 목록에서 더 찾아보세요."/>
+      <Rail items={picks} limit={4} saved={saved} toggleSave={toggleSave} emptyMessage="선택한 지역·조건의 후보가 없습니다. 아래 지역 전체 목록에서 더 찾아보세요."/>
       <nav className={styles.regionLinks} aria-label={region+' 지역 전체 둘러보기'}>{regionLinks.map(item=><Link key={item.name} href={item.href} prefetch={false}>{item.name} 전체 둘러보기 →</Link>)}{region==='전국'&&<Link href="#home-region-title">방문할 지역 고르기 ↓</Link>}</nav>
     </Section>
+    <TossWinterHero/>
     {seasonItems.length>0&&<HomeWinterCourses items={seasonItems}/>}
-    <TossAffiliate position="top" compact collection="stay"/>
+    <TossTopDeals/>
     {kidItems.length>0&&<Section title="아이와 어디 가지?" href="/kids"><Rail items={kidItems} saved={saved} toggleSave={toggleSave}/></Section>}
     {dateItems.length>0&&<Section title="데이트·드라이브" href="/date" description="카페·산책·식사를 묶은 방문 후보예요. 상세에서 방문 순서와 실제 이동 경로를 확인하세요."><Rail items={dateItems} saved={saved} toggleSave={toggleSave}/></Section>}
     {currentEventItems.length>0&&<Section title="이번 주말 행사" href="/weekend" description={weekendLabel+' 일정'}><Rail items={currentEventItems} saved={saved} toggleSave={toggleSave}/></Section>}
     {courseItems.length>0&&<Section title="여행코스" href="/course"><Rail items={courseItems} saved={saved} toggleSave={toggleSave}/></Section>}
+    <TossAffiliate position="top" compact collection="stay"/>
     {campItems.length>0&&<Section title="캠핑" href="/camping"><Rail items={campItems} saved={saved} toggleSave={toggleSave}/></Section>}
     {prepItems.length>0&&<Section title="준비 가이드" href="/weekend-prep"><Rail items={prepItems} saved={saved} toggleSave={toggleSave}/></Section>}
     {placeItems.length>0&&<Section title="대표 장소" href="/places"><Rail items={placeItems} saved={saved} toggleSave={toggleSave}/></Section>}
@@ -72,21 +72,23 @@ export default function HomeExplorer({ regional, eventItems, freeItems, kidItems
 function Section({title,href,description,children}:{title:string;href:string;description?:string;children:React.ReactNode}){
  return <section className={styles.section}><div className={styles.sectionHeading}><div><h2>{title}</h2>{description&&<p>{description}</p>}</div><Link href={href} className={styles.moreLink}>더보기 <span aria-hidden="true">›</span></Link></div>{children}</section>;
 }
-function Rail({items,saved,toggleSave,emptyMessage="추천할 콘텐츠를 준비하고 있어요."}:{items:HomeItem[];saved:string[];toggleSave:(item:HomeItem)=>void;emptyMessage?:string}){
+function Rail({items,saved,toggleSave,limit=4,emptyMessage="추천할 콘텐츠를 준비하고 있어요."}:{items:HomeItem[];saved:string[];toggleSave:(item:HomeItem)=>void;limit?:number;emptyMessage?:string}){
  if(!items.length)return <p className={styles.empty}>{emptyMessage}</p>;
- return <div className={styles.cardGrid}>{items.slice(0,8).map((item,index)=><article key={item.id} className={styles.card}><Link href={item.href} prefetch={index===0?undefined:false} className={styles.cardLink}><div className={styles.cardImage}>{item.image&&<img src={item.image} alt={item.imageAlt||''} loading="lazy" decoding="async" width={360} height={225}/>}<span className={styles.cardBadge}>{item.badge}</span></div><div className={styles.cardBody}><h3>{item.title}</h3><p className={styles.cardMeta}>{item.meta}</p></div></Link><button type="button" onClick={()=>toggleSave(item)} aria-label={item.title+' '+(saved.includes(item.href)?'보관 취소':'보관')} aria-pressed={saved.includes(item.href)} className={styles.saveButton}>{saved.includes(item.href)?'♥':'♡'}</button></article>)}</div>;
+ return <div className={styles.cardGrid}>{items.slice(0,limit).map((item,index)=><article key={item.id} className={styles.card}><Link href={item.href} prefetch={index===0?undefined:false} className={styles.cardLink}><div className={styles.cardImage}>{item.image&&<img src={item.image} alt={item.imageAlt||''} loading="lazy" decoding="async" width={360} height={225}/>}<span className={styles.cardBadge}>{item.badge}</span></div><div className={styles.cardBody}><h3>{item.title}</h3><p className={styles.cardMeta}>{item.meta}</p></div></Link><button type="button" onClick={()=>toggleSave(item)} aria-label={item.title+' '+(saved.includes(item.href)?'보관 취소':'보관')} aria-pressed={saved.includes(item.href)} className={styles.saveButton}>{saved.includes(item.href)?'♥':'♡'}</button></article>)}</div>;
 }
 function HomeWinterCourses({items}:{items:HomeItem[]}){
  const [area,setArea]=useState('전국');
  const areas=[...new Set(items.map(item=>item.area).filter((value):value is string=>Boolean(value)))];
  const featured=['서울','강원','부산','경기','전남','제주'].map(region=>items.find(item=>item.area===region)).filter((item):item is HomeItem=>Boolean(item));
- const preview=[...featured,...items.filter(item=>!featured.some(chosen=>chosen.id===item.id))].slice(0,6);
- const courses=area==='전국'?preview:items.filter(item=>item.area===area);
+ const preview=[...featured,...items.filter(item=>!featured.some(chosen=>chosen.id===item.id))].slice(0,4);
+ const regionalCourses=area==='전국'?items:items.filter(item=>item.area===area);
+ const courses=area==='전국'?preview:regionalCourses.slice(0,4);
+ const allCoursesHref=area==='전국'?'/winter-travel':'/winter-travel?area='+encodeURIComponent(area);
  return <section className={styles.winterSection} aria-labelledby="home-winter-title">
-  <div className={styles.sectionHeading}><h2 id="home-winter-title">겨울 당일치기 여행 <span className={styles.courseCount}>{items.length}선</span></h2><Link href="/winter-travel" className={styles.moreLink}>전체 코스 <span aria-hidden="true">→</span></Link></div>
+  <div className={styles.sectionHeading}><h2 id="home-winter-title">겨울 당일치기 여행 <span className={styles.courseCount}>{items.length}선</span></h2><Link href={allCoursesHref} className={styles.moreLink}>전체 코스 <span aria-hidden="true">→</span></Link></div>
   <div role="group" aria-label="홈 겨울 여행 지역" className={styles.filterRow}>{['전국',...areas].map(value=><button type="button" key={value} onClick={()=>setArea(value)} aria-pressed={area===value} className={styles.regionChip}>{value}</button>)}</div>
-  <p role="status" className={styles.resultsLabel}>{area==='전국'?`전국 ${items.length}개 중 ${courses.length}개`:`${area} · ${courses.length}개 코스`}</p>
+  <p role="status" className={styles.resultsLabel}>{area} · 전체 {regionalCourses.length}개 코스</p>
   <div className={styles.winterGrid} data-home-winter-cards>{courses.map(item=><article key={item.id} className={styles.card+' '+styles.winterCard}><Link href={item.href} prefetch={false} className={styles.cardLink}><div className={styles.cardImage}>{item.image&&<img src={item.image} alt={item.imageAlt||item.title} width={640} height={400} loading="lazy" decoding="async"/>}<span className={styles.locationBadge}>{item.meta}</span></div><div className={styles.cardBody}><h3>{item.title}</h3>{item.route&&<p className={styles.route}>{item.route.join(' → ')}</p>}{item.description&&<p className={styles.description}>{item.description}</p>}<div className={styles.cardFooter}><span>{item.duration||'당일치기'}</span><span>코스 보기 <span aria-hidden="true">→</span></span></div></div></Link></article>)}</div>
-  <Link href="/winter-travel" className={styles.allCoursesLink}>전국 {items.length}개 코스 보기 <span aria-hidden="true">→</span></Link>
+  <Link href={allCoursesHref} className={styles.allCoursesLink}>{area} {regionalCourses.length}개 코스 보기 <span aria-hidden="true">→</span></Link>
  </section>;
 }
