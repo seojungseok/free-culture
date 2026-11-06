@@ -14,23 +14,36 @@
 
 ## Agency 전문가 설치와 역할
 
-[msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)의 원본 `b859c515d813efcfc4755d3471dd9e7686c7706d`에서 제공하는 Codex 변환·설치 스크립트를 사용했다. `C:/Users/tjwjd/.codex/agents`에 다음 9개 역할을 설치했다. 이들은 AI 역할 지침이며 외부 인력 고용이나 수익 보장이 아니다.
+[msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)의 원본 `b859c515d813efcfc4755d3471dd9e7686c7706d`에서 제공하는 Codex 변환·설치 스크립트를 사용했다. `C:/Users/tjwjd/.codex/agents`에 다음 12개 역할을 설치했다. 이들은 AI 역할 지침이며 외부 인력 고용이나 수익 보장이 아니다.
 
 - Content Creator, SEO Specialist: 검색 의도·고유 원고·출처·메타데이터
 - Frontend Developer: 배너 겹침·여백·반응형 카드
 - Performance Benchmarker, API Tester, Reality Checker: API·최신성·화면·사실검증
 - Growth Hacker, Ad Creative Strategist, Tracking & Measurement Specialist: 제휴 흐름·문구·노출과 클릭 기록
+- UI Designer, Brand Guardian, UX Architect: 기존 브랜드에 맞춘 홈 정보 계층·카드·터치 영역·색 대비
 
 현재 작업의 담당 에이전트가 해당 원문 지침을 읽고 적용했다. 제휴 배너/특가의 서버 기록 거절과 묶음 노출 집계 결함을 수정했다. 광고비 집행이나 신규 외부 분석 서비스 연결은 하지 않았다.
 
 ## 검증 및 배포 판정
 
+아래 화면·빌드·HTTP 결과는 홈 디자인 추가 보완 전 판본의 검증이다. 추가 디자인을 포함한 최종 검증과 운영 반영은 후속 결과로 구분한다.
+
 - 본문·사진·공개 정책·API 수집기 회귀 44개 통과, 제휴 관련 19개 통과.
 - SEO 정적 검사 통과, 로컬 사이트맵 15,567 URL 중복 없음.
 - 목록 320/390/640/1024/1440px에서 카드 1/1/2/3/4열, 가로 넘침 0. 대표 상세와 숙소 배너도 좁은 화면에서 넘침 없음.
-- 최종 운영용 빌드 성공(Next.js 15.5.21, 정적 페이지 1,362개). 린트의 img/기존 Hook 권고 경고가 남아 있으나 컴파일·타입검사는 통과했다.
+- 디자인 보완 전 운영용 빌드 성공(Next.js 15.5.21, 정적 페이지 1,362개). 린트의 img/기존 Hook 권고 경고가 남아 있으나 컴파일·타입검사는 통과했다.
 - 로컬 운영 서버의 HTTP 검사 107/107 통과. 새 글 20개·사진 60개·퇴역 URL 17개 404·사이트맵·기존 대표 8개 페이지를 확인했다. `local-winter-release-20261106.json` 참조.
 - 공개 HTTP 결과와 배포 SHA는 출시 실행 결과를 별도로 기록한다. 코드 완료만으로 운영 반영을 판정하지 않는다. 후속 Search Console 실물 확인의 비공개 자료는 공개 저장소에 기록하지 않는다.
 - `scripts/check-winter-release.mjs --base <URL> --output <file>`는 새 글 20개, 퇴역 글 17개, 사진 60개, 사이트맵과 기존 대표 페이지를 확인한다.
 
 공식 출처의 TLS 오류/서버 점검, 대량 운영정보 미갱신 범위는 `api-seo-audit-20261106.md`, `winter-reality-review-20261106.md`에 기록했다. 실제 매출·구매·정산·GA4 수신량은 `affiliate-revenue-audit-20261106.md`의 한계와 구분한다.
+
+## 홈 디자인 추가 보완
+
+UI Designer, Brand Guardian, UX Architect 3종을 추가 설치해 Agency 역할은 총 12종이다. 기존 네이비·파랑 브랜드를 유지하며 보이는 H1, 검색 버튼, 지역 버튼 줄바꿈, 44px 터치 영역, 일반 카드의 모바일 2열/PC 4열과 정보 대비를 정리했다.
+
+홈의 겨울여행은 전국 선택 시 서로 다른 지역의 대표 6편을 요약하고, 지역 선택 시 해당 글을 모두 보여준다. '전국 20개 코스 보기'로 연결하며 겨울여행 목록 페이지는 20개 전체를 유지한다. 원고·사진·제휴 링크·고정 5상품·하루특가와 추적은 보존한다. 홈 대표사진 대체텍스트는 실제 photo.alt와 일치시켰다.
+
+헤더 선택 상태는 파랑과 링크 안 밑줄로 통일하고 모바일 메뉴 최소 높이를 44px로 조정했다. 공통 focus-visible, reduced-motion 스크롤 대응과 '주말 무료 행사' 라벨을 적용했다. 흰 배경 대비는 brandblue #2563EB 5.17:1, ink-faint #64748B 4.76:1, free #15803D 5.02:1로 재계산했다. 이 값은 해당 색상 쌍의 계산 결과이며 전체 WCAG 준수나 실측 성능 향상을 뜻하지 않는다.
+
+디자인 수정의 TypeScript·diff 검사와 최종 운영용 빌드가 통과했다. 320/390/1280px 브라우저에서 문서 가로 넘침 0, 카드 2/2/4열, 홈 겨울 6개→경기2개→제주1개, 전체 목록20개와 메뉴 선택 표시를 확인했다. 운영 배포 결과는 후속 검증으로 기록한다. 상세 구현과 미검증 범위는 [홈 디자인 점검](home-design-audit-20261106.md)을 참조한다.

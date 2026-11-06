@@ -22,17 +22,17 @@ const config: Config = {
         ink: {
           DEFAULT: "#191919",
           soft: "#555555",
-          faint: "#8E8E8E",
+          faint: "#64748B",
           dim: "#ADADAD",
         },
-        // 네이버 그린 기반 팔레트
-        free: "#03C75A", // Primary — 무료·선택·핵심 액션
-        freedark: "#02A94D", // hover/강조
+        // 탐색은 브랜드 파랑, 무료 상태는 대비를 확보한 초록.
+        free: "#15803D", // 무료 상태와 기존 무료 기능
+        freedark: "#166534", // hover/강조
         freelight: "#E8F8EF", // 옅은 초록 점
         tint: "#F2FBF6", // 히어로 배경 틴트
         paid: "#FF6B35", // Accent — 조건부무료
         danger: "#FF3B30", // 오늘/내일 마감
-        brandblue: "#2D7FF9", // 1만원 이하
+        brandblue: "#2563EB", // 검색·탐색·링크
         line: "#EEEEEE",
         panel: "#FAFAFA", // 구역 띠 배경
       },

@@ -24,19 +24,19 @@ export default function HeaderNav({ seasonLabel }: { seasonLabel: string }) {
               key={t.href}
               href={t.href}
               aria-current={active ? (pathname === t.href ? "page" : "location") : undefined}
-              className="flex items-center justify-center px-2 py-3 lg:px-3"
+              className={`relative flex min-h-11 items-center justify-center rounded-lg px-2 py-3 lg:px-3 ${active ? 'bg-blue-50' : 'hover:bg-slate-50'}`}
             >
               <span
                 className={[
                   "relative whitespace-nowrap text-[14px] font-bold transition lg:text-[15px]",
-                  active ? "text-free" : "text-ink-soft hover:text-ink",
+                  active ? "text-brandblue" : "text-ink-soft hover:text-ink",
                 ].join(" ")}
               >
                 {t.label}
                 <span
                   className={[
-                    "absolute inset-x-0 -bottom-[23px] h-[2.5px] rounded-full transition",
-                    active ? "bg-free" : "bg-transparent",
+                    "absolute inset-x-0 -bottom-2 h-[2px] rounded-full transition",
+                    active ? "bg-brandblue" : "bg-transparent",
                   ].join(" ")}
                 />
               </span>
@@ -80,7 +80,7 @@ export function MobileHeaderNav({ seasonLabel }: { seasonLabel: string }) {
       <nav aria-label="전체 메뉴" className="absolute right-0 top-[calc(100%+10px)] max-h-[80dvh] w-[220px] overflow-y-auto rounded-2xl border border-line bg-white p-2 shadow-lg">
         {[...navigation.primary, ...navigation.more].map((item) => {
           const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
-          return <Link key={item.href} href={item.href} aria-current={active ? (pathname === item.href ? "page" : "location") : undefined} onClick={() => { if (menu.current) menu.current.open = false; }} className={`block rounded-xl px-3 py-2.5 text-[14px] font-bold hover:bg-tint hover:text-brandblue ${active ? "bg-tint text-brandblue" : "text-ink-soft"}`}>{item.label}</Link>;
+          return <Link key={item.href} href={item.href} aria-current={active ? (pathname === item.href ? "page" : "location") : undefined} onClick={() => { if (menu.current) menu.current.open = false; }} className={`flex min-h-11 items-center rounded-xl px-3 py-2.5 text-[14px] font-bold hover:bg-blue-50 hover:text-brandblue ${active ? "bg-blue-50 text-brandblue" : "text-ink-soft"}`}>{item.label}</Link>;
         })}
       </nav>
     </details>

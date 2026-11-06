@@ -1,0 +1,99 @@
+.home {
+  --home-navy: #102344;
+  --home-blue: #2563eb;
+  --home-muted: #526174;
+  --home-line: #dce5ef;
+  --home-soft: #f3f7fc;
+  background: #fff;
+  padding-bottom: 48px;
+}
+.searchArea,.categories,.quickNav,.section,.winterSection {
+  width:100%;
+  max-width:1120px;
+  margin-inline:auto;
+  padding-inline:16px;
+}
+.searchArea {padding-top:20px;padding-bottom:20px}
+.homeTitle {color:var(--home-navy);font-size:clamp(22px,3vw,30px);font-weight:900;line-height:1.35;letter-spacing:-.045em;word-break:keep-all}
+.searchForm {display:flex;align-items:center;gap:8px;margin-top:14px;border:1.5px solid var(--home-navy);border-radius:16px;padding:4px;background:#fff}
+.searchForm:focus-within {box-shadow:0 0 0 3px #dceaff}
+.searchForm>svg {width:20px;height:20px;flex-shrink:0;margin-left:10px;color:var(--home-muted)}
+.searchForm input {width:100%;min-width:0;height:44px;border:0;outline:0;background:transparent;font-size:16px;color:var(--home-navy)}
+.searchForm input::placeholder {color:#64748b;font-size:14px}
+.searchForm button {min-width:64px;min-height:44px;flex-shrink:0;padding:9px 14px;border-radius:11px;background:var(--home-navy);color:#fff;font-size:14px;font-weight:800}
+.categories {padding-block:20px}
+.categoryGrid {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px 5px}
+.category {display:flex;min-width:0;min-height:80px;flex-direction:column;align-items:center;gap:7px;border-radius:12px;color:var(--home-navy);text-align:center;font-size:11px;font-weight:750;line-height:1.45;word-break:keep-all}
+.categoryIcon {display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:1px solid #e7edf4;border-radius:16px;background:#f5f8fc;font-size:27px}
+.seasonCategory {color:var(--home-blue)}
+.seasonCategory .categoryIcon {background:#eaf2ff;border-color:#b9d2f6}
+.quickNav {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-bottom:8px}
+.quickNav>a,.quickNav>button {display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;padding:8px 4px;border:1px solid var(--home-line);border-radius:11px;background:#fff;color:var(--home-navy);font-size:11px;font-weight:750;line-height:1.35;text-align:center;box-shadow:none}
+.section {padding-top:32px}
+.sectionHeading {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.sectionHeading>div {min-width:0}
+.sectionHeading h2 {color:var(--home-navy);font-size:21px;font-weight:900;line-height:1.4;letter-spacing:-.04em;word-break:keep-all}
+.sectionHeading p {max-width:680px;margin-top:5px;color:var(--home-muted);font-size:13px;line-height:1.7}
+.moreLink {display:inline-flex;min-height:44px;flex-shrink:0;align-items:center;justify-content:center;gap:6px;color:var(--home-blue);font-size:13px;font-weight:750;white-space:nowrap}
+.filterRow {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.regionChip {display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 15px;border:1px solid var(--home-line);border-radius:999px;background:#fff;color:var(--home-muted);font-size:13px;font-weight:750;line-height:1.4}
+.regionChip[aria-pressed="true"] {border-color:var(--home-navy);background:var(--home-navy);color:#fff}
+.intentRow {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.intentChip {min-height:44px;padding:8px 13px;border:1px solid var(--home-line);border-radius:10px;background:#fff;color:var(--home-muted);font-size:12px;font-weight:700}
+.intentChip[aria-pressed="true"] {background:#eaf2ff;border-color:#a7c6f4;color:#1d4e97}
+.resultsLabel {margin-bottom:14px;color:var(--home-muted);font-size:13px;font-weight:650;line-height:1.6}
+.cardGrid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card {position:relative;min-width:0;overflow:hidden;border:1px solid var(--home-line);border-radius:16px;background:#fff;box-shadow:0 2px 4px #10234406}
+.cardLink {display:flex;height:100%;min-width:0;flex-direction:column;border-radius:inherit}
+.cardImage {position:relative;aspect-ratio:16/10;overflow:hidden;background:#eef2f7}
+.cardImage img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cardBadge {position:absolute;left:9px;bottom:9px;max-width:calc(100% - 18px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-radius:6px;background:#102344dc;padding:3px 7px;color:#fff;font-size:11px;font-weight:650;line-height:1.5}
+.cardBody {display:flex;flex:1;min-width:0;flex-direction:column;padding:13px}
+.cardBody h3 {display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;min-height:44px;color:var(--home-navy);font-size:14px;font-weight:800;line-height:22px;letter-spacing:-.025em;overflow-wrap:anywhere}
+.cardMeta {margin-top:7px;color:var(--home-muted);font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.saveButton {position:absolute;top:6px;right:6px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #ffffff70;border-radius:50%;background:#102344a8;color:#fff;font-size:22px}
+.saveButton[aria-pressed="true"] {background:#fff;color:#be185d;border-color:#fce7f3}
+.regionLinks {display:flex;flex-wrap:wrap;column-gap:18px;margin-top:12px}
+.regionLinks a {display:inline-flex;min-height:44px;align-items:center;color:var(--home-blue);font-size:13px;font-weight:750}
+.empty {padding:28px 18px;border-radius:16px;background:var(--home-soft);color:var(--home-muted);font-size:13px;line-height:1.8;text-align:center}
+.winterSection {margin-top:32px;padding-block:22px;background:var(--home-soft);border-block:1px solid var(--home-line)}
+.winterSection .sectionHeading {align-items:flex-start}
+.courseCount {display:inline-block;color:var(--home-blue);white-space:nowrap}
+.winterGrid {display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.locationBadge {position:absolute;left:12px;top:12px;max-width:calc(100% - 24px);padding:5px 10px;border-radius:999px;background:#fffffff5;color:var(--home-navy);font-size:12px;font-weight:750;line-height:1.5}
+.winterCard .cardBody {padding:16px}
+.winterCard .cardBody h3 {display:block;min-height:0;overflow:visible;font-size:17px;line-height:1.6;word-break:keep-all}
+.route {margin-top:10px;color:var(--home-blue);font-size:13px;font-weight:650;line-height:1.85;word-break:keep-all;overflow-wrap:anywhere}
+.description {display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;margin-top:8px;color:var(--home-muted);font-size:14px;line-height:1.7}
+.cardFooter {display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:auto;padding-top:16px;color:var(--home-muted);font-size:12px;font-weight:650;line-height:1.6}
+.cardFooter>span:last-child {color:var(--home-blue);font-weight:800}
+.allCoursesLink {display:flex;align-items:center;justify-content:center;gap:12px;min-height:48px;margin-top:20px;padding:12px 18px;border:1px solid #bfd0e7;border-radius:12px;background:#fff;color:var(--home-navy);font-size:14px;font-weight:800}
+.home :where(a,button):focus-visible {outline:3px solid #245db6;outline-offset:3px}
+@media (hover:hover) {
+ .category:hover .categoryIcon {background:#eaf2ff;border-color:#b9d2f6}
+ .quickNav>a:hover,.quickNav>button:hover,.intentChip:hover,.regionChip:not([aria-pressed="true"]):hover {background:#edf3fb}
+ .card:hover {border-color:#b5c9e3;box-shadow:0 5px 16px #1023440b}
+ .cardLink:hover h3,.moreLink:hover,.regionLinks a:hover {color:var(--home-blue);text-decoration:underline;text-underline-offset:4px}
+}
+@media(min-width:640px) {
+ .searchArea,.categories,.quickNav,.section,.winterSection {padding-inline:24px}
+ .searchArea {padding-top:28px;padding-bottom:24px}
+ .category {font-size:12px}
+ .categoryIcon {width:52px;height:52px;font-size:29px}
+ .quickNav {gap:10px}
+ .quickNav>a,.quickNav>button {font-size:13px}
+ .section {padding-top:40px}
+ .sectionHeading h2 {font-size:24px}
+ .cardGrid {grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+ .cardBody {padding:15px}
+ .cardBody h3 {font-size:15px;line-height:24px;min-height:48px}
+ .cardMeta {font-size:13px}
+ .winterSection {padding-block:28px;border:1px solid var(--home-line);border-radius:20px}
+ .winterGrid {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(min-width:1024px) {
+ .searchArea,.categories,.quickNav,.section,.winterSection {padding-inline:32px}
+ .categoryGrid {grid-template-columns:repeat(10,minmax(0,1fr));gap:12px}
+ .cardGrid {grid-template-columns:repeat(4,minmax(0,1fr))}
+ .winterGrid {grid-template-columns:repeat(3,minmax(0,1fr))}
+}
