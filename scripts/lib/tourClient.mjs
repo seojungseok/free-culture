@@ -66,9 +66,17 @@ export const AREA_TO_SIDO = {
 };
 export const AREA_CODES = Object.keys(AREA_TO_SIDO).map(Number);
 const LEGAL_AREA_TO_SIDO = { 11: "서울", 26: "부산", 27: "대구", 28: "인천", 29: "광주", 30: "대전", 31: "울산", 36: "세종", 41: "경기", 42: "강원", 51: "강원", 43: "충북", 44: "충남", 45: "전북", 52: "전북", 46: "전남", 47: "경북", 48: "경남", 50: "제주" };
+function mergedTravelArea(item) {
+  // Search categories retain familiar travel regions after the 2026-07-01 merger.
+  // Only infer from a full merged address; never alter the provider's address.
+  const district = String(item?.addr1 || item?.addr || "").trim().match(/^전남광주통합특별시\s+([^\s]+)/)?.[1];
+  if (/^(광산구|동구|서구|남구|북구)$/.test(district || "")) return "광주";
+  if (/^(목포시|여수시|순천시|나주시|광양시|담양군|곡성군|구례군|고흥군|보성군|화순군|장흥군|강진군|해남군|영암군|무안군|함평군|영광군|장성군|완도군|진도군|신안군)$/.test(district || "")) return "전남";
+  return "";
+}
 export function tourArea(item, fallback = "") {
   return LEGAL_AREA_TO_SIDO[String(item?.lDongRegnCd || "").slice(0, 2)]
-    || AREA_TO_SIDO[item?.areacode] || fallback;
+    || mergedTravelArea(item) || AREA_TO_SIDO[item?.areacode] || fallback;
 }
 
 // ── 캐시 read/write ────────────────────────────────────────────

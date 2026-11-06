@@ -27,6 +27,20 @@ test("national festival records use legal-region codes when legacy codes are abs
   assert.equal(tourArea({}, "서울"), "서울");
 });
 
+test("merged legal addresses retain separate travel filters when a legal code is unknown", () => {
+  const districts = {광주: ["광산구", "동구", "서구", "남구", "북구"], 전남: ["목포시", "여수시", "순천시", "나주시", "광양시", "담양군", "곡성군", "구례군", "고흥군", "보성군", "화순군", "장흥군", "강진군", "해남군", "영암군", "무안군", "함평군", "영광군", "장성군", "완도군", "진도군", "신안군"]};
+  for (const [area, names] of Object.entries(districts)) for (const district of names) {
+    const item = {lDongRegnCd: "99", areacode: "5", addr1: `전남광주통합특별시 ${district} 문화로 1`};
+    const original = {...item};
+    assert.equal(tourArea(item, "서울"), area, district);
+    assert.deepEqual(item, original, "Mapping must not rewrite the source address");
+  }
+  assert.equal(tourArea({addr: "전남광주통합특별시 여수시 문화로 1"}), "전남");
+  assert.equal(tourArea({addr1: "부산광역시 북구 문화로 1"}, "부산"), "부산");
+  assert.equal(tourArea({lDongRegnCd: "99", addr1: "전남광주통합특별시 미확인구 문화로 1"}, "기타"), "기타");
+  assert.equal(tourArea({lDongRegnCd: "26", addr1: "전남광주통합특별시 북구 문화로 1"}), "부산", "Recognized legal code keeps priority");
+});
+
 test("pet credentials never override the general TourAPI credential", async () => {
   const originalFetch = globalThis.fetch;
   const original = { TOUR_API_KEY: process.env.TOUR_API_KEY, PET_TOUR_API_KEY: process.env.PET_TOUR_API_KEY, DATA_GO_KR_KEY: process.env.DATA_GO_KR_KEY };

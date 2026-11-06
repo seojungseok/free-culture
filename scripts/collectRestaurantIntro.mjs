@@ -1,6 +1,6 @@
 // 음식점(contentTypeId=39) detailIntro2 수집 — 전화(문의)·영업시간·휴무·주차·대표메뉴.
 //  나들이 detailIntro 로직(normalizeIntro) 재사용 — 39는 opentimefood/restdatefood/infocenterfood 등으로 매핑됨.
-//  → data/restaurant-intro.json 에 나들이와 동일 스키마로 점진 캐시(재실행 시 이어서).
+//  → data/restaurant-intro.json 캐시. 미수집과 30일 지난 기록을 기존 요청 예산 안에서 순환 확인.
 //  수도권(서울·인천·경기) 우선. 일 1,000회 공유 한도 → RIN_DAILY(기본 300)만큼만, 며칠에 걸쳐 완주.
 //
 // 실행:
@@ -12,6 +12,7 @@ import {
   readCache, writeCache, createBudget, QuotaError,
   detailIntroRaw, normalizeIntro, sleep, hasKey,
 } from "./lib/tourClient.mjs";
+import { refreshQueue } from "./lib/refreshQueue.mjs";
 
 if (!hasKey()) { console.error("❌ TOUR_API_KEY / DATA_GO_KR_KEY 없음"); process.exit(1); }
 
@@ -20,17 +21,11 @@ const OUT = "restaurant-intro.json";
 const CT = "39";
 const PRIORITY = ["서울", "인천", "경기"]; // 수도권 먼저
 
-// 수도권 → 나머지 순, 미수집만
-function orderTargets(restaurants, done, areaFilter) {
-  const pri = [], rest = [];
-  for (const r of restaurants) {
-    if (r.id in done) continue;
-    if (areaFilter.length && !areaFilter.includes(r.area)) continue;
-    (PRIORITY.includes(r.area) ? pri : rest).push(r);
-  }
-  // 수도권 안에서도 서울→인천→경기 순
-  pri.sort((a, b) => PRIORITY.indexOf(a.area) - PRIORITY.indexOf(b.area));
-  return [...pri, ...rest];
+// 미수집·30일 지난 영업정보를 오래된 순으로 재확인한다.
+function orderTargets(restaurants, done, areaFilter, checks = {}) {
+  const candidates = restaurants.filter(r => !areaFilter.length || areaFilter.includes(r.area));
+  candidates.sort((a, b) => (PRIORITY.indexOf(a.area) + 1 || 4) - (PRIORITY.indexOf(b.area) + 1 || 4));
+  return refreshQueue(candidates, done, checks);
 }
 
 async function main() {
@@ -39,10 +34,10 @@ async function main() {
   store.intro ||= {};
 
   const areaFilter = (process.env.RIN_AREAS || "").split(",").map((s) => s.trim()).filter(Boolean);
-  const targets = orderTargets(restaurants, store.intro, areaFilter);
+  const targets = orderTargets(restaurants, store.intro, areaFilter, store.successfulChecks);
   const requested = (process.argv[2] || "").split(",").map((id) => id.trim()).filter(Boolean);
   const batch = requested.length ? restaurants.filter((r) => requested.includes(r.id)).slice(0, DAILY) : targets.slice(0, DAILY);
-  console.log(`\n🍽️🧭 음식점 방문정보(detailIntro2) 수집 — 미수집 ${targets.length} · 이번 실행 ${batch.length} (상한 ${DAILY})`);
+  console.log(`\n🍽️🧭 음식점 방문정보(detailIntro2) 수집 — 미수집·재확인 ${targets.length} · 이번 실행 ${batch.length} (상한 ${DAILY})`);
 
   const budget = createBudget(DAILY);
   let ok = 0, empty = 0, fail = 0, retrieved = 0;
@@ -50,6 +45,8 @@ async function main() {
     try {
       const raw = await detailIntroRaw(r.id, CT, budget);
       retrieved++;
+      store.successfulChecks ||= {};
+      store.successfulChecks[r.id] = new Date().toISOString();
       const norm = normalizeIntro(CT, raw || {});
       norm.type = CT;
       norm.checkedAt = new Date().toISOString();

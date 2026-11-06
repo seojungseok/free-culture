@@ -45,22 +45,6 @@ test('course slugs are deterministic and show region and period',()=>{
  assert.equal(publicationSlug('incheon-new-day-abc','당일'),publicationSlug('incheon-new-day-abc','당일'));
  assert.match(publicationSlug('incheon-new-day-abc','당일'),/^incheon-winter-daytrip-/);
 });
-test('the four researched opening courses preserve route context and official sources',()=>{
- const data=JSON.parse(fs.readFileSync('data/winter-courses.json','utf8'));
- const ids=['seoul-family-day-ervk2g','busan-family-day-mnyk49','seoul-heritage-1n2d-cfrk65','busan-nature-1n2d-ilhzk2'];
- for(const id of ids){
-   const course=data.courses.find(c=>c.sourceCourseId===id);
-   assert.ok(course && isPublicWinterCourse(course));
-   assert.equal(course.slug,publicationSlug(id,course.duration));
-   assert.equal(course.sources.length,course.stops.length);
-   const text=course.sections.flatMap(s=>s.paragraphs).join(' ');
-   assert.doesNotMatch(text,/(?:누리마루 APEC하우스|부산타워\(다이아몬드타워\)|케이블카)을/);
-   assert.match(text,/공식 안내/);
-   if(course.duration==='1박2일')assert.match(text,/숙소 주변 정류장/);
- }
- const seoul=data.courses.find(c=>c.sourceCourseId==='seoul-heritage-1n2d-cfrk65');
- assert.match(seoul.sections.flatMap(s=>s.paragraphs).join(' '),/같은 경희궁 권역/);
-});
 test('official verification requires approved host, venue identity and matching source',async()=>{
  const place={id:'12',title:'첫번째 박물관'}, detail={homepage:'https://museum.seoul.go.kr/exhibit',overview:'첫번째 박물관은 지역 역사와 문화를 소개하는 곳입니다.'};
  const html=`<html><p>${detail.overview}</p></html>`;

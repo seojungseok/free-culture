@@ -1,0 +1,31 @@
+import fs from 'node:fs';
+import {isPublicWinterCourse} from '../lib/winter-course-validation.mjs';
+import {winterCourseImage} from '../lib/winterCourseImage.mjs';
+const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+const editorials=read('data/winter-daytrip-editorial.json'),places=read('data/winter-daytrip-places.json');
+if(editorials.length!==20||places.length!==20)throw Error('Exactly 20 reviewed articles required');
+if(!process.argv.includes('--reviewed'))throw Error('Visual and editorial review is required before publication');
+const now=new Date().toISOString(),old=read('data/winter-courses.json');
+const distance=(a,b)=>{const rad=Math.PI/180,lat=(Number(b.mapy)-Number(a.mapy))*rad,lon=(Number(b.mapx)-Number(a.mapx))*rad;return 12742*Math.asin(Math.sqrt(Math.sin(lat/2)**2+Math.cos(Number(a.mapy)*rad)*Math.cos(Number(b.mapy)*rad)*Math.sin(lon/2)**2));};
+const courses=editorials.map((text,index)=>{
+ const rows=places[index];
+ if(rows.stops.length!==text.stops.length)throw Error('Stop mismatch');
+ const stops=text.stops.map((stop,i)=>{
+  const p=rows.stops[i];if(!p.photo||!p.mapx||!p.mapy)throw Error(`Missing place evidence: ${text.slug}`);
+  const photo={...p.photo,reviewed:true,reviewedAt:now};
+  if(photo.sourceYear)photo.caption+=` · ${photo.sourceYear}년 공개 자료`;
+  const matchingSource=text.sources.find(source=>source.title.replace(/\s/g,'').includes(stop.name.replace(/\s/g,'')));
+  return {...stop,placeId:p.id,sourceTitle:p.title,addr:p.addr,mapx:p.mapx,mapy:p.mapy,day:1,image:photo.src,photo,sourceCheckedAt:p.checkedAt,...(matchingSource?{officialUrl:matchingSource.url}:{})};
+ });
+ const legs=stops.slice(1).map((s,i)=>Number(distance(stops[i],s).toFixed(2)));
+ if(legs.some(km=>km>35))throw Error(`Route needs review: ${text.slug}`);
+ const hero=stops[text.area==='대전'?2:0].photo;
+ const course={...text,id:`winter-editorial-${text.slug}`,status:'published',publishedAt:now,updatedAt:now,lastReviewedAt:now,sourceCourseId:`editorial-20261106-${text.slug}`,stops,image:hero,validation:{version:2,sourceKind:'naver-official-tour-api',checkedAt:now,checks:['identity','coordinates','route','text','official-sources','photos','daytrip'],straightLineLegsKm:legs}};
+ if(!isPublicWinterCourse(course)||!winterCourseImage(course))throw Error(`Publication validation: ${course.slug}`);
+ return course;
+});
+const retiredFile='data/winter-retired-slugs.json';
+if(!fs.existsSync(retiredFile))fs.writeFileSync(retiredFile,JSON.stringify({retiredAt:now,reason:'2026-11-06 user-requested replacement of all previous winter articles',slugs:old.courses.map(c=>c.slug).filter(slug=>!courses.some(c=>c.slug===slug))},null,2)+'\n');
+fs.writeFileSync('data/winter-courses.json',JSON.stringify({version:2,updatedAt:now,collection:'winter-daytrips-20261106',courses},null,2)+'\n');
+fs.writeFileSync('data/winter-reviewed-photos.json','{}\n');
+console.log(JSON.stringify({articles:courses.length,regions:new Set(courses.map(c=>c.area)).size,photos:new Set(courses.flatMap(c=>c.stops.map(s=>s.photo.src))).size,maxLegKm:Math.max(...courses.flatMap(c=>c.validation.straightLineLegsKm))}));

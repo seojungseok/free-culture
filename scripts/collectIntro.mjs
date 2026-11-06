@@ -12,6 +12,7 @@ import {
   detailIntroRaw, normalizeIntro, classifyAdmission, sleep, hasKey,
 } from "./lib/tourClient.mjs";
 import { pickQueue } from "./lib/articleGen.mjs";
+import { refreshQueue } from "./lib/refreshQueue.mjs";
 
 if (!hasKey()) { console.error("❌ TOUR_API_KEY / DATA_GO_KR_KEY 없음"); process.exit(1); }
 
@@ -22,12 +23,12 @@ const OUT = "place-intro.json";
 // 글 발행 큐(pickQueue)와 **같은 순서**로 채운다.
 //  예전엔 places.json 원본 순서로 모으다 보니, 캐시를 수천 곳 쌓아놔도
 //  정작 오늘 글 쓸 상위 300곳에는 6%만 걸렸다(= 그 빈자리를 유료 웹검색이 메우고 있었다).
-function orderTargets(spots, done) {
-  const remaining = spots.filter((s) => !(s.id in done));
+function orderTargets(spots, done, checks = {}) {
+  const remaining = refreshQueue(spots, done, checks);
   const ordered = pickQueue(remaining, new Set(), remaining.length);
   const kid = [], rest = [];
   for (const s of ordered) (s.isKid ? kid : rest).push(s);
-  return [...kid, ...rest];
+  return refreshQueue([...kid, ...rest], done, checks);
 }
 
 async function main() {
@@ -45,11 +46,11 @@ async function main() {
     const byId = new Map(places.map((p) => [p.id, p]));
     batch = ids.map((id) => byId.get(id)).filter(Boolean);
   } else {
-    batch = orderTargets(places, store.intro).slice(0, DAILY);
+    batch = orderTargets(places, store.intro, store.successfulChecks).slice(0, DAILY);
   }
 
-  const targetsTotal = orderTargets(places, store.intro).length;
-  console.log(`\n🧭 방문 팁(detailIntro2) 수집 — 미수집 ${targetsTotal} · 이번 실행 ${batch.length} (상한 ${DAILY})`);
+  const targetsTotal = orderTargets(places, store.intro, store.successfulChecks).length;
+  console.log(`\n🧭 방문 팁(detailIntro2) 수집 — 미수집·재확인 ${targetsTotal} · 이번 실행 ${batch.length} (상한 ${DAILY})`);
 
   const budget = createBudget(DAILY);
   let ok = 0, empty = 0, fail = 0, retrieved = 0;
@@ -57,6 +58,8 @@ async function main() {
     try {
       const raw = await detailIntroRaw(p.id, p.type, budget);
       retrieved++;
+      store.successfulChecks ||= {};
+      store.successfulChecks[p.id] = new Date().toISOString();
       const norm = normalizeIntro(p.type, raw || {});
       norm.type = p.type;
       norm.checkedAt = new Date().toISOString();

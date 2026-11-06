@@ -1,0 +1,2125 @@
+{
+  "checkedAt": "2026-11-06T12:05:43.284Z",
+  "queries": [
+    {
+      "city": "서울",
+      "area": "서울",
+      "query": "덕수궁",
+      "checkedAt": "2026-11-06T12:04:35.468Z",
+      "status": "ok",
+      "total": 11,
+      "results": [
+        {
+          "id": "130173",
+          "title": "국립현대미술관 덕수궁",
+          "addr": "서울특별시 중구 세종대로 99",
+          "area": "서울",
+          "mapx": "126.9747884975",
+          "mapy": "37.5657330658",
+          "image": "",
+          "type": "14",
+          "sourceModifiedAt": "20260710150709",
+          "copyrightType": ""
+        },
+        {
+          "id": "126509",
+          "title": "덕수궁",
+          "addr": "서울특별시 중구 세종대로 99 (정동)",
+          "area": "서울",
+          "mapx": "126.9765746344",
+          "mapy": "37.5650549194",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/44/3584644_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260923172756",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "1605981",
+          "title": "덕수궁 대한문",
+          "addr": "서울특별시 중구 세종대로 99 (정동)",
+          "area": "서울",
+          "mapx": "126.9765906796",
+          "mapy": "37.5651071556",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/91/3384991_image2_1.JPG",
+          "type": "12",
+          "sourceModifiedAt": "20250730154607",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "3023349",
+          "title": "덕수궁 돈덕전",
+          "addr": "서울특별시 중구 세종대로 99 (정동)",
+          "area": "서울",
+          "mapx": "126.9765746344",
+          "mapy": "37.5650549194",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/90/4110690_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260915094743",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "129186",
+          "title": "덕수궁 돌담길",
+          "addr": "서울특별시 중구 세종대로19길 24 (정동)",
+          "area": "서울",
+          "mapx": "126.9744616398",
+          "mapy": "37.5677154465",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/54/4126554_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261022112322",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "2756396",
+          "title": "덕수궁 밤의 석조전",
+          "addr": "서울특별시 중구 세종대로 99 (정동)",
+          "area": "서울",
+          "mapx": "126.9765746344",
+          "mapy": "37.5650549194",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/10/4102010_image2_1.jpg",
+          "type": "15",
+          "sourceModifiedAt": "20260820153636",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "1017547",
+          "title": "덕수궁 중명전",
+          "addr": "서울특별시 중구 정동길 41-11 (정동)",
+          "area": "서울",
+          "mapx": "126.9725355901",
+          "mapy": "37.5667252702",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/92/4114192_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260921165602",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "801502",
+          "title": "덕수궁해물칼국수",
+          "addr": "충청남도 서천군 마서면 장산로855번길 5",
+          "area": "충남",
+          "mapx": "126.7367648724",
+          "mapy": "36.0184382285",
+          "image": "",
+          "type": "39",
+          "sourceModifiedAt": "20261007165651",
+          "copyrightType": ""
+        },
+        {
+          "id": "2736325",
+          "title": "전주 한옥마을 덕수궁",
+          "addr": "전북특별자치도 전주시 완산구 간납로 10",
+          "area": "전북",
+          "mapx": "127.1557499224",
+          "mapy": "35.8166641567",
+          "image": "",
+          "type": "32",
+          "sourceModifiedAt": "20250626115342",
+          "copyrightType": ""
+        },
+        {
+          "id": "3438691",
+          "title": "전주 한옥마을 덕수궁 별관",
+          "addr": "전북특별자치도 전주시 완산구 기린대로 72 (풍남동3가)",
+          "area": "전북",
+          "mapx": "127.1549639058",
+          "mapy": "35.8157253606",
+          "image": "",
+          "type": "32",
+          "sourceModifiedAt": "20241218152211",
+          "copyrightType": ""
+        },
+        {
+          "id": "3438736",
+          "title": "전주한옥마을 독채덕수궁",
+          "addr": "전북특별자치도 전주시 완산구 최명희길 26-40 (풍남동3가)",
+          "area": "전북",
+          "mapx": "127.1516475064",
+          "mapy": "35.8167918485",
+          "image": "",
+          "type": "32",
+          "sourceModifiedAt": "20241218151524",
+          "copyrightType": ""
+        }
+      ]
+    },
+    {
+      "city": "서울",
+      "area": "서울",
+      "query": "서울시립미술관",
+      "checkedAt": "2026-11-06T12:04:36.021Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "130071",
+          "title": "서울시립미술관 서소문본관",
+          "addr": "서울특별시 중구 덕수궁길 61",
+          "area": "서울",
+          "mapx": "126.97367754109",
+          "mapy": "37.5641082438607",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/90/3510490_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260312090840",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "서울",
+      "area": "서울",
+      "query": "정동길",
+      "checkedAt": "2026-11-06T12:04:36.573Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2778454",
+          "title": "정동길",
+          "addr": "서울특별시 중구 정동",
+          "area": "서울",
+          "mapx": "126.9696000000",
+          "mapy": "37.5679000000",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/80/2795180_image2_1.jpg",
+          "type": "28",
+          "sourceModifiedAt": "20260825130218",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "부산",
+      "area": "부산",
+      "query": "동백섬",
+      "checkedAt": "2026-11-06T12:04:37.143Z",
+      "status": "ok",
+      "total": 3,
+      "results": [
+        {
+          "id": "2756617",
+          "title": "동백섬 지심도터미널",
+          "addr": "경상남도 거제시 장승포로 56-22 (장승포동)",
+          "area": "경남",
+          "mapx": "128.7276200443",
+          "mapy": "34.8672777312",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/78/4142278_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261104160410",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "135827",
+          "title": "동백섬횟집",
+          "addr": "부산광역시 해운대구 해운대해변로209번나길 17",
+          "area": "부산",
+          "mapx": "129.1546889075",
+          "mapy": "35.1604296524",
+          "image": "",
+          "type": "39",
+          "sourceModifiedAt": "20250311153735",
+          "copyrightType": ""
+        },
+        {
+          "id": "987810",
+          "title": "해운대 동백섬",
+          "addr": "부산광역시 해운대구 동백로 67",
+          "area": "부산",
+          "mapx": "129.1521516870",
+          "mapy": "35.1539511410",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/62/4105462_image2_1.JPG",
+          "type": "12",
+          "sourceModifiedAt": "20261026103858",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "부산",
+      "area": "부산",
+      "query": "해운대해수욕장",
+      "checkedAt": "2026-11-06T12:04:37.734Z",
+      "status": "ok",
+      "total": 2,
+      "results": [
+        {
+          "id": "2929116",
+          "title": "다비치안경 해운대해수욕장입구점",
+          "addr": "부산광역시 해운대구 구남로 11-1 (우동)",
+          "area": "부산",
+          "mapx": "129.159811309804",
+          "mapy": "35.1628751551535",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/14/4019314_image2_1.jpg",
+          "type": "38",
+          "sourceModifiedAt": "20260319094959",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "126081",
+          "title": "해운대해수욕장",
+          "addr": "부산광역시 해운대구 해운대해변로 264",
+          "area": "부산",
+          "mapx": "129.1602785648",
+          "mapy": "35.1590840227",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/47/4105447_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260909092001",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "부산",
+      "area": "부산",
+      "query": "해운대전통시장",
+      "checkedAt": "2026-11-06T12:04:38.295Z",
+      "status": "ok",
+      "total": 0,
+      "results": []
+    },
+    {
+      "city": "대구",
+      "area": "대구",
+      "query": "청라언덕",
+      "checkedAt": "2026-11-06T12:04:38.855Z",
+      "status": "ok",
+      "total": 2,
+      "results": [
+        {
+          "id": "2611140",
+          "title": "동산청라언덕",
+          "addr": "대구광역시 중구 달구벌대로 2029 (동산동)",
+          "area": "대구",
+          "mapx": "128.5849554948",
+          "mapy": "35.8666074145",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/60/4056360_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260610164342",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "4012261",
+          "title": "이마트24 청라언덕점",
+          "addr": "대구광역시 중구 국채보상로102길 70 (동산동)",
+          "area": "대구",
+          "mapx": "128.586757306577",
+          "mapy": "35.8675295559308",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/04/4024104_image2_1.jpg",
+          "type": "38",
+          "sourceModifiedAt": "20260317101259",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "대구",
+      "area": "대구",
+      "query": "계산예가",
+      "checkedAt": "2026-11-06T12:04:39.421Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2366217",
+          "title": "근대문화체험관 계산예가",
+          "addr": "대구광역시 중구 서성로 6-1",
+          "area": "대구",
+          "mapx": "128.5878634206",
+          "mapy": "35.8671840532",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/02/3510102_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20250721133133",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "대구",
+      "area": "대구",
+      "query": "서문시장",
+      "checkedAt": "2026-11-06T12:04:39.995Z",
+      "status": "ok",
+      "total": 2,
+      "results": [
+        {
+          "id": "132532",
+          "title": "대구 서문시장 & 서문시장 야시장",
+          "addr": "대구광역시 중구 큰장로26길 45",
+          "area": "대구",
+          "mapx": "128.5807862176",
+          "mapy": "35.8689226144",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/47/3039247_image2_1.jpg",
+          "type": "38",
+          "sourceModifiedAt": "20251023143000",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "2614909",
+          "title": "서문풍물야시장&서문시장삼겹살거리",
+          "addr": "충청북도 청주시 상당구 무심동로392번길 18 (서문동)",
+          "area": "충북",
+          "mapx": "127.4857205739",
+          "mapy": "36.6354280890",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/41/3461441_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261103114440",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "인천",
+      "area": "인천",
+      "query": "차이나타운",
+      "checkedAt": "2026-11-06T12:04:40.564Z",
+      "status": "ok",
+      "total": 3,
+      "results": [
+        {
+          "id": "2402981",
+          "title": "대림동 차이나타운",
+          "addr": "서울특별시 영등포구 대림동",
+          "area": "서울",
+          "mapx": "126.8975138236",
+          "mapy": "37.4924530714",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/92/3526892_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20250827165120",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "127151",
+          "title": "부산 차이나타운",
+          "addr": "부산광역시 동구 중앙대로179번길 1 (초량동)",
+          "area": "부산",
+          "mapx": "129.0385345717",
+          "mapy": "35.1133909492",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/03/4130003_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261027152751",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "264512",
+          "title": "인천 차이나타운",
+          "addr": "인천광역시 제물포구 차이나타운로59번길 20",
+          "area": "인천",
+          "mapx": "126.6179000000",
+          "mapy": "37.4756000000",
+          "image": "",
+          "type": "12",
+          "sourceModifiedAt": "20260902102416",
+          "copyrightType": ""
+        }
+      ]
+    },
+    {
+      "city": "인천",
+      "area": "인천",
+      "query": "짜장면박물관",
+      "checkedAt": "2026-11-06T12:04:41.144Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "1931699",
+          "title": "짜장면박물관",
+          "addr": "인천광역시 제물포구 차이나타운로 56-14",
+          "area": "인천",
+          "mapx": "126.6181675445",
+          "mapy": "37.4747905471",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/22/4056222_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260826140515",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "인천",
+      "area": "인천",
+      "query": "개항장",
+      "checkedAt": "2026-11-06T12:04:41.742Z",
+      "status": "ok",
+      "total": 4,
+      "results": [
+        {
+          "id": "947611",
+          "title": "개항장 거리",
+          "addr": "인천광역시 제물포구 관동1가",
+          "area": "인천",
+          "mapx": "126.6209923219",
+          "mapy": "37.4728824966",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/47/4109547_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260921173831",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "3557782",
+          "title": "개항장 댕댕 도서관",
+          "addr": "인천광역시 제물포구 월미로 33 (북성동1가)",
+          "area": "인천",
+          "mapx": "126.6146650689",
+          "mapy": "37.4761360618",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/81/3557781_image2_1.png",
+          "type": "15",
+          "sourceModifiedAt": "20260630184428",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "2779442",
+          "title": "인천개항장 근대건축전시관",
+          "addr": "인천광역시 제물포구 신포로23번길 77",
+          "area": "인천",
+          "mapx": "126.6211978573",
+          "mapy": "37.4728852777",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/66/4056166_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260630215515",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "3496655",
+          "title": "2026 인천개항장 페스타 - 1901 라이브로드",
+          "addr": "인천광역시 제물포구 월미로 33 (북성동1가)",
+          "area": "인천",
+          "mapx": "126.6146527143398",
+          "mapy": "37.4760834130674",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/00/4039000_image2_1.png",
+          "type": "15",
+          "sourceModifiedAt": "20260630184428",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "광주",
+      "area": "광주",
+      "query": "양림동",
+      "checkedAt": "2026-11-06T12:04:42.324Z",
+      "status": "ok",
+      "total": 3,
+      "results": [
+        {
+          "id": "127071",
+          "title": "양림동 선교사 묘지",
+          "addr": "전남광주통합특별시 남구 제중로 77",
+          "area": "",
+          "mapx": "126.9113000000",
+          "mapy": "35.1397000000",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/80/3514580_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261103152818",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "2603494",
+          "title": "양림동 펭귄마을공예거리",
+          "addr": "전남광주통합특별시 남구 백서로 92-8 (양림동)",
+          "area": "",
+          "mapx": "126.9162771097",
+          "mapy": "35.1401818199",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/54/4118454_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261008164600",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "127078",
+          "title": "양림동 호랑가시나무길",
+          "addr": "전남광주통합특별시 남구 양림동 225-25(호랑가시나무아트폴리곤)",
+          "area": "",
+          "mapx": "126.9120763435",
+          "mapy": "35.1380518223",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/53/3514653_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260702103406",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "광주",
+      "area": "광주",
+      "query": "펭귄마을",
+      "checkedAt": "2026-11-06T12:04:42.905Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2603494",
+          "title": "양림동 펭귄마을공예거리",
+          "addr": "전남광주통합특별시 남구 백서로 92-8 (양림동)",
+          "area": "",
+          "mapx": "126.9162771097",
+          "mapy": "35.1401818199",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/54/4118454_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261008164600",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "광주",
+      "area": "광주",
+      "query": "국립아시아문화전당",
+      "checkedAt": "2026-11-06T12:04:43.532Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2009775",
+          "title": "국립아시아문화전당",
+          "addr": "전남광주통합특별시 동구 문화전당로 38 (광산동)",
+          "area": "",
+          "mapx": "126.9192794131",
+          "mapy": "35.1460465789",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/17/4109317_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260921152814",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "대전",
+      "area": "대전",
+      "query": "유성온천",
+      "checkedAt": "2026-11-06T12:05:17.329Z",
+      "status": "ok",
+      "total": 6,
+      "results": [
+        {
+          "id": "4007983",
+          "title": "올리브영 대전유성온천역점",
+          "addr": "대전광역시 유성구 대학로 11 (봉명동)",
+          "area": "대전",
+          "mapx": "127.341459198701",
+          "mapy": "36.3549244467671",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/36/4028236_image2_1.jpeg",
+          "type": "38",
+          "sourceModifiedAt": "20260309093631",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "2760707",
+          "title": "유성온천공원",
+          "addr": "대전광역시 유성구 계룡로123번길 52 (봉명동)",
+          "area": "대전",
+          "mapx": "127.3437",
+          "mapy": "36.3553",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/98/3521398_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260317101258",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "1270240",
+          "title": "유성온천문화축제",
+          "addr": "대전광역시 유성구 어은로 27 (봉명동)",
+          "area": "대전",
+          "mapx": "127.357688151291",
+          "mapy": "36.3606844977923",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/97/4059997_image2_1.jpg",
+          "type": "15",
+          "sourceModifiedAt": "20260424091626",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "125858",
+          "title": "유성온천지구",
+          "addr": "대전광역시 유성구 봉명동 574",
+          "area": "대전",
+          "mapx": "127.3447948538",
+          "mapy": "36.3552973541",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/42/3035142_image2_1.JPG",
+          "type": "12",
+          "sourceModifiedAt": "20261026145546",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "3085028",
+          "title": "저스트슬립호텔 유성온천점",
+          "addr": "대전광역시 유성구 온천로101번길 10-1 (봉명동)",
+          "area": "대전",
+          "mapx": "127.3495356351",
+          "mapy": "36.3548075581",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/26/3084426_image2_1.JPG",
+          "type": "32",
+          "sourceModifiedAt": "20260928112227",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "2915307",
+          "title": "2025 유성온천 크리스마스 축제",
+          "addr": "대전광역시 유성구 어은로 27 (봉명동)",
+          "area": "대전",
+          "mapx": "127.3577063021",
+          "mapy": "36.3607306283",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/43/3574143_image2_1.jpg",
+          "type": "15",
+          "sourceModifiedAt": "20251126095212",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "대전",
+      "area": "대전",
+      "query": "유림공원",
+      "checkedAt": "2026-11-06T12:05:17.892Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2674960",
+          "title": "유림공원",
+          "addr": "대전광역시 유성구 어은로 27",
+          "area": "대전",
+          "mapx": "127.3576879160",
+          "mapy": "36.3606830486",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/57/2674957_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261026101552",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "대전",
+      "area": "대전",
+      "query": "국립중앙과학관",
+      "checkedAt": "2026-11-06T12:05:18.451Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "129785",
+          "title": "국립중앙과학관",
+          "addr": "대전광역시 유성구 대덕대로 481 (구성동)",
+          "area": "대전",
+          "mapx": "127.3790545587592",
+          "mapy": "36.37595413197782",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/52/4057052_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260429161516",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "울산",
+      "area": "울산",
+      "query": "대왕암공원",
+      "checkedAt": "2026-11-06T12:05:19.014Z",
+      "status": "ok",
+      "total": 3,
+      "results": [
+        {
+          "id": "127515",
+          "title": "대왕암공원",
+          "addr": "울산광역시 동구 등대로 95 (일산동)",
+          "area": "울산",
+          "mapx": "129.4352747432",
+          "mapy": "35.4904590082",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/16/3583516_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20251215100336",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "2728939",
+          "title": "대왕암공원 출렁다리",
+          "addr": "울산광역시 동구 등대로 95",
+          "area": "울산",
+          "mapx": "129.4352775223",
+          "mapy": "35.4904034587",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/69/3583469_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20251215093513",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "2728918",
+          "title": "대왕암공원오토캠핑장",
+          "addr": "울산광역시 동구 등대로 80-61 (일산동)",
+          "area": "울산",
+          "mapx": "129.4391638169",
+          "mapy": "35.4881813906",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/60/4131060_image2_1.jpg",
+          "type": "28",
+          "sourceModifiedAt": "20261020132748",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "울산",
+      "area": "울산",
+      "query": "일산해수욕장",
+      "checkedAt": "2026-11-06T12:05:20.143Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "126091",
+          "title": "일산해수욕장(울산)",
+          "addr": "울산광역시 동구 해수욕장10길 18",
+          "area": "울산",
+          "mapx": "129.4301689192",
+          "mapy": "35.4948856692",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/44/3528444_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261027145102",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "울산",
+      "area": "울산",
+      "query": "슬도",
+      "checkedAt": "2026-11-06T12:05:20.733Z",
+      "status": "ok",
+      "total": 5,
+      "results": [
+        {
+          "id": "1395618",
+          "title": "슬도",
+          "addr": "울산광역시 동구 방어동 산5-3",
+          "area": "울산",
+          "mapx": "129.4312364",
+          "mapy": "35.4781868",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/01/3522901_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260313155749",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "2752131",
+          "title": "슬도등대",
+          "addr": "울산광역시 동구 성끝길 122",
+          "area": "울산",
+          "mapx": "129.4311290000",
+          "mapy": "35.4781530000",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/97/3522897_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260812150426",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "3511141",
+          "title": "슬도수산(더가득)",
+          "addr": "울산광역시 동구 화진4가길 28 (방어동)",
+          "area": "울산",
+          "mapx": "129.4226202873",
+          "mapy": "35.4905504257",
+          "image": "",
+          "type": "39",
+          "sourceModifiedAt": "20250901145306",
+          "copyrightType": ""
+        },
+        {
+          "id": "3343016",
+          "title": "슬도아트",
+          "addr": "울산광역시 동구 성끝길 103 (방어동)",
+          "area": "울산",
+          "mapx": "129.4327663249372",
+          "mapy": "35.480904327744355",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/41/3342941_image2_1.png",
+          "type": "14",
+          "sourceModifiedAt": "20260402163239",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "3065359",
+          "title": "슬도해안둘레길",
+          "addr": "울산광역시 동구 성끝길 105-1 (방어동)",
+          "area": "울산",
+          "mapx": "129.43232981559026",
+          "mapy": "35.480874607037116",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/35/4065635_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260519170321",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "세종",
+      "area": "세종",
+      "query": "국립세종수목원",
+      "checkedAt": "2026-11-06T12:05:21.325Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2675068",
+          "title": "국립세종수목원",
+          "addr": "세종특별자치시 수목원로 136 (세종동)",
+          "area": "세종",
+          "mapx": "127.2856916313",
+          "mapy": "36.4986108560",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/89/4065589_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260917112529",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "세종",
+      "area": "세종",
+      "query": "세종호수공원",
+      "checkedAt": "2026-11-06T12:05:21.909Z",
+      "status": "ok",
+      "total": 2,
+      "results": [
+        {
+          "id": "3559214",
+          "title": "꿈앤카페 세종호수공원점 (송담만리)",
+          "addr": "세종특별자치시 다솜로 216 (세종동)",
+          "area": "세종",
+          "mapx": "127.2701992755",
+          "mapy": "36.4989993515",
+          "image": "",
+          "type": "39",
+          "sourceModifiedAt": "20251030130516",
+          "copyrightType": ""
+        },
+        {
+          "id": "1946955",
+          "title": "세종호수공원",
+          "addr": "세종특별자치시 다솜로 216 (세종동)",
+          "area": "세종",
+          "mapx": "127.2701992755",
+          "mapy": "36.4989993515",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/76/3353976_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20250520213216",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "세종",
+      "area": "세종",
+      "query": "국립조세박물관",
+      "checkedAt": "2026-11-06T12:05:22.459Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "130952",
+          "title": "국립조세박물관",
+          "addr": "세종특별자치시 국세청로 8-14 (나성동)",
+          "area": "세종",
+          "mapx": "127.2603063115402",
+          "mapy": "36.485079809381155",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/45/4063845_image2_1.jpeg",
+          "type": "14",
+          "sourceModifiedAt": "20260514082738",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "수원",
+      "area": "경기",
+      "query": "수원 화성",
+      "checkedAt": "2026-11-06T12:05:23.026Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "125555",
+          "title": "수원 화성 [유네스코 세계유산]",
+          "addr": "경기도 수원시 장안구 영화동",
+          "area": "경기",
+          "mapx": "127.0120983143",
+          "mapy": "37.2872981922",
+          "image": "https://tong.visitkorea.or.kr/cms/resource_photo/97/3478597_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260619093209",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "수원",
+      "area": "경기",
+      "query": "화성박물관",
+      "checkedAt": "2026-11-06T12:05:23.615Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "1921150",
+          "title": "수원화성박물관",
+          "addr": "경기도 수원시 팔달구 창룡대로 21 (매향동)",
+          "area": "경기",
+          "mapx": "127.0190799245",
+          "mapy": "37.2820850165",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/73/3020673_image2_1.jpeg",
+          "type": "14",
+          "sourceModifiedAt": "20260831142407",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "수원",
+      "area": "경기",
+      "query": "공방거리",
+      "checkedAt": "2026-11-06T12:05:24.187Z",
+      "status": "ok",
+      "total": 2,
+      "results": [
+        {
+          "id": "2667588",
+          "title": "수원 공방거리",
+          "addr": "경기도 수원시 팔달구 남창동",
+          "area": "경기",
+          "mapx": "127.015089922375",
+          "mapy": "37.2790603584123",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/11/3516011_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260323095249",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "2500201",
+          "title": "연남동 공방거리",
+          "addr": "서울특별시 마포구 성미산로28길 18",
+          "area": "서울",
+          "mapx": "126.9236047023",
+          "mapy": "37.5622464558",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/21/3550521_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261103111709",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "파주",
+      "area": "경기",
+      "query": "오두산통일전망대",
+      "checkedAt": "2026-11-06T12:05:24.789Z",
+      "status": "ok",
+      "total": 0,
+      "results": []
+    },
+    {
+      "city": "파주",
+      "area": "경기",
+      "query": "장단콩웰빙마루",
+      "checkedAt": "2026-11-06T12:05:25.467Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2911414",
+          "title": "파주장단콩웰빙마루",
+          "addr": "경기도 파주시 필승로 396 파주장단콩웰빙마루",
+          "area": "경기",
+          "mapx": "126.6832526475",
+          "mapy": "37.7773686374",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/60/4124260_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261029140720",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "파주",
+      "area": "경기",
+      "query": "헤이리",
+      "checkedAt": "2026-11-06T12:05:26.071Z",
+      "status": "ok",
+      "total": 10,
+      "results": [
+        {
+          "id": "2841885",
+          "title": "커피공장103 헤이리점",
+          "addr": "경기도 파주시 탄현면 헤이리마을길 93-119",
+          "area": "경기",
+          "mapx": "126.6976930811",
+          "mapy": "37.7917257856",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/75/2841875_image2_1.jpg",
+          "type": "39",
+          "sourceModifiedAt": "20250728101606",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "128168",
+          "title": "헤이리 예술마을",
+          "addr": "경기도 파주시 탄현면 헤이리마을길 70-21",
+          "area": "경기",
+          "mapx": "126.69929799395",
+          "mapy": "37.7880092899503",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/81/4057581_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260528115455",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "3012679",
+          "title": "헤이리 트릭아트",
+          "addr": "경기도 파주시 탄현면 헤이리마을길 93-53",
+          "area": "경기",
+          "mapx": "126.6967030167441",
+          "mapy": "37.79003960619057",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/70/3003170_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260430112845",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "3021180",
+          "title": "헤이리농원",
+          "addr": "경기도 파주시 탄현면 방촌로649번길 152-41",
+          "area": "경기",
+          "mapx": "126.707854721245",
+          "mapy": "37.8003105850017",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/81/3589281_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260421170934",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "3032506",
+          "title": "헤이리무장애노을숲길",
+          "addr": "경기도 파주시 탄현면 법흥리",
+          "area": "경기",
+          "mapx": "126.7024",
+          "mapy": "37.7902",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/91/3011591_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260416092718",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "2782872",
+          "title": "헤이리스",
+          "addr": "경기도 파주시 탄현면 헤이리마을길 7",
+          "area": "경기",
+          "mapx": "126.694717879502",
+          "mapy": "37.7882869516154",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/02/3509702_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260312090840",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "2654543",
+          "title": "헤이리시네마",
+          "addr": "경기도 파주시 탄현면 헤이리마을길 93-119 커피공장 103 카페 3층",
+          "area": "경기",
+          "mapx": "126.697678604018",
+          "mapy": "37.7916699241586",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/95/4007895_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260318101005",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "736105",
+          "title": "헤이리예술마을뮤지엄카페 타임캡슐",
+          "addr": "경기도 파주시 탄현면 헤이리마을길 59-63",
+          "area": "경기",
+          "mapx": "126.6958204956",
+          "mapy": "37.7901672969",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/37/737737_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20261103093224",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "2671726",
+          "title": "헤이리풀빌라 워라벨 호스텔",
+          "addr": "경기도 파주시 탄현면 샘철길 38-12",
+          "area": "경기",
+          "mapx": "126.6887356312",
+          "mapy": "37.7894981080",
+          "image": "",
+          "type": "32",
+          "sourceModifiedAt": "20241127154902",
+          "copyrightType": ""
+        },
+        {
+          "id": "1033322",
+          "title": "[평화누리길 7코스] 헤이리길",
+          "addr": "경기도 파주시 탄현면 성동리",
+          "area": "경기",
+          "mapx": "126.6908133103",
+          "mapy": "37.7862540788",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/11/3501811_image2_1.jpg",
+          "type": "28",
+          "sourceModifiedAt": "20250702103936",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "강릉",
+      "area": "강원",
+      "query": "오죽헌",
+      "checkedAt": "2026-11-06T12:05:26.643Z",
+      "status": "ok",
+      "total": 4,
+      "results": [
+        {
+          "id": "129784",
+          "title": "강릉 오죽헌·시립박물관",
+          "addr": "강원특별자치도 강릉시 율곡로3139번길 24 (죽헌동)",
+          "area": "강원",
+          "mapx": "128.87966210169768",
+          "mapy": "37.779138874844655",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/38/3527138_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260318101005",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "2390089",
+          "title": "강릉의 대표 유적지 오죽헌을 걷다.",
+          "addr": "",
+          "area": "",
+          "mapx": "128.8776529782",
+          "mapy": "37.7787097892",
+          "image": "",
+          "type": "25",
+          "sourceModifiedAt": "20260820172930",
+          "copyrightType": ""
+        },
+        {
+          "id": "4062752",
+          "title": "오죽헌 전통뱃놀이 체험시설",
+          "addr": "강원특별자치도 강릉시 죽헌동 754",
+          "area": "강원",
+          "mapx": "128.8835230000",
+          "mapy": "37.7800120000",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/97/4087697_image2_1.JPG",
+          "type": "28",
+          "sourceModifiedAt": "20260914163118",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "1348733",
+          "title": "오죽헌한정식",
+          "addr": "전남광주통합특별시 여수시 시청서1길 36",
+          "area": "전남",
+          "mapx": "127.6611075954",
+          "mapy": "34.7583451702",
+          "image": "",
+          "type": "39",
+          "sourceModifiedAt": "20260630212627",
+          "copyrightType": ""
+        }
+      ]
+    },
+    {
+      "city": "강릉",
+      "area": "강원",
+      "query": "경포해변",
+      "checkedAt": "2026-11-06T12:05:27.196Z",
+      "status": "ok",
+      "total": 0,
+      "results": []
+    },
+    {
+      "city": "강릉",
+      "area": "강원",
+      "query": "안목해변",
+      "checkedAt": "2026-11-06T12:05:27.752Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "127722",
+          "title": "안목해변",
+          "addr": "강원특별자치도 강릉시 창해로14번길 20-1",
+          "area": "강원",
+          "mapx": "128.9482754051",
+          "mapy": "37.7722617595",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/39/4145139_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261105094046",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "속초",
+      "area": "강원",
+      "query": "속초시립박물관",
+      "checkedAt": "2026-11-06T12:05:28.352Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "130895",
+          "title": "속초시립박물관·속초실향민문화촌",
+          "addr": "강원특별자치도 속초시 신흥2길 16",
+          "area": "강원",
+          "mapx": "128.539594719139",
+          "mapy": "38.2004712232996",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/54/3351254_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260205143253",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "속초",
+      "area": "강원",
+      "query": "속초관광수산시장",
+      "checkedAt": "2026-11-06T12:05:28.970Z",
+      "status": "ok",
+      "total": 2,
+      "results": [
+        {
+          "id": "1260275",
+          "title": "속초관광수산시장",
+          "addr": "강원특별자치도 속초시 중앙로147번길 12",
+          "area": "강원",
+          "mapx": "128.5905229864",
+          "mapy": "38.2039356904",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/67/4041467_image2_1.jpg",
+          "type": "38",
+          "sourceModifiedAt": "20261002110140",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "3354272",
+          "title": "속초관광수산시장 회센터",
+          "addr": "강원특별자치도 속초시 중앙로147번길 12 (중앙동)",
+          "area": "강원",
+          "mapx": "128.5905775798",
+          "mapy": "38.2040463451",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/99/3421499_image2_1.jpg",
+          "type": "39",
+          "sourceModifiedAt": "20250728144749",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "속초",
+      "area": "강원",
+      "query": "영금정",
+      "checkedAt": "2026-11-06T12:05:29.545Z",
+      "status": "ok",
+      "total": 2,
+      "results": [
+        {
+          "id": "125779",
+          "title": "영금정",
+          "addr": "강원특별자치도 속초시 영금정로 43 (동명동)",
+          "area": "강원",
+          "mapx": "128.6014624568",
+          "mapy": "38.2119011984",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/01/3576201_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20251128151044",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "3041483",
+          "title": "영금정갯바위",
+          "addr": "강원특별자치도 속초시 영랑해안길 18 (동명동)",
+          "area": "강원",
+          "mapx": "128.6011336103",
+          "mapy": "38.2130701271",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/63/3041463_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260710142841",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "제천",
+      "area": "충북",
+      "query": "제천 의림지",
+      "checkedAt": "2026-11-06T12:05:30.117Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "127804",
+          "title": "제천 의림지와 제림",
+          "addr": "충청북도 제천시 의림지로 33",
+          "area": "충북",
+          "mapx": "128.208074805571",
+          "mapy": "37.1741062116035",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/09/3309809_image2_1.JPG",
+          "type": "12",
+          "sourceModifiedAt": "20260420134409",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "제천",
+      "area": "충북",
+      "query": "의림지역사박물관",
+      "checkedAt": "2026-11-06T12:05:30.679Z",
+      "status": "ok",
+      "total": 0,
+      "results": []
+    },
+    {
+      "city": "제천",
+      "area": "충북",
+      "query": "제천중앙시장",
+      "checkedAt": "2026-11-06T12:05:31.272Z",
+      "status": "ok",
+      "total": 0,
+      "results": []
+    },
+    {
+      "city": "서천",
+      "area": "충남",
+      "query": "국립생태원",
+      "checkedAt": "2026-11-06T12:05:31.835Z",
+      "status": "ok",
+      "total": 2,
+      "results": [
+        {
+          "id": "3036904",
+          "title": "국립생태원 에코리움",
+          "addr": "충청남도 서천군 마서면 금강로 1210",
+          "area": "충남",
+          "mapx": "126.7201124569",
+          "mapy": "36.0369713218",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/81/4100581_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260824150244",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "1922640",
+          "title": "국립생태원(서천)",
+          "addr": "충청남도 서천군 마서면 금강로 1210",
+          "area": "충남",
+          "mapx": "126.7246546278",
+          "mapy": "36.0296644507",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/86/4088586_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260721114814",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "서천",
+      "area": "충남",
+      "query": "국립해양생물자원관",
+      "checkedAt": "2026-11-06T12:05:32.376Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2014616",
+          "title": "국립해양생물자원관",
+          "addr": "충청남도 서천군 장항읍 장산로101번길 75",
+          "area": "충남",
+          "mapx": "126.6693641422",
+          "mapy": "36.0174521810",
+          "image": "https://tong.visitkorea.or.kr/cms/resource_photo/91/3339191_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260901092727",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "서천",
+      "area": "충남",
+      "query": "장항송림",
+      "checkedAt": "2026-11-06T12:05:32.942Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "1937012",
+          "title": "장항송림자연휴양림",
+          "addr": "충청남도 서천군 장항읍 장항산단로34번길 122-16",
+          "area": "충남",
+          "mapx": "126.6655624865",
+          "mapy": "36.0184392999",
+          "image": "https://tong.visitkorea.or.kr/cms/resource_photo/80/3585180_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261029175049",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "군산",
+      "area": "전북",
+      "query": "군산근대역사박물관",
+      "checkedAt": "2026-11-06T12:05:33.532Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "1684836",
+          "title": "군산근대역사박물관",
+          "addr": "전북특별자치도 군산시 해망로 240 (장미동)",
+          "area": "전북",
+          "mapx": "126.7121231556",
+          "mapy": "35.9908197098",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/13/3304813_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260915111727",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "군산",
+      "area": "전북",
+      "query": "군산근대미술관",
+      "checkedAt": "2026-11-06T12:05:34.098Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2468978",
+          "title": "군산근대미술관",
+          "addr": "전북특별자치도 군산시 해망로 230",
+          "area": "전북",
+          "mapx": "126.7127568054",
+          "mapy": "35.9898912385",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/58/4108858_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261103113648",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "군산",
+      "area": "전북",
+      "query": "경암동",
+      "checkedAt": "2026-11-06T12:05:34.704Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2605528",
+          "title": "경암동 철길마을",
+          "addr": "전북특별자치도 군산시 경촌4길 14",
+          "area": "전북",
+          "mapx": "126.7362330582",
+          "mapy": "35.9813520474",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/50/3080250_image2_1.JPG",
+          "type": "12",
+          "sourceModifiedAt": "20250711100057",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "순천",
+      "area": "전남",
+      "query": "순천만습지",
+      "checkedAt": "2026-11-06T12:05:35.282Z",
+      "status": "ok",
+      "total": 2,
+      "results": [
+        {
+          "id": "126730",
+          "title": "순천만습지",
+          "addr": "전남광주통합특별시 순천시 순천만길 513-25",
+          "area": "",
+          "mapx": "127.5092830428",
+          "mapy": "34.8858016084",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/14/4088614_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260903154354",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "2795593",
+          "title": "순천만습지천문대",
+          "addr": "전남광주통합특별시 순천시 순천만길 513-25",
+          "area": "",
+          "mapx": "127.5096291972",
+          "mapy": "34.8855169884",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/36/4066436_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260630184428",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "순천",
+      "area": "전남",
+      "query": "순천만국가정원",
+      "checkedAt": "2026-11-06T12:05:35.835Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "1919548",
+          "title": "순천만국가정원",
+          "addr": "전남광주통합특별시 순천시 국가정원1호길 47 (오천동)",
+          "area": "",
+          "mapx": "127.4996986297",
+          "mapy": "34.9286032064",
+          "image": "",
+          "type": "12",
+          "sourceModifiedAt": "20260903154237",
+          "copyrightType": ""
+        }
+      ]
+    },
+    {
+      "city": "순천",
+      "area": "전남",
+      "query": "아랫장",
+      "checkedAt": "2026-11-06T12:05:36.392Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2044930",
+          "title": "순천 아랫장",
+          "addr": "전남광주통합특별시 순천시 장평로 60",
+          "area": "",
+          "mapx": "127.49609838684",
+          "mapy": "34.9450986059954",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/51/2042051_image2_1.jpg",
+          "type": "38",
+          "sourceModifiedAt": "20260630184428",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "여수",
+      "area": "전남",
+      "query": "오동도",
+      "checkedAt": "2026-11-06T12:05:36.941Z",
+      "status": "ok",
+      "total": 6,
+      "results": [
+        {
+          "id": "2371969",
+          "title": "여수 도심을 가로질러 오동도까지 걸어라",
+          "addr": "",
+          "area": "",
+          "mapx": "127.7393060661",
+          "mapy": "34.7307586808",
+          "image": "",
+          "type": "25",
+          "sourceModifiedAt": "20260820172930",
+          "copyrightType": ""
+        },
+        {
+          "id": "129152",
+          "title": "오동도 등대",
+          "addr": "전남광주통합특별시 여수시 오동도로 238-32",
+          "area": "전남",
+          "mapx": "127.7678097276",
+          "mapy": "34.7444013572",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/34/3019934_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260630184428",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "2752381",
+          "title": "오동도 유람선터미널",
+          "addr": "전남광주통합특별시 여수시 수정동 332-23",
+          "area": "",
+          "mapx": "127.7558598121",
+          "mapy": "34.7408744461",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/88/3346488_image2_1.JPG",
+          "type": "12",
+          "sourceModifiedAt": "20261026143307",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "2790514",
+          "title": "오동도-여자만자전거길",
+          "addr": "전남광주통합특별시 여수시 소호동",
+          "area": "",
+          "mapx": "127.6423983162",
+          "mapy": "34.7369979215",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/91/2792391_image2_1.jpg",
+          "type": "28",
+          "sourceModifiedAt": "20260819084025",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "1372885",
+          "title": "오동도펜션",
+          "addr": "전남광주통합특별시 여수시 하멜로 78",
+          "area": "",
+          "mapx": "127.747024609448",
+          "mapy": "34.7377107750907",
+          "image": "",
+          "type": "32",
+          "sourceModifiedAt": "20260630184428",
+          "copyrightType": ""
+        },
+        {
+          "id": "128025",
+          "title": "한려해상국립공원 (오동도)",
+          "addr": "전남광주통합특별시 여수시 오동도로 222",
+          "area": "",
+          "mapx": "127.7641117286",
+          "mapy": "34.7443241845",
+          "image": "https://tong.visitkorea.or.kr/cms/resource_photo/78/3544278_image2_1.JPG",
+          "type": "12",
+          "sourceModifiedAt": "20261103081826",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "여수",
+      "area": "전남",
+      "query": "해양공원",
+      "checkedAt": "2026-11-06T12:05:37.499Z",
+      "status": "ok",
+      "total": 5,
+      "results": [
+        {
+          "id": "2037308",
+          "title": "엑스포해양공원",
+          "addr": "전남광주통합특별시 여수시 박람회길 1",
+          "area": "전남",
+          "mapx": "127.7465197232",
+          "mapy": "34.7522251119",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/67/3587267_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260630184428",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "2612858",
+          "title": "여수구항 해양공원",
+          "addr": "전남광주통합특별시 여수시 중앙동",
+          "area": "전남",
+          "mapx": "127.7406317338",
+          "mapy": "34.7370905935",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/23/3372723_image2_1.JPG",
+          "type": "12",
+          "sourceModifiedAt": "20260630184428",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "3351475",
+          "title": "여수해양공원",
+          "addr": "전남광주통합특별시 여수시 이순신광장로 188-1 (종화동)",
+          "area": "",
+          "mapx": "127.7441697644",
+          "mapy": "34.7379571382",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/20/3381020_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260630151945",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "3008171",
+          "title": "종포 해양공원",
+          "addr": "전남광주통합특별시 여수시 이순신광장로 146  ",
+          "area": "",
+          "mapx": "127.73970728268793",
+          "mapy": "34.73728907146295",
+          "image": "",
+          "type": "12",
+          "sourceModifiedAt": "20260630184428",
+          "copyrightType": ""
+        },
+        {
+          "id": "2718734",
+          "title": "진해해양공원",
+          "addr": "경상남도 창원시 진해구 명동로 62",
+          "area": "경남",
+          "mapx": "128.719346533862",
+          "mapy": "35.0921809265434",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/24/4059624_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260601111546",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "여수",
+      "area": "전남",
+      "query": "이순신광장",
+      "checkedAt": "2026-11-06T12:05:38.057Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2612869",
+          "title": "이순신광장",
+          "addr": "전남광주통합특별시 여수시 중앙로 74",
+          "area": "전남",
+          "mapx": "127.7357348686",
+          "mapy": "34.7399013049",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/07/3351107_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260630184428",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "경주",
+      "area": "경북",
+      "query": "국립경주박물관",
+      "checkedAt": "2026-11-06T12:05:38.650Z",
+      "status": "ok",
+      "total": 2,
+      "results": [
+        {
+          "id": "129778",
+          "title": "국립경주박물관",
+          "addr": "경상북도 경주시 일정로 186",
+          "area": "경북",
+          "mapx": "129.2283703803",
+          "mapy": "35.8304796952",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/06/4097506_image2_1.JPG",
+          "type": "14",
+          "sourceModifiedAt": "20260813165128",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "3022997",
+          "title": "국립경주박물관 신라천년서고",
+          "addr": "경상북도 경주시 일정로 186",
+          "area": "경북",
+          "mapx": "129.2269000000",
+          "mapy": "35.8293000000",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/27/3022927_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20260813165654",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "경주",
+      "area": "경북",
+      "query": "대릉원",
+      "checkedAt": "2026-11-06T12:05:39.221Z",
+      "status": "ok",
+      "total": 3,
+      "results": [
+        {
+          "id": "1492402",
+          "title": "경주 대릉원 일원",
+          "addr": "경상북도 경주시 황남동",
+          "area": "경북",
+          "mapx": "129.2128000000",
+          "mapy": "35.8382000000",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/98/4105798_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260901114538",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "2485128",
+          "title": "경주 대릉원돌담길 축제",
+          "addr": "경상북도 경주시 황남동",
+          "area": "경북",
+          "mapx": "129.213294",
+          "mapy": "35.840154",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/11/4059511_image2_1.jpg",
+          "type": "15",
+          "sourceModifiedAt": "20260421151527",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "126214",
+          "title": "천마총(대릉원)",
+          "addr": "경상북도 경주시 계림로 9",
+          "area": "경북",
+          "mapx": "129.2104983997",
+          "mapy": "35.8386877792",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/19/3491219_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20251117093014",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "경주",
+      "area": "경북",
+      "query": "월정교",
+      "checkedAt": "2026-11-06T12:05:39.791Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "2603509",
+          "title": "월정교",
+          "addr": "경상북도 경주시 교동 274",
+          "area": "경북",
+          "mapx": "129.2181000000",
+          "mapy": "35.8293000000",
+          "image": "https://tong.visitkorea.or.kr/cms/resource_photo/94/3052894_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260619093209",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "통영",
+      "area": "경남",
+      "query": "통영중앙전통시장",
+      "checkedAt": "2026-11-06T12:05:40.373Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "584712",
+          "title": "통영중앙전통시장",
+          "addr": "경상남도 통영시 중앙시장1길 14-16",
+          "area": "경남",
+          "mapx": "128.4246359087",
+          "mapy": "34.8453294044",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/67/3523867_image2_1.jpg",
+          "type": "38",
+          "sourceModifiedAt": "20251230101601",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "통영",
+      "area": "경남",
+      "query": "동피랑",
+      "checkedAt": "2026-11-06T12:05:40.938Z",
+      "status": "ok",
+      "total": 3,
+      "results": [
+        {
+          "id": "753306",
+          "title": "동피랑마을",
+          "addr": "경상남도 통영시 동피랑1길 6-18",
+          "area": "경남",
+          "mapx": "128.4276467571",
+          "mapy": "34.8453461228",
+          "image": "",
+          "type": "12",
+          "sourceModifiedAt": "20250319190828",
+          "copyrightType": ""
+        },
+        {
+          "id": "2756584",
+          "title": "동피랑전복마을",
+          "addr": "경상남도 통영시 해송정2길 29",
+          "area": "경남",
+          "mapx": "128.4274015282845",
+          "mapy": "34.843253824401074",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/59/2756859_image2_1.jpg",
+          "type": "39",
+          "sourceModifiedAt": "20260227092503",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "2756592",
+          "title": "동피랑쭈굴",
+          "addr": "경상남도 통영시 통영해안로 363-1 (동호동)",
+          "area": "경남",
+          "mapx": "128.4272692911",
+          "mapy": "34.8445536295",
+          "image": "",
+          "type": "39",
+          "sourceModifiedAt": "20261019105505",
+          "copyrightType": ""
+        }
+      ]
+    },
+    {
+      "city": "통영",
+      "area": "경남",
+      "query": "통영 삼도수군통제영",
+      "checkedAt": "2026-11-06T12:05:41.509Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "231923",
+          "title": "통영 삼도수군통제영",
+          "addr": "경상남도 통영시 세병로 27 (문화동)",
+          "area": "경남",
+          "mapx": "128.4234890263",
+          "mapy": "34.8471548607",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/24/4081224_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260707173932",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "서귀포",
+      "area": "제주",
+      "query": "천지연폭포",
+      "checkedAt": "2026-11-06T12:05:42.089Z",
+      "status": "ok",
+      "total": 1,
+      "results": [
+        {
+          "id": "126438",
+          "title": "천지연폭포",
+          "addr": "제주특별자치도 서귀포시 서홍동 666-1",
+          "area": "제주",
+          "mapx": "126.5595508450",
+          "mapy": "33.2447166744",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/43/4094043_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20260729141814",
+          "copyrightType": "Type1"
+        }
+      ]
+    },
+    {
+      "city": "서귀포",
+      "area": "제주",
+      "query": "이중섭",
+      "checkedAt": "2026-11-06T12:05:42.669Z",
+      "status": "ok",
+      "total": 7,
+      "results": [
+        {
+          "id": "2708108",
+          "title": "범일 이중섭거리",
+          "addr": "부산광역시 동구 범일동",
+          "area": "부산",
+          "mapx": "129.0521955945",
+          "mapy": "35.1403327856",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/71/3552571_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20251023143000",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "127283",
+          "title": "이중섭 거주지",
+          "addr": "제주특별자치도 서귀포시 이중섭로 29",
+          "area": "제주",
+          "mapx": "126.5644041185",
+          "mapy": "33.2455460185",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/99/4131199_image2_1.JPG",
+          "type": "12",
+          "sourceModifiedAt": "20261102220742",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "584891",
+          "title": "이중섭 거주지(통영)",
+          "addr": "경상남도 통영시 항남3길 25",
+          "area": "경남",
+          "mapx": "128.4227722848",
+          "mapy": "34.8414298069",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/50/3349750_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20250319185956",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "130494",
+          "title": "이중섭 미술관",
+          "addr": "제주특별자치도 서귀포시 이중섭로 33 (서귀동)",
+          "area": "제주",
+          "mapx": "126.5644704852",
+          "mapy": "33.2451592697",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/93/3533493_image2_1.jpg",
+          "type": "14",
+          "sourceModifiedAt": "20261022132841",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "1620936",
+          "title": "이중섭거리",
+          "addr": "제주특별자치도 서귀포시 이중섭로 29 (서귀동)",
+          "area": "제주",
+          "mapx": "126.5644587764",
+          "mapy": "33.2454906467",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/36/3403036_image2_1.jpg",
+          "type": "12",
+          "sourceModifiedAt": "20261020153540",
+          "copyrightType": "Type3"
+        },
+        {
+          "id": "2574367",
+          "title": "이중섭식당",
+          "addr": "경상남도 통영시 강구안길 15",
+          "area": "경남",
+          "mapx": "128.423136425781",
+          "mapy": "34.8436408882526",
+          "image": "",
+          "type": "39",
+          "sourceModifiedAt": "20260224102735",
+          "copyrightType": ""
+        },
+        {
+          "id": "3028565",
+          "title": "이중섭전망대",
+          "addr": "부산광역시 동구 증산로 168 (범일동)",
+          "area": "부산",
+          "mapx": "129.05263133974444",
+          "mapy": "35.14059298912447",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/46/3028546_image2_1.JPG",
+          "type": "12",
+          "sourceModifiedAt": "20260420160131",
+          "copyrightType": "Type3"
+        }
+      ]
+    },
+    {
+      "city": "서귀포",
+      "area": "제주",
+      "query": "매일올레시장",
+      "checkedAt": "2026-11-06T12:05:43.284Z",
+      "status": "ok",
+      "total": 2,
+      "results": [
+        {
+          "id": "1013258",
+          "title": "서귀포매일올레시장",
+          "addr": "제주특별자치도 서귀포시 서귀동",
+          "area": "제주",
+          "mapx": "126.5632315764",
+          "mapy": "33.2501500626",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/66/3546866_image2_1.jpg",
+          "type": "38",
+          "sourceModifiedAt": "20261026181842",
+          "copyrightType": "Type1"
+        },
+        {
+          "id": "4110105",
+          "title": "캡틴클럽하우스 서귀포매일올레시장점",
+          "addr": "제주특별자치도 서귀포시 중앙로54번길 42 (서귀동)",
+          "area": "제주",
+          "mapx": "126.5637268216",
+          "mapy": "33.2498223451",
+          "image": "https://tong.visitkorea.or.kr/cms/resource/09/4110109_image2_1.jpg",
+          "type": "39",
+          "sourceModifiedAt": "20260914095214",
+          "copyrightType": "Type3"
+        }
+      ]
+    }
+  ],
+  "requests": 60
+}

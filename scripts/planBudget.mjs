@@ -1,4 +1,4 @@
-// TourAPI(일 1,000회 공유) 일일 예산 자동 배분 — 완전 무인 운영용.
+// TourAPI 수집기 예산 배분. 운영 한도는 API 제공기관의 실제 계정 제한을 우선한다.
 //  우선순위: 음식점 영업정보(RIN) → 방문팁(intro) → 볼거리(info).
 //  RIN이 남아있으면 현행(RIN 500 / intro 250 / info 150) 유지.
 //  RIN이 완주(미수집↓)되면 남는 예산을 intro·info로 자동 이관 → 손 안 대도 다음으로 넘어감.
@@ -9,21 +9,24 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { refreshQueue } from "./lib/refreshQueue.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (f, fb) => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, "data", f), "utf8")); } catch { return fb; } };
 
-// 각 수집의 "미수집 남은 개수"
+// 미수집 또는 30일 경과한 재확인 대상 수. 실제 호출은 기존 예산 이내.
 const restaurants = read("restaurants.json", { restaurants: [] }).restaurants || [];
-const rIntro = read("restaurant-intro.json", { intro: {} }).intro || {};
-const rinRemaining = restaurants.filter((r) => !(r.id in rIntro)).length;
+const rIntroRaw = read("restaurant-intro.json", { intro: {} });
+const rIntro = rIntroRaw.intro || {};
+const rinRemaining = refreshQueue(restaurants, rIntro, rIntroRaw.successfulChecks).length;
 
 const places = read("places.json", { spots: [] }).spots || [];
-const pIntro = read("place-intro.json", { intro: {} }).intro || {};
+const pIntroRaw = read("place-intro.json", { intro: {} });
+const pIntro = pIntroRaw.intro || {};
 const pInfoRaw = read("place-info.json", {});
 const pInfo = pInfoRaw.info || pInfoRaw;
-const introRemaining = places.filter((p) => !(p.id in pIntro)).length;
-const infoRemaining = places.filter((p) => !(p.id in pInfo)).length;
+const introRemaining = refreshQueue(places, pIntro, pIntroRaw.successfulChecks).length;
+const infoRemaining = refreshQueue(places, pInfo, { ...pInfoRaw.checkedAt, ...pInfoRaw.successfulChecks }).length;
 
 // 기본 배분(현행) + RIN이 덜 쓰는 만큼(freed)을 intro·info로 이관(60:40)
 // Weekly also reserves calls for refreshed lists, overviews and the day's
@@ -47,6 +50,6 @@ const lines = `rin_daily=${rin}\nintro_daily=${intro}\ninfo_daily=${info}\n`;
 if (out) fs.appendFileSync(out, lines);
 
 console.log("📊 TourAPI 예산 자동 배분");
-console.log(`   미수집 — 음식점영업(RIN) ${rinRemaining} · 방문팁 ${introRemaining} · 볼거리 ${infoRemaining}`);
+console.log(`   미수집·30일 경과 — 음식점영업(RIN) ${rinRemaining} · 방문팁 ${introRemaining} · 볼거리 ${infoRemaining}`);
 console.log(`   오늘 배분 — RIN ${rin} · 방문팁 ${intro} · 볼거리 ${info} (합 ${rin + intro + info} / backfill 상한 ${envelope})`);
 if (freed > 0) console.log(`   ♻ RIN 여유분 ${freed} → 방문팁·볼거리로 자동 이관`);

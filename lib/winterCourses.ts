@@ -2,13 +2,15 @@ import winterData from '@/data/winter-courses.json';
 import reviewedPhotos from '@/data/winter-reviewed-photos.json';
 import { isPublicWinterCourse } from '@/lib/winter-course-validation.mjs';
 
-export type WinterStop = { placeId: string; name: string; addr?: string; mapx: string | number; mapy: string | number; day: number; image?: string; officialUrl?: string };
+export type WinterPhoto = { src: string; sourceUrl?: string; alt: string; caption: string; credit: string; kind: 'tour-api' | 'ai'; reviewed: boolean; width: number; height: number };
+export type WinterStop = { placeId: string; name: string; addr?: string; mapx: string | number; mapy: string | number; day: number; image?: string; officialUrl?: string; description?: string; timeLabel?: string; stay?: string; photo?: WinterPhoto };
 export type WinterCourse = {
   id: string; slug: string; title: string; duration: '당일' | '1박2일'; area: string;
   intro: string; publishedAt: string; sourceCourseId: string; stops: WinterStop[];
+  city?: string; startPoint?: string; transport?: string; durationLabel?: string; updatedAt?: string; lastReviewedAt?: string;
   sections: { heading: string; paragraphs: string[] }[];
   sources?: { title: string; url: string; checkedAt?: string }[];
-  image?: { src: string; alt: string; caption: string; credit: string; kind: 'tour-api' | 'ai'; reviewed: boolean; width: number; height: number };
+  image?: WinterPhoto;
 };
 
 export function getPublicWinterCourses(): WinterCourse[] {

@@ -1,0 +1,83 @@
+{
+  "checkedAt": "2026-11-06T12:04:16.542Z",
+  "requestCount": 6,
+  "results": [
+    {
+      "name": "TourAPI 관광목록",
+      "http": 200,
+      "resultCode": "0000",
+      "totalCount": 12564,
+      "durationMs": 289,
+      "shapeKeys": [
+        "header",
+        "body"
+      ]
+    },
+    {
+      "name": "관광사진갤러리",
+      "http": 200,
+      "resultCode": "0000",
+      "totalCount": 6115,
+      "durationMs": 99,
+      "shapeKeys": [
+        "header",
+        "body"
+      ]
+    },
+    {
+      "name": "고캠핑",
+      "http": 200,
+      "resultCode": "0000",
+      "totalCount": 3123,
+      "durationMs": 88,
+      "shapeKeys": [
+        "header",
+        "body"
+      ]
+    },
+    {
+      "name": "반려동물관광",
+      "http": 200,
+      "resultCode": "0000",
+      "totalCount": 9657,
+      "durationMs": 282,
+      "shapeKeys": [
+        "header",
+        "body"
+      ]
+    },
+    {
+      "name": "문화행사",
+      "http": 200,
+      "resultCode": "",
+      "totalCount": null,
+      "durationMs": 21,
+      "shapeKeys": [
+        "OpenAPI_ServiceResponse"
+      ],
+      "outcome": "unexpected_envelope_with_generic_tour_query"
+    },
+    {
+      "name": "문화행사 정식 쿼리 재확인",
+      "http": 200,
+      "resultCode": "",
+      "rootKeys": [
+        "?xml",
+        "response"
+      ],
+      "totalCount": 454,
+      "outcome": "passed_provider_specific_xml_contract",
+      "bodyKeys": [
+        "totalCount",
+        "PageNo",
+        "numOfrows",
+        "items"
+      ]
+    }
+  ],
+  "notes": [
+    "Public read-only sample: 6 requests total, no retries beyond one corrected culture query.",
+    "Culture API uses its own query parameters and XML response; its second request returned the expected response.msgBody contract.",
+    "Single-response durations are diagnostic samples, not p95 or load-test measurements."
+  ]
+}

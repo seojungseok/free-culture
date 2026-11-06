@@ -4,6 +4,7 @@ import campingImages from "@/data/camping-images.json";
 import { SIDO_LIST } from "@/lib/classify";
 import { displayAddress } from "@/lib/address";
 import { normalizeExternalUrl } from "@/lib/externalUrl";
+import { publicImageUrl } from "@/lib/publicImage.mjs";
 
 export interface Camp {
   id: string; name: string; area: string; sigungu: string; addr: string;
@@ -37,7 +38,7 @@ const data = {
     operPd: String(c.operPd ?? ""),
     tel: String(c.tel ?? ""),
     homepage: normalizeExternalUrl(c.homepage),
-    image: String(c.image || imgOverride[c.id] || ""),
+    image: publicImageUrl(c.image) || publicImageUrl(imgOverride[c.id]),
     intro: String(c.intro ?? ""),
   })),
 };

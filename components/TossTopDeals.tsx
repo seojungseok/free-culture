@@ -30,7 +30,7 @@ export default function TossTopDeals({contained=false}:{contained?:boolean}) {
   const node=strip.current;if(!node||!deals.length)return;
   const observer=new IntersectionObserver(entries=>{
    for(const entry of entries){
-    if(!entry.isIntersecting)continue;
+    if(!entry.isIntersecting||entry.intersectionRatio<0.5)continue;
     const id=Number((entry.target as HTMLElement).dataset.product),key=`${page}:${id}`;
     if(!seen.current.has(key)){affiliateTrack('affiliate_impression','toss','food_deal_rail',page,id);seen.current.add(key);}
    }

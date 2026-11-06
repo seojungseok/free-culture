@@ -35,9 +35,14 @@ const {getKidCourses}=load('lib/kidCourses'),{isIndexableKidCourse}=load('lib/ki
 assert(getKidCourses().every(c=>set.has('https://mwohaji.kr/kids/c/'+c.id)===isIndexableKidCourse(c)));
 assert(set.has('https://mwohaji.kr/kids'),'Kids hub remains indexable');
 assert(getAllBundles().every(c=>!set.has('https://mwohaji.kr/camping/collections/'+c.slug)));
-const {getAllEvents}=load('lib/data'),{hasSubstantiveEventInfo}=load('lib/eventQuality'),{todayYmd}=load('lib/dates');
+const {getAllEvents,getEventById}=load('lib/data'),{hasSubstantiveEventInfo}=load('lib/eventQuality'),{todayYmd}=load('lib/dates');
 assert(getAllEvents().every(event=>!event.addressConflict),'Conflicting event regions stay out of current listings');
-assert(load('lib/data').getEventById('399707')?.addressConflict,'Existing event detail remains accessible for review');
+const visibleEventIds=new Set(getAllEvents().map(event=>event.id));
+for(const raw of load('data/events.json').events){
+  const detail=getEventById(raw.id);
+  assert(detail,raw.id+' current event detail remains accessible');
+  if(detail.addressConflict)assert(!visibleEventIds.has(raw.id),raw.id+' conflicting event stays out of listings');
+}
 for(const e of getAllEvents())assert.equal(set.has('https://mwohaji.kr/event/'+e.id),e.endDate>=todayYmd()&&hasSubstantiveEventInfo(e),e.id+' event quality');
 const {getAllFestivals}=load('lib/festivals');
 for(const f of getAllFestivals())assert.equal(set.has('https://mwohaji.kr/festivals/'+f.id),!f.id.startsWith('event-')&&f.endDate>=todayYmd()&&(f.description||'').trim().length>=150,f.id+' festival quality');
@@ -60,14 +65,27 @@ for(const p of getAllPlaces())assert.equal(set.has('https://mwohaji.kr/places/sp
 for(const r of getAllRestaurants())assert.equal(set.has('https://mwohaji.kr/food/spot/'+r.id),hasSubstantiveRestaurantInfo(r.id),r.id+' restaurant quality');
 const {getAllCamps}=load('lib/camping');
 for(const c of getAllCamps())assert.equal(set.has('https://mwohaji.kr/camping/'+c.id),hasSubstantiveCampInfo(c),c.id+' camp quality');
-const {displayAddress,displayRegionTitle}=load('lib/address');
-assert.equal(displayAddress('전남광주통합특별시 광산구 하남대로 1'),'광주광역시 광산구 하남대로 1');
-assert.equal(displayAddress('전남광주통합특별시 여수시 해안로 1'),'전라남도 여수시 해안로 1');
-assert.equal(displayAddress('전남광주통합특별시 확인되지않은구 도로 1'),'확인되지않은구 도로 1');
+const {displayAddress,displayRegionTitle,mergedAddressTravelArea}=load('lib/address');
+assert.equal(displayAddress('전남광주통합특별시 광산구 하남대로 1'),'전남광주통합특별시 광산구 하남대로 1');
+assert.equal(displayAddress('전남광주통합특별시 여수시 해안로 1','전남'),'전남광주통합특별시 여수시 해안로 1');
+assert.equal(displayAddress('전남광주통합특별시 확인되지않은구 도로 1'),'전남광주통합특별시 확인되지않은구 도로 1');
 assert.equal(displayAddress('전남광주통합특별시 진도군 고군면', '경남'), '');
-assert.equal(displayRegionTitle('전남광주통합특별시립오페라단','광주'),'광주시립오페라단');
-for(const row of [...getAllPlaces(),...getAllRestaurants(),...getAllCamps()])assert(!row.addr.includes('전남광주통합특별시'),row.id+' malformed displayed address');
-for(const row of getAllEvents())assert(!`${row.title} ${row.address}`.includes('전남광주통합특별시'),row.id+' malformed current event');
+assert.equal(displayRegionTitle('전남광주통합특별시립오페라단','광주'),'전남광주통합특별시립오페라단');
+assert.equal(mergedAddressTravelArea('부산광역시 북구 문화로 1'),'');
+assert.equal(displayAddress('부산광역시 북구 문화로 1','부산'),'부산광역시 북구 문화로 1');
+for(const [file,key,rows] of [['data/places.json','spots',getAllPlaces()],['data/restaurants.json','restaurants',getAllRestaurants()],['data/camping.json','camps',getAllCamps()]]){
+  const originals=new Map(load(file)[key].map(row=>[row.id,row]));
+  for(const row of rows){const original=originals.get(row.id);assert.equal(row.addr,displayAddress(original.addr,row.area),row.id+' preserves current legal address');}
+}
+for(const raw of load('data/events.json').events){
+  const detail=getEventById(raw.id);
+  assert.equal(detail.title,raw.title,raw.id+' preserves source title');
+  assert.equal(detail.address,displayAddress(raw.address,raw.area),raw.id+' preserves current legal address');
+}
+const {photoArea}=load('lib/photoGallery');
+assert.equal(photoArea('전남광주통합특별시 북구 문화로 1'),'광주');
+assert.equal(photoArea('전남광주통합특별시 순천시 문화로 1'),'전남');
+assert.equal(photoArea('전남광주통합특별시 미확인구 문화로 1'),'');
 const robots=load('app/robots').default();
 const matches=(rule,url)=>new RegExp('^'+rule.split('*').map(p=>p.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('.*')).test(url);
 const metaTraining=robots.rules.find(r=>r.userAgent==='Meta-ExternalAgent');
@@ -77,7 +95,9 @@ for(const r of robots.rules.filter(r=>r!==metaTraining)){const dis=[r.disallow||
 const eventStory=load('lib/eventStory').eventStory;
 assert(eventStory({title:'test',realmName:'전시',area:'서울',sigungu:'',place:'',startDate:'20260901',endDate:'20260910',priceLabel:'요금 정보 확인 필요',priceType:'unknown'}).some(s=>s.includes('장소 서울')));
 const {getCityTours}=load('lib/cityTours'),{getPrepArticles}=load('lib/weekend-prep/data');
+const {getPublicWinterCourses}=load('lib/winterCourses');
 const allDynamicIds={
+  '/winter-travel/':new Set(getPublicWinterCourses().map(row=>row.slug)),
   '/places/spot/':new Set(getAllPlaces().map(row=>row.id)),
   '/food/spot/':new Set(getAllRestaurants().map(row=>row.id)),
   '/camping/':new Set(getAllCamps().map(row=>row.id)),
@@ -88,7 +108,7 @@ const allDynamicIds={
   '/pet-travel/':new Set(getPetTravelPlaces().map(row=>row.id)),
   '/weekend-prep/':new Set(getPrepArticles().map(row=>row.slug)),
 };
-const hubPaths=new Set(['/', '/events', '/festivals', '/places', '/course', '/city-tour', '/camping', '/food', '/pet-travel', '/free', '/cheap', '/weekend', '/ending-soon', '/kids', '/season', '/about', '/privacy', '/terms', '/contact', '/date', '/weekend-prep', '/camping/cooking']);
+const hubPaths=new Set(['/', '/events', '/festivals', '/places', '/course', '/city-tour', '/camping', '/food', '/pet-travel', '/free', '/cheap', '/weekend', '/ending-soon', '/kids', '/season', '/about', '/privacy', '/terms', '/contact', '/date', '/weekend-prep', '/camping/cooking', '/winter-travel']);
 const {SIDO_SLUG,GENRES}=load('lib/classify');
 const areaSlugs=new Set(Object.values(SIDO_SLUG)),genreSlugs=new Set(GENRES.map(row=>row.key));
 for(const url of urls){

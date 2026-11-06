@@ -1,6 +1,6 @@
 // 2-3. 음식점(contentTypeId=39) 수집 — areaBasedList2 지역별, 사진 있는 곳 우선.
 //  전국 totalCount ≈ 13,744 → 사진 없는 곳 제외 + 상한(RESTO_MAX)으로 규모 조절.
-//  → data/restaurants.json 에 점진 캐시(재실행 시 이어서). 일 1,000회 한도 자동 중단.
+//  → 기존 ID의 사실·사진을 재확인하고 URL을 보존한다. RESTO_MAX는 신규 추가에만 적용.
 //
 // 실행:
 //   node scripts/collectRestaurants.mjs           # 지역별 순차, 상한까지
@@ -8,8 +8,9 @@
 
 import {
   readCache, writeCache, createBudget, QuotaError, areaBasedPage,
-  AREA_TO_SIDO, AREA_CODES, https, sleep, hasKey,
+  AREA_TO_SIDO, AREA_CODES, https, sleep, hasKey, tourArea, safeApiError,
 } from "./lib/tourClient.mjs";
+import { mergeCollectedRecord, checkedSnapshot } from "./lib/collectorState.mjs";
 
 if (!hasKey()) { console.error("❌ TOUR_API_KEY / DATA_GO_KR_KEY 없음"); process.exit(1); }
 
@@ -32,25 +33,28 @@ async function main() {
 
   const budget = createBudget(DAILY);
   const totals = {};
-  let added = 0;
+  const checkedAt = new Date().toISOString();
+  let added = 0, retrieved = 0, failures = 0, complete = true;
   try {
     for (const area of areaCodes) {
-      if (byId.size >= MAX) break;
       const sido = AREA_TO_SIDO[area];
       let page = 1, total = Infinity, areaAdded = 0;
-      while ((page - 1) * 100 < total && byId.size < MAX) {
-        const res = await areaBasedPage({ contentTypeId: CT, areaCode: area, pageNo: page, rows: 100 }, budget);
+      while ((page - 1) * 1000 < total) {
+        const res = await areaBasedPage({ contentTypeId: CT, areaCode: area, pageNo: page, rows: 1000 }, budget);
+        retrieved++;
         const items = res.items;
         total = res.total; totals[sido] = res.total;
         for (const it of items) {
           const id = String(it.contentid || "");
-          if (!id || byId.has(id)) continue;
-          if (!it.firstimage) continue; // 사진 있는 곳 우선
+          if (!id) continue;
+          const previous = byId.get(id);
+          // The size cap applies to new entries, never to refreshing an existing URL.
+          if (!previous && (!it.firstimage || byId.size >= MAX)) continue;
           const r = {
             id,
             title: String(it.title || "").trim(),
             addr: String(it.addr1 || "").trim(),
-            area: sido,
+            area: tourArea(it, sido),
             image: https(it.firstimage),
             mapx: String(it.mapx || ""),
             mapy: String(it.mapy || ""),
@@ -59,9 +63,10 @@ async function main() {
             cat1: String(it.cat1 || ""),
             cat2: String(it.cat2 || ""),
             cat3: String(it.cat3 || ""),
+            sourceModifiedAt: String(it.modifiedtime || ""),
           };
-          byId.set(id, r);
-          areaAdded++; added++;
+          byId.set(id, mergeCollectedRecord(previous, r, checkedAt));
+          if (!previous) { areaAdded++; added++; }
         }
         if (items.length === 0) break;
         page++;
@@ -70,18 +75,17 @@ async function main() {
       console.log(`  ${sido.padEnd(3)} 전체 ${String(totals[sido] ?? 0).padStart(5)} · 신규 ${String(areaAdded).padStart(4)} (누적 ${byId.size})`);
     }
   } catch (e) {
-    if (e instanceof QuotaError) console.log(`\n⛔ ${e.message} — 진행분 저장 후 중단`);
+    complete = false; failures++;
+    if (e instanceof QuotaError) console.log(`\n⛔ ${safeApiError(e)} — 진행분 저장 후 중단`);
     else throw e;
   }
 
+  if (!retrieved) { console.error("음식점 목록 조회 실패 — 기존 자료 유지"); process.exitCode = 1; return; }
   const restaurants = [...byId.values()];
-  store.restaurants = restaurants;
-  store.count = restaurants.length;
-  store.generatedAt = new Date().toISOString();
-  const mb = writeCache(OUT, store);
+  const mb = writeCache(OUT, checkedSnapshot(store, restaurants, 'restaurants', { checkedAt, calls: budget.used, failures, complete }));
   const grand = Object.values(totals).reduce((a, b) => a + b, 0);
   console.log(`\n💾 저장: data/${OUT} (${restaurants.length}곳, ${mb}MB, API콜 ${budget.used})`);
   console.log(`   조회한 지역 전국합 ${grand} · 이번 신규 ${added}`);
 }
 
-main().catch((e) => { console.error("❌ 실패:", e.message); process.exit(1); });
+main().catch((e) => { console.error("❌ 실패:", safeApiError(e)); process.exit(1); });

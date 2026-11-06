@@ -74,7 +74,7 @@ export default function HomePage() {
   }));
   const freeItems = getFree(true).filter((item) => item.imgUrl && item.endDate >= today).slice(0, 8).map((item) => ({ ...eventItem(item), badge: item.priceLabel || "무료 여부 확인" }));
   const kidItems = placeItems.filter((_, index) => places[index]?.isKid).slice(0, 6);
-  const seasonItems: HomeItem[] = getPublicWinterCourses().slice(0, 8).map((item) => ({ id: `winter-${item.id}`, href: `/winter-travel/${item.slug}`, title: item.title, meta: `${item.area} · ${item.duration === "당일" ? "당일치기" : "1박 2일"}`, image: winterCourseImage(item)?.src || "", badge: "겨울 여행지", area: item.area }));
+  const seasonItems: HomeItem[] = getPublicWinterCourses().map((item) => ({ id: `winter-${item.id}`, href: `/winter-travel/${item.slug}`, title: item.title, meta: [item.area, item.city, '당일치기'].filter(Boolean).join(' · '), image: winterCourseImage(item)?.src || "", badge: "겨울 당일치기", area: item.area, description: item.intro, route: item.stops.map(stop=>stop.name), duration: item.durationLabel }));
   const prepItems: HomeItem[] = getPrepArticles().slice(0, 8).map((item) => ({ id: `prep-${item.slug}`, href: `/weekend-prep/${item.slug}`, title: item.title, meta: item.category, image: item.cover.url, badge: "준비 가이드" }));
   const publishedPlaces = getAllArticles().filter((article) => article.status === "published" && article.publishedAt && article.content.length >= 300).sort((a, b) => Date.parse(b.publishedAt || "") - Date.parse(a.publishedAt || ""));
   const byPlaceId = new Map(placeItems.map((item) => [item.id.slice(6), item]));

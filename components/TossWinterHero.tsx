@@ -26,7 +26,7 @@ export default function TossWinterHero(){
   const timer=setTimeout(()=>setClock(Date.now()),Math.min(Math.max(0,deadline-Date.now()+5),2147483647));
   return()=>clearTimeout(timer);
  },[feed.checkedAt,list]);
- useEffect(()=>{if(!node.current||!active)return;const observer=new IntersectionObserver(entries=>setVisible(entries.some(e=>e.isIntersecting)),{threshold:.35});observer.observe(node.current);return()=>observer.disconnect();},[!!active]);
+ useEffect(()=>{if(!node.current||!active)return;const observer=new IntersectionObserver(entries=>setVisible(entries.some(e=>e.isIntersecting&&e.intersectionRatio>=.35)),{threshold:.35});observer.observe(node.current);return()=>observer.disconnect();},[!!active]);
  useEffect(()=>{if(list.length<2||paused||hover||!visible||reduced||!foreground)return;const timer=setInterval(()=>setIndex(i=>(i+1)%list.length),5000);return()=>clearInterval(timer);},[list.length,paused,hover,visible,reduced,foreground]);
  useEffect(()=>{if(!active||!visible||seen.current.has(active.id))return;seen.current.add(active.id);affiliateTrack('affiliate_impression','toss','home_winter_hero',page,active.id);},[active?.id,page,visible]);
  if(!active)return null;

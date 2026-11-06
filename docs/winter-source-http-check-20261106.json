@@ -1,0 +1,764 @@
+{
+  "checkedAt": "2026-11-06T12:19:07.627Z",
+  "articleCount": 20,
+  "results": [
+    {
+      "url": "https://korean.visitseoul.net/citycenter/%EB%8D%95%EC%88%98%EA%B6%81/KOP002046",
+      "status": 200,
+      "finalUrl": "https://korean.visitseoul.net/citycenter/%EB%8D%95%EC%88%98%EA%B6%81/KOP002046",
+      "type": "text/html;charset=UTF-8",
+      "title": "덕수궁 | 서울 공식 관광정보 웹사이트"
+    },
+    {
+      "url": "https://korean.visitseoul.net/palace/%EC%A0%95%EB%8F%99%EA%B8%B8/KOP000889",
+      "status": 200,
+      "finalUrl": "https://korean.visitseoul.net/palace/%EC%A0%95%EB%8F%99%EA%B8%B8/KOP000889",
+      "type": "text/html;charset=UTF-8",
+      "title": "정동길 | 서울 공식 관광정보 웹사이트"
+    },
+    {
+      "url": "https://citytourbusan.com/ko/file/citytourbusan.pdf",
+      "status": 200,
+      "finalUrl": "https://citytourbusan.com/ko/file/citytourbusan.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://visitbusan.net/index.do?lang_cd=ko&menuCd=DOM_000000201001001000&uc_seq=284",
+      "status": 200,
+      "finalUrl": "https://visitbusan.net/index.do?lang_cd=ko&menuCd=DOM_000000201001001000&uc_seq=284",
+      "type": "text/html;charset=utf-8",
+      "title": "명소 | 부산에가면 | Visit Busan 釜山広域市"
+    },
+    {
+      "url": "https://www.kctg.or.kr/tour/touristSiteView.do?tourist_cd=TOURIST_ID00010723",
+      "status": 200,
+      "finalUrl": "https://www.kctg.or.kr/tour/touristSiteView.do?tourist_cd=TOURIST_ID00010723",
+      "type": "text/html;charset=utf-8",
+      "title": "청라언덕 │ 관광지별(관광지 정보) │ 예약서비스 │ 문화관광해설사 통합예약"
+    },
+    {
+      "url": "https://www.daegucitytour.com/data/leaflet_ko.pdf",
+      "status": 200,
+      "finalUrl": "https://www.daegucitytour.com/data/leaflet_ko.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://www.daegucitytour.com/bbs/board.php?bo_table=notice&wr_id=1633",
+      "status": 200,
+      "finalUrl": "https://www.daegucitytour.com/bbs/board.php?bo_table=notice&wr_id=1633",
+      "type": "text/html; charset=utf-8",
+      "title": "[특별코스] 대구시티투어 특별코스(시간을 걷는 대구 K-투어) 운행 안내"
+    },
+    {
+      "url": "https://hanzhong.ii.re.kr/storage/report/BB0000046266.pdf",
+      "status": 200,
+      "finalUrl": "https://hanzhong.ii.re.kr/storage/report/BB0000046266.pdf",
+      "type": "application/pdf;charset=UTF-8"
+    },
+    {
+      "url": "https://sema.seoul.go.kr/",
+      "status": 200,
+      "finalUrl": "https://sema.seoul.go.kr/",
+      "type": "text/html;charset=UTF-8",
+      "title": "SeMA"
+    },
+    {
+      "url": "https://tour.gwangju.go.kr/home/tour/info/village/002.cs?act=view&infoId=52",
+      "status": 200,
+      "finalUrl": "https://tour.gwangju.go.kr/home/tour/info/village/002.cs?act=view&infoId=52",
+      "type": "text/html;charset=UTF-8",
+      "title": "이색거리-상세화면 : 광주관광"
+    },
+    {
+      "url": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21122811325905008",
+      "status": 200,
+      "finalUrl": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21122811325905008",
+      "type": "text/html; charset=utf-8",
+      "title": "인천 차이나타운ㅣ여행지ㅣ인천투어"
+    },
+    {
+      "url": "https://dh.aks.ac.kr/~gwangju/wiki/index.php/%ED%8E%AD%EA%B7%84%EB%A7%88%EC%9D%84",
+      "status": 200,
+      "finalUrl": "https://dh.aks.ac.kr/~gwangju/wiki/index.php/%ED%8E%AD%EA%B7%84%EB%A7%88%EC%9D%84",
+      "type": "text/html; charset=UTF-8",
+      "title": "펭귄마을 - 광주문화예술인문스토리플랫폼"
+    },
+    {
+      "url": "https://www.science.go.kr/",
+      "status": 200,
+      "finalUrl": "https://www.science.go.kr/",
+      "type": "text/html;charset=utf-8",
+      "title": "국립중앙과학관에 오신 걸 환영합니다."
+    },
+    {
+      "url": "https://www.acc.go.kr/main/index.do",
+      "status": 200,
+      "finalUrl": "https://www.acc.go.kr/main/index.do",
+      "type": "text/html;charset=UTF-8",
+      "title": "국립아시아문화전당"
+    },
+    {
+      "url": "https://www.yuseong.go.kr/tour/",
+      "status": 200,
+      "finalUrl": "https://www.yuseong.go.kr/tour/",
+      "type": "text/html; charset=UTF-8",
+      "title": "유성구 문화관광"
+    },
+    {
+      "url": "https://webzine.ulsan.go.kr/contents/view.do?bbsId=BBSMSTR_000000000180&nttId=14693",
+      "status": 200,
+      "finalUrl": "https://webzine.ulsan.go.kr/contents/view.do?bbsId=BBSMSTR_000000000180&nttId=14693",
+      "type": "text/html;charset=utf-8",
+      "title": "울산광역시 웹진 - 여행 : 숲으로, 바다로! 일산마을에서 더위 몽땅 피하기"
+    },
+    {
+      "url": "https://daewangam.donggu.ulsan.kr/BBS_011List.do",
+      "status": 200,
+      "finalUrl": "https://daewangam.donggu.ulsan.kr/BBS_011List.do",
+      "type": "text/html; charset=utf-8",
+      "title": "대왕암공원 > 커뮤니티 > 자주하는질문대왕암공원"
+    },
+    {
+      "url": "https://daewangam.donggu.ulsan.kr/Pgrecomend1.do",
+      "status": 200,
+      "finalUrl": "https://daewangam.donggu.ulsan.kr/Pgrecomend1.do",
+      "type": "text/html; charset=utf-8",
+      "title": "대왕암공원"
+    },
+    {
+      "url": "https://council.sejong.go.kr/upload/councilnews/20220712111520748-08533.pdf",
+      "status": 200,
+      "finalUrl": "https://council.sejong.go.kr/upload/councilnews/20220712111520748-08533.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://www.suwon.go.kr/sw-www/sw-visitsuwon/sw-visitsuwon-02/sw-visitsuwon-02-02/sw-visitsuwon-02-02-01/sw-visitsuwon-02-02-01-01.jsp",
+      "status": 200,
+      "finalUrl": "https://www.suwon.go.kr/sw-www/sw-visitsuwon/sw-visitsuwon-02/sw-visitsuwon-02-02/sw-visitsuwon-02-02-01/sw-visitsuwon-02-02-01-01.jsp",
+      "type": "text/html;charset=UTF-8",
+      "title": "화성행궁 출발 : 수원관광 &gt; 관광코스 &gt; 수원 성곽길 코스 &gt; 60분 코스 &gt; 화성행궁 출발"
+    },
+    {
+      "url": "https://www.suwon.go.kr/sw-www/sw-visitsuwon/sw-visitsuwon-01/sw-visitsuwon-01-02/sw-visitsuwon-01-02-01.jsp",
+      "status": 200,
+      "finalUrl": "https://www.suwon.go.kr/sw-www/sw-visitsuwon/sw-visitsuwon-01/sw-visitsuwon-01-02/sw-visitsuwon-01-02-01.jsp",
+      "type": "text/html;charset=UTF-8",
+      "title": "소개 : 수원관광 &gt; 관광지 &gt; 화성행궁 &gt; 소개"
+    },
+    {
+      "url": "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoList.do?menuCode=116",
+      "status": 200,
+      "finalUrl": "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoList.do?menuCode=116",
+      "type": "text/html; charset=UTF-8",
+      "title": "통일동산 관광특구 : HOME &gt; 관광명소 &gt; 테마별 &gt; 통일동산 관광특구"
+    },
+    {
+      "url": "https://www.jmd.co.kr/news/group_n.asp",
+      "status": 200,
+      "finalUrl": "https://www.jmd.co.kr/news/group_n.asp",
+      "type": "text/html; Charset=UTF-8",
+      "title": "오두산통일전망대"
+    },
+    {
+      "url": "https://parking.paju.go.kr/parkinfo",
+      "status": 200,
+      "finalUrl": "https://parking.paju.go.kr/parkinfo",
+      "type": "text/html",
+      "title": "파주파킹(파주시 통합주차포털)"
+    },
+    {
+      "url": "https://j.nts.go.kr/museum/main.do",
+      "status": 200,
+      "finalUrl": "https://j.nts.go.kr/museum/main.do",
+      "type": "text/html;charset=UTF-8",
+      "title": "국립조세박물관"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=8SFPBIb3s_c",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/watch?v=8SFPBIb3s_c",
+      "type": "text/html; charset=utf-8",
+      "title": "국립세종수목원 사계절전시온실 첫 번째, 지중해온실🌼 - YouTube"
+    },
+    {
+      "url": "https://sokcho.go.kr/ct/museum/intro/guide",
+      "error": "TypeError"
+    },
+    {
+      "url": "https://www.sokcho.go.kr/",
+      "error": "TypeError"
+    },
+    {
+      "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=351&vcontsId=66485",
+      "status": 200,
+      "finalUrl": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=351&vcontsId=66485",
+      "type": "text/html;charset=utf-8",
+      "title": "Gangneung Coffee Street (강릉커피거리)- VISITKOREA"
+    },
+    {
+      "url": "https://www.kric.go.kr/jsp/board/portal/sub05/res/themeEssayDetail.jsp?board_seq=2544",
+      "status": 200,
+      "finalUrl": "https://www.kric.go.kr/jsp/board/portal/sub05/res/themeEssayDetail.jsp?board_seq=2544",
+      "type": "text/html; charset=UTF-8",
+      "title": "철도여행 - 철도산업정보센터"
+    },
+    {
+      "url": "https://www.kctg.or.kr/tour/touristSiteView.do?tourist_cd=TOURIST_ID00010515",
+      "status": 200,
+      "finalUrl": "https://www.kctg.or.kr/tour/touristSiteView.do?tourist_cd=TOURIST_ID00010515",
+      "type": "text/html;charset=utf-8",
+      "title": "의림지 │ 관광지별(관광지 정보) │ 예약서비스 │ 문화관광해설사 통합예약"
+    },
+    {
+      "url": "https://www.nie.re.kr/nieEng/main/contents.do?menuNo=400077",
+      "status": 200,
+      "finalUrl": "https://www.nie.re.kr/nieEng/main/contents.do?menuNo=400077",
+      "type": "text/html;charset=utf-8",
+      "title": "Information | Use information | Tourist Information | About<br>NIE |"
+    },
+    {
+      "url": "https://www.nie.re.kr/nie/cmmn/file/fileDown.do?atchFileId=e91dc90cc67a4d7fa3c0b86683e8b005&fileSn=1",
+      "status": 200,
+      "finalUrl": "https://www.nie.re.kr/nie/cmmn/file/fileDown.do?atchFileId=e91dc90cc67a4d7fa3c0b86683e8b005&fileSn=1",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://museum.gunsan.go.kr/new/contents/userInfo501.jsp",
+      "status": 200,
+      "finalUrl": "https://museum.gunsan.go.kr/new/contents/userInfo501.jsp",
+      "type": "text/html;charset=euc-kr",
+      "title": "�����ϴ� ���� | ����ٴ뿪��ڹ���"
+    },
+    {
+      "url": "https://arts.gunsan.go.kr/upload_data/board_data/BBS_0000391/171558695661395.pdf",
+      "status": 200,
+      "finalUrl": "https://arts.gunsan.go.kr/upload_data/board_data/BBS_0000391/171558695661395.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://www.mabik.re.kr/bbs/BBSMSTR_000000000345/view.do?nttId=B000000015281Ol5iL5",
+      "status": 200,
+      "finalUrl": "https://www.mabik.re.kr/bbs/BBSMSTR_000000000345/view.do?nttId=B000000015281Ol5iL5",
+      "type": "text/html;charset=UTF-8",
+      "title": "일반공지 < MABIK소식 < 소식 < 국립해양생물자원관"
+    },
+    {
+      "url": "https://tour.jecheon.go.kr/tour/base/main/view",
+      "status": 200,
+      "finalUrl": "https://tour.jecheon.go.kr/tour/base/main/view",
+      "type": "text/html;charset=utf-8",
+      "title": "메인 | 머물고 싶은 자연치유도시 제천"
+    },
+    {
+      "url": "https://www.jmd.co.kr/information/info01.asp",
+      "status": 200,
+      "finalUrl": "https://www.jmd.co.kr/information/info01.asp",
+      "type": "text/html; Charset=UTF-8",
+      "title": "오두산통일전망대"
+    },
+    {
+      "url": "https://scbay.suncheon.go.kr/wetland/",
+      "status": 200,
+      "finalUrl": "https://scbay.suncheon.go.kr/wetland/",
+      "type": "text/html;charset=utf-8",
+      "title": "순천만습지에 오신 것을 환영합니다."
+    },
+    {
+      "url": "https://scbay.suncheon.go.kr/wetland/community/0001/?boardId=bbs_0000000000010902&cntId=201&mode=view",
+      "status": 200,
+      "finalUrl": "https://scbay.suncheon.go.kr/wetland/community/0001/?boardId=bbs_0000000000010902&cntId=201&mode=view",
+      "type": "text/html;charset=utf-8",
+      "title": "순천만습지에 오신 것을 환영합니다."
+    },
+    {
+      "url": "https://sema.seoul.go.kr/kr/visit/seosomun",
+      "status": 200,
+      "finalUrl": "https://sema.seoul.go.kr/kr/visit/seosomun",
+      "type": "text/html;charset=UTF-8",
+      "title": "SeMA - 서울시립미술관 서소문본관"
+    },
+    {
+      "url": "https://scbay.suncheon.go.kr/garden/",
+      "status": 200,
+      "finalUrl": "https://scbay.suncheon.go.kr/garden/",
+      "type": "text/html;charset=utf-8",
+      "title": "순천만국가정원에 오신 것을 환영합니다."
+    },
+    {
+      "url": "https://m.yeosu.go.kr/download/www/civicism_2026.pdf",
+      "status": 200,
+      "finalUrl": "https://m.yeosu.go.kr/download/www/civicism_2026.pdf",
+      "type": "application/pdf",
+      "title": ""
+    },
+    {
+      "url": "https://gyeongju.museum.go.kr/site/kor/",
+      "status": 404,
+      "finalUrl": "https://gyeongju.museum.go.kr/site/kor/",
+      "type": "text/html",
+      "title": "국립박물관 | 누리집 점검 안내"
+    },
+    {
+      "url": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=2558",
+      "status": 500,
+      "finalUrl": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=2558",
+      "type": "text/html;charset=utf-8",
+      "title": "ERROR"
+    },
+    {
+      "url": "https://access.visitkorea.or.kr/ms/detail.do?cotId=571aebdb-f3d5-457b-b0e5-9875be4e2905",
+      "status": 200,
+      "finalUrl": "https://access.visitkorea.or.kr/ms/detail.do?cotId=571aebdb-f3d5-457b-b0e5-9875be4e2905",
+      "type": "text/html;charset=UTF-8",
+      "title": "관광지·명소(상세) | 무장애 관광정보 | 열린관광 모두의 여행"
+    },
+    {
+      "url": "https://museum.tongyeong.go.kr/003/sub01.php",
+      "error": "UNABLE_TO_VERIFY_LEAF_SIGNATURE"
+    },
+    {
+      "url": "https://tyurc.or.kr/project/infomation.php",
+      "status": 200,
+      "finalUrl": "https://tyurc.or.kr/project/infomation.php",
+      "type": "text/html; charset=utf-8",
+      "title": "통영시 도시재생지원센터"
+    },
+    {
+      "url": "https://visitjeju.net/kr/detail/view?contentsid=CONT_000000000500618&menuId=DOM_000001718000000000",
+      "status": 200,
+      "finalUrl": "https://visitjeju.net/kr/detail/view?contentsid=CONT_000000000500618&menuId=DOM_000001718000000000",
+      "type": "text/html;charset=utf-8",
+      "title": "Visit Jeju"
+    },
+    {
+      "url": "https://m.visitjeju.net/kr/themtour/view?contentsid=CNTS_300000000014564&menuId=DOM_000002000000000221",
+      "status": 200,
+      "finalUrl": "https://m.visitjeju.net/kr/themtour/view?contentsid=CNTS_300000000014564&menuId=DOM_000002000000000221",
+      "type": "text/html;charset=utf-8",
+      "title": "Visit Jeju"
+    },
+    {
+      "url": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=90960",
+      "status": 200,
+      "finalUrl": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=90960",
+      "type": "text/html;charset=utf-8",
+      "title": "Seogwipo Maeil Olle Market (서귀포매일올레시장)- VISITKOREA"
+    },
+    {
+      "url": "https://m.yeosu.go.kr/tour/travel/island_beach?idx=234&mode=view",
+      "status": 200,
+      "finalUrl": "https://m.yeosu.go.kr/tour/travel/island_beach?idx=234&mode=view",
+      "type": "text/html; charset=UTF-8",
+      "title": "여수관광문화 &gt; 관광명소 &gt; 섬/해변 &gt; 의 \"오동도\" 게시물 상세보기"
+    },
+    {
+      "url": "https://yeosu.go.kr/tour/leisure/bicycle/course1",
+      "status": 200,
+      "finalUrl": "https://yeosu.go.kr/tour/leisure/bicycle/course1",
+      "type": "text/html; charset=UTF-8",
+      "title": "여수관광문화 &gt; 여행·체험 &gt; 자전거코스 &gt; 1코스"
+    },
+    {
+      "url": "https://www.koagi.or.kr/sjna/viewngGdnc/useGdnc.jsp",
+      "status": 200,
+      "finalUrl": "https://www.koagi.or.kr/sjna/viewngGdnc/useGdnc.jsp",
+      "type": "text/html;charset=UTF-8",
+      "title": "이용안내 : 국립세종수목원 &gt; 관람안내 &gt; 이용안내"
+    },
+    {
+      "url": "https://www.koagi.or.kr/sjna/user/bbs/BD_selectBbsList.do?q_bbsSn=1048&q_clsfNo=3&q_lwrkClsfSn=1&q_rowPerPage=20",
+      "status": 200,
+      "finalUrl": "https://www.koagi.or.kr/sjna/user/bbs/BD_selectBbsList.do?q_bbsSn=1048&q_clsfNo=3&q_lwrkClsfSn=1&q_rowPerPage=20",
+      "type": "text/html;charset=UTF-8",
+      "title": "전시공간 소개 : 국립세종수목원 &gt; 둘러보기 &gt; 전시공간 소개"
+    },
+    {
+      "url": "https://tour.chungbuk.go.kr/www/selectTourCntnts.do?key=60&pageIndex=5&pageUnit=12&searchAreaSe=03&searchCnd=all&searchMainSe=ATTR&tourNo=1130",
+      "status": 200,
+      "finalUrl": "https://tour.chungbuk.go.kr/www/selectTourCntnts.do?key=60&pageIndex=5&pageUnit=12&searchAreaSe=03&searchCnd=all&searchMainSe=ATTR&tourNo=1130",
+      "type": "text/html;charset=UTF-8",
+      "title": "관광명소 - 충북나드리"
+    },
+    {
+      "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=351&vcontsId=186387",
+      "status": 200,
+      "finalUrl": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=351&vcontsId=186387",
+      "type": "text/html;charset=utf-8",
+      "title": "Suncheon Aretjang Market (순천 아랫장)- VISITKOREA"
+    },
+    {
+      "url": "https://tour.jecheon.go.kr/tour/base/tour/contents/view?clturCntntsNo=1117&menuLevel=3&menuNo=67",
+      "status": 200,
+      "finalUrl": "https://tour.jecheon.go.kr/tour/base/tour/contents/view?clturCntntsNo=1117&menuLevel=3&menuNo=67",
+      "type": "text/html;charset=utf-8",
+      "title": ""
+    }
+  ],
+  "activeSourceCount": 54,
+  "activeSourceResults": [
+    {
+      "url": "https://korean.visitseoul.net/citycenter/%EB%8D%95%EC%88%98%EA%B6%81/KOP002046",
+      "status": 200,
+      "finalUrl": "https://korean.visitseoul.net/citycenter/%EB%8D%95%EC%88%98%EA%B6%81/KOP002046",
+      "type": "text/html;charset=UTF-8",
+      "title": "덕수궁 | 서울 공식 관광정보 웹사이트"
+    },
+    {
+      "url": "https://korean.visitseoul.net/palace/%EC%A0%95%EB%8F%99%EA%B8%B8/KOP000889",
+      "status": 200,
+      "finalUrl": "https://korean.visitseoul.net/palace/%EC%A0%95%EB%8F%99%EA%B8%B8/KOP000889",
+      "type": "text/html;charset=UTF-8",
+      "title": "정동길 | 서울 공식 관광정보 웹사이트"
+    },
+    {
+      "url": "https://citytourbusan.com/ko/file/citytourbusan.pdf",
+      "status": 200,
+      "finalUrl": "https://citytourbusan.com/ko/file/citytourbusan.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://visitbusan.net/index.do?lang_cd=ko&menuCd=DOM_000000201001001000&uc_seq=284",
+      "status": 200,
+      "finalUrl": "https://visitbusan.net/index.do?lang_cd=ko&menuCd=DOM_000000201001001000&uc_seq=284",
+      "type": "text/html;charset=utf-8",
+      "title": "명소 | 부산에가면 | Visit Busan 釜山広域市"
+    },
+    {
+      "url": "https://www.kctg.or.kr/tour/touristSiteView.do?tourist_cd=TOURIST_ID00010723",
+      "status": 200,
+      "finalUrl": "https://www.kctg.or.kr/tour/touristSiteView.do?tourist_cd=TOURIST_ID00010723",
+      "type": "text/html;charset=utf-8",
+      "title": "청라언덕 │ 관광지별(관광지 정보) │ 예약서비스 │ 문화관광해설사 통합예약"
+    },
+    {
+      "url": "https://www.daegucitytour.com/data/leaflet_ko.pdf",
+      "status": 200,
+      "finalUrl": "https://www.daegucitytour.com/data/leaflet_ko.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://www.daegucitytour.com/bbs/board.php?bo_table=notice&wr_id=1633",
+      "status": 200,
+      "finalUrl": "https://www.daegucitytour.com/bbs/board.php?bo_table=notice&wr_id=1633",
+      "type": "text/html; charset=utf-8",
+      "title": "[특별코스] 대구시티투어 특별코스(시간을 걷는 대구 K-투어) 운행 안내"
+    },
+    {
+      "url": "https://hanzhong.ii.re.kr/storage/report/BB0000046266.pdf",
+      "status": 200,
+      "finalUrl": "https://hanzhong.ii.re.kr/storage/report/BB0000046266.pdf",
+      "type": "application/pdf;charset=UTF-8"
+    },
+    {
+      "url": "https://tour.gwangju.go.kr/home/tour/info/village/002.cs?act=view&infoId=52",
+      "status": 200,
+      "finalUrl": "https://tour.gwangju.go.kr/home/tour/info/village/002.cs?act=view&infoId=52",
+      "type": "text/html;charset=UTF-8",
+      "title": "이색거리-상세화면 : 광주관광"
+    },
+    {
+      "url": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21122811325905008",
+      "status": 200,
+      "finalUrl": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21122811325905008",
+      "type": "text/html; charset=utf-8",
+      "title": "인천 차이나타운ㅣ여행지ㅣ인천투어"
+    },
+    {
+      "url": "https://dh.aks.ac.kr/~gwangju/wiki/index.php/%ED%8E%AD%EA%B7%84%EB%A7%88%EC%9D%84",
+      "status": 200,
+      "finalUrl": "https://dh.aks.ac.kr/~gwangju/wiki/index.php/%ED%8E%AD%EA%B7%84%EB%A7%88%EC%9D%84",
+      "type": "text/html; charset=UTF-8",
+      "title": "펭귄마을 - 광주문화예술인문스토리플랫폼"
+    },
+    {
+      "url": "https://www.science.go.kr/",
+      "status": 200,
+      "finalUrl": "https://www.science.go.kr/",
+      "type": "text/html;charset=utf-8",
+      "title": "국립중앙과학관에 오신 걸 환영합니다."
+    },
+    {
+      "url": "https://www.acc.go.kr/main/index.do",
+      "status": 200,
+      "finalUrl": "https://www.acc.go.kr/main/index.do",
+      "type": "text/html;charset=UTF-8",
+      "title": "국립아시아문화전당"
+    },
+    {
+      "url": "https://www.yuseong.go.kr/tour/",
+      "status": 200,
+      "finalUrl": "https://www.yuseong.go.kr/tour/",
+      "type": "text/html; charset=UTF-8",
+      "title": "유성구 문화관광"
+    },
+    {
+      "url": "https://webzine.ulsan.go.kr/contents/view.do?bbsId=BBSMSTR_000000000180&nttId=14693",
+      "status": 200,
+      "finalUrl": "https://webzine.ulsan.go.kr/contents/view.do?bbsId=BBSMSTR_000000000180&nttId=14693",
+      "type": "text/html;charset=utf-8",
+      "title": "울산광역시 웹진 - 여행 : 숲으로, 바다로! 일산마을에서 더위 몽땅 피하기"
+    },
+    {
+      "url": "https://daewangam.donggu.ulsan.kr/BBS_011List.do",
+      "status": 200,
+      "finalUrl": "https://daewangam.donggu.ulsan.kr/BBS_011List.do",
+      "type": "text/html; charset=utf-8",
+      "title": "대왕암공원 > 커뮤니티 > 자주하는질문대왕암공원"
+    },
+    {
+      "url": "https://daewangam.donggu.ulsan.kr/Pgrecomend1.do",
+      "status": 200,
+      "finalUrl": "https://daewangam.donggu.ulsan.kr/Pgrecomend1.do",
+      "type": "text/html; charset=utf-8",
+      "title": "대왕암공원"
+    },
+    {
+      "url": "https://www.suwon.go.kr/sw-www/sw-visitsuwon/sw-visitsuwon-02/sw-visitsuwon-02-02/sw-visitsuwon-02-02-01/sw-visitsuwon-02-02-01-01.jsp",
+      "status": 200,
+      "finalUrl": "https://www.suwon.go.kr/sw-www/sw-visitsuwon/sw-visitsuwon-02/sw-visitsuwon-02-02/sw-visitsuwon-02-02-01/sw-visitsuwon-02-02-01-01.jsp",
+      "type": "text/html;charset=UTF-8",
+      "title": "화성행궁 출발 : 수원관광 &gt; 관광코스 &gt; 수원 성곽길 코스 &gt; 60분 코스 &gt; 화성행궁 출발"
+    },
+    {
+      "url": "https://www.suwon.go.kr/sw-www/sw-visitsuwon/sw-visitsuwon-01/sw-visitsuwon-01-02/sw-visitsuwon-01-02-01.jsp",
+      "status": 200,
+      "finalUrl": "https://www.suwon.go.kr/sw-www/sw-visitsuwon/sw-visitsuwon-01/sw-visitsuwon-01-02/sw-visitsuwon-01-02-01.jsp",
+      "type": "text/html;charset=UTF-8",
+      "title": "소개 : 수원관광 &gt; 관광지 &gt; 화성행궁 &gt; 소개"
+    },
+    {
+      "url": "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoList.do?menuCode=116",
+      "status": 200,
+      "finalUrl": "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoList.do?menuCode=116",
+      "type": "text/html; charset=UTF-8",
+      "title": "통일동산 관광특구 : HOME &gt; 관광명소 &gt; 테마별 &gt; 통일동산 관광특구"
+    },
+    {
+      "url": "https://parking.paju.go.kr/parkinfo",
+      "status": 200,
+      "finalUrl": "https://parking.paju.go.kr/parkinfo",
+      "type": "text/html",
+      "title": "파주파킹(파주시 통합주차포털)"
+    },
+    {
+      "url": "https://j.nts.go.kr/museum/main.do",
+      "status": 200,
+      "finalUrl": "https://j.nts.go.kr/museum/main.do",
+      "type": "text/html;charset=UTF-8",
+      "title": "국립조세박물관"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=8SFPBIb3s_c",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/watch?v=8SFPBIb3s_c",
+      "type": "text/html; charset=utf-8",
+      "title": "국립세종수목원 사계절전시온실 첫 번째, 지중해온실🌼 - YouTube"
+    },
+    {
+      "url": "https://sokcho.go.kr/ct/museum/intro/guide",
+      "error": "TypeError"
+    },
+    {
+      "url": "https://www.sokcho.go.kr/",
+      "error": "TypeError"
+    },
+    {
+      "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=351&vcontsId=66485",
+      "status": 200,
+      "finalUrl": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=351&vcontsId=66485",
+      "type": "text/html;charset=utf-8",
+      "title": "Gangneung Coffee Street (강릉커피거리)- VISITKOREA"
+    },
+    {
+      "url": "https://www.kric.go.kr/jsp/board/portal/sub05/res/themeEssayDetail.jsp?board_seq=2544",
+      "status": 200,
+      "finalUrl": "https://www.kric.go.kr/jsp/board/portal/sub05/res/themeEssayDetail.jsp?board_seq=2544",
+      "type": "text/html; charset=UTF-8",
+      "title": "철도여행 - 철도산업정보센터"
+    },
+    {
+      "url": "https://www.kctg.or.kr/tour/touristSiteView.do?tourist_cd=TOURIST_ID00010515",
+      "status": 200,
+      "finalUrl": "https://www.kctg.or.kr/tour/touristSiteView.do?tourist_cd=TOURIST_ID00010515",
+      "type": "text/html;charset=utf-8",
+      "title": "의림지 │ 관광지별(관광지 정보) │ 예약서비스 │ 문화관광해설사 통합예약"
+    },
+    {
+      "url": "https://www.nie.re.kr/nieEng/main/contents.do?menuNo=400077",
+      "status": 200,
+      "finalUrl": "https://www.nie.re.kr/nieEng/main/contents.do?menuNo=400077",
+      "type": "text/html;charset=utf-8",
+      "title": "Information | Use information | Tourist Information | About<br>NIE |"
+    },
+    {
+      "url": "https://www.nie.re.kr/nie/cmmn/file/fileDown.do?atchFileId=e91dc90cc67a4d7fa3c0b86683e8b005&fileSn=1",
+      "status": 200,
+      "finalUrl": "https://www.nie.re.kr/nie/cmmn/file/fileDown.do?atchFileId=e91dc90cc67a4d7fa3c0b86683e8b005&fileSn=1",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://museum.gunsan.go.kr/new/contents/userInfo501.jsp",
+      "status": 200,
+      "finalUrl": "https://museum.gunsan.go.kr/new/contents/userInfo501.jsp",
+      "type": "text/html;charset=euc-kr",
+      "title": "�����ϴ� ���� | ����ٴ뿪��ڹ���"
+    },
+    {
+      "url": "https://arts.gunsan.go.kr/upload_data/board_data/BBS_0000391/171558695661395.pdf",
+      "status": 200,
+      "finalUrl": "https://arts.gunsan.go.kr/upload_data/board_data/BBS_0000391/171558695661395.pdf",
+      "type": "application/pdf"
+    },
+    {
+      "url": "https://www.mabik.re.kr/bbs/BBSMSTR_000000000345/view.do?nttId=B000000015281Ol5iL5",
+      "status": 200,
+      "finalUrl": "https://www.mabik.re.kr/bbs/BBSMSTR_000000000345/view.do?nttId=B000000015281Ol5iL5",
+      "type": "text/html;charset=UTF-8",
+      "title": "일반공지 < MABIK소식 < 소식 < 국립해양생물자원관"
+    },
+    {
+      "url": "https://www.jmd.co.kr/information/info01.asp",
+      "status": 200,
+      "finalUrl": "https://www.jmd.co.kr/information/info01.asp",
+      "type": "text/html; Charset=UTF-8",
+      "title": "오두산통일전망대"
+    },
+    {
+      "url": "https://scbay.suncheon.go.kr/wetland/",
+      "status": 200,
+      "finalUrl": "https://scbay.suncheon.go.kr/wetland/",
+      "type": "text/html;charset=utf-8",
+      "title": "순천만습지에 오신 것을 환영합니다."
+    },
+    {
+      "url": "https://scbay.suncheon.go.kr/wetland/community/0001/?boardId=bbs_0000000000010902&cntId=201&mode=view",
+      "status": 200,
+      "finalUrl": "https://scbay.suncheon.go.kr/wetland/community/0001/?boardId=bbs_0000000000010902&cntId=201&mode=view",
+      "type": "text/html;charset=utf-8",
+      "title": "순천만습지에 오신 것을 환영합니다."
+    },
+    {
+      "url": "https://sema.seoul.go.kr/kr/visit/seosomun",
+      "status": 200,
+      "finalUrl": "https://sema.seoul.go.kr/kr/visit/seosomun",
+      "type": "text/html;charset=UTF-8",
+      "title": "SeMA - 서울시립미술관 서소문본관"
+    },
+    {
+      "url": "https://scbay.suncheon.go.kr/garden/",
+      "status": 200,
+      "finalUrl": "https://scbay.suncheon.go.kr/garden/",
+      "type": "text/html;charset=utf-8",
+      "title": "순천만국가정원에 오신 것을 환영합니다."
+    },
+    {
+      "url": "https://m.yeosu.go.kr/download/www/civicism_2026.pdf",
+      "status": 200,
+      "finalUrl": "https://m.yeosu.go.kr/download/www/civicism_2026.pdf",
+      "type": "application/pdf",
+      "title": ""
+    },
+    {
+      "url": "https://gyeongju.museum.go.kr/site/kor/",
+      "status": 404,
+      "finalUrl": "https://gyeongju.museum.go.kr/site/kor/",
+      "type": "text/html",
+      "title": "국립박물관 | 누리집 점검 안내"
+    },
+    {
+      "url": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=2558",
+      "status": 500,
+      "finalUrl": "https://www.gyeongju.go.kr/tour_bak/page.do?mnu_uid=2558",
+      "type": "text/html;charset=utf-8",
+      "title": "ERROR"
+    },
+    {
+      "url": "https://access.visitkorea.or.kr/ms/detail.do?cotId=571aebdb-f3d5-457b-b0e5-9875be4e2905",
+      "status": 200,
+      "finalUrl": "https://access.visitkorea.or.kr/ms/detail.do?cotId=571aebdb-f3d5-457b-b0e5-9875be4e2905",
+      "type": "text/html;charset=UTF-8",
+      "title": "관광지·명소(상세) | 무장애 관광정보 | 열린관광 모두의 여행"
+    },
+    {
+      "url": "https://museum.tongyeong.go.kr/003/sub01.php",
+      "error": "UNABLE_TO_VERIFY_LEAF_SIGNATURE"
+    },
+    {
+      "url": "https://tyurc.or.kr/project/infomation.php",
+      "status": 200,
+      "finalUrl": "https://tyurc.or.kr/project/infomation.php",
+      "type": "text/html; charset=utf-8",
+      "title": "통영시 도시재생지원센터"
+    },
+    {
+      "url": "https://visitjeju.net/kr/detail/view?contentsid=CONT_000000000500618&menuId=DOM_000001718000000000",
+      "status": 200,
+      "finalUrl": "https://visitjeju.net/kr/detail/view?contentsid=CONT_000000000500618&menuId=DOM_000001718000000000",
+      "type": "text/html;charset=utf-8",
+      "title": "Visit Jeju"
+    },
+    {
+      "url": "https://m.visitjeju.net/kr/themtour/view?contentsid=CNTS_300000000014564&menuId=DOM_000002000000000221",
+      "status": 200,
+      "finalUrl": "https://m.visitjeju.net/kr/themtour/view?contentsid=CNTS_300000000014564&menuId=DOM_000002000000000221",
+      "type": "text/html;charset=utf-8",
+      "title": "Visit Jeju"
+    },
+    {
+      "url": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=90960",
+      "status": 200,
+      "finalUrl": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=90960",
+      "type": "text/html;charset=utf-8",
+      "title": "Seogwipo Maeil Olle Market (서귀포매일올레시장)- VISITKOREA"
+    },
+    {
+      "url": "https://m.yeosu.go.kr/tour/travel/island_beach?idx=234&mode=view",
+      "status": 200,
+      "finalUrl": "https://m.yeosu.go.kr/tour/travel/island_beach?idx=234&mode=view",
+      "type": "text/html; charset=UTF-8",
+      "title": "여수관광문화 &gt; 관광명소 &gt; 섬/해변 &gt; 의 \"오동도\" 게시물 상세보기"
+    },
+    {
+      "url": "https://yeosu.go.kr/tour/leisure/bicycle/course1",
+      "status": 200,
+      "finalUrl": "https://yeosu.go.kr/tour/leisure/bicycle/course1",
+      "type": "text/html; charset=UTF-8",
+      "title": "여수관광문화 &gt; 여행·체험 &gt; 자전거코스 &gt; 1코스"
+    },
+    {
+      "url": "https://www.koagi.or.kr/sjna/viewngGdnc/useGdnc.jsp",
+      "status": 200,
+      "finalUrl": "https://www.koagi.or.kr/sjna/viewngGdnc/useGdnc.jsp",
+      "type": "text/html;charset=UTF-8",
+      "title": "이용안내 : 국립세종수목원 &gt; 관람안내 &gt; 이용안내"
+    },
+    {
+      "url": "https://www.koagi.or.kr/sjna/user/bbs/BD_selectBbsList.do?q_bbsSn=1048&q_clsfNo=3&q_lwrkClsfSn=1&q_rowPerPage=20",
+      "status": 200,
+      "finalUrl": "https://www.koagi.or.kr/sjna/user/bbs/BD_selectBbsList.do?q_bbsSn=1048&q_clsfNo=3&q_lwrkClsfSn=1&q_rowPerPage=20",
+      "type": "text/html;charset=UTF-8",
+      "title": "전시공간 소개 : 국립세종수목원 &gt; 둘러보기 &gt; 전시공간 소개"
+    },
+    {
+      "url": "https://tour.chungbuk.go.kr/www/selectTourCntnts.do?key=60&pageIndex=5&pageUnit=12&searchAreaSe=03&searchCnd=all&searchMainSe=ATTR&tourNo=1130",
+      "status": 200,
+      "finalUrl": "https://tour.chungbuk.go.kr/www/selectTourCntnts.do?key=60&pageIndex=5&pageUnit=12&searchAreaSe=03&searchCnd=all&searchMainSe=ATTR&tourNo=1130",
+      "type": "text/html;charset=UTF-8",
+      "title": "관광명소 - 충북나드리"
+    },
+    {
+      "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=351&vcontsId=186387",
+      "status": 200,
+      "finalUrl": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=351&vcontsId=186387",
+      "type": "text/html;charset=utf-8",
+      "title": "Suncheon Aretjang Market (순천 아랫장)- VISITKOREA"
+    },
+    {
+      "url": "https://tour.jecheon.go.kr/tour/base/tour/contents/view?clturCntntsNo=1117&menuLevel=3&menuNo=67",
+      "status": 200,
+      "finalUrl": "https://tour.jecheon.go.kr/tour/base/tour/contents/view?clturCntntsNo=1117&menuLevel=3&menuNo=67",
+      "type": "text/html;charset=utf-8",
+      "title": ""
+    }
+  ]
+}
