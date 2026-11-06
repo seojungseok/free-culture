@@ -5,7 +5,7 @@
 // 테마: 동물/놀이/배우는/자연/공연(문화행사). 실내는 indoor 플래그로 교차 필터.
 
 import { getAllPlaces, getKidTours } from "@/lib/tour";
-import { getByAudience } from "@/lib/data";
+import { getByAudience, getEventById, respectEventPublicationDeadline } from "@/lib/data";
 import restaurantsData from "@/data/restaurants.json";
 import { displayAddress } from "@/lib/address";
 import { SIDO_SLUG, SIDO_LIST } from "@/lib/classify";
@@ -175,7 +175,11 @@ function build(): KidCourse[] {
 }
 
 let cache: KidCourse[] | null = null;
-export function getKidCourses(): KidCourse[] { if (!cache) cache = build(); return cache; }
+export function getKidCourses(): KidCourse[] {
+  respectEventPublicationDeadline();
+  if (!cache) cache = build();
+  return cache.filter(course => !course.id.startsWith('ev-') || Boolean(getEventById(course.id.slice(3))));
+}
 export function getKidCourse(id: string): KidCourse | undefined { return getKidCourses().find((c) => c.id === id || c.slug === id); }
 
 export function kidAreaCounts(): { area: string; slug: string; count: number }[] {

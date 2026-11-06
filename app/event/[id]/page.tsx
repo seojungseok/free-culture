@@ -21,6 +21,7 @@ import { eventOffer } from "@/lib/eventSeo";
 import { hasSubstantiveEventInfo } from "@/lib/eventQuality";
 import { SIDO_SLUG } from "@/lib/classify";
 import { displayAddress, displayRegionTitle } from "@/lib/address";
+import { isEventPublished } from "@/lib/event-publication.mjs";
 
 const archivedEvents = new Map((archivedEventsData.events as CultureEvent[]).map(event => [event.id, {
   ...event,
@@ -28,7 +29,10 @@ const archivedEvents = new Map((archivedEventsData.events as CultureEvent[]).map
   address: displayAddress(event.address || "", event.area),
   addressConflict: Boolean(event.address && !displayAddress(event.address, event.area)),
 }]));
-const eventForDetail = (id: string) => getEventById(id) || archivedEvents.get(id);
+const eventForDetail = (id: string) => {
+  const event = getEventById(id) || archivedEvents.get(id);
+  return event && isEventPublished(event) ? event : undefined;
+};
 
 // ISR: 1시간 재검증. 종료 상태를 반영하면서 기존 상세 URL은 유지한다.
 // 전체를 빌드 때 만들지 않고 주목도 높은 일부만 사전 생성, 나머지는 첫 요청 때 생성 후 캐시.
@@ -51,7 +55,7 @@ export async function generateMetadata({
   if (!ev) return { title: "행사를 찾을 수 없습니다" };
   const where = ev.addressConflict ? ev.place || "장소 확인 필요" : placeText(ev.area, ev.sigungu, ev.place);
   const contents = eventContentsText(ev.contents).replace(/\s+/g, " ");
-  const desc = `${ev.endDate < todayYmd() ? "종료된 행사 · " : ""}${ev.priceLabel} · ${fmtRange(ev.startDate, ev.endDate)} · ${where}. ${
+  const desc = ev.description || `${ev.endDate < todayYmd() ? "종료된 행사 · " : ""}${ev.priceLabel} · ${fmtRange(ev.startDate, ev.endDate)} · ${where}. ${
     contents ? contents.slice(0, 80) : `${ev.realmName} 행사 정보를 확인하세요.`
   }`;
   const isFree = ev.priceType === "free";
@@ -63,15 +67,16 @@ export async function generateMetadata({
     ev.title,
   ];
   return {
-    title: ev.title,
+    title: ev.seoTitle || ev.title,
     description: desc,
     robots: ev.endDate < todayYmd() || !hasSubstantiveEventInfo(ev) ? { index: false, follow: true } : undefined,
     keywords,
     alternates: { canonical: `/event/${ev.id}` },
     openGraph: {
-      title: ev.title,
+      title: ev.seoTitle || ev.title,
       description: desc,
-      images: ev.imgUrl ? [{ url: ev.imgUrl }] : undefined,
+      images: ev.imgUrl ? [{ url: ev.imgUrl, alt: ev.posterAlt || ev.title }] : undefined,
+      url: `/event/${ev.id}`,
       type: "article",
     },
   };
@@ -88,9 +93,10 @@ export default async function EventPage({
 
   const d = dday(ev.startDate, ev.endDate);
   const ended = ev.endDate < todayYmd();
+  const canLocate = !ev.addressConflict && Number(ev.gpsX) > 0 && Number(ev.gpsY) > 0;
   const regionSlug = (SIDO_SLUG as Record<string,string>)[ev.area];
   const contents = eventContentsParagraphs(ev.contents);
-  const story = ev.addressConflict ? [] : eventStory({
+  const story = ev.addressConflict || ev.sections?.length ? [] : eventStory({
     title: ev.title, realmName: ev.realmName, area: ev.area, sigungu: ev.sigungu,
     place: ev.place, startDate: ev.startDate, endDate: ev.endDate,
     priceLabel: ev.priceLabel, priceType: ev.priceType, audiences: ev.audiences,
@@ -105,11 +111,13 @@ export default async function EventPage({
     "@type": "Event",
     name: ev.title,
     url: `${SITE.url}/event/${ev.id}`,
-    startDate: iso(ev.startDate),
-    endDate: iso(ev.endDate),
+    startDate: ev.startAt || iso(ev.startDate),
+    endDate: ev.endAt || iso(ev.endDate),
+    isAccessibleForFree: ev.priceType === "free" ? true : undefined,
+    organizer: ev.organizerName ? { "@type": "Organization", name: ev.organizerName, url: ev.organizerUrl || ev.officialUrl } : undefined,
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    image: ev.imgUrl ? [ev.imgUrl] : undefined,
+    image: ev.imgUrl ? [new URL(ev.imgUrl, SITE.url).href] : undefined,
     description: contents.join("\n\n") || `${ev.realmName} · ${ev.priceLabel}`,
     location: {
       "@type": "Place",
@@ -147,10 +155,10 @@ export default async function EventPage({
             {ev.imgUrl ? (
               <Image
                 src={ev.imgUrl}
-                alt={ev.title}
+                alt={ev.posterAlt || ev.title}
                 fill
                 sizes="(max-width:768px) 100vw, 420px"
-                className="object-cover"
+                className={ev.posterAlt ? "object-contain" : "object-cover"}
                 priority
                 unoptimized
               />
@@ -184,12 +192,13 @@ export default async function EventPage({
           </div>
 
           <h1 className="text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
-            {ev.title}
+            {ev.seoTitle || ev.title}
           </h1>
+          {ev.description && <p className="mt-4 text-base leading-8 text-ink-soft">{ev.description}</p>}
 
           {ended && <p className="mt-4 rounded-xl bg-amber-50 p-4 text-sm leading-6">등록된 일정 기준으로 종료된 행사입니다. 지난 행사 정보는 참고용으로 보존합니다. {regionSlug&&<Link href={'/region/'+regionSlug} className="font-bold underline">현재 {ev.area} 행사·나들이 찾기</Link>}</p>}
 
-          <TossTopDeals contained />
+          {!ev.sections?.length && <TossTopDeals contained />}
           <dl className="mt-6 divide-y divide-black/5 rounded-2xl border border-black/5 bg-white">
             <Row label={ended ? "당시 안내 요금" : "요금"}>
               <span className="font-semibold">{ev.priceRaw || ev.priceLabel}</span>
@@ -205,8 +214,10 @@ export default async function EventPage({
               )}
             </Row>
             <Row label="기간"><time dateTime={iso(ev.startDate)}>{fmtRange(ev.startDate, ev.startDate)}</time>{ev.startDate!==ev.endDate&&<> ~ <time dateTime={iso(ev.endDate)}>{fmtRange(ev.endDate,ev.endDate)}</time></>}</Row>
+            {ev.scheduleLabel && <Row label="시간">{ev.scheduleLabel}</Row>}
             <Row label="장소">{ev.place || "-"}</Row>
             {!ev.addressConflict && <Row label="주소">{ev.address || `${ev.area} ${ev.sigungu}`.trim() || "-"}</Row>}
+            {ev.organizerName && <Row label="주최">{ev.organizerName}</Row>}
             {ev.phone && <Row label="문의">{ev.phone}</Row>}
           </dl>
 
@@ -229,7 +240,25 @@ export default async function EventPage({
             </div>
           )}
 
-          {contents.length > 0 && (
+          {ev.registrationUrl && <nav aria-label="행사 참여 안내" className="mt-5 flex flex-wrap gap-3">
+            <a href={ev.registrationUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center rounded-xl bg-free px-4 py-3 text-sm font-bold text-white">책갈피 사전 신청 안내 ↗</a>
+            <a href={ev.officialUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center rounded-xl border border-line px-4 py-3 text-sm font-bold">전체 프로그램 확인 ↗</a>
+          </nav>}
+
+          {ev.sections?.map((section, index) => <section key={section.heading} aria-labelledby={`event-editorial-${index}`} className="mt-6 rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6">
+            <h2 id={`event-editorial-${index}`} className="mb-4 text-lg font-extrabold text-ink">{section.heading}</h2>
+            <div className="space-y-4 text-[15px] leading-[1.9] text-ink-soft sm:text-base">{section.body.split(/\n\n/).map((paragraph, i) => <p key={i} className="whitespace-pre-line break-words">{paragraph}</p>)}</div>
+          </section>)}
+
+          {!!ev.gallery?.length && <section className="mt-6" aria-labelledby="event-gallery-title">
+            <h2 id="event-gallery-title" className="mb-4 text-lg font-extrabold">주최 측이 공개한 책갈피 예시</h2>
+            <div className="grid gap-4 sm:grid-cols-2">{ev.gallery.map(photo => <figure key={photo.src} className="overflow-hidden rounded-xl border border-line bg-white">
+              <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" className="aspect-square w-full object-contain" width={600} height={600} />
+              <figcaption className="p-4 text-sm leading-6 text-ink-soft">{photo.caption} <a href={photo.sourceUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">공식 출처 ↗</a></figcaption>
+            </figure>)}</div>
+          </section>}
+
+          {!ev.sections?.length && contents.length > 0 && (
             <section aria-labelledby="event-details-heading" className="mt-6 rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6">
               <h2 id="event-details-heading" className="mb-5 text-[17px] font-extrabold text-ink">행사 상세 안내</h2>
               <div className="space-y-5 text-[15px] leading-[1.9] text-ink-soft sm:text-base">
@@ -260,8 +289,8 @@ export default async function EventPage({
             </div>
           </section>}
 
-          {ev.endDate >= todayYmd() ? (!ev.addressConflict && <NextStop anchor={{id:"event:"+ev.id,title:ev.title,href:"/event/"+ev.id,area:ev.area,kind:"event",image:ev.imgUrl,address:ev.address || ev.place,x:Number(ev.gpsX),y:Number(ev.gpsY),free:ev.priceType==="free",kids:ev.audiences?.includes("kids"),start:ev.startDate,end:ev.endDate}}/>) : <section className="mt-5 rounded-xl bg-amber-50 p-4 text-sm"><h2 className="font-bold">이 행사는 종료되었습니다</h2><p className="mt-2">등록된 일정 기준입니다. 현재 갈 곳을 다시 찾아보세요.</p><nav className="mt-3 flex flex-wrap gap-4 font-bold underline"><Link href="/weekend">이번 주말 행사 보기</Link>{regionSlug&&<Link href={`/region/${regionSlug}`}>{ev.area} 이번 주말 가볼 곳</Link>}</nav></section>}
-          {ev.endDate >= todayYmd() && !ev.addressConflict && <NearbyParking lon={Number(ev.gpsX)} lat={Number(ev.gpsY)} area={ev.area} address={ev.address} title="행사장 근처 주차 확인" />}
+          {ev.endDate >= todayYmd() ? (canLocate && <NextStop anchor={{id:"event:"+ev.id,title:ev.title,href:"/event/"+ev.id,area:ev.area,kind:"event",image:ev.imgUrl,address:ev.address || ev.place,x:Number(ev.gpsX),y:Number(ev.gpsY),free:ev.priceType==="free",kids:ev.audiences?.includes("kids"),start:ev.startDate,end:ev.endDate}}/>) : <section className="mt-5 rounded-xl bg-amber-50 p-4 text-sm"><h2 className="font-bold">이 행사는 종료되었습니다</h2><p className="mt-2">등록된 일정 기준입니다. 현재 갈 곳을 다시 찾아보세요.</p><nav className="mt-3 flex flex-wrap gap-4 font-bold underline"><Link href="/weekend">이번 주말 행사 보기</Link>{regionSlug&&<Link href={`/region/${regionSlug}`}>{ev.area} 이번 주말 가볼 곳</Link>}</nav></section>}
+          {ev.endDate >= todayYmd() && canLocate && <NearbyParking lon={Number(ev.gpsX)} lat={Number(ev.gpsY)} area={ev.area} address={ev.address} title="행사장 근처 주차 확인" />}
           <ShareButtons title={ev.title} officialUrl={ev.officialUrl} />
 
           <p className="mt-4 text-[13px] text-ink-faint">
@@ -276,7 +305,8 @@ export default async function EventPage({
             </a>
           </p>
 
-          <p className="mt-6 text-sm leading-6 text-ink-faint">정보 출처: 공공데이터포털(한국문화정보원). {ev.officialUrl && <a href={ev.officialUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">행사 공식 페이지 확인 ↗</a>}</p>
+          <p className="mt-6 text-sm leading-6 text-ink-faint">정보 출처: {ev.sourceLabel || "공공데이터포털(한국문화정보원)"}. {ev.officialUrl && <a href={ev.officialUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">행사 공식 페이지 확인 ↗</a>} {ev.instagramUrl && <a href={ev.instagramUrl} target="_blank" rel="noopener noreferrer" className="ml-2 font-semibold underline">주최 팀 인스타그램 ↗</a>}</p>
+          {!!ev.sections?.length && <TossTopDeals contained />}
 
           <AdSlot label="상세 하단 광고" />
         </div>

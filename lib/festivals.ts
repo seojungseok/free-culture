@@ -19,7 +19,7 @@ export interface Festival {
 
 const COLLECTED = ((festivalsData as unknown as { festivals?: Festival[] }).festivals || [])
   .map((festival) => ({ ...festival, addr: displayAddress(festival.addr, festival.area) }));
-const ALL = [
+function allFestivals(): Festival[] { return [
   ...COLLECTED,
   ...getAllEvents()
     .filter((event) => event.genreKey === "festival")
@@ -29,12 +29,12 @@ const ALL = [
       description: event.contents || "", place: event.place, homepage: event.officialUrl, tel: event.phone,
       source: "공공 문화행사 데이터",
     } as Festival)),
-].filter((festival, index, all) => all.findIndex((item) => item.title === festival.title && item.startDate === festival.startDate) === index);
+].filter((festival, index, all) => all.findIndex((item) => item.title === festival.title && item.startDate === festival.startDate) === index); }
 /** 해당 지역에서 지금 열리는/곧(기본 60일 내) 열리는 축제. 시작일 순. */
 export function areaFestivals(area: string, { withinDays = 60, limit = 4 } = {}): (Festival & { ongoing: boolean })[] {
   const today = todayYmd();
   const soon = addDaysYmd(today, withinDays);
-  return ALL
+  return allFestivals()
     .filter((f) => f.area === area && f.endDate >= today && f.startDate <= soon)
     .sort((a, b) => a.startDate.localeCompare(b.startDate))
     .slice(0, limit)
@@ -43,15 +43,15 @@ export function areaFestivals(area: string, { withinDays = 60, limit = 4 } = {})
 
 export function upcomingFestivals(limit = 12): Festival[] {
   const today = todayYmd();
-  return ALL.filter((f) => f.endDate >= today).sort((a, b) => a.startDate.localeCompare(b.startDate)).slice(0, limit);
+  return allFestivals().filter((f) => f.endDate >= today).sort((a, b) => a.startDate.localeCompare(b.startDate)).slice(0, limit);
 }
 
 export function getAllFestivals(): Festival[] {
-  return ALL.filter((festival) => festival.endDate >= todayYmd()).sort((a, b) => a.startDate.localeCompare(b.startDate));
+  return allFestivals().filter((festival) => festival.endDate >= todayYmd()).sort((a, b) => a.startDate.localeCompare(b.startDate));
 }
 
 export function getFestivalById(id: string): Festival | undefined {
-  return ALL.find((festival) => festival.id === id);
+  return allFestivals().find((festival) => festival.id === id);
 }
 
 /** Culture events already have their own detail URL; avoid linking a duplicate. */

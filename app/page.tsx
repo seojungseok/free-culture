@@ -30,8 +30,14 @@ const regionGroups: Record<string, string[]> = {
 };
 
 function eventItem(event: ReturnType<typeof getWeekend>[number]): HomeItem {
-  return { id: `event-${event.id}`, href: `/event/${event.id}`, title: eventContentsText(event.title), meta: [event.area, fmtRange(event.startDate, event.endDate)].filter(Boolean).join(" · "), image: event.imgUrl || "", badge: event.realmName || "문화행사", area: event.area, start: event.startDate, end: event.endDate, kids:event.audiences?.includes('kids'),free:event.priceType==='free' };
+  return { id: `event-${event.id}`, href: `/event/${event.id}`, title: eventContentsText(event.seoTitle || event.title), meta: [event.area, event.scheduleLabel || fmtRange(event.startDate, event.endDate)].filter(Boolean).join(" · "), image: event.imgUrl || "", badge: promotedEvent(event) ? "무료 행사" : event.realmName || "문화행사", area: event.area, start: event.startDate, end: event.endDate, kids:event.audiences?.includes('kids'),free:event.priceType==='free' };
 }
+
+// A confirmed, time-limited editorial selection; this is not a popularity rank.
+function promotedEvent(event: ReturnType<typeof getWeekend>[number]): boolean {
+  return Boolean(event.expiresAt && event.featured && event.priceType === 'free');
+}
+const eventPriority = (a: ReturnType<typeof getWeekend>[number], b: ReturnType<typeof getWeekend>[number]) => Number(promotedEvent(b)) - Number(promotedEvent(a));
 
 function mixForRegion(groups: HomeItem[][], limit = 8): HomeItem[] {
   const mixed: HomeItem[] = [];
@@ -53,7 +59,7 @@ function rotateItems(items: HomeItem[], key: string): HomeItem[] {
 }
 
 export default function HomePage() {
-  const weekendEvents = getWeekend().filter((item) => item.imgUrl);
+  const weekendEvents = getWeekend().filter((item) => item.imgUrl).sort(eventPriority);
   const today = todayYmd();
   const places = getAllPlaces().filter((item) => item.image && hasSubstantivePlaceInfo(item.id));
   const courses = getIndexableCourses().map(slimCourse).filter((item) => item.image);
@@ -64,15 +70,16 @@ export default function HomePage() {
   const campItems: HomeItem[] = camps.map((item) => ({ id: `camp-${item.id}`, href: `/camping/${item.id}`, title: item.name, meta: [item.area, item.sigungu].filter(Boolean).join(" · "), image: item.image, badge: "캠핑", area: item.area }));
   const dateItems: HomeItem[] = dateCourses.map((item) => ({ id: `date-${item.id}`, href: `/date/c/${item.id}`, title: item.title, meta: `${item.area} ${item.city} · 도보 이동 약 ${item.walkMin}분`, image: item.image, badge: "데이트 코스", area: item.area }));
   const weekendItems = weekendEvents.map(eventItem);
+  const promotedItems = weekendEvents.filter(promotedEvent).map(eventItem);
   const regional = Object.fromEntries(Object.entries(regionGroups).map(([region, areas]) => {
     const within = <T extends { area?: string }>(items: T[]) => areas.length ? items.filter((item) => item.area && areas.includes(item.area)) : items;
     const items = mixForRegion([within(weekendItems), within(placeItems), within(courseItems), within(campItems), within(dateItems)]);
-    // Keep the established first eight mixed cards; append only bounded choices
-    // needed by the intent filters, with original IDs and URLs.
-    const choices=[...rotateItems(items, `${today}:${region}`),...within(weekendItems).slice(0,8),...within(placeItems).filter(p=>p.kids).slice(0,8),...within(weekendItems).filter(p=>p.free).slice(0,8)];
+    // Keep the selected region and intent filters. Put its verified free event
+    // before rotation so the first row can show it while it is published.
+    const choices=[...within(promotedItems),...rotateItems(items, `${today}:${region}`),...within(weekendItems).slice(0,8),...within(placeItems).filter(p=>p.kids).slice(0,8),...within(weekendItems).filter(p=>p.free).slice(0,8)];
     return [region, Array.from(new Map(choices.map(item=>[item.id,item])).values())];
   }));
-  const freeItems = getFree(true).filter((item) => item.imgUrl && item.endDate >= today).slice(0, 8).map((item) => ({ ...eventItem(item), badge: item.priceLabel || "무료 여부 확인" }));
+  const freeItems = getFree(true).filter((item) => item.imgUrl && item.endDate >= today).sort(eventPriority).slice(0, 8).map((item) => ({ ...eventItem(item), badge: item.priceLabel || "무료 여부 확인" }));
   const kidItems = placeItems.filter((_, index) => places[index]?.isKid).slice(0, 6);
   const seasonItems: HomeItem[] = getPublicWinterCourses().map((item) => ({ id: `winter-${item.id}`, href: `/winter-travel/${item.slug}`, title: item.title, meta: [item.area, item.city, '당일치기'].filter(Boolean).join(' · '), image: winterCourseImage(item)?.src || "", imageAlt: winterCourseImage(item)?.alt || item.title, badge: "겨울 당일치기", area: item.area, description: item.intro, route: item.stops.map(stop=>stop.name), duration: item.durationLabel }));
   const prepItems: HomeItem[] = getPrepArticles().slice(0, 8).map((item) => ({ id: `prep-${item.slug}`, href: `/weekend-prep/${item.slug}`, title: item.title, meta: item.category, image: item.cover.url, badge: "준비 가이드" }));

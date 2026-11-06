@@ -12,6 +12,7 @@ export default function NearFinder(){
  const [query,setQuery]=useState<Query>(defaults),[ready,setReady]=useState(false),[status,setStatus]=useState('idle'),[error,setError]=useState('');
  const [items,setItems]=useState<Result[]>([]),[total,setTotal]=useState(0),[locating,setLocating]=useState(false);
  const remember=useListReturn('near-return',ready&&status==='done');
+ useEffect(()=>{const refreshExpired=()=>setQuery(current=>({...current}));window.addEventListener('event-publication-expired',refreshExpired);return()=>window.removeEventListener('event-publication-expired',refreshExpired);},[]);
  useEffect(()=>{try{const raw=sessionStorage.getItem(NEAR_SESSION);if(raw){const s=JSON.parse(raw);setQuery({point:s.point&&validPoint(s.point)?s.point:null,area:SIDO_LIST.includes(s.area)?s.area:'',radius:NEAR_RADII.includes(s.radius)?s.radius:10,kind:NEAR_KINDS.some(k=>k.value===s.kind)?s.kind:'all',page:Math.max(1,Math.min(50,Number(s.page)||1))});setError(s.error||'');}}catch{}setReady(true);},[]);
  useEffect(()=>{if(!ready)return;try{sessionStorage.setItem(NEAR_SESSION,JSON.stringify(query));}catch{}},[query,ready]);
  useEffect(()=>{

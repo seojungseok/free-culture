@@ -29,6 +29,22 @@ export interface CultureEvent {
 
   startDate: string; // YYYYMMDD
   endDate: string; // YYYYMMDD
+  /** Explicit publication removal deadline, ISO 8601 with timezone. */
+  expiresAt?: string;
+  startAt?: string;
+  endAt?: string;
+  seoTitle?: string;
+  description?: string;
+  scheduleLabel?: string;
+  organizerName?: string;
+  organizerUrl?: string;
+  registrationUrl?: string;
+  instagramUrl?: string;
+  sourceLabel?: string;
+  sections?: { heading: string; body: string }[];
+  posterAlt?: string;
+  gallery?: { src: string; alt: string; caption: string; sourceUrl: string }[];
+  contentUpdatedAt?: string;
 
   place: string;
   area: string; // 시도

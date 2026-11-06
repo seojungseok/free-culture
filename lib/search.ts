@@ -1,7 +1,8 @@
 // 통합 검색 코어 (서버) — 나들이·문화행사·축제·맛집을 한 번에.
 //  파싱(지역/가격/유형·장르) + 유의어 + 세부지역(구·동) + 띄어쓰기무관 + 순서무관 + 관련도 정렬.
 import { getAllPlaces } from "@/lib/tour";
-import { getAllEvents } from "@/lib/data";
+import { getAllEvents, respectEventPublicationDeadline } from "@/lib/data";
+import { isEventPublished } from '@/lib/event-publication.mjs';
 import { getAdmission } from "@/lib/fees";
 import { getAllCamps } from "@/lib/camping";
 import { SIDO_LIST } from "@/lib/classify";
@@ -20,6 +21,7 @@ export interface SearchDoc {
   price: "free" | "cheap" | "partial" | "paid" | "unknown";
   hasImg: boolean;
   endDate?:string;
+  expiresAt?:string;
   titleN: string; // 정규화 제목(공백제거·소문자)
   hay: string;    // 정규화 전체 검색 대상
 }
@@ -51,12 +53,12 @@ function build(): SearchDoc[] {
     const price = freeish.has(e.priceType) ? (e.priceType === "partial_free" ? "partial" : "free")
       : e.priceType === "cheap" ? "cheap" : e.priceType === "paid" ? "paid" : "unknown";
     docs.push({
-      kind: isFest ? "festival" : "event", id: e.id, title: e.title, area: e.area,
+      kind: isFest ? "festival" : "event", id: e.id, title: e.seoTitle || e.title, area: e.area,
       sub: e.sigungu || "", url: `/event/${e.id}`, image: e.imgUrl || "",
-      genre: e.genreKey, price, endDate:e.endDate,
+      genre: e.genreKey, price, endDate:e.endDate, expiresAt:e.expiresAt,
       hasImg: Boolean(e.imgUrl),
-      titleN: norm(e.title),
-      hay: norm(`${e.title} ${e.place} ${e.area} ${e.sigungu} ${e.address} ${e.realmName}`),
+      titleN: norm(e.seoTitle || e.title),
+      hay: norm(`${e.title} ${e.seoTitle || ''} ${e.description || ''} ${e.sections?.map(section => section.heading + ' ' + section.body).join(' ') || ''} ${e.place} ${e.area} ${e.sigungu} ${e.address} ${e.realmName}`),
     });
   }
 
@@ -94,7 +96,7 @@ function build(): SearchDoc[] {
 
   return docs;
 }
-function docs() { return (DOCS ||= build()); }
+function docs() { respectEventPublicationDeadline(); return (DOCS ||= build()).filter(doc => isEventPublished(doc)); }
 
 // ── 유의어·사전 ────────────────────────────────────────────────
 const SIDO_ALIAS: Record<string, string> = { 서울특별시: "서울", 인천광역시: "인천", 부산광역시: "부산", 대구광역시: "대구", 대전광역시: "대전", 광주광역시: "광주", 울산광역시: "울산", 세종특별자치시: "세종", 경기도: "경기", 강원도: "강원", 강원특별자치도: "강원", 충청북도: "충북", 충청남도: "충남", 전라북도: "전북", 전북특별자치도: "전북", 전라남도: "전남", 경상북도: "경북", 경상남도: "경남", 제주도: "제주", 제주특별자치도: "제주" };

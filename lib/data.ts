@@ -1,15 +1,27 @@
 // 정적 import: 빌드 산출물/서버리스 함수에 함께 번들되어 ISR·동적 렌더에서도 안전
 import { weekendRangeYmd } from "@/lib/dates";
 import eventsData from "@/data/events.json";
+import curatedEventsData from "@/data/curated-events.json";
+import { unstable_noStore as noStore } from 'next/cache';
+import { isEventPublished } from '@/lib/event-publication.mjs';
 import type { CultureEvent, EventsData, PriceType } from "./types";
 import { displayAddress, displayRegionTitle } from "@/lib/address";
 import { eventSourceDetail } from '@/lib/eventSource';
 
+const curatedEvents = (curatedEventsData as unknown as { events: CultureEvent[] }).events;
+const curatedIds = new Set(curatedEvents.map(event => event.id));
+// Explicitly curated records survive API collection and take precedence by ID.
+const mergedEvents = [...curatedEvents, ...(eventsData as unknown as EventsData).events.filter(event => !curatedIds.has(event.id))];
+export function respectEventPublicationDeadline() {
+  // Event-dependent routes must not keep a pre-deadline static/ISR response.
+  // Unrelated pages retain their existing caching behavior.
+  if (curatedEvents.some(event => event.expiresAt)) noStore();
+}
 const normalizedEvents: EventsData = {
   ...(eventsData as unknown as EventsData),
-  events: (eventsData as unknown as EventsData).events.map((event) => ({
+  events: mergedEvents.map((event) => ({
     ...event,
-    sourceDetail:eventSourceDetail(event),
+    sourceDetail:event.sourceDetail || eventSourceDetail(event),
     title: displayRegionTitle(event.title, event.area),
     address: displayAddress(event.address || "", event.area),
     addressConflict: Boolean(event.address && !displayAddress(event.address, event.area)),
@@ -21,7 +33,11 @@ const visibleEvents: EventsData = {
   ...normalizedEvents,
   events: normalizedEvents.events.filter((event) => !event.addressConflict),
 };
-function load(): EventsData { return visibleEvents; }
+function load(): EventsData {
+  respectEventPublicationDeadline();
+  const events = visibleEvents.events.filter(event => isEventPublished(event));
+  return { ...visibleEvents, count: events.length, events };
+}
 
 export function getAllEvents(): CultureEvent[] {
   return load().events;
@@ -32,7 +48,8 @@ export function getGeneratedAt(): string {
 }
 
 export function getEventById(id: string): CultureEvent | undefined {
-  return normalizedEvents.events.find((e) => e.id === id);
+  respectEventPublicationDeadline();
+  return normalizedEvents.events.find((e) => e.id === id && isEventPublished(e));
 }
 
 export function getByRegion(area: string): CultureEvent[] {
@@ -61,6 +78,7 @@ export function slimForClient(events: CultureEvent[]): CultureEvent[] {
     audiences: e.audiences,
     startDate: e.startDate,
     endDate: e.endDate,
+    expiresAt: e.expiresAt,
   })) as unknown as CultureEvent[];
 }
 

@@ -160,7 +160,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 분야 허브는 유지하고 지역×분야 필터는 탐색용으로만 제공한다.
   const eventRoutes = allEvents.filter((e) => e.endDate >= todayYmd() && hasSubstantiveEventInfo(e)).map((e) => ({
     url: `${base}/event/${e.id}`,
-
+    ...(e.contentUpdatedAt ? { lastModified: e.contentUpdatedAt } : {}),
     changeFrequency: "weekly" as const,
     priority: 0.4,
   }));

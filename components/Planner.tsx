@@ -12,6 +12,7 @@ export default function Planner({options,initialDate,minDate,maxDate}: {options:
   const [error,setError]=useState("");
   const [ready,setReady]=useState(false);
   useEffect(()=>{setReady(true);},[]);
+  useEffect(()=>{const clearExpired=()=>setResults(null);window.addEventListener('event-publication-expired',clearExpired);return()=>window.removeEventListener('event-publication-expired',clearExpired);},[]);
   // Do not allow native form submission before React attaches the submit handler.
   return <><form inert={!ready} aria-busy={!ready} onSubmit={e=>{e.preventDefault();if(date<minDate||date>maxDate){setError("오늘부터 60일 이내의 날짜를 선택해 주세요.");return;}setError("");setResults(makePlans(options,{area,date,hours,kids,free,purpose,meal,parking,access,query}));}} className="rounded-2xl border border-slate-200 bg-white p-5">
     <div className="grid gap-4 sm:grid-cols-3">
