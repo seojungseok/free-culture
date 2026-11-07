@@ -5,7 +5,7 @@ import {validateShape, publicationErrors} from './content.mjs';
 
 const store = JSON.parse(fs.readFileSync('data/weekend-prep.json', 'utf8'));
 
-test('published preparation guides contain no commerce fields', () => {
+test('published preparation guides retain their current content format', () => {
   validateShape(store);
   for (const article of store.articles) {
     assert(!('productIds' in article));
@@ -15,6 +15,23 @@ test('published preparation guides contain no commerce fields', () => {
     for (const section of article.sections) assert(!('productIds' in section));
   }
   assert(!('products' in store));
+});
+
+test('ingredient affiliate links have reviewed original Coupang URLs and product details', () => {
+  let count = 0;
+  for (const article of store.articles) for (const item of article.checklist || []) {
+    if (!item.affiliate) continue;
+    const product = item.affiliate;
+    const url = new URL(product.url);
+    assert.equal(url.protocol, 'https:');
+    assert.equal(url.hostname, 'link.coupang.com');
+    assert.equal(product.source, 'coupang-api');
+    assert.equal(product.reviewed, true);
+    assert(product.productName.trim());
+    assert(Number.isFinite(Date.parse(product.checkedAt)));
+    count++;
+  }
+  assert(count > 0, 'Expected at least one reviewed ingredient link');
 });
 
 test('a guide missing visit information or images cannot publish', () => {

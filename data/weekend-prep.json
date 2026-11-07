@@ -9,7 +9,7 @@
       "coverLabel": "가을 꽃게탕 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-09-21T13:36:31.510Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-crab-soup-checklist-finished.webp",
@@ -36,19 +36,40 @@
           "id": "zucchini",
           "label": "애호박",
           "role": "부드러운 채소 건더기와 단맛을 보태는 재료",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8443644467&itemId=21514174147&vendorItemId=88035786492&traceid=V0-153-208cc4ad82542133&clickBeacon=c34f89f0-b02e-11f1-af50-98e51cf2b040%7E3&requestid=20260914202351640165075281&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "클릭마켓 애호박 국내산, 10개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "minari",
           "label": "미나리",
           "role": "마지막에 넣어 향을 살리는 마무리 채소",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9604422506&itemId=28671730606&vendorItemId=95594653564&traceid=V0-153-a38b3851ce5d4fd8&clickBeacon=35c0bf70-b02c-11f1-866a-8757280d0565%7E3&requestid=20260914200535147073140341&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "[백화점납품용] 국내산 돌미나리 생 미나리, 1kg, 1개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "seasoning",
           "label": "매운탕 양념",
           "role": "고춧가루·장류를 따로 챙기지 않을 때 쓰는 기본 양념",
-          "group": "seasoning"
+          "group": "seasoning",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8574770164&itemId=24853776710&vendorItemId=91860843335&traceid=V0-153-e0f9df60b4ff721e&clickBeacon=29c238c0-b02c-11f1-a991-8c301a69f448%7E3&requestid=20260914200515022174461093&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "더미식 매운탕 양념, 140g, 6개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "broth",
@@ -78,7 +99,14 @@
           "id": "bowl",
           "label": "국그릇",
           "role": "뜨거운 국물요리를 개인별로 나누어 담는 그릇",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         }
       ],
       "sections": [
@@ -117,7 +145,7 @@
       "coverLabel": "캠핑 어묵탕 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-09-21T13:36:31.626Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camp-fishcake-soup-finished.webp",
@@ -174,7 +202,14 @@
           "id": "bowl",
           "label": "국그릇",
           "role": "뜨거운 국물요리를 개인별로 나누어 담는 그릇",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         }
       ],
       "sections": [
@@ -213,7 +248,7 @@
       "coverLabel": "캠핑 부대찌개 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-09-21T13:36:31.748Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camp-budae-soup-finished.webp",
@@ -234,13 +269,27 @@
           "id": "ham",
           "label": "슬라이스 햄",
           "role": "인원수에 맞춰 건더기를 추가할 때 쓰는 햄",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8243714135&itemId=20288921742&vendorItemId=88750711228&traceid=V0-153-26128b4579474e47&requestid=20260914200555558143011690&token=31850C%7CCMG&pt=0&slot=1",
+            "productName": "청정원 슬라이스햄S 1kg 샌드위치햄 대용량",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "cheese",
           "label": "체다 슬라이스 치즈",
           "role": "원할 때 한 장씩 더하는 선택 재료",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6959448489&itemId=16937430412&vendorItemId=95770153044&traceid=V0-153-44f7809e2106a683&requestid=20260914200605778284936985&token=31850C%7CCMG&pt=0&slot=1",
+            "productName": "e치즈몰 서울우유 체다슬라이스 베이커리 치즈 1800g 100매",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "green-onion",
@@ -252,7 +301,14 @@
           "id": "zucchini",
           "label": "애호박",
           "role": "햄 사이에 넣을 채소 건더기를 보태는 재료",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8443644467&itemId=21514174147&vendorItemId=88035786492&traceid=V0-153-208cc4ad82542133&clickBeacon=c34f89f0-b02e-11f1-af50-98e51cf2b040%7E3&requestid=20260914202351640165075281&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "클릭마켓 애호박 국내산, 10개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "broth",
@@ -282,7 +338,14 @@
           "id": "bowl",
           "label": "국그릇",
           "role": "뜨거운 국물요리를 개인별로 나누어 담는 그릇",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         }
       ],
       "sections": [
@@ -321,7 +384,7 @@
       "coverLabel": "소고기 버섯전골 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-09-21T13:36:31.871Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camp-beef-mushroom-hotpot-finished.webp",
@@ -354,7 +417,14 @@
           "id": "zucchini",
           "label": "애호박",
           "role": "부드러운 채소 건더기를 보태는 재료",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8443644467&itemId=21514174147&vendorItemId=88035786492&traceid=V0-153-208cc4ad82542133&clickBeacon=c34f89f0-b02e-11f1-af50-98e51cf2b040%7E3&requestid=20260914202351640165075281&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "클릭마켓 애호박 국내산, 10개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "broth",
@@ -384,7 +454,14 @@
           "id": "bowl",
           "label": "국그릇",
           "role": "뜨거운 국물요리를 개인별로 나누어 담는 그릇",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         }
       ],
       "sections": [
@@ -423,7 +500,7 @@
       "coverLabel": "캠핑 해물탕 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-09-21T13:36:31.988Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camp-seafood-hotpot-finished.webp",
@@ -450,19 +527,40 @@
           "id": "minari",
           "label": "미나리",
           "role": "마지막에 향을 더하는 채소",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9604422506&itemId=28671730606&vendorItemId=95594653564&traceid=V0-153-a38b3851ce5d4fd8&clickBeacon=35c0bf70-b02c-11f1-866a-8757280d0565%7E3&requestid=20260914200535147073140341&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "[백화점납품용] 국내산 돌미나리 생 미나리, 1kg, 1개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "zucchini",
           "label": "애호박",
           "role": "부드러운 채소 건더기를 보태는 재료",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8443644467&itemId=21514174147&vendorItemId=88035786492&traceid=V0-153-208cc4ad82542133&clickBeacon=c34f89f0-b02e-11f1-af50-98e51cf2b040%7E3&requestid=20260914202351640165075281&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "클릭마켓 애호박 국내산, 10개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "seasoning",
           "label": "매운탕 양념",
           "role": "해물탕의 기본 간을 준비하는 양념",
-          "group": "seasoning"
+          "group": "seasoning",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8574770164&itemId=24853776710&vendorItemId=91860843335&traceid=V0-153-e0f9df60b4ff721e&clickBeacon=29c238c0-b02c-11f1-a991-8c301a69f448%7E3&requestid=20260914200515022174461093&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "더미식 매운탕 양념, 140g, 6개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "broth",
@@ -492,7 +590,14 @@
           "id": "bowl",
           "label": "국그릇",
           "role": "뜨거운 국물요리를 개인별로 나누어 담는 그릇",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         }
       ],
       "sections": [
@@ -1216,7 +1321,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-21T13:36:32.097Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-seafood-ramen-finished.webp",
@@ -1273,7 +1378,14 @@
           "id": "item-8",
           "label": "국그릇",
           "role": "함께 먹는 인원수만큼 챙길 개인 그릇",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         }
       ],
       "sections": [
@@ -1312,7 +1424,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-21T13:36:32.204Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-mussel-soup-finished.webp",
@@ -1369,7 +1481,14 @@
           "id": "item-8",
           "label": "국그릇",
           "role": "함께 먹는 인원수만큼 챙길 개인 그릇",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         }
       ],
       "sections": [
@@ -1408,7 +1527,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-21T13:36:32.329Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-kimchi-fried-rice-finished.webp",
@@ -1510,7 +1629,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-21T13:36:32.432Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-squid-stir-fry-finished.webp",
@@ -1606,7 +1725,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-21T13:36:32.535Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-chicken-skewer-finished.webp",
@@ -1627,7 +1746,14 @@
           "id": "item-2",
           "label": "바비큐 양념소스",
           "role": "양념 유무와 겹치지 않게 선택할 소스",
-          "group": "seasoning"
+          "group": "seasoning",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7614412503&itemId=28427943275&vendorItemId=95378852209&traceid=V0-153-acfd3c0344dff324&clickBeacon=cf294a90-b02e-11f1-b41c-ec1f25749123%7E3&requestid=20260914202411509157264864&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "소스야 지코바 스타일 양념 소스 숯불 치킨 바베큐, 1kg, 1개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "item-3",
@@ -1639,7 +1765,14 @@
           "id": "item-4",
           "label": "파프리카",
           "role": "꼬치와 구분해 준비할 색 채소",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7935223581&itemId=21841256512&vendorItemId=88889579450&traceid=V0-153-9ffa8a7b2e95386a&clickBeacon=5a86eb00-af72-11f1-8e75-b1f91745e732%7E3&requestid=20260913215510457278595649&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "item-5",
@@ -1702,7 +1835,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-21T13:36:32.644Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-kimchi-pancake-finished.webp",
@@ -1798,7 +1931,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-21T13:36:32.757Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-pork-belly-bbq-finished.webp",
@@ -1831,7 +1964,14 @@
           "id": "item-4",
           "label": "파프리카",
           "role": "채소 곁들임으로 선택할 파프리카",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7935223581&itemId=21841256512&vendorItemId=88889579450&traceid=V0-153-9ffa8a7b2e95386a&clickBeacon=5a86eb00-af72-11f1-8e75-b1f91745e732%7E3&requestid=20260913215510457278595649&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "item-5",
@@ -1894,7 +2034,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-09-21T13:36:32.861Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-tofu-kimchi-finished.webp",
@@ -1991,7 +2131,7 @@
       "coverLabel": "가을 캠핑 돼지고기 김치찌개 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:36:32.982Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260919-pork-kimchi-stew-finished.webp",
@@ -2089,7 +2229,14 @@
           "id": "ingredient-9676631018",
           "label": "국그릇",
           "role": "국물과 건더기를 개인별로 나누어 담는 식기",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-7689270513",
@@ -2122,7 +2269,7 @@
       "coverLabel": "가을 캠핑 된장찌개 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:36:33.091Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260919-doenjang-stew-finished.webp",
@@ -2178,7 +2325,14 @@
           "id": "ingredient-8443644467",
           "label": "애호박",
           "role": "전 또는 국물 건더기. 손질 후 물기를 정리해 포장",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8443644467&itemId=21514174147&vendorItemId=88035786492&traceid=V0-153-208cc4ad82542133&clickBeacon=c34f89f0-b02e-11f1-af50-98e51cf2b040%7E3&requestid=20260914202351640165075281&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "클릭마켓 애호박 국내산, 10개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-9457848435",
@@ -2220,7 +2374,14 @@
           "id": "ingredient-9676631018",
           "label": "국그릇",
           "role": "국물과 건더기를 개인별로 나누어 담는 식기",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-7689270513",
@@ -2253,7 +2414,7 @@
       "coverLabel": "가을 캠핑 들깨버섯탕 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:36:33.208Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-finished.webp",
@@ -2309,7 +2470,14 @@
           "id": "ingredient-8443644467",
           "label": "애호박",
           "role": "전 또는 국물 건더기. 손질 후 물기를 정리해 포장",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8443644467&itemId=21514174147&vendorItemId=88035786492&traceid=V0-153-208cc4ad82542133&clickBeacon=c34f89f0-b02e-11f1-af50-98e51cf2b040%7E3&requestid=20260914202351640165075281&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "클릭마켓 애호박 국내산, 10개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-9457848435",
@@ -2351,7 +2519,14 @@
           "id": "ingredient-9676631018",
           "label": "국그릇",
           "role": "국물과 건더기를 개인별로 나누어 담는 식기",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-7689270513",
@@ -2384,7 +2559,7 @@
       "coverLabel": "가을 캠핑 감자수제비 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:36:33.320Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260919-potato-sujebi-finished.webp",
@@ -2440,7 +2615,14 @@
           "id": "ingredient-8443644467",
           "label": "애호박",
           "role": "전 또는 국물 건더기. 손질 후 물기를 정리해 포장",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8443644467&itemId=21514174147&vendorItemId=88035786492&traceid=V0-153-208cc4ad82542133&clickBeacon=c34f89f0-b02e-11f1-af50-98e51cf2b040%7E3&requestid=20260914202351640165075281&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "클릭마켓 애호박 국내산, 10개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-6528172171",
@@ -2482,7 +2664,14 @@
           "id": "ingredient-9676631018",
           "label": "국그릇",
           "role": "국물과 건더기를 개인별로 나누어 담는 식기",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-7689270513",
@@ -2515,7 +2704,7 @@
       "coverLabel": "가을 캠핑 새우버터구이 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:36:33.432Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260919-shrimp-butter-grill-finished.webp",
@@ -2595,7 +2784,14 @@
           "id": "ingredient-7935223581",
           "label": "파프리카 (선택)",
           "role": "곁들일 채소. 색상과 실제 구성은 상품 옵션 확인",
-          "group": "seasoning"
+          "group": "seasoning",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7935223581&itemId=21841256512&vendorItemId=88889579450&traceid=V0-153-9ffa8a7b2e95386a&clickBeacon=5a86eb00-af72-11f1-8e75-b1f91745e732%7E3&requestid=20260913215510457278595649&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-9587833030",
@@ -2640,7 +2836,7 @@
       "coverLabel": "가을 캠핑 고등어감자조림 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:36:33.548Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260919-mackerel-potato-braise-finished.webp",
@@ -2738,7 +2934,14 @@
           "id": "ingredient-9676631018",
           "label": "국그릇",
           "role": "국물과 건더기를 개인별로 나누어 담는 식기",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-7689270513",
@@ -2771,7 +2974,7 @@
       "coverLabel": "가을 캠핑 닭볶음탕 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:36:33.662Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260919-chicken-potato-stew-finished.webp",
@@ -2869,7 +3072,14 @@
           "id": "ingredient-9676631018",
           "label": "국그릇",
           "role": "국물과 건더기를 개인별로 나누어 담는 식기",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-7689270513",
@@ -2902,7 +3112,7 @@
       "coverLabel": "가을 캠핑 떡볶이 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:36:33.782Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260919-tteokbokki-finished.webp",
@@ -3000,7 +3210,14 @@
           "id": "ingredient-9676631018",
           "label": "국그릇",
           "role": "국물과 건더기를 개인별로 나누어 담는 식기",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-7689270513",
@@ -3033,7 +3250,7 @@
       "coverLabel": "가을 캠핑 애호박전 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:36:33.899Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260919-zucchini-pancake-finished.webp",
@@ -3077,7 +3294,14 @@
           "id": "ingredient-8443644467",
           "label": "애호박",
           "role": "전 또는 국물 건더기. 손질 후 물기를 정리해 포장",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8443644467&itemId=21514174147&vendorItemId=88035786492&traceid=V0-153-208cc4ad82542133&clickBeacon=c34f89f0-b02e-11f1-af50-98e51cf2b040%7E3&requestid=20260914202351640165075281&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "클릭마켓 애호박 국내산, 10개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-8326848865",
@@ -3113,7 +3337,14 @@
           "id": "ingredient-7935223581",
           "label": "파프리카 (선택)",
           "role": "곁들일 채소. 색상과 실제 구성은 상품 옵션 확인",
-          "group": "seasoning"
+          "group": "seasoning",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7935223581&itemId=21841256512&vendorItemId=88889579450&traceid=V0-153-9ffa8a7b2e95386a&clickBeacon=5a86eb00-af72-11f1-8e75-b1f91745e732%7E3&requestid=20260913215510457278595649&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-9587833030",
@@ -3158,7 +3389,7 @@
       "coverLabel": "가을 캠핑 버터콘치즈 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-09-21T13:36:34.009Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260919-corn-cheese-finished.webp",
@@ -3208,7 +3439,14 @@
           "id": "ingredient-6959448489",
           "label": "슬라이스 체다치즈",
           "role": "옥수수 위에 녹일 치즈. 모차렐라와 식감이 다름",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6959448489&itemId=16937430412&vendorItemId=95770153044&traceid=V0-153-44f7809e2106a683&requestid=20260914200605778284936985&token=31850C%7CCMG&pt=0&slot=1",
+            "productName": "e치즈몰 서울우유 체다슬라이스 베이커리 치즈 1800g 100매",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-7847571181",
@@ -3226,13 +3464,27 @@
           "id": "ingredient-7935223581",
           "label": "파프리카 (선택)",
           "role": "곁들일 채소. 색상과 실제 구성은 상품 옵션 확인",
-          "group": "seasoning"
+          "group": "seasoning",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7935223581&itemId=21841256512&vendorItemId=88889579450&traceid=V0-153-9ffa8a7b2e95386a&clickBeacon=5a86eb00-af72-11f1-8e75-b1f91745e732%7E3&requestid=20260913215510457278595649&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-8243714135",
           "label": "슬라이스햄 (선택)",
           "role": "잘게 썰어 더할 선택 재료. 포장의 가열 안내 확인",
-          "group": "seasoning"
+          "group": "seasoning",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8243714135&itemId=20288921742&vendorItemId=88750711228&traceid=V0-153-26128b4579474e47&requestid=20260914200555558143011690&token=31850C%7CCMG&pt=0&slot=1",
+            "productName": "청정원 슬라이스햄S 1kg 샌드위치햄 대용량",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-487322",
@@ -3283,7 +3535,7 @@
       "coverLabel": "간장버터감자구이 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:36:34.114Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260920-soy-butter-potato-grill-cover-unified-v2.webp",
@@ -3396,7 +3648,7 @@
       "coverLabel": "새우전 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:36:34.217Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260920-shrimp-jeon-cover-unified-v2.webp",
@@ -3509,7 +3761,7 @@
       "coverLabel": "버섯치즈구이 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:36:34.321Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260920-mushroom-cheese-grill-cover-unified-v2.webp",
@@ -3535,7 +3787,14 @@
           "id": "ingredient-6959448489",
           "label": "체다 슬라이스 치즈",
           "role": "버섯 위에 올려 녹이는 재료",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=6959448489&itemId=16937430412&vendorItemId=95770153044&traceid=V0-153-44f7809e2106a683&requestid=20260914200605778284936985&token=31850C%7CCMG&pt=0&slot=1",
+            "productName": "e치즈몰 서울우유 체다슬라이스 베이커리 치즈 1800g 100매",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-9457848435",
@@ -3547,7 +3806,14 @@
           "id": "ingredient-7935223581",
           "label": "파프리카",
           "role": "색과 식감을 더하는 채소",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7935223581&itemId=21841256512&vendorItemId=88889579450&traceid=V0-153-9ffa8a7b2e95386a&clickBeacon=5a86eb00-af72-11f1-8e75-b1f91745e732%7E3&requestid=20260913215510457278595649&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-487322",
@@ -3622,7 +3888,7 @@
       "coverLabel": "두부간장구이 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:36:34.426Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260920-tofu-soy-grill-cover-unified-v2.webp",
@@ -3735,7 +4001,7 @@
       "coverLabel": "김치어묵볶음 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-09-21T13:36:34.535Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-20260920-kimchi-fishcake-stirfry-cover-unified-v2.webp",
@@ -3844,7 +4110,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:36:34.650Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -3957,7 +4223,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:36:34.759Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -4070,7 +4336,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:36:34.866Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -4104,7 +4370,14 @@
           "id": "ingredient-7935223581",
           "label": "파프리카",
           "role": "색과 식감을 더하는 채소",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7935223581&itemId=21841256512&vendorItemId=88889579450&traceid=V0-153-9ffa8a7b2e95386a&clickBeacon=5a86eb00-af72-11f1-8e75-b1f91745e732%7E3&requestid=20260913215510457278595649&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "못난이 파프리카모음 색상혼합 빨강,노랑(1kg,2kg,3kg) 가락시장 직배송 푸르름팜, 1KG, 1개",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-9457848435",
@@ -4183,7 +4456,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:36:34.977Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -4296,7 +4569,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-09-21T13:36:35.083Z",
+      "updatedAt": "2026-11-07T05:05:00.000Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -4318,6 +4591,12 @@
           "id": "ingredient-7430379988",
           "label": "손질 홍합살",
           "role": "해동·보관 안내를 먼저 확인하는 주재료",
+          "group": "main"
+        },
+        {
+          "id": "seaweed",
+          "label": "마른 미역",
+          "role": "물에 불린 뒤 씻어 국에 넣는 주재료",
           "group": "main"
         },
         {
@@ -4354,7 +4633,14 @@
           "id": "ingredient-9676631018",
           "label": "국그릇",
           "role": "따뜻한 국을 나누어 담는 식기",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9676631018&itemId=28934222035&vendorItemId=95865399449&traceid=V0-153-f5f98f7de73a298d&requestid=20260913215259200017042690&token=31850C%7CGM&pt=0&slot=1",
+            "productName": "세모소 이중 스텐 국그릇 뚜껑세트 업소용 식당용 보온 보냉 진공 탕기 107x62",
+            "checkedAt": "2026-11-07T05:03:00.000Z",
+            "source": "coupang-api",
+            "reviewed": true
+          }
         },
         {
           "id": "ingredient-9127118279",
