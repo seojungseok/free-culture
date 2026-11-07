@@ -9,8 +9,8 @@
 .prep-card-media{aspect-ratio:3/2;overflow:hidden}.prep-card-media img{display:block;height:100%;object-fit:cover}
 .prep-affiliate-disclosure{margin:0 0 12px!important;color:#53645c;font-size:12px!important;line-height:1.5!important}
 .prep-check-group label{min-height:44px}
-.prep-affiliate-product{display:grid;justify-items:start;gap:6px;max-width:15rem;min-width:0}
+.prep-affiliate-product{display:grid;justify-items:end;gap:6px;width:15rem;max-width:100%;min-width:0;text-align:right}
 .prep-affiliate-name{color:#36554a;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
 .prep-order{min-height:44px;gap:5px;background:#a3411f}
 .prep-order:focus-visible{outline:3px solid #173e2e;outline-offset:3px}
-@media(max-width:480px){.prep-check-group li.has-affiliate{grid-template-columns:minmax(0,1fr)}.prep-affiliate-product{max-width:none;margin-left:32px}}
+@media(max-width:480px){.prep-check-group li.has-affiliate{grid-template-columns:minmax(0,1fr)}.prep-affiliate-product{width:auto;max-width:none;margin-left:32px;justify-self:stretch}}
