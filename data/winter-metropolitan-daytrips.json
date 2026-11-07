@@ -1,0 +1,1463 @@
+{
+  "generatedAt": "2026-11-07T04:21:17.610Z",
+  "courses": [
+    {
+      "slug": "seoul-seongsu-forest-winter-daytrip",
+      "title": "서울 겨울 당일치기: 서울숲 식물원과 성수 골목에서 보내는 하루",
+      "area": "서울",
+      "city": "성동구",
+      "duration": "당일",
+      "intro": "추운 계절에도 실내 식물과 동네 산책을 함께 즐기고 싶다면 서울숲과 성수동이 좋습니다. 곤충식물원을 먼저 보고 서울숲을 걷다가 성수연방에서 식사와 휴식을 이어 가는 당일 코스입니다. 추위에 따라 공원 산책 시간을 자유롭게 줄일 수 있습니다.",
+      "startPoint": "서울숲역",
+      "transport": "지하철과 도보",
+      "durationLabel": "현지 약 4~5시간 제안",
+      "naverQuery": "서울 겨울 당일치기  서울숲 식물원과 성수 골목에서 보내는 하루",
+      "stops": [
+        {
+          "placeId": "3442142",
+          "name": "서울숲 곤충식물원",
+          "timeLabel": "오전",
+          "stay": "제안 40~60분",
+          "description": "겨울의 서울숲에서는 식물원 관람을 먼저 계획합니다. 야외를 오래 걷기 전 따뜻한 공간에서 식물을 살펴보고, 공원 쪽으로 나와 나무 사이 산책로를 짧게 걸어 보세요. 곤충식물원은 겨울철 운영시간이 달라지므로 출발 전 확인합니다.",
+          "day": 1,
+          "addr": "서울특별시 성동구 뚝섬로 273 (성수동1가)",
+          "mapx": "127.0418131384",
+          "mapy": "37.5431247707",
+          "officialUrl": "https://parks.seoul.go.kr/content.do?key=2604070012",
+          "image": "/winter-photos/capital-extra-3442142-7-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-extra-3442142-7-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/17/3442117_image2_1.JPG",
+            "placeId": "3442142",
+            "alt": "서울숲 곤충식물원 자료 사진",
+            "caption": "서울숲곤충식물원_내부 식물들 · 촬영 시기 미확인 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 529
+          }
+        },
+        {
+          "placeId": "2745594",
+          "name": "성수연방",
+          "timeLabel": "점심 이후",
+          "stay": "제안 60~90분",
+          "description": "성수역 방향으로 이동해 성수연방에서 식사나 휴식을 고릅니다. 매장 구성과 영업시간은 수시로 달라질 수 있으므로 가고 싶은 곳의 안내를 확인하세요. 서울숲에서 걸을 수도 있지만 추위와 보행량을 고려해 지하철이나 버스를 이용해도 좋습니다.",
+          "day": 1,
+          "addr": "서울특별시 성동구 성수이로14길 14",
+          "mapx": "127.0568784737",
+          "mapy": "37.5417140944",
+          "officialUrl": "https://korean.visitseoul.net/area/%EC%84%B1%EC%88%98%EC%97%B0%EB%B0%A9/KOP028794",
+          "image": "/winter-photos/capital-2745594-1-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-2745594-1-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/25/3564925_image2_1.jpg",
+            "placeId": "2745594",
+            "alt": "성수연방 자료 사진",
+            "caption": "성수연방 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 626
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": "숲과 도심의 온도 차이를 즐기는 코스",
+          "paragraphs": [
+            "실내 식물 관찰과 짧은 공원 산책, 성수동 식사를 차례로 묶었습니다. 공원 전체를 돌기보다 당일 날씨와 발걸음에 맞춰 산책 구간을 정하세요. 출발지에서 서울숲까지의 이동은 제안 시간에 포함하지 않습니다."
+          ]
+        },
+        {
+          "heading": "겨울에 확인할 점",
+          "paragraphs": [
+            "곤충식물원은 계절별 운영시간과 휴관일이 달라질 수 있으니 방문 전 최신 공지를 확인하세요. 성수 지역은 주말에 붐빌 수 있어 식사 시간을 늦추거나 대기 시간을 여유 있게 잡는 편이 좋습니다."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "서울관광재단 · 서울숲",
+          "url": "https://korean.visitseoul.net/area/%EC%84%9C%EC%9A%B8%EC%88%B2/KOP001838",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "서울관광재단 · 성수연방",
+          "url": "https://korean.visitseoul.net/area/%EC%84%B1%EC%88%98%EC%97%B0%EB%B0%A9/KOP028794",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "서울숲 곤충식물원 공식 안내",
+          "url": "https://parks.seoul.go.kr/content.do?key=2604070012",
+          "checkedAt": "2026-11-07T04:03:46.995Z"
+        }
+      ],
+      "id": "capital-seoul-seongsu-forest-winter-daytrip",
+      "status": "published",
+      "sourceCourseId": "capital-seoul-seongsu-forest-winter-daytrip",
+      "publishedAt": "2026-11-07T04:21:17.610Z",
+      "updatedAt": "2026-11-07T04:21:17.610Z",
+      "lastReviewedAt": "2026-11-07T04:21:17.610Z",
+      "image": {
+        "src": "/winter-photos/capital-extra-3442142-7-20261107.webp",
+        "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/17/3442117_image2_1.JPG",
+        "placeId": "3442142",
+        "alt": "서울숲 곤충식물원 자료 사진",
+        "caption": "서울숲곤충식물원_내부 식물들 · 촬영 시기 미확인 자료 사진",
+        "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+        "kind": "tour-api",
+        "copyrightType": "Type1",
+        "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+        "reviewed": true,
+        "reviewedAt": "2026-11-07T04:19:00.230Z",
+        "width": 940,
+        "height": 529
+      },
+      "validation": {
+        "version": 4,
+        "sourceKind": "official-tour-api",
+        "checkedAt": "2026-11-07T04:21:17.610Z",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text",
+          "official-sources",
+          "photos",
+          "daytrip"
+        ]
+      }
+    },
+    {
+      "slug": "seoul-namsangol-namsan-winter-daytrip",
+      "title": "서울 겨울 당일치기: 남산골한옥마을과 남산 산책",
+      "area": "서울",
+      "city": "중구",
+      "duration": "당일",
+      "intro": "한옥의 마당과 도심 속 산책로를 하루에 만나고 싶은 분을 위한 서울 중구 일정입니다. 충무로에서 남산골한옥마을을 둘러보고 점심을 먹은 뒤 남산공원으로 향합니다. 겨울 산길을 완주하기보다 걸을 수 있는 만큼만 둘러보세요.",
+      "startPoint": "충무로역",
+      "transport": "지하철과 도보",
+      "durationLabel": "현지 약 4~5시간 제안",
+      "naverQuery": "서울 겨울 당일치기  남산골한옥마을과 남산 산책",
+      "stops": [
+        {
+          "placeId": "126747",
+          "name": "남산골한옥마을",
+          "timeLabel": "오전",
+          "stay": "제안 60~90분",
+          "description": "충무로역에서 남산골한옥마을로 이동해 전통 가옥과 정원을 살펴봅니다. 가옥 배치와 마당의 모습을 천천히 보고, 체험이나 해설을 원한다면 해당 날짜에 운영하는지 미리 확인하세요.",
+          "day": 1,
+          "addr": "서울특별시 중구 퇴계로34길 28 (필동2가)",
+          "mapx": "126.9932865315",
+          "mapy": "37.5597775194",
+          "officialUrl": "https://korean.visitseoul.net/hallyu/%EB%82%A8%EC%82%B0%EA%B3%A8-%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84/KOP000276",
+          "image": "/winter-photos/capital-126747-2-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-126747-2-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/44/4126544_image2_1.jpg",
+            "placeId": "126747",
+            "alt": "남산골한옥마을 자료 사진",
+            "caption": "남산골한옥마을 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 627
+          },
+          "gallery": [
+            {
+              "src": "/winter-photos/capital-126747-3-20261107.webp",
+              "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/43/4126543_image2_1.jpg",
+              "placeId": "126747",
+              "alt": "남산골한옥마을 자료 사진",
+              "caption": "남산골한옥마을 · 계절이 다른 자료 사진",
+              "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+              "kind": "tour-api",
+              "copyrightType": "Type1",
+              "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+              "reviewed": true,
+              "reviewedAt": "2026-11-07T04:19:00.230Z",
+              "width": 940,
+              "height": 627
+            }
+          ]
+        },
+        {
+          "placeId": "126485",
+          "name": "남산공원(서울)",
+          "timeLabel": "오후",
+          "stay": "제안 60~90분",
+          "description": "점심을 먹은 뒤 남산공원의 완만한 구간을 선택해 걷습니다. 정상까지 반드시 오를 필요는 없습니다. 눈과 비 뒤에는 경사로가 얼 수 있으므로 공식 통제 안내를 확인하고 미끄러운 길은 되돌아가세요.",
+          "day": 1,
+          "addr": "서울특별시 중구 삼일대로 231 (예장동)",
+          "mapx": "126.9922311881",
+          "mapy": "37.5556863093",
+          "officialUrl": "https://parks.seoul.go.kr/content.do?key=2604070017",
+          "image": "/winter-photos/capital-126485-1-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-126485-1-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/44/3539644_image2_1.jpg",
+            "placeId": "126485",
+            "alt": "남산공원(서울) 자료 사진",
+            "caption": "남산공원(서울) · 촬영 시기 미확인 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 627
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": "한옥에서 시작해 남산 자락까지",
+          "paragraphs": [
+            "남산골의 전통 정원과 남산의 도심 전망을 한날에 즐기는 구성입니다. 점심시간을 사이에 넣고 체력에 따라 산책 길이를 조절하세요. 케이블카나 전망대 입장은 필수 일정이 아니며 별도 요금과 운영 조건이 있을 수 있습니다."
+          ]
+        },
+        {
+          "heading": "눈길과 휴관일을 확인하세요",
+          "paragraphs": [
+            "남산골의 가옥 관람과 정원 개방 조건은 다를 수 있습니다. 월요일 방문 전 휴관 공지를 살펴보세요. 산길은 해가 진 뒤 기온이 내려가므로 낮에 걷고 어두워지기 전에 이동하는 편이 안전합니다."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "서울관광재단 · 남산골한옥마을",
+          "url": "https://korean.visitseoul.net/hallyu/%EB%82%A8%EC%82%B0%EA%B3%A8-%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84/KOP000276",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "서울관광재단 · 남산 둘레길",
+          "url": "https://korean.visitseoul.net/nature/Namsan-Trails/KOP9jn7zj",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "남산공원(서울) 공식 안내",
+          "url": "https://parks.seoul.go.kr/content.do?key=2604070017",
+          "checkedAt": "2026-11-07T04:03:46.995Z"
+        }
+      ],
+      "id": "capital-seoul-namsangol-namsan-winter-daytrip",
+      "status": "published",
+      "sourceCourseId": "capital-seoul-namsangol-namsan-winter-daytrip",
+      "publishedAt": "2026-11-07T04:21:17.610Z",
+      "updatedAt": "2026-11-07T04:21:17.610Z",
+      "lastReviewedAt": "2026-11-07T04:21:17.610Z",
+      "image": {
+        "src": "/winter-photos/capital-126747-2-20261107.webp",
+        "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/44/4126544_image2_1.jpg",
+        "placeId": "126747",
+        "alt": "남산골한옥마을 자료 사진",
+        "caption": "남산골한옥마을 · 계절이 다른 자료 사진",
+        "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+        "kind": "tour-api",
+        "copyrightType": "Type1",
+        "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+        "reviewed": true,
+        "reviewedAt": "2026-11-07T04:19:00.230Z",
+        "width": 940,
+        "height": 627
+      },
+      "validation": {
+        "version": 4,
+        "sourceKind": "official-tour-api",
+        "checkedAt": "2026-11-07T04:21:17.610Z",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text",
+          "official-sources",
+          "photos",
+          "daytrip"
+        ]
+      }
+    },
+    {
+      "slug": "seoul-seodaemun-history-winter-daytrip",
+      "title": "서울 겨울 당일치기: 서대문독립공원과 국립기상박물관",
+      "area": "서울",
+      "city": "서대문구",
+      "duration": "당일",
+      "intro": "서울 도심에서 역사와 날씨를 함께 만나는 겨울 나들이입니다. 서대문독립공원을 천천히 걷고 점심을 먹은 뒤 국립기상박물관에서 기상 관측과 기록을 살펴봅니다. 야외 산책과 실내 전시를 나눠 추운 날에도 조절하기 좋은 당일 코스입니다.",
+      "startPoint": "독립문역",
+      "transport": "지하철과 도보",
+      "durationLabel": "현지 약 4~5시간 제안",
+      "naverQuery": "서울 서대문독립공원 국립기상박물관 겨울 당일치기",
+      "stops": [
+        {
+          "placeId": "128622",
+          "name": "서대문독립공원",
+          "timeLabel": "오전",
+          "stay": "제안 체류 60~90분",
+          "description": "독립문역에서 공원으로 이동해 독립문과 주변 역사 공간을 차례로 살펴봅니다. 서대문형무소역사관 내부 관람을 더하고 싶다면 별도의 운영일과 관람료를 확인하세요. 겨울에는 공원의 계단과 그늘진 길에서 발걸음을 천천히 옮깁니다.",
+          "day": 1,
+          "addr": "서울특별시 서대문구 통일로 251 (현저동)",
+          "mapx": "126.9573421635",
+          "mapy": "37.5746723659",
+          "officialUrl": "https://korean.visitseoul.net/attractions/%EC%84%9C%EB%8C%80%EB%AC%B8%ED%98%95%EB%AC%B4%EC%86%8C%EC%97%AD%EC%82%AC%EA%B4%80/KOP001831",
+          "image": "/winter-photos/capital-128622-1-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-128622-1-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/06/3590406_image2_1.jpg",
+            "placeId": "128622",
+            "alt": "서대문독립공원 자료 사진",
+            "caption": "서대문독립공원 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 627
+          },
+          "gallery": [
+            {
+              "src": "/winter-photos/capital-128622-2-20261107.webp",
+              "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/07/3590407_image2_1.jpg",
+              "placeId": "128622",
+              "alt": "서대문독립공원 자료 사진",
+              "caption": "서대문독립공원 · 계절이 다른 자료 사진",
+              "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+              "kind": "tour-api",
+              "copyrightType": "Type1",
+              "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+              "reviewed": true,
+              "reviewedAt": "2026-11-07T04:19:00.230Z",
+              "width": 940,
+              "height": 627
+            },
+            {
+              "src": "/winter-photos/capital-128622-3-20261107.webp",
+              "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/08/3590408_image2_1.jpg",
+              "placeId": "128622",
+              "alt": "서대문독립공원 자료 사진",
+              "caption": "서대문독립공원 · 계절이 다른 자료 사진",
+              "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+              "kind": "tour-api",
+              "copyrightType": "Type1",
+              "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+              "reviewed": true,
+              "reviewedAt": "2026-11-07T04:19:00.230Z",
+              "width": 940,
+              "height": 627
+            }
+          ]
+        },
+        {
+          "placeId": "3038260",
+          "name": "국립기상박물관",
+          "timeLabel": "점심 이후",
+          "stay": "제안 체류 60~90분",
+          "description": "송월길의 국립기상박물관에서 기상 관측의 역사와 관련 전시를 살펴봅니다. 옛 기상관측 시설의 흔적과 오늘날의 날씨 관측을 연결해 볼 수 있는 실내 일정입니다. 공원에서 박물관까지 실제 보행 경로와 휴관일을 확인해 이동합니다.",
+          "day": 1,
+          "addr": "서울특별시 종로구 송월동 1-1 국립기상박물관",
+          "mapx": "126.9666303489",
+          "mapy": "37.5696203417",
+          "officialUrl": "https://science.kma.go.kr/museum//tour/notice_view?sel_search=&txt_search=&wm_id=1188",
+          "image": "/winter-photos/capital-alt-3038260-1-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-alt-3038260-1-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/41/3456041_image2_1.jpg",
+            "placeId": "3038260",
+            "alt": "국립기상박물관 자료 사진",
+            "caption": "국립기상박물관 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 705
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": "독립문에서 송월길까지",
+          "paragraphs": [
+            "서대문독립공원에서 역사 공간을 둘러보고 주변에서 점심을 먹은 뒤 종로구 송월길의 박물관으로 이동합니다. 두 시설은 서로 다른 기관이므로 역사관과 기상박물관의 운영일을 각각 확인하세요. 도보가 부담스러우면 버스나 택시를 이용해도 좋습니다."
+          ]
+        },
+        {
+          "heading": "겨울 관람 전 확인",
+          "paragraphs": [
+            "기상박물관은 정기 휴관일과 공휴일 대체 휴관이 있을 수 있습니다. 출발 전 공식 일정과 전시 운영을 확인하고 야외 길이 얼었다면 보행 시간을 넉넉히 잡으세요. 서대문형무소역사관은 선택 방문이며 별도의 이용 조건이 적용됩니다."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "서울관광재단 · 서대문형무소역사관과 독립공원",
+          "url": "https://korean.visitseoul.net/attractions/%EC%84%9C%EB%8C%80%EB%AC%B8%ED%98%95%EB%AC%B4%EC%86%8C%EC%97%AD%EC%82%AC%EA%B4%80/KOP001831",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "기상청 · 국립기상박물관 운영 안내",
+          "url": "https://science.kma.go.kr/museum//tour/notice_view?sel_search=&txt_search=&wm_id=1188",
+          "checkedAt": "2026-11-07"
+        }
+      ],
+      "id": "capital-seoul-seodaemun-history-winter-daytrip",
+      "status": "published",
+      "sourceCourseId": "capital-seoul-seodaemun-history-winter-daytrip",
+      "publishedAt": "2026-11-07T04:21:17.610Z",
+      "updatedAt": "2026-11-07T04:21:17.610Z",
+      "lastReviewedAt": "2026-11-07T04:21:17.610Z",
+      "image": {
+        "src": "/winter-photos/capital-128622-1-20261107.webp",
+        "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/06/3590406_image2_1.jpg",
+        "placeId": "128622",
+        "alt": "서대문독립공원 자료 사진",
+        "caption": "서대문독립공원 · 계절이 다른 자료 사진",
+        "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+        "kind": "tour-api",
+        "copyrightType": "Type1",
+        "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+        "reviewed": true,
+        "reviewedAt": "2026-11-07T04:19:00.230Z",
+        "width": 940,
+        "height": 627
+      },
+      "validation": {
+        "version": 4,
+        "sourceKind": "official-tour-api",
+        "checkedAt": "2026-11-07T04:21:17.610Z",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text",
+          "official-sources",
+          "photos",
+          "daytrip"
+        ]
+      }
+    },
+    {
+      "slug": "incheon-wolmi-park-winter-daytrip",
+      "title": "인천 겨울 당일치기: 월미공원과 유리전망대 바다 풍경",
+      "area": "인천",
+      "city": "제물포구",
+      "duration": "당일",
+      "intro": "차이나타운과는 다른 인천의 겨울 풍경을 보고 싶다면 월미산 자락으로 가 보세요. 월미공원의 전통정원을 걷고 유리전망대에서 항만을 바라보는 당일 코스입니다. 바닷바람이 강한 날에도 걸을 거리를 조절할 수 있습니다.",
+      "startPoint": "인천역",
+      "transport": "지하철과 버스",
+      "durationLabel": "현지 약 4~5시간 제안",
+      "naverQuery": "인천 겨울 당일치기  월미공원과 유리전망대 바다 풍경",
+      "stops": [
+        {
+          "placeId": "879086",
+          "name": "월미공원",
+          "timeLabel": "오전",
+          "stay": "제안 60~90분",
+          "description": "월미공원 정문 쪽의 한국전통정원부터 둘러봅니다. 정원과 숲길은 모두 야외이므로 오래 머무르기보다 날씨에 따라 산책 구간을 고르고, 걷기 어려운 동행이 있다면 공원 안내소에 접근 가능한 길을 확인하세요. 한국전통정원 안내 주소는 월미로 131-22이며, 공원 시설과 출입구별 주소가 다를 수 있으니 목적지 입구를 확인하세요.",
+          "day": 1,
+          "addr": "인천광역시 제물포구 월미로 131-31 (북성동1가)",
+          "mapx": "126.6041549279",
+          "mapy": "37.4757498100",
+          "officialUrl": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21122711123420571",
+          "image": "/winter-photos/capital-879086-1-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-879086-1-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/74/3532874_image2_1.jpg",
+            "placeId": "879086",
+            "alt": "월미공원 자료 사진",
+            "caption": "월미공원 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 626
+          },
+          "gallery": [
+            {
+              "src": "/winter-photos/capital-879086-2-20261107.webp",
+              "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/70/3532870_image2_1.jpg",
+              "placeId": "879086",
+              "alt": "월미공원 자료 사진",
+              "caption": "월미공원 · 계절이 다른 자료 사진",
+              "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+              "kind": "tour-api",
+              "copyrightType": "Type1",
+              "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+              "reviewed": true,
+              "reviewedAt": "2026-11-07T04:19:00.230Z",
+              "width": 417,
+              "height": 627
+            }
+          ]
+        },
+        {
+          "placeId": "2754729",
+          "name": "월미산유리전망대",
+          "timeLabel": "점심 이후",
+          "stay": "제안 40~60분",
+          "description": "월미산 전망대로 향해 항만과 바다를 조망합니다. 전망대에 가는 길은 경사가 있으므로 이동 수단과 경로를 미리 확인하세요. 시설 개방과 기상 상황에 따라 실내 관람 가능 여부가 달라질 수 있습니다.",
+          "day": 1,
+          "addr": "인천광역시 제물포구 북성동1가 125",
+          "mapx": "126.6026468561",
+          "mapy": "37.4712808586",
+          "officialUrl": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21122715333106434"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "정원과 항만 전망을 한 권역에서",
+          "paragraphs": [
+            "개항장 중심의 기존 여행과 달리 월미공원 안의 정원과 전망을 중심으로 잡았습니다. 인천역에서 공원 입구까지의 교통을 별도로 계획하고 점심은 월미도 주변에서 취향에 맞게 고르세요. 전망이 흐린 날은 정원 산책에 무게를 둡니다."
+          ]
+        },
+        {
+          "heading": "바닷바람과 전망대 운영 확인",
+          "paragraphs": [
+            "겨울 바닷바람이 강하면 같은 기온에서도 체감 추위가 큽니다. 방풍 겉옷을 준비하고 전망대와 공원 이동 사이에 실내 휴식 시간을 두세요. 셔틀이나 시설 이용은 상시 운행으로 가정하지 말고 당일 공지를 확인합니다."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "인천투어 · 월미공원",
+          "url": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21122711123420571",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "인천투어 · 월미공원 전망대",
+          "url": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21122715333106434",
+          "checkedAt": "2026-11-07"
+        }
+      ],
+      "id": "capital-incheon-wolmi-park-winter-daytrip",
+      "status": "published",
+      "sourceCourseId": "capital-incheon-wolmi-park-winter-daytrip",
+      "publishedAt": "2026-11-07T04:21:17.610Z",
+      "updatedAt": "2026-11-07T04:21:17.610Z",
+      "lastReviewedAt": "2026-11-07T04:21:17.610Z",
+      "image": {
+        "src": "/winter-photos/capital-879086-1-20261107.webp",
+        "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/74/3532874_image2_1.jpg",
+        "placeId": "879086",
+        "alt": "월미공원 자료 사진",
+        "caption": "월미공원 · 계절이 다른 자료 사진",
+        "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+        "kind": "tour-api",
+        "copyrightType": "Type1",
+        "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+        "reviewed": true,
+        "reviewedAt": "2026-11-07T04:19:00.230Z",
+        "width": 940,
+        "height": 626
+      },
+      "validation": {
+        "version": 4,
+        "sourceKind": "official-tour-api",
+        "checkedAt": "2026-11-07T04:21:17.610Z",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text",
+          "official-sources",
+          "photos",
+          "daytrip"
+        ]
+      }
+    },
+    {
+      "slug": "incheon-songdo-park-tower-winter-daytrip",
+      "title": "인천 겨울 당일치기: 송도 센트럴파크와 G타워 전망대",
+      "area": "인천",
+      "city": "연수구",
+      "duration": "당일",
+      "intro": "송도 센트럴파크의 수변과 도심 풍경을 실내 전망대까지 이어 보는 인천 겨울 나들이입니다. 낮에는 공원에서 짧게 걷고 점심 뒤 G타워에 올라 방금 걸었던 길을 내려다봅니다. 시설 개방과 날씨를 확인해 순서를 바꿔도 좋습니다.",
+      "startPoint": "센트럴파크역",
+      "transport": "도시철도와 도보",
+      "durationLabel": "현지 약 4~5시간 제안",
+      "naverQuery": "인천 겨울 당일치기  송도 센트럴파크와 G타워 전망대",
+      "stops": [
+        {
+          "placeId": "2465107",
+          "name": "송도 센트럴파크",
+          "timeLabel": "오전",
+          "stay": "제안 50~80분",
+          "description": "센트럴파크역에서 공원 수변으로 나와 해수로와 주변 건물을 바라보며 걷습니다. 전 구간을 완주하기보다 컨디션에 맞춰 돌아갈 지점을 정하세요. 수상 체험은 날씨와 별도 운영 일정에 따라 이용 여부가 달라집니다.",
+          "day": 1,
+          "addr": "인천광역시 연수구 컨벤시아대로 160",
+          "mapx": "126.6435981392",
+          "mapy": "37.3903993102",
+          "officialUrl": "https://www.insiseol.or.kr/park/songdo/facility/central.jsp",
+          "image": "/winter-photos/capital-2465107-1-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-2465107-1-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/18/3512918_image2_1.jpg",
+            "placeId": "2465107",
+            "alt": "송도 센트럴파크 자료 사진",
+            "caption": "송도 센트럴파크 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 627
+          },
+          "gallery": [
+            {
+              "src": "/winter-photos/capital-2465107-2-20261107.webp",
+              "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/21/3512921_image2_1.jpg",
+              "placeId": "2465107",
+              "alt": "송도 센트럴파크 자료 사진",
+              "caption": "송도 센트럴파크 · 계절이 다른 자료 사진",
+              "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+              "kind": "tour-api",
+              "copyrightType": "Type1",
+              "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+              "reviewed": true,
+              "reviewedAt": "2026-11-07T04:19:00.230Z",
+              "width": 940,
+              "height": 627
+            }
+          ]
+        },
+        {
+          "placeId": "2994418",
+          "name": "G타워 전망대",
+          "timeLabel": "점심 이후",
+          "stay": "제안 40~60분",
+          "description": "G타워 전망대에서 공원과 송도 도심을 위에서 바라봅니다. 실내 전망을 중심으로 쉬어 갈 수 있지만 업무·행사와 시설 사정에 따라 개방 조건이 바뀔 수 있습니다. 방문 전 공식 안내를 확인하세요.",
+          "day": 1,
+          "addr": "인천광역시 연수구 아트센터대로 175 G-Tower",
+          "mapx": "126.6335544435",
+          "mapy": "37.3964178789",
+          "officialUrl": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=APD23072110005548244"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "야외 수변과 실내 조망을 번갈아",
+          "paragraphs": [
+            "송도에서는 공원에서 바라본 풍경을 전망대에서 다시 내려다보는 순서가 재미있습니다. 점심은 공원 인근에서 해결하고, 바람이 강하면 공원 걷기를 줄여 실내 체류를 늘리세요. 교통편과 시설 대기 시간은 별도로 계산합니다."
+          ]
+        },
+        {
+          "heading": "방문일 운영과 바람을 살피세요",
+          "paragraphs": [
+            "전망대 개방 시간과 휴무는 반드시 방문일 기준으로 확인하세요. 결빙된 수변 데크에서는 뛰지 않고, 어린이와 함께라면 물가에서 떨어진 보행로를 고릅니다. 보트 운항이나 야경을 필수 일정으로 두지 않아도 됩니다."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "인천투어 · 송도센트럴파크",
+          "url": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21121615281620822",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "인천투어 · G타워 전망대",
+          "url": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=APD23072110005548244",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "송도 센트럴파크 공식 안내",
+          "url": "https://www.insiseol.or.kr/park/songdo/facility/central.jsp",
+          "checkedAt": "2026-11-07T04:20:48.613Z"
+        }
+      ],
+      "id": "capital-incheon-songdo-park-tower-winter-daytrip",
+      "status": "published",
+      "sourceCourseId": "capital-incheon-songdo-park-tower-winter-daytrip",
+      "publishedAt": "2026-11-07T04:21:17.610Z",
+      "updatedAt": "2026-11-07T04:21:17.610Z",
+      "lastReviewedAt": "2026-11-07T04:21:17.610Z",
+      "image": {
+        "src": "/winter-photos/capital-2465107-1-20261107.webp",
+        "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/18/3512918_image2_1.jpg",
+        "placeId": "2465107",
+        "alt": "송도 센트럴파크 자료 사진",
+        "caption": "송도 센트럴파크 · 계절이 다른 자료 사진",
+        "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+        "kind": "tour-api",
+        "copyrightType": "Type1",
+        "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+        "reviewed": true,
+        "reviewedAt": "2026-11-07T04:19:00.230Z",
+        "width": 940,
+        "height": 627
+      },
+      "validation": {
+        "version": 4,
+        "sourceKind": "official-tour-api",
+        "checkedAt": "2026-11-07T04:21:17.610Z",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text",
+          "official-sources",
+          "photos",
+          "daytrip"
+        ]
+      }
+    },
+    {
+      "slug": "gyeonggi-yangsu-garden-winter-daytrip",
+      "title": "양평 겨울 당일치기: 세미원과 양수리 수변 산책",
+      "area": "경기",
+      "city": "양평군",
+      "duration": "당일",
+      "intro": "양수역 주변에서 겨울 정원과 강가 풍경을 느긋하게 즐기는 양평 당일치기입니다. 세미원의 계절 풍경을 감상한 뒤 양수리에서 점심을 먹고 수풀로 양수리 생태공원을 걷습니다. 겨울에는 연꽃보다 정원과 수변 산책에 초점을 맞춥니다.",
+      "startPoint": "양수역",
+      "transport": "경의중앙선과 도보",
+      "durationLabel": "현지 약 4~5시간 제안",
+      "naverQuery": "양평 겨울 당일치기  세미원과 양수리 수변 산책",
+      "stops": [
+        {
+          "placeId": "407051",
+          "name": "세미원",
+          "timeLabel": "오전",
+          "stay": "제안 60~90분",
+          "description": "세미원에서 겨울 정원의 식물과 수변을 둘러봅니다. 여름 연꽃 개화를 기대하기보다 계절에 따른 정원 구조와 주변 강 풍경을 감상하는 일정으로 잡으세요. 입장료와 동절기 운영 여부는 공식 공지를 확인합니다.",
+          "day": 1,
+          "addr": "경기도 양평군 양서면 양수로 93",
+          "mapx": "127.3241902960",
+          "mapy": "37.5407412665",
+          "officialUrl": "https://tour.yp21.go.kr/www/contents.do?key=164",
+          "image": "/winter-photos/capital-407051-1-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-407051-1-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/92/3447892_image2_1.jpg",
+            "placeId": "407051",
+            "alt": "세미원 자료 사진",
+            "caption": "세미원 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 627
+          },
+          "gallery": [
+            {
+              "src": "/winter-photos/capital-407051-2-20261107.webp",
+              "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/91/3447891_image2_1.jpg",
+              "placeId": "407051",
+              "alt": "세미원 자료 사진",
+              "caption": "세미원 · 계절이 다른 자료 사진",
+              "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+              "kind": "tour-api",
+              "copyrightType": "Type1",
+              "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+              "reviewed": true,
+              "reviewedAt": "2026-11-07T04:19:00.230Z",
+              "width": 940,
+              "height": 627
+            }
+          ]
+        },
+        {
+          "placeId": "2605339",
+          "name": "수풀로 양수리",
+          "timeLabel": "오후",
+          "stay": "제안 40~60분",
+          "description": "양수리 수변을 따라 이어지는 녹지에서 짧게 산책합니다. 이동하기 전 현재 보행 경로와 개방 구간을 지도에서 확인하고 강바람이 심하면 가까운 실내로 이동하세요. 물가나 얼음 위에 내려가지 않습니다. 양평군과 관광공사의 주소 표기가 다르므로 출발 전 실제 이용할 출입구를 확인하세요.",
+          "day": 1,
+          "addr": "경기도 양평군 양서면 북한강로 33-2",
+          "mapx": "127.3210598445",
+          "mapy": "37.5470238140",
+          "officialUrl": "https://tour.yp21.go.kr/www/selectTourCntntsWebView.do?ctgry=4&key=69&tourNo=447"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "양수역 주변에 머무는 느린 하루",
+          "paragraphs": [
+            "정원 관람 후 양수리에서 점심을 먹고 수변을 걷는 방식입니다. 세미원과 두물머리를 잇는 배다리는 날씨나 수위에 따라 통제될 수 있으므로 개방을 가정해 이동 시간을 짜지 마세요. 출발지에서 양수역까지의 열차 시간은 별도입니다."
+          ]
+        },
+        {
+          "heading": "겨울 수변 안전과 개방 여부",
+          "paragraphs": [
+            "수변은 평지라도 바람이 강하고 그늘진 곳이 얼 수 있습니다. 미끄럼이 덜한 신발을 신고, 이용 가능한 산책 구간과 세미원 휴관 여부를 확인하세요. 눈이나 추위가 심하면 마지막 산책을 생략해도 충분합니다."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "양평군 · 세미원",
+          "url": "https://tour.yp21.go.kr/www/selectTourCntntsWebView.do?key=69&pageIndex=1&pageUnit=6&searchCnd=all&sortTy=HIT&tourNo=172",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "양평군 · 수풀로 양수리",
+          "url": "https://tour.yp21.go.kr/www/selectTourCntntsWebView.do?ctgry=4&key=69&tourNo=447",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "세미원 공식 안내",
+          "url": "https://tour.yp21.go.kr/www/contents.do?key=164",
+          "checkedAt": "2026-11-07T04:20:48.613Z"
+        }
+      ],
+      "id": "capital-gyeonggi-yangsu-garden-winter-daytrip",
+      "status": "published",
+      "sourceCourseId": "capital-gyeonggi-yangsu-garden-winter-daytrip",
+      "publishedAt": "2026-11-07T04:21:17.610Z",
+      "updatedAt": "2026-11-07T04:21:17.610Z",
+      "lastReviewedAt": "2026-11-07T04:21:17.610Z",
+      "image": {
+        "src": "/winter-photos/capital-407051-1-20261107.webp",
+        "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/92/3447892_image2_1.jpg",
+        "placeId": "407051",
+        "alt": "세미원 자료 사진",
+        "caption": "세미원 · 계절이 다른 자료 사진",
+        "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+        "kind": "tour-api",
+        "copyrightType": "Type1",
+        "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+        "reviewed": true,
+        "reviewedAt": "2026-11-07T04:19:00.230Z",
+        "width": 940,
+        "height": 627
+      },
+      "validation": {
+        "version": 4,
+        "sourceKind": "official-tour-api",
+        "checkedAt": "2026-11-07T04:21:17.610Z",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text",
+          "official-sources",
+          "photos",
+          "daytrip"
+        ]
+      }
+    },
+    {
+      "slug": "gyeonggi-bucheon-ecology-winter-daytrip",
+      "title": "부천 겨울 당일치기: 부천식물원과 까치울 먹거리촌",
+      "area": "경기",
+      "city": "부천시",
+      "duration": "당일",
+      "intro": "추운 날 실내에서 식물을 보고 따뜻한 점심으로 쉬어 가는 부천 당일치기입니다. 부천식물원의 식물 전시를 둘러본 뒤 까치울 음식문화거리에서 각자 취향에 맞는 식사를 고릅니다. 시설별 운영과 식당 영업은 방문 전에 확인하세요.",
+      "startPoint": "까치울역",
+      "transport": "지하철과 도보",
+      "durationLabel": "현지 약 4~5시간 제안",
+      "naverQuery": "부천식물원 까치울 음식문화거리 겨울 당일치기",
+      "stops": [
+        {
+          "placeId": "407030",
+          "name": "부천식물원",
+          "timeLabel": "오전",
+          "stay": "제안 체류 60~90분",
+          "description": "실내 식물원을 먼저 둘러보며 식물의 잎과 생육 환경을 관찰합니다. 가족과 함께라면 관람 구역을 한두 곳 골라 천천히 보는 편이 좋습니다. 전시 공간의 운영일과 관람 조건은 방문 전 부천시 안내를 확인하세요.",
+          "day": 1,
+          "addr": "경기도 부천시 원미구 길주로 660 (춘의동)",
+          "mapx": "126.8156736899",
+          "mapy": "37.5056250825",
+          "officialUrl": "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=148006001004010",
+          "image": "/winter-photos/capital-extra-407030-3-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-extra-407030-3-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/30/4117730_image2_1.jpg",
+            "placeId": "407030",
+            "alt": "부천식물원 자료 사진",
+            "caption": "경기_부천_부천식물원_내부_5.jpg · 촬영 시기 미확인 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 627
+          },
+          "gallery": [
+            {
+              "src": "/winter-photos/capital-extra-407030-5-20261107.webp",
+              "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/28/4117728_image2_1.jpg",
+              "placeId": "407030",
+              "alt": "부천식물원 자료 사진",
+              "caption": "경기_부천_부천식물원_내부_3.jpg · 촬영 시기 미확인 자료 사진",
+              "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+              "kind": "tour-api",
+              "copyrightType": "Type1",
+              "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+              "reviewed": true,
+              "reviewedAt": "2026-11-07T04:19:00.230Z",
+              "width": 940,
+              "height": 627
+            },
+            {
+              "src": "/winter-photos/capital-extra-407030-6-20261107.webp",
+              "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/27/4117727_image2_1.jpg",
+              "placeId": "407030",
+              "alt": "부천식물원 자료 사진",
+              "caption": "경기_부천_부천식물원_내부_2.jpg · 촬영 시기 미확인 자료 사진",
+              "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+              "kind": "tour-api",
+              "copyrightType": "Type1",
+              "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+              "reviewed": true,
+              "reviewedAt": "2026-11-07T04:19:00.230Z",
+              "width": 940,
+              "height": 627
+            }
+          ]
+        },
+        {
+          "placeId": "611883",
+          "name": "까치울음식테마마을",
+          "timeLabel": "점심 이후",
+          "stay": "제안 체류 60~90분",
+          "description": "작동 일대 음식문화거리에서 취향과 예산에 맞춰 점심을 고릅니다. 식당과 카페마다 메뉴·영업일·주차 조건이 다르므로 갈 곳을 정했다면 방문 전 매장에 확인하세요. 식물원에서 이동할 때는 실제 도보 경로나 버스를 확인합니다.",
+          "day": 1,
+          "addr": "경기도 부천시 오정구 작동",
+          "mapx": "126.8138124817",
+          "mapy": "37.5151517201",
+          "officialUrl": "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=a8fb922e-3668-4aa7-9dbd-bbbe9af84d36",
+          "image": "/winter-photos/capital-alt-611883-0-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-alt-611883-0-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/36/3554836_image2_1.jpg",
+            "placeId": "611883",
+            "alt": "까치울음식테마마을 자료 사진",
+            "caption": "까치울음식테마마을 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 626
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": "식물원 관람 뒤 까치울에서 식사",
+          "paragraphs": [
+            "식물 관람을 하루의 중심에 두고 음식문화거리에서 식사와 휴식을 더한 일정입니다. 식물원과 까치울은 가까운 권역이지만 출입구와 목적지 식당에 따라 이동 경로가 달라지므로 지도로 확인하세요. 당일 기온이 낮으면 식물원에서 충분히 머물고 이동을 짧게 조정합니다."
+          ]
+        },
+        {
+          "heading": "휴관일과 식당별 영업 확인",
+          "paragraphs": [
+            "부천식물원은 동절기에 이용 시간이 달라질 수 있으므로 공식 안내를 확인하세요. 음식문화거리는 단일 시설이 아니라 여러 점포가 모인 곳입니다. 특정 메뉴나 가격을 정해 놓기보다 방문하려는 가게의 운영 정보를 확인하고 선택하세요."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "부천시 · 부천식물원",
+          "url": "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=148006001004010",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "한국관광공사 · 까치울음식테마마을",
+          "url": "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=a8fb922e-3668-4aa7-9dbd-bbbe9af84d36",
+          "checkedAt": "2026-11-07"
+        }
+      ],
+      "id": "capital-gyeonggi-bucheon-ecology-winter-daytrip",
+      "status": "published",
+      "sourceCourseId": "capital-gyeonggi-bucheon-ecology-winter-daytrip",
+      "publishedAt": "2026-11-07T04:21:17.610Z",
+      "updatedAt": "2026-11-07T04:21:17.610Z",
+      "lastReviewedAt": "2026-11-07T04:21:17.610Z",
+      "image": {
+        "src": "/winter-photos/capital-extra-407030-3-20261107.webp",
+        "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/30/4117730_image2_1.jpg",
+        "placeId": "407030",
+        "alt": "부천식물원 자료 사진",
+        "caption": "경기_부천_부천식물원_내부_5.jpg · 촬영 시기 미확인 자료 사진",
+        "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+        "kind": "tour-api",
+        "copyrightType": "Type1",
+        "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+        "reviewed": true,
+        "reviewedAt": "2026-11-07T04:19:00.230Z",
+        "width": 940,
+        "height": 627
+      },
+      "validation": {
+        "version": 4,
+        "sourceKind": "official-tour-api",
+        "checkedAt": "2026-11-07T04:21:17.610Z",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text",
+          "official-sources",
+          "photos",
+          "daytrip"
+        ]
+      }
+    },
+    {
+      "slug": "gyeonggi-bucheon-comics-lake-winter-daytrip",
+      "title": "부천 겨울 당일치기: 한국만화박물관과 상동호수공원",
+      "area": "경기",
+      "city": "부천시",
+      "duration": "당일",
+      "intro": "만화 전시를 보며 몸을 녹이고 호수 주변을 가볍게 걷는 부천 겨울 당일치기입니다. 한국만화박물관에 충분한 시간을 쓰고 점심 후 상동호수공원에 들릅니다. 야외 산책이 부담스러운 날에는 실내 관람을 중심으로 계획하세요.",
+      "startPoint": "삼산체육관역",
+      "transport": "지하철과 도보",
+      "durationLabel": "현지 약 4~5시간 제안",
+      "naverQuery": "부천 겨울 당일치기  한국만화박물관과 상동호수공원",
+      "stops": [
+        {
+          "placeId": "2470347",
+          "name": "한국만화박물관",
+          "timeLabel": "오전",
+          "stay": "제안 90~120분",
+          "description": "한국만화박물관에서 기획 전시와 소장 자료를 살펴보며 실내 시간을 넉넉히 보냅니다. 관심 있는 작품이나 시대를 골라 보는 것도 좋은 방법입니다. 전시 교체일과 휴관, 관람 요금은 박물관 공식 안내로 확인하세요.",
+          "day": 1,
+          "addr": "경기도 부천시 원미구 길주로 1 (상동)",
+          "mapx": "126.7422053159",
+          "mapy": "37.5082512500",
+          "officialUrl": "https://www.komacon.kr/comicsmuseum/guide/show_info.asp",
+          "image": "/winter-photos/capital-2470347-1-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-2470347-1-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/90/4119290_image2_1.jpg",
+            "placeId": "2470347",
+            "alt": "한국만화박물관 자료 사진",
+            "caption": "한국만화박물관 · 촬영 시기 미확인 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 627
+          },
+          "gallery": [
+            {
+              "src": "/winter-photos/capital-2470347-2-20261107.webp",
+              "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/92/4119292_image2_1.jpg",
+              "placeId": "2470347",
+              "alt": "한국만화박물관 자료 사진",
+              "caption": "한국만화박물관 · 촬영 시기 미확인 자료 사진",
+              "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+              "kind": "tour-api",
+              "copyrightType": "Type1",
+              "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+              "reviewed": true,
+              "reviewedAt": "2026-11-07T04:19:00.230Z",
+              "width": 940,
+              "height": 627
+            }
+          ]
+        },
+        {
+          "placeId": "756618",
+          "name": "상동호수공원",
+          "timeLabel": "오후",
+          "stay": "제안 40~60분",
+          "description": "점심 뒤 상동호수공원에서 짧게 산책하며 실내 관람으로 굳은 몸을 풀어 보세요. 호수 가장자리의 결빙 구간에는 들어가지 않습니다. 바람이 강하면 전체를 돌지 않고 가까운 출입구로 돌아옵니다.",
+          "day": 1,
+          "addr": "경기도 부천시 원미구 길주로 16 (상동)",
+          "mapx": "126.7441635284",
+          "mapy": "37.5061765258",
+          "officialUrl": "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=172002002001",
+          "image": "/winter-photos/capital-756618-2-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-756618-2-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/98/4119298_image2_1.jpg",
+            "placeId": "756618",
+            "alt": "상동호수공원 자료 사진",
+            "caption": "상동호수공원 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 627
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": "만화 관람과 호숫가 산책",
+          "paragraphs": [
+            "실내 문화 관람을 하루의 중심에 놓아 추운 날에도 부담을 줄인 코스입니다. 박물관을 서둘러 나오기보다 전시를 충분히 보고 식사 후 남은 시간에 공원을 걷습니다. 각 지점까지의 실제 도보 경로와 대중교통은 지도에서 확인하세요."
+          ]
+        },
+        {
+          "heading": "박물관 개방일을 먼저 정하세요",
+          "paragraphs": [
+            "월요일과 공휴일 전후 운영은 매번 같다고 가정하지 말고 박물관 공지를 확인합니다. 야외에 오래 머물기 어렵다면 호수 산책을 줄이고 카페나 식당에서 쉬었다 귀가하세요."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "한국만화영상진흥원 · 박물관 오시는 길",
+          "url": "https://www.komacon.kr/komacon/introduction/map_comic.asp",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "한국만화박물관 공식 안내",
+          "url": "https://www.komacon.kr/comicsmuseum/guide/show_info.asp",
+          "checkedAt": "2026-11-07T04:20:48.613Z"
+        },
+        {
+          "title": "상동호수공원 공식 안내",
+          "url": "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=172002002001",
+          "checkedAt": "2026-11-07T04:20:48.613Z"
+        }
+      ],
+      "id": "capital-gyeonggi-bucheon-comics-lake-winter-daytrip",
+      "status": "published",
+      "sourceCourseId": "capital-gyeonggi-bucheon-comics-lake-winter-daytrip",
+      "publishedAt": "2026-11-07T04:21:17.610Z",
+      "updatedAt": "2026-11-07T04:21:17.610Z",
+      "lastReviewedAt": "2026-11-07T04:21:17.610Z",
+      "image": {
+        "src": "/winter-photos/capital-2470347-1-20261107.webp",
+        "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/90/4119290_image2_1.jpg",
+        "placeId": "2470347",
+        "alt": "한국만화박물관 자료 사진",
+        "caption": "한국만화박물관 · 촬영 시기 미확인 자료 사진",
+        "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+        "kind": "tour-api",
+        "copyrightType": "Type1",
+        "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+        "reviewed": true,
+        "reviewedAt": "2026-11-07T04:19:00.230Z",
+        "width": 940,
+        "height": 627
+      },
+      "validation": {
+        "version": 4,
+        "sourceKind": "official-tour-api",
+        "checkedAt": "2026-11-07T04:21:17.610Z",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text",
+          "official-sources",
+          "photos",
+          "daytrip"
+        ]
+      }
+    },
+    {
+      "slug": "gyeonggi-goyang-lake-winter-daytrip",
+      "title": "고양 겨울 당일치기: 일산호수공원과 고양꽃전시관",
+      "area": "경기",
+      "city": "고양시",
+      "duration": "당일",
+      "intro": "겨울 고양에서 호숫가 산책과 실내 휴식을 함께 즐기는 일정입니다. 일산호수공원의 일부 구간을 가볍게 걷고 공원 안 고양꽃전시관의 플라워 북카페에서 쉬어 갑니다. 특별 전시나 축제가 열리는지는 방문 전 따로 확인하세요.",
+      "startPoint": "정발산역",
+      "transport": "지하철과 도보",
+      "durationLabel": "현지 약 4~5시간 제안",
+      "naverQuery": "고양 일산호수공원 고양꽃전시관 겨울 당일치기",
+      "stops": [
+        {
+          "placeId": "127197",
+          "name": "일산호수공원",
+          "timeLabel": "오전",
+          "stay": "제안 체류 50~80분",
+          "description": "정발산역에서 일산호수공원 방향으로 이동해 호수 주변에서 컨디션에 맞는 짧은 구간을 걷습니다. 전 구간을 완주하지 않아도 됩니다. 겨울에는 물가의 얼음 위에 들어가지 말고 바람이 강하면 실내에서 먼저 쉬세요.",
+          "day": 1,
+          "addr": "경기도 고양시 일산동구 호수로 595 (장항동)",
+          "mapx": "126.7638550000",
+          "mapy": "37.6570580000",
+          "officialUrl": "https://www.goyang.go.kr/park/park01/park01_4.jsp",
+          "image": "/winter-photos/capital-final-127197-1-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-final-127197-1-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource_photo/80/3553180_image2_1.jpg",
+            "placeId": "127197",
+            "alt": "일산호수공원 자료 사진",
+            "caption": "일산호수공원 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 626
+          }
+        },
+        {
+          "placeId": "2744492",
+          "name": "고양꽃전시관",
+          "timeLabel": "점심 이후",
+          "stay": "제안 체류 40~70분",
+          "description": "공원 안 고양꽃전시관의 플라워 북카페에서 꽃과 책을 둘러보며 실내 휴식을 가집니다. 전시관은 행사나 대관 일정에 따라 이용 조건이 달라질 수 있습니다. 특별전은 상시 운영으로 가정하지 말고 방문일 공지를 확인하세요.",
+          "day": 1,
+          "addr": "경기도 고양시 일산동구 호수로 595 (장항동)",
+          "mapx": "126.76890828030449",
+          "mapy": "37.6552847260535",
+          "officialUrl": "https://www.goyang.go.kr/park/park02/park02_3.jsp",
+          "image": "/winter-photos/capital-final-2744492-2-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-final-2744492-2-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/34/3513634_image2_1.jpg",
+            "placeId": "2744492",
+            "alt": "고양꽃전시관 자료 사진",
+            "caption": "고양꽃전시관 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 626
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": "호수 풍경을 보고 꽃과 책으로 쉬어 가기",
+          "paragraphs": [
+            "정발산역에서 공원으로 걸어 들어가 먼저 호수 풍경을 본 뒤 식사와 북카페 방문을 이어 갑니다. 실내에 오래 머물고 싶다면 순서를 바꿔도 됩니다. 계절 행사와 야간 조명을 반드시 볼 수 있다는 전제 없이 공원과 실내 휴식에 집중하세요."
+          ]
+        },
+        {
+          "heading": "동절기 보행과 전시관 공지",
+          "paragraphs": [
+            "고양시 안내상 북카페 휴관과 전시관 운영은 별도로 확인해야 합니다. 호수 주변 바람과 그늘진 보행로의 결빙에도 대비해 장갑과 미끄럼이 덜한 신발을 챙기세요. 눈이 많이 내린 날에는 관리 구간 안내에 따라 산책을 줄입니다."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "고양시 · 호수공원 전시관 안내",
+          "url": "https://www.goyang.go.kr/park/park02/park02_3.jsp",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "고양시 · 호수공원 오시는 길",
+          "url": "https://www.goyang.go.kr/park/park01/park01_4.jsp",
+          "checkedAt": "2026-11-07"
+        }
+      ],
+      "id": "capital-gyeonggi-goyang-lake-winter-daytrip",
+      "status": "published",
+      "sourceCourseId": "capital-gyeonggi-goyang-lake-winter-daytrip",
+      "publishedAt": "2026-11-07T04:21:17.610Z",
+      "updatedAt": "2026-11-07T04:21:17.610Z",
+      "lastReviewedAt": "2026-11-07T04:21:17.610Z",
+      "image": {
+        "src": "/winter-photos/capital-final-127197-1-20261107.webp",
+        "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource_photo/80/3553180_image2_1.jpg",
+        "placeId": "127197",
+        "alt": "일산호수공원 자료 사진",
+        "caption": "일산호수공원 · 계절이 다른 자료 사진",
+        "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+        "kind": "tour-api",
+        "copyrightType": "Type1",
+        "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+        "reviewed": true,
+        "reviewedAt": "2026-11-07T04:19:00.230Z",
+        "width": 940,
+        "height": 626
+      },
+      "validation": {
+        "version": 4,
+        "sourceKind": "official-tour-api",
+        "checkedAt": "2026-11-07T04:21:17.610Z",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text",
+          "official-sources",
+          "photos",
+          "daytrip"
+        ]
+      }
+    },
+    {
+      "slug": "seoul-childrens-park-winter-daytrip",
+      "title": "서울 아이와 겨울 당일치기: 어린이대공원과 서울상상나라",
+      "area": "서울",
+      "city": "광진구",
+      "duration": "당일",
+      "intro": "아이와 함께 겨울 서울에서 실내 체험과 짧은 공원 산책을 묶는 당일 코스입니다. 서울상상나라에서 놀이형 전시를 즐기고 같은 어린이대공원 안을 날씨에 맞춰 걷습니다. 서울상상나라는 어린이 동반 관람을 원칙으로 하므로 방문 대상을 먼저 확인하세요.",
+      "startPoint": "어린이대공원역",
+      "transport": "지하철과 도보",
+      "durationLabel": "현지 약 4~5시간 제안",
+      "naverQuery": "서울 아이와 겨울 당일치기 어린이대공원 서울상상나라",
+      "stops": [
+        {
+          "placeId": "1897833",
+          "name": "서울상상나라",
+          "timeLabel": "오전",
+          "stay": "제안 체류 90~120분",
+          "description": "어린이와 함께 실내 체험 전시를 둘러봅니다. 관람 인원이 많을 때 현장 입장이 마감될 수 있어 공식 홈페이지에서 방문일 사전 예약을 확인하는 편이 좋습니다. 어린이를 동반하지 않은 성인과 청소년의 관람은 제한됩니다.",
+          "day": 1,
+          "addr": "서울특별시 광진구 능동로 216 (능동)",
+          "mapx": "127.0762792676",
+          "mapy": "37.5493552228",
+          "officialUrl": "https://www.seoulchildrensmuseum.org/reservation/individualregistration.do",
+          "image": "/winter-photos/capital-final-1897833-0-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-final-1897833-0-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/65/3539965_image2_1.jpg",
+            "placeId": "1897833",
+            "alt": "서울상상나라 자료 사진",
+            "caption": "서울상상나라 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 626
+          },
+          "gallery": [
+            {
+              "src": "/winter-photos/capital-final-1897833-1-20261107.webp",
+              "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/66/3539966_image2_1.jpg",
+              "placeId": "1897833",
+              "alt": "서울상상나라 자료 사진",
+              "caption": "서울상상나라 · 계절이 다른 자료 사진",
+              "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+              "kind": "tour-api",
+              "copyrightType": "Type1",
+              "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+              "reviewed": true,
+              "reviewedAt": "2026-11-07T04:19:00.230Z",
+              "width": 940,
+              "height": 626
+            }
+          ]
+        },
+        {
+          "placeId": "126490",
+          "name": "서울어린이대공원",
+          "timeLabel": "점심 이후",
+          "stay": "제안 체류 40~70분",
+          "description": "식사 후 어린이대공원에서 아이의 컨디션과 날씨에 맞는 짧은 구간을 걷습니다. 동물원·놀이시설은 각각 운영과 휴장 조건이 다를 수 있어 필수 일정으로 두지 마세요. 바람이나 눈이 심하면 실내 관람 뒤 바로 귀가해도 좋습니다.",
+          "day": 1,
+          "addr": "서울특별시 광진구 능동로 216 (능동)",
+          "mapx": "127.0762792676",
+          "mapy": "37.5493552228",
+          "officialUrl": "https://www.sisul.or.kr/open_content/childrenpark/",
+          "image": "/winter-photos/capital-final-126490-0-20261107.webp",
+          "photo": {
+            "src": "/winter-photos/capital-final-126490-0-20261107.webp",
+            "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/62/3355162_image2_1.JPG",
+            "placeId": "126490",
+            "alt": "서울어린이대공원 자료 사진",
+            "caption": "서울어린이대공원 · 계절이 다른 자료 사진",
+            "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+            "kind": "tour-api",
+            "copyrightType": "Type1",
+            "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+            "reviewed": true,
+            "reviewedAt": "2026-11-07T04:19:00.230Z",
+            "width": 940,
+            "height": 640
+          }
+        }
+      ],
+      "sections": [
+        {
+          "heading": "실내 체험 뒤 공원을 짧게 걷기",
+          "paragraphs": [
+            "서울상상나라는 어린이대공원 안에 있어 두 장소 사이 이동 부담이 작습니다. 오전 예약 시간에 맞춰 실내 체험을 먼저 하고 점심과 화장실 휴식을 충분히 가진 뒤 공원을 걷는 흐름입니다. 상상나라의 체험 구성과 이용 대상은 방문 시점에 달라질 수 있습니다."
+          ]
+        },
+        {
+          "heading": "어린이 동반 및 예약 확인",
+          "paragraphs": [
+            "어린이 없이 방문하는 성인과 청소년은 서울상상나라 입장이 제한됩니다. 사전 예약을 권장하며 현장 입장은 인원 마감 시 어려울 수 있으니 공식 예약 안내를 확인하세요. 휴관일·보수 일정과 공원 시설의 당일 운영 여부도 각각 살펴봅니다."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "title": "서울상상나라 · 개인예약 안내",
+          "url": "https://www.seoulchildrensmuseum.org/reservation/individualregistration.do",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "서울관광재단 · 서울상상나라",
+          "url": "https://korean.visitseoul.net/museum/%EC%84%9C%EC%9A%B8%EC%83%81%EC%83%81%EB%82%98%EB%9D%BC/KOP011669",
+          "checkedAt": "2026-11-07"
+        },
+        {
+          "title": "서울어린이대공원 공식 안내",
+          "url": "https://www.sisul.or.kr/open_content/childrenpark/",
+          "checkedAt": "2026-11-07T04:06:57.155Z"
+        }
+      ],
+      "id": "capital-seoul-childrens-park-winter-daytrip",
+      "status": "published",
+      "sourceCourseId": "capital-seoul-childrens-park-winter-daytrip",
+      "publishedAt": "2026-11-07T04:21:17.610Z",
+      "updatedAt": "2026-11-07T04:21:17.610Z",
+      "lastReviewedAt": "2026-11-07T04:21:17.610Z",
+      "image": {
+        "src": "/winter-photos/capital-final-1897833-0-20261107.webp",
+        "sourceUrl": "https://tong.visitkorea.or.kr/cms/resource/65/3539965_image2_1.jpg",
+        "placeId": "1897833",
+        "alt": "서울상상나라 자료 사진",
+        "caption": "서울상상나라 · 계절이 다른 자료 사진",
+        "credit": "한국관광공사 TourAPI · 공공누리 제1유형",
+        "kind": "tour-api",
+        "copyrightType": "Type1",
+        "licenseUrl": "https://www.kogl.or.kr/info/license.do",
+        "reviewed": true,
+        "reviewedAt": "2026-11-07T04:19:00.230Z",
+        "width": 940,
+        "height": 626
+      },
+      "validation": {
+        "version": 4,
+        "sourceKind": "official-tour-api",
+        "checkedAt": "2026-11-07T04:21:17.610Z",
+        "checks": [
+          "identity",
+          "coordinates",
+          "route",
+          "text",
+          "official-sources",
+          "photos",
+          "daytrip"
+        ]
+      }
+    }
+  ]
+}

@@ -53,9 +53,9 @@ export default async function WinterCoursePage({params}:{params:Promise<{slug:st
  return <article className="mx-auto max-w-[880px] px-4 pb-14 pt-5 sm:px-6">
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:json(breadcrumbs)}}/>
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:json(article)}}/>
-  <nav aria-label="현재 위치" className="flex flex-wrap items-center gap-x-2 text-xs text-ink-soft"><Link href="/" className="inline-flex min-h-11 items-center hover:underline">홈</Link><span aria-hidden="true">/</span><Link href="/winter-travel" className="inline-flex min-h-11 items-center hover:underline">겨울 여행</Link><span aria-hidden="true">/</span><span aria-current="page">{[course.area,course.city].filter(Boolean).join(' · ')}</span></nav>
+  <nav aria-label="현재 위치" className="flex flex-wrap items-center gap-x-2 text-xs text-ink-soft"><Link href="/" className="inline-flex min-h-11 items-center hover:underline">홈</Link><span aria-hidden="true">/</span><Link href="/winter-travel" className="inline-flex min-h-11 items-center hover:underline">겨울 여행</Link><span aria-hidden="true">/</span><span aria-current="page">{[...new Set([course.area,course.city].filter(Boolean))].join(' · ')}</span></nav>
   <header className="pt-4">
-   <p className="text-sm font-bold text-brandblue">{[course.area,course.city,durationText].filter(Boolean).join(' · ')}</p>
+   <p className="text-sm font-bold text-brandblue">{[...new Set([course.area,course.city,durationText].filter(Boolean))].join(' · ')}</p>
    <h1 className="mt-3 break-keep text-[28px] font-black leading-[1.4] tracking-tight text-ink sm:text-4xl sm:leading-[1.35]">{course.title}</h1>
    <p className="mt-4 text-[15px] leading-8 text-ink-soft sm:text-base">{course.intro}</p>
    <p className="mt-3 text-xs leading-6 text-ink-soft">정보 확인 <time dateTime={checkedAt}>{formatDate(checkedAt)}</time></p>

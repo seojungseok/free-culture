@@ -1,0 +1,108 @@
+{
+  "generatedAt": "2026-11-07T04:21:17.610Z",
+  "total": 20,
+  "published": 20,
+  "drafts": 0,
+  "courses": [
+    {
+      "slug": "seoul-seongsu-forest-winter-daytrip",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "seoul-namsangol-namsan-winter-daytrip",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "seoul-seodaemun-history-winter-daytrip",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "incheon-wolmi-park-winter-daytrip",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "incheon-songdo-park-tower-winter-daytrip",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-yangsu-garden-winter-daytrip",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-bucheon-ecology-winter-daytrip",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-bucheon-comics-lake-winter-daytrip",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-goyang-lake-winter-daytrip",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "seoul-childrens-park-winter-daytrip",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-suwon-fortress-winter-2days",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "incheon-port-songdo-winter-2days",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-paju-books-art-winter-2days",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-yangpyeong-rivers-temple-winter-2days",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-gapyeong-garden-lake-winter-2days",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-pocheon-quarry-lake-winter-2days",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-yongin-folklore-museum-winter-2days",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-bucheon-comics-garden-winter-2days",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-icheon-ceramics-park-winter-2days",
+      "status": "published",
+      "reasons": []
+    },
+    {
+      "slug": "gyeonggi-namyangju-dasan-river-winter-2days",
+      "status": "published",
+      "reasons": []
+    }
+  ]
+}

@@ -9,7 +9,7 @@ export const revalidate=3600;
 export function generateMetadata():Metadata{
  const count=getPublicWinterCourses().length;
  const title='전국 겨울여행'+(count?' '+count+'코스':'')+' · 당일치기와 1박 2일';
- const description='겨울 바다, 궁궐과 미술관, 온천 마을까지. 전국 17개 지역의 당일치기와 1박 2일 겨울여행을 지역·일정별로 고르고, 날짜별 동선과 이동 방법·숙박 권역·공식 안내를 확인하세요.';
+ const description='서울·인천·경기 수도권부터 전국 겨울 바다와 미술관까지. 당일치기와 1박 2일 코스를 지역별로 고르고 일정, 이동 방법, 숙박 권역과 공식 안내를 확인하세요.';
  return {title,description,alternates:{canonical:'/winter-travel'},robots:{index:count>0,follow:true},openGraph:{type:'website',title,description,url:'/winter-travel'}};
 }
 export default function WinterTravelPage(){

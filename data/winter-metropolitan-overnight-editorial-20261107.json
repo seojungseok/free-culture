@@ -1,0 +1,934 @@
+[
+  {
+    "slug": "gyeonggi-suwon-fortress-winter-2days",
+    "title": "수원 겨울 1박 2일 여행: 수원화성과 행궁동, 광교호수의 겨울 산책",
+    "area": "경기",
+    "city": "수원",
+    "duration": "1박2일",
+    "intro": "수원화성박물관에서 정조의 성곽 도시를 살펴보고 화성과 행궁을 거닙니다. 둘째 날에는 광교호수공원까지 이어지는 1박 2일 일정입니다. 겨울 바람이 강한 날은 성곽의 한 구간만 걷고 실내 관람에 시간을 더해 보세요.",
+    "startPoint": "첫날 오전 수원역 또는 팔달문 일대 도착 · 둘째 날 오후 현지에서 귀가",
+    "transport": "시내버스와 도보",
+    "durationLabel": "첫날 오전~둘째 날 오후 현지 일정 제안",
+    "overnightArea": "수원역·행궁동 인근",
+    "naverQuery": "수원 겨울 1박2일 수원화성박물관 화성행궁",
+    "stops": [
+      {
+        "name": "수원화성박물관",
+        "query": "수원화성박물관",
+        "day": 1,
+        "officialUrl": "https://smuseum.suwon.go.kr/hs/contents/view?contentsNo=129&menuLevel=3&menuNo=110",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "성곽을 보기 전 축성 과정과 정조의 도시 계획을 살펴보는 실내 출발점입니다. 전시를 둘러본 뒤 성곽에서 찾고 싶은 건축 요소를 하나 골라 보세요. 전시에서 본 성문의 형태를 사진이나 메모로 기억해 두면 성벽을 볼 때 차이를 찾기 좋습니다."
+      },
+      {
+        "name": "수원화성",
+        "query": "수원화성",
+        "day": 1,
+        "officialUrl": "https://www.swcf.or.kr/?p=65",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "화성의 성문과 성벽을 한 구간만 골라 걸으며 박물관에서 본 축성 이야기를 실제 풍경과 연결합니다. 언덕과 계단은 눈이 쌓이면 더 조심해야 합니다. 성곽길 전체를 돌 필요는 없습니다. 방문하려는 구간의 출입구와 돌아올 교통편부터 정하세요."
+      },
+      {
+        "name": "화성행궁",
+        "query": "화성행궁",
+        "day": 2,
+        "officialUrl": "https://www.swcf.or.kr/?p=65",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "둘째 날에는 정조가 머물던 행궁을 관람하며 전날 걸은 성곽 안의 공간을 살펴봅니다. 전각과 마당이 이어져 추울 때는 휴식 장소를 미리 찾아두세요. 행궁의 야간관람은 별도 기간에만 열릴 수 있어 낮 시간 방문을 기준으로 계획했습니다."
+      },
+      {
+        "name": "광교호수공원",
+        "query": "광교호수공원",
+        "day": 2,
+        "officialUrl": "https://www.suwon.go.kr/sw-www/sw-suwonpark/sw-suwonpark-05/sw-suwonpark-05-05.jsp",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "여행 끝은 호수 주변 평탄한 구간에서 짧은 산책으로 마무리합니다. 기온과 바람이 강할 때는 전체 둘레를 돌기보다 접근이 쉬운 출입구 주변만 걷습니다. 행궁에서 광교까지는 별도 이동이 필요하므로 시내버스 경로와 교통 상황을 먼저 확인하세요."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "첫째 날 | 수원화성박물관 · 수원화성",
+        "paragraphs": [
+          "화성박물관의 자료를 먼저 보고 성곽의 성문과 축성 방식에 주목하세요. 성곽에서는 한 구간만 걷고 팔달문 주변에서 저녁을 먹으면 추위와 이동 부담을 줄일 수 있습니다."
+        ]
+      },
+      {
+        "heading": "둘째 날 | 화성행궁 · 광교호수공원",
+        "paragraphs": [
+          "화성행궁은 야간 개장 기간을 가정하지 않고 낮 방문으로 잡았습니다. 오후에는 광교로 이동해 호숫가를 짧게 걷고 수원역 또는 광교 방면에서 귀가합니다."
+        ]
+      },
+      {
+        "heading": "숙소와 겨울 방문 전 확인",
+        "paragraphs": [
+          "숙소는 수원역·행궁동 인근에서 첫날 저녁 이동과 다음 날 출발 동선을 비교해 고릅니다. 요금과 짐 보관 여부는 예약 전에 숙소에 확인하세요.",
+          "시설별 휴관일·입장료와 예약 조건, 이동편은 방문일의 공식 안내에서 확인하세요. 눈이나 결빙이 있으면 강변과 경사로를 줄이고 안전한 실내 일정으로 조정합니다."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "수원화성박물관 · 관람 안내",
+        "url": "https://smuseum.suwon.go.kr/hs/contents/view?contentsNo=129&menuLevel=3&menuNo=110",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "화성행궁 · 관람 안내",
+        "url": "https://www.swcf.or.kr/?p=65",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "수원시 · 산책하기 좋은 공원",
+        "url": "https://www.suwon.go.kr/sw-www/sw-suwonpark/sw-suwonpark-05/sw-suwonpark-05-05.jsp",
+        "checkedAt": "2026-11-07"
+      }
+    ]
+  },
+  {
+    "slug": "incheon-port-songdo-winter-2days",
+    "title": "인천 겨울 1박 2일 여행: 개항장 골목과 송도 수변을 잇는 1박 여행",
+    "area": "인천",
+    "city": "인천",
+    "duration": "1박2일",
+    "intro": "인천역 앞 차이나타운과 짜장면박물관에서 개항장의 이야기를 만납니다. 하룻밤을 보낸 뒤에는 송도 센트럴파크와 인천도시역사관으로 이동해 항구 도시의 옛 모습과 새로운 수변 풍경을 함께 살펴보세요.",
+    "startPoint": "첫날 오전 인천역 도착 · 둘째 날 오후 현지에서 귀가",
+    "transport": "지하철과 도보, 송도 이동은 대중교통",
+    "durationLabel": "첫날 오전~둘째 날 오후 현지 일정 제안",
+    "overnightArea": "인천역·송도 센트럴파크역 인근",
+    "naverQuery": "인천 겨울 1박2일 차이나타운 송도 센트럴파크",
+    "stops": [
+      {
+        "name": "차이나타운",
+        "query": "차이나타운",
+        "day": 1,
+        "officialUrl": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21122811325905008",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "인천역에서 가까운 차이나타운을 출발점으로 삼아 중국식 건축과 골목의 분위기를 천천히 살펴봅니다. 식사할 곳은 메뉴와 가격을 확인해 정하세요. 문 주변은 방문객이 모이기 쉬워 짐이 많다면 역에 보관하고 골목부터 걷는 편이 낫습니다."
+      },
+      {
+        "name": "짜장면박물관",
+        "query": "짜장면박물관",
+        "day": 1,
+        "officialUrl": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21121415141255311",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "개항장 산책 중 실내로 들어가 음식과 지역의 역사를 함께 살펴보는 순서입니다. 작은 전시를 천천히 보고 다음 장소로 이동하면 추위를 피하기 좋습니다. 실내 관람 뒤 차이나타운에서 식사하고 숙소로 이동하면 첫날 짐을 다시 들고 오갈 일이 줄어듭니다."
+      },
+      {
+        "name": "송도 센트럴파크",
+        "query": "송도 센트럴파크",
+        "day": 2,
+        "officialUrl": "https://www.insiseol.or.kr/park/songdo/facility/central.jsp",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "둘째 날에는 해수를 끌어들인 수로와 주변 도시 풍경을 보며 공원의 짧은 구간을 걷습니다. 수상 체험은 겨울 운영 여부를 확인한 뒤 선택하세요. 공원은 넓으므로 숙소 또는 역사관과 가까운 출입구를 기준으로 산책 길이를 정해 보세요."
+      },
+      {
+        "name": "인천도시역사관",
+        "query": "인천도시역사관",
+        "day": 2,
+        "officialUrl": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21121411240804659",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "송도의 도시 변화와 인천의 역사에 관한 전시를 보며 여행을 정리합니다. 야외 공원과 실내 전시를 묶어 강풍이나 추위에 따라 순서를 조절할 수 있습니다. 전시관과 센트럴파크는 가까운 편이지만 출입구 위치를 먼저 확인하면 추운 날의 이동을 줄일 수 있습니다."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "첫째 날 | 차이나타운 · 짜장면박물관",
+        "paragraphs": [
+          "인천역에서 차이나타운과 짜장면박물관을 둘러본 뒤 골목에서 점심을 먹습니다. 개항장 구경은 도보 중심으로 하고, 쌀쌀하면 박물관 방문을 앞당기세요."
+        ]
+      },
+      {
+        "heading": "둘째 날 | 송도 센트럴파크 · 인천도시역사관",
+        "paragraphs": [
+          "숙소에서 체크아웃한 다음 송도로 이동합니다. 역사관을 충분히 보고 센트럴파크는 날씨에 맞춰 짧게 걷는 순서로 바꿔도 좋습니다."
+        ]
+      },
+      {
+        "heading": "숙소와 겨울 방문 전 확인",
+        "paragraphs": [
+          "숙소는 인천역·송도 센트럴파크역 인근에서 첫날 저녁 이동과 다음 날 출발 동선을 비교해 고릅니다. 요금과 짐 보관 여부는 예약 전에 숙소에 확인하세요.",
+          "시설별 휴관일·입장료와 예약 조건, 이동편은 방문일의 공식 안내에서 확인하세요. 눈이나 결빙이 있으면 강변과 경사로를 줄이고 안전한 실내 일정으로 조정합니다."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "차이나타운 · 기관 안내",
+        "url": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21122811325905008",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "짜장면박물관 · 기관 안내",
+        "url": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21121415141255311",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "송도 센트럴파크 · 기관 안내",
+        "url": "https://www.insiseol.or.kr/park/songdo/facility/central.jsp",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "인천도시역사관 · 관람 안내",
+        "url": "https://itour.incheon.go.kr/ssst/ssst/detail.do?cotId=ITD21121411240804659",
+        "checkedAt": "2026-11-07"
+      }
+    ]
+  },
+  {
+    "slug": "gyeonggi-paju-books-art-winter-2days",
+    "title": "파주 겨울 1박 2일 여행: 출판도시 책방과 헤이리 예술마을의 겨울",
+    "area": "경기",
+    "city": "파주",
+    "duration": "1박2일",
+    "intro": "책장 사이에서 겨울 오후를 보내고 싶다면 파주 출판도시에서 시작해 보세요. 지혜의숲과 미메시스 미술관을 둘러본 뒤, 다음 날에는 헤이리 전시 공간과 오두산 전망대를 잇습니다. 전시·전망대 운영일은 출발 전에 확인하세요.",
+    "startPoint": "첫날 오전 파주 출판도시 도착 · 둘째 날 오후 현지에서 귀가",
+    "transport": "자가용 또는 버스와 택시",
+    "durationLabel": "첫날 오전~둘째 날 오후 현지 일정 제안",
+    "overnightArea": "출판도시·탄현면 인근",
+    "naverQuery": "파주 겨울 1박2일 지혜의숲 헤이리예술마을",
+    "stops": [
+      {
+        "name": "지혜의숲",
+        "query": "지혜의숲",
+        "day": 1,
+        "officialUrl": "https://ggtour.or.kr/gmice/?p=29&page=2&reqIdx=202507251703193055&viewMode=view",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "첫날은 파주 출판도시의 개방형 서가에서 관심 분야의 책을 골라 천천히 읽습니다. 책을 읽는 시간을 넉넉히 남기고 주변 출판 공간은 운영 여부를 확인하세요. 독서만 할 계획이라면 입장 조건을 확인하고 따뜻한 실내에 머무를 여유를 남겨 두세요."
+      },
+      {
+        "name": "미메시스 아트 뮤지엄",
+        "query": "미메시스 아트 뮤지엄",
+        "day": 1,
+        "officialUrl": "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoView.do?cntntsSn=2101&menuCode=8",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "출판도시에서 전시 관람을 이어갑니다. 건물의 공간과 전시를 함께 살펴보고 겨울의 짧은 낮에는 실내에서 충분히 쉬었다가 숙소로 이동하세요. 전시는 교체 시기에 따라 열리지 않을 수 있으므로 예매 전 현재 전시 여부를 확인합니다."
+      },
+      {
+        "name": "헤이리예술마을",
+        "query": "헤이리예술마을",
+        "day": 2,
+        "officialUrl": "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoView.do?cntntsSn=2224&menuCode=83&q_gubunCode=1002",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "둘째 날은 여러 전시관과 공방이 모인 예술마을에서 관심 있는 공간 한두 곳을 고릅니다. 개별 시설마다 휴관일과 입장 조건이 다릅니다. 마을이 넓어 모든 전시관을 돌기보다 선택한 한두 곳의 예약·휴관 정보를 확인하는 편이 좋습니다."
+      },
+      {
+        "name": "오두산통일전망대",
+        "query": "오두산통일전망대",
+        "day": 2,
+        "officialUrl": "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoView.do?cntntsSn=3039&menuCode=116",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "여행 마지막에는 전망대에서 접경 지역을 바라보고 전시를 살펴봅니다. 안개나 날씨에 따라 조망이 달라지며 운영일과 이동편을 확인해야 합니다. 전망 관람이 제한되는 날에는 헤이리 실내 관람에 시간을 더하는 대안도 가능합니다."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "첫째 날 | 지혜의숲 · 미메시스 아트 뮤지엄",
+        "paragraphs": [
+          "지혜의숲과 미술관은 출판도시의 책과 전시라는 공통 주제로 묶었습니다. 전시가 쉬는 날에는 서가 관람과 주변 서점 탐방에 집중할 수 있습니다."
+        ]
+      },
+      {
+        "heading": "둘째 날 | 헤이리예술마을 · 오두산통일전망대",
+        "paragraphs": [
+          "출판도시에서 탄현면으로 이동해 헤이리의 전시 공간을 고릅니다. 오두산 전망대 운영과 시야를 확인하고 방문이 어렵다면 마을에서 실내 시간을 늘립니다."
+        ]
+      },
+      {
+        "heading": "숙소와 겨울 방문 전 확인",
+        "paragraphs": [
+          "숙소는 출판도시·탄현면 인근에서 첫날 저녁 이동과 다음 날 출발 동선을 비교해 고릅니다. 요금과 짐 보관 여부는 예약 전에 숙소에 확인하세요.",
+          "시설별 휴관일·입장료와 예약 조건, 이동편은 방문일의 공식 안내에서 확인하세요. 눈이나 결빙이 있으면 강변과 경사로를 줄이고 안전한 실내 일정으로 조정합니다."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "미메시스 아트 뮤지엄 · 기관 안내",
+        "url": "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoView.do?cntntsSn=2101&menuCode=8",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "헤이리예술마을 · 기관 안내",
+        "url": "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoView.do?cntntsSn=2224&menuCode=83&q_gubunCode=1002",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "오두산통일전망대 · 기관 안내",
+        "url": "https://tour.paju.go.kr/user/tour/place/BD_tourPlaceInfoView.do?cntntsSn=3039&menuCode=116",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "경기관광공사 · 아시아출판문화정보센터",
+        "url": "https://ggtour.or.kr/gmice/?p=29&page=2&reqIdx=202507251703193055&viewMode=view",
+        "checkedAt": "2026-11-07"
+      }
+    ]
+  },
+  {
+    "slug": "gyeonggi-yangpyeong-rivers-temple-winter-2days",
+    "title": "양평 겨울 1박 2일 여행: 두물머리 강변과 용문산 자락의 겨울",
+    "area": "경기",
+    "city": "양평",
+    "duration": "1박2일",
+    "intro": "두물머리의 차가운 강 풍경과 세미원 정원을 본 뒤 양평에서 하루를 쉽니다. 이튿날은 군립미술관의 실내 전시와 용문사 주변 산책으로 채웠습니다. 양수리와 용문산은 떨어져 있어 교통편을 미리 살피는 편이 좋습니다.",
+    "startPoint": "첫날 오전 양수역 또는 양평역 도착 · 둘째 날 오후 현지에서 귀가",
+    "transport": "경의중앙선과 버스·택시, 자가용 편리",
+    "durationLabel": "첫날 오전~둘째 날 오후 현지 일정 제안",
+    "overnightArea": "양수역·양평읍 인근",
+    "naverQuery": "양평 겨울 1박2일 두물머리 양평군립미술관",
+    "stops": [
+      {
+        "name": "두물머리",
+        "query": "두물머리",
+        "day": 1,
+        "officialUrl": "https://tour.yp21.go.kr/www/contents.do?key=164",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "강이 만나는 물가에서 겨울 강변 풍경을 보고 산책을 시작합니다. 새벽 물안개는 날씨에 따라 달라지므로 볼 수 있다고 전제하지 말고 보온을 우선하세요. 강가의 차가운 바람을 고려해 장갑과 모자를 준비하고 보행로가 얼었는지 확인하세요."
+      },
+      {
+        "name": "세미원",
+        "query": "세미원",
+        "day": 1,
+        "officialUrl": "https://tour.yp21.go.kr/www/contents.do?key=164",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "정원 산책로를 따라 수변을 살펴보고 실내 휴식이 가능한 공간을 확인합니다. 연꽃 개화기를 기대하기보다 겨울 정원의 분위기를 천천히 즐기는 일정입니다. 두물머리와 이어 걷는 동선은 출입구나 연결 통로의 운영 상태를 확인하고 정하세요."
+      },
+      {
+        "name": "양평군립미술관",
+        "query": "양평군립미술관",
+        "day": 2,
+        "officialUrl": "https://ymuseum.org/home/sub01.php?mid=8",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "둘째 날에는 날씨의 영향을 덜 받는 전시 관람으로 일정을 시작합니다. 전시 교체일과 휴관일을 확인하고 관람할 전시가 있는 날에 방문하세요. 전시가 없는 날이라면 양평읍에서 식사와 휴식을 길게 잡고 다음 일정으로 이동합니다."
+      },
+      {
+        "name": "용문사",
+        "query": "용문사",
+        "day": 2,
+        "officialUrl": "https://tour.yp21.go.kr/www/selectTourCntntsWebView.do?ctgry=13&key=76&pageIndex=1&pageUnit=6&searchCnd=all&sortTy=HIT&tourNo=243",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "용문산 자락의 사찰과 오래된 은행나무 주변을 둘러봅니다. 겨울 산길의 결빙 가능성을 고려해 무리한 등산 대신 사찰 주변 짧은 동선을 택합니다. 산자락에 눈이 남을 수 있으므로 대중교통이나 주차장에서 사찰까지의 길 상태도 확인하세요."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "첫째 날 | 두물머리 · 세미원",
+        "paragraphs": [
+          "양수역을 기준으로 두물머리와 세미원 입구를 확인합니다. 새벽 물안개나 겨울 축제를 가정하지 않고 강변의 평범한 풍경을 즐기는 일정입니다."
+        ]
+      },
+      {
+        "heading": "둘째 날 | 양평군립미술관 · 용문사",
+        "paragraphs": [
+          "양평읍에서 미술관을 관람하고 용문산 쪽으로 이동합니다. 양수역 주변과 용문산은 떨어져 있으므로 버스 배차를 확인하거나 차량을 이용하는 편이 수월합니다."
+        ]
+      },
+      {
+        "heading": "숙소와 겨울 방문 전 확인",
+        "paragraphs": [
+          "숙소는 양수역·양평읍 인근에서 첫날 저녁 이동과 다음 날 출발 동선을 비교해 고릅니다. 요금과 짐 보관 여부는 예약 전에 숙소에 확인하세요.",
+          "시설별 휴관일·입장료와 예약 조건, 이동편은 방문일의 공식 안내에서 확인하세요. 눈이나 결빙이 있으면 강변과 경사로를 줄이고 안전한 실내 일정으로 조정합니다."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "양평군립미술관 · 관람 안내",
+        "url": "https://ymuseum.org/home/sub01.php?mid=8",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "양평관광 · 용문사",
+        "url": "https://tour.yp21.go.kr/www/selectTourCntntsWebView.do?ctgry=13&key=76&pageIndex=1&pageUnit=6&searchCnd=all&sortTy=HIT&tourNo=243",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "양평관광 · 두물머리와 세미원",
+        "url": "https://tour.yp21.go.kr/www/contents.do?key=164",
+        "checkedAt": "2026-11-07"
+      }
+    ]
+  },
+  {
+    "slug": "gyeonggi-gapyeong-garden-lake-winter-2days",
+    "title": "가평 겨울 1박 2일 여행: 정원과 청평호를 여유 있게 보는 겨울 일정",
+    "area": "경기",
+    "city": "가평",
+    "duration": "1박2일",
+    "intro": "아침고요수목원의 겨울 정원과 청평호반 풍경을 느긋하게 둘러보고 가평에서 묵습니다. 둘째 날은 가까이 자리한 쁘띠프랑스와 이탈리아마을을 함께 방문합니다. 조명 행사와 버스 운행 여부는 실제 방문일 기준으로 확인하세요.",
+    "startPoint": "첫날 오전 청평역 또는 가평역 도착 · 둘째 날 오후 현지에서 귀가",
+    "transport": "자가용 권장, 관광지 순환버스 운행 여부 확인",
+    "durationLabel": "첫날 오전~둘째 날 오후 현지 일정 제안",
+    "overnightArea": "청평면·가평읍 인근",
+    "naverQuery": "가평 겨울 1박2일 아침고요수목원 쁘띠프랑스",
+    "stops": [
+      {
+        "name": "아침고요수목원",
+        "query": "아침고요수목원",
+        "day": 1,
+        "officialUrl": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=0d39564b-bd71-4f67-9877-288c00bc726f",
+        "timeLabel": "오전 · 방문일 개장 시각 확인",
+        "stay": "제안 체류 60~90분",
+        "description": "수목원에서 침엽수와 겨울 정원의 풍경을 둘러봅니다. 계절 조명 행사는 해마다 기간과 운영 여부가 달라 예매 전 공식 안내를 확인해야 합니다. 밤 조명을 선택하면 귀가가 늦어질 수 있어 숙소 체크인과 이동 시간을 먼저 조정하세요. 겨울 야간 행사 기간에는 개장·퇴장 시각이 달라질 수 있어 방문일 공지를 먼저 확인하고 출발하세요."
+      },
+      {
+        "name": "청평호반",
+        "query": "청평호반",
+        "day": 1,
+        "officialUrl": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=c22fe563-5ca5-4f7f-a0c4-e337c1e16e29",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "청평호 주변에서 물과 산의 겨울 풍경을 감상합니다. 강변은 바람이 강할 수 있으므로 짧은 정차와 식사 시간을 함께 계획하는 편이 좋습니다. 호반에 내려가는 곳과 차량을 세울 수 있는 곳은 지도에서 미리 확인해 무리한 정차를 피하세요."
+      },
+      {
+        "name": "쁘띠프랑스",
+        "query": "쁘띠프랑스",
+        "day": 2,
+        "officialUrl": "https://ggtour.or.kr/gmice/?p=29&page=1&reqIdx=202610261338588564&viewMode=view",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "둘째 날에는 프랑스 문화마을의 전시와 건물을 둘러봅니다. 공연과 체험의 운영 일정은 변동될 수 있으므로 방문일에 맞춰 확인하세요. 청평역 쪽에서 이동한다면 순환버스의 배차와 마지막 운행편을 미리 확인하세요."
+      },
+      {
+        "name": "이탈리아마을",
+        "query": "이탈리아마을",
+        "day": 2,
+        "officialUrl": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=c22fe563-5ca5-4f7f-a0c4-e337c1e16e29",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "인접한 이탈리아마을에서 전시 공간과 건축물을 둘러보고 귀가합니다. 쁘띠프랑스와 별도 입장 또는 통합권 조건이 있을 수 있어 예매 조건을 비교하세요. 두 시설을 둘러보는 시간이 길어지면 식사와 역 복귀 시간을 고려해 관람 범위를 줄이세요."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "첫째 날 | 아침고요수목원 · 청평호반",
+        "paragraphs": [
+          "청평에서 수목원으로 이동해 겨울 정원을 보고 호반의 숙소로 향합니다. 야간 조명을 포함할 때는 올해 실제 운영 공지와 이동편을 먼저 확인합니다."
+        ]
+      },
+      {
+        "heading": "둘째 날 | 쁘띠프랑스 · 이탈리아마을",
+        "paragraphs": [
+          "쁘띠프랑스와 이탈리아마을은 인접한 시설이므로 하루에 묶었습니다. 각각의 운영시간과 입장권을 비교하고 돌아갈 버스의 마지막 시간을 따로 적어두세요."
+        ]
+      },
+      {
+        "heading": "숙소와 겨울 방문 전 확인",
+        "paragraphs": [
+          "숙소는 청평면·가평읍 인근에서 첫날 저녁 이동과 다음 날 출발 동선을 비교해 고릅니다. 요금과 짐 보관 여부는 예약 전에 숙소에 확인하세요.",
+          "시설별 휴관일·입장료와 예약 조건, 이동편은 방문일의 공식 안내에서 확인하세요. 눈이나 결빙이 있으면 강변과 경사로를 줄이고 안전한 실내 일정으로 조정합니다."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "쁘띠프랑스 · 기관 안내",
+        "url": "https://ggtour.or.kr/gmice/?p=29&page=1&reqIdx=202610261338588564&viewMode=view",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "한국관광공사 · 아침고요수목원 안내",
+        "url": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=0d39564b-bd71-4f67-9877-288c00bc726f",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "한국관광공사 · 청평호·가평 여행",
+        "url": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=c22fe563-5ca5-4f7f-a0c4-e337c1e16e29",
+        "checkedAt": "2026-11-07"
+      }
+    ]
+  },
+  {
+    "slug": "gyeonggi-pocheon-quarry-lake-winter-2days",
+    "title": "포천 겨울 1박 2일 여행: 채석장 문화공간과 산정호수를 만나는 겨울",
+    "area": "경기",
+    "city": "포천",
+    "duration": "1박2일",
+    "intro": "포천아트밸리의 옛 채석장 풍경과 천문과학관을 본 뒤 산정호수로 향하는 여행입니다. 둘째 날에는 호수와 같은 권역의 조각공원을 함께 걸어요. 겨울 수변은 바람이 세고 미끄러울 수 있으니 날씨에 맞춰 거리를 조절하세요.",
+    "startPoint": "첫날 오전 포천시내 또는 운천 방면 도착 · 둘째 날 오후 현지에서 귀가",
+    "transport": "자가용 권장",
+    "durationLabel": "첫날 오전~둘째 날 오후 현지 일정 제안",
+    "overnightArea": "포천시내·산정호수 인근",
+    "naverQuery": "포천 겨울 1박2일 포천아트밸리 산정호수 조각공원",
+    "stops": [
+      {
+        "name": "포천아트밸리",
+        "query": "포천아트밸리",
+        "day": 1,
+        "officialUrl": "https://www.ggtour.or.kr/gmice/?p=21&rIdx=202410291724387884&viewMode=view",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "옛 채석장을 활용한 공간에서 천주호와 주변 절벽을 바라봅니다. 모노레일 운행과 천문과학관 관람 조건은 날씨와 시설 사정에 따라 확인하세요. 호수와 조각공원을 먼저 둘러본 뒤 실내 전시로 들어가면 야외 체류 시간을 나누기 좋습니다."
+      },
+      {
+        "name": "포천아트밸리 천문과학관",
+        "query": "포천아트밸리 천문과학관",
+        "day": 1,
+        "officialUrl": "https://artvalley.pcfac.or.kr/star/sub02/sub02.html",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "아트밸리 안에서 실내 전시를 함께 보며 야외 관람 사이에 몸을 녹입니다. 별 관측 행사나 프로그램은 별도 일정일 수 있어 사전 확인이 필요합니다. 천문과학관은 아트밸리 안의 시설이므로 별도의 먼 이동지로 생각하지 않아도 됩니다."
+      },
+      {
+        "name": "산정호수",
+        "query": "산정호수",
+        "day": 2,
+        "officialUrl": "https://www.ggtour.or.kr/dulegil/usr/wap/detail.do?app=24910&seq=10015",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "둘째 날에는 호숫가에서 평탄한 산책 구간을 선택해 겨울 풍경을 즐깁니다. 호수 얼음 위에 들어가지 말고 결빙된 산책로는 우회하세요. 바람이 강한 날에는 호수 전체를 걷는 계획 대신 접근이 쉬운 수변 구간에서 되돌아옵니다."
+      },
+      {
+        "name": "산정호수 조각공원",
+        "query": "산정호수 조각공원",
+        "day": 2,
+        "officialUrl": "https://council.pocheon.go.kr/attach/bbs/magazine/201905281447439389057-26cc55373dbc105186623ed86cd288e535b01f571a2f6dbfe4f6e06446a96cf7d639ffc4dc54a22e.pdf",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 30~45분",
+        "description": "산정호수 관광지 안의 조각공원에서 작품과 호수 주변 풍경을 함께 살펴봅니다. 호수와 조각공원은 같은 권역이므로 별도 장거리 이동지로 잡지 않고 산책의 연장으로 묶습니다. 호숫가가 얼면 보행에 주의하고, 식사는 인근에서 영업 여부를 확인해 별도로 선택하세요."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "첫째 날 | 포천아트밸리 · 포천아트밸리 천문과학관",
+        "paragraphs": [
+          "포천아트밸리의 호수와 천문과학관을 함께 보는 하루입니다. 과학관은 별도 먼 목적지가 아니라 같은 관광지 안에 있으므로 한 번의 입장 동선으로 묶으세요."
+        ]
+      },
+      {
+        "heading": "둘째 날 | 산정호수 · 산정호수 조각공원",
+        "paragraphs": [
+          "산정호수 수변을 걷고 같은 관광지 권역의 조각공원을 이어서 둘러봅니다. 두 곳은 한 장소에서 이어지는 산책이므로 별도 이동 시간을 길게 잡을 필요는 없습니다.",
+          "겨울에는 호수의 얼음 위에 들어가지 말고 산책로 결빙 여부를 확인하세요. 식사는 호수 주변에서 영업 중인 식당을 별도로 선택하고 영업일과 가격을 확인합니다."
+        ]
+      },
+      {
+        "heading": "숙소와 겨울 방문 전 확인",
+        "paragraphs": [
+          "숙소는 포천시내·산정호수 인근에서 첫날 저녁 이동과 다음 날 출발 동선을 비교해 고릅니다. 요금과 짐 보관 여부는 예약 전에 숙소에 확인하세요.",
+          "시설별 휴관일·입장료와 예약 조건, 이동편은 방문일의 공식 안내에서 확인하세요. 눈이나 결빙이 있으면 강변과 경사로를 줄이고 안전한 실내 일정으로 조정합니다."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "포천아트밸리 · 기관 안내",
+        "url": "https://www.ggtour.or.kr/gmice/?p=21&rIdx=202410291724387884&viewMode=view",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "포천아트밸리 천문과학관 · 이용안내",
+        "url": "https://artvalley.pcfac.or.kr/star/sub02/sub02.html",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "포천시의회 · 산정호수 관광지 조각공원",
+        "url": "https://council.pocheon.go.kr/attach/bbs/magazine/201905281447439389057-26cc55373dbc105186623ed86cd288e535b01f571a2f6dbfe4f6e06446a96cf7d639ffc4dc54a22e.pdf",
+        "checkedAt": "2026-11-07"
+      }
+    ]
+  },
+  {
+    "slug": "gyeonggi-yongin-folklore-museum-winter-2days",
+    "title": "용인 겨울 1박 2일 여행: 민속촌과 박물관, 호수공원 산책",
+    "area": "경기",
+    "city": "용인",
+    "duration": "1박2일",
+    "intro": "한국민속촌에서 옛 마을을 둘러보고 경기도박물관에서 지역의 역사를 이어 봅니다. 둘째 날은 백남준아트센터의 미디어아트와 기흥호수공원 산책을 묶었습니다. 실내외 관람을 나눠 추운 날에도 조절하기 좋은 용인 1박 2일 코스입니다.",
+    "startPoint": "첫날 오전 기흥역 또는 한국민속촌 방면 도착 · 둘째 날 오후 현지에서 귀가",
+    "transport": "버스와 택시 병행, 자가용 편리",
+    "durationLabel": "첫날 오전~둘째 날 오후 현지 일정 제안",
+    "overnightArea": "기흥역·민속촌 인근",
+    "naverQuery": "용인 겨울 1박2일 한국민속촌 백남준아트센터 기흥호수공원",
+    "stops": [
+      {
+        "name": "한국민속촌",
+        "query": "한국민속촌",
+        "day": 1,
+        "officialUrl": "https://koreanfolk.co.kr/about",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "첫날은 옛집과 마을 공간을 둘러보며 겨울철 생활상을 떠올려 봅니다. 공연과 체험은 날짜별로 달라질 수 있으므로 방문일의 운영표를 확인하세요. 마을의 야외 구간이 길 수 있어 방한용품과 앉아서 쉴 시간을 충분히 챙깁니다."
+      },
+      {
+        "name": "경기도박물관",
+        "query": "경기도박물관",
+        "day": 1,
+        "officialUrl": "https://musenet.ggcf.kr/pages/guide-contact",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "실내 전시로 자리를 옮겨 경기도의 역사와 문화를 살펴봅니다. 날이 매우 춥다면 민속촌 야외 체류 시간을 줄이고 박물관 관람을 길게 잡을 수 있습니다. 민속촌과 박물관은 각각 입장 조건이 다르므로 관람 순서와 교통편을 따로 확인하세요."
+      },
+      {
+        "name": "백남준아트센터",
+        "query": "백남준아트센터",
+        "day": 2,
+        "officialUrl": "https://ggtour.or.kr/bf/information/0504da1c-b20f-11ef-87e7-fa163e471bdd",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "둘째 날은 백남준의 작품 세계와 미디어아트를 만나는 실내 전시에서 시작합니다. 경기도박물관과 가까워 상갈동 권역을 다시 찾기 편하지만, 전시 교체와 휴관 일정은 다를 수 있습니다. 관람하려는 전시의 운영 여부를 확인한 뒤 출발하세요."
+      },
+      {
+        "name": "기흥호수공원",
+        "query": "기흥호수공원",
+        "day": 2,
+        "officialUrl": "https://itour.yongin.go.kr/stamptourdetail?stampCrsId=10",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 40~60분",
+        "description": "미술관 관람을 마친 뒤 기흥호수공원으로 이동해 물가의 평탄한 구간을 짧게 걷습니다. 겨울 바람이 거세면 전체 둘레를 돌기보다 주차장이나 버스 정류장에 가까운 구간만 선택하세요. 얼어붙은 길에서는 속도를 줄이고 젖은 데크를 조심합니다."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "첫째 날 | 한국민속촌 · 경기도박물관",
+        "paragraphs": [
+          "한국민속촌의 야외 관람 후 경기도박물관에서 실내 전시를 봅니다. 두 시설의 위치와 휴관일을 각각 확인해 한쪽이 쉬는 날이면 순서를 바꾸세요."
+        ]
+      },
+      {
+        "heading": "둘째 날 | 백남준아트센터 · 기흥호수공원",
+        "paragraphs": [
+          "상갈동에서 백남준의 미디어아트를 살펴보고 기흥호수공원으로 이동해 수변을 걷습니다. 전시관의 휴관일과 현장 전시를 확인하고, 호수에서는 날씨에 맞춰 산책 거리를 정하세요.",
+          "호암미술관의 실내 전시 공간은 2026년 6월 30일부터 재정비 중입니다. 희원은 별도 선택지로 검토할 수 있으나 겨울 개방 여부와 입장 조건을 방문일 기준으로 다시 확인하세요."
+        ]
+      },
+      {
+        "heading": "숙소와 겨울 방문 전 확인",
+        "paragraphs": [
+          "숙소는 기흥역·민속촌 인근에서 첫날 저녁 이동과 다음 날 출발 동선을 비교해 고릅니다. 요금과 짐 보관 여부는 예약 전에 숙소에 확인하세요.",
+          "시설별 휴관일·입장료와 예약 조건, 이동편은 방문일의 공식 안내에서 확인하세요. 눈이나 결빙이 있으면 강변과 경사로를 줄이고 안전한 실내 일정으로 조정합니다."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "경기도박물관 · 기관 안내",
+        "url": "https://musenet.ggcf.kr/pages/guide-contact",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "백남준아트센터 · 경기관광공사",
+        "url": "https://ggtour.or.kr/bf/information/0504da1c-b20f-11ef-87e7-fa163e471bdd",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "기흥호수공원 · 용인시 관광",
+        "url": "https://itour.yongin.go.kr/stamptourdetail?stampCrsId=10",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "호암미술관 · 실내 전시공간 재정비 안내",
+        "url": "https://www.leeumhoam.org/hoam/info/notice/207",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "한국민속촌 · 공식 소개",
+        "url": "https://koreanfolk.co.kr/about",
+        "checkedAt": "2026-11-07"
+      }
+    ]
+  },
+  {
+    "slug": "gyeonggi-bucheon-comics-garden-winter-2days",
+    "title": "부천 겨울 1박 2일 여행: 만화박물관과 실내 식물원 여행",
+    "area": "경기",
+    "city": "부천",
+    "duration": "1박2일",
+    "intro": "만화와 로봇 전시를 보고 온실 속 식물을 만나는 부천 겨울여행입니다. 첫날에는 한국만화박물관과 로보파크를 둘러보고, 다음 날에는 상동호수공원에 있는 식물원 수피아와 호숫가를 이어 걷습니다. 시설별 휴관일은 따로 확인하세요.",
+    "startPoint": "첫날 오전 삼산체육관역·상동역 방면 도착 · 둘째 날 오후 현지에서 귀가",
+    "transport": "지하철과 버스",
+    "durationLabel": "첫날 오전~둘째 날 오후 현지 일정 제안",
+    "overnightArea": "상동역·부천시청역 인근",
+    "naverQuery": "부천 겨울 1박2일 한국만화박물관 부천호수식물원 수피아",
+    "stops": [
+      {
+        "name": "한국만화박물관",
+        "query": "한국만화박물관",
+        "day": 1,
+        "officialUrl": "https://www.komacon.kr/comicsmuseum/guide/show_info.asp",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "첫날은 한국 만화의 전시와 자료를 살펴봅니다. 아이와 함께라면 체험 가능 구역과 예약 여부를 확인하고, 읽는 시간까지 여유 있게 배정하세요. 만화 자료를 자세히 읽고 싶다면 관람 시간을 넉넉히 두고 다음 시설 체험은 선택적으로 넣습니다."
+      },
+      {
+        "name": "부천로보파크",
+        "query": "부천로보파크",
+        "day": 1,
+        "officialUrl": "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=148006001004001",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "로봇 관련 전시를 보는 실내 일정으로 이어갑니다. 체험 시설은 점검이나 운영 일정에 영향을 받을 수 있어 방문 전에 확인하는 편이 좋습니다. 실내 이동 전 버스 배차나 택시 소요를 확인하면 시설을 나와 추위에 오래 기다리지 않아도 됩니다."
+      },
+      {
+        "name": "부천호수식물원 수피아",
+        "query": "부천호수식물원 수피아",
+        "day": 2,
+        "officialUrl": "https://www.bucheon.go.kr/site/main/index167",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "둘째 날에는 온실에서 열대·아열대 식물을 관찰하며 겨울 추위를 피합니다. 회차제 또는 예약 운영 여부와 입장 조건을 확인한 후 방문하세요. 식물원은 실내에서 식물 관찰을 하기에 좋아 눈이나 찬 바람이 강한 날에도 일정을 조절하기 좋습니다."
+      },
+      {
+        "name": "상동호수공원",
+        "query": "상동호수공원",
+        "day": 2,
+        "officialUrl": "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=172002002001",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "식물원 주변 호숫가의 짧은 산책로를 걸으며 여행을 마칩니다. 추운 날은 식물원 안에 머무는 시간을 늘리고 야외 구간을 짧게 조정합니다. 호수 주변 도로의 보행 방향과 결빙 여부를 살펴보고 가까운 출입구로 돌아오세요."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "첫째 날 | 한국만화박물관 · 부천로보파크",
+        "paragraphs": [
+          "한국만화박물관에서 만화 자료를 보고 로보파크로 이동해 로봇 전시를 살펴봅니다. 두 시설의 전시·체험 운영은 각각 확인해야 합니다."
+        ]
+      },
+      {
+        "heading": "둘째 날 | 부천호수식물원 수피아 · 상동호수공원",
+        "paragraphs": [
+          "부천호수식물원 수피아에서 온실 식물을 보고 같은 공원 주변을 짧게 걷습니다. 정해진 입장 회차가 있는지 확인한 후 대중교통 출발 시각을 잡으세요."
+        ]
+      },
+      {
+        "heading": "숙소와 겨울 방문 전 확인",
+        "paragraphs": [
+          "숙소는 상동역·부천시청역 인근에서 첫날 저녁 이동과 다음 날 출발 동선을 비교해 고릅니다. 요금과 짐 보관 여부는 예약 전에 숙소에 확인하세요.",
+          "시설별 휴관일·입장료와 예약 조건, 이동편은 방문일의 공식 안내에서 확인하세요. 눈이나 결빙이 있으면 강변과 경사로를 줄이고 안전한 실내 일정으로 조정합니다."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "한국만화박물관 · 기관 안내",
+        "url": "https://www.komacon.kr/comicsmuseum/guide/show_info.asp",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "부천로보파크 · 기관 안내",
+        "url": "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=148006001004001",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "부천호수식물원 수피아 · 기관 안내",
+        "url": "https://www.bucheon.go.kr/site/main/index167",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "상동호수공원 · 기관 안내",
+        "url": "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=172002002001",
+        "checkedAt": "2026-11-07"
+      }
+    ]
+  },
+  {
+    "slug": "gyeonggi-icheon-ceramics-park-winter-2days",
+    "title": "이천 겨울 1박 2일 여행: 도자 공방과 설봉공원을 둘러보는 겨울",
+    "area": "경기",
+    "city": "이천",
+    "duration": "1박2일",
+    "intro": "이천 예스파크 공방에서 도자기의 제작 과정을 살피고 시립박물관에서 지역의 역사를 만납니다. 둘째 날은 설봉공원과 경기도자미술관을 묶어 산책과 전시를 즐깁니다. 공방마다 여는 날과 체험 예약 조건이 다르니 미리 확인하세요.",
+    "startPoint": "첫날 오전 이천역·설봉공원 방면 도착 · 둘째 날 오후 현지에서 귀가",
+    "transport": "자가용 또는 버스·택시",
+    "durationLabel": "첫날 오전~둘째 날 오후 현지 일정 제안",
+    "overnightArea": "이천 시내·설봉공원 인근",
+    "naverQuery": "이천 겨울 1박2일 이천도자예술마을 예스파크 설봉공원",
+    "stops": [
+      {
+        "name": "이천도자예술마을 예스파크",
+        "query": "이천도자예술마을 예스파크",
+        "day": 1,
+        "officialUrl": "https://www.icheon.go.kr/news/board/post/view.do?bcIdx=785&idx=321516&mid=0301000000",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "첫날은 공방이 모인 마을에서 도자 작품과 가마 이야기를 살펴봅니다. 공방마다 영업일이 다르며 체험을 원한다면 개별 예약 조건을 확인하세요. 도자 구매를 생각한다면 작품별 제작 방식과 포장·배송 가능 여부를 공방에 직접 문의하세요."
+      },
+      {
+        "name": "이천시립박물관",
+        "query": "이천시립박물관",
+        "day": 1,
+        "officialUrl": "https://www.icheon.go.kr/tour/contents.do?mid=0102050300",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "지역 유물과 생활사를 살피며 실내에서 쉬어 갑니다. 관람 전에 휴관과 전시 교체 여부를 확인하면 헛걸음을 줄일 수 있습니다. 예스파크에서 시내로 이동할 시간을 따로 확보하고 전시 관람은 시설 휴관일에 맞춰 조정하세요."
+      },
+      {
+        "name": "설봉공원",
+        "query": "설봉공원",
+        "day": 2,
+        "officialUrl": "https://www.icheon.go.kr/tour/contents.do?mid=0101010000",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "둘째 날에는 설봉호 주변의 접근하기 쉬운 산책 구간을 짧게 걷습니다. 눈과 결빙이 있을 때는 계단이나 경사가 적은 길을 고르세요. 공원은 넓으므로 호수 주변 한 구간만 걷고 무리하게 산길로 올라가지 않도록 계획합니다. 음악분수는 동절기인 2026년 10월 31일 운영을 마쳤으며 2027년 4월 재운영 예정이므로 겨울에 가동을 기대하지 않도록 합니다."
+      },
+      {
+        "name": "경기도자미술관(이천)",
+        "query": "이천세계도자센터",
+        "day": 2,
+        "officialUrl": "https://kocef.org/html/?menuid=kcf010102",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "옛 이천세계도자센터인 경기도자미술관에서 도자 전시를 보며 공방에서 본 제작과 작품을 연결합니다. 기획전 일정과 입장 조건이 변동될 수 있으므로 공식 안내를 확인한 뒤 이동하세요. 전시 운영이 없는 날에는 사기막골 도예촌 등 다른 공방 방문을 대안으로 검토할 수 있습니다."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "첫째 날 | 이천도자예술마을 예스파크 · 이천시립박물관",
+        "paragraphs": [
+          "예스파크에서는 원하는 공방의 영업 여부를 확인하고 도자 작품을 살펴봅니다. 이천시립박물관에서는 지역 생활사를 보며 실내에서 쉬어 갑니다."
+        ]
+      },
+      {
+        "heading": "둘째 날 | 설봉공원 · 경기도자미술관(이천)",
+        "paragraphs": [
+          "설봉공원 주변 산책과 도자 전시를 묶었습니다. 경기도자미술관의 현재 전시 여부를 먼저 확인하고 휴관 중이라면 공원 산책이나 다른 공방을 대안으로 삼으세요."
+        ]
+      },
+      {
+        "heading": "숙소와 겨울 방문 전 확인",
+        "paragraphs": [
+          "숙소는 이천 시내·설봉공원 인근에서 첫날 저녁 이동과 다음 날 출발 동선을 비교해 고릅니다. 요금과 짐 보관 여부는 예약 전에 숙소에 확인하세요.",
+          "시설별 휴관일·입장료와 예약 조건, 이동편은 방문일의 공식 안내에서 확인하세요. 눈이나 결빙이 있으면 강변과 경사로를 줄이고 안전한 실내 일정으로 조정합니다."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "이천도자예술마을 예스파크 · 기관 안내",
+        "url": "https://www.icheon.go.kr/news/board/post/view.do?bcIdx=785&idx=321516&mid=0301000000",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "이천시립박물관 · 기관 안내",
+        "url": "https://www.icheon.go.kr/tour/contents.do?mid=0102050300",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "설봉공원 · 관람 안내",
+        "url": "https://www.icheon.go.kr/tour/contents.do?mid=0101010000",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "이천시 · 설봉공원 음악분수 동절기 중단",
+        "url": "https://www.icheon.go.kr/news/board/post/view.do?bcIdx=785&idx=322076&mid=0301000000",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "경기도자미술관(이천) · 관람 안내",
+        "url": "https://kocef.org/html/?menuid=kcf010102",
+        "checkedAt": "2026-11-07"
+      }
+    ]
+  },
+  {
+    "slug": "gyeonggi-namyangju-dasan-river-winter-2days",
+    "title": "남양주 겨울 1박 2일 여행: 다산의 삶과 북한강 전망을 따라 걷는 겨울",
+    "area": "경기",
+    "city": "남양주",
+    "duration": "1박2일",
+    "intro": "정약용 유적지와 실학박물관에서 다산의 삶과 생각을 살펴본 뒤 남양주에서 하룻밤을 보냅니다. 다음 날에는 북한강 물의정원과 수종사를 찾습니다. 강변의 찬 바람과 산길 결빙 가능성을 고려해 야외 일정은 짧게 조절하세요.",
+    "startPoint": "첫날 오전 운길산역·팔당역 방면 도착 · 둘째 날 오후 현지에서 귀가",
+    "transport": "경의중앙선과 버스·택시, 자가용 편리",
+    "durationLabel": "첫날 오전~둘째 날 오후 현지 일정 제안",
+    "overnightArea": "조안면·운길산역 인근",
+    "naverQuery": "남양주 겨울 1박2일 다산 정약용 유적지 물의정원",
+    "stops": [
+      {
+        "name": "다산 정약용 유적지",
+        "query": "다산 정약용 유적지",
+        "day": 1,
+        "officialUrl": "https://www.nyj.go.kr/www/selectBbsNttView.do?bbsNo=320&key=2498&nttNo=549786",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "정약용의 생애와 업적을 살피며 첫날을 시작합니다. 생가와 전시 공간을 둘러볼 때 각각의 운영시간과 휴관일을 확인하세요. 야외 유적과 실내 전시의 동선을 나눠 기온에 따라 순서를 바꾸면 관람하기 편합니다."
+      },
+      {
+        "name": "실학박물관",
+        "query": "실학박물관",
+        "day": 1,
+        "officialUrl": "https://silhak.ggcf.kr/pages/information",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "다산 유적지 가까이에서 조선 후기 실학 관련 전시를 살펴봅니다. 유적지에서 얻은 질문을 전시와 연결하고 실내에서 충분히 쉬어 갑니다. 박물관과 유적지는 가까우나 시설별 휴관일이 다를 수 있으므로 두 곳을 각각 확인해야 합니다."
+      },
+      {
+        "name": "물의정원",
+        "query": "물의정원",
+        "day": 2,
+        "officialUrl": "https://www.nyj.go.kr/culture/contents.do?key=4314",
+        "timeLabel": "10:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "둘째 날은 북한강변 정원에서 겨울 물가의 풍경을 보며 짧게 걷습니다. 계절 꽃이 없더라도 강변 산책을 즐길 수 있으며 강풍에는 체류를 줄입니다. 강변 산책로는 바람이 센 날 체감온도가 낮아지므로 방풍 외투와 장갑을 준비하세요."
+      },
+      {
+        "name": "수종사",
+        "query": "수종사",
+        "day": 2,
+        "officialUrl": "https://ggtour.or.kr/gto/notice/news/42962752-ace9-4a74-8fb0-e3548eb29868?type=NOTI_REPORT",
+        "timeLabel": "14:00 제안",
+        "stay": "제안 체류 60~90분",
+        "description": "마지막으로 산자락의 사찰을 찾습니다. 진입로와 주차장에서 이어지는 길은 겨울철 미끄러울 수 있으므로 강설이나 결빙 때는 안전을 우선해 일정을 바꾸세요. 사찰 진입은 도로 상황에 좌우되므로 눈 예보가 있다면 물의정원에서 일정을 마무리해도 됩니다."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "첫째 날 | 다산 정약용 유적지 · 실학박물관",
+        "paragraphs": [
+          "정약용 유적지와 가까운 실학박물관에서 인물과 시대를 함께 살펴봅니다. 휴관일은 시설별로 다르므로 두 장소를 각각 확인하고 방문합니다."
+        ]
+      },
+      {
+        "heading": "둘째 날 | 물의정원 · 수종사",
+        "paragraphs": [
+          "강변의 물의정원을 짧게 걷고 수종사 쪽으로 이동합니다. 사찰 진입로에 눈이 남아 있다면 올라가지 않고 강변 근처에서 일정을 마무리합니다."
+        ]
+      },
+      {
+        "heading": "숙소와 겨울 방문 전 확인",
+        "paragraphs": [
+          "숙소는 조안면·운길산역 인근에서 첫날 저녁 이동과 다음 날 출발 동선을 비교해 고릅니다. 요금과 짐 보관 여부는 예약 전에 숙소에 확인하세요.",
+          "시설별 휴관일·입장료와 예약 조건, 이동편은 방문일의 공식 안내에서 확인하세요. 눈이나 결빙이 있으면 강변과 경사로를 줄이고 안전한 실내 일정으로 조정합니다."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "물의정원 · 기관 안내",
+        "url": "https://www.nyj.go.kr/culture/contents.do?key=4314",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "수종사 · 기관 안내",
+        "url": "https://ggtour.or.kr/gto/notice/news/42962752-ace9-4a74-8fb0-e3548eb29868?type=NOTI_REPORT",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "실학박물관 · 관람 안내",
+        "url": "https://silhak.ggcf.kr/pages/information",
+        "checkedAt": "2026-11-07"
+      },
+      {
+        "title": "남양주시 · 정약용유적지와 다산기념관",
+        "url": "https://www.nyj.go.kr/www/selectBbsNttView.do?bbsNo=320&key=2498&nttNo=549786",
+        "checkedAt": "2026-11-07"
+      }
+    ]
+  }
+]

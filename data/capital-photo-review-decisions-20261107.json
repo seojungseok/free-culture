@@ -1,0 +1,109 @@
+{
+  "checkedAt": "2026-11-07T04:19:00.230Z",
+  "source": "visual review in current task",
+  "rejections": [
+    {
+      "number": 1,
+      "id": "125517",
+      "src": "/winter-photos/capital-125517-1-20261107.webp",
+      "reason": "과도하게 낮은 높이의 파노라마"
+    },
+    {
+      "number": 16,
+      "id": "129437",
+      "src": "/winter-photos/capital-129437-1-20261107.webp",
+      "reason": "장소 혼동 가능"
+    },
+    {
+      "number": 18,
+      "id": "129437",
+      "src": "/winter-photos/capital-129437-3-20261107.webp",
+      "reason": "야간 행사 장면"
+    },
+    {
+      "number": 64,
+      "id": "2994418",
+      "src": "/winter-photos/capital-2994418-1-20261107.webp",
+      "reason": "화장실·계단·주차 장면"
+    },
+    {
+      "number": 65,
+      "id": "2994418",
+      "src": "/winter-photos/capital-2994418-2-20261107.webp",
+      "reason": "화장실·계단·주차 장면"
+    },
+    {
+      "number": 66,
+      "id": "2994418",
+      "src": "/winter-photos/capital-2994418-3-20261107.webp",
+      "reason": "화장실·계단·주차 장면"
+    },
+    {
+      "number": 70,
+      "id": "3023991",
+      "src": "/winter-photos/capital-3023991-1-20261107.webp",
+      "reason": "화장실·계단·주차 장면"
+    },
+    {
+      "number": 71,
+      "id": "3023991",
+      "src": "/winter-photos/capital-3023991-2-20261107.webp",
+      "reason": "화장실·계단·주차 장면"
+    },
+    {
+      "number": 72,
+      "id": "3023991",
+      "src": "/winter-photos/capital-3023991-3-20261107.webp",
+      "reason": "화장실·계단·주차 장면"
+    },
+    {
+      "number": 73,
+      "id": "3442142",
+      "src": "/winter-photos/capital-3442142-1-20261107.webp",
+      "reason": "화장실·계단·주차 장면"
+    },
+    {
+      "number": 74,
+      "id": "3442142",
+      "src": "/winter-photos/capital-3442142-2-20261107.webp",
+      "reason": "화장실·계단·주차 장면"
+    },
+    {
+      "number": 75,
+      "id": "3442142",
+      "src": "/winter-photos/capital-3442142-3-20261107.webp",
+      "reason": "화장실·계단·주차 장면"
+    },
+    {
+      "number": 25,
+      "id": "407030",
+      "src": "/winter-photos/capital-407030-1-20261107.webp",
+      "reason": "시각 검토에서 장소 특징 확인 불가"
+    },
+    {
+      "number": 26,
+      "id": "407030",
+      "src": "/winter-photos/capital-407030-2-20261107.webp",
+      "reason": "시각 검토에서 장소 특징 확인 불가"
+    },
+    {
+      "number": 27,
+      "id": "407030",
+      "src": "/winter-photos/capital-407030-3-20261107.webp",
+      "reason": "시각 검토에서 장소 특징 확인 불가"
+    },
+    {
+      "number": 91,
+      "id": "2464201",
+      "src": "/winter-photos/capital-2464201-1-20261107.webp",
+      "reason": "시각 검토에서 장소 특징 확인 불가"
+    },
+    {
+      "number": 92,
+      "id": "2464201",
+      "src": "/winter-photos/capital-2464201-2-20261107.webp",
+      "reason": "시각 검토에서 장소 특징 확인 불가"
+    }
+  ],
+  "otherImagesApproved": false
+}

@@ -10,7 +10,7 @@ export type WinterCoursePreview=Pick<WinterCourse,'id'|'slug'|'title'|'area'|'ci
 const areaOrder=['서울','인천','경기','강원','대전','세종','충북','충남','전북','광주','전남','대구','경북','부산','울산','경남','제주'];
 function matching(courses:WinterCoursePreview[],filters:Filters){
  const term=filters.q?.replace(/\s+/g,'').toLowerCase();
- return courses.filter(course=>(!term||[course.title,course.area,course.city,...course.stops.map(stop=>stop.name)].join('').replace(/\s+/g,'').toLowerCase().includes(term))&&(!filters.area||course.area===filters.area)&&(!filters.duration||course.duration===(filters.duration==='overnight'?'1박2일':'당일')));
+ return courses.filter(course=>(!term||[course.title,course.area,course.city,...course.stops.map(stop=>stop.name)].join('').replace(/\s+/g,'').toLowerCase().includes(term))&&(!filters.area||(filters.area==='수도권'?['서울','인천','경기'].includes(course.area):course.area===filters.area))&&(!filters.duration||course.duration===(filters.duration==='overnight'?'1박2일':'당일')));
 }
 
 export default function WinterCourseBrowser({courses}:{courses:WinterCoursePreview[]}){
@@ -30,6 +30,7 @@ export default function WinterCourseBrowser({courses}:{courses:WinterCoursePrevi
    </div>
    <div className="flex flex-wrap gap-2" role="group" aria-label="겨울 여행 지역">
     <Chip label="전국" count={matching(courses,{q:filters.q,duration:filters.duration}).length} active={!filters.area} onClick={()=>go({area:undefined})}/>
+    <Chip label="수도권" count={matching(courses,{q:filters.q,area:'수도권',duration:filters.duration}).length} active={filters.area==='수도권'} onClick={()=>go({area:filters.area==='수도권'?undefined:'수도권'})}/>
     {areas.map(area=><Chip key={area} label={area} count={matching(courses,{q:filters.q,area,duration:filters.duration}).length} active={filters.area===area} onClick={()=>go({area:filters.area===area?undefined:area})}/>)}
    </div>
    <div className="mb-5 mt-6 flex flex-wrap items-center justify-between gap-3">
@@ -43,7 +44,7 @@ export default function WinterCourseBrowser({courses}:{courses:WinterCoursePrevi
    {list.length?<div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 min-[1440px]:grid-cols-4" data-winter-cards>
     {list.map(course=>{const photo=winterCourseImage(course);return <article key={course.id} className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
      <Link href={'/winter-travel/'+course.slug} prefetch={false} className="group flex h-full flex-col rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
-      <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">{photo&&<img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover"/>}<span className="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-[#102344]">{[course.area,course.city].filter(Boolean).join(' · ')}</span></div>
+      <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">{photo&&<img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover"/>}<span className="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-[#102344]">{[...new Set([course.area,course.city].filter(Boolean))].join(' · ')}</span></div>
       <div className="flex flex-1 flex-col p-4 sm:p-5"><p className="mb-2 text-xs font-bold text-brandblue">{course.duration==='1박2일'?'1박 2일':'당일치기'}</p><h3 className="break-keep text-lg font-extrabold leading-7 tracking-tight text-ink group-hover:text-brandblue">{course.title}</h3><div className="mt-3 space-y-1 break-keep text-[13px] font-semibold leading-6 text-brandblue">{(course.duration==='1박2일'?[1,2]:[1]).map(day=><p key={day}>{course.duration==='1박2일'&&<span className="mr-1 text-ink-soft">{day}일차</span>}{course.stops.filter(stop=>stop.day===day).map(stop=>stop.name).join(' → ')}</p>)}</div><p className="mt-2 line-clamp-3 text-sm leading-6 text-ink-soft">{course.intro}</p><div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-4 text-xs font-semibold text-ink-soft"><span>{course.duration==='1박2일'?'1박 2일 · '+course.stops.length+'곳':course.durationLabel||'당일치기'}</span><span className="font-bold text-brandblue">코스 보기 →</span></div></div>
      </Link>
     </article>;})}

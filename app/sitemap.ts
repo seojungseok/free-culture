@@ -207,7 +207,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // 2) 발행글 있는 상세 (최신 lastmod — 새 글 우선 크롤)
     ...articleSpotRoutes,
     ...courseDetailRoutes,
-    ...getPublicWinterCourses().map(course => ({ url: `${base}/winter-travel/${course.slug}`, lastModified: new Date(course.publishedAt), changeFrequency: 'monthly' as const, priority: 0.6 })),
+    ...getPublicWinterCourses().map(course => ({ url: `${base}/winter-travel/${course.slug}`, lastModified: new Date(course.updatedAt && Number.isFinite(Date.parse(course.updatedAt)) ? course.updatedAt : course.publishedAt), changeFrequency: 'monthly' as const, priority: 0.6 })),
     ...kidDetailRoutes,
     ...getCityTours().filter(isIndexableCityTour).map(t => ({url: `${base}/city-tour/${t.id}`, lastModified: new Date(t.publishedAt), changeFrequency: "monthly" as const, priority: 0.7})),
     // 3) 대량 롱테일 상세 (낮은 우선순위·가끔)

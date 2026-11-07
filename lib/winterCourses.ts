@@ -1,5 +1,7 @@
 import winterData from '@/data/winter-courses.json';
 import overnightData from '@/data/winter-overnight-courses.json';
+import metropolitanDaytrips from '@/data/winter-metropolitan-daytrips.json';
+import metropolitanOvernights from '@/data/winter-metropolitan-overnights.json';
 import reviewedPhotos from '@/data/winter-reviewed-photos.json';
 import { isPublicWinterCourse } from '@/lib/winter-course-validation.mjs';
 
@@ -15,7 +17,7 @@ export type WinterCourse = {
 };
 
 export function getPublicWinterCourses(): WinterCourse[] {
-  const collections = [winterData, overnightData] as unknown as { courses?: unknown[] }[];
+  const collections = [winterData, overnightData, metropolitanDaytrips, metropolitanOvernights] as unknown as { courses?: unknown[] }[];
   const unique = new Map<string, WinterCourse>();
   for (const course of collections.flatMap(data=>Array.isArray(data.courses)?data.courses:[])) {
     if (isPublicWinterCourse(course)) {
