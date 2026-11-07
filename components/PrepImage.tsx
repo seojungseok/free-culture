@@ -5,7 +5,7 @@ export default function PrepImage({photo, priority = false, headline}: {photo: P
   return <figure className="prep-photo">
     <div className="prep-image">
       {photo.url ? <Image src={photo.url} alt={photo.alt} width={photo.width} height={photo.height}
-        sizes="(max-width: 640px) 100vw, 800px" priority={priority} unoptimized={!photo.url.startsWith('/')} />
+        sizes="(max-width: 640px) 100vw, 800px" priority={priority} fetchPriority={priority ? 'high' : undefined} unoptimized={!photo.url.startsWith('/')} />
         : <div className="prep-no-image">설명 이미지를 준비하고 있어요</div>}
       {headline && <strong className="prep-cover-label">{headline}</strong>}
     </div>
