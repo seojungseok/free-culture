@@ -1,0 +1,41 @@
+name: Match final preparation ingredients
+on:
+  push:
+    branches: [codex/prep-ingredients-20261111]
+    paths: [scripts/prep/review-final-ingredient-matches.mjs, .github/workflows/prep-ingredient-final.yml]
+permissions:
+  contents: write
+concurrency:
+  group: site-content-publication
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Verify only the final four ingredients through shared gate
+        env:
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+          COUPANG_QUEUE_GITHUB_TOKEN: ${{ github.token }}
+          PREP_INGREDIENT_COMPLETION: '1'
+        run: node scripts/prep/review-final-ingredient-matches.mjs
+      - name: Save unreviewed candidates
+        if: always()
+        run: |
+          if [ ! -f data/prep-ingredient-final-20261111.json ]; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/prep-ingredient-final-20261111.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Save final ingredient matches for review'
+          git fetch origin "$GITHUB_REF_NAME"
+          git rebase "origin/$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
