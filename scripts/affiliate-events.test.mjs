@@ -24,7 +24,7 @@ test('the receiver contract covers every maintained placement without collecting
  assert.equal(normalizeAffiliateEvent([]),null);
 });
 
-test('real event route accepts hero, daily-deal and accommodation tracking and writes only the approved fields',async()=>{
+test('real event route accepts all maintained shopping positions and writes only the approved fields',async()=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'mwohaji-affiliate-test-'));
  const originalDir=process.env.AFFILIATE_EVENTS_DIR;
  process.env.AFFILIATE_EVENTS_DIR=dir;
@@ -33,14 +33,15 @@ test('real event route accepts hero, daily-deal and accommodation tracking and w
   const compiled=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
   const route=await import('data:text/javascript;base64,'+Buffer.from(compiled).toString('base64'));
   const request=(body,origin='https://mwohaji.kr')=>new Request('https://mwohaji.kr/api/affiliate/events',{method:'POST',headers:{origin,'content-type':'application/json'},body:typeof body==='string'?body:JSON.stringify(body)});
-  for(const placement of ['home_winter_hero','food_deal_rail','home_stay']){
-   for(const type of ['affiliate_impression','affiliate_click'])assert.equal((await route.POST(request({...event,event:type,placement,privateField:'discard'}))).status,204);
+  const placements=['home_winter_hero','food_deal_rail','home_stay','prep_image','prep_checklist','prep_product_list'];
+  for(const placement of placements){
+   for(const type of ['affiliate_impression','affiliate_click'])assert.equal((await route.POST(request({...event,event:type,provider:placement.startsWith('prep_')?'coupang':'toss',page:placement.startsWith('prep_')?'/weekend-prep/test':'/',placement,privateField:'discard'}))).status,204);
   }
   assert.equal((await route.POST(request({...event,placement:'unknown'}))).status,400);
   assert.equal((await route.POST(request('{broken'))).status,400);
   assert.equal((await route.POST(request(event,'https://unrelated.example'))).status,403);
   const lines=fs.readdirSync(dir).flatMap(name=>fs.readFileSync(path.join(dir,name),'utf8').trim().split('\n').map(line=>JSON.parse(line)));
-  assert.equal(lines.length,6);
+  assert.equal(lines.length,placements.length*2);
   for(const row of lines)assert.deepEqual(Object.keys(row).sort(),['at','event','page','placement','productId','provider']);
  }finally{
   if(originalDir===undefined)delete process.env.AFFILIATE_EVENTS_DIR;else process.env.AFFILIATE_EVENTS_DIR=originalDir;

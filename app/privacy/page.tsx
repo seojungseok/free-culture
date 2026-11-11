@@ -5,7 +5,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "개인정보처리방침",
-  description: `${SITE.name}의 이메일 문의, 위치 기능, 브라우저 저장, 방문 분석 및 광고 쿠키에 관한 안내입니다.`,
+  description: `${SITE.name}의 이메일 문의, 위치 기능, 브라우저 저장, 방문 분석 및 제휴 링크에 관한 안내입니다.`,
   alternates: { canonical: "/privacy" },
 };
 
@@ -31,8 +31,9 @@ export default function PrivacyPage() {
       <p>보관함은 선택한 장소·일정·방문 날짜를, 준비 가이드와 방문 전 체크리스트는 체크한 항목을 이용자의 브라우저 localStorage에 저장합니다. 이 기능의 저장 내용을 서버 데이터베이스에 전송하거나 다른 기기와 동기화하지 않습니다.</p>
       <p>보관함에서 항목을 삭제하거나 준비 가이드의 &ldquo;전체 체크 해제&rdquo;, 방문 전 체크리스트의 &ldquo;체크 초기화&rdquo;를 사용해 선택을 지울 수 있습니다. 브라우저의 사이트 데이터를 지우면 저장 내용 전체가 제거됩니다. 공용 기기에서는 이용 후 저장한 항목과 사이트 데이터를 삭제해 주세요.</p>
 
-      <h2>5. 광고 및 쿠키 (Google AdSense)</h2>
-      <p>서비스는 Google AdSense를 통해 광고를 게재할 수 있습니다. Google을 포함한 제3자 광고 사업자는 쿠키를 사용하여 이용자의 방문 기록을 바탕으로 맞춤형 광고를 제공할 수 있습니다. 이용자는 <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">Google 광고 설정</a>에서 맞춤 광고를 해제할 수 있으며, <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer">제3자 광고 쿠키 선택 안내</a>에서 쿠키 사용을 관리할 수 있습니다.</p>
+      <h2>5. 제휴 광고와 외부 판매처의 쿠키</h2>
+      <p>서비스에는 쿠팡 파트너스와 토스 쇼핑 등 제휴 상품 링크가 포함됩니다. 제휴 링크를 통해 구매하면 서비스가 수수료를 받을 수 있으며, 해당 영역에 제휴 관계를 안내합니다. 상품의 규격·옵션·가격·배송·반품 조건은 이동한 판매처에서 확인해 주세요.</p>
+      <p>외부 판매처에서는 제휴 유입과 구매를 확인하기 위해 쿠키 등을 사용할 수 있습니다. 그 사용과 관리에는 각 판매처의 개인정보처리방침과 브라우저 설정이 적용됩니다. 서비스의 제휴 클릭 기록은 구매 완료나 확정 수수료를 뜻하지 않습니다.</p>
       <p>브라우저 설정을 통해 쿠키 저장을 거부하거나 삭제할 수 있습니다. 위치 권한과 localStorage·sessionStorage는 쿠키 설정과 별도로 관리될 수 있으므로 브라우저의 권한 및 사이트 데이터 설정도 함께 확인해 주세요.</p>
 
       <h2>6. 외부 사이트</h2>
@@ -40,7 +41,7 @@ export default function PrivacyPage() {
 
       <h2>7. 개인정보 관련 문의</h2>
       <p>개인정보와 이메일 문의 내용에 관한 요청은 <Link href="/contact">문의 페이지</Link> 또는 <a href={`mailto:${SITE.email}`}>{SITE.email}</a>로 접수할 수 있습니다.</p>
-      <p className="text-sm text-ink-faint">시행일: 2026년 7월 25일 · 최종 수정: 2026년 10월 3일</p>
+      <p className="text-sm text-ink-faint">시행일: 2026년 7월 25일 · 최종 수정: 2026년 11월 11일</p>
     </div>
   );
 }

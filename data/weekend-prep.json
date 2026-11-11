@@ -9,7 +9,7 @@
       "coverLabel": "가을 꽃게탕 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-11-07T05:05:00.000Z",
+      "updatedAt": "2026-11-11T13:35:04.184Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/autumn-crab-soup-checklist-finished.webp",
@@ -24,7 +24,18 @@
           "id": "crab",
           "label": "냉동 꽃게",
           "role": "국물의 중심이 되는 주재료. 이동 전 냉동 상태와 보냉 공간부터 확인",
-          "group": "main"
+          "group": "main",
+          "required": true,
+          "quantity": "2인분 예시 300~400g · 구매 포장의 전체 중량과 구분해 준비하세요.",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=9075185730&itemId=26656243329&vendorItemId=93628676322&traceid=V0-153-dc8a04b7e7a77da9&clickBeacon=f650e290-ddd3-11f1-b31c-df25219d4cd8%7E3&requestid=20261111222946491158013602&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "[4개 특가이벤트 옵션선택] 수산잇츠 급냉 냉동 절단꽃게 특대 2L, 5개, 특대(2L)450g",
+            "checkedAt": "2026-11-11T13:29:48.008Z",
+            "source": "coupang-api",
+            "reviewed": true,
+            "image": "/prep-products/9075185730.webp",
+            "optionNote": "판매처 옵션 표기는 5개·특대(2L)450g입니다. 위의 2인분 준비량과 판매 포장 구성을 구분하고, 필요한 중량·묶음 수를 확인하세요."
+          }
         },
         {
           "id": "green-onion",
@@ -87,7 +98,16 @@
           "id": "pot",
           "label": "20cm 양수냄비",
           "role": "국물 재료를 한 번에 담는 조리 냄비",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8202208763&itemId=23516653877&vendorItemId=94042794477&traceid=V0-153-85c5315a24af0c21&clickBeacon=08a9ff80-ddd4-11f1-8a30-ff0c791bb009%7E3&requestid=20261111223017274017881506&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "로딘쿡웨어 우디 IH 인덕션 후라이팬 궁중팬 냄비 티타늄코팅 세라믹코팅 우드핸들, 양수냄비20cm, 1개, 베이지와 크림아이보리",
+            "checkedAt": "2026-11-11T13:30:18.510Z",
+            "source": "coupang-api",
+            "reviewed": true,
+            "image": "/prep-products/8202208763.webp",
+            "optionNote": "판매처 선택 옵션은 양수냄비20cm·1개입니다. 실제 용량과 사용하는 열원에 맞는지는 상품 페이지에서 확인하세요."
+          }
         },
         {
           "id": "ladle",
@@ -145,7 +165,7 @@
       "coverLabel": "캠핑 어묵탕 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-11-07T05:05:00.000Z",
+      "updatedAt": "2026-11-11T13:35:04.184Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camp-fishcake-soup-finished.webp",
@@ -190,7 +210,16 @@
           "id": "pot",
           "label": "20cm 양수냄비",
           "role": "국물 재료를 한 번에 담는 조리 냄비",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8202208763&itemId=23516653877&vendorItemId=94042794477&traceid=V0-153-85c5315a24af0c21&clickBeacon=08a9ff80-ddd4-11f1-8a30-ff0c791bb009%7E3&requestid=20261111223017274017881506&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "로딘쿡웨어 우디 IH 인덕션 후라이팬 궁중팬 냄비 티타늄코팅 세라믹코팅 우드핸들, 양수냄비20cm, 1개, 베이지와 크림아이보리",
+            "checkedAt": "2026-11-11T13:30:18.510Z",
+            "source": "coupang-api",
+            "reviewed": true,
+            "image": "/prep-products/8202208763.webp",
+            "optionNote": "판매처 선택 옵션은 양수냄비20cm·1개입니다. 실제 용량과 사용하는 열원에 맞는지는 상품 페이지에서 확인하세요."
+          }
         },
         {
           "id": "ladle",
@@ -248,7 +277,7 @@
       "coverLabel": "캠핑 부대찌개 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-11-07T05:05:00.000Z",
+      "updatedAt": "2026-11-11T13:35:04.184Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camp-budae-soup-finished.webp",
@@ -326,7 +355,16 @@
           "id": "pot",
           "label": "20cm 양수냄비",
           "role": "국물 재료를 한 번에 담는 조리 냄비",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8202208763&itemId=23516653877&vendorItemId=94042794477&traceid=V0-153-85c5315a24af0c21&clickBeacon=08a9ff80-ddd4-11f1-8a30-ff0c791bb009%7E3&requestid=20261111223017274017881506&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "로딘쿡웨어 우디 IH 인덕션 후라이팬 궁중팬 냄비 티타늄코팅 세라믹코팅 우드핸들, 양수냄비20cm, 1개, 베이지와 크림아이보리",
+            "checkedAt": "2026-11-11T13:30:18.510Z",
+            "source": "coupang-api",
+            "reviewed": true,
+            "image": "/prep-products/8202208763.webp",
+            "optionNote": "판매처 선택 옵션은 양수냄비20cm·1개입니다. 실제 용량과 사용하는 열원에 맞는지는 상품 페이지에서 확인하세요."
+          }
         },
         {
           "id": "ladle",
@@ -384,7 +422,7 @@
       "coverLabel": "소고기 버섯전골 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-11-07T05:05:00.000Z",
+      "updatedAt": "2026-11-11T13:35:04.184Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camp-beef-mushroom-hotpot-finished.webp",
@@ -442,7 +480,16 @@
           "id": "pot",
           "label": "20cm 양수냄비",
           "role": "국물 재료를 한 번에 담는 조리 냄비",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8202208763&itemId=23516653877&vendorItemId=94042794477&traceid=V0-153-85c5315a24af0c21&clickBeacon=08a9ff80-ddd4-11f1-8a30-ff0c791bb009%7E3&requestid=20261111223017274017881506&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "로딘쿡웨어 우디 IH 인덕션 후라이팬 궁중팬 냄비 티타늄코팅 세라믹코팅 우드핸들, 양수냄비20cm, 1개, 베이지와 크림아이보리",
+            "checkedAt": "2026-11-11T13:30:18.510Z",
+            "source": "coupang-api",
+            "reviewed": true,
+            "image": "/prep-products/8202208763.webp",
+            "optionNote": "판매처 선택 옵션은 양수냄비20cm·1개입니다. 실제 용량과 사용하는 열원에 맞는지는 상품 페이지에서 확인하세요."
+          }
         },
         {
           "id": "ladle",
@@ -500,7 +547,7 @@
       "coverLabel": "캠핑 해물탕 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-11-07T05:05:00.000Z",
+      "updatedAt": "2026-11-11T13:35:04.184Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camp-seafood-hotpot-finished.webp",
@@ -578,7 +625,16 @@
           "id": "pot",
           "label": "20cm 양수냄비",
           "role": "국물 재료를 한 번에 담는 조리 냄비",
-          "group": "common"
+          "group": "common",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=8202208763&itemId=23516653877&vendorItemId=94042794477&traceid=V0-153-85c5315a24af0c21&clickBeacon=08a9ff80-ddd4-11f1-8a30-ff0c791bb009%7E3&requestid=20261111223017274017881506&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "로딘쿡웨어 우디 IH 인덕션 후라이팬 궁중팬 냄비 티타늄코팅 세라믹코팅 우드핸들, 양수냄비20cm, 1개, 베이지와 크림아이보리",
+            "checkedAt": "2026-11-11T13:30:18.510Z",
+            "source": "coupang-api",
+            "reviewed": true,
+            "image": "/prep-products/8202208763.webp",
+            "optionNote": "판매처 선택 옵션은 양수냄비20cm·1개입니다. 실제 용량과 사용하는 열원에 맞는지는 상품 페이지에서 확인하세요."
+          }
         },
         {
           "id": "ladle",
@@ -1629,7 +1685,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-11-07T05:05:00.000Z",
+      "updatedAt": "2026-11-11T13:35:04.184Z",
       "reviewed": true,
       "cover": {
         "url": "/prep-images/camping-squid-stir-fry-finished.webp",
@@ -1644,7 +1700,16 @@
           "id": "item-1",
           "label": "손질 오징어",
           "role": "손질 상태·해동 안내와 냉동 보관 짐을 확인",
-          "group": "main"
+          "group": "main",
+          "affiliate": {
+            "url": "https://link.coupang.com/re/AFFSDP?lptag=AF0215515&pageKey=7936814676&itemId=24380034038&vendorItemId=88909643037&traceid=V0-153-1cc9f19bd6625884&clickBeacon=1b06c5f0-ddd4-11f1-b450-6d66bef07948%7E3&requestid=20261111223048033044411633&token=31850C%7CCMG&pt=1&slot=1",
+            "productName": "자연산 생물 급냉 손질오징어, 1개, 900g~1kg(5~7미)",
+            "checkedAt": "2026-11-11T13:30:49.515Z",
+            "source": "coupang-api",
+            "reviewed": true,
+            "image": "/prep-products/7936814676.webp",
+            "optionNote": "판매처 표기는 900g~1kg(5~7미)·1개입니다. 한 번에 전량을 쓰는 양이 아니므로 필요한 분량과 보관 여건을 확인하세요."
+          }
         },
         {
           "id": "item-2",

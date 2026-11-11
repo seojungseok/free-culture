@@ -4,6 +4,7 @@ import {notFound} from 'next/navigation';
 import {getPrepArticles,isPrepReview,prepCategoryLabel,cookingCategory,isCookingPrepArticle} from '@/lib/weekend-prep/data';
 import {SITE} from '@/lib/site';
 import PrepArticle from '@/components/PrepArticle';
+import {prepGuideItems} from '@/lib/prep-affiliate';
 import '../prep.css';
 export const dynamicParams=true;
 export function generateStaticParams(){return getPrepArticles().map(a=>({slug:a.slug}));}
@@ -27,20 +28,22 @@ export default async function Page({params}:{params:Promise<{slug:string}>}){
   if(!a)notFound();
   const url=`${SITE.url}/weekend-prep/${a.slug}`;
   const json=[{
-    '@context':'https://schema.org','@type':'Article',headline:a.title,description:a.description,
+    '@context':'https://schema.org','@type':'Article','@id':url+'#article',headline:a.title,description:a.description,
     image:new URL(a.cover.url,SITE.url).href,datePublished:a.publishAt,dateModified:a.updatedAt,
     inLanguage:'ko-KR',articleSection:prepCategoryLabel(a.category,a),
     author:{'@type':'Organization',name:SITE.name,url:SITE.url},
     publisher:{'@type':'Organization',name:SITE.name,url:SITE.url},mainEntityOfPage:{'@type':'WebPage','@id':url},
+    isPartOf:{'@type':'WebSite','@id':SITE.url+'/#website',name:SITE.name,url:SITE.url},
+    ...(a.checklist?.length?{about:a.checklist.map(item=>({'@type':'Thing',name:item.label}))}:{}),
   },{
     '@context':'https://schema.org','@type':'BreadcrumbList',
-    itemListElement:[{name:'홈',item:SITE.url},{name:'주말 준비물 체크리스트',item:`${SITE.url}/weekend-prep`},{name:a.title,item:url}].map((x,i)=>({'@type':'ListItem',position:i+1,...x})),
+    itemListElement:[{name:'홈',item:SITE.url},{name:'준비 가이드',item:`${SITE.url}/weekend-prep`},{name:a.title,item:url}].map((x,i)=>({'@type':'ListItem',position:i+1,...x})),
   }];
   const related=articles.filter(b=>b.slug!==a.slug&&prepCategoryLabel(b.category,b)===prepCategoryLabel(a.category,a))
     .sort((b,c)=>Number(isCookingPrepArticle(c)&&cookingCategory(c)===cookingCategory(a))-Number(isCookingPrepArticle(b)&&cookingCategory(b)===cookingCategory(a))).slice(0,3);
   return <main className="prep">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(json).replace(/</g,'\\u003c')}}/>
-    <PrepArticle article={a} preview={isPrepReview} relatedArticles={articles.map(({slug,title})=>({slug,title}))}/>
+    <PrepArticle article={a} preview={isPrepReview} shoppingItems={prepGuideItems(a,articles)} relatedArticles={articles.map(({slug,title})=>({slug,title}))}/>
     {related.length>0&&<nav className="prep-article prep-directory" aria-label="다른 준비물 체크리스트">
       <h2>함께 챙길 준비물 체크리스트</h2>
       <ul>{related.map(b=><li key={b.slug}><Link href={`/weekend-prep/${b.slug}`} prefetch={false}>{b.title}</Link></li>)}</ul>
