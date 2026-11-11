@@ -42,14 +42,16 @@ for (const article of store.articles.filter(a => a.status === 'published')) {
     destinations++;
   }
   if (items.length) {
-    assert($('.prep-tag').length > 0, 'Preparation buttons must exist');
+    const rows=$('.prep-simple-items>li').toArray();
+    assert.equal(rows.length,items.length,'Every ingredient has one compact purchase row');
+    assert.equal($('.prep-photo-tags,.prep-product-pop,.prep-affiliate-product,#prep-checklist img,#prep-checklist input,#prep-checklist small').length,0,'Remove product images, descriptions, options, popups and checkboxes');
+    rows.forEach((row,index)=>{assert.equal($(row).children('strong').text(),items[index].label);assert.equal($(row).find('a').text().trim(),'최저가 알아보기');assert.equal($(row).children().length,2);});
     assert($('a[href="#prep-checklist"]').length > 0, 'Ingredient shortcut must exist');
     assert(html.indexOf('id="prep-checklist"') < html.indexOf('id="prep-cooking"'), 'Ingredients precede cooking');
   }
   if (article.slug === 'autumn-flower-crab-soup-ingredient-checklist') {
-    assert($('.prep-tag').first().text().includes('꽃게'), 'Crab is first photo preparation button');
-    assert($('.prep-essential .prep-quantity').text().includes('300~400g'));
-    assert($('.prep-essential a[data-affiliate-placement=prep_checklist]').length === 1, 'Crab has a reviewed purchase route');
+    assert($('.prep-simple-items>li').first().children('strong').text().includes('꽃게'),'Crab remains the first ingredient');
+    assert($('.prep-simple-items>li').first().find('a[data-affiliate-placement=prep_checklist]').length===1,'Crab has a reviewed purchase route');
   }
   pages++;
 }

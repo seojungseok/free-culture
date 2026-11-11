@@ -1,44 +1,26 @@
 "use client";
+import {useEffect,useState} from 'react';
 
-import { useEffect, useState } from "react";
-
-// 무료 키리스 카운터(abacus.jasoncameron.dev) 사용.
-// - 개인정보/IP 저장하지 않음 (익명 카운트만)
-// - 같은 세션 내 새로고침은 중복 집계하지 않음 (sessionStorage 플래그)
-// - 카운터 서비스가 죽어도 렌더링 실패 없이 조용히 숨김
-// 나중에 신뢰도가 필요하면 Supabase/Vercel KV로 교체 가능.
-
-const NS = "weekendpick-kr";
-const BASE = "https://abacus.jasoncameron.dev";
-
-export default function VisitorCount() {
-  const [data, setData] = useState<{ today: number; total: number } | null>(null);
-
-  useEffect(() => {
-    const now = new Date(Date.now() + 9 * 60 * 60 * 1000);
-    const day = now.toISOString().slice(0, 10).replace(/-/g, "");
-    const flag = `vc_${day}`;
-    const firstThisSession = !sessionStorage.getItem(flag);
-    const verb = firstThisSession ? "hit" : "get"; // hit=증가, get=조회만
-
-    Promise.all([
-      fetch(`${BASE}/${verb}/${NS}/total`).then((r) => r.json()),
-      fetch(`${BASE}/${verb}/${NS}/d${day}`).then((r) => r.json()),
-    ])
-      .then(([t, d]) => {
-        if (firstThisSession) sessionStorage.setItem(flag, "1");
-        if (typeof t?.value === "number" && typeof d?.value === "number")
-          setData({ total: t.value, today: d.value });
-      })
-      .catch(() => {
-        /* 카운터 실패 시 조용히 숨김 */
-      });
-  }, []);
-
-  if (!data) return null;
-  return (
-    <span className="tabular-nums">
-      오늘 {data.today.toLocaleString()} · 전체 {data.total.toLocaleString()}
-    </span>
-  );
+type Counts={today:number;total:number;day:string};
+export default function VisitorCount(){
+ const [data,setData]=useState<Counts|null>(null);
+ useEffect(()=>{
+  let active=true;
+  const day=new Date(Date.now()+9*60*60*1000).toISOString().slice(0,10).replaceAll('-','');
+  const flag=`vc_${day}`;
+  const countingEnabled=['mwohaji.kr','www.mwohaji.kr'].includes(window.location.hostname);
+  let first=false;
+  try{if(countingEnabled&&!sessionStorage.getItem(flag)){sessionStorage.setItem(flag,'1');first=true;}}catch{}
+  const read=async(method:'GET'|'POST')=>{
+   const response=await fetch('/api/visitors',{method,cache:'no-store'});
+   if(!response.ok)throw Error('Visitor count unavailable');
+   const value=await response.json();
+   if(!Number.isSafeInteger(value?.today)||!Number.isSafeInteger(value?.total)||value.today<0||value.total<0)throw Error('Invalid count');
+   if(active)setData(value);
+  };
+  // A failed/uncertain increment is never repeated. Reading cannot inflate history.
+  read(first?'POST':'GET').catch(()=>{if(first&&active)void read('GET').catch(()=>{});});
+  return ()=>{active=false;};
+ },[]);
+ return <span className="tabular-nums" aria-live="polite" data-visitor-counter="daily-total">{data?`오늘 ${data.today.toLocaleString()} · 전체 ${data.total.toLocaleString()}`:'방문자 수 집계 중'}</span>;
 }
