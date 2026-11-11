@@ -23,9 +23,9 @@ export default function PrepListing({params:p={},directory}:{params?:PrepListPar
     {isPrepReview&&<p className="prep-notice">로컬 검토 화면 · 비공개 초안이 포함되어 있습니다.</p>}
     <p className="prep-eyebrow">WEEKEND GUIDE</p>
     <h1>주말 준비물 체크리스트</h1>
-    <p className="prep-lead">요리 재료와 주말 준비물을 주제별로 확인하세요.<br/>메뉴별 재료 체크리스트와 캠핑 준비를 한곳에서 확인할 수 있어요.</p>
+    <p className="prep-lead">이번 캠핑에서는 무엇을 먹을까요?<br/>메뉴별 재료와 양념, 조리도구를 확인하고 장보기 목록을 완성해 보세요.</p>
     {!isPrepReview&&<TossTopDeals contained />}
-    <form action="/weekend-prep" className="prep-search"><input name="q" defaultValue={q} aria-label="주말 준비물 검색" placeholder="어떤 준비물이 필요하세요?"/>{category&&<input type="hidden" name="category" value={category}/>}<button>검색</button></form>
+    <form action="/weekend-prep" className="prep-search"><input name="q" defaultValue={q} aria-label="요리와 준비물 검색" placeholder="메뉴나 준비물을 검색하세요"/>{category&&<input type="hidden" name="category" value={category}/>}<button>검색</button></form>
     <nav className="prep-filters" aria-label="준비물 분류"><Link href={href('')} aria-current={!category?'page':undefined}>전체 보기</Link>{PREP_CATEGORIES.filter(c=>all.some(a=>prepCategoryLabel(a.category,a)===c)).map(c=><Link key={c} href={href(c)} aria-current={category===c?'page':undefined}>{c}</Link>)}</nav>
     {category==='요리 재료 체크리스트'&&<nav className="prep-filters" aria-label="메뉴 종류">{COOKING_CATEGORIES.map(c=><Link key={c} href={href(category,1,c)} aria-current={cooking===c?'page':undefined}>{c}</Link>)}</nav>}
     {!list.length?<div className="prep-empty">{all.length?'검색 결과가 없어요. 다른 단어로 찾아보세요.':'알찬 주말 준비 이야기를 준비하고 있어요.'}<p><Link href="/camping">캠핑 장소 둘러보기 →</Link></p></div>:<div className="prep-grid">{list.slice((page-1)*9,page*9).map(a=><Link className="prep-card" href={`/weekend-prep/${a.slug}`} key={a.slug}>

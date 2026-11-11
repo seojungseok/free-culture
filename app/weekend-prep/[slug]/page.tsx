@@ -26,6 +26,7 @@ export default async function Page({params}:{params:Promise<{slug:string}>}){
   const articles=getPrepArticles();
   const a=articles.find(a=>a.slug===slug);
   if(!a)notFound();
+  const shoppingItems=prepGuideItems(a,articles);
   const url=`${SITE.url}/weekend-prep/${a.slug}`;
   const json=[{
     '@context':'https://schema.org','@type':'Article','@id':url+'#article',headline:a.title,description:a.description,
@@ -34,7 +35,7 @@ export default async function Page({params}:{params:Promise<{slug:string}>}){
     author:{'@type':'Organization',name:SITE.name,url:SITE.url},
     publisher:{'@type':'Organization',name:SITE.name,url:SITE.url},mainEntityOfPage:{'@type':'WebPage','@id':url},
     isPartOf:{'@type':'WebSite','@id':SITE.url+'/#website',name:SITE.name,url:SITE.url},
-    ...(a.checklist?.length?{about:a.checklist.map(item=>({'@type':'Thing',name:item.label}))}:{}),
+    ...(shoppingItems.length?{about:shoppingItems.map(item=>({'@type':'Thing',name:item.label}))}:{}),
   },{
     '@context':'https://schema.org','@type':'BreadcrumbList',
     itemListElement:[{name:'홈',item:SITE.url},{name:'준비 가이드',item:`${SITE.url}/weekend-prep`},{name:a.title,item:url}].map((x,i)=>({'@type':'ListItem',position:i+1,...x})),
@@ -43,7 +44,7 @@ export default async function Page({params}:{params:Promise<{slug:string}>}){
     .sort((b,c)=>Number(isCookingPrepArticle(c)&&cookingCategory(c)===cookingCategory(a))-Number(isCookingPrepArticle(b)&&cookingCategory(b)===cookingCategory(a))).slice(0,3);
   return <main className="prep">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(json).replace(/</g,'\\u003c')}}/>
-    <PrepArticle article={a} preview={isPrepReview} shoppingItems={prepGuideItems(a,articles)} relatedArticles={articles.map(({slug,title})=>({slug,title}))}/>
+    <PrepArticle article={a} preview={isPrepReview} shoppingItems={shoppingItems} relatedArticles={articles.map(({slug,title})=>({slug,title}))}/>
     {related.length>0&&<nav className="prep-article prep-directory" aria-label="다른 준비물 체크리스트">
       <h2>함께 챙길 준비물 체크리스트</h2>
       <ul>{related.map(b=><li key={b.slug}><Link href={`/weekend-prep/${b.slug}`} prefetch={false}>{b.title}</Link></li>)}</ul>

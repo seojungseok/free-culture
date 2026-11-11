@@ -29,14 +29,19 @@ for (const article of store.articles.filter(a => a.status === 'published')) {
   assert.equal(breadcrumb.itemListElement.at(-1).name, article.title);
   assert.equal($('meta[name="google-adsense-account"],script[src*="adsbygoogle"]').length, 0);
   const links = $('a[data-affiliate-provider=coupang]').toArray();
-  for (const item of article.checklist || []) {
-    if (!item.affiliate?.reviewed) continue;
+  const items=[...(article.checklist||[]),...(article.shoppingItems||[])];
+  assert(items.length > 0,'Every published guide must expose its actual materials or products');
+  assert(!$('.prep-link-pending').length,'No visible preparation item may remain unlinked');
+  assert(!html.includes('이 활동에 어울리는 준비물')&&!html.includes('직접 준비할 재료')&&!html.includes('완성 요리 장면'),'Awkward stock copy must be removed');
+  assert(!$('meta[name=robots]').attr('content')?.includes('noindex'));
+  for (const item of items) {
+    assert(item.affiliate?.reviewed,'Every visible item must have a reviewed original link');
     const matching = links.filter(node => $(node).attr('href') === item.affiliate.url);
     assert(matching.length > 0, 'Reviewed original destination must render without rewriting');
     assert(matching.every(node => /sponsored/.test($(node).attr('rel')) && $(node).attr('target') === '_blank'));
     destinations++;
   }
-  if (article.checklist?.length) {
+  if (items.length) {
     assert($('.prep-tag').length > 0, 'Preparation buttons must exist');
     assert($('a[href="#prep-checklist"]').length > 0, 'Ingredient shortcut must exist');
     assert(html.indexOf('id="prep-checklist"') < html.indexOf('id="prep-cooking"'), 'Ingredients precede cooking');
@@ -61,4 +66,5 @@ const sitemap = await fetch(new URL('/sitemap.xml', base));
 assert.equal(sitemap.status, 200);
 const sitemapBody = await sitemap.text();
 assert(/weekend-prep/.test(sitemapBody), 'Preparation sitemap must remain discoverable');
+for(const article of store.articles.filter(a=>a.status==='published'))assert(sitemapBody.includes('https://mwohaji.kr/weekend-prep/'+article.slug),'Every original guide remains in the sitemap');
 console.log(JSON.stringify({passed: true, pages, reviewedDestinations: destinations, productImages: imageChecks, articleAndBreadcrumb: true, adsenseRemoved: true, affiliateDestinationsFollowed: 0}));

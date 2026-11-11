@@ -19,13 +19,17 @@ test('published preparation guides retain their current content format', () => {
 
 test('ingredient affiliate links have reviewed original Coupang URLs and product details', () => {
   let count = 0;
-  for (const article of store.articles) for (const item of article.checklist || []) {
+  for (const article of store.articles) for (const item of [...(article.checklist||[]),...(article.shoppingItems||[])]) {
     if (!item.affiliate) continue;
     const product = item.affiliate;
     const url = new URL(product.url);
     assert.equal(url.protocol, 'https:');
     assert.equal(url.hostname, 'link.coupang.com');
-    assert.equal(product.source, 'coupang-api');
+    assert(['coupang-api','registered-product'].includes(product.source));
+    if(product.source==='registered-product'){
+      const source=new URL(product.sourceUrl);assert.equal(source.hostname,'www.coupang.com');assert.match(source.pathname,/^\/vp\/products\/\d+$/);assert(Number.isFinite(Date.parse(product.reviewedAt)));
+      if(url.searchParams.has('pageKey'))assert.equal(url.searchParams.get('pageKey'),source.pathname.split('/').at(-1));
+    }
     assert.equal(product.reviewed, true);
     assert(product.productName.trim());
     assert(Number.isFinite(Date.parse(product.checkedAt)));

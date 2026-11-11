@@ -19,8 +19,15 @@ test('all original article URLs, publication states, text and affiliate destinat
  assert.equal(store.articles.length,original.articles.length);
  for(const before of original.articles){
   const after=store.articles.find(a=>a.slug===before.slug);
+  const expected=structuredClone(before);
+  const copyLog=fs.existsSync('data/prep-copy-edits-20261111.json')?JSON.parse(fs.readFileSync('data/prep-copy-edits-20261111.json','utf8')):[];
+  for(const edit of copyLog.filter(edit=>edit.slug===before.slug)){
+   assert(/^(description|cover\.alt|sections\.\d+\.(text|image\.alt)|checklist\.\d+\.label)$/.test(edit.path),'Only explicitly reviewed prose fields may change');
+   const parts=edit.path.split('.');let target=expected;for(const key of parts.slice(0,-1))target=target[key];
+   assert(target[parts.at(-1)]===edit.before,'Copy review must match the original text');target[parts.at(-1)]=edit.after;
+  }
   assert(after,'Existing URL must remain');
-  for(const field of ['title','description','status','publishAt','sections','internalLinks','cover'])assert(JSON.stringify(after[field])===JSON.stringify(before[field]),'Existing article content must remain: '+field);
+  for(const field of ['title','description','status','publishAt','sections','internalLinks','cover'])assert(JSON.stringify(after[field])===JSON.stringify(expected[field]),'Existing article content and approved copy edits must remain: '+field);
   for(const item of before.checklist||[])if(item.affiliate){const next=after.checklist.find(v=>v.id===item.id);assert(next?.affiliate?.url===item.affiliate.url,'Original affiliate destination must remain byte-for-byte');}
  }
 });
@@ -41,7 +48,8 @@ test('crab has a reviewed product and remains the first, required ingredient',()
  assert.match(crab.affiliate.optionNote,/450g/);
  assert.equal(photoGuideItems(a.checklist)[0].id,'crab');
  assert(photoGuideItems(a.checklist,true).every(i=>i.group==='common'));
- assert.equal(prepGuideItems(store.articles.find(v=>v.slug==='camp-jeyuk-bokkeum'),store.articles)[0].label,store.articles.find(v=>v.slug==='autumn-20260920-jeyuk-bokkeum-ingredient-checklist').checklist[0].label);
+ const recipe=store.articles.find(v=>v.slug==='camp-jeyuk-bokkeum');
+ assert(prepGuideItems(recipe,store.articles).some(item=>item.label==='제육용 돼지고기'));
 });
 
 test('all preparation positions use the existing privacy-minimized receiver contract',()=>{

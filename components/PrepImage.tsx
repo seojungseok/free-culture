@@ -5,7 +5,7 @@ import PrepAffiliateLink from './PrepAffiliateLink';
 import {reviewedPrepAffiliate} from '@/lib/prep-affiliate';
 import type {PrepImage as Photo, PrepChecklistItem} from '@/lib/weekend-prep/types';
 
-export default function PrepImage({photo, priority = false, headline, items = [], slug}: {photo: Photo; priority?: boolean; headline?: string; items?: PrepChecklistItem[]; slug?: string}) {
+export default function PrepImage({photo, priority = false, headline, items = [], slug, kind='cooking'}: {photo: Photo; priority?: boolean; headline?: string; items?: PrepChecklistItem[]; slug?: string; kind?: 'cooking'|'supplies'}) {
   const [active, setActive] = useState<string | null>(null);
   const lastButton = useRef<HTMLButtonElement | null>(null);
   const panelId = useId();
@@ -21,7 +21,7 @@ export default function PrepImage({photo, priority = false, headline, items = []
     </div>
     <figcaption>{photo.alt}</figcaption>
     {!!items.length && slug && <div className="prep-photo-shopping" onKeyDown={event => {if (event.key === 'Escape') close();}}>
-      <p className="prep-photo-shopping-title">이 활동에 어울리는 준비물 <span>+를 눌러 필요한 재료와 상품을 확인하세요.</span></p>
+      <p className="prep-photo-shopping-title">{kind==='supplies'?'본문에서 소개한 상품':items.every(item=>item.group==='common')?'함께 챙길 조리도구':'필요한 재료와 조리도구'} <span>+ 버튼을 누르면 상품과 구성을 볼 수 있어요.</span></p>
       <div className="prep-photo-tags" role="group" aria-label="사진 관련 준비물">
         {items.map(item => <button type="button" className="prep-tag" key={item.id} aria-expanded={active === item.id} aria-controls={panelId}
           onClick={event => {lastButton.current = event.currentTarget; setActive(active === item.id ? null : item.id);}}><span aria-hidden="true">{active === item.id ? '−' : '+'}</span> {item.label}</button>)}
@@ -30,9 +30,9 @@ export default function PrepImage({photo, priority = false, headline, items = []
         <div className="prep-product-pop-head"><strong>{selected.label}{selected.required && <span className="prep-required">필수 주재료</span>}</strong><button type="button" onClick={close} aria-label="준비물 안내 닫기">닫기 ×</button></div>
         {selected.quantity && <p className="prep-quantity">{selected.quantity}</p>}
         <p>{selected.role}</p>
-        {product ? <><div className="prep-linked-product">{product.image&&<Image src={product.image} alt={product.productName+' 판매처 상품 사진'} width={80} height={80} unoptimized/>}<p className="prep-affiliate-name">연결 상품: {product.productName}</p></div>{product.optionNote&&<p className="prep-option-note">{product.optionNote}</p>}<PrepAffiliateLink href={product.url} slug={slug} placement="prep_image" className="prep-order" label={`${selected.label} 쿠팡 상품의 규격과 옵션 확인 (새 창)`}>쿠팡에서 규격·옵션 확인 ↗</PrepAffiliateLink></>
-          : <p className="prep-link-pending">준비할 재료입니다. 확인된 상품 링크는 아직 연결되지 않았어요.</p>}
-        <p className="prep-photo-shopping-note">AI 연출 이미지로, 연결 상품의 실제 외형·구성과 다를 수 있습니다.</p>
+        {product ? <><div className="prep-linked-product">{product.image&&<Image src={product.image} alt={product.productName+' 판매처 상품 사진'} width={80} height={80} unoptimized/>}<p className="prep-affiliate-name">{product.productName}</p></div>{product.optionNote&&<p className="prep-option-note">{product.optionNote}</p>}<PrepAffiliateLink href={product.url} slug={slug} placement="prep_image" className="prep-order" label={`${selected.label} 쿠팡 상품 보기 (새 창)`}>쿠팡에서 상품 보기 ↗</PrepAffiliateLink></>
+          : <p className="prep-link-pending">상품 정보를 확인하고 있어요.</p>}
+        <p className="prep-photo-shopping-note">AI 연출 이미지로, 판매 상품의 실제 모습과 다를 수 있어요.</p>
       </div>}
     </div>}
     {photo.usageNotice && <p className="prep-notice">{photo.usageNotice}</p>}

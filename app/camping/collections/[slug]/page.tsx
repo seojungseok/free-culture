@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: {
       absolute: `${b.title} ${b.count}곳 | ${SITE.name}`,
     },
-    description: `${b.title} ${b.count}곳을 한눈에. 유형·편의시설·반려동물 동반 여부와 요금·예약·지도 정보를 데이터로 정리했어요.`,
+    description: `${b.title} ${b.count}곳을 한눈에. 캠핑장 유형과 편의시설, 반려동물 동반 여부를 살펴보고 요금·예약·지도 정보를 확인하세요.`,
     robots: { index: false, follow: true },
     keywords: b.keywords,
     alternates: { canonical: `/camping/collections/${b.slug}` },

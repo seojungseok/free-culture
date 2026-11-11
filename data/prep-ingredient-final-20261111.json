@@ -14,7 +14,10 @@
       "image": "https://ads-partners.coupang.com/image1/SOP2mr7nDJAi1WF6SKaDERoGiIPYaXcBNx0UrDc3wHy9Q_rsBlimMT1oN6Ds1GQKT3sDIEl-x6VGxublTb7BHBOhmBhdW55yozPtxHKEVR-8D91doWiq-iEnsJr2cWYHe_moNB1SH2yYjVpqWr4xVaDQx6O--EZ4L66fVr3YpMYAukM6PGlDf--ejDMH9_UCPiJpaxgdyyeRk9EHO0tU5nuzfKJz64oKkBZT09CGBY95u2OiriZwlAXzatFHFYMLfuAShhLI5c0WCAiNHExu4ex_bIkACUtkqt1aU8u3cRTv8nN6MVFHlWkOuwcIy_mkU4yRxuwjyoDE9SWlw55KYoPL_GMrrYCn11EnUHHE7zFb-fk6gYUy9N8vH9C-gxFX0VMLCiTwBezTk1u1yBphNHwMzXkD5PfKKp8phsmov7vY2ozsYtbJX_QZM39I2suv7Rw3tMCJOObb8qZGNidl_2ne6PjLlOwwZYIwK3x2fbmumUSTeEZx3Qc4TmNkkmQg-H3os6jK_KFdDAYXANsUk3e4GmzRZpksVPIV62pjJ8o=",
       "source": "coupang-api",
       "checkedAt": "2026-11-11T14:36:29.276Z",
-      "reviewed": false
+      "reviewed": true,
+      "localImage": "/prep-products/9812117237.webp",
+      "reviewedAt": "2026-11-11T14:39:01.529Z",
+      "reviewNote": "API 상품명·선택 구성과 상품 번호별 실제 사진을 대조했습니다. 생 모둠버섯·생깻잎·김치맛 볶음밥·보통맛 고춧가루로 확인했으며 재고·가격·배송은 보증하지 않습니다."
     },
     {
       "key": "perilla-leaf",
@@ -28,7 +31,10 @@
       "image": "https://ads-partners.coupang.com/image1/ZcrGTCMTQ0PZV7FEZUOgR-j_-rkTCNn6L6uLmBisQFsh-lgFaqRmr4HaPb40prnSQNnX2xBH4H1Y7VqlAPPRyHdgIPozbi6EU9mJ2dzbXF_3f-3P7BGN8niG3bzYdWq8hwnSz0jnwuFjF_8obvg9L5K1tQrIxF21uyD4gOjAH_MDeXI9GUMswKX4gKSI2w_MLCYyIKuRSbLaQvZYa0tVYCz2AxKBe19MkYax0RU6YODvjk-SLBmg4lPdueKr1s9w_xSGu06TOayeNy76myRzrJD1ibauftQZWa9-2WvNmip23T0HRnaRg3bl04V9hH5oh1RyfscN9IBQEufvFgxWMmIlOA2ACTbEssIK6IylyJb4nznq30EAU18zdr9VGCBL0qBmwQvEtAlPIOT7DURCJ4NwlJ8xyFMh2zCPlINJEA-Wqc0vYid46YD4ML5RMYPD8C6p01eSMgYyl0_0o_XhkFK59e69GLqgSkSkQUSKTa1h5BYDRW0yD5TljwzQqlMZPStApiOLh3t__9bglqRXa4eJFj08r6Y=",
       "source": "coupang-api",
       "checkedAt": "2026-11-11T14:36:51.352Z",
-      "reviewed": false
+      "reviewed": true,
+      "localImage": "/prep-products/9801951205.webp",
+      "reviewedAt": "2026-11-11T14:39:01.530Z",
+      "reviewNote": "API 상품명·선택 구성과 상품 번호별 실제 사진을 대조했습니다. 생 모둠버섯·생깻잎·김치맛 볶음밥·보통맛 고춧가루로 확인했으며 재고·가격·배송은 보증하지 않습니다."
     },
     {
       "key": "chicken-friedrice",
@@ -42,7 +48,11 @@
       "image": "https://ads-partners.coupang.com/image1/7WLQN2MQhmx-WLBX7fcIG8hnII5vaE73EMnWeUfKpaYwkkfqUiNVQGvT8r0kER0jb3u4oEjF2ChKHxHxeSxgRbaiATjzfK_6RpSFOubKFGMLZhvHjkfRMaAVCCEk2Oaw7HocLyuEhdtLD_ImzP0LSglC5vAfRLvgwR5PNu2SOKEGGjSl4svU3_1NJrcN-JRDgEALEkjjqrMkzdTniOXkTictbYwWsr5xmTRfs5jwWbfZKXvBY4J2DE2-rPozuqQejzSnxDjyxcE8In-eE9gj0vVWaUoIENZSqmPwTWiCNcJ1LhP8FKfxtJGjeUN82ASsD8F7RnbNlXguBlRQriOKLjSkOrOQetDBQy1Ic90PeRI5qbNk7baAX0J7Br3s8WmwgG0q1DFGDWsZX6S5RqxCsR0e4r3Xw8lpqtqztZL73ot2EhFBtjcfAIvklImub2dUesSu0YQkFNU6-WU6mWUE1XPGr1H7lST0EgO7Jw8OpkoJWPixPzBvnkn0RyrGotfSY0TRgPDNV7ldDdpjouXRb6BQTIQOpIamDw==",
       "source": "coupang-api",
       "checkedAt": "2026-11-11T14:37:26.055Z",
-      "reviewed": false
+      "reviewed": true,
+      "localImage": "/prep-products/8511187607.webp",
+      "reviewedAt": "2026-11-11T14:39:01.530Z",
+      "reviewNote": "API 상품명·선택 구성과 상품 번호별 실제 사진을 대조했습니다. 생 모둠버섯·생깻잎·김치맛 볶음밥·보통맛 고춧가루로 확인했으며 재고·가격·배송은 보증하지 않습니다.",
+      "optionNote": "김치삼겹 맛 닭가슴살 볶음밥 300g 10개 구성입니다. 원재료·알레르기 표시와 가열 방법은 실제 포장을 확인하세요."
     },
     {
       "key": "chili-powder",
@@ -56,7 +66,10 @@
       "image": "https://ads-partners.coupang.com/image1/L7ZzTvCu-2oLPzvoL77XUARZq8rhr4vZSAENxXW43fS7Tnk9p6ONchv7ibzVtOzDFkso2FYSHfncg2UNDhzIfeEFpP0Ew9Mzu41aOvMekzKl8AyMU7SII6Z1nojj-z0vyrxBeSBOQrdqcG_agBXFM69mSdxXMJlxVyPBpOyHQlie3KmppZF1547dvHNicKUue-Q0OB4GZslhmAp0E5RH1id2dqGdcJLneDTSdCVcfHHyczQpa-ybG3ZnGl8c0JqO6y0V8Y4qyvg2k2kdydIlGuVRH_DWCMwMhf8Gu-ZJS2J4oQiux2zoMHnJvGBvqBTiui2bOC8V5gs-mBJC3E-IxHppljDCFkzTSlllwtP1jFAb6OPrMjZMPJCjnqa3qs6V9pS1utwu5NH08v2CglryDhlb3PsNj5_DM9cc8c7RUQX9DnOGrGdo06JgzmJ0Q5tU17ihgIGb7FxyQSZZQ3ZYvbdO97oPgZyttjQHtPDLO7uqTqVOThl99P5lqD-SjegttAtBczHusTbCoU0ncEUiS8-9Eyw=",
       "source": "coupang-api",
       "checkedAt": "2026-11-11T14:37:37.947Z",
-      "reviewed": false
+      "reviewed": true,
+      "localImage": "/prep-products/9775061160.webp",
+      "reviewedAt": "2026-11-11T14:39:01.530Z",
+      "reviewNote": "API 상품명·선택 구성과 상품 번호별 실제 사진을 대조했습니다. 생 모둠버섯·생깻잎·김치맛 볶음밥·보통맛 고춧가루로 확인했으며 재고·가격·배송은 보증하지 않습니다."
     }
   ],
   "unmatched": [],
