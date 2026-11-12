@@ -5,6 +5,7 @@ import {isSharelinkMaintenance,maintenanceStart,maintenanceEnd} from './maintena
 import {selections,channels} from './editorial.mjs';
 import {winterCampaignVersion,winterSelections} from './winter-editorial.mjs';
 import {homeDealGroup,eligibleHomeDeal} from './home-deals.mjs';
+import {matchesReviewedProduct} from './reviewed-product.mjs';
 if(isSharelinkMaintenance()){
  console.log('SHARELINK_SYNC_SKIPPED scheduled maintenance');
  process.exit(0);
@@ -31,7 +32,7 @@ try {
   const products=[];
   for(const choice of selections){
    const p=details.items?.find(p=>p.tacaItemId===choice.id);
-   if(!p||p.isSoldOut||!Number.isFinite(p.displayPrice)||p.displayName!==choice.expectedName||!p.mainImageUrls?.includes(choice.imageUrl))continue;
+   if(!matchesReviewedProduct(choice,p)||!Number.isFinite(p.displayPrice))continue;
    const links={};
    for(const c of channels.filter(c=>c==='home'||c===choice.topic)){
     const cached=previous?.products?.find(q=>q.id===choice.id&&q.name===p.displayName)?.links?.[c]||(c==='home'?choice.reviewedHomeLink:undefined);
@@ -49,8 +50,8 @@ try {
   for(const deal of homeDeals){
    const p=homeDetails.items?.find(p=>p.tacaItemId===deal.tacaItemId);
    if(!eligibleHomeDeal(deal,p))continue;
-   const winterChoice=winterSelections.find(choice=>choice.id===p.tacaItemId&&choice.expectedName===p.displayName);
-   if(winterChoice&&!p.mainImageUrls.includes(winterChoice.imageUrl))continue;
+   const winterChoice=winterSelections.find(choice=>choice.id===p.tacaItemId);
+   if(winterChoice&&!matchesReviewedProduct(winterChoice,p))continue;
    const cached=previous?.products?.find(q=>q.id===p.tacaItemId&&q.name===p.displayName)?.links?.home;
    const link=cached?.startsWith('https://toss.shopping/')?{shortUrl:cached}:await request('/links',{method:'POST',body:{tacaItemId:p.tacaItemId,publisherId,subTagId:'mwohaji_home'}});
    if(!link.shortUrl?.startsWith('https://'))throw new Error('Invalid original Sharelink');

@@ -1,6 +1,6 @@
 // Public merchant information reviewed in the authenticated Toss Sharelink UI.
 // The dated launch snapshot expires after six hours; a matching hourly collector revision takes precedence.
-export const winterCampaignVersion="winter-studio-20261113-v5";
+export const winterCampaignVersion="winter-studio-20261113-v6";
 export const winterTossCampaigns=[
   {
     "id": 2702896485,
@@ -49,7 +49,7 @@ export const winterTossCampaigns=[
 export const reviewedWinterTossFeed={
   "version": 1,
   "checkedAt": "2026-11-12T15:41:01.647Z",
-  "winterCampaignVersion": "winter-studio-20261113-v5",
+  "winterCampaignVersion": "winter-studio-20261113-v6",
   "products": [
     {
       "id": 2702896485,
@@ -165,4 +165,3 @@ export const reviewedWinterTossFeed={
     }
   ]
 };
-

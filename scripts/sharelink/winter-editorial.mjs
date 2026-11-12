@@ -85,4 +85,3 @@ export const winterSelections=[
     "reviewedHomeLink": "https://toss.shopping/_m/DFUkzlnn"
   }
 ];
-

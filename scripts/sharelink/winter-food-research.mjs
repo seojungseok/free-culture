@@ -24,11 +24,10 @@ try{
   const results=[];
   for(const id of ids){
    const response=await request('/products/best-categories/'+id+'?size=10');
-   const products=(response.items||[]).map(p=>({id:p.tacaItemId,name:p.displayName,images:p.mainImageUrls,price:p.displayPrice,discountRate:p.discountRate,isSoldOut:p.isSoldOut,productUrl:p.productUrl,categoryIds:p.categoryIds}));
+   const products=(response.items||[]).map(p=>({id:p.tacaItemId,name:p.displayName,image:p.thumbnailUrl,price:p.displayPrice,discountRate:p.discountRate,isSoldOut:p.isSoldOut,productUrl:p.productUrl,categoryIds:p.categoryIds}));
    results.push({category:known.find(c=>c.id===id),checkedAt:new Date().toISOString(),products});
    fs.writeFileSync(path.join(output,'candidates.json'),JSON.stringify({results},null,2));
    console.log(JSON.stringify(results.at(-1)));
   }
  });
 }catch(error){console.error(error.message);process.exitCode=1;}
-
