@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {selectTopDeals,topDealGroup,topDealOption,topDealPreparation} from '../../lib/toss-top-deals.mjs';
 import {winterCampaignVersion} from '../../data/toss-winter-reviewed.mjs';
+import {homeDealGroup} from './home-deals.mjs';
 
 const now=Date.parse('2026-11-05T03:00:00Z');
 const deal={id:1,name:'어묵 확인된 하루특가',image:'https://example.com/image',price:1000,discountRate:15,links:{home:'https://toss.shopping/example'},endAt:new Date(now+1000).toISOString()};
@@ -25,6 +26,13 @@ test('겨울 완제품은 허용하되 붕어빵 조리도구와 재료는 제�
 test('라면 용기와 과일 도구는 음식 단어가 있어도 특가에서 제외한다',()=>{
  const products=['맥스 앤 맥스 전자레인지 라면 용기, 1L, 2개','키위 과일칼, 1개','냉동 붕어빵, 1kg, 1개'].map((name,index)=>({...deal,id:index+1,name}));
  assert.deepEqual(selectTopDeals({...feed,products},now).map(p=>p.id),[3]);
+});
+test('먹거리 특가에는 라면포트와 전기포트를 넣지 않고 실제 라면은 유지한다',()=>{
+ const names=['키친플라워 쿠킨 돌핀 멀티 라면포트, 1.8L, 1개','무선 전기포트, 1.5L, 1개','라면 멀티포트, 1개','농심 신라면, 120g, 20개'];
+ const products=names.map((name,index)=>({...deal,id:index+1,name}));
+ assert.deepEqual(selectTopDeals({...feed,products},now).map(p=>p.id),[4]);
+ for(const name of names.slice(0,3))assert.equal(homeDealGroup(name),null);
+ assert.equal(homeDealGroup(names[3]),'camp');
 });
 
 test('조리가 필요한 음식은 음료 단어가 섞여도 간식·음료로 분류하지 않는다',()=>{
