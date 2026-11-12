@@ -68,7 +68,7 @@ export function MobileHeaderNav({ seasonLabel }: { seasonLabel: string }) {
   useEffect(() => { if (menu.current) menu.current.open = false; }, [pathname]);
 
   return (
-    <details ref={menu} className="group relative lg:hidden" onKeyDown={(event) => { if (event.key === "Escape" && menu.current?.open) { menu.current.open = false; menu.current.querySelector("summary")?.focus(); } }}>
+    <details ref={menu} className="group relative xl:hidden" onKeyDown={(event) => { if (event.key === "Escape" && menu.current?.open) { menu.current.open = false; menu.current.querySelector("summary")?.focus(); } }}>
       <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full text-[#07152f] transition hover:bg-tint [&::-webkit-details-marker]:hidden">
         <span className="sr-only">메뉴</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-9 w-9" aria-hidden="true">
@@ -77,7 +77,7 @@ export function MobileHeaderNav({ seasonLabel }: { seasonLabel: string }) {
           <path d="M4 17h16" />
         </svg>
       </summary>
-      <nav aria-label="전체 메뉴" className="absolute right-0 top-[calc(100%+10px)] max-h-[80dvh] w-[220px] overflow-y-auto rounded-2xl border border-line bg-white p-2 shadow-lg">
+      <nav aria-label="전체 메뉴" className="absolute right-0 top-[calc(100%+10px)] max-h-[70dvh] w-[min(220px,calc(100vw-24px))] overflow-y-auto rounded-2xl border border-line bg-white p-2 shadow-lg">
         {[...navigation.primary, ...navigation.more].map((item) => {
           const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
           return <Link key={item.href} href={item.href} aria-current={active ? (pathname === item.href ? "page" : "location") : undefined} onClick={() => { if (menu.current) menu.current.open = false; }} className={`flex min-h-11 items-center rounded-xl px-3 py-2.5 text-[14px] font-bold hover:bg-blue-50 hover:text-brandblue ${active ? "bg-blue-50 text-brandblue" : "text-ink-soft"}`}>{item.label}</Link>;

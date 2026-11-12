@@ -4,6 +4,7 @@ import metropolitanDaytrips from '@/data/winter-metropolitan-daytrips.json';
 import metropolitanOvernights from '@/data/winter-metropolitan-overnights.json';
 import reviewedPhotos from '@/data/winter-reviewed-photos.json';
 import { isPublicWinterCourse } from '@/lib/winter-course-validation.mjs';
+import {practicalWinterSections} from './winterPracticalGuides';
 
 export type WinterPhoto = { src: string; sourceUrl?: string; alt: string; caption: string; credit: string; kind: 'tour-api' | 'ai'; reviewed: boolean; width: number; height: number };
 export type WinterStop = { placeId: string; name: string; addr?: string; mapx: string | number; mapy: string | number; day: number; image?: string; officialUrl?: string; description?: string; timeLabel?: string; stay?: string; photo?: WinterPhoto; gallery?: WinterPhoto[] };
@@ -23,7 +24,8 @@ export function getPublicWinterCourses(): WinterCourse[] {
     if (isPublicWinterCourse(course)) {
       const original = course as WinterCourse;
       const reviewed = (reviewedPhotos as Record<string, WinterCourse['image']>)[original.slug];
-      const item = { ...original, image: original.image || (reviewed && original.stops.some((stop) => stop.image === reviewed.src) ? reviewed : undefined) };
+      const additions=practicalWinterSections(original);
+      const item = { ...original, sections:[...original.sections,...additions], ...(additions.length?{updatedAt:'2026-11-12T00:00:00+09:00'}:{}), image: original.image || (reviewed && original.stops.some((stop) => stop.image === reviewed.src) ? reviewed : undefined) };
       if (!unique.has(item.slug)) unique.set(item.slug, item);
     }
   }

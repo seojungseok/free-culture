@@ -5,6 +5,7 @@ import {getPublicWinterCourses,getWinterCourse,type WinterPhoto} from '@/lib/win
 import {SITE} from '@/lib/site';
 import {winterCourseImage} from '@/lib/winterCourseImage.mjs';
 import TossTopDeals from '@/components/TossTopDeals';
+import WinterStay from '@/components/WinterStay';
 
 export const revalidate=3600;
 export const dynamicParams=false;
@@ -62,7 +63,7 @@ export default async function WinterCoursePage({params}:{params:Promise<{slug:st
    <dl className="mt-5 grid gap-4 rounded-2xl bg-[#f3f6fa] p-5 sm:grid-cols-3">
     {[[course.startPoint,'출발 지점'],[course.transport,'이동 방식'],[course.durationLabel,'현지 일정']].filter(([value])=>value).map(([value,label])=><div key={label} className="min-w-0"><dt className="text-xs text-ink-soft">{label}</dt><dd className="mt-1 break-keep text-sm font-bold leading-6 text-ink">{value}</dd></div>)}
    </dl>
-   {course.overnightArea&&<p className="mt-3 rounded-xl border border-slate-200 px-4 py-3 text-sm leading-7 text-ink-soft"><strong className="text-ink">숙박 권역</strong> · {course.overnightArea}</p>}
+   {course.overnightArea&&<div className="mt-3 rounded-xl border border-slate-200 px-4 py-3 text-sm leading-7 text-ink-soft"><p><strong className="text-ink">숙박 권역</strong> · {course.overnightArea}</p><a href="#winter-stay" className="mt-1 inline-flex min-h-11 items-center font-bold text-brandblue">이 코스에서 숙소 고르기 →</a></div>}
   </header>
   {photo&&<CoursePhoto photo={photo} priority/>}
   <nav className="mt-7 rounded-2xl border border-slate-200 p-5" aria-label={overnight?'1박 2일 코스 순서':'하루 코스 순서'}>
@@ -72,13 +73,13 @@ export default async function WinterCoursePage({params}:{params:Promise<{slug:st
   {course.stops.map((stop,index)=>{
    const official=stop.officialUrl?safeSourceUrl(stop.officialUrl):null;
    const stopPhotos=[stop.photo,...(stop.gallery||[])].map(image=>winterCourseImage({image})).filter(image=>{if(!image||renderedPhotos.has(image.src))return false;renderedPhotos.add(image.src);return true;});
-   return <section key={stop.placeId} id={'stop-'+(index+1)} className="mt-10 scroll-mt-24">
+   return <div key={stop.placeId}><section id={'stop-'+(index+1)} className="mt-10 scroll-mt-24">
     <p className="text-xs font-bold text-brandblue">{[overnight?`${stop.day}일차`:null,stop.timeLabel,stop.stay].filter(Boolean).join(' · ')}</p>
     <h2 className="mt-2 break-keep text-2xl font-black leading-9 tracking-tight text-ink">{index+1}. {stop.name}</h2>
     {stop.description&&<p className="mt-3 whitespace-pre-line text-[15px] leading-8 text-ink-soft">{stop.description}</p>}
     {stopPhotos.map(image=><CoursePhoto key={image.src} photo={image}/>)}
     <div className="mt-4 rounded-xl bg-slate-50 px-4 py-3">{stop.addr&&<p className="break-words text-sm leading-6 text-ink-soft">{stop.addr}</p>}<div className="flex flex-wrap gap-x-5"><a href={'https://map.naver.com/p/search/'+encodeURIComponent([stop.addr,stop.name].filter(Boolean).join(' '))} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-sm font-bold text-brandblue">네이버 지도 ↗</a>{official&&<a href={official} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-sm font-bold text-brandblue">공식 안내 ↗</a>}</div></div>
-   </section>;
+   </section>{overnight&&stop.day===1&&course.stops[index+1]?.day===2&&<WinterStay slug={course.slug} city={course.city||course.area} area={course.overnightArea||course.area}/>}</div>;
   })}
   {course.sections.map((section,index)=><section key={section.heading+'-'+index} className="mt-10"><h2 className="break-keep text-xl font-black leading-8 text-ink">{section.heading}</h2>{section.paragraphs.map((paragraph,i)=><p key={i} className="mt-3 whitespace-pre-line text-[15px] leading-8 text-ink-soft">{paragraph}</p>)}</section>)}
   <aside className="mt-10 rounded-2xl border border-slate-200 p-5">

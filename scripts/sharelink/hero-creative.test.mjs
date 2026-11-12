@@ -33,16 +33,17 @@ function render(items=products,checkedAt=new Date(now).toISOString()){
  return load(renderToStaticMarkup(React.createElement(exports.default)));
 }
 
-test('each fixed product retains its exact option text, original destination and seller image',()=>{
+test('each fixed product retains its exact option text, original destination and reviewed campaign photo',()=>{
  for(const product of products){
   const $=render([product]);
   assert.equal($('h2').text(),product.name);
   assert.equal($('a.bannerLink').attr('href'),product.links.home);
-  assert.equal($('.productImage').attr('src'),product.image);
+  assert.equal($('.scene').attr('src'),heroPolicy.winterTossCampaign(product).art);
+  assert.equal(Number($('.scene').attr('width'))/Number($('.scene').attr('height')),3);
   assert.equal($('.offer strong').text(),'12,300원');
   assert.equal($('.priceCaption time').text(),'11.5 12:00 기준');
   assert.equal($('.priceCaption time').attr('datetime'),new Date(now).toISOString());
-  assert.match($('.cta').text(),/토스에서 가격·구성 확인/);
+  assert.match($('.cta').text(),/지금 구매하기/);
   assert.match($('a').attr('rel'),/sponsored/);
   assert.match($('a').attr('aria-label'),/새 창/);
  }

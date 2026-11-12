@@ -54,25 +54,23 @@ export default function TossWinterHero(){
    onPointerEnter={e=>{if(e.pointerType==='mouse')setHover(true);}} onPointerLeave={()=>setHover(false)}
    onFocusCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node)&&!(e.target as HTMLElement).closest('[data-playback-control]'))setPaused(true);}}>
    <a className={styles.bannerLink} href={active.links.home} target="_blank" rel="sponsored nofollow noopener noreferrer"
-    aria-label={`${active.name} · 토스에서 가격·구성 확인 (새 창)`}
+    aria-label={`${active.name} · 지금 구매하기 (새 창)`}
     onTouchStart={e=>{setPaused(true);swipe.current={x:e.touches[0].clientX,y:e.touches[0].clientY,moved:false};}}
     onTouchCancel={()=>{swipe.current.moved=false;}}
     onTouchEnd={e=>{const dx=e.changedTouches[0].clientX-swipe.current.x,dy=e.changedTouches[0].clientY-swipe.current.y;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){swipe.current.moved=true;choose(index+(dx<0?1:-1));}}}
     onClick={e=>{if(swipe.current.moved){e.preventDefault();swipe.current.moved=false;return;}click();}}>
-    <img key={active.id} className={styles.scene} src={art?.art||active.image} alt="" width={2172} height={724} loading="lazy" decoding="async"/>
+    <img key={active.id} className={styles.scene} src={art?.art||active.image} alt={`${art?.label||'겨울 먹거리'} 한 상 · AI 연출 이미지`} width={2172} height={724} loading="lazy" decoding="async"/>
     <div className={styles.copy}>
-     <p className={styles.eyebrow}>[광고] 토스쇼핑 · 겨울 먹거리</p>
-     <h2>{active.name}</h2>
+     <div className={styles.intro}><p className={styles.eyebrow}>[광고] 토스쇼핑 · {art?.title.replace(/\n/g,' ')||'오늘의 겨울 먹거리'}</p><h2>{active.name}</h2></div>
      <div className={styles.purchase}>
-      <img className={styles.productImage} src={active.image} alt={`${active.name} 판매처 상품 사진`} width={72} height={72} loading="lazy" decoding="async"/>
       <div className={styles.purchaseDetails}>
-       <span className={styles.priceCaption}>확인 가격 · <time dateTime={feed.checkedAt}>{checked}</time></span>
        <div className={styles.offer}>
         {Number.isFinite(active.discountRate)&&Number(active.discountRate)>0&&Number(active.discountRate)<=100&&<span>{active.discountRate}%</span>}
         <strong>{active.price.toLocaleString('ko-KR')}원</strong>
        </div>
-       <span className={styles.cta}>토스에서 가격·구성 확인 <span aria-hidden="true">↗</span></span>
+       <span className={styles.priceCaption}><time dateTime={feed.checkedAt}>{checked}</time></span>
       </div>
+      <span className={styles.cta}>지금 구매하기 <span aria-hidden="true">↗</span></span>
      </div>
     </div>
    </a>
@@ -88,6 +86,6 @@ export default function TossWinterHero(){
     </div>
    </div>}
   </div>
-  <p className={styles.disclosure}>[광고] 토스쇼핑 쉐어링크 활동으로, 링크 구매 시 수수료를 지급받습니다. 배경은 AI 음식 연출이며 실제 상품 조리 사진이 아닙니다. 가격·할인·구성은 토스에서 확인하세요.<span className={styles.desktopHint}> PC에서는 QR코드로 가격을 확인해요.</span></p>
+  <p className={styles.disclosure}>[광고] 링크 구매 시 수수료를 지급받습니다. 사진은 AI 음식 연출이며 실제 상품 조리 사진이 아닙니다. 할인율은 토스 표시 기준이며 가격·배송비·옵션은 구매 화면 기준입니다.<span className={styles.desktopHint}> PC에서는 연결 화면의 QR코드를 스캔하세요.</span></p>
  </section>;
 }

@@ -8,7 +8,7 @@ export default function Header() {
   const s = season();
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur-md">
-      <div className="mx-auto flex h-[56px] w-full max-w-[1180px] items-center gap-1 px-3 sm:h-[70px] sm:gap-3 sm:px-6 lg:px-8">
+      <div className="site-header-inner mx-auto flex h-[56px] w-full max-w-[1180px] items-center gap-1 px-3 sm:h-[70px] sm:gap-3 sm:px-6 lg:px-8">
         <BackButton />
         <Link href="/" aria-label={`${SITE.name} 홈`} className="flex shrink-0 items-center gap-2">
           <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 shrink-0 text-brandblue sm:h-7 sm:w-7">
@@ -24,14 +24,14 @@ export default function Header() {
           </span>
         </Link>
 
-        <div className="hidden min-w-0 flex-1 justify-center lg:flex">
+        <div className="hidden min-w-0 flex-1 justify-center xl:flex">
           <HeaderNav seasonLabel={s.label} />
         </div>
 
         <Link
           href="/search"
           aria-label="검색"
-          className="ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[#07152f] transition hover:bg-tint hover:text-brandblue lg:ml-0"
+          className="ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[#07152f] transition hover:bg-tint hover:text-brandblue xl:ml-0"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1" className="h-8 w-8 md:h-6 md:w-6">
             <circle cx="11" cy="11" r="7" />
