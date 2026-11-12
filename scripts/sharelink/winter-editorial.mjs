@@ -1,4 +1,4 @@
-export {winterCampaignVersion} from '../../data/toss-winter-reviewed.mjs';
+export const winterCampaignVersion='winter-studio-20261113-v6';
 // Original UI-issued links remain unchanged when the hourly collector verifies the product again.
 export const winterSelections=[
   {
