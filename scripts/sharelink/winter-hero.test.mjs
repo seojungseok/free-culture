@@ -1,25 +1,41 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {selectWinterTossHero,winterTossCampaign} from '../../lib/toss-winter-hero.mjs';
+import {reviewedWinterTossFeed,winterTossCampaigns,winterCampaignVersion} from '../../data/toss-winter-reviewed.mjs';
+import {freshnessMs} from '../../lib/sharelink-policy.mjs';
 
 const now=Date.parse('2026-11-05T03:00:00Z');
 const p=(id,name,overrides={})=>({id,name,image:'https://shopping.toss.im/example.jpg',price:12000,discountRate:25,links:{home:'https://toss.shopping/example'},...overrides});
-const feed=(products,checkedAt=new Date(now).toISOString())=>({version:1,checkedAt,products});
+const feed=(products,checkedAt=new Date(now).toISOString())=>({version:1,winterCampaignVersion,checkedAt,products});
+const products=winterTossCampaigns.map(c=>p(c.id,c.name));
+const hoppang=products[0];
 
-const fishcake=p(174755365,'부산포차 꼬치어묵, 400g, 3봉');
-test('고정 메인은 매일 특가가 바뀌어도 다른 상품으로 교체하지 않는다',()=>{
- const products=[fishcake,p(2584893075,'농심 육개장사발면 86g 18개 + 김치사발면 86g 6개, 1세트'),p(288570013,'신선하랑 냉동 삼겹살, 1kg, 2개'),p(773646201,'맛팜 옛고을 찰순대, 400g, 1개 + 푸짐한 내장 모둠, 500g, 1개'),p(2317495197,'G7 커피 퓨어블랙 라이트, 0.9g, 110개입, 3개'),p(6,'김치만두',{endAt:new Date(now+1000).toISOString()})];
- const selected=selectWinterTossHero(feed(products),now);
- assert.deepEqual(selected.map(x=>x.id),[174755365,2584893075,288570013,773646201,2317495197]);
+test('the fixed winter campaign contains the six reviewed food products, without substituting daily deals',()=>{
+ const selected=selectWinterTossHero(feed([...products,p(6,'김치만두')]),now);
+ assert.deepEqual(selected.map(x=>x.id),[2702896485,524308317,3483345,2181746213,1029151217,123678795]);
  assert.ok(selected.every(x=>x.image==='https://shopping.toss.im/example.jpg'));
- assert.ok(selected.every(x=>winterTossCampaign(x)?.art?.startsWith('/affiliate-images/toss-main-')));
- assert.equal(winterTossCampaign(selected[0]).label,'어묵');
+ assert.ok(selected.every(x=>winterTossCampaign(x)?.art?.endsWith('-20261112-v5.webp')));
+ assert.equal(winterTossCampaign(selected[0]).label,'호빵');
 });
-test('만료·품절·오래된 피드와 토스 외 링크를 배너에서 제외한다',()=>{
- const products=[{...fishcake,endAt:new Date(now).toISOString()},{...fishcake,isSoldOut:true},{...fishcake,links:{home:'https://example.com/test'}}];
- assert.equal(selectWinterTossHero(feed(products),now).length,0);
- assert.equal(selectWinterTossHero(feed([fishcake],new Date(now-6*3600000).toISOString()),now).length,0);
+test('expired, sold-out, renamed, stale and off-site products are excluded',()=>{
+ for(const patch of [{endAt:new Date(now).toISOString()},{isSoldOut:true},{name:'다른 구성'},{links:{home:'https://example.com/test'}}]){
+  assert.equal(selectWinterTossHero(feed([{...hoppang,...patch}]),now).length,0);
+ }
+ assert.equal(selectWinterTossHero(feed([hoppang],new Date(now-freshnessMs).toISOString()),now).length,0);
 });
-test('소수 상품이면 검증되지 않은 상품으로 개수를 채우지 않는다',()=>{
- assert.deepEqual(selectWinterTossHero(feed([fishcake,p(2,'김치 냉장고')]),now).map(x=>x.id),[174755365]);
+test('an authoritative collector omission does not resurrect a launch product',()=>{
+ const time=Date.parse(reviewedWinterTossFeed.checkedAt)+3600000;
+ const updated=feed([{...hoppang,price:9900}],new Date(time).toISOString());
+ assert.deepEqual(selectWinterTossHero(updated,time).map(x=>x.id),[hoppang.id]);
+ assert.equal(selectWinterTossHero(updated,time)[0].price,9900);
+ assert.equal(selectWinterTossHero(feed([],new Date(time).toISOString()),time).length,0);
+});
+test('the dated launch snapshot bridges only the old collector and expires without extending its timestamp',()=>{
+ const time=Math.max(...reviewedWinterTossFeed.products.map(p=>Date.parse(p.verifiedAt)))+1000;
+ const oldFeed={version:1,checkedAt:new Date(time).toISOString(),products:[]};
+ const selected=selectWinterTossHero(oldFeed,time);
+ assert.equal(selected.length,6);
+ assert.equal(selected[0].links.home,reviewedWinterTossFeed.products[0].links.home);
+ assert.equal(selected[0].verifiedAt,reviewedWinterTossFeed.products[0].verifiedAt);
+ assert.equal(selectWinterTossHero(oldFeed,Date.parse(reviewedWinterTossFeed.checkedAt)+freshnessMs).length,0);
 });
