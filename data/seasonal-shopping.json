@@ -1,0 +1,358 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "slug": "winter-warmers",
+      "title": "방한용품 모음",
+      "description": "핫팩·넥워머·방한장갑을 한곳에서 비교하고, 필요한 겨울 준비물만 골라보세요.",
+      "intro": "외출할 시간과 옷차림을 먼저 떠올려 보세요. 주머니에 챙길 핫팩, 목을 감싸는 넥워머, 손에 맞는 장갑을 따로 비교하면 필요한 준비물을 고르기 쉽습니다.",
+      "banner": "warmers",
+      "productIds": [
+        429518365,
+        2664937033,
+        2704763523
+      ],
+      "tips": [
+        "핫팩은 손에 쥐는 용도와 부착하는 용도를 구분하고, 피부에 직접 닿는 사용은 포장 안내를 확인하세요.",
+        "넥워머는 원하는 착용 범위와 소재, 세탁 방법을 살펴보세요.",
+        "장갑은 손 치수와 선택 옵션을 먼저 맞추세요. 터치 기능 등은 상품 상세의 안내를 확인하세요."
+      ]
+    },
+    {
+      "slug": "kimjang",
+      "title": "김장재료 모음",
+      "description": "고춧가루·액젓·다진마늘·천일염을 살펴보고 집에 없는 김장재료부터 준비하세요.",
+      "intro": "김장할 배추의 양과 집에 남은 재료를 먼저 정리하세요. 고춧가루의 입자, 액젓의 용량, 마늘과 소금의 묶음 수량을 비교해 필요한 재료만 골라보세요. 배추와 무는 별도로 준비하는 구성입니다.",
+      "banner": "kimjang",
+      "productIds": [
+        166148191,
+        2654093557,
+        2654109849,
+        2694382795
+      ],
+      "tips": [
+        "고춧가루는 입자와 매운맛을 확인하고, 평소 사용하는 김장 레시피에 맞춰 고르세요.",
+        "액젓과 소금은 이미 집에 있는 양부터 확인하세요. 상품별 용량과 묶음 수량이 다릅니다.",
+        "다진마늘은 보관 방법과 개봉 후 안내를 확인하고, 김장 후 남을 양까지 생각해 준비하세요."
+      ]
+    },
+    {
+      "slug": "winter-snacks",
+      "title": "겨울간식 모음",
+      "description": "호빵·붕어빵·호떡부터 만두와 떡볶이까지, 3만 원 미만 겨울 먹거리를 골라보세요.",
+      "intro": "따끈한 간식이 생각나는 날, 먹고 싶은 메뉴부터 골라보세요. 단팥 간식과 한 접시 분식을 함께 모았습니다. 실제 판매 상품의 포장 사진과 이름을 보고, 보관 공간과 먹을 인원에 맞춰 수량을 비교하세요.",
+      "banner": "snacks",
+      "productIds": [
+        2702896485,
+        524308317,
+        3483345,
+        1029151217,
+        123678795
+      ],
+      "tips": [
+        "사진 속 완성 음식은 AI 상차림 예시입니다. 상품 카드에는 판매처에서 제공한 실제 상품 사진을 표시합니다.",
+        "개별포장 수량과 총중량을 함께 확인하고, 냉동·냉장 보관 공간을 먼저 살펴보세요.",
+        "제품마다 조리 방식이 다릅니다. 사용할 찜기·팬·전자레인지 등과 포장 안내를 확인하세요."
+      ]
+    },
+    {
+      "slug": "coffee",
+      "title": "겨울 커피 모음",
+      "description": "따뜻한 블랙커피 한 잔을 준비할 때, G7 커피의 구성과 수량을 확인해 보세요.",
+      "intro": "찬바람 부는 날 마실 커피를 미리 살펴보세요. 연결 상품은 G7 퓨어블랙 라이트 0.9g, 110개입, 3개 구성입니다. 광고 사진의 컵과 소품은 포함되지 않으며, 실제 상품 구성은 아래 판매처 사진과 구매 화면에서 확인할 수 있습니다.",
+      "banner": "coffee",
+      "productIds": [
+        2317495197
+      ],
+      "tips": [
+        "스틱 한 개의 용량과 한 상자의 개수, 전체 묶음 수량을 구분해 보세요.",
+        "원재료와 카페인 등 필요한 정보는 실제 포장과 구매 상세에서 확인하세요.",
+        "곁들일 간식이 필요하면 겨울간식 모음에서 호빵·붕어빵·호떡을 함께 살펴보세요."
+      ]
+    }
+  ],
+  "campaigns": [
+    {
+      "key": "warmers",
+      "collection": "winter-warmers",
+      "label": "방한용품",
+      "title": "찬바람 불기 전, 겨울 준비 한 번에",
+      "href": "/shopping/winter-warmers",
+      "art": "/affiliate-images/seasonal-warmers-20261113.webp",
+      "artMobile": "/affiliate-images/seasonal-warmers-mobile-20261113.webp"
+    },
+    {
+      "key": "coffee",
+      "collection": "coffee",
+      "label": "커피",
+      "title": "찬 바람 부는 날, 커피 한 잔의 여유",
+      "href": "/shopping/coffee",
+      "art": "/affiliate-images/seasonal-coffee-20261113.webp",
+      "artMobile": "/affiliate-images/seasonal-coffee-mobile-20261113.webp"
+    },
+    {
+      "key": "kimjang",
+      "collection": "kimjang",
+      "label": "김장재료",
+      "title": "김장하는 날, 재료부터 한 번에",
+      "href": "/shopping/kimjang",
+      "art": "/affiliate-images/seasonal-kimjang-20261113.webp",
+      "artMobile": "/affiliate-images/seasonal-kimjang-mobile-20261113.webp"
+    },
+    {
+      "key": "snacks",
+      "collection": "winter-snacks",
+      "label": "겨울간식",
+      "title": "겨울 간식, 따끈하게 한 입",
+      "href": "/shopping/winter-snacks",
+      "art": "/affiliate-images/seasonal-snacks-20261113.webp",
+      "artMobile": "/affiliate-images/seasonal-snacks-mobile-20261113.webp"
+    },
+    {
+      "key": "tteokbokki",
+      "collection": "winter-snacks",
+      "label": "떡볶이",
+      "title": "오늘 저녁엔 국물떡볶이",
+      "href": "/shopping/winter-snacks#product-123678795",
+      "art": "/affiliate-images/seasonal-tteokbokki-20261113.webp",
+      "artMobile": "/affiliate-images/seasonal-tteokbokki-mobile-20261113.webp"
+    }
+  ],
+  "reviewedProducts": [
+    {
+      "collection": "winter-warmers",
+      "label": "핫팩",
+      "id": 429518365,
+      "name": "쟈니베어 군인핫팩 특대형, 180g, 30개",
+      "image": "https://shopping.toss.im/live/temp/2026-09-13/b66e237f-54ae-464b-b453-f255af6805f7.png",
+      "price": 15980,
+      "discountRate": 67,
+      "isSoldOut": false,
+      "productUrl": "https://toss.shopping/t/440194529",
+      "checkedAt": "2026-11-13T12:27:10.759Z",
+      "links": {
+        "home": "https://toss.shopping/_m/pR3YfECp"
+      },
+      "option": "쟈니베어 군인핫팩 특대형, 180g, 30개"
+    },
+    {
+      "collection": "winter-warmers",
+      "label": "넥워머",
+      "id": 2664937033,
+      "name": "겨울 방한 기모 마스크 넥워머, 다이아2종, FREE, 2종세트, 1세트",
+      "image": "https://shopping.toss.im/live/temp/2026-09-28/f19013b4-efc6-47a0-977f-51f4e4456330.jpeg",
+      "price": 7800,
+      "discountRate": 48,
+      "isSoldOut": false,
+      "productUrl": "https://toss.shopping/t/2676703227",
+      "checkedAt": "2026-11-13T12:27:11.775Z",
+      "links": {
+        "home": "https://toss.shopping/_m/PzNiGlBt"
+      },
+      "option": "겨울 방한 기모 마스크 넥워머, 다이아2종, FREE, 2종세트, 1세트"
+    },
+    {
+      "collection": "winter-warmers",
+      "label": "방한장갑",
+      "id": 2704763523,
+      "name": "위너스포 남녀공용 겨울 방한 기모 논슬립 터치 장갑, 블랙 + 그레이, 2쌍, 1개",
+      "image": "https://shopping.toss.im/live/temp/2026-10-28/e6ddb80a-1e2d-4c18-8d17-fdf119214a65.jpeg",
+      "price": 9000,
+      "discountRate": 77,
+      "isSoldOut": false,
+      "productUrl": "https://toss.shopping/t/2702818043",
+      "checkedAt": "2026-11-13T12:27:12.889Z",
+      "links": {
+        "home": "https://toss.shopping/_m/zHJZRElx"
+      },
+      "option": "위너스포 남녀공용 겨울 방한 기모 논슬립 터치 장갑, 블랙 + 그레이, 2쌍, 1개"
+    },
+    {
+      "collection": "kimjang",
+      "label": "멸치액젓",
+      "id": 2654093557,
+      "name": "우리 멸치액젓, 900ml, 1개",
+      "image": "https://shopping.toss.im/live/temp/2026-09-03/8976b717-b29e-4c6b-9b01-5d28532d7501.jpg",
+      "price": 5990,
+      "discountRate": 25,
+      "isSoldOut": false,
+      "productUrl": "https://toss.shopping/t/2666324863",
+      "checkedAt": "2026-11-13T12:27:15.076Z",
+      "links": {
+        "home": "https://toss.shopping/_m/PCZhpYyC"
+      },
+      "option": "우리 멸치액젓, 900ml, 1개"
+    },
+    {
+      "collection": "kimjang",
+      "label": "다진마늘",
+      "id": 2654109849,
+      "name": "국내산 영천 다진마늘, 500g, 1개",
+      "image": "https://shopping.toss.im/live/temp/2026-09-09/07e2bdef-4810-41f6-9637-2ccbd9f70c75.jpg",
+      "price": 7350,
+      "discountRate": 25,
+      "isSoldOut": false,
+      "productUrl": "https://toss.shopping/t/2666341573",
+      "checkedAt": "2026-11-13T12:28:10.787Z",
+      "links": {
+        "home": "https://toss.shopping/_m/LyK0fAI3"
+      },
+      "option": "국내산 영천 다진마늘, 500g, 1개"
+    },
+    {
+      "collection": "kimjang",
+      "label": "소금",
+      "id": 2694382795,
+      "name": "간수뺀 신안 천일염, 10kg, 1개",
+      "image": "https://shopping.toss.im/live/temp/2026-11-11/d16d842b-aff2-4bc7-bf9d-3796ebffc2e6.png",
+      "price": 9600,
+      "discountRate": 39,
+      "isSoldOut": false,
+      "productUrl": "https://toss.shopping/t/2696873925",
+      "checkedAt": "2026-11-13T12:28:11.874Z",
+      "links": {
+        "home": "https://toss.shopping/_m/LAyvRGA8"
+      },
+      "option": "간수뺀 신안 천일염, 10kg, 1개"
+    },
+    {
+      "collection": "kimjang",
+      "label": "고춧가루",
+      "id": 166148191,
+      "name": "청년 국산 고춧가루, 보통맛, 굵은가루, 1kg, 1개",
+      "image": "https://shopping.toss.im/live/taca/ai/NWNlOGVl/QVBzSWxhZFlEdFNHU1k1V3IyL3VVcHczYmtyZjByeHFVa3FnbzF1clVVY1M.png",
+      "price": 23800,
+      "discountRate": 44,
+      "isSoldOut": false,
+      "checkedAt": "2026-11-13T12:31:47.421Z",
+      "links": {
+        "home": "https://toss.shopping/_m/B24oDIUe"
+      },
+      "option": "청년 국산 고춧가루, 보통맛, 굵은가루, 1kg, 1개"
+    },
+    {
+      "id": 2317495197,
+      "topic": "daily-food",
+      "headline": "가을 산책 끝에, 따뜻한 커피 한 잔",
+      "reason": "블랙커피를 준비하는 장면에 맞춰 개별 포장 수량과 휴대할 컵·뜨거운 물을 확인하세요.",
+      "caution": "광고는 일반 블랙커피의 AI 연출입니다. 컵·목도리 등 소품은 구성품이 아닙니다. 원재료와 조리 방법은 구매 상세 및 포장 안내를 확인하세요.",
+      "imageNote": "판매처 제공 상품 사진",
+      "option": "G7 커피 퓨어블랙 라이트, 0.9g, 110개입, 3개",
+      "homeFeature": true,
+      "name": "G7 커피 퓨어블랙 라이트, 0.9g, 110개입, 3개",
+      "image": "https://shopping.toss.im/live/temp/2025-07-08/ccf27be0-20d9-4633-ac57-85c04cc23538.jpeg",
+      "price": 25200,
+      "discountRate": 66,
+      "links": {
+        "home": "https://toss.shopping/_m/XHxEXgvD"
+      },
+      "label": "블랙커피",
+      "collection": "coffee",
+      "checkedAt": "2026-11-13T11:29:07.136Z"
+    },
+    {
+      "id": 2702896485,
+      "imageNote": "판매처 제공 상품 이미지 · 배너는 AI 음식 연출",
+      "option": "단팥 · 개별포장 · 12입 · 1박스",
+      "topic": "winter-food",
+      "headline": "겨울엔, 따끈한 호빵",
+      "reason": "따끈한 겨울 간식을 준비할 때, 단팥 구성과 개별포장 수량을 먼저 살펴보세요.",
+      "caution": "사진은 AI 음식 연출입니다. 실제 상품의 구성·보관·조리 방법과 최종 구매 조건은 판매처 안내를 확인하세요.",
+      "homeFeature": false,
+      "name": "삼립 단팥호빵, 개별포장, 12입, 1박스",
+      "image": "https://shopping.toss.im/579/live/product/863902077/579e0fce-e378-480b-9a9c-94de0c48b76b.jpg",
+      "price": 18900,
+      "discountRate": 0,
+      "links": {
+        "home": "https://toss.shopping/_m/zlZwRaT6"
+      },
+      "label": "호빵",
+      "collection": "winter-snacks",
+      "checkedAt": "2026-11-13T11:29:07.136Z"
+    },
+    {
+      "id": 524308317,
+      "imageNote": "판매처 제공 상품 이미지 · 배너는 AI 음식 연출",
+      "option": "팥 · 1,050g · 2개",
+      "topic": "winter-food",
+      "headline": "집에서도 붕어빵 한 입",
+      "reason": "팥 붕어빵을 골랐습니다. 보관할 공간과 한 번에 꺼낼 양을 생각해 구성을 고르세요.",
+      "caution": "사진은 AI 음식 연출입니다. 실제 상품의 구성·보관·조리 방법과 최종 구매 조건은 판매처 안내를 확인하세요.",
+      "homeFeature": false,
+      "priceLabel": "최대할인가",
+      "name": "이브로 용궁에서 온 팥 붕어빵, 1050g, 2개",
+      "image": "https://shopping.toss.im/live/temp/2025-12-04/d8138a0a-c43a-4bd2-adca-5a9527784969.jpeg",
+      "price": 26880,
+      "discountRate": 29,
+      "links": {
+        "home": "https://toss.shopping/_m/Bgyvetk8"
+      },
+      "label": "붕어빵",
+      "collection": "winter-snacks",
+      "checkedAt": "2026-11-13T11:29:07.136Z"
+    },
+    {
+      "id": 3483345,
+      "imageNote": "판매처 제공 상품 이미지 · 배너는 AI 음식 연출",
+      "option": "찹쌀 꿀호떡 · 1.05kg · 1개",
+      "topic": "winter-food",
+      "headline": "호떡 굽는 저녁",
+      "reason": "겨울 간식으로 준비하는 찹쌀 꿀호떡입니다. 총중량과 판매처의 보관·조리 안내를 살펴보세요.",
+      "caution": "사진은 AI 음식 연출입니다. 실제 상품의 구성·보관·조리 방법과 최종 구매 조건은 판매처 안내를 확인하세요.",
+      "homeFeature": false,
+      "priceLabel": "최대할인가",
+      "name": "전통 찹쌀 꿀호떡, 1.05kg, 1개",
+      "image": "https://shopping.toss.im/live/taca/ai/v2/YmZmNTFi/T1l3eTg5TXppbVRtYkd6TXpNZ084OFU1dWNaVktsbEdGcWxoRGlvZHRibz0.png",
+      "price": 14900,
+      "discountRate": 16,
+      "links": {
+        "home": "https://toss.shopping/_m/V5rIUQG8"
+      },
+      "label": "호떡",
+      "collection": "winter-snacks",
+      "checkedAt": "2026-11-13T11:29:07.136Z"
+    },
+    {
+      "id": 1029151217,
+      "imageNote": "판매처 제공 상품 이미지 · 배너는 AI 음식 연출",
+      "option": "고기 교자만두 · 600g · 7개",
+      "topic": "winter-food",
+      "headline": "따끈한 만두 한 접시",
+      "reason": "고기 교자만두를 여러 봉 구성으로 골랐습니다. 보관할 냉동 공간과 필요한 양을 먼저 확인하세요.",
+      "caution": "사진은 AI 음식 연출입니다. 실제 상품의 구성·보관·조리 방법과 최종 구매 조건은 판매처 안내를 확인하세요.",
+      "homeFeature": false,
+      "priceLabel": "최대할인가",
+      "name": "동원 개성교자 만두 고기, 600g, 7개",
+      "image": "https://shopping.toss.im/live/taca/ai/MjFjNDI3/WG02RTQ2VzUrQjQ1VWZ2VS8yMmV0UTcrb3VsL3JrK3IwUlBXQm9CUksvRT0.png",
+      "price": 23900,
+      "discountRate": 39,
+      "links": {
+        "home": "https://toss.shopping/_m/XbI9dyBt"
+      },
+      "label": "만두",
+      "collection": "winter-snacks",
+      "checkedAt": "2026-11-13T11:29:07.136Z"
+    },
+    {
+      "id": 123678795,
+      "imageNote": "판매처 제공 상품 이미지 · 배너는 AI 음식 연출",
+      "option": "오리지널 국물떡볶이 · 570g · 4봉",
+      "topic": "winter-food",
+      "headline": "오늘은 떡볶이 한 냄비",
+      "reason": "오리지널 국물떡볶이 구성입니다. 함께 먹을 인원에 맞춰 수량을 정하고 조리 안내를 확인하세요.",
+      "caution": "사진은 AI 음식 연출입니다. 실제 상품의 구성·보관·조리 방법과 최종 구매 조건은 판매처 안내를 확인하세요.",
+      "homeFeature": false,
+      "priceLabel": "최대할인가",
+      "name": "미미네 오리지널 국물떡볶이, 570g, 4봉",
+      "image": "https://shopping.toss.im/live/temp/2025-06-16/175dd140-c026-4092-b0fe-83912e77fb2b.png",
+      "price": 18900,
+      "discountRate": 18,
+      "links": {
+        "home": "https://toss.shopping/_m/DFUkzlnn"
+      },
+      "label": "떡볶이",
+      "collection": "winter-snacks",
+      "checkedAt": "2026-11-13T11:29:07.136Z"
+    }
+  ]
+}

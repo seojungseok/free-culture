@@ -43,6 +43,7 @@ export default function HomeExplorer({ regional, eventItems, freeItems, kidItems
         <button type="submit">검색</button>
       </form>
     </section>
+    <TossWinterHero/>
     <nav className={styles.categories} aria-label="여행 카테고리"><div className={styles.categoryGrid}>{categories.filter(item=>item[2]!=='/pet-travel').map(([icon,label,href],index)=><Link key={label} href={href} prefetch={index<5?undefined:false} className={styles.category+(href==='/winter-travel'?' '+styles.seasonCategory:'')}><span className={styles.categoryIcon} aria-hidden="true">{icon}</span><span>{label}</span></Link>)}</div></nav>
     <nav className={styles.quickNav} aria-label="빠른 나들이 찾기"><HomeNearbyButton/><Link href="/weekend">이번 주말</Link><Link href="/plan">맞춤 추천</Link><Link href="/saved">♡ 보관함</Link></nav>
     <Section title="지역별 나들이" href="/places">
@@ -52,7 +53,6 @@ export default function HomeExplorer({ regional, eventItems, freeItems, kidItems
       <Rail items={picks} limit={4} saved={saved} toggleSave={toggleSave} emptyMessage="선택한 지역·조건의 후보가 없습니다. 아래 지역 전체 목록에서 더 찾아보세요."/>
       <nav className={styles.regionLinks} aria-label={region+' 지역 전체 둘러보기'}>{regionLinks.map(item=><Link key={item.name} href={item.href} prefetch={false}>{item.name} 전체 둘러보기 →</Link>)}{region==='전국'&&<Link href="#home-region-title">방문할 지역 고르기 ↓</Link>}</nav>
     </Section>
-    <TossWinterHero/>
     {seasonItems.length>0&&<HomeWinterCourses items={seasonItems}/>}
     <TossTopDeals/>
     {kidItems.length>0&&<Section title="아이와 어디 가지?" href="/kids"><Rail items={kidItems} saved={saved} toggleSave={toggleSave}/></Section>}

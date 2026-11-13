@@ -4,6 +4,7 @@ import {withClient} from './client.mjs';
 import {isSharelinkMaintenance,maintenanceStart,maintenanceEnd} from './maintenance.mjs';
 import {selections,channels} from './editorial.mjs';
 import {winterCampaignVersion,winterSelections} from './winter-editorial.mjs';
+import {seasonalCampaignVersion} from './seasonal-editorial.mjs';
 import {homeDealGroup,eligibleHomeDeal} from './home-deals.mjs';
 import {matchesReviewedProduct} from './reviewed-product.mjs';
 if(isSharelinkMaintenance()){
@@ -15,7 +16,7 @@ let previous;try{previous=JSON.parse(fs.readFileSync(output,'utf8'));}catch{}
 // A code deployment shortly after the hourly collector reuses its verified
 // feed instead of spending another provider allowance on the same products.
 const previousCheck=Date.parse(previous?.checkedAt),cacheAge=Date.now()-previousCheck;
-if(previous?.version===1&&previous.winterCampaignVersion===winterCampaignVersion&&Array.isArray(previous.products)&&Number.isFinite(previousCheck)&&cacheAge>=0&&cacheAge<15*60000&&(Date.now()<maintenanceStart||previousCheck>=maintenanceEnd)){
+if(previous?.version===1&&previous.winterCampaignVersion===winterCampaignVersion&&previous.seasonalCampaignVersion===seasonalCampaignVersion&&Array.isArray(previous.products)&&Number.isFinite(previousCheck)&&cacheAge>=0&&cacheAge<15*60000&&(Date.now()<maintenanceStart||previousCheck>=maintenanceEnd)){
  console.log(`SHARELINK_SYNC_CACHED products=${previous.products.length}`);
  process.exit(0);
 }
@@ -58,7 +59,7 @@ try {
    const old=products.findIndex(p=>p.id===deal.tacaItemId);const existingLinks=old>=0?products[old].links:{};if(old>=0)products.splice(old,1);
    products.push({id:p.tacaItemId,topic:homeDealGroup(p.displayName)==='camp'?'camp-food':'daily-food',homeFeature:true,headline:homeDealGroup(p.displayName)==='camp'?'캠핑 먹거리, 오늘의 하루특가':'집에서 가볍게, 오늘의 하루특가',name:p.displayName,option:p.displayName,image:winterChoice?.imageUrl||p.mainImageUrls.find(u=>u.includes('/live/temp/'))||p.mainImageUrls.find(u=>u.startsWith('https://')),imageNote:'판매처 제공 상품 사진',price:p.displayPrice,...(winterChoice?.priceLabel?{priceLabel:winterChoice.priceLabel}:{}),discountRate:p.discountRate,endAt:deal.endAt,reason:'구매 전에 구성과 수량을 확인하세요.',caution:'보관·조리 방법과 배송 조건은 판매처에서 확인하세요.',links:{...existingLinks,home:link.shortUrl}});
   }
-  const feed={version:1,winterCampaignVersion,checkedAt:new Date().toISOString(),products};
+  const feed={version:1,winterCampaignVersion,seasonalCampaignVersion,checkedAt:new Date().toISOString(),products};
   fs.mkdirSync(path.dirname(output),{recursive:true});
   fs.writeFileSync(output+'.tmp',JSON.stringify(feed,null,2),{mode:0o644});fs.renameSync(output+'.tmp',output);
   console.log(`SHARELINK_SYNC_OK products=${products.length} todayDeals=${deals.items?.length||0} verifiedTimedDeals=${products.filter(p=>p.endAt).length}`);
