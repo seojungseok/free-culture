@@ -56,18 +56,21 @@
       ]
     },
     {
-      "slug": "coffee",
-      "title": "겨울 커피 모음",
-      "description": "따뜻한 블랙커피 한 잔을 준비할 때, G7 커피의 구성과 수량을 확인해 보세요.",
-      "intro": "찬바람 부는 날 마실 커피를 미리 살펴보세요. 연결 상품은 G7 퓨어블랙 라이트 0.9g, 110개입, 3개 구성입니다. 광고 사진의 컵과 소품은 포함되지 않으며, 실제 상품 구성은 아래 판매처 사진과 구매 화면에서 확인할 수 있습니다.",
-      "banner": "coffee",
+      "slug": "winter-drinks",
+      "title": "따뜻한 한 잔",
+      "description": "커피·율무차·유자차·계피생강차, 찬바람 부는 날 마실 한 잔을 골라보세요.",
+      "intro": "커피가 생각나는 날, 곡물차를 준비하고 싶은 날, 과일차나 생강차를 찾는 날에 맞춰 골라보세요. 각 상품의 원재료·알레르기 표시와 스틱 수량, 용량을 비교해 필요한 만큼 준비하세요. 사진 속 컵·소품은 포함되지 않으며, 배너는 음료를 담아낸 AI 연출 예시입니다.",
+      "banner": "winter-drinks",
       "productIds": [
-        2317495197
+        2317495197,
+        432494761,
+        2654108107,
+        142628247
       ],
       "tips": [
-        "스틱 한 개의 용량과 한 상자의 개수, 전체 묶음 수량을 구분해 보세요.",
-        "원재료와 카페인 등 필요한 정보는 실제 포장과 구매 상세에서 확인하세요.",
-        "곁들일 간식이 필요하면 겨울간식 모음에서 호빵·붕어빵·호떡을 함께 살펴보세요."
+        "블랙커피·율무차·유자차·계피생강차의 원재료와 당류·카페인 표시는 구매 상세를 확인하세요.",
+        "율무차는 견과류 등 알레르기 표시를 먼저 살펴보세요.",
+        "스틱 수와 병 용량, 개봉 후 보관 방법과 음용 방법을 비교하세요."
       ]
     }
   ],
@@ -82,13 +85,13 @@
       "artMobile": "/affiliate-images/seasonal-warmers-mobile-20261113.webp"
     },
     {
-      "key": "coffee",
-      "collection": "coffee",
-      "label": "커피",
-      "title": "찬 바람 부는 날, 커피 한 잔의 여유",
-      "href": "/shopping/coffee",
-      "art": "/affiliate-images/seasonal-coffee-20261113.webp",
-      "artMobile": "/affiliate-images/seasonal-coffee-mobile-20261113.webp"
+      "key": "winter-drinks",
+      "collection": "winter-drinks",
+      "label": "따뜻한 한 잔",
+      "title": "찬바람 부는 날, 따뜻한 한 잔",
+      "href": "/shopping/winter-drinks",
+      "art": "/affiliate-images/seasonal-winter-drinks-20261113.webp",
+      "artMobile": "/affiliate-images/seasonal-winter-drinks-mobile-20261113.webp"
     },
     {
       "key": "kimjang",
@@ -353,6 +356,75 @@
       "label": "떡볶이",
       "collection": "winter-snacks",
       "checkedAt": "2026-11-13T11:29:07.136Z"
+    },
+    {
+      "label": "율무차",
+      "id": 432494761,
+      "name": "꿀이구마 호두 아몬드 율무차, 18g, 100스틱, 1개",
+      "image": "https://shopping.toss.im/live/temp/2025-12-15/8d6c5b6a-91b6-4187-b01b-62f4eae12997.jpeg",
+      "price": 13900,
+      "discountRate": 41,
+      "isSoldOut": false,
+      "productUrl": "https://toss.shopping/t/443172309",
+      "links": {
+        "home": "https://toss.shopping/_m/X4GE5MD"
+      },
+      "checkedAt": "2026-11-13T13:53:46.242Z",
+      "detailMatched": true,
+      "collection": "winter-drinks",
+      "topic": "winter-drinks",
+      "homeFeature": false,
+      "option": "꿀이구마 호두 아몬드 율무차, 18g, 100스틱, 1개",
+      "headline": "율무차 골라보기",
+      "reason": "원재료와 용량, 수량을 비교해 겨울에 마실 한 잔을 준비해 보세요.",
+      "caution": "사진 속 음료는 연출 예시이며 실제 구성과 음용 방법은 구매 상세를 확인하세요.",
+      "imageNote": "판매처 제공 상품 사진"
+    },
+    {
+      "label": "유자차",
+      "id": 2654108107,
+      "name": "오아시스 저당 유자차, 530g, 2개",
+      "image": "https://shopping.toss.im/live/temp/2026-09-09/933863e7-428f-416b-a48b-dc4fcbf5786c.jpg",
+      "price": 16900,
+      "discountRate": 39,
+      "isSoldOut": false,
+      "productUrl": "https://toss.shopping/t/2666339811",
+      "links": {
+        "home": "https://toss.shopping/_m/blj6H3n7"
+      },
+      "checkedAt": "2026-11-13T13:53:48.439Z",
+      "detailMatched": true,
+      "collection": "winter-drinks",
+      "topic": "winter-drinks",
+      "homeFeature": false,
+      "option": "오아시스 저당 유자차, 530g, 2개",
+      "headline": "유자차 골라보기",
+      "reason": "원재료와 용량, 수량을 비교해 겨울에 마실 한 잔을 준비해 보세요.",
+      "caution": "사진 속 음료는 연출 예시이며 실제 구성과 음용 방법은 구매 상세를 확인하세요.",
+      "imageNote": "판매처 제공 상품 사진"
+    },
+    {
+      "label": "생강차",
+      "id": 142628247,
+      "name": "100일동안 계피생강차, 1.2g, 100개입, 1팩",
+      "image": "https://shopping.toss.im/live/temp/2026-01-27/09afe02c-afac-4676-92a0-40baed1a8961.jpeg",
+      "price": 12900,
+      "discountRate": 50,
+      "isSoldOut": false,
+      "productUrl": "https://toss.shopping/t/72313727",
+      "links": {
+        "home": "https://toss.shopping/_m/NR0VkHLa"
+      },
+      "checkedAt": "2026-11-13T13:53:50.647Z",
+      "detailMatched": true,
+      "collection": "winter-drinks",
+      "topic": "winter-drinks",
+      "homeFeature": false,
+      "option": "100일동안 계피생강차, 1.2g, 100개입, 1팩",
+      "headline": "생강차 골라보기",
+      "reason": "원재료와 용량, 수량을 비교해 겨울에 마실 한 잔을 준비해 보세요.",
+      "caution": "사진 속 음료는 연출 예시이며 실제 구성과 음용 방법은 구매 상세를 확인하세요.",
+      "imageNote": "판매처 제공 상품 사진"
     }
   ]
 }

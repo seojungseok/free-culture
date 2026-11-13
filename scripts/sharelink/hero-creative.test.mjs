@@ -20,12 +20,12 @@ function render(index=0){
   if(specifier.endsWith('.module.css'))return {__esModule:true,default:new Proxy({},{get:(_,key)=>String(key)})};
   return require(specifier);
  }});
- return load(renderToStaticMarkup(React.createElement(exports.default)));
+ return load(renderToStaticMarkup(React.createElement(exports.default,{campaigns:catalogue.campaigns,collections:catalogue.collections.map(({slug,title})=>({slug,title}))})));
 }
-test('five photographic campaigns lead to their internal published collections, including coffee',()=>{
+test('five photographic campaigns lead to their internal published collections, including winter drinks',()=>{
  assert.equal(catalogue.campaigns.length,5);
  assert.equal(catalogue.campaigns[0].collection,'winter-warmers');
- assert.ok(catalogue.campaigns.some(c=>c.collection==='coffee'));
+ assert.ok(catalogue.campaigns.some(c=>c.collection==='winter-drinks'));
  for(const [index,campaign] of catalogue.campaigns.entries()){
   const $=render(index);
   assert.equal($('a.bannerLink').attr('href'),campaign.href);

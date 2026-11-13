@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "./IntentLink";
 import { SITE } from "@/lib/site";
 import BackButton from "./BackButton";
 import HeaderNav, { MobileHeaderNav } from "./HeaderNav";

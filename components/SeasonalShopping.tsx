@@ -5,14 +5,18 @@ import catalogue from '@/data/seasonal-shopping.json';
 import {selectSeasonalProducts} from '@/lib/seasonal-shopping.mjs';
 import {affiliateTrack} from '@/lib/affiliate-track';
 import {useTossFeed} from './TossFeedProvider';
+import type {TossFeed} from '@/lib/sharelink';
 import styles from './SeasonalShopping.module.css';
 
 type Collection=typeof catalogue.collections[number];
-export default function SeasonalShopping({collection}:{collection:Collection}){
+export default function SeasonalShopping({collection,initialFeed,initialTime}:{collection:Collection;initialFeed:TossFeed;initialTime:number}){
  const {feed,now,loading}=useTossFeed();
  const [clock,setClock]=useState(0),[filter,setFilter]=useState('전체'),[sort,setSort]=useState('추천순');
- const time=Math.max(now,clock),page='/shopping/'+collection.slug;
- const products=useMemo(()=>time?selectSeasonalProducts(feed,collection,catalogue.reviewedProducts,time):[],[feed,collection,time]);
+ const time=Math.max(now,clock,initialTime),page='/shopping/'+collection.slug;
+ // A retained root layout may have an older feed after client navigation.
+ const feedTime=Date.parse(feed.checkedAt),initialFeedTime=Date.parse(initialFeed.checkedAt);
+ const currentFeed=Number.isFinite(feedTime)&&(!Number.isFinite(initialFeedTime)||feedTime>initialFeedTime)?feed:initialFeed;
+ const products=useMemo(()=>selectSeasonalProducts(currentFeed,collection,catalogue.reviewedProducts,time),[currentFeed,collection,time]);
  useEffect(()=>{
   if(!products.length)return;
   const timer=setTimeout(()=>setClock(Date.now()),Math.min(Math.max(0,Math.min(...products.map(p=>p.expiresAt))-Date.now()+5),2147483647));

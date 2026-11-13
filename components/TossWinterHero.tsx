@@ -2,12 +2,12 @@
 import Link from 'next/link';
 import {useEffect,useRef,useState} from 'react';
 import {usePathname} from 'next/navigation';
-import catalogue from '@/data/seasonal-shopping.json';
 import {affiliateTrack} from '@/lib/affiliate-track';
 import styles from './TossWinterHero.module.css';
 
-const campaigns=catalogue.campaigns;
-export default function TossWinterHero(){
+type Campaign={key:string;href:string;label:string;title:string;art:string;artMobile:string};
+export type SeasonalHeroData={campaigns:Campaign[];collections:{slug:string;title:string}[]};
+export default function TossWinterHero({campaigns,collections}:SeasonalHeroData){
  const page=usePathname()||'/';
  const [index,setIndex]=useState(0),[paused,setPaused]=useState(false),[hover,setHover]=useState(false);
  const [visible,setVisible]=useState(false),[reduced,setReduced]=useState(true),[foreground,setForeground]=useState(true);
@@ -27,7 +27,7 @@ export default function TossWinterHero(){
   if(campaigns.length<2||paused||hover||!visible||reduced||!foreground)return;
   const timer=setInterval(()=>setIndex(i=>(i+1)%campaigns.length),5000);
   return()=>clearInterval(timer);
- },[paused,hover,visible,reduced,foreground]);
+ },[campaigns.length,paused,hover,visible,reduced,foreground]);
  useEffect(()=>{
   if(!visible||!foreground)return;
   const key=page+':'+active.key;
@@ -38,7 +38,7 @@ export default function TossWinterHero(){
   if(!visible||!foreground)return;
   const next=campaigns[(index+1)%campaigns.length],image=new Image();
   image.src=matchMedia('(max-width:767px)').matches?next.artMobile:next.art;
- },[index,visible,foreground]);
+ },[campaigns,index,visible,foreground]);
  const choose=(next:number)=>{setPaused(true);setIndex((next+campaigns.length)%campaigns.length);};
  return <section className={styles.wrap} aria-label="겨울 쇼핑 모음" data-seasonal-hero>
   <div ref={node} className={styles.hero} role="group" aria-roledescription="캐러셀" aria-label="겨울 쇼핑 기획전"
@@ -60,7 +60,7 @@ export default function TossWinterHero(){
     {!reduced&&<button type="button" data-playback-control aria-label={paused?'기획전 자동 재생 시작':'기획전 자동 재생 일시정지'} aria-pressed={paused} onClick={()=>setPaused(p=>!p)}>{paused?'▶':'Ⅱ'}</button>}
    </div></div>
   </div>
-  <nav className={styles.collectionLinks} aria-label="겨울 상품 모음 바로가기">{catalogue.collections.map(c=><Link key={c.slug} href={'/shopping/'+c.slug} prefetch={false}>{c.title}</Link>)}</nav>
+  <nav className={styles.collectionLinks} aria-label="겨울 상품 모음 바로가기">{collections.map(c=><Link key={c.slug} href={'/shopping/'+c.slug} prefetch={false}>{c.title}</Link>)}</nav>
   <p className={styles.disclosure}>[광고] 배너는 AI 연출입니다. 모음에서 실제 상품을 골라보세요. 제휴 링크로 구매 시 수수료를 지급받습니다.</p>
  </section>;
 }

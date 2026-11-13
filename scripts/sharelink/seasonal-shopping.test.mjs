@@ -39,3 +39,11 @@ test('all four collections use verified sub-30000 products and support circulati
  }
  assert.ok(normalizeAffiliateEvent({event:'affiliate_click',provider:'toss',placement:'seasonal_product_list',page:'/shopping/kimjang',productId:166148191}));
 });
+
+test('winter drink launch snapshots stop bridging once collector version 2 records an omission',()=>{
+ const drinks=catalogue.collections.find(c=>c.slug==='winter-drinks');
+ const snapshots=catalogue.reviewedProducts.filter(p=>drinks.productIds.includes(p.id)).map(p=>({...p,checkedAt:new Date(now-3600000).toISOString()}));
+ assert.equal(selectSeasonalProducts(feed([],now),drinks,snapshots,now).length,3);
+ assert.equal(selectSeasonalProducts({...feed([],now),seasonalCampaignVersion:2},drinks,snapshots,now).length,0);
+ assert.equal(selectSeasonalProducts({...feed([],now),seasonalCampaignVersion:2},collection,reviewed,now).length,0);
+});

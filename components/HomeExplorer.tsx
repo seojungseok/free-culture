@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import Link from "./IntentLink";
 import { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SAVED_KEY, parseSaved, type TripStop } from "@/lib/planner";
@@ -7,7 +7,7 @@ import HomeRegionPicker from './HomeRegionPicker';
 import HomeNearbyButton from './HomeNearbyButton';
 import GamePromoBanner from './GamePromoBanner';
 import TossAffiliate from './TossAffiliate';
-import TossWinterHero from './TossWinterHero';
+import TossWinterHero, {type SeasonalHeroData} from './TossWinterHero';
 import TossTopDeals from './TossTopDeals';
 import { useRenderDay } from "./RenderDate";
 import { formatKoreanDate, weekendRangeYmd } from "@/lib/dates";
@@ -15,12 +15,12 @@ import {homeFilters,homeCandidates} from "@/lib/home-discovery.mjs";
 import styles from './HomeExplorer.module.css';
 
 export type HomeItem = { id: string; href: string; title: string; meta: string; image: string; imageAlt?:string; badge: string; area?: string; start?: string; end?: string; kids?:boolean;free?:boolean; description?:string; route?:string[]; duration?:string; tripDuration?:'당일'|'1박2일' };
-type Props = { regional: Record<string, HomeItem[]>; eventItems: HomeItem[]; freeItems: HomeItem[]; kidItems: HomeItem[]; dateItems: HomeItem[]; campItems: HomeItem[]; courseItems: HomeItem[]; seasonItems: HomeItem[]; prepItems: HomeItem[]; placeItems: HomeItem[]; newItems: HomeItem[]; regions: { name: string; href: string }[]; siteName: string };
+type Props = { regional: Record<string, HomeItem[]>; eventItems: HomeItem[]; freeItems: HomeItem[]; kidItems: HomeItem[]; dateItems: HomeItem[]; campItems: HomeItem[]; courseItems: HomeItem[]; seasonItems: HomeItem[]; prepItems: HomeItem[]; placeItems: HomeItem[]; newItems: HomeItem[]; regions: { name: string; href: string }[]; siteName: string; seasonalHero:SeasonalHeroData };
 const savedKey = SAVED_KEY;
 const regionalAreas: Record<string, string[]> = { 충청: ["충북", "충남", "대전", "세종"], 경상: ["경북", "경남", "부산", "대구", "울산"], 전라: ["전북", "전남", "광주"], 전국: [] };
 const categories = [["🎭", "문화행사", "/events"], ["🌿", "나들이", "/places"], ["🗺️", "여행코스", "/course"], ["❄️", "겨울 여행지", "/winter-travel"], ["🚌", "시티투어", "/city-tour"], ["⛺", "캠핑", "/camping"], ["🍽️", "맛집탐방", "/food"], ["🐾", "반려동물 여행", "/pet-travel"], ["👨‍👩‍👧", "아이와 함께", "/kids"], ["💛", "데이트", "/date"], ["🧺", "준비 가이드", "/weekend-prep"]];
 
-export default function HomeExplorer({ regional, eventItems, freeItems, kidItems, dateItems, campItems, courseItems, seasonItems, prepItems, placeItems, newItems, regions, siteName }: Props) {
+export default function HomeExplorer({ regional, eventItems, freeItems, kidItems, dateItems, campItems, courseItems, seasonItems, prepItems, placeItems, newItems, regions, siteName, seasonalHero }: Props) {
   const day = useRenderDay();
   const weekend = weekendRangeYmd(day);
   const currentEventItems = eventItems.filter((item) => item.start && item.end && item.start <= weekend.end && item.end >= weekend.start);
@@ -43,7 +43,7 @@ export default function HomeExplorer({ regional, eventItems, freeItems, kidItems
         <button type="submit">검색</button>
       </form>
     </section>
-    <TossWinterHero/>
+    <TossWinterHero {...seasonalHero}/>
     <nav className={styles.categories} aria-label="여행 카테고리"><div className={styles.categoryGrid}>{categories.filter(item=>item[2]!=='/pet-travel').map(([icon,label,href],index)=><Link key={label} href={href} prefetch={index<5?undefined:false} className={styles.category+(href==='/winter-travel'?' '+styles.seasonCategory:'')}><span className={styles.categoryIcon} aria-hidden="true">{icon}</span><span>{label}</span></Link>)}</div></nav>
     <nav className={styles.quickNav} aria-label="빠른 나들이 찾기"><HomeNearbyButton/><Link href="/weekend">이번 주말</Link><Link href="/plan">맞춤 추천</Link><Link href="/saved">♡ 보관함</Link></nav>
     <Section title="지역별 나들이" href="/places">

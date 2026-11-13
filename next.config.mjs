@@ -10,7 +10,10 @@ const nextConfig = {
   ...(process.env.NAS_STANDALONE === "1" ? { output: "standalone" } : {}),
   outputFileTracingRoot: __dirname,
   async redirects() {
-    return [{ source: '/places/spot/3353336', destination: '/places/spot/2774564', statusCode: 301 }];
+    return [
+      { source: '/places/spot/3353336', destination: '/places/spot/2774564', statusCode: 301 },
+      { source: '/shopping/coffee', destination: '/shopping/winter-drinks', statusCode: 301 },
+    ];
   },
   async rewrites() {
     // Keep existing query URLs and server-rendered results. Query-free landing

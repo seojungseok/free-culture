@@ -1,5 +1,5 @@
 // Verified through the configured Toss API. Original affiliate URLs are preserved.
-export const seasonalCampaignVersion=1;
+export const seasonalCampaignVersion=2;
 export const seasonalSelections=[
   {
     "id": 429518365,
@@ -93,3 +93,45 @@ export const seasonalSelections=[
     "caution": "상품별 용량·원재료·보관 방법과 선택 옵션은 구매 상세를 확인하세요."
   }
 ];
+
+seasonalSelections.push(...[
+  {
+    "id": 432494761,
+    "expectedName": "꿀이구마 호두 아몬드 율무차, 18g, 100스틱, 1개",
+    "imageUrl": "https://shopping.toss.im/live/temp/2025-12-15/8d6c5b6a-91b6-4187-b01b-62f4eae12997.jpeg",
+    "reviewedHomeLink": "https://toss.shopping/_m/X4GE5MD",
+    "imageNote": "판매처 제공 상품 사진",
+    "option": "꿀이구마 호두 아몬드 율무차, 18g, 100스틱, 1개",
+    "topic": "winter-drinks",
+    "homeFeature": false,
+    "headline": "율무차 골라보기",
+    "reason": "원재료와 용량, 수량을 비교해 필요한 음료를 골라보세요.",
+    "caution": "알레르기 표시와 음용 방법, 보관 방법은 구매 상세를 확인하세요."
+  },
+  {
+    "id": 2654108107,
+    "expectedName": "오아시스 저당 유자차, 530g, 2개",
+    "imageUrl": "https://shopping.toss.im/live/temp/2026-09-09/933863e7-428f-416b-a48b-dc4fcbf5786c.jpg",
+    "reviewedHomeLink": "https://toss.shopping/_m/blj6H3n7",
+    "imageNote": "판매처 제공 상품 사진",
+    "option": "오아시스 저당 유자차, 530g, 2개",
+    "topic": "winter-drinks",
+    "homeFeature": false,
+    "headline": "유자차 골라보기",
+    "reason": "원재료와 용량, 수량을 비교해 필요한 음료를 골라보세요.",
+    "caution": "알레르기 표시와 음용 방법, 보관 방법은 구매 상세를 확인하세요."
+  },
+  {
+    "id": 142628247,
+    "expectedName": "100일동안 계피생강차, 1.2g, 100개입, 1팩",
+    "imageUrl": "https://shopping.toss.im/live/temp/2026-01-27/09afe02c-afac-4676-92a0-40baed1a8961.jpeg",
+    "reviewedHomeLink": "https://toss.shopping/_m/NR0VkHLa",
+    "imageNote": "판매처 제공 상품 사진",
+    "option": "100일동안 계피생강차, 1.2g, 100개입, 1팩",
+    "topic": "winter-drinks",
+    "homeFeature": false,
+    "headline": "생강차 골라보기",
+    "reason": "원재료와 용량, 수량을 비교해 필요한 음료를 골라보세요.",
+    "caution": "알레르기 표시와 음용 방법, 보관 방법은 구매 상세를 확인하세요."
+  }
+]);
