@@ -46,6 +46,6 @@ test('navigation and clear advertising disclosure remain available without a sid
  assert.equal($('button[aria-label="이전 기획전"]').length,1);
  assert.equal($('button[aria-label="다음 기획전"]').length,1);
  assert.equal($('.collectionLinks a').length,4);
- assert.match($('.disclosure').text(),/AI 연출/);
+ assert.equal($('.disclosure').text(),'[광고] 제휴 링크로 구매 시 수수료를 지급받습니다.');
  assert.match($('.disclosure').text(),/수수료/);
 });

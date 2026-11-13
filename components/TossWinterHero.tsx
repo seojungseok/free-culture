@@ -49,7 +49,7 @@ export default function TossWinterHero({campaigns,collections}:SeasonalHeroData)
     onTouchCancel={()=>{swipe.current.moved=false;}}
     onTouchEnd={e=>{const dx=e.changedTouches[0].clientX-swipe.current.x,dy=e.changedTouches[0].clientY-swipe.current.y;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){swipe.current.moved=true;choose(index+(dx<0?1:-1));}}}
     onClick={e=>{if(swipe.current.moved){e.preventDefault();swipe.current.moved=false;return;}affiliateTrack('collection_click','toss','home_seasonal_hero',page);}}>
-    <picture className={styles.visual}><source media="(max-width:767px)" srcSet={active.artMobile} width={960} height={320}/><img className={styles.scene} src={active.art} alt={active.title+' · '+active.label+' 모음 · AI 연출'} width={1760} height={320} loading="eager" fetchPriority="high" decoding="async"/></picture>
+    <picture className={styles.visual}><source media="(max-width:767px)" srcSet={active.artMobile} width={960} height={320}/><img className={styles.scene} src={active.art} alt={active.title+' · '+active.label+' 모음'} width={1760} height={320} loading="eager" fetchPriority="high" decoding="async"/></picture>
     <h2 className={styles.screenReader}>{active.title}</h2>
     <span className={styles.ad}>광고</span>
    </Link>
@@ -61,6 +61,6 @@ export default function TossWinterHero({campaigns,collections}:SeasonalHeroData)
    </div></div>
   </div>
   <nav className={styles.collectionLinks} aria-label="겨울 상품 모음 바로가기">{collections.map(c=><Link key={c.slug} href={'/shopping/'+c.slug} prefetch={false}>{c.title}</Link>)}</nav>
-  <p className={styles.disclosure}>[광고] 배너는 AI 연출입니다. 모음에서 실제 상품을 골라보세요. 제휴 링크로 구매 시 수수료를 지급받습니다.</p>
+  <p className={styles.disclosure}>[광고] 제휴 링크로 구매 시 수수료를 지급받습니다.</p>
  </section>;
 }

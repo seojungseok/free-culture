@@ -50,7 +50,7 @@
         123678795
       ],
       "tips": [
-        "사진 속 완성 음식은 AI 상차림 예시입니다. 상품 카드에는 판매처에서 제공한 실제 상품 사진을 표시합니다.",
+        "상품 카드의 판매처 제공 사진과 실제 구성을 확인하세요.",
         "개별포장 수량과 총중량을 함께 확인하고, 냉동·냉장 보관 공간을 먼저 살펴보세요.",
         "제품마다 조리 방식이 다릅니다. 사용할 찜기·팬·전자레인지 등과 포장 안내를 확인하세요."
       ]
@@ -59,7 +59,7 @@
       "slug": "winter-drinks",
       "title": "따뜻한 한 잔",
       "description": "커피·율무차·유자차·계피생강차, 찬바람 부는 날 마실 한 잔을 골라보세요.",
-      "intro": "커피가 생각나는 날, 곡물차를 준비하고 싶은 날, 과일차나 생강차를 찾는 날에 맞춰 골라보세요. 각 상품의 원재료·알레르기 표시와 스틱 수량, 용량을 비교해 필요한 만큼 준비하세요. 사진 속 컵·소품은 포함되지 않으며, 배너는 음료를 담아낸 AI 연출 예시입니다.",
+      "intro": "커피가 생각나는 날, 곡물차를 준비하고 싶은 날, 과일차나 생강차를 찾는 날에 맞춰 골라보세요. 각 상품의 원재료·알레르기 표시와 스틱 수량, 용량을 비교해 필요한 만큼 준비하세요. 사진 속 컵·소품은 포함되지 않습니다.",
       "banner": "winter-drinks",
       "productIds": [
         2317495197,
@@ -81,8 +81,8 @@
       "label": "방한용품",
       "title": "찬바람 불기 전, 겨울 준비 한 번에",
       "href": "/shopping/winter-warmers",
-      "art": "/affiliate-images/seasonal-warmers-20261113.webp",
-      "artMobile": "/affiliate-images/seasonal-warmers-mobile-20261113.webp"
+      "art": "/affiliate-images/seasonal-warmers-20261114-v2.webp",
+      "artMobile": "/affiliate-images/seasonal-warmers-mobile-20261114-v2.webp"
     },
     {
       "key": "winter-drinks",
@@ -90,8 +90,8 @@
       "label": "따뜻한 한 잔",
       "title": "찬바람 부는 날, 따뜻한 한 잔",
       "href": "/shopping/winter-drinks",
-      "art": "/affiliate-images/seasonal-winter-drinks-20261113.webp",
-      "artMobile": "/affiliate-images/seasonal-winter-drinks-mobile-20261113.webp"
+      "art": "/affiliate-images/seasonal-winter-drinks-20261114-v2.webp",
+      "artMobile": "/affiliate-images/seasonal-winter-drinks-mobile-20261114-v2.webp"
     },
     {
       "key": "kimjang",
@@ -99,8 +99,8 @@
       "label": "김장재료",
       "title": "김장하는 날, 재료부터 한 번에",
       "href": "/shopping/kimjang",
-      "art": "/affiliate-images/seasonal-kimjang-20261113.webp",
-      "artMobile": "/affiliate-images/seasonal-kimjang-mobile-20261113.webp"
+      "art": "/affiliate-images/seasonal-kimjang-20261114-v2.webp",
+      "artMobile": "/affiliate-images/seasonal-kimjang-mobile-20261114-v2.webp"
     },
     {
       "key": "snacks",
@@ -108,8 +108,8 @@
       "label": "겨울간식",
       "title": "겨울 간식, 따끈하게 한 입",
       "href": "/shopping/winter-snacks",
-      "art": "/affiliate-images/seasonal-snacks-20261113.webp",
-      "artMobile": "/affiliate-images/seasonal-snacks-mobile-20261113.webp"
+      "art": "/affiliate-images/seasonal-snacks-20261114-v2.webp",
+      "artMobile": "/affiliate-images/seasonal-snacks-mobile-20261114-v2.webp"
     },
     {
       "key": "tteokbokki",
@@ -117,8 +117,8 @@
       "label": "떡볶이",
       "title": "오늘 저녁엔 국물떡볶이",
       "href": "/shopping/winter-snacks#product-123678795",
-      "art": "/affiliate-images/seasonal-tteokbokki-20261113.webp",
-      "artMobile": "/affiliate-images/seasonal-tteokbokki-mobile-20261113.webp"
+      "art": "/affiliate-images/seasonal-tteokbokki-20261114-v2.webp",
+      "artMobile": "/affiliate-images/seasonal-tteokbokki-mobile-20261114-v2.webp"
     }
   ],
   "reviewedProducts": [
