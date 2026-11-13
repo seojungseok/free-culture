@@ -5,7 +5,7 @@ import path from 'node:path';
 import vm from 'node:vm';
 import {createRequire} from 'node:module';
 import ts from 'typescript';
-import {isEventPublished, expiredEventForPath, expiredEventSelectors} from '../lib/event-publication.mjs';
+import {isEventPublished, liveEventDeadlines, expiredEventForPath, expiredEventSelectors} from '../lib/event-publication.mjs';
 import {load as loadHtml} from 'cheerio';
 
 const deadline = Date.parse('2026-11-08T18:00:00+09:00');
@@ -18,6 +18,13 @@ test('publication closes exactly at 18:00 KST without changing ordinary event UR
   assert.equal(isEventPublished({endDate:'20200101'},deadline),true);
   assert.equal(isEventPublished({expiresAt:'2026-11-08T18:00:00'},deadline-1),false);
   assert.equal(isEventPublished({expiresAt:'invalid'},deadline-1),false);
+});
+
+test('only future verified deadlines need live server rendering and a client timer',()=>{
+ const events=[event,{id:'ordinary'},{id:'invalid',expiresAt:'invalid'}];
+ assert.deepEqual(liveEventDeadlines(events,deadline-1),[{id:event.id,expiresAt:event.expiresAt}]);
+ assert.deepEqual(liveEventDeadlines(events,deadline),[]);
+ assert.deepEqual(liveEventDeadlines(events,deadline+1),[]);
 });
 
 test('detail, aliases and public images share the removal deadline',()=>{
@@ -73,6 +80,7 @@ test('warm server data, search, nearby, festival and child-course caches drop th
     const childBefore=kids.getKidCourses();
     assert.ok(childBefore.some(item=>item.id==='ev-'+event.id),'fixture should exercise the cached child-course branch');
     const beforeCacheCalls=loader.noStoreCalls();
+    assert.ok(beforeCacheCalls>0,'pre-deadline readers prevent a response from being cached across expiry');
     Date.now=()=>deadline;
     assert.equal(data.getEventById(event.id),undefined);
     for(const items of [data.getAllEvents(),data.getFree(),data.getByRegion('서울'),data.getWeekend(),data.getFeatured(),data.getByAudience('kids')])assert.ok(!items.some(item=>item.id===event.id));
@@ -82,8 +90,23 @@ test('warm server data, search, nearby, festival and child-course caches drop th
     assert.equal(festivals.getFestivalById('event-'+event.id),undefined);
     assert.ok(!kids.getKidCourses().some(item=>item.id==='ev-'+event.id));
     assert.equal(kids.getKidCourse('ev-'+event.id),undefined);
-    assert.ok(loader.noStoreCalls()>beforeCacheCalls,'cached readers must still prevent stale full-route caching');
+    assert.equal(loader.noStoreCalls(),beforeCacheCalls,'only post-expiry content may resume caching once all deadlines passed');
   }finally{Date.now=originalNow;}
+});
+
+test('already expired server records cause no client HEAD requests or route refresh on a new visit',async()=>{
+ const original={window:global.window,document:global.document,fetch:global.fetch};
+ try{
+  let effect,requests=0,refreshes=0;
+  const hooks={useEffect:callback=>{effect=callback;},useRef:()=>({current:''}),useState:()=>[[],()=>{}]};
+  const loader=sourceLoader({react:hooks,'next/navigation':{usePathname:()=>'/',useRouter:()=>({refresh(){refreshes++;}})}});
+  global.window={addEventListener(){},removeEventListener(){},dispatchEvent(){}};
+  global.document={addEventListener(){},removeEventListener(){}};
+  global.fetch=async()=>{requests++;throw Error('unnecessary request');};
+  loader.load('@/components/EventPublicationBoundary').default({deadlines:liveEventDeadlines([event],deadline)});
+  const cleanup=effect();await new Promise(resolve=>setImmediate(resolve));
+  assert.equal(requests,0);assert.equal(refreshes,0);cleanup();
+ }finally{global.window=original.window;global.document=original.document;global.fetch=original.fetch;}
 });
 
 test('middleware sends no-store before expiry and 410/noindex for HTML, RSC and image requests after expiry',()=>{

@@ -13,6 +13,7 @@ import {readTossFeed} from '@/lib/sharelink';
 import {TossFeedProvider} from '@/components/TossFeedProvider';
 import EventPublicationBoundary from '@/components/EventPublicationBoundary';
 import curatedEvents from '@/data/curated-events.json';
+import {liveEventDeadlines} from '@/lib/event-publication.mjs';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -76,7 +77,7 @@ export default function RootLayout({
         {/* 게임 상세는 집중 화면(헤더·푸터 숨김), 그 외는 사이트 크롬 유지 */}
         <RenderDateProvider day={todayYmd()}>
         <TossFeedProvider initial={readTossFeed()}>
-        <EventPublicationBoundary deadlines={curatedEvents.events.filter(event => Boolean(event.expiresAt)).map(event => ({id:event.id,expiresAt:event.expiresAt!}))}/>
+        <EventPublicationBoundary deadlines={liveEventDeadlines(curatedEvents.events)}/>
         <ChromeGate header={<Header />} footer={<Footer />} floating={<FloatingShare />}>
           {children}
         </ChromeGate>

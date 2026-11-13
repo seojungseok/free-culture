@@ -25,3 +25,11 @@
 - 344px 커버 화면, 768px 펼친 화면, 1440px PC에서 넘침이 없고 상품 사진·구매 링크와 배너 문구가 표시됨을 확인했다. 운영 반영 후 동일한 공개 브라우저 조건의 요청 수와 실제 구매 경로를 추가 확인한다.
 
 적용한 설치된 전문 스킬: web-perf, performance-profiler, Vercel React Best Practices. 기준 자료: [Next.js Prefetching](https://nextjs.org/docs/app/guides/prefetching), [Server and Client Components](https://nextjs.org/docs/app/getting-started/server-and-client-components), [Vercel Agent Skills](https://github.com/vercel-labs/agent-skills).
+
+## 운영 확인에서 발견한 추가 원인
+
+첫 배포 `7134d56`는 NAS 23:15:01~23:19:12에 정상(0)으로 종료했다. 동일한 390×844 격리 브라우저 시나리오에서 요청 63→44개, 클릭하지 않은 다른 페이지의 미리 읽기 10→0개를 관측했다. 첫 배포 이후에도 남아 있던 자기 페이지 RSC 요청 1개와 HEAD 확인 요청 2개는 이미 11월 8일 종료된 행사 때문에 발생했다. `expiresAt`이 있는 기록이 남아 있다는 이유만으로 서버 캐시를 계속 막고, 새 방문마다 만료 확인과 `router.refresh()`를 실행하는 구조였다.
+
+서버에서는 아직 앞으로 남은 마감만 실시간 렌더와 클라이언트 타이머에 전달한다. 모든 마감이 지난 뒤에는 만료 기록이 제거된 결과를 기존 ISR 정책으로 다시 캐시한다. 원본 행사 데이터와 구 URL/이미지의 410 처리는 유지한다. 미래 마감이 있는 동안에는 기존대로 no-store로 사전 만료 응답의 캐시를 막고, 이미 열린 탭도 마감에 맞춰 갱신한다.
+
+추가 변경 검증 46개 및 생산 빌드(1416개 정적 경로)가 통과했다. 로컬 생산 서버의 홈페이지가 `s-maxage=60`, `x-nextjs-cache: HIT`를 반환하며, 기존 만료 상세/별칭/이미지는 모두 410·no-store·noindex를 유지하고, 음료 페이지는 첫 HTML에 4개 카드를 표시함을 확인했다. 공개 Lighthouse 및 현장 Core Web Vitals 수치는 이번 측정에 포함하지 않는다.

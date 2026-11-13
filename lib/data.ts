@@ -3,7 +3,7 @@ import { weekendRangeYmd } from "@/lib/dates";
 import eventsData from "@/data/events.json";
 import curatedEventsData from "@/data/curated-events.json";
 import { unstable_noStore as noStore } from 'next/cache';
-import { isEventPublished } from '@/lib/event-publication.mjs';
+import { isEventPublished, liveEventDeadlines } from '@/lib/event-publication.mjs';
 import type { CultureEvent, EventsData, PriceType } from "./types";
 import { displayAddress, displayRegionTitle } from "@/lib/address";
 import { eventSourceDetail } from '@/lib/eventSource';
@@ -13,9 +13,9 @@ const curatedIds = new Set(curatedEvents.map(event => event.id));
 // Explicitly curated records survive API collection and take precedence by ID.
 const mergedEvents = [...curatedEvents, ...(eventsData as unknown as EventsData).events.filter(event => !curatedIds.has(event.id))];
 export function respectEventPublicationDeadline() {
-  // Event-dependent routes must not keep a pre-deadline static/ISR response.
-  // Unrelated pages retain their existing caching behavior.
-  if (curatedEvents.some(event => event.expiresAt)) noStore();
+  // While a deadline is ahead, never cache a response across its boundary.
+  // Once all deadlines passed, only post-expiry content can enter ISR again.
+  if (liveEventDeadlines(curatedEvents).length) noStore();
 }
 const normalizedEvents: EventsData = {
   ...(eventsData as unknown as EventsData),
