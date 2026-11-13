@@ -37,7 +37,7 @@ export default function SeasonalShopping({collection}:{collection:Collection}){
     </article>)}
    </div>
   </section>
-  <aside className={styles.guide}><h2>고르기 전에 살펴보세요</h2><ul>{collection.tips.map(tip=><li key={tip}>{tip}</li>)}</ul></aside>
+  <aside className={styles.guide}><h2>고르기 전에 살펴보세요</h2><p>{collection.intro}</p><ul>{collection.tips.map(tip=><li key={tip}>{tip}</li>)}</ul></aside>
   <section className={styles.related}><h2>이 모음도 둘러보세요</h2><div>{catalogue.collections.filter(c=>c.slug!==collection.slug).map(c=><Link key={c.slug} href={'/shopping/'+c.slug} prefetch={false}><img src={'/affiliate-images/seasonal-'+c.banner+'-mobile-20261113.webp'} alt="" width={960} height={320} loading="lazy"/><span>{c.title}</span></Link>)}</div></section>
  </>;
 }

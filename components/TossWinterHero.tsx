@@ -49,7 +49,7 @@ export default function TossWinterHero(){
     onTouchCancel={()=>{swipe.current.moved=false;}}
     onTouchEnd={e=>{const dx=e.changedTouches[0].clientX-swipe.current.x,dy=e.changedTouches[0].clientY-swipe.current.y;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){swipe.current.moved=true;choose(index+(dx<0?1:-1));}}}
     onClick={e=>{if(swipe.current.moved){e.preventDefault();swipe.current.moved=false;return;}affiliateTrack('collection_click','toss','home_seasonal_hero',page);}}>
-    <picture className={styles.visual}><source media="(max-width:767px)" srcSet={active.artMobile} width={960} height={320}/><img key={active.key} className={styles.scene} src={active.art} alt={active.title+' · '+active.label+' 모음 · AI 연출'} width={1760} height={320} loading="eager" fetchPriority="high" decoding="async"/></picture>
+    <picture className={styles.visual}><source media="(max-width:767px)" srcSet={active.artMobile} width={960} height={320}/><img className={styles.scene} src={active.art} alt={active.title+' · '+active.label+' 모음 · AI 연출'} width={1760} height={320} loading="eager" fetchPriority="high" decoding="async"/></picture>
     <h2 className={styles.screenReader}>{active.title}</h2>
     <span className={styles.ad}>광고</span>
    </Link>
