@@ -1,0 +1,476 @@
+[
+  {
+    "slug": "autumn-flower-crab-soup-ingredient-checklist",
+    "path": "description",
+    "before": "가을 캠핑 전 꽃게탕에 필요한 꽃게·대파·애호박·미나리·양념·육수와 냄비까지 빠짐없이 확인하는 장보기 체크리스트입니다.",
+    "after": "꽃게탕의 재료와 분량을 확인하고, 꽃게 맛이 국물에 우러나도록 무를 먼저 익히고, 미나리는 맨 마지막에 넣습니다. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "autumn-flower-crab-soup-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/autumn-crab-soup-checklist-cover-unified-v2.webp",
+      "alt": "꽃게탕의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "camping-fishcake-soup-ingredient-checklist",
+    "path": "description",
+    "before": "캠핑 어묵탕에 필요한 모둠 어묵·대파·육수 재료와 생수·냄비·국자·국그릇을 출발 전에 확인하는 준비물 체크리스트입니다.",
+    "after": "어묵탕의 재료와 분량을 확인하고, 무를 먼저 부드럽게 익힌 뒤 어묵을 넣으세요. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "camping-fishcake-soup-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/camp-fishcake-soup-checklist-cover-unified-v2.webp",
+      "alt": "어묵탕의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "camping-budae-jjigae-ingredient-checklist",
+    "path": "description",
+    "before": "캠핑 부대찌개용 햄·소시지 구성과 추가 햄·치즈·대파·육수, 생수와 냄비까지 순서대로 확인하는 준비물 체크리스트입니다.",
+    "after": "부대찌개의 재료와 분량을 확인하고, 밀키트는 구성품부터 확인하고, 직접 끓일 때는 김치·햄에서 나오는 간을 먼저 보세요. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "camping-budae-jjigae-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/camp-budae-soup-checklist-cover-unified-v2.webp",
+      "alt": "부대찌개의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "camping-beef-mushroom-hotpot-ingredient-checklist",
+    "path": "description",
+    "before": "캠핑 소고기 버섯전골에 필요한 소고기 구성·모둠버섯·대파·애호박·육수와 조리도구를 확인하는 준비물 체크리스트입니다.",
+    "after": "소고기 버섯전골의 재료와 분량을 확인하고, 버섯·채소로 국물 바탕을 내고 얇은 소고기를 나누어 넣습니다. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "camping-beef-mushroom-hotpot-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/camp-beef-mushroom-hotpot-checklist-cover-unified-v2.webp",
+      "alt": "소고기 버섯전골의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "camping-seafood-hotpot-ingredient-checklist",
+    "path": "description",
+    "before": "캠핑 해물탕용 모둠해물·오만둥이·미나리·애호박·매운탕 양념·육수와 냄비까지 확인하는 가을 준비물 체크리스트입니다.",
+    "after": "해물탕의 재료와 분량을 확인하고, 밀키트 양념에 별도 매운탕 양념을 전부 더하지 마세요. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "camping-seafood-hotpot-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/camp-seafood-hotpot-checklist-cover-unified-v2.webp",
+      "alt": "해물탕의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "camping-seafood-ramen-ingredients",
+    "path": "description",
+    "before": "캠핑 전 해물라면에 필요한 봉지라면·모둠해물·대파 등의 식재료와 양념, 조리도구를 확인하는 장보기 체크리스트입니다.",
+    "after": "해물라면의 재료와 분량을 확인하고, 해물을 먼저 안전하게 익히고 국물 양을 맞춘 다음 면을 넣습니다. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "camping-seafood-ramen-ingredients",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/camping-seafood-ramen-ingredients-cover-unified-v2.webp",
+      "alt": "해물라면의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "camping-mussel-soup-ingredients",
+    "path": "description",
+    "before": "캠핑 전 홍합탕에 필요한 손질 홍합살·대파·양파 등의 식재료와 양념, 조리도구를 확인하는 장보기 체크리스트입니다.",
+    "after": "홍합탕의 재료와 분량을 확인하고, 홍합에서 짠맛이 우러나므로 소금은 마지막에 확인합니다. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "camping-mussel-soup-ingredients",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/camping-mussel-soup-ingredients-cover-unified-v2.webp",
+      "alt": "홍합탕의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "camping-kimchi-fried-rice-ingredients",
+    "path": "description",
+    "before": "캠핑 전 김치볶음밥에 필요한 즉석밥·배추김치·달걀 등의 식재료와 양념, 조리도구를 확인하는 장보기 체크리스트입니다.",
+    "after": "김치볶음밥에 필요한 식재료와 양념을 확인하세요. 김치의 수분을 줄이고 밥을 풀어 볶는 순서과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "camping-kimchi-fried-rice-ingredients",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/camping-kimchi-fried-rice-ingredients-cover-unified-v2.webp",
+      "alt": "김치볶음밥의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "camping-squid-stir-fry-ingredients",
+    "path": "description",
+    "before": "캠핑 전 오징어볶음에 필요한 손질 오징어·양파·대파 등의 식재료와 양념, 조리도구를 확인하는 장보기 체크리스트입니다.",
+    "after": "오징어볶음에 필요한 식재료와 양념을 확인하세요. 오징어 손질과 물기를 줄여 볶는 순서과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "camping-squid-stir-fry-ingredients",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/camping-squid-stir-fry-ingredients-cover-unified-v2.webp",
+      "alt": "오징어볶음의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "camping-chicken-skewer-ingredients",
+    "path": "description",
+    "before": "캠핑 전 닭꼬치구이에 필요한 닭꼬치·염통 모둠꼬치·새송이버섯·파프리카 등의 식재료와 양념, 조리도구를 확인하는 장보기 체크리스트입니다.",
+    "after": "닭꼬치구이에 필요한 식재료와 양념을 확인하세요. 꼬치 구성과 채소 준비, 고기 속까지 익히는 방법과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "camping-chicken-skewer-ingredients",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/camping-chicken-skewer-ingredients-cover-unified-v2.webp",
+      "alt": "닭꼬치구이의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "camping-kimchi-pancake-ingredients",
+    "path": "description",
+    "before": "캠핑 전 김치전에 필요한 배추김치·부침가루·대파 등의 식재료와 양념, 조리도구를 확인하는 장보기 체크리스트입니다.",
+    "after": "김치전에 필요한 식재료와 양념을 확인하세요. 김치와 부침가루로 반죽을 맞추고 부치는 순서과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "camping-kimchi-pancake-ingredients",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/camping-kimchi-pancake-ingredients-cover-unified-v2.webp",
+      "alt": "김치전의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "camping-pork-belly-bbq-ingredients",
+    "path": "description",
+    "before": "캠핑 전 삼겹살 바비큐에 필요한 구이용 삼겹살·배추김치·새송이버섯 등의 식재료와 양념, 조리도구를 확인하는 장보기 체크리스트입니다.",
+    "after": "삼겹살 바비큐에 필요한 식재료와 양념을 확인하세요. 고기와 곁들임 채소를 준비하고 구워 먹는 순서과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "camping-pork-belly-bbq-ingredients",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/camping-pork-belly-bbq-ingredients-cover-unified-v2.webp",
+      "alt": "삼겹살 바비큐의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "camping-tofu-kimchi-ingredients",
+    "path": "description",
+    "before": "캠핑 전 두부김치에 필요한 부침용 두부·배추김치·양파 등의 식재료와 양념, 조리도구를 확인하는 장보기 체크리스트입니다.",
+    "after": "두부김치에 필요한 식재료와 양념을 확인하세요. 두부를 데우고 김치를 따로 볶아 담는 방법과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "camping-tofu-kimchi-ingredients",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/camping-tofu-kimchi-ingredients-cover-unified-v2.webp",
+      "alt": "두부김치의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "autumn-camping-pork-kimchi-stew-ingredient-checklist",
+    "path": "description",
+    "before": "가을 캠핑 저녁에 끓일 돼지고기 김치찌개 재료를 확인하세요. 김치·돼지고기·두부의 분리 포장부터 육수와 냄비까지 챙기는 체크리스트입니다.",
+    "after": "돼지고기 김치찌개의 재료와 분량을 확인하고, 김치를 먼저 볶아 맛을 내고, 고기는 속까지 익힙니다. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "autumn-camping-pork-kimchi-stew-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/autumn-20260919-pork-kimchi-stew-cover-unified-v2.webp",
+      "alt": "돼지고기 김치찌개의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "autumn-camping-doenjang-stew-ingredient-checklist",
+    "path": "description",
+    "before": "가을 캠핑 된장찌개에 넣을 된장·두부·애호박·양파와 육수 재료를 정리했습니다. 집에서 소분할 양념과 현장에서 넣을 순서를 함께 확인하세요.",
+    "after": "된장찌개의 재료와 분량을 확인하고, 단단한 감자를 먼저 익히고 두부·대파는 뒤에 넣습니다. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "autumn-camping-doenjang-stew-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/autumn-20260919-doenjang-stew-cover-unified-v2.webp",
+      "alt": "된장찌개의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "autumn-camping-perilla-mushroom-soup-ingredient-checklist",
+    "path": "description",
+    "before": "들깨버섯탕의 들깨가루·모둠버섯·두부와 육수 재료를 챙기는 가을 캠핑 체크리스트입니다. 들깨가루를 풀어 넣는 순서와 걸쭉함 조절 방법을 담았습니다.",
+    "after": "들깨버섯탕의 재료와 분량을 확인하고, 버섯을 먼저 익히고 들깨가루는 국물에 미리 풀어 넣습니다. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "autumn-camping-perilla-mushroom-soup-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-cover-unified-v2.webp",
+      "alt": "들깨버섯탕의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "autumn-camping-potato-sujebi-ingredient-checklist",
+    "path": "description",
+    "before": "감자수제비를 캠핑에서 끓일 때 필요한 감자·수제비·애호박·육수와 도구 체크리스트입니다. 감자를 먼저 익히고 반죽이 붙지 않게 넣는 순서를 확인하세요.",
+    "after": "감자수제비의 재료와 분량을 확인하고, 감자를 먼저 익히고 반죽은 얇고 비슷한 두께로 넣습니다. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "autumn-camping-potato-sujebi-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/autumn-20260919-potato-sujebi-cover-unified-v2.webp",
+      "alt": "감자수제비의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "autumn-camping-shrimp-butter-grill-ingredient-checklist",
+    "path": "description",
+    "before": "가을 캠핑 새우버터구이에 필요한 생새우살·무염버터·다진마늘과 곁들일 채소를 정리했습니다. 물기 제거와 버터를 태우지 않는 조리 순서까지 확인하세요.",
+    "after": "새우버터구이에 필요한 식재료와 양념을 확인하세요. 새우를 손질하고 버터가 타지 않게 굽는 방법과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "autumn-camping-shrimp-butter-grill-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/autumn-20260919-shrimp-butter-grill-cover-unified-v2.webp",
+      "alt": "새우버터구이의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "autumn-camping-mackerel-potato-braise-ingredient-checklist",
+    "path": "description",
+    "before": "가을 캠핑 고등어감자조림에 필요한 손질 고등어·감자·양파와 양념 체크리스트입니다. 감자를 먼저 익히는 순서와 생선 분리 포장, 가시 확인 요령을 담았습니다.",
+    "after": "고등어감자조림의 재료와 분량을 확인하고, 감자는 아래에 깔고 고등어는 위에서 익힙니다. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "autumn-camping-mackerel-potato-braise-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/autumn-20260919-mackerel-potato-braise-cover-unified-v2.webp",
+      "alt": "고등어감자조림의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "autumn-camping-chicken-potato-stew-ingredient-checklist",
+    "path": "description",
+    "before": "가을 캠핑 닭볶음탕에 필요한 토막 닭·감자·양파와 양념을 체크하세요. 생닭 분리 포장부터 뼈 주변까지 익히는 순서, 남은 재료 정리까지 안내합니다.",
+    "after": "닭볶음탕의 재료와 분량을 확인하고, 닭을 먼저 끓여 익히고 감자는 크기를 맞춰 더합니다. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "autumn-camping-chicken-potato-stew-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/autumn-20260919-chicken-potato-stew-cover-unified-v2.webp",
+      "alt": "닭볶음탕의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "autumn-camping-tteokbokki-ingredient-checklist",
+    "path": "description",
+    "before": "캠핑 떡볶이의 떡·어묵·대파와 양념·육수 재료를 확인하는 체크리스트입니다. 떡 종류에 맞춘 준비와 국물이 졸아들 때 간을 조절하는 방법을 담았습니다.",
+    "after": "떡볶이의 재료와 분량을 확인하고, 떡 상태를 먼저 풀고 국물을 끓인 뒤 농도를 맞춥니다. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  },
+  {
+    "slug": "autumn-camping-tteokbokki-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/autumn-20260919-tteokbokki-cover-unified-v2.webp",
+      "alt": "떡볶이의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "autumn-camping-zucchini-pancake-ingredient-checklist",
+    "path": "description",
+    "before": "가을 캠핑 애호박전에 필요한 애호박·달걀·부침가루·식용유를 빠짐없이 확인하세요. 둥근 전과 채썬 전 선택, 반죽 두께와 부치는 순서를 안내합니다.",
+    "after": "애호박전에 필요한 식재료와 양념을 확인하세요. 애호박의 물기를 정리하고 달걀옷을 입혀 굽는 순서과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "autumn-camping-zucchini-pancake-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/autumn-20260919-zucchini-pancake-cover-unified-v2.webp",
+      "alt": "애호박전의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "autumn-camping-corn-cheese-ingredient-checklist",
+    "path": "description",
+    "before": "마요네즈 없이 만드는 캠핑 버터콘치즈 재료 체크리스트입니다. 옥수수·체다치즈·버터·양파를 챙기고 수분을 줄여 약불로 익히는 순서를 확인하세요.",
+    "after": "버터콘치즈에 필요한 식재료와 양념을 확인하세요. 옥수수의 물기를 빼고 치즈를 녹이는 방법과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "autumn-camping-corn-cheese-ingredient-checklist",
+    "path": "sections.0.image",
+    "after": {
+      "url": "/prep-images/autumn-20260919-corn-cheese-cover-unified-v2.webp",
+      "alt": "버터콘치즈의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    }
+  },
+  {
+    "slug": "autumn-20260920-soy-butter-potato-grill",
+    "path": "description",
+    "before": "가을 캠핑에서 간장버터감자구이를 만들 때 필요한 감자·버터·간장과 조리도구를 순서대로 확인하는 체크리스트입니다.",
+    "after": "간장버터감자구이에 필요한 식재료와 양념을 확인하세요. 감자를 먼저 익히고 간장·버터를 더하는 순서과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "autumn-20260920-shrimp-jeon",
+    "path": "description",
+    "before": "가을 캠핑에서 새우전을 부칠 때 필요한 새우·달걀·부침가루와 팬, 집게를 확인하는 장보기 체크리스트입니다.",
+    "after": "새우전에 필요한 식재료와 양념을 확인하세요. 새우와 달걀·부침가루로 전을 부치는 순서과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "autumn-20260920-mushroom-cheese-grill",
+    "path": "description",
+    "before": "가을 캠핑에서 버섯치즈구이를 만들 때 필요한 새송이버섯·버터·체다치즈와 그리들과 조리도구를 확인하는 체크리스트입니다.",
+    "after": "버섯치즈구이에 필요한 식재료와 양념을 확인하세요. 버섯 물기를 정리하고 치즈를 녹여 굽는 방법과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "autumn-20260920-tofu-soy-grill",
+    "path": "description",
+    "before": "가을 캠핑에서 두부간장구이를 만들 때 필요한 두부·간장·마늘과 팬, 집게를 확인하는 재료 체크리스트입니다.",
+    "after": "두부간장구이에 필요한 식재료와 양념을 확인하세요. 두부 물기를 빼고 간장 양념을 더해 굽는 순서과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "autumn-20260920-kimchi-fishcake-stirfry",
+    "path": "description",
+    "before": "가을 캠핑에서 김치어묵볶음을 만들 때 필요한 김치·어묵·양파와 조리도구를 확인하는 장보기 체크리스트입니다.",
+    "after": "김치어묵볶음에 필요한 식재료와 양념을 확인하세요. 김치와 양파를 먼저 볶고 어묵을 더하는 순서과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "autumn-20260920-jeyuk-bokkeum-ingredient-checklist",
+    "path": "description",
+    "before": "가을 캠핑에서 제육볶음을 만들 때 필요한 돼지고기·볶음소스·채소와 조리도구를 순서대로 확인하는 체크리스트입니다.",
+    "after": "제육볶음에 필요한 식재료와 양념을 확인하세요. 양념된 제품과 생고기를 구분해 충분히 익히는 방법과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "autumn-20260920-sundae-bokkeum-ingredient-checklist",
+    "path": "description",
+    "before": "가을 캠핑에서 순대볶음을 만들 때 필요한 순대·양념·채소와 조리도구를 순서대로 확인하는 체크리스트입니다.",
+    "after": "순대볶음에 필요한 식재료와 양념을 확인하세요. 양파와 양념을 볶은 뒤 순대를 더하는 방법과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "autumn-20260920-dakgalbi-ingredient-checklist",
+    "path": "description",
+    "before": "가을 캠핑에서 춘천 닭갈비를 만들 때 필요한 양념 닭갈비·채소와 조리도구를 순서대로 확인하는 체크리스트입니다.",
+    "after": "춘천 닭갈비에 필요한 식재료와 양념을 확인하세요. 닭갈비와 채소를 나누어 넣고 속까지 익히는 순서과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "autumn-20260920-chicken-kimchi-fried-rice-ingredient-checklist",
+    "path": "description",
+    "before": "가을 캠핑에서 닭가슴살 김치볶음밥을 만들 때 필요한 볶음밥·김치·달걀과 조리도구를 순서대로 확인하는 체크리스트입니다.",
+    "after": "닭가슴살 김치볶음밥에 필요한 식재료와 양념을 확인하세요. 김치와 대파를 먼저 볶고 볶음밥을 고루 데우는 방법과 재료 보관·준비 요령을 함께 정리했습니다."
+  },
+  {
+    "slug": "autumn-20260920-mussel-seaweed-soup-ingredient-checklist",
+    "path": "description",
+    "before": "가을 캠핑에서 홍합미역국을 끓일 때 필요한 홍합살·미역·육수와 조리도구를 순서대로 확인하는 체크리스트입니다.",
+    "after": "홍합미역국의 재료와 분량을 확인하고, 불린 미역을 먼저 볶아 국물 바탕을 내고 홍합살은 그 뒤에 더합니다. 불 조절과 간 맞추기, 실패했을 때 고치는 방법을 함께 안내합니다."
+  }
+]

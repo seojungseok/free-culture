@@ -318,10 +318,14 @@ async function main() {
   if (JSON.stringify(nextArchive) !== JSON.stringify(existingArchive)) {
     fs.writeFileSync(ARCHIVE_FILE, JSON.stringify({updatedAt:new Date().toISOString(),events:nextArchive}));
   }
+  const checkedAt = new Date().toISOString();
   fs.writeFileSync(
     OUT_FILE,
     JSON.stringify(
-      { generatedAt: new Date().toISOString(), count: events.length, events },
+      { generatedAt: checkedAt, count: events.length, events,
+        incompleteRefresh: Boolean(providerQuota || detailFailures),
+        refresh: {checkedAt, complete: !providerQuota && !detailFailures,
+          calls: Object.values(calls).reduce((sum,value)=>sum+value,0), failures:detailFailures} },
       null,
       0
     )

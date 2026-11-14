@@ -35,10 +35,17 @@ const ingredientGuides: Record<string, string> = {
 };
 
 export function prepGuideItems(article: PrepArticle, articles: PrepArticle[]) {
-  if (article.checklist?.length) return article.checklist;
-  if (article.shoppingItems?.length) return article.shoppingItems;
+  if (article.checklist?.length) return prepShoppingItems(article, article.checklist);
+  if (article.shoppingItems?.length) return prepShoppingItems(article, article.shoppingItems);
   const source = articles.find(value => value.slug === ingredientGuides[article.slug] && value.status === 'published');
-  return source?.checklist || [];
+  return prepShoppingItems(article, source?.checklist || []);
+}
+
+// Retain reviewed product records and their original tracking URLs in the store.
+// A cooking shopping list contains food; ordinary household tools are not purchases.
+export function prepShoppingItems(article: PrepArticle, items: PrepChecklistItem[]) {
+  if (!/요리|재료/.test(article.category)) return items;
+  return items.filter(item => item.group !== 'common' && !/냄비|국자|국그릇|접시|식판|조리.?집게|도마|뒤집개|수저|젓가락|생수|조리용 물/.test(item.label));
 }
 
 export function prepDishName(title: string) {

@@ -2,6 +2,9 @@ import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
+import DataFreshness from '@/components/DataFreshness';
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "소개와 정보 편집 기준",
@@ -24,6 +27,8 @@ export default function AboutPage() {
         <li><b>시티투어:</b> 지자체·관광기관의 공식 안내를 바탕으로 정리하며, 상세페이지의 공식 안내에서 운행일·예약 조건을 다시 확인할 수 있습니다.</li>
       </ul>
       <p>자료는 수집된 시점의 정보입니다. 데이터 수집일이나 글 발행일은 운영처가 모든 정보를 그날 확인했다는 의미가 아닙니다. 상세페이지의 출처와 공식 홈페이지·문의처를 함께 확인해 주세요.</p>
+
+      <DataFreshness />
 
       <h2>이 사이트에서 후보를 고르는 방법</h2>
       <ol className="my-3 list-decimal pl-5">

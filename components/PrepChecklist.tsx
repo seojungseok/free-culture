@@ -18,8 +18,8 @@ export default function PrepChecklist({slug,items,dishName,kind='cooking'}:{slug
  const toggle=(id:string)=>setSelection(current=>{const ids=new Set(current.key===storageKey?current.ids:[]);ids.has(id)?ids.delete(id):ids.add(id);return {key:storageKey,ids};});
  const remaining=items.filter(item=>!checked.has(item.id));
  return <section id="prep-checklist" className="prep-checklist" aria-labelledby="prep-checklist-title">
-  <div className="prep-checklist-head"><h2 id="prep-checklist-title">{kind==='cooking'?`${dishName} 재료와 조리도구`:'본문에서 소개한 상품'}</h2></div>
-  <p className="prep-checklist-intro">집에 있는 것은 체크하세요. 없는 것만 구매하면 돼요.</p>
+  <div className="prep-checklist-head"><h2 id="prep-checklist-title">{kind==='cooking'?`${dishName} 재료 장보기 목록`:'본문에서 소개한 상품'}</h2></div>
+  <p className="prep-checklist-intro">{kind==='cooking'?'양념과 채소는 집에 있는 것을 먼저 확인하고, 필요한 재료만 체크하세요.':'집에 있는 것은 체크하세요. 없는 것만 구매하면 돼요.'}</p>
   <div className="prep-checklist-toolbar"><p className="prep-checklist-count" role="status">준비 완료 {checked.size}개 · 필요한 것 {remaining.length}개</p><div><button type="button" aria-pressed={missingOnly} onClick={()=>setMissingOnly(value=>!value)}>{missingOnly?'전체 보기':'없는 것만 보기'}</button><button type="button" disabled={!checked.size} onClick={()=>setSelection({key:storageKey,ids:new Set()})}>체크 초기화</button></div></div>
   {missingOnly&&!remaining.length&&<p className="prep-checklist-complete">모두 준비했어요. 이제 요리를 시작해 보세요!</p>}
   <ul className="prep-simple-items">{(missingOnly?remaining:items).map(item=>{

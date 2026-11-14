@@ -140,11 +140,16 @@ jobs:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
         run: node scripts/collectRegionalFestivals.mjs
 
+      - name: 공공자료 최신성 확인 (외부 API 추가 호출 없음)
+        id: freshness
+        continue-on-error: true
+        run: node scripts/report-data-freshness.mjs --check
+
       - name: 변경분 커밋 (정적 데이터)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/places.json data/camping.json data/place-details.json data/place-overviews.json \
+          git add data/data-freshness.json data/places.json data/camping.json data/place-details.json data/place-overviews.json \
                   data/restaurants.json data/restaurant-intro.json data/place-intro.json \
                   data/place-info.json data/camping-images.json data/photo-gallery.json data/festivals.json data/pet-travel.json data/parking.json
           if git diff --staged --quiet; then
@@ -170,6 +175,7 @@ jobs:
           PET: ${{ steps.pet.outcome }}
           PET_DETAILS: ${{ steps.pet_details.outcome }}
           REGIONAL: ${{ steps.regional.outcome }}
+          FRESHNESS: ${{ steps.freshness.outcome }}
           REGIONAL_STATUS: ${{ steps.regional.outputs.collector_status }}
         run: |
           failed=0
@@ -177,7 +183,7 @@ jobs:
             echo '::warning::지역 축제 제공기관 부분 장애. 실패 지역의 최신성은 미확인이며 지역 축제 갱신 요약을 확인하세요.'
             echo '- 지역 축제: 부분 장애 · 기존 자료와 마지막 확인시각 유지' >> "$GITHUB_STEP_SUMMARY"
           fi
-          for name in PARKING PLACES CAMPING RESTAURANTS RESTAURANT_INTRO INTRO INFO CAMPING_IMAGES GALLERY PET PET_DETAILS REGIONAL; do
+          for name in PARKING PLACES CAMPING RESTAURANTS RESTAURANT_INTRO INTRO INFO CAMPING_IMAGES GALLERY PET PET_DETAILS REGIONAL FRESHNESS; do
             outcome="${!name}"
             echo "$name: $outcome"
             if [ "$outcome" = "failure" ]; then failed=1; fi

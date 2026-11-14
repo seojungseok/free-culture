@@ -5,7 +5,8 @@ import PrepChecklist from './PrepChecklist';
 import {FoodChecklistDetails} from './FoodChecklistDetails';
 import type {PrepArticle as Article, PrepChecklistItem} from '@/lib/weekend-prep/types';
 import {prepCategoryLabel} from '@/lib/weekend-prep/categoryLabel';
-import {reviewedPrepAffiliate, prepDishName} from '@/lib/prep-affiliate';
+import {reviewedPrepAffiliate, prepDishName, prepShoppingItems} from '@/lib/prep-affiliate';
+import PrepCookingGuide, {hasDetailedCookingGuide} from './PrepCookingGuide';
 import TossTopDeals from './TossTopDeals';
 
 function dishName(title:string){
@@ -70,17 +71,19 @@ const cookingGuides:Record<string,CookingGuideData>={
 
 const smallSeafoodSlugs=new Set(['camping-seafood-hotpot-ingredient-checklist','camping-seafood-ramen-ingredients','camping-mussel-soup-ingredients','camping-squid-stir-fry-ingredients','autumn-camping-shrimp-butter-grill-ingredient-checklist','autumn-20260920-shrimp-jeon','autumn-20260920-mussel-seaweed-soup-ingredient-checklist']);
 function CookingGuide({article}:{article:Article}){
+ if(hasDetailedCookingGuide(article.slug))return <PrepCookingGuide slug={article.slug}/>;
  const guide=cookingGuides[article.slug];
  if(!guide)return <section id="prep-cooking" className="prep-cooking-intro" aria-label="간단한 요리 방법"><h2>간단한 {dishName(article.title)} 만드는 방법</h2><p>{quickCookingGuide(dishName(article.title))}</p></section>;
  return <section id="prep-cooking" className="prep-cooking-intro" aria-label={guide.title}><h2>{guide.title}</h2><ol className="prep-cooking-steps">{guide.steps.map((step,index)=><li key={index}>{step}</li>)}</ol><p className="prep-cooking-note">해동과 조리 방법은 제품 포장을 확인하고, 식재료별 식품안전 기준에 맞게 충분히 익히세요.</p>{smallSeafoodSlugs.has(article.slug)&&<p className="prep-cooking-note">식약처는 어패류를 중심온도 85℃ 이상에서 1분 이상 익히도록 안내합니다. 작은 재료는 얇은 탐침의 식품용 온도계를 옆으로 넣어 중심을 확인하세요. 탐침을 넣을 수 없다면 이 기준에 도달했는지 확인하기 어렵고, 색만으로 안전을 판단할 수 없습니다.</p>}</section>;
 }
 
-export default function PrepArticle({article:a,preview=false,relatedArticles=[],shoppingItems=a.checklist||[]}:{article:Article;preview?:boolean;relatedArticles?:{slug:string;title:string}[];shoppingItems?:PrepChecklistItem[]}){
+export default function PrepArticle({article:a,preview=false,relatedArticles=[],shoppingItems:unfilteredItems=a.checklist||[]}:{article:Article;preview?:boolean;relatedArticles?:{slug:string;title:string}[];shoppingItems?:PrepChecklistItem[]}){
+ const shoppingItems=prepShoppingItems(a,unfilteredItems);
  const checklist=!!a.checklist?.length;
  const imageKind: 'cooking'|'supplies' = a.category==='캠핑용품'||a.category==='야외 놀이'?'supplies':'cooking';
  const hasAffiliate=shoppingItems.some(reviewedPrepAffiliate);
  const usedPhotos=new Set([a.cover.url]);
- const neutralPhotos=a.sections.flatMap(section=>section.image?[section.image]:[]).filter(photo=>!photo.url.includes('-support.webp')&&!photo.url.includes('-cover-unified-v2.webp')).filter(photo=>{if(usedPhotos.has(photo.url))return false;usedPhotos.add(photo.url);return true;});
+ const neutralPhotos=a.sections.flatMap(section=>section.image?[section.image]:[]).filter(photo=>!photo.url.includes('-support.webp')).filter(photo=>{if(usedPhotos.has(photo.url))return false;usedPhotos.add(photo.url);return true;});
  const completedUrl=completedFoodPhotos[a.slug]?'/prep-images/'+completedFoodPhotos[a.slug]+'.webp':'';
  const completedPhoto=completedUrl&&!usedPhotos.has(completedUrl)?{...a.cover,url:completedUrl,alt:'완성된 '+dishName(a.title)+' 요리 장면'}:undefined;
  return <article className="prep-article">

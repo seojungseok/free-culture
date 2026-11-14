@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-11-14T11:11:27.723Z",
+  "healthy": true,
+  "sources": [
+    {
+      "id": "events",
+      "label": "문화행사",
+      "provider": "한국문화정보원",
+      "interval": "매일",
+      "count": 1080,
+      "checkedAt": "2026-11-14T00:56:40.578Z",
+      "status": "fresh"
+    },
+    {
+      "id": "festivals",
+      "label": "축제",
+      "provider": "한국관광공사·지역 관광기관",
+      "interval": "매일",
+      "count": 428,
+      "checkedAt": "2026-11-14T00:53:37.241Z",
+      "status": "fresh"
+    },
+    {
+      "id": "pet-travel",
+      "label": "반려동물 동반여행",
+      "provider": "한국관광공사",
+      "interval": "매일",
+      "count": 535,
+      "checkedAt": "2026-11-14T00:59:27.822Z",
+      "status": "fresh"
+    },
+    {
+      "id": "places",
+      "label": "관광지",
+      "provider": "한국관광공사",
+      "interval": "매주 월요일",
+      "count": 10704,
+      "checkedAt": "2026-11-08T22:18:55.001Z",
+      "status": "fresh"
+    },
+    {
+      "id": "restaurants",
+      "label": "음식점",
+      "provider": "한국관광공사",
+      "interval": "매주 월요일",
+      "count": 7496,
+      "checkedAt": "2026-11-08T22:19:29.000Z",
+      "status": "fresh"
+    },
+    {
+      "id": "camping",
+      "label": "캠핑장",
+      "provider": "한국관광공사 고캠핑",
+      "interval": "매주 월요일",
+      "count": 3238,
+      "checkedAt": "2026-11-08T22:19:24.451Z",
+      "status": "fresh"
+    }
+  ]
+}
