@@ -1,0 +1,8 @@
+{
+  "https://www.youth.go.kr/youth/cmm/imgView/imgView.do?atchmnflId=00000000000008208590&thumbTySn=10": {
+    "sha256": "7b91ae4b6d1d51b09f60e260056548d2fd2154b77913f25527a49b2b8dae8809",
+    "rotation": 180,
+    "reason": "공식 등록 사진이 상하 반전된 것을 육안 확인. 동일 원본 바이트에만 적용.",
+    "checkedAt": "2026-11-14T15:09:25.192Z"
+  }
+}

@@ -31,7 +31,7 @@ jobs:
       - name: 수집 한도·저장정보 보존 검사 (실 API 호출 없음)
         run: |
           node --test scripts/lib/tourClient.test.mjs scripts/lib/refreshQueue.test.mjs scripts/lib/regionalRequest.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs scripts/site-optimization.test.mjs scripts/nas/smoke.test.mjs scripts/data-freshness.test.mjs
-          node --test scripts/experiences.test.mjs scripts/public-discovery.test.mjs scripts/experience-details.test.mjs
+          node --test scripts/experiences.test.mjs scripts/public-discovery.test.mjs scripts/experience-details.test.mjs scripts/experience-photos.test.mjs
           node scripts/test-tour-detail-fallback.cjs
           node --test scripts/enrichCourseStops.test.mjs scripts/enrichCoursePlaces.test.mjs scripts/enrichCultureEvents.test.mjs
           node --test scripts/winter-daytrips.test.mjs scripts/winter-course.test.mjs scripts/winter-public-display.test.mjs scripts/lib/winter-evidence.test.mjs scripts/winter-photo.test.mjs scripts/winter-publication.test.mjs
@@ -202,6 +202,14 @@ jobs:
           EXPERIENCE_DETAIL_DAILY: "40"
         run: node scripts/enrichExperienceDetails.mjs
 
+      - name: 청소년 공식 게시물의 프로그램별 포스터 대조
+        id: experience_photos
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          EXPERIENCE_PHOTO_DAILY: "20"
+        run: node scripts/enrichExperiencePhotos.mjs
+
       - name: 체험 장소 대조·공식 사진 WebP 캐시
         id: experience_media
         continue-on-error: true
@@ -291,6 +299,7 @@ jobs:
           ACCESSIBLE: ${{ steps.accessible.outcome }}
           EXPERIENCES: ${{ steps.experiences.outcome }}
           EXPERIENCE_DETAILS: ${{ steps.experience_details.outcome }}
+          EXPERIENCE_PHOTOS: ${{ steps.experience_photos.outcome }}
           EXPERIENCE_MEDIA: ${{ steps.experience_media.outcome }}
           SCIENCE: ${{ steps.science.outcome }}
           FESTIVAL_DETAIL_STATUS: ${{ steps.festival_details.outputs.collector_status }}
@@ -302,7 +311,7 @@ jobs:
         run: |
           failed=0
           failed_names=()
-          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS NEW_ARTICLES LEARNING ACCESSIBLE EXPERIENCES EXPERIENCE_DETAILS EXPERIENCE_MEDIA SCIENCE FRESHNESS; do
+          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS NEW_ARTICLES LEARNING ACCESSIBLE EXPERIENCES EXPERIENCE_DETAILS EXPERIENCE_PHOTOS EXPERIENCE_MEDIA SCIENCE FRESHNESS; do
             outcome="${!name}"
             echo "$name: $outcome"
             if [ "$outcome" = "failure" ]; then

@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import {XMLParser} from 'fast-xml-parser';
 import {loadSourceEnv} from './lib/sourceEnv.mjs';
 import {normalizeRural,normalizeYouth} from '../lib/experiences.mjs';
+import {preservedYouthPhoto} from './lib/youthPhotos.mjs';
 loadSourceEnv();
 const config={rural:{endpoint:'https://api.data.go.kr/openapi/tn_pubr_public_frhl_exprn_vilage_api',normalize:normalizeRural,file:'rural-experiences.json'},youth:{endpoint:'https://apis.data.go.kr/1383000/YouthActivInfoVacationSrvc/getVacationProgrmList',normalize:normalizeYouth,file:'youth-experiences.json'}};
 const key=process.env.DATA_GO_KR_KEY,parser=new XMLParser({parseTagValue:false});
@@ -27,7 +28,7 @@ for(const [name,service]of Object.entries(config)){
    received+=items.length;
    for(const row of items){const record=service.normalize(row);if(record&&(name!=='youth'||record.end>=today)){
     const old=previous.get(record.id),same=old?.title===record.title&&old?.start===record.start&&old?.end===record.end&&(!old?.listSummary||old.listSummary===record.summary),enriched=old?.detailCheckedAt&&same?Object.fromEntries(['content','activities','address','phone','detailCheckedAt'].map(key=>[key,old[key]])):{};
-    records.set(record.id,{...record,...enriched,listSummary:record.summary||'',active:true});
+    records.set(record.id,{...record,...enriched,...(name==='youth'?preservedYouthPhoto(record,old):{}),listSummary:record.summary||'',active:true});
    }}
    if(received>=total)break;
    await new Promise(resolve=>setTimeout(resolve,1000));
