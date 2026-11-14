@@ -10,6 +10,8 @@ const today=new Date(Date.now()+9*3600000).toISOString().slice(0,10);let failure
 for(const [name,service]of Object.entries(config)){
  if(process.argv[2]&&process.argv[2]!==name)continue;
  try{
+  const prior=fs.existsSync('data/'+service.file)?JSON.parse(fs.readFileSync('data/'+service.file,'utf8')):{records:[]};
+  const previous=new Map(prior.records.map(record=>[record.id,record]));
   const records=new Map();let total=0,received=0,calls=0;
   for(let page=1;page<=30;page++){
    const url=new URL(service.endpoint);url.search=new URLSearchParams({serviceKey:decodeURIComponent(key),pageNo:String(page),numOfRows:'1000',...(name==='rural'?{type:'json'}:{})}).toString();
@@ -23,12 +25,18 @@ for(const [name,service]of Object.entries(config)){
    total=count;const raw=result.body?.items?.item;const items=Array.isArray(raw)?raw:raw?[raw]:[];
    if(!items.length&&received<total)throw new Error('페이지 누락');
    received+=items.length;
-   for(const row of items){const record=service.normalize(row);if(record&&(name!=='youth'||record.end>=today))records.set(record.id,record);}
+   for(const row of items){const record=service.normalize(row);if(record&&(name!=='youth'||record.end>=today)){
+    const old=previous.get(record.id),same=old?.title===record.title&&old?.start===record.start&&old?.end===record.end&&(!old?.listSummary||old.listSummary===record.summary),enriched=old?.detailCheckedAt&&same?Object.fromEntries(['content','activities','address','phone','detailCheckedAt'].map(key=>[key,old[key]])):{};
+    records.set(record.id,{...record,...enriched,listSummary:record.summary||'',active:true});
+   }}
    if(received>=total)break;
    await new Promise(resolve=>setTimeout(resolve,1000));
   }
   if(received!==total||name==='rural'&&!records.size)throw new Error('목록 완전성 확인 실패');
-  const at=new Date().toISOString(),snapshot={generatedAt:at,refresh:{checkedAt:at,complete:true,calls,totalRows:received},records:[...records.values()]};
+  const current=records.size;
+  // A published detail URL remains available after a programme ends or leaves the feed.
+  for(const old of prior.records)if(!records.has(old.id))records.set(old.id,{...old,active:false});
+  const at=new Date().toISOString(),snapshot={generatedAt:at,refresh:{checkedAt:at,complete:true,calls,totalRows:received,currentRecords:current},records:[...records.values()]};
   fs.writeFileSync('data/'+service.file+'.tmp',JSON.stringify(snapshot));fs.renameSync('data/'+service.file+'.tmp','data/'+service.file);
   console.log(JSON.stringify({source:name,records:records.size,...snapshot.refresh}));
  }catch(error){failures++;const safe=/^(연결 실패|HTTP \d{3}|응답 형식 오류|인증 또는 제공 상태 확인 필요|목록 완전성 확인 실패|페이지 누락)$/.test(error.message)?error.message:'수집 실패';console.error(name+': '+safe+' — 기존 자료 보존');}

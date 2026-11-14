@@ -42,7 +42,8 @@ try{
   await sleep(250);
  }
  if(!Object.keys(places).length)throw new Error('API JSON 응답 형식 오류');
- writeCache('accessible-travel.json',{generatedAt:now,sourceUrl:'https://www.data.go.kr/data/15101897/openapi.do',refresh:{checkedAt:now,complete:failures===0,calls:budget.used,listed:lists.length,checked},coverage:'전국 관광지·문화시설 목록을 확인하고 상세 편의정보를 순차 보강합니다. 현재 수록된 장소만 보여줍니다.',places});
+ const archivedPlaces={...(previous.archivedPlaces||{})};for(const [id,place]of Object.entries(previous.places||{}))if(!places[id])archivedPlaces[id]=place;for(const id of Object.keys(places))delete archivedPlaces[id];
+ writeCache('accessible-travel.json',{generatedAt:now,sourceUrl:'https://www.data.go.kr/data/15101897/openapi.do',refresh:{checkedAt:now,complete:failures===0,calls:budget.used,listed:lists.length,checked},coverage:'전국 관광지·문화시설 목록을 확인하고 상세 편의정보를 순차 보강합니다. 현재 수록된 장소만 보여줍니다.',places,archivedPlaces});
  console.log(JSON.stringify({places:Object.keys(places).length,checked,failures,calls:budget.used,listed:lists.length}));
  if(failures)process.exitCode=1;
 }catch(error){console.error('무장애 수집: '+safeApiError(error)+' — 기존 자료 보존');process.exitCode=error instanceof QuotaError&&error.reason==='provider'?75:1;}

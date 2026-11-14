@@ -16,7 +16,7 @@ export default async function AccessibleTravelPage({searchParams}:{searchParams:
  const size=24,pages=Math.max(1,Math.ceil(places.length/size)),page=Math.min(pages,Math.max(1,Math.floor(Number(queryValue(query,'page'))||1))),shown=places.slice((page-1)*size,page*size);
  const existing=new Set(getAllPlaces().map(place=>place.id));
  return <div className={styles.page}>
-  <PublicDiscoverySchema title={title} path="/accessible-travel" items={shown.map(place=>({name:place.title,url:'/accessible-travel#place-'+place.id}))}/>
+  <PublicDiscoverySchema title={title} path="/accessible-travel" items={shown.map(place=>({name:place.title,url:'/accessible-travel/'+place.id}))}/>
   <nav className={styles.breadcrumb} aria-label="현재 위치"><Link href="/">홈</Link><span>/</span><span>이동·영유아 편의정보</span></nav>
   <header className={styles.hero}><h1>{title}</h1><p>함께 가는 사람에게 필요한 시설부터 살펴보세요. 한국관광공사의 무장애 여행 자료에서 확인된 출입구·이동 동선·화장실·영유아 편의 안내를 모았습니다.</p></header>
   <aside className={styles.note}>‘안내 있음’은 해당 항목에 설명이 있다는 뜻입니다. 불가·계단·경사 등 제한 설명도 포함됩니다. 휠체어·유모차 대여만으로 이동 가능 여부를 판단하지 말고, 방문할 구역의 출입구와 이동 동선을 함께 확인해 주세요.</aside>
@@ -33,10 +33,10 @@ export default async function AccessibleTravelPage({searchParams}:{searchParams:
    const preview=top.length?top:keys.slice(0,3),remaining=keys.filter(key=>!preview.includes(key));
    return <article key={place.id} id={'place-'+place.id} className={styles.card}>
     <div className={styles.badges}><span>{place.area}</span><span>{place.type==='14'?'문화시설':'관광지'}</span>{familyFields.some(key=>place.facts[key])&&<span>영유아 안내 있음</span>}</div>
-    <h2>{place.title}</h2><p className={styles.summary}>{place.address}</p>
+    <h2><Link href={'/accessible-travel/'+place.id}>{place.title}</Link></h2><p className={styles.summary}>{place.address}</p>
     <dl className={styles.facts}>{preview.map(key=><div key={key} style={{display:'contents'}}><dt>{ACCESS_FIELDS[key as keyof typeof ACCESS_FIELDS]}</dt><dd>{place.facts[key]}</dd></div>)}</dl>
     {remaining.length>0&&<details className={styles.more}><summary>편의 안내 전체 {keys.length}항목 보기</summary><dl className={styles.facts}>{remaining.map(key=><div key={key} style={{display:'contents'}}><dt>{ACCESS_FIELDS[key as keyof typeof ACCESS_FIELDS]}</dt><dd>{place.facts[key]}</dd></div>)}</dl></details>}
-    <div className={styles.actions}>{existing.has(place.id)&&<Link href={'/places/spot/'+place.id}>장소 이용 안내</Link>}<a href={'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(place.title+' '+place.address)} target="_blank" rel="noopener noreferrer">지도에서 위치 확인</a><a href={place.officialUrl} target="_blank" rel="noopener noreferrer">모두의여행에서 장소명 검색</a></div>
+    <div className={styles.actions}><Link href={'/accessible-travel/'+place.id}>이동·영유아 편의 상세 보기</Link>{existing.has(place.id)&&<Link href={'/places/spot/'+place.id}>장소 이용 안내</Link>}</div>
     <p className={styles.source}>상세자료 조회 {sourceDate(place.checkedAt)}<br/>출처: <a href={ACCESSIBLE_SOURCE} target="_blank" rel="noopener noreferrer">한국관광공사 무장애 여행 정보</a></p>
    </article>;
   })}</div>

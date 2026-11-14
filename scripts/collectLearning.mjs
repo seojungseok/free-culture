@@ -34,6 +34,8 @@ if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.ur
  loadSourceEnv();
  try{
   const result=await collectLearning({key:process.env.DATA_GO_KR_KEY});
+  const old=fs.existsSync('data/learning-classes.json')?JSON.parse(fs.readFileSync('data/learning-classes.json','utf8')):{courses:[]},ids=new Set(result.courses.map(course=>course.id));
+  result.archivedCourses=[...new Map([...(old.archivedCourses||[]),...old.courses].filter(course=>!ids.has(course.id)).map(course=>[course.id,course])).values()];
   fs.writeFileSync('data/learning-classes.json.tmp',JSON.stringify(result));
   fs.renameSync('data/learning-classes.json.tmp','data/learning-classes.json');
   console.log(JSON.stringify({courses:result.courses.length,...result.refresh}));

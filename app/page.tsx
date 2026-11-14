@@ -1,3 +1,4 @@
+import ExperienceHome from '@/components/ExperienceHome';
 import type { Metadata } from "next";
 import HomeExplorer, { type HomeItem } from "@/components/HomeExplorer";
 import { getWeekend, getFree } from "@/lib/data";
@@ -89,5 +90,5 @@ export default function HomePage() {
   const editorialPlaces = publishedPlaces.map((article) => byPlaceId.get(article.id)).filter((item): item is HomeItem => Boolean(item));
   const representativeItems = editorialPlaces.slice(-6).reverse();
   const newItems = editorialPlaces.filter((item) => !representativeItems.some((representative) => representative.id === item.id)).slice(0, 6);
-  return <HomeExplorer seasonalHero={{campaigns:seasonalCatalogue.campaigns,collections:seasonalCatalogue.collections.map(({slug,title})=>({slug,title}))}} regional={regional} eventItems={weekendItems.slice(0, 8)} kidItems={kidItems} dateItems={dateItems.slice(0, 6)} campItems={campItems.slice(0, 6)} courseItems={courseItems.filter((_, index) => courses[index].duration === "당일").slice(0, 6)} seasonItems={seasonItems} prepItems={prepItems} placeItems={representativeItems} newItems={newItems} freeItems={freeItems} regions={SIDO_LIST.map((name) => ({ name, href: `/region/${(SIDO_SLUG as Record<string, string>)[name]}` }))} siteName={SITE.name} />;
+  return <HomeExplorer experienceContent={<ExperienceHome/>} seasonalHero={{campaigns:seasonalCatalogue.campaigns,collections:seasonalCatalogue.collections.map(({slug,title})=>({slug,title}))}} regional={regional} eventItems={weekendItems.slice(0, 8)} kidItems={kidItems} dateItems={dateItems.slice(0, 6)} campItems={campItems.slice(0, 6)} courseItems={courseItems.filter((_, index) => courses[index].duration === "당일").slice(0, 6)} seasonItems={seasonItems} prepItems={prepItems} placeItems={representativeItems} newItems={newItems} freeItems={freeItems} regions={SIDO_LIST.map((name) => ({ name, href: `/region/${(SIDO_SLUG as Record<string, string>)[name]}` }))} siteName={SITE.name} />;
 }

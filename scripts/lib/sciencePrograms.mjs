@@ -20,7 +20,7 @@ export function parseCentralScience(html,{url,now=new Date().toISOString()}){
   const year=Number(cells[2].match(/20\d{2}/)?.[0]||new Date(now).getUTCFullYear()),dates=scienceDates(cells[4],year);
   if(!dates.length)return;
   const officialUrl=safePublicUrl($(tr).find('a[href^="https://rsvn.science.go.kr/"]').last().attr('href'))||url;
-  records.push({id:idFor(url+'|'+cells[0]),title:cells[2],institution:'국립중앙과학관',area:'대전',city:'유성구',audience:cells[3],period:cells[4],start:dates[0],end:dates.at(-1),registration:cells[5],registrationEnd:scienceDates(cells[5],year).at(-1)||'',method:'공식 교육예약에서 확인',price:'프로그램별 공식 안내 확인',sourceStatus:cells[1],officialUrl,source:url,checkedAt:now});
+  records.push({id:idFor(url+'|'+cells[2]+'|'+dates[0]+'|'+officialUrl),title:cells[2],institution:'국립중앙과학관',area:'대전',city:'유성구',audience:cells[3],period:cells[4],start:dates[0],end:dates.at(-1),registration:cells[5],registrationEnd:scienceDates(cells[5],year).at(-1)||'',method:'공식 교육예약에서 확인',price:'프로그램별 공식 안내 확인',sourceStatus:cells[1],officialUrl,source:url,checkedAt:now});
  });
  return records;
 }

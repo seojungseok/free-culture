@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-14T12:47:11.004Z",
+  "checkedAt": "2026-11-14T13:57:43.693Z",
   "healthy": true,
   "sources": [
     {
@@ -80,7 +80,7 @@
       "provider": "한국농어촌공사·한국어촌어항공단",
       "interval": "매일 원자료 확인 · 원문 반기 갱신",
       "count": 1261,
-      "checkedAt": "2026-11-14T12:39:23.464Z",
+      "checkedAt": "2026-11-14T13:27:30.517Z",
       "status": "fresh"
     },
     {
@@ -89,7 +89,7 @@
       "provider": "성평등가족부",
       "interval": "매일",
       "count": 118,
-      "checkedAt": "2026-11-14T12:39:28.800Z",
+      "checkedAt": "2026-11-14T13:27:36.070Z",
       "status": "fresh"
     },
     {
@@ -98,7 +98,7 @@
       "provider": "국립중앙과학관·인천학생과학관",
       "interval": "매일 공식 교육 일정 확인",
       "count": 14,
-      "checkedAt": "2026-11-14T12:39:29.067Z",
+      "checkedAt": "2026-11-14T13:45:30.492Z",
       "status": "fresh"
     }
   ]

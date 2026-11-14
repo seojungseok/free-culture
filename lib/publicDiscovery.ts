@@ -25,6 +25,11 @@ export function currentClasses(collection:ClassCollection='all',query:DiscoveryQ
  .sort((a,b)=>Number(registrationState(a,today)==='접수예정')-Number(registrationState(b,today)==='접수예정')||(a.registrationEnd||'9999').localeCompare(b.registrationEnd||'9999')||b.referenceDate.localeCompare(a.referenceDate));
 }
 export const learningUpdatedAt=learning.refresh.checkedAt;
+export function allClasses(){return [...learning.courses,...((learning as unknown as {archivedCourses?:LearningClass[]}).archivedCourses||[])] as LearningClass[];}
+export function getPublicClass(id:string){return allClasses().find(course=>course.id===id);}
+export const publicClassHref=(course:Pick<LearningClass,'id'>)=>'/classes/detail/'+course.id;
+export const indexablePublicClass=(course:LearningClass)=>course.end>=todayIso()&&course.description.length>=80;
 export const accessibleUpdatedAt=accessible.refresh.checkedAt;
 export function accessiblePlaces(){return Object.values(accessible.places) as AccessiblePlace[];}
+export function getAccessiblePlace(id:string){return accessiblePlaces().find(place=>place.id===id)||((accessible as unknown as {archivedPlaces?:Record<string,AccessiblePlace>}).archivedPlaces||{})[id];}
 export function discoveryPageHref(path:string,query:DiscoveryQuery,page:number){const params=new URLSearchParams();for(const [key,value]of Object.entries(query))if(typeof value==='string'&&key!=='page'&&value)params.set(key,value);params.set('page',String(page));return path+'?'+params;}

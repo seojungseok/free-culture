@@ -1,0 +1,16 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import {SITE} from '@/lib/site';
+import {sourceDate} from '@/lib/publicDiscovery';
+import styles from './ExperienceBrowser.module.css';
+type Section={title:string;paragraphs?:string[];facts?:[string,string][]};
+type Props={title:string;description:string;path:string;category:string;categoryHref:string;area:string;status:string;sections:Section[];bookingFacts:[string,string][];officialUrl?:string;phone?:string;source:string;sourceLabel:string;checkedAt:string;image?:{src:string;width:number;height:number};schema?:Record<string,unknown>};
+const FactList=({rows}:{rows:[string,string][]})=><dl className={styles.facts}>{rows.filter(([,value])=>value).map(([label,value])=><div key={label} style={{display:'contents'}}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>;
+export default function PublicProgramDetail(p:Props){
+ const url=new URL(p.path,SITE.url).href,phone=(p.phone||'').replace(/[^\d+]/g,'');
+ const schema={'@context':'https://schema.org','@graph':[
+  {'@type':'WebPage','@id':url,url,name:p.title,description:p.description,inLanguage:'ko-KR',...(p.schema?{mainEntity:p.schema}:{})},
+  {'@type':'BreadcrumbList',itemListElement:[{name:'홈',item:SITE.url},{name:p.category,item:new URL(p.categoryHref,SITE.url).href},{name:p.title,item:url}].map((entry,index)=>({'@type':'ListItem',position:index+1,...entry}))}
+ ]};
+ return <article className={styles.page} data-public-program-detail><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/><nav className={styles.breadcrumb} aria-label="현재 위치"><Link href="/">홈</Link><span>/</span><Link href={p.categoryHref}>{p.category}</Link><span>/</span><span>{p.title}</span></nav><header className={styles.detailHeader}><p>{p.area} · {p.category}</p><h1>{p.title}</h1><p className={styles.summary}>{p.description}</p></header><div className={styles.detailGrid}><div className={styles.detailMain}>{p.image&&<figure className={styles.detailPhoto}><Image src={p.image.src} width={p.image.width} height={p.image.height} alt={p.title+' 전경 (공공기관 제공)'} priority unoptimized/></figure>}{p.sections.map(section=><section key={section.title} className={styles.detailSection}><h2>{section.title}</h2>{section.paragraphs?.map((paragraph,index)=><p key={index}>{paragraph}</p>)}{section.facts&&<FactList rows={section.facts}/>}</section>)}</div><aside className={styles.sidebar} aria-label="신청·이용 안내"><span className={styles.status}>{p.status}</span><h2>신청·이용 안내</h2><FactList rows={p.bookingFacts}/>{p.officialUrl&&<a href={p.officialUrl} className={styles.booking} target="_blank" rel="noopener noreferrer" data-external-application>공식 기관의 신청·이용 안내 ↗</a>}{phone&&<a href={'tel:'+phone} className={styles.phone}>전화 문의 · {p.phone}</a>}<Link href={p.categoryHref} className={styles.mapLink}>{p.category} 목록으로</Link></aside></div><div className={styles.source}><p>자료 확인 {sourceDate(p.checkedAt)}</p><p>출처: <a href={p.source} target="_blank" rel="noopener noreferrer" data-source-link>{p.sourceLabel}</a></p></div><nav className={styles.areaLinks}><Link href={p.categoryHref}>{p.category} 전체</Link><Link href="/experiences">지역별 체험·교육</Link></nav></article>;
+}

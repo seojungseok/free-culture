@@ -1,0 +1,15 @@
+import type {Metadata} from 'next';
+import {notFound} from 'next/navigation';
+import {allClasses,getPublicClass,publicClassHref,learningUpdatedAt,todayIso} from '@/lib/publicDiscovery';
+import {registrationState,LEARNING_SOURCE} from '@/lib/learning.mjs';
+import PublicProgramDetail from '@/components/PublicProgramDetail';
+export const revalidate=3600;
+type Props={params:Promise<{id:string}>};
+export function generateStaticParams(){return allClasses().filter(course=>course.end>=todayIso()).slice(0,4).map(course=>({id:course.id}));}
+export async function generateMetadata({params}:Props):Promise<Metadata>{const course=getPublicClass((await params).id);if(!course)return {title:'강좌를 찾을 수 없습니다',robots:{index:false,follow:true}};const title=`${course.title} — ${course.area} ${course.venue} ${course.start} ${course.startTime}`,description=`${course.title} · ${course.start} · ${course.venue}. ${course.description} ${course.institution} · ${course.audience} · ${course.start} ~ ${course.end}. 수강료, 요일·시간, 접수 방법과 주소를 확인하세요.`.slice(0,160);return {title,description,alternates:{canonical:publicClassHref(course)},robots:{index:course.end>=todayIso()&&course.description.length>=80,follow:true},openGraph:{title,description,url:publicClassHref(course),type:'website'}};}
+export default async function ClassDetail({params}:Props){const course=getPublicClass((await params).id);if(!course)notFound();const tuition=course.tuition===0?'수강료 0원':course.tuition===null?'공개자료에 미기재':course.tuition.toLocaleString()+'원',registration=[course.registrationStart,course.registrationEnd].filter(Boolean).join(' ~ ');return <PublicProgramDetail title={course.title} description={course.description} path={publicClassHref(course)} category="문화·취미 강좌" categoryHref="/classes" area={course.area} status={registrationState(course,todayIso())} sections={[
+ {title:'강좌 내용',paragraphs:[course.description]},
+ {title:'교육 일정과 대상',facts:[['교육기간',`${course.start} ~ ${course.end}`],['운영요일',course.weekdays],['교육시간',[course.startTime,course.endTime].filter(Boolean).join(' ~ ')],['교육대상',course.audience],['교육방식',course.method],['수강료',tuition]]},
+ {title:'접수 방법과 준비',facts:[['접수기간',registration],['접수방법',course.registrationMethod],['선정방법',course.selection],['정원',course.capacity?course.capacity+'명 (잔여석 수가 아닙니다)':'']],paragraphs:['수강료 외 재료비·교재비, 거주지·연령 제한과 준비물은 운영기관의 모집 안내를 확인해 주세요.']},
+ {title:'장소와 문의처',facts:[['장소',course.venue],['주소',course.address],['운영기관',course.institution],['문의전화',course.phone],['원자료 기준일',course.referenceDate]]}
+ ]} bookingFacts={[["수강료",tuition],["접수기간",registration],["교육기간",`${course.start} ~ ${course.end}`],["교육대상",course.audience]]} officialUrl={course.homepage} phone={course.phone} source={LEARNING_SOURCE} sourceLabel="지방자치단체·교육청 / 전국평생학습강좌표준데이터 API" checkedAt={learningUpdatedAt} schema={{'@type':'Course',name:course.title,description:course.description,provider:{'@type':'Organization',name:course.institution},hasCourseInstance:{'@type':'CourseInstance',startDate:course.start,endDate:course.end,courseMode:course.method,location:{'@type':'Place',name:course.venue,address:course.address}}}}/>;}

@@ -21,6 +21,8 @@ import { monthRangeYmd, todayYmd } from "@/lib/dates";
 import placeDetailData from '@/data/place-details.json';
 import {latestContentDate} from '@/lib/content-updates.mjs';
 import { getPublicWinterCourses } from '@/lib/winterCourses';
+import {allExperiences,currentExperiences,experienceHref,experienceRegionHref,indexableExperience} from '@/lib/experienceData';
+import {allClasses,indexablePublicClass,publicClassHref,accessiblePlaces} from '@/lib/publicDiscovery';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url.replace(/\/$/, "");
@@ -198,6 +200,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // 1) 홈·주요 목록·허브 (높은 우선순위 — 크롤 예산 집중)
     ...staticRoutes,
+    ...[...new Set(currentExperiences().map(item=>item.area))].filter(area=>Object.hasOwn(SIDO_SLUG,area)).map(area=>({url:base+experienceRegionHref(area),changeFrequency:'daily' as const,priority:0.7})),
+    ...allExperiences().filter(indexableExperience).map(item=>({url:base+experienceHref(item),changeFrequency:'weekly' as const,priority:0.6})),
+    ...allClasses().filter(indexablePublicClass).map(course=>({url:base+publicClassHref(course),changeFrequency:'weekly' as const,priority:0.5})),
+    ...accessiblePlaces().map(place=>({url:base+'/accessible-travel/'+place.id,changeFrequency:'weekly' as const,priority:0.5})),
     ...monthlyRoutes,
     ...regionRoutes,
     ...genreRoutes,

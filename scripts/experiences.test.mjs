@@ -26,7 +26,7 @@ test('current source records support the three distinct new activities',()=>{
  const rural=JSON.parse(fs.readFileSync('data/rural-experiences.json','utf8')),youth=JSON.parse(fs.readFileSync('data/youth-experiences.json','utf8')),science=JSON.parse(fs.readFileSync('data/science-experiences.json','utf8'));
  assert(rural.records.length>0);assert(youth.records.length>0);assert(science.records.length>0);
  assert(rural.records.every(record=>record.programs.length&&record.referenceDate));
- assert(youth.records.every(record=>record.end>=youth.generatedAt.slice(0,10)));
+ assert(youth.records.filter(record=>record.active!==false).every(record=>record.end>=youth.generatedAt.slice(0,10)));
  assert(science.records.every(record=>record.source.startsWith('https://www.science.go.kr/')||record.source.startsWith('https://aicei.ice.go.kr/')));
 });
 test('an empty upcoming program season with a completed source check is valid, not a missing collection',()=>{

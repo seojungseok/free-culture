@@ -31,7 +31,7 @@ jobs:
       - name: 수집 한도·저장정보 보존 검사 (실 API 호출 없음)
         run: |
           node --test scripts/lib/tourClient.test.mjs scripts/lib/refreshQueue.test.mjs scripts/lib/regionalRequest.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs scripts/site-optimization.test.mjs scripts/nas/smoke.test.mjs scripts/data-freshness.test.mjs
-          node --test scripts/experiences.test.mjs scripts/public-discovery.test.mjs
+          node --test scripts/experiences.test.mjs scripts/public-discovery.test.mjs scripts/experience-details.test.mjs
           node scripts/test-tour-detail-fallback.cjs
           node --test scripts/enrichCourseStops.test.mjs scripts/enrichCoursePlaces.test.mjs scripts/enrichCultureEvents.test.mjs
           node --test scripts/winter-daytrips.test.mjs scripts/winter-course.test.mjs scripts/winter-public-display.test.mjs scripts/lib/winter-evidence.test.mjs scripts/winter-photo.test.mjs scripts/winter-publication.test.mjs
@@ -193,6 +193,25 @@ jobs:
         timeout-minutes: 3
         run: node scripts/collectSciencePrograms.mjs
 
+      - name: 청소년 프로그램 상세 본문·주소·문의처 보강
+        id: experience_details
+        continue-on-error: true
+        timeout-minutes: 7
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          EXPERIENCE_DETAIL_DAILY: "40"
+        run: node scripts/enrichExperienceDetails.mjs
+
+      - name: 체험 장소 대조·공식 사진 WebP 캐시
+        id: experience_media
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          EXPERIENCE_IMAGE_DAILY: "30"
+        run: |
+          node scripts/buildExperienceVenues.mjs
+          node scripts/cacheExperienceImages.mjs
+
       - name: 전국 문화·취미 강좌 갱신 (공공데이터포털 승인 API)
         id: learning
         continue-on-error: true
@@ -221,7 +240,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/data-freshness.json data/rural-experiences.json data/youth-experiences.json data/science-experiences.json data/learning-classes.json data/accessible-travel.json data/winter-courses.json data/winter-budget.json data/winter-place-verifications.json data/events.json data/events-archive.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
+          git add data/data-freshness.json public/experience-images data/experience-venues.json data/experience-media.json data/rural-experiences.json data/youth-experiences.json data/science-experiences.json data/learning-classes.json data/accessible-travel.json data/winter-courses.json data/winter-budget.json data/winter-place-verifications.json data/events.json data/events-archive.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
                   data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json data/place-details.json \
                   data/pet-travel.json data/city-tour-articles.json data/course-stop-checks.json data/course-place-details.json data/event-source-details.json
           if git diff --staged --quiet; then
@@ -271,6 +290,8 @@ jobs:
           LEARNING: ${{ steps.learning.outcome }}
           ACCESSIBLE: ${{ steps.accessible.outcome }}
           EXPERIENCES: ${{ steps.experiences.outcome }}
+          EXPERIENCE_DETAILS: ${{ steps.experience_details.outcome }}
+          EXPERIENCE_MEDIA: ${{ steps.experience_media.outcome }}
           SCIENCE: ${{ steps.science.outcome }}
           FESTIVAL_DETAIL_STATUS: ${{ steps.festival_details.outputs.collector_status }}
           PLACE_DETAIL_STATUS: ${{ steps.details.outputs.collector_status }}
@@ -281,7 +302,7 @@ jobs:
         run: |
           failed=0
           failed_names=()
-          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS NEW_ARTICLES LEARNING ACCESSIBLE EXPERIENCES SCIENCE FRESHNESS; do
+          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS NEW_ARTICLES LEARNING ACCESSIBLE EXPERIENCES EXPERIENCE_DETAILS EXPERIENCE_MEDIA SCIENCE FRESHNESS; do
             outcome="${!name}"
             echo "$name: $outcome"
             if [ "$outcome" = "failure" ]; then
