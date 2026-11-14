@@ -5,7 +5,7 @@ import venueData from '@/data/experience-venues.json';
 import mediaData from '@/data/experience-media.json';
 import {SIDO_SLUG} from './classify';
 import {todayIso,queryValue,type DiscoveryQuery} from './publicDiscovery';
-import {ruralThemes,experienceCity} from './experiences.mjs';
+import {ruralThemes,experienceCity,isYouthExperience} from './experiences.mjs';
 
 export type ExperienceKind='family'|'science'|'rural';
 export const experienceTopics={
@@ -37,7 +37,7 @@ export const isExperienceKind=(kind:string):kind is ExperienceKind=>Object.hasOw
 export const getExperience=(kind:string,id:string)=>BY_ID.get(kind+'/'+id);
 export function allExperiences(){return ALL;}
 export function currentExperiences(today=todayIso()){
- return ALL.filter(item=>item.active&&(!item.end||item.end>=today)).filter(item=>item.kind!=='family'||/체험|가족|만들기|캠프|축제|탐방|문화|과학|공예|관측|공연|여행|요리|모험|메이커|목공|댄스|생태|환경|텃밭|자연|스포츠|스케이트|보드게임|진로/.test([item.title,item.summary,...item.content,...item.activities].join(' ')));
+ return ALL.filter(item=>item.active&&(!item.end||item.end>=today)).filter(item=>item.kind!=='family'||isYouthExperience(item));
 }
 export const ruralExperiences=()=>currentExperiences().filter(item=>item.kind==='rural');
 export const youthExperiences=()=>currentExperiences().filter(item=>item.kind==='family');
@@ -65,6 +65,7 @@ export function filterExperiences(kind:ExperienceKind|undefined,query:DiscoveryQ
 export function relatedExperiences(item:Experience){return currentExperiences().filter(other=>other.id!==item.id||other.kind!==item.kind).sort((a,b)=>Number(b.area===item.area)-Number(a.area===item.area)||Number(b.kind===item.kind)-Number(a.kind===item.kind)||Number(!!b.image)-Number(!!a.image)).slice(0,4);}
 export function indexableExperience(item:Experience){
  if(!item.active||item.end&&item.end<todayIso())return false;
+ if(item.kind==='family'&&!isYouthExperience(item))return false;
  if(item.kind==='rural')return !!item.address&&(item.venueOverview.length>=120||item.programs.length>=5&&!!item.phone);
  return item.content.join(' ').length+item.activities.join(' ').length+item.venueOverview.length>=120&&!!(item.period||item.start)&&!!item.audience;
 }

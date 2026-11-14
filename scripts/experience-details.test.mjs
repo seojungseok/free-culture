@@ -1,12 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {normalizeYouth,mergeYouthDetail,experienceParagraphs} from '../lib/experiences.mjs';
+import {normalizeYouth,mergeYouthDetail,experienceParagraphs,isYouthExperience} from '../lib/experiences.mjs';
 import {enrichYouthDetails} from './enrichExperienceDetails.mjs';
 import {matchExperienceVenue} from '../lib/experienceVenue.mjs';
 import {parseCentralScience} from './lib/sciencePrograms.mjs';
 const now=()=>new Date('2026-11-14T12:00:00Z');
 const raw={key1:'123',pgmNm:'가족 만들기',sdate:'2026/11/21',edate:'2026/11/21',sido:'서울특별시',sigungu:'종로구',target:'20',price:'무료'};
+test('the discovery and indexation rules share the same activity theme boundary',()=>{
+ assert(isYouthExperience({title:'주말 공예',content:['만들기 활동'],activities:[]}));
+ assert(!isYouthExperience({title:'위원회 정기회의',summary:'운영 규정과 예산을 검토합니다.',content:[],activities:[]}));
+});
 test('detail API supplies full readable content without scripts, private contact names or invented ages',()=>{
  const record=normalizeYouth(raw),body='<p>대상: 초등학생</p><p>'+('만들기 활동을 안내합니다. '.repeat(100))+'</p><script>malicious()</script>';
  const result=mergeYouthDetail(record,{...raw,addr:'서울특별시 종로구',tel:'02-123-4567',managernm:'개인 이름',info1:body,info2:'도구를 살펴보고 작품을 만듭니다.'},now().toISOString());

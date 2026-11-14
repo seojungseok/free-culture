@@ -39,6 +39,8 @@ for(const path of ['/experiences/rural?area='+encodeURIComponent('경기')+'&the
 try{
  const $=await html('/');check($('[aria-labelledby="home-public-discovery"] [data-experience-card]').length>=4,'Home still only shows topic banners');
  const sitemap=await fetch(new URL('/sitemap.xml',base)).then(response=>response.text());for(const path of indexedTitles.values())check(sitemap.includes(path+'</loc>'),'Indexed detail missing from sitemap: '+path);
+ const linkedFamily=new Set();let familyPages=1;for(let page=1;page<=familyPages;page++){const $=await html('/experiences/family'+(page>1?'?page='+page:''));$('[data-experience-card] a').each((_,node)=>linkedFamily.add($(node).attr('href')));if(page===1)familyPages=Number($('nav[aria-label="체험 목록 페이지"] span').text().split('/').at(-1).trim())||1;}
+ for(const path of indexedTitles.values())if(path.startsWith('/experiences/family/'))check(linkedFamily.has(path),'Indexed detail has no category card: '+path);
  const photos=Object.values(read('experience-media.json').images).filter(image=>image.src).slice(0,8);for(const photo of photos){const r=await fetch(new URL(photo.src,base));check(r.ok&&r.headers.get('content-type')?.includes('image/webp'),'Compressed photo unavailable');}
  if(process.env.EXPECTED_COMMIT){const status=await fetch(new URL('/api/site-status',base)).then(response=>response.json());check(status.commit===process.env.EXPECTED_COMMIT,'Wrong deployed release');}
  results.push({path:'home/sitemap/images/release',ok:true});
