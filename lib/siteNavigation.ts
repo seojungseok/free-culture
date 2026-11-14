@@ -16,6 +16,9 @@ export function headerNavigation(seasonLabel: string): { primary: SiteNavItem[];
       { href: "/weekend-prep", label: "준비 가이드" },
     ],
     more: [
+      { href: "/experiences", label: "체험·교육" },
+      { href: "/classes", label: "문화·취미 강좌" },
+      { href: "/accessible-travel", label: "이동·영유아 편의정보" },
       { href: "/pet-travel", label: "반려동물 여행" },
       { href: "/city-tour", label: "시티투어" },
       { href: "/food", label: "맛집 탐방" },

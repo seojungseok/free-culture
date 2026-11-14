@@ -1,5 +1,5 @@
 {
-  "version": 53,
+  "version": 54,
   "articles": [
     {
       "slug": "autumn-flower-crab-soup-ingredient-checklist",
@@ -9,15 +9,15 @@
       "coverLabel": "가을 꽃게탕 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.391Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-crab-soup-checklist-finished.webp",
-        "alt": "완성된 꽃게탕",
+        "url": "/prep-images/autumn-crab-soup-checklist-cover.webp",
+        "alt": "꽃게탕의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -172,12 +172,12 @@
           "heading": "장보기 전 확인",
           "text": "먼저 꽃게 포장 단위가 인원수와 보냉함 크기에 맞는지 확인하세요. 냉동 꽃게는 출발 직전에 보냉 가방으로 옮기고, 대파·애호박·미나리는 씻어서 물기를 뺀 뒤 각각 봉투에 나누면 현장에서 빠뜨린 재료를 찾기 쉽습니다. 매운탕 양념과 육수팩은 이미 장바구니에 있더라도 실제 짐에 들어갔는지 체크해야 합니다. 꽃게 포장이 크면 출발 전에 냄비에도 들어가는지 확인하세요.",
           "image": {
-            "url": "/prep-images/autumn-crab-soup-checklist-cover-unified-v2.webp",
-            "alt": "꽃게탕의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/autumn-crab-soup-checklist-finished.webp",
+            "alt": "완성된 꽃게탕",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -211,15 +211,15 @@
       "coverLabel": "캠핑 어묵탕 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.393Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camp-fishcake-soup-finished.webp",
-        "alt": "완성된 어묵탕",
+        "url": "/prep-images/camp-fishcake-soup-checklist-cover.webp",
+        "alt": "어묵탕의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -350,12 +350,12 @@
           "heading": "장보기 전 확인",
           "text": "모둠 어묵은 포장 중량과 보관 방법을 먼저 보고 인원수에 맞춰 준비하세요. 대파는 씻어 썰어 두면 현장에서 도마 사용을 줄일 수 있습니다. 육수팩과 분말 조미료는 둘 다 무조건 넣는 목록이 아니라, 평소 쓰는 국물 방식에 맞춰 필요한 것을 체크하는 보완 재료입니다. 작은 지퍼백에 모아 두면 찾기 쉽습니다. 냉장 보관 표시가 있으면 보냉 가방 자리도 먼저 확보하세요.",
           "image": {
-            "url": "/prep-images/camp-fishcake-soup-checklist-cover-unified-v2.webp",
-            "alt": "어묵탕의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/camp-fishcake-soup-finished.webp",
+            "alt": "완성된 어묵탕",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -389,15 +389,15 @@
       "coverLabel": "캠핑 부대찌개 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.394Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camp-budae-soup-finished.webp",
-        "alt": "완성된 부대찌개",
+        "url": "/prep-images/camp-budae-soup-checklist-cover.webp",
+        "alt": "부대찌개의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -550,12 +550,12 @@
           "heading": "장보기 전 확인",
           "text": "먼저 부대찌개 구성품 안에 햄과 소시지가 얼마나 들어 있는지 판매 페이지에서 확인하고, 부족할 때만 추가 햄을 체크하세요. 치즈는 취향에 따라 빼도 되는 선택 재료이며 대파와 애호박은 씻어 썰어 가면 편합니다. 냉장 또는 냉동 식품은 출발 직전에 보냉 가방으로 옮기고 서로 섞이지 않게 봉투를 나눕니다. 구성품과 추가 재료가 겹치지 않는지도 한 번 확인하세요.",
           "image": {
-            "url": "/prep-images/camp-budae-soup-checklist-cover-unified-v2.webp",
-            "alt": "부대찌개의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/camp-budae-soup-finished.webp",
+            "alt": "완성된 부대찌개",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -589,15 +589,15 @@
       "coverLabel": "소고기 버섯전골 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.394Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camp-beef-mushroom-hotpot-finished.webp",
-        "alt": "완성된 소고기 버섯전골",
+        "url": "/prep-images/camp-beef-mushroom-hotpot-checklist-cover.webp",
+        "alt": "소고기 버섯전골의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -739,12 +739,12 @@
           "heading": "장보기 전 확인",
           "text": "소고기 구성품에 이미 들어 있는 채소와 육수 범위를 먼저 확인하면 중복 구매를 줄일 수 있습니다. 모둠버섯은 포장 안의 종류와 양을 보고, 대파와 애호박은 필요한 만큼 씻어 소분하세요. 고기와 채소는 보관 조건이 다르므로 각각 밀봉하고 고기는 출발 직전에 보냉 가방 안쪽에 넣는 순서로 점검합니다. 구성 안에 든 재료는 중복 체크하지 않아도 됩니다.",
           "image": {
-            "url": "/prep-images/camp-beef-mushroom-hotpot-checklist-cover-unified-v2.webp",
-            "alt": "소고기 버섯전골의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/camp-beef-mushroom-hotpot-finished.webp",
+            "alt": "완성된 소고기 버섯전골",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -778,15 +778,15 @@
       "coverLabel": "캠핑 해물탕 준비물",
       "status": "published",
       "publishAt": "2026-09-14T15:00:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.394Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camp-seafood-hotpot-finished.webp",
-        "alt": "완성된 해물탕",
+        "url": "/prep-images/camp-seafood-hotpot-checklist-cover.webp",
+        "alt": "해물탕의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -941,12 +941,12 @@
           "heading": "장보기 전 확인",
           "text": "모둠해물탕 포장의 중량과 포함된 해물 종류를 먼저 확인하고, 오만둥이는 건더기를 더하고 싶을 때만 체크하세요. 냉동 해물은 녹으면서 물이 샐 수 있으므로 밀폐 봉투에 한 번 더 넣어 보냉 가방 안쪽에 둡니다. 미나리와 애호박은 씻어 물기를 뺀 뒤 따로 포장하면 현장에서 목록과 실제 재료를 대조하기 쉽습니다.",
           "image": {
-            "url": "/prep-images/camp-seafood-hotpot-checklist-cover-unified-v2.webp",
-            "alt": "해물탕의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/camp-seafood-hotpot-finished.webp",
+            "alt": "완성된 해물탕",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -3496,15 +3496,15 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.394Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-seafood-ramen-finished.webp",
-        "alt": "완성된 해물라면",
+        "url": "/prep-images/camping-seafood-ramen-ingredients-cover.webp",
+        "alt": "해물라면의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -3633,12 +3633,12 @@
           "heading": "장보기 전 재료 확인",
           "text": "라면만 챙기고 해물 봉투를 냉동실에 남겨 두지 않도록 장보기 목록을 분리하세요. 봉지라면은 먹을 사람 수와 다른 메뉴가 있는지부터 확인하고, 모둠해물은 원래 포장에 적힌 구성과 중량을 보고 고릅니다. 사진의 해물은 준비 장면을 보여 주는 AI 연출이므로 실제 종류와 손질 상태는 연결한 상품의 선택 옵션이 기준입니다. 대파는 물기를 정리해 따로 담고, 곁들일 김치는 라면 봉지와 닿지 않게 밀폐 용기에 넣으세요. 스프를 별도로 더 구입하기 전에 라면 포장 안에 무엇이 들어 있는지도 확인하면 중복 장보기를 줄일 수 있습니다.",
           "image": {
-            "url": "/prep-images/camping-seafood-ramen-ingredients-cover-unified-v2.webp",
-            "alt": "해물라면의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/camping-seafood-ramen-finished.webp",
+            "alt": "완성된 해물라면",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -3672,15 +3672,15 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.395Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-mussel-soup-finished.webp",
-        "alt": "완성된 홍합탕",
+        "url": "/prep-images/camping-mussel-soup-ingredients-cover.webp",
+        "alt": "홍합탕의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -3809,12 +3809,12 @@
           "heading": "장보기 전 재료 확인",
           "text": "홍합탕은 껍데기가 있는 홍합과 손질된 홍합살 중 어떤 재료를 준비할지 먼저 정하세요. 이번 목록의 연결 상품은 껍데기를 제거한 자숙 냉동 홍합살 1kg으로, 껍데기 홍합 상품과 다릅니다. 사진도 홍합살의 형태에 맞춰 준비했으며 생물 홍합을 가져갈 계획이라면 목록의 구매 링크를 그대로 선택하지 말고 원하는 형태를 확인해야 합니다. 포장 단위와 인원, 보냉 공간을 함께 보고 대파와 양파는 물기를 정리해 따로 담으세요. 육수팩은 선택 재료이므로 집에 있는 국물 재료와 겹치지 않는지 먼저 살펴봅니다. 원래 포장의 손질·보관 안내를 남겨 두면 현장에서 확인하기 쉽습니다.",
           "image": {
-            "url": "/prep-images/camping-mussel-soup-ingredients-cover-unified-v2.webp",
-            "alt": "홍합탕의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/camping-mussel-soup-finished.webp",
+            "alt": "완성된 홍합탕",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -3848,15 +3848,15 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.395Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-kimchi-fried-rice-finished.webp",
-        "alt": "완성된 김치볶음밥",
+        "url": "/prep-images/camping-kimchi-fried-rice-ingredients-cover.webp",
+        "alt": "김치볶음밥의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -4000,12 +4000,12 @@
           "heading": "장보기 전 재료 확인",
           "text": "김치볶음밥 재료는 밥과 김치를 각각 세는 것부터 시작합니다. 즉석밥의 한 팩 중량과 먹을 인원을 확인하고, 이미 준비한 밥이 있다면 새로 주문하지 않아도 됩니다. 김치는 국물이 흐르지 않게 작은 밀폐 용기에 담아 밥 포장과 분리하세요. 달걀은 선택 재료이므로 함께 먹을 사람의 취향과 알레르기를 확인한 뒤 포함합니다. 대파와 김가루는 큰 포장 전체를 가져가기보다 필요한 짐의 크기를 먼저 계획하고, 집에 식용유가 있으면 뚜껑을 닫은 작은 용기에 담을 수 있는지 확인하세요. 완제품 냉동 볶음밥과 직접 준비할 밥·김치를 동시에 사는 중복 구매도 피할 수 있습니다.",
           "image": {
-            "url": "/prep-images/camping-kimchi-fried-rice-ingredients-cover-unified-v2.webp",
-            "alt": "김치볶음밥의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/camping-kimchi-fried-rice-finished.webp",
+            "alt": "완성된 김치볶음밥",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -4039,15 +4039,15 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.395Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-squid-stir-fry-finished.webp",
-        "alt": "완성된 오징어볶음",
+        "url": "/prep-images/camping-squid-stir-fry-ingredients-cover.webp",
+        "alt": "오징어볶음의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -4176,12 +4176,12 @@
           "heading": "장보기 전 재료 확인",
           "text": "오징어볶음은 오징어와 볶음 양념을 같은 장보기 항목으로 묶어 두면 빠뜨리기 쉽지 않습니다. 손질 오징어를 골라도 실제 손질 범위와 해동 방법은 받은 제품 안내를 확인해야 합니다. 양파와 대파는 남은 집 재료가 있는지 먼저 보고, 손질해 가져간다면 물기와 보관 용기를 따로 점검하세요. 연결한 오징어볶음 소스는 직접 챙길 고추장·고춧가루를 대신할 선택 경로입니다. 소스와 별도 양념을 모두 사기보다 포장 구성과 필요한 양을 비교해 하나의 준비 방식으로 정리하는 것이 좋습니다. 식용유도 집에 있는 제품부터 체크합니다.",
           "image": {
-            "url": "/prep-images/camping-squid-stir-fry-ingredients-cover-unified-v2.webp",
-            "alt": "오징어볶음의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/camping-squid-stir-fry-finished.webp",
+            "alt": "완성된 오징어볶음",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -4215,15 +4215,15 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.395Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-chicken-skewer-finished.webp",
-        "alt": "완성된 닭꼬치구이",
+        "url": "/prep-images/camping-chicken-skewer-ingredients-cover.webp",
+        "alt": "닭꼬치구이의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -4350,12 +4350,12 @@
           "heading": "장보기 전 재료 확인",
           "text": "닭꼬치구이 장보기에서 먼저 확인할 것은 꼬치의 구성입니다. 연결한 상품은 닭꼬치와 염통꼬치가 들어 있는 모둠 상품이므로 닭고기만 준비하려는 경우 선택 옵션과 실제 구성을 다시 확인하세요. 꼬치가 이미 조립된 형태라면 별도 꼬치막대를 중복으로 챙길 필요가 있는지도 살펴봅니다. 바비큐 소스는 원래 꼬치에 양념이 포함돼 있는지 확인한 뒤 선택하고, 새송이버섯·파프리카·양파는 꼬치에 끼우는 재료가 아닌 곁들임 채소로 나눠 담아도 됩니다. 인원에 맞는 포장 수량과 보냉 짐의 부피를 함께 점검하세요.",
           "image": {
-            "url": "/prep-images/camping-chicken-skewer-ingredients-cover-unified-v2.webp",
-            "alt": "닭꼬치구이의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/camping-chicken-skewer-finished.webp",
+            "alt": "완성된 닭꼬치구이",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -4389,15 +4389,15 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.396Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-kimchi-pancake-finished.webp",
-        "alt": "완성된 김치전",
+        "url": "/prep-images/camping-kimchi-pancake-ingredients-cover.webp",
+        "alt": "김치전의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -4526,12 +4526,12 @@
           "heading": "장보기 전 재료 확인",
           "text": "김치전 준비물은 김치·부침가루·조리용 물을 한 묶음으로 확인하면 편합니다. 김치는 국물까지 담을 용기를 따로 마련하고, 부침가루는 큰 봉지 전체를 가져갈지 소분할지 먼저 정하세요. 가루를 소분한다면 제품명과 성분 안내를 함께 확인할 수 있도록 원래 포장 정보를 남겨 둡니다. 대파는 원하는 경우 넣을 채소로 따로 담고, 집에 있는 식용유가 충분한지도 체크하세요. 부침가루에 들어 있는 성분은 상품별로 다르므로 별도 양념을 더 사기 전에 실제 포장 안내를 확인하면 준비물이 불필요하게 늘어나는 것을 줄일 수 있습니다.",
           "image": {
-            "url": "/prep-images/camping-kimchi-pancake-ingredients-cover-unified-v2.webp",
-            "alt": "김치전의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/camping-kimchi-pancake-finished.webp",
+            "alt": "완성된 김치전",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -4565,15 +4565,15 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.396Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-pork-belly-bbq-finished.webp",
-        "alt": "완성된 삼겹살 바비큐",
+        "url": "/prep-images/camping-pork-belly-bbq-ingredients-cover.webp",
+        "alt": "삼겹살 바비큐의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -4700,12 +4700,12 @@
           "heading": "장보기 전 재료 확인",
           "text": "삼겹살 바비큐는 상품명에 삼겹살이 적혀 있다고 모두 고기 상품인 것은 아닙니다. 고기불판과 실제 구이용 삼겹살을 구분해 체크하고, 고기 부위·두께·선택한 포장 중량은 원래 상품 옵션에서 확인하세요. 곁들일 김치와 새송이버섯·파프리카·양파는 별도 용기에 나눠 담아 고기 포장과 섞이지 않게 합니다. 평소 먹는 쌈장이나 소금은 집에 있는 것을 먼저 찾아보고 취향에 맞춰 추가하면 됩니다. 여러 메뉴를 함께 준비한다면 고기 포장 수량을 무조건 늘리기보다 전체 식사 계획과 보냉함 공간을 같이 점검하세요.",
           "image": {
-            "url": "/prep-images/camping-pork-belly-bbq-ingredients-cover-unified-v2.webp",
-            "alt": "삼겹살 바비큐의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/camping-pork-belly-bbq-finished.webp",
+            "alt": "완성된 삼겹살 바비큐",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -4739,15 +4739,15 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-15T15:49:05.695Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.396Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/camping-tofu-kimchi-finished.webp",
-        "alt": "완성된 두부김치",
+        "url": "/prep-images/camping-tofu-kimchi-ingredients-cover.webp",
+        "alt": "두부김치의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "checklist": [
         {
@@ -4876,12 +4876,12 @@
           "heading": "장보기 전 재료 확인",
           "text": "두부김치를 준비할 때는 두부 종류와 김치 용기를 먼저 확인합니다. 부침용 두부와 찌개용 두부는 선택 옵션이 다를 수 있으므로 실제 포장 이름을 보고 고르고, 몇 모를 가져갈지 인원과 다른 메뉴를 기준으로 정하세요. 배추김치는 새지 않는 용기에 따로 담고, 양파와 대파는 김치와 섞기 전에 각각 보관하면 남은 재료를 다른 식사에 쓰기 편합니다. 식용유는 이미 가진 것을 먼저 점검하고, 볶음김치를 준비했다면 배추김치와 둘 다 구입하는 중복을 피할 수 있습니다. 고기를 넣는 변형 메뉴 대신 이번 목록은 두부와 김치를 중심으로 간단하게 준비합니다.",
           "image": {
-            "url": "/prep-images/camping-tofu-kimchi-ingredients-cover-unified-v2.webp",
-            "alt": "두부김치의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/camping-tofu-kimchi-finished.webp",
+            "alt": "완성된 두부김치",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -4916,27 +4916,27 @@
       "coverLabel": "가을 캠핑 돼지고기 김치찌개 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.396Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-pork-kimchi-stew-finished.webp",
-        "alt": "완성된 돼지고기 김치찌개",
+        "url": "/prep-images/autumn-20260919-pork-kimchi-stew-cover.webp",
+        "alt": "돼지고기 김치찌개의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "sections": [
         {
           "heading": "돼지고기 김치찌개 재료: 김치의 익은 정도부터 살펴보세요",
           "text": "돼지고기 김치찌개의 기본 재료는 생 돼지고기·배추김치·두부·대파입니다. 체크리스트에서 양념과 집에 있는 조리도구까지 나누어 확인하세요.\n김치찌개는 김치 맛에 따라 필요한 양념이 달라집니다. 익은 배추김치를 먼저 정하고, 김칫국물은 작은 밀폐통에 따로 담으세요.\n국물까지 모두 넣고 시작하면 짠맛을 조절하기 어려우므로 끓인 뒤 간을 보며 보태는 편이 낫습니다. 돼지고기는 얇게 썬 제육용 고기를 이용해도 됩니다.\n이미 양념된 제육볶음 상품과 생고기를 혼동하지 말고, 구입한 포장의 원재료와 보관 표시를 확인하세요.",
           "image": {
-            "url": "/prep-images/autumn-20260919-pork-kimchi-stew-cover-unified-v2.webp",
-            "alt": "돼지고기 김치찌개의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/autumn-20260919-pork-kimchi-stew-finished.webp",
+            "alt": "완성된 돼지고기 김치찌개",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -5154,27 +5154,27 @@
       "coverLabel": "가을 캠핑 된장찌개 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.397Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-doenjang-stew-finished.webp",
-        "alt": "완성된 된장찌개",
+        "url": "/prep-images/autumn-20260919-doenjang-stew-cover.webp",
+        "alt": "된장찌개의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "sections": [
         {
           "heading": "된장찌개 재료: 된장은 소분하고 두부는 포장째",
           "text": "된장찌개의 기본 재료는 재래식 된장·두부·애호박·양파입니다. 체크리스트에서 양념과 집에 있는 조리도구까지 나누어 확인하세요.\n된장찌개를 준비할 때는 냉장고에 있는 된장을 먼저 확인하세요. 새로 큰 묶음을 살 필요 없이 한 끼에 쓸 양을 깨끗한 작은 통에 덜면 됩니다.\n제품마다 짠맛과 부재료가 다르므로 정해진 숟가락 수를 그대로 따르기보다 처음에는 적게 풀고 마지막에 간을 맞추세요. 두부와 애호박은 국물을 먹는 건더기이므로 냄비에 채소가 들어갈 여유도 남겨 둡니다.",
           "image": {
-            "url": "/prep-images/autumn-20260919-doenjang-stew-cover-unified-v2.webp",
-            "alt": "된장찌개의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/autumn-20260919-doenjang-stew-finished.webp",
+            "alt": "완성된 된장찌개",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -5390,27 +5390,27 @@
       "coverLabel": "가을 캠핑 들깨버섯탕 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.397Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-finished.webp",
-        "alt": "완성된 들깨버섯탕",
+        "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-cover.webp",
+        "alt": "들깨버섯탕의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "sections": [
         {
           "heading": "들깨버섯탕 재료: 버섯 구성과 들깨가루 표시 확인",
           "text": "들깨버섯탕의 기본 재료는 들깨가루·모둠버섯·애호박·양파입니다. 체크리스트에서 양념과 집에 있는 조리도구까지 나누어 확인하세요.\n들깨버섯탕은 모둠버섯을 사용하면 여러 종류를 따로 사는 수고를 줄일 수 있습니다. 포장에 어떤 버섯이 들었는지 확인하고, 이미 있는 새송이나 표고를 더해도 됩니다.\n들깨가루는 볶음 여부나 껍질 유무에 따라 식감이 달라질 수 있으므로 상세 표시를 살펴보세요. 향이 있는 가루는 봉투를 연 채 짐에 넣지 말고 필요한 만큼 밀폐 용기에 덜어 둡니다.",
           "image": {
-            "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-cover-unified-v2.webp",
-            "alt": "들깨버섯탕의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-finished.webp",
+            "alt": "완성된 들깨버섯탕",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -5626,27 +5626,27 @@
       "coverLabel": "가을 캠핑 감자수제비 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.397Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-potato-sujebi-finished.webp",
-        "alt": "완성된 감자수제비",
+        "url": "/prep-images/autumn-20260919-potato-sujebi-cover.webp",
+        "alt": "감자수제비의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "sections": [
         {
           "heading": "감자수제비 재료: 반죽을 할지 생수제비를 쓸지 정하기",
           "text": "감자수제비의 기본 재료는 감자·생수제비·애호박·대파입니다. 체크리스트에서 양념과 집에 있는 조리도구까지 나누어 확인하세요.\n캠핑장에서 반죽부터 하면 밀가루와 물을 조절할 자리까지 필요합니다. 이번 체크리스트는 준비된 생수제비를 사용하는 기준입니다.\n제품의 냉장·냉동 여부와 개봉 뒤 보관 안내를 확인하고 먹을 양만 준비하세요. 감자가 들어가므로 수제비를 무조건 한 봉지 다 넣기보다는 한 끼에 먹을 인원수와 다른 반찬을 먼저 살핍니다.",
           "image": {
-            "url": "/prep-images/autumn-20260919-potato-sujebi-cover-unified-v2.webp",
-            "alt": "감자수제비의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/autumn-20260919-potato-sujebi-finished.webp",
+            "alt": "완성된 감자수제비",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -5862,27 +5862,27 @@
       "coverLabel": "가을 캠핑 새우버터구이 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.397Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-shrimp-butter-grill-finished.webp",
-        "alt": "완성된 새우버터구이",
+        "url": "/prep-images/autumn-20260919-shrimp-butter-grill-cover.webp",
+        "alt": "새우버터구이의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "sections": [
         {
           "heading": "새우버터구이 재료: 자숙 새우와 생새우살을 구분하세요",
           "text": "새우버터구이의 기본 재료는 생 새우살·무염버터·다진마늘·양파입니다. 체크리스트에서 양념과 집에 있는 조리도구까지 나누어 확인하세요.\n새우버터구이를 위해 연결한 재료는 생새우살 기준입니다. 이미 익힌 자숙 새우와 조리 조건이 같지 않으므로 구입한 포장 표시를 먼저 읽으세요.\n냉동 새우는 제품 안내에 맞게 냉장 해동하고 밀폐 상태를 유지합니다. 무염버터를 쓰면 간을 따로 조절하기 쉽고, 가염버터를 대신 쓸 때는 추가 간을 줄이는 식으로 준비합니다.",
           "image": {
-            "url": "/prep-images/autumn-20260919-shrimp-butter-grill-cover-unified-v2.webp",
-            "alt": "새우버터구이의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/autumn-20260919-shrimp-butter-grill-finished.webp",
+            "alt": "완성된 새우버터구이",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -6083,27 +6083,27 @@
       "coverLabel": "가을 캠핑 고등어감자조림 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.398Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-mackerel-potato-braise-finished.webp",
-        "alt": "완성된 고등어감자조림",
+        "url": "/prep-images/autumn-20260919-mackerel-potato-braise-cover.webp",
+        "alt": "고등어감자조림의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "sections": [
         {
           "heading": "고등어감자조림 재료: 고등어와 감자 크기를 먼저 맞추기",
           "text": "고등어감자조림의 기본 재료는 손질 고등어·감자·진간장·양파입니다. 체크리스트에서 양념과 집에 있는 조리도구까지 나누어 확인하세요.\n손질 고등어를 고를 때 소금간 여부와 냉장·냉동 표시를 먼저 확인하세요. 염장된 제품은 간장을 적게 넣고 시작합니다.\n생무 대신 감자를 넣는 구성으로, 감자는 너무 두껍지 않게 비슷한 크기로 썰어야 익는 정도를 맞추기 쉽습니다. 고등어 한 박스가 한 끼 분량이라는 뜻은 아니므로 먹을 인원수와 토막 크기를 보고 나누어 준비하세요.",
           "image": {
-            "url": "/prep-images/autumn-20260919-mackerel-potato-braise-cover-unified-v2.webp",
-            "alt": "고등어감자조림의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/autumn-20260919-mackerel-potato-braise-finished.webp",
+            "alt": "완성된 고등어감자조림",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -6321,27 +6321,27 @@
       "coverLabel": "가을 캠핑 닭볶음탕 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.398Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-chicken-potato-stew-finished.webp",
-        "alt": "완성된 닭볶음탕",
+        "url": "/prep-images/autumn-20260919-chicken-potato-stew-cover.webp",
+        "alt": "닭볶음탕의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "sections": [
         {
           "heading": "닭볶음탕 재료: 양념육 대신 토막 생닭 기준",
           "text": "닭볶음탕의 기본 재료는 닭볶음탕용 생닭·감자·양파·고추장입니다. 체크리스트에서 양념과 집에 있는 조리도구까지 나누어 확인하세요.\n이 목록은 닭갈비처럼 이미 양념된 고기가 아니라 닭볶음탕용 토막 생닭으로 시작합니다. 냉장·냉동 표시와 실제 중량을 확인하고 인원수에 맞게 준비하세요.\n감자를 함께 넣기 때문에 닭만 보고 냄비를 고르면 넘칠 수 있습니다. 닭과 감자, 국물이 함께 들어갈 여유를 확인하고 고추장·간장·마늘은 각각 덜어 가져갑니다.",
           "image": {
-            "url": "/prep-images/autumn-20260919-chicken-potato-stew-cover-unified-v2.webp",
-            "alt": "닭볶음탕의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/autumn-20260919-chicken-potato-stew-finished.webp",
+            "alt": "완성된 닭볶음탕",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -6559,27 +6559,27 @@
       "coverLabel": "가을 캠핑 떡볶이 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.398Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-tteokbokki-finished.webp",
-        "alt": "완성된 떡볶이",
+        "url": "/prep-images/autumn-20260919-tteokbokki-cover.webp",
+        "alt": "떡볶이의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "sections": [
         {
           "heading": "떡볶이 재료: 쌀떡과 밀떡, 실제 상품부터 확인",
           "text": "떡볶이의 기본 재료는 밀떡·모둠어묵·고추장·대파입니다. 체크리스트에서 양념과 집에 있는 조리도구까지 나누어 확인하세요.\n떡볶이떡은 종류와 냉장·냉동 상태에 따라 조리 전 준비가 다릅니다. 무조건 오래 불리지 말고 제품 포장 안내를 따르세요.\n어묵은 납작한 것만 고집하지 않아도 되지만 두꺼운 모둠어묵은 한입 크기로 잘라 준비하면 먹기 편합니다. 고추장과 간장은 따로 소분해 재료 자체의 간을 보고 넣을 수 있게 합니다.",
           "image": {
-            "url": "/prep-images/autumn-20260919-tteokbokki-cover-unified-v2.webp",
-            "alt": "떡볶이의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/autumn-20260919-tteokbokki-finished.webp",
+            "alt": "완성된 떡볶이",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -6797,27 +6797,27 @@
       "coverLabel": "가을 캠핑 애호박전 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.399Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-zucchini-pancake-finished.webp",
-        "alt": "완성된 애호박전",
+        "url": "/prep-images/autumn-20260919-zucchini-pancake-cover.webp",
+        "alt": "애호박전의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "sections": [
         {
           "heading": "애호박전 재료: 동그랗게 부칠지 채를 썰지 선택",
           "text": "애호박전의 기본 재료는 애호박·달걀·부침가루·식용유입니다. 체크리스트에서 양념과 집에 있는 조리도구까지 나누어 확인하세요.\n애호박을 둥글게 썰어 달걀옷을 입히는 전과, 채썬 호박을 반죽에 섞는 전은 준비 과정이 다릅니다. 여기서는 둥근 애호박전을 기본으로 합니다.\n부침가루는 호박에 얇게 묻히고 달걀물을 따로 준비하세요. 제품에 소금이나 조미료가 이미 들어 있을 수 있으므로 반죽에 별도 간을 하기 전 원재료 표시를 확인합니다.",
           "image": {
-            "url": "/prep-images/autumn-20260919-zucchini-pancake-cover-unified-v2.webp",
-            "alt": "애호박전의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/autumn-20260919-zucchini-pancake-finished.webp",
+            "alt": "완성된 애호박전",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -7016,27 +7016,27 @@
       "coverLabel": "가을 캠핑 버터콘치즈 재료",
       "status": "published",
       "publishAt": "2026-09-19T06:47:55.104Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.399Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260919-corn-cheese-finished.webp",
-        "alt": "완성된 버터콘치즈",
+        "url": "/prep-images/autumn-20260919-corn-cheese-cover.webp",
+        "alt": "버터콘치즈의 주재료와 양념을 준비한 AI 연출 재료 사진",
         "width": 1200,
         "height": 800,
         "generated": true,
-        "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+        "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
       },
       "sections": [
         {
           "heading": "버터콘치즈 재료: 체다치즈와 버터로 간단하게",
           "text": "버터콘치즈의 기본 재료는 스위트콘·슬라이스 체다치즈·무염버터·양파입니다. 체크리스트에서 양념과 집에 있는 조리도구까지 나누어 확인하세요.\n이번 버터콘치즈는 마요네즈를 따로 준비하지 않는 구성입니다. 옥수수 통조림에 버터와 슬라이스 체다치즈를 더합니다.\n모차렐라처럼 치즈가 길게 늘어나는 조리법은 아니며 체다 고유의 색과 짠맛이 더해집니다. 옥수수와 치즈의 실제 중량, 버터의 판매 묶음 수를 확인하고 이미 집에 있는 재료는 새로 사지 않아도 됩니다.",
           "image": {
-            "url": "/prep-images/autumn-20260919-corn-cheese-cover-unified-v2.webp",
-            "alt": "버터콘치즈의 주재료와 양념을 준비한 AI 연출 장면",
+            "url": "/prep-images/autumn-20260919-corn-cheese-finished.webp",
+            "alt": "완성된 버터콘치즈",
             "width": 1200,
             "height": 800,
             "generated": true,
-            "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+            "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
           }
         },
         {
@@ -7233,10 +7233,10 @@
       "coverLabel": "간장버터감자구이 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.399Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260920-soy-butter-potato-grill-cover-unified-v2.webp",
+        "url": "/prep-images/autumn-20260920-soy-butter-potato-grill-cover.webp",
         "alt": "간장버터감자구이용 감자와 버터, 간장을 준비한 가을 캠핑 장면",
         "width": 1200,
         "height": 800,
@@ -7427,10 +7427,10 @@
       "coverLabel": "새우전 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.399Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260920-shrimp-jeon-cover-unified-v2.webp",
+        "url": "/prep-images/autumn-20260920-shrimp-jeon-cover.webp",
         "alt": "새우전용 새우와 달걀, 부침가루를 준비한 가을 캠핑 장면",
         "width": 1200,
         "height": 800,
@@ -7621,10 +7621,10 @@
       "coverLabel": "버섯치즈구이 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.399Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260920-mushroom-cheese-grill-cover-unified-v2.webp",
+        "url": "/prep-images/autumn-20260920-mushroom-cheese-grill-cover.webp",
         "alt": "버섯치즈구이용 새송이버섯과 치즈, 버터를 준비한 가을 캠핑 장면",
         "width": 1200,
         "height": 800,
@@ -7811,10 +7811,10 @@
       "coverLabel": "두부간장구이 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.400Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260920-tofu-soy-grill-cover-unified-v2.webp",
+        "url": "/prep-images/autumn-20260920-tofu-soy-grill-cover.webp",
         "alt": "두부간장구이용 두부와 간장, 마늘을 준비한 가을 캠핑 장면",
         "width": 1200,
         "height": 800,
@@ -8005,10 +8005,10 @@
       "coverLabel": "김치어묵볶음 재료",
       "status": "published",
       "publishAt": "2026-09-20T06:20:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.400Z",
       "reviewed": true,
       "cover": {
-        "url": "/prep-images/autumn-20260920-kimchi-fishcake-stirfry-cover-unified-v2.webp",
+        "url": "/prep-images/autumn-20260920-kimchi-fishcake-stirfry-cover.webp",
         "alt": "김치어묵볶음용 김치와 어묵, 양파를 준비한 가을 캠핑 장면",
         "width": 1200,
         "height": 800,
@@ -8195,7 +8195,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.400Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -8354,8 +8354,8 @@
         "text": "매콤한 제육볶음은 재료를 미리 나누어 준비하면 캠핑장에서도 한 팬으로 빠르게 만들기 좋습니다. 고기는 차갑게 보관하고 채소는 물기를 닦아 따로 챙긴 뒤, 체크리스트에서 빠진 재료가 없는지 확인해 보세요."
       },
       "cover": {
-        "url": "/prep-images/autumn-20260920-jeyuk-cover-unified-v2.webp",
-        "alt": "가을 캠핑에서 제육볶음을 준비한 장면",
+        "url": "/prep-images/autumn-20260920-jeyuk-prep.webp",
+        "alt": "제육볶음용 돼지고기와 채소를 손질해 둔 장면",
         "width": 1200,
         "height": 800,
         "generated": true
@@ -8365,8 +8365,8 @@
           "heading": "제육볶음 준비 장면",
           "text": "제육용 돼지고기와 양파, 대파는 조리 전까지 분리해 차갑게 보관합니다. 팬을 충분히 예열한 뒤 식용유를 아주 조금 두르고 양파를 먼저 볶아 향을 낸 다음 고기를 넣어 익혀 주세요. 볶음소스는 처음부터 많이 넣기보다 고기의 양과 수분을 보며 나누어 더하면 간을 맞추기 쉽습니다.",
           "image": {
-            "url": "/prep-images/autumn-20260920-jeyuk-prep.webp",
-            "alt": "제육볶음용 돼지고기와 채소를 손질해 둔 장면",
+            "url": "/prep-images/autumn-20260920-jeyuk-cover.webp",
+            "alt": "가을 캠핑 제육볶음 완성 요리의 전체 모습",
             "width": 1200,
             "height": 800,
             "generated": true
@@ -8389,7 +8389,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.400Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -8548,8 +8548,8 @@
         "text": "순대볶음은 채소와 양념을 먼저 볶아 팬의 수분을 정리한 뒤 순대를 넣으면 한결 다루기 편합니다. 순대와 채소를 분리해 가져가고, 포장에 적힌 보관과 가열 방법을 확인한 다음 준비물을 체크해 보세요."
       },
       "cover": {
-        "url": "/prep-images/autumn-20260920-sundae-cover-unified-v2.webp",
-        "alt": "가을 캠핑 순대볶음을 준비한 장면",
+        "url": "/prep-images/autumn-20260920-sundae-prep.webp",
+        "alt": "순대볶음용 순대와 채소, 양념을 준비한 장면",
         "width": 1200,
         "height": 800,
         "generated": true
@@ -8559,8 +8559,8 @@
           "heading": "순대볶음 준비 장면",
           "text": "순대는 포장 안내에 따라 준비하고 양파와 대파는 먹기 좋게 썹니다. 팬에 식용유를 조금 두른 뒤 양파를 먼저 볶아 수분을 줄이고, 양념장은 맛을 보며 조금씩 넣어 주세요. 순대는 오래 볶으면 터질 수 있어 채소와 양념이 어우러진 뒤 넣는 편이 좋습니다.",
           "image": {
-            "url": "/prep-images/autumn-20260920-sundae-prep.webp",
-            "alt": "순대볶음용 순대와 채소, 양념을 준비한 장면",
+            "url": "/prep-images/autumn-20260920-sundae-cover.webp",
+            "alt": "가을 캠핑 순대볶음 완성 요리의 전체 모습",
             "width": 1200,
             "height": 800,
             "generated": true
@@ -8583,7 +8583,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.401Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -8740,7 +8740,7 @@
         "text": "양념 닭갈비는 닭의 중심까지 익히는 것이 우선이라 채소는 익는 속도에 맞춰 나누어 넣는 편이 좋습니다. 고기는 조리 전까지 차갑게 보관하고 채소의 물기를 닦아 둔 뒤 체크리스트를 확인해 보세요."
       },
       "cover": {
-        "url": "/prep-images/autumn-20260920-dakgalbi-cover-unified-v2.webp",
+        "url": "/prep-images/autumn-20260920-dakgalbi-cover.webp",
         "alt": "가을 캠핑에서 춘천 닭갈비를 준비한 장면",
         "width": 1200,
         "height": 800,
@@ -8775,7 +8775,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.401Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -8934,7 +8934,7 @@
         "text": "김치볶음밥은 김치를 먼저 볶아 수분을 정리하면 밥알이 뭉치지 않고 볶기 편합니다. 포장 볶음밥과 달걀은 보관 안내를 확인해 차갑게 가져가고, 필요한 재료와 도구를 순서대로 체크해 보세요."
       },
       "cover": {
-        "url": "/prep-images/autumn-20260920-chicken-kimchi-rice-cover-unified-v2.webp",
+        "url": "/prep-images/autumn-20260920-chicken-kimchi-rice-cover.webp",
         "alt": "가을 캠핑 닭가슴살 김치볶음밥을 준비한 장면",
         "width": 1200,
         "height": 800,
@@ -8969,7 +8969,7 @@
       "category": "요리 재료 체크리스트",
       "status": "published",
       "publishAt": "2026-09-20T08:30:00.000Z",
-      "updatedAt": "2026-11-14T11:15:30.172Z",
+      "updatedAt": "2026-11-14T12:06:33.401Z",
       "reviewed": true,
       "imageConnectionNote": "사진은 실제 재료·상품 사진을 참고한 AI 연출 예시입니다. 포장 글자·재료 수량·완성 모습은 실제 판매 구성이나 조리 결과를 보증하지 않습니다. +는 이 요리에 어울리는 재료·도구로 연결되며 실제 옵션은 판매 페이지에서 확인하세요.",
       "internalLinks": [
@@ -9128,8 +9128,8 @@
         "text": "홍합미역국은 미역을 충분히 불리고 국물 바탕을 만든 뒤 홍합살을 마지막에 넣으면 준비가 한결 간단합니다. 해물은 조리 전까지 차갑게 보관하고, 냄비와 국자까지 빠짐없이 체크해 보세요."
       },
       "cover": {
-        "url": "/prep-images/autumn-20260920-mussel-seaweed-cover-unified-v2.webp",
-        "alt": "가을 캠핑에서 홍합미역국을 준비한 장면",
+        "url": "/prep-images/autumn-20260920-mussel-seaweed-prep.webp",
+        "alt": "홍합미역국용 홍합살과 미역, 채소를 준비한 장면",
         "width": 1200,
         "height": 800,
         "generated": true
@@ -9139,8 +9139,8 @@
           "heading": "홍합미역국 준비 장면",
           "text": "마른 미역은 사용할 양을 물에 불린 뒤 여러 번 헹궈 물기를 짭니다. 냄비에 물과 국물육수 다시팩을 넣어 국물 바탕을 내고, 양파를 먼저 넣어 익혀 주세요. 손질 홍합살은 제품 포장에 적힌 해동·가열 방법을 확인해 국물이 끓은 뒤 넣습니다.",
           "image": {
-            "url": "/prep-images/autumn-20260920-mussel-seaweed-prep.webp",
-            "alt": "홍합미역국용 홍합살과 미역, 채소를 준비한 장면",
+            "url": "/prep-images/autumn-20260920-mussel-seaweed-cover.webp",
+            "alt": "가을 캠핑 홍합미역국 완성 요리의 전체 모습",
             "width": 1200,
             "height": 800,
             "generated": true

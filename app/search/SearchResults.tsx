@@ -26,6 +26,7 @@ export default function SearchResults({q=""}:{q?:string}) {
           <SearchBox size="lg" defaultValue={query} placeholder="지역·유형으로 검색 (예: 인천 무료 공연)" />
         </div>
         <TossTopDeals contained />
+        <nav aria-label="새 콘텐츠에서 찾기" className="mt-5 flex flex-wrap justify-center gap-3 text-sm font-bold text-blue-700"><Link href={'/classes'+(query?'?q='+encodeURIComponent(query):'')} className="inline-flex min-h-11 items-center rounded-lg border border-blue-200 px-4">문화·취미 강좌 찾기</Link><Link href={'/accessible-travel'+(query?'?q='+encodeURIComponent(query):'')} className="inline-flex min-h-11 items-center rounded-lg border border-blue-200 px-4">이동·영유아 편의정보 찾기</Link></nav>
 
         {query && /가을|단풍|억새/.test(query) && <aside className="mx-auto mt-6 max-w-xl rounded-2xl border border-amber-200 bg-amber-50 p-4"><Link href="/season" className="font-bold text-ink hover:underline">🍂 가을나들이 모아보기 →</Link><p className="mt-1 text-sm text-ink-soft">가을 나들이 장소와 여행코스를 지역별로 찾아보세요.</p></aside>}
         {!query ? (

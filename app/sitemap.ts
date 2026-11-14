@@ -32,6 +32,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const MAJOR = new Set(["/events", "/festivals", "/places", "/course", "/camping", "/food"]);
   const LOW = new Set(["/about", "/privacy", "/terms", "/contact"]);
   const staticRoutes = [
+    '/experiences', '/experiences/family', '/experiences/science', '/experiences/rural',
+    '/classes', '/classes/free', '/classes/weekend', '/classes/family', '/accessible-travel',
     '/shopping/winter-warmers', '/shopping/kimjang', '/shopping/winter-snacks', '/shopping/winter-drinks',
     ...(getPublicWinterCourses().length ? ['/winter-travel'] : []),
     ...(getPrepArticles().length ? ['/weekend-prep'] : []),

@@ -1,0 +1,1215 @@
+[
+  {
+    "slug": "autumn-flower-crab-soup-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-crab-soup-checklist-finished.webp",
+      "alt": "완성된 꽃게탕",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-crab-soup-checklist-cover.webp",
+      "alt": "꽃게탕의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-flower-crab-soup-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-crab-soup-checklist-cover-unified-v2.webp",
+      "alt": "꽃게탕의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-crab-soup-checklist-finished.webp",
+      "alt": "완성된 꽃게탕",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-fishcake-soup-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/camp-fishcake-soup-finished.webp",
+      "alt": "완성된 어묵탕",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camp-fishcake-soup-checklist-cover.webp",
+      "alt": "어묵탕의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-fishcake-soup-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/camp-fishcake-soup-checklist-cover-unified-v2.webp",
+      "alt": "어묵탕의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camp-fishcake-soup-finished.webp",
+      "alt": "완성된 어묵탕",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-budae-jjigae-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/camp-budae-soup-finished.webp",
+      "alt": "완성된 부대찌개",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camp-budae-soup-checklist-cover.webp",
+      "alt": "부대찌개의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-budae-jjigae-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/camp-budae-soup-checklist-cover-unified-v2.webp",
+      "alt": "부대찌개의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camp-budae-soup-finished.webp",
+      "alt": "완성된 부대찌개",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-beef-mushroom-hotpot-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/camp-beef-mushroom-hotpot-finished.webp",
+      "alt": "완성된 소고기 버섯전골",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camp-beef-mushroom-hotpot-checklist-cover.webp",
+      "alt": "소고기 버섯전골의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-beef-mushroom-hotpot-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/camp-beef-mushroom-hotpot-checklist-cover-unified-v2.webp",
+      "alt": "소고기 버섯전골의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camp-beef-mushroom-hotpot-finished.webp",
+      "alt": "완성된 소고기 버섯전골",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-seafood-hotpot-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/camp-seafood-hotpot-finished.webp",
+      "alt": "완성된 해물탕",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camp-seafood-hotpot-checklist-cover.webp",
+      "alt": "해물탕의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-seafood-hotpot-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/camp-seafood-hotpot-checklist-cover-unified-v2.webp",
+      "alt": "해물탕의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camp-seafood-hotpot-finished.webp",
+      "alt": "완성된 해물탕",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-seafood-ramen-ingredients",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/camping-seafood-ramen-finished.webp",
+      "alt": "완성된 해물라면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-seafood-ramen-ingredients-cover.webp",
+      "alt": "해물라면의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-seafood-ramen-ingredients",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/camping-seafood-ramen-ingredients-cover-unified-v2.webp",
+      "alt": "해물라면의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-seafood-ramen-finished.webp",
+      "alt": "완성된 해물라면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-mussel-soup-ingredients",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/camping-mussel-soup-finished.webp",
+      "alt": "완성된 홍합탕",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-mussel-soup-ingredients-cover.webp",
+      "alt": "홍합탕의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-mussel-soup-ingredients",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/camping-mussel-soup-ingredients-cover-unified-v2.webp",
+      "alt": "홍합탕의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-mussel-soup-finished.webp",
+      "alt": "완성된 홍합탕",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-kimchi-fried-rice-ingredients",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/camping-kimchi-fried-rice-finished.webp",
+      "alt": "완성된 김치볶음밥",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-kimchi-fried-rice-ingredients-cover.webp",
+      "alt": "김치볶음밥의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-kimchi-fried-rice-ingredients",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/camping-kimchi-fried-rice-ingredients-cover-unified-v2.webp",
+      "alt": "김치볶음밥의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-kimchi-fried-rice-finished.webp",
+      "alt": "완성된 김치볶음밥",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-squid-stir-fry-ingredients",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/camping-squid-stir-fry-finished.webp",
+      "alt": "완성된 오징어볶음",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-squid-stir-fry-ingredients-cover.webp",
+      "alt": "오징어볶음의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-squid-stir-fry-ingredients",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/camping-squid-stir-fry-ingredients-cover-unified-v2.webp",
+      "alt": "오징어볶음의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-squid-stir-fry-finished.webp",
+      "alt": "완성된 오징어볶음",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-chicken-skewer-ingredients",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/camping-chicken-skewer-finished.webp",
+      "alt": "완성된 닭꼬치구이",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-chicken-skewer-ingredients-cover.webp",
+      "alt": "닭꼬치구이의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-chicken-skewer-ingredients",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/camping-chicken-skewer-ingredients-cover-unified-v2.webp",
+      "alt": "닭꼬치구이의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-chicken-skewer-finished.webp",
+      "alt": "완성된 닭꼬치구이",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-kimchi-pancake-ingredients",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/camping-kimchi-pancake-finished.webp",
+      "alt": "완성된 김치전",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-kimchi-pancake-ingredients-cover.webp",
+      "alt": "김치전의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-kimchi-pancake-ingredients",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/camping-kimchi-pancake-ingredients-cover-unified-v2.webp",
+      "alt": "김치전의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-kimchi-pancake-finished.webp",
+      "alt": "완성된 김치전",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-pork-belly-bbq-ingredients",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/camping-pork-belly-bbq-finished.webp",
+      "alt": "완성된 삼겹살 바비큐",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-pork-belly-bbq-ingredients-cover.webp",
+      "alt": "삼겹살 바비큐의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-pork-belly-bbq-ingredients",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/camping-pork-belly-bbq-ingredients-cover-unified-v2.webp",
+      "alt": "삼겹살 바비큐의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-pork-belly-bbq-finished.webp",
+      "alt": "완성된 삼겹살 바비큐",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-tofu-kimchi-ingredients",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/camping-tofu-kimchi-finished.webp",
+      "alt": "완성된 두부김치",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-tofu-kimchi-ingredients-cover.webp",
+      "alt": "두부김치의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "camping-tofu-kimchi-ingredients",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/camping-tofu-kimchi-ingredients-cover-unified-v2.webp",
+      "alt": "두부김치의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/camping-tofu-kimchi-finished.webp",
+      "alt": "완성된 두부김치",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-pork-kimchi-stew-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260919-pork-kimchi-stew-finished.webp",
+      "alt": "완성된 돼지고기 김치찌개",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-pork-kimchi-stew-cover.webp",
+      "alt": "돼지고기 김치찌개의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-pork-kimchi-stew-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260919-pork-kimchi-stew-cover-unified-v2.webp",
+      "alt": "돼지고기 김치찌개의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-pork-kimchi-stew-finished.webp",
+      "alt": "완성된 돼지고기 김치찌개",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-doenjang-stew-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260919-doenjang-stew-finished.webp",
+      "alt": "완성된 된장찌개",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-doenjang-stew-cover.webp",
+      "alt": "된장찌개의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-doenjang-stew-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260919-doenjang-stew-cover-unified-v2.webp",
+      "alt": "된장찌개의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-doenjang-stew-finished.webp",
+      "alt": "완성된 된장찌개",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-perilla-mushroom-soup-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-finished.webp",
+      "alt": "완성된 들깨버섯탕",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-cover.webp",
+      "alt": "들깨버섯탕의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-perilla-mushroom-soup-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-cover-unified-v2.webp",
+      "alt": "들깨버섯탕의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-perilla-mushroom-soup-finished.webp",
+      "alt": "완성된 들깨버섯탕",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-potato-sujebi-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260919-potato-sujebi-finished.webp",
+      "alt": "완성된 감자수제비",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-potato-sujebi-cover.webp",
+      "alt": "감자수제비의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-potato-sujebi-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260919-potato-sujebi-cover-unified-v2.webp",
+      "alt": "감자수제비의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-potato-sujebi-finished.webp",
+      "alt": "완성된 감자수제비",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-shrimp-butter-grill-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260919-shrimp-butter-grill-finished.webp",
+      "alt": "완성된 새우버터구이",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-shrimp-butter-grill-cover.webp",
+      "alt": "새우버터구이의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-shrimp-butter-grill-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260919-shrimp-butter-grill-cover-unified-v2.webp",
+      "alt": "새우버터구이의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-shrimp-butter-grill-finished.webp",
+      "alt": "완성된 새우버터구이",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-mackerel-potato-braise-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260919-mackerel-potato-braise-finished.webp",
+      "alt": "완성된 고등어감자조림",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-mackerel-potato-braise-cover.webp",
+      "alt": "고등어감자조림의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-mackerel-potato-braise-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260919-mackerel-potato-braise-cover-unified-v2.webp",
+      "alt": "고등어감자조림의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-mackerel-potato-braise-finished.webp",
+      "alt": "완성된 고등어감자조림",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-chicken-potato-stew-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260919-chicken-potato-stew-finished.webp",
+      "alt": "완성된 닭볶음탕",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-chicken-potato-stew-cover.webp",
+      "alt": "닭볶음탕의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-chicken-potato-stew-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260919-chicken-potato-stew-cover-unified-v2.webp",
+      "alt": "닭볶음탕의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-chicken-potato-stew-finished.webp",
+      "alt": "완성된 닭볶음탕",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-tteokbokki-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260919-tteokbokki-finished.webp",
+      "alt": "완성된 떡볶이",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-tteokbokki-cover.webp",
+      "alt": "떡볶이의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-tteokbokki-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260919-tteokbokki-cover-unified-v2.webp",
+      "alt": "떡볶이의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-tteokbokki-finished.webp",
+      "alt": "완성된 떡볶이",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-zucchini-pancake-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260919-zucchini-pancake-finished.webp",
+      "alt": "완성된 애호박전",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-zucchini-pancake-cover.webp",
+      "alt": "애호박전의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-zucchini-pancake-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260919-zucchini-pancake-cover-unified-v2.webp",
+      "alt": "애호박전의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-zucchini-pancake-finished.webp",
+      "alt": "완성된 애호박전",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-corn-cheese-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260919-corn-cheese-finished.webp",
+      "alt": "완성된 버터콘치즈",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-corn-cheese-cover.webp",
+      "alt": "버터콘치즈의 주재료와 양념을 준비한 AI 연출 재료 사진",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-camping-corn-cheese-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260919-corn-cheese-cover-unified-v2.webp",
+      "alt": "버터콘치즈의 주재료와 양념을 준비한 AI 연출 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "조리 준비 예시이며 실제 판매 상품의 구성과 다를 수 있습니다."
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260919-corn-cheese-finished.webp",
+      "alt": "완성된 버터콘치즈",
+      "width": 1200,
+      "height": 800,
+      "generated": true,
+      "usageNotice": "AI로 연출한 요리 이미지입니다. 실제 조리 결과와 다를 수 있습니다."
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-soy-butter-potato-grill",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260920-soy-butter-potato-grill-cover-unified-v2.webp",
+      "alt": "간장버터감자구이용 감자와 버터, 간장을 준비한 가을 캠핑 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-soy-butter-potato-grill-cover.webp",
+      "alt": "간장버터감자구이용 감자와 버터, 간장을 준비한 가을 캠핑 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-shrimp-jeon",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260920-shrimp-jeon-cover-unified-v2.webp",
+      "alt": "새우전용 새우와 달걀, 부침가루를 준비한 가을 캠핑 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-shrimp-jeon-cover.webp",
+      "alt": "새우전용 새우와 달걀, 부침가루를 준비한 가을 캠핑 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-mushroom-cheese-grill",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260920-mushroom-cheese-grill-cover-unified-v2.webp",
+      "alt": "버섯치즈구이용 새송이버섯과 치즈, 버터를 준비한 가을 캠핑 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-mushroom-cheese-grill-cover.webp",
+      "alt": "버섯치즈구이용 새송이버섯과 치즈, 버터를 준비한 가을 캠핑 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-tofu-soy-grill",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260920-tofu-soy-grill-cover-unified-v2.webp",
+      "alt": "두부간장구이용 두부와 간장, 마늘을 준비한 가을 캠핑 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-tofu-soy-grill-cover.webp",
+      "alt": "두부간장구이용 두부와 간장, 마늘을 준비한 가을 캠핑 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-kimchi-fishcake-stirfry",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260920-kimchi-fishcake-stirfry-cover-unified-v2.webp",
+      "alt": "김치어묵볶음용 김치와 어묵, 양파를 준비한 가을 캠핑 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-kimchi-fishcake-stirfry-cover.webp",
+      "alt": "김치어묵볶음용 김치와 어묵, 양파를 준비한 가을 캠핑 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-jeyuk-bokkeum-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260920-jeyuk-cover-unified-v2.webp",
+      "alt": "가을 캠핑에서 제육볶음을 준비한 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-jeyuk-prep.webp",
+      "alt": "제육볶음용 돼지고기와 채소를 손질해 둔 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-jeyuk-bokkeum-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260920-jeyuk-prep.webp",
+      "alt": "제육볶음용 돼지고기와 채소를 손질해 둔 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-jeyuk-cover.webp",
+      "alt": "가을 캠핑 제육볶음 완성 요리의 전체 모습",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-sundae-bokkeum-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260920-sundae-cover-unified-v2.webp",
+      "alt": "가을 캠핑 순대볶음을 준비한 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-sundae-prep.webp",
+      "alt": "순대볶음용 순대와 채소, 양념을 준비한 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-sundae-bokkeum-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260920-sundae-prep.webp",
+      "alt": "순대볶음용 순대와 채소, 양념을 준비한 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-sundae-cover.webp",
+      "alt": "가을 캠핑 순대볶음 완성 요리의 전체 모습",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-dakgalbi-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260920-dakgalbi-cover-unified-v2.webp",
+      "alt": "가을 캠핑에서 춘천 닭갈비를 준비한 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-dakgalbi-cover.webp",
+      "alt": "가을 캠핑에서 춘천 닭갈비를 준비한 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-chicken-kimchi-fried-rice-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260920-chicken-kimchi-rice-cover-unified-v2.webp",
+      "alt": "가을 캠핑 닭가슴살 김치볶음밥을 준비한 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-chicken-kimchi-rice-cover.webp",
+      "alt": "가을 캠핑 닭가슴살 김치볶음밥을 준비한 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-mussel-seaweed-soup-ingredient-checklist",
+    "path": "cover",
+    "before": {
+      "url": "/prep-images/autumn-20260920-mussel-seaweed-cover-unified-v2.webp",
+      "alt": "가을 캠핑에서 홍합미역국을 준비한 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-mussel-seaweed-prep.webp",
+      "alt": "홍합미역국용 홍합살과 미역, 채소를 준비한 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  },
+  {
+    "slug": "autumn-20260920-mussel-seaweed-soup-ingredient-checklist",
+    "path": "sections.0.image",
+    "before": {
+      "url": "/prep-images/autumn-20260920-mussel-seaweed-prep.webp",
+      "alt": "홍합미역국용 홍합살과 미역, 채소를 준비한 장면",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "after": {
+      "url": "/prep-images/autumn-20260920-mussel-seaweed-cover.webp",
+      "alt": "가을 캠핑 홍합미역국 완성 요리의 전체 모습",
+      "width": 1200,
+      "height": 800,
+      "generated": true
+    },
+    "reason": "제목을 중복 합성한 파일을 제외하고 재료를 상단, 완성 요리를 본문에 배치. 원본 사진 33개 시각 검토."
+  }
+]

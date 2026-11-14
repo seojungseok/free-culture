@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import ts from 'typescript';
 import {load} from 'cheerio';
+import {DATA_SOURCES} from '../lib/data-freshness.mjs';
 const base=process.env.VERIFY_BASE || 'http://127.0.0.1:3314';
 const store=JSON.parse(fs.readFileSync('data/weekend-prep.json','utf8'));
 const cooking=JSON.parse(fs.readFileSync('data/prep-cooking-guides.json','utf8'));
@@ -28,6 +29,12 @@ for(const article of store.articles.filter(article=>article.status==='published'
   check(schemas.some(schema=>schema['@type']==='BreadcrumbList'),'Breadcrumb missing');
   const photos=$('article .prep-photo img').length;
   check(photos>=3&&photos<=4,'Expected 3–4 distinct preparation images');
+  if(article.checklist?.length){
+   const sources=$('article .prep-photo img').map((_,img)=>$(img).attr('src')||'').get();
+   check(!sources.some(src=>src.includes('-cover-unified-v2')),'Old double-caption image remains');
+   const expected=article.cover.url.replace(/\.webp$/,'');
+   check(sources[0].includes(expected),'Ingredient cover is not first');
+  }
   if(article.checklist?.length)check(!/냄비|국자|국그릇|조리도구|집게/.test($('.prep-lead').text()),'Household purchases remain in description');
   if(cooking.guides[article.slug]){
    check($('#prep-cooking').length===1,'Cooking section duplicated');
@@ -40,9 +47,9 @@ for(const article of store.articles.filter(article=>article.status==='published'
 }
 try{
  const status=await fetch(new URL('/api/data-status',base)).then(response=>response.json());
- check(status.sources.length===6&&status.healthy===true,'Data is not current');
+ check(status.sources.length===DATA_SOURCES.length&&status.healthy===true,'Data is not current');
  const $=load(await fetch(new URL('/about',base)).then(response=>response.text()));
- check($('#data-updates time').length===6,'About page collection dates missing');
+ check($('#data-updates time').length===DATA_SOURCES.length,'About page collection dates missing');
  if(process.env.EXPECTED_COMMIT){const live=await fetch(new URL('/api/site-status',base)).then(response=>response.json());check(live.commit===process.env.EXPECTED_COMMIT,'Deployment commit differs');}
  results.push({slug:'data-status/about',ok:true,sources:status.sources});
 }catch(error){results.push({slug:'data-status/about',ok:false,error:error.message});}

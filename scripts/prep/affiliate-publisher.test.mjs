@@ -20,11 +20,11 @@ test('all original article URLs, publication states, text and affiliate destinat
  for(const before of original.articles){
   const after=store.articles.find(a=>a.slug===before.slug);
   const expected=structuredClone(before);
-  const copyLog=['data/prep-copy-edits-20261111.json','data/prep-copy-edits-20261114.json'].flatMap(file=>fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'utf8')):[]);
+  const copyLog=['data/prep-copy-edits-20261111.json','data/prep-copy-edits-20261114.json','data/prep-image-edits-20261114.json'].flatMap(file=>fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'utf8')):[]);
   for(const edit of copyLog.filter(edit=>edit.slug===before.slug)){
-   assert(/^(description|cover\.alt|sections\.\d+\.(text|image|image\.alt)|checklist\.\d+\.label)$/.test(edit.path),'Only explicitly reviewed copy or same-article preparation images may change');
+   assert(/^(description|cover|cover\.alt|sections\.\d+\.(text|image|image\.alt)|checklist\.\d+\.label)$/.test(edit.path),'Only explicitly reviewed copy or same-article preparation images may change');
    const parts=edit.path.split('.');let target=expected;for(const key of parts.slice(0,-1))target=target[key];
-   assert(target[parts.at(-1)]===edit.before,'Copy review must match the original text');target[parts.at(-1)]=edit.after;
+   assert.deepEqual(target[parts.at(-1)],edit.before,'Copy review must match the original text or image');target[parts.at(-1)]=edit.after;
   }
   assert(after,'Existing URL must remain');
   for(const field of ['title','description','status','publishAt','sections','internalLinks','cover'])assert(JSON.stringify(after[field])===JSON.stringify(expected[field]),'Existing article content and approved copy edits must remain: '+field);

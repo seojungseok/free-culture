@@ -39,6 +39,19 @@ test('camping equipment and outdoor play retain their reviewed products',()=>{
   assert.equal(prepShoppingItems(article,items),items);
  }
 });
+
+test('ingredient guides show clean ingredient covers and move finished food into the body',()=>{
+ const ingredients=store.articles.filter(article=>article.checklist?.length);
+ assert.equal(ingredients.length,33);
+ for(const article of ingredients){
+  const photos=[article.cover,...article.sections.map(section=>section.image).filter(Boolean)];
+  assert(!photos.some(photo=>photo.url.includes('-cover-unified-v2.webp')),article.slug);
+  assert(!article.cover.url.endsWith('-finished.webp'),article.slug);
+ }
+ const fishcake=ingredients.find(article=>article.slug==='camping-fishcake-soup-ingredient-checklist');
+ assert.equal(fishcake.cover.url,'/prep-images/camp-fishcake-soup-checklist-cover.webp');
+ assert.equal(fishcake.sections[0].image.url,'/prep-images/camp-fishcake-soup-finished.webp');
+});
 test('each soup recipe has usable quantities, ingredient order, corrections, alternatives and dated sources',()=>{
  assert.equal(Object.keys(cooking.guides).length,15);
  assert(Number.isFinite(Date.parse(cooking.checkedAt)));

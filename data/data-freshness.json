@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-14T11:11:27.723Z",
+  "checkedAt": "2026-11-14T12:47:11.004Z",
   "healthy": true,
   "sources": [
     {
@@ -54,6 +54,51 @@
       "interval": "매주 월요일",
       "count": 3238,
       "checkedAt": "2026-11-08T22:19:24.451Z",
+      "status": "fresh"
+    },
+    {
+      "id": "learning",
+      "label": "문화·취미 강좌",
+      "provider": "지방자치단체·교육청",
+      "interval": "매일",
+      "count": 2832,
+      "checkedAt": "2026-11-14T12:11:26.907Z",
+      "status": "fresh"
+    },
+    {
+      "id": "accessible",
+      "label": "이동·영유아 편의정보",
+      "provider": "한국관광공사",
+      "interval": "화~일요일 · 상세 순차 확인",
+      "count": 51,
+      "checkedAt": "2026-11-14T12:13:57.135Z",
+      "status": "fresh"
+    },
+    {
+      "id": "rural-experiences",
+      "label": "농촌·어촌 체험",
+      "provider": "한국농어촌공사·한국어촌어항공단",
+      "interval": "매일 원자료 확인 · 원문 반기 갱신",
+      "count": 1261,
+      "checkedAt": "2026-11-14T12:39:23.464Z",
+      "status": "fresh"
+    },
+    {
+      "id": "youth-experiences",
+      "label": "어린이·청소년 체험",
+      "provider": "성평등가족부",
+      "interval": "매일",
+      "count": 118,
+      "checkedAt": "2026-11-14T12:39:28.800Z",
+      "status": "fresh"
+    },
+    {
+      "id": "science-experiences",
+      "label": "과학관 교육·체험",
+      "provider": "국립중앙과학관·인천학생과학관",
+      "interval": "매일 공식 교육 일정 확인",
+      "count": 14,
+      "checkedAt": "2026-11-14T12:39:29.067Z",
       "status": "fresh"
     }
   ]

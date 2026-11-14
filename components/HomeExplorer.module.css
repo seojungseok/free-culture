@@ -7,7 +7,7 @@
   background: #fff;
   padding-bottom: 48px;
 }
-.searchArea,.categories,.quickNav,.section,.winterSection {
+.searchArea,.categories,.quickNav,.section,.winterSection,.publicDiscovery {
   width:100%;
   max-width:1120px;
   margin-inline:auto;
@@ -30,6 +30,15 @@
 .quickNav {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-bottom:8px}
 .quickNav>a,.quickNav>button {display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;padding:8px 4px;border:1px solid var(--home-line);border-radius:11px;background:#fff;color:var(--home-navy);font-size:11px;font-weight:750;line-height:1.35;text-align:center;box-shadow:none}
 .section {padding-top:32px}
+.publicDiscovery {padding-top:22px;padding-bottom:8px}
+.publicDiscovery h2 {font-size:20px;font-weight:850;letter-spacing:-.03em;margin-bottom:12px}
+.publicDiscovery>div {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.publicDiscovery a {min-width:0;padding:18px;border:1px solid #b9cde6;border-radius:12px;background:#f3f7fc;line-height:1.7}
+.publicDiscovery strong {display:block;font-size:17px;color:#102344}
+.publicDiscovery span {display:block;margin-top:5px;font-size:13px;color:#526174;word-break:keep-all}
+.publicDiscovery .discoveryMore {display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:8px}
+.publicDiscovery .discoveryMore a {min-height:44px;display:inline-flex;align-items:center;padding:0;background:none;border:0;border-radius:0;font-size:13px;font-weight:750;color:#245db6;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:560px){.publicDiscovery>div{grid-template-columns:1fr}.publicDiscovery a{padding:16px}}
 .sectionHeading {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
 .sectionHeading>div {min-width:0}
 .sectionHeading h2 {color:var(--home-navy);font-size:21px;font-weight:900;line-height:1.4;letter-spacing:-.04em;word-break:keep-all}
@@ -97,7 +106,7 @@
 }
 @media(min-width:1024px) {
  .searchArea,.categories,.quickNav,.section,.winterSection {padding-inline:32px}
- .categoryGrid {grid-template-columns:repeat(10,minmax(0,1fr));gap:12px}
+ .categoryGrid {grid-template-columns:repeat(11,minmax(0,1fr));gap:10px}
  .cardGrid {grid-template-columns:repeat(4,minmax(0,1fr))}
  .winterGrid {grid-template-columns:repeat(4,minmax(0,1fr))}
  .cardGrid>:nth-child(-n+4),.winterGrid>:nth-child(-n+4) {display:block}

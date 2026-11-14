@@ -31,6 +31,7 @@ jobs:
       - name: 수집 한도·저장정보 보존 검사 (실 API 호출 없음)
         run: |
           node --test scripts/lib/tourClient.test.mjs scripts/lib/refreshQueue.test.mjs scripts/lib/regionalRequest.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs scripts/site-optimization.test.mjs scripts/nas/smoke.test.mjs scripts/data-freshness.test.mjs
+          node --test scripts/experiences.test.mjs scripts/public-discovery.test.mjs
           node scripts/test-tour-detail-fallback.cjs
           node --test scripts/enrichCourseStops.test.mjs scripts/enrichCoursePlaces.test.mjs scripts/enrichCultureEvents.test.mjs
           node --test scripts/winter-daytrips.test.mjs scripts/winter-course.test.mjs scripts/winter-public-display.test.mjs scripts/lib/winter-evidence.test.mjs scripts/winter-photo.test.mjs scripts/winter-publication.test.mjs
@@ -178,6 +179,38 @@ jobs:
           PET_ENRICH_DAILY: "10"
         run: node scripts/enrichPetTravel.mjs
 
+      - name: 농어촌·청소년 체험 신규 콘텐츠 갱신 (승인 API)
+        id: experiences
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: node scripts/collectExperiences.mjs
+
+      - name: 과학관 공식 교육 일정 확인 (기관별 실패 시 기존 안내 보존)
+        id: science
+        continue-on-error: true
+        timeout-minutes: 3
+        run: node scripts/collectSciencePrograms.mjs
+
+      - name: 전국 문화·취미 강좌 갱신 (공공데이터포털 승인 API)
+        id: learning
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: node scripts/collectLearning.mjs
+
+      - name: 이동·영유아 편의정보 보강 (월요일은 주간 예산 우선)
+        id: accessible
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          ACCESSIBLE_DAILY: ${{ steps.api_budget.outputs.accessible }}
+        run: node scripts/run-collector.mjs scripts/collectAccessible.mjs
+
       - name: 공공자료 최신성 확인 (외부 API 추가 호출 없음)
         id: freshness
         continue-on-error: true
@@ -188,7 +221,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/data-freshness.json data/winter-courses.json data/winter-budget.json data/winter-place-verifications.json data/events.json data/events-archive.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
+          git add data/data-freshness.json data/rural-experiences.json data/youth-experiences.json data/science-experiences.json data/learning-classes.json data/accessible-travel.json data/winter-courses.json data/winter-budget.json data/winter-place-verifications.json data/events.json data/events-archive.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
                   data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json data/place-details.json \
                   data/pet-travel.json data/city-tour-articles.json data/course-stop-checks.json data/course-place-details.json data/event-source-details.json
           if git diff --staged --quiet; then
@@ -235,6 +268,10 @@ jobs:
           CULTURE_DETAILS: ${{ steps.culture_details.outcome }}
           NEW_ARTICLES: ${{ steps.new_articles.outcome }}
           FRESHNESS: ${{ steps.freshness.outcome }}
+          LEARNING: ${{ steps.learning.outcome }}
+          ACCESSIBLE: ${{ steps.accessible.outcome }}
+          EXPERIENCES: ${{ steps.experiences.outcome }}
+          SCIENCE: ${{ steps.science.outcome }}
           FESTIVAL_DETAIL_STATUS: ${{ steps.festival_details.outputs.collector_status }}
           PLACE_DETAIL_STATUS: ${{ steps.details.outputs.collector_status }}
           IMAGE_STATUS: ${{ steps.images.outputs.collector_status }}
@@ -244,7 +281,7 @@ jobs:
         run: |
           failed=0
           failed_names=()
-          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS NEW_ARTICLES FRESHNESS; do
+          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS NEW_ARTICLES LEARNING ACCESSIBLE EXPERIENCES SCIENCE FRESHNESS; do
             outcome="${!name}"
             echo "$name: $outcome"
             if [ "$outcome" = "failure" ]; then
