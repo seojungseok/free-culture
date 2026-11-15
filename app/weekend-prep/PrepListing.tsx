@@ -3,6 +3,7 @@ import PrepCover from '@/components/PrepCover';
 import {COOKING_CATEGORIES,cookingCategory,getPrepArticles,isCookingPrepArticle,isPrepReview,prepCategoryLabel} from '@/lib/weekend-prep/data';
 import {PREP_CATEGORIES} from '@/lib/weekend-prep/types';
 import TossTopDeals from '@/components/TossTopDeals';
+import {prepCollectionTitle,prepCollectionDescription} from '@/lib/weekend-prep/search';
 
 export type PrepListParams={q?:string;category?:string;cooking?:string;page?:string};
 
@@ -19,8 +20,8 @@ export default function PrepListing({params:p={},directory}:{params?:PrepListPar
   return <main className="prep">
     {isPrepReview&&<p className="prep-notice">로컬 검토 화면 · 비공개 초안이 포함되어 있습니다.</p>}
     <p className="prep-eyebrow">CAMP COOKING</p>
-    <h1>캠핑요리 재료와 레시피</h1>
-    <p className="prep-lead">이번 캠핑에서는 무엇을 먹을까요?<br/>메뉴별 재료와 양념, 조리도구를 확인하고 장보기 목록을 완성해 보세요.</p>
+    <h1>{prepCollectionTitle}</h1>
+    <p className="prep-lead">{prepCollectionDescription}</p>
     {!isPrepReview&&<TossTopDeals contained />}
     <form action="/weekend-prep" className="prep-search"><input name="q" defaultValue={q} aria-label="요리와 준비물 검색" placeholder="메뉴나 준비물을 검색하세요"/>{category&&<input type="hidden" name="category" value={category}/>}<button>검색</button></form>
     <nav className="prep-filters" aria-label="준비물 분류"><Link href={href('')} aria-current={!category?'page':undefined}>전체 보기</Link>{PREP_CATEGORIES.filter(c=>all.some(a=>prepCategoryLabel(a.category,a)===c)).map(c=><Link key={c} href={href(c)} aria-current={category===c?'page':undefined}>{c}</Link>)}</nav>

@@ -9,8 +9,8 @@ import {reviewedPrepAffiliate, prepDishName, prepShoppingItems} from '@/lib/prep
 import PrepCookingGuide, {hasDetailedCookingGuide} from './PrepCookingGuide';
 import TossTopDeals from './TossTopDeals';
 
-function dishName(title:string){
- return prepDishName(title);
+function dishName(article:Article){
+ return article.dishName||prepDishName(article.title);
 }
 
 function bodyText(text:string){
@@ -73,7 +73,7 @@ const smallSeafoodSlugs=new Set(['camping-seafood-hotpot-ingredient-checklist','
 function CookingGuide({article}:{article:Article}){
  if(hasDetailedCookingGuide(article.slug))return <PrepCookingGuide slug={article.slug}/>;
  const guide=cookingGuides[article.slug];
- if(!guide)return <section id="prep-cooking" className="prep-cooking-intro" aria-label="간단한 요리 방법"><h2>간단한 {dishName(article.title)} 만드는 방법</h2><p>{quickCookingGuide(dishName(article.title))}</p></section>;
+ if(!guide)return <section id="prep-cooking" className="prep-cooking-intro" aria-label="간단한 요리 방법"><h2>간단한 {dishName(article)} 만드는 방법</h2><p>{quickCookingGuide(dishName(article))}</p></section>;
  return <section id="prep-cooking" className="prep-cooking-intro" aria-label={guide.title}><h2>{guide.title}</h2><ol className="prep-cooking-steps">{guide.steps.map((step,index)=><li key={index}>{step}</li>)}</ol><p className="prep-cooking-note">해동과 조리 방법은 제품 포장을 확인하고, 식재료별 식품안전 기준에 맞게 충분히 익히세요.</p>{smallSeafoodSlugs.has(article.slug)&&<p className="prep-cooking-note">식약처는 어패류를 중심온도 85℃ 이상에서 1분 이상 익히도록 안내합니다. 작은 재료는 얇은 탐침의 식품용 온도계를 옆으로 넣어 중심을 확인하세요. 탐침을 넣을 수 없다면 이 기준에 도달했는지 확인하기 어렵고, 색만으로 안전을 판단할 수 없습니다.</p>}</section>;
 }
 
@@ -85,7 +85,7 @@ export default function PrepArticle({article:a,preview=false,relatedArticles=[],
  const usedPhotos=new Set([a.cover.url]);
  const neutralPhotos=a.sections.flatMap(section=>section.image?[section.image]:[]).filter(photo=>!photo.url.includes('-support.webp')).filter(photo=>{if(usedPhotos.has(photo.url))return false;usedPhotos.add(photo.url);return true;});
  const completedUrl=completedFoodPhotos[a.slug]?'/prep-images/'+completedFoodPhotos[a.slug]+'.webp':'';
- const completedPhoto=completedUrl&&!usedPhotos.has(completedUrl)?{...a.cover,url:completedUrl,alt:'완성된 '+dishName(a.title)+' 요리 장면'}:undefined;
+ const completedPhoto=completedUrl&&!usedPhotos.has(completedUrl)?{...a.cover,url:completedUrl,alt:'완성된 '+dishName(a)+' 요리 장면'}:undefined;
  return <article className="prep-article">
   <nav aria-label="현재 위치"><Link href="/">홈</Link> / <Link href="/weekend-prep">캠핑요리</Link> / {prepCategoryLabel(a.category,a)}</nav>
   {preview&&<p className="prep-notice">검토용 초안 · 아직 공개되지 않은 글입니다.</p>}
@@ -93,7 +93,7 @@ export default function PrepArticle({article:a,preview=false,relatedArticles=[],
   {hasAffiliate&&<p className="prep-affiliate-disclosure">이 글에는 쿠팡 제휴 링크가 포함되어 있습니다. 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.</p>}
   {!!shoppingItems.length&&<nav className="prep-guide-actions" aria-label="캠핑요리 바로가기"><a href="#prep-checklist">{imageKind==='cooking'?'재료 목록 보기 ↓':'상품 목록 보기 ↓'}</a><a href="#prep-cooking">{imageKind==='cooking'?'조리 순서 보기 ↓':'선택 요령 보기 ↓'}</a></nav>}
   <PrepImage photo={a.cover} priority headline={a.coverLabel||a.title}/>
-  {!!shoppingItems.length&&<PrepChecklist kind={imageKind} slug={a.slug} items={shoppingItems} dishName={dishName(a.title)}/>}
+  {!!shoppingItems.length&&<PrepChecklist kind={imageKind} slug={a.slug} items={shoppingItems} dishName={dishName(a)}/>}
   {checklist&&<CookingGuide article={a}/>}
   {!preview&&<TossTopDeals contained />}
   {checklist&&<FoodChecklistDetails slug={a.slug} articles={relatedArticles} preparationImage={neutralPhotos[0]?<PrepImage photo={neutralPhotos[0]}/>:null} tipImage={neutralPhotos[1]?<PrepImage photo={neutralPhotos[1]}/>:null} images={<div className="prep-food-images">{neutralPhotos.slice(2).map(photo=><PrepImage key={photo.url} photo={photo}/>)}{completedPhoto&&<PrepImage photo={completedPhoto}/>}</div>}/>}

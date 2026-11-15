@@ -1,0 +1,656 @@
+{
+  "checkedAt": "2026-11-15T12:40:34.692Z",
+  "method": "Public Naver autocomplete suggestions; no search volume or ranking data",
+  "results": [
+    {
+      "seed": "캠핑 요리",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%BA%A0%ED%95%91+%EC%9A%94%EB%A6%AC&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:23.846Z",
+      "suggestions": [
+        "캠핑요리",
+        "간단캠핑요리",
+        "캠핑요리추천",
+        "캠핑요리배달",
+        "캠핑요리메뉴",
+        "가족캠핑요리",
+        "캠핑요리레시피"
+      ]
+    },
+    {
+      "seed": "캠핑 음식",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%BA%A0%ED%95%91+%EC%9D%8C%EC%8B%9D&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:24.108Z",
+      "suggestions": [
+        "캠핑음식",
+        "캠핑음식배달",
+        "캠핑음식추천"
+      ]
+    },
+    {
+      "seed": "꽃게탕",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EA%BD%83%EA%B2%8C%ED%83%95&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:24.380Z",
+      "suggestions": [
+        "꽃게탕 레시피",
+        "꽃게탕 끓이는법",
+        "꽃게탕",
+        "꽃게탕 맛집",
+        "꽃게탕 재료",
+        "꽃게탕 양념",
+        "강화도 꽃게탕",
+        "여수 꽃게탕",
+        "꽃게탕면",
+        "평택 꽃게탕"
+      ]
+    },
+    {
+      "seed": "어묵탕",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%96%B4%EB%AC%B5%ED%83%95&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:24.649Z",
+      "suggestions": [
+        "어묵탕 레시피",
+        "어묵탕",
+        "어묵탕 끓이는법",
+        "어묵탕 육수",
+        "어묵탕 냄비",
+        "어묵탕 밀키트",
+        "어묵탕 소스",
+        "김치어묵탕",
+        "꼬치어묵탕",
+        "매운어묵탕"
+      ]
+    },
+    {
+      "seed": "부대찌개",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:24.919Z",
+      "suggestions": [
+        "부대찌개",
+        "부대찌개 레시피",
+        "땅스부대찌개",
+        "부대찌개 양념장",
+        "부대찌개 맛집",
+        "부대찌개 재료",
+        "부대찌개 밀키트",
+        "부대찌개 햄",
+        "대우부대찌개",
+        "박가부대찌개"
+      ]
+    },
+    {
+      "seed": "소고기 버섯전골",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%86%8C%EA%B3%A0%EA%B8%B0+%EB%B2%84%EC%84%AF%EC%A0%84%EA%B3%A8&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:25.190Z",
+      "suggestions": [
+        "소고기 버섯전골",
+        "소고기 버섯전골 만들기",
+        "소고기 버섯전골많드는법",
+        "소고기 버섯전골 소스",
+        "소고기 버섯전골 재료",
+        "소고기 버섯전골 육수 내는법",
+        "소고기버섯전골 레시피",
+        "소고기버섯전골 소스 레시피",
+        "소고기버섯전골 레시피방법",
+        "소고기버섯전골 사골육수"
+      ]
+    },
+    {
+      "seed": "해물탕",
+      "url": "https://ac.search.naver.com/nx/ac?q=%ED%95%B4%EB%AC%BC%ED%83%95&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:25.462Z",
+      "suggestions": [
+        "해물탕",
+        "해물탕 레시피",
+        "해물탕 맛집",
+        "근처 해물탕",
+        "해물탕 끓이는법",
+        "동해해물탕",
+        "해물탕집",
+        "군포해물탕",
+        "대구 해물탕",
+        "용궁해물탕"
+      ]
+    },
+    {
+      "seed": "햄치즈 샌드위치",
+      "url": "https://ac.search.naver.com/nx/ac?q=%ED%96%84%EC%B9%98%EC%A6%88+%EC%83%8C%EB%93%9C%EC%9C%84%EC%B9%98&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:25.732Z",
+      "suggestions": [
+        "햄치즈 샌드위치",
+        "메가커피 햄치즈 샌드위치",
+        "햄치즈 샌드위치 레시피",
+        "햄치즈 샌드위치 도시락",
+        "햄치즈 샌드위치 재료",
+        "햄치즈 샌드위치 소스 추천",
+        "햄치즈 샌드위치 소스 레시피",
+        "햄치즈 샌드위치 레시피 소스",
+        "햄치즈 샌드위치 다이어트",
+        "햄치즈 샌드위치 만들기 소스"
+      ]
+    },
+    {
+      "seed": "잔치국수",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%9E%94%EC%B9%98%EA%B5%AD%EC%88%98&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:26.000Z",
+      "suggestions": [
+        "잔치국수 레시피",
+        "잔치국수",
+        "잔치국수 양념장",
+        "잔치국수 육수",
+        "잔치국수 맛집",
+        "잔치국수 칼로리",
+        "잔치국수 고명",
+        "잔치국수집",
+        "잔치국수 만들기",
+        "근처 잔치국수"
+      ]
+    },
+    {
+      "seed": "야채꼬치",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%95%BC%EC%B1%84%EA%BC%AC%EC%B9%98&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:26.270Z",
+      "suggestions": [
+        "야채꼬치",
+        "야채 꼬치 쉽게 하는법"
+      ]
+    },
+    {
+      "seed": "캠핑 준비물",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%BA%A0%ED%95%91+%EC%A4%80%EB%B9%84%EB%AC%BC&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:26.539Z",
+      "suggestions": [
+        "캠핑 준비물",
+        "캠핑 준비물 리스트",
+        "동계캠핑 준비물",
+        "겨울 캠핑 준비물",
+        "우중 캠핑 준비물",
+        "11월 캠핑 준비물",
+        "겨울 캠핑 준비물 리스트",
+        "캠핑 준비물 음식",
+        "첫 캠핑 준비물",
+        "캠핑 준비물 리스트 음식"
+      ]
+    },
+    {
+      "seed": "고리던지기",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EA%B3%A0%EB%A6%AC%EB%8D%98%EC%A7%80%EA%B8%B0&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:26.808Z",
+      "suggestions": [
+        "고리던지기",
+        "고리던지기 교구",
+        "고리 던지기 놀이",
+        "고리던지기 링",
+        "고리던지기 효과",
+        "고리던지기 고리",
+        "고리 던지기 장난감",
+        "고리던지기 방법",
+        "고리던지기 만들기",
+        "고리던지기 세트"
+      ]
+    },
+    {
+      "seed": "제육볶음",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%A0%9C%EC%9C%A1%EB%B3%B6%EC%9D%8C&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:27.069Z",
+      "suggestions": [
+        "제육볶음 레시피",
+        "제육볶음",
+        "제육볶음 황금레시피",
+        "류수영 제육볶음",
+        "제육볶음 양념",
+        "제육볶음 맛집",
+        "제육볶음 고기",
+        "근처 제육볶음",
+        "제육볶음 칼로리",
+        "제육볶음 재료"
+      ]
+    },
+    {
+      "seed": "순대볶음",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%88%9C%EB%8C%80%EB%B3%B6%EC%9D%8C&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:27.329Z",
+      "suggestions": [
+        "순대볶음 레시피",
+        "순대볶음",
+        "순대볶음 양념장",
+        "순대볶음 맛집",
+        "류수영 순대볶음",
+        "순대볶음 만들기",
+        "야채순대볶음",
+        "보령 순대볶음",
+        "신림 순대볶음",
+        "보령웅천 순대볶음"
+      ]
+    },
+    {
+      "seed": "닭갈비",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%8B%AD%EA%B0%88%EB%B9%84&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:27.599Z",
+      "suggestions": [
+        "닭갈비",
+        "닭갈비 레시피",
+        "춘천 닭갈비",
+        "유가네닭갈비",
+        "닭갈비 맛집",
+        "닭갈비 양념장",
+        "닭갈비 양념",
+        "닭갈비제작소",
+        "장인닭갈비",
+        "부막숯불닭갈비"
+      ]
+    },
+    {
+      "seed": "오징어볶음",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%98%A4%EC%A7%95%EC%96%B4%EB%B3%B6%EC%9D%8C&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:27.871Z",
+      "suggestions": [
+        "오징어볶음 레시피",
+        "오징어볶음",
+        "오징어볶음 황금레시피",
+        "류수영 오징어볶음",
+        "간장오징어볶음",
+        "남원 오징어볶음",
+        "오징어볶음 양념",
+        "오징어볶음밥",
+        "경주 오징어볶음",
+        "익산 오징어볶음"
+      ]
+    },
+    {
+      "seed": "김치볶음밥",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EA%B9%80%EC%B9%98%EB%B3%B6%EC%9D%8C%EB%B0%A5&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:28.139Z",
+      "suggestions": [
+        "김치볶음밥 레시피",
+        "김치볶음밥 황금레시피",
+        "스팸김치볶음밥",
+        "김치볶음밥",
+        "참치김치볶음밥",
+        "스팸김치볶음밥 레시피",
+        "크림김치볶음밥",
+        "파김치 볶음밥",
+        "삼겹김치볶음밥",
+        "한솥 김치볶음밥"
+      ]
+    },
+    {
+      "seed": "해물라면",
+      "url": "https://ac.search.naver.com/nx/ac?q=%ED%95%B4%EB%AC%BC%EB%9D%BC%EB%A9%B4&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:28.409Z",
+      "suggestions": [
+        "해물라면",
+        "제주도 해물라면",
+        "팔도 해물라면",
+        "해물라면 레시피",
+        "제주 해물라면",
+        "애월 해물라면",
+        "모모언니해물라면",
+        "서귀포 해물라면",
+        "우도 해물라면",
+        "일품해물라면"
+      ]
+    },
+    {
+      "seed": "홍합탕",
+      "url": "https://ac.search.naver.com/nx/ac?q=%ED%99%8D%ED%95%A9%ED%83%95&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:28.682Z",
+      "suggestions": [
+        "홍합탕 끓이는법",
+        "홍합탕 레시피",
+        "홍합탕",
+        "홍합탕 맛집",
+        "홍합탕 밀키트",
+        "홍합탕 끓이기",
+        "홍합탕 효능",
+        "홍합탕 가격",
+        "홍합탕국",
+        "홍합탕 칼로리"
+      ]
+    },
+    {
+      "seed": "닭꼬치",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%8B%AD%EA%BC%AC%EC%B9%98&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:28.949Z",
+      "suggestions": [
+        "닭꼬치",
+        "닭꼬치체인점",
+        "닭꼬치만드는법",
+        "닭꼬치양념",
+        "닭꼬치기계",
+        "즉석닭꼬치",
+        "숯불닭꼬치",
+        "냉동닭꼬치"
+      ]
+    },
+    {
+      "seed": "김치전",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EA%B9%80%EC%B9%98%EC%A0%84&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:29.219Z",
+      "suggestions": [
+        "김치전 레시피",
+        "김치전 바삭하게",
+        "김치전",
+        "김치전 만드는법",
+        "김치전 반죽",
+        "파김치전",
+        "김치전골",
+        "사옹원 김치전",
+        "류수영 김치전",
+        "참치김치전"
+      ]
+    },
+    {
+      "seed": "캠핑 삼겹살",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%BA%A0%ED%95%91+%EC%82%BC%EA%B2%B9%EC%82%B4&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:29.490Z",
+      "suggestions": [
+        "캠핑 삼겹살",
+        "캠핑 삼겹살집",
+        "캠핑 삼겹살 그릴",
+        "캠핑 삼겹살 두께",
+        "캠핑 삼겹살 준비물",
+        "캠핑 삼겹살 불판",
+        "캠핑 삼겹살 구이",
+        "캠핑 삼겹살 요리",
+        "캠핑 삼겹살 꼬치",
+        "캠핑 삼겹살 세트"
+      ]
+    },
+    {
+      "seed": "두부김치",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%91%90%EB%B6%80%EA%B9%80%EC%B9%98&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:29.762Z",
+      "suggestions": [
+        "두부김치 레시피",
+        "두부김치",
+        "두부김치 만드는법",
+        "두부김치볶음",
+        "두부김치 두부",
+        "두부김치찌개",
+        "두부김치찜",
+        "두부김치국",
+        "신라면 두부김치",
+        "두부김치전"
+      ]
+    },
+    {
+      "seed": "돼지고기 김치찌개",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%8F%BC%EC%A7%80%EA%B3%A0%EA%B8%B0+%EA%B9%80%EC%B9%98%EC%B0%8C%EA%B0%9C&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:30.031Z",
+      "suggestions": [
+        "돼지고기 김치찌개 레시피",
+        "돼지고기 김치찌개 황금레시피",
+        "돼지고기 김치찌개",
+        "돼지고기 김치찌개 끓이는법",
+        "비비고 돼지고기 김치찌개",
+        "묵은지 돼지고기 김치찌개",
+        "돼지고기 김치찌개 부위",
+        "돼지고기 김치찌개 맛집",
+        "돼지고기 김치찌개 칼로리",
+        "돼지고기 김치찌개 육수"
+      ]
+    },
+    {
+      "seed": "된장찌개",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%90%9C%EC%9E%A5%EC%B0%8C%EA%B0%9C&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:30.299Z",
+      "suggestions": [
+        "된장찌개 레시피",
+        "된장찌개",
+        "된장찌개 끓이는법",
+        "된장찌개 재료",
+        "차돌된장찌개",
+        "된장찌개 밀키트",
+        "된장찌개 맛집",
+        "고깃집 된장찌개",
+        "우렁된장찌개",
+        "우삼겹 된장찌개"
+      ]
+    },
+    {
+      "seed": "들깨버섯탕",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%93%A4%EA%B9%A8%EB%B2%84%EC%84%AF%ED%83%95&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:30.593Z",
+      "suggestions": [
+        "들깨버섯탕",
+        "들깨 버섯탕 레시피",
+        "들깨버섯탕 아기",
+        "들깨버섯탕 효능",
+        "들깨버섯탕 칼로리",
+        "들깨 버섯탕 맛집",
+        "들깨버섯탕 끓이는법",
+        "들깨버섯탕육수",
+        "들깨버섯탕 황금레시피",
+        "들깨버섯탕효능부작용"
+      ]
+    },
+    {
+      "seed": "감자수제비",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EA%B0%90%EC%9E%90%EC%88%98%EC%A0%9C%EB%B9%84&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:30.864Z",
+      "suggestions": [
+        "감자수제비 레시피",
+        "감자수제비",
+        "감자수제비 반죽",
+        "코스트코 감자수제비",
+        "감자수제비가루",
+        "들깨감자수제비",
+        "김치감자수제비",
+        "감자수제비 만들기",
+        "칠갑 감자수제비",
+        "이가자연면 감자수제비"
+      ]
+    },
+    {
+      "seed": "새우버터구이",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%83%88%EC%9A%B0%EB%B2%84%ED%84%B0%EA%B5%AC%EC%9D%B4&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:31.132Z",
+      "suggestions": [
+        "새우 버터구이 하는법",
+        "새우 버터구이",
+        "냉동새우 버터구이",
+        "갈릭새우버터구이",
+        "흰다리새우 버터구이",
+        "붉은새우 버터구이",
+        "새우버터구이 레시피",
+        "칵테일새우 버터구이",
+        "블랙타이거새우 버터구이",
+        "새우 버터구이 손질"
+      ]
+    },
+    {
+      "seed": "고등어감자조림",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EA%B3%A0%EB%93%B1%EC%96%B4%EA%B0%90%EC%9E%90%EC%A1%B0%EB%A6%BC&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:31.402Z",
+      "suggestions": [
+        "고등어감자조림",
+        "고등어감자조림 레시피",
+        "고등어 감자조림 양념",
+        "고등어 감자조림 양념장",
+        "고등어 감자조림 만드는 법",
+        "고등어 감자조림 황금레시피"
+      ]
+    },
+    {
+      "seed": "닭볶음탕",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%8B%AD%EB%B3%B6%EC%9D%8C%ED%83%95&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:31.672Z",
+      "suggestions": [
+        "닭볶음탕 레시피",
+        "닭볶음탕 황금레시피",
+        "닭볶음탕",
+        "류수영 닭볶음탕",
+        "닭볶음탕 맛집",
+        "닭볶음탕 양념",
+        "닭볶음탕 만드는법",
+        "솥뚜껑 닭볶음탕",
+        "엽기닭볶음탕",
+        "가평 닭볶음탕"
+      ]
+    },
+    {
+      "seed": "떡볶이",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%96%A1%EB%B3%B6%EC%9D%B4&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:31.930Z",
+      "suggestions": [
+        "떡볶이",
+        "떡볶이 레시피",
+        "엽기떡볶이",
+        "떡볶이 맛집",
+        "신전떡볶이",
+        "떡볶이 코트",
+        "신공떡볶이",
+        "떡볶이 소스",
+        "떡볶이 밀키트",
+        "형부떡볶이"
+      ]
+    },
+    {
+      "seed": "애호박전",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%95%A0%ED%98%B8%EB%B0%95%EC%A0%84&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:32.199Z",
+      "suggestions": [
+        "애호박전",
+        "애호박전 레시피",
+        "성시경 애호박전",
+        "애호박전 만들기",
+        "새우애호박전",
+        "아기 애호박전",
+        "감자애호박전",
+        "류수영 애호박전",
+        "건새우애호박전",
+        "애호박전 칼로리"
+      ]
+    },
+    {
+      "seed": "콘치즈",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%BD%98%EC%B9%98%EC%A6%88&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:32.485Z",
+      "suggestions": [
+        "콘치즈 레시피",
+        "콘치즈만드는법",
+        "콘치즈",
+        "콘치즈 철판",
+        "옥수수콘치즈",
+        "콘치즈볼",
+        "콘치즈 과자",
+        "콘치즈떡",
+        "콘치즈만두",
+        "콘치즈피자"
+      ]
+    },
+    {
+      "seed": "감자버터구이",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EA%B0%90%EC%9E%90%EB%B2%84%ED%84%B0%EA%B5%AC%EC%9D%B4&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:32.795Z",
+      "suggestions": [
+        "알감자버터구이",
+        "감자버터구이",
+        "알감자 버터구이 레시피",
+        "휴게소 감자 버터구이",
+        "감자 버터구이 레시피",
+        "감자 버터구이 오븐",
+        "감자 버터구이 에프",
+        "감자버터구이 조리법",
+        "감자버터구이 칼로리",
+        "감자 버터구이 후라이팬"
+      ]
+    },
+    {
+      "seed": "새우전",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EC%83%88%EC%9A%B0%EC%A0%84&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:33.084Z",
+      "suggestions": [
+        "새우전",
+        "새우전 레시피",
+        "애호박새우전",
+        "부추새우전",
+        "미나리새우전",
+        "보리새우전",
+        "호박새우전",
+        "새우전 만들기",
+        "냉동새우전",
+        "노바시새우전"
+      ]
+    },
+    {
+      "seed": "버섯치즈구이",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%B2%84%EC%84%AF%EC%B9%98%EC%A6%88%EA%B5%AC%EC%9D%B4&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:33.350Z",
+      "suggestions": [
+        "버섯 치즈 구이",
+        "버섯치즈구이 만드는법"
+      ]
+    },
+    {
+      "seed": "두부간장구이",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%91%90%EB%B6%80%EA%B0%84%EC%9E%A5%EA%B5%AC%EC%9D%B4&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:33.618Z",
+      "suggestions": []
+    },
+    {
+      "seed": "김치어묵볶음",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EA%B9%80%EC%B9%98%EC%96%B4%EB%AC%B5%EB%B3%B6%EC%9D%8C&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:33.889Z",
+      "suggestions": [
+        "김치어묵볶음",
+        "김치어묵볶음 레시피",
+        "김치어묵볶음밥"
+      ]
+    },
+    {
+      "seed": "닭가슴살 김치볶음밥",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%8B%AD%EA%B0%80%EC%8A%B4%EC%82%B4+%EA%B9%80%EC%B9%98%EB%B3%B6%EC%9D%8C%EB%B0%A5&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:34.160Z",
+      "suggestions": [
+        "닭가슴살 김치볶음밥",
+        "닭가슴살 김치볶음밥 레시피",
+        "닭가슴살 김치볶음밥 냉동",
+        "닭가슴살 김치볶음밥 칼로리",
+        "닭가슴살 김치볶음밥 도시락",
+        "닭가슴살 김치볶음밥 만들기",
+        "닭가슴살 김치볶음밥 다이어트"
+      ]
+    },
+    {
+      "seed": "홍합미역국",
+      "url": "https://ac.search.naver.com/nx/ac?q=%ED%99%8D%ED%95%A9%EB%AF%B8%EC%97%AD%EA%B5%AD&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:40:34.430Z",
+      "suggestions": [
+        "홍합미역국",
+        "홍합 미역국 레시피",
+        "홍합미역국 끓이는법",
+        "홍합 미역국 만들기",
+        "홍합 미역국 칼로리",
+        "홍합미역국 간",
+        "홍합미역국 마늘",
+        "홍합미역국 냉동",
+        "홍합 미역국 비린내",
+        "홍합 미역국 끓이기"
+      ]
+    },
+    {
+      "seed": "두부구이",
+      "url": "https://ac.search.naver.com/nx/ac?q=%EB%91%90%EB%B6%80%EA%B5%AC%EC%9D%B4&con=0&frm=nv&ans=2&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&run=2&rev=4&q_enc=UTF-8&st=100",
+      "checkedAt": "2026-11-15T12:44:36.422Z",
+      "suggestions": [
+        "두부구이",
+        "두부구이 양념장",
+        "들기름 두부구이",
+        "두부구이 레시피",
+        "산초두부구이",
+        "참기름 두부구이",
+        "계란두부구이",
+        "아기 두부구이",
+        "두부구이 양념",
+        "두부구이 간장"
+      ]
+    }
+  ],
+  "scope": "Public autocomplete wording, not measured query volume or rankings",
+  "officialGuidance": [
+    "https://searchadvisor.naver.com/guide/markup-content",
+    "https://searchadvisor.naver.com/guide/diagnose-site",
+    "https://searchadvisor.naver.com/guide/content-basic"
+  ]
+}

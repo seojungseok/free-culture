@@ -6,6 +6,7 @@ import {getPrepArticles,isPrepReview,prepCategoryLabel,cookingCategory,isCooking
 import {SITE} from '@/lib/site';
 import PrepArticle from '@/components/PrepArticle';
 import {prepGuideItems} from '@/lib/prep-affiliate';
+import {companionPrepSlug} from '@/lib/weekend-prep/search';
 import '../prep.css';
 export const dynamicParams=true;
 export function generateStaticParams(){return getPrepArticles().map(a=>({slug:a.slug}));}
@@ -17,7 +18,7 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
   const image={url:a.cover.url,width:a.cover.width,height:a.cover.height,alt:a.cover.alt};
   return withSearchMetadata({
     robots:{index:!isPrepReview,follow:true,'max-image-preview':'large'},
-    title:a.title,description:a.description,alternates:{canonical:url},
+    title:a.title,description:a.description,keywords:null,alternates:{canonical:url},
     openGraph:{type:'article',url,siteName:SITE.name,locale:'ko_KR',title:a.title,description:a.description,publishedTime:a.publishAt,modifiedTime:a.updatedAt,images:[image]},
     twitter:{card:'summary_large_image',title:a.title,description:a.description,images:[image]},
   });
@@ -41,8 +42,9 @@ export default async function Page({params}:{params:Promise<{slug:string}>}){
     '@context':'https://schema.org','@type':'BreadcrumbList',
     itemListElement:[{name:'홈',item:SITE.url},{name:'캠핑요리',item:`${SITE.url}/weekend-prep`},{name:a.title,item:url}].map((x,i)=>({'@type':'ListItem',position:i+1,...x})),
   }];
-  const related=articles.filter(b=>b.slug!==a.slug&&prepCategoryLabel(b.category,b)===prepCategoryLabel(a.category,a))
-    .sort((b,c)=>Number(isCookingPrepArticle(c)&&cookingCategory(c)===cookingCategory(a))-Number(isCookingPrepArticle(b)&&cookingCategory(b)===cookingCategory(a))).slice(0,3);
+  const companion=companionPrepSlug(a.slug);
+  const related=articles.filter(b=>b.slug!==a.slug&&(b.slug===companion||prepCategoryLabel(b.category,b)===prepCategoryLabel(a.category,a)))
+    .sort((b,c)=>Number(c.slug===companion)-Number(b.slug===companion)||Number(isCookingPrepArticle(c)&&cookingCategory(c)===cookingCategory(a))-Number(isCookingPrepArticle(b)&&cookingCategory(b)===cookingCategory(a))).slice(0,3);
   return <main className="prep">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(json).replace(/</g,'\\u003c')}}/>
     <PrepArticle article={a} preview={isPrepReview} shoppingItems={shoppingItems} relatedArticles={articles.map(({slug,title})=>({slug,title}))}/>

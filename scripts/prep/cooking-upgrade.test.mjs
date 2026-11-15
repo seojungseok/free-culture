@@ -20,7 +20,7 @@ test('every published cooking guide omits household purchases and preserves its 
   hidden+=raw.length-shown.length;
   assert(shown.length>0,article.slug);
   assert(shown.every(item=>item.group!=='common'),article.slug);
-  assert(shown.every(item=>!(/냄비|국자|국그릇|접시|식판|조리.?집게|도마|뒤집개|생수|조리용 물/).test(item.label)),article.slug);
+   assert(shown.every(item=>!(/냄비|국자|국그릇|접시|식판|조리.?집게|도마|뒤집개|생수(?!제비)|조리용 물/).test(item.label)),article.slug);
   if(article.checklist?.length){
    assert(!/냄비|국자|국그릇|조리도구|집게/.test(article.description),article.slug);
    const photos=[article.cover,...article.sections.map(section=>section.image).filter(Boolean)];
@@ -38,6 +38,17 @@ test('camping equipment and outdoor play retain their reviewed products',()=>{
   const items=article.shoppingItems || article.checklist;
   assert.equal(prepShoppingItems(article,items),items);
  }
+});
+
+test('fresh sujebi is a food ingredient even though its name starts with the word for bottled water',()=>{
+ const article=store.articles.find(article=>article.slug==='autumn-camping-potato-sujebi-ingredient-checklist');
+ const fresh=article.checklist.find(item=>item.label==='생수제비');
+ assert(fresh,'The existing recipe has a registered fresh-sujebi ingredient');
+ const water={id:'water-example',label:'생수 2L',role:'조리용 물',group:'main'};
+ const shown=prepShoppingItems(article,[fresh,water]);
+ assert.equal(shown.length,1);
+ assert.equal(shown[0],fresh);
+ assert.equal(shown[0].affiliate.url,fresh.affiliate.url,'Keep the registered ingredient tracking URL');
 });
 
 test('ingredient guides show clean ingredient covers and move finished food into the body',()=>{

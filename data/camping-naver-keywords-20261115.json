@@ -1,0 +1,358 @@
+{
+  "version": 1,
+  "scope": "44 existing published guides; titles and visible lead descriptions only; URLs, products, photos and recipe instructions preserved",
+  "entries": [
+    {
+      "slug": "autumn-flower-crab-soup-ingredient-checklist",
+      "seed": "꽃게탕",
+      "dishName": "꽃게탕",
+      "intent": "ingredients",
+      "title": "꽃게탕 재료와 양념 | 캠핑 국물요리 준비",
+      "description": "꽃게탕 재료와 양념 분량을 확인하세요. 냉동 꽃게 손질부터 무 육수, 미나리를 넣는 순서까지 캠핑 전에 준비할 내용을 정리했습니다."
+    },
+    {
+      "slug": "camping-fishcake-soup-ingredient-checklist",
+      "seed": "어묵탕",
+      "dishName": "어묵탕",
+      "intent": "ingredients",
+      "title": "어묵탕 재료와 육수 | 캠핑 꼬치어묵탕 준비",
+      "description": "어묵탕 재료와 육수 준비를 정리했습니다. 모둠 어묵과 무·대파를 챙기고, 꼬치어묵탕 국물의 간을 맞추는 순서를 확인하세요."
+    },
+    {
+      "slug": "camping-budae-jjigae-ingredient-checklist",
+      "seed": "부대찌개",
+      "dishName": "부대찌개",
+      "intent": "ingredients",
+      "title": "부대찌개 재료와 양념장 | 캠핑 장보기 목록",
+      "description": "부대찌개 재료인 햄·소시지·김치·두부와 양념장 분량을 확인하세요. 밀키트 구성품과 추가 재료를 구분해 캠핑 장보기를 준비합니다."
+    },
+    {
+      "slug": "camping-beef-mushroom-hotpot-ingredient-checklist",
+      "seed": "소고기 버섯전골",
+      "dishName": "소고기 버섯전골",
+      "intent": "ingredients",
+      "title": "소고기 버섯전골 재료 | 육수와 채소 준비",
+      "description": "소고기 버섯전골 재료와 육수 분량을 정리했습니다. 얇은 소고기와 모둠버섯을 준비하고, 채소부터 익혀 나누어 넣는 순서를 확인하세요."
+    },
+    {
+      "slug": "camping-seafood-hotpot-ingredient-checklist",
+      "seed": "해물탕",
+      "dishName": "해물탕",
+      "intent": "ingredients",
+      "title": "해물탕 재료와 양념 | 캠핑 해물·채소 준비",
+      "description": "해물탕 재료와 양념을 준비하는 장보기 목록입니다. 모둠해물·오만둥이·미나리를 확인하고, 밀키트 구성과 부족한 재료를 나누어 챙기세요."
+    },
+    {
+      "slug": "camp-seafood-pot-table",
+      "seed": "해물탕",
+      "dishName": "해물탕",
+      "intent": "recipe",
+      "title": "해물탕 끓이는 법 | 무 육수와 해물 넣는 순서",
+      "description": "캠핑 해물탕 끓이는 법을 단계별로 정리했습니다. 무로 육수를 내고 해물을 넣은 뒤, 양념 간을 맞추고 미나리로 마무리하는 순서를 확인하세요."
+    },
+    {
+      "slug": "camp-morning-sandwich",
+      "seed": "햄치즈 샌드위치",
+      "dishName": "햄치즈 샌드위치",
+      "intent": "recipe",
+      "title": "햄치즈 샌드위치 만들기 | 캠핑 아침 토스트",
+      "description": "햄치즈 샌드위치 만들기에 필요한 식빵·햄·치즈와 팬 굽기 순서입니다. 캠핑 아침에 빵은 덜 타고 치즈는 녹도록 불을 조절하는 법을 안내합니다."
+    },
+    {
+      "slug": "camp-noodle-lunch",
+      "seed": "잔치국수",
+      "dishName": "잔치국수",
+      "intent": "recipe",
+      "title": "잔치국수 만들기 | 멸치육수와 소면 삶는 법",
+      "description": "잔치국수 만들기 전 육수와 고명을 준비하세요. 멸치육수를 내고 소면을 삶아 담는 순서, 캠핑에서 분말 육수를 활용하는 방법을 정리했습니다."
+    },
+    {
+      "slug": "grilled-vegetable-side-dishes",
+      "seed": "야채꼬치",
+      "dishName": "채소꼬치",
+      "intent": "recipe",
+      "title": "야채꼬치 만들기 | 캠핑 바비큐 채소 굽는 법",
+      "description": "캠핑 바비큐에 곁들이는 야채꼬치 만들기입니다. 파프리카·애호박·버섯을 손질하고, 채소꼬치를 고르게 굽고 소스를 바르는 순서를 확인하세요."
+    },
+    {
+      "slug": "autumn-camp-tarp-rest-corner",
+      "seed": "캠핑 준비물",
+      "dishName": null,
+      "intent": "equipment",
+      "title": "첫 캠핑 준비물 | 에어텐트·타프·캠핑의자 비교",
+      "description": "첫 캠핑 준비물로 에어텐트·타프·릴렉스체어의 역할을 비교합니다. 숙박과 낮 캠핑을 구분해 구매 전 크기·설치·보관 조건을 확인하세요."
+    },
+    {
+      "slug": "family-park-ring-ball-play",
+      "seed": "고리던지기",
+      "dishName": null,
+      "intent": "outdoor",
+      "title": "고리던지기 놀이 방법 | 14세 이상 세트 선택 기준",
+      "description": "고리던지기 세트의 구성과 놀이 방법을 살펴봅니다. 판매처 표시 연령이 14세 이상인 제품의 설치·거리 조절·점수 놀이와 보관 기준을 확인하세요."
+    },
+    {
+      "slug": "camp-jeyuk-bokkeum",
+      "seed": "제육볶음",
+      "dishName": "제육볶음",
+      "intent": "recipe",
+      "title": "제육볶음 레시피 | 캠핑 그리들 양념과 볶는 법",
+      "description": "돼지고기 600g 기준 제육볶음 레시피입니다. 양념 비율과 그리들 예열, 채소 넣는 순서, 물이 생기거나 양념이 탈 때 대처법을 확인하세요."
+    },
+    {
+      "slug": "camp-sundae-bokkeum",
+      "seed": "순대볶음",
+      "dishName": "순대볶음",
+      "intent": "recipe",
+      "title": "순대볶음 만들기 | 양념장과 순대 안 터지게 볶는 법",
+      "description": "순대볶음 만들기를 순대 500g 기준으로 정리했습니다. 양념장과 채소를 준비하고, 순대가 터지거나 양념이 타지 않게 볶는 순서를 안내합니다."
+    },
+    {
+      "slug": "camp-dakgalbi",
+      "seed": "닭갈비",
+      "dishName": "닭갈비",
+      "intent": "recipe",
+      "title": "닭갈비 레시피 | 캠핑 그리들에서 볶는 순서",
+      "description": "양념 닭갈비로 시작하는 캠핑 닭갈비 레시피입니다. 양배추·고구마를 손질하고, 그리들에서 익히며 국물과 양념 농도를 조절하는 순서를 확인하세요."
+    },
+    {
+      "slug": "camp-ojingeo-bokkeum",
+      "seed": "오징어볶음",
+      "dishName": "오징어볶음",
+      "intent": "recipe",
+      "title": "오징어볶음 레시피 | 양념과 물기 줄여 볶는 법",
+      "description": "오징어볶음 레시피와 양념 비율을 정리했습니다. 해동한 오징어의 물기를 닦고 채소부터 볶는 순서, 국물이 많을 때 농도를 잡는 방법을 확인하세요."
+    },
+    {
+      "slug": "camp-kimchi-fried-rice",
+      "seed": "김치볶음밥",
+      "dishName": "김치볶음밥",
+      "intent": "recipe",
+      "title": "김치볶음밥 레시피 | 햄 넣고 고슬하게 볶는 법",
+      "description": "햄을 넣은 김치볶음밥 레시피입니다. 찬밥과 김치의 수분을 조절하고 그리들에 얇게 펴 볶는 순서, 밥이 질거나 마를 때 고치는 방법을 안내합니다."
+    },
+    {
+      "slug": "camping-seafood-ramen-ingredients",
+      "seed": "해물라면",
+      "dishName": "해물라면",
+      "intent": "ingredients",
+      "title": "해물라면 재료와 물 양 | 캠핑 라면 준비",
+      "description": "해물라면 재료로 라면·모둠해물·대파를 준비하세요. 봉지에 적힌 물 양을 기준으로 해물을 먼저 익히고 면을 넣는 순서까지 정리했습니다."
+    },
+    {
+      "slug": "camping-mussel-soup-ingredients",
+      "seed": "홍합탕",
+      "dishName": "홍합탕",
+      "intent": "ingredients",
+      "title": "홍합탕 재료와 물 양 | 홍합살 국물요리 준비",
+      "description": "홍합탕 재료와 물 양, 마늘·대파 준비를 확인하세요. 손질 홍합살과 껍데기 홍합의 차이, 익히는 순서와 마지막 간 맞추기를 안내합니다."
+    },
+    {
+      "slug": "camping-kimchi-fried-rice-ingredients",
+      "seed": "김치볶음밥",
+      "dishName": "김치볶음밥",
+      "intent": "ingredients",
+      "title": "김치볶음밥 재료 | 김치·밥·달걀 장보기 목록",
+      "description": "김치볶음밥 재료인 김치·밥·달걀·대파·김가루를 확인하세요. 캠핑 전에 재료를 나누어 담고 김치 국물과 밥의 수분을 조절하는 요령을 정리했습니다."
+    },
+    {
+      "slug": "camping-squid-stir-fry-ingredients",
+      "seed": "오징어볶음",
+      "dishName": "오징어볶음",
+      "intent": "ingredients",
+      "title": "오징어볶음 재료와 양념 | 손질·보관 준비",
+      "description": "오징어볶음 재료인 손질 오징어·양파·대파와 양념을 확인하세요. 시판 소스를 쓸 때의 준비 기준, 해동 후 물기 제거와 보관 요령을 정리했습니다."
+    },
+    {
+      "slug": "camping-chicken-skewer-ingredients",
+      "seed": "닭꼬치",
+      "dishName": "닭꼬치구이",
+      "intent": "ingredients",
+      "title": "닭꼬치 재료와 소스 | 캠핑 꼬치구이 준비",
+      "description": "캠핑 닭꼬치 재료와 소스를 확인하세요. 모둠꼬치 구성과 곁들일 채소를 나누어 준비하고, 속까지 익힌 뒤 소스를 바르는 순서를 정리했습니다."
+    },
+    {
+      "slug": "camping-kimchi-pancake-ingredients",
+      "seed": "김치전",
+      "dishName": "김치전",
+      "intent": "ingredients",
+      "title": "김치전 재료와 반죽 | 캠핑 부침개 준비",
+      "description": "김치전 재료인 김치·부침가루·대파와 식용유를 확인하세요. 김치 국물에 맞춰 반죽 물 양을 조절하고, 얇게 펴 부치는 순서를 안내합니다."
+    },
+    {
+      "slug": "camping-pork-belly-bbq-ingredients",
+      "seed": "캠핑 삼겹살",
+      "dishName": "삼겹살 바비큐",
+      "intent": "ingredients",
+      "title": "캠핑 삼겹살 준비물 | 고기와 곁들임 채소",
+      "description": "캠핑 삼겹살 준비물 중 고기와 곁들임 재료를 정리했습니다. 김치·버섯·파프리카·양파를 챙기고, 생고기와 분리해 보관하고 굽는 순서를 확인하세요."
+    },
+    {
+      "slug": "camping-tofu-kimchi-ingredients",
+      "seed": "두부김치",
+      "dishName": "두부김치",
+      "intent": "ingredients",
+      "title": "두부김치 재료 | 두부·볶음김치 준비와 조리 순서",
+      "description": "두부김치 재료로 두부·김치·양파·대파를 준비하세요. 두부를 데우고 김치를 따로 볶아 담는 순서와 캠핑에 가져갈 때의 보관 요령을 정리했습니다."
+    },
+    {
+      "slug": "autumn-camping-pork-kimchi-stew-ingredient-checklist",
+      "seed": "돼지고기 김치찌개",
+      "dishName": "돼지고기 김치찌개",
+      "intent": "ingredients",
+      "title": "돼지고기 김치찌개 재료 | 고기와 양념 준비",
+      "description": "돼지고기 김치찌개 재료와 육수·양념 분량을 확인하세요. 찌개용 고기와 김치·두부를 준비하고, 김치를 볶아 끓이는 순서를 정리했습니다."
+    },
+    {
+      "slug": "autumn-camping-doenjang-stew-ingredient-checklist",
+      "seed": "된장찌개",
+      "dishName": "된장찌개",
+      "intent": "ingredients",
+      "title": "된장찌개 재료와 육수 | 두부·채소 준비",
+      "description": "된장찌개 재료와 된장·육수 분량을 정리했습니다. 감자·애호박·양파·두부를 준비하고, 단단한 채소부터 끓여 간을 맞추는 순서를 확인하세요."
+    },
+    {
+      "slug": "autumn-camping-perilla-mushroom-soup-ingredient-checklist",
+      "seed": "들깨버섯탕",
+      "dishName": "들깨버섯탕",
+      "intent": "ingredients",
+      "title": "들깨버섯탕 재료 | 들깨가루와 버섯 준비",
+      "description": "들깨버섯탕 재료와 들깨가루 분량을 확인하세요. 모둠버섯·두부·육수를 준비하고, 가루를 국물에 미리 풀어 뭉침을 줄이는 방법을 안내합니다."
+    },
+    {
+      "slug": "autumn-camping-potato-sujebi-ingredient-checklist",
+      "seed": "감자수제비",
+      "dishName": "감자수제비",
+      "intent": "ingredients",
+      "title": "감자수제비 재료 | 반죽과 멸치육수 준비",
+      "description": "감자수제비 재료와 멸치육수 양을 확인하세요. 시판 반죽과 직접 반죽의 준비 기준, 감자를 먼저 익히고 수제비를 넣는 순서를 정리했습니다."
+    },
+    {
+      "slug": "autumn-camping-shrimp-butter-grill-ingredient-checklist",
+      "seed": "새우버터구이",
+      "dishName": "새우버터구이",
+      "intent": "ingredients",
+      "title": "새우 버터구이 재료 | 냉동새우·마늘·버터 준비",
+      "description": "새우 버터구이 재료인 새우·마늘·버터와 곁들임 채소를 확인하세요. 냉동새우 해동·물기 제거, 버터가 타지 않게 굽는 방법을 정리했습니다."
+    },
+    {
+      "slug": "autumn-camping-mackerel-potato-braise-ingredient-checklist",
+      "seed": "고등어감자조림",
+      "dishName": "고등어감자조림",
+      "intent": "ingredients",
+      "title": "고등어 감자조림 재료와 양념장 | 캠핑 생선요리",
+      "description": "고등어 감자조림 재료와 양념장 분량을 확인하세요. 손질 고등어와 감자를 준비하고, 감자를 아래에 깔아 생선이 부서지지 않게 조리는 순서입니다."
+    },
+    {
+      "slug": "autumn-camping-chicken-potato-stew-ingredient-checklist",
+      "seed": "닭볶음탕",
+      "dishName": "닭볶음탕",
+      "intent": "ingredients",
+      "title": "닭볶음탕 재료와 양념 | 닭·감자 장보기 목록",
+      "description": "닭볶음탕 재료와 고추장·간장 양념 분량을 정리했습니다. 볶음탕용 닭과 감자·양파를 준비하고, 속까지 익히며 국물 농도를 맞추는 법을 확인하세요."
+    },
+    {
+      "slug": "autumn-camping-tteokbokki-ingredient-checklist",
+      "seed": "떡볶이",
+      "dishName": "떡볶이",
+      "intent": "ingredients",
+      "title": "떡볶이 재료와 소스 | 캠핑 떡·어묵 준비",
+      "description": "떡볶이 재료와 소스 분량을 확인하세요. 떡·어묵·대파를 챙기고, 직접 양념과 밀키트 소스를 구분해 물 양과 국물 농도를 맞추는 순서입니다."
+    },
+    {
+      "slug": "autumn-camping-zucchini-pancake-ingredient-checklist",
+      "seed": "애호박전",
+      "dishName": "애호박전",
+      "intent": "ingredients",
+      "title": "애호박전 재료 | 달걀·부침가루와 간장 준비",
+      "description": "애호박전 재료인 애호박·달걀·부침가루와 간장을 확인하세요. 물기를 정리하고 달걀옷을 입혀 굽는 순서, 캠핑 전 소분·보관 요령을 안내합니다."
+    },
+    {
+      "slug": "autumn-camping-corn-cheese-ingredient-checklist",
+      "seed": "콘치즈",
+      "dishName": "콘치즈",
+      "intent": "ingredients",
+      "title": "콘치즈 재료 | 옥수수·체다치즈로 캠핑 간식 준비",
+      "description": "콘치즈 재료인 옥수수·체다치즈·버터·양파를 확인하세요. 스위트콘 물기를 빼고 약불에서 치즈를 녹여 만드는 캠핑 간식 준비 순서를 정리했습니다."
+    },
+    {
+      "slug": "autumn-20260920-soy-butter-potato-grill",
+      "seed": "감자버터구이",
+      "dishName": "간장버터감자구이",
+      "intent": "ingredients",
+      "title": "감자 버터구이 재료 | 간장 양념으로 굽는 법",
+      "description": "감자 버터구이 재료로 감자·버터·간장·양파를 준비하세요. 감자를 먼저 익히고 간장과 버터를 더하는 순서, 소분·보관 요령을 정리했습니다."
+    },
+    {
+      "slug": "autumn-20260920-shrimp-jeon",
+      "seed": "새우전",
+      "dishName": "새우전",
+      "intent": "ingredients",
+      "title": "새우전 재료 | 냉동새우·달걀·부침가루 준비",
+      "description": "새우전 재료인 칵테일새우·달걀·부침가루를 확인하세요. 냉동새우 해동과 물기 제거, 달걀옷을 입혀 속까지 익히는 순서를 정리했습니다."
+    },
+    {
+      "slug": "autumn-20260920-mushroom-cheese-grill",
+      "seed": "버섯치즈구이",
+      "dishName": "버섯치즈구이",
+      "intent": "ingredients",
+      "title": "버섯치즈구이 재료 | 새송이버섯·치즈 준비",
+      "description": "버섯치즈구이 재료로 새송이버섯·버터·체다치즈를 준비하세요. 버섯의 수분을 먼저 줄이고 불을 낮춰 치즈를 녹이는 순서와 보관 요령을 정리했습니다."
+    },
+    {
+      "slug": "autumn-20260920-tofu-soy-grill",
+      "seed": "두부구이",
+      "dishName": "두부간장구이",
+      "intent": "ingredients",
+      "title": "두부구이 재료와 간장 양념 | 캠핑 두부요리",
+      "description": "두부구이 재료인 두부·간장·마늘·대파를 확인하세요. 두부 물기를 닦고 표면을 구운 뒤 간장 양념을 더하는 순서와 캠핑 보관 요령을 정리했습니다."
+    },
+    {
+      "slug": "autumn-20260920-kimchi-fishcake-stirfry",
+      "seed": "김치어묵볶음",
+      "dishName": "김치어묵볶음",
+      "intent": "ingredients",
+      "title": "김치어묵볶음 재료 | 김치·어묵·양념 준비",
+      "description": "김치어묵볶음 재료로 김치·어묵·양파·대파를 준비하세요. 김치를 먼저 볶아 수분을 줄이고 어묵과 양념을 더하는 순서, 보관 기준을 정리했습니다."
+    },
+    {
+      "slug": "autumn-20260920-jeyuk-bokkeum-ingredient-checklist",
+      "seed": "제육볶음",
+      "dishName": "제육볶음",
+      "intent": "ingredients",
+      "title": "제육볶음 재료와 양념 | 돼지고기·채소 준비",
+      "description": "제육볶음 재료와 양념 준비를 확인하세요. 제육용 돼지고기·양파·대파를 챙기고, 양념된 제품과 생고기를 구분해 캠핑 장보기를 준비합니다."
+    },
+    {
+      "slug": "autumn-20260920-sundae-bokkeum-ingredient-checklist",
+      "seed": "순대볶음",
+      "dishName": "순대볶음",
+      "intent": "ingredients",
+      "title": "순대볶음 재료와 양념장 | 순대·채소 준비",
+      "description": "순대볶음 재료와 양념장을 준비하는 목록입니다. 찰순대·양파·대파와 밀키트 구성품을 구분하고, 따로 포장해 보관하는 요령을 확인하세요."
+    },
+    {
+      "slug": "autumn-20260920-dakgalbi-ingredient-checklist",
+      "seed": "닭갈비",
+      "dishName": "춘천 닭갈비",
+      "intent": "ingredients",
+      "title": "닭갈비 재료 | 양념 닭갈비와 곁들임 채소 준비",
+      "description": "닭갈비 재료로 양념 닭갈비·버섯·양파·파프리카·대파를 확인하세요. 양념 제품과 채소를 분리해 담고 속까지 익히는 순서를 정리했습니다."
+    },
+    {
+      "slug": "autumn-20260920-chicken-kimchi-fried-rice-ingredient-checklist",
+      "seed": "닭가슴살 김치볶음밥",
+      "dishName": "닭가슴살 김치볶음밥",
+      "intent": "ingredients",
+      "title": "닭가슴살 김치볶음밥 재료 | 냉동 볶음밥 준비",
+      "description": "닭가슴살 김치볶음밥 재료와 냉동 제품 구성을 확인하세요. 김치·달걀·대파를 더할 때 준비할 것과 포장 안내에 맞춰 데우는 순서를 정리했습니다."
+    },
+    {
+      "slug": "autumn-20260920-mussel-seaweed-soup-ingredient-checklist",
+      "seed": "홍합미역국",
+      "dishName": "홍합미역국",
+      "intent": "ingredients",
+      "title": "홍합미역국 재료 | 홍합살·미역·육수 준비",
+      "description": "홍합미역국 재료로 홍합살·마른 미역·육수를 준비하세요. 미역을 불리는 양과 볶아 끓이는 순서, 홍합을 충분히 익혀 간을 맞추는 법을 안내합니다."
+    }
+  ]
+}

@@ -45,7 +45,7 @@ export function prepGuideItems(article: PrepArticle, articles: PrepArticle[]) {
 // A cooking shopping list contains food; ordinary household tools are not purchases.
 export function prepShoppingItems(article: PrepArticle, items: PrepChecklistItem[]) {
   if (!/요리|재료/.test(article.category)) return items;
-  return items.filter(item => item.group !== 'common' && !/냄비|국자|국그릇|접시|식판|조리.?집게|도마|뒤집개|수저|젓가락|생수|조리용 물/.test(item.label));
+  return items.filter(item => item.group !== 'common' && !/냄비|국자|국그릇|접시|식판|조리.?집게|도마|뒤집개|수저|젓가락|생수(?!제비)|조리용 물/.test(item.label));
 }
 
 export function prepDishName(title: string) {
