@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-15T00:00:47.403Z",
+  "checkedAt": "2026-11-15T23:17:41.929Z",
   "healthy": true,
   "sources": [
     {
@@ -26,7 +26,7 @@
       "provider": "한국관광공사",
       "interval": "매일",
       "count": 535,
-      "checkedAt": "2026-11-14T23:58:38.726Z",
+      "checkedAt": "2026-11-15T23:17:24.566Z",
       "status": "fresh"
     },
     {
@@ -35,7 +35,7 @@
       "provider": "한국관광공사",
       "interval": "매주 월요일",
       "count": 10704,
-      "checkedAt": "2026-11-08T22:18:55.001Z",
+      "checkedAt": "2026-11-15T23:11:36.314Z",
       "status": "fresh"
     },
     {
@@ -44,7 +44,7 @@
       "provider": "한국관광공사",
       "interval": "매주 월요일",
       "count": 7496,
-      "checkedAt": "2026-11-08T22:19:29.000Z",
+      "checkedAt": "2026-11-15T23:12:10.034Z",
       "status": "fresh"
     },
     {
@@ -52,8 +52,8 @@
       "label": "캠핑장",
       "provider": "한국관광공사 고캠핑",
       "interval": "매주 월요일",
-      "count": 3238,
-      "checkedAt": "2026-11-08T22:19:24.451Z",
+      "count": 3251,
+      "checkedAt": "2026-11-15T23:12:05.179Z",
       "status": "fresh"
     },
     {
@@ -62,7 +62,7 @@
       "provider": "지방자치단체·교육청",
       "interval": "매일",
       "count": 2824,
-      "checkedAt": "2026-11-14T23:59:12.521Z",
+      "checkedAt": "2026-11-15T15:06:29.341Z",
       "status": "fresh"
     },
     {
@@ -80,7 +80,7 @@
       "provider": "한국농어촌공사·한국어촌어항공단",
       "interval": "매일 원자료 확인 · 원문 반기 갱신",
       "count": 1261,
-      "checkedAt": "2026-11-14T23:58:59.672Z",
+      "checkedAt": "2026-11-15T15:06:31.944Z",
       "status": "fresh"
     },
     {
@@ -89,7 +89,7 @@
       "provider": "성평등가족부",
       "interval": "매일",
       "count": 117,
-      "checkedAt": "2026-11-14T23:59:08.245Z",
+      "checkedAt": "2026-11-15T15:06:41.056Z",
       "status": "fresh"
     },
     {
@@ -97,8 +97,8 @@
       "label": "과학관 교육·체험",
       "provider": "국립중앙과학관·인천학생과학관",
       "interval": "매일 공식 교육 일정 확인",
-      "count": 14,
-      "checkedAt": "2026-11-14T23:59:08.381Z",
+      "count": 8,
+      "checkedAt": "2026-11-15T15:18:30.378Z",
       "status": "fresh"
     }
   ]
