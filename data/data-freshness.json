@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-14T13:57:43.693Z",
+  "checkedAt": "2026-11-15T00:00:47.403Z",
   "healthy": true,
   "sources": [
     {
@@ -7,8 +7,8 @@
       "label": "문화행사",
       "provider": "한국문화정보원",
       "interval": "매일",
-      "count": 1080,
-      "checkedAt": "2026-11-14T00:56:40.578Z",
+      "count": 948,
+      "checkedAt": "2026-11-14T23:57:24.939Z",
       "status": "fresh"
     },
     {
@@ -17,7 +17,7 @@
       "provider": "한국관광공사·지역 관광기관",
       "interval": "매일",
       "count": 428,
-      "checkedAt": "2026-11-14T00:53:37.241Z",
+      "checkedAt": "2026-11-14T23:54:41.465Z",
       "status": "fresh"
     },
     {
@@ -26,7 +26,7 @@
       "provider": "한국관광공사",
       "interval": "매일",
       "count": 535,
-      "checkedAt": "2026-11-14T00:59:27.822Z",
+      "checkedAt": "2026-11-14T23:58:38.726Z",
       "status": "fresh"
     },
     {
@@ -61,8 +61,8 @@
       "label": "문화·취미 강좌",
       "provider": "지방자치단체·교육청",
       "interval": "매일",
-      "count": 2832,
-      "checkedAt": "2026-11-14T12:11:26.907Z",
+      "count": 2824,
+      "checkedAt": "2026-11-14T23:59:12.521Z",
       "status": "fresh"
     },
     {
@@ -70,8 +70,8 @@
       "label": "이동·영유아 편의정보",
       "provider": "한국관광공사",
       "interval": "화~일요일 · 상세 순차 확인",
-      "count": 51,
-      "checkedAt": "2026-11-14T12:13:57.135Z",
+      "count": 102,
+      "checkedAt": "2026-11-15T00:00:16.014Z",
       "status": "fresh"
     },
     {
@@ -80,7 +80,7 @@
       "provider": "한국농어촌공사·한국어촌어항공단",
       "interval": "매일 원자료 확인 · 원문 반기 갱신",
       "count": 1261,
-      "checkedAt": "2026-11-14T13:27:30.517Z",
+      "checkedAt": "2026-11-14T23:58:59.672Z",
       "status": "fresh"
     },
     {
@@ -88,8 +88,8 @@
       "label": "어린이·청소년 체험",
       "provider": "성평등가족부",
       "interval": "매일",
-      "count": 118,
-      "checkedAt": "2026-11-14T13:27:36.070Z",
+      "count": 117,
+      "checkedAt": "2026-11-14T23:59:08.245Z",
       "status": "fresh"
     },
     {
@@ -98,7 +98,7 @@
       "provider": "국립중앙과학관·인천학생과학관",
       "interval": "매일 공식 교육 일정 확인",
       "count": 14,
-      "checkedAt": "2026-11-14T13:45:30.492Z",
+      "checkedAt": "2026-11-14T23:59:08.381Z",
       "status": "fresh"
     }
   ]
