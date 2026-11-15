@@ -1,0 +1,3236 @@
+{
+  "source": "Naver Search Ads GET /keywordstool",
+  "sourceUrl": "https://naver.github.io/searchad-apidoc/",
+  "checkedAt": "2026-11-15T12:17:07.533Z",
+  "period": "provider monthly search counts, PC and mobile; not Google volume",
+  "competitionDefinition": "adCompetition is advertising competition, not organic SEO difficulty",
+  "requested": [
+    "겨울방학체험",
+    "겨울방학프로그램",
+    "겨울방학캠프",
+    "초등겨울방학",
+    "방학체험",
+    "어린이체험",
+    "초등학생체험",
+    "초등체험학습",
+    "청소년체험",
+    "청소년진로체험",
+    "가족체험",
+    "무료체험",
+    "실내체험",
+    "체험학습",
+    "체험학습장소",
+    "원데이클래스",
+    "키즈클래스",
+    "문화강좌",
+    "문화센터강좌",
+    "평생학습강좌",
+    "무료강좌",
+    "주말체험",
+    "과학체험",
+    "과학관체험",
+    "과학교실",
+    "천문체험",
+    "농촌체험",
+    "농촌체험마을",
+    "어촌체험",
+    "갯벌체험",
+    "딸기따기체험",
+    "딸기체험",
+    "김장체험",
+    "두부만들기체험",
+    "도자기체험",
+    "목공체험",
+    "공예체험",
+    "요리체험",
+    "쿠킹클래스",
+    "영어회화강좌",
+    "미술강좌",
+    "사진강좌",
+    "악기강좌",
+    "캘리그라피강좌",
+    "스마트폰교육",
+    "학습멘토링",
+    "코딩체험",
+    "생태체험",
+    "농장체험",
+    "서울체험",
+    "서울어린이체험",
+    "서울겨울방학체험",
+    "부산체험",
+    "부산어린이체험",
+    "부산겨울방학체험",
+    "대구체험",
+    "대구어린이체험",
+    "대구겨울방학체험",
+    "인천체험",
+    "인천어린이체험",
+    "인천겨울방학체험",
+    "광주체험",
+    "광주어린이체험",
+    "광주겨울방학체험",
+    "대전체험",
+    "대전어린이체험",
+    "대전겨울방학체험",
+    "울산체험",
+    "울산어린이체험",
+    "울산겨울방학체험",
+    "세종체험",
+    "세종어린이체험",
+    "세종겨울방학체험",
+    "경기도체험",
+    "경기도어린이체험",
+    "경기도겨울방학체험",
+    "강원도체험",
+    "강원도어린이체험",
+    "강원도겨울방학체험",
+    "충북체험",
+    "충북어린이체험",
+    "충북겨울방학체험",
+    "충남체험",
+    "충남어린이체험",
+    "충남겨울방학체험",
+    "전북체험",
+    "전북어린이체험",
+    "전북겨울방학체험",
+    "전남체험",
+    "전남어린이체험",
+    "전남겨울방학체험",
+    "경북체험",
+    "경북어린이체험",
+    "경북겨울방학체험",
+    "경남체험",
+    "경남어린이체험",
+    "경남겨울방학체험",
+    "제주체험",
+    "제주어린이체험",
+    "제주겨울방학체험",
+    "가평농촌체험",
+    "양주농촌체험",
+    "파주농촌체험",
+    "완도농촌체험",
+    "통영농촌체험",
+    "화성농촌체험",
+    "하동농촌체험",
+    "서귀포농촌체험",
+    "제주농촌체험",
+    "남해농촌체험",
+    "사천농촌체험",
+    "거제농촌체험",
+    "문경농촌체험",
+    "거창농촌체험",
+    "김해농촌체험",
+    "영덕농촌체험",
+    "영주농촌체험",
+    "구미농촌체험",
+    "예천농촌체험",
+    "안동농촌체험",
+    "창원농촌체험",
+    "양산농촌체험",
+    "합천농촌체험",
+    "산청농촌체험",
+    "진주농촌체험",
+    "용인농촌체험",
+    "포천농촌체험",
+    "안성농촌체험",
+    "의성농촌체험",
+    "고령농촌체험",
+    "영천농촌체험",
+    "상주농촌체험",
+    "영양농촌체험",
+    "이천농촌체험",
+    "여주농촌체험",
+    "양평농촌체험",
+    "연천농촌체험",
+    "청송농촌체험",
+    "성주농촌체험",
+    "진도농촌체험",
+    "순천농촌체험",
+    "울릉농촌체험",
+    "봉화농촌체험",
+    "칠곡농촌체험",
+    "경산농촌체험",
+    "청도농촌체험",
+    "경주농촌체험",
+    "포항농촌체험",
+    "김천농촌체험",
+    "울진농촌체험",
+    "북구농촌체험",
+    "군위농촌체험",
+    "유성구농촌체험",
+    "동구농촌체험",
+    "중구농촌체험",
+    "대덕구농촌체험",
+    "종로구농촌체험",
+    "없음농촌체험",
+    "울주농촌체험",
+    "강화농촌체험",
+    "담양농촌체험",
+    "영광농촌체험",
+    "여수농촌체험",
+    "곡성농촌체험",
+    "영암농촌체험",
+    "강진농촌체험",
+    "신안농촌체험",
+    "고흥농촌체험",
+    "장성농촌체험",
+    "화순농촌체험",
+    "밀양농촌체험",
+    "함안농촌체험",
+    "창녕농촌체험",
+    "나주농촌체험",
+    "보성농촌체험",
+    "광양농촌체험",
+    "해남농촌체험",
+    "무안농촌체험",
+    "장흥농촌체험",
+    "함평농촌체험",
+    "홍천농촌체험",
+    "화천농촌체험",
+    "삼척농촌체험",
+    "인제농촌체험",
+    "춘천농촌체험",
+    "철원농촌체험",
+    "양구농촌체험",
+    "횡성농촌체험",
+    "원주농촌체험",
+    "양양농촌체험",
+    "강릉농촌체험",
+    "평창농촌체험",
+    "영월농촌체험",
+    "정선농촌체험",
+    "동해농촌체험",
+    "고성농촌체험",
+    "평택농촌체험",
+    "김포농촌체험",
+    "태백농촌체험",
+    "고양농촌체험",
+    "의령농촌체험",
+    "함양농촌체험",
+    "익산농촌체험",
+    "임실농촌체험",
+    "무주농촌체험",
+    "남원농촌체험",
+    "정읍농촌체험",
+    "구례농촌체험",
+    "장수농촌체험",
+    "진안농촌체험",
+    "완주농촌체험",
+    "고창농촌체험",
+    "청주농촌체험",
+    "홍성농촌체험",
+    "영동농촌체험",
+    "제천농촌체험",
+    "괴산농촌체험",
+    "증평농촌체험",
+    "단양농촌체험",
+    "보은농촌체험",
+    "진천농촌체험",
+    "옥천농촌체험",
+    "당진농촌체험",
+    "금산농촌체험",
+    "충주농촌체험",
+    "공주농촌체험",
+    "청양농촌체험",
+    "부여농촌체험",
+    "태안농촌체험",
+    "예산농촌체험",
+    "서천농촌체험",
+    "논산농촌체험",
+    "음성농촌체험",
+    "순창농촌체험",
+    "부안농촌체험",
+    "김제농촌체험",
+    "군산농촌체험",
+    "전주농촌체험",
+    "서산농촌체험",
+    "천안농촌체험",
+    "아산농촌체험",
+    "보령농촌체험",
+    "계룡농촌체험",
+    "속초농촌체험",
+    "서구농촌체험",
+    "옹진농촌체험",
+    "시흥농촌체험",
+    "안산농촌체험",
+    "기장농촌체험",
+    "영도구농촌체험"
+  ],
+  "requests": [
+    {
+      "seeds": [
+        "겨울방학프로그램",
+        "방학체험",
+        "무료체험",
+        "원데이클래스",
+        "문화강좌"
+      ],
+      "checkedAt": "2026-11-15T12:15:33.875Z",
+      "returned": 1200
+    },
+    {
+      "seeds": [
+        "문화센터강좌",
+        "평생학습강좌",
+        "무료강좌",
+        "과학교실",
+        "천문체험"
+      ],
+      "checkedAt": "2026-11-15T12:15:36.125Z",
+      "returned": 586
+    },
+    {
+      "seeds": [
+        "어촌체험",
+        "딸기따기체험",
+        "두부만들기체험",
+        "목공체험",
+        "쿠킹클래스"
+      ],
+      "checkedAt": "2026-11-15T12:15:38.463Z",
+      "returned": 1200
+    },
+    {
+      "seeds": [
+        "영어회화강좌",
+        "미술강좌",
+        "사진강좌",
+        "악기강좌",
+        "캘리그라피강좌"
+      ],
+      "checkedAt": "2026-11-15T12:15:40.747Z",
+      "returned": 742
+    },
+    {
+      "seeds": [
+        "스마트폰교육",
+        "학습멘토링",
+        "코딩체험",
+        "서울체험",
+        "서울겨울방학체험"
+      ],
+      "checkedAt": "2026-11-15T12:15:43.023Z",
+      "returned": 682
+    },
+    {
+      "seeds": [
+        "부산체험",
+        "부산어린이체험",
+        "부산겨울방학체험",
+        "대구어린이체험",
+        "대구겨울방학체험"
+      ],
+      "checkedAt": "2026-11-15T12:15:45.321Z",
+      "returned": 1113
+    },
+    {
+      "seeds": [
+        "인천어린이체험",
+        "인천겨울방학체험",
+        "광주체험",
+        "광주겨울방학체험",
+        "대전어린이체험"
+      ],
+      "checkedAt": "2026-11-15T12:15:47.574Z",
+      "returned": 308
+    },
+    {
+      "seeds": [
+        "대전겨울방학체험",
+        "울산체험",
+        "울산어린이체험",
+        "울산겨울방학체험",
+        "세종체험"
+      ],
+      "checkedAt": "2026-11-15T12:15:49.816Z",
+      "returned": 383
+    },
+    {
+      "seeds": [
+        "세종어린이체험",
+        "세종겨울방학체험",
+        "경기도겨울방학체험",
+        "강원도체험",
+        "강원도어린이체험"
+      ],
+      "checkedAt": "2026-11-15T12:15:52.016Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "강원도겨울방학체험",
+        "충북체험",
+        "충북어린이체험",
+        "충북겨울방학체험",
+        "충남체험"
+      ],
+      "checkedAt": "2026-11-15T12:15:54.217Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "충남어린이체험",
+        "충남겨울방학체험",
+        "전북체험",
+        "전북어린이체험",
+        "전북겨울방학체험"
+      ],
+      "checkedAt": "2026-11-15T12:15:56.419Z",
+      "returned": 32
+    },
+    {
+      "seeds": [
+        "전남체험",
+        "전남어린이체험",
+        "전남겨울방학체험",
+        "경북체험",
+        "경북어린이체험"
+      ],
+      "checkedAt": "2026-11-15T12:15:58.644Z",
+      "returned": 28
+    },
+    {
+      "seeds": [
+        "경북겨울방학체험",
+        "경남체험",
+        "경남어린이체험",
+        "경남겨울방학체험",
+        "제주체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:01.005Z",
+      "returned": 1200
+    },
+    {
+      "seeds": [
+        "제주어린이체험",
+        "제주겨울방학체험",
+        "양주농촌체험",
+        "파주농촌체험",
+        "완도농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:03.276Z",
+      "returned": 533
+    },
+    {
+      "seeds": [
+        "통영농촌체험",
+        "화성농촌체험",
+        "하동농촌체험",
+        "서귀포농촌체험",
+        "제주농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:05.505Z",
+      "returned": 26
+    },
+    {
+      "seeds": [
+        "남해농촌체험",
+        "사천농촌체험",
+        "거제농촌체험",
+        "문경농촌체험",
+        "거창농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:07.709Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "김해농촌체험",
+        "영덕농촌체험",
+        "영주농촌체험",
+        "구미농촌체험",
+        "예천농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:09.948Z",
+      "returned": 6
+    },
+    {
+      "seeds": [
+        "안동농촌체험",
+        "창원농촌체험",
+        "양산농촌체험",
+        "합천농촌체험",
+        "산청농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:12.177Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "진주농촌체험",
+        "용인농촌체험",
+        "포천농촌체험",
+        "안성농촌체험",
+        "의성농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:14.392Z",
+      "returned": 34
+    },
+    {
+      "seeds": [
+        "고령농촌체험",
+        "영천농촌체험",
+        "상주농촌체험",
+        "영양농촌체험",
+        "이천농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:16.608Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "여주농촌체험",
+        "양평농촌체험",
+        "연천농촌체험",
+        "청송농촌체험",
+        "성주농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:18.826Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "진도농촌체험",
+        "순천농촌체험",
+        "울릉농촌체험",
+        "봉화농촌체험",
+        "칠곡농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:21.046Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "경산농촌체험",
+        "청도농촌체험",
+        "경주농촌체험",
+        "포항농촌체험",
+        "김천농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:23.252Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "울진농촌체험",
+        "북구농촌체험",
+        "군위농촌체험",
+        "유성구농촌체험",
+        "동구농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:25.483Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "중구농촌체험",
+        "대덕구농촌체험",
+        "종로구농촌체험",
+        "없음농촌체험",
+        "울주농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:27.695Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "강화농촌체험",
+        "담양농촌체험",
+        "영광농촌체험",
+        "여수농촌체험",
+        "곡성농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:29.910Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "영암농촌체험",
+        "강진농촌체험",
+        "신안농촌체험",
+        "고흥농촌체험",
+        "장성농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:32.114Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "화순농촌체험",
+        "밀양농촌체험",
+        "함안농촌체험",
+        "창녕농촌체험",
+        "나주농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:34.322Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "보성농촌체험",
+        "광양농촌체험",
+        "해남농촌체험",
+        "무안농촌체험",
+        "장흥농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:36.547Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "함평농촌체험",
+        "홍천농촌체험",
+        "화천농촌체험",
+        "삼척농촌체험",
+        "인제농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:38.756Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "춘천농촌체험",
+        "철원농촌체험",
+        "양구농촌체험",
+        "횡성농촌체험",
+        "원주농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:40.976Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "양양농촌체험",
+        "강릉농촌체험",
+        "평창농촌체험",
+        "영월농촌체험",
+        "정선농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:43.188Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "동해농촌체험",
+        "고성농촌체험",
+        "평택농촌체험",
+        "김포농촌체험",
+        "태백농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:45.391Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "고양농촌체험",
+        "의령농촌체험",
+        "함양농촌체험",
+        "임실농촌체험",
+        "무주농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:47.613Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "남원농촌체험",
+        "정읍농촌체험",
+        "구례농촌체험",
+        "장수농촌체험",
+        "진안농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:49.815Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "완주농촌체험",
+        "고창농촌체험",
+        "청주농촌체험",
+        "홍성농촌체험",
+        "영동농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:52.019Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "제천농촌체험",
+        "괴산농촌체험",
+        "증평농촌체험",
+        "단양농촌체험",
+        "보은농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:54.243Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "진천농촌체험",
+        "옥천농촌체험",
+        "당진농촌체험",
+        "금산농촌체험",
+        "충주농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:56.453Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "공주농촌체험",
+        "청양농촌체험",
+        "부여농촌체험",
+        "태안농촌체험",
+        "예산농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:16:58.659Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "서천농촌체험",
+        "논산농촌체험",
+        "음성농촌체험",
+        "순창농촌체험",
+        "부안농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:17:00.872Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "김제농촌체험",
+        "군산농촌체험",
+        "전주농촌체험",
+        "서산농촌체험",
+        "천안농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:17:03.099Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "아산농촌체험",
+        "보령농촌체험",
+        "계룡농촌체험",
+        "속초농촌체험",
+        "서구농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:17:05.319Z",
+      "returned": 5
+    },
+    {
+      "seeds": [
+        "옹진농촌체험",
+        "시흥농촌체험",
+        "안산농촌체험",
+        "기장농촌체험",
+        "영도구농촌체험"
+      ],
+      "checkedAt": "2026-11-15T12:17:07.533Z",
+      "returned": 5
+    }
+  ],
+  "exact": [
+    {
+      "keyword": "겨울방학체험",
+      "pc": 20,
+      "mobile": 60,
+      "total": 80,
+      "totalMin": 80,
+      "totalMax": 80,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "겨울방학프로그램",
+      "pc": 40,
+      "mobile": 20,
+      "total": 60,
+      "totalMin": 60,
+      "totalMax": 60,
+      "adCompetition": "중간",
+      "adDepth": 3
+    },
+    {
+      "keyword": "겨울방학캠프",
+      "pc": 740,
+      "mobile": 2260,
+      "total": 3000,
+      "totalMin": 3000,
+      "totalMax": 3000,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "초등겨울방학",
+      "pc": 70,
+      "mobile": 490,
+      "total": 560,
+      "totalMin": 560,
+      "totalMax": 560,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "어린이체험",
+      "pc": 1400,
+      "mobile": 1460,
+      "total": 2860,
+      "totalMin": 2860,
+      "totalMax": 2860,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "초등학생체험",
+      "pc": 130,
+      "mobile": 330,
+      "total": 460,
+      "totalMin": 460,
+      "totalMax": 460,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "초등체험학습",
+      "pc": 40,
+      "mobile": 220,
+      "total": 260,
+      "totalMin": 260,
+      "totalMax": 260,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "청소년체험",
+      "pc": 30,
+      "mobile": 50,
+      "total": 80,
+      "totalMin": 80,
+      "totalMax": 80,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "청소년진로체험",
+      "pc": 110,
+      "mobile": 290,
+      "total": 400,
+      "totalMin": 400,
+      "totalMax": 400,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "가족체험",
+      "pc": 30,
+      "mobile": 50,
+      "total": 80,
+      "totalMin": 80,
+      "totalMax": 80,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "무료체험",
+      "pc": 80,
+      "mobile": 270,
+      "total": 350,
+      "totalMin": 350,
+      "totalMax": 350,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "실내체험",
+      "pc": 60,
+      "mobile": 360,
+      "total": 420,
+      "totalMin": 420,
+      "totalMax": 420,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "체험학습",
+      "pc": 490,
+      "mobile": 2030,
+      "total": 2520,
+      "totalMin": 2520,
+      "totalMax": 2520,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "체험학습장소",
+      "pc": 10,
+      "mobile": 640,
+      "total": 650,
+      "totalMin": 650,
+      "totalMax": 650,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "원데이클래스",
+      "pc": 5550,
+      "mobile": 13800,
+      "total": 19350,
+      "totalMin": 19350,
+      "totalMax": 19350,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "키즈클래스",
+      "pc": 80,
+      "mobile": 400,
+      "total": 480,
+      "totalMin": 480,
+      "totalMax": 480,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "문화강좌",
+      "pc": 30,
+      "mobile": 60,
+      "total": 90,
+      "totalMin": 90,
+      "totalMax": 90,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "문화센터강좌",
+      "pc": 20,
+      "mobile": 500,
+      "total": 520,
+      "totalMin": 520,
+      "totalMax": 520,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "평생학습강좌",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "무료강좌",
+      "pc": 40,
+      "mobile": 30,
+      "total": 70,
+      "totalMin": 70,
+      "totalMax": 70,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "주말체험",
+      "pc": 30,
+      "mobile": 80,
+      "total": 110,
+      "totalMin": 110,
+      "totalMax": 110,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "과학체험",
+      "pc": 60,
+      "mobile": 170,
+      "total": 230,
+      "totalMin": 230,
+      "totalMax": 230,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "과학관체험",
+      "pc": 10,
+      "mobile": 580,
+      "total": 590,
+      "totalMin": 590,
+      "totalMax": 590,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "과학교실",
+      "pc": 20,
+      "mobile": 40,
+      "total": 60,
+      "totalMin": 60,
+      "totalMax": 60,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "천문체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "농촌체험",
+      "pc": 340,
+      "mobile": 1060,
+      "total": 1400,
+      "totalMin": 1400,
+      "totalMax": 1400,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "농촌체험마을",
+      "pc": 50,
+      "mobile": 110,
+      "total": 160,
+      "totalMin": 160,
+      "totalMax": 160,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "어촌체험",
+      "pc": 10,
+      "mobile": 80,
+      "total": 90,
+      "totalMin": 90,
+      "totalMax": 90,
+      "adCompetition": "중간",
+      "adDepth": 5
+    },
+    {
+      "keyword": "갯벌체험",
+      "pc": 880,
+      "mobile": 5400,
+      "total": 6280,
+      "totalMin": 6280,
+      "totalMax": 6280,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "딸기따기체험",
+      "pc": 90,
+      "mobile": 580,
+      "total": 670,
+      "totalMin": 670,
+      "totalMax": 670,
+      "adCompetition": "높음",
+      "adDepth": 9
+    },
+    {
+      "keyword": "딸기체험",
+      "pc": 400,
+      "mobile": 2470,
+      "total": 2870,
+      "totalMin": 2870,
+      "totalMax": 2870,
+      "adCompetition": "중간",
+      "adDepth": 8
+    },
+    {
+      "keyword": "김장체험",
+      "pc": 720,
+      "mobile": 1820,
+      "total": 2540,
+      "totalMin": 2540,
+      "totalMax": 2540,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "두부만들기체험",
+      "pc": 70,
+      "mobile": 400,
+      "total": 470,
+      "totalMin": 470,
+      "totalMax": 470,
+      "adCompetition": "중간",
+      "adDepth": 5
+    },
+    {
+      "keyword": "도자기체험",
+      "pc": 520,
+      "mobile": 3140,
+      "total": 3660,
+      "totalMin": 3660,
+      "totalMax": 3660,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "목공체험",
+      "pc": 180,
+      "mobile": 410,
+      "total": 590,
+      "totalMin": 590,
+      "totalMax": 590,
+      "adCompetition": "높음",
+      "adDepth": 8
+    },
+    {
+      "keyword": "공예체험",
+      "pc": 90,
+      "mobile": 160,
+      "total": 250,
+      "totalMin": 250,
+      "totalMax": 250,
+      "adCompetition": "높음",
+      "adDepth": 8
+    },
+    {
+      "keyword": "요리체험",
+      "pc": 50,
+      "mobile": 170,
+      "total": 220,
+      "totalMin": 220,
+      "totalMax": 220,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "쿠킹클래스",
+      "pc": 860,
+      "mobile": 5200,
+      "total": 6060,
+      "totalMin": 6060,
+      "totalMax": 6060,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "영어회화강좌",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "미술강좌",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "사진강좌",
+      "pc": 20,
+      "mobile": 40,
+      "total": 60,
+      "totalMin": 60,
+      "totalMax": 60,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "악기강좌",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "캘리그라피강좌",
+      "pc": 10,
+      "mobile": 40,
+      "total": 50,
+      "totalMin": 50,
+      "totalMax": 50,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "스마트폰교육",
+      "pc": 40,
+      "mobile": 50,
+      "total": 90,
+      "totalMin": 90,
+      "totalMax": 90,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "학습멘토링",
+      "pc": "< 10",
+      "mobile": 30,
+      "total": null,
+      "totalMin": 30,
+      "totalMax": 39,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "코딩체험",
+      "pc": "< 10",
+      "mobile": 20,
+      "total": null,
+      "totalMin": 20,
+      "totalMax": 29,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "생태체험",
+      "pc": 60,
+      "mobile": 200,
+      "total": 260,
+      "totalMin": 260,
+      "totalMax": 260,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "농장체험",
+      "pc": 180,
+      "mobile": 1110,
+      "total": 1290,
+      "totalMin": 1290,
+      "totalMax": 1290,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "서울체험",
+      "pc": 310,
+      "mobile": 730,
+      "total": 1040,
+      "totalMin": 1040,
+      "totalMax": 1040,
+      "adCompetition": "높음",
+      "adDepth": 8
+    },
+    {
+      "keyword": "서울어린이체험",
+      "pc": 200,
+      "mobile": 890,
+      "total": 1090,
+      "totalMin": 1090,
+      "totalMax": 1090,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "서울겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "부산체험",
+      "pc": 350,
+      "mobile": 1070,
+      "total": 1420,
+      "totalMin": 1420,
+      "totalMax": 1420,
+      "adCompetition": "높음",
+      "adDepth": 8
+    },
+    {
+      "keyword": "부산어린이체험",
+      "pc": 150,
+      "mobile": 770,
+      "total": 920,
+      "totalMin": 920,
+      "totalMax": 920,
+      "adCompetition": "중간",
+      "adDepth": 8
+    },
+    {
+      "keyword": "부산겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "대구체험",
+      "pc": 170,
+      "mobile": 690,
+      "total": 860,
+      "totalMin": 860,
+      "totalMax": 860,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "대구어린이체험",
+      "pc": 100,
+      "mobile": 470,
+      "total": 570,
+      "totalMin": 570,
+      "totalMax": 570,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "대구겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "인천체험",
+      "pc": 90,
+      "mobile": 330,
+      "total": 420,
+      "totalMin": 420,
+      "totalMax": 420,
+      "adCompetition": "높음",
+      "adDepth": 8
+    },
+    {
+      "keyword": "인천어린이체험",
+      "pc": 50,
+      "mobile": 220,
+      "total": 270,
+      "totalMin": 270,
+      "totalMax": 270,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "인천겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "광주체험",
+      "pc": 90,
+      "mobile": 420,
+      "total": 510,
+      "totalMin": 510,
+      "totalMax": 510,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "광주어린이체험",
+      "pc": 80,
+      "mobile": 480,
+      "total": 560,
+      "totalMin": 560,
+      "totalMax": 560,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "광주겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "대전체험",
+      "pc": 180,
+      "mobile": 610,
+      "total": 790,
+      "totalMin": 790,
+      "totalMax": 790,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "대전어린이체험",
+      "pc": 90,
+      "mobile": 500,
+      "total": 590,
+      "totalMin": 590,
+      "totalMax": 590,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "대전겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "울산체험",
+      "pc": 140,
+      "mobile": 390,
+      "total": 530,
+      "totalMin": 530,
+      "totalMax": 530,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "울산어린이체험",
+      "pc": 30,
+      "mobile": 230,
+      "total": 260,
+      "totalMin": 260,
+      "totalMax": 260,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "울산겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "세종체험",
+      "pc": 50,
+      "mobile": 180,
+      "total": 230,
+      "totalMin": 230,
+      "totalMax": 230,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "세종어린이체험",
+      "pc": 20,
+      "mobile": 80,
+      "total": 100,
+      "totalMin": 100,
+      "totalMax": 100,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "세종겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "경기도체험",
+      "pc": 60,
+      "mobile": 190,
+      "total": 250,
+      "totalMin": 250,
+      "totalMax": 250,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "경기도어린이체험",
+      "pc": 40,
+      "mobile": 150,
+      "total": 190,
+      "totalMin": 190,
+      "totalMax": 190,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "경기도겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "강원도체험",
+      "pc": 40,
+      "mobile": 160,
+      "total": 200,
+      "totalMin": 200,
+      "totalMax": 200,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "강원도어린이체험",
+      "pc": 10,
+      "mobile": 60,
+      "total": 70,
+      "totalMin": 70,
+      "totalMax": 70,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "강원도겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "충북체험",
+      "pc": "< 10",
+      "mobile": 30,
+      "total": null,
+      "totalMin": 30,
+      "totalMax": 39,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "충북어린이체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "충북겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "충남체험",
+      "pc": 10,
+      "mobile": 60,
+      "total": 70,
+      "totalMin": 70,
+      "totalMax": 70,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "충남어린이체험",
+      "pc": 10,
+      "mobile": 20,
+      "total": 30,
+      "totalMin": 30,
+      "totalMax": 30,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "충남겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "전북체험",
+      "pc": 30,
+      "mobile": 80,
+      "total": 110,
+      "totalMin": 110,
+      "totalMax": 110,
+      "adCompetition": "중간",
+      "adDepth": 5
+    },
+    {
+      "keyword": "전북어린이체험",
+      "pc": 10,
+      "mobile": 30,
+      "total": 40,
+      "totalMin": 40,
+      "totalMax": 40,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "전북겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "전남체험",
+      "pc": 30,
+      "mobile": 110,
+      "total": 140,
+      "totalMin": 140,
+      "totalMax": 140,
+      "adCompetition": "중간",
+      "adDepth": 5
+    },
+    {
+      "keyword": "전남어린이체험",
+      "pc": 20,
+      "mobile": 80,
+      "total": 100,
+      "totalMin": 100,
+      "totalMax": 100,
+      "adCompetition": "중간",
+      "adDepth": 6
+    },
+    {
+      "keyword": "전남겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "경북체험",
+      "pc": 20,
+      "mobile": 80,
+      "total": 100,
+      "totalMin": 100,
+      "totalMax": 100,
+      "adCompetition": "높음",
+      "adDepth": 7
+    },
+    {
+      "keyword": "경북어린이체험",
+      "pc": 10,
+      "mobile": 20,
+      "total": 30,
+      "totalMin": 30,
+      "totalMax": 30,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "경북겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "경남체험",
+      "pc": 50,
+      "mobile": 180,
+      "total": 230,
+      "totalMin": 230,
+      "totalMax": 230,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "경남어린이체험",
+      "pc": 30,
+      "mobile": 120,
+      "total": 150,
+      "totalMin": 150,
+      "totalMax": 150,
+      "adCompetition": "높음",
+      "adDepth": 10
+    },
+    {
+      "keyword": "경남겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "제주체험",
+      "pc": 420,
+      "mobile": 1260,
+      "total": 1680,
+      "totalMin": 1680,
+      "totalMax": 1680,
+      "adCompetition": "높음",
+      "adDepth": 8
+    },
+    {
+      "keyword": "제주어린이체험",
+      "pc": 50,
+      "mobile": 270,
+      "total": 320,
+      "totalMin": 320,
+      "totalMax": 320,
+      "adCompetition": "높음",
+      "adDepth": 8
+    },
+    {
+      "keyword": "제주겨울방학체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "가평농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "양주농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "파주농촌체험",
+      "pc": "< 10",
+      "mobile": 20,
+      "total": null,
+      "totalMin": 20,
+      "totalMax": 29,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "완도농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "통영농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "화성농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "하동농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "서귀포농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "제주농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "남해농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "사천농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "거제농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "문경농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "거창농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "김해농촌체험",
+      "pc": "< 10",
+      "mobile": 20,
+      "total": null,
+      "totalMin": 20,
+      "totalMax": 29,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "영덕농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "영주농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "구미농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "예천농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "안동농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "창원농촌체험",
+      "pc": "< 10",
+      "mobile": 20,
+      "total": null,
+      "totalMin": 20,
+      "totalMax": 29,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "양산농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "합천농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "산청농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "진주농촌체험",
+      "pc": "< 10",
+      "mobile": 40,
+      "total": null,
+      "totalMin": 40,
+      "totalMax": 49,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "용인농촌체험",
+      "pc": 10,
+      "mobile": 80,
+      "total": 90,
+      "totalMin": 90,
+      "totalMax": 90,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "포천농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "안성농촌체험",
+      "pc": 10,
+      "mobile": 10,
+      "total": 20,
+      "totalMin": 20,
+      "totalMax": 20,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "의성농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "고령농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "영천농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "상주농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "영양농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "이천농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "여주농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "양평농촌체험",
+      "pc": 80,
+      "mobile": 320,
+      "total": 400,
+      "totalMin": 400,
+      "totalMax": 400,
+      "adCompetition": "중간",
+      "adDepth": 5
+    },
+    {
+      "keyword": "연천농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "청송농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "성주농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "진도농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "순천농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "울릉농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "봉화농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "칠곡농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "경산농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "청도농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "경주농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "포항농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "김천농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "울진농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "북구농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "군위농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "유성구농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "동구농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "중구농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "대덕구농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "종로구농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "없음농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "울주농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "강화농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "담양농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "영광농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "여수농촌체험",
+      "pc": "< 10",
+      "mobile": 20,
+      "total": null,
+      "totalMin": 20,
+      "totalMax": 29,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "곡성농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "영암농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "강진농촌체험",
+      "pc": "< 10",
+      "mobile": 20,
+      "total": null,
+      "totalMin": 20,
+      "totalMax": 29,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "신안농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "고흥농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "장성농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "화순농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "밀양농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "함안농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "창녕농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "나주농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "보성농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "광양농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "해남농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "무안농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "장흥농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "함평농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "홍천농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "화천농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "삼척농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "인제농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "춘천농촌체험",
+      "pc": "< 10",
+      "mobile": 20,
+      "total": null,
+      "totalMin": 20,
+      "totalMax": 29,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "철원농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "양구농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "횡성농촌체험",
+      "pc": "< 10",
+      "mobile": 30,
+      "total": null,
+      "totalMin": 30,
+      "totalMax": 39,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "원주농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "중간",
+      "adDepth": 3
+    },
+    {
+      "keyword": "양양농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "강릉농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "평창농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "영월농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "정선농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "동해농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "고성농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "평택농촌체험",
+      "pc": "< 10",
+      "mobile": 20,
+      "total": null,
+      "totalMin": 20,
+      "totalMax": 29,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "김포농촌체험",
+      "pc": 20,
+      "mobile": 160,
+      "total": 180,
+      "totalMin": 180,
+      "totalMax": 180,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "태백농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "고양농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "의령농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "함양농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "익산농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "임실농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "무주농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "남원농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "정읍농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "구례농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "장수농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "진안농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "완주농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "고창농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "청주농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "낮음",
+      "adDepth": 2
+    },
+    {
+      "keyword": "홍성농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "영동농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "제천농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "괴산농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "증평농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "단양농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "보은농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "진천농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "옥천농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "당진농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "금산농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "충주농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "공주농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "청양농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "부여농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "태안농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "예산농촌체험",
+      "pc": 10,
+      "mobile": 30,
+      "total": 40,
+      "totalMin": 40,
+      "totalMax": 40,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "서천농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "논산농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "음성농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "순창농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "부안농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "김제농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "군산농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "전주농촌체험",
+      "pc": "< 10",
+      "mobile": 10,
+      "total": null,
+      "totalMin": 10,
+      "totalMax": 19,
+      "adCompetition": "중간",
+      "adDepth": 2
+    },
+    {
+      "keyword": "서산농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "천안농촌체험",
+      "pc": 10,
+      "mobile": 20,
+      "total": 30,
+      "totalMin": 30,
+      "totalMax": 30,
+      "adCompetition": "높음",
+      "adDepth": 3
+    },
+    {
+      "keyword": "아산농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "보령농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "계룡농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "속초농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "서구농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "옹진농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "시흥농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "안산농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    },
+    {
+      "keyword": "기장농촌체험",
+      "pc": 10,
+      "mobile": 30,
+      "total": 40,
+      "totalMin": 40,
+      "totalMax": 40,
+      "adCompetition": "중간",
+      "adDepth": 1
+    },
+    {
+      "keyword": "영도구농촌체험",
+      "pc": "< 10",
+      "mobile": "< 10",
+      "total": null,
+      "totalMin": 0,
+      "totalMax": 18,
+      "adCompetition": "낮음",
+      "adDepth": 0
+    }
+  ]
+}

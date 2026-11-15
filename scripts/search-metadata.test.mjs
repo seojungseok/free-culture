@@ -5,6 +5,7 @@ import vm from 'node:vm';
 import ts from 'typescript';
 import {XMLParser,XMLValidator} from 'fast-xml-parser';
 import {placeRouteIds} from './build-place-route-index.mjs';
+import {experienceEditorial} from '../lib/programmeEditorial.mjs';
 
 const SITE={name:'주말에 뭐하지?',url:'https://mwohaji.kr'};
 const topics={family:{short:'가족·청소년 체험'},science:{short:'과학관 교육·행사'},rural:{short:'농촌·어촌 체험'}};
@@ -12,7 +13,7 @@ const experienceHref=item=>`/experiences/${item.kind}/${item.id}`;
 function compile(file){
  const source=fs.readFileSync(file,'utf8');
  const compiled=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
- const sandbox={exports:{},URL,require:name=>name==='./site'?{SITE}:name==='./experienceData'?{experienceHref,experienceTopics:topics}:(()=>{throw Error(name)})()};
+ const sandbox={exports:{},URL,require:name=>name==='./site'?{SITE}:name==='./experienceData'?{experienceHref,experienceTopics:topics}:name==='./programmeEditorial.mjs'?{experienceEditorial}:(()=>{throw Error(name)})()};
  vm.runInNewContext(compiled,sandbox);return sandbox.exports;
 }
 const {withSearchMetadata}=compile('lib/searchMetadata.ts');
@@ -49,7 +50,7 @@ test('RSS is valid XML with full detail and stable internal permalink identifier
  const xml=renderExperienceFeed([sample],new Date('2026-11-15T00:00:00Z'));
  assert.equal(XMLValidator.validate(xml),true);
  const channel=new XMLParser({ignoreAttributes:false}).parse(xml).rss.channel,item=channel.item;
- assert.equal(item.title,sample.title);assert.equal(item.link,'https://mwohaji.kr/experiences/family/test-1');
+ assert.equal(item.title,experienceEditorial(sample).title);assert.equal(item.link,'https://mwohaji.kr/experiences/family/test-1');
  assert.equal(item.guid['#text'],item.link);assert.equal(item.guid['@_isPermaLink'],'true');
  assert.equal(item.description,item['content:encoded']);
  for(const text of [...sample.content,sample.audience,sample.address,sample.phone])assert(item.description.includes(text.replaceAll('&','&amp;')));

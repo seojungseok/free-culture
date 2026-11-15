@@ -1,6 +1,7 @@
 import type { Experience } from './experienceData';
 import { experienceHref, experienceTopics } from './experienceData';
 import { SITE } from './site';
+import { experienceEditorial } from './programmeEditorial.mjs';
 
 const escape = (value: string) => value.replace(/[&<>"']/g, char => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;',
@@ -10,20 +11,22 @@ const list = (items: string[]) => items.length ? `<ul>${items.map(item => `<li>$
 
 /** Full substantive detail, using the same stored public facts as the internal page. */
 export function experienceFeedBody(item: Experience): string {
+  const editorial = experienceEditorial(item);
   const period = item.period || (item.start ? `${item.start} ~ ${item.end}` : '');
   const facts = [
-    ['활동 일정', period], ['참여 대상', item.audience],
+    ['공식 프로그램명', item.title], ['활동 일정', period], ['참여 대상', item.audience],
     ['참가비', item.kind === 'rural' ? '체험별 비용은 공개자료에 미기재' : item.price || '공개자료에 미기재'],
     ['접수 안내', item.registration], ['보유 시설', item.facilities],
     ['운영·관리', item.institution], ['자료 기준일', item.referenceDate],
     ['주소', item.address || `${item.area} ${item.city}`], ['문의 전화', item.phone],
   ].filter(([, value]) => value);
   return [
-    `<h2>${escape(item.title)}</h2>`, paragraph(item.summary),
+    `<h2>${escape(editorial.title)}</h2>`, paragraph(editorial.lead), paragraph(editorial.introduction),
     item.image ? `<figure><img src="${escape(new URL(item.image.src, SITE.url).href)}" alt="${escape(item.imageAlt)}"/><figcaption>${escape(item.imageAlt)}</figcaption></figure>` : '',
     item.kind === 'rural'
       ? `<h3>이 마을에서 할 수 있는 체험</h3>${list(item.programs)}${paragraph('공공자료에 등록된 체험입니다. 수확 시기와 작황에 따라 진행하는 프로그램이 달라질 수 있습니다.')}`
       : `<h3>${item.kind === 'science' ? '교육 내용' : '활동 안내'}</h3>${item.content.map(paragraph).join('')}${item.activities.length ? '<h3>무엇을 하나요?</h3>' + item.activities.map(paragraph).join('') : ''}`,
+    ...editorial.paragraphs.map(paragraph),
     item.venueOverview ? `<h3>장소 소개</h3>${paragraph(item.venueOverview)}${paragraph('한국관광공사 장소 소개 · 프로그램별 운영 안내와 별도로 제공되는 장소 정보입니다.')}` : '',
     `<h3>일정·비용·위치</h3><dl>${facts.map(([label, value]) => `<dt>${label}</dt><dd>${escape(value)}</dd>`).join('')}</dl>`,
     paragraph(item.kind === 'rural'
@@ -51,7 +54,7 @@ ${items.map(item => {
     const url = new URL(experienceHref(item), SITE.url).href;
     const body = escape(experienceFeedBody(item));
     // Collection/check timestamps are deliberately not represented as publication dates.
-    return `<item><title>${escape(item.title)}</title><link>${escape(url)}</link><guid isPermaLink="true">${escape(url)}</guid><category>${escape(experienceTopics[item.kind].short)}</category><description>${body}</description><content:encoded>${body}</content:encoded></item>`;
+    return `<item><title>${escape(experienceEditorial(item).title)}</title><link>${escape(url)}</link><guid isPermaLink="true">${escape(url)}</guid><category>${escape(experienceTopics[item.kind].short)}</category><description>${body}</description><content:encoded>${body}</content:encoded></item>`;
   }).join('\n')}
 </channel></rss>`;
 }

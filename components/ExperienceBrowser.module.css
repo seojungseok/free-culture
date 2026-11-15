@@ -23,6 +23,7 @@
 @media(prefers-reduced-motion:reduce){.cardImage>img{transition:none}.cardLink:hover .cardImage>img{transform:none}}
 .posterImage{background:#f5f7fa}.posterImage>img{object-fit:contain;padding:8px 8px 31px}.detailPhoto figcaption a{color:#245db6;text-decoration:underline}
 .programmePhoto .photoFrame{padding:18px}.programmePhoto .photoFrame>img{width:auto;max-width:100%;border-radius:6px}
+.directoryGuide{margin:36px 0 24px;padding:24px;background:#f6f8fc;border-top:2px solid #dce5f5;border-radius:12px;overflow-wrap:anywhere;word-break:keep-all;color:#35506e;font-size:15px;line-height:1.9}.directoryGuide h2{margin:0 0 14px;font-size:21px;line-height:1.5;color:#112c4b}.directoryGuide p{margin:12px 0}.directoryGuide ul,.directoryGuide ol{padding-left:22px;margin:14px 0}.directoryGuide li{padding-left:4px;margin:7px 0}.directoryGuide a{color:#245db6;text-decoration:underline;text-underline-offset:3px}@media(max-width:639px){.directoryGuide{padding:20px 16px;font-size:14px}.directoryGuide h2{font-size:19px}}
 .homeSection{max-width:1120px;padding:32px 16px 0}
 .homeHeading h2{font-size:21px;line-height:1.4;min-width:0}.homeHeading>a{flex-shrink:0;white-space:nowrap}
 .homeSection .homeGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}

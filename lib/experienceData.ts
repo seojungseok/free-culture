@@ -7,6 +7,7 @@ import {SIDO_SLUG} from './classify';
 import {todayIso,queryValue,type DiscoveryQuery} from './publicDiscovery';
 import {ruralThemes,experienceCity,isYouthExperience} from './experiences.mjs';
 import {cleanExperienceText,experienceIntro} from './experienceText.mjs';
+import {experienceEditorial} from './programmeEditorial.mjs';
 
 export type ExperienceKind='family'|'science'|'rural';
 export const experienceTopics={
@@ -53,7 +54,7 @@ export function experienceStatus(item:Experience,today=todayIso()){
 export function filterExperiences(kind:ExperienceKind|undefined,query:DiscoveryQuery={},region='',today=todayIso()){
  const area=region||queryValue(query,'area'),city=queryValue(query,'city'),q=queryValue(query,'q').trim().toLocaleLowerCase().slice(0,100),theme=queryValue(query,'theme'),cost=queryValue(query,'cost');
  const result=currentExperiences(today).filter(item=>!kind||item.kind===kind).filter(item=>!area||item.area===area).filter(item=>!city||item.city===city).filter(item=>cost!=='free'||item.free)
-  .filter(item=>!q||[item.title,item.summary,item.institution,item.address,...item.content,...item.activities,...item.programs].join(' ').toLocaleLowerCase().includes(q))
+  .filter(item=>!q||[item.title,item.summary,item.institution,item.address,...item.content,...item.activities,...item.programs,experienceEditorial(item,today).focus].join(' ').toLocaleLowerCase().includes(q))
   .filter(item=>!theme||item.kind!=='rural'||!Object.hasOwn(ruralThemes,theme)||ruralThemes[theme as keyof typeof ruralThemes].test.test(item.programs.join(' ')))
   .sort((a,b)=>Number(experienceStatus(a,today)==='접수기간 지남')-Number(experienceStatus(b,today)==='접수기간 지남')||Number(!!a.start&&a.start<today)-Number(!!b.start&&b.start<today)||Number(!!b.image)-Number(!!a.image)||(a.start&&a.start>=today?a.start:a.end||'9999').localeCompare(b.start&&b.start>=today?b.start:b.end||'9999')||a.title.localeCompare(b.title,'ko'));
  if(kind)return result;
@@ -71,5 +72,5 @@ export function indexableExperience(item:Experience){
  if(item.kind==='rural')return !!item.address&&(item.venueOverview.length>=120||item.programs.length>=5&&!!item.phone);
  return item.content.join(' ').length+item.activities.join(' ').length+item.venueOverview.length>=120&&!!(item.period||item.start)&&!!item.audience;
 }
-export function experienceDescription(item:Experience){return `${item.area} ${item.city} ${item.title}${item.start?' · '+item.start+' ~ '+item.end:''}. ${item.summary} ${item.kind==='rural'?'체험 프로그램·시설·주소·문의처':`${item.price||'비용 안내'}·참여대상·신청 방법`}를 확인하세요.`.replace(/\s+/g,' ').slice(0,160);}
-export function experienceSeoTitle(item:Experience){return `${item.title} — ${item.area} ${item.city}${item.start?' · '+item.start:''} ${experienceTopics[item.kind].short}`;}
+export function experienceDescription(item:Experience){return experienceEditorial(item).description;}
+export function experienceSeoTitle(item:Experience){return experienceEditorial(item).title;}

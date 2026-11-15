@@ -1,14 +1,18 @@
 // Read-only HTML/asset checks. This never follows an application, affiliate or public-data API.
 import fs from 'node:fs';
 import {load} from 'cheerio';
-import {experienceContentBlocks} from '../lib/experienceText.mjs';
+import {experienceContentBlocks,experienceIntro,cleanExperienceText} from '../lib/experienceText.mjs';
+import {experienceEditorial,uniqueClassEditorials} from '../lib/programmeEditorial.mjs';
+import {experienceCity} from '../lib/experiences.mjs';
 const base=process.env.VERIFY_BASE||'http://127.0.0.1:3317',full=process.env.VERIFY_FULL==='1',results=[];
 const read=file=>JSON.parse(fs.readFileSync('data/'+file,'utf8'));
 const check=(condition,message)=>{if(!condition)throw new Error(message);};
-const sources=['rural','youth','science'].flatMap(kind=>read(kind+'-experiences.json').records.map(row=>({path:`/experiences/${kind==='youth'?'family':kind}/${row.id}`,title:row.title,kind:kind==='youth'?'family':kind,active:row.active!==false,address:row.address||'',content:[...(row.content||[]),...(row.activities||[])]})));
+const venues=read('experience-venues.json').venues;
+const sources=['rural','youth','science'].flatMap(source=>read(source+'-experiences.json').records.map(row=>{const kind=source==='youth'?'family':source,address=row.address||venues[kind+'/'+row.id]?.address||'',summary=experienceIntro(row.content||[])||(!row.content?.length?cleanExperienceText(row.summary):'')||[row.institution,row.audience].filter(Boolean).join(' · '),item={...row,kind,address,summary,city:experienceCity(address)||row.city};return {path:`/experiences/${kind}/${row.id}`,title:experienceEditorial(item).title,officialName:row.title,kind,active:row.active!==false,address,content:[...(row.content||[]),...(row.activities||[])]};}));
 const expected=full?sources:sources.filter(row=>row.active).filter((row,index,list)=>list.filter(other=>other.kind===row.kind).indexOf(row)<12);
 const learning=read('learning-classes.json'),classRows=[...learning.courses,...(learning.archivedCourses||[])];
-const classes=(full?classRows:classRows.slice(0,12)).map(row=>({path:'/classes/detail/'+row.id,title:row.title,kind:'class',active:true}));
+const classEditorials=uniqueClassEditorials(classRows);
+const classes=(full?classRows:classRows.slice(0,12)).map(row=>({path:'/classes/detail/'+row.id,title:classEditorials.get(row.id).title,officialName:row.title,kind:'class',active:true}));
 const access=Object.values(read('accessible-travel.json').places).slice(0,full?100:8).map(row=>({path:'/accessible-travel/'+row.id,title:row.title,kind:'access',active:true}));
 const indexedTitles=new Map(),indexedDescriptions=new Map();let maxHtmlBytes=0;
 async function html(path){const response=await fetch(new URL(path,base),{signal:AbortSignal.timeout(45000)});check(response.ok,'HTTP '+response.status);const text=await response.text();maxHtmlBytes=Math.max(maxHtmlBytes,Buffer.byteLength(text));return load(text);}
@@ -17,6 +21,7 @@ async function detail(row){
   const $=await html(row.path),title=$('title').text(),description=$('meta[name=description]').attr('content')||'',canonical=new URL($('link[rel=canonical]').attr('href')).pathname;
   check($('h1').length===1&&$('h1').text()===row.title,'Wrong or duplicate H1');check(canonical===row.path,'Canonical mismatch');check(description.length>=15,'Description missing');
   const detail=$('[data-experience-detail],[data-public-program-detail]');check(detail.length===1&&detail.find('h2').length>=3,'Internal body missing');
+  if(row.officialName){check(detail.text().includes(row.officialName),'Original official name missing');check(title.startsWith(row.title),'Search title differs from H1');check($('meta[property="og:title"]').attr('content')===row.title,'OG title mismatch');check($('meta[name="twitter:title"]').attr('content')===row.title,'Twitter title mismatch');check($('meta[property="og:description"]').attr('content')===description,'OG description mismatch');check($('meta[name="twitter:description"]').attr('content')===description,'Twitter description mismatch');}
   const schemas=$('script[type="application/ld+json"]').map((_,node)=>JSON.parse($(node).text())).get();check(schemas.some(schema=>schema['@graph']?.some(entity=>entity['@type']==='BreadcrumbList')),'Breadcrumb missing');check(schemas.some(schema=>schema['@graph']?.some(entity=>entity['@type']==='WebPage')),'WebPage schema missing');
   if(['family','science','rural'].includes(row.kind))check(schemas.some(schema=>schema['@graph']?.some(entity=>['Event','EducationEvent','TouristAttraction'].includes(entity['@type']))),'Main entity missing');
   if(row.kind==='family')for(const part of experienceContentBlocks(row.content.slice(0,2)).flatMap(block=>block.items).flat())check(detail.text().includes(part),'Detailed API content missing');
