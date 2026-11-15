@@ -13,6 +13,8 @@ services:
       TOUR_RUNTIME_FETCH: "0"
       TOSS_SHARELINK_PUBLIC_FILE: "/app/runtime/sharelink/public/editorial.json"
       AFFILIATE_EVENTS_DIR: "/app/affiliate-events"
+      VISITOR_COUNTER_DIR: "/app/visitor-counter"
+      VISITOR_COUNTER_RECOVER_LEGACY: "1"
     ports:
       # LAN-only preview. Router port forwarding must remain disabled.
       - "192.168.0.115:3275:3000"
@@ -20,6 +22,7 @@ services:
       - next_cache:/app/.next/cache
       - ./runtime/sharelink/public:/app/runtime/sharelink/public:ro
       - ./runtime/sharelink/events:/app/affiliate-events
+      - visitor_counter:/app/visitor-counter
     tmpfs:
       - /tmp:rw,noexec,nosuid,size=128m
     security_opt:
@@ -44,3 +47,4 @@ services:
 
 volumes:
   next_cache:
+  visitor_counter:

@@ -14,6 +14,7 @@ const paths = [
   "/robots.txt",
   "/sitemap.xml",
   "/api/site-status",
+  "/api/visitors",
 ];
 
 const results = [];
@@ -24,10 +25,12 @@ for (const path of paths) {
       redirect: "manual",
       signal: AbortSignal.timeout(15000),
     });
-    const body = ["/event/383591","/sitemap.xml","/api/site-status","/places/spot/130344"].includes(path)
+    const body = ["/event/383591","/sitemap.xml","/api/site-status","/places/spot/130344","/api/visitors"].includes(path)
       ? await response.text()
       : null;
-    const contentOk = path === '/api/site-status'
+    const contentOk = path === '/api/visitors'
+      ? (()=>{try{const value=JSON.parse(body);return response.headers.get('x-visitor-store')==='persistent-v1'&&Number.isSafeInteger(value.total)&&Number.isSafeInteger(value.today)&&value.total>=value.today&&value.today>=0;}catch{return false;}})()
+      : path === '/api/site-status'
       ? (()=>{try{const result=JSON.parse(body);return result.ready===true&&(!process.env.EXPECTED_COMMIT||result.commit===process.env.EXPECTED_COMMIT);}catch{return false;}})()
       : path === '/places/spot/130344'
       ? body?.includes('https://sokchocul.or.kr/')&&!body?.includes('sokcho-culture.com')

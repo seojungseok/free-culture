@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "namespace": "weekendpick-kr",
+  "day": "20261115",
+  "total": 55908,
+  "today": 315,
+  "recordedAt": "2026-11-15T08:25:47.776Z",
+  "source": "https://abacus.jsn.cam/get/weekendpick-kr/",
+  "note": "Separately confirmed HTTP 200 reads of the existing total and daily keys. Read-only reconciliation after cutover preserves later legacy increments."
+}

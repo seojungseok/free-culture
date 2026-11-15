@@ -20,7 +20,9 @@ COPY --from=build --chown=10001:10001 /app/scripts/nas/smoke.mjs ./scripts/nas/s
 # DSM ZIP extraction can preserve restrictive directory modes. All bundled
 # content is public/source data, while runtime secrets stay outside the image.
 RUN chmod -R a+rX /app/public /app/data /app/.next && \
-    mkdir -p /app/.next/cache && chown -R 10001:10001 /app/.next/cache
+    mkdir -p /app/.next/cache /app/visitor-counter && \
+    chown -R 10001:10001 /app/.next/cache /app/visitor-counter && \
+    chmod 700 /app/visitor-counter
 USER 10001:10001
 EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=90s --retries=3 \
