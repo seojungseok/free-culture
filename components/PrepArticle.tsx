@@ -87,18 +87,17 @@ export default function PrepArticle({article:a,preview=false,relatedArticles=[],
  const completedUrl=completedFoodPhotos[a.slug]?'/prep-images/'+completedFoodPhotos[a.slug]+'.webp':'';
  const completedPhoto=completedUrl&&!usedPhotos.has(completedUrl)?{...a.cover,url:completedUrl,alt:'완성된 '+dishName(a.title)+' 요리 장면'}:undefined;
  return <article className="prep-article">
-  <nav aria-label="현재 위치"><Link href="/">홈</Link> / <Link href="/weekend-prep">준비 가이드</Link> / {prepCategoryLabel(a.category,a)}</nav>
+  <nav aria-label="현재 위치"><Link href="/">홈</Link> / <Link href="/weekend-prep">캠핑요리</Link> / {prepCategoryLabel(a.category,a)}</nav>
   {preview&&<p className="prep-notice">검토용 초안 · 아직 공개되지 않은 글입니다.</p>}
   <p className="prep-eyebrow">{prepCategoryLabel(a.category,a)}</p><h1>{a.title}</h1><p className="prep-lead">{a.description}</p>
   {hasAffiliate&&<p className="prep-affiliate-disclosure">이 글에는 쿠팡 제휴 링크가 포함되어 있습니다. 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.</p>}
-  {!!shoppingItems.length&&<nav className="prep-guide-actions" aria-label="준비 가이드 바로가기"><a href="#prep-checklist">{imageKind==='cooking'?'재료 목록 보기 ↓':'상품 목록 보기 ↓'}</a><a href="#prep-cooking">{imageKind==='cooking'?'조리 순서 보기 ↓':'선택 요령 보기 ↓'}</a></nav>}
+  {!!shoppingItems.length&&<nav className="prep-guide-actions" aria-label="캠핑요리 바로가기"><a href="#prep-checklist">{imageKind==='cooking'?'재료 목록 보기 ↓':'상품 목록 보기 ↓'}</a><a href="#prep-cooking">{imageKind==='cooking'?'조리 순서 보기 ↓':'선택 요령 보기 ↓'}</a></nav>}
   <PrepImage photo={a.cover} priority headline={a.coverLabel||a.title}/>
   {!!shoppingItems.length&&<PrepChecklist kind={imageKind} slug={a.slug} items={shoppingItems} dishName={dishName(a.title)}/>}
   {checklist&&<CookingGuide article={a}/>}
   {!preview&&<TossTopDeals contained />}
-  {checklist&&<FoodChecklistDetails slug={a.slug} articles={relatedArticles} preparationImage={neutralPhotos[0]?<PrepImage photo={neutralPhotos[0]}/>:null} tipImage={neutralPhotos[1]?<PrepImage photo={neutralPhotos[1]}/>:null} images={<div className="prep-food-images">{neutralPhotos.slice(2).map(photo=><PrepImage key={photo.url} photo={photo}/>)}{completedPhoto&&<PrepImage photo={completedPhoto}/>}<p className="prep-ai-note">이 글의 이미지는 AI 연출입니다.</p></div>}/>}
+  {checklist&&<FoodChecklistDetails slug={a.slug} articles={relatedArticles} preparationImage={neutralPhotos[0]?<PrepImage photo={neutralPhotos[0]}/>:null} tipImage={neutralPhotos[1]?<PrepImage photo={neutralPhotos[1]}/>:null} images={<div className="prep-food-images">{neutralPhotos.slice(2).map(photo=><PrepImage key={photo.url} photo={photo}/>)}{completedPhoto&&<PrepImage photo={completedPhoto}/>}</div>}/>}
   {!checklist&&a.sections.map((section,index)=><section key={index} id={index===0&&shoppingItems.length?'prep-cooking':undefined}><h2>{section.heading}</h2>{bodyText(section.text).split('\n').filter(Boolean).map((raw,j)=>{const point=raw.startsWith('• ');return <p className={point?'prep-point':undefined} key={j}>{point?raw.slice(2):raw}</p>;})}{section.image&&<PrepImage photo={section.image}/>}</section>)}
   {!checklist&&!!a.internalLinks.length&&<nav aria-label="함께 읽기"><h2>함께 보면 좋은 곳</h2>{a.internalLinks.map(link=><p key={link.href}><Link href={link.href}>{link.label} →</Link></p>)}</nav>}
-  {!checklist&&<p className="prep-ai-note">이 글의 이미지는 AI 연출입니다.</p>}
  </article>;
 }

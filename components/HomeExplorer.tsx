@@ -18,7 +18,7 @@ export type HomeItem = { id: string; href: string; title: string; meta: string; 
 type Props = { experienceContent:ReactNode; regional: Record<string, HomeItem[]>; eventItems: HomeItem[]; freeItems: HomeItem[]; kidItems: HomeItem[]; dateItems: HomeItem[]; campItems: HomeItem[]; courseItems: HomeItem[]; seasonItems: HomeItem[]; prepItems: HomeItem[]; placeItems: HomeItem[]; newItems: HomeItem[]; regions: { name: string; href: string }[]; siteName: string; seasonalHero:SeasonalHeroData };
 const savedKey = SAVED_KEY;
 const regionalAreas: Record<string, string[]> = { 충청: ["충북", "충남", "대전", "세종"], 경상: ["경북", "경남", "부산", "대구", "울산"], 전라: ["전북", "전남", "광주"], 전국: [] };
-const categories = [["🔬", "체험·교육", "/experiences"], ["🎭", "문화행사", "/events"], ["🌿", "나들이", "/places"], ["🗺️", "여행코스", "/course"], ["❄️", "겨울 여행지", "/winter-travel"], ["🚌", "시티투어", "/city-tour"], ["⛺", "캠핑", "/camping"], ["🍽️", "맛집탐방", "/food"], ["🐾", "반려동물 여행", "/pet-travel"], ["👨‍👩‍👧", "아이와 함께", "/kids"], ["💛", "데이트", "/date"], ["🧺", "준비 가이드", "/weekend-prep"]];
+const categories = [["🔬", "체험·교육", "/experiences"], ["🎭", "문화행사", "/events"], ["🌿", "나들이", "/places"], ["🗺️", "여행코스", "/course"], ["❄️", "겨울 여행지", "/winter-travel"], ["🚌", "시티투어", "/city-tour"], ["⛺", "캠핑", "/camping"], ["🍽️", "맛집탐방", "/food"], ["🐾", "반려동물 여행", "/pet-travel"], ["👨‍👩‍👧", "아이와 함께", "/kids"], ["💛", "데이트", "/date"], ["🧺", "캠핑요리", "/weekend-prep"]];
 
 export default function HomeExplorer({ experienceContent, regional, eventItems, freeItems, kidItems, dateItems, campItems, courseItems, seasonItems, prepItems, placeItems, newItems, regions, siteName, seasonalHero }: Props) {
   const day = useRenderDay();
@@ -62,7 +62,7 @@ export default function HomeExplorer({ experienceContent, regional, eventItems, 
     {courseItems.length>0&&<Section title="여행코스" href="/course"><Rail items={courseItems} saved={saved} toggleSave={toggleSave}/></Section>}
     <TossAffiliate position="top" compact collection="stay"/>
     {campItems.length>0&&<Section title="캠핑" href="/camping"><Rail items={campItems} saved={saved} toggleSave={toggleSave}/></Section>}
-    {prepItems.length>0&&<Section title="준비 가이드" href="/weekend-prep"><Rail items={prepItems} saved={saved} toggleSave={toggleSave}/></Section>}
+    {prepItems.length>0&&<Section title="캠핑요리" href="/weekend-prep"><Rail items={prepItems} saved={saved} toggleSave={toggleSave}/></Section>}
     {placeItems.length>0&&<Section title="대표 장소" href="/places"><Rail items={placeItems} saved={saved} toggleSave={toggleSave}/></Section>}
     {newItems.length>0&&<Section title="새로 둘러볼 콘텐츠" href="/places"><Rail items={newItems} saved={saved} toggleSave={toggleSave}/></Section>}
     {currentFreeItems.length>0&&<Section title="가볼 만한 무료행사" href="/free" description="무료와 일부 조건에서 무료인 문화행사를 구분해 보여드려요."><Rail items={currentFreeItems} saved={saved} toggleSave={toggleSave}/></Section>}

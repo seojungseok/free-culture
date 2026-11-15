@@ -39,17 +39,17 @@ export default async function Page({params}:{params:Promise<{slug:string}>}){
     ...(shoppingItems.length?{about:shoppingItems.map(item=>({'@type':'Thing',name:item.label}))}:{}),
   },{
     '@context':'https://schema.org','@type':'BreadcrumbList',
-    itemListElement:[{name:'홈',item:SITE.url},{name:'준비 가이드',item:`${SITE.url}/weekend-prep`},{name:a.title,item:url}].map((x,i)=>({'@type':'ListItem',position:i+1,...x})),
+    itemListElement:[{name:'홈',item:SITE.url},{name:'캠핑요리',item:`${SITE.url}/weekend-prep`},{name:a.title,item:url}].map((x,i)=>({'@type':'ListItem',position:i+1,...x})),
   }];
   const related=articles.filter(b=>b.slug!==a.slug&&prepCategoryLabel(b.category,b)===prepCategoryLabel(a.category,a))
     .sort((b,c)=>Number(isCookingPrepArticle(c)&&cookingCategory(c)===cookingCategory(a))-Number(isCookingPrepArticle(b)&&cookingCategory(b)===cookingCategory(a))).slice(0,3);
   return <main className="prep">
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(json).replace(/</g,'\\u003c')}}/>
     <PrepArticle article={a} preview={isPrepReview} shoppingItems={shoppingItems} relatedArticles={articles.map(({slug,title})=>({slug,title}))}/>
-    {related.length>0&&<nav className="prep-article prep-directory" aria-label="다른 준비물 체크리스트">
-      <h2>함께 챙길 준비물 체크리스트</h2>
+    {related.length>0&&<nav className="prep-article prep-directory" aria-label="다른 캠핑요리">
+      <h2>함께 볼 캠핑요리</h2>
       <ul>{related.map(b=><li key={b.slug}><Link href={`/weekend-prep/${b.slug}`} prefetch={false}>{b.title}</Link></li>)}</ul>
-      <p><Link href="/weekend-prep">전체 준비물 모아보기 →</Link></p>
+      <p><Link href="/weekend-prep">전체 캠핑요리 모아보기 →</Link></p>
     </nav>}
   </main>;
 }

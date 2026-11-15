@@ -13,7 +13,7 @@ export function headerNavigation(seasonLabel: string): { primary: SiteNavItem[];
       { href: "/course", label: "여행코스" },
       { href: "/winter-travel", label: "겨울 여행지" },
       { href: "/camping", label: "캠핑" },
-      { href: "/weekend-prep", label: "준비 가이드" },
+      { href: "/weekend-prep", label: "캠핑요리" },
     ],
     more: [
       { href: "/experiences", label: "체험·교육" },
