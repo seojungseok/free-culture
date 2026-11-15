@@ -41,3 +41,4 @@
 @media(max-width:800px){.experienceGrid{grid-template-columns:1fr}.topic{padding:22px}}
 @media(max-width:680px){.page{padding:20px 16px 40px}.filters{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px;gap:12px}.results{grid-template-columns:1fr}.card{padding:18px}.count span{display:block;margin:6px 0 0}.facts{grid-template-columns:83px minmax(0,1fr)}.tabs a{padding:9px 12px}}
 @media(max-width:359px){.filters{grid-template-columns:minmax(0,1fr)}.search{grid-column:auto}.facts{grid-template-columns:70px minmax(0,1fr);gap:8px 10px}}
+.courseCover{display:block;float:right;width:220px;height:165px;margin:0 0 16px 24px;border-radius:10px;overflow:hidden}.courseCover>div{min-height:0}@media(max-width:640px){.courseCover{float:none;width:100%;height:auto;aspect-ratio:16/9;margin:0 0 18px}}

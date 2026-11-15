@@ -1,0 +1,8 @@
+import {programmeAvailability,availabilityLabels} from '@/lib/programmeAvailability.mjs';
+import styles from './ExperienceBrowser.module.css';
+export type Session={id:string;title:string;start:string;end:string;startTime?:string;endTime?:string;period?:string;weekdays?:string;registrationStart?:string;registrationEnd?:string;capacity?:string;audience?:string;active?:boolean};
+export default function ProgrammeSessions({sessions}:{sessions?:Session[]}){
+ const all=sessions||[],rows=all.filter(row=>['open','upcoming','inquiry'].includes(programmeAvailability(row))),prior=all.filter(row=>!rows.includes(row));
+ if(all.length<2)return null;
+ return <section className={styles.detailSection} data-programme-sessions><h2>날짜·시간별 참여 안내</h2>{rows.length>0&&<><p>같은 프로그램의 회차를 한곳에 모았습니다. 날짜와 시간, 참여 대상을 비교한 뒤 공식 모집 안내에서 신청해 주세요.</p><ul className={styles.sessionList}>{rows.map(row=><li key={row.id} data-programme-session><div><strong>{row.start===row.end?row.start:`${row.start} ~ ${row.end}`}</strong><span>{row.period||[row.weekdays,[row.startTime,row.endTime].filter(Boolean).join(' ~ ')].filter(Boolean).join(' · ')}</span></div><div><strong>{row.title}</strong>{row.audience&&<span>{row.audience}</span>}{row.capacity&&<span>등록 정원 {row.capacity}명 · 잔여석 수 아님</span>}</div><span className={styles.status}>{availabilityLabels[programmeAvailability(row)]}</span></li>)}</ul></>}{prior.length>0&&<details className={styles.source}><summary>이전·마감 회차 기록 {prior.length}개</summary><ul>{prior.map(row=><li key={row.id}>{row.title} · {row.start}~{row.end} · {row.period||[row.weekdays,row.startTime,row.endTime].filter(Boolean).join(' ')} · {availabilityLabels[programmeAvailability(row)]}</li>)}</ul><p>이전 URL과 원자료를 보존한 기록입니다. 현재 모집 목록에는 표시하지 않습니다.</p></details>}</section>;
+}

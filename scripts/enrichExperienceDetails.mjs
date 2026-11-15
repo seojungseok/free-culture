@@ -4,9 +4,9 @@ import {fileURLToPath} from 'node:url';
 import {XMLParser} from 'fast-xml-parser';
 import {loadSourceEnv} from './lib/sourceEnv.mjs';
 import {mergeYouthDetail} from '../lib/experiences.mjs';
-export async function enrichYouthDetails(store,{max=40,fetchDetail,now=()=>new Date(),pause=ms=>new Promise(resolve=>setTimeout(resolve,ms))}){
+export async function enrichYouthDetails(store,{max=10000,force=false,fetchDetail,now=()=>new Date(),pause=ms=>new Promise(resolve=>setTimeout(resolve,ms))}){
  const today=new Date(now().getTime()+9*3600000).toISOString().slice(0,10);
- const targets=store.records.filter(record=>record.active!==false&&record.end>=today&&(!record.detailCheckedAt||now().getTime()-Date.parse(record.detailCheckedAt)>7*86400000))
+ const targets=store.records.filter(record=>record.active!==false&&record.end>=today&&(force||!record.detailCheckedAt||now().getTime()-Date.parse(record.detailCheckedAt)>20*3600000))
   .sort((a,b)=>Number(!/체험|만들기|캠프|과학|문화|탐방/.test(a.title))-Number(!/체험|만들기|캠프|과학|문화|탐방/.test(b.title))||String(a.detailCheckedAt||'').localeCompare(b.detailCheckedAt||'')).slice(0,max);
  let checked=0,failures=0;
  for(const record of targets){
@@ -21,8 +21,8 @@ export async function enrichYouthDetails(store,{max=40,fetchDetail,now=()=>new D
 async function main(){
  loadSourceEnv();if(!process.env.DATA_GO_KR_KEY)throw new Error('API key missing');
  const file='data/youth-experiences.json',store=JSON.parse(fs.readFileSync(file,'utf8')),parser=new XMLParser({parseTagValue:false});
- const max=Math.min(150,Math.max(0,Number(process.env.EXPERIENCE_DETAIL_DAILY||40)));
- const result=await enrichYouthDetails(store,{max,fetchDetail:async id=>{
+ const max=Math.max(0,Number(process.env.EXPERIENCE_DETAIL_DAILY||10000));
+ const result=await enrichYouthDetails(store,{max,force:process.env.EXPERIENCE_REFRESH_ALL==='1',fetchDetail:async id=>{
   const url=new URL('https://apis.data.go.kr/1383000/YouthActivInfoVacationSrvc/getVacationProgrmInfo');
   url.search=new URLSearchParams({serviceKey:decodeURIComponent(process.env.DATA_GO_KR_KEY),key1:id,pageNo:'1',numOfRows:'10'}).toString();
   let response;try{response=await fetch(url,{signal:AbortSignal.timeout(20000)});}catch{throw new Error('API connection failed');}

@@ -7,7 +7,7 @@ const photo='/youth/cmm/imgView/imgView.do?atchmnflId=00000000000008209405&thumb
 const html=({id=record.id,title=record.title,institution=record.institution,src=photo}={})=>`<li><a onclick="fnDtl('7455','','${id}','001005');">${title}</a><dd>기관명 : ${institution}</dd><img src="${src}" alt="${title}"></li>`;
 const at='2026-11-14T15:00:00Z';
 test('a poster must match programme ID, title and institution and use the official image endpoint',()=>{
- assert.equal(parseYouthPoster(html(),record,at).imageSource,'https://www.youth.go.kr'+photo);
+ assert.equal(parseYouthPoster(html(),record,at).imageSource,'https://www.youth.go.kr'+photo.replace('&thumbTySn=10',''));
  for(const changed of [{id:'999'},{title:'다른 체험'},{institution:'동명 기관 다른 지점'},{src:'https://example.org/photo.jpg'}])assert.equal(parseYouthPoster(html(changed),record,at),null);
  assert.equal(parseYouthPoster(html()+html({src:photo.replace('8209405','8209406')}),record,at),null);
  assert.equal(youthPosterUrl('https://www.youth.go.kr@127.0.0.1/youth/cmm/imgView/imgView.do'), '');
@@ -31,6 +31,6 @@ test('fresh images survive collection and provider errors but changed programmes
  assert.deepEqual(preservedYouthPhoto({...record,end:'2026-12-27'},old),{});
  const store={records:[old]};const result=await enrichExperiencePhotos(store,{max:1,now:()=>new Date(at),pause:async()=>{},fetchPage:async()=>{throw new Error('provider failed');}});
  assert.equal(result.failed,1);assert.equal(old.imageSource,'https://www.youth.go.kr'+photo);
- const fresh={...record,imageAttemptedAt:at};let calls=0;
+ const fresh={...record,listingCheckedAt:at};let calls=0;
  await enrichExperiencePhotos({records:[fresh]},{max:1,now:()=>new Date(at),fetchPage:async()=>{calls++;}});assert.equal(calls,0);
 });

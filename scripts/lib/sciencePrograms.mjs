@@ -3,6 +3,10 @@ import {createHash} from 'node:crypto';
 import {dateOnly,safePublicUrl} from '../../lib/learning.mjs';
 const clean=value=>String(value||'').replace(/\s+/g,' ').trim();
 const idFor=value=>createHash('sha256').update(value).digest('hex').slice(0,20);
+function registrationFields(value,year){
+ const dates=scienceDates(value,year),times=[...String(value).matchAll(/\b(\d{1,2})(?::(\d{2})|시)/g)].map(match=>match[1].padStart(2,'0')+':'+(match[2]||'00'));
+ return {registrationStart:dates[0]||'',registrationEnd:dates.at(-1)||'',registrationStartTime:times[0]||'',registrationEndTime:times.length>1?times.at(-1):''};
+}
 export function scienceDates(value,defaultYear){
  let year=defaultYear;const result=[];
  for(const match of String(value).matchAll(/(?:(20\d{2})\s*[.년/]\s*)?(\d{1,2})\s*[.월/]\s*(\d{1,2})\s*[.일]?/g)){
@@ -20,7 +24,7 @@ export function parseCentralScience(html,{url,now=new Date().toISOString()}){
   const year=Number(cells[2].match(/20\d{2}/)?.[0]||new Date(now).getUTCFullYear()),dates=scienceDates(cells[4],year);
   if(!dates.length)return;
   const officialUrl=safePublicUrl($(tr).find('a[href^="https://rsvn.science.go.kr/"]').last().attr('href'))||url;
-  records.push({id:idFor(url+'|'+cells[2]+'|'+dates[0]+'|'+officialUrl),title:cells[2],institution:'국립중앙과학관',area:'대전',city:'유성구',audience:cells[3],period:cells[4],start:dates[0],end:dates.at(-1),registration:cells[5],registrationEnd:scienceDates(cells[5],year).at(-1)||'',method:'공식 교육예약에서 확인',price:'프로그램별 공식 안내 확인',sourceStatus:cells[1],officialUrl,source:url,checkedAt:now});
+  records.push({id:idFor(url+'|'+cells[2]+'|'+dates[0]+'|'+officialUrl),title:cells[2],institution:'국립중앙과학관',area:'대전',city:'유성구',audience:cells[3],period:cells[4],start:dates[0],end:dates.at(-1),registration:cells[5],...registrationFields(cells[5],year),method:'공식 교육예약에서 확인',price:'프로그램별 공식 안내 확인',sourceStatus:cells[1],officialUrl,source:url,checkedAt:now});
  });
  return records;
 }
@@ -39,7 +43,8 @@ export function parseIncheonScience(html,{url,now=new Date().toISOString()}){
   if(cells.length<8)continue;
   const dates=scienceDates(cells[0],year);if(!dates.length)continue;
   const title=cells[1]+' / '+cells[3].replace(/^[①-⑳]\s*/,''),registration=cells[7];
-  records.push({id:idFor(url+'|'+title+'|'+cells[0]),title,institution:'인천학생과학관',area:'인천',city:'중구',audience:cells[5],period:cells[0]+' '+cells[4],start:dates[0],end:dates.at(-1),registration,registrationEnd:scienceDates(registration,year).at(-1)||'',method:'교육청 참여/신청 안내에서 확인',price:'공식 안내 확인',sourceStatus:'공식 일정 안내',officialUrl:url,source:url,checkedAt:now});
+  const times=[...cells[4].matchAll(/\b(\d{1,2}):(\d{2})/g)].map(match=>match[1].padStart(2,'0')+':'+match[2]),duration=Number(cells[1].match(/(\d+)분/)?.[1]||0),last=times.at(-1),endMinutes=last&&duration?Number(last.slice(0,2))*60+Number(last.slice(3))+duration:0;
+  records.push({id:idFor(url+'|'+title+'|'+cells[0]),title,institution:'인천학생과학관',area:'인천',city:'중구',audience:cells[5],period:cells[0]+' '+cells[4],start:dates[0],end:dates.at(-1),startTime:times[0]||'',endTime:endMinutes<1440&&endMinutes>0?String(Math.floor(endMinutes/60)).padStart(2,'0')+':'+String(endMinutes%60).padStart(2,'0'):'',registration,...registrationFields(registration,year),method:'교육청 참여/신청 안내에서 확인',price:'공식 안내 확인',sourceStatus:'공식 일정 안내',officialUrl:url,source:url,checkedAt:now});
  }
  return records;
 }

@@ -31,7 +31,7 @@ jobs:
       - name: 수집 한도·저장정보 보존 검사 (실 API 호출 없음)
         run: |
           node --test scripts/lib/tourClient.test.mjs scripts/lib/refreshQueue.test.mjs scripts/lib/regionalRequest.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs scripts/site-optimization.test.mjs scripts/nas/smoke.test.mjs scripts/data-freshness.test.mjs
-          node --test scripts/experiences.test.mjs scripts/public-discovery.test.mjs scripts/experience-details.test.mjs scripts/experience-photos.test.mjs
+          node --test scripts/experiences.test.mjs scripts/public-discovery.test.mjs scripts/experience-details.test.mjs scripts/experience-photos.test.mjs scripts/programme-availability.test.mjs scripts/experience-readable.test.mjs scripts/programme-editorial.test.mjs
           node scripts/test-tour-detail-fallback.cjs
           node --test scripts/enrichCourseStops.test.mjs scripts/enrichCoursePlaces.test.mjs scripts/enrichCultureEvents.test.mjs
           node --test scripts/winter-daytrips.test.mjs scripts/winter-course.test.mjs scripts/winter-public-display.test.mjs scripts/lib/winter-evidence.test.mjs scripts/winter-photo.test.mjs scripts/winter-publication.test.mjs
@@ -196,26 +196,26 @@ jobs:
       - name: 청소년 프로그램 상세 본문·주소·문의처 보강
         id: experience_details
         continue-on-error: true
-        timeout-minutes: 7
+        timeout-minutes: 20
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-          EXPERIENCE_DETAIL_DAILY: "40"
+          EXPERIENCE_DETAIL_DAILY: "9000"
         run: node scripts/enrichExperienceDetails.mjs
 
-      - name: 청소년 공식 게시물의 프로그램별 포스터 대조
+      - name: 청소년 전체 모집 상태·원본 포스터 대조
         id: experience_photos
         continue-on-error: true
-        timeout-minutes: 8
+        timeout-minutes: 20
         env:
-          EXPERIENCE_PHOTO_DAILY: "20"
+          EXPERIENCE_PHOTO_DAILY: "10000"
         run: node scripts/enrichExperiencePhotos.mjs
 
       - name: 체험 장소 대조·공식 사진 WebP 캐시
         id: experience_media
         continue-on-error: true
-        timeout-minutes: 8
+        timeout-minutes: 15
         env:
-          EXPERIENCE_IMAGE_DAILY: "30"
+          EXPERIENCE_IMAGE_DAILY: "10000"
         run: |
           node scripts/buildExperienceVenues.mjs
           node scripts/cacheExperienceImages.mjs

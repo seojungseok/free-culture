@@ -8,7 +8,7 @@ const allowed=new Set(['tong.visitkorea.or.kr','www.seantour.kr','www.youth.go.k
 export function publicExperienceImage(value){try{const url=new URL(String(value).replace(/^http:/,'https:'));return url.protocol==='https:'&&!url.username&&!url.password&&allowed.has(url.hostname)&&!url.searchParams.has('serviceKey')?url.href:'';}catch{return '';}}
 const records=[...read('rural-experiences.json',{records:[]}).records,...read('youth-experiences.json',{records:[]}).records,...Object.values(read('experience-venues.json',{venues:{}}).venues),...Object.values(read('accessible-travel.json',{places:{}}).places).map(place=>({imageSource:place.image}))];
 const sources=[...new Set(records.map(record=>publicExperienceImage(record.imageSource)).filter(Boolean))];
-const registry=read('experience-media.json',{images:{}}),max=Math.min(160,Math.max(0,Number(process.env.EXPERIENCE_IMAGE_DAILY||30)));
+const registry=read('experience-media.json',{images:{}}),max=Math.max(0,Number(process.env.EXPERIENCE_IMAGE_DAILY||10000));
 const adjustments=read('experience-image-adjustments.json',{});
 fs.mkdirSync('public/experience-images',{recursive:true});let fetched=0,failed=0;
 for(const source of sources){
@@ -27,7 +27,7 @@ for(const source of sources){
   const correction=adjustments[source],rotation=correction?.sha256===createHash('sha256').update(bytes).digest('hex')&&[90,180,270].includes(correction.rotation)?correction.rotation:undefined;
   const result=await sharp(bytes,{limitInputPixels:40e6}).rotate(rotation).resize({width:900,height:900,fit:'inside',withoutEnlargement:true}).webp({quality:78}).toBuffer({resolveWithObject:true});
   if(result.info.width<80||result.info.height<80)throw new Error('Image dimensions too small');
-  fs.writeFileSync('public'+src,result.data);registry.images[source]={src,width:result.info.width,height:result.info.height,source,checkedAt:new Date().toISOString(),bytes:result.data.length};fetched++;
+  fs.writeFileSync('public'+src,result.data);registry.images[source]={src,width:result.info.width,height:result.info.height,source,checkedAt:new Date().toISOString(),bytes:result.data.length,fileHash:createHash('sha256').update(result.data).digest('hex')};fetched++;
  }catch{failed++;registry.images[source]={...(prior||{}),failedAt:new Date().toISOString()};}
  await new Promise(resolve=>setTimeout(resolve,180));
 }

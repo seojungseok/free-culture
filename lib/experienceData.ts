@@ -8,6 +8,7 @@ import {todayIso,queryValue,type DiscoveryQuery} from './publicDiscovery';
 import {ruralThemes,experienceCity,isYouthExperience} from './experiences.mjs';
 import {cleanExperienceText,experienceIntro} from './experienceText.mjs';
 import {experienceEditorial} from './programmeEditorial.mjs';
+import {groupProgrammeSessions,programmeAvailability,isAvailableProgramme,availabilityLabels} from './programmeAvailability.mjs';
 
 export type ExperienceKind='family'|'science'|'rural';
 export const experienceTopics={
@@ -17,11 +18,11 @@ export const experienceTopics={
 };
 type Raw=Record<string,unknown>;
 type Venue={title:string;address:string;phone:string;imageSource:string;overview:string;homepage:string;checkedAt:string;latitude:number;longitude:number;source:string};
-export type ExperienceMedia={src:string;width:number;height:number;source:string;checkedAt:string};
+export type ExperienceMedia={src:string;width:number;height:number;source:string;checkedAt:string;fileHash?:string};
 const venues=venueData.venues as Record<string,Venue>,images=mediaData.images as Record<string,ExperienceMedia|{failedAt:string;src?:never}>;
 const str=(value:unknown)=>typeof value==='string'?value:'';
 const strings=(value:unknown)=>Array.isArray(value)?value.filter((item):item is string=>typeof item==='string'):[];
-export type Experience={id:string;kind:ExperienceKind;title:string;area:string;city:string;summary:string;content:string[];activities:string[];programs:string[];institution:string;address:string;phone:string;audience:string;price:string;free:boolean;period:string;start:string;end:string;registration:string;registrationEnd:string;status:string;facilities:string;officialUrl:string;source:string;checkedAt:string;detailCheckedAt:string;referenceDate:string;image?:ExperienceMedia;imageAlt:string;imageKind?:'poster';imageSourcePage?:string;venueOverview:string;venueCheckedAt:string;venueSource:string;latitude:number;longitude:number;active:boolean};
+export type Experience={id:string;kind:ExperienceKind;title:string;area:string;city:string;summary:string;content:string[];activities:string[];programs:string[];institution:string;address:string;phone:string;audience:string;price:string;free:boolean;period:string;start:string;end:string;registration:string;registrationEnd:string;status:string;facilities:string;officialUrl:string;source:string;checkedAt:string;detailCheckedAt:string;referenceDate:string;image?:ExperienceMedia;imageAlt:string;imageKind?:'poster';imageSourcePage?:string;venueOverview:string;venueCheckedAt:string;venueSource:string;latitude:number;longitude:number;active:boolean;aliases?:string[];sessions?:Experience[];sessionCount?:number;registrationStart?:string;registrationStartTime?:string;registrationEndTime?:string;startTime?:string;endTime?:string;publicRegistrationState?:string;listingCheckedAt?:string;capacity?:string};
 export const experienceUpdatedAt={rural:rural.refresh.checkedAt,family:youth.refresh.checkedAt,science:science.refresh.checkedAt};
 function toExperience(kind:ExperienceKind,row:Raw):Experience{
  const id=str(row.id),venue=venues[kind+'/'+id],programs=strings(row.programs).map(cleanExperienceText).filter(Boolean),title=str(row.title);
@@ -30,30 +31,28 @@ function toExperience(kind:ExperienceKind,row:Raw):Experience{
  const fullSummary=kind==='rural'?programs.slice(0,5).join(' · '):experienceIntro(content)||(!content.length?cleanExperienceText(row.summary):'')||[str(row.institution),str(row.audience)].filter(Boolean).join(' · ');
  const summary=fullSummary.length>180?fullSummary.slice(0,177)+'…':fullSummary;
  const poster=sourceImage===str(row.imageSource)&&row.imageKind==='poster';
- return {id,kind,title,area:str(row.area),city,summary,content,activities,programs,institution:str(row.institution),address,phone:str(row.phone)||venue?.phone||'',audience:str(row.audience),price:str(row.price),free:row.free===true,period:str(row.period),start:str(row.start),end:str(row.end),registration:str(row.registration),registrationEnd:str(row.registrationEnd),status:str(row.sourceStatus),facilities:str(row.facilities),officialUrl:str(row.homepage)||str(row.officialUrl)||venue?.homepage||'',source:str(row.source),checkedAt:experienceUpdatedAt[kind],detailCheckedAt:str(row.detailCheckedAt),referenceDate:str(row.referenceDate),image:image?.src?image:undefined,imageAlt:sourceImage===venue?.imageSource?`${venue.title} 전경 (한국관광공사 제공)`:poster?`${title} 공식 안내 이미지 (${str(row.imageCredit)})`:`${title} (공공기관 제공 사진)`,imageKind:poster?'poster':undefined,imageSourcePage:poster?str(row.imageSourcePage):undefined,venueOverview:venue?.overview||'',venueCheckedAt:venue?.checkedAt||'',venueSource:venue?.source||'',latitude:Number(row.latitude)||venue?.latitude||0,longitude:Number(row.longitude)||venue?.longitude||0,active:row.active!==false};
+ const publicAudience=str(row.publicAudience).split(/\s+/).map(token=>({초:'초등학생',중:'중학생',고:'고등학생',대:'대학생',일:'일반',유:'유아'} as Record<string,string>)[token]||token).join(' · '),audience=/공식 안내|미기재|확인/.test(str(row.audience))&&publicAudience?publicAudience:str(row.audience);
+ return {capacity:str(row.publicCapacity).replace(/명$/,''),registrationStart:str(row.registrationStart),registrationStartTime:str(row.registrationStartTime),registrationEndTime:str(row.registrationEndTime),startTime:str(row.startTime),endTime:str(row.endTime),publicRegistrationState:str(row.publicRegistrationState),listingCheckedAt:str(row.listingCheckedAt),id,kind,title,area:str(row.area),city,summary,content,activities,programs,institution:str(row.institution),address,phone:str(row.phone)||venue?.phone||'',audience,price:str(row.price),free:row.free===true,period:str(row.period),start:str(row.start),end:str(row.end),registration:str(row.registration),registrationEnd:str(row.registrationEnd),status:str(row.sourceStatus),facilities:str(row.facilities),officialUrl:str(row.officialDetailUrl)||str(row.homepage)||str(row.officialUrl)||venue?.homepage||'',source:str(row.source),checkedAt:str(row.checkedAt)||experienceUpdatedAt[kind],detailCheckedAt:str(row.detailCheckedAt),referenceDate:str(row.referenceDate),image:image?.src?image:undefined,imageAlt:sourceImage===venue?.imageSource?`${venue.title} 전경 (한국관광공사 제공)`:poster?`${title} 공식 안내 이미지 (${str(row.imageCredit)})`:`${title} (공공기관 제공 사진)`,imageKind:poster?'poster':undefined,imageSourcePage:poster?str(row.imageSourcePage):undefined,venueOverview:venue?.overview||'',venueCheckedAt:venue?.checkedAt||'',venueSource:venue?.source||'',latitude:Number(row.latitude)||venue?.latitude||0,longitude:Number(row.longitude)||venue?.longitude||0,active:row.active!==false};
 }
-const ALL:Experience[]=[...(youth.records as unknown as Raw[]).map(row=>toExperience('family',row)),...(science.records as unknown as Raw[]).map(row=>toExperience('science',row)),...(rural.records as unknown as Raw[]).map(row=>toExperience('rural',row))];
-const BY_ID=new Map(ALL.map(item=>[item.kind+'/'+item.id,item]));
+const RAW_ALL:Experience[]=[...(youth.records as unknown as Raw[]).map(row=>toExperience('family',row)),...(science.records as unknown as Raw[]).map(row=>toExperience('science',row)),...(rural.records as unknown as Raw[]).map(row=>toExperience('rural',row))];
+const ALL=Object.keys(experienceTopics).flatMap(kind=>groupProgrammeSessions(RAW_ALL.filter(item=>item.kind===kind),kind)) as Experience[];
+const BY_ID=new Map(ALL.flatMap(item=>(item.aliases||[item.id]).map(id=>[item.kind+'/'+id,item] as const)));
 export const experienceHref=(item:Pick<Experience,'kind'|'id'>)=>`/experiences/${item.kind}/${item.id}`;
 export const experienceRegionHref=(area:string)=>(SIDO_SLUG as Record<string,string>)[area]?'/experiences/region/'+(SIDO_SLUG as Record<string,string>)[area]:'/experiences';
 export const isExperienceKind=(kind:string):kind is ExperienceKind=>Object.hasOwn(experienceTopics,kind);
 export const getExperience=(kind:string,id:string)=>BY_ID.get(kind+'/'+id);
 export function allExperiences(){return ALL;}
-export function currentExperiences(today=todayIso()){
- return ALL.filter(item=>item.active&&(!item.end||item.end>=today)).filter(item=>item.kind!=='family'||isYouthExperience(item));
+export function currentExperiences(today=todayIso(),upcoming=false){
+ const now=today===todayIso()?new Date():today;
+ return ALL.filter(item=>isAvailableProgramme(item,now,upcoming)).filter(item=>item.kind!=='family'||isYouthExperience(item));
 }
 export const ruralExperiences=()=>currentExperiences().filter(item=>item.kind==='rural');
 export const youthExperiences=()=>currentExperiences().filter(item=>item.kind==='family');
 export const scienceExperiences=()=>currentExperiences().filter(item=>item.kind==='science');
-export function experienceStatus(item:Experience,today=todayIso()){
- if(!item.active)return '현재 운영 여부 확인';
- if(item.end&&item.end<today)return '활동 종료';
- if(item.registrationEnd&&item.registrationEnd<today)return '접수기간 지남';
- return item.kind==='rural'?'계절별 체험':item.status||'활동 일정 안내';
-}
+export function experienceStatus(item:Experience,today=todayIso()){return availabilityLabels[programmeAvailability(item,today===todayIso()?new Date():today)];}
 export function filterExperiences(kind:ExperienceKind|undefined,query:DiscoveryQuery={},region='',today=todayIso()){
  const area=region||queryValue(query,'area'),city=queryValue(query,'city'),q=queryValue(query,'q').trim().toLocaleLowerCase().slice(0,100),theme=queryValue(query,'theme'),cost=queryValue(query,'cost');
- const result=currentExperiences(today).filter(item=>!kind||item.kind===kind).filter(item=>!area||item.area===area).filter(item=>!city||item.city===city).filter(item=>cost!=='free'||item.free)
+ const result=currentExperiences(today,queryValue(query,'availability')==='upcoming').filter(item=>kind?item.kind===kind:item.kind!=='rural').filter(item=>!area||item.area===area).filter(item=>!city||item.city===city).filter(item=>cost!=='free'||item.free)
   .filter(item=>!q||[item.title,item.summary,item.institution,item.address,...item.content,...item.activities,...item.programs,experienceEditorial(item,today).focus].join(' ').toLocaleLowerCase().includes(q))
   .filter(item=>!theme||item.kind!=='rural'||!Object.hasOwn(ruralThemes,theme)||ruralThemes[theme as keyof typeof ruralThemes].test.test(item.programs.join(' ')))
   .sort((a,b)=>Number(experienceStatus(a,today)==='접수기간 지남')-Number(experienceStatus(b,today)==='접수기간 지남')||Number(!!a.start&&a.start<today)-Number(!!b.start&&b.start<today)||Number(!!b.image)-Number(!!a.image)||(a.start&&a.start>=today?a.start:a.end||'9999').localeCompare(b.start&&b.start>=today?b.start:b.end||'9999')||a.title.localeCompare(b.title,'ko'));
@@ -67,7 +66,7 @@ export function filterExperiences(kind:ExperienceKind|undefined,query:DiscoveryQ
 }
 export function relatedExperiences(item:Experience){return currentExperiences().filter(other=>other.id!==item.id||other.kind!==item.kind).sort((a,b)=>Number(b.area===item.area)-Number(a.area===item.area)||Number(b.kind===item.kind)-Number(a.kind===item.kind)||Number(!!b.image)-Number(!!a.image)).slice(0,4);}
 export function indexableExperience(item:Experience){
- if(!item.active||item.end&&item.end<todayIso())return false;
+ if(!isAvailableProgramme(item)&&!isAvailableProgramme(item,new Date(),true))return false;
  if(item.kind==='family'&&!isYouthExperience(item))return false;
  if(item.kind==='rural')return !!item.address&&(item.venueOverview.length>=120||item.programs.length>=5&&!!item.phone);
  return item.content.join(' ').length+item.activities.join(' ').length+item.venueOverview.length>=120&&!!(item.period||item.start)&&!!item.audience;
