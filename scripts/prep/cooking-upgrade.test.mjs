@@ -49,7 +49,7 @@ test('ingredient guides show clean ingredient covers and move finished food into
   assert(!article.cover.url.endsWith('-finished.webp'),article.slug);
  }
  const fishcake=ingredients.find(article=>article.slug==='camping-fishcake-soup-ingredient-checklist');
- assert.equal(fishcake.cover.url,'/prep-images/camp-fishcake-soup-checklist-cover.webp');
+ assert.equal(fishcake.cover.url,'/prep-images/camping-fishcake-soup-ingredient-checklist-cover-20261115.webp');
  assert.equal(fishcake.sections[0].image.url,'/prep-images/camp-fishcake-soup-finished.webp');
 });
 test('each soup recipe has usable quantities, ingredient order, corrections, alternatives and dated sources',()=>{

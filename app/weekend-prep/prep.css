@@ -7,6 +7,15 @@
 .prep-directory{margin-top:40px;border-top:1px solid #dce3dd;padding-top:12px}.prep-directory>p{color:#60716d;line-height:1.8}.prep-directory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:24px}.prep-directory h3{font-weight:750;color:#204e40}.prep-directory ul{margin-top:8px;padding-left:18px;list-style:disc}.prep-directory li{padding:6px 0;line-height:1.6;overflow-wrap:anywhere}.prep-directory a{text-decoration:underline;text-underline-offset:3px}@media(max-width:560px){.prep-directory-grid{grid-template-columns:1fr}}
 
 .prep-card-media{aspect-ratio:3/2;overflow:hidden}.prep-card-media img{display:block;height:100%;object-fit:cover}
+/* One editorial cover system: generated photography + crisp Korean HTML text. */
+.prep-cover{position:relative;isolation:isolate;container-type:inline-size;aspect-ratio:3/2;overflow:hidden;background:#e9e5dc;color:#fff}
+.prep-cover>img{display:block;width:100%;height:100%;object-fit:cover;transform:none;border-radius:0}
+.prep-cover-ai{position:absolute;top:12px;right:12px;padding:4px 8px;border-radius:4px;background:#183f34e6;color:#fff;font-size:10px;line-height:1.3;letter-spacing:.02em}
+.prep-cover-caption{position:absolute;inset:auto 0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.1cqi;height:28%;padding:2.5cqi 3.5cqi;background:#183f34;text-align:center}
+.prep-cover-kicker{display:block;color:#d4e2d9;font-size:10px;font-size:clamp(8px,2.6cqi,16px);font-weight:500;line-height:1.3;letter-spacing:.11em}
+.prep-cover-title{display:block;max-width:100%;color:#fff;font-size:21px;font-size:clamp(13px,5.2cqi,36px);font-weight:750;line-height:1.25;letter-spacing:-.045em;word-break:keep-all;overflow-wrap:break-word;text-wrap:balance}
+.prep-photo>.prep-cover{border-radius:16px}
+@media(max-width:760px){.prep-cover-ai{top:10px;right:10px}}
 .prep-affiliate-disclosure{margin:0 0 12px!important;color:#53645c;font-size:12px!important;line-height:1.5!important}
 .prep-check-group label{min-height:44px}
 .prep-affiliate-product{display:grid;justify-items:end;gap:6px;width:15rem;max-width:100%;min-width:0;text-align:right}
