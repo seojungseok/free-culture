@@ -1,0 +1,472 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-15T14:07:28.291Z",
+  "previousCommit": "4478c048533b6278e0b96206806080a296c8ef23",
+  "previousArticles": {
+    "autumn-flower-crab-soup-ingredient-checklist": "f19f0b6d247cfb9a5cd8287c0257a052b4a483ac87ca791e3296b221ed27f3cc",
+    "camping-fishcake-soup-ingredient-checklist": "ec7eddac3ce8406ea1073dbe6389137c4ca9e0e1ad78540ba323f8850a93b4ac",
+    "camping-budae-jjigae-ingredient-checklist": "e04e04d660706c85fcb878f6b7f13bc9d9731601c2ffa130c33b6fde3ba96b2f",
+    "camping-beef-mushroom-hotpot-ingredient-checklist": "6cb86d00c80ce561f76cbf497843c6c2bcba359fb27106b3ebddd9043401cd31",
+    "camping-seafood-hotpot-ingredient-checklist": "91508131d8485b7df8a496cb064401b1ea38132724dfe58faa154af7a0dd5bf3",
+    "camp-seafood-pot-table": "cc0f9ac9960dcd0d8b64e8091369bba03acaf3a04ac0146c954a76ddd2bb3cd8",
+    "camp-morning-sandwich": "fada07d64ecb857eaaa8f7d6d6f596f63194df005432587ade9165b16e461159",
+    "camp-noodle-lunch": "55c91383272d8cbe71e09dde53eb11edbda72279a47cb4a3f81e13a2749fc86b",
+    "grilled-vegetable-side-dishes": "996879308e7ba589c55fec00cdc4729ec77b2fe30763a1e032470dbfab1ca6dc",
+    "autumn-camp-tarp-rest-corner": "ca110f650e8bb1ddc0bd7530e6645ed3f5e963a2b9f3f2c262a18f25152731f5",
+    "family-park-ring-ball-play": "22f8d41b8619f59dc293961c6211ca1c71e06785e9f04c903f1075e10571963a",
+    "camp-jeyuk-bokkeum": "ea1a3258fc3050cec982d438e35835164e1cb708efabf48bc881d35793770e8e",
+    "camp-sundae-bokkeum": "2890a4a06b46661308feecda892a5e8aff5c5623748de1a26566c73e6dec074f",
+    "camp-dakgalbi": "a9a09379beafd210a820a221ecf4a97da8b950a3938e84eb82be13e0f9e1d0ac",
+    "camp-ojingeo-bokkeum": "dc5224f75f68a8a1dfba5e8f5b9fbaaef02eea5f8c663d59bbb0a204f63e27da",
+    "camp-kimchi-fried-rice": "39a6f79b4b366cf9f1c15489b341b809f6d43d36196e7f8e58fb473a392f61b2",
+    "camping-seafood-ramen-ingredients": "bc625f63ed8d0f02db7b710d631956942034295661449c33bc05eaea88be2d77",
+    "camping-mussel-soup-ingredients": "3f2c6d54ef0e9ed84965733e1a65b96fc8aca37f6cec0e29ed41b88884f69bed",
+    "camping-kimchi-fried-rice-ingredients": "568dcae876bcaeef587af2939c4900e2b024831240f160992015e5dc3e99e548",
+    "camping-squid-stir-fry-ingredients": "e3f2e3faa0f6137c2cf75e968218b2972eb84098e72f9084a680c48e1c67e26e",
+    "camping-chicken-skewer-ingredients": "c0738362a5096214bc4b6a566edcf237a4ca11bc2ee25ffae1b2360ce6ca8a90",
+    "camping-kimchi-pancake-ingredients": "ec4db1199b6bbaf547bc781ab9c009befc061859e262724dd178bc4b7133e8e1",
+    "camping-pork-belly-bbq-ingredients": "00f8a55fcd8692bcc0b038aa65ae036ee8ea25a7ab72768545bd28c772d269bd",
+    "camping-tofu-kimchi-ingredients": "93c71caa38acf00893d5de71a22f3a64cae284c8fa2e7c1c5254d56bec8e376c",
+    "autumn-camping-pork-kimchi-stew-ingredient-checklist": "b0021f05054e867b110bcb9087d73a02fb9df9bdb8acf925c11d51e4ccabfd32",
+    "autumn-camping-doenjang-stew-ingredient-checklist": "9ef54a0bbc45fa5e657f1d0fe1c34015b24e88f1b2445ba7b00af4913c29b93d",
+    "autumn-camping-perilla-mushroom-soup-ingredient-checklist": "cc3545427fccee08e8e19ba1bf4623c0589286b31dc5e95ab14436421adbed03",
+    "autumn-camping-potato-sujebi-ingredient-checklist": "79baa445eaebccf1c55dbff7b048e9402eb812f3263af1d69e9c57c0bf4c1be4",
+    "autumn-camping-shrimp-butter-grill-ingredient-checklist": "f58966fccdea003537f675afb7609c571bec7c568e37a7e6e1e67d9f16bfd12d",
+    "autumn-camping-mackerel-potato-braise-ingredient-checklist": "0e9f42fcfae12da0c1d5f61244c6d613e44cadef47b006f8cbc90ca8bf8b0027",
+    "autumn-camping-chicken-potato-stew-ingredient-checklist": "aa61f6472f25820820f39ff48e9a7691b6d3c923a4d180f73e63e263225c6322",
+    "autumn-camping-tteokbokki-ingredient-checklist": "4bdefee5a988c9a617a69f05925369080427ab3a02881fa118165406a3b91864",
+    "autumn-camping-zucchini-pancake-ingredient-checklist": "1183a5ad5686a6b94e9fbb930674513292efa9c913f76eb2d1acc89eaef237ad",
+    "autumn-camping-corn-cheese-ingredient-checklist": "e78d6a98e5f1f9923dfcb625445db8f1eb2548415867c2037931b0a9962ddaa0",
+    "autumn-20260920-soy-butter-potato-grill": "f82e7722a7344596993696c98dba16765432cc97f933ff3f08cd721d610de7db",
+    "autumn-20260920-shrimp-jeon": "ab497656edf7ab48d6e8001c6bc1eb9aaf93946140c8d84cef6075541af92114",
+    "autumn-20260920-mushroom-cheese-grill": "4de78af8f464cf5b44e1dbf1d97fb1b349e9a96f0b8402964c42529bb3bb9e6e",
+    "autumn-20260920-tofu-soy-grill": "b790f810755826ad07d1e9f7347bf462ef9c076a7a070dbd0a66ed51bae42a4d",
+    "autumn-20260920-kimchi-fishcake-stirfry": "668f2eb315665f441dc9d173b362ee0a62de6a363eac3aa7fb50ef9c07f556b6",
+    "autumn-20260920-jeyuk-bokkeum-ingredient-checklist": "48efb093fdbe7f518a3742b0a7460a4c7c86e77dda70ab10f639f434b0d371d0",
+    "autumn-20260920-sundae-bokkeum-ingredient-checklist": "8a242010fbdef83199b73da1cec1d07a31dee3bf22cf1ec410997d59366fb29e",
+    "autumn-20260920-dakgalbi-ingredient-checklist": "8603ab51d39961cd339acec9e9948f8e1dae4d41304ad7fcf9b84e7ecbf30cd8",
+    "autumn-20260920-chicken-kimchi-fried-rice-ingredient-checklist": "2636b128cc8b32ee213e4fc78da75af727ece816825e575a93595d9768405f44",
+    "autumn-20260920-mussel-seaweed-soup-ingredient-checklist": "a5d5acf8263122dfaff94f5c2fe84e712012572b136973a7a6aec2f674c3cdcb"
+  },
+  "recipeSlugs": [
+    "winter-camping-mille-feuille-nabe",
+    "winter-camping-mandu-jeongol",
+    "winter-camping-dakhanmari",
+    "winter-camping-sundubu-jjigae",
+    "winter-camping-gochujang-jjigae",
+    "winter-camping-beef-radish-soup",
+    "winter-camping-tteok-mandu-soup",
+    "winter-camping-kimchi-udon",
+    "winter-camping-pork-suyuk",
+    "winter-camping-oyster-radish-soup",
+    "winter-camping-dongtae-tang",
+    "winter-camping-gambas",
+    "winter-camping-beef-sprouts-stir-fry",
+    "winter-camping-steamed-eggs",
+    "winter-camping-sweet-potato-cheese"
+  ],
+  "visualReview": {
+    "reviewed": true,
+    "scenes": 45,
+    "note": "All 45 distinct scenes inspected in three contact sheets; sundubu ingredient image replaced to show silken soft tofu. Recipe illustrations are not exact commercial product reproductions."
+  },
+  "newProductLookup": {
+    "requestsMade": 0,
+    "status": "Stopped before requests because existing shared lock persisted. No lock was changed. Existing verified original ingredient links reused; unmatched ingredients have no purchase URL."
+  },
+  "articles": [
+    {
+      "slug": "winter-camping-mille-feuille-nabe",
+      "title": "밀푀유나베 레시피 | 겨울 캠핑 육수와 소스",
+      "subtype": "국물요리",
+      "linkedIngredients": [
+        "깻잎",
+        "모둠버섯",
+        "육수용 다시팩",
+        "국간장",
+        "진간장",
+        "설탕"
+      ],
+      "ordinaryIngredients": [
+        "샤브샤브용 소고기",
+        "알배추",
+        "식초"
+      ],
+      "images": [
+        "/prep-images/winter-camping-mille-feuille-nabe-cover-20261115.webp",
+        "/prep-images/winter-camping-mille-feuille-nabe-prep-20261115.webp",
+        "/prep-images/winter-camping-mille-feuille-nabe-step-20261115.webp"
+      ],
+      "sources": [
+        "https://wtable.co.kr/recipes/K9a135iyFtmccy1Tk7KCsuCe",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-mandu-jeongol",
+      "title": "만두전골 레시피 | 냉동만두로 겨울 캠핑 한 끼",
+      "subtype": "국물요리",
+      "linkedIngredients": [
+        "모둠버섯",
+        "두부",
+        "대파",
+        "육수용 다시팩",
+        "고춧가루",
+        "국간장",
+        "다진 마늘"
+      ],
+      "ordinaryIngredients": [
+        "냉동 고기만두",
+        "알배추"
+      ],
+      "images": [
+        "/prep-images/winter-camping-mandu-jeongol-cover-20261115.webp",
+        "/prep-images/winter-camping-mandu-jeongol-prep-20261115.webp",
+        "/prep-images/winter-camping-mandu-jeongol-step-20261115.webp"
+      ],
+      "sources": [
+        "https://wtable.co.kr/recipes/UnBhf9YD5xkd2jsALXNoXtpN",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-dakhanmari",
+      "title": "닭한마리 레시피 | 캠핑에서 맑은 국물 끓이기",
+      "subtype": "국물요리",
+      "linkedIngredients": [
+        "닭볶음탕용 생닭",
+        "감자",
+        "대파",
+        "양파",
+        "다진 마늘",
+        "소금",
+        "진간장",
+        "고춧가루"
+      ],
+      "ordinaryIngredients": [
+        "식초"
+      ],
+      "images": [
+        "/prep-images/winter-camping-dakhanmari-cover-20261115.webp",
+        "/prep-images/winter-camping-dakhanmari-prep-20261115.webp",
+        "/prep-images/winter-camping-dakhanmari-step-20261115.webp"
+      ],
+      "sources": [
+        "https://wtable.co.kr/guide/63169",
+        "https://wtable.co.kr/recipes/Tg6gURMmYRRrbCQWhrH8eQrY",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-sundubu-jjigae",
+      "title": "순두부찌개 끓이는 법 | 돼지고기 양념과 재료",
+      "subtype": "찌개",
+      "linkedIngredients": [
+        "생 돼지고기",
+        "배추김치",
+        "양파",
+        "대파",
+        "고춧가루",
+        "다진 마늘",
+        "식용유",
+        "국간장",
+        "육수용 다시팩"
+      ],
+      "ordinaryIngredients": [
+        "순두부"
+      ],
+      "images": [
+        "/prep-images/winter-camping-sundubu-jjigae-cover-20261115.webp",
+        "/prep-images/winter-camping-sundubu-jjigae-prep-20261115.webp",
+        "/prep-images/winter-camping-sundubu-jjigae-step-20261115.webp"
+      ],
+      "sources": [
+        "https://wtable.co.kr/recipes/k4hiGGLQzRFEyCCFhi9YzMNk",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-gochujang-jjigae",
+      "title": "고추장찌개 레시피 | 감자·돼지고기 한 냄비",
+      "subtype": "찌개",
+      "linkedIngredients": [
+        "생 돼지고기",
+        "감자",
+        "애호박",
+        "양파",
+        "대파",
+        "고추장",
+        "고춧가루",
+        "다진 마늘",
+        "식용유",
+        "국간장"
+      ],
+      "ordinaryIngredients": [],
+      "images": [
+        "/prep-images/winter-camping-gochujang-jjigae-cover-20261115.webp",
+        "/prep-images/winter-camping-gochujang-jjigae-prep-20261115.webp",
+        "/prep-images/winter-camping-gochujang-jjigae-step-20261115.webp"
+      ],
+      "sources": [
+        "https://wtable.co.kr/recipes/DL7NkfME6TqJzVstxw8akVmn",
+        "https://wtable.co.kr/recipes/ZyoBx58uydUJQkW78dXpeCDN",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-beef-radish-soup",
+      "title": "소고기뭇국 끓이는 법 | 겨울 캠핑 아침 국물",
+      "subtype": "국물요리",
+      "linkedIngredients": [
+        "무",
+        "대파",
+        "다진 마늘",
+        "참기름",
+        "국간장",
+        "소금"
+      ],
+      "ordinaryIngredients": [
+        "국거리 소고기"
+      ],
+      "images": [
+        "/prep-images/winter-camping-beef-radish-soup-cover-20261115.webp",
+        "/prep-images/winter-camping-beef-radish-soup-prep-20261115.webp",
+        "/prep-images/winter-camping-beef-radish-soup-step-20261115.webp"
+      ],
+      "sources": [
+        "https://wtable.co.kr/recipes/cQc1pLW8mk7ybxMLKNWBC9vK",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-tteok-mandu-soup",
+      "title": "떡만둣국 끓이는 법 | 멸치육수 캠핑 아침",
+      "subtype": "국물요리",
+      "linkedIngredients": [
+        "달걀",
+        "대파",
+        "육수용 다시팩",
+        "국간장",
+        "다진 마늘",
+        "김가루"
+      ],
+      "ordinaryIngredients": [
+        "떡국떡",
+        "냉동 고기만두"
+      ],
+      "images": [
+        "/prep-images/winter-camping-tteok-mandu-soup-cover-20261115.webp",
+        "/prep-images/winter-camping-tteok-mandu-soup-prep-20261115.webp",
+        "/prep-images/winter-camping-tteok-mandu-soup-step-20261115.webp"
+      ],
+      "sources": [
+        "https://wtable.co.kr/recipes/JBaJY3fYQzCn9c1DPdg5ZLdo",
+        "https://wtable.co.kr/recipes/Hkogrkfg9sRPAA6NfmXbVEgC",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-kimchi-udon",
+      "title": "김치우동 레시피 | 어묵 넣는 캠핑 국물요리",
+      "subtype": "국물요리",
+      "linkedIngredients": [
+        "배추김치",
+        "모둠 어묵",
+        "양파",
+        "대파",
+        "육수용 다시팩",
+        "국간장",
+        "다진 마늘",
+        "고춧가루"
+      ],
+      "ordinaryIngredients": [
+        "우동 사리"
+      ],
+      "images": [
+        "/prep-images/winter-camping-kimchi-udon-cover-20261115.webp",
+        "/prep-images/winter-camping-kimchi-udon-prep-20261115.webp",
+        "/prep-images/winter-camping-kimchi-udon-step-20261115.webp"
+      ],
+      "sources": [
+        "https://www.10000recipe.com/recipe/6996250",
+        "https://www.10000recipe.com/recipe/6957739",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-pork-suyuk",
+      "title": "수육 삶는 법 | 겨울 캠핑 돼지고기·된장 준비",
+      "subtype": "기타 요리",
+      "linkedIngredients": [
+        "양파",
+        "대파",
+        "재래식 된장",
+        "배추김치"
+      ],
+      "ordinaryIngredients": [
+        "수육용 통삼겹살",
+        "깐마늘"
+      ],
+      "images": [
+        "/prep-images/winter-camping-pork-suyuk-cover-20261115.webp",
+        "/prep-images/winter-camping-pork-suyuk-prep-20261115.webp",
+        "/prep-images/winter-camping-pork-suyuk-step-20261115.webp"
+      ],
+      "sources": [
+        "https://www.10000recipe.com/recipe/7048327",
+        "https://www.10000recipe.com/recipe/7012275",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-oyster-radish-soup",
+      "title": "굴국 끓이는 법 | 겨울 굴 손질과 익히는 순서",
+      "subtype": "국물요리",
+      "linkedIngredients": [
+        "무",
+        "대파",
+        "다진 마늘",
+        "육수용 다시팩",
+        "국간장",
+        "소금"
+      ],
+      "ordinaryIngredients": [
+        "가열조리용 굴"
+      ],
+      "images": [
+        "/prep-images/winter-camping-oyster-radish-soup-cover-20261115.webp",
+        "/prep-images/winter-camping-oyster-radish-soup-prep-20261115.webp",
+        "/prep-images/winter-camping-oyster-radish-soup-step-20261115.webp"
+      ],
+      "sources": [
+        "https://wtable.co.kr/recipes/2Mi1Cjk3jJgk38tqytKFzcNA",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-dongtae-tang",
+      "title": "동태탕 끓이는 법 | 냉동 동태 손질과 양념",
+      "subtype": "국물요리",
+      "linkedIngredients": [
+        "무",
+        "두부",
+        "대파",
+        "고춧가루",
+        "재래식 된장",
+        "국간장",
+        "다진 마늘",
+        "육수용 다시팩"
+      ],
+      "ordinaryIngredients": [
+        "손질 동태"
+      ],
+      "images": [
+        "/prep-images/winter-camping-dongtae-tang-cover-20261115.webp",
+        "/prep-images/winter-camping-dongtae-tang-prep-20261115.webp",
+        "/prep-images/winter-camping-dongtae-tang-step-20261115.webp"
+      ],
+      "sources": [
+        "https://www.10000recipe.com/recipe/7072800",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-gambas",
+      "title": "감바스 만들기 | 캠핑 새우·마늘·올리브유 준비",
+      "subtype": "기타 요리",
+      "linkedIngredients": [
+        "생 새우살",
+        "새송이버섯",
+        "소금",
+        "식빵"
+      ],
+      "ordinaryIngredients": [
+        "깐마늘",
+        "올리브유"
+      ],
+      "images": [
+        "/prep-images/winter-camping-gambas-cover-20261115.webp",
+        "/prep-images/winter-camping-gambas-prep-20261115.webp",
+        "/prep-images/winter-camping-gambas-step-20261115.webp"
+      ],
+      "sources": [
+        "https://wtable.co.kr/recipes/V23haVi86TY4HqMZbB5FKhxB",
+        "https://wtable.co.kr/recipes/XxFFmnHQm2UmedvhA4krQA3U",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-beef-sprouts-stir-fry",
+      "title": "우삼겹 숙주볶음 레시피 | 굴소스 없이 볶는 법",
+      "subtype": "볶음요리",
+      "linkedIngredients": [
+        "양파",
+        "대파",
+        "진간장",
+        "설탕",
+        "다진 마늘",
+        "참기름"
+      ],
+      "ordinaryIngredients": [
+        "우삼겹",
+        "숙주"
+      ],
+      "images": [
+        "/prep-images/winter-camping-beef-sprouts-stir-fry-cover-20261115.webp",
+        "/prep-images/winter-camping-beef-sprouts-stir-fry-prep-20261115.webp",
+        "/prep-images/winter-camping-beef-sprouts-stir-fry-step-20261115.webp"
+      ],
+      "sources": [
+        "https://wtable.co.kr/recipes/y55PcdXx3s1FzEdVLAXkDoJd",
+        "https://wtable.co.kr/curations/435",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    },
+    {
+      "slug": "winter-camping-steamed-eggs",
+      "title": "계란찜 만들기 | 캠핑 냄비 물 비율과 불 조절",
+      "subtype": "간편식·아침",
+      "linkedIngredients": [
+        "달걀",
+        "대파",
+        "당근",
+        "소금",
+        "참기름"
+      ],
+      "ordinaryIngredients": [],
+      "images": [
+        "/prep-images/winter-camping-steamed-eggs-cover-20261115.webp",
+        "/prep-images/winter-camping-steamed-eggs-prep-20261115.webp",
+        "/prep-images/winter-camping-steamed-eggs-step-20261115.webp"
+      ],
+      "sources": [
+        "https://www.10000recipe.com/recipe/6966942",
+        "https://www.10000recipe.com/recipe/7083131",
+        "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744",
+        "https://www.foodsafety.gov/food-safety-charts/safe-minimum-internal-temperatures"
+      ]
+    },
+    {
+      "slug": "winter-camping-sweet-potato-cheese",
+      "title": "고구마치즈구이 만들기 | 프라이팬 겨울 간식",
+      "subtype": "장작·불멍 간식",
+      "linkedIngredients": [
+        "고구마",
+        "체다 슬라이스 치즈",
+        "무염 버터",
+        "올리고당"
+      ],
+      "ordinaryIngredients": [],
+      "images": [
+        "/prep-images/winter-camping-sweet-potato-cheese-cover-20261115.webp",
+        "/prep-images/winter-camping-sweet-potato-cheese-prep-20261115.webp",
+        "/prep-images/winter-camping-sweet-potato-cheese-step-20261115.webp"
+      ],
+      "sources": [
+        "https://wtable.co.kr/recipes/EvangyM85H24hehPiwCzWRZQ",
+        "https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs401&menu_no=4419&ntctxt_no=1068744"
+      ]
+    }
+  ]
+}

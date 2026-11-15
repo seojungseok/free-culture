@@ -2,6 +2,9 @@ export const PREP_CATEGORIES = ['요리 재료 체크리스트', '캠핑요리 �
 export type PrepImage = {url: string; alt: string; width: number; height: number; generated: boolean; usageNotice?: string};
 export type PrepChecklistItem = {id: string; label: string; role: string; group: 'main' | 'seasoning' | 'common'; quantity?: string; required?: boolean; affiliate?: {url: string; productName: string; checkedAt: string; source: 'coupang-api' | 'registered-product'; reviewed: boolean; image?: string; optionNote?: string; sourceUrl?: string; reviewedAt?: string}};
 export type PrepArticle = {slug: string; title: string; description: string; category: typeof PREP_CATEGORIES[number]; coverLabel?: string; dishName?: string;
+  cookingCategory?: '국물요리'|'볶음요리'|'볶음밥'|'찌개'|'삼겹살·바비큐'|'장작·불멍 간식'|'간편식·아침'|'기타 요리';
+  recipe?: {servings: string; ingredients: string[]; steps: {title: string; text: string}[]};
+  sources?: {title: string; url: string; checkedAt: string}[];
   introduction?: {heading: string; text: string}; imageConnectionNote?: string; checklist?: PrepChecklistItem[]; shoppingItems?: PrepChecklistItem[];
   status: 'draft' | 'scheduled' | 'published'; publishAt: string; updatedAt: string; reviewed: boolean;
   cover: PrepImage; sections: {heading: string; text: string; image?: PrepImage}[];

@@ -25,7 +25,7 @@ export default function PrepChecklist({slug,items,dishName,kind='cooking'}:{slug
   <ul className="prep-simple-items">{(missingOnly?remaining:items).map(item=>{
    const product=reviewedPrepAffiliate(item);
    const ready=checked.has(item.id);
-   return <li key={item.id} className={ready?'is-checked':undefined}><label className="prep-have"><input type="checkbox" checked={ready} disabled={selection.key!==storageKey} onChange={()=>toggle(item.id)}/><strong>{item.label}</strong><span className="sr-only"> 집에 있음</span></label>{ready?<span className="prep-done">준비 완료</span>:product&&<PrepAffiliateLink href={product.url} slug={slug} placement="prep_checklist" className="prep-order" label={`${item.label} 구매하러가기 (새 창)`}>구매하러가기</PrepAffiliateLink>}</li>;
+   return <li key={item.id} className={ready?'is-checked':undefined}><label className="prep-have"><input type="checkbox" checked={ready} disabled={selection.key!==storageKey} onChange={()=>toggle(item.id)}/><span className="prep-ingredient-copy"><strong>{item.label}</strong>{item.quantity&&<><span className="prep-ingredient-quantity">{item.quantity}</span><span className="prep-ingredient-role">{item.role}</span></>}<span className="sr-only"> 집에 있음</span></span></label>{ready?<span className="prep-done">준비 완료</span>:product&&<PrepAffiliateLink href={product.url} slug={slug} placement="prep_checklist" className="prep-order" label={`${item.label} 구매하러가기 (새 창)`}>구매하러가기</PrepAffiliateLink>}</li>;
   })}</ul>
  </section>;
 }

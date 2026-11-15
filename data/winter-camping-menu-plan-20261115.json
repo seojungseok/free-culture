@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "selection": {
+    "reason": "15 new dishes, no duplicate of the existing 44 dish topics; Naver autocomplete observed for all menu seeds; winter soups, breakfast and hot snacks; not measured traffic forecasts"
+  },
+  "menus": [
+    {
+      "key": "mille-feuille-nabe",
+      "dish": "밀푀유나베",
+      "title": "밀푀유나베 레시피 | 겨울 캠핑 육수와 소스",
+      "label": "뜨끈한 밀푀유나베",
+      "category": "국물요리",
+      "main": "Korean mille-feuille nabe: a low round stainless hotpot with tight concentric upright layers of napa cabbage, perilla leaves and very thin fully cooked beef in clear broth; brown shiitake and king oyster mushrooms at center.",
+      "prep": "Separated napa cabbage leaves, thin raw shabu-shabu beef in a separate shallow cream tray, fresh perilla leaves, king oyster and shiitake mushrooms, a small jug of clear broth.",
+      "step": "Close side view of a shallow stainless pot with uncooked upright layers of napa cabbage, perilla leaves and thin beef being arranged in concentric rings, mushrooms in the center, a small jug of broth next to it. No heat or active flame.",
+      "slug": "winter-camping-mille-feuille-nabe"
+    },
+    {
+      "key": "mandu-jeongol",
+      "dish": "만두전골",
+      "title": "만두전골 레시피 | 냉동만두로 겨울 캠핑 한 끼",
+      "label": "보글보글 만두전골",
+      "category": "국물요리",
+      "main": "Korean dumpling hotpot in a round stainless pot, six plump crimped half-moon dumplings fully cooked in a warm lightly red broth with napa cabbage, shiitake mushrooms, tofu cubes and scallions.",
+      "prep": "Six frozen crimped half-moon meat dumplings on a cream platter, napa cabbage leaves, shiitake and king oyster mushrooms, tofu block and sliced scallions separately arranged.",
+      "step": "An uncovered stainless pot seen from 45-degree overhead, broth with softened napa cabbage and mushrooms, crimped dumplings gently spaced on top and a clean ladle resting on an ivory plate. Fully open outdoor table, no burner.",
+      "slug": "winter-camping-mandu-jeongol"
+    },
+    {
+      "key": "dakhanmari",
+      "dish": "닭한마리",
+      "title": "닭한마리 레시피 | 캠핑에서 맑은 국물 끓이기",
+      "label": "따뜻한 닭한마리",
+      "category": "국물요리",
+      "main": "Korean dakhanmari clear chicken hotpot with fully cooked pale bone-in chopped chicken pieces, thick potato slices and scallion segments in clean clear broth in a round stainless pot. No red chili in the broth.",
+      "prep": "Raw chopped bone-in chicken pieces in a separate cream tray away from vegetables, potatoes, scallions, onion, a tiny dish of minced garlic and a jug of water. Clearly separate raw chicken and clean vegetables.",
+      "step": "Stainless pot of clear chicken broth with fully cooked chicken pieces and softened potato slices; a clean ladle holding one chicken piece above the broth, a clean separate small dipping dish next to the pot. No raw meat near serving dishes.",
+      "slug": "winter-camping-dakhanmari"
+    },
+    {
+      "key": "sundubu-jjigae",
+      "dish": "돼지고기 순두부찌개",
+      "title": "순두부찌개 끓이는 법 | 돼지고기 양념과 재료",
+      "label": "칼칼한 순두부찌개",
+      "category": "찌개",
+      "main": "Korean red soft-tofu stew in a small stainless saucepan, generous irregular white soft-tofu curds, small fully cooked pork pieces, kimchi, onion and scallion. No raw egg or runny yolk.",
+      "prep": "Soft tofu in a cream bowl, small raw pork slices isolated on a separate tray, chopped kimchi in a small bowl, onion, scallion and a small dish of red chili powder.",
+      "step": "Close view of a small stainless pot where broad spoonfuls of white soft tofu have just been added to red cooked-pork and kimchi broth, clean spoon at the side. No egg.",
+      "slug": "winter-camping-sundubu-jjigae"
+    },
+    {
+      "key": "gochujang-jjigae",
+      "dish": "고추장찌개",
+      "title": "고추장찌개 레시피 | 감자·돼지고기 한 냄비",
+      "label": "든든한 고추장찌개",
+      "category": "찌개",
+      "main": "Korean gochujang stew in a stainless pot with chunky yellow potato, cooked small pork pieces, zucchini half-moons, onion and scallion in a moderately thick red broth.",
+      "prep": "Potatoes, sliced zucchini, onion, scallion, raw pork on a safely separate small tray, and small dishes of gochujang and minced garlic on ivory ceramics.",
+      "step": "Close view of a stainless stew pot with red broth and half-submerged potato pieces, zucchini and cooked pork, a clean ladle gently turning one soft potato piece without mashing it.",
+      "slug": "winter-camping-gochujang-jjigae"
+    },
+    {
+      "key": "beef-radish-soup",
+      "dish": "소고기뭇국",
+      "title": "소고기뭇국 끓이는 법 | 겨울 캠핑 아침 국물",
+      "label": "맑은 소고기뭇국",
+      "category": "국물요리",
+      "main": "Korean clear beef and radish soup, a wide cream bowl filled with clear golden broth, thin translucent Korean radish slices, fully cooked small beef pieces and a few scallion rings, small stainless soup pot beside it.",
+      "prep": "Korean radish cut into thin broad rectangles, raw diced beef isolated in a cream tray, scallions, tiny dishes of minced garlic and soy sauce and a small water jug.",
+      "step": "Uncovered small stainless pot with clear broth, cooked beef and radish; a spoon lifts one translucent radish rectangle with clean white chopsticks resting separately on linen.",
+      "slug": "winter-camping-beef-radish-soup"
+    },
+    {
+      "key": "tteok-mandu-soup",
+      "dish": "떡만둣국",
+      "title": "떡만둣국 끓이는 법 | 멸치육수 캠핑 아침",
+      "label": "아침엔 떡만둣국",
+      "category": "국물요리",
+      "main": "Korean tteok-manduguk in two ivory bowls, clear anchovy broth with white oval rice-cake slices, fully cooked crimped dumplings, cooked yellow egg ribbons, scallions and a small amount of roasted seaweed flakes.",
+      "prep": "White oval sliced rice cakes, crimped frozen dumplings, two whole unbroken eggs, scallions and a small dish of dark roasted seaweed flakes in separate ivory dishes.",
+      "step": "A stainless soup pot showing cooked dumplings, oval rice cakes and fully set yellow egg ribbons in clear broth, a clean ladle pouring a portion into one ivory bowl. No raw egg visible.",
+      "slug": "winter-camping-tteok-mandu-soup"
+    },
+    {
+      "key": "kimchi-udon",
+      "dish": "김치우동",
+      "title": "김치우동 레시피 | 어묵 넣는 캠핑 국물요리",
+      "label": "후루룩 김치우동",
+      "category": "국물요리",
+      "main": "Korean kimchi udon in a stainless pot, thick white udon noodles curled through a lightly red broth with chopped kimchi, rectangular fishcake pieces and sliced scallions.",
+      "prep": "A nest of thick white udon noodles on an ivory plate, chopped kimchi in a small bowl, rectangular fishcake sheets, scallions and onion, all unpackaged.",
+      "step": "Close-up of a stainless pot with kimchi and fishcake broth, thick udon noodles loosened and separated using clean chopsticks, no hands, no burner.",
+      "slug": "winter-camping-kimchi-udon"
+    },
+    {
+      "key": "pork-suyuk",
+      "dish": "돼지고기 수육",
+      "title": "수육 삶는 법 | 겨울 캠핑 돼지고기·된장 준비",
+      "label": "함께 나누는 수육",
+      "category": "기타 요리",
+      "main": "Korean bossam suyuk: neatly cut slices of fully cooked boiled pork belly with alternating pale meat and white fat layers on an ivory platter, a separate small bowl of kimchi, onion and scallions; stainless covered pot in background.",
+      "prep": "One thick raw pork-belly block isolated in a cream tray, onion halves, scallions, garlic and a small dish of brown doenjang. No thin raw pork slices; it must be a whole thick block.",
+      "step": "A fully cooked boiled pork-belly block on a clean wooden board with several even slices cut from its end, a clean knife placed safely to the side, a small stainless pot and separate kimchi dish behind. No pink raw pork.",
+      "slug": "winter-camping-pork-suyuk"
+    },
+    {
+      "key": "oyster-radish-soup",
+      "dish": "굴국",
+      "title": "굴국 끓이는 법 | 겨울 굴 손질과 익히는 순서",
+      "label": "겨울 한 그릇 굴국",
+      "category": "국물요리",
+      "main": "Korean oyster and radish soup in a cream bowl, fully cooked plump opaque ivory oysters with gently ruffled edges, translucent radish slices and scallions in clear broth, small stainless soup pot beside the bowl.",
+      "prep": "Raw shucked oyster meat in a separate chilled ivory bowl, thin Korean radish slices, scallions, small dish of minced garlic and clear broth jug. No shells and no raw oysters served with garnishes.",
+      "step": "Small stainless pot with clear radish broth and fully cooked opaque shucked oysters, one clean ladle lifting an oyster and radish slice, gentle steam, no raw oyster plating.",
+      "slug": "winter-camping-oyster-radish-soup"
+    },
+    {
+      "key": "dongtae-tang",
+      "dish": "동태탕",
+      "title": "동태탕 끓이는 법 | 냉동 동태 손질과 양념",
+      "label": "얼큰한 동태탕",
+      "category": "국물요리",
+      "main": "Korean spicy pollock stew dongtae-tang, thick skin-on cross-cut pollock steaks fully cooked in red broth with radish rectangles, tofu cubes and scallions in a round stainless pot. No salmon, cod fillets or crab.",
+      "prep": "Raw cross-cut frozen pollock steaks isolated on an ivory tray, Korean radish slices, tofu cubes, scallions and small dishes of red chili powder and brown doenjang.",
+      "step": "Stainless red soup pot with fully cooked skin-on cross-cut pollock steaks, radish and tofu, a clean ladle at the edge; fish steaks remain intact rather than shredded.",
+      "slug": "winter-camping-dongtae-tang"
+    },
+    {
+      "key": "gambas",
+      "dish": "감바스",
+      "title": "감바스 만들기 | 캠핑 새우·마늘·올리브유 준비",
+      "label": "마늘 향 가득 감바스",
+      "category": "기타 요리",
+      "main": "Spanish-style garlic shrimp gambas for Korean camping, small round black cast-iron skillet containing fully cooked opaque pink peeled shrimp, thick golden garlic slices and king oyster mushroom pieces in glossy olive oil; two small toasted bread triangles on an ivory plate.",
+      "prep": "Raw peeled shrimp safely isolated in a small ivory dish, peeled whole garlic cloves, king oyster mushroom slices, olive oil in a plain small glass jug and two white-bread slices.",
+      "step": "Close view of a black skillet with pale golden garlic slices and fully cooked opaque pink shrimp in gently shimmering olive oil; oil does not splash, smoke or burn, no active flame or hands.",
+      "slug": "winter-camping-gambas"
+    },
+    {
+      "key": "beef-sprouts-stir-fry",
+      "dish": "우삼겹 숙주볶음",
+      "title": "우삼겹 숙주볶음 레시피 | 굴소스 없이 볶는 법",
+      "label": "아삭한 우삼겹 숙주볶음",
+      "category": "볶음요리",
+      "main": "Korean thin-sliced beef-belly and mung-bean-sprout stir-fry in a shallow black skillet, fully cooked curled beef, white sprouts with tiny yellow tips, onion and scallion, light soy glaze with no puddle of liquid.",
+      "prep": "Thin rolled raw beef-belly slices isolated on a small tray, a mound of clean mung bean sprouts with yellow tips, onion slices, scallion, a small dish of minced garlic and soy sauce.",
+      "step": "A black skillet with cooked thin beef-belly pieces at one side and mung-bean sprouts and onions freshly mixed on the other side; clean wooden spatula rests across the rim, no raw beef and no hands.",
+      "slug": "winter-camping-beef-sprouts-stir-fry"
+    },
+    {
+      "key": "steamed-eggs",
+      "dish": "계란찜",
+      "title": "계란찜 만들기 | 캠핑 냄비 물 비율과 불 조절",
+      "label": "몽글몽글 계란찜",
+      "category": "간편식·아침",
+      "main": "Korean fully cooked steamed eggs in a small stainless saucepan, soft set pale-yellow curds with tiny cooked carrot cubes and green scallion flecks, moist but no raw liquid egg, ivory spoon on linen at side.",
+      "prep": "Three whole brown eggs and one separate bowl of beaten yellow egg, a small glass measuring cup of clear water, finely diced carrot, scallion and a tiny salt dish. No textual markings on measuring cup.",
+      "step": "Close view into a small stainless saucepan of softly set fully cooked yellow egg curds with tiny carrot and scallion pieces; a spoon shows the moist set interior, no liquid raw egg and no foam overflowing.",
+      "slug": "winter-camping-steamed-eggs"
+    },
+    {
+      "key": "sweet-potato-cheese",
+      "dish": "고구마치즈구이",
+      "title": "고구마치즈구이 만들기 | 프라이팬 겨울 간식",
+      "label": "달콤한 고구마치즈구이",
+      "category": "장작·불멍 간식",
+      "main": "Two cooked Korean sweet potatoes cut lengthwise in halves on an ivory platter, fluffy golden-yellow flesh topped with melted golden cheddar cheese, a small butter dish and plain camping mug nearby. No exaggerated cheese pull.",
+      "prep": "Two small whole Korean sweet potatoes, two square golden cheddar slices on a separate plate, a small butter pat and a plain stainless lidded skillet on the oak camping table.",
+      "step": "A black shallow skillet holding two split fully cooked sweet potatoes with golden cheddar squares softening over their yellow flesh, a lid rests to the side and a little steam rises; no campfire, no foil directly on flames.",
+      "slug": "winter-camping-sweet-potato-cheese"
+    }
+  ]
+}

@@ -42,11 +42,23 @@ export default async function Page({params}:{params:Promise<{slug:string}>}){
     '@context':'https://schema.org','@type':'BreadcrumbList',
     itemListElement:[{name:'홈',item:SITE.url},{name:'캠핑요리',item:`${SITE.url}/weekend-prep`},{name:a.title,item:url}].map((x,i)=>({'@type':'ListItem',position:i+1,...x})),
   }];
+  const structuredData:unknown[]=[...json];
+  if(a.recipe) structuredData.push({
+    '@context':'https://schema.org','@type':'Recipe','@id':url+'#recipe',
+    name:a.title,description:a.description,inLanguage:'ko-KR',
+    image:[a.cover,...a.sections.flatMap(section=>section.image?[section.image]:[])].map(photo=>new URL(photo.url,SITE.url).href),
+    author:{'@type':'Organization',name:SITE.name,url:SITE.url},
+    datePublished:a.publishAt,dateModified:a.updatedAt,
+    recipeYield:a.recipe.servings,recipeCategory:a.cookingCategory,
+    recipeIngredient:a.recipe.ingredients,
+    recipeInstructions:a.recipe.steps.map(step=>({'@type':'HowToStep',name:step.title,text:step.text})),
+    mainEntityOfPage:{'@type':'WebPage','@id':url},
+  });
   const companion=companionPrepSlug(a.slug);
   const related=articles.filter(b=>b.slug!==a.slug&&(b.slug===companion||prepCategoryLabel(b.category,b)===prepCategoryLabel(a.category,a)))
     .sort((b,c)=>Number(c.slug===companion)-Number(b.slug===companion)||Number(isCookingPrepArticle(c)&&cookingCategory(c)===cookingCategory(a))-Number(isCookingPrepArticle(b)&&cookingCategory(b)===cookingCategory(a))).slice(0,3);
   return <main className="prep">
-    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(json).replace(/</g,'\\u003c')}}/>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData).replace(/</g,'\\u003c')}}/>
     <PrepArticle article={a} preview={isPrepReview} shoppingItems={shoppingItems} relatedArticles={articles.map(({slug,title})=>({slug,title}))}/>
     {related.length>0&&<nav className="prep-article prep-directory" aria-label="다른 캠핑요리">
       <h2>함께 볼 캠핑요리</h2>

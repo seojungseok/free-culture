@@ -27,9 +27,9 @@ test('every published cooking guide omits household purchases and preserves its 
    assert(photos.length>=3&&photos.length<=4,article.slug);
    assert.equal(new Set(photos.map(photo=>photo.url)).size,photos.length,article.slug);
   }
-  for(const item of shown){assert.equal(item.affiliate?.reviewed,true);assert(raw.includes(item));}
+  for(const item of shown){if(article.recipe&&!item.affiliate)assert(item.quantity&&item.role);else assert.equal(item.affiliate?.reviewed,true);assert(raw.includes(item));}
  }
- assert.equal(checked,42);
+ assert.equal(checked,42+store.articles.filter(article=>article.recipe).length);
  assert(hidden>100);
  assert.equal(JSON.stringify(store),before,'Filtering never deletes the original tracking records');
 });

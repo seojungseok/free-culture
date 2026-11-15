@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-11-15T14:26:12.998Z",
+  "viewports": [
+    2560,
+    481,
+    320
+  ],
+  "horizontalOverflow": false,
+  "coverFontLoaded": true,
+  "headingWordBreak": "keep-all",
+  "checkbox": {
+    "checkedRemaining": 8,
+    "missingOnlyRows": 8,
+    "resetRemaining": 9,
+    "persistedAfterReload": true
+  },
+  "temporaryViewportReset": true,
+  "screenshots": [
+    "list-review.jpg",
+    "mobile-review.jpg"
+  ]
+}

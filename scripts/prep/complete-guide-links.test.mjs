@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {recipeIngredients} from './apply-ingredient-catalog.mjs';
 const store=JSON.parse(fs.readFileSync('data/weekend-prep.json','utf8'));
-test('every item in every published preparation guide has a reviewed original purchase route',()=>{
+test('original guides keep complete purchase routes; new recipes never invent routes for ordinary ingredients',()=>{
  for(const article of store.articles.filter(a=>a.status==='published')){
   const items=[...(article.checklist||[]),...(article.shoppingItems||[])];assert(items.length,'Guide must have an actual item list: '+article.slug);
-  for(const item of items){assert.equal(item.affiliate?.reviewed,true,'No missing link: '+article.slug+' / '+item.label);const link=new URL(item.affiliate.url);assert.equal(link.hostname,'link.coupang.com');assert.equal(link.protocol,'https:');if(item.affiliate.image)assert(fs.existsSync('public'+item.affiliate.image));}
+  for(const item of items){if(!item.affiliate&&article.recipe){assert(item.quantity&&item.role,'Ordinary recipe ingredients retain useful quantities');continue;}assert.equal(item.affiliate?.reviewed,true,'No missing link: '+article.slug+' / '+item.label);const link=new URL(item.affiliate.url);assert.equal(link.hostname,'link.coupang.com');assert.equal(link.protocol,'https:');if(item.affiliate.image)assert(fs.existsSync('public'+item.affiliate.image));}
  }
 });
 test('green onion and onion links cover every occurrence rather than one example guide',()=>{

@@ -1,0 +1,1448 @@
+{
+  "version": 1,
+  "generatedWith": "built-in image_gen",
+  "style": "Light oak, ivory ceramics, forest green HTML title band, natural daylight and subtle winter woodland. No generated lettering or branding.",
+  "purpose": "Recipe scenes, not exact commercial product reproductions; no productMatchReviewed approval is asserted.",
+  "images": [
+    {
+      "id": 0,
+      "slug": "winter-camping-mille-feuille-nabe",
+      "kind": "cover",
+      "label": "뜨끈한 밀푀유나베",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-104ea05b-30d9-4717-bc37-b88df55f5b1f.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean mille-feuille nabe: a low round stainless hotpot with tight concentric upright layers of napa cabbage, perilla leaves and very thin fully cooked beef in clear broth; brown shiitake and king oyster mushrooms at center. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-mille-feuille-nabe-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-mille-feuille-nabe-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 159424,
+          "sha256": "426248465d9d7aba31013fffc229600ad8efaa689d39f034c58c4d77c46adb0c"
+        },
+        {
+          "url": "/prep-images/winter-camping-mille-feuille-nabe-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 49512,
+          "sha256": "962a9086e2bfac180e71b77b195b5b211430a46a00a9ee85f4919805cec75e94"
+        },
+        {
+          "url": "/prep-images/winter-camping-mille-feuille-nabe-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15534,
+          "sha256": "07738c5ec7b3bf29e7078855c4f814b917bf81b440d9fc476b780cdb5903bd55"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "slug": "winter-camping-mille-feuille-nabe",
+      "kind": "prep",
+      "label": "뜨끈한 밀푀유나베",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-12704e75-e8ea-4ed8-95ac-2ddc1e504b02.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Separated napa cabbage leaves, thin raw shabu-shabu beef in a separate shallow cream tray, fresh perilla leaves, king oyster and shiitake mushrooms, a small jug of clear broth. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-mille-feuille-nabe-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-mille-feuille-nabe-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 187918,
+          "sha256": "37a79fb1bd0a0d41b9c1602f05f61034d1d3d208308470982f47d7296064fb3e"
+        },
+        {
+          "url": "/prep-images/winter-camping-mille-feuille-nabe-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 60360,
+          "sha256": "e0f0557678118d98a1debe67623eb92229b451e5cfc77a6a828e925179ced0c0"
+        },
+        {
+          "url": "/prep-images/winter-camping-mille-feuille-nabe-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 19376,
+          "sha256": "0c3fc44c07e529a4b8c24a718e86f47c4161b0ad09a2a9e9dbb65575b43cb6c2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "winter-camping-mille-feuille-nabe",
+      "kind": "step",
+      "label": "뜨끈한 밀푀유나베",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-1254eee8-8086-453b-ae01-d5935feb287d.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Close side view of a shallow stainless pot with uncooked upright layers of napa cabbage, perilla leaves and thin beef being arranged in concentric rings, mushrooms in the center, a small jug of broth next to it. No heat or active flame. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-mille-feuille-nabe-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-mille-feuille-nabe-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 158008,
+          "sha256": "9f0d335aba0dc6b28f861cec106b15bdf3ad8684a7161581b46e7ac75b07154b"
+        },
+        {
+          "url": "/prep-images/winter-camping-mille-feuille-nabe-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 54376,
+          "sha256": "2ac394eea5e775354f79508baf85d7d8c8e0ea51c181af316c4d3906d362d423"
+        },
+        {
+          "url": "/prep-images/winter-camping-mille-feuille-nabe-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 18704,
+          "sha256": "f1e26c7deece2495af439ccd36c7cce8828e9fe11178b04f0ceb599d47e3943d"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "winter-camping-mandu-jeongol",
+      "kind": "cover",
+      "label": "보글보글 만두전골",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-5abe992e-9cdb-4164-9929-e2675a1c3a96.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean dumpling hotpot in a round stainless pot, six plump crimped half-moon dumplings fully cooked in a warm lightly red broth with napa cabbage, shiitake mushrooms, tofu cubes and scallions. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-mandu-jeongol-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-mandu-jeongol-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 156424,
+          "sha256": "cf63529ea0f65778a122bad57e3f7bd21250e17b41a49e32897b63d5585c2853"
+        },
+        {
+          "url": "/prep-images/winter-camping-mandu-jeongol-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 48426,
+          "sha256": "65ea3a4932a3c8a16410367f82cb0d8f7ca7f05de13186526692f0239271364d"
+        },
+        {
+          "url": "/prep-images/winter-camping-mandu-jeongol-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15410,
+          "sha256": "ec640985509d47eb268c664eb52bfee26d268beeb29e327b9adb414ef02eacf6"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "winter-camping-mandu-jeongol",
+      "kind": "prep",
+      "label": "보글보글 만두전골",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-2a86d036-127b-4f1f-857e-60db7796e452.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Six frozen crimped half-moon meat dumplings on a cream platter, napa cabbage leaves, shiitake and king oyster mushrooms, tofu block and sliced scallions separately arranged. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-mandu-jeongol-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-mandu-jeongol-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 180812,
+          "sha256": "8a607781fe35af1570f6c453cba4954aaceb911a17c48ebd18397cbb947bc26f"
+        },
+        {
+          "url": "/prep-images/winter-camping-mandu-jeongol-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 51566,
+          "sha256": "e60d6706b512cbdad36ff0bc1c418e21bf5ca6db5aaaeb8b4871c61927f5489c"
+        },
+        {
+          "url": "/prep-images/winter-camping-mandu-jeongol-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15916,
+          "sha256": "6eebb6eb88d5cb45f220f0b5cab2bb1e20d0a3dd2aa558dea12314b568ba0815"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "winter-camping-mandu-jeongol",
+      "kind": "step",
+      "label": "보글보글 만두전골",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-e1ba0492-793e-4d69-a8a8-8f65bab696b1.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: An uncovered stainless pot seen from 45-degree overhead, broth with softened napa cabbage and mushrooms, crimped dumplings gently spaced on top and a clean ladle resting on an ivory plate. Fully open outdoor table, no burner. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-mandu-jeongol-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-mandu-jeongol-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 150290,
+          "sha256": "8a046d81d191f4ee2de4408246b0a6787ec041c9983d15007949e5ae525b090f"
+        },
+        {
+          "url": "/prep-images/winter-camping-mandu-jeongol-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 43996,
+          "sha256": "adb0fcfc2ada1d22f797f62308b9b44eb4640426a09a6322b0d02b6f45985576"
+        },
+        {
+          "url": "/prep-images/winter-camping-mandu-jeongol-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15140,
+          "sha256": "1a86fb7e62744da8aa0c4d3a115284ce3befe6cf21768cf3e2d1faba1772d479"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "winter-camping-dakhanmari",
+      "kind": "cover",
+      "label": "따뜻한 닭한마리",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-4ad8c9d7-ed4b-42a3-b759-c138bf73b03a.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean dakhanmari clear chicken hotpot with fully cooked pale bone-in chopped chicken pieces, thick potato slices and scallion segments in clean clear broth in a round stainless pot. No red chili in the broth. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-dakhanmari-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-dakhanmari-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 154896,
+          "sha256": "b7f53a201550807ccbc23c91d5693bef0d56a32ac388514d0b870a71a8ca2877"
+        },
+        {
+          "url": "/prep-images/winter-camping-dakhanmari-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 44340,
+          "sha256": "ae48f3405b5a5bcd5d21c3c47b8339e94fa2b267dcfe432e8439528a17cadc0d"
+        },
+        {
+          "url": "/prep-images/winter-camping-dakhanmari-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 14114,
+          "sha256": "9d4911a1697276e36ae21dbfc4981482cd6965404b8691475be089b706b44615"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "winter-camping-dakhanmari",
+      "kind": "prep",
+      "label": "따뜻한 닭한마리",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-40deded8-e3ab-42bb-a889-1ab365eaf7b9.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Raw chopped bone-in chicken pieces in a separate cream tray away from vegetables, potatoes, scallions, onion, a tiny dish of minced garlic and a jug of water. Clearly separate raw chicken and clean vegetables. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-dakhanmari-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-dakhanmari-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 171184,
+          "sha256": "9fecf1dc4a6b06463ad4eede810b036a559be0ca9c3d74e58b101db0988930ab"
+        },
+        {
+          "url": "/prep-images/winter-camping-dakhanmari-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 53872,
+          "sha256": "f6ac11d6fedaeb439728fbed9efd94762da3fb1279a166fa42a1352ec95a3001"
+        },
+        {
+          "url": "/prep-images/winter-camping-dakhanmari-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 16976,
+          "sha256": "83961e5e6c09aa27f0d2329a0fcd3698fc99118da6f14ab35785db5af4788904"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "winter-camping-dakhanmari",
+      "kind": "step",
+      "label": "따뜻한 닭한마리",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-a9044dc6-29eb-4d11-aafd-3f2c067b1611.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Stainless pot of clear chicken broth with fully cooked chicken pieces and softened potato slices; a clean ladle holding one chicken piece above the broth, a clean separate small dipping dish next to the pot. No raw meat near serving dishes. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-dakhanmari-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-dakhanmari-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 117088,
+          "sha256": "4f952a902bb574c233af35fca2a47fd5a04ae00222521503096f20095fb953d3"
+        },
+        {
+          "url": "/prep-images/winter-camping-dakhanmari-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 39424,
+          "sha256": "07329f200593cfb03200f1c72e3d7e3ca4ef6a9c091b300a95c38842c40dd6b0"
+        },
+        {
+          "url": "/prep-images/winter-camping-dakhanmari-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 13742,
+          "sha256": "9c97d843cda656c7e10eb4acc7637f0d5db6f024bea243b2157872ae175324e6"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "winter-camping-sundubu-jjigae",
+      "kind": "cover",
+      "label": "칼칼한 순두부찌개",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-4bddfbe0-789e-4eaf-b524-21a64528e2ca.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean red soft-tofu stew in a small stainless saucepan, generous irregular white soft-tofu curds, small fully cooked pork pieces, kimchi, onion and scallion. No raw egg or runny yolk. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-sundubu-jjigae-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-sundubu-jjigae-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 161722,
+          "sha256": "e3ae884f07bc5b7c756447129c7a7570910c8c759e7ca5a690d9c5c1cc7dccef"
+        },
+        {
+          "url": "/prep-images/winter-camping-sundubu-jjigae-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 50180,
+          "sha256": "8e8d3671db76c8c3f1385556e50c359e77f791532f028ebc7fd9b0c842d1f334"
+        },
+        {
+          "url": "/prep-images/winter-camping-sundubu-jjigae-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15446,
+          "sha256": "ed78c1df5d3909794438e3f79c1be27722b9ce2a0fae8be9b458846f9125fd61"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "winter-camping-sundubu-jjigae",
+      "kind": "prep",
+      "label": "칼칼한 순두부찌개",
+      "source": "C:/Users/tjwjd/.codex/generated_images/01a1deb3-4abb-79c2-881b-35645a1faa3d/exec-c5497b2f-0756-4bcf-bca6-36221d6c5aae.png",
+      "prompt": "Photorealistic Korean sundubu jjigae ingredients on light oak outdoors: smooth glossy silken soft tofu in three large curving scoops, separate raw pork, kimchi, onion, scallion and chili powder; warm natural daylight; no lettering or branding. Final replacement reviewed visually.",
+      "url": "/prep-images/winter-camping-sundubu-jjigae-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-sundubu-jjigae-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 172516,
+          "sha256": "8296f0cc87e5b429d22d69bd8dbf161ac20d15f90118e2afa01a6e0d4fd2867b"
+        },
+        {
+          "url": "/prep-images/winter-camping-sundubu-jjigae-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 53038,
+          "sha256": "2411ecc7adf5aee14216d092aac1a778a769f12cf605132f813da7be8a20face"
+        },
+        {
+          "url": "/prep-images/winter-camping-sundubu-jjigae-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 16646,
+          "sha256": "68e59af2e5598c72cf2fed439faa49a744d4ffd94f32c38aaf2538bbc68e6ce5"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "slug": "winter-camping-sundubu-jjigae",
+      "kind": "step",
+      "label": "칼칼한 순두부찌개",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-614b3182-15a8-420c-b762-1023350a378e.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Close view of a small stainless pot where broad spoonfuls of white soft tofu have just been added to red cooked-pork and kimchi broth, clean spoon at the side. No egg. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-sundubu-jjigae-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-sundubu-jjigae-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 155256,
+          "sha256": "14b2341559278be885aa2d9bd3801bb0153d9485a4175800cd37eaa5398f60e4"
+        },
+        {
+          "url": "/prep-images/winter-camping-sundubu-jjigae-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 46542,
+          "sha256": "fa65ba7d800b428ae618d01ccc9c46c7381429547a15260f227e94c78c2e22d5"
+        },
+        {
+          "url": "/prep-images/winter-camping-sundubu-jjigae-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15860,
+          "sha256": "9479447bb37a773faae27c05445bdd4e6fb6193dd9fb89d63a20c2a62bea8d0f"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "slug": "winter-camping-gochujang-jjigae",
+      "kind": "cover",
+      "label": "든든한 고추장찌개",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-3f610783-09fe-4c89-8377-e9df1e7ecafa.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean gochujang stew in a stainless pot with chunky yellow potato, cooked small pork pieces, zucchini half-moons, onion and scallion in a moderately thick red broth. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-gochujang-jjigae-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-gochujang-jjigae-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 147556,
+          "sha256": "3457ede973562e0c438877fa3cf82bea65e4c0b0731434692066fffc1d5f4aba"
+        },
+        {
+          "url": "/prep-images/winter-camping-gochujang-jjigae-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 44364,
+          "sha256": "6f9878d9f56e8965db80806e6a412610d94e0b7dd289aec66042be8795f32718"
+        },
+        {
+          "url": "/prep-images/winter-camping-gochujang-jjigae-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 14148,
+          "sha256": "5795def5cb435bdf55059d15a9f090735afb3e42afaeb6d78d96cddd8466a710"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "slug": "winter-camping-gochujang-jjigae",
+      "kind": "prep",
+      "label": "든든한 고추장찌개",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-e3f3ac5f-ab3f-4143-97a7-e089694231cd.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Potatoes, sliced zucchini, onion, scallion, raw pork on a safely separate small tray, and small dishes of gochujang and minced garlic on ivory ceramics. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-gochujang-jjigae-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-gochujang-jjigae-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 179838,
+          "sha256": "175bf1d5a384aae26f109317e2a54d43ccb119264eeff2678f54d38148f2f035"
+        },
+        {
+          "url": "/prep-images/winter-camping-gochujang-jjigae-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 52490,
+          "sha256": "abdb76632ba12b79e73e413af75117710d34a7a38984c7d5f5671a0b177dc63f"
+        },
+        {
+          "url": "/prep-images/winter-camping-gochujang-jjigae-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15840,
+          "sha256": "dad777676ec02ee2addbdcba6747238c2891d2d23e1f78b82baac4c85ed9dbb9"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "slug": "winter-camping-gochujang-jjigae",
+      "kind": "step",
+      "label": "든든한 고추장찌개",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-ab4564ac-0f03-4ec6-ab01-216fe734a12c.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Close view of a stainless stew pot with red broth and half-submerged potato pieces, zucchini and cooked pork, a clean ladle gently turning one soft potato piece without mashing it. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-gochujang-jjigae-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-gochujang-jjigae-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 138718,
+          "sha256": "47472307f895fd9d387e9b2a0b327121338b1c9d8efab2f98a6258522e9ff7a4"
+        },
+        {
+          "url": "/prep-images/winter-camping-gochujang-jjigae-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 41896,
+          "sha256": "e4f17d8d75fca6750472f5e6eb4bb8099163c1f6817bb038d9f292ca8c5b074f"
+        },
+        {
+          "url": "/prep-images/winter-camping-gochujang-jjigae-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 14254,
+          "sha256": "dc76f0936d3c39201fcbb9e587589e3ffc1fe6e0d7f928f1a3b6dbf9a366cb90"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "slug": "winter-camping-beef-radish-soup",
+      "kind": "cover",
+      "label": "맑은 소고기뭇국",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-d542a92e-b786-4ed6-969e-03f6b2f63fa9.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean clear beef and radish soup, a wide cream bowl filled with clear golden broth, thin translucent Korean radish slices, fully cooked small beef pieces and a few scallion rings, small stainless soup pot beside it. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-beef-radish-soup-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-beef-radish-soup-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 144524,
+          "sha256": "7de4a3c418a08ea735860650d90647217f1ac6657e985def8ca8f06a2e513f11"
+        },
+        {
+          "url": "/prep-images/winter-camping-beef-radish-soup-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 42528,
+          "sha256": "51fd595733ef4f8e2efdc2252ea4d27d23f55d0e662611258bb901d283de05c5"
+        },
+        {
+          "url": "/prep-images/winter-camping-beef-radish-soup-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 13594,
+          "sha256": "6f331c425db7af465b2b39093cf346fc62d28a65586f2b7140b65bf68e7e065b"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "slug": "winter-camping-beef-radish-soup",
+      "kind": "prep",
+      "label": "맑은 소고기뭇국",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-4f0f7cf6-318e-4fcc-9295-2d6e21adf837.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean radish cut into thin broad rectangles, raw diced beef isolated in a cream tray, scallions, tiny dishes of minced garlic and soy sauce and a small water jug. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-beef-radish-soup-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-beef-radish-soup-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 139646,
+          "sha256": "c04c6852b1b5922b5112acdb985d07cb0a1e83622e5f7d2fd2f0dcc427e0292d"
+        },
+        {
+          "url": "/prep-images/winter-camping-beef-radish-soup-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 43118,
+          "sha256": "d26089026d48c72af84dbeef2a5d4cd581fe162a0674f86b90197ebc953798e8"
+        },
+        {
+          "url": "/prep-images/winter-camping-beef-radish-soup-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 14888,
+          "sha256": "d370cac49b499ea16d9ad2ff239900a911e94aff13177ea667bb3827b8d557ed"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "slug": "winter-camping-beef-radish-soup",
+      "kind": "step",
+      "label": "맑은 소고기뭇국",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-3f09d210-087d-4490-ba9c-fa5db366f714.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Uncovered small stainless pot with clear broth, cooked beef and radish; a spoon lifts one translucent radish rectangle with clean white chopsticks resting separately on linen. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-beef-radish-soup-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-beef-radish-soup-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 124036,
+          "sha256": "67c150845556a9fa35c89921932cc062fab87bf276c3e8feea7719ae71938e61"
+        },
+        {
+          "url": "/prep-images/winter-camping-beef-radish-soup-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 39972,
+          "sha256": "bffbdef622d0e067af957d6621a26b116c595bef5b7568cfb256c4b132f9de9e"
+        },
+        {
+          "url": "/prep-images/winter-camping-beef-radish-soup-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 12872,
+          "sha256": "9353b8898eadaf2c6bab2d488c0775094aa50a0765bae3d16aeaf3106dbda190"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "slug": "winter-camping-tteok-mandu-soup",
+      "kind": "cover",
+      "label": "아침엔 떡만둣국",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-01cbfa18-a7a7-489a-936c-e0d146bfb588.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean tteok-manduguk in two ivory bowls, clear anchovy broth with white oval rice-cake slices, fully cooked crimped dumplings, cooked yellow egg ribbons, scallions and a small amount of roasted seaweed flakes. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-tteok-mandu-soup-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-tteok-mandu-soup-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 140832,
+          "sha256": "38498aa83917bf25d01620dfb21fb0f55a2ff4634c9d23efecd542874fd174b8"
+        },
+        {
+          "url": "/prep-images/winter-camping-tteok-mandu-soup-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 42694,
+          "sha256": "0f8e81c5f43078b801feee94735e712017317f49692c04128680c468839615a4"
+        },
+        {
+          "url": "/prep-images/winter-camping-tteok-mandu-soup-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 13450,
+          "sha256": "393a3727cc854716ffd19023ed37b9df73924ffe966f6bc886a8f7948ca0658f"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "slug": "winter-camping-tteok-mandu-soup",
+      "kind": "prep",
+      "label": "아침엔 떡만둣국",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-817d7959-33fc-4b45-834d-f59ea857232f.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: White oval sliced rice cakes, crimped frozen dumplings, two whole unbroken eggs, scallions and a small dish of dark roasted seaweed flakes in separate ivory dishes. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-tteok-mandu-soup-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-tteok-mandu-soup-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 146608,
+          "sha256": "35d13e790291eca2faca4ef474c503337fd26bd83ee4a4f7a6d6dfd74214a6f3"
+        },
+        {
+          "url": "/prep-images/winter-camping-tteok-mandu-soup-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 47066,
+          "sha256": "d2b953260fe80dbad9ad3a76efcc96964000835067e261792536b31eaf90d010"
+        },
+        {
+          "url": "/prep-images/winter-camping-tteok-mandu-soup-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15460,
+          "sha256": "dc1d5066d76b9515562375cc427794425d46b3f9e12694a0d43f2ec9d3b96442"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "slug": "winter-camping-tteok-mandu-soup",
+      "kind": "step",
+      "label": "아침엔 떡만둣국",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-24fa661e-a41b-48f0-8fd9-735a6030d83e.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: A stainless soup pot showing cooked dumplings, oval rice cakes and fully set yellow egg ribbons in clear broth, a clean ladle pouring a portion into one ivory bowl. No raw egg visible. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-tteok-mandu-soup-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-tteok-mandu-soup-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 138072,
+          "sha256": "1f91cc7ceffe4f0296e4a9ac52344bf137cca33b29c23305ccc8a6a29e31d5e4"
+        },
+        {
+          "url": "/prep-images/winter-camping-tteok-mandu-soup-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 45450,
+          "sha256": "a119770a3d4647b5369894387408efd39e4d3d36959dab9d0d72e84e7eeb1fe9"
+        },
+        {
+          "url": "/prep-images/winter-camping-tteok-mandu-soup-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15480,
+          "sha256": "c6014e32e69c309e3215e44b445e96cc924d0249bd94672c7b82fa775051e309"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "slug": "winter-camping-kimchi-udon",
+      "kind": "cover",
+      "label": "후루룩 김치우동",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-4629bfa1-ec5e-4761-b240-f48de4af5657.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean kimchi udon in a stainless pot, thick white udon noodles curled through a lightly red broth with chopped kimchi, rectangular fishcake pieces and sliced scallions. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-kimchi-udon-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-kimchi-udon-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 150710,
+          "sha256": "fc175d80b89f8465a59ae12f2a619d06a5230e931970d2a509802ab29236c70c"
+        },
+        {
+          "url": "/prep-images/winter-camping-kimchi-udon-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 44058,
+          "sha256": "fd96d7268eb91c9635f2cedcd387ed48c8836703ce03266a8d2f9e464e7f864d"
+        },
+        {
+          "url": "/prep-images/winter-camping-kimchi-udon-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 14344,
+          "sha256": "fac31ffbf8266c1a20c19fd320ff65ff53acf1e6ce21a08f9288144c06b86050"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "slug": "winter-camping-kimchi-udon",
+      "kind": "prep",
+      "label": "후루룩 김치우동",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-b30fc7e5-f569-42c8-a0b6-402c0a085a3f.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: A nest of thick white udon noodles on an ivory plate, chopped kimchi in a small bowl, rectangular fishcake sheets, scallions and onion, all unpackaged. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-kimchi-udon-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-kimchi-udon-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 138098,
+          "sha256": "73d2e53d154c00e6316e8cd36051511111dfa3ecf29d7caceed0cb1f7dff3eb1"
+        },
+        {
+          "url": "/prep-images/winter-camping-kimchi-udon-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 44580,
+          "sha256": "98f712215a25af9f87ed5ee4021ea21b4fd3b61bdd5703e733a1a110ed0f2e94"
+        },
+        {
+          "url": "/prep-images/winter-camping-kimchi-udon-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15286,
+          "sha256": "e69af485c24d05f7632cdd56750eafa995a697dfc2f4314bd984bcbd4a526dc7"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "slug": "winter-camping-kimchi-udon",
+      "kind": "step",
+      "label": "후루룩 김치우동",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-d358d699-4c1f-4ab5-8f39-037c2e0f6959.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Close-up of a stainless pot with kimchi and fishcake broth, thick udon noodles loosened and separated using clean chopsticks, no hands, no burner. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-kimchi-udon-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-kimchi-udon-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 138492,
+          "sha256": "9d333c8228d86872c6ad5da8c9ee9b26716bd89b822e3d1bfd88c77ee1368d4f"
+        },
+        {
+          "url": "/prep-images/winter-camping-kimchi-udon-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 44040,
+          "sha256": "a93cc932a71626a9d471909f0ac4eaaf8c9a9a38cb056a73df9d48d51a5f83e1"
+        },
+        {
+          "url": "/prep-images/winter-camping-kimchi-udon-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15122,
+          "sha256": "2135b84e8ff17c1d598398bc23ec249e9e40e329624cfd2749a6ebe4ac0443d1"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "slug": "winter-camping-pork-suyuk",
+      "kind": "cover",
+      "label": "함께 나누는 수육",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-a384fd12-74bc-41b2-be3a-7c3a1f64630e.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean bossam suyuk: neatly cut slices of fully cooked boiled pork belly with alternating pale meat and white fat layers on an ivory platter, a separate small bowl of kimchi, onion and scallions; stainless covered pot in background. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-pork-suyuk-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-pork-suyuk-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 131200,
+          "sha256": "3d1c4436bce1478e4dfeb1f5ba17a6742c124ad25f57daeb9ffaa4925c1a5f48"
+        },
+        {
+          "url": "/prep-images/winter-camping-pork-suyuk-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 42770,
+          "sha256": "c6a9eb784dfbc26ae00ed4222536eba7471b1f5894230937cd46f4110234f68d"
+        },
+        {
+          "url": "/prep-images/winter-camping-pork-suyuk-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 13830,
+          "sha256": "57c18f6774e86acd26e72cf841485a6ad002afc8efc0f1531e0f4d9e653a4f81"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "slug": "winter-camping-pork-suyuk",
+      "kind": "prep",
+      "label": "함께 나누는 수육",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-883bf96c-2f19-4068-bda2-fa845a5ccc1b.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: One thick raw pork-belly block isolated in a cream tray, onion halves, scallions, garlic and a small dish of brown doenjang. No thin raw pork slices; it must be a whole thick block. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-pork-suyuk-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-pork-suyuk-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 150494,
+          "sha256": "4f76a9e9c08894dd2a791cc903db3d33f719f33ffd7569d82d00bc478249d1fe"
+        },
+        {
+          "url": "/prep-images/winter-camping-pork-suyuk-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 49142,
+          "sha256": "3eb5b48906993c5fa87e296cb75917e4e5b21926d0a66993d8797bd5065ee4b7"
+        },
+        {
+          "url": "/prep-images/winter-camping-pork-suyuk-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 16088,
+          "sha256": "a682edb8dfe9b1fc91c3282873cb8800e62753e28252362fcc07f7db3703d993"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "slug": "winter-camping-pork-suyuk",
+      "kind": "step",
+      "label": "함께 나누는 수육",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-e25c8e13-d363-462e-96cf-7735e9e2cea6.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: A fully cooked boiled pork-belly block on a clean wooden board with several even slices cut from its end, a clean knife placed safely to the side, a small stainless pot and separate kimchi dish behind. No pink raw pork. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-pork-suyuk-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-pork-suyuk-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 179862,
+          "sha256": "3c8d4412432321b2dd71355971d7e4f80062cc1d77d7b03c2fb2ebeadb229c93"
+        },
+        {
+          "url": "/prep-images/winter-camping-pork-suyuk-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 49622,
+          "sha256": "f0774b9ee35e8c5c1cebfcb261655ce4184c7fec9049a9689ff55cce104b7f1f"
+        },
+        {
+          "url": "/prep-images/winter-camping-pork-suyuk-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15460,
+          "sha256": "a1b1e6f3dfce60d0375fcaafbe5279f24d67e16013d7392f40491f1be770b2b1"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "slug": "winter-camping-oyster-radish-soup",
+      "kind": "cover",
+      "label": "겨울 한 그릇 굴국",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-47a8c914-cceb-4a58-81bf-af166fb6d632.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean oyster and radish soup in a cream bowl, fully cooked plump opaque ivory oysters with gently ruffled edges, translucent radish slices and scallions in clear broth, small stainless soup pot beside the bowl. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-oyster-radish-soup-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-oyster-radish-soup-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 132506,
+          "sha256": "271fa62abfdd2f6ec074f4f9da3c7bdb6e86d8c69d54ab21d9568a950987b8d4"
+        },
+        {
+          "url": "/prep-images/winter-camping-oyster-radish-soup-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 40308,
+          "sha256": "05de3132513d6cfaa53c35cb92cb7e11b330c289f8105d5a401c94b83cf2dfc0"
+        },
+        {
+          "url": "/prep-images/winter-camping-oyster-radish-soup-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 13160,
+          "sha256": "0af7f99c78dfaf9982068b3fcff8877678dd729ed33504c260503b11467931af"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "slug": "winter-camping-oyster-radish-soup",
+      "kind": "prep",
+      "label": "겨울 한 그릇 굴국",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-224c07ae-5126-4513-bde5-7b6097cf7ca3.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Raw shucked oyster meat in a separate chilled ivory bowl, thin Korean radish slices, scallions, small dish of minced garlic and clear broth jug. No shells and no raw oysters served with garnishes. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-oyster-radish-soup-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-oyster-radish-soup-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 168916,
+          "sha256": "e8dc59ca97b9ba0b2ffefff857d348c0420232eb14add4419310f635d4eb430f"
+        },
+        {
+          "url": "/prep-images/winter-camping-oyster-radish-soup-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 50648,
+          "sha256": "d69f3812e8f707eefe260384c5f53c369e8cb077082852a37afc3fa079d593ca"
+        },
+        {
+          "url": "/prep-images/winter-camping-oyster-radish-soup-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 16036,
+          "sha256": "5fcb305538ebf72602f85a8015afb3b58bf326b6ffb51b62d0477dc162e391c2"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "slug": "winter-camping-oyster-radish-soup",
+      "kind": "step",
+      "label": "겨울 한 그릇 굴국",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-dfa254af-3e78-4fb4-817a-ae0062fb55e3.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Small stainless pot with clear radish broth and fully cooked opaque shucked oysters, one clean ladle lifting an oyster and radish slice, gentle steam, no raw oyster plating. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-oyster-radish-soup-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-oyster-radish-soup-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 125300,
+          "sha256": "24edb0d70740448009a24744c0a55f396c66cd2986722016b35ea32000e36bda"
+        },
+        {
+          "url": "/prep-images/winter-camping-oyster-radish-soup-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 38402,
+          "sha256": "604c4bfa8147e37e8d42c74d1ee5c4962160ec5f32b0b1ce7a17854d779d55cb"
+        },
+        {
+          "url": "/prep-images/winter-camping-oyster-radish-soup-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 12542,
+          "sha256": "e28e9f8f6c1d53c25e20915e71c432c0c0b2ddae2006f91144ed2c4cef4e9003"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "slug": "winter-camping-dongtae-tang",
+      "kind": "cover",
+      "label": "얼큰한 동태탕",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-4b6b0ab2-29d5-4d61-8842-33c461837726.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean spicy pollock stew dongtae-tang, thick skin-on cross-cut pollock steaks fully cooked in red broth with radish rectangles, tofu cubes and scallions in a round stainless pot. No salmon, cod fillets or crab. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-dongtae-tang-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-dongtae-tang-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 152004,
+          "sha256": "aae8873392df77c7013c2caaa704e7309e4f2300e0a7f65aa6ad3e48370ba94f"
+        },
+        {
+          "url": "/prep-images/winter-camping-dongtae-tang-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 48180,
+          "sha256": "9595a5e99f14658b39a30e3972fd785c8eafc8cb0d8105f7e05e185f1d522ce2"
+        },
+        {
+          "url": "/prep-images/winter-camping-dongtae-tang-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15536,
+          "sha256": "9a83ee2ab5780d1baf35d85f3cb6767a4945be8272fdb85b463cc9e8b8677f5c"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "slug": "winter-camping-dongtae-tang",
+      "kind": "prep",
+      "label": "얼큰한 동태탕",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-99e5fe0e-f55f-4fd9-937d-a8369bd64d9e.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Raw cross-cut frozen pollock steaks isolated on an ivory tray, Korean radish slices, tofu cubes, scallions and small dishes of red chili powder and brown doenjang. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-dongtae-tang-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-dongtae-tang-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 186626,
+          "sha256": "5835923b9b4b38f5a53f737d2943a5e4ae55bf4f23a87bd9144071ee2f2e10e3"
+        },
+        {
+          "url": "/prep-images/winter-camping-dongtae-tang-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 52792,
+          "sha256": "30397a77a662dbd5f68072b69d137dc7689acd461c224fcf8b06296bcaa6d1f9"
+        },
+        {
+          "url": "/prep-images/winter-camping-dongtae-tang-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 16102,
+          "sha256": "7803527becd2bb5af98e6e0ac4a64bae7d242941be0813521029ad0ceaf1dbdd"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "slug": "winter-camping-dongtae-tang",
+      "kind": "step",
+      "label": "얼큰한 동태탕",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-8894a8a6-8fc3-48c4-bd3d-567e0fc99673.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Stainless red soup pot with fully cooked skin-on cross-cut pollock steaks, radish and tofu, a clean ladle at the edge; fish steaks remain intact rather than shredded. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-dongtae-tang-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-dongtae-tang-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 175624,
+          "sha256": "67363607949516ece9519bcad5bd11741619572ac8716ba1496fb904f3be5781"
+        },
+        {
+          "url": "/prep-images/winter-camping-dongtae-tang-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 51262,
+          "sha256": "6f042f70e2b03ba8161fe4cb339cafb8990c87afd81b1a0692b3655692194b6f"
+        },
+        {
+          "url": "/prep-images/winter-camping-dongtae-tang-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 16006,
+          "sha256": "74963add64f253c6640d8383f49d88f0e3f1ac532c3c6dbed3fe78d4c6c8d005"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "slug": "winter-camping-gambas",
+      "kind": "cover",
+      "label": "마늘 향 가득 감바스",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-5ac92ddc-f159-4e67-ac5f-af2272d50242.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Spanish-style garlic shrimp gambas for Korean camping, small round black cast-iron skillet containing fully cooked opaque pink peeled shrimp, thick golden garlic slices and king oyster mushroom pieces in glossy olive oil; two small toasted bread triangles on an ivory plate. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-gambas-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-gambas-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 175784,
+          "sha256": "22bedf91aef4de14a34e14aad5a9f6ca6c7ab37a871b0c0f39c81c87bc7ada5f"
+        },
+        {
+          "url": "/prep-images/winter-camping-gambas-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 49880,
+          "sha256": "baef85b9fdefd9af7ad683e59d78a976769ffcd82401209aa5cd8b84d9d78ad0"
+        },
+        {
+          "url": "/prep-images/winter-camping-gambas-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15194,
+          "sha256": "92e3c0ef694ea414aa3eae1ce1755917c829481aa2d52e96d46a055c86177e4e"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "slug": "winter-camping-gambas",
+      "kind": "prep",
+      "label": "마늘 향 가득 감바스",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-9f543f4d-93c2-4c50-84d1-26542e1637b0.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Raw peeled shrimp safely isolated in a small ivory dish, peeled whole garlic cloves, king oyster mushroom slices, olive oil in a plain small glass jug and two white-bread slices. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-gambas-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-gambas-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 159722,
+          "sha256": "e96931f0b9ad3756c57213f4e8c02ef42dd3a69f7419816aeca0d46e46ecc29b"
+        },
+        {
+          "url": "/prep-images/winter-camping-gambas-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 46418,
+          "sha256": "b93da2c9b69f4525fd727834022b6488949824a16edada5da6535124141fc915"
+        },
+        {
+          "url": "/prep-images/winter-camping-gambas-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 14768,
+          "sha256": "a7f5e4cbcb1dee4ac1c8cc350b57f364da81ccf01d398bd781c1b38ba86fae83"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "slug": "winter-camping-gambas",
+      "kind": "step",
+      "label": "마늘 향 가득 감바스",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-9ebf2633-a187-46d3-a451-147ef3e5968b.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Close view of a black skillet with pale golden garlic slices and fully cooked opaque pink shrimp in gently shimmering olive oil; oil does not splash, smoke or burn, no active flame or hands. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-gambas-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-gambas-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 179310,
+          "sha256": "2ba97090d5ef073ad2054c893fc12e42c933ab728da94bfe4bbd4c1d240b4103"
+        },
+        {
+          "url": "/prep-images/winter-camping-gambas-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 53774,
+          "sha256": "05c6c990c3b7712be5d17f3f66af79d8e6ef23e31343459993cf1be053626889"
+        },
+        {
+          "url": "/prep-images/winter-camping-gambas-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 16102,
+          "sha256": "a6977db3652a17dc58a50e3e96272b634036ae3014a2317f82c93a0a5b721e13"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "slug": "winter-camping-beef-sprouts-stir-fry",
+      "kind": "cover",
+      "label": "아삭한 우삼겹 숙주볶음",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-6285dd22-1280-4d51-8274-2ac5a17788b7.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean thin-sliced beef-belly and mung-bean-sprout stir-fry in a shallow black skillet, fully cooked curled beef, white sprouts with tiny yellow tips, onion and scallion, light soy glaze with no puddle of liquid. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-beef-sprouts-stir-fry-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-beef-sprouts-stir-fry-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 167732,
+          "sha256": "4092bf4868e1e50aeb2ede1bcecfcea1f3108fdecf1905cddb72f96e8929f520"
+        },
+        {
+          "url": "/prep-images/winter-camping-beef-sprouts-stir-fry-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 50056,
+          "sha256": "464fe4f0a08e1bca048647d92eb78a09bb322601d27758be55f952b19bc809f6"
+        },
+        {
+          "url": "/prep-images/winter-camping-beef-sprouts-stir-fry-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 15662,
+          "sha256": "4e8220242845280a64ce893e566fbc31730165fec89c12c3ac27f3a4643fba7d"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "slug": "winter-camping-beef-sprouts-stir-fry",
+      "kind": "prep",
+      "label": "아삭한 우삼겹 숙주볶음",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-67b99a80-5804-40dd-b3e0-4813ca2c9b5b.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Thin rolled raw beef-belly slices isolated on a small tray, a mound of clean mung bean sprouts with yellow tips, onion slices, scallion, a small dish of minced garlic and soy sauce. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-beef-sprouts-stir-fry-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-beef-sprouts-stir-fry-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 180224,
+          "sha256": "09c7d3d0ba7023301f95366de645d1fc8f0a6db298cddeeb1c14cfeb434ec61d"
+        },
+        {
+          "url": "/prep-images/winter-camping-beef-sprouts-stir-fry-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 58142,
+          "sha256": "eb40a8326be071d1b05648464571ccf1e4ccb0a498d867a05e56bb0ae36cda99"
+        },
+        {
+          "url": "/prep-images/winter-camping-beef-sprouts-stir-fry-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 18678,
+          "sha256": "29b482e7082a1a07d60c8b5022649929e15dd75b3a5d6485a9e922b8614a8815"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "slug": "winter-camping-beef-sprouts-stir-fry",
+      "kind": "step",
+      "label": "아삭한 우삼겹 숙주볶음",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-2fd69fd5-3836-4e40-b168-7dd0f87f7802.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: A black skillet with cooked thin beef-belly pieces at one side and mung-bean sprouts and onions freshly mixed on the other side; clean wooden spatula rests across the rim, no raw beef and no hands. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-beef-sprouts-stir-fry-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-beef-sprouts-stir-fry-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 200192,
+          "sha256": "f62496c5f3fa5a93013faa35678d51e3b245db95a80d2dea1ae6b46c10cc8599"
+        },
+        {
+          "url": "/prep-images/winter-camping-beef-sprouts-stir-fry-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 57052,
+          "sha256": "776abf8fefc0389c987f8c7030d29db502385e790a85a6009ae90fb6ed502cfd"
+        },
+        {
+          "url": "/prep-images/winter-camping-beef-sprouts-stir-fry-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 17422,
+          "sha256": "2158cb6019b66b8ad442469669a75d3fa153933a5078f8a4b5edee7cb518e792"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "slug": "winter-camping-steamed-eggs",
+      "kind": "cover",
+      "label": "몽글몽글 계란찜",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-8cc1c38e-8e83-4cc7-88ef-ad6dddca9b52.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Korean fully cooked steamed eggs in a small stainless saucepan, soft set pale-yellow curds with tiny cooked carrot cubes and green scallion flecks, moist but no raw liquid egg, ivory spoon on linen at side. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-steamed-eggs-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-steamed-eggs-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 140304,
+          "sha256": "0f5bb842c4eaae90b1e4fd65dc71fc0d0a1c2e43064abe8ff467f273db4b6870"
+        },
+        {
+          "url": "/prep-images/winter-camping-steamed-eggs-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 43294,
+          "sha256": "810d4c3ae328df5d50b26425fb8a59fc1839da2c348879a1bf02131e8d960632"
+        },
+        {
+          "url": "/prep-images/winter-camping-steamed-eggs-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 14626,
+          "sha256": "5d7086d46e0dfe00a0a57278508800cdd9285a1f198f9d114368e5c6534b0845"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "slug": "winter-camping-steamed-eggs",
+      "kind": "prep",
+      "label": "몽글몽글 계란찜",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-26d9fbfc-ca63-4420-b95b-af167479a5f5.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Three whole brown eggs and one separate bowl of beaten yellow egg, a small glass measuring cup of clear water, finely diced carrot, scallion and a tiny salt dish. No textual markings on measuring cup. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-steamed-eggs-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-steamed-eggs-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 167844,
+          "sha256": "7b1f1ffd05d226ae7162b5b559acf9cc22f6f5852342ec7b570b61ffb0884efe"
+        },
+        {
+          "url": "/prep-images/winter-camping-steamed-eggs-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 50520,
+          "sha256": "02fc253d9ba48116984712b2bb7e7bfbd48af1e790bce81358d9bdac04d81371"
+        },
+        {
+          "url": "/prep-images/winter-camping-steamed-eggs-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 16148,
+          "sha256": "2fb8525dd3f77902dc025253f8bbbe532deb9084d4ceb0d3eef5fce725bb3e67"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "slug": "winter-camping-steamed-eggs",
+      "kind": "step",
+      "label": "몽글몽글 계란찜",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-4df23c51-2661-400e-b008-09475292f9ea.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Close view into a small stainless saucepan of softly set fully cooked yellow egg curds with tiny carrot and scallion pieces; a spoon shows the moist set interior, no liquid raw egg and no foam overflowing. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-steamed-eggs-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-steamed-eggs-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 132228,
+          "sha256": "b12c884458f1e14150b7cac476ab3a69d2e3b098d0db13436c55fa6c89cb8631"
+        },
+        {
+          "url": "/prep-images/winter-camping-steamed-eggs-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 42984,
+          "sha256": "abbb5b8fa2e9cb617ce80fc0d10730c54db0aa823a50855536642727020b596f"
+        },
+        {
+          "url": "/prep-images/winter-camping-steamed-eggs-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 13814,
+          "sha256": "98c42ce663d8f0ede663c6d44c307c6f288de3cdf0d55138c7fe26184fb79d35"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "slug": "winter-camping-sweet-potato-cheese",
+      "kind": "cover",
+      "label": "달콤한 고구마치즈구이",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-a8092b83-b073-4dfd-adfc-0369d71fe3aa.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Two cooked Korean sweet potatoes cut lengthwise in halves on an ivory platter, fluffy golden-yellow flesh topped with melted golden cheddar cheese, a small butter dish and plain camping mug nearby. No exaggerated cheese pull. Main dish should be entirely within the upper 76% with comfortable side margins; the bottom 24% is uncluttered plain oak table for a later dark green HTML title overlay. Appetizing finished dish, coherent two-person meal.",
+      "url": "/prep-images/winter-camping-sweet-potato-cheese-cover-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-sweet-potato-cheese-cover-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 149892,
+          "sha256": "8a197161c6c60b67304ab49116750f7d90dd0489cba031baf41304889342f57d"
+        },
+        {
+          "url": "/prep-images/winter-camping-sweet-potato-cheese-cover-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 48010,
+          "sha256": "072ffa09b4a782349e8f5b4e461a1676d76808004db2eb14896649e6293ae9b9"
+        },
+        {
+          "url": "/prep-images/winter-camping-sweet-potato-cheese-cover-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 14614,
+          "sha256": "de622a1c53928d8ff1457d082dffe9920f754c1265ceba3e150a38937ed07a57"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "slug": "winter-camping-sweet-potato-cheese",
+      "kind": "prep",
+      "label": "달콤한 고구마치즈구이",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-31bfb14e-f959-4cb1-afde-a3c37fdc1d0e.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: Two small whole Korean sweet potatoes, two square golden cheddar slices on a separate plate, a small butter pat and a plain stainless lidded skillet on the oak camping table. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is ingredient preparation before cooking.",
+      "url": "/prep-images/winter-camping-sweet-potato-cheese-prep-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-sweet-potato-cheese-prep-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 157374,
+          "sha256": "4e3f1cad7ea45859cf18108b81bcd22a7e5f4884b18a6e2e8b76f46fcec548d4"
+        },
+        {
+          "url": "/prep-images/winter-camping-sweet-potato-cheese-prep-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 45650,
+          "sha256": "337ea2676ddc37b6a116802a195683a211423ec43e6fa167d4d599c4bd2d4782"
+        },
+        {
+          "url": "/prep-images/winter-camping-sweet-potato-cheese-prep-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 14244,
+          "sha256": "2fe6a305fee59e2f3f2c805194acf1305c971af37b7c9a603e2b6776b67f99df"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "slug": "winter-camping-sweet-potato-cheese",
+      "kind": "step",
+      "label": "달콤한 고구마치즈구이",
+      "source": "C:\\Users\\tjwjd\\.codex\\generated_images\\01a1deb3-4abb-79c2-881b-35645a1faa3d\\exec-be04fe40-570d-4f63-b2e0-e837e3b9660d.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: a NEW editorial food photograph for a Korean winter camping recipe website, a cohesive series matching light honey-oak camping tables, ivory linen, matte cream ceramics, restrained forest green accents, soft natural daylight from the upper left, a 50mm-lens look at a consistent 45-degree overhead angle. Single landscape 3:2 photograph, 1536x1024, never a collage or multi-panel image. A faint defocused beige tent and cold winter woodland with a few distant frost patches in the upper background; the table is entirely outdoors, no enclosed shelter, no burners or flames, no people. Warm inviting food colors against a calm neutral palette, realistic edible textures, no dramatic orange grading or vignette. All food unpackaged, NO commercial packaging or branding. ABSOLUTELY NO text, letters, Korean writing, title band, logo, watermark, border, price or stars anywhere in the image. The website adds real Korean typography in HTML. Requested subject and stage: A black shallow skillet holding two split fully cooked sweet potatoes with golden cheddar squares softening over their yellow flesh, a lid rests to the side and a little steam rises; no campfire, no foil directly on flames. Fill most of the frame with this practical distinct instructional scene. It must clearly differ from the finished-dish hero: this is a close-up of a specific cooking or doneness step.",
+      "url": "/prep-images/winter-camping-sweet-potato-cheese-step-20261115.webp",
+      "variants": [
+        {
+          "url": "/prep-images/winter-camping-sweet-potato-cheese-step-20261115.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 134144,
+          "sha256": "300b16aac73f56e76e80be5889f7a715b68e72bd917d9c5a8f6f597a6bf4d83d"
+        },
+        {
+          "url": "/prep-images/winter-camping-sweet-potato-cheese-step-20261115-w640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 43110,
+          "sha256": "021a9e3ca57adf4d7fcff8ba68fbaa7a8cddc07636566c7f6a2f60b9ded52021"
+        },
+        {
+          "url": "/prep-images/winter-camping-sweet-potato-cheese-step-20261115-w320.webp",
+          "width": 320,
+          "height": 213,
+          "bytes": 13842,
+          "sha256": "1b5b41bc9198fefd49486d31f227ef1efa1ad112bb95c40682bfc92d96fe68cd"
+        }
+      ]
+    }
+  ]
+}

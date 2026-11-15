@@ -12,20 +12,15 @@ const sandbox={exports:{},URL,Date};
 vm.runInNewContext(ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,sandbox);
 const {reviewedPrepAffiliate,prepProductId,photoGuideItems,prepGuideItems}=sandbox.exports;
 const store=JSON.parse(fs.readFileSync('data/weekend-prep.json','utf8'));
-const original=JSON.parse(execFileSync('git',['show','7961f6cf0fc89afaba8c6c9f00a3f8531fa9619b:data/weekend-prep.json'],{encoding:'utf8'}));
+// The approved November 15 search/title release is the preservation baseline.
+const original=JSON.parse(execFileSync('git',['show','4478c048533b6278e0b96206806080a296c8ef23:data/weekend-prep.json'],{encoding:'utf8'}));
 const sample={id:'test',label:'확인용 재료',role:'테스트',group:'main',affiliate:{reviewed:true,source:'coupang-api',productName:'확인용 상품',checkedAt:'2026-11-07T00:00:00Z',url:'https://link.coupang.com/re/AFFSDP?pageKey=123&itemId=99&lptag=AF123&token=synthetic'}};
 
 test('all original article URLs, publication states, text and affiliate destinations are preserved',()=>{
- assert.equal(store.articles.length,original.articles.length);
+ assert(store.articles.length>=original.articles.length);
  for(const before of original.articles){
   const after=store.articles.find(a=>a.slug===before.slug);
   const expected=structuredClone(before);
-  const copyLog=['data/prep-copy-edits-20261111.json','data/prep-copy-edits-20261114.json','data/prep-image-edits-20261114.json'].flatMap(file=>fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'utf8')):[]);
-  for(const edit of copyLog.filter(edit=>edit.slug===before.slug)){
-   assert(/^(description|cover|cover\.alt|sections\.\d+\.(text|image|image\.alt)|checklist\.\d+\.label)$/.test(edit.path),'Only explicitly reviewed copy or same-article preparation images may change');
-   const parts=edit.path.split('.');let target=expected;for(const key of parts.slice(0,-1))target=target[key];
-   assert.deepEqual(target[parts.at(-1)],edit.before,'Copy review must match the original text or image');target[parts.at(-1)]=edit.after;
-  }
   assert(after,'Existing URL must remain');
   for(const field of ['title','description','status','publishAt','sections','internalLinks','cover'])assert(JSON.stringify(after[field])===JSON.stringify(expected[field]),'Existing article content and approved copy edits must remain: '+field);
   for(const item of before.checklist||[])if(item.affiliate){const next=after.checklist.find(v=>v.id===item.id);assert(next?.affiliate?.url===item.affiliate.url,'Original affiliate destination must remain byte-for-byte');}

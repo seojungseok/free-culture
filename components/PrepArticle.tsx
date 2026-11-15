@@ -98,6 +98,7 @@ export default function PrepArticle({article:a,preview=false,relatedArticles=[],
   {!preview&&<TossTopDeals contained />}
   {checklist&&<FoodChecklistDetails slug={a.slug} articles={relatedArticles} preparationImage={neutralPhotos[0]?<PrepImage photo={neutralPhotos[0]}/>:null} tipImage={neutralPhotos[1]?<PrepImage photo={neutralPhotos[1]}/>:null} images={<div className="prep-food-images">{neutralPhotos.slice(2).map(photo=><PrepImage key={photo.url} photo={photo}/>)}{completedPhoto&&<PrepImage photo={completedPhoto}/>}</div>}/>}
   {!checklist&&a.sections.map((section,index)=><section key={index} id={index===0&&shoppingItems.length?'prep-cooking':undefined}><h2>{section.heading}</h2>{bodyText(section.text).split('\n').filter(Boolean).map((raw,j)=>{const point=raw.startsWith('• ');return <p className={point?'prep-point':undefined} key={j}>{point?raw.slice(2):raw}</p>;})}{section.image&&<PrepImage photo={section.image}/>}</section>)}
+  {!!a.sources?.length&&<details className="prep-recipe-sources"><summary>참고한 조리법과 식품안전 자료</summary><p>재료와 조리 방식은 아래 자료를 참고해 캠핑 환경에 맞게 정리했습니다.</p><ul>{a.sources.map(source=><li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a></li>)}</ul></details>}
   {!checklist&&!!a.internalLinks.length&&<nav aria-label="함께 읽기"><h2>함께 보면 좋은 곳</h2>{a.internalLinks.map(link=><p key={link.href}><Link href={link.href}>{link.label} →</Link></p>)}</nav>}
  </article>;
 }

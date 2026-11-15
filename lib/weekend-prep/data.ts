@@ -9,7 +9,8 @@ export function getPrepArticles(){return prepStore.articles.filter(a=>isPrepRevi
 
 export type CookingCategory = '국물요리'|'볶음요리'|'볶음밥'|'찌개'|'삼겹살·바비큐'|'장작·불멍 간식'|'간편식·아침'|'기타 요리';
 export const COOKING_CATEGORIES: CookingCategory[] = ['국물요리','볶음요리','볶음밥','찌개','삼겹살·바비큐','장작·불멍 간식','간편식·아침','기타 요리'];
-export function cookingCategory(article:Pick<PrepArticle,'slug'|'title'>):CookingCategory{
+export function cookingCategory(article:Pick<PrepArticle,'slug'|'title'|'cookingCategory'>):CookingCategory{
+  if(article.cookingCategory) return article.cookingCategory;
   const newChecklists:Record<string,CookingCategory>={
     'autumn-camping-pork-kimchi-stew-ingredient-checklist':'찌개',
     'autumn-camping-doenjang-stew-ingredient-checklist':'찌개',
@@ -43,4 +44,4 @@ export function cookingCategory(article:Pick<PrepArticle,'slug'|'title'>):Cookin
   return '국물요리';
 }
 
-export function isCookingPrepArticle(article:PrepArticle){return prepCategoryLabel(article.category,article)==='요리 재료 체크리스트';}
+export function isCookingPrepArticle(article:PrepArticle){return ['요리 재료 체크리스트','캠핑요리 가이드'].includes(prepCategoryLabel(article.category,article));}
