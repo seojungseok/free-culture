@@ -8,12 +8,10 @@ import TravelAffiliate from './TravelAffiliate';
 export default function ChromeGate({
   header,
   footer,
-  floating,
   children,
 }: {
   header: React.ReactNode;
   footer: React.ReactNode;
-  floating: React.ReactNode;
   children: React.ReactNode;
 }) {
   const p = usePathname() || "/";
@@ -27,7 +25,6 @@ export default function ChromeGate({
       {header}
       <main className="w-full">{children}{p!=='/'&&<TravelAffiliate />}</main>
       {footer}
-      {floating}
     </>
   );
 }

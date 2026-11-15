@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import DeferredFonts from "@/components/DeferredFonts";
-import FloatingShare from "@/components/FloatingShare";
 import ChromeGate from "@/components/ChromeGate";
 import { RenderDateProvider } from "@/components/RenderDate";
 import { todayYmd } from "@/lib/dates";
@@ -78,7 +77,7 @@ export default function RootLayout({
         <RenderDateProvider day={todayYmd()}>
         <TossFeedProvider initial={readTossFeed()}>
         <EventPublicationBoundary deadlines={liveEventDeadlines(curatedEvents.events)}/>
-        <ChromeGate header={<Header />} footer={<Footer />} floating={<FloatingShare />}>
+        <ChromeGate header={<Header />} footer={<Footer />}>
           {children}
         </ChromeGate>
         </TossFeedProvider>

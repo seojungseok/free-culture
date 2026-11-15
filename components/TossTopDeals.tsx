@@ -1,32 +1,63 @@
 'use client';
 
-import {useEffect, useId, useMemo, useRef, useState} from 'react';
+import {useEffect, useId, useMemo, useRef, useState,type PointerEvent,type KeyboardEvent} from 'react';
 import {usePathname} from 'next/navigation';
 import {affiliateTrack} from '@/lib/affiliate-track';
 import {freshnessMs} from '@/lib/sharelink-policy.mjs';
 import {selectTopDeals,topDealGroups,topDealGroup} from '@/lib/toss-top-deals.mjs';
 import {useTossFeed} from './TossFeedProvider';
 import styles from './TossTopDeals.module.css';
+const priceFormat=new Intl.NumberFormat('ko-KR');
+const deadlineFormat=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
 
 export default function TossTopDeals({contained=false}:{contained?:boolean}) {
  const page=usePathname()||'/';
  const {feed,now}=useTossFeed();
  const [expiryClock,setExpiryClock]=useState(0);
  const [group,setGroup]=useState('all');
- const [dealPage,setDealPage]=useState(0);
  const railId=useId();
  const strip=useRef<HTMLDivElement>(null);
+ const drag=useRef<{pointerId:number;x:number;y:number;left:number;moved:boolean}|null>(null);
+ const suppressClick=useRef(false);
  const seen=useRef(new Set<string>());
  const effectiveNow=Math.max(now,expiryClock);
  const eligible=useMemo(()=>effectiveNow>0?selectTopDeals(feed,effectiveNow,{isHome:page==='/'}):[],[feed,effectiveNow,page]);
  const groups=topDealGroups.filter(g=>g.id==='all'||eligible.some(p=>topDealGroup(p)===g.id));
  const activeGroup=groups.some(g=>g.id===group)?group:'all';
  const matching=useMemo(()=>activeGroup==='all'?eligible:eligible.filter(p=>topDealGroup(p)===activeGroup),[eligible,activeGroup]);
- const pageCount=Math.ceil(matching.length/4);
- const activePage=Math.min(dealPage,Math.max(0,pageCount-1));
- const deals=useMemo(()=>matching.slice(activePage*4,activePage*4+4),[matching,activePage]);
+ const overflow=matching.length>4?'many':matching.length>2?'medium':'few';
 
- useEffect(()=>{strip.current?.scrollTo({left:0,behavior:'auto'});},[activeGroup,activePage,page]);
+ useEffect(()=>{drag.current=null;suppressClick.current=false;strip.current?.removeAttribute('data-dragging');strip.current?.scrollTo({left:0,behavior:'auto'});},[activeGroup,page]);
+
+ function startDrag(event:PointerEvent<HTMLDivElement>){
+  suppressClick.current=false;
+  if(event.pointerType!=='mouse'||event.button!==0||!event.isPrimary||event.currentTarget.scrollWidth<=event.currentTarget.clientWidth)return;
+  drag.current={pointerId:event.pointerId,x:event.clientX,y:event.clientY,left:event.currentTarget.scrollLeft,moved:false};
+ }
+ function moveDrag(event:PointerEvent<HTMLDivElement>){
+  const state=drag.current;if(!state||state.pointerId!==event.pointerId)return;
+  if((event.buttons&1)===0){finishDrag(event);return;}
+  const dx=event.clientX-state.x,dy=event.clientY-state.y;
+  if(!state.moved){
+   if(Math.abs(dx)<8&&Math.abs(dy)<8)return;
+   if(Math.abs(dy)>Math.abs(dx)){drag.current=null;suppressClick.current=true;return;}
+   state.moved=true;event.currentTarget.dataset.dragging='true';event.currentTarget.setPointerCapture(event.pointerId);
+  }
+  event.preventDefault();event.currentTarget.scrollLeft=state.left-dx;
+ }
+ function finishDrag(event:PointerEvent<HTMLDivElement>){
+  const state=drag.current;if(!state||state.pointerId!==event.pointerId)return;
+  drag.current=null;suppressClick.current=state.moved;event.currentTarget.removeAttribute('data-dragging');
+  if(event.currentTarget.hasPointerCapture(event.pointerId))event.currentTarget.releasePointerCapture(event.pointerId);
+ }
+ function moveWithKeyboard(event:KeyboardEvent<HTMLDivElement>){
+  if(event.target!==event.currentTarget||event.altKey||event.ctrlKey||event.metaKey||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
+  const node=event.currentTarget,card=node.querySelector<HTMLElement>('[data-product]');if(!card)return;
+  event.preventDefault();
+  const step=card.getBoundingClientRect().width+parseFloat(getComputedStyle(node).columnGap||'0'),behavior=window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+  if(event.key==='Home'||event.key==='End')node.scrollTo({left:event.key==='Home'?0:node.scrollWidth,behavior});
+  else node.scrollBy({left:(event.key==='ArrowRight'?1:-1)*step,behavior});
+ }
 
  // Recheck at the exact deal or feed expiry, even between the shared clock ticks.
  useEffect(()=>{
@@ -38,7 +69,7 @@ export default function TossTopDeals({contained=false}:{contained?:boolean}) {
  },[eligible,feed.checkedAt]);
 
  useEffect(()=>{
-  const node=strip.current;if(!node||!deals.length)return;
+  const node=strip.current;if(!node||!matching.length)return;
   const observer=new IntersectionObserver(entries=>{
    for(const entry of entries){
     if(!entry.isIntersecting||entry.intersectionRatio<0.5)continue;
@@ -48,23 +79,24 @@ export default function TossTopDeals({contained=false}:{contained?:boolean}) {
   },{threshold:0.5});
   node.querySelectorAll('[data-product]').forEach(card=>observer.observe(card));
   return()=>observer.disconnect();
- },[deals,page]);
+ },[matching,page]);
 
- if(!deals.length)return null;
+ if(!matching.length)return null;
  return <section className={`${styles.wrap} ${contained?styles.contained:''} ${page.startsWith('/game')?styles.game:''}`} aria-label="토스쇼핑 오늘의 먹거리 하루특가">
-   <div className={styles.heading}><h2>오늘의 먹거리 특가</h2><span className={styles.count} role="status" aria-live="polite">{groups.find(g=>g.id===activeGroup)?.label} · {activePage*4+1}–{activePage*4+deals.length} / {matching.length}개</span></div>
-   {groups.length>2&&<div className={styles.filters} role="group" aria-label="먹거리 종류">{groups.map(g=><button type="button" key={g.id} aria-pressed={activeGroup===g.id} aria-controls={railId} onClick={()=>{setGroup(g.id);setDealPage(0);}}>{g.label}</button>)}</div>}
+   <div className={styles.heading}><h2>오늘의 먹거리 특가</h2><span className={styles.count} role="status" aria-live="polite">{groups.find(g=>g.id===activeGroup)?.label} · {matching.length}개</span></div>
+   {groups.length>2&&<div className={styles.filters} role="group" aria-label="먹거리 종류">{groups.map(g=><button type="button" key={g.id} aria-pressed={activeGroup===g.id} aria-controls={railId} onClick={()=>setGroup(g.id)}>{g.label}</button>)}</div>}
    <p className={styles.disclosure}>[광고] 토스쇼핑 쉐어링크 활동으로, 링크 구매 시 수수료를 지급받습니다.</p>
-   <div id={railId} ref={strip} className={styles.rail} role="region" aria-label={`${groups.find(g=>g.id===activeGroup)?.label} 특가 ${deals.length}개`} tabIndex={0}>
-    {deals.map(p=><article className={styles.card} data-product={p.id} key={p.id}>
-     <a href={p.links.home} target="_blank" rel="sponsored noopener noreferrer" onClick={()=>affiliateTrack('affiliate_click','toss','food_deal_rail',page,p.id)} aria-label={`${p.name}, ${p.price.toLocaleString('ko-KR')}원. 마감 전 구매하기 (새 창)`}>
-      <img src={p.image} alt="" width={240} height={180} loading="lazy" decoding="async" />
+   <div id={railId} ref={strip} className={styles.rail} role="region" aria-label={`${groups.find(g=>g.id===activeGroup)?.label} 특가 ${matching.length}개`} aria-describedby={railId+'-hint'} tabIndex={0} data-overflow={overflow} onPointerDown={startDrag} onPointerMove={moveDrag} onPointerUp={finishDrag} onPointerCancel={finishDrag} onLostPointerCapture={finishDrag} onDragStart={event=>event.preventDefault()} onKeyDown={moveWithKeyboard} onClickCapture={event=>{if(suppressClick.current){suppressClick.current=false;if(event.detail>0){event.preventDefault();event.stopPropagation();}}}}>
+    {matching.map(p=><article className={styles.card} data-product={p.id} key={p.id}>
+     <a href={p.links.home} target="_blank" rel="sponsored noopener noreferrer" draggable={false} onClick={()=>affiliateTrack('affiliate_click','toss','food_deal_rail',page,p.id)} aria-label={`${p.name}, ${priceFormat.format(p.price)}원. 마감 전 구매하기 (새 창)`}>
+      <img src={p.image} alt="" width={240} height={180} loading="lazy" decoding="async" draggable={false} />
       <h3 title={p.name}>{p.name}</h3>
-      <p className={styles.price}><span>{p.discountRate}% </span><strong>{p.price.toLocaleString('ko-KR')}원</strong></p><p className={styles.end}>{new Date(p.endAt!).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false})} 종료 예정</p>
+      <p className={styles.price}><span>{p.discountRate}% </span><strong>{priceFormat.format(p.price)}원</strong></p><p className={styles.end}>{deadlineFormat.format(new Date(p.endAt!))} 종료 예정</p>
       <span className={styles.cta}>마감 전 구매하기 <span aria-hidden="true">↗</span></span>
      </a>
     </article>)}
    </div>
-   <div className={styles.footer}><p className={styles.dealHint}><time dateTime={feed.checkedAt}>{new Date(feed.checkedAt).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false})}</time> 확인 · 할인율은 토스 표시 기준 · 배송비·옵션은 구매 화면 기준입니다.<span className={styles.desktopHint}> PC에서는 연결 화면의 QR코드를 스캔하세요.</span></p>{pageCount>1&&<div className={styles.controls}><button type="button" disabled={activePage===0} aria-controls={railId} aria-label="이전 특가 상품 최대 4개" onClick={()=>setDealPage(activePage-1)}>이전</button><button type="button" disabled={activePage>=pageCount-1} aria-controls={railId} aria-label={activePage>=pageCount-1?'마지막 특가 상품입니다':`특가 상품 더보기, 다음 ${Math.min(4,matching.length-(activePage+1)*4)}개`} onClick={()=>setDealPage(activePage+1)}>상품 더보기 →</button></div>}</div>
+   <p id={railId+'-hint'} className={styles.swipeHint} data-overflow={overflow}>좌우로 밀어 더 보기 · PC에서는 마우스로 끌거나 방향키를 사용하세요.</p>
+   <div className={styles.footer}><p className={styles.dealHint}><time dateTime={feed.checkedAt}>{deadlineFormat.format(new Date(feed.checkedAt))}</time> 확인 · 할인율은 토스 표시 기준 · 배송비·옵션은 구매 화면 기준입니다.<span className={styles.desktopHint}> PC에서는 연결 화면의 QR코드를 스캔하세요.</span></p></div>
  </section>;
 }

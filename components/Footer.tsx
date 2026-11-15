@@ -39,8 +39,8 @@ export default function Footer() {
                 {SITE.email}
               </a>
             </p>
-            <div className="-ml-2.5 mt-0.5">
-              <ShareLinkButton label="사이트 주소 복사" target="origin" />
+            <div className="mt-2">
+              <ShareLinkButton label="홈페이지 링크 복사" target="origin" size="md" />
             </div>
           </div>
 
@@ -50,7 +50,7 @@ export default function Footer() {
               <div className="mb-1 font-bold text-ink">둘러보기</div>
               <div className="flex flex-wrap gap-x-3 gap-y-0">
                 {BROWSE.map((l) => (
-                  <Link key={l.href} href={l.href} className="inline-flex min-h-[32px] items-center text-[13px] text-[#666] hover:text-free">{l.label}</Link>
+                  <Link key={l.href} href={l.href} prefetch={false} className="inline-flex min-h-[32px] items-center text-[13px] text-[#666] hover:text-free">{l.label}</Link>
                 ))}
               </div>
             </nav>
@@ -58,7 +58,7 @@ export default function Footer() {
               <div className="mb-1 font-bold text-ink">안내</div>
               <div className="flex flex-wrap gap-x-3 gap-y-0">
                 {INFO.map((l) => (
-                  <Link key={l.href} href={l.href} className="inline-flex min-h-[32px] items-center text-[13px] text-[#666] hover:text-free">{l.label}</Link>
+                  <Link key={l.href} href={l.href} prefetch={false} className="inline-flex min-h-[32px] items-center text-[13px] text-[#666] hover:text-free">{l.label}</Link>
                 ))}
               </div>
             </nav>
@@ -80,6 +80,7 @@ export default function Footer() {
                 <Link
                   key={sido}
                   href={`/region/${(SIDO_SLUG as Record<string, string>)[sido]}`}
+                  prefetch={false}
                   className="inline-flex min-h-[32px] items-center hover:text-free hover:underline"
                 >
                   {sido}
