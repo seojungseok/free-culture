@@ -1,9 +1,10 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import CityTourBrowser from '@/components/CityTourBrowser';
 import {getCityTours,CITY_SOURCE} from '@/lib/cityTours';
-export const metadata:Metadata={title:'전국 시티투어 코스 | 탑승 장소·요금·주변 나들이',description:'지역별 시티투어 코스의 경유지와 탑승 장소, 원본 요금·운행 조건을 확인하고 관련 관광지와 식사 후보를 함께 살펴보세요.',alternates:{canonical:'/city-tour'}};
+export const metadata:Metadata=withSearchMetadata({title:'전국 시티투어 코스 | 탑승 장소·요금·주변 나들이',description:'지역별 시티투어 코스의 경유지와 탑승 장소, 원본 요금·운행 조건을 확인하고 관련 관광지와 식사 후보를 함께 살펴보세요.',alternates:{canonical:'/city-tour'}});
 export default function CityTours(){const items=getCityTours();return <main className="mx-auto max-w-6xl px-4 py-8">
  <nav className="mb-4 text-sm text-ink-soft"><Link href="/">홈</Link> / 시티투어</nav>
  <h1 className="text-3xl font-black">전국 시티투어</h1><p className="mt-3 max-w-2xl text-sm leading-7 text-ink-soft">탑승 장소부터 경유지, 함께 둘러볼 나들이까지. 원본 자료를 정리한 코스별 안내 {items.length}개를 지역별로 찾아보세요.</p>

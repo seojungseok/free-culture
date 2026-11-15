@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
@@ -15,7 +16,7 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
  const {slug}=await params,course=getWinterCourse(slug);
  if(!course)return {robots:{index:false,follow:true}};
  const photo=winterCourseImage(course);
- return {title:course.title,description:course.intro.slice(0,155),alternates:{canonical:'/winter-travel/'+slug},openGraph:{type:'article',title:course.title,description:course.intro.slice(0,155),publishedTime:course.publishedAt,modifiedTime:course.updatedAt||course.publishedAt,...(photo?{images:[{url:photo.src,alt:photo.alt,width:photo.width,height:photo.height}]}:{})}};
+ return withSearchMetadata({title:course.title,description:course.intro.slice(0,155),alternates:{canonical:'/winter-travel/'+slug},openGraph:{type:'article',title:course.title,description:course.intro.slice(0,155),publishedTime:course.publishedAt,modifiedTime:course.updatedAt||course.publishedAt,...(photo?{images:[{url:photo.src,alt:photo.alt,width:photo.width,height:photo.height}]}:{})}});
 }
 function safeSourceUrl(value:string):string|null{
  try{const url=new URL(value);return url.protocol==='https:'?url.href:null;}catch{return null;}

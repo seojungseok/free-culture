@@ -15,6 +15,8 @@ const paths = [
   "/sitemap.xml",
   "/api/site-status",
   "/api/visitors",
+  "/rss.xml",
+  "/places/spot/missing-place-for-test",
 ];
 
 const results = [];
@@ -25,10 +27,14 @@ for (const path of paths) {
       redirect: "manual",
       signal: AbortSignal.timeout(15000),
     });
-    const body = ["/event/383591","/sitemap.xml","/api/site-status","/places/spot/130344","/api/visitors"].includes(path)
+    const body = ["/event/383591","/sitemap.xml","/api/site-status","/places/spot/130344","/api/visitors","/rss.xml"].includes(path)
       ? await response.text()
       : null;
-    const contentOk = path === '/api/visitors'
+    const contentOk = path === '/places/spot/missing-place-for-test'
+      ? response.headers.get('x-robots-tag')?.includes('noindex')
+      : path === '/rss.xml'
+      ? response.headers.get('content-type')?.includes('application/rss+xml') && body?.includes('<rss version="2.0"') && body?.includes('/experiences/') && body?.includes('<content:encoded>')
+      : path === '/api/visitors'
       ? (()=>{try{const value=JSON.parse(body);return response.headers.get('x-visitor-store')==='persistent-v1'&&Number.isSafeInteger(value.total)&&Number.isSafeInteger(value.today)&&value.total>=value.today&&value.today>=0;}catch{return false;}})()
       : path === '/api/site-status'
       ? (()=>{try{const result=JSON.parse(body);return result.ready===true&&(!process.env.EXPECTED_COMMIT||result.commit===process.env.EXPECTED_COMMIT);}catch{return false;}})()
@@ -39,7 +45,8 @@ for (const path of paths) {
       : path === "/sitemap.xml"
         ? body?.includes("https://mwohaji.kr/") && body?.includes("/event/")
         : true;
-    results.push({ path, status: response.status, ms: Math.round(performance.now() - start), ok: response.status === 200 && contentOk });
+    const expectedStatus = path === '/places/spot/missing-place-for-test' ? 404 : 200;
+    results.push({ path, status: response.status, ms: Math.round(performance.now() - start), ok: response.status === expectedStatus && contentOk });
   } catch (error) {
     results.push({ path, status: null, ms: Math.round(performance.now() - start), ok: false, error: error?.name || "RequestError" });
   }

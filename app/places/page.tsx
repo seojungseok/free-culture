@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import { Suspense } from "react";
@@ -9,13 +10,13 @@ import InitialIndexPreview from "@/components/InitialIndexPreview";
 // 목록은 하루 1회 재생성 → 새 데이터 하루 내 반영
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "나들이·가볼만한 곳 — 전국 관광지·문화시설·체험 명소",
   keywords: ["나들이", "가볼만한 곳", "주말 나들이", "전국 관광지", "문화시설", "체험 명소"],
   description:
     "전국의 관광지·박물관·과학관·수목원·체험 명소를 지역·유형별로 모았어요. 장소 소개와 지도·홈페이지 링크 제공.",
   alternates: { canonical: "/places" },
-};
+});
 
 export default function PlacesPage() {
   const total = getPlaceCount();

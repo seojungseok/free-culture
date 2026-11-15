@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -6,11 +7,11 @@ import DataFreshness from '@/components/DataFreshness';
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "소개와 정보 편집 기준",
   description: `${SITE.name}의 데이터 출처, 나들이 후보 선정 방식, 일정·요금·코스 정보를 읽는 법과 오류 수정 방법을 안내합니다.`,
   alternates: { canonical: "/about" },
-};
+});
 
 export default function AboutPage() {
   return (

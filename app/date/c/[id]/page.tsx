@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const menu = getRestaurantMenu(c.food.id);
   const menuHead = menu ? menu.split(" / ")[0] : "";
   const description = `${c.area} ${c.city} 카페데이트 코스. ${c.cafe.title}에서 커피 한잔 하고 ${distLabel(c.park.distKm)} 거리의 ${c.park.title}을 걷다가 ${c.food.title}${menuHead ? `(${menuHead})` : ""}에서 식사까지. 세 곳이 ${distLabel(c.totalKm)} 안에 모여 있어 반나절이면 충분해요.`;
-  return {
+  return withSearchMetadata({
     title,
     description,
     robots: { index: false, follow: true },
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     ],
     alternates: { canonical: `/date/c/${id}` },
     openGraph: { title, description, ...(c.image ? { images: [{ url: c.image }] } : {}), type: "article" },
-  };
+  });
 }
 
 /** 코스 한 지점 — 사진 + 소개 + 이동 정보 */

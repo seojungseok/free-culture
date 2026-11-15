@@ -1,7 +1,10 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { buildPlaceRouteIndex } from './scripts/build-place-route-index.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+// Refresh a compact ID-only guard whenever dev/build loads the current data.
+buildPlaceRouteIndex(__dirname);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TripSave from "@/components/TripSave";
 import VisitChecklist from "@/components/VisitChecklist";
 import SourceNote from "@/components/SourceNote";
@@ -52,7 +53,7 @@ export async function generateMetadata({
   const description = summary
     ? `${gu ? `${r.area} ${gu}` : r.area} ${food} ${r.title}. ${summary}.`
     : `${r.title} · ${food}. ${r.addr || r.area}`;
-  return {
+  return withSearchMetadata({
     title,
     description,
     robots: { index: hasSubstantiveRestaurantInfo(id), follow: true },
@@ -64,7 +65,7 @@ export async function generateMetadata({
     ],
     alternates: { canonical: `/food/spot/${id}` },
     openGraph: { title, description, ...(r.image ? { images: [{ url: r.image }] } : {}) },
-  };
+  });
 }
 
 export default async function FoodSpotPage({ params }: { params: Promise<{ id: string }> }) {

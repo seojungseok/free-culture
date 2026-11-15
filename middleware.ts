@@ -1,9 +1,19 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import curated from './data/curated-events.json';
 import { eventPublicationPaths, expiredEventForPath } from './lib/event-publication.mjs';
+import { missingPlaceRoute, missingPlaceHtml, placeRouteRedirect } from './lib/placeRouteGuard';
 
 export function middleware(request: NextRequest) {
   let path = request.nextUrl.pathname;
+  const destination = placeRouteRedirect(path);
+  if (destination) return NextResponse.redirect(new URL(destination, request.url), 308);
+  // Resolve before React streams a shell; a missing place must never be HTTP 200.
+  if (missingPlaceRoute(path)) {
+    return new NextResponse(missingPlaceHtml, {
+      status: 404,
+      headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'private, no-store', 'X-Robots-Tag': 'noindex, follow' },
+    });
+  }
   // Also cover any previously generated Next image URL for this poster.
   if (path === '/_next/image') {
     const image = request.nextUrl.searchParams.get('url');
@@ -26,4 +36,4 @@ export function middleware(request: NextRequest) {
   return response;
 }
 
-export const config = { matcher: ['/event/:path*', '/event-posters/:path*', '/festivals/:path*', '/kids/c/:path*', '/_next/image'] };
+export const config = { matcher: ['/places/spot/:path*', '/event/:path*', '/event-posters/:path*', '/festivals/:path*', '/kids/c/:path*', '/_next/image'] };

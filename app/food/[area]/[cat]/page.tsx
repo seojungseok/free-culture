@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -31,13 +32,13 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
   const c = foodCatFromSlug(cat);
   if (!sido || !c) return { title: "맛집을 찾을 수 없습니다" };
   const n = filterRestaurants({ area: sido, cat3: c.code }).length;
-  return {
+  return withSearchMetadata({
     title: `${sido} ${c.label} 맛집 ${n.toLocaleString()}곳 — 위치·연락처·영업정보`,
     description: `${sido} ${c.label} 맛집 ${n.toLocaleString()}곳. 위치·지도·전화·영업시간을 한눈에 확인하고 가볼 만한 ${c.label} 음식점을 찾아보세요.`,
     keywords: [`${sido} ${c.label}`, `${sido} ${c.label} 맛집`, `${sido} ${c.label} 맛집 추천`, `${sido} 맛집`],
     robots: { index: false, follow: true },
     alternates: { canonical: `/food/${area}/${cat}` },
-  };
+  });
 }
 
 export default async function FoodAreaCatPage({ params }: { params: Promise<{ area: string; cat: string }> }) {

@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import NextStop from "@/components/NextStop";
 import VisitChecklist from "@/components/VisitChecklist";
 import SourceNote from "@/components/SourceNote";
@@ -34,14 +35,27 @@ export function generateStaticParams() {
   return []; // 모든 상세는 온디맨드 생성 후 캐시
 }
 
+function resolvePlace(id: string) {
+  const samePlace = samePlaceTarget(id);
+  if (samePlace) permanentRedirect(`/places/spot/${samePlace}`);
+  if (isCampingDupe(id)) {
+    const target = campingDupeTarget(id);
+    permanentRedirect(target ? `/camping/${target}` : '/camping');
+  }
+  const spot = getTourById(id);
+  if (spot) return spot;
+  if (getRestaurantById(id)) permanentRedirect(`/food/spot/${id}`);
+  notFound();
+}
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const spot = getTourById(id);
-  if (!spot) return { title: "장소를 찾을 수 없습니다" }; // 음식점은 /food/spot/[id]로 301
+  // Resolve missing/moved records before metadata is sent to blocking crawlers.
+  const spot = resolvePlace(id);
   const type = tourTypeLabel(spot.type);
   // 발행글 있으면 그 도입부, 없으면 TourAPI 소개글, 그것도 없으면 롱테일 템플릿
   const article = getArticle(id);
@@ -69,7 +83,7 @@ export async function generateMetadata({
       ? `${spot.title}(${spot.area}) · ${visitFacts.join(" · ")}`.slice(0, 160)
       : `${spot.title} · ${spot.area} ${type}. ${spot.addr}`.slice(0, 160);
   const title = `${spot.title} — ${spot.area} 나들이·가볼만한 곳`;
-  return {
+  return withSearchMetadata({
     title,
     description,
     robots: { index: hasSubstantivePlaceInfo(id), follow: true },
@@ -93,7 +107,7 @@ export async function generateMetadata({
       description,
       ...(spot.image ? { images: [{ url: spot.image }] } : {}),
     },
-  };
+  });
 }
 
 export default async function SpotDetailPage({
@@ -102,19 +116,7 @@ export default async function SpotDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const samePlace = samePlaceTarget(id);
-  if (samePlace) permanentRedirect(`/places/spot/${samePlace}`);
-  // 캠핑으로 분리된 장소 → /camping 상세로 영구 이동(색인 이전)
-  if (isCampingDupe(id)) {
-    const t = campingDupeTarget(id);
-    permanentRedirect(t ? `/camping/${t}` : "/camping");
-  }
-  const spot = getTourById(id);
-  if (!spot) {
-    // 음식점은 맛집 탐방으로 이관 → 예전 주소는 새 주소로 영구 이동(색인 이전)
-    if (getRestaurantById(id)) permanentRedirect(`/food/spot/${id}`);
-    notFound();
-  }
+  const spot = resolvePlace(id);
 
   const article = getArticle(id); // 발행된 자체 소개글(있으면 본문으로)
   // 방문 팁·볼거리: 미리 수집한 캐시로만 서빙(런타임 API 호출 없음)

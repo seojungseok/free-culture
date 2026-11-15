@@ -1,13 +1,14 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "문의와 정보 수정 제보",
   description: `${SITE.name}의 행사·장소·코스·캠핑장 정보 오류, 등록 요청, 권리 관련 문의를 접수하는 방법입니다.`,
   alternates: { canonical: "/contact" },
-};
+});
 
 const MAIL = SITE.email;
 const mailLink = (subject: string, body: string) => `mailto:${MAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

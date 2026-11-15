@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -23,12 +24,12 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
   const sido = sidoFromSlug(area);
   if (!sido) return { title: "지역을 찾을 수 없습니다" };
   const n = filterRestaurants({ area: sido }).length;
-  return {
+  return withSearchMetadata({
     title: `${sido} 맛집 — 한식·중식·일식·카페 ${n.toLocaleString()}곳`,
     description: `${sido} 맛집 ${n.toLocaleString()}곳을 업종(한식·서양식·일식·중식·카페·이색)으로 골라보세요. 위치·연락처·영업정보 제공.`,
     keywords: [`${sido} 맛집`, `${sido} 맛집 추천`, `${sido} 한식`, `${sido} 카페`, `${sido} 맛집 탐방`],
     alternates: { canonical: `/food/${area}` },
-  };
+  });
 }
 
 export default async function FoodAreaPage({ params }: { params: Promise<{ area: string }> }) {

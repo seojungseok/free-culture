@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SITE } from "@/lib/site";
+import { experienceFeedUrl } from '@/lib/searchMetadata';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
     template: `%s · ${SITE.name}`,
   },
   description: SITE.description,
+  alternates: { types: { 'application/rss+xml': experienceFeedUrl } },
   keywords: [
     "무료 전시",
     "무료 공연",

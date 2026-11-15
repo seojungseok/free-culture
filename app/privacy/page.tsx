@@ -1,13 +1,14 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "개인정보처리방침",
   description: `${SITE.name}의 이메일 문의, 위치 기능, 브라우저 저장, 방문 분석 및 제휴 링크에 관한 안내입니다.`,
   alternates: { canonical: "/privacy" },
-};
+});
 
 export default function PrivacyPage() {
   return (

@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -7,11 +8,11 @@ import { COOKING_CATEGORIES, cookingCategory, getPrepArticles, isCookingPrepArti
 import type { PrepArticle } from '@/lib/weekend-prep/types';
 
 export const revalidate = 86400;
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: '캠핑요리 준비하기 | 국물요리·볶음요리·볶음밥·찌개',
   description: '캠핑에서 만들 요리를 국물요리·볶음요리·볶음밥·찌개로 나누어 재료 체크리스트와 조리 가이드를 확인하세요.',
   alternates: { canonical: '/camping/cooking' },
-};
+});
 
 const CATEGORIES: CookingCategory[] = COOKING_CATEGORIES;
 

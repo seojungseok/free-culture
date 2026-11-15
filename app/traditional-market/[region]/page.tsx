@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import TraditionalMarketUnavailable from "@/components/TraditionalMarketUnavailable";
@@ -20,12 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ region: s
   const raw = (await params).region;
   const region = regionFromSlug(decodeURIComponent(raw));
   if (!MARKET_REGIONS.includes(region)) return {};
-  return {
+  return withSearchMetadata({
     title: `${region} · 현재 공개하지 않는 페이지`,
     description: "다른 나들이 장소와 이번 주말 갈 곳을 찾아보세요.",
     robots: { index: false, follow: true },
     alternates: { canonical: `/traditional-market/${raw}` },
-  };
+  });
 }
 
 export default async function TraditionalMarketRegionPage({ params }: { params: Promise<{ region: string }> }) {

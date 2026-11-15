@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import { Suspense } from "react";
@@ -26,12 +27,12 @@ export async function generateMetadata({
   const sido = sidoFromSlug(area);
   if (!sido) return { title: "지역을 찾을 수 없습니다" };
   const n = getPlaces({ area: sido }).length;
-  return {
+  return withSearchMetadata({
     title: `${sido} 나들이·가볼만한 곳 — 관광지·문화시설·체험 ${n.toLocaleString()}곳`,
     description: `${sido}에서 나들이하기 좋은 관광지·박물관·과학관·수목원·체험 명소 ${n.toLocaleString()}곳. 장소 소개와 지도·홈페이지 링크를 확인하세요.`,
     keywords: [`${sido} 나들이`, `${sido} 가볼만한 곳`, `${sido} 주말 나들이`, `${sido} 관광지`, `${sido} 문화시설`],
     alternates: { canonical: `/places/${area}` },
-  };
+  });
 }
 
 export default async function PlacesAreaPage({

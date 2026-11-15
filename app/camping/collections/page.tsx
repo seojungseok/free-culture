@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -5,14 +6,14 @@ import { getAllBundles } from "@/lib/campingCollections";
 import { SITE } from "@/lib/site";
 import { Band, Container } from "@/components/Band";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: {
     absolute: `캠핑장 모음 — 지역·유형별 큐레이션 | ${SITE.name}`,
   },
   description: "지역별 반려동물 캠핑장·글램핑·오토캠핑·카라반 모음. 데이터로 자동 정리한 캠핑장 큐레이션.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/camping/collections" },
-};
+});
 
 const THEME_ORDER = ["pet", "glamp", "auto", "carav", "elec"];
 const THEME_LABEL: Record<string, string> = { pet: "🐾 반려동물 동반", glamp: "⛺ 글램핑", auto: "🚙 오토캠핑", carav: "🚐 카라반", elec: "⚡ 전기 되는 곳" };

@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import ExperienceHome from '@/components/ExperienceHome';
 import type { Metadata } from "next";
 import HomeExplorer, { type HomeItem } from "@/components/HomeExplorer";
@@ -19,11 +20,11 @@ import { hasSubstantivePlaceInfo, hasSubstantiveCampInfo } from "@/lib/placeQual
 import seasonalCatalogue from '@/data/seasonal-shopping.json';
 
 export const revalidate = 60;
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: { absolute: "이번 주말 어디 가지? 전국 가볼만한 곳·축제·여행코스 추천 · 주말에 뭐하지?" },
   description: "이번 주말 갈 만한 전국 문화행사·나들이·여행코스를 지역과 테마로 빠르게 찾아보세요. 무료 행사, 아이와 갈 곳, 데이트 코스도 한곳에 모았습니다.",
   alternates: { canonical: "/" },
-};
+});
 
 const regionGroups: Record<string, string[]> = {
   서울: ["서울"], 경기: ["경기"], 인천: ["인천"], 강원: ["강원"],

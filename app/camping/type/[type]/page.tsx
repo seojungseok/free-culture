@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -21,13 +22,13 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   const t = campTypeFromSlug(type);
   if (!t) return { title: "캠핑장을 찾을 수 없습니다" };
   const n = filterCamps({ type: t.label }).length;
-  return {
+  return withSearchMetadata({
     title: `전국 ${t.label} ${n.toLocaleString()}곳 — 지역별 ${t.label} 추천`,
     description: `전국 ${t.label} ${n.toLocaleString()}곳을 지역별로 모았어요. 요금·예약·편의시설·지도 정보를 확인하고 가볼 만한 ${t.label}을 찾아보세요.`,
     keywords: [`${t.label}`, `전국 ${t.label}`, `${t.label} 추천`, `${t.label} 예약`],
     robots: { index: false, follow: true },
     alternates: { canonical: `/camping/type/${type}` },
-  };
+  });
 }
 
 export default async function CampingTypePage({ params }: { params: Promise<{ type: string }> }) {

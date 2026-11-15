@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -22,12 +23,12 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
   const sido = sidoFromSlug(area);
   if (!sido) return { title: "지역을 찾을 수 없습니다" };
   const n = filterCamps({ area: sido }).length;
-  return {
+  return withSearchMetadata({
     title: `${sido} 캠핑장 ${n.toLocaleString()}곳 — 글램핑·오토캠핑·카라반`,
     description: `${sido} 캠핑장 ${n.toLocaleString()}곳을 유형(글램핑·오토캠핑·카라반)·반려동물 동반으로 골라보세요. 요금·예약·지도 정보 제공.`,
     keywords: [`${sido} 캠핑장`, `${sido} 글램핑`, `${sido} 오토캠핑`, `${sido} 반려동물 캠핑장`, `${sido} 캠핑`],
     alternates: { canonical: `/camping/region/${area}` },
-  };
+  });
 }
 
 export default async function CampingRegionPage({ params }: { params: Promise<{ area: string }> }) {

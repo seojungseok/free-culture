@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
   const list = dateCoursesByArea(sido);
   const cities = dateCityCounts(sido);
   const top = cities.slice(0, 5).map((c) => c.city);
-  return {
+  return withSearchMetadata({
     title: `${sido} 카페데이트 — 카페·공원·맛집 코스 ${list.length}곳`,
     description: `${sido} 카페데이트 코스 ${list.length}곳. ${top.join("·")} 등 ${cities.length}개 동네에서 카페부터 공원·맛집까지 걸어서 이어지는 반나절 코스를 골라보세요.`,
     robots: { index: false, follow: true },
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
       ...top.map((c) => `${c} 카페데이트`),
     ],
     alternates: { canonical: `/date/${slug}` },
-  };
+  });
 }
 
 export default async function DateAreaPage({ params }: { params: Promise<{ area: string }> }) {

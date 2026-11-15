@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from "@/components/TossTopDeals";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -7,12 +8,12 @@ import { getAllFestivals } from "@/lib/festivals";
 
 export const revalidate = 10800;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "전국 축제 일정 | 지역별 축제·가볼만한곳",
   description: "전국 축제 일정을 지역과 기간별로 찾아보세요. 진행 중인 축제, 예정 축제, 축제 장소와 공식 홈페이지를 한눈에 확인할 수 있습니다.",
   keywords: ["전국 축제", "축제 일정", "지역 축제", "가을 축제", "축제 가볼만한곳"],
   alternates: { canonical: `${SITE.url.replace(/\/$/, "")}/festivals` },
-};
+});
 
 export default function FestivalsPage() {
   const festivals = getAllFestivals();

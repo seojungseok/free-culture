@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from "@/components/TossTopDeals";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -11,12 +12,12 @@ import InitialIndexPreview from "@/components/InitialIndexPreview";
 
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "전국 여행코스 — 당일치기·1박2일·2박3일 국내 여행 코스",
   description: "전국 여행코스를 지역·기간·테마로 골라보세요. 공식 축제 일정이 확인된 지역은 가을여행과 축제를 함께 찾을 수 있는 코스로 안내합니다.",
   keywords: ["국내여행 코스", "당일치기", "1박2일", "여행코스 추천", "가을여행", "가을축제"],
   alternates: { canonical: "/course" },
-};
+});
 
 export default function CoursePage() {
   const total = getCourseCount();

@@ -1,12 +1,13 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import { SITE } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "이용약관",
   description: `${SITE.name} 이용약관입니다.`,
   alternates: { canonical: "/terms" },
-};
+});
 
 export default function TermsPage() {
   return (

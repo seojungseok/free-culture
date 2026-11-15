@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import NextStop from "@/components/NextStop";
 import NearbyParking from "@/components/NearbyParking";
@@ -52,7 +53,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const ev = eventForDetail(id);
-  if (!ev) return { title: "행사를 찾을 수 없습니다" };
+  if (!ev) notFound();
   const where = ev.addressConflict ? ev.place || "장소 확인 필요" : placeText(ev.area, ev.sigungu, ev.place);
   const contents = eventContentsText(ev.contents).replace(/\s+/g, " ");
   const desc = ev.description || `${ev.endDate < todayYmd() ? "종료된 행사 · " : ""}${ev.priceLabel} · ${fmtRange(ev.startDate, ev.endDate)} · ${where}. ${
@@ -66,7 +67,7 @@ export async function generateMetadata({
     `${ev.area} 주말 나들이`,
     ev.title,
   ];
-  return {
+  return withSearchMetadata({
     title: ev.seoTitle || ev.title,
     description: desc,
     robots: ev.endDate < todayYmd() || !hasSubstantiveEventInfo(ev) ? { index: false, follow: true } : undefined,
@@ -79,7 +80,7 @@ export async function generateMetadata({
       url: `/event/${ev.id}`,
       type: "article",
     },
-  };
+  });
 }
 
 export default async function EventPage({

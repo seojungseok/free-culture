@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import Link from 'next/link';
 import type {Metadata} from 'next';
@@ -10,7 +11,7 @@ import type {WeekendCandidate} from '@/lib/weekendDiscovery';
 import {SIDO_SLUG} from '@/lib/classify';
 import {getKidTours} from '@/lib/tour';
 export const revalidate=3600;
-export const metadata:Metadata={title:'이번 주말 가볼 만한 곳 | 지역별 행사·아이와 나들이',description:'이번 주말 서울·경기·부산·제주 등 지역별로 날짜가 맞는 행사와 나들이 장소를 찾아보세요. 아이와·데이트·무료 조건도 비교할 수 있습니다.',alternates:{canonical:'/weekend'}};
+export const metadata:Metadata=withSearchMetadata({title:'이번 주말 가볼 만한 곳 | 지역별 행사·아이와 나들이',description:'이번 주말 서울·경기·부산·제주 등 지역별로 날짜가 맞는 행사와 나들이 장소를 찾아보세요. 아이와·데이트·무료 조건도 비교할 수 있습니다.',alternates:{canonical:'/weekend'}});
 export default function WeekendPage(){
  const {start,end}=weekendRangeYmd(),month=Number(start.slice(4,6));
  const season=month>=3&&month<=5?'spring':month>=6&&month<=8?'summer':month>=9&&month<=11?'autumn':'winter';

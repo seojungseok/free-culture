@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -29,13 +30,13 @@ export async function generateMetadata({ params }: { params: Promise<{ month: st
   const current = currentKstMonth();
   const range = monthRangeYmd(current.year, n - 1);
   const eventCount = getAllEvents().filter((event) => event.startDate <= range.end && event.endDate >= range.start).length;
-  return {
+  return withSearchMetadata({
     title: `${n}월에 뭐하지? · ${MONTH_THEMES[n - 1]} 전국 행사·축제`,
     description: `${n}월에 가볼 만한 전국 문화행사와 축제, 지역별 나들이를 날짜·지역·가격 필터로 찾아보세요.`,
     keywords: [`${n}월에 뭐하지`, `${n}월 가볼만한곳`, `${n}월 행사`, `${n}월 축제`, "전국 문화행사", "주말 나들이"],
     robots: n < current.month || eventCount < 3 ? { index: false, follow: true } : undefined,
     alternates: { canonical: `/month/${n}` },
-  };
+  });
 }
 
 type Festival = { id: string; title: string; addr: string; area: string; image?: string; startDate: string; endDate: string };

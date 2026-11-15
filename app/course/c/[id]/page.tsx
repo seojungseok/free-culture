@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import TripSave from "@/components/TripSave";
 import type { Metadata } from "next";
@@ -42,14 +43,14 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const desc = c.content.replace(/[#*>`-]/g, " ").replace(/\s+/g, " ").trim().slice(0, 150);
   const atts = courseAttractions(c); // 실제 노출 관광지(식당 제외·상한 적용)
   const firstStop = courseTitleCounts.get(courseTitleKey(c))! > 1 ? ` · ${atts[0]?.name || ""}` : "";
-  return {
+  return withSearchMetadata({
     title: `${c.title}${firstStop} — ${c.area} ${durationLabel(c.duration)} 여행코스`,
     description: desc || `${c.area} ${durationLabel(c.duration)} 여행코스. ${atts.map((s) => s.name).slice(0, 4).join(", ")} 등을 잇는 여행 일정.`,
     robots: { index: isIndexableCourse(id), follow: true },
     keywords: [`${c.area} 여행코스`, `${c.area} ${durationLabel(c.duration)}`, ...atts.slice(0, 3).map((s) => s.name)],
     alternates: { canonical: `/course/c/${id}` },
     openGraph: { title: c.title, description: desc, images: c.image ? [c.image] : [], type: "article" },
-  };
+  });
 }
 
 export default async function CourseDetailPage({ params }: { params: Promise<{ id: string }> }) {

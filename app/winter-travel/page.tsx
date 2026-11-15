@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import WinterCourseBrowser from '@/components/WinterCourseBrowser';
@@ -10,7 +11,7 @@ export function generateMetadata():Metadata{
  const count=getPublicWinterCourses().length;
  const title='전국 겨울여행'+(count?' '+count+'코스':'')+' · 당일치기와 1박 2일';
  const description='서울·인천·경기 수도권부터 전국 겨울 바다와 미술관까지. 당일치기와 1박 2일 코스를 지역별로 고르고 일정, 이동 방법, 숙박 권역과 공식 안내를 확인하세요.';
- return {title,description,alternates:{canonical:'/winter-travel'},robots:{index:count>0,follow:true},openGraph:{type:'website',title,description,url:'/winter-travel'}};
+ return withSearchMetadata({title,description,alternates:{canonical:'/winter-travel'},robots:{index:count>0,follow:true},openGraph:{type:'website',title,description,url:'/winter-travel'}});
 }
 export default function WinterTravelPage(){
  const courses=getPublicWinterCourses();

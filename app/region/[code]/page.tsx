@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type {Metadata} from 'next';
 import Link from 'next/link';
@@ -13,7 +14,7 @@ export function generateStaticParams(){return Object.values(SIDO_SLUG).map(code=
 export async function generateMetadata({params}:{params:Promise<{code:string}>}):Promise<Metadata>{
  const {code}=await params,area=sidoFromSlug(code);if(!area)return {};
  const hub=regionHub(area,code);
- return {title:{absolute:`${area}에서 이번 주말 뭐하지? 가볼만한 곳·행사·나들이 | 주말에 뭐하지?`},description:`${area}의 ${hub.sections.slice(0,5).map(s=>s.label).join('·')}를 한곳에서 비교하세요. 날짜가 맞는 행사와 방문할 장소, 코스의 이용 조건을 확인할 수 있습니다.`,alternates:{canonical:`/region/${code}`}};
+ return withSearchMetadata({title:{absolute:`${area}에서 이번 주말 뭐하지? 가볼만한 곳·행사·나들이 | 주말에 뭐하지?`},description:`${area}의 ${hub.sections.slice(0,5).map(s=>s.label).join('·')}를 한곳에서 비교하세요. 날짜가 맞는 행사와 방문할 장소, 코스의 이용 조건을 확인할 수 있습니다.`,alternates:{canonical:`/region/${code}`}});
 }
 export default async function RegionPage({params}:{params:Promise<{code:string}>}){
  const {code}=await params,area=sidoFromSlug(code);if(!area)notFound();const {sections,recommended,weekend}=regionHub(area,code);

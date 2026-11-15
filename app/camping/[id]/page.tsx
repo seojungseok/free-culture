@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import NextStop from "@/components/NextStop";
 import VisitChecklist from "@/components/VisitChecklist";
 import SourceNote from "@/components/SourceNote";
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const region = [c.area, c.sigungu].filter(Boolean).join(" ");
   const location = campTitleCounts.get(campTitleKey(c))! > 1 ? ` ${c.addr.split(/\s+/).slice(-2).join(" ")}` : "";
   const facs = Object.entries(c.facilities).filter(([, v]) => v).map(([k]) => k);
-  return {
+  return withSearchMetadata({
     title: {
       absolute: `${c.name} - ${region}${location} ${type} | ${SITE.name}`,
     },
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     keywords: [`${c.area} ${type}`, `${c.sigungu} 캠핑장`, `${c.area} 캠핑장`, c.pet ? `${c.area} 반려동물 캠핑장` : "", c.name].filter((k) => k && k.trim()),
     alternates: { canonical: `/camping/${id}` },
     openGraph: { title: `${c.name} - ${region} ${type}`, ...(c.image ? { images: [{ url: c.image }] } : {}) },
-  };
+  });
 }
 
 export default async function CampDetailPage({ params }: { params: Promise<{ id: string }> }) {

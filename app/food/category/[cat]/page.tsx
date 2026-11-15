@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -22,13 +23,13 @@ export async function generateMetadata({ params }: { params: Promise<{ cat: stri
   const c = foodCatFromSlug(cat);
   if (!c) return { title: "맛집을 찾을 수 없습니다" };
   const n = filterRestaurants({ cat3: c.code }).length;
-  return {
+  return withSearchMetadata({
     title: `전국 ${c.label} 맛집 ${n.toLocaleString()}곳 — 지역별 ${c.label} 추천`,
     description: `전국 ${c.label} 맛집 ${n.toLocaleString()}곳을 지역별로 모았어요. 위치·전화·영업정보를 확인하고 가볼 만한 ${c.label} 음식점을 찾아보세요.`,
     keywords: [`${c.label} 맛집`, `전국 ${c.label} 맛집`, `${c.label} 맛집 추천`, `${c.label} 맛집 순위`],
     robots: { index: false, follow: true },
     alternates: { canonical: `/food/category/${cat}` },
-  };
+  });
 }
 
 export default async function FoodCategoryPage({ params }: { params: Promise<{ cat: string }> }) {

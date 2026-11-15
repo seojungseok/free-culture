@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -25,18 +26,18 @@ const THEME_LABEL: Record<string, { label: string; emoji: string }> = {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   const c = getKidCourse(id);
-  if (!c) return { title: "코스를 찾을 수 없습니다" };
+  if (!c) notFound();
   const th = THEME_LABEL[c.theme]?.label || "아이와 함께";
   const headline = kidHeadline(c.theme, c.spot.title);
   const title = `${headline} — ${c.area} ${c.city} 아이와 함께 코스`;
   const description = `${c.area} ${c.city} 아이와 함께 ${th} 코스. ${[c.spot.title,c.park?.title,c.food?.title].filter(Boolean).join(' → ')} 순서의 방문 후보와 위치를 확인하세요.`;
-  return {
+  return withSearchMetadata({
     title, description,
     robots: { index: isIndexableKidCourse(c), follow: true },
     keywords: [`${c.city} 아이와 갈만한 곳`, `${c.area} 아이와 함께`, `${c.city} ${th}`, c.spot.title, headline, `${c.city} 아이 나들이`, `${c.city} 키즈`],
     alternates: { canonical: `/kids/c/${id}` },
     openGraph: { title, description, ...(c.image ? { images: [{ url: c.image }] } : {}), type: "article" },
-  };
+  });
 }
 
 function Stop({ stop, label, emoji, fromTitle, detail, description }: { stop: KidStop; label: string; emoji: string; fromTitle?: string; detail?: string; description?: string }) {

@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const b = getBundle(slug);
   if (!b) return { title: "캠핑 모음을 찾을 수 없습니다" };
-  return {
+  return withSearchMetadata({
     title: {
       absolute: `${b.title} ${b.count}곳 | ${SITE.name}`,
     },
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     robots: { index: false, follow: true },
     keywords: b.keywords,
     alternates: { canonical: `/camping/collections/${b.slug}` },
-  };
+  });
 }
 
 export default async function BundlePage({ params }: { params: Promise<{ slug: string }> }) {

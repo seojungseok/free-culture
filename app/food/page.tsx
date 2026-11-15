@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from "@/components/TossTopDeals";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -8,12 +9,12 @@ import Link from "next/link";
 
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "전국 맛집 — 지역·업종별 맛집 탐방",
   description: "전국 맛집을 지역과 업종(한식·중식·일식·카페 등)으로 골라보세요. 위치·연락처·영업정보 제공.",
   keywords: ["맛집", "지역 맛집", "맛집 탐방", "전국 음식점"],
   alternates: { canonical: "/food" },
-};
+});
 
 function slimRestaurant(r: Restaurant): RestaurantRow {
   return [r.id, r.title, r.addr, r.area, r.image, r.cat3 || "", r.phone || ""];

@@ -1,13 +1,14 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import type { Metadata } from "next";
 import { getCheap } from "@/lib/data";
 import CollectionView from "@/components/CollectionView";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "1만원 이하 전시·공연",
   description:
     "1만원 이하로 부담 없이 즐길 수 있는 전국 전시·공연·문화행사. 가성비 좋은 문화생활을 찾아보세요.",
   alternates: { canonical: "/cheap" },
-};
+});
 
 export default function CheapPage() {
   const events = getCheap();

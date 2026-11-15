@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
@@ -15,7 +16,7 @@ type Props={params:Promise<{collection:string}>};
 export async function generateMetadata({params}:Props):Promise<Metadata>{
  const {collection:slug}=await params,c=catalogue.collections.find(c=>c.slug===slug);
  if(!c)return {};
- return {title:c.title,description:c.description,alternates:{canonical:SITE.url+'/shopping/'+c.slug},openGraph:{title:c.title,description:c.description,images:catalogue.campaigns.filter(campaign=>campaign.key===c.banner).map(campaign=>({url:campaign.art}))}};
+ return withSearchMetadata({title:c.title,description:c.description,alternates:{canonical:SITE.url+'/shopping/'+c.slug},openGraph:{title:c.title,description:c.description,images:catalogue.campaigns.filter(campaign=>campaign.key===c.banner).map(campaign=>({url:campaign.art}))}});
 }
 export default async function ShoppingCollectionPage({params}:Props){
  const {collection:slug}=await params,c=catalogue.collections.find(c=>c.slug===slug);

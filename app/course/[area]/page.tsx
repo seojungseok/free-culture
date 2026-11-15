@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -21,13 +22,13 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
   const area = sidoFromSlug(slug);
   if (!area) return {};
   const hasIndexableCourses = filterCourses({ area }).length > 0;
-  return {
+  return withSearchMetadata({
     title: `${area} 여행코스 — 당일치기·1박2일 ${area} 여행 일정 추천`,
     description: `${area} 여행코스를 기간·테마별로 모았어요. ${area} 가볼만한 곳을 이어 하루 동선으로, 밥집까지 함께. 당일치기부터 1박2일까지.`,
     keywords: [`${area} 여행코스`, `${area} 여행`, `${area} 당일치기`, `${area} 1박2일`, `${area} 가볼만한곳`],
     robots: hasIndexableCourses ? undefined : { index: false, follow: true },
     alternates: { canonical: `/course/${slug}` },
-  };
+  });
 }
 
 export default async function CourseAreaPage({ params }: { params: Promise<{ area: string }> }) {

@@ -1,15 +1,16 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import type { Metadata } from "next";
 import { getFree } from "@/lib/data";
 import CollectionView from "@/components/CollectionView";
 import { addDaysYmd, todayYmd } from "@/lib/dates";
 import PosterCard from "@/components/PosterCard";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "전국 무료 문화행사: 오늘 진행 중·곧 열리는 체험·전시·공연",
   description:
     "오늘 진행 중인 무료 전시·공연과 앞으로 30일 안에 열리는 무료 문화행사를 확인하세요. 체험 프로그램의 일정·장소·사전 신청 조건을 안내합니다.",
   alternates: { canonical: "/free" },
-};
+});
 
 export default function FreePage() {
   // 완전 무료 + 조건부 무료 포함

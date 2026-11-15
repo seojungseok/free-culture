@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from "@/components/TossTopDeals";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -10,14 +11,14 @@ import CampingCookingGuide from "@/components/CampingCookingGuide";
 
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: {
     absolute: "전국 캠핑장 추천 | 글램핑·오토캠핑·카라반 | 주말에뭐하지",
   },
   description: "전국 캠핑장을 유형(글램핑·오토캠핑·카라반)·편의시설(전기·샤워·온수)·반려동물 동반으로 골라보세요. 요금·예약·지도 정보 제공.",
   keywords: ["전국 캠핑장", "글램핑", "오토캠핑", "카라반", "반려동물 캠핑장"],
   alternates: { canonical: "/camping" },
-};
+});
 
 const SIDO_NAME: Record<string, string> = {
   경기: "경기도",

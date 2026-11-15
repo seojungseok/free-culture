@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {SIDO_LIST} from '@/lib/classify';
@@ -9,7 +10,7 @@ import PublicDiscoverySchema from '@/components/PublicDiscoverySchema';
 export const revalidate=3600;
 const title='이동·영유아 편의정보로 나들이 찾기';
 const description='휠체어 출입구와 이동 경로, 장애인 화장실, 유모차 대여·수유실 등 공공 편의정보를 지역별로 확인하세요. 실제 이용 조건과 제한 사항을 함께 보여드립니다.';
-export async function generateMetadata({searchParams}:{searchParams:Promise<DiscoveryQuery>}):Promise<Metadata>{return {title,description,alternates:{canonical:'/accessible-travel'},...(Object.values(await searchParams).some(Boolean)?{robots:{index:false,follow:true}}:{})};}
+export async function generateMetadata({searchParams}:{searchParams:Promise<DiscoveryQuery>}):Promise<Metadata>{return withSearchMetadata({title,description,alternates:{canonical:'/accessible-travel'},...(Object.values(await searchParams).some(Boolean)?{robots:{index:false,follow:true}}:{})});}
 export default async function AccessibleTravelPage({searchParams}:{searchParams:Promise<DiscoveryQuery>}){
  const query=await searchParams,area=queryValue(query,'area'),feature=queryValue(query,'feature'),q=queryValue(query,'q').trim().slice(0,100);
  const all=accessiblePlaces(),places=all.filter(place=>!area||place.area===area).filter(place=>!q||[place.title,place.address].join(' ').includes(q)).filter(place=>feature==='family'?familyFields.some(key=>place.facts[key]):feature==='route'?!!(place.facts.route||place.facts.exit):feature==='restroom'?!!place.facts.restroom:true).sort((a,b)=>a.area.localeCompare(b.area,'ko')||a.title.localeCompare(b.title,'ko'));

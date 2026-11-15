@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -13,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const n = getDateCourses().length;
   const title = `내 주변 카페데이트 코스 ${n}곳 — 카페·공원·맛집 반나절 코스`;
   const description = `내 위치에서 가까운 카페데이트 코스를 걸어서·차로 나눠 찾아보세요. 카페에서 시작해 공원과 맛집까지 이어지는 반나절 데이트 코스 ${n}곳, 지역별로도 볼 수 있어요.`;
-  return {
+  return withSearchMetadata({
     title,
     description,
     keywords: [
@@ -23,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: { canonical: "/date" },
     openGraph: { title, description, url: `${SITE.url}/date`, type: "website" },
     twitter: { card: "summary", title, description },
-  };
+  });
 }
 
 export default function DateHubPage() {

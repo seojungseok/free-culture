@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -23,13 +24,13 @@ export async function generateMetadata({ params }: { params: Promise<{ theme: st
   const kw = th.key === "바다피서"
     ? ["여름 여행코스", "바다 여행코스", "해수욕장 코스", "여름휴가 가볼만한곳"]
     : [`${th.label} 여행코스`, `${th.label} 코스`, "국내여행 코스"];
-  return {
+  return withSearchMetadata({
     title: `${th.label} 여행코스 — 전국 ${th.label} 테마 여행 일정`,
     description: `전국 ${th.label} 여행코스 모음. 테마에 딱 맞는 곳들을 이어 만든 하루 여행 동선을 지역별로 골라보세요.`,
     keywords: kw,
     alternates: { canonical: `/course/theme/${slug}` },
     robots: { index: false, follow: true },
-  };
+  });
 }
 
 export default async function CourseThemePage({ params }: { params: Promise<{ theme: string }> }) {

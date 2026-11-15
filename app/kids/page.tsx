@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from "@/components/TossTopDeals";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -14,14 +15,14 @@ export const revalidate = 86400;
 export function generateMetadata(): Metadata {
   const title = "아이와 가볼 만한 곳 | 지역별 장소와 테마 코스";
   const description = "서울·경기·부산·제주에서 아이와 갈 장소를 지역별로 살펴보세요. 동물·놀이·배움·자연 테마 코스는 하루 일정 후보로 비교할 수 있습니다.";
-  return {
+  return withSearchMetadata({
     title,
     description,
     keywords: ["아이와 갈만한 곳", "아이랑 가볼만한 곳", "아이와 함께", "실내 아이와", "비오는날 아이와", "가족 나들이", "아이 체험", "키즈 나들이", "아이 데리고 갈만한 곳"],
     alternates: { canonical: "/kids" },
     openGraph: { title, description, url: `${SITE.url}/kids`, type: "website" },
     twitter: { card: "summary", title, description },
-  };
+  });
 }
 
 export default function KidsPage() {

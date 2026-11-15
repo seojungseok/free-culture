@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -18,17 +19,17 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const festival = getFestivalById((await params).id);
-  if (!festival) return { title: "축제를 찾을 수 없습니다" };
+  if (!festival) notFound();
   const description = eventContentsText(festival.description || "");
   const duplicateEventId = festival.id.startsWith("event-") ? festival.id.slice(6) : "";
   const searchValue = !duplicateEventId && festival.endDate >= todayYmd() && (festival.description || "").trim().length >= 150;
-  return {
+  return withSearchMetadata({
     title: `${festival.title} | ${festival.area} 축제 일정`,
     description: (description || `${festival.title} · ${festival.area} · ${fmtMd(festival.startDate)} ~ ${fmtMd(festival.endDate)}`).replace(/\s+/g, " ").slice(0, 160),
     robots: searchValue ? undefined : { index: false, follow: true },
     alternates: { canonical: duplicateEventId ? `/event/${duplicateEventId}` : `/festivals/${festival.id}` },
     openGraph: { title: festival.title, description, images: festival.image ? [{ url: festival.image }] : undefined, type: "article" },
-  };
+  });
 }
 
 const introLabels: Record<string, string> = { sponsor: "주최·주관", sponsorTel: "주최 측 문의", program: "행사 프로그램" };

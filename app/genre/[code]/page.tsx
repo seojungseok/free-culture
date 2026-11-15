@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -19,11 +20,11 @@ export async function generateMetadata({
   const { code } = await params;
   const label = genreLabelOf(code);
   const n = getByGenre(code).length;
-  return {
+  return withSearchMetadata({
     title: `${label} — 전국 무료·저렴 ${label} 정보`,
     description: `전국 ${label} 행사 ${n}건을 날짜별로. 무료 행사를 먼저 확인하세요.`,
     alternates: { canonical: `/genre/${code}` },
-  };
+  });
 }
 
 export default async function GenrePage({

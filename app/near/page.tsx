@@ -1,14 +1,15 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import NearFinder from "@/components/NearFinder";
 import { SITE } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "내 주변 갈 만한 곳",
   description: "현재 위치나 지역으로 나들이, 문화행사, 맛집을 찾아보세요.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/near" },
-};
+});
 
 export default function NearPage() {
   return (

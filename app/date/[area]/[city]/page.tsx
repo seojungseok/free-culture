@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -29,7 +30,7 @@ export async function generateMetadata({
   if (!list.length) return {};
   const names = list.slice(0, 5).map((c) => c.cafe.title);
   const ambiguous = dateCityParams().some(p => p.area !== slug && decodeURIComponent(p.city) === city);
-  return {
+  return withSearchMetadata({
     title: `${ambiguous ? sido + ' ' : ''}${city} 카페데이트 — 카페 ${list.length}곳과 산책·맛집 코스`,
     description: `${sido} ${city} 카페데이트 코스 ${list.length}곳. ${names.join(", ")} 등 카페에서 시작해 가까운 공원을 걷고 맛집에서 마무리하는 반나절 동선을 모았어요.`,
     robots: { index: false, follow: true },
@@ -42,7 +43,7 @@ export async function generateMetadata({
       ...names.slice(0, 3),
     ],
     alternates: { canonical: `/date/${slug}/${encodeURIComponent(city)}` },
-  };
+  });
 }
 
 export default async function DateCityPage({

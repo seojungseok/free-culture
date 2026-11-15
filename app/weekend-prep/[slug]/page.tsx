@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
@@ -14,12 +15,12 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
   if(!a)return {robots:{index:false}};
   const url=`${SITE.url}/weekend-prep/${a.slug}`;
   const image={url:a.cover.url,width:a.cover.width,height:a.cover.height,alt:a.cover.alt};
-  return {
+  return withSearchMetadata({
     robots:{index:!isPrepReview,follow:true,'max-image-preview':'large'},
     title:a.title,description:a.description,alternates:{canonical:url},
     openGraph:{type:'article',url,siteName:SITE.name,locale:'ko_KR',title:a.title,description:a.description,publishedTime:a.publishAt,modifiedTime:a.updatedAt,images:[image]},
     twitter:{card:'summary_large_image',title:a.title,description:a.description,images:[image]},
-  };
+  });
 }
 export default async function Page({params}:{params:Promise<{slug:string}>}){
   const {slug}=await params;

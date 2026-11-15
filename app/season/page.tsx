@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from '@/components/TossTopDeals';
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -9,12 +10,12 @@ import { autumnReason } from "@/lib/autumnContent";
 
 export const revalidate = 21600;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "가을나들이 추천 — 단풍·억새·수목원·자연휴양림",
   description: "전국 가을나들이 장소를 단풍·억새·수목원·자연휴양림 테마와 지역별 필터로 빠르게 찾아보세요.",
   keywords: ["가을나들이", "단풍 명소", "억새 명소", "수목원", "자연휴양림", "주말 나들이", "전국 관광지"],
   alternates: { canonical: "/season" },
-};
+});
 
 export default function SeasonPage() {
   const s = { key: "autumn", label: "가을", emoji: "🍁" };

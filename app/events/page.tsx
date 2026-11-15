@@ -1,3 +1,4 @@
+import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from "@/components/TossTopDeals";
 import { Suspense } from "react";
 import type { Metadata } from "next";
@@ -11,12 +12,12 @@ import { fmtRange } from "@/lib/format";
 // 목록은 하루 1회 재생성 → 새 행사 하루 내 반영
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSearchMetadata({
   title: "전국 문화행사 — 무료·저렴 전시·공연·축제",
   description:
     "전국의 무료·저렴한 전시·공연·축제·체험을 날짜·지역·분야·가격으로 골라보세요. 매일 자동 업데이트됩니다.",
   alternates: { canonical: "/events" },
-};
+});
 
 export default function EventsPage() {
   const events = slimForClient(getAllEvents());
