@@ -6,6 +6,7 @@ import mediaData from '@/data/experience-media.json';
 import {SIDO_SLUG} from './classify';
 import {todayIso,queryValue,type DiscoveryQuery} from './publicDiscovery';
 import {ruralThemes,experienceCity,isYouthExperience} from './experiences.mjs';
+import {cleanExperienceText,experienceIntro} from './experienceText.mjs';
 
 export type ExperienceKind='family'|'science'|'rural';
 export const experienceTopics={
@@ -22,10 +23,10 @@ const strings=(value:unknown)=>Array.isArray(value)?value.filter((item):item is 
 export type Experience={id:string;kind:ExperienceKind;title:string;area:string;city:string;summary:string;content:string[];activities:string[];programs:string[];institution:string;address:string;phone:string;audience:string;price:string;free:boolean;period:string;start:string;end:string;registration:string;registrationEnd:string;status:string;facilities:string;officialUrl:string;source:string;checkedAt:string;detailCheckedAt:string;referenceDate:string;image?:ExperienceMedia;imageAlt:string;imageKind?:'poster';imageSourcePage?:string;venueOverview:string;venueCheckedAt:string;venueSource:string;latitude:number;longitude:number;active:boolean};
 export const experienceUpdatedAt={rural:rural.refresh.checkedAt,family:youth.refresh.checkedAt,science:science.refresh.checkedAt};
 function toExperience(kind:ExperienceKind,row:Raw):Experience{
- const id=str(row.id),venue=venues[kind+'/'+id],programs=strings(row.programs),title=str(row.title);
+ const id=str(row.id),venue=venues[kind+'/'+id],programs=strings(row.programs).map(cleanExperienceText).filter(Boolean),title=str(row.title);
  const candidates=[str(row.imageSource),venue?.imageSource||''].filter(Boolean),sourceImage=candidates.find(source=>images[source.replace(/^http:/,'https:')]?.src)||candidates[0]||'',image=images[sourceImage.replace(/^http:/,'https:')];
- const content=strings(row.content),activities=strings(row.activities),address=str(row.address)||venue?.address||'',city=experienceCity(address)||str(row.city);
- const fullSummary=kind==='rural'?programs.slice(0,5).join(' · '):content[0]||str(row.summary)||`${str(row.audience)} 대상 · ${str(row.period)}`;
+ const content=strings(row.content).map(cleanExperienceText).filter(Boolean),activities=strings(row.activities).map(cleanExperienceText).filter(Boolean),address=str(row.address)||venue?.address||'',city=experienceCity(address)||str(row.city);
+ const fullSummary=kind==='rural'?programs.slice(0,5).join(' · '):experienceIntro(content)||(!content.length?cleanExperienceText(row.summary):'')||[str(row.institution),str(row.audience)].filter(Boolean).join(' · ');
  const summary=fullSummary.length>180?fullSummary.slice(0,177)+'…':fullSummary;
  const poster=sourceImage===str(row.imageSource)&&row.imageKind==='poster';
  return {id,kind,title,area:str(row.area),city,summary,content,activities,programs,institution:str(row.institution),address,phone:str(row.phone)||venue?.phone||'',audience:str(row.audience),price:str(row.price),free:row.free===true,period:str(row.period),start:str(row.start),end:str(row.end),registration:str(row.registration),registrationEnd:str(row.registrationEnd),status:str(row.sourceStatus),facilities:str(row.facilities),officialUrl:str(row.homepage)||str(row.officialUrl)||venue?.homepage||'',source:str(row.source),checkedAt:experienceUpdatedAt[kind],detailCheckedAt:str(row.detailCheckedAt),referenceDate:str(row.referenceDate),image:image?.src?image:undefined,imageAlt:sourceImage===venue?.imageSource?`${venue.title} 전경 (한국관광공사 제공)`:poster?`${title} 공식 안내 이미지 (${str(row.imageCredit)})`:`${title} (공공기관 제공 사진)`,imageKind:poster?'poster':undefined,imageSourcePage:poster?str(row.imageSourcePage):undefined,venueOverview:venue?.overview||'',venueCheckedAt:venue?.checkedAt||'',venueSource:venue?.source||'',latitude:Number(row.latitude)||venue?.latitude||0,longitude:Number(row.longitude)||venue?.longitude||0,active:row.active!==false};

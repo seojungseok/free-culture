@@ -2,8 +2,12 @@ import learning from '@/data/learning-classes.json';
 import accessible from '@/data/accessible-travel.json';
 import {normalizeLearningClass,isFamilyClass,isWeekendClass,registrationState} from './learning.mjs';
 import {normalizeAccessible} from './accessible.mjs';
+import {cleanExperienceText} from './experienceText.mjs';
 export type LearningClass=NonNullable<ReturnType<typeof normalizeLearningClass>>;
 export type AccessiblePlace=NonNullable<ReturnType<typeof normalizeAccessible>>;
+const readableClasses=(courses:LearningClass[])=>courses.map(course=>({...course,description:cleanExperienceText(course.description)}));
+const learningCourses=readableClasses(learning.courses as LearningClass[]);
+const archivedCourses=readableClasses((learning as unknown as {archivedCourses?:LearningClass[]}).archivedCourses||[]);
 export type DiscoveryQuery=Record<string,string|string[]|undefined>;
 export const queryValue=(query:DiscoveryQuery,key:string)=>typeof query[key]==='string'?query[key] as string:'';
 export const todayIso=()=>new Date(Date.now()+9*3600000).toISOString().slice(0,10);
@@ -17,7 +21,7 @@ export const classCollections={
 export type ClassCollection=keyof typeof classCollections;
 export function currentClasses(collection:ClassCollection='all',query:DiscoveryQuery={},today=todayIso()){
  const area=queryValue(query,'area'),q=queryValue(query,'q').trim().slice(0,100),cost=queryValue(query,'cost'),day=queryValue(query,'day'),audience=queryValue(query,'audience'),status=queryValue(query,'status');
- return (learning.courses as LearningClass[]).filter(course=>course.end>=today)
+ return learningCourses.filter(course=>course.end>=today)
  .filter(course=>status==='all'||['접수기간 내','접수예정'].includes(registrationState(course,today)))
  .filter(course=>collection!=='free'||course.tuition===0).filter(course=>collection!=='weekend'||isWeekendClass(course)).filter(course=>collection!=='family'||isFamilyClass(course))
  .filter(course=>!area||course.area===area).filter(course=>cost!=='free'||course.tuition===0).filter(course=>day!=='weekend'||isWeekendClass(course)).filter(course=>audience!=='family'||isFamilyClass(course))
@@ -25,7 +29,7 @@ export function currentClasses(collection:ClassCollection='all',query:DiscoveryQ
  .sort((a,b)=>Number(registrationState(a,today)==='접수예정')-Number(registrationState(b,today)==='접수예정')||(a.registrationEnd||'9999').localeCompare(b.registrationEnd||'9999')||b.referenceDate.localeCompare(a.referenceDate));
 }
 export const learningUpdatedAt=learning.refresh.checkedAt;
-export function allClasses(){return [...learning.courses,...((learning as unknown as {archivedCourses?:LearningClass[]}).archivedCourses||[])] as LearningClass[];}
+export function allClasses(){return [...learningCourses,...archivedCourses];}
 export function getPublicClass(id:string){return allClasses().find(course=>course.id===id);}
 export const publicClassHref=(course:Pick<LearningClass,'id'>)=>'/classes/detail/'+course.id;
 export const indexablePublicClass=(course:LearningClass)=>course.end>=todayIso()&&course.description.length>=80;

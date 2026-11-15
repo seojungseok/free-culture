@@ -1,12 +1,14 @@
 // Read-only HTML/asset checks. This never follows an application, affiliate or public-data API.
 import fs from 'node:fs';
 import {load} from 'cheerio';
+import {experienceContentBlocks} from '../lib/experienceText.mjs';
 const base=process.env.VERIFY_BASE||'http://127.0.0.1:3317',full=process.env.VERIFY_FULL==='1',results=[];
 const read=file=>JSON.parse(fs.readFileSync('data/'+file,'utf8'));
 const check=(condition,message)=>{if(!condition)throw new Error(message);};
 const sources=['rural','youth','science'].flatMap(kind=>read(kind+'-experiences.json').records.map(row=>({path:`/experiences/${kind==='youth'?'family':kind}/${row.id}`,title:row.title,kind:kind==='youth'?'family':kind,active:row.active!==false,address:row.address||'',content:[...(row.content||[]),...(row.activities||[])]})));
 const expected=full?sources:sources.filter(row=>row.active).filter((row,index,list)=>list.filter(other=>other.kind===row.kind).indexOf(row)<12);
-const classes=read('learning-classes.json').courses.slice(0,12).map(row=>({path:'/classes/detail/'+row.id,title:row.title,kind:'class',active:true}));
+const learning=read('learning-classes.json'),classRows=[...learning.courses,...(learning.archivedCourses||[])];
+const classes=(full?classRows:classRows.slice(0,12)).map(row=>({path:'/classes/detail/'+row.id,title:row.title,kind:'class',active:true}));
 const access=Object.values(read('accessible-travel.json').places).slice(0,full?100:8).map(row=>({path:'/accessible-travel/'+row.id,title:row.title,kind:'access',active:true}));
 const indexedTitles=new Map(),indexedDescriptions=new Map();let maxHtmlBytes=0;
 async function html(path){const response=await fetch(new URL(path,base),{signal:AbortSignal.timeout(45000)});check(response.ok,'HTTP '+response.status);const text=await response.text();maxHtmlBytes=Math.max(maxHtmlBytes,Buffer.byteLength(text));return load(text);}
@@ -17,7 +19,9 @@ async function detail(row){
   const detail=$('[data-experience-detail],[data-public-program-detail]');check(detail.length===1&&detail.find('h2').length>=3,'Internal body missing');
   const schemas=$('script[type="application/ld+json"]').map((_,node)=>JSON.parse($(node).text())).get();check(schemas.some(schema=>schema['@graph']?.some(entity=>entity['@type']==='BreadcrumbList')),'Breadcrumb missing');check(schemas.some(schema=>schema['@graph']?.some(entity=>entity['@type']==='WebPage')),'WebPage schema missing');
   if(['family','science','rural'].includes(row.kind))check(schemas.some(schema=>schema['@graph']?.some(entity=>['Event','EducationEvent','TouristAttraction'].includes(entity['@type']))),'Main entity missing');
-  if(row.kind==='family')for(const paragraph of row.content.slice(0,2))check(detail.text().includes(paragraph),'Detailed API content missing');
+  if(row.kind==='family')for(const part of experienceContentBlocks(row.content.slice(0,2)).flatMap(block=>block.items).flat())check(detail.text().includes(part),'Detailed API content missing');
+  check(!detail.find('p,li,dt').toArray().some(node=>/^[?？\ufffd]/u.test($(node).text().trim())),'Broken source bullet visible');
+  for(const a of detail.find('a[href^="#"]').toArray())check($(String($(a).attr('href'))).length===1,'Broken article jump link');
   if(row.address)check(detail.text().includes(row.address),'Address missing');
   for(const a of $('[data-experience-card] a').toArray())check($(a).attr('href')?.startsWith('/experiences/'),'Related card leaves the site');
   for(const a of $('[data-external-application]').toArray())check(/^https?:\/\//.test($(a).attr('href')||'')&&$(a).attr('target')==='_blank','Application should open official external site');
@@ -27,6 +31,8 @@ async function detail(row){
   results.push({path:row.path,ok:true,indexed:!noindex});
  }catch(error){results.push({path:row.path,ok:false,error:error.message});}
 }
+// Stop before the full audit if the server or network is unavailable.
+await html('/experiences');
 const tasks=[...expected,...classes,...access];let cursor=0;
 await Promise.all(Array.from({length:full?4:2},async()=>{while(cursor<tasks.length){const item=tasks[cursor++];await detail(item);if(results.length%200===0)console.log(JSON.stringify({checked:results.length,failures:results.filter(result=>!result.ok).length}));}}));
 const areas=['seoul','busan','daegu','incheon','gwangju','daejeon','ulsan','sejong','gyeonggi','gangwon','chungbuk','chungnam','jeonbuk','jeonnam','gyeongbuk','gyeongnam','jeju'];
@@ -46,4 +52,4 @@ try{
  results.push({path:'home/sitemap/images/release',ok:true});
 }catch(error){results.push({path:'home/sitemap/images/release',ok:false,error:error.message});}
 const report={base,full,checkedAt:new Date().toISOString(),passed:results.filter(result=>result.ok).length,failed:results.filter(result=>!result.ok).length,indexedDetails:indexedTitles.size,maxHtmlBytes,results};
-fs.mkdirSync('.cache',{recursive:true});fs.writeFileSync('.cache/internal-experience-'+(base.includes('127.0.0.1')?'local':'public')+'.json',JSON.stringify(report,null,2));console.log(JSON.stringify({...report,results:undefined,failures:results.filter(result=>!result.ok)}));if(report.failed)process.exitCode=1;
+fs.mkdirSync('.cache',{recursive:true});fs.writeFileSync('.cache/internal-experience-'+(base.includes('127.0.0.1')?'local':'public')+'.json',JSON.stringify(report,null,2));console.log(JSON.stringify({...report,results:undefined,failures:results.filter(result=>!result.ok).slice(0,20)}));if(report.failed)process.exitCode=1;
