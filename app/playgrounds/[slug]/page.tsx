@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import {notFound} from 'next/navigation';
-import {getPlaygroundGuides,getPlaygroundGuide,getGuideFacilities,getGuideTour,getGuideState,getOperationReview,getGuideAddress,guidePublishedAt,guideModifiedAt,playgroundDate,playgroundMap,playgroundBrowseHref,playgroundSeason} from '@/lib/playgroundData';
+import {getPlaygroundGuides,getPlaygroundGuide,getGuideFacilities,getGuideTour,getGuideState,getOperationReview,getGuideAddress,guideFirstPublishedAt,guideModifiedAt,playgroundDate,playgroundMap,playgroundBrowseHref,playgroundSeason} from '@/lib/playgroundData';
 import {isPlaygroundCandidate,PLAYGROUND_SOURCE} from '@/lib/playgrounds.mjs';
 import {withSearchMetadata} from '@/lib/searchMetadata';
 import {SITE} from '@/lib/site';
@@ -16,13 +16,13 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
  const guide=getPlaygroundGuide((await params).slug);
  if(!guide)return {title:'안내글을 찾을 수 없습니다',robots:{index:false,follow:true}};
  const tour=getGuideTour(guide);
- return withSearchMetadata({title:guide.title,description:guide.description,alternates:{canonical:'/playgrounds/'+guide.slug},robots:getGuideState(guide)?undefined:{index:false,follow:true},openGraph:{type:'article',publishedTime:guidePublishedAt,modifiedTime:guideModifiedAt(guide),images:tour.photos.map(p=>({url:p.src,alt:p.alt}))}});
+ return withSearchMetadata({title:guide.title,description:guide.description,alternates:{canonical:'/playgrounds/'+guide.slug},robots:getGuideState(guide)?undefined:{index:false,follow:true},openGraph:{type:'article',publishedTime:guideFirstPublishedAt(guide),modifiedTime:guideModifiedAt(guide),images:tour.photos.map(p=>({url:p.src,alt:p.alt}))}});
 }
 export default async function PlaygroundDetail({params}:{params:Promise<{slug:string}>}){
  const guide=getPlaygroundGuide((await params).slug);if(!guide)notFound();
  const tour=getGuideTour(guide),facilities=getGuideFacilities(guide),current=getGuideState(guide),review=getOperationReview(guide),address=getGuideAddress(guide),visit=guide.visit,today=playgroundSeason().today,url=SITE.url+'/playgrounds/'+guide.slug;
- const modifiedAt=guideModifiedAt(guide),amenities=(tour.extra||[]).filter(p=>['화장실','이용가능시설'].includes(p.name));
- const ld=[{'@context':'https://schema.org','@type':'Article',headline:guide.title,description:guide.description,inLanguage:'ko-KR',mainEntityOfPage:url,datePublished:guidePublishedAt,dateModified:modifiedAt,author:{'@type':'Organization',name:SITE.name,url:SITE.url},publisher:{'@type':'Organization',name:SITE.name,url:SITE.url},image:tour.photos.map(p=>SITE.url+p.src),about:{'@type':'Place',name:guide.name,address,...(tour.common?.latitude&&tour.common?.longitude?{geo:{'@type':'GeoCoordinates',latitude:tour.common.latitude,longitude:tour.common.longitude}}:{})},citation:[PLAYGROUND_SOURCE,...guide.sources.map(s=>s.url)]},{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'홈',item:SITE.url},{'@type':'ListItem',position:2,name:'어린이 놀이터',item:SITE.url+'/playgrounds'},{'@type':'ListItem',position:3,name:guide.name,item:url}]}];
+ const publishedAt=guideFirstPublishedAt(guide),modifiedAt=guideModifiedAt(guide),amenities=(tour.extra||[]).filter(p=>['화장실','이용가능시설'].includes(p.name));
+ const ld=[{'@context':'https://schema.org','@type':'Article',headline:guide.title,description:guide.description,inLanguage:'ko-KR',mainEntityOfPage:url,datePublished:publishedAt,dateModified:modifiedAt,author:{'@type':'Organization',name:SITE.name,url:SITE.url},publisher:{'@type':'Organization',name:SITE.name,url:SITE.url},image:tour.photos.map(p=>SITE.url+p.src),about:{'@type':'Place',name:guide.name,address,...(tour.common?.latitude&&tour.common?.longitude?{geo:{'@type':'GeoCoordinates',latitude:tour.common.latitude,longitude:tour.common.longitude}}:{})},citation:[PLAYGROUND_SOURCE,...guide.sources.map(s=>s.url)]},{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'홈',item:SITE.url},{'@type':'ListItem',position:2,name:'어린이 놀이터',item:SITE.url+'/playgrounds'},{'@type':'ListItem',position:3,name:guide.name,item:url}]}];
  const facts=[['주소',address],['이용요금',visit.fee],['무료·감면 조건',visit.feeDetails],['이용시간',visit.hours],['예약·발권',visit.booking],['이용 대상',visit.age],['주차',visit.parking],['휴관일',visit.closed],['전화',visit.phone]];
  return <div className={styles.page}>
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(ld).replace(/</g,'\\u003c')}}/>

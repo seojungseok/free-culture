@@ -2,6 +2,208 @@
   "checkedAt": "2026-11-16T13:00:15.075Z",
   "source": "한국관광공사 국문 관광정보 서비스",
   "places": {
+    "125867": {
+      "contentType": 12,
+      "checkedAt": "2026-11-16T15:33:06.194Z",
+      "detailsCheckedAt": "2026-11-16T15:33:06.194Z",
+      "photosCheckedAt": "2026-11-16T15:49:50.454Z",
+      "overview": "신정호는 1926년에 만들어진 인공호수로 면적은 92ha에 달한다. 자연경관이 수려해 많은 관광객이 모여들고 있는 사계절 휴양지이다. 호수 외곽으로 야외음악당, 잔디광장, 음악분수공원 등 친환경적인 테마별 공원으로 구성되어 있어 시민과 관광객에게 휴식의 공간으로 기여하고 있다. 신정호 지방정원은 약 238,648㎡의 면적으로, 그중 33,543㎡의 중점조성지에는 물의 정원을 주요 테마로 한 환영정원, 사계절·색깔정원, 다랭이정원, 물의 정원, 산들바람언덕정원, 마른정원 6개의 테마정원을 조성하였다. 주말이면 음악행사와 다양한 문화행사가 열리는 야외음악당, 부드러운 클래식 음악을 배경으로 아름다운 물분수의 춤이 연출되는 음악분수공원, 그리고 자연과 어우러진 조각상들이 배치된 조각공원은 문화예술체험의 장으로 활용되고 있다. 또한 야외수영장은 여름철 아산시민의 대표 놀이시설로 인기가 있으며, 신정호지방정원 산책로는 청소년들의 자연학습공간이나 연인들의 데이트코스로 자주 이용되고 있다. (출처 : 신정호공원 홈페이지)",
+      "intro": {
+        "contentid": "125867",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "아산시청 정원조성과 정원관리팀 041-540-2518",
+        "opendate": "",
+        "restdate": "[공원]- 연중무휴[피크닉장]- 매주 월요일 (단, 월요일이 공휴일인 경우 정상 운영하며, 화요일 휴장)",
+        "expguide": "",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "[공원]- 상시 개방[피크닉장]- 1회차 11:00~15:00- 클린타임 15:00~17:00-2회차 17:00~20:50",
+        "parking": "가능",
+        "chkbabycarriage": "없음",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "reviewedIntro": {
+        "contentid": "125867",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "아산시청 정원조성과 정원관리팀 041-540-2518",
+        "opendate": "",
+        "restdate": "[공원]- 연중무휴[피크닉장]- 매주 월요일 (단, 월요일이 공휴일인 경우 정상 운영하며, 화요일 휴장)",
+        "expguide": "",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "[공원]- 상시 개방[피크닉장]- 1회차 11:00~15:00- 클린타임 15:00~17:00-2회차 17:00~20:50",
+        "parking": "가능",
+        "chkbabycarriage": "없음",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "introChangedSinceReview": false,
+      "common": {
+        "title": "신정호관광지",
+        "address": "충청남도 아산시 신정로 616 (방축동)",
+        "postalCode": "31564",
+        "homepage": "https://www.asan.go.kr/sinjungho",
+        "telephone": "",
+        "latitude": 36.7715293389,
+        "longitude": 126.9839038561,
+        "sourceModifiedAt": "20261111084802",
+        "overview": "신정호는 1926년에 만들어진 인공호수로 면적은 92ha에 달한다. 자연경관이 수려해 많은 관광객이 모여들고 있는 사계절 휴양지이다. 호수 외곽으로 야외음악당, 잔디광장, 음악분수공원 등 친환경적인 테마별 공원으로 구성되어 있어 시민과 관광객에게 휴식의 공간으로 기여하고 있다. 신정호 지방정원은 약 238,648㎡의 면적으로, 그중 33,543㎡의 중점조성지에는 물의 정원을 주요 테마로 한 환영정원, 사계절·색깔정원, 다랭이정원, 물의 정원, 산들바람언덕정원, 마른정원 6개의 테마정원을 조성하였다. 주말이면 음악행사와 다양한 문화행사가 열리는 야외음악당, 부드러운 클래식 음악을 배경으로 아름다운 물분수의 춤이 연출되는 음악분수공원, 그리고 자연과 어우러진 조각상들이 배치된 조각공원은 문화예술체험의 장으로 활용되고 있다. 또한 야외수영장은 여름철 아산시민의 대표 놀이시설로 인기가 있으며, 신정호지방정원 산책로는 청소년들의 자연학습공간이나 연인들의 데이트코스로 자주 이용되고 있다. (출처 : 신정호공원 홈페이지)"
+      },
+      "extra": [
+        {
+          "name": "입장료",
+          "content": "무료"
+        }
+      ],
+      "reviewedDetails": {
+        "address": "충청남도 아산시 신정로 616 (방축동)",
+        "extra": [
+          {
+            "name": "입장료",
+            "content": "무료"
+          }
+        ]
+      },
+      "detailsChangedSinceReview": false,
+      "photos": [
+        {
+          "src": "/playground-images/asan-sinjeongho-park-playground-1.jpg",
+          "alt": "신정호공원의 정원과 휴식 공간",
+          "original": "https://tong.visitkorea.or.kr/cms/resource_photo/21/4070921_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제1유형",
+          "license": "Type1",
+          "contentId": "125867",
+          "originalSha256": "b191ae95efc96ca52a4757c6ff1065906d1ad8490a3657ff647c709d6662e77e"
+        },
+        {
+          "src": "/playground-images/asan-sinjeongho-park-playground-2.jpg",
+          "alt": "신정호공원의 조형물과 산책 공간",
+          "original": "https://tong.visitkorea.or.kr/cms/resource_photo/15/4070915_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제1유형",
+          "license": "Type1",
+          "contentId": "125867",
+          "originalSha256": "99ef3f0873399a15100465d3c9df55616adf2dec5a7ea4b8879ce3ab2bcbc83d"
+        }
+      ]
+    },
+    "126131": {
+      "contentType": 12,
+      "checkedAt": "2026-11-16T15:33:05.455Z",
+      "detailsCheckedAt": "2026-11-16T15:33:05.455Z",
+      "photosCheckedAt": "2026-11-16T15:49:50.454Z",
+      "overview": "두류공원은 대구광역시의 중심 달서구에 위치하고 있으며, 대구에서 가장 큰 공원이다. 1977년 대구시는 이곳에 50만여 평의 공원을 조성하였으며, 초대형 야외음악당과 문화예술회관, 도서관 등 문화시설과 야구장, 테니스장, 수영장 등 체육시설, 2·28 기념탑과 인물동산 등의 기념시설을 이용할 수 있다. 두류산의 정상부에 자리 잡은 83 타워는 대구의 랜드마크이며, 200m 높이의 전망대에선 대구 시내를 한눈에 내려다볼 수 있다. 계절에 따라 봄이면 벚꽃축제가 진행되고, 여름이면 공원 안에 수영장을 비롯한 분수대 등 더위 식히기에 이용되며 가을이면 단풍명소로, 겨울엔 공원 내 스케이트장에서 즐거운 겨울나기를 할 수 있다. 북쪽 출입구에서 불과 500여 미터 거리에 지하철 2호선 두류역이 있으며, 지하철 1호선 서부정류장역에서 접근하면 공원 서남단의 성당못까지 600여 미터 거리라 접근성 또한 매우 뛰어나다.",
+      "intro": {
+        "contentid": "126131",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "053-803-7470",
+        "opendate": "",
+        "restdate": "연중무휴",
+        "expguide": "숲해설 / 숲체험 등",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "상시 개방",
+        "parking": "가능",
+        "chkbabycarriage": "",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "reviewedIntro": {
+        "contentid": "126131",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "053-803-7470",
+        "opendate": "",
+        "restdate": "연중무휴",
+        "expguide": "숲해설 / 숲체험 등",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "상시 개방",
+        "parking": "가능",
+        "chkbabycarriage": "",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "introChangedSinceReview": false,
+      "common": {
+        "title": "대구두류공원",
+        "address": "대구광역시 달서구 두류공원로 161 (성당동)",
+        "postalCode": "42672",
+        "homepage": "https://www.daegu.go.kr/env",
+        "telephone": "",
+        "latitude": 35.8486622019,
+        "longitude": 128.5590800162,
+        "sourceModifiedAt": "20261111084802",
+        "overview": "두류공원은 대구광역시의 중심 달서구에 위치하고 있으며, 대구에서 가장 큰 공원이다. 1977년 대구시는 이곳에 50만여 평의 공원을 조성하였으며, 초대형 야외음악당과 문화예술회관, 도서관 등 문화시설과 야구장, 테니스장, 수영장 등 체육시설, 2·28 기념탑과 인물동산 등의 기념시설을 이용할 수 있다. 두류산의 정상부에 자리 잡은 83 타워는 대구의 랜드마크이며, 200m 높이의 전망대에선 대구 시내를 한눈에 내려다볼 수 있다. 계절에 따라 봄이면 벚꽃축제가 진행되고, 여름이면 공원 안에 수영장을 비롯한 분수대 등 더위 식히기에 이용되며 가을이면 단풍명소로, 겨울엔 공원 내 스케이트장에서 즐거운 겨울나기를 할 수 있다. 북쪽 출입구에서 불과 500여 미터 거리에 지하철 2호선 두류역이 있으며, 지하철 1호선 서부정류장역에서 접근하면 공원 서남단의 성당못까지 600여 미터 거리라 접근성 또한 매우 뛰어나다."
+      },
+      "extra": [
+        {
+          "name": "입장료",
+          "content": "무료"
+        },
+        {
+          "name": "화장실",
+          "content": "있음"
+        },
+        {
+          "name": "이용가능시설",
+          "content": "두류수영장 / 안병근올림픽기념관 / 두류테니스장 / 골프연습장 / 인라인스케이트장 / 83타워 / 문화예술회관 / 야외음악당"
+        }
+      ],
+      "reviewedDetails": {
+        "address": "대구광역시 달서구 두류공원로 161 (성당동)",
+        "extra": [
+          {
+            "name": "입장료",
+            "content": "무료"
+          },
+          {
+            "name": "화장실",
+            "content": "있음"
+          },
+          {
+            "name": "이용가능시설",
+            "content": "두류수영장 / 안병근올림픽기념관 / 두류테니스장 / 골프연습장 / 인라인스케이트장 / 83타워 / 문화예술회관 / 야외음악당"
+          }
+        ]
+      },
+      "detailsChangedSinceReview": false,
+      "photos": [
+        {
+          "src": "/playground-images/daegu-duryu-park-playground-1.jpg",
+          "alt": "대구 두류공원의 야외 광장과 산책 공간",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/27/3573527_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제1유형",
+          "license": "Type1",
+          "contentId": "126131",
+          "originalSha256": "4473cbdb69220bdcedbf6d7f01a80b366eb74c65608d4a7201cf38c74affb01f"
+        },
+        {
+          "src": "/playground-images/daegu-duryu-park-playground-2.jpg",
+          "alt": "대구 두류공원 일대 전경",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/25/3573525_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제1유형",
+          "license": "Type1",
+          "contentId": "126131",
+          "originalSha256": "135786bb7402f7cd8ac068ce8f6f836b46688bff43799ea8bd03191fa54c377f"
+        }
+      ]
+    },
     "126490": {
       "checkedAt": "2026-11-16T13:00:15.075Z",
       "overview": "서울어린이대공원은 1973년 5월 5일 어린이날에 개장하였다. 536,094.50㎡ 규모의 넓은 녹지 공간으로 이루어져 있어 어린이는 물론 청소년과 시민을 위한 휴식 및 문화 공간의 역할을 하고 있다. 또한 각종 교양 시설과 동물원, 놀이 시설 등도 갖추고 있다. 2009년 5월 5일 재개장 당시에는, 백곰과 바다표범의 수중 생활을 관찰할 수 있는 생태형 수족관인 바다동물관을 비롯해, 꼬마동물마을, 앵무마을 등 다채로운 시설을 새롭게 선보였다. 이와 함께 음악 선율에 맞춰 물줄기가 움직이는 음악분수를 조성하여 풍성한 볼거리를 더했다. 공원 중앙의 푸른 녹지에는 8,000석 규모의 야외공연장인 능동 숲속의 무대가 마련되어 있으며, 팔각당에는 어린이를 위한 실내 놀이터가 조성되어 있다.",
@@ -205,6 +407,426 @@
         }
       ],
       "detailsCheckedAt": "2026-11-16T14:45:08.110Z"
+    },
+    "128066": {
+      "contentType": 12,
+      "checkedAt": "2026-11-16T15:29:53.479Z",
+      "detailsCheckedAt": "2026-11-16T15:29:53.479Z",
+      "photosCheckedAt": "2026-11-16T15:49:50.454Z",
+      "overview": "안산갈대습지는 시화호의 수질을 개선하기 위해 조성한 대규모 인공습지로, 이곳에 심은 수생 식물들과 갈대는 자연적인 정화 처리를 해내고 있다. 자연과 접하기 어려운 도시민이 자연 속에서의 휴식은 물론 생태계를 이루는 생물들이 어떻게 서식하는지를 관찰하고 학습할 수 있도록 조성된 곳으로, 단순한 휴식을 주는 공원을 넘어서 생태 환경의 교육장 역할도 함께 하고 있다. 환경생태관 내부에는 시화호의 역사와 습지 관련 생태자료가 전시되어 있고, 갈대가 오염물질을 정화하는 과정에 대해서도 살펴볼 수 있다. 환경생태관 근처에는 자연에너지 체험교육장이 있어 태양광, 풍력, 지열 등과 같은 공해가 적고 계속해서 사용할 수 있는 자연에너지를 체험할 수 있고, 생태연못에는 계절마다 다양한 수생식물도 만나볼 수 있다. 환경생태관 밖으로 광활하게 이어진 갈대 습지 관찰로는 습지를 보호하고 탐방객 편의를 위해서 나무데크로 잘 조성되어 있다. 도심과 조금 떨어져 있어 자연의 소리가 잘 들리는 갈대습지공원에서 바람 소리, 새소리, 물소리를 들으며 다양한 습지 생물과 함께 만나볼 수 있다.",
+      "intro": {
+        "contentid": "128066",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "031-599-9400",
+        "opendate": "",
+        "restdate": "매주 월요일",
+        "expguide": "수생생물 체험 / 곤충 관찰 체험 / 조류 탐사 체험 등",
+        "expagerange": "전 연령",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "- 하절기(3월~10월) 10:00~18:00- 동절기(11월~2월) 10:00~16:30- 바람소리길 06:00~22:00",
+        "parking": "가능요금 (무료)",
+        "chkbabycarriage": "없음",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "reviewedIntro": {
+        "contentid": "128066",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "031-599-9400",
+        "opendate": "",
+        "restdate": "매주 월요일",
+        "expguide": "수생생물 체험 / 곤충 관찰 체험 / 조류 탐사 체험 등",
+        "expagerange": "전 연령",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "- 하절기(3월~10월) 10:00~18:00- 동절기(11월~2월) 10:00~16:30- 바람소리길 06:00~22:00",
+        "parking": "가능요금 (무료)",
+        "chkbabycarriage": "없음",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "introChangedSinceReview": false,
+      "common": {
+        "title": "안산갈대습지공원",
+        "address": "경기도 안산시 상록구 갈대습지로 76 (사동)",
+        "postalCode": "15635",
+        "homepage": "https://www.ansanwetland.co.kr/",
+        "telephone": "",
+        "latitude": 37.2743336707,
+        "longitude": 126.8409948605,
+        "sourceModifiedAt": "20261111084802",
+        "overview": "안산갈대습지는 시화호의 수질을 개선하기 위해 조성한 대규모 인공습지로, 이곳에 심은 수생 식물들과 갈대는 자연적인 정화 처리를 해내고 있다. 자연과 접하기 어려운 도시민이 자연 속에서의 휴식은 물론 생태계를 이루는 생물들이 어떻게 서식하는지를 관찰하고 학습할 수 있도록 조성된 곳으로, 단순한 휴식을 주는 공원을 넘어서 생태 환경의 교육장 역할도 함께 하고 있다. 환경생태관 내부에는 시화호의 역사와 습지 관련 생태자료가 전시되어 있고, 갈대가 오염물질을 정화하는 과정에 대해서도 살펴볼 수 있다. 환경생태관 근처에는 자연에너지 체험교육장이 있어 태양광, 풍력, 지열 등과 같은 공해가 적고 계속해서 사용할 수 있는 자연에너지를 체험할 수 있고, 생태연못에는 계절마다 다양한 수생식물도 만나볼 수 있다. 환경생태관 밖으로 광활하게 이어진 갈대 습지 관찰로는 습지를 보호하고 탐방객 편의를 위해서 나무데크로 잘 조성되어 있다. 도심과 조금 떨어져 있어 자연의 소리가 잘 들리는 갈대습지공원에서 바람 소리, 새소리, 물소리를 들으며 다양한 습지 생물과 함께 만나볼 수 있다."
+      },
+      "extra": [
+        {
+          "name": "입장료",
+          "content": "무료"
+        },
+        {
+          "name": "내국인예약안내",
+          "content": "홈페이지를 통해 사전 예약"
+        },
+        {
+          "name": "화장실",
+          "content": "있음"
+        }
+      ],
+      "reviewedDetails": {
+        "address": "경기도 안산시 상록구 갈대습지로 76 (사동)",
+        "extra": [
+          {
+            "name": "입장료",
+            "content": "무료"
+          },
+          {
+            "name": "내국인예약안내",
+            "content": "홈페이지를 통해 사전 예약"
+          },
+          {
+            "name": "화장실",
+            "content": "있음"
+          }
+        ]
+      },
+      "detailsChangedSinceReview": false,
+      "photos": [
+        {
+          "src": "/playground-images/ansan-wetland-indoor-experience-1.jpg",
+          "alt": "안산갈대습지 관람시설의 실내 전시공간",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/73/3078373_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제3유형",
+          "license": "Type3",
+          "contentId": "128066",
+          "originalSha256": "f533e3a1c49e331d46db0eb740ffb2971f91878ab7f918bba1a42af8176b32e2"
+        },
+        {
+          "src": "/playground-images/ansan-wetland-indoor-experience-2.jpg",
+          "alt": "안산갈대습지의 생태 전시공간",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/74/3078374_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제3유형",
+          "license": "Type3",
+          "contentId": "128066",
+          "originalSha256": "45bb323d7e2a37fd33251a876f9fb390332e31c0fb7aa938dbdd002bdc1fa4b4"
+        }
+      ]
+    },
+    "1385338": {
+      "contentType": 12,
+      "checkedAt": "2026-11-16T15:29:53.479Z",
+      "detailsCheckedAt": "2026-11-16T15:29:53.479Z",
+      "photosCheckedAt": "2026-11-16T15:49:50.454Z",
+      "overview": "이사부사자공원은 신라 장군 이사부의 개척정신과 정신을 계승한 가족형 테마공원이다. 이곳에서는 동해안의 아름다운 절경을 가장 가까이에서 감상할 수 있다. 공원 내에 위치한 그림책나라는 전시관으로, 빅북, 팝업북, 다양한 그림책은 물론 VR·AR 기기를 체험할 수 있는 공간이다. 또한 하절기에는 물썰매장이 운영되어 시원한 물놀이를 즐길 수 있으며, 야간에는 추억의 명화 상영을 통해 또 다른 즐거움을 선사한다. 이사부사자공원은 가족, 친구, 연인 모두에게 동심의 세계로 떠나는 특별한 경험을 제공하는 매력적인 관광지다.",
+      "intro": {
+        "contentid": "1385338",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "033-570-4616",
+        "opendate": "2011년 8월 2일",
+        "restdate": "매주 월요일",
+        "expguide": "",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "[이사부사자공원]- 상시 개방[그림책나라]- 09:00~17:30※ 휴게시간 12:00~13:00[물썰매장(7 월~8월)]※ 자세한 사항은 홈페이지 참조",
+        "parking": "가능요금 (무료)",
+        "chkbabycarriage": "불가",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "reviewedIntro": {
+        "contentid": "1385338",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "033-570-4616",
+        "opendate": "2011년 8월 2일",
+        "restdate": "매주 월요일",
+        "expguide": "",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "[이사부사자공원]- 상시 개방[그림책나라]- 09:00~17:30※ 휴게시간 12:00~13:00[물썰매장(7 월~8월)]※ 자세한 사항은 홈페이지 참조",
+        "parking": "가능요금 (무료)",
+        "chkbabycarriage": "불가",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "introChangedSinceReview": false,
+      "common": {
+        "title": "이사부사자공원&그림책 나라",
+        "address": "강원특별자치도 삼척시 수로부인길 333",
+        "postalCode": "25909",
+        "homepage": "https://www.samcheok.go.kr/tour.web",
+        "telephone": "",
+        "latitude": 37.4744522276,
+        "longitude": 129.1596853445,
+        "sourceModifiedAt": "20261111084802",
+        "overview": "이사부사자공원은 신라 장군 이사부의 개척정신과 정신을 계승한 가족형 테마공원이다. 이곳에서는 동해안의 아름다운 절경을 가장 가까이에서 감상할 수 있다. 공원 내에 위치한 그림책나라는 전시관으로, 빅북, 팝업북, 다양한 그림책은 물론 VR·AR 기기를 체험할 수 있는 공간이다. 또한 하절기에는 물썰매장이 운영되어 시원한 물놀이를 즐길 수 있으며, 야간에는 추억의 명화 상영을 통해 또 다른 즐거움을 선사한다. 이사부사자공원은 가족, 친구, 연인 모두에게 동심의 세계로 떠나는 특별한 경험을 제공하는 매력적인 관광지다."
+      },
+      "extra": [
+        {
+          "name": "입장료",
+          "content": "- 그림책나라 무료- 물썰매장 5,000원"
+        },
+        {
+          "name": "화장실",
+          "content": "있음"
+        },
+        {
+          "name": "한국어안내서비스",
+          "content": "문화관광해설사 근무"
+        }
+      ],
+      "reviewedDetails": {
+        "address": "강원특별자치도 삼척시 수로부인길 333",
+        "extra": [
+          {
+            "name": "입장료",
+            "content": "- 그림책나라 무료- 물썰매장 5,000원"
+          },
+          {
+            "name": "화장실",
+            "content": "있음"
+          },
+          {
+            "name": "한국어안내서비스",
+            "content": "문화관광해설사 근무"
+          }
+        ]
+      },
+      "detailsChangedSinceReview": false,
+      "photos": [
+        {
+          "src": "/playground-images/samcheok-picturebook-indoor-play-1.jpg",
+          "alt": "삼척 그림책나라의 실내 그림책 공간",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/25/3331525_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제3유형",
+          "license": "Type3",
+          "contentId": "1385338",
+          "originalSha256": "ae4f57a7dca547e825e6cb2ae0f4347a484120ba182cd7b2c99a3d4fbd68702a"
+        },
+        {
+          "src": "/playground-images/samcheok-picturebook-indoor-play-2.jpg",
+          "alt": "삼척 그림책나라의 실내 전시물",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/20/3331520_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제3유형",
+          "license": "Type3",
+          "contentId": "1385338",
+          "originalSha256": "90d14164fd9dac721df52cc07f20ecc1a073bf93ff82d2c97f6368d54f4a7107"
+        }
+      ]
+    },
+    "1946955": {
+      "contentType": 12,
+      "checkedAt": "2026-11-16T15:42:32.514Z",
+      "detailsCheckedAt": "2026-11-16T15:42:32.514Z",
+      "photosCheckedAt": "2026-11-16T15:49:50.454Z",
+      "overview": "세종호수공원은 세종시 중심에 위치한 호수로서 세종시 및 인근주민들에게 휴식 및 문화의 공간이다. 호수공원에는 금강의 물결에 의해 다듬어진 조약돌을 형상화한 672석 규모의 수상무대섬, 공원의 활성화를 위해 각종 문화예술 행사를 개최하는 독립된 구조의 축제섬, 가족이 함께 할 수 있는 물놀이시설과 반짝이는 모래해변이 있는 물놀이섬, 데크길 따라 가득히 채워진 다양한 수생식물의 향연을 느낄 수 있는 물꽃섬, 여러 종류의 수생식물과 수생태계의 다양한 모습을 관찰하는 습지섬, 총 5개의 테마섬이 있다. 다양한 테마의 시설을 갖춘 5개의 주요 테마섬을 비롯하여, 산책로와 자전거 도로를 제공함으로써 주민의 심신과 안정을 회복할 수 있도록 하며, 테마산책로는 소나무길, 벚나무길, 은행나무길, 이팝나무길, 들풀길, 나들숲, 가을단풍숲, 살구나무길 등 다양한 산책로가 조성되어 다양한 주제별 산책길을 제공한다.",
+      "intro": {
+        "contentid": "1946955",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "044-850-4370",
+        "opendate": "",
+        "restdate": "연중무휴",
+        "expguide": "",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "05:00~23:00",
+        "parking": "가능 (총 1,244대)",
+        "chkbabycarriage": "없음",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "reviewedIntro": {
+        "contentid": "1946955",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "044-850-4370",
+        "opendate": "",
+        "restdate": "연중무휴",
+        "expguide": "",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "05:00~23:00",
+        "parking": "가능 (총 1,244대)",
+        "chkbabycarriage": "없음",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "introChangedSinceReview": false,
+      "common": {
+        "title": "세종호수공원",
+        "address": "세종특별자치시 다솜로 216 (세종동)",
+        "postalCode": "30120",
+        "homepage": "https://www.sjfmc.or.kr/sjpark.do",
+        "telephone": "",
+        "latitude": 36.498953453,
+        "longitude": 127.2701840594,
+        "sourceModifiedAt": "20261111084802",
+        "overview": "세종호수공원은 세종시 중심에 위치한 호수로서 세종시 및 인근주민들에게 휴식 및 문화의 공간이다. 호수공원에는 금강의 물결에 의해 다듬어진 조약돌을 형상화한 672석 규모의 수상무대섬, 공원의 활성화를 위해 각종 문화예술 행사를 개최하는 독립된 구조의 축제섬, 가족이 함께 할 수 있는 물놀이시설과 반짝이는 모래해변이 있는 물놀이섬, 데크길 따라 가득히 채워진 다양한 수생식물의 향연을 느낄 수 있는 물꽃섬, 여러 종류의 수생식물과 수생태계의 다양한 모습을 관찰하는 습지섬, 총 5개의 테마섬이 있다. 다양한 테마의 시설을 갖춘 5개의 주요 테마섬을 비롯하여, 산책로와 자전거 도로를 제공함으로써 주민의 심신과 안정을 회복할 수 있도록 하며, 테마산책로는 소나무길, 벚나무길, 은행나무길, 이팝나무길, 들풀길, 나들숲, 가을단풍숲, 살구나무길 등 다양한 산책로가 조성되어 다양한 주제별 산책길을 제공한다."
+      },
+      "extra": [
+        {
+          "name": "입장료",
+          "content": "무료"
+        },
+        {
+          "name": "화장실",
+          "content": "있음(남/녀 구분)"
+        }
+      ],
+      "reviewedDetails": {
+        "address": "세종특별자치시 다솜로 216 (세종동)",
+        "extra": [
+          {
+            "name": "입장료",
+            "content": "무료"
+          },
+          {
+            "name": "화장실",
+            "content": "있음(남/녀 구분)"
+          }
+        ]
+      },
+      "detailsChangedSinceReview": false,
+      "photos": [
+        {
+          "src": "/playground-images/sejong-lake-park-playground-1.jpg",
+          "alt": "세종호수공원의 야외 놀이공간과 그네",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/74/3353974_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제3유형",
+          "license": "Type3",
+          "contentId": "1946955",
+          "originalSha256": "68d445930b2f5cf733ed9a84fa308bb1792cf046711a304fada041a325ef2e44"
+        },
+        {
+          "src": "/playground-images/sejong-lake-park-playground-2.jpg",
+          "alt": "세종호수공원의 호숫가 산책로",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/77/3353977_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제3유형",
+          "license": "Type3",
+          "contentId": "1946955",
+          "originalSha256": "e8f7905570b18de6d4c271f5d2ff6e06f22e35c9d69f26602c9170f70888ec70"
+        }
+      ]
+    },
+    "2648488": {
+      "contentType": 12,
+      "checkedAt": "2026-11-16T15:29:53.479Z",
+      "detailsCheckedAt": "2026-11-16T15:29:53.479Z",
+      "photosCheckedAt": "2026-11-16T15:49:50.454Z",
+      "overview": "과일나라 테마공원은 2017년 4월에 개장하여 레인보우 힐링 관광지에 자리 잡고 있으며, 영동에서 생산되는 5가지 종류의 과일(포도, 사과, 배, 복숭아, 자두)을 테마로 조성된 공원이다. 재배된 과일의 수정부터 수확까지 모든 과정을 한 번에 볼 수 있는 체험교육의 장소이다. 또한, 과일 수확 시기에 맞게 수확체험과 과일을 활용한 다양한 요리체험을 운영을 하고 있다.",
+      "intro": {
+        "contentid": "2648488",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "043-740-3657",
+        "opendate": "",
+        "restdate": "매주 월요일 ( 단, 월요일이 공휴일인 경우 그 다음날 휴관) / 1월 1일 / 설·추석 당일",
+        "expguide": "과일 수확 체험 / 토스트, 쿠키, 피자 요리 체험 / 주스, 잼, 초콜릿 가공체험",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "- 12월~2월 09:30~17:00- 3월~11월 09:30~17:30",
+        "parking": "가능",
+        "chkbabycarriage": "",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "reviewedIntro": {
+        "contentid": "2648488",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "043-740-3657",
+        "opendate": "",
+        "restdate": "매주 월요일 ( 단, 월요일이 공휴일인 경우 그 다음날 휴관) / 1월 1일 / 설·추석 당일",
+        "expguide": "과일 수확 체험 / 토스트, 쿠키, 피자 요리 체험 / 주스, 잼, 초콜릿 가공체험",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "- 12월~2월 09:30~17:00- 3월~11월 09:30~17:30",
+        "parking": "가능",
+        "chkbabycarriage": "",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "introChangedSinceReview": false,
+      "common": {
+        "title": "과일나라테마공원",
+        "address": "충청북도 영동군 영동읍 매천리 39-2",
+        "postalCode": "29142",
+        "homepage": "https://ht.yd21.go.kr/fruit/",
+        "telephone": "",
+        "latitude": 36.1606,
+        "longitude": 127.7931,
+        "sourceModifiedAt": "20261111084802",
+        "overview": "과일나라 테마공원은 2017년 4월에 개장하여 레인보우 힐링 관광지에 자리 잡고 있으며, 영동에서 생산되는 5가지 종류의 과일(포도, 사과, 배, 복숭아, 자두)을 테마로 조성된 공원이다. 재배된 과일의 수정부터 수확까지 모든 과정을 한 번에 볼 수 있는 체험교육의 장소이다. 또한, 과일 수확 시기에 맞게 수확체험과 과일을 활용한 다양한 요리체험을 운영을 하고 있다."
+      },
+      "extra": [
+        {
+          "name": "입장료",
+          "content": "무료※ 체험료 및 시설 사용 대관료 별도"
+        },
+        {
+          "name": "내국인예약안내",
+          "content": "전화 문의 후 예약 가능"
+        }
+      ],
+      "reviewedDetails": {
+        "address": "충청북도 영동군 영동읍 매천리 39-2",
+        "extra": [
+          {
+            "name": "입장료",
+            "content": "무료※ 체험료 및 시설 사용 대관료 별도"
+          },
+          {
+            "name": "내국인예약안내",
+            "content": "전화 문의 후 예약 가능"
+          }
+        ]
+      },
+      "detailsChangedSinceReview": false,
+      "photos": [
+        {
+          "src": "/playground-images/yeongdong-fruit-park-family-1.jpg",
+          "alt": "과일나라테마공원의 실내 세계과일조경원",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/21/4065721_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제1유형",
+          "license": "Type1",
+          "contentId": "2648488",
+          "originalSha256": "8687e111ab95254cce489f50642de65f2a4e4a9cd7ab2c19d7ddb0ec48776e8a"
+        },
+        {
+          "src": "/playground-images/yeongdong-fruit-park-family-2.jpg",
+          "alt": "과일나라테마공원의 야외 어린이 공간",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/49/3544649_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제1유형",
+          "license": "Type1",
+          "contentId": "2648488",
+          "originalSha256": "e41d91d9043ee1d820276a37b3cc1ceff04201cf887c8bbc99b488434a28073e"
+        }
+      ]
     },
     "2663341": {
       "checkedAt": "2026-11-16T13:00:15.075Z",
@@ -515,6 +1137,115 @@
       ],
       "detailsCheckedAt": "2026-11-16T14:45:08.110Z"
     },
+    "2737298": {
+      "contentType": 12,
+      "checkedAt": "2026-11-16T15:33:06.921Z",
+      "detailsCheckedAt": "2026-11-16T15:33:06.921Z",
+      "photosCheckedAt": "2026-11-16T15:49:50.454Z",
+      "overview": "자연과 문화가 어우러진 조례호수공원에는 호숫가 산책로를 따라 넓은 광장, 분수대, 벤치, 등산로 등이 마련되어 있다. 해마다 문화 페스티벌, 소규모 바자회 등 다양한 행사가 개최되고, 공원 한편에 마련된 작은 도서관인 ‘호수공원으로 나온 도서관’, 바닥분수, 음악분수 등은 순천 시민들의 여가와 건강 증진을 목적으로 도심 속 쉼터 역할을 하는 공원이다. 조례호수공원의 이름은 순천시 조례동에서 유래되었다. 마을의 형국이 조리 모양으로 생겼다는 의미에서 ‘조례’라고 하였다고도 하며, 마을이 남쪽으로 탁 트여서 맑고 환하게 비쳐 밝음으로 예의를 지키고 살 만한 곳이라고 하여 지어진 이름이라고도 한다.",
+      "intro": {
+        "contentid": "2737298",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "순천역 관광안내소 061-749-3107",
+        "opendate": "",
+        "restdate": "연중무휴",
+        "expguide": "",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "상시 개방",
+        "parking": "가능",
+        "chkbabycarriage": "",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "reviewedIntro": {
+        "contentid": "2737298",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "순천역 관광안내소 061-749-3107",
+        "opendate": "",
+        "restdate": "연중무휴",
+        "expguide": "",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "상시 개방",
+        "parking": "가능",
+        "chkbabycarriage": "",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "introChangedSinceReview": false,
+      "common": {
+        "title": "조례호수공원",
+        "address": "전남광주통합특별시 순천시 조례동 1867",
+        "postalCode": "57932",
+        "homepage": "https://www.suncheon.go.kr/tour",
+        "telephone": "",
+        "latitude": 34.9660438048,
+        "longitude": 127.5220148565,
+        "sourceModifiedAt": "20261111084802",
+        "overview": "자연과 문화가 어우러진 조례호수공원에는 호숫가 산책로를 따라 넓은 광장, 분수대, 벤치, 등산로 등이 마련되어 있다. 해마다 문화 페스티벌, 소규모 바자회 등 다양한 행사가 개최되고, 공원 한편에 마련된 작은 도서관인 ‘호수공원으로 나온 도서관’, 바닥분수, 음악분수 등은 순천 시민들의 여가와 건강 증진을 목적으로 도심 속 쉼터 역할을 하는 공원이다. 조례호수공원의 이름은 순천시 조례동에서 유래되었다. 마을의 형국이 조리 모양으로 생겼다는 의미에서 ‘조례’라고 하였다고도 하며, 마을이 남쪽으로 탁 트여서 맑고 환하게 비쳐 밝음으로 예의를 지키고 살 만한 곳이라고 하여 지어진 이름이라고도 한다."
+      },
+      "extra": [
+        {
+          "name": "입장료",
+          "content": "무료"
+        },
+        {
+          "name": "주차요금",
+          "content": "무료"
+        },
+        {
+          "name": "화장실",
+          "content": "있음"
+        }
+      ],
+      "reviewedDetails": {
+        "address": "전남광주통합특별시 순천시 조례동 1867",
+        "extra": [
+          {
+            "name": "입장료",
+            "content": "무료"
+          },
+          {
+            "name": "주차요금",
+            "content": "무료"
+          },
+          {
+            "name": "화장실",
+            "content": "있음"
+          }
+        ]
+      },
+      "detailsChangedSinceReview": false,
+      "photos": [
+        {
+          "src": "/playground-images/suncheon-jorye-lake-playground-1.jpg",
+          "alt": "순천 조례호수공원의 호수와 주변 산책 공간",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/17/4101617_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제1유형",
+          "license": "Type1",
+          "contentId": "2737298",
+          "originalSha256": "c6a3eb7188a72ae90eada9803a871d2f377727651bea88c794ef68a65e576c22"
+        },
+        {
+          "src": "/playground-images/suncheon-jorye-lake-playground-2.jpg",
+          "alt": "조례호수공원의 나무 그늘 산책로",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/24/4101624_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제1유형",
+          "license": "Type1",
+          "contentId": "2737298",
+          "originalSha256": "2f6f7e6d8961b88eec7382da7451d89f8923b6ff29734e110677be8133ad8112"
+        }
+      ]
+    },
     "2752449": {
       "checkedAt": "2026-11-16T13:34:37.104Z",
       "photosCheckedAt": "2026-11-16T13:34:37.104Z",
@@ -611,6 +1342,208 @@
         }
       ],
       "detailsCheckedAt": "2026-11-16T14:45:08.110Z"
+    },
+    "2752603": {
+      "contentType": 12,
+      "checkedAt": "2026-11-16T15:29:53.479Z",
+      "detailsCheckedAt": "2026-11-16T15:29:53.479Z",
+      "photosCheckedAt": "2026-11-16T15:49:50.454Z",
+      "overview": "빛고을농촌테마공원은 전남광주통합특별시 남구 양과동 49,805㎡의 넓은 공간에 건립되었다. 공원 내 농업전시체험관에는 어린이들을 위한 놀이체험실, 북카페가 마련되어 있고 쌀을 직접 만져보며 다양한 쌀의 영양소를 확인할 수 있는 쌀 전시실이 따로 있다. 곤충들이 전시되어 있어 살아있는 곤충뿐만 아니라 생동감 있게 재현된 세계 곳곳의 곤충 표본들을 만날 수 있는 곤충박물관, 다양한 화훼 및 수목이 전시되어 있어 자연 친화적인 체험이 가능한 화훼유리온실, 힐링가든 등도 마련되어 있다. 아이들과 함께 눈으로 보고 손으로 만지면서 도시에서 접하기 어려운 자연과 농업 문화를 체험할 수 있는 도심 속 작은 힐링 공간이다.",
+      "intro": {
+        "contentid": "2752603",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "062-607-3850~3",
+        "opendate": "",
+        "restdate": "매주 월요일 (단, 월요일이 법정공휴일일 경우 다음날 휴무)",
+        "expguide": "자개수첩 만들기 / 나비모형 만들기 / 곤충표본 만들기 등",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "09:00~18:00",
+        "parking": "가능",
+        "chkbabycarriage": "",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "reviewedIntro": {
+        "contentid": "2752603",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "062-607-3850~3",
+        "opendate": "",
+        "restdate": "매주 월요일 (단, 월요일이 법정공휴일일 경우 다음날 휴무)",
+        "expguide": "자개수첩 만들기 / 나비모형 만들기 / 곤충표본 만들기 등",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "09:00~18:00",
+        "parking": "가능",
+        "chkbabycarriage": "",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "introChangedSinceReview": false,
+      "common": {
+        "title": "빛고을농촌테마공원",
+        "address": "전남광주통합특별시 남구 포충로 966-15",
+        "postalCode": "61758",
+        "homepage": "https://tour.gwangju.go.kr/home/tour/info/sports.cs?act=view&infoId=1167",
+        "telephone": "",
+        "latitude": 35.0842407882,
+        "longitude": 126.8678874335,
+        "sourceModifiedAt": "20261111084802",
+        "overview": "빛고을농촌테마공원은 전남광주통합특별시 남구 양과동 49,805㎡의 넓은 공간에 건립되었다. 공원 내 농업전시체험관에는 어린이들을 위한 놀이체험실, 북카페가 마련되어 있고 쌀을 직접 만져보며 다양한 쌀의 영양소를 확인할 수 있는 쌀 전시실이 따로 있다. 곤충들이 전시되어 있어 살아있는 곤충뿐만 아니라 생동감 있게 재현된 세계 곳곳의 곤충 표본들을 만날 수 있는 곤충박물관, 다양한 화훼 및 수목이 전시되어 있어 자연 친화적인 체험이 가능한 화훼유리온실, 힐링가든 등도 마련되어 있다. 아이들과 함께 눈으로 보고 손으로 만지면서 도시에서 접하기 어려운 자연과 농업 문화를 체험할 수 있는 도심 속 작은 힐링 공간이다."
+      },
+      "extra": [
+        {
+          "name": "입장료",
+          "content": "무료"
+        },
+        {
+          "name": "주차요금",
+          "content": "무료"
+        },
+        {
+          "name": "화장실",
+          "content": "있음"
+        }
+      ],
+      "reviewedDetails": {
+        "address": "전남광주통합특별시 남구 포충로 966-15",
+        "extra": [
+          {
+            "name": "입장료",
+            "content": "무료"
+          },
+          {
+            "name": "주차요금",
+            "content": "무료"
+          },
+          {
+            "name": "화장실",
+            "content": "있음"
+          }
+        ]
+      },
+      "detailsChangedSinceReview": false,
+      "photos": [
+        {
+          "src": "/playground-images/gwangju-bitgoeul-indoor-playground-1.jpg",
+          "alt": "빛고을농촌테마공원의 실내 어린이 놀이체험실",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/41/3514641_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제1유형",
+          "license": "Type1",
+          "contentId": "2752603",
+          "originalSha256": "46eea2b92c5f8b3ce24c921c8b2212cb4ee47dcbc7f2f5765d3de767698740bc"
+        },
+        {
+          "src": "/playground-images/gwangju-bitgoeul-indoor-playground-2.jpg",
+          "alt": "빛고을농촌테마공원의 화훼유리온실",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/43/3514643_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제1유형",
+          "license": "Type1",
+          "contentId": "2752603",
+          "originalSha256": "a430898dc7e92de36a590d2e85ba479053551131aaadbeb292388019de2d45c1"
+        }
+      ]
+    },
+    "2757058": {
+      "contentType": 12,
+      "checkedAt": "2026-11-16T15:29:53.479Z",
+      "detailsCheckedAt": "2026-11-16T15:29:53.479Z",
+      "photosCheckedAt": "2026-11-16T15:49:50.454Z",
+      "overview": "새마을운동 테마공원은 대한민국의 근현대사와 함께한 새마을운동의 가치를 계승 발전시키고자 건립된 복합문화공간이다. 247,000㎡ 부지에 조성되어 있으며 태동관은 1960년대를 전후로 겪은 보릿고개의 굶주림과 1970년대 새마을운동이 활발하게 전개되어 변화된 모습을 생생하게 전시하고 있다. 역사관은 1980년대 이후 새마을 운동의 성장기를 그리고 세계화관은 도움받는 나라에서 도움을 주는 나라로 성장한 우리나라 역사를 소개하고 있다. 체험시설을 통해 새마을 운동을 직접 경험할 수 있는 것도 의미 있다. 2021년 근현대사와 함께한 새마을 운동의 가치를 계승 발전시키고자 건립된 복합문화공간으로 새마을운동 전시관을 비롯한 실내어린이놀이터, 북카페, 황토찜질방 등 다양한 복합 문화시설이 위치해 있다.",
+      "intro": {
+        "contentid": "2757058",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "054-450-0153",
+        "opendate": "",
+        "restdate": "매주 월요일 (단, 월요일이 공휴일인 경우 정상 운영 그 다음날 휴관)",
+        "expguide": "",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "[전시관]09:00~18:00[야외공원]상시 개방",
+        "parking": "가능",
+        "chkbabycarriage": "없음",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "reviewedIntro": {
+        "contentid": "2757058",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "054-450-0153",
+        "opendate": "",
+        "restdate": "매주 월요일 (단, 월요일이 공휴일인 경우 정상 운영 그 다음날 휴관)",
+        "expguide": "",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "[전시관]09:00~18:00[야외공원]상시 개방",
+        "parking": "가능",
+        "chkbabycarriage": "없음",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "introChangedSinceReview": false,
+      "common": {
+        "title": "새마을운동테마공원",
+        "address": "경상북도 구미시 박정희로 155 (사곡동)",
+        "postalCode": "39332",
+        "homepage": "https://www.gb.go.kr/Main/saemaul/index.do",
+        "telephone": "",
+        "latitude": 36.0936137016,
+        "longitude": 128.3513700767,
+        "sourceModifiedAt": "20261111084802",
+        "overview": "새마을운동 테마공원은 대한민국의 근현대사와 함께한 새마을운동의 가치를 계승 발전시키고자 건립된 복합문화공간이다. 247,000㎡ 부지에 조성되어 있으며 태동관은 1960년대를 전후로 겪은 보릿고개의 굶주림과 1970년대 새마을운동이 활발하게 전개되어 변화된 모습을 생생하게 전시하고 있다. 역사관은 1980년대 이후 새마을 운동의 성장기를 그리고 세계화관은 도움받는 나라에서 도움을 주는 나라로 성장한 우리나라 역사를 소개하고 있다. 체험시설을 통해 새마을 운동을 직접 경험할 수 있는 것도 의미 있다. 2021년 근현대사와 함께한 새마을 운동의 가치를 계승 발전시키고자 건립된 복합문화공간으로 새마을운동 전시관을 비롯한 실내어린이놀이터, 북카페, 황토찜질방 등 다양한 복합 문화시설이 위치해 있다."
+      },
+      "extra": [
+        {
+          "name": "입장료",
+          "content": "무료"
+        }
+      ],
+      "reviewedDetails": {
+        "address": "경상북도 구미시 박정희로 155 (사곡동)",
+        "extra": [
+          {
+            "name": "입장료",
+            "content": "무료"
+          }
+        ]
+      },
+      "detailsChangedSinceReview": false,
+      "photos": [
+        {
+          "src": "/playground-images/gumi-saemaul-free-indoor-playground-1.jpg",
+          "alt": "새마을운동테마공원의 실내 책마당",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/88/3349188_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제3유형",
+          "license": "Type3",
+          "contentId": "2757058",
+          "originalSha256": "a4d36548b24944f873e22012d69479b59af8fec6b0b56fb4fac89eefdec01533"
+        },
+        {
+          "src": "/playground-images/gumi-saemaul-free-indoor-playground-2.jpg",
+          "alt": "어린이놀이터가 있는 새마을운동테마공원 전시관 전경",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/81/3349181_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제3유형",
+          "license": "Type3",
+          "contentId": "2757058",
+          "originalSha256": "1c78a82261e727cf0484cc1d7fe87b0ab25c2623c1f97cec987b116db19c781f"
+        }
+      ]
     },
     "2774564": {
       "checkedAt": "2026-11-16T13:34:37.104Z",
@@ -814,6 +1747,107 @@
       ],
       "detailsCheckedAt": "2026-11-16T14:45:08.110Z"
     },
+    "2782725": {
+      "contentType": 12,
+      "checkedAt": "2026-11-16T15:29:53.479Z",
+      "detailsCheckedAt": "2026-11-16T15:29:53.479Z",
+      "photosCheckedAt": "2026-11-16T15:49:50.454Z",
+      "overview": "동두천시의 대표적인 관광자원인 숲에서 즐길 수 있는 수도권 유일의 숲 테마파크이다. 왕방산 자락에 위치한 18만 ㎡의 산에 둘러싸여 자연친화적인 숲 놀이터이다. 산에서 부는 시원한 바람과 계곡물이 졸졸졸 흐르는 소리를 들으며 아이들이 신나게 뛰어놀 수 있는 야외 체험시설과 날씨에 구애받지 않는 실내 체험시설을 갖추고 있다. 실내 이용권과 실외 이용권을 따로 구입할 수 있고, 실내·외 종합이용권을 구입할 경우 좀 더 저렴하게 이용할 수 있다.",
+      "intro": {
+        "contentid": "2782725",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "0507-1364-5572",
+        "opendate": "",
+        "restdate": "매주 월요일 / 설·추석 당일",
+        "expguide": "",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "10:00~18:00",
+        "parking": "가능 (약 소형 100대 / 대형10대)",
+        "chkbabycarriage": "",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "reviewedIntro": {
+        "contentid": "2782725",
+        "contenttypeid": "12",
+        "heritage1": "0",
+        "heritage2": "0",
+        "heritage3": "0",
+        "infocenter": "0507-1364-5572",
+        "opendate": "",
+        "restdate": "매주 월요일 / 설·추석 당일",
+        "expguide": "",
+        "expagerange": "",
+        "accomcount": "",
+        "useseason": "",
+        "usetime": "10:00~18:00",
+        "parking": "가능 (약 소형 100대 / 대형10대)",
+        "chkbabycarriage": "",
+        "chkpet": "",
+        "chkcreditcard": ""
+      },
+      "introChangedSinceReview": false,
+      "common": {
+        "title": "놀자숲",
+        "address": "경기도 동두천시 탑동가산로 1 (탑동동)",
+        "postalCode": "11322",
+        "homepage": "https://noljasoop.com/",
+        "telephone": "",
+        "latitude": 37.88986726877503,
+        "longitude": 127.13711738269653,
+        "sourceModifiedAt": "20260421170559",
+        "overview": "동두천시의 대표적인 관광자원인 숲에서 즐길 수 있는 수도권 유일의 숲 테마파크이다. 왕방산 자락에 위치한 18만 ㎡의 산에 둘러싸여 자연친화적인 숲 놀이터이다. 산에서 부는 시원한 바람과 계곡물이 졸졸졸 흐르는 소리를 들으며 아이들이 신나게 뛰어놀 수 있는 야외 체험시설과 날씨에 구애받지 않는 실내 체험시설을 갖추고 있다. 실내 이용권과 실외 이용권을 따로 구입할 수 있고, 실내·외 종합이용권을 구입할 경우 좀 더 저렴하게 이용할 수 있다."
+      },
+      "extra": [
+        {
+          "name": "입장료",
+          "content": "[입장권 (36개월 이상/체험권을 구매하지 않은 고객)] - 10,000원 [종일 체험권 (10~18시)] - 실내 30,000원 - 실외 20,000원 - 통합권 (실내+실외) 50,000원 [오후 체험권 (14~18시)] - 실내 24,000원 - 실외 16,000원 - 통합권 (실내+실외) 40,000원 [주니어 체험권 (키 115㎝ 미만)] - 종일권 25,000원 - 오후권 20,000원 - 보호자권 15,000원 ※ 우천 시 주니어 체험권 20% 할인 [일회권 (익스트림 슬라이드)] - 1회권 5,000원 - 2회권 9,000원 [하늘 네트 어드벤처 체험권] - 5,000원 [서바이벌 게임 (2 게임)] - 1인 25,000원 [20% 할인] - 동두천 시민 / 자연휴양림 숙박객 ※ 무료 - 36개월 미만 ※ 자세한 사항은 홈페이지 참조"
+        },
+        {
+          "name": "화장실",
+          "content": "있음"
+        }
+      ],
+      "reviewedDetails": {
+        "address": "경기도 동두천시 탑동가산로 1 (탑동동)",
+        "extra": [
+          {
+            "name": "입장료",
+            "content": "[입장권 (36개월 이상/체험권을 구매하지 않은 고객)] - 10,000원 [종일 체험권 (10~18시)] - 실내 30,000원 - 실외 20,000원 - 통합권 (실내+실외) 50,000원 [오후 체험권 (14~18시)] - 실내 24,000원 - 실외 16,000원 - 통합권 (실내+실외) 40,000원 [주니어 체험권 (키 115㎝ 미만)] - 종일권 25,000원 - 오후권 20,000원 - 보호자권 15,000원 ※ 우천 시 주니어 체험권 20% 할인 [일회권 (익스트림 슬라이드)] - 1회권 5,000원 - 2회권 9,000원 [하늘 네트 어드벤처 체험권] - 5,000원 [서바이벌 게임 (2 게임)] - 1인 25,000원 [20% 할인] - 동두천 시민 / 자연휴양림 숙박객 ※ 무료 - 36개월 미만 ※ 자세한 사항은 홈페이지 참조"
+          },
+          {
+            "name": "화장실",
+            "content": "있음"
+          }
+        ]
+      },
+      "detailsChangedSinceReview": false,
+      "photos": [
+        {
+          "src": "/playground-images/dongducheon-noljasoop-indoor-1.jpg",
+          "alt": "놀자숲의 실내 로프 체험공간",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/34/3549334_image2_1.JPG",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제3유형",
+          "license": "Type3",
+          "contentId": "2782725",
+          "originalSha256": "b86d3438a4f50d77516afc7bc918d77cdff50de2bd36f6c080d718bda5edbb1a"
+        },
+        {
+          "src": "/playground-images/dongducheon-noljasoop-indoor-2.jpg",
+          "alt": "놀자숲의 실내 키즈 어드벤처 공간",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/37/3549337_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제3유형",
+          "license": "Type3",
+          "contentId": "2782725",
+          "originalSha256": "41aac882409000c8f557df8b20267418b9403e53a61e10e72da9fd7102eb3448"
+        }
+      ]
+    },
     "2853484": {
       "checkedAt": "2026-11-16T13:00:15.075Z",
       "overview": "삼무공원은 제주 시내 연동에 있다. 1978년 도시 근린공원으로 조성하였으며 삼무의 의미는 제주에 도둑, 대문, 거지가 없다는 삼무에서 따 온 이름이다. 삼무공원은 베두리오름에 조성된 공원으로, 베두리오름은 작은 언덕으로 삼무공원이 곧 베두리오름이다. 공원에는 증기기관차가 있는데, 1978년 박정희 대통령이 섬에 사는 아이들에게 기차를 보여주려고 사용이 중단된 기차를 흑산도와 제주도에 보낸 것이다. 현재는 제주도에만 미카형 증기기관차가 남아있다. 연동 주민들이 산책과 운동을 즐기는 공원으로 봄에는 능수 벚꽃이 아름다워 여행자들이 찾아온다.",
@@ -911,6 +1945,93 @@
         }
       ],
       "detailsCheckedAt": "2026-11-16T14:45:08.110Z"
+    },
+    "3578788": {
+      "contentType": 14,
+      "checkedAt": "2026-11-16T15:29:53.479Z",
+      "detailsCheckedAt": "2026-11-16T15:29:53.479Z",
+      "photosCheckedAt": "2026-11-16T15:49:50.454Z",
+      "overview": "화포천습지과학관은 경상남도의 내륙습지, 하천형습지인 화포천의 생태·환경 가치를 알리기 위해 조성된 생태교육 중심 시설이다. 1층에는 기획전시실, 생태교육 공간이 마련되어 있고, 2층에는 습지과학실, 화포천의 사계, 철새 전시와 라이브스케치 등이 구성되어 있다. 3층은 자연놀이터와 휴게공원 등 체험과 휴식 공간을 제공하며, 옥상 포토데크와 철새전망대는 화포천습지의 전경을 조망할 수 있는 명소이다. 과학관은 전시, 체험, 탐방이 어우러진 생태문화 교육의 거점이다.",
+      "intro": {
+        "contentid": "3578788",
+        "contenttypeid": "14",
+        "scale": "",
+        "usefee": "무료",
+        "discountinfo": "",
+        "spendtime": "",
+        "parkingfee": "",
+        "infocenterculture": "055-342-9834",
+        "accomcountculture": "",
+        "usetimeculture": "[평일]- 09:00~18:00- 입장 마감 17:00[주말]- 09:00~18:00- 휴게시간 13:00~13:30- 입장 마감 17:00",
+        "restdateculture": "매주 월요일",
+        "parkingculture": "",
+        "chkbabycarriageculture": "",
+        "chkpetculture": "",
+        "chkcreditcardculture": "",
+        "usetime": "[평일]- 09:00~18:00- 입장 마감 17:00[주말]- 09:00~18:00- 휴게시간 13:00~13:30- 입장 마감 17:00",
+        "parking": "",
+        "restdate": "매주 월요일",
+        "infocenter": "055-342-9834"
+      },
+      "reviewedIntro": {
+        "contentid": "3578788",
+        "contenttypeid": "14",
+        "scale": "",
+        "usefee": "무료",
+        "discountinfo": "",
+        "spendtime": "",
+        "parkingfee": "",
+        "infocenterculture": "055-342-9834",
+        "accomcountculture": "",
+        "usetimeculture": "[평일]- 09:00~18:00- 입장 마감 17:00[주말]- 09:00~18:00- 휴게시간 13:00~13:30- 입장 마감 17:00",
+        "restdateculture": "매주 월요일",
+        "parkingculture": "",
+        "chkbabycarriageculture": "",
+        "chkpetculture": "",
+        "chkcreditcardculture": "",
+        "usetime": "[평일]- 09:00~18:00- 입장 마감 17:00[주말]- 09:00~18:00- 휴게시간 13:00~13:30- 입장 마감 17:00",
+        "parking": "",
+        "restdate": "매주 월요일",
+        "infocenter": "055-342-9834"
+      },
+      "introChangedSinceReview": false,
+      "common": {
+        "title": "화포천습지과학관",
+        "address": "경상남도 김해시 진영읍 진영로265번길 330",
+        "postalCode": "50856",
+        "homepage": "https://www.gimhae.go.kr/hwapo.web",
+        "telephone": "",
+        "latitude": 35.3079,
+        "longitude": 128.7779,
+        "sourceModifiedAt": "20260424091626",
+        "overview": "화포천습지과학관은 경상남도의 내륙습지, 하천형습지인 화포천의 생태·환경 가치를 알리기 위해 조성된 생태교육 중심 시설이다. 1층에는 기획전시실, 생태교육 공간이 마련되어 있고, 2층에는 습지과학실, 화포천의 사계, 철새 전시와 라이브스케치 등이 구성되어 있다. 3층은 자연놀이터와 휴게공원 등 체험과 휴식 공간을 제공하며, 옥상 포토데크와 철새전망대는 화포천습지의 전경을 조망할 수 있는 명소이다. 과학관은 전시, 체험, 탐방이 어우러진 생태문화 교육의 거점이다."
+      },
+      "extra": [],
+      "reviewedDetails": {
+        "address": "경상남도 김해시 진영읍 진영로265번길 330",
+        "extra": []
+      },
+      "detailsChangedSinceReview": false,
+      "photos": [
+        {
+          "src": "/playground-images/gimhae-hwapo-wetland-science-1.jpg",
+          "alt": "화포천습지과학관의 실내 어린이 공간",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/79/3578779_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제3유형",
+          "license": "Type3",
+          "contentId": "3578788",
+          "originalSha256": "da5680d572d7c513bd6902af5629bb339fe3f5eb35bcc5692548da11553e9c29"
+        },
+        {
+          "src": "/playground-images/gimhae-hwapo-wetland-science-2.jpg",
+          "alt": "화포천습지과학관의 실내 놀이·체험공간",
+          "original": "https://tong.visitkorea.or.kr/cms/resource/81/3578781_image2_1.jpg",
+          "credit": "한국관광공사 관광콘텐츠랩 · 공공누리 제3유형",
+          "license": "Type3",
+          "contentId": "3578788",
+          "originalSha256": "e570c0afbac103de29dd35ac843a576c00cbacea1fcb69d5ce1daee5fd6bb2d5"
+        }
+      ]
     }
   },
   "detailsCheckedAt": "2026-11-16T14:45:08.110Z"

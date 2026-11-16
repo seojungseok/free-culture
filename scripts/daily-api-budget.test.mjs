@@ -9,8 +9,8 @@ test("Korean Monday reserves the weekly collection allowance", () => {
   assert.equal(mondayUtcEvening.weekly, 0);
   assert.equal(mondayUtcEvening.details, 100);
   assert.equal(mondayUtcEvening.images, 30);
-  assert.equal(mondayUtcEvening.total, 442);
-  assert.equal(mondayUtcEvening.playgroundTour,32);
+  assert.equal(mondayUtcEvening.total, 482);
+  assert.equal(mondayUtcEvening.playgroundTour,72);
   assert.equal(mondayUtcEvening.accessible,60);
 });
 

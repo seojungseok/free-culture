@@ -22,11 +22,12 @@ export function getGuideFacilities(guide:PlaygroundGuide){return guide.facilityI
 type TourRecord={checkedAt:string;detailsCheckedAt?:string;photosCheckedAt?:string;contentType?:number;introChangedSinceReview?:boolean;detailsChangedSinceReview?:boolean;common?:{title:string;address:string;homepage:string;telephone:string;latitude:number|null;longitude:number|null};extra?:{name:string;content:string}[];intro:{usetime:string;parking:string;restdate?:string;infocenter?:string};photos:{src:string;alt:string;original:string;credit:string;license:string;contentId:string;originalSha256?:string}[]};
 export function getGuideTour(guide:PlaygroundGuide){return (tourism.places as Record<string,TourRecord>)[guide.tourId];}
 export function getOperationReview(guide:PlaygroundGuide){return (operationData.reviews as Record<string,{status:string;checkedAt?:string;exceptions:{start:string;end:string;label:string;source:string}[]}>)[guide.slug];}
-export function getRecommendedPlaygroundGuides(now=new Date()){return editorial.guides.filter(guide=>canRecommendPlayground(guide,getGuideFacilities(guide),getOperationReview(guide),{now})&&!getGuideTour(guide).introChangedSinceReview&&!getGuideTour(guide).detailsChangedSinceReview);}
+export function getRecommendedPlaygroundGuides(now=new Date()){return editorial.guides.filter(guide=>canRecommendPlayground(guide,getGuideFacilities(guide),getOperationReview(guide),{now})&&!getGuideTour(guide).introChangedSinceReview&&!getGuideTour(guide).detailsChangedSinceReview).sort((a,b)=>Number(b.visit.feeKind==='free')-Number(a.visit.feeKind==='free'));}
 export function getGuideState(guide:PlaygroundGuide){return getGuideFacilities(guide).some(isPlaygroundCandidate);}
 export function guideForFacility(id:string){return editorial.guides.find(g=>g.facilityIds.includes(id));}
 export const guidePublishedAt=editorial.publishedAt;
-export function guideModifiedAt(guide:PlaygroundGuide){return guide.updatedAt||guidePublishedAt;}
+export function guideFirstPublishedAt(guide:PlaygroundGuide){return guide.publishedAt||guidePublishedAt;}
+export function guideModifiedAt(guide:PlaygroundGuide){return guide.updatedAt||guideFirstPublishedAt(guide);}
 export function getGuideAddress(guide:PlaygroundGuide){return guide.visit.address||getGuideTour(guide).common?.address||getGuideFacilities(guide)[0]?.address||guide.area;}
 export function playgroundDate(at:string){return new Date(at).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});}
 export function playgroundMap(name:string,address:string){return 'https://map.naver.com/p/search/'+encodeURIComponent(name+' '+address);}

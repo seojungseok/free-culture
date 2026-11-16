@@ -6,7 +6,7 @@ export function playgroundCommon(raw){
  return {title:cleanText(raw.title),address:cleanText([raw.addr1,raw.addr2].filter(Boolean).join(' ')),postalCode:cleanText(raw.zipcode),homepage:extractUrl(raw.homepage),telephone:cleanText(raw.tel),latitude:number(raw.mapy,32,40),longitude:number(raw.mapx,123,133),sourceModifiedAt:cleanText(raw.modifiedtime),overview:cleanText(raw.overview)};
 }
 export async function refreshPlaygroundTour({input,fetchIntro=detailIntroRaw,fetchCommon,fetchInfo,pause=sleep,now=new Date(),detailsOnly=false,initializeReviewed=false}={}){
- const result=structuredClone(input),budget=createBudget(32),at=now.toISOString();
+ const result=structuredClone(input),budget=createBudget(72),at=now.toISOString();
  for(const [id,place] of Object.entries(result.places)){
   if(!detailsOnly){
    const raw=await fetchIntro(id,place.contentType||12,budget);if(!raw||String(raw.contentid)!==id||!(raw.usetime||raw.usetimeculture))throw Error('관광 API 필수정보 미확인');

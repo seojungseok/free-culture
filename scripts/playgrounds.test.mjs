@@ -95,3 +95,26 @@ test('상세 API의 요금 변경은 재검토로 표시하고 잘못 연결된 
  const changed=await refreshPlaygroundTour({...options,input:checked,initializeReviewed:false,fetchInfo:async()=>[{infoname:'입장료',infotext:'5,000원'}]});assert.equal(changed.places['123'].detailsChangedSinceReview,true);assert.equal(checked.places['123'].extra[0].content,'무료');assert.equal(changed.places['123'].photos[0].src,'reviewed.webp');
  await assert.rejects(refreshPlaygroundTour({...options,fetchCommon:async()=>({contentid:'999',addr1:'다른 장소'})}),/장소 식별/);
 });
+
+test('지역 안내는 17개 지역에 연결되고 개별 최초 발행일을 보존',()=>{
+ const data=JSON.parse(fs.readFileSync('data/playground-guides.json')),guides=data.guides;
+ for(const area of ['서울','경기','인천','강원','충북','충남','대전','세종','전북','전남','광주','경북','경남','대구','부산','울산','제주'])assert.ok(guides.some(g=>g.area===area),area+' 방문 안내');
+ for(const guide of guides){assert.ok(Number.isFinite(Date.parse(guide.publishedAt)));assert.ok(Date.parse(guide.updatedAt)>=Date.parse(guide.publishedAt));}
+ assert.equal(guides.find(g=>g.slug==='gimhae-wood-indoor-playground').publishedAt,data.publishedAt);
+ assert.ok(Date.parse(guides.find(g=>g.slug==='gumi-saemaul-free-indoor-playground').publishedAt)>Date.parse(data.publishedAt));
+});
+
+test('20곳의 기본·운영·상세 60개 요청과 재시도가 주간 예산에 들어감',async()=>{
+ const input={places:Object.fromEntries(Array.from({length:20},(_,i)=>[String(i+1),{intro:{contentid:String(i+1),usetime:'09:00~18:00'},photos:[]}]))};let calls=0;
+ const use=budget=>{assert.equal(budget.max,72);budget.used++;calls++;assert.ok(budget.used<=budget.max);};
+ const result=await refreshPlaygroundTour({input,pause:async()=>{},fetchIntro:async(id,type,budget)=>{use(budget);return {contentid:id,usetime:'09:00~18:00'};},fetchCommon:async(id,budget)=>{use(budget);return {contentid:id,addr1:'서울특별시 광진구'};},fetchInfo:async(id,type,budget)=>{use(budget);return [{infoname:'입장료',infotext:'무료'}];}});
+ assert.equal(calls,60);assert.equal(Object.keys(result.places).length,20);
+});
+
+test('새 공지 제목 변경은 감지하고 단순 조회수 변동은 추천 판단에 영향 없음',()=>{
+ for(const [mode,link] of [['gumi-notices','?B_NUM=123'],['hwapo-notices','?idx=123&gcode=1366']]){
+  const html='<body><table><tbody><tr><td><a href="'+link+'">2026년 11월 어린이 실내놀이터의 주말 운영시간과 정기 휴관일 안내입니다.</a></td><td>조회수 10</td></tr></tbody></table></body>';
+  assert.equal(operationFingerprint(html,mode),operationFingerprint(html.replace('조회수 10','조회수 20'),mode));
+  assert.notEqual(operationFingerprint(html,mode),operationFingerprint(html.replace('휴관일 안내','임시휴장 안내'),mode));
+ }
+});
