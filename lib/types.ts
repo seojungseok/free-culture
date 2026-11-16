@@ -8,7 +8,10 @@ export type PriceType =
 export interface EventSourceDetail {
   status:string;title:string;url:string;checkedAt:string;excerpt?:string;
   eventTitle:string;eventStartDate:string;eventEndDate:string;
-  facts:{label:string;value:string}[];
+  facts:{label:string;value:string;sourceUrl?:string}[];
+  programme?:string[];
+  sources?:{url:string;title:string;checkedAt:string}[];
+  contentUpdatedAt?:string;
 }
 export interface CultureEvent {
   /** API의 seq (고유 id) */

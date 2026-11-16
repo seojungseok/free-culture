@@ -5,12 +5,13 @@ import { isIP } from 'node:net';
 import { loadKey, QuotaError, sleep } from './tourClient.mjs';
 const parser=new XMLParser({ignoreAttributes:true});
 export const textOf=value=>String(value??'').replace(/<\/?[a-z][a-z0-9]*(?:\s[^>]*)?\s*\/?\s*>/gi,' ').replace(/&amp;/gi,'&').replace(/&nbsp;/gi,' ').replace(/\s+/g,' ').trim();
-export const SOURCE_PARSER_VERSION=2;
-const factLabels=/^(공연시간|관람시간|운영시간|행사시간|교육시간|교육대상|교육인원|러닝타임|소요시간|관람연령|관람등급|등급|참여대상|신청대상|대상|예약방법|신청방법|접수방법|접수기간|신청기간|정원|모집인원|준비물|프로그램명|체험프로그램|체험내용|프로그램|출연|연주곡목|장르)$/;
+export const SOURCE_PARSER_VERSION=3;
+const factLabels=/^(공연시간|공연일시|관람시간|운영시간|행사시간|시간|교육시간|교육대상|교육인원|러닝타임|소요시간|관람연령|관람등급|등급|참여대상|신청대상|대상|예약방법|예매방법|신청방법|접수방법|접수기간|신청기간|정원|모집인원|준비물|프로그램명|체험프로그램|체험내용|프로그램|출연|출연진|연주곡목|주최|주관|장르)$/;
+const normalizedLabel=label=>({'시간':'행사시간','공연일시':'행사시간','러닝타임':'소요시간','대상':'참여대상','등급':'관람등급','출연진':'출연'}[label]||label);
 function dateRangesConflict(value,event) {
   const dates=[...value.matchAll(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/g)].map(m=>m[1]+m[2].padStart(2,'0')+m[3].padStart(2,'0'));
   const today=new Date(Date.now()+9*3600000).toISOString().slice(0,10).replace(/-/g,'');
-  return dates.length>=2&&event.startDate&&event.endDate&&(dates[dates.length-1]<event.startDate||dates[0]>event.endDate||event.endDate>=today&&dates[dates.length-1]<today);
+  return dates.length>=1&&event.startDate&&event.endDate&&(dates[dates.length-1]<event.startDate||dates[0]>event.endDate||event.endDate>=today&&dates[dates.length-1]<today);
 }
 export function publicSourceUrl(value) {
   try {
@@ -90,7 +91,7 @@ export function validFact(label,value) {
 }
 export function sourceExcerpt(value,title) {
   const description=textOf(value);
-  if(!description||/로그인|회원가입|{{|문화생활의 즐거움|가격,?\s*일정 상세 정보|공연장, LG아트센터|진흥원 소개,/.test(description)||titleKey(description)===titleKey(title))return '';
+  if(description.length<20||/로그인|회원가입|{{|문화생활의 즐거움|가격,?\s*일정 상세 정보|공연장, LG아트센터|진흥원 소개,|문화체육관광부 문화예술공연은|공연·전시 정보를 연계해 제공/.test(description)||titleKey(description)===titleKey(title))return '';
   return description.split(/\s+/).slice(0,24).join(' ').slice(0,140);
 }
 export function extractEventSource(html,event,url) {
@@ -98,12 +99,17 @@ export function extractEventSource(html,event,url) {
   const title=textOf($('meta[property="og:title"]').attr('content')||$('title').text());
   const ld=[];
   $('script[type="application/ld+json"]').each((_,node)=>{try{const data=JSON.parse($(node).text());const visit=x=>{if(Array.isArray(x))return x.forEach(visit);if(x&&typeof x==='object'){if([].concat(x['@type']||[]).some(t=>/Event$/.test(t)))ld.push(x);if(x['@graph'])visit(x['@graph']);}};visit(data);}catch{}});
-  const identity=key.length>=2&&!/^(?:뮤지컬|연극|공연|전시|축제)$/.test(key)&&(titleKey(title).includes(key)||ld.some(item=>titleKey(item.name).includes(key)));
+  // Official detail pages often have a site-wide <title>. Only named detail
+  // headings, never card/link text in a programme listing, can establish identity.
+  const detailHeadings=$('.view-tit,.ovw9_title,.view_title,.view-title,.board-view-title,main h1,article h1,#content h1,#contents h1').toArray();
+  const headingMatch=detailHeadings.some(node=>titleKey($(node).text())===key);
+  const identity=key.length>=2&&!/^(?:뮤지컬|연극|공연|전시|축제)$/.test(key)&&(titleKey(title).includes(key)||ld.some(item=>titleKey(item.name).includes(key))||headingMatch);
   if(!identity) return {status:'identity-unconfirmed',title,url,facts:[]};
   const matched=ld.find(item=>titleKey(item.name).includes(key));
   if(matched?.startDate&&event.startDate&&String(matched.startDate).replace(/\D/g,'').slice(0,8)!==event.startDate) return {status:'schedule-conflict',title,url,facts:[]};
   $('script,style,nav,header,footer,form,iframe,noscript,[hidden],[aria-hidden="true"]').remove();
-  const main=$('main,article,[role="main"],#content,#contents,.view_cont,.view-content,.board_view').first();
+  const scoped=$('.ovw9_content,.wrap-info:has(.view-tit)').first();
+  const main=scoped.length?scoped:$('main,article,[role="main"],#content,#contents,.view_cont,.view-content,.board_view').first();
   const body=main.length?main:$('body');
   const tableFacts=[],sessionFacts=[];let scheduleConflict=false;
   $('body tr').each((_,node)=>{
@@ -117,6 +123,11 @@ export function extractEventSource(html,event,url) {
     if(session&&when&&when.replace(/^교육일시\s*/,'').slice(0,10)>=today&&/^(?:마감|접수중|접수예정|대기접수)$/.test(status))sessionFacts.push({label:`${session[1]} 신청 현황`,value:`${when.replace(/^교육일시\s*/,'')} / ${status}`});
     if(/^\d{1,2}:\d{2}\s*[~～-]\s*\d{1,2}:\d{2}/.test(columns[0])&&columns.length===3&&columns[1])tableFacts.push({label:`${columns[0]} 프로그램`,value:columns[1]});
   });
+  body.find('dt').each((_,node)=>{
+    const label=textOf($(node).text()).replace(/\s/g,''),value=textOf($(node).next('dd').text());
+    if(factLabels.test(label))tableFacts.push({label,value});
+    if(/^(?:(?:공연|교육|전시|행사|운영)?기간|공연일시)$/.test(label)&&dateRangesConflict(value,event))scheduleConflict=true;
+  });
   body.find('br').replaceWith('\n');body.find('tr,li,p,div,dt,dd,h1,h2,h3,h4,section').append('\n');
   const lines=[...new Set(body.text().split(/\n/).map(textOf).filter(Boolean))];
   for(let index=0;index<lines.length;index++) {
@@ -125,11 +136,11 @@ export function extractEventSource(html,event,url) {
   }
   if(scheduleConflict)return {status:'schedule-conflict',title,url,facts:[]};
   const facts=[];
-  const add=(label,value)=>{value=textOf(value).replace(/^[:：\s]+/,'');if(validFact(label,value)&&!facts.some(f=>f.label===label))facts.push({label,value});};
+  const add=(label,value)=>{label=normalizedLabel(label);value=textOf(value).replace(/^[:：\s]+/,'');if(label==='행사시간'&&/^\d{1,3}\s*(?:분|시간)(?!\s*\d?시)/.test(value))label='소요시간';if(validFact(label,value)&&!facts.some(f=>f.label===label))facts.push({label,value});};
   tableFacts.forEach(({label,value})=>add(label,value));
   for(let index=0;index<lines.length;index++) {
     const line=lines[index];
-    const match=line.match(/^(공연시간|관람시간|운영시간|행사시간|교육시간|교육대상|교육인원|러닝타임|소요시간|관람연령|관람등급|등급|참여대상|신청대상|예약방법|신청방법|접수기간|신청기간|정원|모집인원|준비물|프로그램명|체험프로그램|체험내용|프로그램|출연|연주곡목|장르)(?:\s*[:：]\s*|\s+|$)(.*)$/);
+    const match=line.match(/^(공연시간|공연일시|관람시간|운영시간|행사시간|교육시간|교육대상|교육인원|러닝타임|소요시간|관람연령|관람등급|등급|참여대상|신청대상|예약방법|예매방법|신청방법|접수방법|접수기간|신청기간|정원|모집인원|준비물|프로그램명|체험프로그램|체험내용|프로그램|출연진|출연|연주곡목|주최|주관|장르)(?:\s*[:：]\s*|\s+|$)(.*)$/);
     if(match) add(match[1],match[2]||lines[index+1]);
     const time=line.match(/^(?:공연|관람)?\s*(\d{2,3}\s*분(?:\s*\(?인터미션[^)]*\)?)?)$/);
     if(time) add('소요시간',time[1]);
@@ -140,5 +151,15 @@ export function extractEventSource(html,event,url) {
   sessionFacts.forEach(({label,value})=>add(label,value));
   const description=textOf(matched?.description||$('meta[property="og:description"]').attr('content')||$('meta[name="description"]').attr('content')||'');
   const excerpt=sourceExcerpt(description,title);
-  return {status:facts.length||excerpt?'verified':'no-readable-detail',title,url,facts:facts.slice(0,12),excerpt};
+  // This venue exposes a labelled programme as short individual work titles.
+  // Store factual titles/credits rather than copying its descriptive article.
+  const programme=[];
+  if(new URL(url).hostname.endsWith('snart.or.kr')) {
+    const nodes=$('.detail_cont .editor_content p');
+    if(/프로그램/.test(nodes.first().text()+nodes.eq(2).text())) nodes.each((_,node)=>{
+      const value=textOf($(node).text());
+      if(value.length>=3&&value.length<=90&&/[가-힣]{2}/.test(value)&&!/[.!?。]|프로그램|입니다|합니다/.test(value)&&!programme.includes(value))programme.push(value);
+    });
+  }
+  return {status:facts.length||excerpt||programme.length?'verified':'no-readable-detail',title,url,facts:facts.slice(0,16),excerpt,...(programme.length?{programme:programme.slice(0,12)}:{})};
 }

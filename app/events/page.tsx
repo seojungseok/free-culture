@@ -33,9 +33,8 @@ export default function EventsPage() {
           무료·저렴 전시·공연·축제를 날짜·지역·분야·가격으로 골라보세요
         </p>
       </Band>
-      <TossTopDeals />
       <Suspense fallback={<InitialIndexPreview title="현재 등록된 문화행사" items={preview} />}>
-        <DateBrowser events={events} openFilters />
+        <DateBrowser events={events} openFilters advertisement={<TossTopDeals contained compact />} />
       </Suspense>
     </>
   );

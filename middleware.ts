@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 import curated from './data/curated-events.json';
 import { eventPublicationPaths, expiredEventForPath } from './lib/event-publication.mjs';
 import { missingPlaceRoute, missingPlaceHtml, placeRouteRedirect } from './lib/placeRouteGuard';
+import { missingEventRoute, missingEventHtml } from './lib/eventRouteGuard';
 
 export function middleware(request: NextRequest) {
   let path = request.nextUrl.pathname;
@@ -12,6 +13,12 @@ export function middleware(request: NextRequest) {
     return new NextResponse(missingPlaceHtml, {
       status: 404,
       headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'private, no-store', 'X-Robots-Tag': 'noindex, follow' },
+    });
+  }
+  if (missingEventRoute(path)) {
+    return new NextResponse(missingEventHtml, {
+      status:404,
+      headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'private, no-store','X-Robots-Tag':'noindex, follow'},
     });
   }
   // Also cover any previously generated Next image URL for this poster.

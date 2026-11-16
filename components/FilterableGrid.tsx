@@ -24,10 +24,12 @@ export default function FilterableGrid({
   events,
   showControls = true,
   hidePriceFilter = false,
+  advertisement,
 }: {
   events: CultureEvent[];
   showControls?: boolean;
   hidePriceFilter?: boolean;
+  advertisement?: React.ReactNode;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -140,6 +142,7 @@ export default function FilterableGrid({
         </div>
       )}
 
+      {advertisement && <div className="mb-6" data-nosnippet="">{advertisement}</div>}
       {shown.length === 0 ? (
         <EmptyState price={price} />
       ) : (

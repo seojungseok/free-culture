@@ -74,11 +74,13 @@ export default function DateBrowser({
   initial,
   previewHref,
   openFilters,
+  advertisement,
 }: {
   events: CultureEvent[];
   initial?: { region?: string; genre?: string; price?: PriceKey };
   previewHref?: string;
   openFilters?: boolean;
+  advertisement?: React.ReactNode;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -352,6 +354,8 @@ export default function DateBrowser({
               <button onClick={resetAll} className="ml-1 rounded-full px-2.5 py-1 text-[12.5px] font-bold text-ink-faint underline underline-offset-2 hover:text-ink">필터 초기화</button>
             </div>
           )}
+
+          {advertisement && <div className="mb-6 mt-3" data-nosnippet="">{advertisement}</div>}
 
           {/* 결과 헤더 */}
           <div className="mb-4 flex flex-wrap items-end justify-between gap-3">

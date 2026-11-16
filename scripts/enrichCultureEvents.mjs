@@ -28,29 +28,79 @@ export async function enrichCultureEvents({events,store,max=200,pageMax=80,worke
       await pause(220);
     }
   }));
-  const pageTargets=events.filter(e=>!e.contents?.trim()&&publicSourceUrl(e.officialUrl)&&(!store.events[e.id]?.pageCheckedAt||now().getTime()-Date.parse(store.events[e.id].pageCheckedAt)>7*86400000||store.events[e.id]?.sourceDetail?.status==='verified'&&store.events[e.id]?.parserVersion!==SOURCE_PARSER_VERSION||store.events[e.id]?.pageResult==='identity-unconfirmed'&&!store.events[e.id]?.pageUrl)).sort((a,b)=>String(store.events[a.id]?.pageCheckedAt||'').localeCompare(String(store.events[b.id]?.pageCheckedAt||''))).slice(0,pageMax);
+  const today=new Date(now().getTime()+9*3600000).toISOString().slice(0,10).replace(/-/g,'');
+  const pageTargets=events.filter(event=>{
+    const prior=store.events[event.id]||{};
+    if(event.endDate<today||!publicSourceUrl(event.officialUrl))return false;
+    const age=now().getTime()-Date.parse(prior.pageCheckedAt||0);
+    if(prior.pageResult==='source-http-429'&&age<86400000)return false;
+    return !prior.pageCheckedAt||age>7*86400000||prior.parserVersion!==SOURCE_PARSER_VERSION;
+  }).sort((a,b)=>{
+    const missing=e=>Number(Boolean(store.events[e.id]?.sourceDetail));
+    return missing(a)-missing(b)||Number(b.featured)-Number(a.featured)||
+      Math.max(0,Number(a.startDate)-Number(today))-Math.max(0,Number(b.startDate)-Number(today));
+  }).slice(0,pageMax);
   index=0;
   const hostNext=new Map();
+  let sourceRequests=0,portalDetails=0;
+  async function readSource(url,event) {
+    const host=new URL(url).host;
+    const start=Math.max(Date.now(),hostNext.get(host)||0);hostNext.set(host,start+700);
+    if(start>Date.now())await pause(start-Date.now());
+    sourceRequests++;
+    try {
+      const response=await pageFetcher(url);
+      return extractEventSource(response.html,event,response.url);
+    } catch(error) {
+      return {status:String(error.message||'').match(/^(source-[a-z-]+(?:-\d{3})?|unsafe-source)$/)?.[0]||'source-unavailable',url,facts:[]};
+    }
+  }
+  const signature=detail=>JSON.stringify({facts:detail?.facts?.map(({label,value,sourceUrl})=>({label,value,sourceUrl})),programme:detail?.programme,excerpt:detail?.excerpt});
   await Promise.all(Array.from({length:Math.max(1,Math.min(4,workers))},async()=>{
     while(index<pageTargets.length){
-      const event=pageTargets[index++],url=publicSourceUrl(event.officialUrl),host=new URL(url).host;
-      const start=Math.max(Date.now(),hostNext.get(host)||0);hostNext.set(host,start+650);if(start>Date.now())await pause(start-Date.now());
+      const event=pageTargets[index++],url=publicSourceUrl(event.officialUrl);
       const previous=store.events[event.id]||{};
-      try{
-        const response=await pageFetcher(url);
-        const result=extractEventSource(response.html,event,response.url);
-        store.events[event.id]={...previous,pageUrl:url,pageCheckedAt:now().toISOString(),pageResult:result.status,parserVersion:SOURCE_PARSER_VERSION,...(result.status==='verified'?{sourceDetail:{...result,eventTitle:event.title,eventStartDate:event.startDate,eventEndDate:event.endDate,checkedAt:now().toISOString()}}:result.status==='schedule-conflict'||result.status==='identity-unconfirmed'?{sourceDetail:undefined}:{})};
-        if(result.status==='verified')pageDetails++;
-      }catch(error){const status=String(error.message||'').match(/^(source-[a-z-]+(?:-\d{3})?|unsafe-source)$/)?.[0]||'source-unavailable';store.events[event.id]={...previous,pageCheckedAt:now().toISOString(),pageResult:status};}
-      pages++;if(pages%25===0)onProgress({pages,pageDetails});
+      const result=await readSource(url,event);
+      const verified=result.status==='verified'?[result]:[];
+      // The provider's public, per-ID detail is a second official source, not a
+      // search result. Identity and registered dates must pass the same parser.
+      let portal;
+      if(/^\d+$/.test(event.id)&&!new URL(url).hostname.endsWith('culture.go.kr')&&
+        (new Set(result.facts.map(f=>f.value)).size<4||!result.facts.some(f=>/소요|러닝/.test(f.label))||!result.facts.some(f=>/시간/.test(f.label)&&/\d:\d/.test(f.value)))) {
+        const portalUrl=`https://www.culture.go.kr/portal/cltInfo/oneCltInfo/oneCltInfoView.do?menuNo=200010&pblprfrSn=${event.id}`;
+        portal=await readSource(portalUrl,event);
+        if(portal.status==='verified'){verified.push(portal);portalDetails++;}
+      }
+      const checkedAt=now().toISOString();
+      const record={...previous,pageUrl:url,pageCheckedAt:checkedAt,pageResult:result.status,parserVersion:SOURCE_PARSER_VERSION,
+        ...(portal?{portalResult:portal.status,portalCheckedAt:checkedAt}:{})};
+      if(verified.length) {
+        const facts=[];
+        for(const source of verified)for(const fact of source.facts) {
+          const label=fact.label==='공연시간'?'행사시간':fact.label;
+          if(!facts.some(row=>row.label===label))facts.push({...fact,label,sourceUrl:source.url});
+        }
+        const detail={...verified[0],facts,
+          programme:verified.find(source=>source.programme?.length)?.programme,
+          excerpt:verified.find(source=>source.excerpt)?.excerpt||'',
+          sources:verified.map(source=>({url:source.url,title:source.title,checkedAt})),
+          eventTitle:event.title,eventStartDate:event.startDate,eventEndDate:event.endDate,checkedAt};
+        detail.contentUpdatedAt=signature(previous.sourceDetail)===signature(detail)?previous.sourceDetail?.contentUpdatedAt||previous.sourceDetail?.checkedAt:checkedAt;
+        record.sourceDetail=detail;pageDetails++;
+      } else if(result.status==='schedule-conflict'||result.status==='identity-unconfirmed') {
+        // A different event or edition must never retain old participation facts.
+        record.sourceDetail=undefined;
+      }
+      store.events[event.id]=record;
+      pages++;if(pages%25===0)onProgress({pages,pageDetails,sourceRequests,portalDetails});
     }
   }));
-  return {targets:targets.length,checked,descriptions,links,failures,deferred,requests:budget.used,pages,pageDetails,exitCode:failures?1:deferred?75:0};
+  return {targets:targets.length,checked,descriptions,links,failures,deferred,requests:budget.used,pages,pageDetails,sourceRequests,portalDetails,exitCode:failures?1:deferred?75:0};
 }
 async function main(){
   loadSourceEnv();
   const data=readCache('events.json',{events:[]}),store=readCache('event-source-details.json',{events:{}});
-  const max=Math.min(1200,Math.max(0,Number(process.env.CULTURE_DETAIL_DAILY||200))),pageMax=Math.min(1200,Math.max(0,Number(process.env.CULTURE_SOURCE_PAGES??80)));
+  const max=Math.min(1200,Math.max(0,Number(process.env.CULTURE_DETAIL_DAILY??200))),pageMax=Math.min(1200,Math.max(0,Number(process.env.CULTURE_SOURCE_PAGES??80)));
   const result=await enrichCultureEvents({events:data.events,store,max,pageMax,workers:Number(process.env.CULTURE_SOURCE_WORKERS||2),onProgress:r=>console.log(JSON.stringify(r))});
   if(result.checked){writeCache('events.json',data);}
   if(result.checked||result.pages)writeCache('event-source-details.json',store);

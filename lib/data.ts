@@ -1,5 +1,5 @@
 // 정적 import: 빌드 산출물/서버리스 함수에 함께 번들되어 ISR·동적 렌더에서도 안전
-import { weekendRangeYmd } from "@/lib/dates";
+import { weekendRangeYmd, todayYmd } from "@/lib/dates";
 import eventsData from "@/data/events.json";
 import curatedEventsData from "@/data/curated-events.json";
 import { unstable_noStore as noStore } from 'next/cache';
@@ -35,7 +35,8 @@ const visibleEvents: EventsData = {
 };
 function load(): EventsData {
   respectEventPublicationDeadline();
-  const events = visibleEvents.events.filter(event => isEventPublished(event));
+  const today=todayYmd();
+  const events = visibleEvents.events.filter(event => isEventPublished(event) && event.endDate >= today);
   return { ...visibleEvents, count: events.length, events };
 }
 

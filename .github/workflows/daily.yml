@@ -33,7 +33,7 @@ jobs:
           node --test scripts/lib/tourClient.test.mjs scripts/lib/refreshQueue.test.mjs scripts/lib/regionalRequest.test.mjs scripts/collectPlaceDetails.test.mjs scripts/collectPlaceImages.test.mjs scripts/enrichFestivals.test.mjs scripts/run-collector.test.mjs scripts/daily-api-budget.test.mjs scripts/site-optimization.test.mjs scripts/nas/smoke.test.mjs scripts/data-freshness.test.mjs
           node --test scripts/experiences.test.mjs scripts/public-discovery.test.mjs scripts/experience-details.test.mjs scripts/experience-photos.test.mjs scripts/programme-availability.test.mjs scripts/experience-readable.test.mjs scripts/programme-editorial.test.mjs
           node scripts/test-tour-detail-fallback.cjs
-          node --test scripts/enrichCourseStops.test.mjs scripts/enrichCoursePlaces.test.mjs scripts/enrichCultureEvents.test.mjs
+          node --test scripts/enrichCourseStops.test.mjs scripts/enrichCoursePlaces.test.mjs scripts/enrichCultureEvents.test.mjs scripts/cultureGuide.test.cjs scripts/eventRouteGuard.test.mjs
           node --test scripts/winter-daytrips.test.mjs scripts/winter-course.test.mjs scripts/winter-public-display.test.mjs scripts/lib/winter-evidence.test.mjs scripts/winter-photo.test.mjs scripts/winter-publication.test.mjs
           node scripts/test-course-planning.cjs
 
@@ -127,7 +127,7 @@ jobs:
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           CULTURE_DETAIL_DAILY: "300"
-          CULTURE_SOURCE_PAGES: "80"
+          CULTURE_SOURCE_PAGES: "160"
           CULTURE_SOURCE_WORKERS: "2"
         run: node scripts/run-collector.mjs scripts/enrichCultureEvents.mjs
 

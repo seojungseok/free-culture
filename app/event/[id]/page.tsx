@@ -1,33 +1,34 @@
+import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
+import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+import { getAllEvents, getEventById } from '@/lib/data';
+import archivedEventsData from '@/data/events-archive.json';
+import type { CultureEvent } from '@/lib/types';
+import { todayYmd } from '@/lib/dates';
+import { dday } from '@/lib/format';
+import { eventContentsParagraphs, eventContentsText } from '@/lib/eventContents';
+import { cultureGuide, eventStartIso, publicEventLink } from '@/lib/cultureGuide';
 import { withSearchMetadata } from '@/lib/searchMetadata';
+import { eventOffer } from '@/lib/eventSeo';
+import { hasSubstantiveEventInfo } from '@/lib/eventQuality';
+import { isEventPublished } from '@/lib/event-publication.mjs';
+import { displayAddress, displayRegionTitle } from '@/lib/address';
+import { SIDO_SLUG } from '@/lib/classify';
+import { SITE } from '@/lib/site';
 import TossTopDeals from '@/components/TossTopDeals';
-import NextStop from "@/components/NextStop";
-import NearbyParking from "@/components/NearbyParking";
-import { todayYmd } from "@/lib/dates";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-import { getAllEvents, getEventById } from "@/lib/data";
-import archivedEventsData from "@/data/events-archive.json";
-import type { CultureEvent } from "@/lib/types";
-import { eventStory } from "@/lib/eventStory";
-import { eventContentsText, eventContentsParagraphs } from "@/lib/eventContents";
-import { fmtRange, placeText, dday } from "@/lib/format";
-import { SITE } from "@/lib/site";
-import PriceBadge from "@/components/PriceBadge";
-import AdSlot from "@/components/AdSlot";
-import PosterCard from "@/components/PosterCard";
-import ShareButtons from "@/components/ShareButtons";
-import { eventOffer } from "@/lib/eventSeo";
-import { hasSubstantiveEventInfo } from "@/lib/eventQuality";
-import { SIDO_SLUG } from "@/lib/classify";
-import { displayAddress, displayRegionTitle } from "@/lib/address";
-import { isEventPublished } from "@/lib/event-publication.mjs";
+import PriceBadge from '@/components/PriceBadge';
+import PosterCard from '@/components/PosterCard';
+import ShareButtons from '@/components/ShareButtons';
+import NextStop from '@/components/NextStop';
+import NearbyParking from '@/components/NearbyParking';
+import styles from './event.module.css';
 
 const archivedEvents = new Map((archivedEventsData.events as CultureEvent[]).map(event => [event.id, {
   ...event,
   title: displayRegionTitle(event.title, event.area),
-  address: displayAddress(event.address || "", event.area),
+  address: displayAddress(event.address || '', event.area),
   addressConflict: Boolean(event.address && !displayAddress(event.address, event.area)),
 }]));
 const eventForDetail = (id: string) => {
@@ -35,315 +36,176 @@ const eventForDetail = (id: string) => {
   return event && isEventPublished(event) ? event : undefined;
 };
 
-// ISR: 1시간 재검증. 종료 상태를 반영하면서 기존 상세 URL은 유지한다.
-// 전체를 빌드 때 만들지 않고 주목도 높은 일부만 사전 생성, 나머지는 첫 요청 때 생성 후 캐시.
 export const revalidate = 10800;
-
 export function generateStaticParams() {
-  return getAllEvents()
-    .filter((e) => e.featured)
-    .slice(0, 60)
-    .map((e) => ({ id: e.id }));
+  return getAllEvents().filter(event => event.featured).slice(0, 60).map(event => ({ id: event.id }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}): Promise<Metadata> {
-  const { id } = await params;
-  const ev = eventForDetail(id);
-  if (!ev) notFound();
-  const where = ev.addressConflict ? ev.place || "장소 확인 필요" : placeText(ev.area, ev.sigungu, ev.place);
-  const contents = eventContentsText(ev.contents).replace(/\s+/g, " ");
-  const desc = ev.description || `${ev.endDate < todayYmd() ? "종료된 행사 · " : ""}${ev.priceLabel} · ${fmtRange(ev.startDate, ev.endDate)} · ${where}. ${
-    contents ? contents.slice(0, 80) : `${ev.realmName} 행사 정보를 확인하세요.`
-  }`;
-  const isFree = ev.priceType === "free";
-  const keywords = ev.addressConflict ? [ev.title, ev.realmName] : [
-    `${ev.area} ${ev.realmName}`,
-    isFree ? `${ev.area} 무료 ${ev.realmName}` : `${ev.area} ${ev.realmName} 공연`,
-    ev.sigungu ? `${ev.sigungu} 문화행사` : `${ev.area} 문화행사`,
-    `${ev.area} 주말 나들이`,
-    ev.title,
-  ];
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const event = eventForDetail((await params).id);
+  if (!event) notFound();
+  const guide = cultureGuide(event);
   return withSearchMetadata({
-    title: ev.seoTitle || ev.title,
-    description: desc,
-    robots: ev.endDate < todayYmd() || !hasSubstantiveEventInfo(ev) ? { index: false, follow: true } : undefined,
-    keywords,
-    alternates: { canonical: `/event/${ev.id}` },
+    title: guide.title,
+    description: guide.description,
+    robots: event.endDate < todayYmd() || !hasSubstantiveEventInfo(event) ? { index: false, follow: true } : undefined,
+    alternates: { canonical: `/event/${event.id}` },
     openGraph: {
-      title: ev.seoTitle || ev.title,
-      description: desc,
-      images: ev.imgUrl ? [{ url: ev.imgUrl, alt: ev.posterAlt || ev.title }] : undefined,
-      url: `/event/${ev.id}`,
-      type: "article",
+      title: guide.title, description: guide.description, url: `/event/${event.id}`, type: 'article',
+      images: event.imgUrl ? [{ url: event.imgUrl, alt: event.posterAlt || `${event.title} 공식 포스터` }] : undefined,
     },
   });
 }
 
-export default async function EventPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = await params;
-  const ev = eventForDetail(id);
+export default async function EventPage({ params }: { params: Promise<{ id: string }> }) {
+  const ev = eventForDetail((await params).id);
   if (!ev) notFound();
-
-  const d = dday(ev.startDate, ev.endDate);
-  const ended = ev.endDate < todayYmd();
+  const today = todayYmd();
+  const ended = ev.endDate < today;
+  const guide = cultureGuide(ev);
+  const countdown = dday(ev.startDate, ev.endDate, today);
+  const regionSlug = (SIDO_SLUG as Record<string, string>)[ev.area];
   const canLocate = !ev.addressConflict && Number(ev.gpsX) > 0 && Number(ev.gpsY) > 0;
-  const regionSlug = (SIDO_SLUG as Record<string,string>)[ev.area];
+  const mapUrl = !ev.addressConflict && (ev.address || ev.place)
+    ? `https://map.naver.com/p/search/${encodeURIComponent([ev.place, ev.address].filter(Boolean).join(' '))}` : '';
   const contents = eventContentsParagraphs(ev.contents);
-  const story = ev.addressConflict || ev.sections?.length ? [] : eventStory({
-    title: ev.title, realmName: ev.realmName, area: ev.area, sigungu: ev.sigungu,
-    place: ev.place, startDate: ev.startDate, endDate: ev.endDate,
-    priceLabel: ev.priceLabel, priceType: ev.priceType, audiences: ev.audiences,
-  });
-  const related = getAllEvents()
-    .filter((e) => e.id !== ev.id && e.area === ev.area && e.imgUrl && e.endDate >= todayYmd())
-    .sort((a,b)=>Number(b.genreKey===ev.genreKey)-Number(a.genreKey===ev.genreKey) || a.endDate.localeCompare(b.endDate))
-    .slice(0, 5);
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    name: ev.title,
-    url: `${SITE.url}/event/${ev.id}`,
-    startDate: ev.startAt || iso(ev.startDate),
-    endDate: ev.endAt || iso(ev.endDate),
-    isAccessibleForFree: ev.priceType === "free" ? true : undefined,
-    organizer: ev.organizerName ? { "@type": "Organization", name: ev.organizerName, url: ev.organizerUrl || ev.officialUrl } : undefined,
-    eventStatus: "https://schema.org/EventScheduled",
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    image: ev.imgUrl ? [new URL(ev.imgUrl, SITE.url).href] : undefined,
-    description: contents.join("\n\n") || `${ev.realmName} · ${ev.priceLabel}`,
-    location: {
-      "@type": "Place",
-      name: ev.place || (ev.addressConflict ? "장소 확인 필요" : ev.area),
-      ...(!ev.addressConflict ? { address: ev.address || `${ev.area} ${ev.sigungu}`.trim() } : {}),
+  const additionalFacts = guide.facts.filter(fact => !/^(행사시간|공연시간|소요시간|관람연령|관람등급|주최)$/.test(fact.label) && fact.value !== guide.age && fact.value !== guide.time && fact.value !== guide.duration);
+  const related = getAllEvents().filter(event => event.id !== ev.id && event.area === ev.area && event.imgUrl && event.endDate >= today)
+    .sort((a, b) => Number(b.genreKey === ev.genreKey) - Number(a.genreKey === ev.genreKey) || a.endDate.localeCompare(b.endDate)).slice(0, 6);
+  const sourceDescription = eventContentsText(ev.contents) || guide.detail?.programme?.join(' · ') || [ev.title, guide.visit].filter(Boolean).join('. ');
+  const startDate = eventStartIso(ev, guide.time);
+  const eventJson = {
+    '@context': 'https://schema.org', '@type': 'Event', name: ev.title, url: `${SITE.url}/event/${ev.id}`,
+    startDate, endDate: ev.endAt || (startDate?.includes('T') ? undefined : iso(ev.endDate)),
+    isAccessibleForFree: ev.priceType === 'free' ? true : undefined,
+    organizer: guide.organizer ? { '@type': 'Organization', name: guide.organizer, url: publicEventLink(ev.organizerUrl) || undefined } : undefined,
+    eventStatus: 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    image: ev.imgUrl ? [new URL(ev.imgUrl, SITE.url).href] : undefined, description: sourceDescription,
+    location: { '@type': 'Place', name: ev.place || '장소 확인 필요',
+      ...(!ev.addressConflict && ev.address ? { address: { '@type': 'PostalAddress', streetAddress: ev.address, addressRegion: ev.area, addressLocality: ev.sigungu || undefined, addressCountry: 'KR' } } : {}),
+      ...(canLocate ? {geo:{'@type':'GeoCoordinates',longitude:Number(ev.gpsX),latitude:Number(ev.gpsY)}} : {}),
     },
     offers: ended ? undefined : eventOffer(ev),
   };
+  const breadcrumb = [
+    {name:'홈',item:SITE.url}, {name:'문화행사',item:`${SITE.url}/events`},
+    {name:ev.realmName || '분야별 행사',item:`${SITE.url}/genre/${ev.genreKey}`}, {name:ev.title,item:`${SITE.url}/event/${ev.id}`},
+  ];
 
-  return (
-    <article className="mx-auto w-full max-w-[1280px] px-5 pb-14 pt-6 sm:px-6 lg:px-8">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, {
-          '@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
-            {'@type':'ListItem',position:1,name:'홈',item:SITE.url},
-            {'@type':'ListItem',position:2,name:ev.realmName || '문화행사',item:`${SITE.url}/genre/${ev.genreKey}`},
-            {'@type':'ListItem',position:3,name:ev.title,item:`${SITE.url}/event/${ev.id}`},
-          ],
-        }]).replace(/</g, "\\u003c") }}
-      />
+  return <article className={styles.page}>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify([eventJson,{
+      '@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:breadcrumb.map((item,index)=>({'@type':'ListItem',position:index+1,...item})),
+    }]).replace(/</g,'\\u003c')}} />
+    <nav aria-label="현재 위치" className={styles.breadcrumb}>
+      <Link href="/">홈</Link><span aria-hidden="true">/</span><Link href="/events">문화행사</Link><span aria-hidden="true">/</span><Link href={`/genre/${ev.genreKey}`}>{ev.realmName || '분야별 행사'}</Link>
+      <span className="sr-only"> / {ev.title}</span>
+    </nav>
 
-      <nav className="mb-5 text-sm text-ink-faint">
-        <Link href="/" className="hover:text-ink">홈</Link>
-        <span className="mx-1.5">/</span>
-        <Link href={`/genre/${ev.genreKey}`} className="hover:text-ink">
-          {ev.realmName || "문화행사"}
-        </Link>
+    <div className={styles.hero}>
+      <header className={styles.summary} id="event-essential-info">
+        <div className={styles.badges}>
+          <Link href={`/genre/${ev.genreKey}`}>{ev.realmName || '문화행사'}</Link>
+          {guide.region && regionSlug && <Link href={`/region/${regionSlug}`}>{guide.region}</Link>}
+          <span>{ended ? '종료된 행사' : countdown?.label || '일정 확인'}</span>
+        </div>
+        <h1>{ev.seoTitle || ev.title}</h1>
+        <p className={styles.lead}>{guide.summary}</p>
+        {ended && <p className={styles.notice}>등록된 일정 기준으로 종료된 행사입니다. 아래 내용은 당시 안내입니다. <Link href={regionSlug ? `/region/${regionSlug}` : '/events'}>현재 열리는 행사 보기 →</Link></p>}
+        <dl className={styles.facts}>
+          <Row label="일정"><time dateTime={iso(ev.startDate)}>{guide.period}</time></Row>
+          <Row label="시간">{guide.time || '세부 시간·회차는 공식 안내에서 확인'}</Row>
+          <Row label={ended ? '당시 요금' : '관람료'}><strong>{guide.price}</strong>{ev.priceType === 'partial_free' && ev.freeCondition && <span className={styles.condition}>무료 적용 조건: {ev.freeCondition}</span>}</Row>
+          <Row label="장소">{ev.place || '공식 안내에서 확인'}</Row>
+          {!ev.addressConflict && ev.address && <Row label="주소" full>{ev.address}</Row>}
+          {guide.age && <Row label="대상">{guide.age}</Row>}
+          {guide.duration && <Row label="소요시간">{guide.duration}</Row>}
+          {guide.organizer && <Row label="주최">{guide.organizer}</Row>}
+          {ev.phone && <Row label="문의" full>{ev.phone}</Row>}
+        </dl>
+        <div className={styles.actions}>
+          {guide.official && <a href={guide.official} target="_blank" rel="noopener noreferrer" className={styles.primary}>{ended ? '당시 공식 안내' : '공식 관람·신청 안내'} <span aria-hidden="true">↗</span></a>}
+          {mapUrl && <a href={mapUrl} target="_blank" rel="noopener noreferrer">지도·길찾기 <span aria-hidden="true">↗</span></a>}
+        </div>
+        {!ended && <p className={styles.bookingNote}>신청 가능 여부·잔여 좌석·초대권 수령 방법은 공식 안내에서 확인해 주세요.</p>}
+      </header>
+
+      {/* This full-width row stays beside the essential information in the flow. */}
+      <div className={styles.advertisement} data-nosnippet=""><TossTopDeals contained compact /></div>
+
+      <figure className={styles.poster}>
+        <div className={styles.posterImage}>
+          {ev.imgUrl ? <a href={ev.imgUrl} target="_blank" rel="noopener noreferrer" aria-label={`${ev.title} 포스터 크게 보기 (새 창)`}>
+            <Image src={ev.imgUrl} alt={ev.posterAlt || `${ev.title} 공식 포스터`} fill sizes="(max-width:767px) 320px, 280px" className="object-contain" priority unoptimized />
+          </a> : <p>{ev.title}<br />포스터가 제공되지 않았습니다.</p>}
+          {!ended && <div className={styles.priceBadge}><PriceBadge type={ev.priceType} label={ev.priceLabel}/></div>}
+        </div>
+        {ev.imgUrl && <figcaption>주최 측 안내 포스터 · 이미지를 누르면 크게 볼 수 있습니다.</figcaption>}
+      </figure>
+
+    </div>
+
+    <div className={styles.body}>
+      <nav aria-label="행사 상세 바로가기" className={styles.contentsNav}>
+        <a href="#event-guide">관람·신청</a>
+        {(ev.sections?.length || contents.length || guide.detail?.programme?.length) ? <a href="#event-programme">소개·프로그램</a> : null}
+        {canLocate && <a href="#event-location">장소·주변</a>}
+        <a href="#event-questions">자주 묻는 질문</a><a href="#event-sources">출처</a>
       </nav>
 
-      <div className="grid gap-8 md:grid-cols-[minmax(0,420px)_minmax(0,1fr)]">
-        {/* 포스터 */}
-        <div className="min-w-0 md:sticky md:top-32 md:self-start">
-          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-neutral-100 shadow-card">
-            {ev.imgUrl ? (
-              <Image
-                src={ev.imgUrl}
-                alt={ev.posterAlt || ev.title}
-                fill
-                sizes="(max-width:768px) 100vw, 420px"
-                className={ev.posterAlt ? "object-contain" : "object-cover"}
-                priority
-                unoptimized
-              />
-            ) : (
-              <div className="flex h-full items-center justify-center p-6 text-center text-ink-faint">
-                {ev.title}
-              </div>
-            )}
-            {!ended && <div className="absolute right-3 top-3">
-              <PriceBadge type={ev.priceType} label={ev.priceLabel} />
-            </div>}
-          </div>
-        </div>
+      <section id="event-guide" className={styles.section} aria-labelledby="event-guide-title">
+        <p className={styles.eyebrow}>BEFORE YOU GO</p>
+        <h2 id="event-guide-title">관람·참여 전에 확인하세요</h2>
+        {guide.visit && <p>{guide.visit}</p>}
+        {!!additionalFacts.length && <dl className={styles.detailFacts}>{additionalFacts.map(fact=><Row key={fact.label} label={fact.label}>{fact.value}{fact.sourceUrl && <a className={styles.sourceLink} href={fact.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={`${fact.label} 공식 출처 (새 창)`}>출처 ↗</a>}</Row>)}</dl>}
+        <ul className={styles.checks}>
+          {ev.priceType === 'free' ? <li>무료로 안내된 행사입니다. 초대권 배부 방식과 사전 신청 여부를 확인한 뒤 방문하세요.</li> : ev.priceType === 'partial_free' ? <li>일부 대상·조건에 무료 혜택이 적용됩니다. 본인에게 적용되는 요금과 증빙 조건을 확인하세요.</li> : <li>좌석·회차·대상에 따라 요금이 달라질 수 있습니다. 선택할 관람 조건을 공식 안내와 대조하세요.</li>}
+          {!guide.age && <li>관람연령 안내를 확보하지 못했습니다. 어린이와 동반한다면 공식 안내 또는 문의처에서 입장 기준을 확인하세요.</li>}
+          {!guide.booking.length && <li>사전 신청 방법과 접수 마감 여부를 확인해 주세요. 행사 기간과 예약 가능한 기간은 다를 수 있습니다.</li>}
+          <li>{guide.time ? '안내된 시간과 선택한 회차를 확인하고 이동 일정을 정하세요.' : '출발 전에 세부 시간과 휴관·회차별 운영 여부를 확인하세요.'}</li>
+        </ul>
+      </section>
 
-        {/* 정보 */}
-        <div className="min-w-0">
-          <div className="mb-2 flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-black/[0.05] px-2.5 py-1 text-xs font-semibold text-ink-soft">
-              {ev.realmName || "문화행사"}
-            </span>
-            {d && (
-              <span
-                className={[
-                  "rounded-full px-2.5 py-1 text-xs font-bold",
-                  d.critical ? "bg-danger text-white" : "bg-black/[0.05] text-ink-soft",
-                ].join(" ")}
-              >
-                {d.label}
-              </span>
-            )}
-          </div>
+      {(ev.sections?.length || contents.length || guide.detail?.programme?.length) ? <div id="event-programme">
+        {ev.sections?.length ? ev.sections.map((section,index)=><section key={section.heading} className={styles.section} aria-labelledby={`event-editorial-${index}`}>
+          <h2 id={`event-editorial-${index}`}>{section.heading}</h2>{eventContentsParagraphs(section.body).map((paragraph,i)=><p key={i} className={styles.sourceParagraph}>{paragraph}</p>)}
+        </section>) : contents.length ? <section className={styles.section} aria-labelledby="event-programme-title"><h2 id="event-programme-title">행사 소개·상세 안내</h2>{contents.map((paragraph,index)=><p key={index} className={styles.sourceParagraph}>{paragraph}</p>)}</section> : null}
+        {!!guide.detail?.programme?.length && <section className={styles.section} aria-labelledby="event-official-programme-title"><h2 id="event-official-programme-title">공식 안내에 실린 프로그램</h2><ul className={styles.programme}>{guide.detail.programme.map(item=><li key={item}>{item}</li>)}</ul><p className={styles.small}>프로그램은 주최 측 사정에 따라 변경될 수 있습니다. 전체 곡목·출연 정보는 공식 안내를 확인하세요.</p></section>}
+      </div> : null}
 
-          <h1 className="text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
-            {ev.seoTitle || ev.title}
-          </h1>
-          {ev.description && <p className="mt-4 text-base leading-8 text-ink-soft">{ev.description}</p>}
+      {!!ev.gallery?.length && <section className={styles.section} aria-labelledby="event-gallery-title"><h2 id="event-gallery-title">공식 안내 이미지</h2><div className={styles.gallery}>{ev.gallery.map(photo=><figure key={photo.src}>
+        <img src={photo.src} alt={photo.alt} width={600} height={600} loading="lazy" decoding="async"/>
+        <figcaption>{photo.caption} <a href={photo.sourceUrl} target="_blank" rel="noopener noreferrer">공식 출처 ↗</a></figcaption>
+      </figure>)}</div></section>}
 
-          {ended && <p className="mt-4 rounded-xl bg-amber-50 p-4 text-sm leading-6">등록된 일정 기준으로 종료된 행사입니다. 지난 행사 정보는 참고용으로 보존합니다. {regionSlug&&<Link href={'/region/'+regionSlug} className="font-bold underline">현재 {ev.area} 행사·나들이 찾기</Link>}</p>}
+      {!ended && canLocate && <section id="event-location" className={styles.location} aria-label="행사 장소와 주변 정보">
+        <h2>행사장 위치와 함께 둘러볼 곳</h2><p>{ev.place} · {ev.address}</p>
+        {mapUrl && <a href={mapUrl} target="_blank" rel="noopener noreferrer" className={styles.mapLink}>지도에서 위치·길찾기 확인 ↗</a>}
+        <NearbyParking lon={Number(ev.gpsX)} lat={Number(ev.gpsY)} area={ev.area} address={ev.address} title="행사장 근처 주차 확인"/>
+        <NextStop anchor={{id:`event:${ev.id}`,title:ev.title,href:`/event/${ev.id}`,area:ev.area,kind:'event',image:ev.imgUrl,address:ev.address||ev.place,x:Number(ev.gpsX),y:Number(ev.gpsY),free:ev.priceType==='free',kids:ev.audiences?.includes('kids'),start:ev.startDate,end:ev.endDate}}/>
+      </section>}
 
-          {!ev.sections?.length && <TossTopDeals contained />}
-          <dl className="mt-6 divide-y divide-black/5 rounded-2xl border border-black/5 bg-white">
-            <Row label={ended ? "당시 안내 요금" : "요금"}>
-              <span className="font-semibold">{ev.priceRaw || ev.priceLabel}</span>
-              {ev.priceType === "unknown" && (
-                <span className="ml-2 text-xs text-ink-faint">
-                  (공식 페이지에서 확인 권장)
-                </span>
-              )}
-              {ev.priceType === "partial_free" && ev.freeCondition && (
-                <span className="ml-2 rounded-full bg-free/10 px-2 py-0.5 text-xs font-semibold text-free">
-                  {ev.freeCondition}
-                </span>
-              )}
-            </Row>
-            <Row label="기간"><time dateTime={iso(ev.startDate)}>{fmtRange(ev.startDate, ev.startDate)}</time>{ev.startDate!==ev.endDate&&<> ~ <time dateTime={iso(ev.endDate)}>{fmtRange(ev.endDate,ev.endDate)}</time></>}</Row>
-            {ev.scheduleLabel && <Row label="시간">{ev.scheduleLabel}</Row>}
-            <Row label="장소">{ev.place || "-"}</Row>
-            {!ev.addressConflict && <Row label="주소">{ev.address || `${ev.area} ${ev.sigungu}`.trim() || "-"}</Row>}
-            {ev.organizerName && <Row label="주최">{ev.organizerName}</Row>}
-            {ev.phone && <Row label="문의">{ev.phone}</Row>}
-          </dl>
+      <section id="event-questions" className={styles.section} aria-labelledby="event-questions-title"><h2 id="event-questions-title">자주 묻는 질문</h2><dl className={styles.questions}>{guide.faq.map(item=><div key={item.question}><dt>{item.question}</dt><dd>{item.answer}</dd></div>)}</dl></section>
 
-          {/* 요금 정보 없음 안내 */}
-          {ev.priceType === "unknown" && (
-            <div className="mt-4 rounded-xl border-l-4 border-neutral-300 bg-neutral-50 p-4">
-              <p className="text-[13px] leading-relaxed text-ink-soft">
-                ℹ️ 관람료 정보가 제공되지 않았습니다. 공식 페이지에서 확인해주세요.
-              </p>
-              {ev.officialUrl && (
-                <a
-                  href={ev.officialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center gap-1 rounded-lg bg-ink px-4 py-2 text-[13px] font-bold text-white transition hover:bg-black"
-                >
-                  공식 페이지에서 확인하기 →
-                </a>
-              )}
-            </div>
-          )}
-
-          {ev.registrationUrl && <nav aria-label="행사 참여 안내" className="mt-5 flex flex-wrap gap-3">
-            <a href={ev.registrationUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center rounded-xl bg-free px-4 py-3 text-sm font-bold text-white">책갈피 사전 신청 안내 ↗</a>
-            <a href={ev.officialUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center rounded-xl border border-line px-4 py-3 text-sm font-bold">전체 프로그램 확인 ↗</a>
-          </nav>}
-
-          {ev.sections?.map((section, index) => <section key={section.heading} aria-labelledby={`event-editorial-${index}`} className="mt-6 rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6">
-            <h2 id={`event-editorial-${index}`} className="mb-4 text-lg font-extrabold text-ink">{section.heading}</h2>
-            <div className="space-y-4 text-[15px] leading-[1.9] text-ink-soft sm:text-base">{section.body.split(/\n\n/).map((paragraph, i) => <p key={i} className="whitespace-pre-line break-words">{paragraph}</p>)}</div>
-          </section>)}
-
-          {!!ev.gallery?.length && <section className="mt-6" aria-labelledby="event-gallery-title">
-            <h2 id="event-gallery-title" className="mb-4 text-lg font-extrabold">주최 측이 공개한 책갈피 예시</h2>
-            <div className="grid gap-4 sm:grid-cols-2">{ev.gallery.map(photo => <figure key={photo.src} className="overflow-hidden rounded-xl border border-line bg-white">
-              <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" className="aspect-square w-full object-contain" width={600} height={600} />
-              <figcaption className="p-4 text-sm leading-6 text-ink-soft">{photo.caption} <a href={photo.sourceUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">공식 출처 ↗</a></figcaption>
-            </figure>)}</div>
-          </section>}
-
-          {!ev.sections?.length && contents.length > 0 && (
-            <section aria-labelledby="event-details-heading" className="mt-6 rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6">
-              <h2 id="event-details-heading" className="mb-5 text-[17px] font-extrabold text-ink">행사 상세 안내</h2>
-              <div className="space-y-5 text-[15px] leading-[1.9] text-ink-soft sm:text-base">
-                {contents.map((paragraph, index) => (
-                  <p key={index} className="whitespace-pre-line break-words [overflow-wrap:anywhere]">{paragraph}</p>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {ev.sourceDetail&&<section aria-labelledby="event-source-details-heading" className="mt-6 rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6">
-            <h2 id="event-source-details-heading" className="mb-4 text-[17px] font-extrabold text-ink">공식 안내의 관람·참여 정보</h2>
-            {ev.sourceDetail.facts.length>0&&<dl className="space-y-3 text-[14px] leading-7">{ev.sourceDetail.facts.map(fact=><div key={fact.label} className="grid gap-1 sm:grid-cols-[140px_1fr] sm:gap-3"><dt className="min-w-0 break-words font-bold">{fact.label}</dt><dd className="min-w-0 break-words">{fact.value}</dd></div>)}</dl>}
-            {ev.sourceDetail.excerpt&&<blockquote className="mt-4 border-l-2 border-free/30 pl-4 text-sm leading-7 text-ink-soft">{ev.sourceDetail.excerpt}</blockquote>}
-            <p className="mt-4 text-xs leading-6 text-ink-faint">공식 안내 확인: {new Date(ev.sourceDetail.checkedAt).toLocaleDateString('ko-KR',{timeZone:'Asia/Seoul'})}. <a href={ev.sourceDetail.url} target="_blank" rel="noopener noreferrer" className="font-bold underline">전체 프로그램·신청 조건 확인 ↗</a></p>
-          </section>}
-
-          {/* 소개글 — 구조화 데이터로 조합(공식 소개 없는 행사도 읽을거리 확보).
-              네이버블로그처럼 여백 있고 읽기 편하게(짧은 문단, 넉넉한 줄간격) */}
-          {story.length > 0 && <section className="mt-7 rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6">
-            <h2 className="mb-4 flex items-center gap-1.5 text-[17px] font-extrabold text-ink">
-              <span>📖</span> 행사 소개
-            </h2>
-            <div className="space-y-4 text-[15.5px] leading-[1.95] text-ink-soft">
-              {story.map((para, i) => (
-                <p key={i} className={i === 0 ? "font-medium text-ink" : ""}>{para}</p>
-              ))}
-            </div>
-          </section>}
-
-          {ev.endDate >= todayYmd() ? (canLocate && <NextStop anchor={{id:"event:"+ev.id,title:ev.title,href:"/event/"+ev.id,area:ev.area,kind:"event",image:ev.imgUrl,address:ev.address || ev.place,x:Number(ev.gpsX),y:Number(ev.gpsY),free:ev.priceType==="free",kids:ev.audiences?.includes("kids"),start:ev.startDate,end:ev.endDate}}/>) : <section className="mt-5 rounded-xl bg-amber-50 p-4 text-sm"><h2 className="font-bold">이 행사는 종료되었습니다</h2><p className="mt-2">등록된 일정 기준입니다. 현재 갈 곳을 다시 찾아보세요.</p><nav className="mt-3 flex flex-wrap gap-4 font-bold underline"><Link href="/weekend">이번 주말 행사 보기</Link>{regionSlug&&<Link href={`/region/${regionSlug}`}>{ev.area} 이번 주말 가볼 곳</Link>}</nav></section>}
-          {ev.endDate >= todayYmd() && canLocate && <NearbyParking lon={Number(ev.gpsX)} lat={Number(ev.gpsY)} area={ev.area} address={ev.address} title="행사장 근처 주차 확인" />}
-          <ShareButtons title={ev.title} officialUrl={ev.officialUrl} />
-
-          <p className="mt-4 text-[13px] text-ink-faint">
-            요금·정보가 잘못되었나요?{" "}
-            <a
-              href={`mailto:${SITE.email}?subject=${encodeURIComponent(
-                `요금정보 제보 - ${ev.title}`
-              )}`}
-              className="font-semibold text-ink-soft underline underline-offset-2 hover:text-ink"
-            >
-              제보하기
-            </a>
-          </p>
-
-          <p className="mt-6 text-sm leading-6 text-ink-faint">정보 출처: {ev.sourceLabel || "공공데이터포털(한국문화정보원)"}. {ev.officialUrl && <a href={ev.officialUrl} target="_blank" rel="noopener noreferrer" className="font-semibold underline">행사 공식 페이지 확인 ↗</a>} {ev.instagramUrl && <a href={ev.instagramUrl} target="_blank" rel="noopener noreferrer" className="ml-2 font-semibold underline">주최 팀 인스타그램 ↗</a>}</p>
-          {!!ev.sections?.length && <TossTopDeals contained />}
-
-          <AdSlot label="상세 하단 광고" />
-        </div>
-      </div>
-
-      {related.length > 0 && (
-        <section className="mt-16">
-          <h2 className="mb-5 text-lg font-extrabold text-ink">
-            같은 지역에서 이어서 볼 행사
-          </h2>
-          <div className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:grid-cols-5">
-            {related.map((e) => (
-              <PosterCard key={e.id} ev={e} />
-            ))}
-          </div>
-        </section>
-      )}
-      {regionSlug && <nav aria-label={`${ev.area} 관련 나들이`} className="mt-9 flex flex-wrap gap-4 border-t border-line pt-5 text-sm font-bold text-brandblue">
-        <Link href={`/region/${regionSlug}#events`}>{ev.area} 이번 주말 행사 →</Link>
-        <Link href={`/region/${regionSlug}#places`}>{ev.area} 나들이 장소 →</Link>
-        {ev.audiences?.includes("kids") && <Link href={`/region/${regionSlug}#kids`}>{ev.area} 아이와 나들이 →</Link>}
-      </nav>}
-    </article>
-  );
-}
-
-function Row({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <div className="flex gap-4 px-5 py-3.5 text-[15px]">
-      <dt className="w-16 shrink-0 font-semibold text-ink-faint">{label}</dt>
-      <dd className="text-ink-soft">{children}</dd>
+      <section id="event-sources" className={styles.sources} aria-labelledby="event-sources-title">
+        <h2 id="event-sources-title">정보 출처와 확인 안내</h2>
+        <p>{ev.sourceLabel || '공공데이터포털 · 한국문화정보원'}의 행사 정보와 공식 안내를 바탕으로 정리했습니다.</p>
+        {guide.sources.length > 0 ? <ul>{guide.sources.map(source=><li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{new URL(source.url).hostname.includes('culture.go.kr') ? '문화포털 행사 상세' : '행사 공식 안내'} ↗</a><span> 확인 <time dateTime={source.checkedAt}>{new Date(source.checkedAt).toLocaleDateString('ko-KR',{timeZone:'Asia/Seoul'})}</time></span></li>)}</ul> : guide.official && <p><a href={guide.official} target="_blank" rel="noopener noreferrer">행사 공식 안내 확인 ↗</a></p>}
+        {guide.detail?.excerpt && <blockquote>{guide.detail.excerpt}</blockquote>}
+        {publicEventLink(ev.instagramUrl) && <p><a href={publicEventLink(ev.instagramUrl)} target="_blank" rel="noopener noreferrer">주최 측 인스타그램 ↗</a></p>}
+        <p>일정·요금·프로그램은 변경될 수 있습니다. 최신 참여 조건은 공식 안내를 우선 확인하세요.</p>
+        <ShareButtons title={ev.title} officialUrl={guide.official}/>
+        <p className={styles.small}>잘못된 정보가 있나요? <a href={`mailto:${SITE.email}?subject=${encodeURIComponent(`문화행사 정보 제보 - ${ev.title}`)}`}>정보 수정 제보</a></p>
+      </section>
     </div>
-  );
+
+    {related.length > 0 && <section className={styles.related} aria-labelledby="event-related-title"><h2 id="event-related-title">{ev.area}에서 이어서 볼 문화행사</h2><div className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:grid-cols-6">{related.map(event=><PosterCard key={event.id} ev={event}/>)}</div></section>}
+    <nav className={styles.more} aria-label="다른 문화행사 찾아보기"><Link href={`/genre/${ev.genreKey}`}>{ev.realmName} 전체 보기 →</Link>{regionSlug && <Link href={`/region/${regionSlug}`}>{ev.area} 행사·나들이 →</Link>}<Link href="/free">무료 문화행사 →</Link><Link href="/weekend">이번 주말 가볼 곳 →</Link></nav>
+  </article>;
 }
 
-function iso(ymd: string): string | undefined {
-  if (!ymd || ymd.length !== 8) return undefined;
-  return `${ymd.slice(0, 4)}-${ymd.slice(4, 6)}-${ymd.slice(6, 8)}`;
+function Row({label,children,full=false}:{label:string;children:ReactNode;full?:boolean}) {
+  return <div className={`${styles.factRow} ${full?styles.fullFact:''}`} data-label={label}><dt>{label}</dt><dd>{children}</dd></div>;
+}
+function iso(value:string):string|undefined {
+  return /^\d{8}$/.test(value)?`${value.slice(0,4)}-${value.slice(4,6)}-${value.slice(6,8)}`:undefined;
 }

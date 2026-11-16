@@ -10,7 +10,7 @@ import styles from './TossTopDeals.module.css';
 const priceFormat=new Intl.NumberFormat('ko-KR');
 const deadlineFormat=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
 
-export default function TossTopDeals({contained=false}:{contained?:boolean}) {
+export default function TossTopDeals({contained=false,compact=false}:{contained?:boolean;compact?:boolean}) {
  const page=usePathname()||'/';
  const {feed,now}=useTossFeed();
  const [expiryClock,setExpiryClock]=useState(0);
@@ -25,7 +25,8 @@ export default function TossTopDeals({contained=false}:{contained?:boolean}) {
  const groups=topDealGroups.filter(g=>g.id==='all'||eligible.some(p=>topDealGroup(p)===g.id));
  const activeGroup=groups.some(g=>g.id===group)?group:'all';
  const matching=useMemo(()=>activeGroup==='all'?eligible:eligible.filter(p=>topDealGroup(p)===activeGroup),[eligible,activeGroup]);
- const overflow=matching.length>4?'many':matching.length>2?'medium':'few';
+ const shown=useMemo(()=>compact?matching.slice(0,4):matching,[compact,matching]);
+ const overflow=shown.length>4?'many':shown.length>2?'medium':'few';
 
  useEffect(()=>{drag.current=null;suppressClick.current=false;strip.current?.removeAttribute('data-dragging');strip.current?.scrollTo({left:0,behavior:'auto'});},[activeGroup,page]);
 
@@ -69,7 +70,7 @@ export default function TossTopDeals({contained=false}:{contained?:boolean}) {
  },[eligible,feed.checkedAt]);
 
  useEffect(()=>{
-  const node=strip.current;if(!node||!matching.length)return;
+  const node=strip.current;if(!node||!shown.length)return;
   const observer=new IntersectionObserver(entries=>{
    for(const entry of entries){
     if(!entry.isIntersecting||entry.intersectionRatio<0.5)continue;
@@ -79,15 +80,15 @@ export default function TossTopDeals({contained=false}:{contained?:boolean}) {
   },{threshold:0.5});
   node.querySelectorAll('[data-product]').forEach(card=>observer.observe(card));
   return()=>observer.disconnect();
- },[matching,page]);
+ },[shown,page]);
 
- if(!matching.length)return null;
- return <section className={`${styles.wrap} ${contained?styles.contained:''} ${page.startsWith('/game')?styles.game:''}`} aria-label="토스쇼핑 오늘의 먹거리 하루특가">
-   <div className={styles.heading}><h2>오늘의 먹거리 특가</h2><span className={styles.count} role="status" aria-live="polite">{groups.find(g=>g.id===activeGroup)?.label} · {matching.length}개</span></div>
-   {groups.length>2&&<div className={styles.filters} role="group" aria-label="먹거리 종류">{groups.map(g=><button type="button" key={g.id} aria-pressed={activeGroup===g.id} aria-controls={railId} onClick={()=>setGroup(g.id)}>{g.label}</button>)}</div>}
+ if(!shown.length)return null;
+ return <section className={`${styles.wrap} ${contained?styles.contained:''} ${compact?styles.compact:''} ${page.startsWith('/game')?styles.game:''}`} data-nosnippet="" aria-label="토스쇼핑 오늘의 먹거리 하루특가">
+   <div className={styles.heading}><h2>오늘의 먹거리 특가</h2><span className={styles.count} role="status" aria-live="polite">{groups.find(g=>g.id===activeGroup)?.label} · {shown.length}개</span></div>
+   {!compact&&groups.length>2&&<div className={styles.filters} role="group" aria-label="먹거리 종류">{groups.map(g=><button type="button" key={g.id} aria-pressed={activeGroup===g.id} aria-controls={railId} onClick={()=>setGroup(g.id)}>{g.label}</button>)}</div>}
    <p className={styles.disclosure}>[광고] 토스쇼핑 쉐어링크 활동으로, 링크 구매 시 수수료를 지급받습니다.</p>
-   <div id={railId} ref={strip} className={styles.rail} role="region" aria-label={`${groups.find(g=>g.id===activeGroup)?.label} 특가 ${matching.length}개`} aria-describedby={railId+'-hint'} tabIndex={0} data-overflow={overflow} onPointerDown={startDrag} onPointerMove={moveDrag} onPointerUp={finishDrag} onPointerCancel={finishDrag} onLostPointerCapture={finishDrag} onDragStart={event=>event.preventDefault()} onKeyDown={moveWithKeyboard} onClickCapture={event=>{if(suppressClick.current){suppressClick.current=false;if(event.detail>0){event.preventDefault();event.stopPropagation();}}}}>
-    {matching.map(p=><article className={styles.card} data-product={p.id} key={p.id}>
+   <div id={railId} ref={strip} className={styles.rail} role="region" aria-label={`${groups.find(g=>g.id===activeGroup)?.label} 특가 ${shown.length}개`} aria-describedby={railId+'-hint'} tabIndex={0} data-overflow={overflow} onPointerDown={startDrag} onPointerMove={moveDrag} onPointerUp={finishDrag} onPointerCancel={finishDrag} onLostPointerCapture={finishDrag} onDragStart={event=>event.preventDefault()} onKeyDown={moveWithKeyboard} onClickCapture={event=>{if(suppressClick.current){suppressClick.current=false;if(event.detail>0){event.preventDefault();event.stopPropagation();}}}}>
+    {shown.map(p=><article className={styles.card} data-product={p.id} key={p.id}>
      <a href={p.links.home} target="_blank" rel="sponsored noopener noreferrer" draggable={false} onClick={()=>affiliateTrack('affiliate_click','toss','food_deal_rail',page,p.id)} aria-label={`${p.name}, ${priceFormat.format(p.price)}원. 마감 전 구매하기 (새 창)`}>
       <img src={p.image} alt="" width={240} height={180} loading="lazy" decoding="async" draggable={false} />
       <h3 title={p.name}>{p.name}</h3>
