@@ -102,6 +102,19 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
     </nav>
 
     <div className={styles.hero}>
+      <figure className={styles.poster}>
+        <div className={styles.posterImage}>
+          {ev.imgUrl ? <a href={ev.imgUrl} target="_blank" rel="noopener noreferrer" aria-label={`${ev.title} 포스터 크게 보기 (새 창)`}>
+            <Image src={ev.imgUrl} alt={ev.posterAlt || `${ev.title} 공식 포스터`} fill sizes="(max-width:767.98px) calc(100vw - 36px), 280px" className="object-contain" priority unoptimized />
+          </a> : <p>{ev.title}<br />포스터가 제공되지 않았습니다.</p>}
+          {!ended && <div className={styles.priceBadge}><PriceBadge type={ev.priceType} label={ev.priceLabel}/></div>}
+        </div>
+        {ev.imgUrl && <figcaption>주최 측 안내 포스터 · 이미지를 누르면 크게 볼 수 있습니다.</figcaption>}
+      </figure>
+
+      {/* Mobile reading order: poster, advertisement, then event information. */}
+      <div className={styles.advertisement} data-nosnippet=""><TossTopDeals contained compact /></div>
+
       <header className={styles.summary} id="event-essential-info">
         <div className={styles.badges}>
           <Link href={`/genre/${ev.genreKey}`}>{ev.realmName || '문화행사'}</Link>
@@ -128,19 +141,6 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
         </div>
         {!ended && <p className={styles.bookingNote}>신청 가능 여부·잔여 좌석·초대권 수령 방법은 공식 안내에서 확인해 주세요.</p>}
       </header>
-
-      {/* This full-width row stays beside the essential information in the flow. */}
-      <div className={styles.advertisement} data-nosnippet=""><TossTopDeals contained compact /></div>
-
-      <figure className={styles.poster}>
-        <div className={styles.posterImage}>
-          {ev.imgUrl ? <a href={ev.imgUrl} target="_blank" rel="noopener noreferrer" aria-label={`${ev.title} 포스터 크게 보기 (새 창)`}>
-            <Image src={ev.imgUrl} alt={ev.posterAlt || `${ev.title} 공식 포스터`} fill sizes="(max-width:767px) 320px, 280px" className="object-contain" priority unoptimized />
-          </a> : <p>{ev.title}<br />포스터가 제공되지 않았습니다.</p>}
-          {!ended && <div className={styles.priceBadge}><PriceBadge type={ev.priceType} label={ev.priceLabel}/></div>}
-        </div>
-        {ev.imgUrl && <figcaption>주최 측 안내 포스터 · 이미지를 누르면 크게 볼 수 있습니다.</figcaption>}
-      </figure>
 
     </div>
 
