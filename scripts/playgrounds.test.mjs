@@ -56,6 +56,7 @@ test('11월 16일 기준 주말은 21일, 겨울은 실내 우선이며 물놀�
  assert.equal(canRecommendPlayground({indoor:true},[{...facility,waterEquipment:true}],review,{now}),false);
  assert.equal(canRecommendPlayground({indoor:true},[facility],{...review,checkedAt:undefined},{now}),false);
  assert.equal(canRecommendPlayground({indoor:true},[facility],{...review,checkedAt:'2026-11-10T00:00:00Z'},{now}),false);
+ assert.equal(canRecommendPlayground({indoor:true},[{...facility,checkedAt:'2026-11-10T00:00:00Z'}],review,{now}),false);
 });
 test('공지 등록일을 휴장 시작일로 사용하지 않고 실제 11월 24일 하루에만 제한',()=>{
  const review={status:'verified',checkedAt:at,closedWeekdays:[1],exceptions:[{start:'2026-11-24',end:'2026-11-24'}]},now=new Date(at),facility=normalizePlayground(row(1),at);
