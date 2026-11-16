@@ -1,6 +1,7 @@
 // 통합 검색 코어 (서버) — 나들이·문화행사·축제·맛집을 한 번에.
 //  파싱(지역/가격/유형·장르) + 유의어 + 세부지역(구·동) + 띄어쓰기무관 + 순서무관 + 관련도 정렬.
 import { getAllPlaces } from "@/lib/tour";
+import {getPlaygroundGuides,getGuideTour,getGuideState} from '@/lib/playgroundData';
 import { getAllEvents, respectEventPublicationDeadline } from "@/lib/data";
 import { isEventPublished } from '@/lib/event-publication.mjs';
 import { getAdmission } from "@/lib/fees";
@@ -94,6 +95,10 @@ function build(): SearchDoc[] {
     });
   }
 
+  for (const guide of getPlaygroundGuides().filter(getGuideState)) {
+    const image=getGuideTour(guide).photos[0].src;
+    docs.push({kind:'place',id:'playground-'+guide.slug,title:guide.title,area:guide.area,sub:guide.district,url:'/playgrounds/'+guide.slug,image,price:'unknown',hasImg:true,titleN:norm(guide.title),hay:norm(`${guide.title} ${guide.area} ${guide.district} ${guide.intro} 어린이 놀이터 공원`) });
+  }
   return docs;
 }
 function docs() { respectEventPublicationDeadline(); return (DOCS ||= build()).filter(doc => isEventPublished(doc)); }

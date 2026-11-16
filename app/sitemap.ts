@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import {getPlaygroundGuides,getGuideState,guidePublishedAt} from '@/lib/playgroundData';
 import { getAllEvents } from "@/lib/data";
 import { getAllPlaces, getTourAreaCounts } from "@/lib/tour";
 import { getAllCamps, campAreaCounts } from "@/lib/camping";
@@ -34,6 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const MAJOR = new Set(["/events", "/festivals", "/places", "/course", "/camping", "/food"]);
   const LOW = new Set(["/about", "/privacy", "/terms", "/contact"]);
   const staticRoutes = [
+    '/playgrounds',
     '/experiences', '/experiences/family', '/experiences/science', '/experiences/rural',
     '/classes', '/classes/free', '/classes/weekend', '/classes/family', '/accessible-travel',
     '/shopping/winter-warmers', '/shopping/kimjang', '/shopping/winter-snacks', '/shopping/winter-drinks',
@@ -215,6 +217,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...getPetTravelPlaces().map(p => ({url: `${base}/pet-travel/${p.id}`, lastModified:p.enrichedAt, changeFrequency: "weekly" as const})),
     // 2) 발행글 있는 상세 (최신 lastmod — 새 글 우선 크롤)
     ...articleSpotRoutes,
+    ...getPlaygroundGuides().filter(getGuideState).map(g=>({url:`${base}/playgrounds/${g.slug}`,lastModified:new Date(guidePublishedAt),changeFrequency:'monthly' as const,priority:0.6})),
     ...courseDetailRoutes,
     ...getPublicWinterCourses().map(course => ({ url: `${base}/winter-travel/${course.slug}`, lastModified: new Date(course.updatedAt && Number.isFinite(Date.parse(course.updatedAt)) ? course.updatedAt : course.publishedAt), changeFrequency: 'monthly' as const, priority: 0.6 })),
     ...kidDetailRoutes,

@@ -6,6 +6,7 @@ import ShareLinkButton from "./ShareLinkButton";
 
 const BROWSE = [
   { href: "/experiences", label: "체험·교육" },
+  { href: "/playgrounds", label: "어린이 놀이터" },
   { href: "/classes", label: "문화·취미 강좌" },
   { href: "/accessible-travel", label: "이동·영유아 편의정보" },
   { href: "/events", label: "문화행사" },

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "collect": "node scripts/collect.mjs",
+    "collect:playgrounds": "node scripts/collectPlaygrounds.mjs",
     "collect:tour": "node scripts/collectTour.mjs",
     "collect:intro": "node scripts/collectIntro.mjs",
     "collect:restaurant-intro": "node scripts/collectRestaurantIntro.mjs",

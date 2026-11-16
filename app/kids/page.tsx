@@ -69,6 +69,7 @@ export default function KidsPage() {
         </p>
       </Band>
       <TossTopDeals />
+      <Container className="py-5"><Link href="/playgrounds" className="inline-flex min-h-11 items-center rounded-xl border border-line bg-white px-5 py-3 text-sm font-bold text-free">어린이 놀이터·물놀이터 찾기 →</Link></Container>
 
       <div className="bg-panel">
         {featuredRegions.length > 0 && <Container className="pt-6">

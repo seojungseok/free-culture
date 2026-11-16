@@ -1,0 +1,5 @@
+import Link from 'next/link';
+import {getRecommendedPlaygroundGuides,playgroundSeason} from '@/lib/playgroundData';
+import PlaygroundCard from './PlaygroundCard';
+import styles from './Playgrounds.module.css';
+export default function PlaygroundHome(){const season=playgroundSeason(),guides=getRecommendedPlaygroundGuides().slice(0,4);if(!guides.length)return null;return <section className={styles.home} aria-labelledby="home-playgrounds"><div className={styles.sectionHeading}><h2 id="home-playgrounds">{season.winter?'이번 주말 실내놀이터':'아이와 가는 놀이터'}</h2><Link href="/playgrounds">전체 보기 →</Link></div><p className={styles.sectionIntro}>{season.winter?'추운 날엔 실내에서. 회차·예약·휴관일을 확인한 놀이시설을 골랐습니다.':'운영안내와 방문일을 확인한 놀이시설을 살펴보세요.'} 기준 주말 {season.weekend.slice(5).replace('-','/')} · 실시간 입장 가능 여부는 예약처 확인</p><div className={`${styles.grid} ${styles.homeGrid}`} data-home-playground-cards>{guides.map(g=><PlaygroundCard key={g.slug} guide={g}/>)}</div><nav className={styles.homeLinks} aria-label="놀이터 더 찾아보기"><Link href="/playgrounds?indoor=1#finder">지역별 실내시설 찾기</Link><Link href="/playgrounds?indoor=0#finder">야외 놀이터 등록정보</Link></nav></section>;}

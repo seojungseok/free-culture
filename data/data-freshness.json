@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-15T23:17:41.929Z",
-  "healthy": true,
+  "checkedAt": "2026-11-16T13:52:25.532Z",
+  "healthy": false,
   "sources": [
     {
       "id": "events",
@@ -9,7 +9,7 @@
       "interval": "매일",
       "count": 948,
       "checkedAt": "2026-11-14T23:57:24.939Z",
-      "status": "fresh"
+      "status": "stale"
     },
     {
       "id": "festivals",
@@ -18,7 +18,7 @@
       "interval": "매일",
       "count": 428,
       "checkedAt": "2026-11-14T23:54:41.465Z",
-      "status": "fresh"
+      "status": "stale"
     },
     {
       "id": "pet-travel",
@@ -99,6 +99,24 @@
       "interval": "매일 공식 교육 일정 확인",
       "count": 8,
       "checkedAt": "2026-11-15T15:18:30.378Z",
+      "status": "fresh"
+    },
+    {
+      "id": "playgrounds",
+      "label": "어린이 놀이시설",
+      "provider": "행정안전부",
+      "interval": "매일",
+      "count": 12546,
+      "checkedAt": "2026-11-16T13:12:06.198Z",
+      "status": "fresh"
+    },
+    {
+      "id": "playground-operations",
+      "label": "놀이터 운영·휴관 안내",
+      "provider": "시설 운영기관",
+      "interval": "매일 공식 운영·공지 대조",
+      "count": 4,
+      "checkedAt": "2026-11-16T13:52:23.721Z",
       "status": "fresh"
     }
   ]

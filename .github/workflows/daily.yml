@@ -238,6 +238,38 @@ jobs:
           ACCESSIBLE_DAILY: ${{ steps.api_budget.outputs.accessible }}
         run: node scripts/run-collector.mjs scripts/collectAccessible.mjs
 
+      - name: 어린이 놀이시설 전체 갱신 (승인 API · 공원·하천·공공도서관)
+        id: playgrounds
+        continue-on-error: true
+        timeout-minutes: 6
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: node scripts/collectPlaygrounds.mjs
+
+      - name: 놀이터 공식 운영·휴장 공지 재확인
+        id: playground_operations
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node scripts/checkPlaygroundOperations.mjs
+
+      - name: 놀이터 데이터·발행 기준 검사
+        run: node --test scripts/playgrounds.test.mjs
+
+      - name: 놀이터 공원 관광정보 주간 재확인 (화요일 · 최대 15회)
+        id: playground_tour
+        if: ${{ github.event_name == 'workflow_dispatch' || github.event.schedule == '17 20 * * *' }}
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: |
+          if [ "$(TZ=Asia/Seoul date +%u)" = "2" ]; then
+            node scripts/run-collector.mjs scripts/refreshPlaygroundTour.mjs
+          else
+            echo "공원 관광정보는 화요일에 재확인합니다."
+          fi
+
       - name: 공공자료 최신성 확인 (외부 API 추가 호출 없음)
         id: freshness
         continue-on-error: true
@@ -248,7 +280,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/data-freshness.json public/experience-images data/experience-venues.json data/experience-media.json data/rural-experiences.json data/youth-experiences.json data/science-experiences.json data/learning-classes.json data/accessible-travel.json data/winter-courses.json data/winter-budget.json data/winter-place-verifications.json data/events.json data/events-archive.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
+          git add data/data-freshness.json data/playgrounds.json data/playground-tour.json data/playground-operations.json public/experience-images data/experience-venues.json data/experience-media.json data/rural-experiences.json data/youth-experiences.json data/science-experiences.json data/learning-classes.json data/accessible-travel.json data/winter-courses.json data/winter-budget.json data/winter-place-verifications.json data/events.json data/events-archive.json data/festivals.json data/chuseok.json data/place-articles.json data/place-research.json \
                   data/courses.json data/courses-auto.json data/course-articles.json data/place-overviews.json data/place-details.json \
                   data/pet-travel.json data/city-tour-articles.json data/course-stop-checks.json data/course-place-details.json data/event-source-details.json
           if git diff --staged --quiet; then
@@ -302,6 +334,9 @@ jobs:
           EXPERIENCE_PHOTOS: ${{ steps.experience_photos.outcome }}
           EXPERIENCE_MEDIA: ${{ steps.experience_media.outcome }}
           SCIENCE: ${{ steps.science.outcome }}
+          PLAYGROUNDS: ${{ steps.playgrounds.outcome }}
+          PLAYGROUND_OPERATIONS: ${{ steps.playground_operations.outcome }}
+          PLAYGROUND_TOUR: ${{ steps.playground_tour.outcome }}
           FESTIVAL_DETAIL_STATUS: ${{ steps.festival_details.outputs.collector_status }}
           PLACE_DETAIL_STATUS: ${{ steps.details.outputs.collector_status }}
           IMAGE_STATUS: ${{ steps.images.outputs.collector_status }}
@@ -311,7 +346,7 @@ jobs:
         run: |
           failed=0
           failed_names=()
-          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS NEW_ARTICLES LEARNING ACCESSIBLE EXPERIENCES EXPERIENCE_DETAILS EXPERIENCE_PHOTOS EXPERIENCE_MEDIA SCIENCE FRESHNESS; do
+          for name in FESTIVALS REGIONAL FESTIVAL_DETAILS DETAILS IMAGES EVENTS PET PET_DETAILS COURSE_STOPS COURSE_PLACES CULTURE_DETAILS NEW_ARTICLES LEARNING ACCESSIBLE EXPERIENCES EXPERIENCE_DETAILS EXPERIENCE_PHOTOS EXPERIENCE_MEDIA SCIENCE PLAYGROUNDS PLAYGROUND_TOUR PLAYGROUND_OPERATIONS FRESHNESS; do
             outcome="${!name}"
             echo "$name: $outcome"
             if [ "$outcome" = "failure" ]; then

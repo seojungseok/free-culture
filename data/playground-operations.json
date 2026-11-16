@@ -1,0 +1,108 @@
+{
+  "checkedAt": "2026-11-16T13:52:23.721Z",
+  "reviews": {
+    "daejeon-wood-indoor-playground": {
+      "status": "verified",
+      "closedWeekdays": [
+        1
+      ],
+      "exceptions": [],
+      "sources": [
+        {
+          "url": "https://www.daejeon.go.kr/wood/contentView.do?menuSeq=7306",
+          "mode": "page",
+          "reviewedHash": "c528fc24c5953cfe03f33ab8b347c159108638dd4059f4d6c8dc65121b51689a",
+          "lastCheckedAt": "2026-11-16T13:52:23.721Z"
+        },
+        {
+          "url": "https://www.daejeon.go.kr/wood/board/normalBoardList.do?boardId=wood_0009&menuSeq=7313",
+          "mode": "daejeon-notices",
+          "reviewedHash": "17141ddcc22eba9bbe94804a221fcd6a132185bcf7f19e818bafe049d1edd9fb",
+          "lastCheckedAt": "2026-11-16T13:52:23.721Z"
+        }
+      ],
+      "reviewedAt": "2026-11-16T13:47:39.586Z",
+      "checkedAt": "2026-11-16T13:52:23.721Z"
+    },
+    "jeonbuk-childrens-indoor-experience": {
+      "status": "verified",
+      "closedWeekdays": [
+        1
+      ],
+      "exceptions": [],
+      "sources": [
+        {
+          "url": "https://www.jbchild.kr/index.9is?contentUid=4b75a91e6d1f0cbc016d4705dd6809b0",
+          "mode": "page",
+          "reviewedHash": "db554dc0e4a95afa27f2260a82b6a1eecfd9afba5b5605e1682f9906c16e64e5",
+          "lastCheckedAt": "2026-11-16T13:52:23.721Z"
+        },
+        {
+          "url": "https://www.jbchild.kr/index.9is?contentUid=ff80808169dbbbcd0169dc94767e007b",
+          "mode": "jeonbuk-notices",
+          "reviewedHash": "480cefc9040db012319516bb30c94b4e184fdb9e5241117e78928165a308a2a4",
+          "lastCheckedAt": "2026-11-16T13:52:23.721Z"
+        }
+      ],
+      "reviewedAt": "2026-11-16T13:47:39.586Z",
+      "checkedAt": "2026-11-16T13:52:23.721Z"
+    },
+    "gimhae-wood-indoor-playground": {
+      "status": "verified",
+      "closedWeekdays": [
+        1
+      ],
+      "exceptions": [],
+      "sources": [
+        {
+          "url": "https://www.gimhae.go.kr/06415/06416.web",
+          "mode": "page",
+          "reviewedHash": "b7d2d3bea5f352d78537933c227fb4b8f0c153054657093019a0251fc65a70c3",
+          "lastCheckedAt": "2026-11-16T13:52:23.721Z"
+        },
+        {
+          "url": "https://www.gimhae.go.kr/06443/06444.web",
+          "mode": "kimhae-notices",
+          "reviewedHash": "dadfd996d76ac1d139631b0cf84387a680d75f230bf9e169a90a96f841ecf902",
+          "lastCheckedAt": "2026-11-16T13:52:23.721Z"
+        }
+      ],
+      "reviewedAt": "2026-11-16T13:47:39.586Z",
+      "checkedAt": "2026-11-16T13:52:23.721Z"
+    },
+    "chuncheon-ggumjaram-indoor-playground": {
+      "status": "verified",
+      "closedWeekdays": [
+        1
+      ],
+      "exceptions": [
+        {
+          "start": "2026-11-24",
+          "end": "2026-11-24",
+          "label": "실내공원 소독·환경정비로 11월 24일 하루 임시 휴장, 25일부터 정상 운영",
+          "source": "https://www.cuc.or.kr/viewBoard.do?divId=110&id=569fed44466d477e9c7bdf2c4b269489"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.cuc.or.kr/ggumjaramPark2.do",
+          "mode": "page",
+          "reviewedHash": "b87fa20f62ec92e2bd806e3a8c6799677928c8ecf55b1aa4b12482073892e99d",
+          "lastCheckedAt": "2026-11-16T13:52:23.721Z"
+        },
+        {
+          "url": "https://www.cuc.or.kr/listBoard.do?divId=110",
+          "mode": "chuncheon-notices",
+          "reviewedHash": "4aeca142fff781a4257b8a6ec0d5983f26ee5ea494620ffcbacf1660c46c93f0",
+          "lastCheckedAt": "2026-11-16T13:52:23.721Z"
+        }
+      ],
+      "reviewedAt": "2026-11-16T13:47:39.586Z",
+      "checkedAt": "2026-11-16T13:52:23.721Z"
+    }
+  },
+  "refresh": {
+    "checkedAt": "2026-11-16T13:52:23.721Z",
+    "complete": true
+  }
+}
