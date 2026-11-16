@@ -255,7 +255,7 @@ jobs:
       - name: 놀이터 데이터·발행 기준 검사
         run: node --test scripts/playgrounds.test.mjs
 
-      - name: 놀이터 공원 관광정보 주간 재확인 (화요일 · 최대 15회)
+      - name: 놀이터 운영·요금·편의정보 주간 재확인 (화요일 · 최대 32회)
         id: playground_tour
         if: ${{ github.event_name == 'workflow_dispatch' || github.event.schedule == '17 20 * * *' }}
         continue-on-error: true

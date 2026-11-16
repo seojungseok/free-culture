@@ -9,6 +9,7 @@ import {refreshPlaygroundTour} from './refreshPlaygroundTour.mjs';
 import {createHash} from 'node:crypto';
 import {playgroundSeason,canRecommendPlayground,isTemporarilyClosed} from '../lib/playgroundSeason.mjs';
 import {checkPlaygroundOperations,operationFingerprint} from './checkPlaygroundOperations.mjs';
+import {filterPlaygroundGuides,playgroundBrowseHref} from '../lib/playgroundContent.mjs';
 const at='2026-11-16T13:12:06.198Z';
 const row=(id,extra={})=>({pfctSn:String(id),pfctNm:'한빛공원 놀이터',ronaAddr:'서울특별시 광진구 능동로 1',instlPlaceCd:'A003',prvtPblcYnCdNm:'공공',operYnCdNm:'운영',wowaStylRideCd:'X002',clsgYmd:'',rgnCdNm:'서울특별시 광진구',...extra});
 const reply=(items,page=1,total=items.length,size=2)=>({ok:true,json:async()=>({response:{header:{resultCode:'00'},body:{items,pageIndex:String(page),recordCountPerPage:String(size),totalCnt:String(total)}}})});
@@ -46,7 +47,7 @@ test('시설 급감·불완전 수집은 기존 파일 보존, 사라진 항목�
 test('발행 글마다 실제 시설·API 사진·고유 검색 설명과 충분한 본문이 연결됨',()=>{
  const snapshot=JSON.parse(fs.readFileSync('data/playgrounds.json')),guides=JSON.parse(fs.readFileSync('data/playground-guides.json')).guides,tour=JSON.parse(fs.readFileSync('data/playground-tour.json')),ids=new Map(snapshot.records.map(p=>[p.id,p]));
  assert.equal(new Set(guides.map(g=>g.description)).size,guides.length);
- for(const g of guides){assert.ok(g.description.length<=80);assert.ok(g.sections.flatMap(s=>s.paragraphs).join('').length>=850,g.slug+' 본문');for(const id of g.facilityIds)assert.ok(ids.has(id),g.slug+'의 실제 시설 연결 확인');const p=tour.places[g.tourId];assert.ok(p.intro);assert.ok(p.photos.length>=2);for(const image of p.photos){assert.equal(image.contentId,g.tourId);assert.ok(['Type1','Type3'].includes(image.license));assert.equal(new URL(image.original).hostname,'tong.visitkorea.or.kr');assert.ok(fs.existsSync('public'+image.src));if(image.license==='Type3')assert.equal(createHash('sha256').update(fs.readFileSync('public'+image.src)).digest('hex'),image.originalSha256);}}
+ for(const g of guides){assert.ok(g.description.length<=80);assert.ok(g.sections.length>=3);assert.ok(g.sections.flatMap(s=>s.paragraphs).join('').length>=400,g.slug+' 장소별 본문');for(const key of ['address','fee','feeDetails','hours','booking','age','parking','closed','phone'])assert.ok(g.visit[key]?.trim(),g.slug+' 방문정보 '+key);for(const id of g.facilityIds)assert.ok(ids.has(id),g.slug+'의 실제 시설 연결 확인');const p=tour.places[g.tourId];assert.ok(p.intro);assert.ok(p.photos.length>=2);for(const image of p.photos){assert.equal(image.contentId,g.tourId);assert.ok(['Type1','Type3'].includes(image.license));assert.equal(new URL(image.original).hostname,'tong.visitkorea.or.kr');assert.ok(fs.existsSync('public'+image.src));if(image.license==='Type3')assert.equal(createHash('sha256').update(fs.readFileSync('public'+image.src)).digest('hex'),image.originalSha256);}}
 });
 test('11월 16일 기준 주말은 21일, 겨울은 실내 우선이며 물놀이는 개장 검증 없으면 제외',()=>{
  const now=new Date(at),season=playgroundSeason(now),facility=normalizePlayground(row(1),at),review={status:'verified',checkedAt:at,closedWeekdays:[1],exceptions:[]};
@@ -76,4 +77,21 @@ test('관광 API 변경을 감지하되 편집 글·사진·원본 입력을 덮
  const changed=await refreshPlaygroundTour({input,now:new Date(at),pause:async()=>{},fetchIntro:async()=>({contentid:'123',usetime:'09:00~17:00',parking:'가능'})});
  assert.equal(changed.places['123'].introChangedSinceReview,true);assert.equal(input.places['123'].intro.usetime,'상시 개방');assert.equal(changed.places['123'].photos[0].src,'reviewed.webp');
  await assert.rejects(refreshPlaygroundTour({input,pause:async()=>{},fetchIntro:async()=>undefined}),/필수정보/);
+});
+
+test('무료 필터는 입장료 기준이며 보호자·주차 무료를 전체 무료로 오인하지 않음',()=>{
+ const input=[{slug:'paid',area:'대전',indoor:true,name:'나무놀이터',visit:{feeKind:'paid',fee:'유아 5,000원',highlights:['보호자 무료','주차 무료']}},{slug:'free',area:'서울',indoor:false,name:'어린이 공원',visit:{feeKind:'free',highlights:['모험나라']}}];
+ assert.deepEqual(filterPlaygroundGuides(input,{type:'free'}).map(g=>g.slug),['free']);
+ assert.deepEqual(filterPlaygroundGuides(input,{type:'indoor',area:'대전'}).map(g=>g.slug),['paid']);
+ assert.equal(filterPlaygroundGuides(input,{type:'free',area:'대전'}).length,0);
+ assert.deepEqual(filterPlaygroundGuides(input,{area:'서울',q:'모험 나라'}).map(g=>g.slug),['free']);
+ const href=playgroundBrowseHref('서울','free','어린이');assert.equal(new URL(href,'https://mwohaji.kr').searchParams.get('area'),'서울');assert.equal(new URL(href,'https://mwohaji.kr').searchParams.get('type'),'free');
+});
+
+test('상세 API의 요금 변경은 재검토로 표시하고 잘못 연결된 장소는 저장하지 않음',async()=>{
+ const input={places:{'123':{checkedAt:at,intro:{contentid:'123',usetime:'상시 개방'},photos:[{src:'reviewed.webp'}]}}};
+ const options={input,detailsOnly:true,initializeReviewed:true,pause:async()=>{},now:new Date(at),fetchCommon:async()=>({contentid:'123',title:'한빛공원',addr1:'서울특별시 광진구',homepage:'<a href="https://example.org">공식</a>',mapx:'127',mapy:'37'}),fetchInfo:async()=>[{infoname:'입장료',infotext:'무료'},{infoname:'화장실',infotext:'있음'}]};
+ const checked=await refreshPlaygroundTour(options);assert.equal(checked.places['123'].common.address,'서울특별시 광진구');assert.equal(checked.places['123'].common.homepage,'https://example.org');assert.equal(checked.places['123'].detailsChangedSinceReview,false);assert.equal(checked.places['123'].checkedAt,at);
+ const changed=await refreshPlaygroundTour({...options,input:checked,initializeReviewed:false,fetchInfo:async()=>[{infoname:'입장료',infotext:'5,000원'}]});assert.equal(changed.places['123'].detailsChangedSinceReview,true);assert.equal(checked.places['123'].extra[0].content,'무료');assert.equal(changed.places['123'].photos[0].src,'reviewed.webp');
+ await assert.rejects(refreshPlaygroundTour({...options,fetchCommon:async()=>({contentid:'999',addr1:'다른 장소'})}),/장소 식별/);
 });

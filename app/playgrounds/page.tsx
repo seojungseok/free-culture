@@ -1,31 +1,34 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import PlaygroundCard from '@/components/PlaygroundCard';
+import PlaygroundRegistry from '@/components/PlaygroundRegistry';
 import styles from '@/components/Playgrounds.module.css';
-import {getPlaygroundCandidates,getPlaygroundGuides,getGuideState,getRecommendedPlaygroundGuides,playgroundSeason,guideForFacility,playgroundAreas,playgroundCheckedAt,playgroundDate,playgroundMap} from '@/lib/playgroundData';
+import browse from '@/components/ExperienceBrowser.module.css';
+import {getPlaygroundGuides,getGuideState,playgroundAreas,playgroundTopics,playgroundBrowseHref,filterPlaygroundGuides,type PlaygroundGuide} from '@/lib/playgroundData';
 import {withSearchMetadata} from '@/lib/searchMetadata';
 import {SITE} from '@/lib/site';
-import {PLAYGROUND_SOURCE} from '@/lib/playgrounds.mjs';
 type Query=Record<string,string|string[]|undefined>;
-const value=(q:Query,key:string)=>typeof q[key]==='string'?String(q[key]):'';
-export async function generateMetadata({searchParams}:{searchParams:Promise<Query>}):Promise<Metadata>{const q=await searchParams;return withSearchMetadata({title:'전국 어린이 놀이터·물놀이터 찾기 | 공원 방문 가이드',description:'지역별 공공 놀이터와 물놀이기구 등록시설을 찾고, 사진·운영정보를 확인한 공원 방문 가이드를 읽어보세요.',alternates:{canonical:'/playgrounds'},robots:Object.keys(q).length?{index:false,follow:true}:undefined});}
+const value=(query:Query,key:string)=>typeof query[key]==='string'?String(query[key]):'';
+export async function generateMetadata({searchParams}:{searchParams:Promise<Query>}):Promise<Metadata>{
+ const query=await searchParams;
+ return withSearchMetadata({title:'지역별 어린이 놀이터 | 실내·무료 공원 이용안내',description:'지역별 실내 놀이터와 무료 공원을 사진으로 비교하고, 이용요금·무료 대상·예약·운영시간·주차 정보를 확인하세요.',alternates:{canonical:'/playgrounds'},robots:Object.keys(query).length?{index:false,follow:true}:undefined});
+}
 export default async function PlaygroundPage({searchParams}:{searchParams:Promise<Query>}){
- const query=await searchParams,area=playgroundAreas.includes(value(query,'area'))?value(query,'area'):'',q=value(query,'q').trim().slice(0,80),water=value(query,'water')==='1',season=playgroundSeason(),indoor=!water&&(value(query,'indoor')==='1'||(season.winter&&value(query,'indoor')!=='0')),all=getPlaygroundCandidates(),guides=getRecommendedPlaygroundGuides(),otherGuides=getPlaygroundGuides().filter(g=>getGuideState(g)&&!guides.some(p=>p.slug===g.slug)),filtered=all.filter(p=>(!area||p.area===area)&&(!water||p.waterEquipment===true)&&(!indoor||p.indoorOutdoor==='실내')&&(!q||(`${p.name} ${p.address} ${p.area}`).replace(/\s/g,'').includes(q.replace(/\s/g,''))));
- const pages=Math.max(1,Math.ceil(filtered.length/20)),page=Math.min(pages,Math.max(1,parseInt(value(query,'page'),10)||1)),rows=filtered.slice((page-1)*20,page*20);
- const href=(number:number)=>{const p=new URLSearchParams();if(area)p.set('area',area);if(q)p.set('q',q);if(water)p.set('water','1');p.set('indoor',indoor?'1':'0');p.set('page',String(number));return '/playgrounds?'+p.toString()+'#finder';};
- const ld={'@context':'https://schema.org','@type':'CollectionPage',name:'전국 어린이 놀이터·물놀이터 찾기',url:SITE.url+'/playgrounds',hasPart:guides.map(g=>({'@type':'Article',headline:g.title,url:SITE.url+'/playgrounds/'+g.slug}))};
+ const query=await searchParams,area=playgroundAreas.includes(value(query,'area'))?value(query,'area'):'',q=value(query,'view')==='registry'?'':value(query,'q').trim().slice(0,80);
+ const requested=value(query,'type')||(value(query,'indoor')==='1'?'indoor':''),type=Object.hasOwn(playgroundTopics,requested)?requested:'all';
+ const all=getPlaygroundGuides().filter(getGuideState),guides=filterPlaygroundGuides(all,{area,type,q}) as PlaygroundGuide[];
+ const ld={'@context':'https://schema.org','@type':'CollectionPage',name:'지역별 어린이 놀이터 이용안내',url:SITE.url+'/playgrounds',hasPart:guides.map(g=>({'@type':'Article',headline:g.title,url:SITE.url+'/playgrounds/'+g.slug}))};
  return <div className={styles.page}>
- <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(ld).replace(/</g,'\\u003c')}}/>
- <nav className={styles.breadcrumb} aria-label="현재 위치"><Link href="/">홈</Link><span>›</span><span aria-current="page">어린이 놀이터·물놀이터</span></nav>
- <header className={styles.hero}><p className={styles.eyebrow}>아이와 보내는 주말</p><h1>전국 어린이 놀이터·물놀이터 찾기</h1><p>가까운 놀이터를 찾을 때도, 공원으로 하루 나들이를 갈 때도. 지역별 시설정보와 사진을 확인한 방문 가이드를 함께 살펴보세요.</p></header>
- <section className={styles.guides} aria-labelledby="playground-guides"><div className={styles.sectionHeading}><h2 id="playground-guides">{season.winter?'겨울에는 실내놀이터부터':'운영안내를 확인한 놀이터'}</h2><a href="#finder">우리 지역 찾기 ↓</a></div><p className={styles.sectionIntro}>회차·예약·휴관일을 공식 운영안내와 대조했습니다. 방문할 날짜의 예약과 추가 점검 공지는 출발 전에 확인하세요.</p><div className={styles.grid}>{guides.map(g=><PlaygroundCard key={g.slug} guide={g}/>)}</div></section>
- <details className={styles.source}><summary>야외 공원 등 다른 방문 가이드 보기</summary><div className={styles.grid}>{otherGuides.map(g=><PlaygroundCard key={g.slug} guide={g}/>)}</div></details><section className={styles.finder} id="finder" aria-labelledby="playground-finder"><div className={styles.sectionHeading}><h2 id="playground-finder">지역별 놀이터 찾기</h2></div><p className={styles.sectionIntro}>공원·하천·공공도서관 중 공공시설로 등록돼 있고 ‘운영’ 상태인 시설을 모았습니다. 일반 방문 가능 여부와 개별 이용조건은 현장·운영기관 안내를 확인하세요.</p><p className={styles.stamp}>시설정보 조회: <time dateTime={playgroundCheckedAt}>{playgroundDate(playgroundCheckedAt)}</time> · 매일 갱신</p>
- <form className={styles.filters} action="/playgrounds#finder" method="get"><label>장소·주소 검색<input type="search" name="q" defaultValue={q} maxLength={80} placeholder="공원명 또는 동네 이름"/></label><label>지역<select name="area" defaultValue={area}><option value="">전국</option>{playgroundAreas.map(a=><option key={a}>{a}</option>)}</select></label><label>실내·전체<select name="indoor" defaultValue={indoor?'1':'0'}><option value="1">실내 놀이시설</option><option value="0">전체 등록시설</option></select></label><label>물놀이기구<select name="water" defaultValue={water?'1':''}><option value="">전체 놀이터</option><option value="1">물놀이기구 포함</option></select></label><button type="submit">찾기</button><Link className={styles.reset} href="/playgrounds#finder">초기화</Link></form>
- <aside className={styles.notice}><strong>물놀이기구 등록과 실제 개장은 달라요</strong><p>‘물놀이기구 포함’은 시설에 물놀이형 기구가 등록됐다는 뜻입니다. 이 API에는 올해 개장일·가동시간이 없습니다. 여름 운영 공지를 따로 확인하고, 비수기에는 물놀이가 가능하다고 생각하고 방문하지 마세요.</p></aside>
- <p className={styles.count}>{area||'전국'} {water?'물놀이기구 포함 시설':indoor?'실내 놀이시설 등록정보':'공공 놀이시설'} {filtered.length.toLocaleString()}건<small>한 공원에 여러 놀이시설이 등록될 수 있습니다.</small></p>
- {rows.length?<div className={styles.list}>{rows.map(p=>{const guide=guideForFacility(p.id);return <article key={p.id} className={styles.facility}><h3>{p.name}</h3><p>{p.address}</p><div className={styles.tags}><span>{p.area} · {p.place}</span>{p.indoorOutdoor&&<span>{p.indoorOutdoor}</span>}{p.waterEquipment===true&&<span data-water="true">물놀이기구 포함 · 개장 별도 확인</span>}</div>{guide&&<Link href={'/playgrounds/'+guide.slug}>사진·방문 가이드</Link>}<a href={playgroundMap(p.name,p.address)} target="_blank" rel="noopener noreferrer">네이버지도에서 확인 ↗</a></article>;})}</div>:<p className={styles.empty}>조건에 맞는 등록시설이 없습니다. 지역이나 검색어를 바꿔보세요. 시설이 검색되지 않는다고 해당 지역에 놀이터가 없다는 뜻은 아닙니다.</p>}
- <nav className={styles.pagination} aria-label="놀이터 목록 페이지">{page>1&&<Link rel="prev" href={href(page-1)}>← 이전</Link>}<span>{page} / {pages}</span>{page<pages&&<Link rel="next" href={href(page+1)}>다음 →</Link>}</nav></section>
- <section className={styles.guideText} aria-labelledby="playground-help"><h2 id="playground-help">놀이터 나들이, 주소 다음에 확인할 정보</h2><p>같은 공원 안에 여러 놀이터가 있으면 지도에 비슷한 이름이 반복될 수 있습니다. 만날 장소를 정할 때는 공원 이름뿐 아니라 놀이터 이름과 출입문도 함께 적어보세요. 주차장 주소가 놀이시설 주소와 다른지도 확인하면 도착 후 이동을 줄일 수 있습니다.</p><h3>무료로 들어갈 수 있는 놀이터인가요?</h3><p>공공시설 등록만으로 무료 이용이나 예약 없는 입장이 보장되지는 않습니다. 공원 입장료, 개별 놀이시설 요금, 주차비는 서로 다른 항목입니다. 위 방문 가이드에는 확인된 요금만 적었으며, 지역별 시설 목록에는 이 API가 제공하지 않는 요금을 추정해 넣지 않았습니다.</p><h3>물놀이터는 언제 문을 여나요?</h3><p>시설별로 그해 여름 운영기간과 휴장일이 다릅니다. 물놀이기구가 등록돼 있어도 수질 점검·날씨·보수에 따라 가동하지 않을 수 있습니다. 운영기관의 해당 연도 공지에서 날짜와 시간을 확인하고 출발하세요. 다음 연도의 개장일을 지난 일정으로 대신 안내하지 않습니다.</p><h3>사진은 지금 모습인가요?</h3><p>방문 가이드의 사진은 한국관광공사 API에서 장소와 이용조건을 대조한 자료입니다. API를 조회한 날짜와 사진 촬영일은 같지 않습니다. 사진은 공원 분위기를 참고하는 용도로 보고, 기구 점검이나 공사 여부는 현장 안내를 따르세요.</p><p>날씨가 좋지 않다면 <Link href="/experiences">실내 체험·교육</Link>이나 <Link href="/classes">문화·취미 강좌</Link>도 함께 비교해 보세요.</p></section>
- <footer className={styles.source}><p>출처: 행정안전부 <a href={PLAYGROUND_SOURCE} target="_blank" rel="noopener noreferrer">전국어린이놀이시설정보서비스</a> · 한국관광공사 국문 관광정보 서비스</p><p>학교·어린이집·유치원·주택단지 등은 수집 범위에서 제외했습니다. 민간시설, 이용금지 시설, 지역을 확인하지 못한 시설은 검색 목록에서 제외합니다. 원자료의 ‘운영’은 실시간 개방·예약 가능 여부가 아닙니다.</p></footer>
+  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(ld).replace(/</g,'\\u003c')}}/>
+  <nav className={browse.breadcrumb} aria-label="현재 위치"><Link href="/">홈</Link><span>›</span><span aria-current="page">어린이 놀이터</span></nav>
+  <header className={browse.hero}><p className={styles.eyebrow}>아이와 보내는 주말</p><h1>지역별 어린이 놀이터</h1><p>실내 놀이공간과 무료 공원의 이용요금·운영시간·예약·주차 안내입니다.</p></header>
+  <section id="finder" className={styles.guideFinder} aria-labelledby="playground-guides">
+   <nav className={browse.topics} aria-label="놀이터 분야">{Object.entries(playgroundTopics).map(([key,label])=><Link key={key} href={playgroundBrowseHref(area,key,q)} aria-current={type===key?'page':undefined}>{label}</Link>)}</nav>
+   <nav className={browse.regions} aria-label="놀이터 지역"><Link href={playgroundBrowseHref('',type,q)} aria-current={!area?'page':undefined}>전국 <small>{filterPlaygroundGuides(all,{type}).length}</small></Link>{playgroundAreas.map(a=><Link key={a} href={playgroundBrowseHref(a,type,q)} aria-current={area===a?'page':undefined}>{a}<small>{filterPlaygroundGuides(all,{area:a,type}).length}</small></Link>)}</nav>
+   <form className={browse.filters} action="/playgrounds#finder" method="get"><input type="hidden" name="area" value={area}/><input type="hidden" name="type" value={type}/><label className={browse.search}>장소·키워드 검색<input type="search" name="q" defaultValue={q} maxLength={80} placeholder="놀이터 이름·블록·기차 등"/></label><button type="submit">찾기</button><Link className={browse.reset} href="/playgrounds#finder">초기화</Link></form>
+   <div className={browse.count}><h2 id="playground-guides">{area||'전국'} {playgroundTopics[type as keyof typeof playgroundTopics]} 안내 {guides.length}곳</h2><span>사진·이용요금·운영시간·예약 안내가 있는 장소</span></div>
+   {guides.length?<div className={browse.grid} data-playground-guide-results>{guides.map(g=><PlaygroundCard key={g.slug} guide={g} heading="h3"/>)}</div>:<div className={styles.empty}><p>조건에 맞는 방문 안내글이 아직 없습니다.</p><Link href={playgroundBrowseHref(area,'all')}>{area||'전국'} 전체 안내 보기 →</Link></div>}
+  </section>
+  <PlaygroundRegistry query={query}/>
  </div>;
 }
