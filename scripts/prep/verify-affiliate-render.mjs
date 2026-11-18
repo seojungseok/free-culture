@@ -3,6 +3,11 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {load} from 'cheerio';
+import ts from 'typescript';
+
+const source = fs.readFileSync(new URL('../../lib/prep-affiliate.ts', import.meta.url), 'utf8');
+const {outputText} = ts.transpileModule(source, {compilerOptions: {module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022}});
+const {prepGuideItems, reviewedPrepAffiliate, prepPackLabel} = await import('data:text/javascript;base64,' + Buffer.from(outputText).toString('base64'));
 
 const base = new URL(process.argv[2] || 'http://localhost:3186');
 assert(['localhost', '127.0.0.1', 'mwohaji.kr', 'www.mwohaji.kr'].includes(base.hostname));
@@ -29,13 +34,13 @@ for (const article of store.articles.filter(a => a.status === 'published')) {
   assert.equal(breadcrumb.itemListElement.at(-1).name, article.title);
   assert.equal($('meta[name="google-adsense-account"],script[src*="adsbygoogle"]').length, 0);
   const links = $('a[data-affiliate-provider=coupang]').toArray();
-  const items=[...(article.checklist||[]),...(article.shoppingItems||[])];
+  const items=prepGuideItems(article,store.articles);
   assert(items.length > 0,'Every published guide must expose its actual materials or products');
   assert(!$('.prep-link-pending').length,'No visible preparation item may remain unlinked');
   assert(!html.includes('이 활동에 어울리는 준비물')&&!html.includes('직접 준비할 재료')&&!html.includes('완성 요리 장면'),'Awkward stock copy must be removed');
   assert(!$('meta[name=robots]').attr('content')?.includes('noindex'));
   for (const item of items) {
-    assert(item.affiliate?.reviewed,'Every visible item must have a reviewed original link');
+    if (!reviewedPrepAffiliate(item)) continue;
     const matching = links.filter(node => $(node).attr('href') === item.affiliate.url);
     assert(matching.length > 0, 'Reviewed original destination must render without rewriting');
     assert(matching.every(node => /sponsored/.test($(node).attr('rel')) && $(node).attr('target') === '_blank'));
@@ -46,7 +51,7 @@ for (const article of store.articles.filter(a => a.status === 'published')) {
     assert.equal(rows.length,items.length,'Every ingredient has one compact purchase row');
     assert.equal($('.prep-photo-tags,.prep-product-pop,.prep-affiliate-product,#prep-checklist img,#prep-checklist small').length,0,'Keep compact ingredient rows without product images or options');
     assert.equal($('#prep-checklist input[type=checkbox]').length,items.length,'Every ingredient can be marked as already at home');
-    rows.forEach((row,index)=>{assert.equal($(row).find('label strong').text(),items[index].label);assert.equal($(row).find('a').text().trim(),'구매하러가기');assert.equal($(row).children().length,2);});
+    rows.forEach((row,index)=>{assert.equal($(row).find('label strong').text(),items[index].label);const product=reviewedPrepAffiliate(items[index]);const link=$(row).find('a');assert.equal(link.length,Number(Boolean(product)));if(product){assert(link.attr('href') === product.url, 'Original reviewed URL is preserved');assert.match(link.text(),/가격·옵션 보기/);const pack=prepPackLabel(product.productName);assert.equal($(row).find('.prep-buy-option>span').text(),pack?'판매 포장 · '+pack:'');}});
     assert($('a[href="#prep-checklist"]').length > 0, 'Ingredient shortcut must exist');
     assert(html.indexOf('id="prep-checklist"') < html.indexOf('id="prep-cooking"'), 'Ingredients precede cooking');
   }

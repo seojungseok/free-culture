@@ -15,3 +15,22 @@ export function companionPrepSlug(slug: string): string | undefined {
   const pair = companions.find(pair=>pair.includes(slug));
   return pair?.find(value=>value!==slug);
 }
+import type {PrepArticle} from './types';
+
+export function findCookingGuides(articles: PrepArticle[], query: string, now = Date.now()) {
+  const normalize = (text: string) => text.toLowerCase().replace(/\s+/g, '');
+  const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  if (!terms.length || terms.every(term => term === '캠핑')) return [];
+  const matches = [];
+  for (const article of articles) {
+    if (article.status !== 'published' || !(Date.parse(article.publishAt) <= now)) continue;
+    if (!article.recipe && !/요리|재료/.test(article.category)) continue;
+    const title = normalize(article.title);
+    const ingredients = [...(article.recipe?.ingredients || []), ...(article.shoppingItems || article.checklist || []).map(item => item.label)];
+    const fields = [title, normalize(article.description), ...ingredients.map(normalize), '캠핑요리레시피', '재료'];
+    if (!terms.every(term => fields.some(field => field.includes(term)))) continue;
+    const score = Number(title.includes(normalize(query))) * 10 + terms.filter(term => title.includes(term)).length;
+    matches.push({article, score});
+  }
+  return matches.sort((a,b) => b.score - a.score).slice(0,6).map(match => match.article);
+}

@@ -5,6 +5,7 @@ import {sourceDate} from '@/lib/publicDiscovery';
 import {experienceEditorial} from '@/lib/programmeEditorial.mjs';
 import ProgrammeContent,{ProgrammeFacts as Facts} from './ProgrammeContent';
 import ExperienceCard from './ExperienceCard';
+import FamilyVenueAccess from './FamilyVenueAccess';
 import ProgrammeCover from './ProgrammeCover';
 import ProgrammeSessions from './ProgrammeSessions';
 import {programmeCover} from '@/lib/programmeMedia';
@@ -21,7 +22,7 @@ export default function ExperienceDetail({item}:{item:Experience}){
   <div className={styles.detailGrid}>
    <figure className={styles.detailPhoto}><ProgrammeCover cover={cover} detail priority/></figure>
    <aside className={styles.sidebar} id="experience-apply" aria-label="신청·예약 안내"><span className={styles.status}>{status}</span><h2>{!canApply?state==='upcoming'?'접수예정 안내':'모집 상태 안내':item.kind==='rural'?'방문·체험 예약':'참여·신청 안내'}</h2><Facts rows={[
-    ['지역',`${item.area} ${item.city}`],['활동 일정',period],['대상',item.audience],['비용',item.free?'참가비 무료':item.price||'체험별 문의'],['신청 기간',item.registration]
+    ['지역',`${item.area} ${item.city}`],['활동 일정',period],['대상',item.audience],['모집 정원',sessions.length===1&&/^[1-9]\d*$/.test(item.capacity||'')?item.capacity+'명 (공고 기준)':''],['비용',item.free?'참가비 무료':item.price||'체험별 문의'],['신청 기간',item.registration]
    ]}/>{canApply&&item.officialUrl&&<a className={styles.booking} href={item.officialUrl} target="_blank" rel="noopener noreferrer" data-external-application>{bookingLabel} ↗</a>}{phone&&<a className={styles.phone} href={'tel:'+phone}>전화 문의 · {item.phone}</a>}<p className={styles.bookingNote}>{item.kind==='rural'?'체험 운영일, 어린이 참여 연령, 최소 인원과 예약 가능 여부를 마을에 확인하세요.':item.kind==='science'?'접수기간 안이라도 정원 마감일 수 있습니다. 전시 입장과 별도 교육예약 조건을 확인하세요.':'활동명과 기관명을 확인해 신청하세요. 등록된 활동 일정과 실제 접수기간은 다를 수 있습니다.'}</p><Link className={styles.mapLink} href={experienceRegionHref(item.area)}>{item.area}의 다른 체험 보기</Link></aside>
    <div className={styles.detailMain}><ProgrammeSessions sessions={sessions}/>
     {item.kind==='rural'?<section className={styles.detailSection} id="experience-programs"><h2>이 마을에서 할 수 있는 체험</h2><p>{editorial.introduction}</p><ul>{item.programs.map(program=><li key={program}>{program}</li>)}</ul>{editorial.paragraphs.map(line=><p key={line}>{line}</p>)}</section>:<>
@@ -32,6 +33,7 @@ export default function ExperienceDetail({item}:{item:Experience}){
     <section className={styles.detailSection}><h2>{item.kind==='rural'?'체험·시설 안내':'일정·비용·참여대상'}</h2><Facts rows={[
      ['공식 프로그램명',item.title],['활동 일정',period],['참여 대상',item.audience],['참가비',item.kind==='rural'?'체험별 비용은 공개자료에 미기재':item.price||'공개자료에 미기재'],['접수 안내',item.registration],['보유 시설',item.facilities],['운영·관리',item.institution],['자료 기준일',item.referenceDate]
     ]}/></section>
+    {item.venueId && <FamilyVenueAccess venueId={item.venueId}/>}
     <section className={styles.detailSection} id="experience-location"><h2>위치와 문의처</h2><Facts rows={[
      ['활동 기관',item.institution],['주소',item.address||`${item.area} ${item.city}`],['문의 전화',item.phone]
     ]}/>{item.address&&<a className={styles.mapLink} href={'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(item.address+' '+(item.kind==='science'?item.institution:item.title))} target="_blank" rel="noopener noreferrer">지도에서 위치 확인 (새 창)</a>}</section>

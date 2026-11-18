@@ -26,6 +26,9 @@ try{
  for(const row of lists){const area=addressArea(row.addr1);if(area==='지역 확인')continue;if(!grouped.has(area))grouped.set(area,[]);grouped.get(area).push(row);}
  for(const rows of grouped.values())rows.sort((a,b)=>(Date.parse(places[a.contentid]?.checkedAt)||0)-(Date.parse(places[b.contentid]?.checkedAt)||0)||Number(b.contenttypeid)-Number(a.contenttypeid)||String(b.modifiedtime).localeCompare(String(a.modifiedtime)));
  const queue=[];while([...grouped.values()].some(rows=>rows.length)){for(const rows of grouped.values())if(rows.length)queue.push(rows.shift());}
+ // Refresh matching playground destinations first, within the same daily call budget.
+ const guideIds=new Set(readCache('playground-guides.json',{guides:[]}).guides.map(guide=>guide.tourId));
+ queue.sort((a,b)=>Number(guideIds.has(String(b.contentid)))-Number(guideIds.has(String(a.contentid))));
  let checked=0,failures=0;
  for(const row of queue){
   if(budget.used>=max)break;

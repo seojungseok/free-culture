@@ -40,5 +40,6 @@ export const publicClassHref=(course:Pick<LearningClass,'id'>)=>'/classes/detail
 export const indexablePublicClass=(course:LearningClass)=>(isAvailableProgramme(course)||isAvailableProgramme(course,new Date(),true))&&course.description.length>=80;
 export const accessibleUpdatedAt=accessible.refresh.checkedAt;
 export function accessiblePlaces(){return Object.values(accessible.places) as AccessiblePlace[];}
-export function getAccessiblePlace(id:string){return accessiblePlaces().find(place=>place.id===id)||((accessible as unknown as {archivedPlaces?:Record<string,AccessiblePlace>}).archivedPlaces||{})[id];}
+export function currentAccessiblePlace(id:string){return (accessible.places as Record<string,AccessiblePlace>)[id];}
+export function getAccessiblePlace(id:string){return currentAccessiblePlace(id)||((accessible as unknown as {archivedPlaces?:Record<string,AccessiblePlace>}).archivedPlaces||{})[id];}
 export function discoveryPageHref(path:string,query:DiscoveryQuery,page:number){const params=new URLSearchParams();for(const [key,value]of Object.entries(query))if(typeof value==='string'&&key!=='page'&&value)params.set(key,value);params.set('page',String(page));return path+'?'+params;}

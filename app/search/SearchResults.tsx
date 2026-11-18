@@ -4,6 +4,8 @@ import { search, relatedQueries, KIND_LABEL } from "@/lib/search";
 import SearchBox from "@/components/SearchBox";
 import SearchCard from "@/components/SearchCard";
 import { Container } from "@/components/Band";
+import {getPrepArticles} from '@/lib/weekend-prep/data';
+import {findCookingGuides} from '@/lib/weekend-prep/search';
 import TossTopDeals from "@/components/TossTopDeals";
 
 export const metadata: Metadata = {
@@ -16,6 +18,7 @@ const SUGGESTIONS = ["인천 캠핑장", "경기 글램핑", "반려동물 캠�
 
 export default function SearchResults({q=""}:{q?:string}) {
   const query = q.trim();
+  const guides = query ? findCookingGuides(getPrepArticles(), query) : [];
   const res = query ? search(query) : null;
 
   return (
@@ -29,6 +32,11 @@ export default function SearchResults({q=""}:{q?:string}) {
         <nav aria-label="새 콘텐츠에서 찾기" className="mt-5 flex flex-wrap justify-center gap-3 text-sm font-bold text-blue-700"><Link href={'/classes'+(query?'?q='+encodeURIComponent(query):'')} className="inline-flex min-h-11 items-center rounded-lg border border-blue-200 px-4">문화·취미 강좌 찾기</Link><Link href={'/accessible-travel'+(query?'?q='+encodeURIComponent(query):'')} className="inline-flex min-h-11 items-center rounded-lg border border-blue-200 px-4">이동·영유아 편의정보 찾기</Link></nav>
 
         {query && /가을|단풍|억새/.test(query) && <aside className="mx-auto mt-6 max-w-xl rounded-2xl border border-amber-200 bg-amber-50 p-4"><Link href="/season" className="font-bold text-ink hover:underline">🍂 가을나들이 모아보기 →</Link><p className="mt-1 text-sm text-ink-soft">가을 나들이 장소와 여행코스를 지역별로 찾아보세요.</p></aside>}
+        {guides.length > 0 && <section className="mt-8" aria-labelledby="cooking-search-title">
+          <h2 id="cooking-search-title" className="font-extrabold text-ink">캠핑요리 · 재료 가이드</h2>
+          <ul className="mt-2 grid gap-x-5 sm:grid-cols-2">{guides.map(guide=><li key={guide.slug}><Link className="block py-3 text-sm text-blue-700 hover:underline" href={`/weekend-prep/${guide.slug}`}>{guide.title}</Link></li>)}</ul>
+          <Link className="inline-block py-2 text-sm font-bold" href="/weekend-prep">캠핑 메뉴 전체 보기 →</Link>
+        </section>}
         {!query ? (
           <div className="mx-auto mt-8 max-w-xl text-center">
             <p className="text-sm text-ink-faint">찾고 싶은 지역·유형을 입력해보세요.</p>
@@ -43,7 +51,7 @@ export default function SearchResults({q=""}:{q?:string}) {
         ) : res && res.total > 0 ? (
           <>
             <p className="mt-6 text-sm text-ink-soft">
-              <b className="text-ink">&ldquo;{query}&rdquo;</b> 검색 결과 <b className="text-ink">{res.total.toLocaleString()}</b>건
+              <b className="text-ink">&ldquo;{query}&rdquo;</b> 장소·행사 검색 결과 <b className="text-ink">{res.total.toLocaleString()}</b>건
               <span className="ml-2 text-ink-faint">
                 {res.groups.map((g) => `${g.label} ${g.count}`).join(" · ")}
               </span>
@@ -77,7 +85,7 @@ export default function SearchResults({q=""}:{q?:string}) {
               ) : null;
             })()}
           </>
-        ) : (
+        ) : guides.length ? null : (
           <div className="mx-auto mt-8 max-w-xl">
             <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-black/10 py-16 text-center">
               <div className="text-4xl">🔍</div>

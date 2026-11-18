@@ -21,8 +21,10 @@ test('youth programmes require a recent matching official listing, not only an A
  assert(!isAvailableProgramme({...item,publicRegistrationState:'unverified'},at));
  assert(!isAvailableProgramme({...item,listingCheckedAt:'2026-11-13T00:00:00Z'},at));
  assert.equal(programmeAvailability({...item,publicRegistrationState:'open',registrationStart:'',registrationEnd:''},at),'open');
+ assert.equal(programmeAvailability({...item,publicRegistrationState:'open',registrationEnd:'2026-11-15'},at),'closed');
 });
-test('same programme time options become one article while different sites remain separate',()=>{
+test('same programme time options become one article while different sites remain separate',t=>{
+ t.mock.timers.enable({apis:['Date'],now:at.getTime()});
  const morning={...base,startTime:'10:00',endTime:'11:00',referenceDate:'2026-11-01'},afternoon={...base,id:'b',startTime:'14:00',endTime:'15:00',referenceDate:'2026-11-01'};
  const grouped=groupProgrammeSessions([morning,afternoon],'class');
  assert.equal(grouped.length,1);assert.deepEqual(grouped[0].aliases,['a','b']);assert.equal(availableSessions(grouped[0],at).length,2);

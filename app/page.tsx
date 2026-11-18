@@ -13,9 +13,8 @@ import { SITE } from "@/lib/site";
 import { fmtRange } from "@/lib/format";
 import { todayYmd } from "@/lib/dates";
 import { eventContentsText } from "@/lib/eventContents";
-import { getPublicWinterCourses } from '@/lib/winterCourses';
-import { winterCourseImage } from '@/lib/winterCourseImage.mjs';
-import { getPrepArticles } from "@/lib/weekend-prep/data";
+import HomeWinterCourses from '@/components/HomeWinterCourses';
+import { getPrepArticles, isCookingPrepArticle, cookingCategory } from "@/lib/weekend-prep/data";
 import { getAllArticles } from "@/lib/articles";
 import { hasSubstantivePlaceInfo, hasSubstantiveCampInfo } from "@/lib/placeQuality";
 import seasonalCatalogue from '@/data/seasonal-shopping.json';
@@ -23,7 +22,7 @@ import seasonalCatalogue from '@/data/seasonal-shopping.json';
 export const revalidate = 60;
 export const metadata: Metadata = withSearchMetadata({
   title: { absolute: "이번 주말 어디 가지? 전국 가볼만한 곳·축제·여행코스 추천 · 주말에 뭐하지?" },
-  description: "이번 주말 갈 만한 전국 문화행사·나들이·여행코스를 지역과 테마로 빠르게 찾아보세요. 무료 행사, 아이와 갈 곳, 데이트 코스도 한곳에 모았습니다.",
+  description: "이번 주말 갈 만한 무료 공연과 축제, 어린이 놀이터, 접수 중인 체험·교육을 지역별로 찾아보세요. 여행코스부터 캠핑요리의 재료와 레시피까지 함께 확인할 수 있습니다.",
   alternates: { canonical: "/" },
 });
 
@@ -85,12 +84,11 @@ export default function HomePage() {
   }));
   const freeItems = getFree(true).filter((item) => item.imgUrl && item.endDate >= today).sort(eventPriority).slice(0, 8).map((item) => ({ ...eventItem(item), badge: item.priceLabel || "무료 여부 확인" }));
   const kidItems = placeItems.filter((_, index) => places[index]?.isKid).slice(0, 6);
-  const seasonItems: HomeItem[] = getPublicWinterCourses().map((item) => ({ id: `winter-${item.id}`, href: `/winter-travel/${item.slug}`, title: item.title, meta: [item.area, item.city, item.duration==='1박2일'?'1박 2일':'당일치기'].filter(Boolean).join(' · '), image: winterCourseImage(item)?.src || "", imageAlt: winterCourseImage(item)?.alt || item.title, badge: "겨울여행", area: item.area, description: item.intro, route: item.stops.map(stop=>stop.name), duration: item.duration==='1박2일'?'1박 2일 · '+item.stops.length+'곳':item.durationLabel, tripDuration: item.duration }));
-  const prepItems: HomeItem[] = getPrepArticles().slice(0, 8).map((item) => ({ id: `prep-${item.slug}`, href: `/weekend-prep/${item.slug}`, title: item.title, meta: item.category, image: item.cover.url, badge: "캠핑요리" }));
+  const prepItems: HomeItem[] = getPrepArticles().filter(isCookingPrepArticle).slice(0, 4).map((item) => ({ id: `prep-${item.slug}`, href: `/weekend-prep/${item.slug}`, title: item.title, meta: [cookingCategory(item), item.recipe?.servings].filter(Boolean).join(" · "), image: item.cover.url, imageAlt: item.cover.alt, badge: "캠핑요리" }));
   const publishedPlaces = getAllArticles().filter((article) => article.status === "published" && article.publishedAt && article.content.length >= 300).sort((a, b) => Date.parse(b.publishedAt || "") - Date.parse(a.publishedAt || ""));
   const byPlaceId = new Map(placeItems.map((item) => [item.id.slice(6), item]));
   const editorialPlaces = publishedPlaces.map((article) => byPlaceId.get(article.id)).filter((item): item is HomeItem => Boolean(item));
   const representativeItems = editorialPlaces.slice(-6).reverse();
   const newItems = editorialPlaces.filter((item) => !representativeItems.some((representative) => representative.id === item.id)).slice(0, 6);
-  return <HomeExplorer experienceContent={<><ExperienceHome/><PlaygroundHome/></>} seasonalHero={{campaigns:seasonalCatalogue.campaigns,collections:seasonalCatalogue.collections.map(({slug,title})=>({slug,title}))}} regional={regional} eventItems={weekendItems.slice(0, 8)} kidItems={kidItems} dateItems={dateItems.slice(0, 6)} campItems={campItems.slice(0, 6)} courseItems={courseItems.filter((_, index) => courses[index].duration === "당일").slice(0, 6)} seasonItems={seasonItems} prepItems={prepItems} placeItems={representativeItems} newItems={newItems} freeItems={freeItems} regions={SIDO_LIST.map((name) => ({ name, href: `/region/${(SIDO_SLUG as Record<string, string>)[name]}` }))} siteName={SITE.name} />;
+  return <HomeExplorer experienceContent={<><ExperienceHome/><PlaygroundHome/></>} seasonalHero={{campaigns:seasonalCatalogue.campaigns,collections:seasonalCatalogue.collections.map(({slug,title})=>({slug,title}))}} regional={regional} eventItems={weekendItems.slice(0, 8)} kidItems={kidItems} dateItems={dateItems.slice(0, 6)} campItems={campItems.slice(0, 6)} courseItems={courseItems.filter((_, index) => courses[index].duration === "당일").slice(0, 6)} winterContent={<HomeWinterCourses/>} prepItems={prepItems} placeItems={representativeItems} newItems={newItems} freeItems={freeItems} regions={SIDO_LIST.map((name) => ({ name, href: `/region/${(SIDO_SLUG as Record<string, string>)[name]}` }))} siteName={SITE.name} />;
 }

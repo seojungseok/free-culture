@@ -81,6 +81,8 @@ export default function PrepArticle({article:a,preview=false,relatedArticles=[],
  const shoppingItems=prepShoppingItems(a,unfilteredItems);
  const checklist=!!a.checklist?.length;
  const imageKind: 'cooking'|'supplies' = a.category==='캠핑용품'||a.category==='야외 놀이'?'supplies':'cooking';
+ const firstRecipeStep=a.recipe?.steps[0]?.title;
+ const cookingStart=firstRecipeStep ? a.sections.findIndex(section=>section.heading.includes(firstRecipeStep)) : -1;
  const hasAffiliate=shoppingItems.some(reviewedPrepAffiliate);
  const usedPhotos=new Set([a.cover.url]);
  const neutralPhotos=a.sections.flatMap(section=>section.image?[section.image]:[]).filter(photo=>!photo.url.includes('-support.webp')).filter(photo=>{if(usedPhotos.has(photo.url))return false;usedPhotos.add(photo.url);return true;});
@@ -91,13 +93,13 @@ export default function PrepArticle({article:a,preview=false,relatedArticles=[],
   {preview&&<p className="prep-notice">검토용 초안 · 아직 공개되지 않은 글입니다.</p>}
   <p className="prep-eyebrow">{prepCategoryLabel(a.category,a)}</p><h1>{a.title}</h1><p className="prep-lead">{a.description}</p>
   {hasAffiliate&&<p className="prep-affiliate-disclosure">이 글에는 쿠팡 제휴 링크가 포함되어 있습니다. 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.</p>}
-  {!!shoppingItems.length&&<nav className="prep-guide-actions" aria-label="캠핑요리 바로가기"><a href="#prep-checklist">{imageKind==='cooking'?'재료 목록 보기 ↓':'상품 목록 보기 ↓'}</a><a href="#prep-cooking">{imageKind==='cooking'?'조리 순서 보기 ↓':'선택 요령 보기 ↓'}</a></nav>}
+  {!!shoppingItems.length&&<nav className="prep-guide-actions" aria-label="캠핑요리 바로가기"><a href="#prep-checklist">{imageKind==='cooking'?(hasAffiliate?'재료·가격 보기 ↓':'재료 목록 보기 ↓'):'상품 목록 보기 ↓'}</a><a href="#prep-cooking">{imageKind==='cooking'?'조리 순서 보기 ↓':'선택 요령 보기 ↓'}</a></nav>}
   <PrepImage photo={a.cover} priority headline={a.coverLabel||a.title}/>
   {!!shoppingItems.length&&<PrepChecklist kind={imageKind} slug={a.slug} items={shoppingItems} dishName={dishName(a)}/>}
   {checklist&&<CookingGuide article={a}/>}
   {!preview&&<TossTopDeals contained />}
   {checklist&&<FoodChecklistDetails slug={a.slug} articles={relatedArticles} preparationImage={neutralPhotos[0]?<PrepImage photo={neutralPhotos[0]}/>:null} tipImage={neutralPhotos[1]?<PrepImage photo={neutralPhotos[1]}/>:null} images={<div className="prep-food-images">{neutralPhotos.slice(2).map(photo=><PrepImage key={photo.url} photo={photo}/>)}{completedPhoto&&<PrepImage photo={completedPhoto}/>}</div>}/>}
-  {!checklist&&a.sections.map((section,index)=><section key={index} id={index===0&&shoppingItems.length?'prep-cooking':undefined}><h2>{section.heading}</h2>{bodyText(section.text).split('\n').filter(Boolean).map((raw,j)=>{const point=raw.startsWith('• ');return <p className={point?'prep-point':undefined} key={j}>{point?raw.slice(2):raw}</p>;})}{section.image&&<PrepImage photo={section.image}/>}</section>)}
+  {!checklist&&a.sections.map((section,index)=><section key={index} id={index===Math.max(0,cookingStart)&&shoppingItems.length?'prep-cooking':undefined}><h2>{section.heading}</h2>{bodyText(section.text).split('\n').filter(Boolean).map((raw,j)=>{const point=raw.startsWith('• ');return <p className={point?'prep-point':undefined} key={j}>{point?raw.slice(2):raw}</p>;})}{section.image&&<PrepImage photo={section.image}/>}</section>)}
   {!!a.sources?.length&&<details className="prep-recipe-sources"><summary>참고한 조리법과 식품안전 자료</summary><p>재료와 조리 방식은 아래 자료를 참고해 캠핑 환경에 맞게 정리했습니다.</p><ul>{a.sources.map(source=><li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a></li>)}</ul></details>}
   {!checklist&&!!a.internalLinks.length&&<nav aria-label="함께 읽기"><h2>함께 보면 좋은 곳</h2>{a.internalLinks.map(link=><p key={link.href}><Link href={link.href}>{link.label} →</Link></p>)}</nav>}
  </article>;

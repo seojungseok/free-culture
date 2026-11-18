@@ -15,6 +15,18 @@ export function reviewedPrepAffiliate(item: PrepChecklistItem) {
   } catch { return undefined; }
 }
 
+// Only show unambiguous, comma-delimited package options recorded in the reviewed title.
+export function prepPackLabel(productName: string) {
+  const options = productName.split(',').slice(1).map(value => value.trim());
+  const unit = /^\d+(?:\.\d+)?\s*(?:kg|g|ml|l|개|팩|봉|박스|병|통|세트|포)$/i;
+  const tail: string[] = [];
+  for (const option of options.reverse()) {
+    if (!unit.test(option)) break;
+    tail.unshift(option);
+  }
+  return tail.length === 1 && /^1\s*(개|팩|봉|박스|병|통|세트|포)$/.test(tail[0]) ? '' : tail.join(' · ');
+}
+
 export function prepProductId(url: string): number | undefined {
   try {
     const value = new URL(url).searchParams.get('pageKey');
