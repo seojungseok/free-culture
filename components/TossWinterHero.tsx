@@ -41,10 +41,10 @@ export default function TossWinterHero({collections}:SeasonalHeroData){
  },[active?.id,visible,foreground,page]);
  function choose(next:number){setPaused(true);setIndex((next+count)%count);}
  return <div className={styles.wrap} data-seasonal-hero>
-  {active?<section ref={node} className={styles.hero} data-tone={active.tone} role="region" aria-roledescription="캐러셀" aria-label="주말 추천 상품"
+  {active?<section ref={node} className={styles.hero} data-tone={active.tone} role="region" aria-roledescription="캐러셀" aria-label="겨울 추천 상품"
    onPointerEnter={e=>{if(e.pointerType==='mouse')setHover(true);}} onPointerLeave={()=>setHover(false)}
    onFocusCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node)&&!(e.target as HTMLElement).closest('[data-playback-control]'))setPaused(true);}}>
-   <a className={styles.bannerLink} href={active.href} target="_blank" rel="sponsored noopener noreferrer" aria-label={active.name+' · '+won.format(active.price)+'원 · 토스쇼핑에서 보기 (새 창)'}
+   <a className={styles.bannerLink} href={active.href} rel="sponsored noreferrer" aria-label={active.name+' · '+won.format(active.price)+'원 · 토스쇼핑에서 보기'}
     onTouchStart={e=>{setPaused(true);swipe.current={x:e.touches[0].clientX,y:e.touches[0].clientY,moved:false};}}
     onTouchCancel={()=>{swipe.current.moved=false;}}
     onTouchEnd={e=>{const dx=e.changedTouches[0].clientX-swipe.current.x,dy=e.changedTouches[0].clientY-swipe.current.y;if(count>1&&Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){swipe.current.moved=true;choose(index+(dx<0?1:-1));}}}
@@ -52,7 +52,7 @@ export default function TossWinterHero({collections}:SeasonalHeroData){
      if(!selectHomeProductAds(feed,Date.now()).some(p=>p.id===active.id)){e.preventDefault();setExpiry(Date.now());return;}
      affiliateTrack('affiliate_click','toss','home_product_hero',page,active.id);}}>
     <div className={styles.copy}><span className={styles.ad}>광고 · 토스쇼핑</span><h2>{active.title}</h2><p className={styles.product}>{active.label} <span>{active.option}</span></p>
-     <div className={styles.offer}><strong>{won.format(active.price)}원</strong><span className={styles.cta}>상품 보기 ↗</span></div></div>
+     <div className={styles.offer}><strong>{won.format(active.price)}원</strong><span className={styles.cta}>토스에서 보기 →</span></div></div>
     <div className={styles.visual}><picture><source media="(max-width:560px)" srcSet={'/ads/home-products/'+active.id+'-sm.webp'}/><img className={styles.scene} src={'/ads/home-products/'+active.id+'.webp'} width={1000} height={600} alt={active.scene} loading="eager" fetchPriority="high" decoding="async"/></picture>
      <small className={styles.photoNote}>AI 연출 이미지</small></div>
    </a>

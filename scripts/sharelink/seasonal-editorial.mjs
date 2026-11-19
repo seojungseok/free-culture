@@ -1,13 +1,13 @@
 // Verified through the configured Toss API. Original affiliate URLs are preserved.
-export const seasonalCampaignVersion=2;
+export const seasonalCampaignVersion=3;
 export const seasonalSelections=[
   {
     "id": 429518365,
-    "expectedName": "쟈니베어 군인핫팩 특대형, 180g, 30개",
+    "expectedName": "쟈니베어 군인핫팩 특대형, 180g, 30개입, 1개",
     "imageUrl": "https://shopping.toss.im/live/temp/2026-09-13/b66e237f-54ae-464b-b453-f255af6805f7.png",
     "reviewedHomeLink": "https://toss.shopping/_m/pR3YfECp",
     "imageNote": "판매처 제공 상품 사진",
-    "option": "쟈니베어 군인핫팩 특대형, 180g, 30개",
+    "option": "특대형 180g · 30개입 1개",
     "topic": "winter-warmers",
     "homeFeature": false,
     "headline": "핫팩 준비하기",
