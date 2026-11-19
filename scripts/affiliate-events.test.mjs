@@ -79,7 +79,7 @@ test('offline reports use Korean date boundaries and discard identity fields and
  report.consume('{broken');report.consume('');
  const result=report.finish();
  assert.deepEqual(result.quality,{inspectedLines:9,blankLines:1,invalidJsonLines:1,invalidEventLines:2,invalidTimestampLines:1,excludedByPeriod:2,acceptedEvents:2});
- assert.deepEqual(result.totals,{impressions:1,clicks:1,saveActions:0,clickToImpressionEventRatioPct:100});
+ assert.deepEqual(result.totals,{impressions:1,clicks:1,saveActions:0,collectionImpressions:0,collectionClicks:0,clickToImpressionEventRatioPct:100});
  assert.equal(result.rows.length,1);assert.equal(result.rows[0].date,'2026-11-06');
  assert.equal(result.period.fromInclusive,'2026-11-05T15:00:00.000Z');
  assert.equal(result.period.toExclusive,'2026-11-06T15:00:00.000Z');
@@ -98,6 +98,17 @@ test('offline event ratios preserve repeats, protect zero denominators, and sepa
  assert.equal(rail.impressions,0);assert.equal(rail.clickToImpressionEventRatioPct,null);
  assert.equal(result.metricLabel,'클릭/노출 이벤트 비율');
  assert.match(result.notes.join(' '),/사용자 전환율/);assert.match(result.notes.join(' '),/최종 저장 수가 아닙니다/);
+});
+
+test('collection navigation is counted apart from outgoing affiliate clicks',()=>{
+ const report=createAffiliateEventReport();
+ for(const kind of ['collection_impression','collection_click','affiliate_click'])report.consume(JSON.stringify({...event,event:kind,at:'2026-11-19T00:00:00Z'}));
+ const {rows,totals}=report.finish();
+ assert.equal(rows[0].collectionClicks,1);
+ assert.equal(totals.collectionImpressions,1);
+ assert.equal(totals.clicks,1);
+ assert.equal(totals.impressions,0);
+ assert.ok(!Object.hasOwn(totals,'undefined'));
 });
 
 test('timestamp periods are half-open and invalid periods fail instead of producing misleading zero counts',()=>{

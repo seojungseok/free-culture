@@ -4,6 +4,7 @@ import { readCache, writeCache, loadKey, cleanText, https, safeApiError } from "
 import { mergeCollectedRecord } from "./lib/collectorState.mjs";
 import { regionalRequest, regionalRefreshStatus } from './lib/regionalRequest.mjs';
 import fs from 'node:fs';
+import {regionalYmd as ymd,regionalDateRange as dateRange} from './lib/regionalDates.mjs';
 
 const KEY = loadKey("public");
 const TODAY = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10).replaceAll("-", "");
@@ -14,19 +15,6 @@ const value = (obj, ...keys) => {
   return "";
 };
 const clean = (v) => cleanText(v);
-const ymd = (v) => {
-  const s = String(v ?? "").replace(/\D/g, "");
-  return s.length >= 8 ? s.slice(0, 8) : "";
-};
-const fromEpoch = (v) => {
-  const n = Number(v);
-  return Number.isFinite(n) && n >= 100000000000
-    ? new Date(n).toISOString().slice(0, 10).replaceAll("-", "") : "";
-};
-const dateRange = (v) => {
-  const dates = clean(v).match(/\d{4}[.\-/]\d{1,2}[.\-/]\d{1,2}/g) || [];
-  return { start: dates[0] ? ymd(dates[0]) : "", end: dates[1] ? ymd(dates[1]) : ymd(dates[0]) };
-};
 const list = (value) => Array.isArray(value) ? value : value ? [value] : [];
 const decodedKey = () => { try { return decodeURIComponent(KEY); } catch { return KEY; } };
 const query = (params) => new URLSearchParams({ ...params, serviceKey: decodedKey() }).toString();
@@ -49,7 +37,8 @@ async function busan() {
   // 부산 API는 body/items가 아닌 getFestivalKr.item으로 바로 내려온다.
   const rows = body?.items?.item || body?.items || body?.item || body?.data || j?.getFestivalKr?.item;
   return list(rows).map((it) => {
-    const range = dateRange(value(it, "USAGE_DAY_WEEK_AND_TIME", "USAGE_DAY"));
+    const schedule = dateRange(value(it, "USAGE_DAY_WEEK_AND_TIME"));
+    const range = schedule.start ? schedule : dateRange(value(it, "USAGE_DAY"));
     return event({ id: "busan-" + value(it, "UC_SEQ"), title: clean(value(it, "MAIN_TITLE", "TITLE")),
       addr: clean(value(it, "ADDR1")) || `부산광역시 ${clean(value(it, "GUGUN_NM"))}`.trim(), area: "부산",
       image: value(it, "MAIN_IMG_NORMAL", "MAIN_IMG_THUMB"), mapx: value(it, "LNG"), mapy: value(it, "LAT"),
@@ -64,7 +53,7 @@ async function gyeongju() {
   return list(rows).map((it) => event({
     id: "gyeongju-" + value(it, "FSTVL_NM") + "-" + value(it, "BGNG_YMD"), title: clean(value(it, "FSTVL_NM")),
     addr: clean(value(it, "ADRES")), area: "경북", image: "", tel: clean(value(it, "TELNO")),
-    startDate: fromEpoch(value(it, "BGNG_YMD")) || ymd(value(it, "BGNG_YMD")), endDate: fromEpoch(value(it, "END_YMD")) || ymd(value(it, "END_YMD")), place: value(it, "FSTVL_PLACE", "PLACE"), source: "경주시 축제 현황",
+    startDate: ymd(value(it, "BGNG_YMD")), endDate: ymd(value(it, "END_YMD")), place: value(it, "FSTVL_PLACE", "PLACE"), source: "경주시 축제 현황",
   })).filter(Boolean);
 }
 async function ulsan() {

@@ -8,7 +8,7 @@ import { publicImageUrl } from "@/lib/publicImage.mjs";
 
 export interface Camp {
   id: string; name: string; area: string; sigungu: string; addr: string;
-  mapx: string; mapy: string;
+  mapx: string; mapy: string; listed?: boolean; operationStatus?: string;
   types: string[]; facilities: Record<string, boolean>;
   pet: boolean; petRaw: string; lctCl: string;
   resve: string; operPd: string; tel: string; homepage: string; image: string; intro: string;

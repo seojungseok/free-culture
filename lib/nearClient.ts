@@ -1,5 +1,12 @@
 import type {NearPoint} from './nearSearch';
 export const NEAR_SESSION='near-search-v2';
+type HomeLocation={point:NearPoint|null;area:string;kind:string;radius:number;page:number;error?:string};
+let pending:HomeLocation|null=null;
+export function rememberHomeLocation(state:HomeLocation){
+ pending=state;
+ try{sessionStorage.setItem(NEAR_SESSION,JSON.stringify(state));sessionStorage.removeItem('near-return');}catch{}
+}
+export function takeHomeLocation(){const state=pending;pending=null;return state;}
 export function requestNearLocation():Promise<NearPoint>{
  return new Promise((resolve,reject)=>{
   if(!navigator.geolocation){reject(new Error('이 브라우저에서는 위치를 확인할 수 없어요. 지역을 직접 골라주세요.'));return;}

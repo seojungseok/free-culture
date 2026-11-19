@@ -6,7 +6,7 @@ const inFlight=new Map<number,Promise<{rows:ParkingRow[];checkedAt:string}|null>
 async function requestPage(page:number){
  if(!Number.isInteger(page)||page<1||page>3||!parkingSnapshot.realtimePages.includes(page))return null;
  const key=process.env.PARKING_API_KEY||process.env.DATA_GO_KR_KEY;if(!key)return null;
- try{const url=new URL('https://apis.data.go.kr/B553881/Parking/PrkRealtimeInfo');url.search=new URLSearchParams({serviceKey:decodeURIComponent(key),pageNo:String(page),numOfRows:'1000',format:'2'}).toString();const res=await fetch(url,{cache:'no-store',signal:AbortSignal.timeout(6000)});if(!res.ok)return null;const json=await res.json();if(!['0','00'].includes(String(json.resultCode))||!Array.isArray(json.PrkRealtimeInfo))return null;return {rows:json.PrkRealtimeInfo as ParkingRow[],checkedAt:new Date().toISOString()};}catch{return null;}
+ try{const url=new URL('https://apis.data.go.kr/B553881/Parking_v1/PrkRealtimeInfo_v1');url.search=new URLSearchParams({serviceKey:decodeURIComponent(key),pageNo:String(page),numOfRows:'1000',format:'2'}).toString();const res=await fetch(url,{cache:'no-store',signal:AbortSignal.timeout(6000)});if(!res.ok)return null;const json=await res.json();if(!['0','00'].includes(String(json.resultCode))||!Array.isArray(json.PrkRealtimeInfo))return null;return {rows:json.PrkRealtimeInfo as ParkingRow[],checkedAt:new Date().toISOString()};}catch{return null;}
 }
 // Cache both successes and failures across visitors. Only 3 fixed pages are allowed.
 // At steady state: 3 pages * 96 windows/day = 288 upstream calls, not calls per visitor.

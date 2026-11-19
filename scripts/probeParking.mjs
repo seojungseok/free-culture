@@ -4,7 +4,7 @@ require('@next/env').loadEnvConfig(process.cwd());
 const key = process.env.PARKING_API_KEY || process.env.DATA_GO_KR_KEY;
 if (!key) throw new Error('Parking service key is not configured');
 for (const endpoint of process.argv[2] ? [process.argv[2]] : ['PrkSttusInfo', 'PrkOprInfo', 'PrkRealtimeInfo']) {
-  const url = new URL('https://apis.data.go.kr/B553881/Parking/' + endpoint);
+  const url = new URL('https://apis.data.go.kr/B553881/Parking_v1/' + endpoint + '_v1');
   url.search = new URLSearchParams({ serviceKey: decodeURIComponent(key), pageNo: process.argv[3] || '1', numOfRows: process.argv[4] || '10', format: '2' }).toString();
   try {
     const response = await fetch(url, { signal: AbortSignal.timeout(45000) });

@@ -7,7 +7,8 @@ const value=(query:Query,key:string)=>typeof query[key]==='string'?String(query[
 export default function PlaygroundRegistry({query}:{query:Query}){
  const all=getPlaygroundCandidates(),open=value(query,'view')==='registry'||value(query,'water')==='1'||Boolean(value(query,'page'));
  const area=playgroundAreas.includes(value(query,'area'))?value(query,'area'):'',q=(value(query,'registry_q')||(open?value(query,'q'):'' )).trim().slice(0,80),indoor=value(query,'registry_indoor')==='1'||value(query,'indoor')==='1',water=value(query,'water')==='1';
- const filtered=all.filter(p=>(!area||p.area===area)&&(!indoor||p.indoorOutdoor==='실내')&&(!water||p.waterEquipment===true)&&(!q||(`${p.name} ${p.address}`).replace(/\s/g,'').includes(q.replace(/\s/g,''))));
+ const facility=value(query,'facility');
+ const filtered=all.filter(p=>(!facility||p.id===facility)&&(!area||p.area===area)&&(!indoor||p.indoorOutdoor==='실내')&&(!water||p.waterEquipment===true)&&(!q||(`${p.name} ${p.address}`).replace(/\s/g,'').includes(q.replace(/\s/g,''))));
  const pages=Math.max(1,Math.ceil(filtered.length/20)),page=Math.min(pages,Math.max(1,parseInt(value(query,'page'),10)||1)),rows=filtered.slice((page-1)*20,page*20);
  const href=(number:number)=>{const params=new URLSearchParams({view:'registry',page:String(number)});if(area)params.set('area',area);if(q)params.set('registry_q',q);if(indoor)params.set('registry_indoor','1');if(water)params.set('water','1');return '/playgrounds?'+params+'#registry';};
  return <details id="registry" className={styles.registry} open={open}>

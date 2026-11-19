@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-19T02:06:57.774Z",
-  "healthy": false,
+  "checkedAt": "2026-11-19T15:02:29.250Z",
+  "healthy": true,
   "sources": [
     {
       "id": "events",
@@ -52,8 +52,53 @@
       "label": "캠핑장",
       "provider": "한국관광공사 고캠핑",
       "interval": "매주 월요일",
-      "count": 3251,
-      "checkedAt": "2026-11-15T23:12:05.179Z",
+      "count": 3266,
+      "checkedAt": "2026-11-19T14:43:59.388Z",
+      "status": "fresh"
+    },
+    {
+      "id": "parking",
+      "label": "주차장 위치·운영 표본",
+      "provider": "한국교통안전공단",
+      "interval": "매주 월요일 · 일부 주차장",
+      "count": 694,
+      "checkedAt": "2026-11-19T14:46:58.148Z",
+      "status": "fresh"
+    },
+    {
+      "id": "photos",
+      "label": "관광사진 목록",
+      "provider": "한국관광공사",
+      "interval": "매주 월요일",
+      "count": 6115,
+      "checkedAt": "2026-11-15T23:17:14.269Z",
+      "status": "fresh"
+    },
+    {
+      "id": "restaurant-intro",
+      "label": "음식점 영업정보",
+      "provider": "한국관광공사",
+      "interval": "매주 월요일 · 일부 상세 순차 확인",
+      "count": 7496,
+      "checkedAt": "2026-11-15T23:14:59.153Z",
+      "status": "fresh"
+    },
+    {
+      "id": "place-intro",
+      "label": "관광지 이용정보",
+      "provider": "한국관광공사",
+      "interval": "매주 월요일 · 일부 상세 순차 확인",
+      "count": 6076,
+      "checkedAt": "2026-11-15T23:16:18.148Z",
+      "status": "fresh"
+    },
+    {
+      "id": "place-info",
+      "label": "관광지 볼거리",
+      "provider": "한국관광공사",
+      "interval": "매주 월요일 · 일부 상세 순차 확인",
+      "count": 3836,
+      "checkedAt": "2026-11-15T23:17:06.091Z",
       "status": "fresh"
     },
     {
@@ -70,9 +115,9 @@
       "label": "이동·영유아 편의정보",
       "provider": "한국관광공사",
       "interval": "화~일요일 · 상세 순차 확인",
-      "count": 207,
-      "checkedAt": "2026-11-19T02:05:47.690Z",
-      "status": "partial"
+      "count": 220,
+      "checkedAt": "2026-11-19T14:44:01.915Z",
+      "status": "fresh"
     },
     {
       "id": "rural-experiences",

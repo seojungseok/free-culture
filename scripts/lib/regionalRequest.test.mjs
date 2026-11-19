@@ -1,6 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { regionalRequest, regionalRefreshStatus } from './regionalRequest.mjs';
+import {regionalYmd,regionalDateRange} from './regionalDates.mjs';
+test('provider date formats keep Korean calendar days and explicit end dates',()=>{
+ assert.equal(regionalYmd('1602774000000'),'20201016');
+ assert.deepEqual(regionalDateRange('2026. 5. 15.(금) ~ 5. 24.(일)'),{start:'20260515',end:'20260524'});
+ assert.deepEqual(regionalDateRange('매년 11월'),{start:'',end:''});
+ assert.deepEqual(regionalDateRange('2026.11.30 ~ 미정'),{start:'',end:''});
+});
 const ok={response:{header:{resultCode:'0000'},body:{items:{item:[]}}}};
 const response=value=>({ok:true,text:async()=>typeof value==='string'?value:JSON.stringify(value)});
 test('timeout and 503 retry within a three-request bound, then recover',async()=>{

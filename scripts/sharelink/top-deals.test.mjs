@@ -62,7 +62,7 @@ test('종류별 편성은 처음 여섯 상품을 다양하게 하고 나머지�
 });
 
 test('고정 히어로와 겹치는 상품은 홈에서만 제외한다',()=>{
- const hero={...deal,id:2702896485,name:'삼립 단팥호빵, 개별포장, 12입, 1박스'};
+ const hero={...deal,id:174755365,name:'부산포차 꼬치어묵, 400g, 3봉'};
  const selectedFeed={...feed,winterCampaignVersion,products:[hero,{...deal,id:2,name:'생수, 500ml, 40병'}]};
  assert.equal(selectTopDeals(selectedFeed,now).some(p=>p.id===hero.id),true);
  assert.equal(selectTopDeals(selectedFeed,now,{isHome:true}).some(p=>p.id===hero.id),false);

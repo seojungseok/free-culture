@@ -11,4 +11,16 @@ const pool=[base,{...base,id:'3',url:'/event/3',kind:'event',endDate:'20260909'}
 const q={point:{lat:37.5,lng:127},kind:'all',radius:10,offset:0,limit:12};
 test('distance is geodesic, unknown venue coordinates cannot create a distance',()=>{assert.equal(straightDistance(q.point,base),0);assert.ok(straightDistance(q.point,{lat:37.5,lng:127.1})>8);assert.equal(straightDistance(q.point,{lat:0,lng:0}),Infinity);});
 test('radius and kind intersect, expired and unpublished records stay out',()=>{const r=queryNearby(pool,q,'20260910');assert.deepEqual(r.items.map(p=>p.id),['1','4']);assert.equal(queryNearby(pool,{...q,kind:'food'},'20260910').total,0);assert.equal(queryNearby(pool,{...q,kind:'food',radius:20},'20260910').total,1);});
+test('mixed order exposes each present category once at the top, retaining every result across pages',()=>{
+ const crowded=Array.from({length:16},(_,i)=>({...base,id:String(i),url:'/place/'+i,lng:127+i/1000}));
+ const extra={...base,id:'camp',kind:'camp',lng:127.04,url:'/camping/4'};
+ const entries=[...crowded,extra,extra,{...extra,kind:'festival',url:'/festivals/past',endDate:'20260909'}];
+ const first=queryNearby(entries,{...q,order:'mixed'},'20260910');
+ const rest=queryNearby(entries,{...q,order:'mixed',offset:12},'20260910');
+ assert.equal(first.items[1].kind,'camp');assert.equal(first.total,17);
+ assert.equal(new Set([...first.items,...rest.items].map(x=>x.url)).size,17);
+ assert.ok(queryNearby(entries,q,'20260910').items.every(x=>x.kind==='place'));
+ assert.ok(first.items.every(x=>!('lat' in x)&&!('lng' in x)));
+});
+
 test('region fallback never claims distance, pagination reports the true total',()=>{const r=queryNearby(pool,{...q,point:undefined,area:'서울',limit:2},'20260910');assert.equal(r.total,4);assert.equal(r.items.length,2);assert.ok(r.hasMore);assert.ok(r.items.every(p=>p.distanceKm===undefined));assert.equal(queryNearby(pool,{...q,point:undefined,area:'제주'},'20260910').total,0);});

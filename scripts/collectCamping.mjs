@@ -83,7 +83,7 @@ async function main() {
     await sleep(250);
     try {
       const page = await fetchPage(p, ROWS, budget);
-      if (!page.items.length) throw new Error("API 응답 형식 오류");
+      if (page.total !== first.total || !page.items.length) throw new Error("API 응답 형식 오류");
       items.push(...page.items);
     } catch (error) {
       failures++; console.warn(`캠핑 p${p} 갱신 보류: ${safeApiError(error)}`);
@@ -103,6 +103,7 @@ async function main() {
       sigungu: String(it.sigunguNm || "").trim(),
       addr: String(it.addr1 || "").trim(),
       mapx: String(it.mapX || ""), mapy: String(it.mapY || ""),
+      listed: true, operationStatus: String(it.manageSttus || "").trim(),
       types: typesOf(it),
       facilities: facilitiesOf(it),
       pet: /가능/.test(it.animalCmgCl || "") && !/^불가능$/.test(String(it.animalCmgCl || "").trim()),
@@ -120,12 +121,12 @@ async function main() {
   }
 
   if (!checkedIds.size) throw new Error("캠핑 확인 0건 — 기존 스냅샷 유지");
-  const camps = [...byId.values()];
+  const complete = failures === 0 && !budget.stopped && checkedIds.size === first.total && items.length === first.total;
+  const camps = [...byId.values()].map(camp=>complete&&!checkedIds.has(camp.id)?{...camp,listed:false}:camp);
   const byType = {}, byArea = {};
   let withImg = 0, pet = 0;
   for (const c of camps) { for (const t of c.types) byType[t] = (byType[t] || 0) + 1; byArea[c.area] = (byArea[c.area] || 0) + 1; if (c.image) withImg++; if (c.pet) pet++; }
 
-  const complete = failures === 0 && !budget.stopped && items.length >= first.total;
   writeCache("camping.json", checkedSnapshot(previous, camps, "camps", { checkedAt, calls: budget.used, failures, complete }));
   const mb = (fs.statSync(OUT).size / 1048576).toFixed(2);
   console.log(`\n💾 저장: data/camping.json (${camps.length}곳, ${mb}MB)`);
