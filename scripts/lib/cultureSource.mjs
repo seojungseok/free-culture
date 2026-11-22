@@ -27,6 +27,15 @@ function publicIp(ip) {
   const [a,b]=ip.split('.').map(Number);
   return !(a===0||a===10||a===127||a>=224||a===169&&b===254||a===172&&b>=16&&b<=31||a===192&&[0,168].includes(b)||a===100&&b>=64&&b<=127||a===198&&[18,19,51].includes(b)||a===203&&b===0);
 }
+// A venue homepage belongs to the named place, even when the event moves.
+export function eventVenueUrl(place, item, previous) {
+  const name = textOf(place);
+  if (!name) return '';
+  if (item && textOf(item.place) === name && String(item.placeUrl || '').trim()) {
+    return publicSourceUrl(item.placeUrl);
+  }
+  return textOf(previous?.place) === name ? publicSourceUrl(previous?.venueUrl) : '';
+}
 export async function fetchSourcePage(raw,{fetcher=fetch,resolve=lookup}={}) {
   let url=publicSourceUrl(raw);
   if(!url) throw new Error('unsafe-source');

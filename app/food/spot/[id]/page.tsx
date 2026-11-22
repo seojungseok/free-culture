@@ -44,7 +44,7 @@ export async function generateMetadata({
   const r = getRestaurantById(id);
   if (!r) return { title: "맛집을 찾을 수 없습니다" };
   const food = foodTypeLabel(r);
-  const gu = (r.addr.match(/[가-힣]{2,}(?:구|군)/) || [])[0];
+  const gu = r.addr.split(/\s+/).slice(1, 3).filter(part => /^[가-힣]+(?:시|군|구)$/.test(part)).join(" ");
   const locality = restaurantTitleCounts.get(restaurantTitleKey(r))! > 1
     ? ` ${r.addr.split(/\s+/).slice(1, 3).join(" ")}` : "";
   const title = `${r.title} — ${r.area}${locality} ${food} 맛집`;
@@ -118,7 +118,7 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
     "@type": "Restaurant",
     name: r.title,
     servesCuisine: food,
-    description: overview || `${r.area}에 위치한 ${food} ${r.title}`,
+    description: overview || restaurantSummary(r.id) || `${r.area}에 위치한 ${food} ${r.title}`,
     image: gallery.slice(0, 6).map((g) => g.full),
     address: {
       "@type": "PostalAddress",
@@ -145,8 +145,8 @@ async function RestaurantDetail({ r }: { r: Restaurant }) {
 
   return (
     <Container className="max-w-[820px] pb-16 pt-5">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd).replace(/</g, "\\u003c") }} />
       <nav className="mb-3 flex flex-wrap items-center gap-1 text-[12.5px] text-ink-faint">
         <Link href="/food" className="hover:text-free">맛집 탐방</Link>
         <span>›</span>

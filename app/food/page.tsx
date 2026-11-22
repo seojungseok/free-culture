@@ -1,27 +1,29 @@
 import { withSearchMetadata } from '@/lib/searchMetadata';
 import TossTopDeals from "@/components/TossTopDeals";
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Band } from "@/components/Band";
-import FoodBrowser, { type RestaurantRow } from "@/components/FoodBrowser";
-import { foodAreas, getAllRestaurants, type Restaurant } from "@/lib/food";
+import FoodBrowser, { foodPageHref, type FoodQuery } from "@/components/FoodBrowser";
+import { getAllRestaurants } from "@/lib/food";
 import Link from "next/link";
 
 export const revalidate = 86400;
 
-export const metadata: Metadata = withSearchMetadata({
+const mainMetadata: Metadata = withSearchMetadata({
   title: "전국 맛집 — 지역·업종별 맛집 탐방",
   description: "전국 맛집을 지역과 업종(한식·중식·일식·카페 등)으로 골라보세요. 위치·연락처·영업정보 제공.",
   keywords: ["맛집", "지역 맛집", "맛집 탐방", "전국 음식점"],
   alternates: { canonical: "/food" },
 });
 
-function slimRestaurant(r: Restaurant): RestaurantRow {
-  return [r.id, r.title, r.addr, r.area, r.image, r.cat3 || "", r.phone || ""];
+type Props = {searchParams: Promise<FoodQuery>};
+export async function generateMetadata({searchParams}: Props): Promise<Metadata> {
+  const query = await searchParams;
+  if (!query.area && !query.cat && (!query.page || query.page === "1")) return mainMetadata;
+  return {...mainMetadata, robots:{index:false, follow:true}, alternates:{canonical:foodPageHref(query.area || "", query.cat || "", Number(query.page) || 1)}};
 }
 
-export default function FoodPage() {
-  const restaurants = getAllRestaurants().map(slimRestaurant);
+export default async function FoodPage({searchParams}: Props) {
+  const restaurants = getAllRestaurants();
 
   return (
     <>
@@ -35,9 +37,7 @@ export default function FoodPage() {
         <p className="mt-2">식사 전후에 들를 곳을 찾는다면 <Link href="/places" className="font-semibold text-brandblue underline">지역별 나들이 장소</Link>나 <Link href="/course" className="font-semibold text-brandblue underline">여행코스</Link>를 함께 살펴보세요.</p>
       </section>
       <TossTopDeals />
-      <Suspense fallback={null}>
-        <FoodBrowser restaurants={restaurants} areas={foodAreas()} />
-      </Suspense>
+      <FoodBrowser query={await searchParams}/>
     </>
   );
 }

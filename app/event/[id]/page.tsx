@@ -69,6 +69,7 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
   const mapUrl = !ev.addressConflict && (ev.address || ev.place)
     ? `https://map.naver.com/p/search/${encodeURIComponent([ev.place, ev.address].filter(Boolean).join(' '))}` : '';
   const contents = eventContentsParagraphs(ev.contents);
+  const venueUrl = ev.addressConflict ? '' : publicEventLink(ev.venueUrl);
   const additionalFacts = guide.facts.filter(fact => !/^(행사시간|공연시간|소요시간|관람연령|관람등급|주최)$/.test(fact.label) && fact.value !== guide.age && fact.value !== guide.time && fact.value !== guide.duration);
   const related = getAllEvents().filter(event => event.id !== ev.id && event.area === ev.area && event.imgUrl && event.endDate >= today)
     .sort((a, b) => Number(b.genreKey === ev.genreKey) - Number(a.genreKey === ev.genreKey) || a.endDate.localeCompare(b.endDate)).slice(0, 6);
@@ -138,6 +139,7 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
         <div className={styles.actions}>
           {guide.official && <a href={guide.official} target="_blank" rel="noopener noreferrer" className={styles.primary}>{ended ? '당시 공식 안내' : '공식 관람·신청 안내'} <span aria-hidden="true">↗</span></a>}
           {mapUrl && <a href={mapUrl} target="_blank" rel="noopener noreferrer">지도·길찾기 <span aria-hidden="true">↗</span></a>}
+          {venueUrl && venueUrl !== guide.official && <a href={venueUrl} target="_blank" rel="noopener noreferrer">행사장 홈페이지 <span aria-hidden="true">↗</span></a>}
         </div>
         {!ended && <p className={styles.bookingNote}>신청 가능 여부·잔여 좌석·초대권 수령 방법은 공식 안내에서 확인해 주세요.</p>}
       </header>

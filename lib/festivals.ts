@@ -14,7 +14,7 @@ export interface Festival {
   source?: string; description?: string; place?: string; homepage?: string; tel?: string;
   type?: string; images?: string[]; intro?: Record<string, string>;
   info?: { name: string; text: string }[]; enrichedAt?: string;
-  checkedAt?: string; collectedAt?: string;
+  checkedAt?: string; collectedAt?: string; introCheckedAt?: string;
 }
 
 const COLLECTED = ((festivalsData as unknown as { festivals?: Festival[] }).festivals || [])
@@ -97,7 +97,7 @@ export function festivalVisitInfo(festival: Festival): { hours: string; fee: str
     hours: clean(intro.playtime),
     fee: clean(intro.fee || intro.usetime),
     age: clean(intro.agelimit),
-    reservation: clean(intro.reservation || reservationItem?.text),
+    reservation: clean(intro.reservation) || clean(intro.bookingPlace) || clean(reservationItem?.text),
   };
 }
 

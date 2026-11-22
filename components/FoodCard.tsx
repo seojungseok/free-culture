@@ -16,7 +16,7 @@ function foodCatLabel(cat3?: string): string {
 
 /** 음식점 카드 — /food, /food/[area], /food/[area]/[cat] 공용. 상세(/food/spot/[id])로 링크 */
 export default function FoodCard({ r }: { r: Restaurant }) {
-  const gu = (r.addr.match(/[가-힣]{2,}(?:구|군|시)/) || [])[0] || "";
+  const gu = r.addr.split(/\s+/).slice(1, 3).filter(part => /^[가-힣]+(?:시|구|군)$/.test(part)).join(" ");
   return (
     <Link href={`/food/spot/${r.id}`} prefetch={false} className="group block" aria-label={`${r.title} 상세 보기`}>
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-100 ring-1 ring-black/[0.04] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-cardhover">
@@ -31,6 +31,7 @@ export default function FoodCard({ r }: { r: Restaurant }) {
       </div>
       <div className="px-0.5 pb-1 pt-2">
         <h3 className="line-clamp-1 text-[14px] font-bold text-ink group-hover:text-free">{r.title}</h3>
+        {r.menu && <p className="mt-1 line-clamp-2 text-[13px] text-ink-soft">대표메뉴 · {r.menu}</p>}
         <p className="mt-0.5 line-clamp-1 text-[12px] text-ink-faint">{[r.area, gu].filter(Boolean).join(" · ")}</p>
         {r.phone && (
           <p className="mt-0.5 line-clamp-1 text-[11.5px] font-semibold text-ink-soft">☎ {r.phone}</p>

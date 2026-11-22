@@ -18,6 +18,7 @@ export function hasSubstantivePlaceInfo(id: string): boolean {
 
 /** A restaurant card with only a name, address and photo is too sparse for indexing. */
 export function hasSubstantiveRestaurantInfo(id: string): boolean {
+  if (((overviews as Record<string,string>)[id] || "").trim().length >= 150) return true;
   return restaurantIntroRows(id)
     .filter((row) => ["영업시간", "휴무일", "주차", "대표메뉴", "취급메뉴"].includes(row.label) && row.value.trim().length >= 4)
     .length >= 2;

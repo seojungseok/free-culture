@@ -83,6 +83,7 @@ export async function collectFestivalDetails({ store, count = 20, maxRequests = 
         tel: common.tel || festival.tel || "",
         place: intro.eventplace || festival.place || "",
         intro: { ...(festival.intro || {}), ...intro },
+        ...(Object.keys(intro).length ? {introCheckedAt: checkedAt} : {}),
         info: info.length ? info : festival.info || [],
         images: [...new Set([festival.image, ...images, ...(festival.images || [])].filter(Boolean))].slice(0, 8),
         enrichedAt: checkedAt,

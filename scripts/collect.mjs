@@ -25,6 +25,7 @@ import {
 } from "../lib/classify.js";
 import { mergeEventArchive } from './eventArchive.mjs';
 import {loadSourceEnv} from './lib/sourceEnv.mjs';
+import {eventVenueUrl} from './lib/cultureSource.mjs';
 import {QuotaError,safeApiError} from './lib/tourClient.mjs';
 loadSourceEnv();
 
@@ -147,6 +148,7 @@ async function fetchDetail(seq) {
   const url = `${BASE}/detail2?serviceKey=${KEY}&seq=${seq}`;
   const json = await fetchXml(url, "detail2");
   const it = asArray(json?.response?.body?.items?.item)[0];
+  if (it && String(it.seq) !== seq) throw new Error("API 응답 형식 오류");
   return it || null;
 }
 
@@ -242,7 +244,8 @@ async function main() {
 
     const title = decodeEntities(li.title ?? de?.title ?? prev?.title ?? "");
     const realmName = String(li.realmName ?? de?.realmName ?? prev?.realmName ?? "");
-    const place = decodeEntities(li.place ?? de?.place ?? prev?.place ?? "");
+    const place = decodeEntities(li.place) || decodeEntities(de?.place) || prev?.place || "";
+    const venueUrl = eventVenueUrl(place, de, prev);
     const area = String(li.area ?? de?.area ?? prev?.area ?? "");
     const sigungu = String(li.sigungu ?? de?.sigungu ?? prev?.sigungu ?? "");
     // http → https 정규화 (배포 시 혼합콘텐츠 차단 방지)
@@ -285,6 +288,7 @@ async function main() {
       startDate,
       endDate,
       place,
+      ...(venueUrl ? {venueUrl} : {}),
       area,
       sigungu,
       address: de?.placeAddr ? decodeEntities(de.placeAddr) : prev?.address || "",

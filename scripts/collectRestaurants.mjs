@@ -1,91 +1,78 @@
-// 2-3. 음식점(contentTypeId=39) 수집 — areaBasedList2 지역별, 사진 있는 곳 우선.
-//  전국 totalCount ≈ 13,744 → 사진 없는 곳 제외 + 상한(RESTO_MAX)으로 규모 조절.
-//  → 기존 ID의 사실·사진을 재확인하고 URL을 보존한다. RESTO_MAX는 신규 추가에만 적용.
-//
-// 실행:
-//   node scripts/collectRestaurants.mjs           # 지역별 순차, 상한까지
-//   RESTO_MAX=2000 RESTO_DAILY=800 node scripts/collectRestaurants.mjs
+// Legacy areaCode filters omit restaurants that only carry current legal region codes.
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { readCache, writeCache, createBudget, areaBasedPage, tourArea, https, sleep, hasKey, safeApiError } from './lib/tourClient.mjs';
+import { mergeCollectedRecord, checkedSnapshot } from './lib/collectorState.mjs';
+import { loadSourceEnv } from './lib/sourceEnv.mjs';
 
-import {
-  readCache, writeCache, createBudget, QuotaError, areaBasedPage,
-  AREA_TO_SIDO, AREA_CODES, https, sleep, hasKey, tourArea, safeApiError,
-} from "./lib/tourClient.mjs";
-import { mergeCollectedRecord, checkedSnapshot } from "./lib/collectorState.mjs";
-
-if (!hasKey()) { console.error("❌ TOUR_API_KEY / DATA_GO_KR_KEY 없음"); process.exit(1); }
-
-const DAILY = Number(process.env.RESTO_DAILY || 800);   // 하루 API콜 상한
-const MAX = Number(process.env.RESTO_MAX || 4000);      // 누적 저장 목표(사진有)
-const OUT = "restaurants.json";
-const CT = "39";
-
-async function main() {
-  const store = readCache(OUT, { generatedAt: null, count: 0, restaurants: [] });
-  const byId = new Map(store.restaurants.map((r) => [r.id, r]));
-
-  // RESTO_AREAS=서울,경기,인천 처럼 시도명(쉼표)으로 수집 지역 한정. 없으면 전국.
-  const areaFilter = (process.env.RESTO_AREAS || "").split(",").map((s) => s.trim()).filter(Boolean);
-  const areaCodes = areaFilter.length
-    ? AREA_CODES.filter((c) => areaFilter.includes(AREA_TO_SIDO[c]))
-    : AREA_CODES;
-  const scope = areaFilter.length ? areaFilter.join("·") : "전국";
-  console.log(`\n🍽️  음식점 수집 — 기존 ${byId.size}곳 · 목표 ${MAX} · 콜 상한 ${DAILY} · 지역 ${scope}`);
-
-  const budget = createBudget(DAILY);
-  const totals = {};
-  const checkedAt = new Date().toISOString();
-  let added = 0, retrieved = 0, failures = 0, complete = true;
+// Keep the site's existing category URLs for equivalent current TourAPI classifications.
+const categories = {
+  FD010100: 'A05020100', FD010200: 'A05020100', FD020100: 'A05020400', FD020200: 'A05020300',
+  FD020300: 'A05020200', FD050100: 'A05020900', FD050200: 'A05020900',
+};
+export async function collectRestaurants(store, { max, daily, areas = [], fetchPage = areaBasedPage, pause = sleep, now = new Date() }) {
+  const checkedAt = now.toISOString(), budget = createBudget(daily);
+  const byId = new Map(store.restaurants.map(row => [row.id, row]));
+  const seen = new Set(), additions = new Map();
+  let total = 0, failure = '';
   try {
-    for (const area of areaCodes) {
-      const sido = AREA_TO_SIDO[area];
-      let page = 1, total = Infinity, areaAdded = 0;
-      while ((page - 1) * 1000 < total) {
-        const res = await areaBasedPage({ contentTypeId: CT, areaCode: area, pageNo: page, rows: 1000 }, budget);
-        retrieved++;
-        const items = res.items;
-        total = res.total; totals[sido] = res.total;
-        for (const it of items) {
-          const id = String(it.contentid || "");
-          if (!id) continue;
-          const previous = byId.get(id);
-          // The size cap applies to new entries, never to refreshing an existing URL.
-          if (!previous && (!it.firstimage || byId.size >= MAX)) continue;
-          const r = {
-            id,
-            title: String(it.title || "").trim(),
-            addr: String(it.addr1 || "").trim(),
-            area: tourArea(it, sido),
-            image: https(it.firstimage),
-            mapx: String(it.mapx || ""),
-            mapy: String(it.mapy || ""),
-            tel: String(it.tel || "").trim(),
-            type: CT,
-            cat1: String(it.cat1 || ""),
-            cat2: String(it.cat2 || ""),
-            cat3: String(it.cat3 || ""),
-            sourceModifiedAt: String(it.modifiedtime || ""),
-          };
-          byId.set(id, mergeCollectedRecord(previous, r, checkedAt));
-          if (!previous) { areaAdded++; added++; }
+    for (let pageNo = 1; ; pageNo++) {
+      const page = await fetchPage({contentTypeId:'39', rows:1000, pageNo}, budget);
+      total = page.total;
+      if (!Number.isSafeInteger(total) || total < 1 || !page.items.length) throw new Error('API 응답 형식 오류');
+      const before = seen.size;
+      for (const item of page.items) {
+        const id = String(item.contentid || ''), area = tourArea(item);
+        if (!id || seen.has(id)) continue;
+        seen.add(id);
+        if (!area || (areas.length && !areas.includes(area)) || !item.title?.trim()) continue;
+        const previous = byId.get(id);
+        if (!previous && !item.firstimage) continue;
+        const record = mergeCollectedRecord(previous, {
+          id, area, title:item.title.trim(), addr:String(item.addr1 || '').trim(), image:https(item.firstimage),
+          mapx:String(item.mapx || ''), mapy:String(item.mapy || ''), tel:String(item.tel || '').trim(),
+          type:'39', cat1:item.cat1 || '', cat2:item.cat2 || '',
+          cat3:item.cat3 || categories[item.lclsSystm3] || previous?.cat3 || '',
+          sourceModifiedAt:String(item.modifiedtime || ''),
+        }, checkedAt);
+        if (previous) byId.set(id, record);
+        else {
+          if (!additions.has(area)) additions.set(area, []);
+          additions.get(area).push(record);
         }
-        if (items.length === 0) break;
-        page++;
-        await sleep(220);
       }
-      console.log(`  ${sido.padEnd(3)} 전체 ${String(totals[sido] ?? 0).padStart(5)} · 신규 ${String(areaAdded).padStart(4)} (누적 ${byId.size})`);
+      if (seen.size >= total) break;
+      if (before === seen.size || pageNo * 1000 >= total) throw new Error('API 응답 형식 오류');
+      await pause(250);
     }
-  } catch (e) {
-    complete = false; failures++;
-    if (e instanceof QuotaError) console.log(`\n⛔ ${safeApiError(e)} — 진행분 저장 후 중단`);
-    else throw e;
+  } catch (error) { failure = safeApiError(error); }
+  if (!seen.size) throw new Error(failure || 'API 응답 형식 오류');
+  // A limited number of new URLs should still cover multiple regions.
+  const groups = [...additions.values()];
+  const largest = Math.max(0, ...groups.map(group => group.length));
+  for (let index = 0; index < largest && byId.size < max; index++) {
+    for (const group of groups) {
+      if (byId.size >= max) break;
+      if (group[index]) byId.set(group[index].id, group[index]);
+    }
   }
-
-  if (!retrieved) { console.error("음식점 목록 조회 실패 — 기존 자료 유지"); process.exitCode = 1; return; }
-  const restaurants = [...byId.values()];
-  const mb = writeCache(OUT, checkedSnapshot(store, restaurants, 'restaurants', { checkedAt, calls: budget.used, failures, complete }));
-  const grand = Object.values(totals).reduce((a, b) => a + b, 0);
-  console.log(`\n💾 저장: data/${OUT} (${restaurants.length}곳, ${mb}MB, API콜 ${budget.used})`);
-  console.log(`   조회한 지역 전국합 ${grand} · 이번 신규 ${added}`);
+  const snapshot = checkedSnapshot(store,[...byId.values()],'restaurants',{
+    checkedAt,calls:budget.used,failures:failure ? 1 : 0,complete:!failure && !areas.length,
+  });
+  return {snapshot,total,received:seen.size,failure};
 }
 
-main().catch((e) => { console.error("❌ 실패:", safeApiError(e)); process.exit(1); });
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  try {
+    loadSourceEnv();
+    if (!hasKey()) throw new Error('공공 API 인증키 없음');
+    const store = readCache('restaurants.json',{restaurants:[]});
+    const result = await collectRestaurants(store,{
+      max:Number(process.env.RESTO_MAX || 4000),daily:Number(process.env.RESTO_DAILY || 800),
+      areas:(process.env.RESTO_AREAS || '').split(',').map(area => area.trim()).filter(Boolean),
+    });
+    writeCache('restaurants.json',result.snapshot);
+    console.log(JSON.stringify({total:result.total,received:result.received,stored:result.snapshot.count,...result.snapshot.refresh}));
+    if (result.failure) { console.error(result.failure); process.exitCode=1; }
+  } catch (error) { console.error(safeApiError(error)); process.exitCode=1; }
+}

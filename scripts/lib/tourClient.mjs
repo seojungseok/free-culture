@@ -281,10 +281,13 @@ const INTRO_MAP = {
           infocenter: "infocenterleports", babycarriage: "chkbabycarriageleports", pet: "chkpetleports", creditcard: "chkcreditcardleports" },
   "39": { usetime: "opentimefood", restdate: "restdatefood", parking: "parkingfood", infocenter: "infocenterfood",
           creditcard: "chkcreditcardfood", firstmenu: "firstmenu", treatmenu: "treatmenu", packing: "packing",
-          kidsfacility: "kidsfacility", reservation: "reservationfood", seat: "seat", smoking: "smoking" },
+          kidsfacility: "kidsfacility", reservation: "reservationfood", seat: "seat", smoking: "smoking",
+          discountinfo: "discountinfofood" },
   "15": { usetime: "usetimefestival", eventplace: "eventplace", eventstart: "eventstartdate",
           eventend: "eventenddate", playtime: "playtime", sponsor: "sponsor1", sponsorTel: "sponsor1tel",
-          agelimit: "agelimit", program: "program" },
+          agelimit: "agelimit", program: "program", duration: "spendtimefestival",
+          bookingPlace: "bookingplace", discount: "discountinfofestival", directions: "placeinfo",
+          sideEvents: "subevent", organizer: "sponsor2", organizerTel: "sponsor2tel" },
 };
 
 /** 원시 detailIntro2 item → 공통 스키마(값 없는 필드는 생략) */
@@ -292,7 +295,10 @@ export function normalizeIntro(type, raw) {
   const map = INTRO_MAP[type] || {};
   const out = {};
   for (const [key, field] of Object.entries(map)) {
-    const v = cleanText(raw?.[field]);
+    const value = raw?.[field];
+    const v = ["15","39"].includes(String(type))
+      ? String(value ?? "").split(/<br\s*\/?\s*>|\r?\n/gi).map(cleanText).filter(Boolean).join("\n")
+      : cleanText(value);
     if (v) out[key] = v;
   }
   return out;

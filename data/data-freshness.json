@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-22T00:34:20.189Z",
-  "healthy": false,
+  "checkedAt": "2026-11-22T11:15:06.543Z",
+  "healthy": true,
   "sources": [
     {
       "id": "events",
@@ -43,8 +43,8 @@
       "label": "음식점",
       "provider": "한국관광공사",
       "interval": "매주 월요일",
-      "count": 7496,
-      "checkedAt": "2026-11-15T23:12:10.034Z",
+      "count": 8000,
+      "checkedAt": "2026-11-22T11:06:49.938Z",
       "status": "fresh"
     },
     {
@@ -79,8 +79,8 @@
       "label": "음식점 영업정보",
       "provider": "한국관광공사",
       "interval": "매주 월요일 · 일부 상세 순차 확인",
-      "count": 7496,
-      "checkedAt": "2026-11-15T23:14:59.153Z",
+      "count": 7796,
+      "checkedAt": "2026-11-22T11:09:37.489Z",
       "status": "fresh"
     },
     {
@@ -161,8 +161,8 @@
       "provider": "시설 운영기관",
       "interval": "매일 공식 운영·공지 대조",
       "count": 6,
-      "checkedAt": "2026-11-19T02:06:38.190Z",
-      "status": "partial"
+      "checkedAt": "2026-11-22T11:14:55.628Z",
+      "status": "fresh"
     }
   ]
 }

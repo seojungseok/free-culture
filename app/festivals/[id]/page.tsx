@@ -32,7 +32,10 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   });
 }
 
-const introLabels: Record<string, string> = { sponsor: "주최·주관", sponsorTel: "주최 측 문의", program: "행사 프로그램" };
+const defaultIntroLabels: Record<string, string> = {
+  sponsor: "주최", organizer: "주관", organizerTel: "주관 측 문의", sponsorTel: "주최 측 문의",
+  program: "행사 프로그램", sideEvents: "부대행사", directions: "찾아가는 길",
+};
 
 export default async function FestivalDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const festival = getFestivalById((await params).id);
@@ -43,22 +46,32 @@ export default async function FestivalDetailPage({ params }: { params: Promise<{
   const related = getAllFestivals().filter((item) => item.id !== festival.id && item.area === festival.area).slice(0, 4);
   const state = festivalStatus(festival);
   const visit = festivalVisitInfo(festival);
-  const introEntries = Object.entries(festival.intro || {})
-    .filter(([key, value]) => introLabels[key] && isUsefulDisplayValue(value))
-    .map(([key, value]) => [key, eventContentsText(value)]);
-  const extraInfo = (festival.info || [])
-    .filter((item) => isUsefulDisplayValue(item.text) && eventContentsText(item.text) !== visit.reservation)
-    .slice(0, 8);
+  const introLabels = festival.intro?.sponsor && festival.intro.sponsor === festival.intro.organizer
+    ? {...defaultIntroLabels, sponsor:"주최·주관"} : defaultIntroLabels;
   const facts = [
     { label: "기간", value: `${festivalDateLabel(festival.startDate)} ~ ${festivalDateLabel(festival.endDate)}` },
     { label: "장소", value: festival.place },
     { label: "주소", value: festival.addr },
     { label: "행사 시간", value: visit.hours },
+    { label: "관람 소요시간", value: festival.intro?.duration },
     { label: "이용요금", value: visit.fee },
+    { label: "할인 안내", value: festival.intro?.discount },
     { label: "관람 연령", value: visit.age },
     { label: "예약 안내", value: visit.reservation },
     { label: "문의", value: festival.tel || festival.intro?.sponsorTel },
   ].filter((fact) => isUsefulDisplayValue(fact.value));
+  const textKey = (text: string) => eventContentsText(text).replace(/\s+/g, " ").trim();
+  const displayed = new Set([description, ...facts.map(fact => fact.value || "")].map(textKey));
+  function additionalText(text: string) {
+    const key = textKey(text);
+    if (!isUsefulDisplayValue(key) || displayed.has(key)) return false;
+    displayed.add(key);
+    return true;
+  }
+  const introEntries = Object.keys(introLabels)
+    .map(key => [key, eventContentsText(festival.intro?.[key])])
+    .filter(([, value]) => additionalText(value));
+  const extraInfo = (festival.info || []).filter(item => additionalText(item.text)).slice(0, 12);
   const date = (value: string) => `${value.slice(0, 4)}-${value.slice(4, 6)}-${value.slice(6, 8)}`;
   const canonical = `${SITE.url}/festivals/${festival.id}`;
   const jsonLd = {
@@ -107,7 +120,7 @@ export default async function FestivalDetailPage({ params }: { params: Promise<{
       {descriptionParts.length > 1 && <section className="mt-10 max-w-3xl border-t border-line pt-7"><h2 className="text-xl font-black text-ink">축제 소개</h2>{descriptionParts.slice(1).map((paragraph, index) => <p key={index} className="mt-4 whitespace-pre-line text-[15px] leading-8 text-ink-soft">{paragraph}</p>)}</section>}
       {images.length > 1 && <section className="mt-10 border-t border-line pt-7"><h2 className="text-xl font-black text-ink">축제 이미지</h2><div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">{images.slice(1).map((image, index) => <div key={image} className="aspect-[4/3] overflow-hidden rounded-xl bg-tint"><img src={image} alt={`${festival.title} 안내 이미지 ${index + 2}`} loading="lazy" className="h-full w-full object-cover" /></div>)}</div></section>}
       {(introEntries.length > 0 || extraInfo.length > 0) && <section className="mt-10 border-t border-line pt-7"><h2 className="text-xl font-black text-ink">{state === "ended" ? "당시 행사 안내" : "프로그램과 주최 안내"}</h2><div className="mt-4 grid gap-3 sm:grid-cols-2">{introEntries.map(([key, value]) => <div key={key} className="rounded-xl border border-line bg-white p-4"><h3 className="text-sm font-black text-ink">{introLabels[key]}</h3><p className="mt-2 whitespace-pre-line text-sm leading-6 text-ink-soft">{value}</p></div>)}{extraInfo.map((item, index) => <div key={`${item.name}-${index}`} className="rounded-xl border border-line bg-white p-4"><h3 className="text-sm font-black text-ink">{eventContentsText(item.name) || "행사 안내"}</h3><p className="mt-2 whitespace-pre-line text-sm leading-6 text-ink-soft">{eventContentsText(item.text)}</p></div>)}</div></section>}
-      <SourceNote name={festival.source || "한국관광공사 관광정보"} href={sourceHref} dates={[{ label: "일정·기본정보 수집일", at: festival.checkedAt || festival.collectedAt }, { label: "추가 안내 응답 수집일", at: festival.enrichedAt }]} officialUrl={festival.homepage} />
+      <SourceNote name={festival.source || "한국관광공사 관광정보"} href={sourceHref} dates={[{ label: "일정·기본정보 수집일", at: festival.checkedAt || festival.collectedAt }, { label: "관람 안내 수집일", at: festival.introCheckedAt }, { label: "상세정보 수집일", at: festival.enrichedAt }]} officialUrl={festival.homepage} />
     </article>
     {related.length > 0 && <section className="mt-10 border-t border-line pt-7"><div className="flex items-center justify-between gap-3"><h2 className="text-xl font-black text-ink">같은 지역의 축제</h2><Link href={`/festivals?region=${encodeURIComponent(festival.area)}`} className="text-sm font-bold text-free">지역 축제 더보기 →</Link></div><div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">{related.map((item) => <Link key={item.id} href={festivalHref(item)} prefetch={false} className="overflow-hidden rounded-xl border border-line bg-white hover:border-free">{item.image && <img src={item.image} alt="" loading="lazy" className="aspect-[4/3] w-full object-cover" />}<div className="p-3"><h3 className="line-clamp-2 text-sm font-black text-ink">{item.title}</h3><p className="mt-2 text-xs text-ink-soft">{fmtMd(item.startDate)} ~ {fmtMd(item.endDate)}</p></div></Link>)}</div></section>}
   </main>;

@@ -2,11 +2,11 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readCache,writeCache,createBudget,sleep,QuotaError,safeApiError } from './lib/tourClient.mjs';
 import { loadSourceEnv } from './lib/sourceEnv.mjs';
-import { cultureDetail,publicSourceUrl,extractEventSource,fetchSourcePage,SOURCE_PARSER_VERSION } from './lib/cultureSource.mjs';
+import { cultureDetail,publicSourceUrl,eventVenueUrl,extractEventSource,fetchSourcePage,SOURCE_PARSER_VERSION } from './lib/cultureSource.mjs';
 export async function enrichCultureEvents({events,store,max=200,pageMax=80,workers=2,detailFetcher=cultureDetail,pageFetcher=fetchSourcePage,now=()=>new Date(),pause=sleep,onProgress=()=>{}}) {
   store.events ||= {};
   const budget=createBudget(max);let checked=0,descriptions=0,links=0,failures=0,deferred=0,pages=0,pageDetails=0,index=0,stopped=false;
-  const eligible=events.filter(event=>!event.contents?.trim()&&(!store.events[event.id]?.providerCheckedAt||now().getTime()-Date.parse(store.events[event.id].providerCheckedAt)>7*86400000));
+  const eligible=events.filter(event=>(!event.contents?.trim()||!event.venueUrl||!event.address||!event.phone)&&(!store.events[event.id]?.providerCheckedAt||now().getTime()-Date.parse(store.events[event.id].providerCheckedAt)>7*86400000));
   const targets=eligible.sort((a,b)=>String(store.events[a.id]?.providerCheckedAt||'').localeCompare(String(store.events[b.id]?.providerCheckedAt||''))).slice(0,max);
   await Promise.all(Array.from({length:Math.max(1,Math.min(4,workers))},async()=>{
     while(index<targets.length&&!stopped) {
@@ -18,6 +18,9 @@ export async function enrichCultureEvents({events,store,max=200,pageMax=80,worke
         const contents=String(item.contents1||'').trim();
         if(contents&&!event.contents?.trim()) {event.contents=contents;descriptions++;}
         const url=publicSourceUrl(item.url);
+        const venueUrl=eventVenueUrl(event.place,item,event);
+        if(venueUrl)event.venueUrl=venueUrl;
+        else delete event.venueUrl;
         if(url&&url!==event.officialUrl){event.officialUrl=url;links++;}
         if(item.phone&&!event.phone)event.phone=String(item.phone);
         if(item.placeAddr&&!event.address)event.address=String(item.placeAddr);

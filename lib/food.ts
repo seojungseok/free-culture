@@ -3,15 +3,17 @@ import restaurantsData from "@/data/restaurants.json";
 import restaurantIntroData from "@/data/restaurant-intro.json";
 import { SIDO_LIST } from "@/lib/classify";
 import { displayAddress } from "@/lib/address";
+import { isUsefulDisplayValue } from "@/lib/displayValue";
 
 export interface Restaurant {
   id: string; title: string; addr: string; area: string;
   image: string; mapx: string; mapy: string; tel: string; cat3?: string;
-  phone?: string; // restaurant-intro.json infocenter(문의처) — 목록·카드 노출용
+  phone?: string;
+  menu?: string;
 }
 
 // 수집된 영업정보(restaurant-intro)의 전화(infocenter)를 id→전화 맵으로
-const introMap = (restaurantIntroData as unknown as { intro?: Record<string, { infocenter?: string }> }).intro || {};
+const introMap = (restaurantIntroData as unknown as { intro?: Record<string, { infocenter?: string; firstmenu?: string }> }).intro || {};
 function phoneOf(id: string): string | undefined {
   const v = introMap[id]?.infocenter;
   return v && String(v).trim() ? String(v).trim() : undefined;
@@ -21,7 +23,8 @@ function phoneOf(id: string): string | undefined {
 const restaurants: Restaurant[] = ((restaurantsData as unknown as { restaurants: Restaurant[] }).restaurants || [])
   .map((r) => {
     const phone = phoneOf(r.id);
-    return { ...r, addr: displayAddress(r.addr, r.area), ...(phone ? { phone } : {}) };
+    const menu = introMap[r.id]?.firstmenu?.trim();
+    return { ...r, addr: displayAddress(r.addr, r.area), ...(phone ? { phone } : {}), ...(menu && isUsefulDisplayValue(menu) ? { menu } : {}) };
   });
 
 // 업종(cat3) — TourAPI 음식점 분류. slug는 /food/[area]/[cat] 라우트용(영문·SEO).

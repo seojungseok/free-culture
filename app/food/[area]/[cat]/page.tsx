@@ -85,7 +85,7 @@ export default async function FoodAreaCatPage({ params }: { params: Promise<{ ar
         </div>
         {list.length > CAP && (
           <p className="mt-6 text-center text-[13px] text-ink-faint">
-            {sido} {c.label} 맛집 {list.length.toLocaleString()}곳 중 {CAP}곳 표시
+            <Link prefetch={false} className="font-bold text-free" href={{pathname:"/food",query:{area:sido,cat:c.code,page:3}}}>{sido} {c.label} 맛집 더 보기 →</Link>
           </p>
         )}      </Container>
     </>

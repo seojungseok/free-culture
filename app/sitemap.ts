@@ -4,6 +4,7 @@ import { getAllEvents } from "@/lib/data";
 import { getAllPlaces, getTourAreaCounts } from "@/lib/tour";
 import { getAllCamps, campAreaCounts } from "@/lib/camping";
 import { getAllRestaurants, foodAreas } from "@/lib/food";
+import { getRestaurantIntro } from "@/lib/tourExtra";
 import { getAllArticles } from "@/lib/articles";
 import {
   getAllCourses, getCourseAreaCounts, isIndexableCourse,
@@ -129,7 +130,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 확인된 영업·메뉴 정보가 있는 음식점만 검색용 목록에 포함한다.
   const restaurantRoutes = getAllRestaurants().filter((r) => hasSubstantiveRestaurantInfo(r.id)).map((r) => ({
     url: `${base}/food/spot/${r.id}`,
-    lastModified:latestContentDate(changedPlaces[r.id]?.contentUpdatedAt,(r as typeof r & {contentUpdatedAt?:string}).contentUpdatedAt),
+    lastModified:latestContentDate(changedPlaces[r.id]?.contentUpdatedAt,(r as typeof r & {contentUpdatedAt?:string}).contentUpdatedAt,getRestaurantIntro(r.id)?.contentUpdatedAt),
     changeFrequency: "monthly" as const,
     priority: 0.4,
   }));

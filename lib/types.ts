@@ -62,6 +62,7 @@ export interface CultureEvent {
 
   imgUrl: string; // 포스터
   officialUrl: string; // 공식 상세 페이지
+  venueUrl?: string; // 제공기관이 해당 장소에 연결한 홈페이지
   phone: string;
   contents: string; // 설명 (있을 때)
   sourceDetail?: EventSourceDetail;

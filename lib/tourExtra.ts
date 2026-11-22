@@ -91,6 +91,8 @@ export const INTRO_FIELDS: { key: keyof PlaceIntro; label: string }[] = [
 export const FOOD_INTRO_FIELDS: { key: keyof PlaceIntro; label: string }[] = [
   { key: "usetime", label: "영업시간" },
   { key: "restdate", label: "휴무일" },
+  { key: "reservation", label: "예약 안내" },
+  { key: "discountinfo", label: "할인 안내" },
   { key: "fee", label: "가격정보" },
   { key: "parking", label: "주차" },
   { key: "firstmenu", label: "대표메뉴" },
@@ -149,7 +151,7 @@ export function restaurantSummary(id: string): string {
   };
   const parts: string[] = [];
   if (isUsefulVisitText(it.usetime)) parts.push(`영업 ${clip(it.usetime, 30)}`);
-  if (isUsefulVisitText(it.restdate)) parts.push(`${clip(it.restdate, 20)} 휴무`);
+  if (isUsefulVisitText(it.restdate)) parts.push(`휴무 안내: ${clip(it.restdate, 30)}`);
   if (isUsefulVisitText(it.firstmenu)) parts.push(`대표메뉴 ${clip(it.firstmenu, 24)}`);
   else if (isUsefulVisitText(it.treatmenu)) parts.push(`메뉴 ${clip(it.treatmenu, 30)}`);
   if (isUsefulVisitText(it.parking)) parts.push(`주차 ${clip(it.parking, 10)}`);
@@ -171,7 +173,7 @@ export function restaurantOpeningSpec(id: string):
   | undefined {
   const it = restaurantIntro[id];
   if (!it?.usetime) return undefined;
-  const m = String(it.usetime).match(/(\d{1,2}):(\d{2})\s*[~\-–]\s*(\d{1,2}):(\d{2})/);
+  const m = it.usetime.trim().match(/^(?:매일\s*)?([01]?\d|2[0-3]):([0-5]\d)\s*[~\-–]\s*([01]?\d|2[0-3]):([0-5]\d)$/);
   if (!m) return undefined;
   const pad = (h: string, mm: string) => `${String(Number(h)).padStart(2, "0")}:${mm}`;
   const opens = pad(m[1], m[2]);
@@ -179,18 +181,12 @@ export function restaurantOpeningSpec(id: string):
 
   // 휴무 요일 파싱 — "매주 토요일", "토,일요일" 등. 24시간/연중무휴면 전체 유지.
   // 주의: "토요일"의 "요일"에 든 "일"을 일요일로 오인하면 안 됨 → 요일 글자 바로 앞/구분자 앞만 인정.
-  const rest = String(it.restdate || "");
+  const rest = String(it.restdate || "").trim();
   const closed = new Set<string>();
-  if (!/무휴|없음|24시간|연중/.test(rest)) {
-    for (const mm of rest.matchAll(/([월화수목금토일])(?=\s*요일|\s*[,·/])/g)) {
-      closed.add(DAY_KO[mm[1]]);
-    }
-    // 요일·구분자가 전혀 없는 축약형("화 휴무")만 단일 글자 스캔
-    if (!closed.size && !/요일|[,·/]/.test(rest)) {
-      for (const [ko, en] of Object.entries(DAY_KO)) {
-        if (rest.includes(ko)) closed.add(en);
-      }
-    }
+  if (!/^(?:연중\s*무휴|무휴|휴무일?\s*없음|없음)$/.test(rest)) {
+    const weekly = rest.match(/^(?:매주\s*)?([월화수목금토일](?:요일)?(?:\s*[,·/]\s*[월화수목금토일](?:요일)?)*)(?:\s*(?:정기\s*)?휴무)?$/);
+    if (!weekly) return undefined;
+    for (const day of weekly[1].split(/\s*[,·/]\s*/)) closed.add(DAY_KO[day[0]]);
   }
   const dayOfWeek = ALL_DAYS.filter((d) => !closed.has(d));
   if (!dayOfWeek.length) return undefined;

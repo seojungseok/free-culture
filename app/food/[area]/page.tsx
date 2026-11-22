@@ -74,7 +74,7 @@ export default async function FoodAreaPage({ params }: { params: Promise<{ area:
         </div>
         {list.length > CAP && (
           <p className="mt-6 text-center text-[13px] text-ink-faint">
-            {sido} 맛집 {list.length.toLocaleString()}곳 중 {CAP}곳 표시 — 업종을 선택해 더 좁혀보세요.
+            <Link prefetch={false} className="font-bold text-free" href={{pathname:"/food",query:{area:sido,page:3}}}>{sido} 맛집 더 보기 →</Link>
           </p>
         )}        {/* 다른 지역 맛집 — 내부링크(크롤 유도) */}
         {otherAreas.length > 0 && (
