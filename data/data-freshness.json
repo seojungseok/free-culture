@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-22T11:15:06.543Z",
+  "checkedAt": "2026-11-23T00:00:29.917Z",
   "healthy": true,
   "sources": [
     {
@@ -26,7 +26,7 @@
       "provider": "한국관광공사",
       "interval": "매일",
       "count": 535,
-      "checkedAt": "2026-11-22T00:23:12.674Z",
+      "checkedAt": "2026-11-23T00:00:11.187Z",
       "status": "fresh"
     },
     {
@@ -35,7 +35,7 @@
       "provider": "한국관광공사",
       "interval": "매주 월요일",
       "count": 10704,
-      "checkedAt": "2026-11-15T23:11:36.314Z",
+      "checkedAt": "2026-11-22T23:54:04.164Z",
       "status": "fresh"
     },
     {
@@ -44,7 +44,7 @@
       "provider": "한국관광공사",
       "interval": "매주 월요일",
       "count": 8000,
-      "checkedAt": "2026-11-22T11:06:49.938Z",
+      "checkedAt": "2026-11-22T23:54:39.169Z",
       "status": "fresh"
     },
     {
@@ -52,8 +52,8 @@
       "label": "캠핑장",
       "provider": "한국관광공사 고캠핑",
       "interval": "매주 월요일",
-      "count": 3266,
-      "checkedAt": "2026-11-19T14:43:59.388Z",
+      "count": 3272,
+      "checkedAt": "2026-11-22T23:54:33.753Z",
       "status": "fresh"
     },
     {
@@ -71,7 +71,7 @@
       "provider": "한국관광공사",
       "interval": "매주 월요일",
       "count": 6115,
-      "checkedAt": "2026-11-15T23:17:14.269Z",
+      "checkedAt": "2026-11-23T00:00:00.098Z",
       "status": "fresh"
     },
     {
@@ -79,8 +79,8 @@
       "label": "음식점 영업정보",
       "provider": "한국관광공사",
       "interval": "매주 월요일 · 일부 상세 순차 확인",
-      "count": 7796,
-      "checkedAt": "2026-11-22T11:09:37.489Z",
+      "count": 8000,
+      "checkedAt": "2026-11-22T23:57:35.976Z",
       "status": "fresh"
     },
     {
@@ -89,7 +89,7 @@
       "provider": "한국관광공사",
       "interval": "매주 월요일 · 일부 상세 순차 확인",
       "count": 6076,
-      "checkedAt": "2026-11-15T23:16:18.148Z",
+      "checkedAt": "2026-11-22T23:58:58.257Z",
       "status": "fresh"
     },
     {
@@ -98,7 +98,7 @@
       "provider": "한국관광공사",
       "interval": "매주 월요일 · 일부 상세 순차 확인",
       "count": 3836,
-      "checkedAt": "2026-11-15T23:17:06.091Z",
+      "checkedAt": "2026-11-22T23:59:47.641Z",
       "status": "fresh"
     },
     {
