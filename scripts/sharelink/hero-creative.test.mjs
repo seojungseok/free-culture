@@ -53,11 +53,11 @@ test('ended, stale, sold-out or renamed products and replaced destinations never
 });
 
 test('prices sort the five food ads and unit amounts use the reviewed pack only',()=>{
- const priced=products.map((p,i)=>({...p,price:[14900,8900,21900,18900,26880][i]}));
+ const priced=products.map((p,i)=>({...p,price:[14900,8900,21900,12900,15900][i]}));
  const ads=selectHomeProductAds({...feed,products:priced},now);
- assert.deepEqual(ads.map(p=>p.price),[8900,14900,18900,21900,26880]);
+ assert.deepEqual(ads.map(p=>p.price),[8900,12900,14900,15900,21900]);
  assert.equal(unitPriceFor(ads[0]),'100g당 약 989원');
- assert.equal(unitPriceFor(ads[2]),'1개당 1,575원');
+ assert.equal(unitPriceFor(ads[1]),'1봉당 4,300원');
  assert.equal(unitPriceFor({...ads[2],name:'다른 구성'}),'');
  assert.equal(unitPriceFor({name:'동원샘물 생수, 라벨랜덤, 2L, 6개',price:3480}),'2L 1개당 580원');
  assert.equal(unitPriceFor({...ads[2],price:null}),'');

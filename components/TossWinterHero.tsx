@@ -56,7 +56,7 @@ export default function TossWinterHero({collections}:SeasonalHeroData){
  },[active?.id,visible,foreground,page]);
  function choose(next:number){setPaused(true);setIndex((next+count)%count);}
  return <div className={styles.wrap} data-seasonal-hero>
-  {active?<section ref={node} className={styles.hero} data-tone={active.tone} role="region" aria-roledescription="캐러셀" aria-label="겨울 추천 상품"
+  {active?<section ref={node} className={styles.hero} data-tone={active.tone} role="region" aria-roledescription="캐러셀" aria-label="토스쇼핑 먹거리 추천"
    onPointerEnter={e=>{if(e.pointerType==='mouse')setHover(true);}} onPointerLeave={()=>setHover(false)}
    onFocusCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node)&&!(e.target as HTMLElement).closest('[data-playback-control]'))setPaused(true);}}>
    <a className={styles.bannerLink} href={active.href} rel="sponsored noreferrer" aria-label={active.name+(active.price!==null?' · '+won.format(active.price)+'원':'')+' · 토스쇼핑에서 구성 보기'}
@@ -66,18 +66,20 @@ export default function TossWinterHero({collections}:SeasonalHeroData){
     onClick={e=>{if(swipe.current.moved){e.preventDefault();swipe.current.moved=false;return;}
      if(!selection.isCurrent(active.id,active.price!==null)){e.preventDefault();return;}
      affiliateTrack('affiliate_click','toss','home_product_hero',page,active.id);}}>
-    <div className={styles.copy}><span className={styles.ad}>광고 · 토스쇼핑</span><h2>{active.title}</h2><p className={styles.product}>{active.label} <span>{active.option}</span></p>
+    <div className={styles.copy}><span className={styles.ad}>광고 · 토스쇼핑</span><h2>{active.title}</h2><p className={styles.product}>{active.option}</p>
      <div className={styles.offer}>{active.price!==null&&<div className={styles.priceBlock}><strong>{won.format(active.price)}원</strong><small>{unitPriceFor(active)}</small></div>}<span className={styles.cta}>{active.price===null?'토스에서 가격 확인':'이 구성 토스에서 보기'} →</span></div></div>
-    <div className={styles.visual}><picture><source media="(max-width:560px)" srcSet={'/ads/home-products/'+active.id+'-sm.webp'}/><img className={styles.scene} src={'/ads/home-products/'+active.id+'.webp'} width={1000} height={600} alt={active.imageCopy+' · '+active.scene} loading="eager" fetchPriority="high" decoding="async"/></picture>
+    <div className={styles.visual}><picture><source media="(max-width:560px)" srcSet={'/ads/home-products/'+active.id+'-compact-sm.webp'}/><img className={styles.scene} src={'/ads/home-products/'+active.id+'-wide.webp'} width={768} height={384} alt={active.imageCopy+' · '+active.scene} loading="eager" fetchPriority="high" decoding="async"/></picture>
      <small className={styles.photoNote}>AI 연출 이미지</small></div>
    </a>
+  </section>:null}
+  <div className={styles.footer}>
+   <nav className={styles.collectionLinks} aria-label="상품 모음 바로가기">{collections.map(c=><Link key={c.slug} href={'/shopping/'+c.slug} prefetch={false}>{c.title}</Link>)}</nav>
    {count>1&&<div className={styles.controls} aria-label="상품 넘기기">
     <span aria-live={paused?'polite':'off'}>{position+1} / {count}</span>
     <button type="button" aria-label="이전 상품" onClick={()=>choose(index-1)}>‹</button><button type="button" aria-label="다음 상품" onClick={()=>choose(index+1)}>›</button>
     {!reduced&&<button type="button" data-playback-control aria-label={paused?'자동 재생 시작':'자동 재생 일시정지'} aria-pressed={paused} onClick={()=>setPaused(p=>!p)}>{paused?'▶':'Ⅱ'}</button>}
    </div>}
-  </section>:null}
-  <nav className={styles.collectionLinks} aria-label="상품 모음 바로가기">{collections.map(c=><Link key={c.slug} href={'/shopping/'+c.slug} prefetch={false}>{c.title}</Link>)}</nav>
+  </div>
   {active&&<p className={styles.disclosure}>[광고] 제휴 링크로 구매 시 수수료를 지급받습니다. 옵션·배송비는 구매 화면에서 확인하세요.</p>}
  </div>;
 }
