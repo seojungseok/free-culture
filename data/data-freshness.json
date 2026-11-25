@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-25T13:08:47.621Z",
+  "checkedAt": "2026-11-25T13:27:36.775Z",
   "healthy": false,
   "sources": [
     {
@@ -7,18 +7,18 @@
       "label": "문화행사",
       "provider": "한국문화정보원",
       "interval": "매일",
-      "count": 934,
-      "checkedAt": "2026-11-22T00:22:45.768Z",
-      "status": "stale"
+      "count": 1064,
+      "checkedAt": "2026-11-25T13:17:18.939Z",
+      "status": "fresh"
     },
     {
       "id": "festivals",
       "label": "축제",
       "provider": "한국관광공사·지역 관광기관",
       "interval": "매일",
-      "count": 438,
-      "checkedAt": "2026-11-22T00:19:54.638Z",
-      "status": "stale"
+      "count": 442,
+      "checkedAt": "2026-11-25T13:13:41.862Z",
+      "status": "fresh"
     },
     {
       "id": "pet-travel",
@@ -26,8 +26,8 @@
       "provider": "한국관광공사",
       "interval": "매일",
       "count": 535,
-      "checkedAt": "2026-11-23T00:00:11.187Z",
-      "status": "stale"
+      "checkedAt": "2026-11-25T13:23:47.655Z",
+      "status": "fresh"
     },
     {
       "id": "places",
@@ -106,18 +106,18 @@
       "label": "문화·취미 강좌",
       "provider": "지방자치단체·교육청",
       "interval": "매일",
-      "count": 2670,
-      "checkedAt": "2026-11-22T00:31:36.937Z",
-      "status": "stale"
+      "count": 2421,
+      "checkedAt": "2026-11-25T13:24:53.826Z",
+      "status": "fresh"
     },
     {
       "id": "accessible",
       "label": "이동·영유아 편의정보",
       "provider": "한국관광공사",
       "interval": "화~일요일 · 상세 순차 확인",
-      "count": 361,
-      "checkedAt": "2026-11-22T00:32:53.672Z",
-      "status": "stale"
+      "count": 405,
+      "checkedAt": "2026-11-25T13:25:59.249Z",
+      "status": "fresh"
     },
     {
       "id": "rural-experiences",
@@ -125,7 +125,7 @@
       "provider": "한국농어촌공사·한국어촌어항공단",
       "interval": "매일 원자료 확인 · 원문 반기 갱신",
       "count": 1261,
-      "checkedAt": "2026-11-25T13:06:22.972Z",
+      "checkedAt": "2026-11-25T13:24:08.559Z",
       "status": "fresh"
     },
     {
@@ -134,7 +134,7 @@
       "provider": "성평등가족부",
       "interval": "매일",
       "count": 113,
-      "checkedAt": "2026-11-25T13:04:46.012Z",
+      "checkedAt": "2026-11-25T13:24:17.652Z",
       "status": "fresh"
     },
     {
@@ -143,7 +143,7 @@
       "provider": "국립중앙과학관·인천학생과학관",
       "interval": "매일 공식 교육 일정 확인",
       "count": 4,
-      "checkedAt": "2026-11-25T13:04:39.270Z",
+      "checkedAt": "2026-11-25T13:24:17.807Z",
       "status": "fresh"
     },
     {
@@ -152,7 +152,7 @@
       "provider": "행정안전부",
       "interval": "매일",
       "count": 12549,
-      "checkedAt": "2026-11-25T13:04:41.195Z",
+      "checkedAt": "2026-11-25T13:26:31.382Z",
       "status": "fresh"
     },
     {
