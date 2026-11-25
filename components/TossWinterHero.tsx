@@ -68,10 +68,10 @@ export default function TossWinterHero({collections}:SeasonalHeroData){
     onClick={e=>{if(swipe.current.moved){e.preventDefault();swipe.current.moved=false;return;}
      if(!selection.isCurrent(active.id,active.price!==null)){e.preventDefault();return;}
      affiliateTrack('affiliate_click','toss','home_product_hero',page,active.id);}}>
-    <div className={styles.copy}><span className={styles.ad}>광고 · 토스쇼핑</span><h2>{active.title}</h2><p className={styles.product}>{active.option}</p>
+    <div className={styles.copy}><h2>{active.title}</h2><p className={styles.product}>{active.option}</p>
      <div className={styles.offer}>{active.price!==null&&<div className={styles.priceBlock}><strong>{won.format(active.price)}원</strong><small>{unitPriceFor(active)}</small></div>}<span className={styles.cta}>{action} →</span></div></div>
-    <div className={styles.visual}><picture><source media="(max-width:560px)" srcSet={'/ads/home-products/'+active.id+'-compact-sm.webp'}/><img className={styles.scene} src={'/ads/home-products/'+active.id+'-wide.webp'} width={768} height={384} alt={active.imageCopy+' · '+active.scene} loading="eager" fetchPriority="high" decoding="async"/></picture>
-     <small className={styles.photoNote}>AI 연출 이미지</small></div>
+    <div className={styles.visual}><picture><source media="(max-width:599px)" srcSet={'/ads/home-products/'+active.id+'-pocket-v1.webp'}/><img className={styles.scene} src={'/ads/home-products/'+active.id+'-pan-v1.webp'} width={1680} height={300} alt={active.imageCopy+' · '+active.scene} loading="eager" fetchPriority="high" decoding="async"/></picture>
+     </div>
    </a>
   </section>:null}
   <div className={styles.footer}>
@@ -82,6 +82,6 @@ export default function TossWinterHero({collections}:SeasonalHeroData){
     {!reduced&&<button type="button" data-playback-control aria-label={paused?'자동 재생 시작':'자동 재생 일시정지'} aria-pressed={paused} onClick={()=>setPaused(p=>!p)}>{paused?'▶':'Ⅱ'}</button>}
    </div>}
   </div>
-  {active&&<p className={styles.disclosure}>제휴 링크로 구매하면 수수료를 지급받습니다.</p>}
+  {active&&<p className={styles.disclosure}>AI 연출 이미지 · 제휴 링크로 구매하면 수수료를 지급받습니다.</p>}
  </div>;
 }
