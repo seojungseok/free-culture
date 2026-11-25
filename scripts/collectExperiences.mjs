@@ -37,7 +37,7 @@ for(const [name,service]of Object.entries(config)){
   const current=records.size;
   // A published detail URL remains available after a programme ends or leaves the feed.
   for(const old of prior.records)if(!records.has(old.id))records.set(old.id,{...old,active:false});
-  const at=new Date().toISOString(),snapshot={generatedAt:at,refresh:{checkedAt:at,complete:true,calls,totalRows:received,currentRecords:current},records:[...records.values()]};
+  const at=new Date().toISOString(),snapshot={...prior,generatedAt:at,refresh:{checkedAt:at,complete:true,calls,totalRows:received,currentRecords:current},records:[...records.values()]};
   fs.writeFileSync('data/'+service.file+'.tmp',JSON.stringify(snapshot));fs.renameSync('data/'+service.file+'.tmp','data/'+service.file);
   console.log(JSON.stringify({source:name,records:records.size,...snapshot.refresh}));
  }catch(error){failures++;const safe=/^(연결 실패|HTTP \d{3}|응답 형식 오류|인증 또는 제공 상태 확인 필요|목록 완전성 확인 실패|페이지 누락)$/.test(error.message)?error.message:'수집 실패';console.error(name+': '+safe+' — 기존 자료 보존');}

@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {experienceEditorial,classEditorial,uniqueClassEditorials,programmeWinter,experienceDirectoryEditorial} from '../lib/programmeEditorial.mjs';
 import {experienceCity} from '../lib/experiences.mjs';
+import {groupProgrammeSessions} from '../lib/programmeAvailability.mjs';
 import {searchBounds,publicKeyword} from './research-experience-keywords.mjs';
 
 const today='2026-11-15',read=name=>JSON.parse(fs.readFileSync('data/'+name+'.json','utf8'));
@@ -47,9 +48,12 @@ test('one-day wording only describes a matching single-day source schedule',()=>
 });
 
 test('every stored article receives readable, distinct source-based search copy',()=>{
- const experienceCopy=experiences.map(item=>experienceEditorial(item,today));
+ const pages=['family','science','rural'].flatMap(kind=>groupProgrammeSessions(experiences.filter(item=>item.kind===kind),kind));
+ const experienceCopy=pages.map(item=>experienceEditorial(item,today));
  const classCopy=[...uniqueClassEditorials(classes,today).values()];
- assert.equal(experienceCopy.length,1397);assert.equal(classCopy.length,2832);
+ assert.ok(pages.length>0&&classes.length>0);
+ assert.equal(pages.reduce((n,page)=>n+page.aliases.length,0),experiences.length);
+ assert.equal(classCopy.length,new Set(classes.map(item=>item.id)).size);
  for(const copy of [...experienceCopy,...classCopy]){
   assert(copy.title&&copy.introduction&&copy.description);assert(copy.description.length<=150);
   assert(!/undefined|NaN|\[object Object\]|방법를/.test([copy.title,copy.description,copy.introduction].join(' ')),copy.title);

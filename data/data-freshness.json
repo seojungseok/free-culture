@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-23T00:00:29.917Z",
-  "healthy": true,
+  "checkedAt": "2026-11-25T13:08:47.621Z",
+  "healthy": false,
   "sources": [
     {
       "id": "events",
@@ -9,7 +9,7 @@
       "interval": "매일",
       "count": 934,
       "checkedAt": "2026-11-22T00:22:45.768Z",
-      "status": "fresh"
+      "status": "stale"
     },
     {
       "id": "festivals",
@@ -18,7 +18,7 @@
       "interval": "매일",
       "count": 438,
       "checkedAt": "2026-11-22T00:19:54.638Z",
-      "status": "fresh"
+      "status": "stale"
     },
     {
       "id": "pet-travel",
@@ -27,7 +27,7 @@
       "interval": "매일",
       "count": 535,
       "checkedAt": "2026-11-23T00:00:11.187Z",
-      "status": "fresh"
+      "status": "stale"
     },
     {
       "id": "places",
@@ -108,7 +108,7 @@
       "interval": "매일",
       "count": 2670,
       "checkedAt": "2026-11-22T00:31:36.937Z",
-      "status": "fresh"
+      "status": "stale"
     },
     {
       "id": "accessible",
@@ -117,7 +117,7 @@
       "interval": "화~일요일 · 상세 순차 확인",
       "count": 361,
       "checkedAt": "2026-11-22T00:32:53.672Z",
-      "status": "fresh"
+      "status": "stale"
     },
     {
       "id": "rural-experiences",
@@ -125,7 +125,7 @@
       "provider": "한국농어촌공사·한국어촌어항공단",
       "interval": "매일 원자료 확인 · 원문 반기 갱신",
       "count": 1261,
-      "checkedAt": "2026-11-22T00:23:29.922Z",
+      "checkedAt": "2026-11-25T13:06:22.972Z",
       "status": "fresh"
     },
     {
@@ -134,7 +134,7 @@
       "provider": "성평등가족부",
       "interval": "매일",
       "count": 113,
-      "checkedAt": "2026-11-22T00:23:38.583Z",
+      "checkedAt": "2026-11-25T13:04:46.012Z",
       "status": "fresh"
     },
     {
@@ -142,8 +142,8 @@
       "label": "과학관 교육·체험",
       "provider": "국립중앙과학관·인천학생과학관",
       "interval": "매일 공식 교육 일정 확인",
-      "count": 3,
-      "checkedAt": "2026-11-22T00:23:38.766Z",
+      "count": 4,
+      "checkedAt": "2026-11-25T13:04:39.270Z",
       "status": "fresh"
     },
     {
@@ -152,7 +152,7 @@
       "provider": "행정안전부",
       "interval": "매일",
       "count": 12549,
-      "checkedAt": "2026-11-22T00:33:23.502Z",
+      "checkedAt": "2026-11-25T13:04:41.195Z",
       "status": "fresh"
     },
     {
@@ -162,7 +162,7 @@
       "interval": "매일 공식 운영·공지 대조",
       "count": 6,
       "checkedAt": "2026-11-22T11:14:55.628Z",
-      "status": "fresh"
+      "status": "stale"
     }
   ]
 }

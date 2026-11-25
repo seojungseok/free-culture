@@ -35,7 +35,8 @@ for (const path of paths) {
       : path === '/places/spot/missing-place-for-test'
       ? response.headers.get('x-robots-tag')?.includes('noindex')
       : path === '/rss.xml'
-      ? response.headers.get('content-type')?.includes('application/rss+xml') && body?.includes('<rss version="2.0"') && body?.includes('/experiences/') && body?.includes('<content:encoded>')
+      ? response.headers.get('content-type')?.includes('application/rss+xml') && body?.includes('<rss version="2.0"') && body?.includes('<channel>') && body?.includes('</channel></rss>') &&
+        (body.includes('<item>') ? body.includes('/experiences/') && body.includes('<content:encoded>') : body.includes('<atom:link') && body.includes('<lastBuildDate>'))
       : path === '/api/visitors'
       ? (()=>{try{const value=JSON.parse(body);return response.headers.get('x-visitor-store')==='persistent-v1'&&Number.isSafeInteger(value.total)&&Number.isSafeInteger(value.today)&&value.total>=value.today&&value.today>=0;}catch{return false;}})()
       : path === '/api/site-status'
@@ -49,6 +50,7 @@ for (const path of paths) {
         : true;
     const expectedStatus = path === '/places/spot/missing-place-for-test' ? 404 : 200;
     results.push({ path, status: response.status, ms: Math.round(performance.now() - start), ok: response.status === expectedStatus && contentOk });
+    if(path==='/rss.xml'&&contentOk&&!body.includes('<item>'))console.warn('RSS has no currently publishable programmes');
   } catch (error) {
     results.push({ path, status: null, ms: Math.round(performance.now() - start), ok: false, error: error?.name || "RequestError" });
   }
