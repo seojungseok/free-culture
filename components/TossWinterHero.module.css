@@ -54,3 +54,22 @@
   .collectionLinks { gap:0 8px; }
   .controls button { width:28px; }
 }
+@media (max-width:560px) {
+  .footer { display:grid; grid-template-columns:minmax(0,1fr) auto; }
+  .collectionLinks a { white-space:nowrap; padding-block:3px; }
+}
+@media (max-width:359px) {
+  .bannerLink { grid-template-columns:minmax(0,1fr) 36%; }
+  .copy { padding-inline:7px; }
+  .copy h2 { font-size:16px; }
+}
+@media (min-width:561px) and (max-width:839px) {
+  .bannerLink { grid-template-columns:minmax(0,1fr) min(38%,244px); }
+  .copy { padding:8px 14px; }
+}
+@media (orientation:landscape) and (max-height:480px) {
+  .bannerLink { grid-template-columns:minmax(0,1fr) min(34%,184px); }
+  .copy { padding-block:5px; }
+  .copy h2 { font-size:17px; }
+  .offer { margin-top:2px; }
+}
