@@ -1,3 +1,4 @@
+import ArticleProducts from '@/components/ArticleProducts';
 import Link from 'next/link';
 import {experienceTopics,experienceRegionHref,experienceStatus,relatedExperiences,type Experience} from '@/lib/experienceData';
 import {experienceStructuredData} from '@/lib/experienceSeo';
@@ -40,6 +41,7 @@ export default function ExperienceDetail({item}:{item:Experience}){
    </div>
   </div>
   <div className={styles.source}><p>목록 확인 {sourceDate(item.checkedAt)}{item.detailCheckedAt?` · 상세자료 확인 ${sourceDate(item.detailCheckedAt)}`:''}</p><p>출처: <a href={item.source} target="_blank" rel="noopener noreferrer" data-source-link>{item.kind==='rural'?'한국농어촌공사·한국어촌어항공단 농어촌 체험마을 API':item.kind==='family'?'성평등가족부 청소년 프로그램 목록·상세 API':'과학관 공식 교육 일정'}</a>{item.venueOverview&&<> · <a href={item.venueSource} target="_blank" rel="noopener noreferrer" data-source-link>한국관광공사 장소 소개</a></>}</p></div>
+  <ArticleProducts/>
   <section className={styles.related}><h2>함께 살펴볼 체험</h2><div className={styles.grid}>{relatedExperiences(item).map(other=><ExperienceCard key={other.kind+'/'+other.id} item={other} heading="h3"/>)}</div><nav className={styles.areaLinks}><Link href={experienceRegionHref(item.area)}>{item.area} 체험 전체</Link><Link href={'/experiences/'+item.kind}>{experienceTopics[item.kind].short} 전체</Link><Link href="/experiences">전국 체험·교육</Link></nav></section>
  </article>;
 }

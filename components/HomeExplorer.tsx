@@ -7,7 +7,7 @@ import HomeRegionPicker from './HomeRegionPicker';
 import HomeNearbyButton from './HomeNearbyButton';
 import GamePromoBanner from './GamePromoBanner';
 import TossAffiliate from './TossAffiliate';
-import TossWinterHero, {useHomeAdSelection,type SeasonalHeroData} from './TossWinterHero';
+import TossWinterHero, {type SeasonalHeroData} from './TossWinterHero';
 import TossTopDeals from './TossTopDeals';
 import { useRenderDay } from "./RenderDate";
 import { formatKoreanDate, weekendRangeYmd } from "@/lib/dates";
@@ -22,7 +22,6 @@ const categories = [["🔬", "체험·교육", "/experiences"], ["🎭", "문화
 
 export default function HomeExplorer({ experienceContent, regional, eventItems, freeItems, kidItems, dateItems, campItems, courseItems, winterContent, prepItems, placeItems, newItems, regions, siteName, seasonalHero }: Props) {
   const day = useRenderDay();
-  const homeAds = useHomeAdSelection();
   const stayBanner = <TossAffiliate position="top" compact collection="stay"/>;
   const weekend = weekendRangeYmd(day);
   const currentEventItems = eventItems.filter((item) => item.start && item.end && item.start <= weekend.end && item.end >= weekend.start);
@@ -45,7 +44,7 @@ export default function HomeExplorer({ experienceContent, regional, eventItems, 
         <button type="submit">검색</button>
       </form>
     </section>
-    <TossWinterHero {...seasonalHero} selection={homeAds} fallback={stayBanner}/>
+    <TossWinterHero {...seasonalHero}/>
     <nav className={styles.categories} aria-label="여행 카테고리"><div className={styles.categoryGrid}>{categories.filter(item=>item[2]!=='/pet-travel').map(([icon,label,href],index)=><Link key={label} href={href} prefetch={index<5?undefined:false} className={styles.category+(href==='/winter-travel'?' '+styles.seasonCategory:'')}><span className={styles.categoryIcon} aria-hidden="true">{icon}</span><span>{label}</span></Link>)}</div></nav>
     <nav className={styles.quickNav} aria-label="빠른 나들이 찾기"><HomeNearbyButton/><Link href="/weekend">이번 주말</Link><Link href="/plan">맞춤 추천</Link><Link href="/saved">♡ 보관함</Link></nav>
     {experienceContent}
@@ -62,7 +61,7 @@ export default function HomeExplorer({ experienceContent, regional, eventItems, 
     {dateItems.length>0&&<Section title="데이트·드라이브" href="/date" description="카페·산책·식사를 묶은 방문 후보예요. 상세에서 방문 순서와 실제 이동 경로를 확인하세요."><Rail items={dateItems} saved={saved} toggleSave={toggleSave}/></Section>}
     {currentEventItems.length>0&&<Section title="이번 주말 행사" href="/weekend" description={weekendLabel+' 일정'}><Rail items={currentEventItems} saved={saved} toggleSave={toggleSave}/></Section>}
     {courseItems.length>0&&<Section title="여행코스" href="/course"><Rail items={courseItems} saved={saved} toggleSave={toggleSave}/></Section>}
-    {homeAds.products.length > 0 && stayBanner}
+    {stayBanner}
     {campItems.length>0&&<Section title="캠핑" href="/camping"><Rail items={campItems} saved={saved} toggleSave={toggleSave}/></Section>}
     {prepItems.length>0&&<Section title="캠핑요리" href="/weekend-prep"><Rail items={prepItems} saved={saved} toggleSave={toggleSave}/></Section>}
     {placeItems.length>0&&<Section title="대표 장소" href="/places"><Rail items={placeItems} saved={saved} toggleSave={toggleSave}/></Section>}

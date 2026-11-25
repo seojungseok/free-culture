@@ -16,18 +16,17 @@ const compiled=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.
 function render(index=0,clock=now){
  let hook=0;const exports={};
  vm.runInNewContext(compiled,{exports,require:specifier=>{
-  if(specifier==='react')return {...React,useState:initial=>React.useState(hook++===0?index:initial)};
+  if(specifier==='react')return {...React,useState:initial=>React.useState(hook++===1?index:initial)};
   if(specifier==='next/navigation')return {usePathname:()=>'/'};
   if(specifier==='next/link')return {__esModule:true,default:({children,prefetch,...props})=>React.createElement('a',props,children)};
   if(specifier==='./TossFeedProvider')return {useTossFeed:()=>({feed,now:clock,loading:false})};
-  if(specifier==='@/lib/home-product-ads.mjs')return {selectHomeProductAds};
+  if(specifier==='@/lib/home-product-ads.mjs')return {selectHomeProductAds,homeProductAds};
   if(specifier==='@/lib/sharelink-policy.mjs')return {freshnessMs};
   if(specifier==='@/lib/affiliate-track')return {affiliateTrack:()=>{throw Error('SSR must not emit impressions');}};
   if(specifier.endsWith('.module.css'))return {__esModule:true,default:new Proxy({},{get:(_,key)=>String(key)})};
   return require(specifier);
  }});
- const fallback=React.createElement('a',{href:'https://example.com/stay',rel:'sponsored'},'숙소 기획전');
- return load(renderToStaticMarkup(React.createElement(exports.default,{collections:[{slug:'winter-drinks',title:'따뜻한 한 잔'}],selection:{products:selectHomeProductAds(feed,clock)},fallback})));
+ return load(renderToStaticMarkup(React.createElement(exports.default,{collections:[{slug:'winter-drinks',title:'따뜻한 한 잔'}]})));
 }
 test('five current products have original sponsored links, live prices, real headings and mobile photography',()=>{
  assert.equal(new Set(homeProductAds.map(p=>p.id)).size,5);
@@ -35,7 +34,7 @@ test('five current products have original sponsored links, live prices, real hea
   const $=render(index);
   assert.equal($('a.bannerLink').attr('href'),products[index].links.home);
   assert.match($('a.bannerLink').attr('rel'),/sponsored/);
-  assert.equal($('a.bannerLink').attr('target'),undefined);assert.match($('.cta').text(),/토스에서 보기/);
+  assert.equal($('a.bannerLink').attr('target'),undefined);assert.match($('.cta').text(),/토스에서 가격 보기/);
   assert.equal($('h2').text(),ad.title);assert.ok($('.product').text().includes(ad.option));assert.match($('.offer').text(),/12,900원/);
   for(const src of [$('.scene').attr('src'),$('picture source').attr('srcset')])assert.ok(fs.existsSync(new URL('../../public'+src,import.meta.url)));
   assert.equal($('button[aria-label="다음 상품"]').length,1);assert.match($('.disclosure').text(),/수수료/);
@@ -43,11 +42,11 @@ test('five current products have original sponsored links, live prices, real hea
  }
 });
 test('ended, stale, sold-out or renamed products and replaced destinations never become payable ads',()=>{
- assert.equal(render(0,now+freshnessMs)('a.bannerLink').length,0);
+
  for(const clock of [0,now+freshnessMs]){
   const $=render(0,clock);
-  assert.equal($('[data-seasonal-hero] a[rel="sponsored"]').text(),'숙소 기획전');
-  assert.equal($('.offer').length,0);
+  assert.equal($('a.bannerLink').attr('href'),homeProductAds[0].reviewedHref);
+  assert.equal($('.offer strong').length,0);
  }
  for(const patch of [{price:0},{isSoldOut:true},{name:'구성 변경'},{links:{home:'https://example.com/wrong'}},{endAt:new Date(now).toISOString()}])
   assert.equal(selectHomeProductAds({...feed,products:[{...products[0],...patch}]},now).length,0);

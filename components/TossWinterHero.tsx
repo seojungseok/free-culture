@@ -1,16 +1,16 @@
 'use client';
 import Link from 'next/link';
-import {useEffect,useRef,useState,type ReactNode} from 'react';
+import {useEffect,useRef,useState} from 'react';
 import {usePathname} from 'next/navigation';
 import {affiliateTrack} from '@/lib/affiliate-track';
-import {selectHomeProductAds} from '@/lib/home-product-ads.mjs';
+import {homeProductAds,selectHomeProductAds} from '@/lib/home-product-ads.mjs';
 import {freshnessMs} from '@/lib/sharelink-policy.mjs';
 import {useTossFeed} from './TossFeedProvider';
 import styles from './TossWinterHero.module.css';
 
 export type SeasonalHeroData={collections:{slug:string;title:string}[]};
 const won=new Intl.NumberFormat('ko-KR');
-export function useHomeAdSelection(){
+function useHomeAdSelection(){
  const {feed,now}=useTossFeed();
  const [expiry,setExpiry]=useState(0);
  const products=selectHomeProductAds(feed,Math.max(now,expiry)),count=products.length;
@@ -19,15 +19,18 @@ export function useHomeAdSelection(){
   if(!count||!Number.isFinite(deadline))return;
   const timer=setTimeout(()=>setExpiry(Date.now()),Math.max(0,deadline-Date.now()+1));return()=>clearTimeout(timer);
  },[count,deadline]);
- function isCurrent(id:number){
+ const reviewed=homeProductAds.map(ad=>({...ad,href:ad.reviewedHref,price:null}));
+ function isCurrent(id:number,priced:boolean){
+  if(!priced)return true;
   const checked=Date.now();
   if(selectHomeProductAds(feed,checked).some(product=>product.id===id))return true;
   setExpiry(checked);
   return false;
  }
- return {products,isCurrent};
+ return {products:products.length?products:reviewed,isCurrent};
 }
-export default function TossWinterHero({collections,selection,fallback}:SeasonalHeroData & {selection:ReturnType<typeof useHomeAdSelection>;fallback:ReactNode}){
+export default function TossWinterHero({collections}:SeasonalHeroData){
+ const selection=useHomeAdSelection();
  const page=usePathname()||'/';
  const [index,setIndex]=useState(0),[paused,setPaused]=useState(false),[hover,setHover]=useState(false);
  const [visible,setVisible]=useState(false),[reduced,setReduced]=useState(true),[foreground,setForeground]=useState(true);
@@ -56,16 +59,16 @@ export default function TossWinterHero({collections,selection,fallback}:Seasonal
   {active?<section ref={node} className={styles.hero} data-tone={active.tone} role="region" aria-roledescription="캐러셀" aria-label="겨울 추천 상품"
    onPointerEnter={e=>{if(e.pointerType==='mouse')setHover(true);}} onPointerLeave={()=>setHover(false)}
    onFocusCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node)&&!(e.target as HTMLElement).closest('[data-playback-control]'))setPaused(true);}}>
-   <a className={styles.bannerLink} href={active.href} rel="sponsored noreferrer" aria-label={active.name+' · '+won.format(active.price)+'원 · 토스쇼핑에서 보기'}
+   <a className={styles.bannerLink} href={active.href} rel="sponsored noreferrer" aria-label={active.name+(active.price!==null?' · '+won.format(active.price)+'원':'')+' · 토스쇼핑에서 보기'}
     onTouchStart={e=>{setPaused(true);swipe.current={x:e.touches[0].clientX,y:e.touches[0].clientY,moved:false};}}
     onTouchCancel={()=>{swipe.current.moved=false;}}
     onTouchEnd={e=>{const dx=e.changedTouches[0].clientX-swipe.current.x,dy=e.changedTouches[0].clientY-swipe.current.y;if(count>1&&Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){swipe.current.moved=true;choose(index+(dx<0?1:-1));}}}
     onClick={e=>{if(swipe.current.moved){e.preventDefault();swipe.current.moved=false;return;}
-     if(!selection.isCurrent(active.id)){e.preventDefault();return;}
+     if(!selection.isCurrent(active.id,active.price!==null)){e.preventDefault();return;}
      affiliateTrack('affiliate_click','toss','home_product_hero',page,active.id);}}>
     <div className={styles.copy}><span className={styles.ad}>광고 · 토스쇼핑</span><h2>{active.title}</h2><p className={styles.product}>{active.label} <span>{active.option}</span></p>
-     <div className={styles.offer}><strong>{won.format(active.price)}원</strong><span className={styles.cta}>토스에서 보기 →</span></div></div>
-    <div className={styles.visual}><picture><source media="(max-width:560px)" srcSet={'/ads/home-products/'+active.id+'-sm.webp'}/><img className={styles.scene} src={'/ads/home-products/'+active.id+'.webp'} width={1000} height={600} alt={active.scene} loading="eager" fetchPriority="high" decoding="async"/></picture>
+     <div className={styles.offer}>{active.price!==null&&<strong>{won.format(active.price)}원</strong>}<span className={styles.cta}>토스에서 가격 보기 →</span></div></div>
+    <div className={styles.visual}><picture><source media="(max-width:560px)" srcSet={'/ads/home-products/'+active.id+'-sm.webp'}/><img className={styles.scene} src={'/ads/home-products/'+active.id+'.webp'} width={1000} height={600} alt={active.imageCopy+' · '+active.scene} loading="eager" fetchPriority="high" decoding="async"/></picture>
      <small className={styles.photoNote}>AI 연출 이미지</small></div>
    </a>
    {count>1&&<div className={styles.controls} aria-label="상품 넘기기">
@@ -73,7 +76,7 @@ export default function TossWinterHero({collections,selection,fallback}:Seasonal
     <button type="button" aria-label="이전 상품" onClick={()=>choose(index-1)}>‹</button><button type="button" aria-label="다음 상품" onClick={()=>choose(index+1)}>›</button>
     {!reduced&&<button type="button" data-playback-control aria-label={paused?'자동 재생 시작':'자동 재생 일시정지'} aria-pressed={paused} onClick={()=>setPaused(p=>!p)}>{paused?'▶':'Ⅱ'}</button>}
    </div>}
-  </section>:fallback}
+  </section>:null}
   <nav className={styles.collectionLinks} aria-label="상품 모음 바로가기">{collections.map(c=><Link key={c.slug} href={'/shopping/'+c.slug} prefetch={false}>{c.title}</Link>)}</nav>
   {active&&<p className={styles.disclosure}>[광고] 제휴 링크로 구매 시 수수료를 지급받습니다. 옵션·배송비는 구매 화면에서 확인하세요.</p>}
  </div>;

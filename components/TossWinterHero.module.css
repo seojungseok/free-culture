@@ -41,3 +41,5 @@
  .placeholder{min-height:clamp(300px,83vw,390px)}
  .collectionLinks{gap:0 12px}.collectionLinks a{font-size:13px}
 }
+
+@media(min-width:561px){.visual{width:100%;min-height:0;aspect-ratio:5/3;align-self:center}.scene{object-fit:contain}}

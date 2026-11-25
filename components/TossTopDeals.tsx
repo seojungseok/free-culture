@@ -7,10 +7,16 @@ import {freshnessMs} from '@/lib/sharelink-policy.mjs';
 import {selectTopDeals,topDealGroups,topDealGroup} from '@/lib/toss-top-deals.mjs';
 import {useTossFeed} from './TossFeedProvider';
 import styles from './TossTopDeals.module.css';
+import ArticleProducts from './ArticleProducts';
+import {isShoppingArticle} from '@/lib/article-products.mjs';
 const priceFormat=new Intl.NumberFormat('ko-KR');
 const deadlineFormat=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
 
-export default function TossTopDeals({contained=false,compact=false}:{contained?:boolean;compact?:boolean}) {
+export default function TossTopDeals(props:{contained?:boolean;compact?:boolean}) {
+ const path=usePathname()||'/';
+ return isShoppingArticle(path)?<ArticleProducts/>:<TimedDeals {...props}/>;
+}
+function TimedDeals({contained=false,compact=false}:{contained?:boolean;compact?:boolean}) {
  const page=usePathname()||'/';
  const {feed,now}=useTossFeed();
  const [expiryClock,setExpiryClock]=useState(0);
@@ -82,7 +88,7 @@ export default function TossTopDeals({contained=false,compact=false}:{contained?
   return()=>observer.disconnect();
  },[shown,page]);
 
- if(!shown.length)return null;
+ if(!shown.length)return page==='/'?<ArticleProducts/>:null;
  return <section className={`${styles.wrap} ${contained?styles.contained:''} ${compact?styles.compact:''} ${page.startsWith('/game')?styles.game:''}`} data-nosnippet="" aria-label="토스쇼핑 오늘의 먹거리 하루특가">
    <div className={styles.heading}><h2>오늘의 먹거리 특가</h2><span className={styles.count} role="status" aria-live="polite">{groups.find(g=>g.id===activeGroup)?.label} · {shown.length}개</span></div>
    {!compact&&groups.length>2&&<div className={styles.filters} role="group" aria-label="먹거리 종류">{groups.map(g=><button type="button" key={g.id} aria-pressed={activeGroup===g.id} aria-controls={railId} onClick={()=>setGroup(g.id)}>{g.label}</button>)}</div>}

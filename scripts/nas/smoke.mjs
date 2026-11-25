@@ -31,7 +31,7 @@ for (const path of paths) {
       ? await response.text()
       : null;
     const contentOk = path === '/'
-      ? /data-seasonal-hero[^>]*>(?:(?!<nav\b)[\s\S])*?<a\b(?=[^>]*\brel="[^"]*\bsponsored\b)(?=[^>]*\bhref="https:\/\/(?:3ha\.in|toss\.shopping)\/)[^>]*>/.test(body)
+      ? /data-seasonal-hero[^>]*>(?:(?!<nav\b)[\s\S])*?<a\b(?=[^>]*\brel="[^"]*\bsponsored\b)(?=[^>]*\bhref="https:\/\/toss\.shopping\/)[^>]*>/.test(body)
       : path === '/places/spot/missing-place-for-test'
       ? response.headers.get('x-robots-tag')?.includes('noindex')
       : path === '/rss.xml'

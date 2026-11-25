@@ -1,3 +1,4 @@
+import ArticleProducts from '@/components/ArticleProducts';
 import Link from 'next/link';
 import Image from 'next/image';
 import {SITE} from '@/lib/site';
@@ -27,6 +28,7 @@ export default function PublicProgramDetail(p:Props){
    <aside className={styles.sidebar} id="programme-apply" aria-label="신청·이용 안내"><span className={styles.status}>{p.status}</span><h2>{p.canApply===false?'모집 상태 안내':'신청·이용 안내'}</h2><FactList rows={p.bookingFacts}/>{p.canApply!==false&&p.officialUrl&&<a href={p.officialUrl} className={styles.booking} target="_blank" rel="noopener noreferrer" data-external-application>공식 기관의 신청·이용 안내 ↗</a>}{phone&&<a href={'tel:'+phone} className={styles.phone}>전화 문의 · {p.phone}</a>}<Link href={p.categoryHref} className={styles.mapLink}>{p.category} 목록으로</Link></aside>
    <div className={styles.detailMain}><ProgrammeSessions sessions={p.sessions}/>{p.sections.map((section,index)=><section key={section.title} id={'programme-section-'+index} className={styles.detailSection}><h2>{section.title}</h2>{section.paragraphs&&<ProgrammeContent lines={section.paragraphs}/>} {section.facts&&<FactList rows={section.facts}/>}</section>)}</div>
   </div>
+  <ArticleProducts/>
   <div className={styles.source}><p>자료 확인 {sourceDate(p.checkedAt)}</p><p>출처: <a href={p.source} target="_blank" rel="noopener noreferrer" data-source-link>{p.sourceLabel}</a></p></div><nav className={styles.areaLinks}><Link href={p.categoryHref}>{p.category} 전체</Link><Link href="/experiences">지역별 체험·교육</Link></nav>
  </article>;
 }

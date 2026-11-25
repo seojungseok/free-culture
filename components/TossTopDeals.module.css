@@ -14,3 +14,11 @@
 
 @media(prefers-reduced-motion:reduce){.rail{scroll-behavior:auto}}
 @supports not (container-type:inline-size){@media(max-width:900px){.rail{--deal-gap:12px;grid-auto-columns:calc((100% - var(--deal-gap))/2.12)}.swipeHint[data-overflow=medium]{visibility:visible}}}
+
+.articleOffer{margin:24px auto;padding:16px;width:100%;max-width:1080px;border:1px solid #dbe2df;border-radius:14px;background:#fff;color:#182820;box-sizing:border-box}
+.articleOffer h2{font-size:20px}.articleGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.articleCard{display:flex;align-items:center;gap:10px;min-height:86px;padding:8px;color:inherit;background:#f8f8f4;border-radius:10px;text-decoration:none}
+.articleCard img{width:80px;height:74px;object-fit:contain;background:white;border-radius:6px;flex-shrink:0}
+.articleCard b,.articleCard strong,.articleCard span{display:block}.articleCard b{font-size:13px;line-height:1.45;overflow-wrap:anywhere}.articleCard strong{font-size:17px;margin-top:3px}
+.articleCard span{font-size:12px;color:#165636;font-weight:750;margin-top:4px}.articleCard:hover span{text-decoration:underline}.articleCard:focus-visible{outline:3px solid #236640}
+@media(max-width:850px){.articleGrid{grid-template-columns:1fr}.articleCard{min-height:76px}.articleCard img{height:66px;width:78px}}

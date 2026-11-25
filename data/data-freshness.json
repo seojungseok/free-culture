@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-25T13:27:36.775Z",
-  "healthy": false,
+  "checkedAt": "2026-11-25T13:32:16.769Z",
+  "healthy": true,
   "sources": [
     {
       "id": "events",
@@ -161,8 +161,8 @@
       "provider": "시설 운영기관",
       "interval": "매일 공식 운영·공지 대조",
       "count": 6,
-      "checkedAt": "2026-11-22T11:14:55.628Z",
-      "status": "stale"
+      "checkedAt": "2026-11-25T13:32:12.544Z",
+      "status": "fresh"
     }
   ]
 }

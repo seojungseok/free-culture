@@ -5,7 +5,7 @@ import {spawn} from 'node:child_process';
 test('a 200 response from the old release cannot pass the NAS smoke check',async()=>{
  const commit='a'.repeat(40);let served=commit;
  const server=http.createServer((request,response)=>{
-  if(request.url==='/')response.end('<div data-seasonal-hero="true"><section><a href="https://3ha.in/r/example" rel="sponsored">숙소</a></section><nav>');
+  if(request.url==='/')response.end('<div data-seasonal-hero="true"><section><a href="https://toss.shopping/_m/example" rel="sponsored">토스 상품</a></section><nav>');
   else if(request.url==='/api/site-status'){response.setHeader('content-type','application/json');response.end(JSON.stringify({ready:true,commit:served}));}
   else if(request.url==='/api/visitors'){response.setHeader('x-visitor-store','persistent-v1');response.end(JSON.stringify({total:20,today:2}));}
   else if(request.url==='/rss.xml'){response.setHeader('content-type','application/rss+xml');response.end('<rss version="2.0"><channel><item><link>/experiences/</link><content:encoded>안내</content:encoded></item></channel></rss>');}
