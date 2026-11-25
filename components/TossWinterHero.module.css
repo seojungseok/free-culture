@@ -1,26 +1,31 @@
 .wrap { width:100%; margin:6px 0 10px; color:#35404a; }
-.hero { background:#392321; }
-.hero[data-tone=forest] { background:#273c2b; }
-.hero[data-tone=ember] { background:#33231f; }
-.hero[data-tone=pepper] { background:#701b15; }
-.hero[data-tone=ochre] { background:#5a331c; }
+.hero { --shade:#30191e; --light:#805143; background:var(--shade); }
+.hero[data-tone=forest] { --shade:#172e25; --light:#61704b; }
+.hero[data-tone=ember] { --shade:#30201b; --light:#996039; }
+.hero[data-tone=pepper] { --shade:#491e1b; --light:#a5543a; }
+.hero[data-tone=ochre] { --shade:#412719; --light:#a97843; }
 .bannerLink {
-  display:block; position:relative; isolation:isolate; width:100%;
-  aspect-ratio:5.6/1; min-height:145px; margin:auto; overflow:hidden;
+  display:flex; align-items:center; position:relative; width:100%;
+  aspect-ratio:5.6/1; min-height:145px; margin:auto;
   color:#fff9eb; text-decoration:none;
+  background:radial-gradient(ellipse 57% 160% at 72% 21%,var(--light),transparent 90%),var(--shade);
 }
-.visual,.visual picture,.scene { position:absolute; inset:0; display:block; width:100%; height:100%; }
-.visual { z-index:-1; }
-.scene { object-fit:cover; object-position:left center; }
-.copy { position:absolute; left:7%; top:63%; width:52%; color:#fff9eb; text-shadow:0 1px 4px #28130b; }
-.copy h2 { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-.product { margin:0; font-size:clamp(12px,1.05vw,17px); line-height:1.25; font-weight:600; }
+.visual { position:absolute; inset:4% 5% 4% 47%; }
+.visual picture,.scene { display:block; width:100%; height:100%; }
+.scene { object-fit:contain; object-position:center; }
+.copy { position:relative; margin-left:8%; width:38%; color:#fff9eb; }
+.copy h2 {
+  margin:0 0 .18em; font-family:Georgia,"바탕",Batang,serif;
+  font-size:clamp(22px,2.7vw,44px); font-weight:700; letter-spacing:-.045em;
+  line-height:1.16; word-break:keep-all; text-shadow:0 1px 3px #1b110c55;
+}
+.product { margin:0; color:#f3e4cf; font-size:clamp(12px,1vw,16px); line-height:1.3; }
 .offer,.priceBlock { display:flex; align-items:center; flex-wrap:wrap; }
-.offer { gap:3px 15px; margin-top:3px; }
-.priceBlock { gap:2px 7px; }
-.priceBlock strong { font-size:clamp(20px,2vw,31px); font-weight:850; line-height:1.12; }
+.offer { gap:4px 13px; margin-top:5px; }
+.priceBlock { gap:2px 6px; }
+.priceBlock strong { font-size:clamp(19px,1.65vw,27px); font-weight:800; line-height:1.12; }
 .priceBlock small { font-size:clamp(11px,.9vw,14px); }
-.cta { display:inline-block; border-radius:999px; padding:4px 12px; background:#fff7e7; color:#39241b; font-size:13px; line-height:1.3; font-weight:750; text-shadow:none; }
+.cta { display:inline-block; border-radius:999px; padding:4px 10px; background:#fff7e7; color:#39241b; font-size:13px; line-height:1.3; font-weight:750; }
 .footer,.disclosure { width:min(100% - 28px,1088px); margin-inline:auto; }
 .footer { display:flex; align-items:center; justify-content:space-between; gap:4px 10px; }
 .collectionLinks,.controls { display:flex; align-items:center; }
@@ -33,22 +38,27 @@
 .controls button[data-playback-control] { font-size:13px; }
 .bannerLink:focus-visible,.controls button:focus-visible { outline:3px solid #348cff; outline-offset:-3px; }
 .disclosure { margin-block:1px 0; color:#58616a; font-size:11px; line-height:1.4; }
-@media (min-width:600px) and (max-width:839px) {
-  .copy { width:64%; top:63%; }
-  .offer { gap:2px 10px; }
+@media(max-width:839px) {
+  .copy { margin-left:5%; width:43%; }
+  .visual { left:49%; right:2%; }
+  .offer { gap:3px 8px; }
 }
 @media(max-width:599px) {
   .bannerLink { aspect-ratio:2.65/1; min-height:128px; }
-  .copy { left:6.5%; top:37%; width:51%; }
-  .product { font-size:clamp(11px,3vw,14px); }
-  .offer { gap:3px 9px; }
-  .priceBlock strong { font-size:clamp(18px,5vw,24px); }
+  .copy { margin-left:4%; width:46%; }
+  .visual { left:50%; right:1%; }
+  .copy h2 { font-size:clamp(17px,4.5vw,23px); }
+  .product { font-size:12px; }
+  .priceBlock strong { font-size:18px; }
   .priceBlock small { font-size:11px; }
-  .cta { padding:3px 9px; font-size:12px; }
+  .cta { padding:3px 8px; font-size:12px; }
   .collectionLinks { gap:0 8px; }
   .collectionLinks a { padding-block:3px; }
   .controls button { width:28px; }
 }
 @media(max-width:359px) {
-  .copy { left:5%; width:58%; }
+  .copy { width:50%; }
+  .visual { left:54%; }
+  .product { font-size:11px; }
+  .offer { margin-top:3px; }
 }

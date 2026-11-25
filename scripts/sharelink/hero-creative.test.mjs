@@ -35,7 +35,7 @@ test('five current products have original sponsored links, live prices, real hea
   assert.equal($('a.bannerLink').attr('href'),products[index].links.home);
   assert.match($('a.bannerLink').attr('rel'),/sponsored/);
   assert.equal($('a.bannerLink').attr('target'),undefined);assert.match($('.cta').text(),/추천 중 최저가 확인하기/);
-  assert.equal($('h2').text(),ad.title);assert.ok($('.product').text().includes(ad.option));assert.match($('.offer').text(),/12,900원/);
+  assert.equal($('h2').text(),ad.imageCopy);assert.ok($('.product').text().includes(ad.option));assert.match($('.offer').text(),/12,900원/);
   for(const src of [$('.scene').attr('src'),$('picture source').attr('srcset')])assert.ok(fs.existsSync(new URL('../../public'+src,import.meta.url)));
   assert.equal($('button[aria-label="다음 상품"]').length,1);assert.match($('.disclosure').text(),/수수료/);
   assert.ok(normalizeAffiliateEvent({event:'affiliate_click',placement:'home_product_hero',page:'/',provider:'toss',productId:ad.id}));
