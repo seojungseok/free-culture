@@ -5,7 +5,7 @@
 .hero[data-tone=pepper] { background:#701b15; }
 .hero[data-tone=ochre] { background:#5a331c; }
 .bannerLink {
-  display:block; position:relative; isolation:isolate; width:100%; max-width:1600px;
+  display:block; position:relative; isolation:isolate; width:100%;
   aspect-ratio:5.6/1; min-height:145px; margin:auto; overflow:hidden;
   color:#fff9eb; text-decoration:none;
 }
