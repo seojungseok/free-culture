@@ -1,5 +1,6 @@
 'use client';
 import {useEffect,useMemo,useRef,useState} from 'react';
+import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {useTossFeed} from './TossFeedProvider';
 import {selectArticleProducts} from '@/lib/article-products.mjs';
@@ -28,7 +29,7 @@ export default function ArticleProducts(){
   }},{threshold:.5});
   section.current.querySelectorAll('[data-product]').forEach(el=>observer.observe(el));return()=>observer.disconnect();
  },[cards,page]);
- if(!cards.length)return <aside className={styles.wrap}><a href="/shopping/winter-snacks">겨울 먹거리 고르는 법 보기 →</a></aside>;
+ if(!cards.length)return <aside className={styles.wrap}><Link href="/shopping/winter-snacks" prefetch={false}>겨울 먹거리 고르는 법 보기 →</Link></aside>;
  const priced=cards.every(p=>p.price!==null);
  return <section ref={section} className={styles.articleOffer} data-article-products="" data-nosnippet="" aria-label="토스쇼핑 제휴 상품">
   <div className={styles.heading}><h2>{priced?'3만 원 미만으로 고르는 상품':'토스쇼핑 먹거리 추천'}</h2><span className={styles.count}>광고 · 토스쇼핑</span></div>
