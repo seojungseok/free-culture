@@ -34,7 +34,7 @@ test('five current products have original sponsored links, live prices, real hea
   const $=render(index);
   assert.equal($('a.bannerLink').attr('href'),products[index].links.home);
   assert.match($('a.bannerLink').attr('rel'),/sponsored/);
-  assert.equal($('a.bannerLink').attr('target'),undefined);assert.match($('.cta').text(),/이 구성 토스에서 보기/);
+  assert.equal($('a.bannerLink').attr('target'),undefined);assert.match($('.cta').text(),/추천 중 최저가 확인하기/);
   assert.equal($('h2').text(),ad.title);assert.ok($('.product').text().includes(ad.option));assert.match($('.offer').text(),/12,900원/);
   for(const src of [$('.scene').attr('src'),$('picture source').attr('srcset')])assert.ok(fs.existsSync(new URL('../../public'+src,import.meta.url)));
   assert.equal($('button[aria-label="다음 상품"]').length,1);assert.match($('.disclosure').text(),/수수료/);
@@ -47,6 +47,7 @@ test('ended, stale, sold-out or renamed products and replaced destinations never
   const $=render(0,clock);
   assert.equal($('a.bannerLink').attr('href'),homeProductAds[0].reviewedHref);
   assert.equal($('.offer strong').length,0);
+  assert.equal($('.cta').text(),'토스 가격 확인하기 →');
  }
  for(const patch of [{price:0},{isSoldOut:true},{name:'구성 변경'},{links:{home:'https://example.com/wrong'}},{endAt:new Date(now).toISOString()}])
   assert.equal(selectHomeProductAds({...feed,products:[{...products[0],...patch}]},now).length,0);

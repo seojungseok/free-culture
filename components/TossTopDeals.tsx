@@ -104,6 +104,6 @@ function TimedDeals({contained=false,compact=false}:{contained?:boolean;compact?
     </article>)}
    </div>
    <p id={railId+'-hint'} className={styles.swipeHint} data-overflow={overflow}>좌우로 밀어 더 보기 · PC에서는 마우스로 끌거나 방향키를 사용하세요.</p>
-   <div className={styles.footer}><p className={styles.dealHint}><time dateTime={feed.checkedAt}>{deadlineFormat.format(new Date(feed.checkedAt))}</time> 확인 · 할인율은 토스 표시 기준 · 배송비·옵션은 구매 화면 기준입니다.<span className={styles.desktopHint}> PC에서는 연결 화면의 QR코드를 스캔하세요.</span></p></div>
+   {page!=='/'&&<div className={styles.footer}><p className={styles.dealHint}><time dateTime={feed.checkedAt}>{deadlineFormat.format(new Date(feed.checkedAt))}</time> 확인 · 할인율은 토스 표시 기준 · 배송비·옵션은 구매 화면 기준입니다.<span className={styles.desktopHint}> PC에서는 연결 화면의 QR코드를 스캔하세요.</span></p></div>}
  </section>;
 }
