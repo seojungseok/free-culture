@@ -26,7 +26,8 @@ function render(index=0,clock=now){
   if(specifier.endsWith('.module.css'))return {__esModule:true,default:new Proxy({},{get:(_,key)=>String(key)})};
   return require(specifier);
  }});
- return load(renderToStaticMarkup(React.createElement(exports.default,{collections:[{slug:'winter-drinks',title:'따뜻한 한 잔'}]})));
+ const fallback=React.createElement('a',{href:'https://example.com/stay',rel:'sponsored'},'숙소 기획전');
+ return load(renderToStaticMarkup(React.createElement(exports.default,{collections:[{slug:'winter-drinks',title:'따뜻한 한 잔'}],selection:{products:selectHomeProductAds(feed,clock)},fallback})));
 }
 test('five current products have original sponsored links, live prices, real headings and mobile photography',()=>{
  assert.equal(new Set(homeProductAds.map(p=>p.id)).size,5);
@@ -43,6 +44,11 @@ test('five current products have original sponsored links, live prices, real hea
 });
 test('ended, stale, sold-out or renamed products and replaced destinations never become payable ads',()=>{
  assert.equal(render(0,now+freshnessMs)('a.bannerLink').length,0);
+ for(const clock of [0,now+freshnessMs]){
+  const $=render(0,clock);
+  assert.equal($('[data-seasonal-hero] a[rel="sponsored"]').text(),'숙소 기획전');
+  assert.equal($('.offer').length,0);
+ }
  for(const patch of [{price:0},{isSoldOut:true},{name:'구성 변경'},{links:{home:'https://example.com/wrong'}},{endAt:new Date(now).toISOString()}])
   assert.equal(selectHomeProductAds({...feed,products:[{...products[0],...patch}]},now).length,0);
 });

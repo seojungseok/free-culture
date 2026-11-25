@@ -27,10 +27,12 @@ for (const path of paths) {
       redirect: "manual",
       signal: AbortSignal.timeout(15000),
     });
-    const body = ["/event/383591","/sitemap.xml","/api/site-status","/places/spot/130344","/api/visitors","/rss.xml"].includes(path)
+    const body = ["/","/event/383591","/sitemap.xml","/api/site-status","/places/spot/130344","/api/visitors","/rss.xml"].includes(path)
       ? await response.text()
       : null;
-    const contentOk = path === '/places/spot/missing-place-for-test'
+    const contentOk = path === '/'
+      ? /data-seasonal-hero[^>]*>(?:(?!<nav\b)[\s\S])*?<a\b(?=[^>]*\brel="[^"]*\bsponsored\b)(?=[^>]*\bhref="https:\/\/(?:3ha\.in|toss\.shopping)\/)[^>]*>/.test(body)
+      : path === '/places/spot/missing-place-for-test'
       ? response.headers.get('x-robots-tag')?.includes('noindex')
       : path === '/rss.xml'
       ? response.headers.get('content-type')?.includes('application/rss+xml') && body?.includes('<rss version="2.0"') && body?.includes('/experiences/') && body?.includes('<content:encoded>')

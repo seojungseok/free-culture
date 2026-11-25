@@ -82,9 +82,10 @@ STAMP_MATCH=0
 if [ -f "$APP/data/site-release.json" ] && grep -Fq "\"commit\":\"$REMOTE_SHA\"" "$APP/data/site-release.json"; then STAMP_MATCH=1; fi
 if [ "$STAMP_MATCH" = "1" ] && [ -f "$COMMIT_FILE" ] && [ "$REMOTE_SHA" = "$(sed -n '1p' "$COMMIT_FILE")" ]; then
 # Refresh selected affiliate products even when the source commit is unchanged.
-if [ -f "$APP/scripts/nas/refresh-sharelink.sh" ]; then
-  /bin/sh "$APP/scripts/nas/refresh-sharelink.sh" >> "$LOG" 2>&1 || printf '%s sharelink refresh deferred\n' "$(timestamp)" >> "$LOG"
-fi
+  if [ -f "$APP/scripts/nas/refresh-sharelink.sh" ]; then
+    STEP="refresh sharelink feed"
+    /bin/sh "$APP/scripts/nas/refresh-sharelink.sh" >> "$LOG" 2>&1
+  fi
   printf '%s update skipped: main commit unchanged\n' "$(timestamp)" >> "$LOG"
   exit 0
 fi
