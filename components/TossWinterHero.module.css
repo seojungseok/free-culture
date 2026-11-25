@@ -43,3 +43,5 @@
 }
 
 @media(min-width:561px){.visual{width:100%;min-height:0;aspect-ratio:5/3;align-self:center}.scene{object-fit:contain}}
+
+.priceBlock{display:grid;gap:3px}.priceBlock small{font-size:13px;line-height:1.4;color:var(--accent);font-weight:650}

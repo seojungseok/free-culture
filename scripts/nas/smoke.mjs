@@ -1,7 +1,8 @@
 // Read-only, low-volume check for the NAS release and 48-hour handover window.
 // Never prints response bodies, environment values, or request headers.
 const base = new URL(process.env.NAS_SMOKE_BASE || "http://127.0.0.1:3000");
-const paths = [
+const adsOnly=process.argv.includes('--ads-only');
+const paths = adsOnly?['/', '/event/383591','/api/affiliate/toss']:[
   "/",
   "/events",
   "/places",
@@ -27,11 +28,17 @@ for (const path of paths) {
       redirect: "manual",
       signal: AbortSignal.timeout(15000),
     });
-    const body = ["/","/event/383591","/sitemap.xml","/api/site-status","/places/spot/130344","/api/visitors","/rss.xml"].includes(path)
+    const body = ["/","/event/383591","/sitemap.xml","/api/site-status","/places/spot/130344","/api/visitors","/rss.xml","/api/affiliate/toss"].includes(path)
       ? await response.text()
       : null;
     const contentOk = path === '/'
       ? /data-seasonal-hero[^>]*>(?:(?!<nav\b)[\s\S])*?<a\b(?=[^>]*\brel="[^"]*\bsponsored\b)(?=[^>]*\bhref="https:\/\/toss\.shopping\/)[^>]*>/.test(body)
+      : path === '/api/affiliate/toss'
+      ? (()=>{try{
+          const feed=JSON.parse(body),now=Date.now(),age=now-Date.parse(feed.checkedAt);
+          return age>=0&&age<6*3600000&&Array.isArray(feed.products)&&feed.products.some(p=>
+            p.price>0&&!p.isSoldOut&&(!p.endAt||Date.parse(p.endAt)>now)&&/^https:\/\/toss\.shopping\/_m\//.test(p.links?.home));
+        }catch{return false;}})()
       : path === '/places/spot/missing-place-for-test'
       ? response.headers.get('x-robots-tag')?.includes('noindex')
       : path === '/rss.xml'
@@ -44,7 +51,7 @@ for (const path of paths) {
       : path === '/places/spot/130344'
       ? body?.includes('https://sokchocul.or.kr/')&&!body?.includes('sokcho-culture.com')
       : path === "/event/383591"
-      ? body?.includes('https://mwohaji.kr/event/383591')
+      ? body?.includes('https://mwohaji.kr/event/383591')&&/data-article-products[^>]*>[\s\S]*?<a\b(?=[^>]*\bdata-product=)(?=[^>]*\bhref="https:\/\/toss\.shopping\/_m\/)(?=[^>]*\bsponsored\b)[^>]*>/.test(body)
       : path === "/sitemap.xml"
         ? body?.includes("https://mwohaji.kr/") && body?.includes("/event/")
         : true;

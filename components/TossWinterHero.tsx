@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {useEffect,useRef,useState} from 'react';
 import {usePathname} from 'next/navigation';
 import {affiliateTrack} from '@/lib/affiliate-track';
-import {homeProductAds,selectHomeProductAds} from '@/lib/home-product-ads.mjs';
+import {homeProductAds,selectHomeProductAds,unitPriceFor} from '@/lib/home-product-ads.mjs';
 import {freshnessMs} from '@/lib/sharelink-policy.mjs';
 import {useTossFeed} from './TossFeedProvider';
 import styles from './TossWinterHero.module.css';
@@ -59,7 +59,7 @@ export default function TossWinterHero({collections}:SeasonalHeroData){
   {active?<section ref={node} className={styles.hero} data-tone={active.tone} role="region" aria-roledescription="캐러셀" aria-label="겨울 추천 상품"
    onPointerEnter={e=>{if(e.pointerType==='mouse')setHover(true);}} onPointerLeave={()=>setHover(false)}
    onFocusCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node)&&!(e.target as HTMLElement).closest('[data-playback-control]'))setPaused(true);}}>
-   <a className={styles.bannerLink} href={active.href} rel="sponsored noreferrer" aria-label={active.name+(active.price!==null?' · '+won.format(active.price)+'원':'')+' · 토스쇼핑에서 보기'}
+   <a className={styles.bannerLink} href={active.href} rel="sponsored noreferrer" aria-label={active.name+(active.price!==null?' · '+won.format(active.price)+'원':'')+' · 토스쇼핑에서 구성 보기'}
     onTouchStart={e=>{setPaused(true);swipe.current={x:e.touches[0].clientX,y:e.touches[0].clientY,moved:false};}}
     onTouchCancel={()=>{swipe.current.moved=false;}}
     onTouchEnd={e=>{const dx=e.changedTouches[0].clientX-swipe.current.x,dy=e.changedTouches[0].clientY-swipe.current.y;if(count>1&&Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){swipe.current.moved=true;choose(index+(dx<0?1:-1));}}}
@@ -67,7 +67,7 @@ export default function TossWinterHero({collections}:SeasonalHeroData){
      if(!selection.isCurrent(active.id,active.price!==null)){e.preventDefault();return;}
      affiliateTrack('affiliate_click','toss','home_product_hero',page,active.id);}}>
     <div className={styles.copy}><span className={styles.ad}>광고 · 토스쇼핑</span><h2>{active.title}</h2><p className={styles.product}>{active.label} <span>{active.option}</span></p>
-     <div className={styles.offer}>{active.price!==null&&<strong>{won.format(active.price)}원</strong>}<span className={styles.cta}>토스에서 가격 보기 →</span></div></div>
+     <div className={styles.offer}>{active.price!==null&&<div className={styles.priceBlock}><strong>{won.format(active.price)}원</strong><small>{unitPriceFor(active)}</small></div>}<span className={styles.cta}>{active.price===null?'토스에서 가격 확인':'이 구성 토스에서 보기'} →</span></div></div>
     <div className={styles.visual}><picture><source media="(max-width:560px)" srcSet={'/ads/home-products/'+active.id+'-sm.webp'}/><img className={styles.scene} src={'/ads/home-products/'+active.id+'.webp'} width={1000} height={600} alt={active.imageCopy+' · '+active.scene} loading="eager" fetchPriority="high" decoding="async"/></picture>
      <small className={styles.photoNote}>AI 연출 이미지</small></div>
    </a>

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import {createRequire} from 'node:module';
-import {homeProductAds,selectHomeProductAds} from '../../lib/home-product-ads.mjs';
+import {homeProductAds,selectHomeProductAds,unitPriceFor} from '../../lib/home-product-ads.mjs';
 import {normalizeAffiliateEvent} from '../../lib/affiliate-events.mjs';
 import {freshnessMs} from '../../lib/sharelink-policy.mjs';
 const require=createRequire(import.meta.url),ts=require('typescript'),React=require('react');
@@ -20,7 +20,7 @@ function render(index=0,clock=now){
   if(specifier==='next/navigation')return {usePathname:()=>'/'};
   if(specifier==='next/link')return {__esModule:true,default:({children,prefetch,...props})=>React.createElement('a',props,children)};
   if(specifier==='./TossFeedProvider')return {useTossFeed:()=>({feed,now:clock,loading:false})};
-  if(specifier==='@/lib/home-product-ads.mjs')return {selectHomeProductAds,homeProductAds};
+  if(specifier==='@/lib/home-product-ads.mjs')return {selectHomeProductAds,homeProductAds,unitPriceFor};
   if(specifier==='@/lib/sharelink-policy.mjs')return {freshnessMs};
   if(specifier==='@/lib/affiliate-track')return {affiliateTrack:()=>{throw Error('SSR must not emit impressions');}};
   if(specifier.endsWith('.module.css'))return {__esModule:true,default:new Proxy({},{get:(_,key)=>String(key)})};
@@ -34,7 +34,7 @@ test('five current products have original sponsored links, live prices, real hea
   const $=render(index);
   assert.equal($('a.bannerLink').attr('href'),products[index].links.home);
   assert.match($('a.bannerLink').attr('rel'),/sponsored/);
-  assert.equal($('a.bannerLink').attr('target'),undefined);assert.match($('.cta').text(),/토스에서 가격 보기/);
+  assert.equal($('a.bannerLink').attr('target'),undefined);assert.match($('.cta').text(),/이 구성 토스에서 보기/);
   assert.equal($('h2').text(),ad.title);assert.ok($('.product').text().includes(ad.option));assert.match($('.offer').text(),/12,900원/);
   for(const src of [$('.scene').attr('src'),$('picture source').attr('srcset')])assert.ok(fs.existsSync(new URL('../../public'+src,import.meta.url)));
   assert.equal($('button[aria-label="다음 상품"]').length,1);assert.match($('.disclosure').text(),/수수료/);
@@ -50,4 +50,15 @@ test('ended, stale, sold-out or renamed products and replaced destinations never
  }
  for(const patch of [{price:0},{isSoldOut:true},{name:'구성 변경'},{links:{home:'https://example.com/wrong'}},{endAt:new Date(now).toISOString()}])
   assert.equal(selectHomeProductAds({...feed,products:[{...products[0],...patch}]},now).length,0);
+});
+
+test('prices sort the five food ads and unit amounts use the reviewed pack only',()=>{
+ const priced=products.map((p,i)=>({...p,price:[14900,8900,21900,18900,26880][i]}));
+ const ads=selectHomeProductAds({...feed,products:priced},now);
+ assert.deepEqual(ads.map(p=>p.price),[8900,14900,18900,21900,26880]);
+ assert.equal(unitPriceFor(ads[0]),'100g당 약 989원');
+ assert.equal(unitPriceFor(ads[2]),'1개당 1,575원');
+ assert.equal(unitPriceFor({...ads[2],name:'다른 구성'}),'');
+ assert.equal(unitPriceFor({name:'동원샘물 생수, 라벨랜덤, 2L, 6개',price:3480}),'2L 1개당 580원');
+ assert.equal(unitPriceFor({...ads[2],price:null}),'');
 });

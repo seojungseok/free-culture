@@ -11,7 +11,8 @@ test('article products match the subject, prioritize affordable offers and drop 
  assert.deepEqual(select(now).map(p=>p.id),[2,3,1]);
  assert.deepEqual(select(now+5000).map(p=>p.id),[2,1]);
  for(const row of select(now+freshnessMs)){assert.equal(row.price,null);assert.match(row.href,/^https:\/\/toss\.shopping\/_m\//);}
- assert.deepEqual(selectArticleProducts({checkedAt,products:[]},now,'/event/example'),[]);
+ const fallback=selectArticleProducts({checkedAt,products:[]},now,'/event/example');
+ assert.equal(fallback.length,3);assert.ok(fallback.every(p=>p.guide&&p.price===null));
 });
 test('only editorial detail URLs receive the article format',()=>{
  for(const path of ['/experiences/family/1','/playgrounds/a','/classes/detail/2','/food/spot/9','/camping/8','/weekend-prep/a','/event/12','/festivals/a','/camping/collections/a','/winter-travel/a','/accessible-travel/a'])assert.ok(isShoppingArticle(path),path);
