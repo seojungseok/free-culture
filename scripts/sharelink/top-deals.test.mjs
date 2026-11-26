@@ -82,3 +82,8 @@ test('stale feeds and feeds from before the scheduled maintenance remain hidden'
  assert.equal(selectTopDeals({...feed,checkedAt:new Date(now-6*3600000).toISOString()},now).length,0);
  assert.equal(selectTopDeals({...feed,checkedAt:'2026-10-29T14:00:00Z'},now).length,0);
 });
+
+test('생활용품과 체중 관리 제품은 식품명 일부가 겹쳐도 제외한다',()=>{
+ const products=['스프렉스 무타공 압축봉 홀더','쑤욱빼 다이어트 커피맛'].map((name,i)=>({...deal,id:i+1,name}));
+ assert.deepEqual(selectTopDeals({...feed,products},now),[]);
+});

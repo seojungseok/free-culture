@@ -1,4 +1,4 @@
-import ArticleProducts from '@/components/ArticleProducts';
+import TossTopDeals from '@/components/TossTopDeals';
 import Link from 'next/link';
 import {experienceTopics,experienceRegionHref,experienceStatus,relatedExperiences,type Experience} from '@/lib/experienceData';
 import {experienceStructuredData} from '@/lib/experienceSeo';
@@ -19,6 +19,7 @@ export default function ExperienceDetail({item}:{item:Experience}){
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(experienceStructuredData(item)).replace(/</g,'\\u003c')}}/>
   <nav className={styles.breadcrumb} aria-label="현재 위치"><Link href="/">홈</Link><span>/</span><Link href="/experiences">체험·교육</Link><span>/</span><Link href={'/experiences/'+item.kind}>{experienceTopics[item.kind].short}</Link><span>/</span><span>{editorial.title}</span></nav>
   <header className={styles.detailHeader}><p>{item.area} {item.city} · {experienceTopics[item.kind].short}</p><h1>{editorial.title}</h1><p className={styles.summary}>{editorial.lead}</p><nav className={styles.detailJump} aria-label="체험 상세 바로가기"><a href="#experience-programs">체험 내용</a><a href="#experience-location">위치·문의</a><a href="#experience-apply">신청·예약 안내</a></nav></header>
+  <TossTopDeals contained compact/>
   {!canApply&&<div className={styles.availabilityNotice} role="status"><strong>{status}</strong><p>{state==='upcoming'?'아직 접수 시작 전입니다. 아래의 모집기간을 확인해 주세요.':'현재 신청 가능한 모집 안내가 아닙니다. 지난 모집은 현재 목록과 추천에 노출하지 않습니다.'}</p><Link href="/experiences">현재 모집 중인 체험 보기</Link></div>}
   <div className={styles.detailGrid}>
    <figure className={styles.detailPhoto}><ProgrammeCover cover={cover} detail priority/></figure>
@@ -41,7 +42,6 @@ export default function ExperienceDetail({item}:{item:Experience}){
    </div>
   </div>
   <div className={styles.source}><p>목록 확인 {sourceDate(item.checkedAt)}{item.detailCheckedAt?` · 상세자료 확인 ${sourceDate(item.detailCheckedAt)}`:''}</p><p>출처: <a href={item.source} target="_blank" rel="noopener noreferrer" data-source-link>{item.kind==='rural'?'한국농어촌공사·한국어촌어항공단 농어촌 체험마을 API':item.kind==='family'?'성평등가족부 청소년 프로그램 목록·상세 API':'과학관 공식 교육 일정'}</a>{item.venueOverview&&<> · <a href={item.venueSource} target="_blank" rel="noopener noreferrer" data-source-link>한국관광공사 장소 소개</a></>}</p></div>
-  <ArticleProducts/>
   <section className={styles.related}><h2>함께 살펴볼 체험</h2><div className={styles.grid}>{relatedExperiences(item).map(other=><ExperienceCard key={other.kind+'/'+other.id} item={other} heading="h3"/>)}</div><nav className={styles.areaLinks}><Link href={experienceRegionHref(item.area)}>{item.area} 체험 전체</Link><Link href={'/experiences/'+item.kind}>{experienceTopics[item.kind].short} 전체</Link><Link href="/experiences">전국 체험·교육</Link></nav></section>
  </article>;
 }

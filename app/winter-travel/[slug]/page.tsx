@@ -66,6 +66,7 @@ export default async function WinterCoursePage({params}:{params:Promise<{slug:st
    </dl>
    {course.overnightArea&&<div className="mt-3 rounded-xl border border-slate-200 px-4 py-3 text-sm leading-7 text-ink-soft"><p><strong className="text-ink">숙박 권역</strong> · {course.overnightArea}</p><a href="#winter-stay" className="mt-1 inline-flex min-h-11 items-center font-bold text-brandblue">이 코스에서 숙소 고르기 →</a></div>}
   </header>
+  <TossTopDeals contained compact/>
   {photo&&<CoursePhoto photo={photo} priority/>}
   <nav className="mt-7 rounded-2xl border border-slate-200 p-5" aria-label={overnight?'1박 2일 코스 순서':'하루 코스 순서'}>
    <h2 className="text-lg font-black text-ink">{overnight?'1박 2일 일정':'하루 코스'}</h2>
@@ -88,7 +89,6 @@ export default async function WinterCoursePage({params}:{params:Promise<{slug:st
    <p className="mt-2 text-sm leading-7 text-ink-soft">체류 시간은 여행 계획용 제안입니다. 휴무·예약·요금과 겨울철 통제 여부는 출발 전 공식 안내를 확인하세요.</p>
    <ul className="mt-3 space-y-2">{(course.sources||[]).map((source,index)=>{const url=safeSourceUrl(source.url);return url?<li key={url+'-'+index} className="text-sm leading-6"><a href={url} target="_blank" rel="noopener noreferrer" className="font-semibold text-brandblue underline underline-offset-4">{source.title} ↗</a>{source.checkedAt&&<time dateTime={source.checkedAt} className="mt-0.5 block text-xs text-ink-soft">{formatDate(source.checkedAt)} 확인</time>}</li>:null;})}</ul>
   </aside>
-  <TossTopDeals contained/>
   <section className="mt-10" aria-labelledby="related-winter-title">
    <div className="flex flex-wrap items-center justify-between gap-2"><h2 id="related-winter-title" className="text-xl font-black text-ink">다른 겨울여행 코스</h2><Link href={'/winter-travel?area='+encodeURIComponent(course.area)} className="inline-flex min-h-11 items-center text-sm font-bold text-brandblue">{course.area} 코스 보기 →</Link></div>
    <div className="mt-3 grid gap-4 sm:grid-cols-3">{related.map(item=>{const image=winterCourseImage(item);return <Link key={item.slug} href={'/winter-travel/'+item.slug} prefetch={false} className="overflow-hidden rounded-xl border border-slate-200">{image&&<img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" className="aspect-[16/10] w-full object-cover"/>}<div className="p-4"><p className="text-xs font-semibold text-brandblue">{[item.area,item.city].filter(Boolean).join(' · ')}</p><h3 className="mt-2 break-keep text-sm font-bold leading-6 text-ink">{item.title}</h3></div></Link>;})}</div>

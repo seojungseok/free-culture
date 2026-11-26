@@ -39,6 +39,6 @@ export default function ArticleProducts(){
   <div className={styles.articleGrid}>{cards.map(p=><a className={styles.articleCard} key={p.id} data-product={p.id} href={p.href} rel="sponsored noopener noreferrer" onClick={event=>{
    if(!p.guide&&!selectArticleProducts(feed,Date.now(),page,title).some(current=>current.id===p.id&&current.href===p.href&&!current.guide)){event.preventDefault();setExpiry(Date.now());return;}
    affiliateTrack('affiliate_click','toss','article',page,p.id);
-  }}><img width={96} height={82} src={p.image} alt={p.guide?'AI 음식 연출 이미지':''} loading="lazy"/><div><b>{p.name}</b>{p.price!==null&&<strong>{p.discount&&<small>{p.discount}% 할인 · </small>}{p.price.toLocaleString('ko-KR')}원</strong>}{p.unitPrice&&<small className={styles.unitPrice}>{p.unitPrice}</small>}<span className={styles.articleCta}>{p.discount?'할인 옵션 보기':'토스에서 구성 보기'} →</span></div></a>)}</div>
+  }}><img width={96} height={82} src={p.image} alt={p.guide?'AI 음식 연출 이미지':''} loading="lazy"/><div><b>{p.name}</b>{p.price!==null&&<strong>{p.discount&&<small>{p.discount}% 할인 · </small>}{p.price.toLocaleString('ko-KR')}원</strong>}{p.unitPrice&&<small className={styles.unitPrice}>{p.unitPrice}</small>}<span className={styles.articleCta}>재고 확인하기 →</span></div></a>)}</div>
  </section>;
 }

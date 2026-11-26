@@ -8,7 +8,7 @@ test('a rejected daily deal never discards newly verified editorial products',as
  const choice=selections.find(p=>p.reviewedHomeLink);
  const detail={tacaItemId:choice.id,displayName:choice.expectedName,thumbnailUrl:choice.imageUrl,displayPrice:12000,isSoldOut:false};
  const stages=[],published=[];
- const result=await refreshProducts({publisherId:'fixture',previous:{products:[]},
+ const result=await refreshProducts({publisherId:'fixture',previous:{products:[{id:choice.id,name:detail.displayName,price:detail.displayPrice,endAt:new Date(Date.now()+3600000).toISOString()}]},
   request:async path=>{
    if(path.startsWith('/products/detail?'))return {items:path.split('=')[1].split(',').includes(String(choice.id))?[detail]:[]};
    if(path==='/sub-tags/create')return {results:channels.map(()=>({status:'ALREADY_EXISTS'}))};
@@ -22,6 +22,7 @@ test('a rejected daily deal never discards newly verified editorial products',as
   assert.equal(snapshot.products.length,1);
   assert.equal(snapshot.products[0].links.home,choice.reviewedHomeLink);
   assert.equal(snapshot.products[0].price,detail.displayPrice);
+  assert.equal(snapshot.products[0].endAt,undefined);
  }
  assert.equal(result.partial,true);
 });

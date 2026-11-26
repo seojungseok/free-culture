@@ -24,3 +24,8 @@
 @media(max-width:850px){.articleGrid{grid-template-columns:1fr}.articleCard{min-height:76px}.articleCard img{height:66px;width:78px}}
 
 .articleCard .articleCta{display:inline-block;padding:4px 9px;border-radius:6px;background:#e0eee3;color:#154924}.articleCard .unitPrice{display:block;color:#4f5c50;font-size:12px}.articleCard strong small{color:#b03a19}
+
+@container(min-width:901px){
+ .wrap[data-article-products] .rail[data-overflow=medium]{grid-auto-columns:calc((100% - 2 * var(--deal-gap))/2.8)}
+ .wrap[data-article-products] .swipeHint[data-overflow=medium]{visibility:visible}
+}

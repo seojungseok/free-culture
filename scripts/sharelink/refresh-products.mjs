@@ -38,7 +38,6 @@ export async function refreshProducts({request,publisherId,previous,onVerified,o
   const {expectedName,imageUrl,reviewedHomeLink,...editorial}=choice;
   const links={};
   const product={...editorial,homeFeature:Boolean(choice.homeFeature)&&choice.topic!=='travel',name:p.displayName,image:imageUrl,price:p.displayPrice,discountRate:p.discountRate,links};
-  if(prior?.name===p.displayName&&prior.price===p.displayPrice&&Date.parse(prior.endAt)>Date.now())product.endAt=prior.endAt;
   for(const c of channels.filter(c=>c==='home'||c===choice.topic)){
    const saved=prior?.name===p.displayName?prior.links?.[c]:undefined;
    const url=originalLink(saved)?saved:c==='home'?reviewedHomeLink:undefined;
