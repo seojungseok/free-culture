@@ -94,7 +94,7 @@ export default function TossTopDeals(props:{contained?:boolean;compact?:boolean}
   const tagged=p.links[p.topic];
   return article&&tagged&&/^https:\/\/toss\.shopping\/_m\/[a-zA-Z0-9_-]+$/.test(tagged)?tagged:p.links.home;
  }
- if(!shown.length)return page==='/'?<ArticleProducts/>:null;
+ if(!shown.length)return page==='/'?<ArticleProducts/>:article?<span hidden data-article-deal-slot=""/>:null;
  return <section className={`${styles.wrap} ${contained?styles.contained:''} ${compact?styles.compact:''} ${page.startsWith('/game')?styles.game:''}`} data-nosnippet="" data-article-products={article?"":undefined} aria-label={heading}>
    <div className={styles.heading}><h2>{heading}</h2><span className={styles.count} role="status" aria-live="polite">{article?'토스쇼핑':groups.find(g=>g.id===activeGroup)?.label} · {shown.length}개</span></div>
    {!compact&&groups.length>2&&<div className={styles.filters} role="group" aria-label="먹거리 종류">{groups.map(g=><button type="button" key={g.id} aria-pressed={activeGroup===g.id} aria-controls={railId} onClick={()=>setGroup(g.id)}>{g.label}</button>)}</div>}

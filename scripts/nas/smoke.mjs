@@ -51,7 +51,7 @@ for (const path of paths) {
       : path === '/places/spot/130344'
       ? body?.includes('https://sokchocul.or.kr/')&&!body?.includes('sokcho-culture.com')
       : path === "/event/383591"
-      ? body?.includes('https://mwohaji.kr/event/383591')&&/data-article-products[^>]*>[\s\S]*?<a\b(?=[^>]*\bdata-product=)(?=[^>]*\bhref="https:\/\/toss\.shopping\/_m\/)(?=[^>]*\bsponsored\b)[^>]*>/.test(body)
+      ? body?.includes('https://mwohaji.kr/event/383591')&&(/<span\b[^>]*\bdata-article-deal-slot=/.test(body)||/data-article-products[^>]*>[\s\S]*?<a\b(?=[^>]*\bdata-product=)(?=[^>]*\bhref="https:\/\/toss\.shopping\/_m\/)(?=[^>]*\bsponsored\b)[^>]*>/.test(body))
       : path === "/sitemap.xml"
         ? body?.includes("https://mwohaji.kr/") && body?.includes("/event/")
         : true;

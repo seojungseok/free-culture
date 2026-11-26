@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import http from 'node:http';
 import {spawn} from 'node:child_process';
 test('a 200 response from the old release cannot pass the NAS smoke check',async()=>{
- const commit='a'.repeat(40);let served=commit,age=0;
+ const commit='a'.repeat(40);let served=commit,age=0,hydrated=false;
  const server=http.createServer((request,response)=>{
   if(request.url==='/')response.end('<div data-seasonal-hero="true"><section><a href="https://toss.shopping/_m/example" rel="sponsored">토스 상품</a></section><nav>');
-  else if(request.url==='/event/383591')response.end('https://mwohaji.kr/event/383591 <section data-article-products><a data-product="1" href="https://toss.shopping/_m/test" rel="sponsored">상품</a></section>');
+  else if(request.url==='/event/383591')response.end(hydrated?'https://mwohaji.kr/event/383591 <span hidden data-article-deal-slot=""></span>':'https://mwohaji.kr/event/383591 <section data-article-products><a data-product="1" href="https://toss.shopping/_m/test" rel="sponsored">상품</a></section>');
   else if(request.url==='/api/affiliate/toss')response.end(JSON.stringify({checkedAt:new Date(Date.now()-age).toISOString(),products:[{price:8900,links:{home:'https://toss.shopping/_m/example'}}]}));
   else if(request.url==='/api/site-status'){response.setHeader('content-type','application/json');response.end(JSON.stringify({ready:true,commit:served}));}
   else if(request.url==='/api/visitors'){response.setHeader('x-visitor-store','persistent-v1');response.end(JSON.stringify({total:20,today:2}));}
@@ -18,7 +18,7 @@ test('a 200 response from the old release cannot pass the NAS smoke check',async
  const run=(...flags)=>new Promise(resolve=>{const child=spawn(process.execPath,['scripts/nas/smoke.mjs',...flags],{env:{...process.env,NAS_SMOKE_BASE:`http://127.0.0.1:${server.address().port}`,EXPECTED_COMMIT:commit},stdio:['ignore','pipe','pipe']});let output='';child.stdout.on('data',b=>output+=b);child.on('close',code=>resolve({code,report:JSON.parse(output)}));});
  try{
   const good=await run();assert.equal(good.code,0);assert.equal(good.report.ok,true);assert.ok(good.report.results.some(result=>result.path==='/api/site-status'&&result.ok));
-  assert.equal((await run('--ads-only')).code,0);age=6*3600000;
+  hydrated=true;assert.equal((await run('--ads-only')).code,0);age=6*3600000;
   const expired=await run('--ads-only');assert.equal(expired.code,1);assert.equal(expired.report.results.find(r=>r.path==='/api/affiliate/toss').ok,false);
   served='b'.repeat(40);const stale=await run();assert.equal(stale.code,1);assert.equal(stale.report.ok,false);assert.equal(stale.report.results.find(r=>r.path==='/api/site-status').ok,false);
  }finally{await new Promise(resolve=>server.close(resolve));}

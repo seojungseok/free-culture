@@ -18,6 +18,7 @@ export async function refreshProducts({request,publisherId,previous,onVerified,o
  }
  async function details(ids){
   const items=[];
+  ids=[...new Set(ids)];
   for(let i=0;i<ids.length;i+=10){
    const batch=await request('/products/detail?tacaItemIds='+ids.slice(i,i+10).join(','));
    if(!Array.isArray(batch?.items))throw new Error('Invalid product detail response');
@@ -86,7 +87,8 @@ export async function refreshProducts({request,publisherId,previous,onVerified,o
   }
   const homeDeals=liveDeals.filter(d=>homeDealGroup(d.displayName)).slice(0,40);
   stage='daily deal detail';
-  const homeDetails=await details(homeDeals.map(d=>d.tacaItemId));
+  const missingIds=homeDeals.map(d=>d.tacaItemId).filter(id=>!reviewed.has(id));
+  const homeDetails=new Map([...reviewed,...await details(missingIds)]);
   stage='daily deal link';
   for(const deal of homeDeals){
    const p=homeDetails.get(deal.tacaItemId);

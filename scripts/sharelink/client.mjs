@@ -21,6 +21,13 @@ export async function withClient(work,{fetchImpl=fetch,stateDir=process.env.TOSS
     const access=process.env.TOSS_SHARELINK_ACCESS_KEY,secret=process.env.TOSS_SHARELINK_SECRET_KEY;
     if(!access||!secret)throw new Error('Missing private Sharelink credentials');
     const fingerprint=crypto.createHash('sha256').update(access+secret).digest('hex');
+    const cooldownPath=path.join(stateDir,'cooldown.json');
+    function checkCooldown(){
+      if(!fs.existsSync(cooldownPath))return;
+      const cooldown=JSON.parse(fs.readFileSync(cooldownPath,'utf8'));
+      if(cooldown.until>Date.now())throw new Error('Sharelink cooldown active');
+    }
+    checkCooldown();
     const tokenPath=path.join(stateDir,'token.json');
     let token;try{token=JSON.parse(fs.readFileSync(tokenPath,'utf8'));}catch{}
     if(!token||token.fingerprint!==fingerprint||token.expiresAt<Date.now()+300000){
@@ -31,7 +38,6 @@ export async function withClient(work,{fetchImpl=fetch,stateDir=process.env.TOSS
       token={accessToken:body.access_token,expiresAt:Date.now()+Number(body.expires_in)*1000,fingerprint};
       fs.writeFileSync(tokenPath,JSON.stringify(token),{mode:0o600});
     }
-    const cooldownPath=path.join(stateDir,'cooldown.json');
     let lastRequest=0;
     const request=async(endpoint,{method='GET',body}={})=>{
       if(isSharelinkMaintenance())throw new Error('Sharelink scheduled maintenance');
@@ -39,6 +45,7 @@ export async function withClient(work,{fetchImpl=fetch,stateDir=process.env.TOSS
       const query=new URL(endpoint,base).searchParams;
       const productCount=endpoint.startsWith('/products/detail')?(query.get('tacaItemIds')||'').split(',').filter(Boolean).length: /^\/products\/(today-deals|best-categories)/.test(endpoint)?Number(query.get('size')||10):0;
       if(!Number.isInteger(productCount)||productCount>10)throw new Error('Sharelink product batch exceeds conservative collector limit');
+      checkCooldown();
       const budgetPath=path.join(stateDir,'request-budget.json');
       for(;;){
         let history;try{history=JSON.parse(fs.readFileSync(budgetPath,'utf8'));}catch{history=[];}
@@ -46,14 +53,13 @@ export async function withClient(work,{fetchImpl=fetch,stateDir=process.env.TOSS
         if(history.length<10&&history.reduce((n,r)=>n+r.products,0)+productCount<=10){history.push({at:now,products:productCount});fs.writeFileSync(budgetPath,JSON.stringify(history),{mode:0o600});break;}
         await new Promise(r=>setTimeout(r,Math.max(1100,history[0].at+60100-now)));
       }
-      let cooldown;try{cooldown=JSON.parse(fs.readFileSync(cooldownPath,'utf8'));}catch{}
-      if(cooldown?.until>Date.now())throw new Error('Sharelink cooldown active');
       const delay=1100-(Date.now()-lastRequest);if(delay>0)await new Promise(r=>setTimeout(r,delay));
       if(isSharelinkMaintenance())throw new Error('Sharelink scheduled maintenance');
       lastRequest=Date.now();
       const response=await fetchImpl(base+endpoint,{method,headers:{Authorization:`Bearer ${token.accessToken}`,...(body?{'Content-Type':'application/json'}:{})},...(body?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(30000)});
-      const data=await response.json();
       if(response.status===429){const raw=response.headers.get('Retry-After');const seconds=Number(raw);const until=Number.isFinite(seconds)&&seconds>0?Date.now()+seconds*1000:Math.max(Date.now()+60000,Date.parse(raw)||0);fs.writeFileSync(cooldownPath,JSON.stringify({until}),{mode:0o600});}
+      if(response.status===429)throw new SharelinkError(429,'RATE_LIMITED',response.headers.get('Retry-After')||0);
+      const data=await response.json();
       if(data?.error?.errorCode==='SHARELINK_OPENAPI_QUOTA_EXCEEDED'){const d=new Date(Date.now()+9*3600000);d.setUTCHours(24,0,0,0);fs.writeFileSync(cooldownPath,JSON.stringify({until:d.getTime()-9*3600000}),{mode:0o600});}
       return unwrap(response,data);
     };
