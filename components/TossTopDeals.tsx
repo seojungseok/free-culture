@@ -105,11 +105,11 @@ export default function TossTopDeals(props:{contained?:boolean;compact?:boolean}
        const clickedAt=Date.now();
        if(!selectTopDeals(feed,clickedAt).some(item=>item.id===p.id)){event.preventDefault();setExpiryClock(clickedAt);return;}
        affiliateTrack('affiliate_click','toss',placement,page,p.id);
-      }} aria-label={`${p.name}, ${priceFormat.format(p.price)}원. 재고 확인하기 (새 창)`}>
+      }} aria-label={`${p.name}, ${priceFormat.format(p.price)}원. 최대할인가 확인 (새 창)`}>
       <img src={p.image} alt="" width={240} height={180} loading="lazy" decoding="async" draggable={false} />
       <h3 title={p.name}>{p.name}</h3>
       <p className={styles.price}><span>{p.discountRate}% </span><strong>{priceFormat.format(p.price)}원</strong></p><p className={styles.end}>{deadlineFormat.format(new Date(p.endAt!))} 특가 종료</p>
-      <span className={styles.cta}>재고 확인하기 <span aria-hidden="true">↗</span></span>
+      <span className={styles.cta}>최대할인가 확인 <span aria-hidden="true">↗</span></span>
      </a>
     </article>)}
    </div>
