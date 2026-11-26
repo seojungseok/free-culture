@@ -4,7 +4,7 @@ import {useEffect, useId, useMemo, useRef, useState,type PointerEvent,type Keybo
 import {usePathname} from 'next/navigation';
 import {affiliateTrack} from '@/lib/affiliate-track';
 import {freshnessMs} from '@/lib/sharelink-policy.mjs';
-import {selectTopDeals,topDealGroups,topDealGroup} from '@/lib/toss-top-deals.mjs';
+import {articleDealSelection,selectTopDeals,topDealGroups,topDealGroup} from '@/lib/toss-top-deals.mjs';
 import {useTossFeed} from './TossFeedProvider';
 import styles from './TossTopDeals.module.css';
 import ArticleProducts from './ArticleProducts';
@@ -18,7 +18,9 @@ export default function TossTopDeals(props:{contained?:boolean;compact?:boolean}
  const {contained=false,compact=false}=props;
  const placement=article?'article':'food_deal_rail';
  const meals=/^\/(camping|weekend-prep|food)(?:\/|$)/.test(page);
- const heading=article?(meals?'식사 준비 하루특가':'나들이 간식·음료 하루특가'):'오늘의 먹거리 특가';
+ const [title,setTitle]=useState('');
+ useEffect(()=>{setTitle(article?document.querySelector('h1')?.textContent||'':'');},[article,page]);
+ const heading=article?(meals?'식사 준비 하루특가':'나들이 먹거리 하루특가'):'오늘의 먹거리 특가';
  const {feed,now}=useTossFeed();
  const [expiryClock,setExpiryClock]=useState(0);
  const [group,setGroup]=useState('all');
@@ -29,7 +31,7 @@ export default function TossTopDeals(props:{contained?:boolean;compact?:boolean}
  const seen=useRef(new Set<string>());
  const effectiveNow=Math.max(now,expiryClock);
  const eligible=useMemo(()=>effectiveNow>0?selectTopDeals(feed,effectiveNow,{isHome:page==='/'}):[],[feed,effectiveNow,page]);
- const relevant=useMemo(()=>article?eligible.filter(p=>topDealGroup(p)===(meals?'meal':'snack')):eligible,[eligible,article,meals]);
+ const relevant=useMemo(()=>article?articleDealSelection(eligible,title,meals?'meal':'snack'):eligible,[eligible,article,meals,title]);
  const groups=topDealGroups.filter(g=>g.id==='all'||relevant.some(p=>topDealGroup(p)===g.id));
  const activeGroup=!article&&groups.some(g=>g.id===group)?group:'all';
  const matching=useMemo(()=>activeGroup==='all'?relevant:relevant.filter(p=>topDealGroup(p)===activeGroup),[relevant,activeGroup]);
@@ -108,7 +110,7 @@ export default function TossTopDeals(props:{contained?:boolean;compact?:boolean}
       }} aria-label={`${p.name}, ${priceFormat.format(p.price)}원. 최대할인가 확인 (새 창)`}>
       <img src={p.image} alt="" width={240} height={180} loading="lazy" decoding="async" draggable={false} />
       <h3 title={p.name}>{p.name}</h3>
-      <p className={styles.price}><span>{p.discountRate}% </span><strong>{priceFormat.format(p.price)}원</strong></p><p className={styles.end}>{deadlineFormat.format(new Date(p.endAt!))} 특가 종료</p>
+      <p className={styles.price}><span>{p.discountRate}% </span><strong>{priceFormat.format(p.price)}원</strong></p><p className={styles.end}>{article&&Date.parse(p.endAt!)-effectiveNow<=3*3600000?'마감 임박 · ':''}{deadlineFormat.format(new Date(p.endAt!))} 특가 종료</p>
       <span className={styles.cta}>최대할인가 확인 <span aria-hidden="true">↗</span></span>
      </a>
     </article>)}

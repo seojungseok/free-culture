@@ -4,3 +4,5 @@ export function selectTopDeals(feed: TossFeed, now: number, options?: {isHome?:b
 export function topDealGroup(product: TossProduct): 'snack'|'meal';
 export function topDealPreparation(product: TossProduct): string;
 export function topDealOption(product: TossProduct): string;
+
+export function articleDealSelection(eligible:TossProduct[],title:string,preferredGroup:'meal'|'snack'):TossProduct[];

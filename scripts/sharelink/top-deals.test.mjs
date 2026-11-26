@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {selectTopDeals,topDealGroup,topDealOption,topDealPreparation} from '../../lib/toss-top-deals.mjs';
+import {articleDealSelection,selectTopDeals,topDealGroup,topDealOption,topDealPreparation} from '../../lib/toss-top-deals.mjs';
 import {winterCampaignVersion} from '../../data/toss-winter-reviewed.mjs';
 import {homeDealGroup} from './home-deals.mjs';
 
@@ -86,4 +86,14 @@ test('stale feeds and feeds from before the scheduled maintenance remain hidden'
 test('생활용품과 체중 관리 제품은 식품명 일부가 겹쳐도 제외한다',()=>{
  const products=['스프렉스 무타공 압축봉 홀더','쑤욱빼 다이어트 커피맛'].map((name,i)=>({...deal,id:i+1,name}));
  assert.deepEqual(selectTopDeals({...feed,products},now),[]);
+});
+
+test('상세 글은 제목과 용도에 맞는 상품부터 나머지 특가로 열 칸을 채운다',()=>{
+ const products=Array.from({length:12},(_,i)=>({...deal,id:i+1,name:i<3?'두유':i===11?'삼겹살':'볶음밥'}));
+ const eligible=selectTopDeals({...feed,products},now);
+ const cards=articleDealSelection(eligible,'삼겹살 도시락','snack');
+ assert.equal(cards[0].name,'삼겹살');
+ assert.deepEqual(cards.slice(1,4).map(p=>p.name),['두유','두유','두유']);
+ assert.equal(new Set(cards.map(p=>p.id)).size,10);
+ assert.equal(articleDealSelection(eligible.slice(0,2),'','meal').length,2);
 });
