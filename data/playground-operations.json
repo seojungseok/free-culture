@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-26T03:06:18.079Z",
+  "checkedAt": "2026-11-27T03:14:35.391Z",
   "reviews": {
     "daejeon-wood-indoor-playground": {
       "status": "verified",
@@ -12,17 +12,17 @@
           "url": "https://www.daejeon.go.kr/wood/contentView.do?menuSeq=7306",
           "mode": "page",
           "reviewedHash": "c528fc24c5953cfe03f33ab8b347c159108638dd4059f4d6c8dc65121b51689a",
-          "lastCheckedAt": "2026-11-26T03:06:18.079Z"
+          "lastCheckedAt": "2026-11-27T03:14:35.391Z"
         },
         {
           "url": "https://www.daejeon.go.kr/wood/board/normalBoardList.do?boardId=wood_0009&menuSeq=7313",
           "mode": "daejeon-notices",
           "reviewedHash": "17141ddcc22eba9bbe94804a221fcd6a132185bcf7f19e818bafe049d1edd9fb",
-          "lastCheckedAt": "2026-11-26T03:06:18.079Z"
+          "lastCheckedAt": "2026-11-27T03:14:35.391Z"
         }
       ],
       "reviewedAt": "2026-11-16T13:47:39.586Z",
-      "checkedAt": "2026-11-26T03:06:18.079Z"
+      "checkedAt": "2026-11-27T03:14:35.391Z"
     },
     "jeonbuk-childrens-indoor-experience": {
       "status": "verified",
@@ -35,17 +35,17 @@
           "url": "https://www.jbchild.kr/index.9is?contentUid=4b75a91e6d1f0cbc016d4705dd6809b0",
           "mode": "page",
           "reviewedHash": "db554dc0e4a95afa27f2260a82b6a1eecfd9afba5b5605e1682f9906c16e64e5",
-          "lastCheckedAt": "2026-11-26T03:06:18.079Z"
+          "lastCheckedAt": "2026-11-27T03:14:35.391Z"
         },
         {
           "url": "https://www.jbchild.kr/index.9is?contentUid=ff80808169dbbbcd0169dc94767e007b",
           "mode": "jeonbuk-notices",
           "reviewedHash": "480cefc9040db012319516bb30c94b4e184fdb9e5241117e78928165a308a2a4",
-          "lastCheckedAt": "2026-11-26T03:06:18.079Z"
+          "lastCheckedAt": "2026-11-27T03:14:35.391Z"
         }
       ],
       "reviewedAt": "2026-11-16T13:47:39.586Z",
-      "checkedAt": "2026-11-26T03:06:18.079Z"
+      "checkedAt": "2026-11-27T03:14:35.391Z"
     },
     "gimhae-wood-indoor-playground": {
       "status": "review-required",
@@ -88,17 +88,17 @@
           "url": "https://www.cuc.or.kr/ggumjaramPark2.do",
           "mode": "chuncheon-facility",
           "reviewedHash": "80c237f357bae3b46e2b0ac401da0e558231141877c4c7333bd3facebf8d832f",
-          "lastCheckedAt": "2026-11-26T03:06:18.079Z"
+          "lastCheckedAt": "2026-11-27T03:14:35.391Z"
         },
         {
           "url": "https://www.cuc.or.kr/listBoard.do?divId=110",
           "mode": "chuncheon-park-notices",
           "reviewedHash": "830a92e88c3d15f166bae7897a2227bd7403bfaa5afaac34811e8e1ccb741bfc",
-          "lastCheckedAt": "2026-11-26T03:06:18.079Z"
+          "lastCheckedAt": "2026-11-27T03:14:35.391Z"
         }
       ],
       "reviewedAt": "2026-11-25T13:32:10.506Z",
-      "checkedAt": "2026-11-26T03:06:18.079Z"
+      "checkedAt": "2026-11-27T03:14:35.391Z"
     },
     "gumi-saemaul-free-indoor-playground": {
       "status": "verified",
@@ -111,17 +111,17 @@
           "url": "https://www.gb.go.kr/Main/saemaul/page.do?LARGE_CODE=830&MEDIUM_CODE=20&SMALL_CODE=10&SMALL_CODE2=10&mnu_order=2&mnu_uid=7969",
           "mode": "page",
           "reviewedHash": "47d4752cc08bb9fda7ee41961253f562cb22c2091f3067e7bae5bbd889d11241",
-          "lastCheckedAt": "2026-11-26T03:06:18.079Z"
+          "lastCheckedAt": "2026-11-27T03:14:35.391Z"
         },
         {
           "url": "https://www.gb.go.kr/Main/saemaul/page.do?mnu_uid=7955&BD_CODE=saemaeul_notice_new&cmd=1",
           "mode": "gumi-notices",
           "reviewedHash": "180d9715a4deeccc1c4d24c96f621694bd1ec01578dabd9be871bc60ace31f07",
-          "lastCheckedAt": "2026-11-26T03:06:18.079Z"
+          "lastCheckedAt": "2026-11-27T03:14:35.391Z"
         }
       ],
       "reviewedAt": "2026-11-16T16:01:16.317Z",
-      "checkedAt": "2026-11-26T03:06:18.079Z"
+      "checkedAt": "2026-11-27T03:14:35.391Z"
     },
     "gimhae-hwapo-wetland-science": {
       "status": "review-required",
